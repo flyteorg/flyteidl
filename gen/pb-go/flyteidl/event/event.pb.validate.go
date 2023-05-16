@@ -240,6 +240,16 @@ func (m *NodeExecutionEvent) Validate() error {
 
 	// no validation rules for DeckUri
 
+	if v, ok := interface{}(m.GetReportedAt()).(interface{ Validate() error }); ok {
+		if err := v.Validate(); err != nil {
+			return NodeExecutionEventValidationError{
+				field:  "ReportedAt",
+				reason: "embedded message failed validation",
+				cause:  err,
+			}
+		}
+	}
+
 	switch m.InputValue.(type) {
 
 	case *NodeExecutionEvent_InputUri:
@@ -573,6 +583,8 @@ func (m *DynamicWorkflowNodeMetadata) Validate() error {
 		}
 	}
 
+	// no validation rules for DynamicJobSpecUri
+
 	return nil
 }
 
@@ -867,6 +879,16 @@ func (m *TaskExecutionEvent) Validate() error {
 	}
 
 	// no validation rules for EventVersion
+
+	if v, ok := interface{}(m.GetReportedAt()).(interface{ Validate() error }); ok {
+		if err := v.Validate(); err != nil {
+			return TaskExecutionEventValidationError{
+				field:  "ReportedAt",
+				reason: "embedded message failed validation",
+				cause:  err,
+			}
+		}
+	}
 
 	switch m.InputValue.(type) {
 

@@ -13498,6 +13498,7 @@
                  * @interface IK8sPod
                  * @property {flyteidl.core.IK8sObjectMetadata|null} [metadata] K8sPod metadata
                  * @property {google.protobuf.IStruct|null} [podSpec] K8sPod podSpec
+                 * @property {flyteidl.core.IDataLoadingConfig|null} [dataConfig] K8sPod dataConfig
                  */
     
                 /**
@@ -13532,6 +13533,14 @@
                 K8sPod.prototype.podSpec = null;
     
                 /**
+                 * K8sPod dataConfig.
+                 * @member {flyteidl.core.IDataLoadingConfig|null|undefined} dataConfig
+                 * @memberof flyteidl.core.K8sPod
+                 * @instance
+                 */
+                K8sPod.prototype.dataConfig = null;
+    
+                /**
                  * Creates a new K8sPod instance using the specified properties.
                  * @function create
                  * @memberof flyteidl.core.K8sPod
@@ -13559,6 +13568,8 @@
                         $root.flyteidl.core.K8sObjectMetadata.encode(message.metadata, writer.uint32(/* id 1, wireType 2 =*/10).fork()).ldelim();
                     if (message.podSpec != null && message.hasOwnProperty("podSpec"))
                         $root.google.protobuf.Struct.encode(message.podSpec, writer.uint32(/* id 2, wireType 2 =*/18).fork()).ldelim();
+                    if (message.dataConfig != null && message.hasOwnProperty("dataConfig"))
+                        $root.flyteidl.core.DataLoadingConfig.encode(message.dataConfig, writer.uint32(/* id 3, wireType 2 =*/26).fork()).ldelim();
                     return writer;
                 };
     
@@ -13585,6 +13596,9 @@
                             break;
                         case 2:
                             message.podSpec = $root.google.protobuf.Struct.decode(reader, reader.uint32());
+                            break;
+                        case 3:
+                            message.dataConfig = $root.flyteidl.core.DataLoadingConfig.decode(reader, reader.uint32());
                             break;
                         default:
                             reader.skipType(tag & 7);
@@ -13614,6 +13628,11 @@
                         var error = $root.google.protobuf.Struct.verify(message.podSpec);
                         if (error)
                             return "podSpec." + error;
+                    }
+                    if (message.dataConfig != null && message.hasOwnProperty("dataConfig")) {
+                        var error = $root.flyteidl.core.DataLoadingConfig.verify(message.dataConfig);
+                        if (error)
+                            return "dataConfig." + error;
                     }
                     return null;
                 };
@@ -14245,6 +14264,7 @@
                  * @property {string|null} [iamRole] Identity iamRole
                  * @property {string|null} [k8sServiceAccount] Identity k8sServiceAccount
                  * @property {flyteidl.core.IOAuth2Client|null} [oauth2Client] Identity oauth2Client
+                 * @property {string|null} [executionIdentity] Identity executionIdentity
                  */
     
                 /**
@@ -14287,6 +14307,14 @@
                 Identity.prototype.oauth2Client = null;
     
                 /**
+                 * Identity executionIdentity.
+                 * @member {string} executionIdentity
+                 * @memberof flyteidl.core.Identity
+                 * @instance
+                 */
+                Identity.prototype.executionIdentity = "";
+    
+                /**
                  * Creates a new Identity instance using the specified properties.
                  * @function create
                  * @memberof flyteidl.core.Identity
@@ -14316,6 +14344,8 @@
                         writer.uint32(/* id 2, wireType 2 =*/18).string(message.k8sServiceAccount);
                     if (message.oauth2Client != null && message.hasOwnProperty("oauth2Client"))
                         $root.flyteidl.core.OAuth2Client.encode(message.oauth2Client, writer.uint32(/* id 3, wireType 2 =*/26).fork()).ldelim();
+                    if (message.executionIdentity != null && message.hasOwnProperty("executionIdentity"))
+                        writer.uint32(/* id 4, wireType 2 =*/34).string(message.executionIdentity);
                     return writer;
                 };
     
@@ -14345,6 +14375,9 @@
                             break;
                         case 3:
                             message.oauth2Client = $root.flyteidl.core.OAuth2Client.decode(reader, reader.uint32());
+                            break;
+                        case 4:
+                            message.executionIdentity = reader.string();
                             break;
                         default:
                             reader.skipType(tag & 7);
@@ -14376,6 +14409,9 @@
                         if (error)
                             return "oauth2Client." + error;
                     }
+                    if (message.executionIdentity != null && message.hasOwnProperty("executionIdentity"))
+                        if (!$util.isString(message.executionIdentity))
+                            return "executionIdentity: string expected";
                     return null;
                 };
     
@@ -15260,6 +15296,270 @@
                 return ErrorDocument;
             })();
     
+            core.Span = (function() {
+    
+                /**
+                 * Properties of a Span.
+                 * @memberof flyteidl.core
+                 * @interface ISpan
+                 * @property {google.protobuf.ITimestamp|null} [startTime] Span startTime
+                 * @property {google.protobuf.ITimestamp|null} [endTime] Span endTime
+                 * @property {flyteidl.core.IWorkflowExecutionIdentifier|null} [workflowId] Span workflowId
+                 * @property {flyteidl.core.INodeExecutionIdentifier|null} [nodeId] Span nodeId
+                 * @property {flyteidl.core.ITaskExecutionIdentifier|null} [taskId] Span taskId
+                 * @property {string|null} [operationId] Span operationId
+                 * @property {Array.<flyteidl.core.ISpan>|null} [spans] Span spans
+                 */
+    
+                /**
+                 * Constructs a new Span.
+                 * @memberof flyteidl.core
+                 * @classdesc Represents a Span.
+                 * @implements ISpan
+                 * @constructor
+                 * @param {flyteidl.core.ISpan=} [properties] Properties to set
+                 */
+                function Span(properties) {
+                    this.spans = [];
+                    if (properties)
+                        for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                            if (properties[keys[i]] != null)
+                                this[keys[i]] = properties[keys[i]];
+                }
+    
+                /**
+                 * Span startTime.
+                 * @member {google.protobuf.ITimestamp|null|undefined} startTime
+                 * @memberof flyteidl.core.Span
+                 * @instance
+                 */
+                Span.prototype.startTime = null;
+    
+                /**
+                 * Span endTime.
+                 * @member {google.protobuf.ITimestamp|null|undefined} endTime
+                 * @memberof flyteidl.core.Span
+                 * @instance
+                 */
+                Span.prototype.endTime = null;
+    
+                /**
+                 * Span workflowId.
+                 * @member {flyteidl.core.IWorkflowExecutionIdentifier|null|undefined} workflowId
+                 * @memberof flyteidl.core.Span
+                 * @instance
+                 */
+                Span.prototype.workflowId = null;
+    
+                /**
+                 * Span nodeId.
+                 * @member {flyteidl.core.INodeExecutionIdentifier|null|undefined} nodeId
+                 * @memberof flyteidl.core.Span
+                 * @instance
+                 */
+                Span.prototype.nodeId = null;
+    
+                /**
+                 * Span taskId.
+                 * @member {flyteidl.core.ITaskExecutionIdentifier|null|undefined} taskId
+                 * @memberof flyteidl.core.Span
+                 * @instance
+                 */
+                Span.prototype.taskId = null;
+    
+                /**
+                 * Span operationId.
+                 * @member {string} operationId
+                 * @memberof flyteidl.core.Span
+                 * @instance
+                 */
+                Span.prototype.operationId = "";
+    
+                /**
+                 * Span spans.
+                 * @member {Array.<flyteidl.core.ISpan>} spans
+                 * @memberof flyteidl.core.Span
+                 * @instance
+                 */
+                Span.prototype.spans = $util.emptyArray;
+    
+                // OneOf field names bound to virtual getters and setters
+                var $oneOfFields;
+    
+                /**
+                 * Span id.
+                 * @member {"workflowId"|"nodeId"|"taskId"|"operationId"|undefined} id
+                 * @memberof flyteidl.core.Span
+                 * @instance
+                 */
+                Object.defineProperty(Span.prototype, "id", {
+                    get: $util.oneOfGetter($oneOfFields = ["workflowId", "nodeId", "taskId", "operationId"]),
+                    set: $util.oneOfSetter($oneOfFields)
+                });
+    
+                /**
+                 * Creates a new Span instance using the specified properties.
+                 * @function create
+                 * @memberof flyteidl.core.Span
+                 * @static
+                 * @param {flyteidl.core.ISpan=} [properties] Properties to set
+                 * @returns {flyteidl.core.Span} Span instance
+                 */
+                Span.create = function create(properties) {
+                    return new Span(properties);
+                };
+    
+                /**
+                 * Encodes the specified Span message. Does not implicitly {@link flyteidl.core.Span.verify|verify} messages.
+                 * @function encode
+                 * @memberof flyteidl.core.Span
+                 * @static
+                 * @param {flyteidl.core.ISpan} message Span message or plain object to encode
+                 * @param {$protobuf.Writer} [writer] Writer to encode to
+                 * @returns {$protobuf.Writer} Writer
+                 */
+                Span.encode = function encode(message, writer) {
+                    if (!writer)
+                        writer = $Writer.create();
+                    if (message.startTime != null && message.hasOwnProperty("startTime"))
+                        $root.google.protobuf.Timestamp.encode(message.startTime, writer.uint32(/* id 1, wireType 2 =*/10).fork()).ldelim();
+                    if (message.endTime != null && message.hasOwnProperty("endTime"))
+                        $root.google.protobuf.Timestamp.encode(message.endTime, writer.uint32(/* id 2, wireType 2 =*/18).fork()).ldelim();
+                    if (message.workflowId != null && message.hasOwnProperty("workflowId"))
+                        $root.flyteidl.core.WorkflowExecutionIdentifier.encode(message.workflowId, writer.uint32(/* id 3, wireType 2 =*/26).fork()).ldelim();
+                    if (message.nodeId != null && message.hasOwnProperty("nodeId"))
+                        $root.flyteidl.core.NodeExecutionIdentifier.encode(message.nodeId, writer.uint32(/* id 4, wireType 2 =*/34).fork()).ldelim();
+                    if (message.taskId != null && message.hasOwnProperty("taskId"))
+                        $root.flyteidl.core.TaskExecutionIdentifier.encode(message.taskId, writer.uint32(/* id 5, wireType 2 =*/42).fork()).ldelim();
+                    if (message.operationId != null && message.hasOwnProperty("operationId"))
+                        writer.uint32(/* id 6, wireType 2 =*/50).string(message.operationId);
+                    if (message.spans != null && message.spans.length)
+                        for (var i = 0; i < message.spans.length; ++i)
+                            $root.flyteidl.core.Span.encode(message.spans[i], writer.uint32(/* id 7, wireType 2 =*/58).fork()).ldelim();
+                    return writer;
+                };
+    
+                /**
+                 * Decodes a Span message from the specified reader or buffer.
+                 * @function decode
+                 * @memberof flyteidl.core.Span
+                 * @static
+                 * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+                 * @param {number} [length] Message length if known beforehand
+                 * @returns {flyteidl.core.Span} Span
+                 * @throws {Error} If the payload is not a reader or valid buffer
+                 * @throws {$protobuf.util.ProtocolError} If required fields are missing
+                 */
+                Span.decode = function decode(reader, length) {
+                    if (!(reader instanceof $Reader))
+                        reader = $Reader.create(reader);
+                    var end = length === undefined ? reader.len : reader.pos + length, message = new $root.flyteidl.core.Span();
+                    while (reader.pos < end) {
+                        var tag = reader.uint32();
+                        switch (tag >>> 3) {
+                        case 1:
+                            message.startTime = $root.google.protobuf.Timestamp.decode(reader, reader.uint32());
+                            break;
+                        case 2:
+                            message.endTime = $root.google.protobuf.Timestamp.decode(reader, reader.uint32());
+                            break;
+                        case 3:
+                            message.workflowId = $root.flyteidl.core.WorkflowExecutionIdentifier.decode(reader, reader.uint32());
+                            break;
+                        case 4:
+                            message.nodeId = $root.flyteidl.core.NodeExecutionIdentifier.decode(reader, reader.uint32());
+                            break;
+                        case 5:
+                            message.taskId = $root.flyteidl.core.TaskExecutionIdentifier.decode(reader, reader.uint32());
+                            break;
+                        case 6:
+                            message.operationId = reader.string();
+                            break;
+                        case 7:
+                            if (!(message.spans && message.spans.length))
+                                message.spans = [];
+                            message.spans.push($root.flyteidl.core.Span.decode(reader, reader.uint32()));
+                            break;
+                        default:
+                            reader.skipType(tag & 7);
+                            break;
+                        }
+                    }
+                    return message;
+                };
+    
+                /**
+                 * Verifies a Span message.
+                 * @function verify
+                 * @memberof flyteidl.core.Span
+                 * @static
+                 * @param {Object.<string,*>} message Plain object to verify
+                 * @returns {string|null} `null` if valid, otherwise the reason why it is not
+                 */
+                Span.verify = function verify(message) {
+                    if (typeof message !== "object" || message === null)
+                        return "object expected";
+                    var properties = {};
+                    if (message.startTime != null && message.hasOwnProperty("startTime")) {
+                        var error = $root.google.protobuf.Timestamp.verify(message.startTime);
+                        if (error)
+                            return "startTime." + error;
+                    }
+                    if (message.endTime != null && message.hasOwnProperty("endTime")) {
+                        var error = $root.google.protobuf.Timestamp.verify(message.endTime);
+                        if (error)
+                            return "endTime." + error;
+                    }
+                    if (message.workflowId != null && message.hasOwnProperty("workflowId")) {
+                        properties.id = 1;
+                        {
+                            var error = $root.flyteidl.core.WorkflowExecutionIdentifier.verify(message.workflowId);
+                            if (error)
+                                return "workflowId." + error;
+                        }
+                    }
+                    if (message.nodeId != null && message.hasOwnProperty("nodeId")) {
+                        if (properties.id === 1)
+                            return "id: multiple values";
+                        properties.id = 1;
+                        {
+                            var error = $root.flyteidl.core.NodeExecutionIdentifier.verify(message.nodeId);
+                            if (error)
+                                return "nodeId." + error;
+                        }
+                    }
+                    if (message.taskId != null && message.hasOwnProperty("taskId")) {
+                        if (properties.id === 1)
+                            return "id: multiple values";
+                        properties.id = 1;
+                        {
+                            var error = $root.flyteidl.core.TaskExecutionIdentifier.verify(message.taskId);
+                            if (error)
+                                return "taskId." + error;
+                        }
+                    }
+                    if (message.operationId != null && message.hasOwnProperty("operationId")) {
+                        if (properties.id === 1)
+                            return "id: multiple values";
+                        properties.id = 1;
+                        if (!$util.isString(message.operationId))
+                            return "operationId: string expected";
+                    }
+                    if (message.spans != null && message.hasOwnProperty("spans")) {
+                        if (!Array.isArray(message.spans))
+                            return "spans: array expected";
+                        for (var i = 0; i < message.spans.length; ++i) {
+                            var error = $root.flyteidl.core.Span.verify(message.spans[i]);
+                            if (error)
+                                return "spans." + error;
+                        }
+                    }
+                    return null;
+                };
+    
+                return Span;
+            })();
+    
             core.WorkflowClosure = (function() {
     
                 /**
@@ -15697,6 +15997,7 @@
                  * @property {boolean|null} [isParent] NodeExecutionEvent isParent
                  * @property {boolean|null} [isDynamic] NodeExecutionEvent isDynamic
                  * @property {string|null} [deckUri] NodeExecutionEvent deckUri
+                 * @property {google.protobuf.ITimestamp|null} [reportedAt] NodeExecutionEvent reportedAt
                  */
     
                 /**
@@ -15874,6 +16175,14 @@
                  */
                 NodeExecutionEvent.prototype.deckUri = "";
     
+                /**
+                 * NodeExecutionEvent reportedAt.
+                 * @member {google.protobuf.ITimestamp|null|undefined} reportedAt
+                 * @memberof flyteidl.event.NodeExecutionEvent
+                 * @instance
+                 */
+                NodeExecutionEvent.prototype.reportedAt = null;
+    
                 // OneOf field names bound to virtual getters and setters
                 var $oneOfFields;
     
@@ -15974,6 +16283,8 @@
                         writer.uint32(/* id 19, wireType 2 =*/154).string(message.deckUri);
                     if (message.inputData != null && message.hasOwnProperty("inputData"))
                         $root.flyteidl.core.LiteralMap.encode(message.inputData, writer.uint32(/* id 20, wireType 2 =*/162).fork()).ldelim();
+                    if (message.reportedAt != null && message.hasOwnProperty("reportedAt"))
+                        $root.google.protobuf.Timestamp.encode(message.reportedAt, writer.uint32(/* id 21, wireType 2 =*/170).fork()).ldelim();
                     return writer;
                 };
     
@@ -16054,6 +16365,9 @@
                             break;
                         case 19:
                             message.deckUri = reader.string();
+                            break;
+                        case 21:
+                            message.reportedAt = $root.google.protobuf.Timestamp.decode(reader, reader.uint32());
                             break;
                         default:
                             reader.skipType(tag & 7);
@@ -16194,6 +16508,11 @@
                     if (message.deckUri != null && message.hasOwnProperty("deckUri"))
                         if (!$util.isString(message.deckUri))
                             return "deckUri: string expected";
+                    if (message.reportedAt != null && message.hasOwnProperty("reportedAt")) {
+                        var error = $root.google.protobuf.Timestamp.verify(message.reportedAt);
+                        if (error)
+                            return "reportedAt." + error;
+                    }
                     return null;
                 };
     
@@ -16520,6 +16839,7 @@
                  * @interface IDynamicWorkflowNodeMetadata
                  * @property {flyteidl.core.IIdentifier|null} [id] DynamicWorkflowNodeMetadata id
                  * @property {flyteidl.core.ICompiledWorkflowClosure|null} [compiledWorkflow] DynamicWorkflowNodeMetadata compiledWorkflow
+                 * @property {string|null} [dynamicJobSpecUri] DynamicWorkflowNodeMetadata dynamicJobSpecUri
                  */
     
                 /**
@@ -16554,6 +16874,14 @@
                 DynamicWorkflowNodeMetadata.prototype.compiledWorkflow = null;
     
                 /**
+                 * DynamicWorkflowNodeMetadata dynamicJobSpecUri.
+                 * @member {string} dynamicJobSpecUri
+                 * @memberof flyteidl.event.DynamicWorkflowNodeMetadata
+                 * @instance
+                 */
+                DynamicWorkflowNodeMetadata.prototype.dynamicJobSpecUri = "";
+    
+                /**
                  * Creates a new DynamicWorkflowNodeMetadata instance using the specified properties.
                  * @function create
                  * @memberof flyteidl.event.DynamicWorkflowNodeMetadata
@@ -16581,6 +16909,8 @@
                         $root.flyteidl.core.Identifier.encode(message.id, writer.uint32(/* id 1, wireType 2 =*/10).fork()).ldelim();
                     if (message.compiledWorkflow != null && message.hasOwnProperty("compiledWorkflow"))
                         $root.flyteidl.core.CompiledWorkflowClosure.encode(message.compiledWorkflow, writer.uint32(/* id 2, wireType 2 =*/18).fork()).ldelim();
+                    if (message.dynamicJobSpecUri != null && message.hasOwnProperty("dynamicJobSpecUri"))
+                        writer.uint32(/* id 3, wireType 2 =*/26).string(message.dynamicJobSpecUri);
                     return writer;
                 };
     
@@ -16607,6 +16937,9 @@
                             break;
                         case 2:
                             message.compiledWorkflow = $root.flyteidl.core.CompiledWorkflowClosure.decode(reader, reader.uint32());
+                            break;
+                        case 3:
+                            message.dynamicJobSpecUri = reader.string();
                             break;
                         default:
                             reader.skipType(tag & 7);
@@ -16637,6 +16970,9 @@
                         if (error)
                             return "compiledWorkflow." + error;
                     }
+                    if (message.dynamicJobSpecUri != null && message.hasOwnProperty("dynamicJobSpecUri"))
+                        if (!$util.isString(message.dynamicJobSpecUri))
+                            return "dynamicJobSpecUri: string expected";
                     return null;
                 };
     
@@ -16889,6 +17225,7 @@
                  * @property {string|null} [taskType] TaskExecutionEvent taskType
                  * @property {flyteidl.event.ITaskExecutionMetadata|null} [metadata] TaskExecutionEvent metadata
                  * @property {number|null} [eventVersion] TaskExecutionEvent eventVersion
+                 * @property {google.protobuf.ITimestamp|null} [reportedAt] TaskExecutionEvent reportedAt
                  */
     
                 /**
@@ -17051,6 +17388,14 @@
                  */
                 TaskExecutionEvent.prototype.eventVersion = 0;
     
+                /**
+                 * TaskExecutionEvent reportedAt.
+                 * @member {google.protobuf.ITimestamp|null|undefined} reportedAt
+                 * @memberof flyteidl.event.TaskExecutionEvent
+                 * @instance
+                 */
+                TaskExecutionEvent.prototype.reportedAt = null;
+    
                 // OneOf field names bound to virtual getters and setters
                 var $oneOfFields;
     
@@ -17137,6 +17482,8 @@
                         writer.uint32(/* id 18, wireType 0 =*/144).int32(message.eventVersion);
                     if (message.inputData != null && message.hasOwnProperty("inputData"))
                         $root.flyteidl.core.LiteralMap.encode(message.inputData, writer.uint32(/* id 19, wireType 2 =*/154).fork()).ldelim();
+                    if (message.reportedAt != null && message.hasOwnProperty("reportedAt"))
+                        $root.google.protobuf.Timestamp.encode(message.reportedAt, writer.uint32(/* id 20, wireType 2 =*/162).fork()).ldelim();
                     return writer;
                 };
     
@@ -17213,6 +17560,9 @@
                             break;
                         case 18:
                             message.eventVersion = reader.int32();
+                            break;
+                        case 20:
+                            message.reportedAt = $root.google.protobuf.Timestamp.decode(reader, reader.uint32());
                             break;
                         default:
                             reader.skipType(tag & 7);
@@ -17340,6 +17690,11 @@
                     if (message.eventVersion != null && message.hasOwnProperty("eventVersion"))
                         if (!$util.isInteger(message.eventVersion))
                             return "eventVersion: integer expected";
+                    if (message.reportedAt != null && message.hasOwnProperty("reportedAt")) {
+                        var error = $root.google.protobuf.Timestamp.verify(message.reportedAt);
+                        if (error)
+                            return "reportedAt." + error;
+                    }
                     return null;
                 };
     
@@ -20955,6 +21310,126 @@
                 return Annotations;
             })();
     
+            admin.Envs = (function() {
+    
+                /**
+                 * Properties of an Envs.
+                 * @memberof flyteidl.admin
+                 * @interface IEnvs
+                 * @property {Array.<flyteidl.core.IKeyValuePair>|null} [values] Envs values
+                 */
+    
+                /**
+                 * Constructs a new Envs.
+                 * @memberof flyteidl.admin
+                 * @classdesc Represents an Envs.
+                 * @implements IEnvs
+                 * @constructor
+                 * @param {flyteidl.admin.IEnvs=} [properties] Properties to set
+                 */
+                function Envs(properties) {
+                    this.values = [];
+                    if (properties)
+                        for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                            if (properties[keys[i]] != null)
+                                this[keys[i]] = properties[keys[i]];
+                }
+    
+                /**
+                 * Envs values.
+                 * @member {Array.<flyteidl.core.IKeyValuePair>} values
+                 * @memberof flyteidl.admin.Envs
+                 * @instance
+                 */
+                Envs.prototype.values = $util.emptyArray;
+    
+                /**
+                 * Creates a new Envs instance using the specified properties.
+                 * @function create
+                 * @memberof flyteidl.admin.Envs
+                 * @static
+                 * @param {flyteidl.admin.IEnvs=} [properties] Properties to set
+                 * @returns {flyteidl.admin.Envs} Envs instance
+                 */
+                Envs.create = function create(properties) {
+                    return new Envs(properties);
+                };
+    
+                /**
+                 * Encodes the specified Envs message. Does not implicitly {@link flyteidl.admin.Envs.verify|verify} messages.
+                 * @function encode
+                 * @memberof flyteidl.admin.Envs
+                 * @static
+                 * @param {flyteidl.admin.IEnvs} message Envs message or plain object to encode
+                 * @param {$protobuf.Writer} [writer] Writer to encode to
+                 * @returns {$protobuf.Writer} Writer
+                 */
+                Envs.encode = function encode(message, writer) {
+                    if (!writer)
+                        writer = $Writer.create();
+                    if (message.values != null && message.values.length)
+                        for (var i = 0; i < message.values.length; ++i)
+                            $root.flyteidl.core.KeyValuePair.encode(message.values[i], writer.uint32(/* id 1, wireType 2 =*/10).fork()).ldelim();
+                    return writer;
+                };
+    
+                /**
+                 * Decodes an Envs message from the specified reader or buffer.
+                 * @function decode
+                 * @memberof flyteidl.admin.Envs
+                 * @static
+                 * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+                 * @param {number} [length] Message length if known beforehand
+                 * @returns {flyteidl.admin.Envs} Envs
+                 * @throws {Error} If the payload is not a reader or valid buffer
+                 * @throws {$protobuf.util.ProtocolError} If required fields are missing
+                 */
+                Envs.decode = function decode(reader, length) {
+                    if (!(reader instanceof $Reader))
+                        reader = $Reader.create(reader);
+                    var end = length === undefined ? reader.len : reader.pos + length, message = new $root.flyteidl.admin.Envs();
+                    while (reader.pos < end) {
+                        var tag = reader.uint32();
+                        switch (tag >>> 3) {
+                        case 1:
+                            if (!(message.values && message.values.length))
+                                message.values = [];
+                            message.values.push($root.flyteidl.core.KeyValuePair.decode(reader, reader.uint32()));
+                            break;
+                        default:
+                            reader.skipType(tag & 7);
+                            break;
+                        }
+                    }
+                    return message;
+                };
+    
+                /**
+                 * Verifies an Envs message.
+                 * @function verify
+                 * @memberof flyteidl.admin.Envs
+                 * @static
+                 * @param {Object.<string,*>} message Plain object to verify
+                 * @returns {string|null} `null` if valid, otherwise the reason why it is not
+                 */
+                Envs.verify = function verify(message) {
+                    if (typeof message !== "object" || message === null)
+                        return "object expected";
+                    if (message.values != null && message.hasOwnProperty("values")) {
+                        if (!Array.isArray(message.values))
+                            return "values: array expected";
+                        for (var i = 0; i < message.values.length; ++i) {
+                            var error = $root.flyteidl.core.KeyValuePair.verify(message.values[i]);
+                            if (error)
+                                return "values." + error;
+                        }
+                    }
+                    return null;
+                };
+    
+                return Envs;
+            })();
+    
             admin.AuthRole = (function() {
     
                 /**
@@ -21190,6 +21665,150 @@
                 };
     
                 return RawOutputDataConfig;
+            })();
+    
+            admin.FlyteURLs = (function() {
+    
+                /**
+                 * Properties of a FlyteURLs.
+                 * @memberof flyteidl.admin
+                 * @interface IFlyteURLs
+                 * @property {string|null} [inputs] FlyteURLs inputs
+                 * @property {string|null} [outputs] FlyteURLs outputs
+                 * @property {string|null} [deck] FlyteURLs deck
+                 */
+    
+                /**
+                 * Constructs a new FlyteURLs.
+                 * @memberof flyteidl.admin
+                 * @classdesc Represents a FlyteURLs.
+                 * @implements IFlyteURLs
+                 * @constructor
+                 * @param {flyteidl.admin.IFlyteURLs=} [properties] Properties to set
+                 */
+                function FlyteURLs(properties) {
+                    if (properties)
+                        for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                            if (properties[keys[i]] != null)
+                                this[keys[i]] = properties[keys[i]];
+                }
+    
+                /**
+                 * FlyteURLs inputs.
+                 * @member {string} inputs
+                 * @memberof flyteidl.admin.FlyteURLs
+                 * @instance
+                 */
+                FlyteURLs.prototype.inputs = "";
+    
+                /**
+                 * FlyteURLs outputs.
+                 * @member {string} outputs
+                 * @memberof flyteidl.admin.FlyteURLs
+                 * @instance
+                 */
+                FlyteURLs.prototype.outputs = "";
+    
+                /**
+                 * FlyteURLs deck.
+                 * @member {string} deck
+                 * @memberof flyteidl.admin.FlyteURLs
+                 * @instance
+                 */
+                FlyteURLs.prototype.deck = "";
+    
+                /**
+                 * Creates a new FlyteURLs instance using the specified properties.
+                 * @function create
+                 * @memberof flyteidl.admin.FlyteURLs
+                 * @static
+                 * @param {flyteidl.admin.IFlyteURLs=} [properties] Properties to set
+                 * @returns {flyteidl.admin.FlyteURLs} FlyteURLs instance
+                 */
+                FlyteURLs.create = function create(properties) {
+                    return new FlyteURLs(properties);
+                };
+    
+                /**
+                 * Encodes the specified FlyteURLs message. Does not implicitly {@link flyteidl.admin.FlyteURLs.verify|verify} messages.
+                 * @function encode
+                 * @memberof flyteidl.admin.FlyteURLs
+                 * @static
+                 * @param {flyteidl.admin.IFlyteURLs} message FlyteURLs message or plain object to encode
+                 * @param {$protobuf.Writer} [writer] Writer to encode to
+                 * @returns {$protobuf.Writer} Writer
+                 */
+                FlyteURLs.encode = function encode(message, writer) {
+                    if (!writer)
+                        writer = $Writer.create();
+                    if (message.inputs != null && message.hasOwnProperty("inputs"))
+                        writer.uint32(/* id 1, wireType 2 =*/10).string(message.inputs);
+                    if (message.outputs != null && message.hasOwnProperty("outputs"))
+                        writer.uint32(/* id 2, wireType 2 =*/18).string(message.outputs);
+                    if (message.deck != null && message.hasOwnProperty("deck"))
+                        writer.uint32(/* id 3, wireType 2 =*/26).string(message.deck);
+                    return writer;
+                };
+    
+                /**
+                 * Decodes a FlyteURLs message from the specified reader or buffer.
+                 * @function decode
+                 * @memberof flyteidl.admin.FlyteURLs
+                 * @static
+                 * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+                 * @param {number} [length] Message length if known beforehand
+                 * @returns {flyteidl.admin.FlyteURLs} FlyteURLs
+                 * @throws {Error} If the payload is not a reader or valid buffer
+                 * @throws {$protobuf.util.ProtocolError} If required fields are missing
+                 */
+                FlyteURLs.decode = function decode(reader, length) {
+                    if (!(reader instanceof $Reader))
+                        reader = $Reader.create(reader);
+                    var end = length === undefined ? reader.len : reader.pos + length, message = new $root.flyteidl.admin.FlyteURLs();
+                    while (reader.pos < end) {
+                        var tag = reader.uint32();
+                        switch (tag >>> 3) {
+                        case 1:
+                            message.inputs = reader.string();
+                            break;
+                        case 2:
+                            message.outputs = reader.string();
+                            break;
+                        case 3:
+                            message.deck = reader.string();
+                            break;
+                        default:
+                            reader.skipType(tag & 7);
+                            break;
+                        }
+                    }
+                    return message;
+                };
+    
+                /**
+                 * Verifies a FlyteURLs message.
+                 * @function verify
+                 * @memberof flyteidl.admin.FlyteURLs
+                 * @static
+                 * @param {Object.<string,*>} message Plain object to verify
+                 * @returns {string|null} `null` if valid, otherwise the reason why it is not
+                 */
+                FlyteURLs.verify = function verify(message) {
+                    if (typeof message !== "object" || message === null)
+                        return "object expected";
+                    if (message.inputs != null && message.hasOwnProperty("inputs"))
+                        if (!$util.isString(message.inputs))
+                            return "inputs: string expected";
+                    if (message.outputs != null && message.hasOwnProperty("outputs"))
+                        if (!$util.isString(message.outputs))
+                            return "outputs: string expected";
+                    if (message.deck != null && message.hasOwnProperty("deck"))
+                        if (!$util.isString(message.deck))
+                            return "deck: string expected";
+                    return null;
+                };
+    
+                return FlyteURLs;
             })();
     
             admin.DescriptionEntity = (function() {
@@ -25265,6 +25884,7 @@
                  * @property {flyteidl.admin.IClusterAssignment|null} [clusterAssignment] ExecutionSpec clusterAssignment
                  * @property {google.protobuf.IBoolValue|null} [interruptible] ExecutionSpec interruptible
                  * @property {boolean|null} [overwriteCache] ExecutionSpec overwriteCache
+                 * @property {flyteidl.admin.IEnvs|null} [envs] ExecutionSpec envs
                  */
     
                 /**
@@ -25402,6 +26022,14 @@
                  */
                 ExecutionSpec.prototype.overwriteCache = false;
     
+                /**
+                 * ExecutionSpec envs.
+                 * @member {flyteidl.admin.IEnvs|null|undefined} envs
+                 * @memberof flyteidl.admin.ExecutionSpec
+                 * @instance
+                 */
+                ExecutionSpec.prototype.envs = null;
+    
                 // OneOf field names bound to virtual getters and setters
                 var $oneOfFields;
     
@@ -25470,6 +26098,8 @@
                         $root.google.protobuf.BoolValue.encode(message.interruptible, writer.uint32(/* id 21, wireType 2 =*/170).fork()).ldelim();
                     if (message.overwriteCache != null && message.hasOwnProperty("overwriteCache"))
                         writer.uint32(/* id 22, wireType 0 =*/176).bool(message.overwriteCache);
+                    if (message.envs != null && message.hasOwnProperty("envs"))
+                        $root.flyteidl.admin.Envs.encode(message.envs, writer.uint32(/* id 23, wireType 2 =*/186).fork()).ldelim();
                     return writer;
                 };
     
@@ -25535,6 +26165,9 @@
                             break;
                         case 22:
                             message.overwriteCache = reader.bool();
+                            break;
+                        case 23:
+                            message.envs = $root.flyteidl.admin.Envs.decode(reader, reader.uint32());
                             break;
                         default:
                             reader.skipType(tag & 7);
@@ -25632,6 +26265,11 @@
                     if (message.overwriteCache != null && message.hasOwnProperty("overwriteCache"))
                         if (typeof message.overwriteCache !== "boolean")
                             return "overwriteCache: boolean expected";
+                    if (message.envs != null && message.hasOwnProperty("envs")) {
+                        var error = $root.flyteidl.admin.Envs.verify(message.envs);
+                        if (error)
+                            return "envs." + error;
+                    }
                     return null;
                 };
     
@@ -26533,6 +27171,247 @@
                 return ExecutionUpdateResponse;
             })();
     
+            admin.WorkflowExecutionGetMetricsRequest = (function() {
+    
+                /**
+                 * Properties of a WorkflowExecutionGetMetricsRequest.
+                 * @memberof flyteidl.admin
+                 * @interface IWorkflowExecutionGetMetricsRequest
+                 * @property {flyteidl.core.IWorkflowExecutionIdentifier|null} [id] WorkflowExecutionGetMetricsRequest id
+                 * @property {number|null} [depth] WorkflowExecutionGetMetricsRequest depth
+                 */
+    
+                /**
+                 * Constructs a new WorkflowExecutionGetMetricsRequest.
+                 * @memberof flyteidl.admin
+                 * @classdesc Represents a WorkflowExecutionGetMetricsRequest.
+                 * @implements IWorkflowExecutionGetMetricsRequest
+                 * @constructor
+                 * @param {flyteidl.admin.IWorkflowExecutionGetMetricsRequest=} [properties] Properties to set
+                 */
+                function WorkflowExecutionGetMetricsRequest(properties) {
+                    if (properties)
+                        for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                            if (properties[keys[i]] != null)
+                                this[keys[i]] = properties[keys[i]];
+                }
+    
+                /**
+                 * WorkflowExecutionGetMetricsRequest id.
+                 * @member {flyteidl.core.IWorkflowExecutionIdentifier|null|undefined} id
+                 * @memberof flyteidl.admin.WorkflowExecutionGetMetricsRequest
+                 * @instance
+                 */
+                WorkflowExecutionGetMetricsRequest.prototype.id = null;
+    
+                /**
+                 * WorkflowExecutionGetMetricsRequest depth.
+                 * @member {number} depth
+                 * @memberof flyteidl.admin.WorkflowExecutionGetMetricsRequest
+                 * @instance
+                 */
+                WorkflowExecutionGetMetricsRequest.prototype.depth = 0;
+    
+                /**
+                 * Creates a new WorkflowExecutionGetMetricsRequest instance using the specified properties.
+                 * @function create
+                 * @memberof flyteidl.admin.WorkflowExecutionGetMetricsRequest
+                 * @static
+                 * @param {flyteidl.admin.IWorkflowExecutionGetMetricsRequest=} [properties] Properties to set
+                 * @returns {flyteidl.admin.WorkflowExecutionGetMetricsRequest} WorkflowExecutionGetMetricsRequest instance
+                 */
+                WorkflowExecutionGetMetricsRequest.create = function create(properties) {
+                    return new WorkflowExecutionGetMetricsRequest(properties);
+                };
+    
+                /**
+                 * Encodes the specified WorkflowExecutionGetMetricsRequest message. Does not implicitly {@link flyteidl.admin.WorkflowExecutionGetMetricsRequest.verify|verify} messages.
+                 * @function encode
+                 * @memberof flyteidl.admin.WorkflowExecutionGetMetricsRequest
+                 * @static
+                 * @param {flyteidl.admin.IWorkflowExecutionGetMetricsRequest} message WorkflowExecutionGetMetricsRequest message or plain object to encode
+                 * @param {$protobuf.Writer} [writer] Writer to encode to
+                 * @returns {$protobuf.Writer} Writer
+                 */
+                WorkflowExecutionGetMetricsRequest.encode = function encode(message, writer) {
+                    if (!writer)
+                        writer = $Writer.create();
+                    if (message.id != null && message.hasOwnProperty("id"))
+                        $root.flyteidl.core.WorkflowExecutionIdentifier.encode(message.id, writer.uint32(/* id 1, wireType 2 =*/10).fork()).ldelim();
+                    if (message.depth != null && message.hasOwnProperty("depth"))
+                        writer.uint32(/* id 2, wireType 0 =*/16).int32(message.depth);
+                    return writer;
+                };
+    
+                /**
+                 * Decodes a WorkflowExecutionGetMetricsRequest message from the specified reader or buffer.
+                 * @function decode
+                 * @memberof flyteidl.admin.WorkflowExecutionGetMetricsRequest
+                 * @static
+                 * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+                 * @param {number} [length] Message length if known beforehand
+                 * @returns {flyteidl.admin.WorkflowExecutionGetMetricsRequest} WorkflowExecutionGetMetricsRequest
+                 * @throws {Error} If the payload is not a reader or valid buffer
+                 * @throws {$protobuf.util.ProtocolError} If required fields are missing
+                 */
+                WorkflowExecutionGetMetricsRequest.decode = function decode(reader, length) {
+                    if (!(reader instanceof $Reader))
+                        reader = $Reader.create(reader);
+                    var end = length === undefined ? reader.len : reader.pos + length, message = new $root.flyteidl.admin.WorkflowExecutionGetMetricsRequest();
+                    while (reader.pos < end) {
+                        var tag = reader.uint32();
+                        switch (tag >>> 3) {
+                        case 1:
+                            message.id = $root.flyteidl.core.WorkflowExecutionIdentifier.decode(reader, reader.uint32());
+                            break;
+                        case 2:
+                            message.depth = reader.int32();
+                            break;
+                        default:
+                            reader.skipType(tag & 7);
+                            break;
+                        }
+                    }
+                    return message;
+                };
+    
+                /**
+                 * Verifies a WorkflowExecutionGetMetricsRequest message.
+                 * @function verify
+                 * @memberof flyteidl.admin.WorkflowExecutionGetMetricsRequest
+                 * @static
+                 * @param {Object.<string,*>} message Plain object to verify
+                 * @returns {string|null} `null` if valid, otherwise the reason why it is not
+                 */
+                WorkflowExecutionGetMetricsRequest.verify = function verify(message) {
+                    if (typeof message !== "object" || message === null)
+                        return "object expected";
+                    if (message.id != null && message.hasOwnProperty("id")) {
+                        var error = $root.flyteidl.core.WorkflowExecutionIdentifier.verify(message.id);
+                        if (error)
+                            return "id." + error;
+                    }
+                    if (message.depth != null && message.hasOwnProperty("depth"))
+                        if (!$util.isInteger(message.depth))
+                            return "depth: integer expected";
+                    return null;
+                };
+    
+                return WorkflowExecutionGetMetricsRequest;
+            })();
+    
+            admin.WorkflowExecutionGetMetricsResponse = (function() {
+    
+                /**
+                 * Properties of a WorkflowExecutionGetMetricsResponse.
+                 * @memberof flyteidl.admin
+                 * @interface IWorkflowExecutionGetMetricsResponse
+                 * @property {flyteidl.core.ISpan|null} [span] WorkflowExecutionGetMetricsResponse span
+                 */
+    
+                /**
+                 * Constructs a new WorkflowExecutionGetMetricsResponse.
+                 * @memberof flyteidl.admin
+                 * @classdesc Represents a WorkflowExecutionGetMetricsResponse.
+                 * @implements IWorkflowExecutionGetMetricsResponse
+                 * @constructor
+                 * @param {flyteidl.admin.IWorkflowExecutionGetMetricsResponse=} [properties] Properties to set
+                 */
+                function WorkflowExecutionGetMetricsResponse(properties) {
+                    if (properties)
+                        for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                            if (properties[keys[i]] != null)
+                                this[keys[i]] = properties[keys[i]];
+                }
+    
+                /**
+                 * WorkflowExecutionGetMetricsResponse span.
+                 * @member {flyteidl.core.ISpan|null|undefined} span
+                 * @memberof flyteidl.admin.WorkflowExecutionGetMetricsResponse
+                 * @instance
+                 */
+                WorkflowExecutionGetMetricsResponse.prototype.span = null;
+    
+                /**
+                 * Creates a new WorkflowExecutionGetMetricsResponse instance using the specified properties.
+                 * @function create
+                 * @memberof flyteidl.admin.WorkflowExecutionGetMetricsResponse
+                 * @static
+                 * @param {flyteidl.admin.IWorkflowExecutionGetMetricsResponse=} [properties] Properties to set
+                 * @returns {flyteidl.admin.WorkflowExecutionGetMetricsResponse} WorkflowExecutionGetMetricsResponse instance
+                 */
+                WorkflowExecutionGetMetricsResponse.create = function create(properties) {
+                    return new WorkflowExecutionGetMetricsResponse(properties);
+                };
+    
+                /**
+                 * Encodes the specified WorkflowExecutionGetMetricsResponse message. Does not implicitly {@link flyteidl.admin.WorkflowExecutionGetMetricsResponse.verify|verify} messages.
+                 * @function encode
+                 * @memberof flyteidl.admin.WorkflowExecutionGetMetricsResponse
+                 * @static
+                 * @param {flyteidl.admin.IWorkflowExecutionGetMetricsResponse} message WorkflowExecutionGetMetricsResponse message or plain object to encode
+                 * @param {$protobuf.Writer} [writer] Writer to encode to
+                 * @returns {$protobuf.Writer} Writer
+                 */
+                WorkflowExecutionGetMetricsResponse.encode = function encode(message, writer) {
+                    if (!writer)
+                        writer = $Writer.create();
+                    if (message.span != null && message.hasOwnProperty("span"))
+                        $root.flyteidl.core.Span.encode(message.span, writer.uint32(/* id 1, wireType 2 =*/10).fork()).ldelim();
+                    return writer;
+                };
+    
+                /**
+                 * Decodes a WorkflowExecutionGetMetricsResponse message from the specified reader or buffer.
+                 * @function decode
+                 * @memberof flyteidl.admin.WorkflowExecutionGetMetricsResponse
+                 * @static
+                 * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+                 * @param {number} [length] Message length if known beforehand
+                 * @returns {flyteidl.admin.WorkflowExecutionGetMetricsResponse} WorkflowExecutionGetMetricsResponse
+                 * @throws {Error} If the payload is not a reader or valid buffer
+                 * @throws {$protobuf.util.ProtocolError} If required fields are missing
+                 */
+                WorkflowExecutionGetMetricsResponse.decode = function decode(reader, length) {
+                    if (!(reader instanceof $Reader))
+                        reader = $Reader.create(reader);
+                    var end = length === undefined ? reader.len : reader.pos + length, message = new $root.flyteidl.admin.WorkflowExecutionGetMetricsResponse();
+                    while (reader.pos < end) {
+                        var tag = reader.uint32();
+                        switch (tag >>> 3) {
+                        case 1:
+                            message.span = $root.flyteidl.core.Span.decode(reader, reader.uint32());
+                            break;
+                        default:
+                            reader.skipType(tag & 7);
+                            break;
+                        }
+                    }
+                    return message;
+                };
+    
+                /**
+                 * Verifies a WorkflowExecutionGetMetricsResponse message.
+                 * @function verify
+                 * @memberof flyteidl.admin.WorkflowExecutionGetMetricsResponse
+                 * @static
+                 * @param {Object.<string,*>} message Plain object to verify
+                 * @returns {string|null} `null` if valid, otherwise the reason why it is not
+                 */
+                WorkflowExecutionGetMetricsResponse.verify = function verify(message) {
+                    if (typeof message !== "object" || message === null)
+                        return "object expected";
+                    if (message.span != null && message.hasOwnProperty("span")) {
+                        var error = $root.flyteidl.core.Span.verify(message.span);
+                        if (error)
+                            return "span." + error;
+                    }
+                    return null;
+                };
+    
+                return WorkflowExecutionGetMetricsResponse;
+            })();
+    
             admin.LaunchPlanCreateRequest = (function() {
     
                 /**
@@ -27206,6 +28085,7 @@
                  * @property {number|null} [maxParallelism] LaunchPlanSpec maxParallelism
                  * @property {google.protobuf.IBoolValue|null} [interruptible] LaunchPlanSpec interruptible
                  * @property {boolean|null} [overwriteCache] LaunchPlanSpec overwriteCache
+                 * @property {flyteidl.admin.IEnvs|null} [envs] LaunchPlanSpec envs
                  */
     
                 /**
@@ -27344,6 +28224,14 @@
                 LaunchPlanSpec.prototype.overwriteCache = false;
     
                 /**
+                 * LaunchPlanSpec envs.
+                 * @member {flyteidl.admin.IEnvs|null|undefined} envs
+                 * @memberof flyteidl.admin.LaunchPlanSpec
+                 * @instance
+                 */
+                LaunchPlanSpec.prototype.envs = null;
+    
+                /**
                  * Creates a new LaunchPlanSpec instance using the specified properties.
                  * @function create
                  * @memberof flyteidl.admin.LaunchPlanSpec
@@ -27397,6 +28285,8 @@
                         $root.google.protobuf.BoolValue.encode(message.interruptible, writer.uint32(/* id 19, wireType 2 =*/154).fork()).ldelim();
                     if (message.overwriteCache != null && message.hasOwnProperty("overwriteCache"))
                         writer.uint32(/* id 20, wireType 0 =*/160).bool(message.overwriteCache);
+                    if (message.envs != null && message.hasOwnProperty("envs"))
+                        $root.flyteidl.admin.Envs.encode(message.envs, writer.uint32(/* id 21, wireType 2 =*/170).fork()).ldelim();
                     return writer;
                 };
     
@@ -27462,6 +28352,9 @@
                             break;
                         case 20:
                             message.overwriteCache = reader.bool();
+                            break;
+                        case 21:
+                            message.envs = $root.flyteidl.admin.Envs.decode(reader, reader.uint32());
                             break;
                         default:
                             reader.skipType(tag & 7);
@@ -27551,6 +28444,11 @@
                     if (message.overwriteCache != null && message.hasOwnProperty("overwriteCache"))
                         if (typeof message.overwriteCache !== "boolean")
                             return "overwriteCache: boolean expected";
+                    if (message.envs != null && message.hasOwnProperty("envs")) {
+                        var error = $root.flyteidl.admin.Envs.verify(message.envs);
+                        if (error)
+                            return "envs." + error;
+                    }
                     return null;
                 };
     
@@ -29863,6 +30761,7 @@
                  * @property {flyteidl.admin.IAnnotations|null} [annotations] WorkflowExecutionConfig annotations
                  * @property {google.protobuf.IBoolValue|null} [interruptible] WorkflowExecutionConfig interruptible
                  * @property {boolean|null} [overwriteCache] WorkflowExecutionConfig overwriteCache
+                 * @property {flyteidl.admin.IEnvs|null} [envs] WorkflowExecutionConfig envs
                  */
     
                 /**
@@ -29937,6 +30836,14 @@
                 WorkflowExecutionConfig.prototype.overwriteCache = false;
     
                 /**
+                 * WorkflowExecutionConfig envs.
+                 * @member {flyteidl.admin.IEnvs|null|undefined} envs
+                 * @memberof flyteidl.admin.WorkflowExecutionConfig
+                 * @instance
+                 */
+                WorkflowExecutionConfig.prototype.envs = null;
+    
+                /**
                  * Creates a new WorkflowExecutionConfig instance using the specified properties.
                  * @function create
                  * @memberof flyteidl.admin.WorkflowExecutionConfig
@@ -29974,6 +30881,8 @@
                         $root.google.protobuf.BoolValue.encode(message.interruptible, writer.uint32(/* id 6, wireType 2 =*/50).fork()).ldelim();
                     if (message.overwriteCache != null && message.hasOwnProperty("overwriteCache"))
                         writer.uint32(/* id 7, wireType 0 =*/56).bool(message.overwriteCache);
+                    if (message.envs != null && message.hasOwnProperty("envs"))
+                        $root.flyteidl.admin.Envs.encode(message.envs, writer.uint32(/* id 8, wireType 2 =*/66).fork()).ldelim();
                     return writer;
                 };
     
@@ -30015,6 +30924,9 @@
                             break;
                         case 7:
                             message.overwriteCache = reader.bool();
+                            break;
+                        case 8:
+                            message.envs = $root.flyteidl.admin.Envs.decode(reader, reader.uint32());
                             break;
                         default:
                             reader.skipType(tag & 7);
@@ -30066,6 +30978,11 @@
                     if (message.overwriteCache != null && message.hasOwnProperty("overwriteCache"))
                         if (typeof message.overwriteCache !== "boolean")
                             return "overwriteCache: boolean expected";
+                    if (message.envs != null && message.hasOwnProperty("envs")) {
+                        var error = $root.flyteidl.admin.Envs.verify(message.envs);
+                        if (error)
+                            return "envs." + error;
+                    }
                     return null;
                 };
     
@@ -31766,6 +32683,7 @@
                  * @property {flyteidl.admin.IWorkflowNodeMetadata|null} [workflowNodeMetadata] NodeExecutionClosure workflowNodeMetadata
                  * @property {flyteidl.admin.ITaskNodeMetadata|null} [taskNodeMetadata] NodeExecutionClosure taskNodeMetadata
                  * @property {string|null} [deckUri] NodeExecutionClosure deckUri
+                 * @property {string|null} [dynamicJobSpecUri] NodeExecutionClosure dynamicJobSpecUri
                  */
     
                 /**
@@ -31871,6 +32789,14 @@
                  */
                 NodeExecutionClosure.prototype.deckUri = "";
     
+                /**
+                 * NodeExecutionClosure dynamicJobSpecUri.
+                 * @member {string} dynamicJobSpecUri
+                 * @memberof flyteidl.admin.NodeExecutionClosure
+                 * @instance
+                 */
+                NodeExecutionClosure.prototype.dynamicJobSpecUri = "";
+    
                 // OneOf field names bound to virtual getters and setters
                 var $oneOfFields;
     
@@ -31942,6 +32868,8 @@
                         $root.flyteidl.core.LiteralMap.encode(message.outputData, writer.uint32(/* id 10, wireType 2 =*/82).fork()).ldelim();
                     if (message.deckUri != null && message.hasOwnProperty("deckUri"))
                         writer.uint32(/* id 11, wireType 2 =*/90).string(message.deckUri);
+                    if (message.dynamicJobSpecUri != null && message.hasOwnProperty("dynamicJobSpecUri"))
+                        writer.uint32(/* id 12, wireType 2 =*/98).string(message.dynamicJobSpecUri);
                     return writer;
                 };
     
@@ -31995,6 +32923,9 @@
                             break;
                         case 11:
                             message.deckUri = reader.string();
+                            break;
+                        case 12:
+                            message.dynamicJobSpecUri = reader.string();
                             break;
                         default:
                             reader.skipType(tag & 7);
@@ -32099,6 +33030,9 @@
                     if (message.deckUri != null && message.hasOwnProperty("deckUri"))
                         if (!$util.isString(message.deckUri))
                             return "deckUri: string expected";
+                    if (message.dynamicJobSpecUri != null && message.hasOwnProperty("dynamicJobSpecUri"))
+                        if (!$util.isString(message.dynamicJobSpecUri))
+                            return "dynamicJobSpecUri: string expected";
                     return null;
                 };
     
@@ -32381,6 +33315,7 @@
                  * @interface IDynamicWorkflowNodeMetadata
                  * @property {flyteidl.core.IIdentifier|null} [id] DynamicWorkflowNodeMetadata id
                  * @property {flyteidl.core.ICompiledWorkflowClosure|null} [compiledWorkflow] DynamicWorkflowNodeMetadata compiledWorkflow
+                 * @property {string|null} [dynamicJobSpecUri] DynamicWorkflowNodeMetadata dynamicJobSpecUri
                  */
     
                 /**
@@ -32415,6 +33350,14 @@
                 DynamicWorkflowNodeMetadata.prototype.compiledWorkflow = null;
     
                 /**
+                 * DynamicWorkflowNodeMetadata dynamicJobSpecUri.
+                 * @member {string} dynamicJobSpecUri
+                 * @memberof flyteidl.admin.DynamicWorkflowNodeMetadata
+                 * @instance
+                 */
+                DynamicWorkflowNodeMetadata.prototype.dynamicJobSpecUri = "";
+    
+                /**
                  * Creates a new DynamicWorkflowNodeMetadata instance using the specified properties.
                  * @function create
                  * @memberof flyteidl.admin.DynamicWorkflowNodeMetadata
@@ -32442,6 +33385,8 @@
                         $root.flyteidl.core.Identifier.encode(message.id, writer.uint32(/* id 1, wireType 2 =*/10).fork()).ldelim();
                     if (message.compiledWorkflow != null && message.hasOwnProperty("compiledWorkflow"))
                         $root.flyteidl.core.CompiledWorkflowClosure.encode(message.compiledWorkflow, writer.uint32(/* id 2, wireType 2 =*/18).fork()).ldelim();
+                    if (message.dynamicJobSpecUri != null && message.hasOwnProperty("dynamicJobSpecUri"))
+                        writer.uint32(/* id 3, wireType 2 =*/26).string(message.dynamicJobSpecUri);
                     return writer;
                 };
     
@@ -32468,6 +33413,9 @@
                             break;
                         case 2:
                             message.compiledWorkflow = $root.flyteidl.core.CompiledWorkflowClosure.decode(reader, reader.uint32());
+                            break;
+                        case 3:
+                            message.dynamicJobSpecUri = reader.string();
                             break;
                         default:
                             reader.skipType(tag & 7);
@@ -32498,6 +33446,9 @@
                         if (error)
                             return "compiledWorkflow." + error;
                     }
+                    if (message.dynamicJobSpecUri != null && message.hasOwnProperty("dynamicJobSpecUri"))
+                        if (!$util.isString(message.dynamicJobSpecUri))
+                            return "dynamicJobSpecUri: string expected";
                     return null;
                 };
     
@@ -32627,6 +33578,7 @@
                  * @property {flyteidl.core.ILiteralMap|null} [fullInputs] NodeExecutionGetDataResponse fullInputs
                  * @property {flyteidl.core.ILiteralMap|null} [fullOutputs] NodeExecutionGetDataResponse fullOutputs
                  * @property {flyteidl.admin.IDynamicWorkflowNodeMetadata|null} [dynamicWorkflow] NodeExecutionGetDataResponse dynamicWorkflow
+                 * @property {flyteidl.admin.IFlyteURLs|null} [flyteUrls] NodeExecutionGetDataResponse flyteUrls
                  */
     
                 /**
@@ -32685,6 +33637,14 @@
                 NodeExecutionGetDataResponse.prototype.dynamicWorkflow = null;
     
                 /**
+                 * NodeExecutionGetDataResponse flyteUrls.
+                 * @member {flyteidl.admin.IFlyteURLs|null|undefined} flyteUrls
+                 * @memberof flyteidl.admin.NodeExecutionGetDataResponse
+                 * @instance
+                 */
+                NodeExecutionGetDataResponse.prototype.flyteUrls = null;
+    
+                /**
                  * Creates a new NodeExecutionGetDataResponse instance using the specified properties.
                  * @function create
                  * @memberof flyteidl.admin.NodeExecutionGetDataResponse
@@ -32718,6 +33678,8 @@
                         $root.flyteidl.core.LiteralMap.encode(message.fullOutputs, writer.uint32(/* id 4, wireType 2 =*/34).fork()).ldelim();
                     if (message.dynamicWorkflow != null && message.hasOwnProperty("dynamicWorkflow"))
                         $root.flyteidl.admin.DynamicWorkflowNodeMetadata.encode(message.dynamicWorkflow, writer.uint32(/* id 16, wireType 2 =*/130).fork()).ldelim();
+                    if (message.flyteUrls != null && message.hasOwnProperty("flyteUrls"))
+                        $root.flyteidl.admin.FlyteURLs.encode(message.flyteUrls, writer.uint32(/* id 17, wireType 2 =*/138).fork()).ldelim();
                     return writer;
                 };
     
@@ -32753,6 +33715,9 @@
                             break;
                         case 16:
                             message.dynamicWorkflow = $root.flyteidl.admin.DynamicWorkflowNodeMetadata.decode(reader, reader.uint32());
+                            break;
+                        case 17:
+                            message.flyteUrls = $root.flyteidl.admin.FlyteURLs.decode(reader, reader.uint32());
                             break;
                         default:
                             reader.skipType(tag & 7);
@@ -32797,6 +33762,11 @@
                         var error = $root.flyteidl.admin.DynamicWorkflowNodeMetadata.verify(message.dynamicWorkflow);
                         if (error)
                             return "dynamicWorkflow." + error;
+                    }
+                    if (message.flyteUrls != null && message.hasOwnProperty("flyteUrls")) {
+                        var error = $root.flyteidl.admin.FlyteURLs.verify(message.flyteUrls);
+                        if (error)
+                            return "flyteUrls." + error;
                     }
                     return null;
                 };
@@ -37819,6 +38789,7 @@
                  * @property {string|null} [taskType] TaskExecutionClosure taskType
                  * @property {flyteidl.event.ITaskExecutionMetadata|null} [metadata] TaskExecutionClosure metadata
                  * @property {number|null} [eventVersion] TaskExecutionClosure eventVersion
+                 * @property {Array.<flyteidl.admin.IReason>|null} [reasons] TaskExecutionClosure reasons
                  */
     
                 /**
@@ -37831,6 +38802,7 @@
                  */
                 function TaskExecutionClosure(properties) {
                     this.logs = [];
+                    this.reasons = [];
                     if (properties)
                         for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
                             if (properties[keys[i]] != null)
@@ -37949,6 +38921,14 @@
                  */
                 TaskExecutionClosure.prototype.eventVersion = 0;
     
+                /**
+                 * TaskExecutionClosure reasons.
+                 * @member {Array.<flyteidl.admin.IReason>} reasons
+                 * @memberof flyteidl.admin.TaskExecutionClosure
+                 * @instance
+                 */
+                TaskExecutionClosure.prototype.reasons = $util.emptyArray;
+    
                 // OneOf field names bound to virtual getters and setters
                 var $oneOfFields;
     
@@ -38016,6 +38996,9 @@
                         $root.flyteidl.event.TaskExecutionMetadata.encode(message.metadata, writer.uint32(/* id 16, wireType 2 =*/130).fork()).ldelim();
                     if (message.eventVersion != null && message.hasOwnProperty("eventVersion"))
                         writer.uint32(/* id 17, wireType 0 =*/136).int32(message.eventVersion);
+                    if (message.reasons != null && message.reasons.length)
+                        for (var i = 0; i < message.reasons.length; ++i)
+                            $root.flyteidl.admin.Reason.encode(message.reasons[i], writer.uint32(/* id 18, wireType 2 =*/146).fork()).ldelim();
                     return writer;
                 };
     
@@ -38080,6 +39063,11 @@
                             break;
                         case 17:
                             message.eventVersion = reader.int32();
+                            break;
+                        case 18:
+                            if (!(message.reasons && message.reasons.length))
+                                message.reasons = [];
+                            message.reasons.push($root.flyteidl.admin.Reason.decode(reader, reader.uint32()));
                             break;
                         default:
                             reader.skipType(tag & 7);
@@ -38188,10 +39176,148 @@
                     if (message.eventVersion != null && message.hasOwnProperty("eventVersion"))
                         if (!$util.isInteger(message.eventVersion))
                             return "eventVersion: integer expected";
+                    if (message.reasons != null && message.hasOwnProperty("reasons")) {
+                        if (!Array.isArray(message.reasons))
+                            return "reasons: array expected";
+                        for (var i = 0; i < message.reasons.length; ++i) {
+                            var error = $root.flyteidl.admin.Reason.verify(message.reasons[i]);
+                            if (error)
+                                return "reasons." + error;
+                        }
+                    }
                     return null;
                 };
     
                 return TaskExecutionClosure;
+            })();
+    
+            admin.Reason = (function() {
+    
+                /**
+                 * Properties of a Reason.
+                 * @memberof flyteidl.admin
+                 * @interface IReason
+                 * @property {google.protobuf.ITimestamp|null} [occurredAt] Reason occurredAt
+                 * @property {string|null} [message] Reason message
+                 */
+    
+                /**
+                 * Constructs a new Reason.
+                 * @memberof flyteidl.admin
+                 * @classdesc Represents a Reason.
+                 * @implements IReason
+                 * @constructor
+                 * @param {flyteidl.admin.IReason=} [properties] Properties to set
+                 */
+                function Reason(properties) {
+                    if (properties)
+                        for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                            if (properties[keys[i]] != null)
+                                this[keys[i]] = properties[keys[i]];
+                }
+    
+                /**
+                 * Reason occurredAt.
+                 * @member {google.protobuf.ITimestamp|null|undefined} occurredAt
+                 * @memberof flyteidl.admin.Reason
+                 * @instance
+                 */
+                Reason.prototype.occurredAt = null;
+    
+                /**
+                 * Reason message.
+                 * @member {string} message
+                 * @memberof flyteidl.admin.Reason
+                 * @instance
+                 */
+                Reason.prototype.message = "";
+    
+                /**
+                 * Creates a new Reason instance using the specified properties.
+                 * @function create
+                 * @memberof flyteidl.admin.Reason
+                 * @static
+                 * @param {flyteidl.admin.IReason=} [properties] Properties to set
+                 * @returns {flyteidl.admin.Reason} Reason instance
+                 */
+                Reason.create = function create(properties) {
+                    return new Reason(properties);
+                };
+    
+                /**
+                 * Encodes the specified Reason message. Does not implicitly {@link flyteidl.admin.Reason.verify|verify} messages.
+                 * @function encode
+                 * @memberof flyteidl.admin.Reason
+                 * @static
+                 * @param {flyteidl.admin.IReason} message Reason message or plain object to encode
+                 * @param {$protobuf.Writer} [writer] Writer to encode to
+                 * @returns {$protobuf.Writer} Writer
+                 */
+                Reason.encode = function encode(message, writer) {
+                    if (!writer)
+                        writer = $Writer.create();
+                    if (message.occurredAt != null && message.hasOwnProperty("occurredAt"))
+                        $root.google.protobuf.Timestamp.encode(message.occurredAt, writer.uint32(/* id 1, wireType 2 =*/10).fork()).ldelim();
+                    if (message.message != null && message.hasOwnProperty("message"))
+                        writer.uint32(/* id 2, wireType 2 =*/18).string(message.message);
+                    return writer;
+                };
+    
+                /**
+                 * Decodes a Reason message from the specified reader or buffer.
+                 * @function decode
+                 * @memberof flyteidl.admin.Reason
+                 * @static
+                 * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+                 * @param {number} [length] Message length if known beforehand
+                 * @returns {flyteidl.admin.Reason} Reason
+                 * @throws {Error} If the payload is not a reader or valid buffer
+                 * @throws {$protobuf.util.ProtocolError} If required fields are missing
+                 */
+                Reason.decode = function decode(reader, length) {
+                    if (!(reader instanceof $Reader))
+                        reader = $Reader.create(reader);
+                    var end = length === undefined ? reader.len : reader.pos + length, message = new $root.flyteidl.admin.Reason();
+                    while (reader.pos < end) {
+                        var tag = reader.uint32();
+                        switch (tag >>> 3) {
+                        case 1:
+                            message.occurredAt = $root.google.protobuf.Timestamp.decode(reader, reader.uint32());
+                            break;
+                        case 2:
+                            message.message = reader.string();
+                            break;
+                        default:
+                            reader.skipType(tag & 7);
+                            break;
+                        }
+                    }
+                    return message;
+                };
+    
+                /**
+                 * Verifies a Reason message.
+                 * @function verify
+                 * @memberof flyteidl.admin.Reason
+                 * @static
+                 * @param {Object.<string,*>} message Plain object to verify
+                 * @returns {string|null} `null` if valid, otherwise the reason why it is not
+                 */
+                Reason.verify = function verify(message) {
+                    if (typeof message !== "object" || message === null)
+                        return "object expected";
+                    if (message.occurredAt != null && message.hasOwnProperty("occurredAt")) {
+                        var error = $root.google.protobuf.Timestamp.verify(message.occurredAt);
+                        if (error)
+                            return "occurredAt." + error;
+                    }
+                    if (message.message != null && message.hasOwnProperty("message"))
+                        if (!$util.isString(message.message))
+                            return "message: string expected";
+                    return null;
+                };
+    
+                return Reason;
             })();
     
             admin.TaskExecutionGetDataRequest = (function() {
@@ -38316,6 +39442,7 @@
                  * @property {flyteidl.admin.IUrlBlob|null} [outputs] TaskExecutionGetDataResponse outputs
                  * @property {flyteidl.core.ILiteralMap|null} [fullInputs] TaskExecutionGetDataResponse fullInputs
                  * @property {flyteidl.core.ILiteralMap|null} [fullOutputs] TaskExecutionGetDataResponse fullOutputs
+                 * @property {flyteidl.admin.IFlyteURLs|null} [flyteUrls] TaskExecutionGetDataResponse flyteUrls
                  */
     
                 /**
@@ -38366,6 +39493,14 @@
                 TaskExecutionGetDataResponse.prototype.fullOutputs = null;
     
                 /**
+                 * TaskExecutionGetDataResponse flyteUrls.
+                 * @member {flyteidl.admin.IFlyteURLs|null|undefined} flyteUrls
+                 * @memberof flyteidl.admin.TaskExecutionGetDataResponse
+                 * @instance
+                 */
+                TaskExecutionGetDataResponse.prototype.flyteUrls = null;
+    
+                /**
                  * Creates a new TaskExecutionGetDataResponse instance using the specified properties.
                  * @function create
                  * @memberof flyteidl.admin.TaskExecutionGetDataResponse
@@ -38397,6 +39532,8 @@
                         $root.flyteidl.core.LiteralMap.encode(message.fullInputs, writer.uint32(/* id 3, wireType 2 =*/26).fork()).ldelim();
                     if (message.fullOutputs != null && message.hasOwnProperty("fullOutputs"))
                         $root.flyteidl.core.LiteralMap.encode(message.fullOutputs, writer.uint32(/* id 4, wireType 2 =*/34).fork()).ldelim();
+                    if (message.flyteUrls != null && message.hasOwnProperty("flyteUrls"))
+                        $root.flyteidl.admin.FlyteURLs.encode(message.flyteUrls, writer.uint32(/* id 5, wireType 2 =*/42).fork()).ldelim();
                     return writer;
                 };
     
@@ -38429,6 +39566,9 @@
                             break;
                         case 4:
                             message.fullOutputs = $root.flyteidl.core.LiteralMap.decode(reader, reader.uint32());
+                            break;
+                        case 5:
+                            message.flyteUrls = $root.flyteidl.admin.FlyteURLs.decode(reader, reader.uint32());
                             break;
                         default:
                             reader.skipType(tag & 7);
@@ -38468,6 +39608,11 @@
                         var error = $root.flyteidl.core.LiteralMap.verify(message.fullOutputs);
                         if (error)
                             return "fullOutputs." + error;
+                    }
+                    if (message.flyteUrls != null && message.hasOwnProperty("flyteUrls")) {
+                        var error = $root.flyteidl.admin.FlyteURLs.verify(message.flyteUrls);
+                        if (error)
+                            return "flyteUrls." + error;
                     }
                     return null;
                 };
@@ -42677,6 +43822,39 @@
                  * @variation 2
                  */
     
+                /**
+                 * Callback as used by {@link flyteidl.service.AdminService#getExecutionMetrics}.
+                 * @memberof flyteidl.service.AdminService
+                 * @typedef GetExecutionMetricsCallback
+                 * @type {function}
+                 * @param {Error|null} error Error, if any
+                 * @param {flyteidl.admin.WorkflowExecutionGetMetricsResponse} [response] WorkflowExecutionGetMetricsResponse
+                 */
+    
+                /**
+                 * Calls GetExecutionMetrics.
+                 * @function getExecutionMetrics
+                 * @memberof flyteidl.service.AdminService
+                 * @instance
+                 * @param {flyteidl.admin.IWorkflowExecutionGetMetricsRequest} request WorkflowExecutionGetMetricsRequest message or plain object
+                 * @param {flyteidl.service.AdminService.GetExecutionMetricsCallback} callback Node-style callback called with the error, if any, and WorkflowExecutionGetMetricsResponse
+                 * @returns {undefined}
+                 * @variation 1
+                 */
+                Object.defineProperty(AdminService.prototype.getExecutionMetrics = function getExecutionMetrics(request, callback) {
+                    return this.rpcCall(getExecutionMetrics, $root.flyteidl.admin.WorkflowExecutionGetMetricsRequest, $root.flyteidl.admin.WorkflowExecutionGetMetricsResponse, request, callback);
+                }, "name", { value: "GetExecutionMetrics" });
+    
+                /**
+                 * Calls GetExecutionMetrics.
+                 * @function getExecutionMetrics
+                 * @memberof flyteidl.service.AdminService
+                 * @instance
+                 * @param {flyteidl.admin.IWorkflowExecutionGetMetricsRequest} request WorkflowExecutionGetMetricsRequest message or plain object
+                 * @returns {Promise<flyteidl.admin.WorkflowExecutionGetMetricsResponse>} Promise
+                 * @variation 2
+                 */
+    
                 return AdminService;
             })();
     
@@ -44250,6 +45428,7 @@
                  * @interface ICreateDownloadLinkResponse
                  * @property {Array.<string>|null} [signedUrl] CreateDownloadLinkResponse signedUrl
                  * @property {google.protobuf.ITimestamp|null} [expiresAt] CreateDownloadLinkResponse expiresAt
+                 * @property {flyteidl.service.IPreSignedURLs|null} [preSignedUrls] CreateDownloadLinkResponse preSignedUrls
                  */
     
                 /**
@@ -44285,6 +45464,14 @@
                 CreateDownloadLinkResponse.prototype.expiresAt = null;
     
                 /**
+                 * CreateDownloadLinkResponse preSignedUrls.
+                 * @member {flyteidl.service.IPreSignedURLs|null|undefined} preSignedUrls
+                 * @memberof flyteidl.service.CreateDownloadLinkResponse
+                 * @instance
+                 */
+                CreateDownloadLinkResponse.prototype.preSignedUrls = null;
+    
+                /**
                  * Creates a new CreateDownloadLinkResponse instance using the specified properties.
                  * @function create
                  * @memberof flyteidl.service.CreateDownloadLinkResponse
@@ -44313,6 +45500,8 @@
                             writer.uint32(/* id 1, wireType 2 =*/10).string(message.signedUrl[i]);
                     if (message.expiresAt != null && message.hasOwnProperty("expiresAt"))
                         $root.google.protobuf.Timestamp.encode(message.expiresAt, writer.uint32(/* id 2, wireType 2 =*/18).fork()).ldelim();
+                    if (message.preSignedUrls != null && message.hasOwnProperty("preSignedUrls"))
+                        $root.flyteidl.service.PreSignedURLs.encode(message.preSignedUrls, writer.uint32(/* id 3, wireType 2 =*/26).fork()).ldelim();
                     return writer;
                 };
     
@@ -44341,6 +45530,9 @@
                             break;
                         case 2:
                             message.expiresAt = $root.google.protobuf.Timestamp.decode(reader, reader.uint32());
+                            break;
+                        case 3:
+                            message.preSignedUrls = $root.flyteidl.service.PreSignedURLs.decode(reader, reader.uint32());
                             break;
                         default:
                             reader.skipType(tag & 7);
@@ -44373,10 +45565,416 @@
                         if (error)
                             return "expiresAt." + error;
                     }
+                    if (message.preSignedUrls != null && message.hasOwnProperty("preSignedUrls")) {
+                        var error = $root.flyteidl.service.PreSignedURLs.verify(message.preSignedUrls);
+                        if (error)
+                            return "preSignedUrls." + error;
+                    }
                     return null;
                 };
     
                 return CreateDownloadLinkResponse;
+            })();
+    
+            service.PreSignedURLs = (function() {
+    
+                /**
+                 * Properties of a PreSignedURLs.
+                 * @memberof flyteidl.service
+                 * @interface IPreSignedURLs
+                 * @property {Array.<string>|null} [signedUrl] PreSignedURLs signedUrl
+                 * @property {google.protobuf.ITimestamp|null} [expiresAt] PreSignedURLs expiresAt
+                 */
+    
+                /**
+                 * Constructs a new PreSignedURLs.
+                 * @memberof flyteidl.service
+                 * @classdesc Represents a PreSignedURLs.
+                 * @implements IPreSignedURLs
+                 * @constructor
+                 * @param {flyteidl.service.IPreSignedURLs=} [properties] Properties to set
+                 */
+                function PreSignedURLs(properties) {
+                    this.signedUrl = [];
+                    if (properties)
+                        for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                            if (properties[keys[i]] != null)
+                                this[keys[i]] = properties[keys[i]];
+                }
+    
+                /**
+                 * PreSignedURLs signedUrl.
+                 * @member {Array.<string>} signedUrl
+                 * @memberof flyteidl.service.PreSignedURLs
+                 * @instance
+                 */
+                PreSignedURLs.prototype.signedUrl = $util.emptyArray;
+    
+                /**
+                 * PreSignedURLs expiresAt.
+                 * @member {google.protobuf.ITimestamp|null|undefined} expiresAt
+                 * @memberof flyteidl.service.PreSignedURLs
+                 * @instance
+                 */
+                PreSignedURLs.prototype.expiresAt = null;
+    
+                /**
+                 * Creates a new PreSignedURLs instance using the specified properties.
+                 * @function create
+                 * @memberof flyteidl.service.PreSignedURLs
+                 * @static
+                 * @param {flyteidl.service.IPreSignedURLs=} [properties] Properties to set
+                 * @returns {flyteidl.service.PreSignedURLs} PreSignedURLs instance
+                 */
+                PreSignedURLs.create = function create(properties) {
+                    return new PreSignedURLs(properties);
+                };
+    
+                /**
+                 * Encodes the specified PreSignedURLs message. Does not implicitly {@link flyteidl.service.PreSignedURLs.verify|verify} messages.
+                 * @function encode
+                 * @memberof flyteidl.service.PreSignedURLs
+                 * @static
+                 * @param {flyteidl.service.IPreSignedURLs} message PreSignedURLs message or plain object to encode
+                 * @param {$protobuf.Writer} [writer] Writer to encode to
+                 * @returns {$protobuf.Writer} Writer
+                 */
+                PreSignedURLs.encode = function encode(message, writer) {
+                    if (!writer)
+                        writer = $Writer.create();
+                    if (message.signedUrl != null && message.signedUrl.length)
+                        for (var i = 0; i < message.signedUrl.length; ++i)
+                            writer.uint32(/* id 1, wireType 2 =*/10).string(message.signedUrl[i]);
+                    if (message.expiresAt != null && message.hasOwnProperty("expiresAt"))
+                        $root.google.protobuf.Timestamp.encode(message.expiresAt, writer.uint32(/* id 2, wireType 2 =*/18).fork()).ldelim();
+                    return writer;
+                };
+    
+                /**
+                 * Decodes a PreSignedURLs message from the specified reader or buffer.
+                 * @function decode
+                 * @memberof flyteidl.service.PreSignedURLs
+                 * @static
+                 * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+                 * @param {number} [length] Message length if known beforehand
+                 * @returns {flyteidl.service.PreSignedURLs} PreSignedURLs
+                 * @throws {Error} If the payload is not a reader or valid buffer
+                 * @throws {$protobuf.util.ProtocolError} If required fields are missing
+                 */
+                PreSignedURLs.decode = function decode(reader, length) {
+                    if (!(reader instanceof $Reader))
+                        reader = $Reader.create(reader);
+                    var end = length === undefined ? reader.len : reader.pos + length, message = new $root.flyteidl.service.PreSignedURLs();
+                    while (reader.pos < end) {
+                        var tag = reader.uint32();
+                        switch (tag >>> 3) {
+                        case 1:
+                            if (!(message.signedUrl && message.signedUrl.length))
+                                message.signedUrl = [];
+                            message.signedUrl.push(reader.string());
+                            break;
+                        case 2:
+                            message.expiresAt = $root.google.protobuf.Timestamp.decode(reader, reader.uint32());
+                            break;
+                        default:
+                            reader.skipType(tag & 7);
+                            break;
+                        }
+                    }
+                    return message;
+                };
+    
+                /**
+                 * Verifies a PreSignedURLs message.
+                 * @function verify
+                 * @memberof flyteidl.service.PreSignedURLs
+                 * @static
+                 * @param {Object.<string,*>} message Plain object to verify
+                 * @returns {string|null} `null` if valid, otherwise the reason why it is not
+                 */
+                PreSignedURLs.verify = function verify(message) {
+                    if (typeof message !== "object" || message === null)
+                        return "object expected";
+                    if (message.signedUrl != null && message.hasOwnProperty("signedUrl")) {
+                        if (!Array.isArray(message.signedUrl))
+                            return "signedUrl: array expected";
+                        for (var i = 0; i < message.signedUrl.length; ++i)
+                            if (!$util.isString(message.signedUrl[i]))
+                                return "signedUrl: string[] expected";
+                    }
+                    if (message.expiresAt != null && message.hasOwnProperty("expiresAt")) {
+                        var error = $root.google.protobuf.Timestamp.verify(message.expiresAt);
+                        if (error)
+                            return "expiresAt." + error;
+                    }
+                    return null;
+                };
+    
+                return PreSignedURLs;
+            })();
+    
+            service.GetDataRequest = (function() {
+    
+                /**
+                 * Properties of a GetDataRequest.
+                 * @memberof flyteidl.service
+                 * @interface IGetDataRequest
+                 * @property {string|null} [flyteUrl] GetDataRequest flyteUrl
+                 */
+    
+                /**
+                 * Constructs a new GetDataRequest.
+                 * @memberof flyteidl.service
+                 * @classdesc Represents a GetDataRequest.
+                 * @implements IGetDataRequest
+                 * @constructor
+                 * @param {flyteidl.service.IGetDataRequest=} [properties] Properties to set
+                 */
+                function GetDataRequest(properties) {
+                    if (properties)
+                        for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                            if (properties[keys[i]] != null)
+                                this[keys[i]] = properties[keys[i]];
+                }
+    
+                /**
+                 * GetDataRequest flyteUrl.
+                 * @member {string} flyteUrl
+                 * @memberof flyteidl.service.GetDataRequest
+                 * @instance
+                 */
+                GetDataRequest.prototype.flyteUrl = "";
+    
+                /**
+                 * Creates a new GetDataRequest instance using the specified properties.
+                 * @function create
+                 * @memberof flyteidl.service.GetDataRequest
+                 * @static
+                 * @param {flyteidl.service.IGetDataRequest=} [properties] Properties to set
+                 * @returns {flyteidl.service.GetDataRequest} GetDataRequest instance
+                 */
+                GetDataRequest.create = function create(properties) {
+                    return new GetDataRequest(properties);
+                };
+    
+                /**
+                 * Encodes the specified GetDataRequest message. Does not implicitly {@link flyteidl.service.GetDataRequest.verify|verify} messages.
+                 * @function encode
+                 * @memberof flyteidl.service.GetDataRequest
+                 * @static
+                 * @param {flyteidl.service.IGetDataRequest} message GetDataRequest message or plain object to encode
+                 * @param {$protobuf.Writer} [writer] Writer to encode to
+                 * @returns {$protobuf.Writer} Writer
+                 */
+                GetDataRequest.encode = function encode(message, writer) {
+                    if (!writer)
+                        writer = $Writer.create();
+                    if (message.flyteUrl != null && message.hasOwnProperty("flyteUrl"))
+                        writer.uint32(/* id 1, wireType 2 =*/10).string(message.flyteUrl);
+                    return writer;
+                };
+    
+                /**
+                 * Decodes a GetDataRequest message from the specified reader or buffer.
+                 * @function decode
+                 * @memberof flyteidl.service.GetDataRequest
+                 * @static
+                 * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+                 * @param {number} [length] Message length if known beforehand
+                 * @returns {flyteidl.service.GetDataRequest} GetDataRequest
+                 * @throws {Error} If the payload is not a reader or valid buffer
+                 * @throws {$protobuf.util.ProtocolError} If required fields are missing
+                 */
+                GetDataRequest.decode = function decode(reader, length) {
+                    if (!(reader instanceof $Reader))
+                        reader = $Reader.create(reader);
+                    var end = length === undefined ? reader.len : reader.pos + length, message = new $root.flyteidl.service.GetDataRequest();
+                    while (reader.pos < end) {
+                        var tag = reader.uint32();
+                        switch (tag >>> 3) {
+                        case 1:
+                            message.flyteUrl = reader.string();
+                            break;
+                        default:
+                            reader.skipType(tag & 7);
+                            break;
+                        }
+                    }
+                    return message;
+                };
+    
+                /**
+                 * Verifies a GetDataRequest message.
+                 * @function verify
+                 * @memberof flyteidl.service.GetDataRequest
+                 * @static
+                 * @param {Object.<string,*>} message Plain object to verify
+                 * @returns {string|null} `null` if valid, otherwise the reason why it is not
+                 */
+                GetDataRequest.verify = function verify(message) {
+                    if (typeof message !== "object" || message === null)
+                        return "object expected";
+                    if (message.flyteUrl != null && message.hasOwnProperty("flyteUrl"))
+                        if (!$util.isString(message.flyteUrl))
+                            return "flyteUrl: string expected";
+                    return null;
+                };
+    
+                return GetDataRequest;
+            })();
+    
+            service.GetDataResponse = (function() {
+    
+                /**
+                 * Properties of a GetDataResponse.
+                 * @memberof flyteidl.service
+                 * @interface IGetDataResponse
+                 * @property {flyteidl.core.ILiteralMap|null} [literalMap] GetDataResponse literalMap
+                 * @property {flyteidl.service.IPreSignedURLs|null} [preSignedUrls] GetDataResponse preSignedUrls
+                 */
+    
+                /**
+                 * Constructs a new GetDataResponse.
+                 * @memberof flyteidl.service
+                 * @classdesc Represents a GetDataResponse.
+                 * @implements IGetDataResponse
+                 * @constructor
+                 * @param {flyteidl.service.IGetDataResponse=} [properties] Properties to set
+                 */
+                function GetDataResponse(properties) {
+                    if (properties)
+                        for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                            if (properties[keys[i]] != null)
+                                this[keys[i]] = properties[keys[i]];
+                }
+    
+                /**
+                 * GetDataResponse literalMap.
+                 * @member {flyteidl.core.ILiteralMap|null|undefined} literalMap
+                 * @memberof flyteidl.service.GetDataResponse
+                 * @instance
+                 */
+                GetDataResponse.prototype.literalMap = null;
+    
+                /**
+                 * GetDataResponse preSignedUrls.
+                 * @member {flyteidl.service.IPreSignedURLs|null|undefined} preSignedUrls
+                 * @memberof flyteidl.service.GetDataResponse
+                 * @instance
+                 */
+                GetDataResponse.prototype.preSignedUrls = null;
+    
+                // OneOf field names bound to virtual getters and setters
+                var $oneOfFields;
+    
+                /**
+                 * GetDataResponse data.
+                 * @member {"literalMap"|"preSignedUrls"|undefined} data
+                 * @memberof flyteidl.service.GetDataResponse
+                 * @instance
+                 */
+                Object.defineProperty(GetDataResponse.prototype, "data", {
+                    get: $util.oneOfGetter($oneOfFields = ["literalMap", "preSignedUrls"]),
+                    set: $util.oneOfSetter($oneOfFields)
+                });
+    
+                /**
+                 * Creates a new GetDataResponse instance using the specified properties.
+                 * @function create
+                 * @memberof flyteidl.service.GetDataResponse
+                 * @static
+                 * @param {flyteidl.service.IGetDataResponse=} [properties] Properties to set
+                 * @returns {flyteidl.service.GetDataResponse} GetDataResponse instance
+                 */
+                GetDataResponse.create = function create(properties) {
+                    return new GetDataResponse(properties);
+                };
+    
+                /**
+                 * Encodes the specified GetDataResponse message. Does not implicitly {@link flyteidl.service.GetDataResponse.verify|verify} messages.
+                 * @function encode
+                 * @memberof flyteidl.service.GetDataResponse
+                 * @static
+                 * @param {flyteidl.service.IGetDataResponse} message GetDataResponse message or plain object to encode
+                 * @param {$protobuf.Writer} [writer] Writer to encode to
+                 * @returns {$protobuf.Writer} Writer
+                 */
+                GetDataResponse.encode = function encode(message, writer) {
+                    if (!writer)
+                        writer = $Writer.create();
+                    if (message.literalMap != null && message.hasOwnProperty("literalMap"))
+                        $root.flyteidl.core.LiteralMap.encode(message.literalMap, writer.uint32(/* id 1, wireType 2 =*/10).fork()).ldelim();
+                    if (message.preSignedUrls != null && message.hasOwnProperty("preSignedUrls"))
+                        $root.flyteidl.service.PreSignedURLs.encode(message.preSignedUrls, writer.uint32(/* id 2, wireType 2 =*/18).fork()).ldelim();
+                    return writer;
+                };
+    
+                /**
+                 * Decodes a GetDataResponse message from the specified reader or buffer.
+                 * @function decode
+                 * @memberof flyteidl.service.GetDataResponse
+                 * @static
+                 * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+                 * @param {number} [length] Message length if known beforehand
+                 * @returns {flyteidl.service.GetDataResponse} GetDataResponse
+                 * @throws {Error} If the payload is not a reader or valid buffer
+                 * @throws {$protobuf.util.ProtocolError} If required fields are missing
+                 */
+                GetDataResponse.decode = function decode(reader, length) {
+                    if (!(reader instanceof $Reader))
+                        reader = $Reader.create(reader);
+                    var end = length === undefined ? reader.len : reader.pos + length, message = new $root.flyteidl.service.GetDataResponse();
+                    while (reader.pos < end) {
+                        var tag = reader.uint32();
+                        switch (tag >>> 3) {
+                        case 1:
+                            message.literalMap = $root.flyteidl.core.LiteralMap.decode(reader, reader.uint32());
+                            break;
+                        case 2:
+                            message.preSignedUrls = $root.flyteidl.service.PreSignedURLs.decode(reader, reader.uint32());
+                            break;
+                        default:
+                            reader.skipType(tag & 7);
+                            break;
+                        }
+                    }
+                    return message;
+                };
+    
+                /**
+                 * Verifies a GetDataResponse message.
+                 * @function verify
+                 * @memberof flyteidl.service.GetDataResponse
+                 * @static
+                 * @param {Object.<string,*>} message Plain object to verify
+                 * @returns {string|null} `null` if valid, otherwise the reason why it is not
+                 */
+                GetDataResponse.verify = function verify(message) {
+                    if (typeof message !== "object" || message === null)
+                        return "object expected";
+                    var properties = {};
+                    if (message.literalMap != null && message.hasOwnProperty("literalMap")) {
+                        properties.data = 1;
+                        {
+                            var error = $root.flyteidl.core.LiteralMap.verify(message.literalMap);
+                            if (error)
+                                return "literalMap." + error;
+                        }
+                    }
+                    if (message.preSignedUrls != null && message.hasOwnProperty("preSignedUrls")) {
+                        if (properties.data === 1)
+                            return "data: multiple values";
+                        properties.data = 1;
+                        {
+                            var error = $root.flyteidl.service.PreSignedURLs.verify(message.preSignedUrls);
+                            if (error)
+                                return "preSignedUrls." + error;
+                        }
+                    }
+                    return null;
+                };
+    
+                return GetDataResponse;
             })();
     
             service.DataProxyService = (function() {
@@ -44510,7 +46108,936 @@
                  * @variation 2
                  */
     
+                /**
+                 * Callback as used by {@link flyteidl.service.DataProxyService#getData}.
+                 * @memberof flyteidl.service.DataProxyService
+                 * @typedef GetDataCallback
+                 * @type {function}
+                 * @param {Error|null} error Error, if any
+                 * @param {flyteidl.service.GetDataResponse} [response] GetDataResponse
+                 */
+    
+                /**
+                 * Calls GetData.
+                 * @function getData
+                 * @memberof flyteidl.service.DataProxyService
+                 * @instance
+                 * @param {flyteidl.service.IGetDataRequest} request GetDataRequest message or plain object
+                 * @param {flyteidl.service.DataProxyService.GetDataCallback} callback Node-style callback called with the error, if any, and GetDataResponse
+                 * @returns {undefined}
+                 * @variation 1
+                 */
+                Object.defineProperty(DataProxyService.prototype.getData = function getData(request, callback) {
+                    return this.rpcCall(getData, $root.flyteidl.service.GetDataRequest, $root.flyteidl.service.GetDataResponse, request, callback);
+                }, "name", { value: "GetData" });
+    
+                /**
+                 * Calls GetData.
+                 * @function getData
+                 * @memberof flyteidl.service.DataProxyService
+                 * @instance
+                 * @param {flyteidl.service.IGetDataRequest} request GetDataRequest message or plain object
+                 * @returns {Promise<flyteidl.service.GetDataResponse>} Promise
+                 * @variation 2
+                 */
+    
                 return DataProxyService;
+            })();
+    
+            service.ExternalPluginService = (function() {
+    
+                /**
+                 * Constructs a new ExternalPluginService service.
+                 * @memberof flyteidl.service
+                 * @classdesc Represents an ExternalPluginService
+                 * @extends $protobuf.rpc.Service
+                 * @constructor
+                 * @param {$protobuf.RPCImpl} rpcImpl RPC implementation
+                 * @param {boolean} [requestDelimited=false] Whether requests are length-delimited
+                 * @param {boolean} [responseDelimited=false] Whether responses are length-delimited
+                 */
+                function ExternalPluginService(rpcImpl, requestDelimited, responseDelimited) {
+                    $protobuf.rpc.Service.call(this, rpcImpl, requestDelimited, responseDelimited);
+                }
+    
+                (ExternalPluginService.prototype = Object.create($protobuf.rpc.Service.prototype)).constructor = ExternalPluginService;
+    
+                /**
+                 * Creates new ExternalPluginService service using the specified rpc implementation.
+                 * @function create
+                 * @memberof flyteidl.service.ExternalPluginService
+                 * @static
+                 * @param {$protobuf.RPCImpl} rpcImpl RPC implementation
+                 * @param {boolean} [requestDelimited=false] Whether requests are length-delimited
+                 * @param {boolean} [responseDelimited=false] Whether responses are length-delimited
+                 * @returns {ExternalPluginService} RPC service. Useful where requests and/or responses are streamed.
+                 */
+                ExternalPluginService.create = function create(rpcImpl, requestDelimited, responseDelimited) {
+                    return new this(rpcImpl, requestDelimited, responseDelimited);
+                };
+    
+                /**
+                 * Callback as used by {@link flyteidl.service.ExternalPluginService#createTask}.
+                 * @memberof flyteidl.service.ExternalPluginService
+                 * @typedef CreateTaskCallback
+                 * @type {function}
+                 * @param {Error|null} error Error, if any
+                 * @param {flyteidl.service.TaskCreateResponse} [response] TaskCreateResponse
+                 */
+    
+                /**
+                 * Calls CreateTask.
+                 * @function createTask
+                 * @memberof flyteidl.service.ExternalPluginService
+                 * @instance
+                 * @param {flyteidl.service.ITaskCreateRequest} request TaskCreateRequest message or plain object
+                 * @param {flyteidl.service.ExternalPluginService.CreateTaskCallback} callback Node-style callback called with the error, if any, and TaskCreateResponse
+                 * @returns {undefined}
+                 * @variation 1
+                 */
+                Object.defineProperty(ExternalPluginService.prototype.createTask = function createTask(request, callback) {
+                    return this.rpcCall(createTask, $root.flyteidl.service.TaskCreateRequest, $root.flyteidl.service.TaskCreateResponse, request, callback);
+                }, "name", { value: "CreateTask" });
+    
+                /**
+                 * Calls CreateTask.
+                 * @function createTask
+                 * @memberof flyteidl.service.ExternalPluginService
+                 * @instance
+                 * @param {flyteidl.service.ITaskCreateRequest} request TaskCreateRequest message or plain object
+                 * @returns {Promise<flyteidl.service.TaskCreateResponse>} Promise
+                 * @variation 2
+                 */
+    
+                /**
+                 * Callback as used by {@link flyteidl.service.ExternalPluginService#getTask}.
+                 * @memberof flyteidl.service.ExternalPluginService
+                 * @typedef GetTaskCallback
+                 * @type {function}
+                 * @param {Error|null} error Error, if any
+                 * @param {flyteidl.service.TaskGetResponse} [response] TaskGetResponse
+                 */
+    
+                /**
+                 * Calls GetTask.
+                 * @function getTask
+                 * @memberof flyteidl.service.ExternalPluginService
+                 * @instance
+                 * @param {flyteidl.service.ITaskGetRequest} request TaskGetRequest message or plain object
+                 * @param {flyteidl.service.ExternalPluginService.GetTaskCallback} callback Node-style callback called with the error, if any, and TaskGetResponse
+                 * @returns {undefined}
+                 * @variation 1
+                 */
+                Object.defineProperty(ExternalPluginService.prototype.getTask = function getTask(request, callback) {
+                    return this.rpcCall(getTask, $root.flyteidl.service.TaskGetRequest, $root.flyteidl.service.TaskGetResponse, request, callback);
+                }, "name", { value: "GetTask" });
+    
+                /**
+                 * Calls GetTask.
+                 * @function getTask
+                 * @memberof flyteidl.service.ExternalPluginService
+                 * @instance
+                 * @param {flyteidl.service.ITaskGetRequest} request TaskGetRequest message or plain object
+                 * @returns {Promise<flyteidl.service.TaskGetResponse>} Promise
+                 * @variation 2
+                 */
+    
+                /**
+                 * Callback as used by {@link flyteidl.service.ExternalPluginService#deleteTask}.
+                 * @memberof flyteidl.service.ExternalPluginService
+                 * @typedef DeleteTaskCallback
+                 * @type {function}
+                 * @param {Error|null} error Error, if any
+                 * @param {flyteidl.service.TaskDeleteResponse} [response] TaskDeleteResponse
+                 */
+    
+                /**
+                 * Calls DeleteTask.
+                 * @function deleteTask
+                 * @memberof flyteidl.service.ExternalPluginService
+                 * @instance
+                 * @param {flyteidl.service.ITaskDeleteRequest} request TaskDeleteRequest message or plain object
+                 * @param {flyteidl.service.ExternalPluginService.DeleteTaskCallback} callback Node-style callback called with the error, if any, and TaskDeleteResponse
+                 * @returns {undefined}
+                 * @variation 1
+                 */
+                Object.defineProperty(ExternalPluginService.prototype.deleteTask = function deleteTask(request, callback) {
+                    return this.rpcCall(deleteTask, $root.flyteidl.service.TaskDeleteRequest, $root.flyteidl.service.TaskDeleteResponse, request, callback);
+                }, "name", { value: "DeleteTask" });
+    
+                /**
+                 * Calls DeleteTask.
+                 * @function deleteTask
+                 * @memberof flyteidl.service.ExternalPluginService
+                 * @instance
+                 * @param {flyteidl.service.ITaskDeleteRequest} request TaskDeleteRequest message or plain object
+                 * @returns {Promise<flyteidl.service.TaskDeleteResponse>} Promise
+                 * @variation 2
+                 */
+    
+                return ExternalPluginService;
+            })();
+    
+            /**
+             * State enum.
+             * @name flyteidl.service.State
+             * @enum {string}
+             * @property {number} RETRYABLE_FAILURE=0 RETRYABLE_FAILURE value
+             * @property {number} PERMANENT_FAILURE=1 PERMANENT_FAILURE value
+             * @property {number} PENDING=2 PENDING value
+             * @property {number} RUNNING=3 RUNNING value
+             * @property {number} SUCCEEDED=4 SUCCEEDED value
+             */
+            service.State = (function() {
+                var valuesById = {}, values = Object.create(valuesById);
+                values[valuesById[0] = "RETRYABLE_FAILURE"] = 0;
+                values[valuesById[1] = "PERMANENT_FAILURE"] = 1;
+                values[valuesById[2] = "PENDING"] = 2;
+                values[valuesById[3] = "RUNNING"] = 3;
+                values[valuesById[4] = "SUCCEEDED"] = 4;
+                return values;
+            })();
+    
+            service.TaskCreateRequest = (function() {
+    
+                /**
+                 * Properties of a TaskCreateRequest.
+                 * @memberof flyteidl.service
+                 * @interface ITaskCreateRequest
+                 * @property {flyteidl.core.ILiteralMap|null} [inputs] TaskCreateRequest inputs
+                 * @property {flyteidl.core.ITaskTemplate|null} [template] TaskCreateRequest template
+                 * @property {string|null} [outputPrefix] TaskCreateRequest outputPrefix
+                 */
+    
+                /**
+                 * Constructs a new TaskCreateRequest.
+                 * @memberof flyteidl.service
+                 * @classdesc Represents a TaskCreateRequest.
+                 * @implements ITaskCreateRequest
+                 * @constructor
+                 * @param {flyteidl.service.ITaskCreateRequest=} [properties] Properties to set
+                 */
+                function TaskCreateRequest(properties) {
+                    if (properties)
+                        for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                            if (properties[keys[i]] != null)
+                                this[keys[i]] = properties[keys[i]];
+                }
+    
+                /**
+                 * TaskCreateRequest inputs.
+                 * @member {flyteidl.core.ILiteralMap|null|undefined} inputs
+                 * @memberof flyteidl.service.TaskCreateRequest
+                 * @instance
+                 */
+                TaskCreateRequest.prototype.inputs = null;
+    
+                /**
+                 * TaskCreateRequest template.
+                 * @member {flyteidl.core.ITaskTemplate|null|undefined} template
+                 * @memberof flyteidl.service.TaskCreateRequest
+                 * @instance
+                 */
+                TaskCreateRequest.prototype.template = null;
+    
+                /**
+                 * TaskCreateRequest outputPrefix.
+                 * @member {string} outputPrefix
+                 * @memberof flyteidl.service.TaskCreateRequest
+                 * @instance
+                 */
+                TaskCreateRequest.prototype.outputPrefix = "";
+    
+                /**
+                 * Creates a new TaskCreateRequest instance using the specified properties.
+                 * @function create
+                 * @memberof flyteidl.service.TaskCreateRequest
+                 * @static
+                 * @param {flyteidl.service.ITaskCreateRequest=} [properties] Properties to set
+                 * @returns {flyteidl.service.TaskCreateRequest} TaskCreateRequest instance
+                 */
+                TaskCreateRequest.create = function create(properties) {
+                    return new TaskCreateRequest(properties);
+                };
+    
+                /**
+                 * Encodes the specified TaskCreateRequest message. Does not implicitly {@link flyteidl.service.TaskCreateRequest.verify|verify} messages.
+                 * @function encode
+                 * @memberof flyteidl.service.TaskCreateRequest
+                 * @static
+                 * @param {flyteidl.service.ITaskCreateRequest} message TaskCreateRequest message or plain object to encode
+                 * @param {$protobuf.Writer} [writer] Writer to encode to
+                 * @returns {$protobuf.Writer} Writer
+                 */
+                TaskCreateRequest.encode = function encode(message, writer) {
+                    if (!writer)
+                        writer = $Writer.create();
+                    if (message.inputs != null && message.hasOwnProperty("inputs"))
+                        $root.flyteidl.core.LiteralMap.encode(message.inputs, writer.uint32(/* id 1, wireType 2 =*/10).fork()).ldelim();
+                    if (message.template != null && message.hasOwnProperty("template"))
+                        $root.flyteidl.core.TaskTemplate.encode(message.template, writer.uint32(/* id 2, wireType 2 =*/18).fork()).ldelim();
+                    if (message.outputPrefix != null && message.hasOwnProperty("outputPrefix"))
+                        writer.uint32(/* id 3, wireType 2 =*/26).string(message.outputPrefix);
+                    return writer;
+                };
+    
+                /**
+                 * Decodes a TaskCreateRequest message from the specified reader or buffer.
+                 * @function decode
+                 * @memberof flyteidl.service.TaskCreateRequest
+                 * @static
+                 * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+                 * @param {number} [length] Message length if known beforehand
+                 * @returns {flyteidl.service.TaskCreateRequest} TaskCreateRequest
+                 * @throws {Error} If the payload is not a reader or valid buffer
+                 * @throws {$protobuf.util.ProtocolError} If required fields are missing
+                 */
+                TaskCreateRequest.decode = function decode(reader, length) {
+                    if (!(reader instanceof $Reader))
+                        reader = $Reader.create(reader);
+                    var end = length === undefined ? reader.len : reader.pos + length, message = new $root.flyteidl.service.TaskCreateRequest();
+                    while (reader.pos < end) {
+                        var tag = reader.uint32();
+                        switch (tag >>> 3) {
+                        case 1:
+                            message.inputs = $root.flyteidl.core.LiteralMap.decode(reader, reader.uint32());
+                            break;
+                        case 2:
+                            message.template = $root.flyteidl.core.TaskTemplate.decode(reader, reader.uint32());
+                            break;
+                        case 3:
+                            message.outputPrefix = reader.string();
+                            break;
+                        default:
+                            reader.skipType(tag & 7);
+                            break;
+                        }
+                    }
+                    return message;
+                };
+    
+                /**
+                 * Verifies a TaskCreateRequest message.
+                 * @function verify
+                 * @memberof flyteidl.service.TaskCreateRequest
+                 * @static
+                 * @param {Object.<string,*>} message Plain object to verify
+                 * @returns {string|null} `null` if valid, otherwise the reason why it is not
+                 */
+                TaskCreateRequest.verify = function verify(message) {
+                    if (typeof message !== "object" || message === null)
+                        return "object expected";
+                    if (message.inputs != null && message.hasOwnProperty("inputs")) {
+                        var error = $root.flyteidl.core.LiteralMap.verify(message.inputs);
+                        if (error)
+                            return "inputs." + error;
+                    }
+                    if (message.template != null && message.hasOwnProperty("template")) {
+                        var error = $root.flyteidl.core.TaskTemplate.verify(message.template);
+                        if (error)
+                            return "template." + error;
+                    }
+                    if (message.outputPrefix != null && message.hasOwnProperty("outputPrefix"))
+                        if (!$util.isString(message.outputPrefix))
+                            return "outputPrefix: string expected";
+                    return null;
+                };
+    
+                return TaskCreateRequest;
+            })();
+    
+            service.TaskCreateResponse = (function() {
+    
+                /**
+                 * Properties of a TaskCreateResponse.
+                 * @memberof flyteidl.service
+                 * @interface ITaskCreateResponse
+                 * @property {string|null} [jobId] TaskCreateResponse jobId
+                 */
+    
+                /**
+                 * Constructs a new TaskCreateResponse.
+                 * @memberof flyteidl.service
+                 * @classdesc Represents a TaskCreateResponse.
+                 * @implements ITaskCreateResponse
+                 * @constructor
+                 * @param {flyteidl.service.ITaskCreateResponse=} [properties] Properties to set
+                 */
+                function TaskCreateResponse(properties) {
+                    if (properties)
+                        for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                            if (properties[keys[i]] != null)
+                                this[keys[i]] = properties[keys[i]];
+                }
+    
+                /**
+                 * TaskCreateResponse jobId.
+                 * @member {string} jobId
+                 * @memberof flyteidl.service.TaskCreateResponse
+                 * @instance
+                 */
+                TaskCreateResponse.prototype.jobId = "";
+    
+                /**
+                 * Creates a new TaskCreateResponse instance using the specified properties.
+                 * @function create
+                 * @memberof flyteidl.service.TaskCreateResponse
+                 * @static
+                 * @param {flyteidl.service.ITaskCreateResponse=} [properties] Properties to set
+                 * @returns {flyteidl.service.TaskCreateResponse} TaskCreateResponse instance
+                 */
+                TaskCreateResponse.create = function create(properties) {
+                    return new TaskCreateResponse(properties);
+                };
+    
+                /**
+                 * Encodes the specified TaskCreateResponse message. Does not implicitly {@link flyteidl.service.TaskCreateResponse.verify|verify} messages.
+                 * @function encode
+                 * @memberof flyteidl.service.TaskCreateResponse
+                 * @static
+                 * @param {flyteidl.service.ITaskCreateResponse} message TaskCreateResponse message or plain object to encode
+                 * @param {$protobuf.Writer} [writer] Writer to encode to
+                 * @returns {$protobuf.Writer} Writer
+                 */
+                TaskCreateResponse.encode = function encode(message, writer) {
+                    if (!writer)
+                        writer = $Writer.create();
+                    if (message.jobId != null && message.hasOwnProperty("jobId"))
+                        writer.uint32(/* id 1, wireType 2 =*/10).string(message.jobId);
+                    return writer;
+                };
+    
+                /**
+                 * Decodes a TaskCreateResponse message from the specified reader or buffer.
+                 * @function decode
+                 * @memberof flyteidl.service.TaskCreateResponse
+                 * @static
+                 * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+                 * @param {number} [length] Message length if known beforehand
+                 * @returns {flyteidl.service.TaskCreateResponse} TaskCreateResponse
+                 * @throws {Error} If the payload is not a reader or valid buffer
+                 * @throws {$protobuf.util.ProtocolError} If required fields are missing
+                 */
+                TaskCreateResponse.decode = function decode(reader, length) {
+                    if (!(reader instanceof $Reader))
+                        reader = $Reader.create(reader);
+                    var end = length === undefined ? reader.len : reader.pos + length, message = new $root.flyteidl.service.TaskCreateResponse();
+                    while (reader.pos < end) {
+                        var tag = reader.uint32();
+                        switch (tag >>> 3) {
+                        case 1:
+                            message.jobId = reader.string();
+                            break;
+                        default:
+                            reader.skipType(tag & 7);
+                            break;
+                        }
+                    }
+                    return message;
+                };
+    
+                /**
+                 * Verifies a TaskCreateResponse message.
+                 * @function verify
+                 * @memberof flyteidl.service.TaskCreateResponse
+                 * @static
+                 * @param {Object.<string,*>} message Plain object to verify
+                 * @returns {string|null} `null` if valid, otherwise the reason why it is not
+                 */
+                TaskCreateResponse.verify = function verify(message) {
+                    if (typeof message !== "object" || message === null)
+                        return "object expected";
+                    if (message.jobId != null && message.hasOwnProperty("jobId"))
+                        if (!$util.isString(message.jobId))
+                            return "jobId: string expected";
+                    return null;
+                };
+    
+                return TaskCreateResponse;
+            })();
+    
+            service.TaskGetRequest = (function() {
+    
+                /**
+                 * Properties of a TaskGetRequest.
+                 * @memberof flyteidl.service
+                 * @interface ITaskGetRequest
+                 * @property {string|null} [taskType] TaskGetRequest taskType
+                 * @property {string|null} [jobId] TaskGetRequest jobId
+                 */
+    
+                /**
+                 * Constructs a new TaskGetRequest.
+                 * @memberof flyteidl.service
+                 * @classdesc Represents a TaskGetRequest.
+                 * @implements ITaskGetRequest
+                 * @constructor
+                 * @param {flyteidl.service.ITaskGetRequest=} [properties] Properties to set
+                 */
+                function TaskGetRequest(properties) {
+                    if (properties)
+                        for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                            if (properties[keys[i]] != null)
+                                this[keys[i]] = properties[keys[i]];
+                }
+    
+                /**
+                 * TaskGetRequest taskType.
+                 * @member {string} taskType
+                 * @memberof flyteidl.service.TaskGetRequest
+                 * @instance
+                 */
+                TaskGetRequest.prototype.taskType = "";
+    
+                /**
+                 * TaskGetRequest jobId.
+                 * @member {string} jobId
+                 * @memberof flyteidl.service.TaskGetRequest
+                 * @instance
+                 */
+                TaskGetRequest.prototype.jobId = "";
+    
+                /**
+                 * Creates a new TaskGetRequest instance using the specified properties.
+                 * @function create
+                 * @memberof flyteidl.service.TaskGetRequest
+                 * @static
+                 * @param {flyteidl.service.ITaskGetRequest=} [properties] Properties to set
+                 * @returns {flyteidl.service.TaskGetRequest} TaskGetRequest instance
+                 */
+                TaskGetRequest.create = function create(properties) {
+                    return new TaskGetRequest(properties);
+                };
+    
+                /**
+                 * Encodes the specified TaskGetRequest message. Does not implicitly {@link flyteidl.service.TaskGetRequest.verify|verify} messages.
+                 * @function encode
+                 * @memberof flyteidl.service.TaskGetRequest
+                 * @static
+                 * @param {flyteidl.service.ITaskGetRequest} message TaskGetRequest message or plain object to encode
+                 * @param {$protobuf.Writer} [writer] Writer to encode to
+                 * @returns {$protobuf.Writer} Writer
+                 */
+                TaskGetRequest.encode = function encode(message, writer) {
+                    if (!writer)
+                        writer = $Writer.create();
+                    if (message.taskType != null && message.hasOwnProperty("taskType"))
+                        writer.uint32(/* id 1, wireType 2 =*/10).string(message.taskType);
+                    if (message.jobId != null && message.hasOwnProperty("jobId"))
+                        writer.uint32(/* id 2, wireType 2 =*/18).string(message.jobId);
+                    return writer;
+                };
+    
+                /**
+                 * Decodes a TaskGetRequest message from the specified reader or buffer.
+                 * @function decode
+                 * @memberof flyteidl.service.TaskGetRequest
+                 * @static
+                 * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+                 * @param {number} [length] Message length if known beforehand
+                 * @returns {flyteidl.service.TaskGetRequest} TaskGetRequest
+                 * @throws {Error} If the payload is not a reader or valid buffer
+                 * @throws {$protobuf.util.ProtocolError} If required fields are missing
+                 */
+                TaskGetRequest.decode = function decode(reader, length) {
+                    if (!(reader instanceof $Reader))
+                        reader = $Reader.create(reader);
+                    var end = length === undefined ? reader.len : reader.pos + length, message = new $root.flyteidl.service.TaskGetRequest();
+                    while (reader.pos < end) {
+                        var tag = reader.uint32();
+                        switch (tag >>> 3) {
+                        case 1:
+                            message.taskType = reader.string();
+                            break;
+                        case 2:
+                            message.jobId = reader.string();
+                            break;
+                        default:
+                            reader.skipType(tag & 7);
+                            break;
+                        }
+                    }
+                    return message;
+                };
+    
+                /**
+                 * Verifies a TaskGetRequest message.
+                 * @function verify
+                 * @memberof flyteidl.service.TaskGetRequest
+                 * @static
+                 * @param {Object.<string,*>} message Plain object to verify
+                 * @returns {string|null} `null` if valid, otherwise the reason why it is not
+                 */
+                TaskGetRequest.verify = function verify(message) {
+                    if (typeof message !== "object" || message === null)
+                        return "object expected";
+                    if (message.taskType != null && message.hasOwnProperty("taskType"))
+                        if (!$util.isString(message.taskType))
+                            return "taskType: string expected";
+                    if (message.jobId != null && message.hasOwnProperty("jobId"))
+                        if (!$util.isString(message.jobId))
+                            return "jobId: string expected";
+                    return null;
+                };
+    
+                return TaskGetRequest;
+            })();
+    
+            service.TaskGetResponse = (function() {
+    
+                /**
+                 * Properties of a TaskGetResponse.
+                 * @memberof flyteidl.service
+                 * @interface ITaskGetResponse
+                 * @property {flyteidl.service.State|null} [state] TaskGetResponse state
+                 * @property {flyteidl.core.ILiteralMap|null} [outputs] TaskGetResponse outputs
+                 */
+    
+                /**
+                 * Constructs a new TaskGetResponse.
+                 * @memberof flyteidl.service
+                 * @classdesc Represents a TaskGetResponse.
+                 * @implements ITaskGetResponse
+                 * @constructor
+                 * @param {flyteidl.service.ITaskGetResponse=} [properties] Properties to set
+                 */
+                function TaskGetResponse(properties) {
+                    if (properties)
+                        for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                            if (properties[keys[i]] != null)
+                                this[keys[i]] = properties[keys[i]];
+                }
+    
+                /**
+                 * TaskGetResponse state.
+                 * @member {flyteidl.service.State} state
+                 * @memberof flyteidl.service.TaskGetResponse
+                 * @instance
+                 */
+                TaskGetResponse.prototype.state = 0;
+    
+                /**
+                 * TaskGetResponse outputs.
+                 * @member {flyteidl.core.ILiteralMap|null|undefined} outputs
+                 * @memberof flyteidl.service.TaskGetResponse
+                 * @instance
+                 */
+                TaskGetResponse.prototype.outputs = null;
+    
+                /**
+                 * Creates a new TaskGetResponse instance using the specified properties.
+                 * @function create
+                 * @memberof flyteidl.service.TaskGetResponse
+                 * @static
+                 * @param {flyteidl.service.ITaskGetResponse=} [properties] Properties to set
+                 * @returns {flyteidl.service.TaskGetResponse} TaskGetResponse instance
+                 */
+                TaskGetResponse.create = function create(properties) {
+                    return new TaskGetResponse(properties);
+                };
+    
+                /**
+                 * Encodes the specified TaskGetResponse message. Does not implicitly {@link flyteidl.service.TaskGetResponse.verify|verify} messages.
+                 * @function encode
+                 * @memberof flyteidl.service.TaskGetResponse
+                 * @static
+                 * @param {flyteidl.service.ITaskGetResponse} message TaskGetResponse message or plain object to encode
+                 * @param {$protobuf.Writer} [writer] Writer to encode to
+                 * @returns {$protobuf.Writer} Writer
+                 */
+                TaskGetResponse.encode = function encode(message, writer) {
+                    if (!writer)
+                        writer = $Writer.create();
+                    if (message.state != null && message.hasOwnProperty("state"))
+                        writer.uint32(/* id 1, wireType 0 =*/8).int32(message.state);
+                    if (message.outputs != null && message.hasOwnProperty("outputs"))
+                        $root.flyteidl.core.LiteralMap.encode(message.outputs, writer.uint32(/* id 2, wireType 2 =*/18).fork()).ldelim();
+                    return writer;
+                };
+    
+                /**
+                 * Decodes a TaskGetResponse message from the specified reader or buffer.
+                 * @function decode
+                 * @memberof flyteidl.service.TaskGetResponse
+                 * @static
+                 * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+                 * @param {number} [length] Message length if known beforehand
+                 * @returns {flyteidl.service.TaskGetResponse} TaskGetResponse
+                 * @throws {Error} If the payload is not a reader or valid buffer
+                 * @throws {$protobuf.util.ProtocolError} If required fields are missing
+                 */
+                TaskGetResponse.decode = function decode(reader, length) {
+                    if (!(reader instanceof $Reader))
+                        reader = $Reader.create(reader);
+                    var end = length === undefined ? reader.len : reader.pos + length, message = new $root.flyteidl.service.TaskGetResponse();
+                    while (reader.pos < end) {
+                        var tag = reader.uint32();
+                        switch (tag >>> 3) {
+                        case 1:
+                            message.state = reader.int32();
+                            break;
+                        case 2:
+                            message.outputs = $root.flyteidl.core.LiteralMap.decode(reader, reader.uint32());
+                            break;
+                        default:
+                            reader.skipType(tag & 7);
+                            break;
+                        }
+                    }
+                    return message;
+                };
+    
+                /**
+                 * Verifies a TaskGetResponse message.
+                 * @function verify
+                 * @memberof flyteidl.service.TaskGetResponse
+                 * @static
+                 * @param {Object.<string,*>} message Plain object to verify
+                 * @returns {string|null} `null` if valid, otherwise the reason why it is not
+                 */
+                TaskGetResponse.verify = function verify(message) {
+                    if (typeof message !== "object" || message === null)
+                        return "object expected";
+                    if (message.state != null && message.hasOwnProperty("state"))
+                        switch (message.state) {
+                        default:
+                            return "state: enum value expected";
+                        case 0:
+                        case 1:
+                        case 2:
+                        case 3:
+                        case 4:
+                            break;
+                        }
+                    if (message.outputs != null && message.hasOwnProperty("outputs")) {
+                        var error = $root.flyteidl.core.LiteralMap.verify(message.outputs);
+                        if (error)
+                            return "outputs." + error;
+                    }
+                    return null;
+                };
+    
+                return TaskGetResponse;
+            })();
+    
+            service.TaskDeleteRequest = (function() {
+    
+                /**
+                 * Properties of a TaskDeleteRequest.
+                 * @memberof flyteidl.service
+                 * @interface ITaskDeleteRequest
+                 * @property {string|null} [taskType] TaskDeleteRequest taskType
+                 * @property {string|null} [jobId] TaskDeleteRequest jobId
+                 */
+    
+                /**
+                 * Constructs a new TaskDeleteRequest.
+                 * @memberof flyteidl.service
+                 * @classdesc Represents a TaskDeleteRequest.
+                 * @implements ITaskDeleteRequest
+                 * @constructor
+                 * @param {flyteidl.service.ITaskDeleteRequest=} [properties] Properties to set
+                 */
+                function TaskDeleteRequest(properties) {
+                    if (properties)
+                        for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                            if (properties[keys[i]] != null)
+                                this[keys[i]] = properties[keys[i]];
+                }
+    
+                /**
+                 * TaskDeleteRequest taskType.
+                 * @member {string} taskType
+                 * @memberof flyteidl.service.TaskDeleteRequest
+                 * @instance
+                 */
+                TaskDeleteRequest.prototype.taskType = "";
+    
+                /**
+                 * TaskDeleteRequest jobId.
+                 * @member {string} jobId
+                 * @memberof flyteidl.service.TaskDeleteRequest
+                 * @instance
+                 */
+                TaskDeleteRequest.prototype.jobId = "";
+    
+                /**
+                 * Creates a new TaskDeleteRequest instance using the specified properties.
+                 * @function create
+                 * @memberof flyteidl.service.TaskDeleteRequest
+                 * @static
+                 * @param {flyteidl.service.ITaskDeleteRequest=} [properties] Properties to set
+                 * @returns {flyteidl.service.TaskDeleteRequest} TaskDeleteRequest instance
+                 */
+                TaskDeleteRequest.create = function create(properties) {
+                    return new TaskDeleteRequest(properties);
+                };
+    
+                /**
+                 * Encodes the specified TaskDeleteRequest message. Does not implicitly {@link flyteidl.service.TaskDeleteRequest.verify|verify} messages.
+                 * @function encode
+                 * @memberof flyteidl.service.TaskDeleteRequest
+                 * @static
+                 * @param {flyteidl.service.ITaskDeleteRequest} message TaskDeleteRequest message or plain object to encode
+                 * @param {$protobuf.Writer} [writer] Writer to encode to
+                 * @returns {$protobuf.Writer} Writer
+                 */
+                TaskDeleteRequest.encode = function encode(message, writer) {
+                    if (!writer)
+                        writer = $Writer.create();
+                    if (message.taskType != null && message.hasOwnProperty("taskType"))
+                        writer.uint32(/* id 1, wireType 2 =*/10).string(message.taskType);
+                    if (message.jobId != null && message.hasOwnProperty("jobId"))
+                        writer.uint32(/* id 2, wireType 2 =*/18).string(message.jobId);
+                    return writer;
+                };
+    
+                /**
+                 * Decodes a TaskDeleteRequest message from the specified reader or buffer.
+                 * @function decode
+                 * @memberof flyteidl.service.TaskDeleteRequest
+                 * @static
+                 * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+                 * @param {number} [length] Message length if known beforehand
+                 * @returns {flyteidl.service.TaskDeleteRequest} TaskDeleteRequest
+                 * @throws {Error} If the payload is not a reader or valid buffer
+                 * @throws {$protobuf.util.ProtocolError} If required fields are missing
+                 */
+                TaskDeleteRequest.decode = function decode(reader, length) {
+                    if (!(reader instanceof $Reader))
+                        reader = $Reader.create(reader);
+                    var end = length === undefined ? reader.len : reader.pos + length, message = new $root.flyteidl.service.TaskDeleteRequest();
+                    while (reader.pos < end) {
+                        var tag = reader.uint32();
+                        switch (tag >>> 3) {
+                        case 1:
+                            message.taskType = reader.string();
+                            break;
+                        case 2:
+                            message.jobId = reader.string();
+                            break;
+                        default:
+                            reader.skipType(tag & 7);
+                            break;
+                        }
+                    }
+                    return message;
+                };
+    
+                /**
+                 * Verifies a TaskDeleteRequest message.
+                 * @function verify
+                 * @memberof flyteidl.service.TaskDeleteRequest
+                 * @static
+                 * @param {Object.<string,*>} message Plain object to verify
+                 * @returns {string|null} `null` if valid, otherwise the reason why it is not
+                 */
+                TaskDeleteRequest.verify = function verify(message) {
+                    if (typeof message !== "object" || message === null)
+                        return "object expected";
+                    if (message.taskType != null && message.hasOwnProperty("taskType"))
+                        if (!$util.isString(message.taskType))
+                            return "taskType: string expected";
+                    if (message.jobId != null && message.hasOwnProperty("jobId"))
+                        if (!$util.isString(message.jobId))
+                            return "jobId: string expected";
+                    return null;
+                };
+    
+                return TaskDeleteRequest;
+            })();
+    
+            service.TaskDeleteResponse = (function() {
+    
+                /**
+                 * Properties of a TaskDeleteResponse.
+                 * @memberof flyteidl.service
+                 * @interface ITaskDeleteResponse
+                 */
+    
+                /**
+                 * Constructs a new TaskDeleteResponse.
+                 * @memberof flyteidl.service
+                 * @classdesc Represents a TaskDeleteResponse.
+                 * @implements ITaskDeleteResponse
+                 * @constructor
+                 * @param {flyteidl.service.ITaskDeleteResponse=} [properties] Properties to set
+                 */
+                function TaskDeleteResponse(properties) {
+                    if (properties)
+                        for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                            if (properties[keys[i]] != null)
+                                this[keys[i]] = properties[keys[i]];
+                }
+    
+                /**
+                 * Creates a new TaskDeleteResponse instance using the specified properties.
+                 * @function create
+                 * @memberof flyteidl.service.TaskDeleteResponse
+                 * @static
+                 * @param {flyteidl.service.ITaskDeleteResponse=} [properties] Properties to set
+                 * @returns {flyteidl.service.TaskDeleteResponse} TaskDeleteResponse instance
+                 */
+                TaskDeleteResponse.create = function create(properties) {
+                    return new TaskDeleteResponse(properties);
+                };
+    
+                /**
+                 * Encodes the specified TaskDeleteResponse message. Does not implicitly {@link flyteidl.service.TaskDeleteResponse.verify|verify} messages.
+                 * @function encode
+                 * @memberof flyteidl.service.TaskDeleteResponse
+                 * @static
+                 * @param {flyteidl.service.ITaskDeleteResponse} message TaskDeleteResponse message or plain object to encode
+                 * @param {$protobuf.Writer} [writer] Writer to encode to
+                 * @returns {$protobuf.Writer} Writer
+                 */
+                TaskDeleteResponse.encode = function encode(message, writer) {
+                    if (!writer)
+                        writer = $Writer.create();
+                    return writer;
+                };
+    
+                /**
+                 * Decodes a TaskDeleteResponse message from the specified reader or buffer.
+                 * @function decode
+                 * @memberof flyteidl.service.TaskDeleteResponse
+                 * @static
+                 * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+                 * @param {number} [length] Message length if known beforehand
+                 * @returns {flyteidl.service.TaskDeleteResponse} TaskDeleteResponse
+                 * @throws {Error} If the payload is not a reader or valid buffer
+                 * @throws {$protobuf.util.ProtocolError} If required fields are missing
+                 */
+                TaskDeleteResponse.decode = function decode(reader, length) {
+                    if (!(reader instanceof $Reader))
+                        reader = $Reader.create(reader);
+                    var end = length === undefined ? reader.len : reader.pos + length, message = new $root.flyteidl.service.TaskDeleteResponse();
+                    while (reader.pos < end) {
+                        var tag = reader.uint32();
+                        switch (tag >>> 3) {
+                        default:
+                            reader.skipType(tag & 7);
+                            break;
+                        }
+                    }
+                    return message;
+                };
+    
+                /**
+                 * Verifies a TaskDeleteResponse message.
+                 * @function verify
+                 * @memberof flyteidl.service.TaskDeleteResponse
+                 * @static
+                 * @param {Object.<string,*>} message Plain object to verify
+                 * @returns {string|null} `null` if valid, otherwise the reason why it is not
+                 */
+                TaskDeleteResponse.verify = function verify(message) {
+                    if (typeof message !== "object" || message === null)
+                        return "object expected";
+                    return null;
+                };
+    
+                return TaskDeleteResponse;
             })();
     
             service.UserInfoRequest = (function() {

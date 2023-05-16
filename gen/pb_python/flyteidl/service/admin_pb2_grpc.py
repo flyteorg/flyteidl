@@ -289,6 +289,11 @@ class AdminServiceStub(object):
         request_serializer=flyteidl_dot_admin_dot_description__entity__pb2.DescriptionEntityListRequest.SerializeToString,
         response_deserializer=flyteidl_dot_admin_dot_description__entity__pb2.DescriptionEntityList.FromString,
         )
+    self.GetExecutionMetrics = channel.unary_unary(
+        '/flyteidl.service.AdminService/GetExecutionMetrics',
+        request_serializer=flyteidl_dot_admin_dot_execution__pb2.WorkflowExecutionGetMetricsRequest.SerializeToString,
+        response_deserializer=flyteidl_dot_admin_dot_execution__pb2.WorkflowExecutionGetMetricsResponse.FromString,
+        )
 
 
 class AdminServiceServicer(object):
@@ -666,6 +671,13 @@ class AdminServiceServicer(object):
     context.set_details('Method not implemented!')
     raise NotImplementedError('Method not implemented!')
 
+  def GetExecutionMetrics(self, request, context):
+    """Fetches runtime metrics for a :ref:`ref_flyteidl.admin.Execution`.
+    """
+    context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+    context.set_details('Method not implemented!')
+    raise NotImplementedError('Method not implemented!')
+
 
 def add_AdminServiceServicer_to_server(servicer, server):
   rpc_method_handlers = {
@@ -928,6 +940,11 @@ def add_AdminServiceServicer_to_server(servicer, server):
           servicer.ListDescriptionEntities,
           request_deserializer=flyteidl_dot_admin_dot_description__entity__pb2.DescriptionEntityListRequest.FromString,
           response_serializer=flyteidl_dot_admin_dot_description__entity__pb2.DescriptionEntityList.SerializeToString,
+      ),
+      'GetExecutionMetrics': grpc.unary_unary_rpc_method_handler(
+          servicer.GetExecutionMetrics,
+          request_deserializer=flyteidl_dot_admin_dot_execution__pb2.WorkflowExecutionGetMetricsRequest.FromString,
+          response_serializer=flyteidl_dot_admin_dot_execution__pb2.WorkflowExecutionGetMetricsResponse.SerializeToString,
       ),
   }
   generic_handler = grpc.method_handlers_generic_handler(

@@ -29,6 +29,11 @@ class DataProxyServiceStub(object):
         request_serializer=flyteidl_dot_service_dot_dataproxy__pb2.CreateDownloadLinkRequest.SerializeToString,
         response_deserializer=flyteidl_dot_service_dot_dataproxy__pb2.CreateDownloadLinkResponse.FromString,
         )
+    self.GetData = channel.unary_unary(
+        '/flyteidl.service.DataProxyService/GetData',
+        request_serializer=flyteidl_dot_service_dot_dataproxy__pb2.GetDataRequest.SerializeToString,
+        response_deserializer=flyteidl_dot_service_dot_dataproxy__pb2.GetDataResponse.FromString,
+        )
 
 
 class DataProxyServiceServicer(object):
@@ -56,6 +61,13 @@ class DataProxyServiceServicer(object):
     context.set_details('Method not implemented!')
     raise NotImplementedError('Method not implemented!')
 
+  def GetData(self, request, context):
+    # missing associated documentation comment in .proto file
+    pass
+    context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+    context.set_details('Method not implemented!')
+    raise NotImplementedError('Method not implemented!')
+
 
 def add_DataProxyServiceServicer_to_server(servicer, server):
   rpc_method_handlers = {
@@ -73,6 +85,11 @@ def add_DataProxyServiceServicer_to_server(servicer, server):
           servicer.CreateDownloadLink,
           request_deserializer=flyteidl_dot_service_dot_dataproxy__pb2.CreateDownloadLinkRequest.FromString,
           response_serializer=flyteidl_dot_service_dot_dataproxy__pb2.CreateDownloadLinkResponse.SerializeToString,
+      ),
+      'GetData': grpc.unary_unary_rpc_method_handler(
+          servicer.GetData,
+          request_deserializer=flyteidl_dot_service_dot_dataproxy__pb2.GetDataRequest.FromString,
+          response_serializer=flyteidl_dot_service_dot_dataproxy__pb2.GetDataResponse.SerializeToString,
       ),
   }
   generic_handler = grpc.method_handlers_generic_handler(

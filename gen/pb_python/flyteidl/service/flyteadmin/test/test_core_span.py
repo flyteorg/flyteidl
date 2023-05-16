@@ -16,12 +16,12 @@ from __future__ import absolute_import
 import unittest
 
 import flyteadmin
-from flyteadmin.models.admin_task_create_response import AdminTaskCreateResponse  # noqa: E501
+from flyteadmin.models.core_span import CoreSpan  # noqa: E501
 from flyteadmin.rest import ApiException
 
 
-class TestAdminTaskCreateResponse(unittest.TestCase):
-    """AdminTaskCreateResponse unit test stubs"""
+class TestCoreSpan(unittest.TestCase):
+    """CoreSpan unit test stubs"""
 
     def setUp(self):
         pass
@@ -29,10 +29,10 @@ class TestAdminTaskCreateResponse(unittest.TestCase):
     def tearDown(self):
         pass
 
-    def testAdminTaskCreateResponse(self):
-        """Test AdminTaskCreateResponse"""
+    def testCoreSpan(self):
+        """Test CoreSpan"""
         # FIXME: construct object with mandatory attributes with example values
-        # model = flyteadmin.models.admin_task_create_response.AdminTaskCreateResponse()  # noqa: E501
+        # model = flyteadmin.models.core_span.CoreSpan()  # noqa: E501
         pass
 
 

@@ -20,7 +20,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   package='flyteidl.core',
   syntax='proto3',
   serialized_options=_b('Z4github.com/flyteorg/flyteidl/gen/pb-go/flyteidl/core'),
-  serialized_pb=_b('\n\x1c\x66lyteidl/core/security.proto\x12\rflyteidl.core\"\xa4\x01\n\x06Secret\x12\r\n\x05group\x18\x01 \x01(\t\x12\x15\n\rgroup_version\x18\x02 \x01(\t\x12\x0b\n\x03key\x18\x03 \x01(\t\x12:\n\x11mount_requirement\x18\x04 \x01(\x0e\x32\x1f.flyteidl.core.Secret.MountType\"+\n\tMountType\x12\x07\n\x03\x41NY\x10\x00\x12\x0b\n\x07\x45NV_VAR\x10\x01\x12\x08\n\x04\x46ILE\x10\x02\"O\n\x0cOAuth2Client\x12\x11\n\tclient_id\x18\x01 \x01(\t\x12,\n\rclient_secret\x18\x02 \x01(\x0b\x32\x15.flyteidl.core.Secret\"m\n\x08Identity\x12\x10\n\x08iam_role\x18\x01 \x01(\t\x12\x1b\n\x13k8s_service_account\x18\x02 \x01(\t\x12\x32\n\roauth2_client\x18\x03 \x01(\x0b\x32\x1b.flyteidl.core.OAuth2Client\"\xdd\x01\n\x12OAuth2TokenRequest\x12\x0c\n\x04name\x18\x01 \x01(\t\x12\x34\n\x04type\x18\x02 \x01(\x0e\x32&.flyteidl.core.OAuth2TokenRequest.Type\x12+\n\x06\x63lient\x18\x03 \x01(\x0b\x32\x1b.flyteidl.core.OAuth2Client\x12\x1e\n\x16idp_discovery_endpoint\x18\x04 \x01(\t\x12\x16\n\x0etoken_endpoint\x18\x05 \x01(\t\"\x1e\n\x04Type\x12\x16\n\x12\x43LIENT_CREDENTIALS\x10\x00\"\x95\x01\n\x0fSecurityContext\x12\'\n\x06run_as\x18\x01 \x01(\x0b\x32\x17.flyteidl.core.Identity\x12&\n\x07secrets\x18\x02 \x03(\x0b\x32\x15.flyteidl.core.Secret\x12\x31\n\x06tokens\x18\x03 \x03(\x0b\x32!.flyteidl.core.OAuth2TokenRequestB6Z4github.com/flyteorg/flyteidl/gen/pb-go/flyteidl/coreb\x06proto3')
+  serialized_pb=_b('\n\x1c\x66lyteidl/core/security.proto\x12\rflyteidl.core\"\xa4\x01\n\x06Secret\x12\r\n\x05group\x18\x01 \x01(\t\x12\x15\n\rgroup_version\x18\x02 \x01(\t\x12\x0b\n\x03key\x18\x03 \x01(\t\x12:\n\x11mount_requirement\x18\x04 \x01(\x0e\x32\x1f.flyteidl.core.Secret.MountType\"+\n\tMountType\x12\x07\n\x03\x41NY\x10\x00\x12\x0b\n\x07\x45NV_VAR\x10\x01\x12\x08\n\x04\x46ILE\x10\x02\"O\n\x0cOAuth2Client\x12\x11\n\tclient_id\x18\x01 \x01(\t\x12,\n\rclient_secret\x18\x02 \x01(\x0b\x32\x15.flyteidl.core.Secret\"\x89\x01\n\x08Identity\x12\x10\n\x08iam_role\x18\x01 \x01(\t\x12\x1b\n\x13k8s_service_account\x18\x02 \x01(\t\x12\x32\n\roauth2_client\x18\x03 \x01(\x0b\x32\x1b.flyteidl.core.OAuth2Client\x12\x1a\n\x12\x65xecution_identity\x18\x04 \x01(\t\"\xdd\x01\n\x12OAuth2TokenRequest\x12\x0c\n\x04name\x18\x01 \x01(\t\x12\x34\n\x04type\x18\x02 \x01(\x0e\x32&.flyteidl.core.OAuth2TokenRequest.Type\x12+\n\x06\x63lient\x18\x03 \x01(\x0b\x32\x1b.flyteidl.core.OAuth2Client\x12\x1e\n\x16idp_discovery_endpoint\x18\x04 \x01(\t\x12\x16\n\x0etoken_endpoint\x18\x05 \x01(\t\"\x1e\n\x04Type\x12\x16\n\x12\x43LIENT_CREDENTIALS\x10\x00\"\x95\x01\n\x0fSecurityContext\x12\'\n\x06run_as\x18\x01 \x01(\x0b\x32\x17.flyteidl.core.Identity\x12&\n\x07secrets\x18\x02 \x03(\x0b\x32\x15.flyteidl.core.Secret\x12\x31\n\x06tokens\x18\x03 \x03(\x0b\x32!.flyteidl.core.OAuth2TokenRequestB6Z4github.com/flyteorg/flyteidl/gen/pb-go/flyteidl/coreb\x06proto3')
 )
 
 
@@ -64,8 +64,8 @@ _OAUTH2TOKENREQUEST_TYPE = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   serialized_options=None,
-  serialized_start=598,
-  serialized_end=628,
+  serialized_start=627,
+  serialized_end=657,
 )
 _sym_db.RegisterEnumDescriptor(_OAUTH2TOKENREQUEST_TYPE)
 
@@ -189,6 +189,13 @@ _IDENTITY = _descriptor.Descriptor(
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='execution_identity', full_name='flyteidl.core.Identity.execution_identity', index=3,
+      number=4, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
   ],
   extensions=[
   ],
@@ -201,8 +208,8 @@ _IDENTITY = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=295,
-  serialized_end=404,
+  serialized_start=296,
+  serialized_end=433,
 )
 
 
@@ -261,8 +268,8 @@ _OAUTH2TOKENREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=407,
-  serialized_end=628,
+  serialized_start=436,
+  serialized_end=657,
 )
 
 
@@ -306,8 +313,8 @@ _SECURITYCONTEXT = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=631,
-  serialized_end=780,
+  serialized_start=660,
+  serialized_end=809,
 )
 
 _SECRET.fields_by_name['mount_requirement'].enum_type = _SECRET_MOUNTTYPE

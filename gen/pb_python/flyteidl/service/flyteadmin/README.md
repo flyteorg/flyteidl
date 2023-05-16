@@ -84,6 +84,7 @@ Class | Method | HTTP request | Description
 *AdminServiceApi* | [**get_description_entity**](docs/AdminServiceApi.md#get_description_entity) | **GET** /api/v1/description_entities/{id.resource_type}/{id.project}/{id.domain}/{id.name}/{id.version} | Fetch a :ref:&#x60;ref_flyteidl.admin.DescriptionEntity&#x60; object.
 *AdminServiceApi* | [**get_execution**](docs/AdminServiceApi.md#get_execution) | **GET** /api/v1/executions/{id.project}/{id.domain}/{id.name} | Fetches a :ref:&#x60;ref_flyteidl.admin.Execution&#x60;.
 *AdminServiceApi* | [**get_execution_data**](docs/AdminServiceApi.md#get_execution_data) | **GET** /api/v1/data/executions/{id.project}/{id.domain}/{id.name} | Fetches input and output data for a :ref:&#x60;ref_flyteidl.admin.Execution&#x60;.
+*AdminServiceApi* | [**get_execution_metrics**](docs/AdminServiceApi.md#get_execution_metrics) | **GET** /api/v1/metrics/executions/{id.project}/{id.domain}/{id.name} | Fetches runtime metrics for a :ref:&#x60;ref_flyteidl.admin.Execution&#x60;.
 *AdminServiceApi* | [**get_launch_plan**](docs/AdminServiceApi.md#get_launch_plan) | **GET** /api/v1/launch_plans/{id.project}/{id.domain}/{id.name}/{id.version} | Fetch a :ref:&#x60;ref_flyteidl.admin.LaunchPlan&#x60; definition.
 *AdminServiceApi* | [**get_named_entity**](docs/AdminServiceApi.md#get_named_entity) | **GET** /api/v1/named_entities/{resource_type}/{id.project}/{id.domain}/{id.name} | Returns a :ref:&#x60;ref_flyteidl.admin.NamedEntity&#x60; object.
 *AdminServiceApi* | [**get_node_execution**](docs/AdminServiceApi.md#get_node_execution) | **GET** /api/v1/node_executions/{id.execution_id.project}/{id.execution_id.domain}/{id.execution_id.name}/{id.node_id} | Fetches a :ref:&#x60;ref_flyteidl.admin.NodeExecution&#x60;.
@@ -143,6 +144,7 @@ Class | Method | HTTP request | Description
  - [AdminDescriptionFormat](docs/AdminDescriptionFormat.md)
  - [AdminDomain](docs/AdminDomain.md)
  - [AdminEmailNotification](docs/AdminEmailNotification.md)
+ - [AdminEnvs](docs/AdminEnvs.md)
  - [AdminExecution](docs/AdminExecution.md)
  - [AdminExecutionClosure](docs/AdminExecutionClosure.md)
  - [AdminExecutionClusterLabel](docs/AdminExecutionClusterLabel.md)
@@ -162,6 +164,7 @@ Class | Method | HTTP request | Description
  - [AdminExecutionUpdateResponse](docs/AdminExecutionUpdateResponse.md)
  - [AdminFixedRate](docs/AdminFixedRate.md)
  - [AdminFixedRateUnit](docs/AdminFixedRateUnit.md)
+ - [AdminFlyteURLs](docs/AdminFlyteURLs.md)
  - [AdminGetVersionResponse](docs/AdminGetVersionResponse.md)
  - [AdminLabels](docs/AdminLabels.md)
  - [AdminLaunchPlan](docs/AdminLaunchPlan.md)
@@ -216,6 +219,7 @@ Class | Method | HTTP request | Description
  - [AdminProjectUpdateResponse](docs/AdminProjectUpdateResponse.md)
  - [AdminProjects](docs/AdminProjects.md)
  - [AdminRawOutputDataConfig](docs/AdminRawOutputDataConfig.md)
+ - [AdminReason](docs/AdminReason.md)
  - [AdminSchedule](docs/AdminSchedule.md)
  - [AdminSlackNotification](docs/AdminSlackNotification.md)
  - [AdminSort](docs/AdminSort.md)
@@ -223,8 +227,6 @@ Class | Method | HTTP request | Description
  - [AdminSystemMetadata](docs/AdminSystemMetadata.md)
  - [AdminTask](docs/AdminTask.md)
  - [AdminTaskClosure](docs/AdminTaskClosure.md)
- - [AdminTaskCreateRequest](docs/AdminTaskCreateRequest.md)
- - [AdminTaskCreateResponse](docs/AdminTaskCreateResponse.md)
  - [AdminTaskExecutionClosure](docs/AdminTaskExecutionClosure.md)
  - [AdminTaskExecutionEventRequest](docs/AdminTaskExecutionEventRequest.md)
  - [AdminTaskExecutionEventResponse](docs/AdminTaskExecutionEventResponse.md)
@@ -250,6 +252,7 @@ Class | Method | HTTP request | Description
  - [AdminWorkflowExecutionEventRequest](docs/AdminWorkflowExecutionEventRequest.md)
  - [AdminWorkflowExecutionEventResponse](docs/AdminWorkflowExecutionEventResponse.md)
  - [AdminWorkflowExecutionGetDataResponse](docs/AdminWorkflowExecutionGetDataResponse.md)
+ - [AdminWorkflowExecutionGetMetricsResponse](docs/AdminWorkflowExecutionGetMetricsResponse.md)
  - [AdminWorkflowList](docs/AdminWorkflowList.md)
  - [AdminWorkflowSpec](docs/AdminWorkflowSpec.md)
  - [BlobTypeBlobDimensionality](docs/BlobTypeBlobDimensionality.md)
@@ -324,6 +327,7 @@ Class | Method | HTTP request | Description
  - [CoreSignalCondition](docs/CoreSignalCondition.md)
  - [CoreSimpleType](docs/CoreSimpleType.md)
  - [CoreSleepCondition](docs/CoreSleepCondition.md)
+ - [CoreSpan](docs/CoreSpan.md)
  - [CoreSql](docs/CoreSql.md)
  - [CoreStructuredDataset](docs/CoreStructuredDataset.md)
  - [CoreStructuredDatasetMetadata](docs/CoreStructuredDatasetMetadata.md)
@@ -363,6 +367,8 @@ Class | Method | HTTP request | Description
  - [ExecutionMetadataExecutionMode](docs/ExecutionMetadataExecutionMode.md)
  - [FlyteidladminDynamicWorkflowNodeMetadata](docs/FlyteidladminDynamicWorkflowNodeMetadata.md)
  - [FlyteidladminNodeExecution](docs/FlyteidladminNodeExecution.md)
+ - [FlyteidladminTaskCreateRequest](docs/FlyteidladminTaskCreateRequest.md)
+ - [FlyteidladminTaskCreateResponse](docs/FlyteidladminTaskCreateResponse.md)
  - [FlyteidladminTaskExecution](docs/FlyteidladminTaskExecution.md)
  - [FlyteidladminTaskNodeMetadata](docs/FlyteidladminTaskNodeMetadata.md)
  - [FlyteidladminWorkflowNodeMetadata](docs/FlyteidladminWorkflowNodeMetadata.md)

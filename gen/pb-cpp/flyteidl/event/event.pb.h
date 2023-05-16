@@ -559,6 +559,15 @@ class NodeExecutionEvent final :
   ::flyteidl::event::ParentNodeExecutionMetadata* mutable_parent_node_metadata();
   void set_allocated_parent_node_metadata(::flyteidl::event::ParentNodeExecutionMetadata* parent_node_metadata);
 
+  // .google.protobuf.Timestamp reported_at = 21;
+  bool has_reported_at() const;
+  void clear_reported_at();
+  static const int kReportedAtFieldNumber = 21;
+  const ::google::protobuf::Timestamp& reported_at() const;
+  ::google::protobuf::Timestamp* release_reported_at();
+  ::google::protobuf::Timestamp* mutable_reported_at();
+  void set_allocated_reported_at(::google::protobuf::Timestamp* reported_at);
+
   // .flyteidl.core.NodeExecution.Phase phase = 3;
   void clear_phase();
   static const int kPhaseFieldNumber = 3;
@@ -698,6 +707,7 @@ class NodeExecutionEvent final :
   ::google::protobuf::Timestamp* occurred_at_;
   ::flyteidl::event::ParentTaskExecutionMetadata* parent_task_metadata_;
   ::flyteidl::event::ParentNodeExecutionMetadata* parent_node_metadata_;
+  ::google::protobuf::Timestamp* reported_at_;
   int phase_;
   ::google::protobuf::int32 event_version_;
   bool is_parent_;
@@ -1089,6 +1099,20 @@ class DynamicWorkflowNodeMetadata final :
 
   // accessors -------------------------------------------------------
 
+  // string dynamic_job_spec_uri = 3;
+  void clear_dynamic_job_spec_uri();
+  static const int kDynamicJobSpecUriFieldNumber = 3;
+  const ::std::string& dynamic_job_spec_uri() const;
+  void set_dynamic_job_spec_uri(const ::std::string& value);
+  #if LANG_CXX11
+  void set_dynamic_job_spec_uri(::std::string&& value);
+  #endif
+  void set_dynamic_job_spec_uri(const char* value);
+  void set_dynamic_job_spec_uri(const char* value, size_t size);
+  ::std::string* mutable_dynamic_job_spec_uri();
+  ::std::string* release_dynamic_job_spec_uri();
+  void set_allocated_dynamic_job_spec_uri(::std::string* dynamic_job_spec_uri);
+
   // .flyteidl.core.Identifier id = 1;
   bool has_id() const;
   void clear_id();
@@ -1112,6 +1136,7 @@ class DynamicWorkflowNodeMetadata final :
   class HasBitSetters;
 
   ::google::protobuf::internal::InternalMetadataWithArena _internal_metadata_;
+  ::google::protobuf::internal::ArenaStringPtr dynamic_job_spec_uri_;
   ::flyteidl::core::Identifier* id_;
   ::flyteidl::core::CompiledWorkflowClosure* compiled_workflow_;
   mutable ::google::protobuf::internal::CachedSize _cached_size_;
@@ -1561,6 +1586,15 @@ class TaskExecutionEvent final :
   ::flyteidl::event::TaskExecutionMetadata* mutable_metadata();
   void set_allocated_metadata(::flyteidl::event::TaskExecutionMetadata* metadata);
 
+  // .google.protobuf.Timestamp reported_at = 20;
+  bool has_reported_at() const;
+  void clear_reported_at();
+  static const int kReportedAtFieldNumber = 20;
+  const ::google::protobuf::Timestamp& reported_at() const;
+  ::google::protobuf::Timestamp* release_reported_at();
+  ::google::protobuf::Timestamp* mutable_reported_at();
+  void set_allocated_reported_at(::google::protobuf::Timestamp* reported_at);
+
   // uint32 retry_attempt = 3;
   void clear_retry_attempt();
   static const int kRetryAttemptFieldNumber = 3;
@@ -1675,6 +1709,7 @@ class TaskExecutionEvent final :
   ::google::protobuf::Timestamp* occurred_at_;
   ::google::protobuf::Struct* custom_info_;
   ::flyteidl::event::TaskExecutionMetadata* metadata_;
+  ::google::protobuf::Timestamp* reported_at_;
   ::google::protobuf::uint32 retry_attempt_;
   int phase_;
   ::google::protobuf::uint32 phase_version_;
@@ -3414,6 +3449,52 @@ inline void NodeExecutionEvent::set_allocated_deck_uri(::std::string* deck_uri) 
   // @@protoc_insertion_point(field_set_allocated:flyteidl.event.NodeExecutionEvent.deck_uri)
 }
 
+// .google.protobuf.Timestamp reported_at = 21;
+inline bool NodeExecutionEvent::has_reported_at() const {
+  return this != internal_default_instance() && reported_at_ != nullptr;
+}
+inline const ::google::protobuf::Timestamp& NodeExecutionEvent::reported_at() const {
+  const ::google::protobuf::Timestamp* p = reported_at_;
+  // @@protoc_insertion_point(field_get:flyteidl.event.NodeExecutionEvent.reported_at)
+  return p != nullptr ? *p : *reinterpret_cast<const ::google::protobuf::Timestamp*>(
+      &::google::protobuf::_Timestamp_default_instance_);
+}
+inline ::google::protobuf::Timestamp* NodeExecutionEvent::release_reported_at() {
+  // @@protoc_insertion_point(field_release:flyteidl.event.NodeExecutionEvent.reported_at)
+  
+  ::google::protobuf::Timestamp* temp = reported_at_;
+  reported_at_ = nullptr;
+  return temp;
+}
+inline ::google::protobuf::Timestamp* NodeExecutionEvent::mutable_reported_at() {
+  
+  if (reported_at_ == nullptr) {
+    auto* p = CreateMaybeMessage<::google::protobuf::Timestamp>(GetArenaNoVirtual());
+    reported_at_ = p;
+  }
+  // @@protoc_insertion_point(field_mutable:flyteidl.event.NodeExecutionEvent.reported_at)
+  return reported_at_;
+}
+inline void NodeExecutionEvent::set_allocated_reported_at(::google::protobuf::Timestamp* reported_at) {
+  ::google::protobuf::Arena* message_arena = GetArenaNoVirtual();
+  if (message_arena == nullptr) {
+    delete reinterpret_cast< ::google::protobuf::MessageLite*>(reported_at_);
+  }
+  if (reported_at) {
+    ::google::protobuf::Arena* submessage_arena =
+      reinterpret_cast<::google::protobuf::MessageLite*>(reported_at)->GetArena();
+    if (message_arena != submessage_arena) {
+      reported_at = ::google::protobuf::internal::GetOwnedMessage(
+          message_arena, reported_at, submessage_arena);
+    }
+    
+  } else {
+    
+  }
+  reported_at_ = reported_at;
+  // @@protoc_insertion_point(field_set_allocated:flyteidl.event.NodeExecutionEvent.reported_at)
+}
+
 inline bool NodeExecutionEvent::has_input_value() const {
   return input_value_case() != INPUT_VALUE_NOT_SET;
 }
@@ -3763,6 +3844,59 @@ inline void DynamicWorkflowNodeMetadata::set_allocated_compiled_workflow(::flyte
   }
   compiled_workflow_ = compiled_workflow;
   // @@protoc_insertion_point(field_set_allocated:flyteidl.event.DynamicWorkflowNodeMetadata.compiled_workflow)
+}
+
+// string dynamic_job_spec_uri = 3;
+inline void DynamicWorkflowNodeMetadata::clear_dynamic_job_spec_uri() {
+  dynamic_job_spec_uri_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline const ::std::string& DynamicWorkflowNodeMetadata::dynamic_job_spec_uri() const {
+  // @@protoc_insertion_point(field_get:flyteidl.event.DynamicWorkflowNodeMetadata.dynamic_job_spec_uri)
+  return dynamic_job_spec_uri_.GetNoArena();
+}
+inline void DynamicWorkflowNodeMetadata::set_dynamic_job_spec_uri(const ::std::string& value) {
+  
+  dynamic_job_spec_uri_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
+  // @@protoc_insertion_point(field_set:flyteidl.event.DynamicWorkflowNodeMetadata.dynamic_job_spec_uri)
+}
+#if LANG_CXX11
+inline void DynamicWorkflowNodeMetadata::set_dynamic_job_spec_uri(::std::string&& value) {
+  
+  dynamic_job_spec_uri_.SetNoArena(
+    &::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::move(value));
+  // @@protoc_insertion_point(field_set_rvalue:flyteidl.event.DynamicWorkflowNodeMetadata.dynamic_job_spec_uri)
+}
+#endif
+inline void DynamicWorkflowNodeMetadata::set_dynamic_job_spec_uri(const char* value) {
+  GOOGLE_DCHECK(value != nullptr);
+  
+  dynamic_job_spec_uri_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
+  // @@protoc_insertion_point(field_set_char:flyteidl.event.DynamicWorkflowNodeMetadata.dynamic_job_spec_uri)
+}
+inline void DynamicWorkflowNodeMetadata::set_dynamic_job_spec_uri(const char* value, size_t size) {
+  
+  dynamic_job_spec_uri_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
+      ::std::string(reinterpret_cast<const char*>(value), size));
+  // @@protoc_insertion_point(field_set_pointer:flyteidl.event.DynamicWorkflowNodeMetadata.dynamic_job_spec_uri)
+}
+inline ::std::string* DynamicWorkflowNodeMetadata::mutable_dynamic_job_spec_uri() {
+  
+  // @@protoc_insertion_point(field_mutable:flyteidl.event.DynamicWorkflowNodeMetadata.dynamic_job_spec_uri)
+  return dynamic_job_spec_uri_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline ::std::string* DynamicWorkflowNodeMetadata::release_dynamic_job_spec_uri() {
+  // @@protoc_insertion_point(field_release:flyteidl.event.DynamicWorkflowNodeMetadata.dynamic_job_spec_uri)
+  
+  return dynamic_job_spec_uri_.ReleaseNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline void DynamicWorkflowNodeMetadata::set_allocated_dynamic_job_spec_uri(::std::string* dynamic_job_spec_uri) {
+  if (dynamic_job_spec_uri != nullptr) {
+    
+  } else {
+    
+  }
+  dynamic_job_spec_uri_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), dynamic_job_spec_uri);
+  // @@protoc_insertion_point(field_set_allocated:flyteidl.event.DynamicWorkflowNodeMetadata.dynamic_job_spec_uri)
 }
 
 // -------------------------------------------------------------------
@@ -4637,6 +4771,52 @@ inline void TaskExecutionEvent::set_event_version(::google::protobuf::int32 valu
   
   event_version_ = value;
   // @@protoc_insertion_point(field_set:flyteidl.event.TaskExecutionEvent.event_version)
+}
+
+// .google.protobuf.Timestamp reported_at = 20;
+inline bool TaskExecutionEvent::has_reported_at() const {
+  return this != internal_default_instance() && reported_at_ != nullptr;
+}
+inline const ::google::protobuf::Timestamp& TaskExecutionEvent::reported_at() const {
+  const ::google::protobuf::Timestamp* p = reported_at_;
+  // @@protoc_insertion_point(field_get:flyteidl.event.TaskExecutionEvent.reported_at)
+  return p != nullptr ? *p : *reinterpret_cast<const ::google::protobuf::Timestamp*>(
+      &::google::protobuf::_Timestamp_default_instance_);
+}
+inline ::google::protobuf::Timestamp* TaskExecutionEvent::release_reported_at() {
+  // @@protoc_insertion_point(field_release:flyteidl.event.TaskExecutionEvent.reported_at)
+  
+  ::google::protobuf::Timestamp* temp = reported_at_;
+  reported_at_ = nullptr;
+  return temp;
+}
+inline ::google::protobuf::Timestamp* TaskExecutionEvent::mutable_reported_at() {
+  
+  if (reported_at_ == nullptr) {
+    auto* p = CreateMaybeMessage<::google::protobuf::Timestamp>(GetArenaNoVirtual());
+    reported_at_ = p;
+  }
+  // @@protoc_insertion_point(field_mutable:flyteidl.event.TaskExecutionEvent.reported_at)
+  return reported_at_;
+}
+inline void TaskExecutionEvent::set_allocated_reported_at(::google::protobuf::Timestamp* reported_at) {
+  ::google::protobuf::Arena* message_arena = GetArenaNoVirtual();
+  if (message_arena == nullptr) {
+    delete reinterpret_cast< ::google::protobuf::MessageLite*>(reported_at_);
+  }
+  if (reported_at) {
+    ::google::protobuf::Arena* submessage_arena =
+      reinterpret_cast<::google::protobuf::MessageLite*>(reported_at)->GetArena();
+    if (message_arena != submessage_arena) {
+      reported_at = ::google::protobuf::internal::GetOwnedMessage(
+          message_arena, reported_at, submessage_arena);
+    }
+    
+  } else {
+    
+  }
+  reported_at_ = reported_at;
+  // @@protoc_insertion_point(field_set_allocated:flyteidl.event.TaskExecutionEvent.reported_at)
 }
 
 inline bool TaskExecutionEvent::has_input_value() const {
