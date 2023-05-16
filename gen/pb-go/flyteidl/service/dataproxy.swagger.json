@@ -754,6 +754,10 @@
         "pre_signed_urls": {
           "$ref": "#/definitions/servicePreSignedURLs",
           "title": "Flyte deck html will be returned as a signed url users can download"
+        },
+        "literal": {
+          "$ref": "#/definitions/coreLiteral",
+          "title": "Single literal will be returned"
         }
       }
     },

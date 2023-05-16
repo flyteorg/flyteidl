@@ -203,7 +203,7 @@ pub struct GetDataRequest {
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(Clone, PartialEq, ::prost::Message)]
 pub struct GetDataResponse {
-    #[prost(oneof="get_data_response::Data", tags="1, 2")]
+    #[prost(oneof="get_data_response::Data", tags="1, 2, 3")]
     pub data: ::core::option::Option<get_data_response::Data>,
 }
 /// Nested message and enum types in `GetDataResponse`.
@@ -217,6 +217,9 @@ pub mod get_data_response {
         /// Flyte deck html will be returned as a signed url users can download
         #[prost(message, tag="2")]
         PreSignedUrls(super::PreSignedUrLs),
+        /// Single literal will be returned
+        #[prost(message, tag="3")]
+        Literal(super::super::core::Literal),
     }
 }
 /// ArtifactType
