@@ -14,7 +14,6 @@ class DataProxyServiceStub(object):
     Args:
       channel: A grpc.Channel.
     """
-<<<<<<< HEAD
     self.CreateUploadLocation = channel.unary_unary(
         '/flyteidl.service.DataProxyService/CreateUploadLocation',
         request_serializer=flyteidl_dot_service_dot_dataproxy__pb2.CreateUploadLocationRequest.SerializeToString,
@@ -30,35 +29,11 @@ class DataProxyServiceStub(object):
         request_serializer=flyteidl_dot_service_dot_dataproxy__pb2.CreateDownloadLinkRequest.SerializeToString,
         response_deserializer=flyteidl_dot_service_dot_dataproxy__pb2.CreateDownloadLinkResponse.FromString,
         )
-=======
-
-    def __init__(self, channel):
-        """Constructor.
-
-        Args:
-            channel: A grpc.Channel.
-        """
-        self.CreateUploadLocation = channel.unary_unary(
-                '/flyteidl.service.DataProxyService/CreateUploadLocation',
-                request_serializer=flyteidl_dot_service_dot_dataproxy__pb2.CreateUploadLocationRequest.SerializeToString,
-                response_deserializer=flyteidl_dot_service_dot_dataproxy__pb2.CreateUploadLocationResponse.FromString,
-                )
-        self.CreateDownloadLocation = channel.unary_unary(
-                '/flyteidl.service.DataProxyService/CreateDownloadLocation',
-                request_serializer=flyteidl_dot_service_dot_dataproxy__pb2.CreateDownloadLocationRequest.SerializeToString,
-                response_deserializer=flyteidl_dot_service_dot_dataproxy__pb2.CreateDownloadLocationResponse.FromString,
-                )
-        self.CreateDownloadLink = channel.unary_unary(
-                '/flyteidl.service.DataProxyService/CreateDownloadLink',
-                request_serializer=flyteidl_dot_service_dot_dataproxy__pb2.CreateDownloadLinkRequest.SerializeToString,
-                response_deserializer=flyteidl_dot_service_dot_dataproxy__pb2.CreateDownloadLinkResponse.FromString,
-                )
-        self.GetData = channel.unary_unary(
-                '/flyteidl.service.DataProxyService/GetData',
-                request_serializer=flyteidl_dot_service_dot_dataproxy__pb2.GetDataRequest.SerializeToString,
-                response_deserializer=flyteidl_dot_service_dot_dataproxy__pb2.GetDataResponse.FromString,
-                )
->>>>>>> 513ff822 (Data addresses #minor (#391))
+    self.GetData = channel.unary_unary(
+        '/flyteidl.service.DataProxyService/GetData',
+        request_serializer=flyteidl_dot_service_dot_dataproxy__pb2.GetDataRequest.SerializeToString,
+        response_deserializer=flyteidl_dot_service_dot_dataproxy__pb2.GetDataResponse.FromString,
+        )
 
 
 class DataProxyServiceServicer(object):
@@ -86,15 +61,15 @@ class DataProxyServiceServicer(object):
     context.set_details('Method not implemented!')
     raise NotImplementedError('Method not implemented!')
 
-    def GetData(self, request, context):
-        """Missing associated documentation comment in .proto file."""
-        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
-        context.set_details('Method not implemented!')
-        raise NotImplementedError('Method not implemented!')
+  def GetData(self, request, context):
+    # missing associated documentation comment in .proto file
+    pass
+    context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+    context.set_details('Method not implemented!')
+    raise NotImplementedError('Method not implemented!')
 
 
 def add_DataProxyServiceServicer_to_server(servicer, server):
-<<<<<<< HEAD
   rpc_method_handlers = {
       'CreateUploadLocation': grpc.unary_unary_rpc_method_handler(
           servicer.CreateUploadLocation,
@@ -111,108 +86,12 @@ def add_DataProxyServiceServicer_to_server(servicer, server):
           request_deserializer=flyteidl_dot_service_dot_dataproxy__pb2.CreateDownloadLinkRequest.FromString,
           response_serializer=flyteidl_dot_service_dot_dataproxy__pb2.CreateDownloadLinkResponse.SerializeToString,
       ),
+      'GetData': grpc.unary_unary_rpc_method_handler(
+          servicer.GetData,
+          request_deserializer=flyteidl_dot_service_dot_dataproxy__pb2.GetDataRequest.FromString,
+          response_serializer=flyteidl_dot_service_dot_dataproxy__pb2.GetDataResponse.SerializeToString,
+      ),
   }
   generic_handler = grpc.method_handlers_generic_handler(
       'flyteidl.service.DataProxyService', rpc_method_handlers)
   server.add_generic_rpc_handlers((generic_handler,))
-=======
-    rpc_method_handlers = {
-            'CreateUploadLocation': grpc.unary_unary_rpc_method_handler(
-                    servicer.CreateUploadLocation,
-                    request_deserializer=flyteidl_dot_service_dot_dataproxy__pb2.CreateUploadLocationRequest.FromString,
-                    response_serializer=flyteidl_dot_service_dot_dataproxy__pb2.CreateUploadLocationResponse.SerializeToString,
-            ),
-            'CreateDownloadLocation': grpc.unary_unary_rpc_method_handler(
-                    servicer.CreateDownloadLocation,
-                    request_deserializer=flyteidl_dot_service_dot_dataproxy__pb2.CreateDownloadLocationRequest.FromString,
-                    response_serializer=flyteidl_dot_service_dot_dataproxy__pb2.CreateDownloadLocationResponse.SerializeToString,
-            ),
-            'CreateDownloadLink': grpc.unary_unary_rpc_method_handler(
-                    servicer.CreateDownloadLink,
-                    request_deserializer=flyteidl_dot_service_dot_dataproxy__pb2.CreateDownloadLinkRequest.FromString,
-                    response_serializer=flyteidl_dot_service_dot_dataproxy__pb2.CreateDownloadLinkResponse.SerializeToString,
-            ),
-            'GetData': grpc.unary_unary_rpc_method_handler(
-                    servicer.GetData,
-                    request_deserializer=flyteidl_dot_service_dot_dataproxy__pb2.GetDataRequest.FromString,
-                    response_serializer=flyteidl_dot_service_dot_dataproxy__pb2.GetDataResponse.SerializeToString,
-            ),
-    }
-    generic_handler = grpc.method_handlers_generic_handler(
-            'flyteidl.service.DataProxyService', rpc_method_handlers)
-    server.add_generic_rpc_handlers((generic_handler,))
-
-
- # This class is part of an EXPERIMENTAL API.
-class DataProxyService(object):
-    """DataProxyService defines an RPC Service that allows access to user-data in a controlled manner.
-    """
-
-    @staticmethod
-    def CreateUploadLocation(request,
-            target,
-            options=(),
-            channel_credentials=None,
-            call_credentials=None,
-            insecure=False,
-            compression=None,
-            wait_for_ready=None,
-            timeout=None,
-            metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/flyteidl.service.DataProxyService/CreateUploadLocation',
-            flyteidl_dot_service_dot_dataproxy__pb2.CreateUploadLocationRequest.SerializeToString,
-            flyteidl_dot_service_dot_dataproxy__pb2.CreateUploadLocationResponse.FromString,
-            options, channel_credentials,
-            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
-
-    @staticmethod
-    def CreateDownloadLocation(request,
-            target,
-            options=(),
-            channel_credentials=None,
-            call_credentials=None,
-            insecure=False,
-            compression=None,
-            wait_for_ready=None,
-            timeout=None,
-            metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/flyteidl.service.DataProxyService/CreateDownloadLocation',
-            flyteidl_dot_service_dot_dataproxy__pb2.CreateDownloadLocationRequest.SerializeToString,
-            flyteidl_dot_service_dot_dataproxy__pb2.CreateDownloadLocationResponse.FromString,
-            options, channel_credentials,
-            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
-
-    @staticmethod
-    def CreateDownloadLink(request,
-            target,
-            options=(),
-            channel_credentials=None,
-            call_credentials=None,
-            insecure=False,
-            compression=None,
-            wait_for_ready=None,
-            timeout=None,
-            metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/flyteidl.service.DataProxyService/CreateDownloadLink',
-            flyteidl_dot_service_dot_dataproxy__pb2.CreateDownloadLinkRequest.SerializeToString,
-            flyteidl_dot_service_dot_dataproxy__pb2.CreateDownloadLinkResponse.FromString,
-            options, channel_credentials,
-            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
-
-    @staticmethod
-    def GetData(request,
-            target,
-            options=(),
-            channel_credentials=None,
-            call_credentials=None,
-            insecure=False,
-            compression=None,
-            wait_for_ready=None,
-            timeout=None,
-            metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/flyteidl.service.DataProxyService/GetData',
-            flyteidl_dot_service_dot_dataproxy__pb2.GetDataRequest.SerializeToString,
-            flyteidl_dot_service_dot_dataproxy__pb2.GetDataResponse.FromString,
-            options, channel_credentials,
-            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
->>>>>>> 513ff822 (Data addresses #minor (#391))
