@@ -128,10 +128,13 @@ message GetDataRequest {
 message GetDataResponse {
   oneof data {
     // literal map data will be returned
-    core.LiteralMap literal_map                = 1;
+    core.LiteralMap literal_map = 1;
 
     // Flyte deck html will be returned as a signed url users can download
     PreSignedURLs pre_signed_urls = 2;
+
+    // Single literal will be returned
+    core.Literal literal = 3;
   }
 }
 
