@@ -122,6 +122,7 @@ message GetDataRequest {
   // backend, identifies a Flyte artifact ([i]nput, [o]utput, flyte [d]eck, etc.).
   // e.g. flyte://v1/proj/development/execid/n2/0/i (for 0th task execution attempt input)
   //      flyte://v1/proj/development/execid/n2/i (for node execution input)
+  //      flyte://v1/proj/development/execid/n2/o/o3 (the o3 output of the second node)
   string flyte_url = 1;
 }
 
@@ -133,7 +134,8 @@ message GetDataResponse {
     // Flyte deck html will be returned as a signed url users can download
     PreSignedURLs pre_signed_urls = 2;
 
-    // Single literal will be returned
+    // Single literal will be returned. This is returned when the user/url requests a specific output or input
+    // by name. See the o3 example above.
     core.Literal literal = 3;
   }
 }

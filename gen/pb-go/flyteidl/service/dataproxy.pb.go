@@ -506,6 +506,7 @@ type GetDataRequest struct {
 	// backend, identifies a Flyte artifact ([i]nput, [o]utput, flyte [d]eck, etc.).
 	// e.g. flyte://v1/proj/development/execid/n2/0/i (for 0th task execution attempt input)
 	//      flyte://v1/proj/development/execid/n2/i (for node execution input)
+	//      flyte://v1/proj/development/execid/n2/o/o3 (the o3 output of the second node)
 	FlyteUrl             string   `protobuf:"bytes,1,opt,name=flyte_url,json=flyteUrl,proto3" json:"flyte_url,omitempty"`
 	XXX_NoUnkeyedLiteral struct{} `json:"-"`
 	XXX_unrecognized     []byte   `json:"-"`
