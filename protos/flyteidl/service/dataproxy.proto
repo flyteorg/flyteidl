@@ -4,7 +4,6 @@ package flyteidl.service;
 option go_package = "github.com/flyteorg/flyteidl/gen/pb-go/flyteidl/service";
 
 import "google/api/annotations.proto";
-// import "protoc-gen-swagger/options/annotations.proto";
 import "google/protobuf/duration.proto";
 import "google/protobuf/timestamp.proto";
 import "flyteidl/core/identifier.proto";
