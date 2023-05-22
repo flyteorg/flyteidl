@@ -142,6 +142,143 @@ class ExecutionRelaunchRequest(_message.Message):
     overwrite_cache: bool
     def __init__(self, id: _Optional[_Union[_identifier_pb2.WorkflowExecutionIdentifier, _Mapping]] = ..., name: _Optional[str] = ..., overwrite_cache: bool = ...) -> None: ...
 
+<<<<<<< HEAD
+=======
+class ExecutionRecoverRequest(_message.Message):
+    __slots__ = ["id", "name", "metadata"]
+    ID_FIELD_NUMBER: _ClassVar[int]
+    NAME_FIELD_NUMBER: _ClassVar[int]
+    METADATA_FIELD_NUMBER: _ClassVar[int]
+    id: _identifier_pb2.WorkflowExecutionIdentifier
+    name: str
+    metadata: ExecutionMetadata
+    def __init__(self, id: _Optional[_Union[_identifier_pb2.WorkflowExecutionIdentifier, _Mapping]] = ..., name: _Optional[str] = ..., metadata: _Optional[_Union[ExecutionMetadata, _Mapping]] = ...) -> None: ...
+
+class ExecutionCreateResponse(_message.Message):
+    __slots__ = ["id"]
+    ID_FIELD_NUMBER: _ClassVar[int]
+    id: _identifier_pb2.WorkflowExecutionIdentifier
+    def __init__(self, id: _Optional[_Union[_identifier_pb2.WorkflowExecutionIdentifier, _Mapping]] = ...) -> None: ...
+
+class WorkflowExecutionGetRequest(_message.Message):
+    __slots__ = ["id"]
+    ID_FIELD_NUMBER: _ClassVar[int]
+    id: _identifier_pb2.WorkflowExecutionIdentifier
+    def __init__(self, id: _Optional[_Union[_identifier_pb2.WorkflowExecutionIdentifier, _Mapping]] = ...) -> None: ...
+
+class Execution(_message.Message):
+    __slots__ = ["id", "spec", "closure"]
+    ID_FIELD_NUMBER: _ClassVar[int]
+    SPEC_FIELD_NUMBER: _ClassVar[int]
+    CLOSURE_FIELD_NUMBER: _ClassVar[int]
+    id: _identifier_pb2.WorkflowExecutionIdentifier
+    spec: ExecutionSpec
+    closure: ExecutionClosure
+    def __init__(self, id: _Optional[_Union[_identifier_pb2.WorkflowExecutionIdentifier, _Mapping]] = ..., spec: _Optional[_Union[ExecutionSpec, _Mapping]] = ..., closure: _Optional[_Union[ExecutionClosure, _Mapping]] = ...) -> None: ...
+
+class ExecutionList(_message.Message):
+    __slots__ = ["executions", "token"]
+    EXECUTIONS_FIELD_NUMBER: _ClassVar[int]
+    TOKEN_FIELD_NUMBER: _ClassVar[int]
+    executions: _containers.RepeatedCompositeFieldContainer[Execution]
+    token: str
+    def __init__(self, executions: _Optional[_Iterable[_Union[Execution, _Mapping]]] = ..., token: _Optional[str] = ...) -> None: ...
+
+class LiteralMapBlob(_message.Message):
+    __slots__ = ["values", "uri"]
+    VALUES_FIELD_NUMBER: _ClassVar[int]
+    URI_FIELD_NUMBER: _ClassVar[int]
+    values: _literals_pb2.LiteralMap
+    uri: str
+    def __init__(self, values: _Optional[_Union[_literals_pb2.LiteralMap, _Mapping]] = ..., uri: _Optional[str] = ...) -> None: ...
+
+class AbortMetadata(_message.Message):
+    __slots__ = ["cause", "principal"]
+    CAUSE_FIELD_NUMBER: _ClassVar[int]
+    PRINCIPAL_FIELD_NUMBER: _ClassVar[int]
+    cause: str
+    principal: str
+    def __init__(self, cause: _Optional[str] = ..., principal: _Optional[str] = ...) -> None: ...
+
+class ExecutionClosure(_message.Message):
+    __slots__ = ["outputs", "error", "abort_cause", "abort_metadata", "output_data", "computed_inputs", "phase", "started_at", "duration", "created_at", "updated_at", "notifications", "workflow_id", "state_change_details"]
+    OUTPUTS_FIELD_NUMBER: _ClassVar[int]
+    ERROR_FIELD_NUMBER: _ClassVar[int]
+    ABORT_CAUSE_FIELD_NUMBER: _ClassVar[int]
+    ABORT_METADATA_FIELD_NUMBER: _ClassVar[int]
+    OUTPUT_DATA_FIELD_NUMBER: _ClassVar[int]
+    COMPUTED_INPUTS_FIELD_NUMBER: _ClassVar[int]
+    PHASE_FIELD_NUMBER: _ClassVar[int]
+    STARTED_AT_FIELD_NUMBER: _ClassVar[int]
+    DURATION_FIELD_NUMBER: _ClassVar[int]
+    CREATED_AT_FIELD_NUMBER: _ClassVar[int]
+    UPDATED_AT_FIELD_NUMBER: _ClassVar[int]
+    NOTIFICATIONS_FIELD_NUMBER: _ClassVar[int]
+    WORKFLOW_ID_FIELD_NUMBER: _ClassVar[int]
+    STATE_CHANGE_DETAILS_FIELD_NUMBER: _ClassVar[int]
+    outputs: LiteralMapBlob
+    error: _execution_pb2.ExecutionError
+    abort_cause: str
+    abort_metadata: AbortMetadata
+    output_data: _literals_pb2.LiteralMap
+    computed_inputs: _literals_pb2.LiteralMap
+    phase: _execution_pb2.WorkflowExecution.Phase
+    started_at: _timestamp_pb2.Timestamp
+    duration: _duration_pb2.Duration
+    created_at: _timestamp_pb2.Timestamp
+    updated_at: _timestamp_pb2.Timestamp
+    notifications: _containers.RepeatedCompositeFieldContainer[_common_pb2.Notification]
+    workflow_id: _identifier_pb2.Identifier
+    state_change_details: ExecutionStateChangeDetails
+    def __init__(self, outputs: _Optional[_Union[LiteralMapBlob, _Mapping]] = ..., error: _Optional[_Union[_execution_pb2.ExecutionError, _Mapping]] = ..., abort_cause: _Optional[str] = ..., abort_metadata: _Optional[_Union[AbortMetadata, _Mapping]] = ..., output_data: _Optional[_Union[_literals_pb2.LiteralMap, _Mapping]] = ..., computed_inputs: _Optional[_Union[_literals_pb2.LiteralMap, _Mapping]] = ..., phase: _Optional[_Union[_execution_pb2.WorkflowExecution.Phase, str]] = ..., started_at: _Optional[_Union[_timestamp_pb2.Timestamp, _Mapping]] = ..., duration: _Optional[_Union[_duration_pb2.Duration, _Mapping]] = ..., created_at: _Optional[_Union[_timestamp_pb2.Timestamp, _Mapping]] = ..., updated_at: _Optional[_Union[_timestamp_pb2.Timestamp, _Mapping]] = ..., notifications: _Optional[_Iterable[_Union[_common_pb2.Notification, _Mapping]]] = ..., workflow_id: _Optional[_Union[_identifier_pb2.Identifier, _Mapping]] = ..., state_change_details: _Optional[_Union[ExecutionStateChangeDetails, _Mapping]] = ...) -> None: ...
+
+class SystemMetadata(_message.Message):
+    __slots__ = ["execution_cluster", "namespace"]
+    EXECUTION_CLUSTER_FIELD_NUMBER: _ClassVar[int]
+    NAMESPACE_FIELD_NUMBER: _ClassVar[int]
+    execution_cluster: str
+    namespace: str
+    def __init__(self, execution_cluster: _Optional[str] = ..., namespace: _Optional[str] = ...) -> None: ...
+
+class ExecutionMetadata(_message.Message):
+    __slots__ = ["mode", "principal", "nesting", "scheduled_at", "parent_node_execution", "reference_execution", "system_metadata"]
+    class ExecutionMode(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
+        __slots__ = []
+        MANUAL: _ClassVar[ExecutionMetadata.ExecutionMode]
+        SCHEDULED: _ClassVar[ExecutionMetadata.ExecutionMode]
+        SYSTEM: _ClassVar[ExecutionMetadata.ExecutionMode]
+        RELAUNCH: _ClassVar[ExecutionMetadata.ExecutionMode]
+        CHILD_WORKFLOW: _ClassVar[ExecutionMetadata.ExecutionMode]
+        RECOVERED: _ClassVar[ExecutionMetadata.ExecutionMode]
+    MANUAL: ExecutionMetadata.ExecutionMode
+    SCHEDULED: ExecutionMetadata.ExecutionMode
+    SYSTEM: ExecutionMetadata.ExecutionMode
+    RELAUNCH: ExecutionMetadata.ExecutionMode
+    CHILD_WORKFLOW: ExecutionMetadata.ExecutionMode
+    RECOVERED: ExecutionMetadata.ExecutionMode
+    MODE_FIELD_NUMBER: _ClassVar[int]
+    PRINCIPAL_FIELD_NUMBER: _ClassVar[int]
+    NESTING_FIELD_NUMBER: _ClassVar[int]
+    SCHEDULED_AT_FIELD_NUMBER: _ClassVar[int]
+    PARENT_NODE_EXECUTION_FIELD_NUMBER: _ClassVar[int]
+    REFERENCE_EXECUTION_FIELD_NUMBER: _ClassVar[int]
+    SYSTEM_METADATA_FIELD_NUMBER: _ClassVar[int]
+    mode: ExecutionMetadata.ExecutionMode
+    principal: str
+    nesting: int
+    scheduled_at: _timestamp_pb2.Timestamp
+    parent_node_execution: _identifier_pb2.NodeExecutionIdentifier
+    reference_execution: _identifier_pb2.WorkflowExecutionIdentifier
+    system_metadata: SystemMetadata
+    def __init__(self, mode: _Optional[_Union[ExecutionMetadata.ExecutionMode, str]] = ..., principal: _Optional[str] = ..., nesting: _Optional[int] = ..., scheduled_at: _Optional[_Union[_timestamp_pb2.Timestamp, _Mapping]] = ..., parent_node_execution: _Optional[_Union[_identifier_pb2.NodeExecutionIdentifier, _Mapping]] = ..., reference_execution: _Optional[_Union[_identifier_pb2.WorkflowExecutionIdentifier, _Mapping]] = ..., system_metadata: _Optional[_Union[SystemMetadata, _Mapping]] = ...) -> None: ...
+
+class NotificationList(_message.Message):
+    __slots__ = ["notifications"]
+    NOTIFICATIONS_FIELD_NUMBER: _ClassVar[int]
+    notifications: _containers.RepeatedCompositeFieldContainer[_common_pb2.Notification]
+    def __init__(self, notifications: _Optional[_Iterable[_Union[_common_pb2.Notification, _Mapping]]] = ...) -> None: ...
+
+>>>>>>> f091fd6d (Add namespace to execution system metadata (#406))
 class ExecutionSpec(_message.Message):
 <<<<<<< HEAD
     __slots__ = ["annotations", "auth_role", "cluster_assignment", "disable_all", "inputs", "interruptible", "labels", "launch_plan", "max_parallelism", "metadata", "notifications", "overwrite_cache", "quality_of_service", "raw_output_data_config", "security_context"]
