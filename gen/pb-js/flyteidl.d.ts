@@ -6047,8 +6047,8 @@ export namespace flyteidl {
             /** Identity oauth2Client */
             oauth2Client?: (flyteidl.core.IOAuth2Client|null);
 
-            /** Identity userIdentifier */
-            userIdentifier?: (string|null);
+            /** Identity executionIdentity */
+            executionIdentity?: (string|null);
         }
 
         /** Represents an Identity. */
@@ -6069,8 +6069,8 @@ export namespace flyteidl {
             /** Identity oauth2Client. */
             public oauth2Client?: (flyteidl.core.IOAuth2Client|null);
 
-            /** Identity userIdentifier. */
-            public userIdentifier: string;
+            /** Identity executionIdentity. */
+            public executionIdentity: string;
 
             /**
              * Creates a new Identity instance using the specified properties.
@@ -10600,6 +10600,9 @@ export namespace flyteidl {
 
             /** SystemMetadata executionCluster */
             executionCluster?: (string|null);
+
+            /** SystemMetadata namespace */
+            namespace?: (string|null);
         }
 
         /** Represents a SystemMetadata. */
@@ -10613,6 +10616,9 @@ export namespace flyteidl {
 
             /** SystemMetadata executionCluster. */
             public executionCluster: string;
+
+            /** SystemMetadata namespace. */
+            public namespace: string;
 
             /**
              * Creates a new SystemMetadata instance using the specified properties.
@@ -19705,6 +19711,9 @@ export namespace flyteidl {
 
             /** GetDataResponse preSignedUrls */
             preSignedUrls?: (flyteidl.service.IPreSignedURLs|null);
+
+            /** GetDataResponse literal */
+            literal?: (flyteidl.core.ILiteral|null);
         }
 
         /** Represents a GetDataResponse. */
@@ -19722,8 +19731,11 @@ export namespace flyteidl {
             /** GetDataResponse preSignedUrls. */
             public preSignedUrls?: (flyteidl.service.IPreSignedURLs|null);
 
+            /** GetDataResponse literal. */
+            public literal?: (flyteidl.core.ILiteral|null);
+
             /** GetDataResponse data. */
-            public data?: ("literalMap"|"preSignedUrls");
+            public data?: ("literalMap"|"preSignedUrls"|"literal");
 
             /**
              * Creates a new GetDataResponse instance using the specified properties.

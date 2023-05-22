@@ -5035,6 +5035,10 @@
         "execution_cluster": {
           "type": "string",
           "description": "Which execution cluster this execution ran on."
+        },
+        "namespace": {
+          "type": "string",
+          "description": "Which kubernetes namespace the execution ran under."
         }
       },
       "description": "Represents system, rather than user-facing, metadata about an execution."
@@ -6088,9 +6092,9 @@
           "$ref": "#/definitions/coreOAuth2Client",
           "description": "oauth2_client references an oauth2 client. Backend plugins can use this information to impersonate the client when\nmaking external calls."
         },
-        "user_identifier": {
+        "execution_identity": {
           "type": "string",
-          "description": "user_identifier references the id of the user who executes the task."
+          "title": "execution_identity references the subject who makes the execution"
         }
       },
       "description": "Identity encapsulates the various security identities a task can run as. It's up to the underlying plugin to pick the\nright identity for the execution environment."

@@ -14472,7 +14472,7 @@
                  * @property {string|null} [iamRole] Identity iamRole
                  * @property {string|null} [k8sServiceAccount] Identity k8sServiceAccount
                  * @property {flyteidl.core.IOAuth2Client|null} [oauth2Client] Identity oauth2Client
-                 * @property {string|null} [userIdentifier] Identity userIdentifier
+                 * @property {string|null} [executionIdentity] Identity executionIdentity
                  */
     
                 /**
@@ -14515,12 +14515,12 @@
                 Identity.prototype.oauth2Client = null;
     
                 /**
-                 * Identity userIdentifier.
-                 * @member {string} userIdentifier
+                 * Identity executionIdentity.
+                 * @member {string} executionIdentity
                  * @memberof flyteidl.core.Identity
                  * @instance
                  */
-                Identity.prototype.userIdentifier = "";
+                Identity.prototype.executionIdentity = "";
     
                 /**
                  * Creates a new Identity instance using the specified properties.
@@ -14552,8 +14552,8 @@
                         writer.uint32(/* id 2, wireType 2 =*/18).string(message.k8sServiceAccount);
                     if (message.oauth2Client != null && message.hasOwnProperty("oauth2Client"))
                         $root.flyteidl.core.OAuth2Client.encode(message.oauth2Client, writer.uint32(/* id 3, wireType 2 =*/26).fork()).ldelim();
-                    if (message.userIdentifier != null && message.hasOwnProperty("userIdentifier"))
-                        writer.uint32(/* id 4, wireType 2 =*/34).string(message.userIdentifier);
+                    if (message.executionIdentity != null && message.hasOwnProperty("executionIdentity"))
+                        writer.uint32(/* id 4, wireType 2 =*/34).string(message.executionIdentity);
                     return writer;
                 };
     
@@ -14585,7 +14585,7 @@
                             message.oauth2Client = $root.flyteidl.core.OAuth2Client.decode(reader, reader.uint32());
                             break;
                         case 4:
-                            message.userIdentifier = reader.string();
+                            message.executionIdentity = reader.string();
                             break;
                         default:
                             reader.skipType(tag & 7);
@@ -14617,9 +14617,9 @@
                         if (error)
                             return "oauth2Client." + error;
                     }
-                    if (message.userIdentifier != null && message.hasOwnProperty("userIdentifier"))
-                        if (!$util.isString(message.userIdentifier))
-                            return "userIdentifier: string expected";
+                    if (message.executionIdentity != null && message.hasOwnProperty("executionIdentity"))
+                        if (!$util.isString(message.executionIdentity))
+                            return "executionIdentity: string expected";
                     return null;
                 };
     
@@ -25597,6 +25597,7 @@
                  * @memberof flyteidl.admin
                  * @interface ISystemMetadata
                  * @property {string|null} [executionCluster] SystemMetadata executionCluster
+                 * @property {string|null} [namespace] SystemMetadata namespace
                  */
     
                 /**
@@ -25621,6 +25622,14 @@
                  * @instance
                  */
                 SystemMetadata.prototype.executionCluster = "";
+    
+                /**
+                 * SystemMetadata namespace.
+                 * @member {string} namespace
+                 * @memberof flyteidl.admin.SystemMetadata
+                 * @instance
+                 */
+                SystemMetadata.prototype.namespace = "";
     
                 /**
                  * Creates a new SystemMetadata instance using the specified properties.
@@ -25648,6 +25657,8 @@
                         writer = $Writer.create();
                     if (message.executionCluster != null && message.hasOwnProperty("executionCluster"))
                         writer.uint32(/* id 1, wireType 2 =*/10).string(message.executionCluster);
+                    if (message.namespace != null && message.hasOwnProperty("namespace"))
+                        writer.uint32(/* id 2, wireType 2 =*/18).string(message.namespace);
                     return writer;
                 };
     
@@ -25672,6 +25683,9 @@
                         case 1:
                             message.executionCluster = reader.string();
                             break;
+                        case 2:
+                            message.namespace = reader.string();
+                            break;
                         default:
                             reader.skipType(tag & 7);
                             break;
@@ -25694,6 +25708,9 @@
                     if (message.executionCluster != null && message.hasOwnProperty("executionCluster"))
                         if (!$util.isString(message.executionCluster))
                             return "executionCluster: string expected";
+                    if (message.namespace != null && message.hasOwnProperty("namespace"))
+                        if (!$util.isString(message.namespace))
+                            return "namespace: string expected";
                     return null;
                 };
     
@@ -46039,6 +46056,7 @@
                  * @interface IGetDataResponse
                  * @property {flyteidl.core.ILiteralMap|null} [literalMap] GetDataResponse literalMap
                  * @property {flyteidl.service.IPreSignedURLs|null} [preSignedUrls] GetDataResponse preSignedUrls
+                 * @property {flyteidl.core.ILiteral|null} [literal] GetDataResponse literal
                  */
     
                 /**
@@ -46072,17 +46090,25 @@
                  */
                 GetDataResponse.prototype.preSignedUrls = null;
     
+                /**
+                 * GetDataResponse literal.
+                 * @member {flyteidl.core.ILiteral|null|undefined} literal
+                 * @memberof flyteidl.service.GetDataResponse
+                 * @instance
+                 */
+                GetDataResponse.prototype.literal = null;
+    
                 // OneOf field names bound to virtual getters and setters
                 var $oneOfFields;
     
                 /**
                  * GetDataResponse data.
-                 * @member {"literalMap"|"preSignedUrls"|undefined} data
+                 * @member {"literalMap"|"preSignedUrls"|"literal"|undefined} data
                  * @memberof flyteidl.service.GetDataResponse
                  * @instance
                  */
                 Object.defineProperty(GetDataResponse.prototype, "data", {
-                    get: $util.oneOfGetter($oneOfFields = ["literalMap", "preSignedUrls"]),
+                    get: $util.oneOfGetter($oneOfFields = ["literalMap", "preSignedUrls", "literal"]),
                     set: $util.oneOfSetter($oneOfFields)
                 });
     
@@ -46114,6 +46140,8 @@
                         $root.flyteidl.core.LiteralMap.encode(message.literalMap, writer.uint32(/* id 1, wireType 2 =*/10).fork()).ldelim();
                     if (message.preSignedUrls != null && message.hasOwnProperty("preSignedUrls"))
                         $root.flyteidl.service.PreSignedURLs.encode(message.preSignedUrls, writer.uint32(/* id 2, wireType 2 =*/18).fork()).ldelim();
+                    if (message.literal != null && message.hasOwnProperty("literal"))
+                        $root.flyteidl.core.Literal.encode(message.literal, writer.uint32(/* id 3, wireType 2 =*/26).fork()).ldelim();
                     return writer;
                 };
     
@@ -46140,6 +46168,9 @@
                             break;
                         case 2:
                             message.preSignedUrls = $root.flyteidl.service.PreSignedURLs.decode(reader, reader.uint32());
+                            break;
+                        case 3:
+                            message.literal = $root.flyteidl.core.Literal.decode(reader, reader.uint32());
                             break;
                         default:
                             reader.skipType(tag & 7);
@@ -46177,6 +46208,16 @@
                             var error = $root.flyteidl.service.PreSignedURLs.verify(message.preSignedUrls);
                             if (error)
                                 return "preSignedUrls." + error;
+                        }
+                    }
+                    if (message.literal != null && message.hasOwnProperty("literal")) {
+                        if (properties.data === 1)
+                            return "data: multiple values";
+                        properties.data = 1;
+                        {
+                            var error = $root.flyteidl.core.Literal.verify(message.literal);
+                            if (error)
+                                return "literal." + error;
                         }
                     }
                     return null;
