@@ -8985,9 +8985,9 @@ public final class Workflow {
      * running instances might be more. This has to be a positive number if assigned. Default value is size.
      * </pre>
      *
-     * <code>int64 parallelism = 2;</code>
+     * <code>uint32 parallelism = 2;</code>
      */
-    long getParallelism();
+    int getParallelism();
 
     /**
      * <pre>
@@ -8996,9 +8996,9 @@ public final class Workflow {
      * assigned. Default value is size (if specified).
      * </pre>
      *
-     * <code>int64 min_successes = 3;</code>
+     * <code>int32 min_successes = 3;</code>
      */
-    long getMinSuccesses();
+    int getMinSuccesses();
 
     /**
      * <pre>
@@ -9070,12 +9070,12 @@ public final class Workflow {
             }
             case 16: {
 
-              parallelism_ = input.readInt64();
+              parallelism_ = input.readUInt32();
               break;
             }
             case 24: {
               successCriteriaCase_ = 3;
-              successCriteria_ = input.readInt64();
+              successCriteria_ = input.readInt32();
               break;
             }
             case 37: {
@@ -9187,7 +9187,7 @@ public final class Workflow {
     }
 
     public static final int PARALLELISM_FIELD_NUMBER = 2;
-    private long parallelism_;
+    private int parallelism_;
     /**
      * <pre>
      * Defines the minimum number of instances to bring up concurrently at any given point. Note that this is an
@@ -9195,9 +9195,9 @@ public final class Workflow {
      * running instances might be more. This has to be a positive number if assigned. Default value is size.
      * </pre>
      *
-     * <code>int64 parallelism = 2;</code>
+     * <code>uint32 parallelism = 2;</code>
      */
-    public long getParallelism() {
+    public int getParallelism() {
       return parallelism_;
     }
 
@@ -9209,13 +9209,13 @@ public final class Workflow {
      * assigned. Default value is size (if specified).
      * </pre>
      *
-     * <code>int64 min_successes = 3;</code>
+     * <code>int32 min_successes = 3;</code>
      */
-    public long getMinSuccesses() {
+    public int getMinSuccesses() {
       if (successCriteriaCase_ == 3) {
-        return (java.lang.Long) successCriteria_;
+        return (java.lang.Integer) successCriteria_;
       }
-      return 0L;
+      return 0;
     }
 
     public static final int MIN_SUCCESS_RATIO_FIELD_NUMBER = 4;
@@ -9251,12 +9251,12 @@ public final class Workflow {
       if (node_ != null) {
         output.writeMessage(1, getNode());
       }
-      if (parallelism_ != 0L) {
-        output.writeInt64(2, parallelism_);
+      if (parallelism_ != 0) {
+        output.writeUInt32(2, parallelism_);
       }
       if (successCriteriaCase_ == 3) {
-        output.writeInt64(
-            3, (long)((java.lang.Long) successCriteria_));
+        output.writeInt32(
+            3, (int)((java.lang.Integer) successCriteria_));
       }
       if (successCriteriaCase_ == 4) {
         output.writeFloat(
@@ -9275,14 +9275,14 @@ public final class Workflow {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(1, getNode());
       }
-      if (parallelism_ != 0L) {
+      if (parallelism_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeInt64Size(2, parallelism_);
+          .computeUInt32Size(2, parallelism_);
       }
       if (successCriteriaCase_ == 3) {
         size += com.google.protobuf.CodedOutputStream
-          .computeInt64Size(
-              3, (long)((java.lang.Long) successCriteria_));
+          .computeInt32Size(
+              3, (int)((java.lang.Integer) successCriteria_));
       }
       if (successCriteriaCase_ == 4) {
         size += com.google.protobuf.CodedOutputStream
@@ -9341,13 +9341,11 @@ public final class Workflow {
         hash = (53 * hash) + getNode().hashCode();
       }
       hash = (37 * hash) + PARALLELISM_FIELD_NUMBER;
-      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
-          getParallelism());
+      hash = (53 * hash) + getParallelism();
       switch (successCriteriaCase_) {
         case 3:
           hash = (37 * hash) + MIN_SUCCESSES_FIELD_NUMBER;
-          hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
-              getMinSuccesses());
+          hash = (53 * hash) + getMinSuccesses();
           break;
         case 4:
           hash = (37 * hash) + MIN_SUCCESS_RATIO_FIELD_NUMBER;
@@ -9500,7 +9498,7 @@ public final class Workflow {
           node_ = null;
           nodeBuilder_ = null;
         }
-        parallelism_ = 0L;
+        parallelism_ = 0;
 
         successCriteriaCase_ = 0;
         successCriteria_ = null;
@@ -9594,7 +9592,7 @@ public final class Workflow {
         if (other.hasNode()) {
           mergeNode(other.getNode());
         }
-        if (other.getParallelism() != 0L) {
+        if (other.getParallelism() != 0) {
           setParallelism(other.getParallelism());
         }
         switch (other.getSuccessCriteriaCase()) {
@@ -9807,7 +9805,7 @@ public final class Workflow {
         return nodeBuilder_;
       }
 
-      private long parallelism_ ;
+      private int parallelism_ ;
       /**
        * <pre>
        * Defines the minimum number of instances to bring up concurrently at any given point. Note that this is an
@@ -9815,9 +9813,9 @@ public final class Workflow {
        * running instances might be more. This has to be a positive number if assigned. Default value is size.
        * </pre>
        *
-       * <code>int64 parallelism = 2;</code>
+       * <code>uint32 parallelism = 2;</code>
        */
-      public long getParallelism() {
+      public int getParallelism() {
         return parallelism_;
       }
       /**
@@ -9827,9 +9825,9 @@ public final class Workflow {
        * running instances might be more. This has to be a positive number if assigned. Default value is size.
        * </pre>
        *
-       * <code>int64 parallelism = 2;</code>
+       * <code>uint32 parallelism = 2;</code>
        */
-      public Builder setParallelism(long value) {
+      public Builder setParallelism(int value) {
         
         parallelism_ = value;
         onChanged();
@@ -9842,11 +9840,11 @@ public final class Workflow {
        * running instances might be more. This has to be a positive number if assigned. Default value is size.
        * </pre>
        *
-       * <code>int64 parallelism = 2;</code>
+       * <code>uint32 parallelism = 2;</code>
        */
       public Builder clearParallelism() {
         
-        parallelism_ = 0L;
+        parallelism_ = 0;
         onChanged();
         return this;
       }
@@ -9858,13 +9856,13 @@ public final class Workflow {
        * assigned. Default value is size (if specified).
        * </pre>
        *
-       * <code>int64 min_successes = 3;</code>
+       * <code>int32 min_successes = 3;</code>
        */
-      public long getMinSuccesses() {
+      public int getMinSuccesses() {
         if (successCriteriaCase_ == 3) {
-          return (java.lang.Long) successCriteria_;
+          return (java.lang.Integer) successCriteria_;
         }
-        return 0L;
+        return 0;
       }
       /**
        * <pre>
@@ -9873,9 +9871,9 @@ public final class Workflow {
        * assigned. Default value is size (if specified).
        * </pre>
        *
-       * <code>int64 min_successes = 3;</code>
+       * <code>int32 min_successes = 3;</code>
        */
-      public Builder setMinSuccesses(long value) {
+      public Builder setMinSuccesses(int value) {
         successCriteriaCase_ = 3;
         successCriteria_ = value;
         onChanged();
@@ -9888,7 +9886,7 @@ public final class Workflow {
        * assigned. Default value is size (if specified).
        * </pre>
        *
-       * <code>int64 min_successes = 3;</code>
+       * <code>int32 min_successes = 3;</code>
        */
       public Builder clearMinSuccesses() {
         if (successCriteriaCase_ == 3) {
@@ -21141,8 +21139,8 @@ public final class Workflow {
       ".SignalConditionH\000\022.\n\005sleep\030\003 \001(\0132\035.flyt" +
       "eidl.core.SleepConditionH\000B\013\n\tcondition\"" +
       "\215\001\n\tArrayNode\022!\n\004node\030\001 \001(\0132\023.flyteidl.c" +
-      "ore.Node\022\023\n\013parallelism\030\002 \001(\003\022\027\n\rmin_suc" +
-      "cesses\030\003 \001(\003H\000\022\033\n\021min_success_ratio\030\004 \001(" +
+      "ore.Node\022\023\n\013parallelism\030\002 \001(\r\022\027\n\rmin_suc" +
+      "cesses\030\003 \001(\005H\000\022\033\n\021min_success_ratio\030\004 \001(" +
       "\002H\000B\022\n\020success_criteria\"\247\001\n\014NodeMetadata" +
       "\022\014\n\004name\030\001 \001(\t\022*\n\007timeout\030\004 \001(\0132\031.google" +
       ".protobuf.Duration\022-\n\007retries\030\005 \001(\0132\034.fl" +

@@ -2088,8 +2088,8 @@ pub struct ArrayNode {
     /// Defines the minimum number of instances to bring up concurrently at any given point. Note that this is an
     /// optimistic restriction and that, due to network partitioning or other failures, the actual number of currently
     /// running instances might be more. This has to be a positive number if assigned. Default value is size.
-    #[prost(int64, tag="2")]
-    pub parallelism: i64,
+    #[prost(uint32, tag="2")]
+    pub parallelism: u32,
     #[prost(oneof="array_node::SuccessCriteria", tags="3, 4")]
     pub success_criteria: ::core::option::Option<array_node::SuccessCriteria>,
 }
@@ -2101,8 +2101,8 @@ pub mod array_node {
         /// An absolute number of the minimum number of successful completions of subtasks. As soon as this criteria is met,
         /// the array job will be marked as successful and outputs will be computed. This has to be a non-negative number if
         /// assigned. Default value is size (if specified).
-        #[prost(int64, tag="3")]
-        MinSuccesses(i64),
+        #[prost(int32, tag="3")]
+        MinSuccesses(i32),
         /// If the array job size is not known beforehand, the min_success_ratio can instead be used to determine when an array
         /// job can be marked successful.
         #[prost(float, tag="4")]

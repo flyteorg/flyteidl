@@ -34,8 +34,8 @@ class CoreArrayNode(object):
     """
     swagger_types = {
         'node': 'CoreNode',
-        'parallelism': 'str',
-        'min_successes': 'str',
+        'parallelism': 'int',
+        'min_successes': 'int',
         'min_success_ratio': 'float'
     }
 
@@ -92,7 +92,7 @@ class CoreArrayNode(object):
         Defines the minimum number of instances to bring up concurrently at any given point. Note that this is an optimistic restriction and that, due to network partitioning or other failures, the actual number of currently running instances might be more. This has to be a positive number if assigned. Default value is size.  # noqa: E501
 
         :return: The parallelism of this CoreArrayNode.  # noqa: E501
-        :rtype: str
+        :rtype: int
         """
         return self._parallelism
 
@@ -103,7 +103,7 @@ class CoreArrayNode(object):
         Defines the minimum number of instances to bring up concurrently at any given point. Note that this is an optimistic restriction and that, due to network partitioning or other failures, the actual number of currently running instances might be more. This has to be a positive number if assigned. Default value is size.  # noqa: E501
 
         :param parallelism: The parallelism of this CoreArrayNode.  # noqa: E501
-        :type: str
+        :type: int
         """
 
         self._parallelism = parallelism
@@ -115,7 +115,7 @@ class CoreArrayNode(object):
         An absolute number of the minimum number of successful completions of subtasks. As soon as this criteria is met, the array job will be marked as successful and outputs will be computed. This has to be a non-negative number if assigned. Default value is size (if specified).  # noqa: E501
 
         :return: The min_successes of this CoreArrayNode.  # noqa: E501
-        :rtype: str
+        :rtype: int
         """
         return self._min_successes
 
@@ -126,7 +126,7 @@ class CoreArrayNode(object):
         An absolute number of the minimum number of successful completions of subtasks. As soon as this criteria is met, the array job will be marked as successful and outputs will be computed. This has to be a non-negative number if assigned. Default value is size (if specified).  # noqa: E501
 
         :param min_successes: The min_successes of this CoreArrayNode.  # noqa: E501
-        :type: str
+        :type: int
         """
 
         self._min_successes = min_successes

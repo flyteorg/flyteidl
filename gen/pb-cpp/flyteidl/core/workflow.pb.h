@@ -1502,20 +1502,20 @@ class ArrayNode final :
   ::flyteidl::core::Node* mutable_node();
   void set_allocated_node(::flyteidl::core::Node* node);
 
-  // int64 parallelism = 2;
+  // uint32 parallelism = 2;
   void clear_parallelism();
   static const int kParallelismFieldNumber = 2;
-  ::google::protobuf::int64 parallelism() const;
-  void set_parallelism(::google::protobuf::int64 value);
+  ::google::protobuf::uint32 parallelism() const;
+  void set_parallelism(::google::protobuf::uint32 value);
 
-  // int64 min_successes = 3;
+  // int32 min_successes = 3;
   private:
   bool has_min_successes() const;
   public:
   void clear_min_successes();
   static const int kMinSuccessesFieldNumber = 3;
-  ::google::protobuf::int64 min_successes() const;
-  void set_min_successes(::google::protobuf::int64 value);
+  ::google::protobuf::int32 min_successes() const;
+  void set_min_successes(::google::protobuf::int32 value);
 
   // float min_success_ratio = 4;
   private:
@@ -1539,10 +1539,10 @@ class ArrayNode final :
 
   ::google::protobuf::internal::InternalMetadataWithArena _internal_metadata_;
   ::flyteidl::core::Node* node_;
-  ::google::protobuf::int64 parallelism_;
+  ::google::protobuf::uint32 parallelism_;
   union SuccessCriteriaUnion {
     SuccessCriteriaUnion() {}
-    ::google::protobuf::int64 min_successes_;
+    ::google::protobuf::int32 min_successes_;
     float min_success_ratio_;
   } success_criteria_;
   mutable ::google::protobuf::internal::CachedSize _cached_size_;
@@ -3667,21 +3667,21 @@ inline void ArrayNode::set_allocated_node(::flyteidl::core::Node* node) {
   // @@protoc_insertion_point(field_set_allocated:flyteidl.core.ArrayNode.node)
 }
 
-// int64 parallelism = 2;
+// uint32 parallelism = 2;
 inline void ArrayNode::clear_parallelism() {
-  parallelism_ = PROTOBUF_LONGLONG(0);
+  parallelism_ = 0u;
 }
-inline ::google::protobuf::int64 ArrayNode::parallelism() const {
+inline ::google::protobuf::uint32 ArrayNode::parallelism() const {
   // @@protoc_insertion_point(field_get:flyteidl.core.ArrayNode.parallelism)
   return parallelism_;
 }
-inline void ArrayNode::set_parallelism(::google::protobuf::int64 value) {
+inline void ArrayNode::set_parallelism(::google::protobuf::uint32 value) {
   
   parallelism_ = value;
   // @@protoc_insertion_point(field_set:flyteidl.core.ArrayNode.parallelism)
 }
 
-// int64 min_successes = 3;
+// int32 min_successes = 3;
 inline bool ArrayNode::has_min_successes() const {
   return success_criteria_case() == kMinSuccesses;
 }
@@ -3690,18 +3690,18 @@ inline void ArrayNode::set_has_min_successes() {
 }
 inline void ArrayNode::clear_min_successes() {
   if (has_min_successes()) {
-    success_criteria_.min_successes_ = PROTOBUF_LONGLONG(0);
+    success_criteria_.min_successes_ = 0;
     clear_has_success_criteria();
   }
 }
-inline ::google::protobuf::int64 ArrayNode::min_successes() const {
+inline ::google::protobuf::int32 ArrayNode::min_successes() const {
   // @@protoc_insertion_point(field_get:flyteidl.core.ArrayNode.min_successes)
   if (has_min_successes()) {
     return success_criteria_.min_successes_;
   }
-  return PROTOBUF_LONGLONG(0);
+  return 0;
 }
-inline void ArrayNode::set_min_successes(::google::protobuf::int64 value) {
+inline void ArrayNode::set_min_successes(::google::protobuf::int32 value) {
   if (!has_min_successes()) {
     clear_success_criteria();
     set_has_min_successes();

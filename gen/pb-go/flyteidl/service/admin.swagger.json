@@ -5587,13 +5587,13 @@
           "title": "TODO @hamersaw docs"
         },
         "parallelism": {
-          "type": "string",
+          "type": "integer",
           "format": "int64",
           "description": "Defines the minimum number of instances to bring up concurrently at any given point. Note that this is an\noptimistic restriction and that, due to network partitioning or other failures, the actual number of currently\nrunning instances might be more. This has to be a positive number if assigned. Default value is size."
         },
         "min_successes": {
-          "type": "string",
-          "format": "int64",
+          "type": "integer",
+          "format": "int32",
           "description": "An absolute number of the minimum number of successful completions of subtasks. As soon as this criteria is met,\nthe array job will be marked as successful and outputs will be computed. This has to be a non-negative number if\nassigned. Default value is size (if specified)."
         },
         "min_success_ratio": {

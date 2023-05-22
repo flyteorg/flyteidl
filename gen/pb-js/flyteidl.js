@@ -3207,8 +3207,8 @@
                  * @memberof flyteidl.core
                  * @interface IArrayNode
                  * @property {flyteidl.core.INode|null} [node] ArrayNode node
-                 * @property {Long|null} [parallelism] ArrayNode parallelism
-                 * @property {Long|null} [minSuccesses] ArrayNode minSuccesses
+                 * @property {number|null} [parallelism] ArrayNode parallelism
+                 * @property {number|null} [minSuccesses] ArrayNode minSuccesses
                  * @property {number|null} [minSuccessRatio] ArrayNode minSuccessRatio
                  */
     
@@ -3237,19 +3237,19 @@
     
                 /**
                  * ArrayNode parallelism.
-                 * @member {Long} parallelism
+                 * @member {number} parallelism
                  * @memberof flyteidl.core.ArrayNode
                  * @instance
                  */
-                ArrayNode.prototype.parallelism = $util.Long ? $util.Long.fromBits(0,0,false) : 0;
+                ArrayNode.prototype.parallelism = 0;
     
                 /**
                  * ArrayNode minSuccesses.
-                 * @member {Long} minSuccesses
+                 * @member {number} minSuccesses
                  * @memberof flyteidl.core.ArrayNode
                  * @instance
                  */
-                ArrayNode.prototype.minSuccesses = $util.Long ? $util.Long.fromBits(0,0,false) : 0;
+                ArrayNode.prototype.minSuccesses = 0;
     
                 /**
                  * ArrayNode minSuccessRatio.
@@ -3300,9 +3300,9 @@
                     if (message.node != null && message.hasOwnProperty("node"))
                         $root.flyteidl.core.Node.encode(message.node, writer.uint32(/* id 1, wireType 2 =*/10).fork()).ldelim();
                     if (message.parallelism != null && message.hasOwnProperty("parallelism"))
-                        writer.uint32(/* id 2, wireType 0 =*/16).int64(message.parallelism);
+                        writer.uint32(/* id 2, wireType 0 =*/16).uint32(message.parallelism);
                     if (message.minSuccesses != null && message.hasOwnProperty("minSuccesses"))
-                        writer.uint32(/* id 3, wireType 0 =*/24).int64(message.minSuccesses);
+                        writer.uint32(/* id 3, wireType 0 =*/24).int32(message.minSuccesses);
                     if (message.minSuccessRatio != null && message.hasOwnProperty("minSuccessRatio"))
                         writer.uint32(/* id 4, wireType 5 =*/37).float(message.minSuccessRatio);
                     return writer;
@@ -3330,10 +3330,10 @@
                             message.node = $root.flyteidl.core.Node.decode(reader, reader.uint32());
                             break;
                         case 2:
-                            message.parallelism = reader.int64();
+                            message.parallelism = reader.uint32();
                             break;
                         case 3:
-                            message.minSuccesses = reader.int64();
+                            message.minSuccesses = reader.int32();
                             break;
                         case 4:
                             message.minSuccessRatio = reader.float();
@@ -3364,12 +3364,12 @@
                             return "node." + error;
                     }
                     if (message.parallelism != null && message.hasOwnProperty("parallelism"))
-                        if (!$util.isInteger(message.parallelism) && !(message.parallelism && $util.isInteger(message.parallelism.low) && $util.isInteger(message.parallelism.high)))
-                            return "parallelism: integer|Long expected";
+                        if (!$util.isInteger(message.parallelism))
+                            return "parallelism: integer expected";
                     if (message.minSuccesses != null && message.hasOwnProperty("minSuccesses")) {
                         properties.successCriteria = 1;
-                        if (!$util.isInteger(message.minSuccesses) && !(message.minSuccesses && $util.isInteger(message.minSuccesses.low) && $util.isInteger(message.minSuccesses.high)))
-                            return "minSuccesses: integer|Long expected";
+                        if (!$util.isInteger(message.minSuccesses))
+                            return "minSuccesses: integer expected";
                     }
                     if (message.minSuccessRatio != null && message.hasOwnProperty("minSuccessRatio")) {
                         if (properties.successCriteria === 1)
