@@ -1721,6 +1721,15 @@ class Literal final :
   ::std::string* release_hash();
   void set_allocated_hash(::std::string* hash);
 
+  // .flyteidl.core.LiteralType literal_type = 6;
+  bool has_literal_type() const;
+  void clear_literal_type();
+  static const int kLiteralTypeFieldNumber = 6;
+  const ::flyteidl::core::LiteralType& literal_type() const;
+  ::flyteidl::core::LiteralType* release_literal_type();
+  ::flyteidl::core::LiteralType* mutable_literal_type();
+  void set_allocated_literal_type(::flyteidl::core::LiteralType* literal_type);
+
   // .flyteidl.core.Scalar scalar = 1;
   bool has_scalar() const;
   void clear_scalar();
@@ -1768,6 +1777,7 @@ class Literal final :
       ::google::protobuf::internal::WireFormatLite::TYPE_STRING,
       0 > metadata_;
   ::google::protobuf::internal::ArenaStringPtr hash_;
+  ::flyteidl::core::LiteralType* literal_type_;
   union ValueUnion {
     ValueUnion() {}
     ::flyteidl::core::Scalar* scalar_;
@@ -4441,6 +4451,51 @@ inline ::google::protobuf::Map< ::std::string, ::std::string >*
 Literal::mutable_metadata() {
   // @@protoc_insertion_point(field_mutable_map:flyteidl.core.Literal.metadata)
   return metadata_.MutableMap();
+}
+
+// .flyteidl.core.LiteralType literal_type = 6;
+inline bool Literal::has_literal_type() const {
+  return this != internal_default_instance() && literal_type_ != nullptr;
+}
+inline const ::flyteidl::core::LiteralType& Literal::literal_type() const {
+  const ::flyteidl::core::LiteralType* p = literal_type_;
+  // @@protoc_insertion_point(field_get:flyteidl.core.Literal.literal_type)
+  return p != nullptr ? *p : *reinterpret_cast<const ::flyteidl::core::LiteralType*>(
+      &::flyteidl::core::_LiteralType_default_instance_);
+}
+inline ::flyteidl::core::LiteralType* Literal::release_literal_type() {
+  // @@protoc_insertion_point(field_release:flyteidl.core.Literal.literal_type)
+  
+  ::flyteidl::core::LiteralType* temp = literal_type_;
+  literal_type_ = nullptr;
+  return temp;
+}
+inline ::flyteidl::core::LiteralType* Literal::mutable_literal_type() {
+  
+  if (literal_type_ == nullptr) {
+    auto* p = CreateMaybeMessage<::flyteidl::core::LiteralType>(GetArenaNoVirtual());
+    literal_type_ = p;
+  }
+  // @@protoc_insertion_point(field_mutable:flyteidl.core.Literal.literal_type)
+  return literal_type_;
+}
+inline void Literal::set_allocated_literal_type(::flyteidl::core::LiteralType* literal_type) {
+  ::google::protobuf::Arena* message_arena = GetArenaNoVirtual();
+  if (message_arena == nullptr) {
+    delete reinterpret_cast< ::google::protobuf::MessageLite*>(literal_type_);
+  }
+  if (literal_type) {
+    ::google::protobuf::Arena* submessage_arena = nullptr;
+    if (message_arena != submessage_arena) {
+      literal_type = ::google::protobuf::internal::GetOwnedMessage(
+          message_arena, literal_type, submessage_arena);
+    }
+    
+  } else {
+    
+  }
+  literal_type_ = literal_type;
+  // @@protoc_insertion_point(field_set_allocated:flyteidl.core.Literal.literal_type)
 }
 
 inline bool Literal::has_value() const {

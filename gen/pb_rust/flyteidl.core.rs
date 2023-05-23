@@ -883,9 +883,14 @@ pub struct Literal {
     /// (<https://github.com/flyteorg/flyte/blob/master/rfc/system/1893-caching-of-offloaded-objects.md>)
     #[prost(string, tag="4")]
     pub hash: ::prost::alloc::string::String,
-    /// this should probably be a proto Struct/json
+    /// Rejected: We were going to add the Artifact (or at least ArtifactID) here as a way to keep track of lineage
+    /// But this was deemed too janky.
     #[prost(map="string, string", tag="5")]
     pub metadata: ::std::collections::HashMap<::prost::alloc::string::String, ::prost::alloc::string::String>,
+    /// Rejected: We were going to add the literal type here because we decided it was general enough, but this
+    /// is a lot of work to update everything. Can we think of an easier way?
+    #[prost(message, optional, tag="6")]
+    pub literal_type: ::core::option::Option<LiteralType>,
     #[prost(oneof="literal::Value", tags="1, 2, 3")]
     pub value: ::core::option::Option<literal::Value>,
 }
@@ -1174,7 +1179,7 @@ pub struct Parameter {
     #[prost(message, optional, tag="1")]
     pub var: ::core::option::Option<Variable>,
     /// +optional
-    #[prost(oneof="parameter::Behavior", tags="2, 3")]
+    #[prost(oneof="parameter::Behavior", tags="2, 3, 4")]
     pub behavior: ::core::option::Option<parameter::Behavior>,
 }
 /// Nested message and enum types in `Parameter`.
@@ -1189,6 +1194,8 @@ pub mod parameter {
         /// +optional, is this value required to be filled.
         #[prost(bool, tag="3")]
         Required(bool),
+        #[prost(message, tag="4")]
+        ArtifactQuery(super::super::artifact::ArtifactQuery),
     }
 }
 /// A map of Parameters.

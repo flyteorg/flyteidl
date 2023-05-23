@@ -9379,7 +9379,8 @@ public final class Literals {
 
     /**
      * <pre>
-     * this should probably be a proto Struct/json
+     * Rejected: We were going to add the Artifact (or at least ArtifactID) here as a way to keep track of lineage
+     * But this was deemed too janky.
      * </pre>
      *
      * <code>map&lt;string, string&gt; metadata = 5;</code>
@@ -9387,7 +9388,8 @@ public final class Literals {
     int getMetadataCount();
     /**
      * <pre>
-     * this should probably be a proto Struct/json
+     * Rejected: We were going to add the Artifact (or at least ArtifactID) here as a way to keep track of lineage
+     * But this was deemed too janky.
      * </pre>
      *
      * <code>map&lt;string, string&gt; metadata = 5;</code>
@@ -9402,7 +9404,8 @@ public final class Literals {
     getMetadata();
     /**
      * <pre>
-     * this should probably be a proto Struct/json
+     * Rejected: We were going to add the Artifact (or at least ArtifactID) here as a way to keep track of lineage
+     * But this was deemed too janky.
      * </pre>
      *
      * <code>map&lt;string, string&gt; metadata = 5;</code>
@@ -9411,7 +9414,8 @@ public final class Literals {
     getMetadataMap();
     /**
      * <pre>
-     * this should probably be a proto Struct/json
+     * Rejected: We were going to add the Artifact (or at least ArtifactID) here as a way to keep track of lineage
+     * But this was deemed too janky.
      * </pre>
      *
      * <code>map&lt;string, string&gt; metadata = 5;</code>
@@ -9422,7 +9426,8 @@ public final class Literals {
         java.lang.String defaultValue);
     /**
      * <pre>
-     * this should probably be a proto Struct/json
+     * Rejected: We were going to add the Artifact (or at least ArtifactID) here as a way to keep track of lineage
+     * But this was deemed too janky.
      * </pre>
      *
      * <code>map&lt;string, string&gt; metadata = 5;</code>
@@ -9430,6 +9435,34 @@ public final class Literals {
 
     java.lang.String getMetadataOrThrow(
         java.lang.String key);
+
+    /**
+     * <pre>
+     * Rejected: We were going to add the literal type here because we decided it was general enough, but this
+     * is a lot of work to update everything. Can we think of an easier way?
+     * </pre>
+     *
+     * <code>.flyteidl.core.LiteralType literal_type = 6;</code>
+     */
+    boolean hasLiteralType();
+    /**
+     * <pre>
+     * Rejected: We were going to add the literal type here because we decided it was general enough, but this
+     * is a lot of work to update everything. Can we think of an easier way?
+     * </pre>
+     *
+     * <code>.flyteidl.core.LiteralType literal_type = 6;</code>
+     */
+    flyteidl.core.Types.LiteralType getLiteralType();
+    /**
+     * <pre>
+     * Rejected: We were going to add the literal type here because we decided it was general enough, but this
+     * is a lot of work to update everything. Can we think of an easier way?
+     * </pre>
+     *
+     * <code>.flyteidl.core.LiteralType literal_type = 6;</code>
+     */
+    flyteidl.core.Types.LiteralTypeOrBuilder getLiteralTypeOrBuilder();
 
     public flyteidl.core.Literals.Literal.ValueCase getValueCase();
   }
@@ -9536,6 +9569,19 @@ public final class Literals {
                   MetadataDefaultEntryHolder.defaultEntry.getParserForType(), extensionRegistry);
               metadata_.getMutableMap().put(
                   metadata__.getKey(), metadata__.getValue());
+              break;
+            }
+            case 50: {
+              flyteidl.core.Types.LiteralType.Builder subBuilder = null;
+              if (literalType_ != null) {
+                subBuilder = literalType_.toBuilder();
+              }
+              literalType_ = input.readMessage(flyteidl.core.Types.LiteralType.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(literalType_);
+                literalType_ = subBuilder.buildPartial();
+              }
+
               break;
             }
             default: {
@@ -9811,7 +9857,8 @@ public final class Literals {
     }
     /**
      * <pre>
-     * this should probably be a proto Struct/json
+     * Rejected: We were going to add the Artifact (or at least ArtifactID) here as a way to keep track of lineage
+     * But this was deemed too janky.
      * </pre>
      *
      * <code>map&lt;string, string&gt; metadata = 5;</code>
@@ -9831,7 +9878,8 @@ public final class Literals {
     }
     /**
      * <pre>
-     * this should probably be a proto Struct/json
+     * Rejected: We were going to add the Artifact (or at least ArtifactID) here as a way to keep track of lineage
+     * But this was deemed too janky.
      * </pre>
      *
      * <code>map&lt;string, string&gt; metadata = 5;</code>
@@ -9842,7 +9890,8 @@ public final class Literals {
     }
     /**
      * <pre>
-     * this should probably be a proto Struct/json
+     * Rejected: We were going to add the Artifact (or at least ArtifactID) here as a way to keep track of lineage
+     * But this was deemed too janky.
      * </pre>
      *
      * <code>map&lt;string, string&gt; metadata = 5;</code>
@@ -9858,7 +9907,8 @@ public final class Literals {
     }
     /**
      * <pre>
-     * this should probably be a proto Struct/json
+     * Rejected: We were going to add the Artifact (or at least ArtifactID) here as a way to keep track of lineage
+     * But this was deemed too janky.
      * </pre>
      *
      * <code>map&lt;string, string&gt; metadata = 5;</code>
@@ -9873,6 +9923,42 @@ public final class Literals {
         throw new java.lang.IllegalArgumentException();
       }
       return map.get(key);
+    }
+
+    public static final int LITERAL_TYPE_FIELD_NUMBER = 6;
+    private flyteidl.core.Types.LiteralType literalType_;
+    /**
+     * <pre>
+     * Rejected: We were going to add the literal type here because we decided it was general enough, but this
+     * is a lot of work to update everything. Can we think of an easier way?
+     * </pre>
+     *
+     * <code>.flyteidl.core.LiteralType literal_type = 6;</code>
+     */
+    public boolean hasLiteralType() {
+      return literalType_ != null;
+    }
+    /**
+     * <pre>
+     * Rejected: We were going to add the literal type here because we decided it was general enough, but this
+     * is a lot of work to update everything. Can we think of an easier way?
+     * </pre>
+     *
+     * <code>.flyteidl.core.LiteralType literal_type = 6;</code>
+     */
+    public flyteidl.core.Types.LiteralType getLiteralType() {
+      return literalType_ == null ? flyteidl.core.Types.LiteralType.getDefaultInstance() : literalType_;
+    }
+    /**
+     * <pre>
+     * Rejected: We were going to add the literal type here because we decided it was general enough, but this
+     * is a lot of work to update everything. Can we think of an easier way?
+     * </pre>
+     *
+     * <code>.flyteidl.core.LiteralType literal_type = 6;</code>
+     */
+    public flyteidl.core.Types.LiteralTypeOrBuilder getLiteralTypeOrBuilder() {
+      return getLiteralType();
     }
 
     private byte memoizedIsInitialized = -1;
@@ -9907,6 +9993,9 @@ public final class Literals {
           internalGetMetadata(),
           MetadataDefaultEntryHolder.defaultEntry,
           5);
+      if (literalType_ != null) {
+        output.writeMessage(6, getLiteralType());
+      }
       unknownFields.writeTo(output);
     }
 
@@ -9941,6 +10030,10 @@ public final class Literals {
         size += com.google.protobuf.CodedOutputStream
             .computeMessageSize(5, metadata__);
       }
+      if (literalType_ != null) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(6, getLiteralType());
+      }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
@@ -9960,6 +10053,11 @@ public final class Literals {
           .equals(other.getHash())) return false;
       if (!internalGetMetadata().equals(
           other.internalGetMetadata())) return false;
+      if (hasLiteralType() != other.hasLiteralType()) return false;
+      if (hasLiteralType()) {
+        if (!getLiteralType()
+            .equals(other.getLiteralType())) return false;
+      }
       if (!getValueCase().equals(other.getValueCase())) return false;
       switch (valueCase_) {
         case 1:
@@ -9993,6 +10091,10 @@ public final class Literals {
       if (!internalGetMetadata().getMap().isEmpty()) {
         hash = (37 * hash) + METADATA_FIELD_NUMBER;
         hash = (53 * hash) + internalGetMetadata().hashCode();
+      }
+      if (hasLiteralType()) {
+        hash = (37 * hash) + LITERAL_TYPE_FIELD_NUMBER;
+        hash = (53 * hash) + getLiteralType().hashCode();
       }
       switch (valueCase_) {
         case 1:
@@ -10172,6 +10274,12 @@ public final class Literals {
         hash_ = "";
 
         internalGetMutableMetadata().clear();
+        if (literalTypeBuilder_ == null) {
+          literalType_ = null;
+        } else {
+          literalType_ = null;
+          literalTypeBuilder_ = null;
+        }
         valueCase_ = 0;
         value_ = null;
         return this;
@@ -10226,6 +10334,11 @@ public final class Literals {
         result.hash_ = hash_;
         result.metadata_ = internalGetMetadata();
         result.metadata_.makeImmutable();
+        if (literalTypeBuilder_ == null) {
+          result.literalType_ = literalType_;
+        } else {
+          result.literalType_ = literalTypeBuilder_.build();
+        }
         result.bitField0_ = to_bitField0_;
         result.valueCase_ = valueCase_;
         onBuilt();
@@ -10282,6 +10395,9 @@ public final class Literals {
         }
         internalGetMutableMetadata().mergeFrom(
             other.internalGetMetadata());
+        if (other.hasLiteralType()) {
+          mergeLiteralType(other.getLiteralType());
+        }
         switch (other.getValueCase()) {
           case SCALAR: {
             mergeScalar(other.getScalar());
@@ -10987,7 +11103,8 @@ public final class Literals {
       }
       /**
        * <pre>
-       * this should probably be a proto Struct/json
+       * Rejected: We were going to add the Artifact (or at least ArtifactID) here as a way to keep track of lineage
+       * But this was deemed too janky.
        * </pre>
        *
        * <code>map&lt;string, string&gt; metadata = 5;</code>
@@ -11007,7 +11124,8 @@ public final class Literals {
       }
       /**
        * <pre>
-       * this should probably be a proto Struct/json
+       * Rejected: We were going to add the Artifact (or at least ArtifactID) here as a way to keep track of lineage
+       * But this was deemed too janky.
        * </pre>
        *
        * <code>map&lt;string, string&gt; metadata = 5;</code>
@@ -11018,7 +11136,8 @@ public final class Literals {
       }
       /**
        * <pre>
-       * this should probably be a proto Struct/json
+       * Rejected: We were going to add the Artifact (or at least ArtifactID) here as a way to keep track of lineage
+       * But this was deemed too janky.
        * </pre>
        *
        * <code>map&lt;string, string&gt; metadata = 5;</code>
@@ -11034,7 +11153,8 @@ public final class Literals {
       }
       /**
        * <pre>
-       * this should probably be a proto Struct/json
+       * Rejected: We were going to add the Artifact (or at least ArtifactID) here as a way to keep track of lineage
+       * But this was deemed too janky.
        * </pre>
        *
        * <code>map&lt;string, string&gt; metadata = 5;</code>
@@ -11058,7 +11178,8 @@ public final class Literals {
       }
       /**
        * <pre>
-       * this should probably be a proto Struct/json
+       * Rejected: We were going to add the Artifact (or at least ArtifactID) here as a way to keep track of lineage
+       * But this was deemed too janky.
        * </pre>
        *
        * <code>map&lt;string, string&gt; metadata = 5;</code>
@@ -11081,7 +11202,8 @@ public final class Literals {
       }
       /**
        * <pre>
-       * this should probably be a proto Struct/json
+       * Rejected: We were going to add the Artifact (or at least ArtifactID) here as a way to keep track of lineage
+       * But this was deemed too janky.
        * </pre>
        *
        * <code>map&lt;string, string&gt; metadata = 5;</code>
@@ -11097,7 +11219,8 @@ public final class Literals {
       }
       /**
        * <pre>
-       * this should probably be a proto Struct/json
+       * Rejected: We were going to add the Artifact (or at least ArtifactID) here as a way to keep track of lineage
+       * But this was deemed too janky.
        * </pre>
        *
        * <code>map&lt;string, string&gt; metadata = 5;</code>
@@ -11108,6 +11231,168 @@ public final class Literals {
         internalGetMutableMetadata().getMutableMap()
             .putAll(values);
         return this;
+      }
+
+      private flyteidl.core.Types.LiteralType literalType_;
+      private com.google.protobuf.SingleFieldBuilderV3<
+          flyteidl.core.Types.LiteralType, flyteidl.core.Types.LiteralType.Builder, flyteidl.core.Types.LiteralTypeOrBuilder> literalTypeBuilder_;
+      /**
+       * <pre>
+       * Rejected: We were going to add the literal type here because we decided it was general enough, but this
+       * is a lot of work to update everything. Can we think of an easier way?
+       * </pre>
+       *
+       * <code>.flyteidl.core.LiteralType literal_type = 6;</code>
+       */
+      public boolean hasLiteralType() {
+        return literalTypeBuilder_ != null || literalType_ != null;
+      }
+      /**
+       * <pre>
+       * Rejected: We were going to add the literal type here because we decided it was general enough, but this
+       * is a lot of work to update everything. Can we think of an easier way?
+       * </pre>
+       *
+       * <code>.flyteidl.core.LiteralType literal_type = 6;</code>
+       */
+      public flyteidl.core.Types.LiteralType getLiteralType() {
+        if (literalTypeBuilder_ == null) {
+          return literalType_ == null ? flyteidl.core.Types.LiteralType.getDefaultInstance() : literalType_;
+        } else {
+          return literalTypeBuilder_.getMessage();
+        }
+      }
+      /**
+       * <pre>
+       * Rejected: We were going to add the literal type here because we decided it was general enough, but this
+       * is a lot of work to update everything. Can we think of an easier way?
+       * </pre>
+       *
+       * <code>.flyteidl.core.LiteralType literal_type = 6;</code>
+       */
+      public Builder setLiteralType(flyteidl.core.Types.LiteralType value) {
+        if (literalTypeBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          literalType_ = value;
+          onChanged();
+        } else {
+          literalTypeBuilder_.setMessage(value);
+        }
+
+        return this;
+      }
+      /**
+       * <pre>
+       * Rejected: We were going to add the literal type here because we decided it was general enough, but this
+       * is a lot of work to update everything. Can we think of an easier way?
+       * </pre>
+       *
+       * <code>.flyteidl.core.LiteralType literal_type = 6;</code>
+       */
+      public Builder setLiteralType(
+          flyteidl.core.Types.LiteralType.Builder builderForValue) {
+        if (literalTypeBuilder_ == null) {
+          literalType_ = builderForValue.build();
+          onChanged();
+        } else {
+          literalTypeBuilder_.setMessage(builderForValue.build());
+        }
+
+        return this;
+      }
+      /**
+       * <pre>
+       * Rejected: We were going to add the literal type here because we decided it was general enough, but this
+       * is a lot of work to update everything. Can we think of an easier way?
+       * </pre>
+       *
+       * <code>.flyteidl.core.LiteralType literal_type = 6;</code>
+       */
+      public Builder mergeLiteralType(flyteidl.core.Types.LiteralType value) {
+        if (literalTypeBuilder_ == null) {
+          if (literalType_ != null) {
+            literalType_ =
+              flyteidl.core.Types.LiteralType.newBuilder(literalType_).mergeFrom(value).buildPartial();
+          } else {
+            literalType_ = value;
+          }
+          onChanged();
+        } else {
+          literalTypeBuilder_.mergeFrom(value);
+        }
+
+        return this;
+      }
+      /**
+       * <pre>
+       * Rejected: We were going to add the literal type here because we decided it was general enough, but this
+       * is a lot of work to update everything. Can we think of an easier way?
+       * </pre>
+       *
+       * <code>.flyteidl.core.LiteralType literal_type = 6;</code>
+       */
+      public Builder clearLiteralType() {
+        if (literalTypeBuilder_ == null) {
+          literalType_ = null;
+          onChanged();
+        } else {
+          literalType_ = null;
+          literalTypeBuilder_ = null;
+        }
+
+        return this;
+      }
+      /**
+       * <pre>
+       * Rejected: We were going to add the literal type here because we decided it was general enough, but this
+       * is a lot of work to update everything. Can we think of an easier way?
+       * </pre>
+       *
+       * <code>.flyteidl.core.LiteralType literal_type = 6;</code>
+       */
+      public flyteidl.core.Types.LiteralType.Builder getLiteralTypeBuilder() {
+        
+        onChanged();
+        return getLiteralTypeFieldBuilder().getBuilder();
+      }
+      /**
+       * <pre>
+       * Rejected: We were going to add the literal type here because we decided it was general enough, but this
+       * is a lot of work to update everything. Can we think of an easier way?
+       * </pre>
+       *
+       * <code>.flyteidl.core.LiteralType literal_type = 6;</code>
+       */
+      public flyteidl.core.Types.LiteralTypeOrBuilder getLiteralTypeOrBuilder() {
+        if (literalTypeBuilder_ != null) {
+          return literalTypeBuilder_.getMessageOrBuilder();
+        } else {
+          return literalType_ == null ?
+              flyteidl.core.Types.LiteralType.getDefaultInstance() : literalType_;
+        }
+      }
+      /**
+       * <pre>
+       * Rejected: We were going to add the literal type here because we decided it was general enough, but this
+       * is a lot of work to update everything. Can we think of an easier way?
+       * </pre>
+       *
+       * <code>.flyteidl.core.LiteralType literal_type = 6;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+          flyteidl.core.Types.LiteralType, flyteidl.core.Types.LiteralType.Builder, flyteidl.core.Types.LiteralTypeOrBuilder> 
+          getLiteralTypeFieldBuilder() {
+        if (literalTypeBuilder_ == null) {
+          literalTypeBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              flyteidl.core.Types.LiteralType, flyteidl.core.Types.LiteralType.Builder, flyteidl.core.Types.LiteralTypeOrBuilder>(
+                  getLiteralType(),
+                  getParentForChildren(),
+                  isClean());
+          literalType_ = null;
+        }
+        return literalTypeBuilder_;
       }
       @java.lang.Override
       public final Builder setUnknownFields(
@@ -18885,38 +19170,40 @@ public final class Literals {
       "(\0132\027.google.protobuf.StructH\000\022>\n\022structu" +
       "red_dataset\030\010 \001(\0132 .flyteidl.core.Struct" +
       "uredDatasetH\000\022%\n\005union\030\t \001(\0132\024.flyteidl." +
-      "core.UnionH\000B\007\n\005value\"\224\002\n\007Literal\022\'\n\006sca" +
+      "core.UnionH\000B\007\n\005value\"\306\002\n\007Literal\022\'\n\006sca" +
       "lar\030\001 \001(\0132\025.flyteidl.core.ScalarH\000\0226\n\nco" +
       "llection\030\002 \001(\0132 .flyteidl.core.LiteralCo" +
       "llectionH\000\022(\n\003map\030\003 \001(\0132\031.flyteidl.core." +
       "LiteralMapH\000\022\014\n\004hash\030\004 \001(\t\0226\n\010metadata\030\005" +
       " \003(\0132$.flyteidl.core.Literal.MetadataEnt" +
-      "ry\032/\n\rMetadataEntry\022\013\n\003key\030\001 \001(\t\022\r\n\005valu" +
-      "e\030\002 \001(\t:\0028\001B\007\n\005value\"=\n\021LiteralCollectio" +
-      "n\022(\n\010literals\030\001 \003(\0132\026.flyteidl.core.Lite" +
-      "ral\"\220\001\n\nLiteralMap\0229\n\010literals\030\001 \003(\0132\'.f" +
-      "lyteidl.core.LiteralMap.LiteralsEntry\032G\n" +
-      "\rLiteralsEntry\022\013\n\003key\030\001 \001(\t\022%\n\005value\030\002 \001" +
-      "(\0132\026.flyteidl.core.Literal:\0028\001\"E\n\025Bindin" +
-      "gDataCollection\022,\n\010bindings\030\001 \003(\0132\032.flyt" +
-      "eidl.core.BindingData\"\234\001\n\016BindingDataMap" +
-      "\022=\n\010bindings\030\001 \003(\0132+.flyteidl.core.Bindi" +
-      "ngDataMap.BindingsEntry\032K\n\rBindingsEntry" +
-      "\022\013\n\003key\030\001 \001(\t\022)\n\005value\030\002 \001(\0132\032.flyteidl." +
-      "core.BindingData:\0028\001\";\n\tUnionInfo\022.\n\ntar" +
-      "getType\030\001 \001(\0132\032.flyteidl.core.LiteralTyp" +
-      "e\"\205\002\n\013BindingData\022\'\n\006scalar\030\001 \001(\0132\025.flyt" +
-      "eidl.core.ScalarH\000\022:\n\ncollection\030\002 \001(\0132$" +
-      ".flyteidl.core.BindingDataCollectionH\000\0221" +
-      "\n\007promise\030\003 \001(\0132\036.flyteidl.core.OutputRe" +
-      "ferenceH\000\022,\n\003map\030\004 \001(\0132\035.flyteidl.core.B" +
-      "indingDataMapH\000\022\'\n\005union\030\005 \001(\0132\030.flyteid" +
-      "l.core.UnionInfoB\007\n\005value\"C\n\007Binding\022\013\n\003" +
-      "var\030\001 \001(\t\022+\n\007binding\030\002 \001(\0132\032.flyteidl.co" +
-      "re.BindingData\"*\n\014KeyValuePair\022\013\n\003key\030\001 " +
-      "\001(\t\022\r\n\005value\030\002 \001(\t\" \n\rRetryStrategy\022\017\n\007r" +
-      "etries\030\005 \001(\rB6Z4github.com/flyteorg/flyt" +
-      "eidl/gen/pb-go/flyteidl/coreb\006proto3"
+      "ry\0220\n\014literal_type\030\006 \001(\0132\032.flyteidl.core" +
+      ".LiteralType\032/\n\rMetadataEntry\022\013\n\003key\030\001 \001" +
+      "(\t\022\r\n\005value\030\002 \001(\t:\0028\001B\007\n\005value\"=\n\021Litera" +
+      "lCollection\022(\n\010literals\030\001 \003(\0132\026.flyteidl" +
+      ".core.Literal\"\220\001\n\nLiteralMap\0229\n\010literals" +
+      "\030\001 \003(\0132\'.flyteidl.core.LiteralMap.Litera" +
+      "lsEntry\032G\n\rLiteralsEntry\022\013\n\003key\030\001 \001(\t\022%\n" +
+      "\005value\030\002 \001(\0132\026.flyteidl.core.Literal:\0028\001" +
+      "\"E\n\025BindingDataCollection\022,\n\010bindings\030\001 " +
+      "\003(\0132\032.flyteidl.core.BindingData\"\234\001\n\016Bind" +
+      "ingDataMap\022=\n\010bindings\030\001 \003(\0132+.flyteidl." +
+      "core.BindingDataMap.BindingsEntry\032K\n\rBin" +
+      "dingsEntry\022\013\n\003key\030\001 \001(\t\022)\n\005value\030\002 \001(\0132\032" +
+      ".flyteidl.core.BindingData:\0028\001\";\n\tUnionI" +
+      "nfo\022.\n\ntargetType\030\001 \001(\0132\032.flyteidl.core." +
+      "LiteralType\"\205\002\n\013BindingData\022\'\n\006scalar\030\001 " +
+      "\001(\0132\025.flyteidl.core.ScalarH\000\022:\n\ncollecti" +
+      "on\030\002 \001(\0132$.flyteidl.core.BindingDataColl" +
+      "ectionH\000\0221\n\007promise\030\003 \001(\0132\036.flyteidl.cor" +
+      "e.OutputReferenceH\000\022,\n\003map\030\004 \001(\0132\035.flyte" +
+      "idl.core.BindingDataMapH\000\022\'\n\005union\030\005 \001(\013" +
+      "2\030.flyteidl.core.UnionInfoB\007\n\005value\"C\n\007B" +
+      "inding\022\013\n\003var\030\001 \001(\t\022+\n\007binding\030\002 \001(\0132\032.f" +
+      "lyteidl.core.BindingData\"*\n\014KeyValuePair" +
+      "\022\013\n\003key\030\001 \001(\t\022\r\n\005value\030\002 \001(\t\" \n\rRetryStr" +
+      "ategy\022\017\n\007retries\030\005 \001(\rB6Z4github.com/fly" +
+      "teorg/flyteidl/gen/pb-go/flyteidl/coreb\006" +
+      "proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
@@ -18999,7 +19286,7 @@ public final class Literals {
     internal_static_flyteidl_core_Literal_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_flyteidl_core_Literal_descriptor,
-        new java.lang.String[] { "Scalar", "Collection", "Map", "Hash", "Metadata", "Value", });
+        new java.lang.String[] { "Scalar", "Collection", "Map", "Hash", "Metadata", "LiteralType", "Value", });
     internal_static_flyteidl_core_Literal_MetadataEntry_descriptor =
       internal_static_flyteidl_core_Literal_descriptor.getNestedTypes().get(0);
     internal_static_flyteidl_core_Literal_MetadataEntry_fieldAccessorTable = new

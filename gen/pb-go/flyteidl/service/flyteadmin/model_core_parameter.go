@@ -17,4 +17,5 @@ type CoreParameter struct {
 	Default_ *CoreLiteral `json:"default,omitempty"`
 	// +optional, is this value required to be filled.
 	Required bool `json:"required,omitempty"`
+	ArtifactQuery *ArtifactArtifactQuery `json:"artifact_query,omitempty"`
 }

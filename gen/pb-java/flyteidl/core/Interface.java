@@ -2525,6 +2525,19 @@ public final class Interface {
      */
     boolean getRequired();
 
+    /**
+     * <code>.flyteidl.artifact.ArtifactQuery artifact_query = 4;</code>
+     */
+    boolean hasArtifactQuery();
+    /**
+     * <code>.flyteidl.artifact.ArtifactQuery artifact_query = 4;</code>
+     */
+    flyteidl.artifact.Artifacts.ArtifactQuery getArtifactQuery();
+    /**
+     * <code>.flyteidl.artifact.ArtifactQuery artifact_query = 4;</code>
+     */
+    flyteidl.artifact.Artifacts.ArtifactQueryOrBuilder getArtifactQueryOrBuilder();
+
     public flyteidl.core.Interface.Parameter.BehaviorCase getBehaviorCase();
   }
   /**
@@ -2603,6 +2616,20 @@ public final class Interface {
               behavior_ = input.readBool();
               break;
             }
+            case 34: {
+              flyteidl.artifact.Artifacts.ArtifactQuery.Builder subBuilder = null;
+              if (behaviorCase_ == 4) {
+                subBuilder = ((flyteidl.artifact.Artifacts.ArtifactQuery) behavior_).toBuilder();
+              }
+              behavior_ =
+                  input.readMessage(flyteidl.artifact.Artifacts.ArtifactQuery.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom((flyteidl.artifact.Artifacts.ArtifactQuery) behavior_);
+                behavior_ = subBuilder.buildPartial();
+              }
+              behaviorCase_ = 4;
+              break;
+            }
             default: {
               if (!parseUnknownField(
                   input, unknownFields, extensionRegistry, tag)) {
@@ -2641,6 +2668,7 @@ public final class Interface {
         implements com.google.protobuf.Internal.EnumLite {
       DEFAULT(2),
       REQUIRED(3),
+      ARTIFACT_QUERY(4),
       BEHAVIOR_NOT_SET(0);
       private final int value;
       private BehaviorCase(int value) {
@@ -2658,6 +2686,7 @@ public final class Interface {
         switch (value) {
           case 2: return DEFAULT;
           case 3: return REQUIRED;
+          case 4: return ARTIFACT_QUERY;
           case 0: return BEHAVIOR_NOT_SET;
           default: return null;
         }
@@ -2759,6 +2788,32 @@ public final class Interface {
       return false;
     }
 
+    public static final int ARTIFACT_QUERY_FIELD_NUMBER = 4;
+    /**
+     * <code>.flyteidl.artifact.ArtifactQuery artifact_query = 4;</code>
+     */
+    public boolean hasArtifactQuery() {
+      return behaviorCase_ == 4;
+    }
+    /**
+     * <code>.flyteidl.artifact.ArtifactQuery artifact_query = 4;</code>
+     */
+    public flyteidl.artifact.Artifacts.ArtifactQuery getArtifactQuery() {
+      if (behaviorCase_ == 4) {
+         return (flyteidl.artifact.Artifacts.ArtifactQuery) behavior_;
+      }
+      return flyteidl.artifact.Artifacts.ArtifactQuery.getDefaultInstance();
+    }
+    /**
+     * <code>.flyteidl.artifact.ArtifactQuery artifact_query = 4;</code>
+     */
+    public flyteidl.artifact.Artifacts.ArtifactQueryOrBuilder getArtifactQueryOrBuilder() {
+      if (behaviorCase_ == 4) {
+         return (flyteidl.artifact.Artifacts.ArtifactQuery) behavior_;
+      }
+      return flyteidl.artifact.Artifacts.ArtifactQuery.getDefaultInstance();
+    }
+
     private byte memoizedIsInitialized = -1;
     @java.lang.Override
     public final boolean isInitialized() {
@@ -2783,6 +2838,9 @@ public final class Interface {
         output.writeBool(
             3, (boolean)((java.lang.Boolean) behavior_));
       }
+      if (behaviorCase_ == 4) {
+        output.writeMessage(4, (flyteidl.artifact.Artifacts.ArtifactQuery) behavior_);
+      }
       unknownFields.writeTo(output);
     }
 
@@ -2804,6 +2862,10 @@ public final class Interface {
         size += com.google.protobuf.CodedOutputStream
           .computeBoolSize(
               3, (boolean)((java.lang.Boolean) behavior_));
+      }
+      if (behaviorCase_ == 4) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(4, (flyteidl.artifact.Artifacts.ArtifactQuery) behavior_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -2835,6 +2897,10 @@ public final class Interface {
           if (getRequired()
               != other.getRequired()) return false;
           break;
+        case 4:
+          if (!getArtifactQuery()
+              .equals(other.getArtifactQuery())) return false;
+          break;
         case 0:
         default:
       }
@@ -2862,6 +2928,10 @@ public final class Interface {
           hash = (37 * hash) + REQUIRED_FIELD_NUMBER;
           hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
               getRequired());
+          break;
+        case 4:
+          hash = (37 * hash) + ARTIFACT_QUERY_FIELD_NUMBER;
+          hash = (53 * hash) + getArtifactQuery().hashCode();
           break;
         case 0:
         default:
@@ -3053,6 +3123,13 @@ public final class Interface {
         if (behaviorCase_ == 3) {
           result.behavior_ = behavior_;
         }
+        if (behaviorCase_ == 4) {
+          if (artifactQueryBuilder_ == null) {
+            result.behavior_ = behavior_;
+          } else {
+            result.behavior_ = artifactQueryBuilder_.build();
+          }
+        }
         result.behaviorCase_ = behaviorCase_;
         onBuilt();
         return result;
@@ -3112,6 +3189,10 @@ public final class Interface {
           }
           case REQUIRED: {
             setRequired(other.getRequired());
+            break;
+          }
+          case ARTIFACT_QUERY: {
+            mergeArtifactQuery(other.getArtifactQuery());
             break;
           }
           case BEHAVIOR_NOT_SET: {
@@ -3527,6 +3608,142 @@ public final class Interface {
           onChanged();
         }
         return this;
+      }
+
+      private com.google.protobuf.SingleFieldBuilderV3<
+          flyteidl.artifact.Artifacts.ArtifactQuery, flyteidl.artifact.Artifacts.ArtifactQuery.Builder, flyteidl.artifact.Artifacts.ArtifactQueryOrBuilder> artifactQueryBuilder_;
+      /**
+       * <code>.flyteidl.artifact.ArtifactQuery artifact_query = 4;</code>
+       */
+      public boolean hasArtifactQuery() {
+        return behaviorCase_ == 4;
+      }
+      /**
+       * <code>.flyteidl.artifact.ArtifactQuery artifact_query = 4;</code>
+       */
+      public flyteidl.artifact.Artifacts.ArtifactQuery getArtifactQuery() {
+        if (artifactQueryBuilder_ == null) {
+          if (behaviorCase_ == 4) {
+            return (flyteidl.artifact.Artifacts.ArtifactQuery) behavior_;
+          }
+          return flyteidl.artifact.Artifacts.ArtifactQuery.getDefaultInstance();
+        } else {
+          if (behaviorCase_ == 4) {
+            return artifactQueryBuilder_.getMessage();
+          }
+          return flyteidl.artifact.Artifacts.ArtifactQuery.getDefaultInstance();
+        }
+      }
+      /**
+       * <code>.flyteidl.artifact.ArtifactQuery artifact_query = 4;</code>
+       */
+      public Builder setArtifactQuery(flyteidl.artifact.Artifacts.ArtifactQuery value) {
+        if (artifactQueryBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          behavior_ = value;
+          onChanged();
+        } else {
+          artifactQueryBuilder_.setMessage(value);
+        }
+        behaviorCase_ = 4;
+        return this;
+      }
+      /**
+       * <code>.flyteidl.artifact.ArtifactQuery artifact_query = 4;</code>
+       */
+      public Builder setArtifactQuery(
+          flyteidl.artifact.Artifacts.ArtifactQuery.Builder builderForValue) {
+        if (artifactQueryBuilder_ == null) {
+          behavior_ = builderForValue.build();
+          onChanged();
+        } else {
+          artifactQueryBuilder_.setMessage(builderForValue.build());
+        }
+        behaviorCase_ = 4;
+        return this;
+      }
+      /**
+       * <code>.flyteidl.artifact.ArtifactQuery artifact_query = 4;</code>
+       */
+      public Builder mergeArtifactQuery(flyteidl.artifact.Artifacts.ArtifactQuery value) {
+        if (artifactQueryBuilder_ == null) {
+          if (behaviorCase_ == 4 &&
+              behavior_ != flyteidl.artifact.Artifacts.ArtifactQuery.getDefaultInstance()) {
+            behavior_ = flyteidl.artifact.Artifacts.ArtifactQuery.newBuilder((flyteidl.artifact.Artifacts.ArtifactQuery) behavior_)
+                .mergeFrom(value).buildPartial();
+          } else {
+            behavior_ = value;
+          }
+          onChanged();
+        } else {
+          if (behaviorCase_ == 4) {
+            artifactQueryBuilder_.mergeFrom(value);
+          }
+          artifactQueryBuilder_.setMessage(value);
+        }
+        behaviorCase_ = 4;
+        return this;
+      }
+      /**
+       * <code>.flyteidl.artifact.ArtifactQuery artifact_query = 4;</code>
+       */
+      public Builder clearArtifactQuery() {
+        if (artifactQueryBuilder_ == null) {
+          if (behaviorCase_ == 4) {
+            behaviorCase_ = 0;
+            behavior_ = null;
+            onChanged();
+          }
+        } else {
+          if (behaviorCase_ == 4) {
+            behaviorCase_ = 0;
+            behavior_ = null;
+          }
+          artifactQueryBuilder_.clear();
+        }
+        return this;
+      }
+      /**
+       * <code>.flyteidl.artifact.ArtifactQuery artifact_query = 4;</code>
+       */
+      public flyteidl.artifact.Artifacts.ArtifactQuery.Builder getArtifactQueryBuilder() {
+        return getArtifactQueryFieldBuilder().getBuilder();
+      }
+      /**
+       * <code>.flyteidl.artifact.ArtifactQuery artifact_query = 4;</code>
+       */
+      public flyteidl.artifact.Artifacts.ArtifactQueryOrBuilder getArtifactQueryOrBuilder() {
+        if ((behaviorCase_ == 4) && (artifactQueryBuilder_ != null)) {
+          return artifactQueryBuilder_.getMessageOrBuilder();
+        } else {
+          if (behaviorCase_ == 4) {
+            return (flyteidl.artifact.Artifacts.ArtifactQuery) behavior_;
+          }
+          return flyteidl.artifact.Artifacts.ArtifactQuery.getDefaultInstance();
+        }
+      }
+      /**
+       * <code>.flyteidl.artifact.ArtifactQuery artifact_query = 4;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+          flyteidl.artifact.Artifacts.ArtifactQuery, flyteidl.artifact.Artifacts.ArtifactQuery.Builder, flyteidl.artifact.Artifacts.ArtifactQueryOrBuilder> 
+          getArtifactQueryFieldBuilder() {
+        if (artifactQueryBuilder_ == null) {
+          if (!(behaviorCase_ == 4)) {
+            behavior_ = flyteidl.artifact.Artifacts.ArtifactQuery.getDefaultInstance();
+          }
+          artifactQueryBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              flyteidl.artifact.Artifacts.ArtifactQuery, flyteidl.artifact.Artifacts.ArtifactQuery.Builder, flyteidl.artifact.Artifacts.ArtifactQueryOrBuilder>(
+                  (flyteidl.artifact.Artifacts.ArtifactQuery) behavior_,
+                  getParentForChildren(),
+                  isClean());
+          behavior_ = null;
+        }
+        behaviorCase_ = 4;
+        onChanged();;
+        return artifactQueryBuilder_;
       }
       @java.lang.Override
       public final Builder setUnknownFields(
@@ -4420,24 +4637,27 @@ public final class Interface {
     java.lang.String[] descriptorData = {
       "\n\035flyteidl/core/interface.proto\022\rflyteid" +
       "l.core\032\031flyteidl/core/types.proto\032\034flyte" +
-      "idl/core/literals.proto\"I\n\010Variable\022(\n\004t" +
-      "ype\030\001 \001(\0132\032.flyteidl.core.LiteralType\022\023\n" +
-      "\013description\030\002 \001(\t\"\226\001\n\013VariableMap\022<\n\tva" +
-      "riables\030\001 \003(\0132).flyteidl.core.VariableMa" +
-      "p.VariablesEntry\032I\n\016VariablesEntry\022\013\n\003ke" +
-      "y\030\001 \001(\t\022&\n\005value\030\002 \001(\0132\027.flyteidl.core.V" +
-      "ariable:\0028\001\"i\n\016TypedInterface\022*\n\006inputs\030" +
-      "\001 \001(\0132\032.flyteidl.core.VariableMap\022+\n\007out" +
-      "puts\030\002 \001(\0132\032.flyteidl.core.VariableMap\"|" +
-      "\n\tParameter\022$\n\003var\030\001 \001(\0132\027.flyteidl.core" +
-      ".Variable\022)\n\007default\030\002 \001(\0132\026.flyteidl.co" +
-      "re.LiteralH\000\022\022\n\010required\030\003 \001(\010H\000B\n\n\010beha" +
-      "vior\"\234\001\n\014ParameterMap\022?\n\nparameters\030\001 \003(" +
-      "\0132+.flyteidl.core.ParameterMap.Parameter" +
-      "sEntry\032K\n\017ParametersEntry\022\013\n\003key\030\001 \001(\t\022\'" +
-      "\n\005value\030\002 \001(\0132\030.flyteidl.core.Parameter:" +
-      "\0028\001B6Z4github.com/flyteorg/flyteidl/gen/" +
-      "pb-go/flyteidl/coreb\006proto3"
+      "idl/core/literals.proto\032!flyteidl/artifa" +
+      "ct/artifacts.proto\"I\n\010Variable\022(\n\004type\030\001" +
+      " \001(\0132\032.flyteidl.core.LiteralType\022\023\n\013desc" +
+      "ription\030\002 \001(\t\"\226\001\n\013VariableMap\022<\n\tvariabl" +
+      "es\030\001 \003(\0132).flyteidl.core.VariableMap.Var" +
+      "iablesEntry\032I\n\016VariablesEntry\022\013\n\003key\030\001 \001" +
+      "(\t\022&\n\005value\030\002 \001(\0132\027.flyteidl.core.Variab" +
+      "le:\0028\001\"i\n\016TypedInterface\022*\n\006inputs\030\001 \001(\013" +
+      "2\032.flyteidl.core.VariableMap\022+\n\007outputs\030" +
+      "\002 \001(\0132\032.flyteidl.core.VariableMap\"\270\001\n\tPa" +
+      "rameter\022$\n\003var\030\001 \001(\0132\027.flyteidl.core.Var" +
+      "iable\022)\n\007default\030\002 \001(\0132\026.flyteidl.core.L" +
+      "iteralH\000\022\022\n\010required\030\003 \001(\010H\000\022:\n\016artifact" +
+      "_query\030\004 \001(\0132 .flyteidl.artifact.Artifac" +
+      "tQueryH\000B\n\n\010behavior\"\234\001\n\014ParameterMap\022?\n" +
+      "\nparameters\030\001 \003(\0132+.flyteidl.core.Parame" +
+      "terMap.ParametersEntry\032K\n\017ParametersEntr" +
+      "y\022\013\n\003key\030\001 \001(\t\022\'\n\005value\030\002 \001(\0132\030.flyteidl" +
+      ".core.Parameter:\0028\001B6Z4github.com/flyteo" +
+      "rg/flyteidl/gen/pb-go/flyteidl/coreb\006pro" +
+      "to3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
@@ -4452,6 +4672,7 @@ public final class Interface {
         new com.google.protobuf.Descriptors.FileDescriptor[] {
           flyteidl.core.Types.getDescriptor(),
           flyteidl.core.Literals.getDescriptor(),
+          flyteidl.artifact.Artifacts.getDescriptor(),
         }, assigner);
     internal_static_flyteidl_core_Variable_descriptor =
       getDescriptor().getMessageTypes().get(0);
@@ -4482,7 +4703,7 @@ public final class Interface {
     internal_static_flyteidl_core_Parameter_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_flyteidl_core_Parameter_descriptor,
-        new java.lang.String[] { "Var", "Default", "Required", "Behavior", });
+        new java.lang.String[] { "Var", "Default", "Required", "ArtifactQuery", "Behavior", });
     internal_static_flyteidl_core_ParameterMap_descriptor =
       getDescriptor().getMessageTypes().get(4);
     internal_static_flyteidl_core_ParameterMap_fieldAccessorTable = new
@@ -4497,6 +4718,7 @@ public final class Interface {
         new java.lang.String[] { "Key", "Value", });
     flyteidl.core.Types.getDescriptor();
     flyteidl.core.Literals.getDescriptor();
+    flyteidl.artifact.Artifacts.getDescriptor();
   }
 
   // @@protoc_insertion_point(outer_class_scope)

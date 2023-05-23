@@ -16,11 +16,12 @@
 // @@protoc_insertion_point(includes)
 #include <google/protobuf/port_def.inc>
 
+extern PROTOBUF_INTERNAL_EXPORT_flyteidl_2fartifact_2fartifacts_2eproto ::google::protobuf::internal::SCCInfo<3> scc_info_ArtifactQuery_flyteidl_2fartifact_2fartifacts_2eproto;
 extern PROTOBUF_INTERNAL_EXPORT_flyteidl_2fcore_2finterface_2eproto ::google::protobuf::internal::SCCInfo<1> scc_info_ParameterMap_ParametersEntry_DoNotUse_flyteidl_2fcore_2finterface_2eproto;
 extern PROTOBUF_INTERNAL_EXPORT_flyteidl_2fcore_2finterface_2eproto ::google::protobuf::internal::SCCInfo<1> scc_info_VariableMap_VariablesEntry_DoNotUse_flyteidl_2fcore_2finterface_2eproto;
 extern PROTOBUF_INTERNAL_EXPORT_flyteidl_2fcore_2finterface_2eproto ::google::protobuf::internal::SCCInfo<1> scc_info_VariableMap_flyteidl_2fcore_2finterface_2eproto;
 extern PROTOBUF_INTERNAL_EXPORT_flyteidl_2fcore_2finterface_2eproto ::google::protobuf::internal::SCCInfo<1> scc_info_Variable_flyteidl_2fcore_2finterface_2eproto;
-extern PROTOBUF_INTERNAL_EXPORT_flyteidl_2fcore_2finterface_2eproto ::google::protobuf::internal::SCCInfo<2> scc_info_Parameter_flyteidl_2fcore_2finterface_2eproto;
+extern PROTOBUF_INTERNAL_EXPORT_flyteidl_2fcore_2finterface_2eproto ::google::protobuf::internal::SCCInfo<3> scc_info_Parameter_flyteidl_2fcore_2finterface_2eproto;
 extern PROTOBUF_INTERNAL_EXPORT_flyteidl_2fcore_2fliterals_2eproto ::google::protobuf::internal::SCCInfo<10> scc_info_Literal_flyteidl_2fcore_2fliterals_2eproto;
 extern PROTOBUF_INTERNAL_EXPORT_flyteidl_2fcore_2ftypes_2eproto ::google::protobuf::internal::SCCInfo<6> scc_info_LiteralType_flyteidl_2fcore_2ftypes_2eproto;
 namespace flyteidl {
@@ -46,6 +47,7 @@ class ParameterDefaultTypeInternal {
   ::google::protobuf::internal::ExplicitlyConstructed<Parameter> _instance;
   const ::flyteidl::core::Literal* default__;
   bool required_;
+  const ::flyteidl::artifact::ArtifactQuery* artifact_query_;
 } _Parameter_default_instance_;
 class ParameterMap_ParametersEntry_DoNotUseDefaultTypeInternal {
  public:
@@ -127,10 +129,11 @@ static void InitDefaultsParameter_flyteidl_2fcore_2finterface_2eproto() {
   ::flyteidl::core::Parameter::InitAsDefaultInstance();
 }
 
-::google::protobuf::internal::SCCInfo<2> scc_info_Parameter_flyteidl_2fcore_2finterface_2eproto =
-    {{ATOMIC_VAR_INIT(::google::protobuf::internal::SCCInfoBase::kUninitialized), 2, InitDefaultsParameter_flyteidl_2fcore_2finterface_2eproto}, {
+::google::protobuf::internal::SCCInfo<3> scc_info_Parameter_flyteidl_2fcore_2finterface_2eproto =
+    {{ATOMIC_VAR_INIT(::google::protobuf::internal::SCCInfoBase::kUninitialized), 3, InitDefaultsParameter_flyteidl_2fcore_2finterface_2eproto}, {
       &scc_info_Variable_flyteidl_2fcore_2finterface_2eproto.base,
-      &scc_info_Literal_flyteidl_2fcore_2fliterals_2eproto.base,}};
+      &scc_info_Literal_flyteidl_2fcore_2fliterals_2eproto.base,
+      &scc_info_ArtifactQuery_flyteidl_2fartifact_2fartifacts_2eproto.base,}};
 
 static void InitDefaultsParameterMap_ParametersEntry_DoNotUse_flyteidl_2fcore_2finterface_2eproto() {
   GOOGLE_PROTOBUF_VERIFY_VERSION;
@@ -213,6 +216,7 @@ const ::google::protobuf::uint32 TableStruct_flyteidl_2fcore_2finterface_2eproto
   PROTOBUF_FIELD_OFFSET(::flyteidl::core::Parameter, var_),
   offsetof(::flyteidl::core::ParameterDefaultTypeInternal, default__),
   offsetof(::flyteidl::core::ParameterDefaultTypeInternal, required_),
+  offsetof(::flyteidl::core::ParameterDefaultTypeInternal, artifact_query_),
   PROTOBUF_FIELD_OFFSET(::flyteidl::core::Parameter, behavior_),
   PROTOBUF_FIELD_OFFSET(::flyteidl::core::ParameterMap_ParametersEntry_DoNotUse, _has_bits_),
   PROTOBUF_FIELD_OFFSET(::flyteidl::core::ParameterMap_ParametersEntry_DoNotUse, _internal_metadata_),
@@ -236,8 +240,8 @@ static const ::google::protobuf::internal::MigrationSchema schemas[] PROTOBUF_SE
   { 16, -1, sizeof(::flyteidl::core::VariableMap)},
   { 22, -1, sizeof(::flyteidl::core::TypedInterface)},
   { 29, -1, sizeof(::flyteidl::core::Parameter)},
-  { 38, 45, sizeof(::flyteidl::core::ParameterMap_ParametersEntry_DoNotUse)},
-  { 47, -1, sizeof(::flyteidl::core::ParameterMap)},
+  { 39, 46, sizeof(::flyteidl::core::ParameterMap_ParametersEntry_DoNotUse)},
+  { 48, -1, sizeof(::flyteidl::core::ParameterMap)},
 };
 
 static ::google::protobuf::Message const * const file_default_instances[] = {
@@ -259,38 +263,42 @@ static ::google::protobuf::Message const * const file_default_instances[] = {
 const char descriptor_table_protodef_flyteidl_2fcore_2finterface_2eproto[] =
   "\n\035flyteidl/core/interface.proto\022\rflyteid"
   "l.core\032\031flyteidl/core/types.proto\032\034flyte"
-  "idl/core/literals.proto\"I\n\010Variable\022(\n\004t"
-  "ype\030\001 \001(\0132\032.flyteidl.core.LiteralType\022\023\n"
-  "\013description\030\002 \001(\t\"\226\001\n\013VariableMap\022<\n\tva"
-  "riables\030\001 \003(\0132).flyteidl.core.VariableMa"
-  "p.VariablesEntry\032I\n\016VariablesEntry\022\013\n\003ke"
-  "y\030\001 \001(\t\022&\n\005value\030\002 \001(\0132\027.flyteidl.core.V"
-  "ariable:\0028\001\"i\n\016TypedInterface\022*\n\006inputs\030"
-  "\001 \001(\0132\032.flyteidl.core.VariableMap\022+\n\007out"
-  "puts\030\002 \001(\0132\032.flyteidl.core.VariableMap\"|"
-  "\n\tParameter\022$\n\003var\030\001 \001(\0132\027.flyteidl.core"
-  ".Variable\022)\n\007default\030\002 \001(\0132\026.flyteidl.co"
-  "re.LiteralH\000\022\022\n\010required\030\003 \001(\010H\000B\n\n\010beha"
-  "vior\"\234\001\n\014ParameterMap\022\?\n\nparameters\030\001 \003("
-  "\0132+.flyteidl.core.ParameterMap.Parameter"
-  "sEntry\032K\n\017ParametersEntry\022\013\n\003key\030\001 \001(\t\022\'"
-  "\n\005value\030\002 \001(\0132\030.flyteidl.core.Parameter:"
-  "\0028\001B6Z4github.com/flyteorg/flyteidl/gen/"
-  "pb-go/flyteidl/coreb\006proto3"
+  "idl/core/literals.proto\032!flyteidl/artifa"
+  "ct/artifacts.proto\"I\n\010Variable\022(\n\004type\030\001"
+  " \001(\0132\032.flyteidl.core.LiteralType\022\023\n\013desc"
+  "ription\030\002 \001(\t\"\226\001\n\013VariableMap\022<\n\tvariabl"
+  "es\030\001 \003(\0132).flyteidl.core.VariableMap.Var"
+  "iablesEntry\032I\n\016VariablesEntry\022\013\n\003key\030\001 \001"
+  "(\t\022&\n\005value\030\002 \001(\0132\027.flyteidl.core.Variab"
+  "le:\0028\001\"i\n\016TypedInterface\022*\n\006inputs\030\001 \001(\013"
+  "2\032.flyteidl.core.VariableMap\022+\n\007outputs\030"
+  "\002 \001(\0132\032.flyteidl.core.VariableMap\"\270\001\n\tPa"
+  "rameter\022$\n\003var\030\001 \001(\0132\027.flyteidl.core.Var"
+  "iable\022)\n\007default\030\002 \001(\0132\026.flyteidl.core.L"
+  "iteralH\000\022\022\n\010required\030\003 \001(\010H\000\022:\n\016artifact"
+  "_query\030\004 \001(\0132 .flyteidl.artifact.Artifac"
+  "tQueryH\000B\n\n\010behavior\"\234\001\n\014ParameterMap\022\?\n"
+  "\nparameters\030\001 \003(\0132+.flyteidl.core.Parame"
+  "terMap.ParametersEntry\032K\n\017ParametersEntr"
+  "y\022\013\n\003key\030\001 \001(\t\022\'\n\005value\030\002 \001(\0132\030.flyteidl"
+  ".core.Parameter:\0028\001B6Z4github.com/flyteo"
+  "rg/flyteidl/gen/pb-go/flyteidl/coreb\006pro"
+  "to3"
   ;
 ::google::protobuf::internal::DescriptorTable descriptor_table_flyteidl_2fcore_2finterface_2eproto = {
   false, InitDefaults_flyteidl_2fcore_2finterface_2eproto, 
   descriptor_table_protodef_flyteidl_2fcore_2finterface_2eproto,
-  "flyteidl/core/interface.proto", &assign_descriptors_table_flyteidl_2fcore_2finterface_2eproto, 787,
+  "flyteidl/core/interface.proto", &assign_descriptors_table_flyteidl_2fcore_2finterface_2eproto, 883,
 };
 
 void AddDescriptors_flyteidl_2fcore_2finterface_2eproto() {
-  static constexpr ::google::protobuf::internal::InitFunc deps[2] =
+  static constexpr ::google::protobuf::internal::InitFunc deps[3] =
   {
     ::AddDescriptors_flyteidl_2fcore_2ftypes_2eproto,
     ::AddDescriptors_flyteidl_2fcore_2fliterals_2eproto,
+    ::AddDescriptors_flyteidl_2fartifact_2fartifacts_2eproto,
   };
- ::google::protobuf::internal::AddDescriptors(&descriptor_table_flyteidl_2fcore_2finterface_2eproto, deps, 2);
+ ::google::protobuf::internal::AddDescriptors(&descriptor_table_flyteidl_2fcore_2finterface_2eproto, deps, 3);
 }
 
 // Force running AddDescriptors() at dynamic initialization time.
@@ -1438,11 +1446,14 @@ void Parameter::InitAsDefaultInstance() {
   ::flyteidl::core::_Parameter_default_instance_.default__ = const_cast< ::flyteidl::core::Literal*>(
       ::flyteidl::core::Literal::internal_default_instance());
   ::flyteidl::core::_Parameter_default_instance_.required_ = false;
+  ::flyteidl::core::_Parameter_default_instance_.artifact_query_ = const_cast< ::flyteidl::artifact::ArtifactQuery*>(
+      ::flyteidl::artifact::ArtifactQuery::internal_default_instance());
 }
 class Parameter::HasBitSetters {
  public:
   static const ::flyteidl::core::Variable& var(const Parameter* msg);
   static const ::flyteidl::core::Literal& default_(const Parameter* msg);
+  static const ::flyteidl::artifact::ArtifactQuery& artifact_query(const Parameter* msg);
 };
 
 const ::flyteidl::core::Variable&
@@ -1452,6 +1463,10 @@ Parameter::HasBitSetters::var(const Parameter* msg) {
 const ::flyteidl::core::Literal&
 Parameter::HasBitSetters::default_(const Parameter* msg) {
   return *msg->behavior_.default__;
+}
+const ::flyteidl::artifact::ArtifactQuery&
+Parameter::HasBitSetters::artifact_query(const Parameter* msg) {
+  return *msg->behavior_.artifact_query_;
 }
 void Parameter::set_allocated_default_(::flyteidl::core::Literal* default_) {
   ::google::protobuf::Arena* message_arena = GetArenaNoVirtual();
@@ -1473,10 +1488,31 @@ void Parameter::clear_default_() {
     clear_has_behavior();
   }
 }
+void Parameter::set_allocated_artifact_query(::flyteidl::artifact::ArtifactQuery* artifact_query) {
+  ::google::protobuf::Arena* message_arena = GetArenaNoVirtual();
+  clear_behavior();
+  if (artifact_query) {
+    ::google::protobuf::Arena* submessage_arena = nullptr;
+    if (message_arena != submessage_arena) {
+      artifact_query = ::google::protobuf::internal::GetOwnedMessage(
+          message_arena, artifact_query, submessage_arena);
+    }
+    set_has_artifact_query();
+    behavior_.artifact_query_ = artifact_query;
+  }
+  // @@protoc_insertion_point(field_set_allocated:flyteidl.core.Parameter.artifact_query)
+}
+void Parameter::clear_artifact_query() {
+  if (has_artifact_query()) {
+    delete behavior_.artifact_query_;
+    clear_has_behavior();
+  }
+}
 #if !defined(_MSC_VER) || _MSC_VER >= 1900
 const int Parameter::kVarFieldNumber;
 const int Parameter::kDefaultFieldNumber;
 const int Parameter::kRequiredFieldNumber;
+const int Parameter::kArtifactQueryFieldNumber;
 #endif  // !defined(_MSC_VER) || _MSC_VER >= 1900
 
 Parameter::Parameter()
@@ -1501,6 +1537,10 @@ Parameter::Parameter(const Parameter& from)
     }
     case kRequired: {
       set_required(from.required());
+      break;
+    }
+    case kArtifactQuery: {
+      mutable_artifact_query()->::flyteidl::artifact::ArtifactQuery::MergeFrom(from.artifact_query());
       break;
     }
     case BEHAVIOR_NOT_SET: {
@@ -1547,6 +1587,10 @@ void Parameter::clear_behavior() {
     }
     case kRequired: {
       // No need to clear
+      break;
+    }
+    case kArtifactQuery: {
+      delete behavior_.artifact_query_;
       break;
     }
     case BEHAVIOR_NOT_SET: {
@@ -1617,6 +1661,19 @@ const char* Parameter::_InternalParse(const char* begin, const char* end, void* 
         GOOGLE_PROTOBUF_PARSER_ASSERT(ptr);
         break;
       }
+      // .flyteidl.artifact.ArtifactQuery artifact_query = 4;
+      case 4: {
+        if (static_cast<::google::protobuf::uint8>(tag) != 34) goto handle_unusual;
+        ptr = ::google::protobuf::io::ReadSize(ptr, &size);
+        GOOGLE_PROTOBUF_PARSER_ASSERT(ptr);
+        parser_till_end = ::flyteidl::artifact::ArtifactQuery::_InternalParse;
+        object = msg->mutable_artifact_query();
+        if (size > end - ptr) goto len_delim_till_end;
+        ptr += size;
+        GOOGLE_PROTOBUF_PARSER_ASSERT(ctx->ParseExactRange(
+            {parser_till_end, object}, ptr - size, ptr));
+        break;
+      }
       default: {
       handle_unusual:
         if ((tag & 7) == 4 || tag == 0) {
@@ -1683,6 +1740,17 @@ bool Parameter::MergePartialFromCodedStream(
         break;
       }
 
+      // .flyteidl.artifact.ArtifactQuery artifact_query = 4;
+      case 4: {
+        if (static_cast< ::google::protobuf::uint8>(tag) == (34 & 0xFF)) {
+          DO_(::google::protobuf::internal::WireFormatLite::ReadMessage(
+               input, mutable_artifact_query()));
+        } else {
+          goto handle_unusual;
+        }
+        break;
+      }
+
       default: {
       handle_unusual:
         if (tag == 0) {
@@ -1727,6 +1795,12 @@ void Parameter::SerializeWithCachedSizes(
     ::google::protobuf::internal::WireFormatLite::WriteBool(3, this->required(), output);
   }
 
+  // .flyteidl.artifact.ArtifactQuery artifact_query = 4;
+  if (has_artifact_query()) {
+    ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
+      4, HasBitSetters::artifact_query(this), output);
+  }
+
   if (_internal_metadata_.have_unknown_fields()) {
     ::google::protobuf::internal::WireFormat::SerializeUnknownFields(
         _internal_metadata_.unknown_fields(), output);
@@ -1757,6 +1831,13 @@ void Parameter::SerializeWithCachedSizes(
   // bool required = 3;
   if (has_required()) {
     target = ::google::protobuf::internal::WireFormatLite::WriteBoolToArray(3, this->required(), target);
+  }
+
+  // .flyteidl.artifact.ArtifactQuery artifact_query = 4;
+  if (has_artifact_query()) {
+    target = ::google::protobuf::internal::WireFormatLite::
+      InternalWriteMessageToArray(
+        4, HasBitSetters::artifact_query(this), target);
   }
 
   if (_internal_metadata_.have_unknown_fields()) {
@@ -1800,6 +1881,13 @@ size_t Parameter::ByteSizeLong() const {
       total_size += 1 + 1;
       break;
     }
+    // .flyteidl.artifact.ArtifactQuery artifact_query = 4;
+    case kArtifactQuery: {
+      total_size += 1 +
+        ::google::protobuf::internal::WireFormatLite::MessageSize(
+          *behavior_.artifact_query_);
+      break;
+    }
     case BEHAVIOR_NOT_SET: {
       break;
     }
@@ -1841,6 +1929,10 @@ void Parameter::MergeFrom(const Parameter& from) {
     }
     case kRequired: {
       set_required(from.required());
+      break;
+    }
+    case kArtifactQuery: {
+      mutable_artifact_query()->::flyteidl::artifact::ArtifactQuery::MergeFrom(from.artifact_query());
       break;
     }
     case BEHAVIOR_NOT_SET: {

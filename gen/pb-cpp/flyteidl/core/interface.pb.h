@@ -36,6 +36,7 @@
 #include <google/protobuf/unknown_field_set.h>
 #include "flyteidl/core/types.pb.h"
 #include "flyteidl/core/literals.pb.h"
+#include "flyteidl/artifact/artifacts.pb.h"
 // @@protoc_insertion_point(includes)
 #include <google/protobuf/port_def.inc>
 #define PROTOBUF_INTERNAL_EXPORT_flyteidl_2fcore_2finterface_2eproto
@@ -529,6 +530,7 @@ class Parameter final :
   enum BehaviorCase {
     kDefault = 2,
     kRequired = 3,
+    kArtifactQuery = 4,
     BEHAVIOR_NOT_SET = 0,
   };
 
@@ -622,6 +624,15 @@ class Parameter final :
   bool required() const;
   void set_required(bool value);
 
+  // .flyteidl.artifact.ArtifactQuery artifact_query = 4;
+  bool has_artifact_query() const;
+  void clear_artifact_query();
+  static const int kArtifactQueryFieldNumber = 4;
+  const ::flyteidl::artifact::ArtifactQuery& artifact_query() const;
+  ::flyteidl::artifact::ArtifactQuery* release_artifact_query();
+  ::flyteidl::artifact::ArtifactQuery* mutable_artifact_query();
+  void set_allocated_artifact_query(::flyteidl::artifact::ArtifactQuery* artifact_query);
+
   void clear_behavior();
   BehaviorCase behavior_case() const;
   // @@protoc_insertion_point(class_scope:flyteidl.core.Parameter)
@@ -629,6 +640,7 @@ class Parameter final :
   class HasBitSetters;
   void set_has_default_();
   void set_has_required();
+  void set_has_artifact_query();
 
   inline bool has_behavior() const;
   inline void clear_has_behavior();
@@ -639,6 +651,7 @@ class Parameter final :
     BehaviorUnion() {}
     ::flyteidl::core::Literal* default__;
     bool required_;
+    ::flyteidl::artifact::ArtifactQuery* artifact_query_;
   } behavior_;
   mutable ::google::protobuf::internal::CachedSize _cached_size_;
   ::google::protobuf::uint32 _oneof_case_[1];
@@ -1146,6 +1159,41 @@ inline void Parameter::set_required(bool value) {
   }
   behavior_.required_ = value;
   // @@protoc_insertion_point(field_set:flyteidl.core.Parameter.required)
+}
+
+// .flyteidl.artifact.ArtifactQuery artifact_query = 4;
+inline bool Parameter::has_artifact_query() const {
+  return behavior_case() == kArtifactQuery;
+}
+inline void Parameter::set_has_artifact_query() {
+  _oneof_case_[0] = kArtifactQuery;
+}
+inline ::flyteidl::artifact::ArtifactQuery* Parameter::release_artifact_query() {
+  // @@protoc_insertion_point(field_release:flyteidl.core.Parameter.artifact_query)
+  if (has_artifact_query()) {
+    clear_has_behavior();
+      ::flyteidl::artifact::ArtifactQuery* temp = behavior_.artifact_query_;
+    behavior_.artifact_query_ = nullptr;
+    return temp;
+  } else {
+    return nullptr;
+  }
+}
+inline const ::flyteidl::artifact::ArtifactQuery& Parameter::artifact_query() const {
+  // @@protoc_insertion_point(field_get:flyteidl.core.Parameter.artifact_query)
+  return has_artifact_query()
+      ? *behavior_.artifact_query_
+      : *reinterpret_cast< ::flyteidl::artifact::ArtifactQuery*>(&::flyteidl::artifact::_ArtifactQuery_default_instance_);
+}
+inline ::flyteidl::artifact::ArtifactQuery* Parameter::mutable_artifact_query() {
+  if (!has_artifact_query()) {
+    clear_behavior();
+    set_has_artifact_query();
+    behavior_.artifact_query_ = CreateMaybeMessage< ::flyteidl::artifact::ArtifactQuery >(
+        GetArenaNoVirtual());
+  }
+  // @@protoc_insertion_point(field_mutable:flyteidl.core.Parameter.artifact_query)
+  return behavior_.artifact_query_;
 }
 
 inline bool Parameter::has_behavior() const {

@@ -104,7 +104,7 @@ class Scalar(_message.Message):
     def __init__(self, primitive: _Optional[_Union[Primitive, _Mapping]] = ..., blob: _Optional[_Union[Blob, _Mapping]] = ..., binary: _Optional[_Union[Binary, _Mapping]] = ..., schema: _Optional[_Union[Schema, _Mapping]] = ..., none_type: _Optional[_Union[Void, _Mapping]] = ..., error: _Optional[_Union[_types_pb2.Error, _Mapping]] = ..., generic: _Optional[_Union[_struct_pb2.Struct, _Mapping]] = ..., structured_dataset: _Optional[_Union[StructuredDataset, _Mapping]] = ..., union: _Optional[_Union[Union, _Mapping]] = ...) -> None: ...
 
 class Literal(_message.Message):
-    __slots__ = ["scalar", "collection", "map", "hash", "metadata"]
+    __slots__ = ["scalar", "collection", "map", "hash", "metadata", "literal_type"]
     class MetadataEntry(_message.Message):
         __slots__ = ["key", "value"]
         KEY_FIELD_NUMBER: _ClassVar[int]
@@ -117,12 +117,14 @@ class Literal(_message.Message):
     MAP_FIELD_NUMBER: _ClassVar[int]
     HASH_FIELD_NUMBER: _ClassVar[int]
     METADATA_FIELD_NUMBER: _ClassVar[int]
+    LITERAL_TYPE_FIELD_NUMBER: _ClassVar[int]
     scalar: Scalar
     collection: LiteralCollection
     map: LiteralMap
     hash: str
     metadata: _containers.ScalarMap[str, str]
-    def __init__(self, scalar: _Optional[_Union[Scalar, _Mapping]] = ..., collection: _Optional[_Union[LiteralCollection, _Mapping]] = ..., map: _Optional[_Union[LiteralMap, _Mapping]] = ..., hash: _Optional[str] = ..., metadata: _Optional[_Mapping[str, str]] = ...) -> None: ...
+    literal_type: _types_pb2.LiteralType
+    def __init__(self, scalar: _Optional[_Union[Scalar, _Mapping]] = ..., collection: _Optional[_Union[LiteralCollection, _Mapping]] = ..., map: _Optional[_Union[LiteralMap, _Mapping]] = ..., hash: _Optional[str] = ..., metadata: _Optional[_Mapping[str, str]] = ..., literal_type: _Optional[_Union[_types_pb2.LiteralType, _Mapping]] = ...) -> None: ...
 
 class LiteralCollection(_message.Message):
     __slots__ = ["literals"]

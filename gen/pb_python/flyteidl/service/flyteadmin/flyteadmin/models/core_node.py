@@ -16,13 +16,13 @@ import re  # noqa: F401
 
 import six
 
-from flyteadmin.models.core_alias import CoreAlias  # noqa: F401,E501
 from flyteadmin.models.core_binding import CoreBinding  # noqa: F401,E501
 from flyteadmin.models.core_branch_node import CoreBranchNode  # noqa: F401,E501
 from flyteadmin.models.core_gate_node import CoreGateNode  # noqa: F401,E501
 from flyteadmin.models.core_node_metadata import CoreNodeMetadata  # noqa: F401,E501
 from flyteadmin.models.core_task_node import CoreTaskNode  # noqa: F401,E501
 from flyteadmin.models.core_workflow_node import CoreWorkflowNode  # noqa: F401,E501
+from flyteadmin.models.flyteidlcore_alias import FlyteidlcoreAlias  # noqa: F401,E501
 
 
 class CoreNode(object):
@@ -43,7 +43,7 @@ class CoreNode(object):
         'metadata': 'CoreNodeMetadata',
         'inputs': 'list[CoreBinding]',
         'upstream_node_ids': 'list[str]',
-        'output_aliases': 'list[CoreAlias]',
+        'output_aliases': 'list[FlyteidlcoreAlias]',
         'task_node': 'CoreTaskNode',
         'workflow_node': 'CoreWorkflowNode',
         'branch_node': 'CoreBranchNode',
@@ -194,7 +194,7 @@ class CoreNode(object):
         +optional. A node can define aliases for a subset of its outputs. This is particularly useful if different nodes need to conform to the same interface (e.g. all branches in a branch node). Downstream nodes must refer to this nodes outputs using the alias if one's specified.  # noqa: E501
 
         :return: The output_aliases of this CoreNode.  # noqa: E501
-        :rtype: list[CoreAlias]
+        :rtype: list[FlyteidlcoreAlias]
         """
         return self._output_aliases
 
@@ -205,7 +205,7 @@ class CoreNode(object):
         +optional. A node can define aliases for a subset of its outputs. This is particularly useful if different nodes need to conform to the same interface (e.g. all branches in a branch node). Downstream nodes must refer to this nodes outputs using the alias if one's specified.  # noqa: E501
 
         :param output_aliases: The output_aliases of this CoreNode.  # noqa: E501
-        :type: list[CoreAlias]
+        :type: list[FlyteidlcoreAlias]
         """
 
         self._output_aliases = output_aliases

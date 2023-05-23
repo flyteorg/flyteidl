@@ -313,6 +313,18 @@ func (m *Parameter) Validate() error {
 	case *Parameter_Required:
 		// no validation rules for Required
 
+	case *Parameter_ArtifactQuery:
+
+		if v, ok := interface{}(m.GetArtifactQuery()).(interface{ Validate() error }); ok {
+			if err := v.Validate(); err != nil {
+				return ParameterValidationError{
+					field:  "ArtifactQuery",
+					reason: "embedded message failed validation",
+					cause:  err,
+				}
+			}
+		}
+
 	}
 
 	return nil

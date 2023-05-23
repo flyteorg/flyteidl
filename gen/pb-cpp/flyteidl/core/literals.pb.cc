@@ -329,6 +329,7 @@ static void InitDefaultsLiteral_flyteidl_2fcore_2fliterals_2eproto() {
 ::google::protobuf::internal::SCCInfo<10> scc_info_Literal_flyteidl_2fcore_2fliterals_2eproto =
     {{ATOMIC_VAR_INIT(::google::protobuf::internal::SCCInfoBase::kUninitialized), 10, InitDefaultsLiteral_flyteidl_2fcore_2fliterals_2eproto}, {
       &scc_info_Literal_MetadataEntry_DoNotUse_flyteidl_2fcore_2fliterals_2eproto.base,
+      &scc_info_LiteralType_flyteidl_2fcore_2ftypes_2eproto.base,
       &scc_info_Primitive_flyteidl_2fcore_2fliterals_2eproto.base,
       &scc_info_Blob_flyteidl_2fcore_2fliterals_2eproto.base,
       &scc_info_Binary_flyteidl_2fcore_2fliterals_2eproto.base,
@@ -336,8 +337,7 @@ static void InitDefaultsLiteral_flyteidl_2fcore_2fliterals_2eproto() {
       &scc_info_Void_flyteidl_2fcore_2fliterals_2eproto.base,
       &scc_info_Error_flyteidl_2fcore_2ftypes_2eproto.base,
       &scc_info_ListValue_google_2fprotobuf_2fstruct_2eproto.base,
-      &scc_info_StructuredDataset_flyteidl_2fcore_2fliterals_2eproto.base,
-      &scc_info_LiteralType_flyteidl_2fcore_2ftypes_2eproto.base,}};
+      &scc_info_StructuredDataset_flyteidl_2fcore_2fliterals_2eproto.base,}};
 
 static void InitDefaultsUnionInfo_flyteidl_2fcore_2fliterals_2eproto() {
   GOOGLE_PROTOBUF_VERIFY_VERSION;
@@ -552,6 +552,7 @@ const ::google::protobuf::uint32 TableStruct_flyteidl_2fcore_2fliterals_2eproto:
   offsetof(::flyteidl::core::LiteralDefaultTypeInternal, map_),
   PROTOBUF_FIELD_OFFSET(::flyteidl::core::Literal, hash_),
   PROTOBUF_FIELD_OFFSET(::flyteidl::core::Literal, metadata_),
+  PROTOBUF_FIELD_OFFSET(::flyteidl::core::Literal, literal_type_),
   PROTOBUF_FIELD_OFFSET(::flyteidl::core::Literal, value_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::flyteidl::core::LiteralCollection, _internal_metadata_),
@@ -646,17 +647,17 @@ static const ::google::protobuf::internal::MigrationSchema schemas[] PROTOBUF_SE
   { 64, -1, sizeof(::flyteidl::core::Scalar)},
   { 79, 86, sizeof(::flyteidl::core::Literal_MetadataEntry_DoNotUse)},
   { 88, -1, sizeof(::flyteidl::core::Literal)},
-  { 99, -1, sizeof(::flyteidl::core::LiteralCollection)},
-  { 105, 112, sizeof(::flyteidl::core::LiteralMap_LiteralsEntry_DoNotUse)},
-  { 114, -1, sizeof(::flyteidl::core::LiteralMap)},
-  { 120, -1, sizeof(::flyteidl::core::BindingDataCollection)},
-  { 126, 133, sizeof(::flyteidl::core::BindingDataMap_BindingsEntry_DoNotUse)},
-  { 135, -1, sizeof(::flyteidl::core::BindingDataMap)},
-  { 141, -1, sizeof(::flyteidl::core::UnionInfo)},
-  { 147, -1, sizeof(::flyteidl::core::BindingData)},
-  { 158, -1, sizeof(::flyteidl::core::Binding)},
-  { 165, -1, sizeof(::flyteidl::core::KeyValuePair)},
-  { 172, -1, sizeof(::flyteidl::core::RetryStrategy)},
+  { 100, -1, sizeof(::flyteidl::core::LiteralCollection)},
+  { 106, 113, sizeof(::flyteidl::core::LiteralMap_LiteralsEntry_DoNotUse)},
+  { 115, -1, sizeof(::flyteidl::core::LiteralMap)},
+  { 121, -1, sizeof(::flyteidl::core::BindingDataCollection)},
+  { 127, 134, sizeof(::flyteidl::core::BindingDataMap_BindingsEntry_DoNotUse)},
+  { 136, -1, sizeof(::flyteidl::core::BindingDataMap)},
+  { 142, -1, sizeof(::flyteidl::core::UnionInfo)},
+  { 148, -1, sizeof(::flyteidl::core::BindingData)},
+  { 159, -1, sizeof(::flyteidl::core::Binding)},
+  { 166, -1, sizeof(::flyteidl::core::KeyValuePair)},
+  { 173, -1, sizeof(::flyteidl::core::RetryStrategy)},
 };
 
 static ::google::protobuf::Message const * const file_default_instances[] = {
@@ -724,43 +725,45 @@ const char descriptor_table_protodef_flyteidl_2fcore_2fliterals_2eproto[] =
   "(\0132\027.google.protobuf.StructH\000\022>\n\022structu"
   "red_dataset\030\010 \001(\0132 .flyteidl.core.Struct"
   "uredDatasetH\000\022%\n\005union\030\t \001(\0132\024.flyteidl."
-  "core.UnionH\000B\007\n\005value\"\224\002\n\007Literal\022\'\n\006sca"
+  "core.UnionH\000B\007\n\005value\"\306\002\n\007Literal\022\'\n\006sca"
   "lar\030\001 \001(\0132\025.flyteidl.core.ScalarH\000\0226\n\nco"
   "llection\030\002 \001(\0132 .flyteidl.core.LiteralCo"
   "llectionH\000\022(\n\003map\030\003 \001(\0132\031.flyteidl.core."
   "LiteralMapH\000\022\014\n\004hash\030\004 \001(\t\0226\n\010metadata\030\005"
   " \003(\0132$.flyteidl.core.Literal.MetadataEnt"
-  "ry\032/\n\rMetadataEntry\022\013\n\003key\030\001 \001(\t\022\r\n\005valu"
-  "e\030\002 \001(\t:\0028\001B\007\n\005value\"=\n\021LiteralCollectio"
-  "n\022(\n\010literals\030\001 \003(\0132\026.flyteidl.core.Lite"
-  "ral\"\220\001\n\nLiteralMap\0229\n\010literals\030\001 \003(\0132\'.f"
-  "lyteidl.core.LiteralMap.LiteralsEntry\032G\n"
-  "\rLiteralsEntry\022\013\n\003key\030\001 \001(\t\022%\n\005value\030\002 \001"
-  "(\0132\026.flyteidl.core.Literal:\0028\001\"E\n\025Bindin"
-  "gDataCollection\022,\n\010bindings\030\001 \003(\0132\032.flyt"
-  "eidl.core.BindingData\"\234\001\n\016BindingDataMap"
-  "\022=\n\010bindings\030\001 \003(\0132+.flyteidl.core.Bindi"
-  "ngDataMap.BindingsEntry\032K\n\rBindingsEntry"
-  "\022\013\n\003key\030\001 \001(\t\022)\n\005value\030\002 \001(\0132\032.flyteidl."
-  "core.BindingData:\0028\001\";\n\tUnionInfo\022.\n\ntar"
-  "getType\030\001 \001(\0132\032.flyteidl.core.LiteralTyp"
-  "e\"\205\002\n\013BindingData\022\'\n\006scalar\030\001 \001(\0132\025.flyt"
-  "eidl.core.ScalarH\000\022:\n\ncollection\030\002 \001(\0132$"
-  ".flyteidl.core.BindingDataCollectionH\000\0221"
-  "\n\007promise\030\003 \001(\0132\036.flyteidl.core.OutputRe"
-  "ferenceH\000\022,\n\003map\030\004 \001(\0132\035.flyteidl.core.B"
-  "indingDataMapH\000\022\'\n\005union\030\005 \001(\0132\030.flyteid"
-  "l.core.UnionInfoB\007\n\005value\"C\n\007Binding\022\013\n\003"
-  "var\030\001 \001(\t\022+\n\007binding\030\002 \001(\0132\032.flyteidl.co"
-  "re.BindingData\"*\n\014KeyValuePair\022\013\n\003key\030\001 "
-  "\001(\t\022\r\n\005value\030\002 \001(\t\" \n\rRetryStrategy\022\017\n\007r"
-  "etries\030\005 \001(\rB6Z4github.com/flyteorg/flyt"
-  "eidl/gen/pb-go/flyteidl/coreb\006proto3"
+  "ry\0220\n\014literal_type\030\006 \001(\0132\032.flyteidl.core"
+  ".LiteralType\032/\n\rMetadataEntry\022\013\n\003key\030\001 \001"
+  "(\t\022\r\n\005value\030\002 \001(\t:\0028\001B\007\n\005value\"=\n\021Litera"
+  "lCollection\022(\n\010literals\030\001 \003(\0132\026.flyteidl"
+  ".core.Literal\"\220\001\n\nLiteralMap\0229\n\010literals"
+  "\030\001 \003(\0132\'.flyteidl.core.LiteralMap.Litera"
+  "lsEntry\032G\n\rLiteralsEntry\022\013\n\003key\030\001 \001(\t\022%\n"
+  "\005value\030\002 \001(\0132\026.flyteidl.core.Literal:\0028\001"
+  "\"E\n\025BindingDataCollection\022,\n\010bindings\030\001 "
+  "\003(\0132\032.flyteidl.core.BindingData\"\234\001\n\016Bind"
+  "ingDataMap\022=\n\010bindings\030\001 \003(\0132+.flyteidl."
+  "core.BindingDataMap.BindingsEntry\032K\n\rBin"
+  "dingsEntry\022\013\n\003key\030\001 \001(\t\022)\n\005value\030\002 \001(\0132\032"
+  ".flyteidl.core.BindingData:\0028\001\";\n\tUnionI"
+  "nfo\022.\n\ntargetType\030\001 \001(\0132\032.flyteidl.core."
+  "LiteralType\"\205\002\n\013BindingData\022\'\n\006scalar\030\001 "
+  "\001(\0132\025.flyteidl.core.ScalarH\000\022:\n\ncollecti"
+  "on\030\002 \001(\0132$.flyteidl.core.BindingDataColl"
+  "ectionH\000\0221\n\007promise\030\003 \001(\0132\036.flyteidl.cor"
+  "e.OutputReferenceH\000\022,\n\003map\030\004 \001(\0132\035.flyte"
+  "idl.core.BindingDataMapH\000\022\'\n\005union\030\005 \001(\013"
+  "2\030.flyteidl.core.UnionInfoB\007\n\005value\"C\n\007B"
+  "inding\022\013\n\003var\030\001 \001(\t\022+\n\007binding\030\002 \001(\0132\032.f"
+  "lyteidl.core.BindingData\"*\n\014KeyValuePair"
+  "\022\013\n\003key\030\001 \001(\t\022\r\n\005value\030\002 \001(\t\" \n\rRetryStr"
+  "ategy\022\017\n\007retries\030\005 \001(\rB6Z4github.com/fly"
+  "teorg/flyteidl/gen/pb-go/flyteidl/coreb\006"
+  "proto3"
   ;
 ::google::protobuf::internal::DescriptorTable descriptor_table_flyteidl_2fcore_2fliterals_2eproto = {
   false, InitDefaults_flyteidl_2fcore_2fliterals_2eproto, 
   descriptor_table_protodef_flyteidl_2fcore_2fliterals_2eproto,
-  "flyteidl/core/literals.proto", &assign_descriptors_table_flyteidl_2fcore_2fliterals_2eproto, 2556,
+  "flyteidl/core/literals.proto", &assign_descriptors_table_flyteidl_2fcore_2fliterals_2eproto, 2606,
 };
 
 void AddDescriptors_flyteidl_2fcore_2fliterals_2eproto() {
@@ -5063,12 +5066,15 @@ void Literal::InitAsDefaultInstance() {
       ::flyteidl::core::LiteralCollection::internal_default_instance());
   ::flyteidl::core::_Literal_default_instance_.map_ = const_cast< ::flyteidl::core::LiteralMap*>(
       ::flyteidl::core::LiteralMap::internal_default_instance());
+  ::flyteidl::core::_Literal_default_instance_._instance.get_mutable()->literal_type_ = const_cast< ::flyteidl::core::LiteralType*>(
+      ::flyteidl::core::LiteralType::internal_default_instance());
 }
 class Literal::HasBitSetters {
  public:
   static const ::flyteidl::core::Scalar& scalar(const Literal* msg);
   static const ::flyteidl::core::LiteralCollection& collection(const Literal* msg);
   static const ::flyteidl::core::LiteralMap& map(const Literal* msg);
+  static const ::flyteidl::core::LiteralType& literal_type(const Literal* msg);
 };
 
 const ::flyteidl::core::Scalar&
@@ -5082,6 +5088,10 @@ Literal::HasBitSetters::collection(const Literal* msg) {
 const ::flyteidl::core::LiteralMap&
 Literal::HasBitSetters::map(const Literal* msg) {
   return *msg->value_.map_;
+}
+const ::flyteidl::core::LiteralType&
+Literal::HasBitSetters::literal_type(const Literal* msg) {
+  return *msg->literal_type_;
 }
 void Literal::set_allocated_scalar(::flyteidl::core::Scalar* scalar) {
   ::google::protobuf::Arena* message_arena = GetArenaNoVirtual();
@@ -5125,12 +5135,19 @@ void Literal::set_allocated_map(::flyteidl::core::LiteralMap* map) {
   }
   // @@protoc_insertion_point(field_set_allocated:flyteidl.core.Literal.map)
 }
+void Literal::clear_literal_type() {
+  if (GetArenaNoVirtual() == nullptr && literal_type_ != nullptr) {
+    delete literal_type_;
+  }
+  literal_type_ = nullptr;
+}
 #if !defined(_MSC_VER) || _MSC_VER >= 1900
 const int Literal::kScalarFieldNumber;
 const int Literal::kCollectionFieldNumber;
 const int Literal::kMapFieldNumber;
 const int Literal::kHashFieldNumber;
 const int Literal::kMetadataFieldNumber;
+const int Literal::kLiteralTypeFieldNumber;
 #endif  // !defined(_MSC_VER) || _MSC_VER >= 1900
 
 Literal::Literal()
@@ -5146,6 +5163,11 @@ Literal::Literal(const Literal& from)
   hash_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
   if (from.hash().size() > 0) {
     hash_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.hash_);
+  }
+  if (from.has_literal_type()) {
+    literal_type_ = new ::flyteidl::core::LiteralType(*from.literal_type_);
+  } else {
+    literal_type_ = nullptr;
   }
   clear_has_value();
   switch (from.value_case()) {
@@ -5172,6 +5194,7 @@ void Literal::SharedCtor() {
   ::google::protobuf::internal::InitSCC(
       &scc_info_Literal_flyteidl_2fcore_2fliterals_2eproto.base);
   hash_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  literal_type_ = nullptr;
   clear_has_value();
 }
 
@@ -5182,6 +5205,7 @@ Literal::~Literal() {
 
 void Literal::SharedDtor() {
   hash_.DestroyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  if (this != internal_default_instance()) delete literal_type_;
   if (has_value()) {
     clear_value();
   }
@@ -5227,6 +5251,10 @@ void Literal::Clear() {
 
   metadata_.Clear();
   hash_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  if (GetArenaNoVirtual() == nullptr && literal_type_ != nullptr) {
+    delete literal_type_;
+  }
+  literal_type_ = nullptr;
   clear_value();
   _internal_metadata_.Clear();
 }
@@ -5316,6 +5344,19 @@ const char* Literal::_InternalParse(const char* begin, const char* end, void* ob
           ptr = newend;
           if (ptr >= end) break;
         } while ((::google::protobuf::io::UnalignedLoad<::google::protobuf::uint64>(ptr) & 255) == 42 && (ptr += 1));
+        break;
+      }
+      // .flyteidl.core.LiteralType literal_type = 6;
+      case 6: {
+        if (static_cast<::google::protobuf::uint8>(tag) != 50) goto handle_unusual;
+        ptr = ::google::protobuf::io::ReadSize(ptr, &size);
+        GOOGLE_PROTOBUF_PARSER_ASSERT(ptr);
+        parser_till_end = ::flyteidl::core::LiteralType::_InternalParse;
+        object = msg->mutable_literal_type();
+        if (size > end - ptr) goto len_delim_till_end;
+        ptr += size;
+        GOOGLE_PROTOBUF_PARSER_ASSERT(ctx->ParseExactRange(
+            {parser_till_end, object}, ptr - size, ptr));
         break;
       }
       default: {
@@ -5426,6 +5467,17 @@ bool Literal::MergePartialFromCodedStream(
         break;
       }
 
+      // .flyteidl.core.LiteralType literal_type = 6;
+      case 6: {
+        if (static_cast< ::google::protobuf::uint8>(tag) == (50 & 0xFF)) {
+          DO_(::google::protobuf::internal::WireFormatLite::ReadMessage(
+               input, mutable_literal_type()));
+        } else {
+          goto handle_unusual;
+        }
+        break;
+      }
+
       default: {
       handle_unusual:
         if (tag == 0) {
@@ -5530,6 +5582,12 @@ void Literal::SerializeWithCachedSizes(
     }
   }
 
+  // .flyteidl.core.LiteralType literal_type = 6;
+  if (this->has_literal_type()) {
+    ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
+      6, HasBitSetters::literal_type(this), output);
+  }
+
   if (_internal_metadata_.have_unknown_fields()) {
     ::google::protobuf::internal::WireFormat::SerializeUnknownFields(
         _internal_metadata_.unknown_fields(), output);
@@ -5624,6 +5682,13 @@ void Literal::SerializeWithCachedSizes(
     }
   }
 
+  // .flyteidl.core.LiteralType literal_type = 6;
+  if (this->has_literal_type()) {
+    target = ::google::protobuf::internal::WireFormatLite::
+      InternalWriteMessageToArray(
+        6, HasBitSetters::literal_type(this), target);
+  }
+
   if (_internal_metadata_.have_unknown_fields()) {
     target = ::google::protobuf::internal::WireFormat::SerializeUnknownFieldsToArray(
         _internal_metadata_.unknown_fields(), target);
@@ -5664,6 +5729,13 @@ size_t Literal::ByteSizeLong() const {
     total_size += 1 +
       ::google::protobuf::internal::WireFormatLite::StringSize(
         this->hash());
+  }
+
+  // .flyteidl.core.LiteralType literal_type = 6;
+  if (this->has_literal_type()) {
+    total_size += 1 +
+      ::google::protobuf::internal::WireFormatLite::MessageSize(
+        *literal_type_);
   }
 
   switch (value_case()) {
@@ -5724,6 +5796,9 @@ void Literal::MergeFrom(const Literal& from) {
 
     hash_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.hash_);
   }
+  if (from.has_literal_type()) {
+    mutable_literal_type()->::flyteidl::core::LiteralType::MergeFrom(from.literal_type());
+  }
   switch (from.value_case()) {
     case kScalar: {
       mutable_scalar()->::flyteidl::core::Scalar::MergeFrom(from.scalar());
@@ -5771,6 +5846,7 @@ void Literal::InternalSwap(Literal* other) {
   metadata_.Swap(&other->metadata_);
   hash_.Swap(&other->hash_, &::google::protobuf::internal::GetEmptyStringAlreadyInited(),
     GetArenaNoVirtual());
+  swap(literal_type_, other->literal_type_);
   swap(value_, other->value_);
   swap(_oneof_case_[0], other->_oneof_case_[0]);
 }

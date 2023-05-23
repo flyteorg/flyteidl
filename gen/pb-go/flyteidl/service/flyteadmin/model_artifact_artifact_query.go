@@ -9,10 +9,9 @@
 
 package flyteadmin
 
-// Links a variable to an alias.
-type CoreAlias struct {
-	// Must match one of the output variable names on a node.
-	Var_ string `json:"var,omitempty"`
-	// A workflow-level unique alias that downstream nodes can refer to in their input.
-	Alias string `json:"alias,omitempty"`
+type ArtifactArtifactQuery struct {
+	ArtifactKey *ArtifactArtifactKey `json:"artifact_key,omitempty"`
+	Version string `json:"version,omitempty"`
+	Alias *FlyteidlartifactAlias `json:"alias,omitempty"`
+	Tags []ArtifactTag `json:"tags,omitempty"`
 }

@@ -15,42 +15,42 @@ class ArtifactRegistryStub(object):
             channel: A grpc.Channel.
         """
         self.CreateArtifact = channel.unary_unary(
-                '/flyteidl.service.ArtifactRegistry/CreateArtifact',
+                '/flyteidl.artifact.ArtifactRegistry/CreateArtifact',
                 request_serializer=flyteidl_dot_artifact_dot_artifacts__pb2.CreateArtifactRequest.SerializeToString,
                 response_deserializer=flyteidl_dot_artifact_dot_artifacts__pb2.CreateArtifactResponse.FromString,
                 )
         self.GetArtifact = channel.unary_unary(
-                '/flyteidl.service.ArtifactRegistry/GetArtifact',
+                '/flyteidl.artifact.ArtifactRegistry/GetArtifact',
                 request_serializer=flyteidl_dot_artifact_dot_artifacts__pb2.GetArtifactRequest.SerializeToString,
                 response_deserializer=flyteidl_dot_artifact_dot_artifacts__pb2.Artifact.FromString,
                 )
         self.ListArtifactNames = channel.unary_unary(
-                '/flyteidl.service.ArtifactRegistry/ListArtifactNames',
+                '/flyteidl.artifact.ArtifactRegistry/ListArtifactNames',
                 request_serializer=flyteidl_dot_artifact_dot_artifacts__pb2.ListArtifactNamesRequest.SerializeToString,
                 response_deserializer=flyteidl_dot_artifact_dot_artifacts__pb2.ListArtifactNamesResponse.FromString,
                 )
         self.ListArtifacts = channel.unary_unary(
-                '/flyteidl.service.ArtifactRegistry/ListArtifacts',
+                '/flyteidl.artifact.ArtifactRegistry/ListArtifacts',
                 request_serializer=flyteidl_dot_artifact_dot_artifacts__pb2.ListArtifactsRequest.SerializeToString,
                 response_deserializer=flyteidl_dot_artifact_dot_artifacts__pb2.ListArtifactsResponse.FromString,
                 )
         self.TagArtifact = channel.unary_unary(
-                '/flyteidl.service.ArtifactRegistry/TagArtifact',
+                '/flyteidl.artifact.ArtifactRegistry/TagArtifact',
                 request_serializer=flyteidl_dot_artifact_dot_artifacts__pb2.AddTagsRequest.SerializeToString,
                 response_deserializer=flyteidl_dot_artifact_dot_artifacts__pb2.AddTagsResponse.FromString,
                 )
         self.RemoveTags = channel.unary_unary(
-                '/flyteidl.service.ArtifactRegistry/RemoveTags',
+                '/flyteidl.artifact.ArtifactRegistry/RemoveTags',
                 request_serializer=flyteidl_dot_artifact_dot_artifacts__pb2.RemoveTagsRequest.SerializeToString,
                 response_deserializer=flyteidl_dot_artifact_dot_artifacts__pb2.RemoveTagsResponse.FromString,
                 )
         self.CreateAlias = channel.unary_unary(
-                '/flyteidl.service.ArtifactRegistry/CreateAlias',
+                '/flyteidl.artifact.ArtifactRegistry/CreateAlias',
                 request_serializer=flyteidl_dot_artifact_dot_artifacts__pb2.CreateAliasRequest.SerializeToString,
                 response_deserializer=flyteidl_dot_artifact_dot_artifacts__pb2.CreateAliasResponse.FromString,
                 )
         self.RemoveAlias = channel.unary_unary(
-                '/flyteidl.service.ArtifactRegistry/RemoveAlias',
+                '/flyteidl.artifact.ArtifactRegistry/RemoveAlias',
                 request_serializer=flyteidl_dot_artifact_dot_artifacts__pb2.RemoveAliasRequest.SerializeToString,
                 response_deserializer=flyteidl_dot_artifact_dot_artifacts__pb2.RemoveAliasResponse.FromString,
                 )
@@ -152,7 +152,7 @@ def add_ArtifactRegistryServicer_to_server(servicer, server):
             ),
     }
     generic_handler = grpc.method_handlers_generic_handler(
-            'flyteidl.service.ArtifactRegistry', rpc_method_handlers)
+            'flyteidl.artifact.ArtifactRegistry', rpc_method_handlers)
     server.add_generic_rpc_handlers((generic_handler,))
 
 
@@ -171,7 +171,7 @@ class ArtifactRegistry(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/flyteidl.service.ArtifactRegistry/CreateArtifact',
+        return grpc.experimental.unary_unary(request, target, '/flyteidl.artifact.ArtifactRegistry/CreateArtifact',
             flyteidl_dot_artifact_dot_artifacts__pb2.CreateArtifactRequest.SerializeToString,
             flyteidl_dot_artifact_dot_artifacts__pb2.CreateArtifactResponse.FromString,
             options, channel_credentials,
@@ -188,7 +188,7 @@ class ArtifactRegistry(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/flyteidl.service.ArtifactRegistry/GetArtifact',
+        return grpc.experimental.unary_unary(request, target, '/flyteidl.artifact.ArtifactRegistry/GetArtifact',
             flyteidl_dot_artifact_dot_artifacts__pb2.GetArtifactRequest.SerializeToString,
             flyteidl_dot_artifact_dot_artifacts__pb2.Artifact.FromString,
             options, channel_credentials,
@@ -205,7 +205,7 @@ class ArtifactRegistry(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/flyteidl.service.ArtifactRegistry/ListArtifactNames',
+        return grpc.experimental.unary_unary(request, target, '/flyteidl.artifact.ArtifactRegistry/ListArtifactNames',
             flyteidl_dot_artifact_dot_artifacts__pb2.ListArtifactNamesRequest.SerializeToString,
             flyteidl_dot_artifact_dot_artifacts__pb2.ListArtifactNamesResponse.FromString,
             options, channel_credentials,
@@ -222,7 +222,7 @@ class ArtifactRegistry(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/flyteidl.service.ArtifactRegistry/ListArtifacts',
+        return grpc.experimental.unary_unary(request, target, '/flyteidl.artifact.ArtifactRegistry/ListArtifacts',
             flyteidl_dot_artifact_dot_artifacts__pb2.ListArtifactsRequest.SerializeToString,
             flyteidl_dot_artifact_dot_artifacts__pb2.ListArtifactsResponse.FromString,
             options, channel_credentials,
@@ -239,7 +239,7 @@ class ArtifactRegistry(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/flyteidl.service.ArtifactRegistry/TagArtifact',
+        return grpc.experimental.unary_unary(request, target, '/flyteidl.artifact.ArtifactRegistry/TagArtifact',
             flyteidl_dot_artifact_dot_artifacts__pb2.AddTagsRequest.SerializeToString,
             flyteidl_dot_artifact_dot_artifacts__pb2.AddTagsResponse.FromString,
             options, channel_credentials,
@@ -256,7 +256,7 @@ class ArtifactRegistry(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/flyteidl.service.ArtifactRegistry/RemoveTags',
+        return grpc.experimental.unary_unary(request, target, '/flyteidl.artifact.ArtifactRegistry/RemoveTags',
             flyteidl_dot_artifact_dot_artifacts__pb2.RemoveTagsRequest.SerializeToString,
             flyteidl_dot_artifact_dot_artifacts__pb2.RemoveTagsResponse.FromString,
             options, channel_credentials,
@@ -273,7 +273,7 @@ class ArtifactRegistry(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/flyteidl.service.ArtifactRegistry/CreateAlias',
+        return grpc.experimental.unary_unary(request, target, '/flyteidl.artifact.ArtifactRegistry/CreateAlias',
             flyteidl_dot_artifact_dot_artifacts__pb2.CreateAliasRequest.SerializeToString,
             flyteidl_dot_artifact_dot_artifacts__pb2.CreateAliasResponse.FromString,
             options, channel_credentials,
@@ -290,7 +290,7 @@ class ArtifactRegistry(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/flyteidl.service.ArtifactRegistry/RemoveAlias',
+        return grpc.experimental.unary_unary(request, target, '/flyteidl.artifact.ArtifactRegistry/RemoveAlias',
             flyteidl_dot_artifact_dot_artifacts__pb2.RemoveAliasRequest.SerializeToString,
             flyteidl_dot_artifact_dot_artifacts__pb2.RemoveAliasResponse.FromString,
             options, channel_credentials,

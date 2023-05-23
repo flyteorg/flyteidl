@@ -1,5 +1,5 @@
 syntax = "proto3";
-package flyteidl.service;
+package flyteidl.artifact;
 
 option go_package = "github.com/flyteorg/flyteidl/gen/pb-go/flyteidl/artifact";
 
@@ -64,6 +64,13 @@ message ArtifactSpec {
 
   string short_description = 8;
   string long_description = 9;
+}
+
+message ArtifactQuery {
+  ArtifactKey artifact_key = 1;
+  string version = 2;
+  Alias alias = 3;
+  repeated Tag tags = 4;
 }
 
 message CreateArtifactRequest {

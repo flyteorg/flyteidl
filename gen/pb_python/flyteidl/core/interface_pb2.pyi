@@ -1,5 +1,6 @@
 from flyteidl.core import types_pb2 as _types_pb2
 from flyteidl.core import literals_pb2 as _literals_pb2
+from flyteidl.artifact import artifacts_pb2 as _artifacts_pb2
 from google.protobuf.internal import containers as _containers
 from google.protobuf import descriptor as _descriptor
 from google.protobuf import message as _message
@@ -37,14 +38,16 @@ class TypedInterface(_message.Message):
     def __init__(self, inputs: _Optional[_Union[VariableMap, _Mapping]] = ..., outputs: _Optional[_Union[VariableMap, _Mapping]] = ...) -> None: ...
 
 class Parameter(_message.Message):
-    __slots__ = ["var", "default", "required"]
+    __slots__ = ["var", "default", "required", "artifact_query"]
     VAR_FIELD_NUMBER: _ClassVar[int]
     DEFAULT_FIELD_NUMBER: _ClassVar[int]
     REQUIRED_FIELD_NUMBER: _ClassVar[int]
+    ARTIFACT_QUERY_FIELD_NUMBER: _ClassVar[int]
     var: Variable
     default: _literals_pb2.Literal
     required: bool
-    def __init__(self, var: _Optional[_Union[Variable, _Mapping]] = ..., default: _Optional[_Union[_literals_pb2.Literal, _Mapping]] = ..., required: bool = ...) -> None: ...
+    artifact_query: _artifacts_pb2.ArtifactQuery
+    def __init__(self, var: _Optional[_Union[Variable, _Mapping]] = ..., default: _Optional[_Union[_literals_pb2.Literal, _Mapping]] = ..., required: bool = ..., artifact_query: _Optional[_Union[_artifacts_pb2.ArtifactQuery, _Mapping]] = ...) -> None: ...
 
 class ParameterMap(_message.Message):
     __slots__ = ["parameters"]

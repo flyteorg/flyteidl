@@ -58,6 +58,18 @@ class ArtifactSpec(_message.Message):
     long_description: str
     def __init__(self, value: _Optional[_Union[_literals_pb2.Literal, _Mapping]] = ..., type: _Optional[_Union[_types_pb2.LiteralType, _Mapping]] = ..., tags: _Optional[_Iterable[_Union[Tag, _Mapping]]] = ..., alias: _Optional[_Union[Alias, _Mapping]] = ..., task_execution: _Optional[_Union[_identifier_pb2.TaskExecutionIdentifier, _Mapping]] = ..., execution: _Optional[_Union[_identifier_pb2.WorkflowExecutionIdentifier, _Mapping]] = ..., principal: _Optional[str] = ..., short_description: _Optional[str] = ..., long_description: _Optional[str] = ...) -> None: ...
 
+class ArtifactQuery(_message.Message):
+    __slots__ = ["artifact_key", "version", "alias", "tags"]
+    ARTIFACT_KEY_FIELD_NUMBER: _ClassVar[int]
+    VERSION_FIELD_NUMBER: _ClassVar[int]
+    ALIAS_FIELD_NUMBER: _ClassVar[int]
+    TAGS_FIELD_NUMBER: _ClassVar[int]
+    artifact_key: ArtifactKey
+    version: str
+    alias: Alias
+    tags: _containers.RepeatedCompositeFieldContainer[Tag]
+    def __init__(self, artifact_key: _Optional[_Union[ArtifactKey, _Mapping]] = ..., version: _Optional[str] = ..., alias: _Optional[_Union[Alias, _Mapping]] = ..., tags: _Optional[_Iterable[_Union[Tag, _Mapping]]] = ...) -> None: ...
+
 class CreateArtifactRequest(_message.Message):
     __slots__ = ["artifact_key", "version", "spec"]
     ARTIFACT_KEY_FIELD_NUMBER: _ClassVar[int]

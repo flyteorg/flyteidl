@@ -258,6 +258,40 @@ public final class ExecutionOuterClass {
      * <code>.flyteidl.core.LiteralMap inputs = 5;</code>
      */
     flyteidl.core.Literals.LiteralMapOrBuilder getInputsOrBuilder();
+
+    /**
+     * <code>map&lt;string, .flyteidl.artifact.ArtifactID&gt; artifacts = 6;</code>
+     */
+    int getArtifactsCount();
+    /**
+     * <code>map&lt;string, .flyteidl.artifact.ArtifactID&gt; artifacts = 6;</code>
+     */
+    boolean containsArtifacts(
+        java.lang.String key);
+    /**
+     * Use {@link #getArtifactsMap()} instead.
+     */
+    @java.lang.Deprecated
+    java.util.Map<java.lang.String, flyteidl.artifact.Artifacts.ArtifactID>
+    getArtifacts();
+    /**
+     * <code>map&lt;string, .flyteidl.artifact.ArtifactID&gt; artifacts = 6;</code>
+     */
+    java.util.Map<java.lang.String, flyteidl.artifact.Artifacts.ArtifactID>
+    getArtifactsMap();
+    /**
+     * <code>map&lt;string, .flyteidl.artifact.ArtifactID&gt; artifacts = 6;</code>
+     */
+
+    flyteidl.artifact.Artifacts.ArtifactID getArtifactsOrDefault(
+        java.lang.String key,
+        flyteidl.artifact.Artifacts.ArtifactID defaultValue);
+    /**
+     * <code>map&lt;string, .flyteidl.artifact.ArtifactID&gt; artifacts = 6;</code>
+     */
+
+    flyteidl.artifact.Artifacts.ArtifactID getArtifactsOrThrow(
+        java.lang.String key);
   }
   /**
    * <pre>
@@ -349,6 +383,19 @@ public final class ExecutionOuterClass {
 
               break;
             }
+            case 50: {
+              if (!((mutable_bitField0_ & 0x00000020) != 0)) {
+                artifacts_ = com.google.protobuf.MapField.newMapField(
+                    ArtifactsDefaultEntryHolder.defaultEntry);
+                mutable_bitField0_ |= 0x00000020;
+              }
+              com.google.protobuf.MapEntry<java.lang.String, flyteidl.artifact.Artifacts.ArtifactID>
+              artifacts__ = input.readMessage(
+                  ArtifactsDefaultEntryHolder.defaultEntry.getParserForType(), extensionRegistry);
+              artifacts_.getMutableMap().put(
+                  artifacts__.getKey(), artifacts__.getValue());
+              break;
+            }
             default: {
               if (!parseUnknownField(
                   input, unknownFields, extensionRegistry, tag)) {
@@ -373,6 +420,18 @@ public final class ExecutionOuterClass {
       return flyteidl.admin.ExecutionOuterClass.internal_static_flyteidl_admin_ExecutionCreateRequest_descriptor;
     }
 
+    @SuppressWarnings({"rawtypes"})
+    @java.lang.Override
+    protected com.google.protobuf.MapField internalGetMapField(
+        int number) {
+      switch (number) {
+        case 6:
+          return internalGetArtifacts();
+        default:
+          throw new RuntimeException(
+              "Invalid map field number: " + number);
+      }
+    }
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
@@ -381,6 +440,7 @@ public final class ExecutionOuterClass {
               flyteidl.admin.ExecutionOuterClass.ExecutionCreateRequest.class, flyteidl.admin.ExecutionOuterClass.ExecutionCreateRequest.Builder.class);
     }
 
+    private int bitField0_;
     public static final int PROJECT_FIELD_NUMBER = 1;
     private volatile java.lang.Object project_;
     /**
@@ -592,6 +652,82 @@ public final class ExecutionOuterClass {
       return getInputs();
     }
 
+    public static final int ARTIFACTS_FIELD_NUMBER = 6;
+    private static final class ArtifactsDefaultEntryHolder {
+      static final com.google.protobuf.MapEntry<
+          java.lang.String, flyteidl.artifact.Artifacts.ArtifactID> defaultEntry =
+              com.google.protobuf.MapEntry
+              .<java.lang.String, flyteidl.artifact.Artifacts.ArtifactID>newDefaultInstance(
+                  flyteidl.admin.ExecutionOuterClass.internal_static_flyteidl_admin_ExecutionCreateRequest_ArtifactsEntry_descriptor, 
+                  com.google.protobuf.WireFormat.FieldType.STRING,
+                  "",
+                  com.google.protobuf.WireFormat.FieldType.MESSAGE,
+                  flyteidl.artifact.Artifacts.ArtifactID.getDefaultInstance());
+    }
+    private com.google.protobuf.MapField<
+        java.lang.String, flyteidl.artifact.Artifacts.ArtifactID> artifacts_;
+    private com.google.protobuf.MapField<java.lang.String, flyteidl.artifact.Artifacts.ArtifactID>
+    internalGetArtifacts() {
+      if (artifacts_ == null) {
+        return com.google.protobuf.MapField.emptyMapField(
+            ArtifactsDefaultEntryHolder.defaultEntry);
+      }
+      return artifacts_;
+    }
+
+    public int getArtifactsCount() {
+      return internalGetArtifacts().getMap().size();
+    }
+    /**
+     * <code>map&lt;string, .flyteidl.artifact.ArtifactID&gt; artifacts = 6;</code>
+     */
+
+    public boolean containsArtifacts(
+        java.lang.String key) {
+      if (key == null) { throw new java.lang.NullPointerException(); }
+      return internalGetArtifacts().getMap().containsKey(key);
+    }
+    /**
+     * Use {@link #getArtifactsMap()} instead.
+     */
+    @java.lang.Deprecated
+    public java.util.Map<java.lang.String, flyteidl.artifact.Artifacts.ArtifactID> getArtifacts() {
+      return getArtifactsMap();
+    }
+    /**
+     * <code>map&lt;string, .flyteidl.artifact.ArtifactID&gt; artifacts = 6;</code>
+     */
+
+    public java.util.Map<java.lang.String, flyteidl.artifact.Artifacts.ArtifactID> getArtifactsMap() {
+      return internalGetArtifacts().getMap();
+    }
+    /**
+     * <code>map&lt;string, .flyteidl.artifact.ArtifactID&gt; artifacts = 6;</code>
+     */
+
+    public flyteidl.artifact.Artifacts.ArtifactID getArtifactsOrDefault(
+        java.lang.String key,
+        flyteidl.artifact.Artifacts.ArtifactID defaultValue) {
+      if (key == null) { throw new java.lang.NullPointerException(); }
+      java.util.Map<java.lang.String, flyteidl.artifact.Artifacts.ArtifactID> map =
+          internalGetArtifacts().getMap();
+      return map.containsKey(key) ? map.get(key) : defaultValue;
+    }
+    /**
+     * <code>map&lt;string, .flyteidl.artifact.ArtifactID&gt; artifacts = 6;</code>
+     */
+
+    public flyteidl.artifact.Artifacts.ArtifactID getArtifactsOrThrow(
+        java.lang.String key) {
+      if (key == null) { throw new java.lang.NullPointerException(); }
+      java.util.Map<java.lang.String, flyteidl.artifact.Artifacts.ArtifactID> map =
+          internalGetArtifacts().getMap();
+      if (!map.containsKey(key)) {
+        throw new java.lang.IllegalArgumentException();
+      }
+      return map.get(key);
+    }
+
     private byte memoizedIsInitialized = -1;
     @java.lang.Override
     public final boolean isInitialized() {
@@ -621,6 +757,12 @@ public final class ExecutionOuterClass {
       if (inputs_ != null) {
         output.writeMessage(5, getInputs());
       }
+      com.google.protobuf.GeneratedMessageV3
+        .serializeStringMapTo(
+          output,
+          internalGetArtifacts(),
+          ArtifactsDefaultEntryHolder.defaultEntry,
+          6);
       unknownFields.writeTo(output);
     }
 
@@ -646,6 +788,16 @@ public final class ExecutionOuterClass {
       if (inputs_ != null) {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(5, getInputs());
+      }
+      for (java.util.Map.Entry<java.lang.String, flyteidl.artifact.Artifacts.ArtifactID> entry
+           : internalGetArtifacts().getMap().entrySet()) {
+        com.google.protobuf.MapEntry<java.lang.String, flyteidl.artifact.Artifacts.ArtifactID>
+        artifacts__ = ArtifactsDefaultEntryHolder.defaultEntry.newBuilderForType()
+            .setKey(entry.getKey())
+            .setValue(entry.getValue())
+            .build();
+        size += com.google.protobuf.CodedOutputStream
+            .computeMessageSize(6, artifacts__);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -678,6 +830,8 @@ public final class ExecutionOuterClass {
         if (!getInputs()
             .equals(other.getInputs())) return false;
       }
+      if (!internalGetArtifacts().equals(
+          other.internalGetArtifacts())) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -702,6 +856,10 @@ public final class ExecutionOuterClass {
       if (hasInputs()) {
         hash = (37 * hash) + INPUTS_FIELD_NUMBER;
         hash = (53 * hash) + getInputs().hashCode();
+      }
+      if (!internalGetArtifacts().getMap().isEmpty()) {
+        hash = (37 * hash) + ARTIFACTS_FIELD_NUMBER;
+        hash = (53 * hash) + internalGetArtifacts().hashCode();
       }
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
@@ -814,6 +972,28 @@ public final class ExecutionOuterClass {
         return flyteidl.admin.ExecutionOuterClass.internal_static_flyteidl_admin_ExecutionCreateRequest_descriptor;
       }
 
+      @SuppressWarnings({"rawtypes"})
+      protected com.google.protobuf.MapField internalGetMapField(
+          int number) {
+        switch (number) {
+          case 6:
+            return internalGetArtifacts();
+          default:
+            throw new RuntimeException(
+                "Invalid map field number: " + number);
+        }
+      }
+      @SuppressWarnings({"rawtypes"})
+      protected com.google.protobuf.MapField internalGetMutableMapField(
+          int number) {
+        switch (number) {
+          case 6:
+            return internalGetMutableArtifacts();
+          default:
+            throw new RuntimeException(
+                "Invalid map field number: " + number);
+        }
+      }
       @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
@@ -858,6 +1038,7 @@ public final class ExecutionOuterClass {
           inputs_ = null;
           inputsBuilder_ = null;
         }
+        internalGetMutableArtifacts().clear();
         return this;
       }
 
@@ -884,6 +1065,8 @@ public final class ExecutionOuterClass {
       @java.lang.Override
       public flyteidl.admin.ExecutionOuterClass.ExecutionCreateRequest buildPartial() {
         flyteidl.admin.ExecutionOuterClass.ExecutionCreateRequest result = new flyteidl.admin.ExecutionOuterClass.ExecutionCreateRequest(this);
+        int from_bitField0_ = bitField0_;
+        int to_bitField0_ = 0;
         result.project_ = project_;
         result.domain_ = domain_;
         result.name_ = name_;
@@ -897,6 +1080,9 @@ public final class ExecutionOuterClass {
         } else {
           result.inputs_ = inputsBuilder_.build();
         }
+        result.artifacts_ = internalGetArtifacts();
+        result.artifacts_.makeImmutable();
+        result.bitField0_ = to_bitField0_;
         onBuilt();
         return result;
       }
@@ -963,6 +1149,8 @@ public final class ExecutionOuterClass {
         if (other.hasInputs()) {
           mergeInputs(other.getInputs());
         }
+        internalGetMutableArtifacts().mergeFrom(
+            other.internalGetArtifacts());
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
@@ -991,6 +1179,7 @@ public final class ExecutionOuterClass {
         }
         return this;
       }
+      private int bitField0_;
 
       private java.lang.Object project_ = "";
       /**
@@ -1615,6 +1804,129 @@ public final class ExecutionOuterClass {
           inputs_ = null;
         }
         return inputsBuilder_;
+      }
+
+      private com.google.protobuf.MapField<
+          java.lang.String, flyteidl.artifact.Artifacts.ArtifactID> artifacts_;
+      private com.google.protobuf.MapField<java.lang.String, flyteidl.artifact.Artifacts.ArtifactID>
+      internalGetArtifacts() {
+        if (artifacts_ == null) {
+          return com.google.protobuf.MapField.emptyMapField(
+              ArtifactsDefaultEntryHolder.defaultEntry);
+        }
+        return artifacts_;
+      }
+      private com.google.protobuf.MapField<java.lang.String, flyteidl.artifact.Artifacts.ArtifactID>
+      internalGetMutableArtifacts() {
+        onChanged();;
+        if (artifacts_ == null) {
+          artifacts_ = com.google.protobuf.MapField.newMapField(
+              ArtifactsDefaultEntryHolder.defaultEntry);
+        }
+        if (!artifacts_.isMutable()) {
+          artifacts_ = artifacts_.copy();
+        }
+        return artifacts_;
+      }
+
+      public int getArtifactsCount() {
+        return internalGetArtifacts().getMap().size();
+      }
+      /**
+       * <code>map&lt;string, .flyteidl.artifact.ArtifactID&gt; artifacts = 6;</code>
+       */
+
+      public boolean containsArtifacts(
+          java.lang.String key) {
+        if (key == null) { throw new java.lang.NullPointerException(); }
+        return internalGetArtifacts().getMap().containsKey(key);
+      }
+      /**
+       * Use {@link #getArtifactsMap()} instead.
+       */
+      @java.lang.Deprecated
+      public java.util.Map<java.lang.String, flyteidl.artifact.Artifacts.ArtifactID> getArtifacts() {
+        return getArtifactsMap();
+      }
+      /**
+       * <code>map&lt;string, .flyteidl.artifact.ArtifactID&gt; artifacts = 6;</code>
+       */
+
+      public java.util.Map<java.lang.String, flyteidl.artifact.Artifacts.ArtifactID> getArtifactsMap() {
+        return internalGetArtifacts().getMap();
+      }
+      /**
+       * <code>map&lt;string, .flyteidl.artifact.ArtifactID&gt; artifacts = 6;</code>
+       */
+
+      public flyteidl.artifact.Artifacts.ArtifactID getArtifactsOrDefault(
+          java.lang.String key,
+          flyteidl.artifact.Artifacts.ArtifactID defaultValue) {
+        if (key == null) { throw new java.lang.NullPointerException(); }
+        java.util.Map<java.lang.String, flyteidl.artifact.Artifacts.ArtifactID> map =
+            internalGetArtifacts().getMap();
+        return map.containsKey(key) ? map.get(key) : defaultValue;
+      }
+      /**
+       * <code>map&lt;string, .flyteidl.artifact.ArtifactID&gt; artifacts = 6;</code>
+       */
+
+      public flyteidl.artifact.Artifacts.ArtifactID getArtifactsOrThrow(
+          java.lang.String key) {
+        if (key == null) { throw new java.lang.NullPointerException(); }
+        java.util.Map<java.lang.String, flyteidl.artifact.Artifacts.ArtifactID> map =
+            internalGetArtifacts().getMap();
+        if (!map.containsKey(key)) {
+          throw new java.lang.IllegalArgumentException();
+        }
+        return map.get(key);
+      }
+
+      public Builder clearArtifacts() {
+        internalGetMutableArtifacts().getMutableMap()
+            .clear();
+        return this;
+      }
+      /**
+       * <code>map&lt;string, .flyteidl.artifact.ArtifactID&gt; artifacts = 6;</code>
+       */
+
+      public Builder removeArtifacts(
+          java.lang.String key) {
+        if (key == null) { throw new java.lang.NullPointerException(); }
+        internalGetMutableArtifacts().getMutableMap()
+            .remove(key);
+        return this;
+      }
+      /**
+       * Use alternate mutation accessors instead.
+       */
+      @java.lang.Deprecated
+      public java.util.Map<java.lang.String, flyteidl.artifact.Artifacts.ArtifactID>
+      getMutableArtifacts() {
+        return internalGetMutableArtifacts().getMutableMap();
+      }
+      /**
+       * <code>map&lt;string, .flyteidl.artifact.ArtifactID&gt; artifacts = 6;</code>
+       */
+      public Builder putArtifacts(
+          java.lang.String key,
+          flyteidl.artifact.Artifacts.ArtifactID value) {
+        if (key == null) { throw new java.lang.NullPointerException(); }
+        if (value == null) { throw new java.lang.NullPointerException(); }
+        internalGetMutableArtifacts().getMutableMap()
+            .put(key, value);
+        return this;
+      }
+      /**
+       * <code>map&lt;string, .flyteidl.artifact.ArtifactID&gt; artifacts = 6;</code>
+       */
+
+      public Builder putAllArtifacts(
+          java.util.Map<java.lang.String, flyteidl.artifact.Artifacts.ArtifactID> values) {
+        internalGetMutableArtifacts().getMutableMap()
+            .putAll(values);
+        return this;
       }
       @java.lang.Override
       public final Builder setUnknownFields(
@@ -28054,6 +28366,11 @@ public final class ExecutionOuterClass {
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_flyteidl_admin_ExecutionCreateRequest_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_flyteidl_admin_ExecutionCreateRequest_ArtifactsEntry_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_flyteidl_admin_ExecutionCreateRequest_ArtifactsEntry_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_flyteidl_admin_ExecutionRelaunchRequest_descriptor;
   private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
@@ -28178,116 +28495,120 @@ public final class ExecutionOuterClass {
       "flyteidl/core/literals.proto\032\035flyteidl/c" +
       "ore/execution.proto\032\036flyteidl/core/ident" +
       "ifier.proto\032\033flyteidl/core/metrics.proto" +
-      "\032\034flyteidl/core/security.proto\032\036google/p" +
-      "rotobuf/duration.proto\032\037google/protobuf/" +
-      "timestamp.proto\032\036google/protobuf/wrapper" +
-      "s.proto\"\237\001\n\026ExecutionCreateRequest\022\017\n\007pr" +
-      "oject\030\001 \001(\t\022\016\n\006domain\030\002 \001(\t\022\014\n\004name\030\003 \001(" +
-      "\t\022+\n\004spec\030\004 \001(\0132\035.flyteidl.admin.Executi" +
-      "onSpec\022)\n\006inputs\030\005 \001(\0132\031.flyteidl.core.L" +
-      "iteralMap\"\177\n\030ExecutionRelaunchRequest\0226\n" +
-      "\002id\030\001 \001(\0132*.flyteidl.core.WorkflowExecut" +
-      "ionIdentifier\022\014\n\004name\030\003 \001(\t\022\027\n\017overwrite" +
-      "_cache\030\004 \001(\010J\004\010\002\020\003\"\224\001\n\027ExecutionRecoverR" +
-      "equest\0226\n\002id\030\001 \001(\0132*.flyteidl.core.Workf" +
-      "lowExecutionIdentifier\022\014\n\004name\030\002 \001(\t\0223\n\010" +
-      "metadata\030\003 \001(\0132!.flyteidl.admin.Executio" +
-      "nMetadata\"Q\n\027ExecutionCreateResponse\0226\n\002" +
+      "\032\034flyteidl/core/security.proto\032!flyteidl" +
+      "/artifact/artifacts.proto\032\036google/protob" +
+      "uf/duration.proto\032\037google/protobuf/times" +
+      "tamp.proto\032\036google/protobuf/wrappers.pro" +
+      "to\"\272\002\n\026ExecutionCreateRequest\022\017\n\007project" +
+      "\030\001 \001(\t\022\016\n\006domain\030\002 \001(\t\022\014\n\004name\030\003 \001(\t\022+\n\004" +
+      "spec\030\004 \001(\0132\035.flyteidl.admin.ExecutionSpe" +
+      "c\022)\n\006inputs\030\005 \001(\0132\031.flyteidl.core.Litera" +
+      "lMap\022H\n\tartifacts\030\006 \003(\01325.flyteidl.admin" +
+      ".ExecutionCreateRequest.ArtifactsEntry\032O" +
+      "\n\016ArtifactsEntry\022\013\n\003key\030\001 \001(\t\022,\n\005value\030\002" +
+      " \001(\0132\035.flyteidl.artifact.ArtifactID:\0028\001\"" +
+      "\177\n\030ExecutionRelaunchRequest\0226\n\002id\030\001 \001(\0132" +
+      "*.flyteidl.core.WorkflowExecutionIdentif" +
+      "ier\022\014\n\004name\030\003 \001(\t\022\027\n\017overwrite_cache\030\004 \001" +
+      "(\010J\004\010\002\020\003\"\224\001\n\027ExecutionRecoverRequest\0226\n\002" +
       "id\030\001 \001(\0132*.flyteidl.core.WorkflowExecuti" +
-      "onIdentifier\"U\n\033WorkflowExecutionGetRequ" +
-      "est\0226\n\002id\030\001 \001(\0132*.flyteidl.core.Workflow" +
-      "ExecutionIdentifier\"\243\001\n\tExecution\0226\n\002id\030" +
-      "\001 \001(\0132*.flyteidl.core.WorkflowExecutionI" +
-      "dentifier\022+\n\004spec\030\002 \001(\0132\035.flyteidl.admin" +
-      ".ExecutionSpec\0221\n\007closure\030\003 \001(\0132 .flytei" +
-      "dl.admin.ExecutionClosure\"M\n\rExecutionLi" +
-      "st\022-\n\nexecutions\030\001 \003(\0132\031.flyteidl.admin." +
-      "Execution\022\r\n\005token\030\002 \001(\t\"X\n\016LiteralMapBl" +
-      "ob\022/\n\006values\030\001 \001(\0132\031.flyteidl.core.Liter" +
-      "alMapB\002\030\001H\000\022\r\n\003uri\030\002 \001(\tH\000B\006\n\004data\"1\n\rAb" +
-      "ortMetadata\022\r\n\005cause\030\001 \001(\t\022\021\n\tprincipal\030" +
-      "\002 \001(\t\"\360\005\n\020ExecutionClosure\0225\n\007outputs\030\001 " +
-      "\001(\0132\036.flyteidl.admin.LiteralMapBlobB\002\030\001H" +
-      "\000\022.\n\005error\030\002 \001(\0132\035.flyteidl.core.Executi" +
-      "onErrorH\000\022\031\n\013abort_cause\030\n \001(\tB\002\030\001H\000\0227\n\016" +
-      "abort_metadata\030\014 \001(\0132\035.flyteidl.admin.Ab" +
-      "ortMetadataH\000\0224\n\013output_data\030\r \001(\0132\031.fly" +
-      "teidl.core.LiteralMapB\002\030\001H\000\0226\n\017computed_" +
-      "inputs\030\003 \001(\0132\031.flyteidl.core.LiteralMapB" +
-      "\002\030\001\0225\n\005phase\030\004 \001(\0162&.flyteidl.core.Workf" +
-      "lowExecution.Phase\022.\n\nstarted_at\030\005 \001(\0132\032" +
-      ".google.protobuf.Timestamp\022+\n\010duration\030\006" +
-      " \001(\0132\031.google.protobuf.Duration\022.\n\ncreat" +
-      "ed_at\030\007 \001(\0132\032.google.protobuf.Timestamp\022" +
-      ".\n\nupdated_at\030\010 \001(\0132\032.google.protobuf.Ti" +
-      "mestamp\0223\n\rnotifications\030\t \003(\0132\034.flyteid" +
-      "l.admin.Notification\022.\n\013workflow_id\030\013 \001(" +
-      "\0132\031.flyteidl.core.Identifier\022I\n\024state_ch" +
-      "ange_details\030\016 \001(\0132+.flyteidl.admin.Exec" +
-      "utionStateChangeDetailsB\017\n\routput_result" +
-      "\">\n\016SystemMetadata\022\031\n\021execution_cluster\030" +
-      "\001 \001(\t\022\021\n\tnamespace\030\002 \001(\t\"\332\003\n\021ExecutionMe" +
-      "tadata\022=\n\004mode\030\001 \001(\0162/.flyteidl.admin.Ex" +
-      "ecutionMetadata.ExecutionMode\022\021\n\tprincip" +
-      "al\030\002 \001(\t\022\017\n\007nesting\030\003 \001(\r\0220\n\014scheduled_a" +
-      "t\030\004 \001(\0132\032.google.protobuf.Timestamp\022E\n\025p" +
-      "arent_node_execution\030\005 \001(\0132&.flyteidl.co" +
-      "re.NodeExecutionIdentifier\022G\n\023reference_" +
-      "execution\030\020 \001(\0132*.flyteidl.core.Workflow" +
-      "ExecutionIdentifier\0227\n\017system_metadata\030\021" +
-      " \001(\0132\036.flyteidl.admin.SystemMetadata\"g\n\r" +
-      "ExecutionMode\022\n\n\006MANUAL\020\000\022\r\n\tSCHEDULED\020\001" +
-      "\022\n\n\006SYSTEM\020\002\022\014\n\010RELAUNCH\020\003\022\022\n\016CHILD_WORK" +
-      "FLOW\020\004\022\r\n\tRECOVERED\020\005\"G\n\020NotificationLis" +
-      "t\0223\n\rnotifications\030\001 \003(\0132\034.flyteidl.admi" +
-      "n.Notification\"\244\006\n\rExecutionSpec\022.\n\013laun" +
-      "ch_plan\030\001 \001(\0132\031.flyteidl.core.Identifier" +
-      "\022-\n\006inputs\030\002 \001(\0132\031.flyteidl.core.Literal" +
-      "MapB\002\030\001\0223\n\010metadata\030\003 \001(\0132!.flyteidl.adm" +
-      "in.ExecutionMetadata\0229\n\rnotifications\030\005 " +
-      "\001(\0132 .flyteidl.admin.NotificationListH\000\022" +
-      "\025\n\013disable_all\030\006 \001(\010H\000\022&\n\006labels\030\007 \001(\0132\026" +
-      ".flyteidl.admin.Labels\0220\n\013annotations\030\010 " +
-      "\001(\0132\033.flyteidl.admin.Annotations\0228\n\020secu" +
-      "rity_context\030\n \001(\0132\036.flyteidl.core.Secur" +
-      "ityContext\022/\n\tauth_role\030\020 \001(\0132\030.flyteidl" +
-      ".admin.AuthRoleB\002\030\001\022;\n\022quality_of_servic" +
-      "e\030\021 \001(\0132\037.flyteidl.core.QualityOfService" +
-      "\022\027\n\017max_parallelism\030\022 \001(\005\022C\n\026raw_output_" +
-      "data_config\030\023 \001(\0132#.flyteidl.admin.RawOu" +
-      "tputDataConfig\022=\n\022cluster_assignment\030\024 \001" +
-      "(\0132!.flyteidl.admin.ClusterAssignment\0221\n" +
-      "\rinterruptible\030\025 \001(\0132\032.google.protobuf.B" +
-      "oolValue\022\027\n\017overwrite_cache\030\026 \001(\010\022\"\n\004env" +
-      "s\030\027 \001(\0132\024.flyteidl.admin.EnvsB\030\n\026notific" +
-      "ation_overridesJ\004\010\004\020\005\"b\n\031ExecutionTermin" +
-      "ateRequest\0226\n\002id\030\001 \001(\0132*.flyteidl.core.W" +
-      "orkflowExecutionIdentifier\022\r\n\005cause\030\002 \001(" +
-      "\t\"\034\n\032ExecutionTerminateResponse\"Y\n\037Workf" +
-      "lowExecutionGetDataRequest\0226\n\002id\030\001 \001(\0132*" +
+      "onIdentifier\022\014\n\004name\030\002 \001(\t\0223\n\010metadata\030\003" +
+      " \001(\0132!.flyteidl.admin.ExecutionMetadata\"" +
+      "Q\n\027ExecutionCreateResponse\0226\n\002id\030\001 \001(\0132*" +
       ".flyteidl.core.WorkflowExecutionIdentifi" +
-      "er\"\336\001\n WorkflowExecutionGetDataResponse\022" +
-      ",\n\007outputs\030\001 \001(\0132\027.flyteidl.admin.UrlBlo" +
-      "bB\002\030\001\022+\n\006inputs\030\002 \001(\0132\027.flyteidl.admin.U" +
-      "rlBlobB\002\030\001\022.\n\013full_inputs\030\003 \001(\0132\031.flytei" +
-      "dl.core.LiteralMap\022/\n\014full_outputs\030\004 \001(\013" +
-      "2\031.flyteidl.core.LiteralMap\"\177\n\026Execution" +
-      "UpdateRequest\0226\n\002id\030\001 \001(\0132*.flyteidl.cor" +
-      "e.WorkflowExecutionIdentifier\022-\n\005state\030\002" +
-      " \001(\0162\036.flyteidl.admin.ExecutionState\"\220\001\n" +
-      "\033ExecutionStateChangeDetails\022-\n\005state\030\001 " +
-      "\001(\0162\036.flyteidl.admin.ExecutionState\022/\n\013o" +
-      "ccurred_at\030\002 \001(\0132\032.google.protobuf.Times" +
-      "tamp\022\021\n\tprincipal\030\003 \001(\t\"\031\n\027ExecutionUpda" +
-      "teResponse\"k\n\"WorkflowExecutionGetMetric" +
-      "sRequest\0226\n\002id\030\001 \001(\0132*.flyteidl.core.Wor" +
-      "kflowExecutionIdentifier\022\r\n\005depth\030\002 \001(\005\"" +
-      "H\n#WorkflowExecutionGetMetricsResponse\022!" +
-      "\n\004span\030\001 \001(\0132\023.flyteidl.core.Span*>\n\016Exe" +
-      "cutionState\022\024\n\020EXECUTION_ACTIVE\020\000\022\026\n\022EXE" +
-      "CUTION_ARCHIVED\020\001B7Z5github.com/flyteorg" +
-      "/flyteidl/gen/pb-go/flyteidl/adminb\006prot" +
-      "o3"
+      "er\"U\n\033WorkflowExecutionGetRequest\0226\n\002id\030" +
+      "\001 \001(\0132*.flyteidl.core.WorkflowExecutionI" +
+      "dentifier\"\243\001\n\tExecution\0226\n\002id\030\001 \001(\0132*.fl" +
+      "yteidl.core.WorkflowExecutionIdentifier\022" +
+      "+\n\004spec\030\002 \001(\0132\035.flyteidl.admin.Execution" +
+      "Spec\0221\n\007closure\030\003 \001(\0132 .flyteidl.admin.E" +
+      "xecutionClosure\"M\n\rExecutionList\022-\n\nexec" +
+      "utions\030\001 \003(\0132\031.flyteidl.admin.Execution\022" +
+      "\r\n\005token\030\002 \001(\t\"X\n\016LiteralMapBlob\022/\n\006valu" +
+      "es\030\001 \001(\0132\031.flyteidl.core.LiteralMapB\002\030\001H" +
+      "\000\022\r\n\003uri\030\002 \001(\tH\000B\006\n\004data\"1\n\rAbortMetadat" +
+      "a\022\r\n\005cause\030\001 \001(\t\022\021\n\tprincipal\030\002 \001(\t\"\360\005\n\020" +
+      "ExecutionClosure\0225\n\007outputs\030\001 \001(\0132\036.flyt" +
+      "eidl.admin.LiteralMapBlobB\002\030\001H\000\022.\n\005error" +
+      "\030\002 \001(\0132\035.flyteidl.core.ExecutionErrorH\000\022" +
+      "\031\n\013abort_cause\030\n \001(\tB\002\030\001H\000\0227\n\016abort_meta" +
+      "data\030\014 \001(\0132\035.flyteidl.admin.AbortMetadat" +
+      "aH\000\0224\n\013output_data\030\r \001(\0132\031.flyteidl.core" +
+      ".LiteralMapB\002\030\001H\000\0226\n\017computed_inputs\030\003 \001" +
+      "(\0132\031.flyteidl.core.LiteralMapB\002\030\001\0225\n\005pha" +
+      "se\030\004 \001(\0162&.flyteidl.core.WorkflowExecuti" +
+      "on.Phase\022.\n\nstarted_at\030\005 \001(\0132\032.google.pr" +
+      "otobuf.Timestamp\022+\n\010duration\030\006 \001(\0132\031.goo" +
+      "gle.protobuf.Duration\022.\n\ncreated_at\030\007 \001(" +
+      "\0132\032.google.protobuf.Timestamp\022.\n\nupdated" +
+      "_at\030\010 \001(\0132\032.google.protobuf.Timestamp\0223\n" +
+      "\rnotifications\030\t \003(\0132\034.flyteidl.admin.No" +
+      "tification\022.\n\013workflow_id\030\013 \001(\0132\031.flytei" +
+      "dl.core.Identifier\022I\n\024state_change_detai" +
+      "ls\030\016 \001(\0132+.flyteidl.admin.ExecutionState" +
+      "ChangeDetailsB\017\n\routput_result\">\n\016System" +
+      "Metadata\022\031\n\021execution_cluster\030\001 \001(\t\022\021\n\tn" +
+      "amespace\030\002 \001(\t\"\332\003\n\021ExecutionMetadata\022=\n\004" +
+      "mode\030\001 \001(\0162/.flyteidl.admin.ExecutionMet" +
+      "adata.ExecutionMode\022\021\n\tprincipal\030\002 \001(\t\022\017" +
+      "\n\007nesting\030\003 \001(\r\0220\n\014scheduled_at\030\004 \001(\0132\032." +
+      "google.protobuf.Timestamp\022E\n\025parent_node" +
+      "_execution\030\005 \001(\0132&.flyteidl.core.NodeExe" +
+      "cutionIdentifier\022G\n\023reference_execution\030" +
+      "\020 \001(\0132*.flyteidl.core.WorkflowExecutionI" +
+      "dentifier\0227\n\017system_metadata\030\021 \001(\0132\036.fly" +
+      "teidl.admin.SystemMetadata\"g\n\rExecutionM" +
+      "ode\022\n\n\006MANUAL\020\000\022\r\n\tSCHEDULED\020\001\022\n\n\006SYSTEM" +
+      "\020\002\022\014\n\010RELAUNCH\020\003\022\022\n\016CHILD_WORKFLOW\020\004\022\r\n\t" +
+      "RECOVERED\020\005\"G\n\020NotificationList\0223\n\rnotif" +
+      "ications\030\001 \003(\0132\034.flyteidl.admin.Notifica" +
+      "tion\"\244\006\n\rExecutionSpec\022.\n\013launch_plan\030\001 " +
+      "\001(\0132\031.flyteidl.core.Identifier\022-\n\006inputs" +
+      "\030\002 \001(\0132\031.flyteidl.core.LiteralMapB\002\030\001\0223\n" +
+      "\010metadata\030\003 \001(\0132!.flyteidl.admin.Executi" +
+      "onMetadata\0229\n\rnotifications\030\005 \001(\0132 .flyt" +
+      "eidl.admin.NotificationListH\000\022\025\n\013disable" +
+      "_all\030\006 \001(\010H\000\022&\n\006labels\030\007 \001(\0132\026.flyteidl." +
+      "admin.Labels\0220\n\013annotations\030\010 \001(\0132\033.flyt" +
+      "eidl.admin.Annotations\0228\n\020security_conte" +
+      "xt\030\n \001(\0132\036.flyteidl.core.SecurityContext" +
+      "\022/\n\tauth_role\030\020 \001(\0132\030.flyteidl.admin.Aut" +
+      "hRoleB\002\030\001\022;\n\022quality_of_service\030\021 \001(\0132\037." +
+      "flyteidl.core.QualityOfService\022\027\n\017max_pa" +
+      "rallelism\030\022 \001(\005\022C\n\026raw_output_data_confi" +
+      "g\030\023 \001(\0132#.flyteidl.admin.RawOutputDataCo" +
+      "nfig\022=\n\022cluster_assignment\030\024 \001(\0132!.flyte" +
+      "idl.admin.ClusterAssignment\0221\n\rinterrupt" +
+      "ible\030\025 \001(\0132\032.google.protobuf.BoolValue\022\027" +
+      "\n\017overwrite_cache\030\026 \001(\010\022\"\n\004envs\030\027 \001(\0132\024." +
+      "flyteidl.admin.EnvsB\030\n\026notification_over" +
+      "ridesJ\004\010\004\020\005\"b\n\031ExecutionTerminateRequest" +
+      "\0226\n\002id\030\001 \001(\0132*.flyteidl.core.WorkflowExe" +
+      "cutionIdentifier\022\r\n\005cause\030\002 \001(\t\"\034\n\032Execu" +
+      "tionTerminateResponse\"Y\n\037WorkflowExecuti" +
+      "onGetDataRequest\0226\n\002id\030\001 \001(\0132*.flyteidl." +
+      "core.WorkflowExecutionIdentifier\"\336\001\n Wor" +
+      "kflowExecutionGetDataResponse\022,\n\007outputs" +
+      "\030\001 \001(\0132\027.flyteidl.admin.UrlBlobB\002\030\001\022+\n\006i" +
+      "nputs\030\002 \001(\0132\027.flyteidl.admin.UrlBlobB\002\030\001" +
+      "\022.\n\013full_inputs\030\003 \001(\0132\031.flyteidl.core.Li" +
+      "teralMap\022/\n\014full_outputs\030\004 \001(\0132\031.flyteid" +
+      "l.core.LiteralMap\"\177\n\026ExecutionUpdateRequ" +
+      "est\0226\n\002id\030\001 \001(\0132*.flyteidl.core.Workflow" +
+      "ExecutionIdentifier\022-\n\005state\030\002 \001(\0162\036.fly" +
+      "teidl.admin.ExecutionState\"\220\001\n\033Execution" +
+      "StateChangeDetails\022-\n\005state\030\001 \001(\0162\036.flyt" +
+      "eidl.admin.ExecutionState\022/\n\013occurred_at" +
+      "\030\002 \001(\0132\032.google.protobuf.Timestamp\022\021\n\tpr" +
+      "incipal\030\003 \001(\t\"\031\n\027ExecutionUpdateResponse" +
+      "\"k\n\"WorkflowExecutionGetMetricsRequest\0226" +
+      "\n\002id\030\001 \001(\0132*.flyteidl.core.WorkflowExecu" +
+      "tionIdentifier\022\r\n\005depth\030\002 \001(\005\"H\n#Workflo" +
+      "wExecutionGetMetricsResponse\022!\n\004span\030\001 \001" +
+      "(\0132\023.flyteidl.core.Span*>\n\016ExecutionStat" +
+      "e\022\024\n\020EXECUTION_ACTIVE\020\000\022\026\n\022EXECUTION_ARC" +
+      "HIVED\020\001B7Z5github.com/flyteorg/flyteidl/" +
+      "gen/pb-go/flyteidl/adminb\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
@@ -28307,6 +28628,7 @@ public final class ExecutionOuterClass {
           flyteidl.core.IdentifierOuterClass.getDescriptor(),
           flyteidl.core.Metrics.getDescriptor(),
           flyteidl.core.Security.getDescriptor(),
+          flyteidl.artifact.Artifacts.getDescriptor(),
           com.google.protobuf.DurationProto.getDescriptor(),
           com.google.protobuf.TimestampProto.getDescriptor(),
           com.google.protobuf.WrappersProto.getDescriptor(),
@@ -28316,7 +28638,13 @@ public final class ExecutionOuterClass {
     internal_static_flyteidl_admin_ExecutionCreateRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_flyteidl_admin_ExecutionCreateRequest_descriptor,
-        new java.lang.String[] { "Project", "Domain", "Name", "Spec", "Inputs", });
+        new java.lang.String[] { "Project", "Domain", "Name", "Spec", "Inputs", "Artifacts", });
+    internal_static_flyteidl_admin_ExecutionCreateRequest_ArtifactsEntry_descriptor =
+      internal_static_flyteidl_admin_ExecutionCreateRequest_descriptor.getNestedTypes().get(0);
+    internal_static_flyteidl_admin_ExecutionCreateRequest_ArtifactsEntry_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_flyteidl_admin_ExecutionCreateRequest_ArtifactsEntry_descriptor,
+        new java.lang.String[] { "Key", "Value", });
     internal_static_flyteidl_admin_ExecutionRelaunchRequest_descriptor =
       getDescriptor().getMessageTypes().get(1);
     internal_static_flyteidl_admin_ExecutionRelaunchRequest_fieldAccessorTable = new
@@ -28456,6 +28784,7 @@ public final class ExecutionOuterClass {
     flyteidl.core.IdentifierOuterClass.getDescriptor();
     flyteidl.core.Metrics.getDescriptor();
     flyteidl.core.Security.getDescriptor();
+    flyteidl.artifact.Artifacts.getDescriptor();
     com.google.protobuf.DurationProto.getDescriptor();
     com.google.protobuf.TimestampProto.getDescriptor();
     com.google.protobuf.WrappersProto.getDescriptor();

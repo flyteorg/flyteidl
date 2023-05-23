@@ -3791,6 +3791,10 @@ definitions:
           \ be\nincluded in this map. If not required and not provided, defaults apply.\n\
           +optional"
         $ref: "#/definitions/coreLiteralMap"
+      artifacts:
+        type: "object"
+        additionalProperties:
+          $ref: "#/definitions/artifactArtifactID"
     description: "Request to launch an execution with the given project, domain and\
       \ optionally-assigned name."
   adminExecutionCreateResponse:
@@ -4843,6 +4847,57 @@ definitions:
                 map:
                   literals: {}
                 hash: "hash"
+                literal_type:
+                  schema:
+                    columns:
+                    - name: "name"
+                      type: {}
+                    - name: "name"
+                      type: {}
+                  annotation:
+                    annotations:
+                      fields:
+                        key:
+                          list_value:
+                            values:
+                            - null
+                            - null
+                          number_value: 6.027456183070403
+                          string_value: "string_value"
+                          null_value: {}
+                          bool_value: true
+                  structured_dataset_type:
+                    external_schema_type: "external_schema_type"
+                    columns:
+                    - name: "name"
+                    - name: "name"
+                    format: "format"
+                    external_schema_bytes: "external_schema_bytes"
+                  metadata:
+                    fields:
+                      key:
+                        list_value:
+                          values:
+                          - null
+                          - null
+                        number_value: 6.027456183070403
+                        string_value: "string_value"
+                        null_value: {}
+                        bool_value: true
+                  blob:
+                    dimensionality: {}
+                    format: "format"
+                  enum_type:
+                    values:
+                    - "values"
+                    - "values"
+                  union_type:
+                    variants:
+                    - null
+                    - null
+                  simple: {}
+                  structure:
+                    tag: "tag"
               var:
                 description: "description"
                 type:
@@ -4896,6 +4951,20 @@ definitions:
                   simple: {}
                   structure:
                     tag: "tag"
+              artifact_query:
+                artifact_key:
+                  domain: "domain"
+                  name: "name"
+                  project: "project"
+                alias:
+                  value: "value"
+                  key: "key"
+                version: "version"
+                tags:
+                - value: "value"
+                  key: "key"
+                - value: "value"
+                  key: "key"
               required: true
       spec:
         workflow_id:
@@ -5087,6 +5156,57 @@ definitions:
                 map:
                   literals: {}
                 hash: "hash"
+                literal_type:
+                  schema:
+                    columns:
+                    - name: "name"
+                      type: {}
+                    - name: "name"
+                      type: {}
+                  annotation:
+                    annotations:
+                      fields:
+                        key:
+                          list_value:
+                            values:
+                            - null
+                            - null
+                          number_value: 6.027456183070403
+                          string_value: "string_value"
+                          null_value: {}
+                          bool_value: true
+                  structured_dataset_type:
+                    external_schema_type: "external_schema_type"
+                    columns:
+                    - name: "name"
+                    - name: "name"
+                    format: "format"
+                    external_schema_bytes: "external_schema_bytes"
+                  metadata:
+                    fields:
+                      key:
+                        list_value:
+                          values:
+                          - null
+                          - null
+                        number_value: 6.027456183070403
+                        string_value: "string_value"
+                        null_value: {}
+                        bool_value: true
+                  blob:
+                    dimensionality: {}
+                    format: "format"
+                  enum_type:
+                    values:
+                    - "values"
+                    - "values"
+                  union_type:
+                    variants:
+                    - null
+                    - null
+                  simple: {}
+                  structure:
+                    tag: "tag"
               var:
                 description: "description"
                 type:
@@ -5140,6 +5260,20 @@ definitions:
                   simple: {}
                   structure:
                     tag: "tag"
+              artifact_query:
+                artifact_key:
+                  domain: "domain"
+                  name: "name"
+                  project: "project"
+                alias:
+                  value: "value"
+                  key: "key"
+                version: "version"
+                tags:
+                - value: "value"
+                  key: "key"
+                - value: "value"
+                  key: "key"
               required: true
         security_context:
           run_as:
@@ -5388,6 +5522,57 @@ definitions:
               map:
                 literals: {}
               hash: "hash"
+              literal_type:
+                schema:
+                  columns:
+                  - name: "name"
+                    type: {}
+                  - name: "name"
+                    type: {}
+                annotation:
+                  annotations:
+                    fields:
+                      key:
+                        list_value:
+                          values:
+                          - null
+                          - null
+                        number_value: 6.027456183070403
+                        string_value: "string_value"
+                        null_value: {}
+                        bool_value: true
+                structured_dataset_type:
+                  external_schema_type: "external_schema_type"
+                  columns:
+                  - name: "name"
+                  - name: "name"
+                  format: "format"
+                  external_schema_bytes: "external_schema_bytes"
+                metadata:
+                  fields:
+                    key:
+                      list_value:
+                        values:
+                        - null
+                        - null
+                      number_value: 6.027456183070403
+                      string_value: "string_value"
+                      null_value: {}
+                      bool_value: true
+                blob:
+                  dimensionality: {}
+                  format: "format"
+                enum_type:
+                  values:
+                  - "values"
+                  - "values"
+                union_type:
+                  variants:
+                  - null
+                  - null
+                simple: {}
+                structure:
+                  tag: "tag"
             var:
               description: "description"
               type:
@@ -5441,6 +5626,20 @@ definitions:
                 simple: {}
                 structure:
                   tag: "tag"
+            artifact_query:
+              artifact_key:
+                domain: "domain"
+                name: "name"
+                project: "project"
+              alias:
+                value: "value"
+                key: "key"
+              version: "version"
+              tags:
+              - value: "value"
+                key: "key"
+              - value: "value"
+                key: "key"
             required: true
   adminLaunchPlanCreateRequest:
     type: "object"
@@ -5655,6 +5854,57 @@ definitions:
                   map:
                     literals: {}
                   hash: "hash"
+                  literal_type:
+                    schema:
+                      columns:
+                      - name: "name"
+                        type: {}
+                      - name: "name"
+                        type: {}
+                    annotation:
+                      annotations:
+                        fields:
+                          key:
+                            list_value:
+                              values:
+                              - null
+                              - null
+                            number_value: 6.027456183070403
+                            string_value: "string_value"
+                            null_value: {}
+                            bool_value: true
+                    structured_dataset_type:
+                      external_schema_type: "external_schema_type"
+                      columns:
+                      - name: "name"
+                      - name: "name"
+                      format: "format"
+                      external_schema_bytes: "external_schema_bytes"
+                    metadata:
+                      fields:
+                        key:
+                          list_value:
+                            values:
+                            - null
+                            - null
+                          number_value: 6.027456183070403
+                          string_value: "string_value"
+                          null_value: {}
+                          bool_value: true
+                    blob:
+                      dimensionality: {}
+                      format: "format"
+                    enum_type:
+                      values:
+                      - "values"
+                      - "values"
+                    union_type:
+                      variants:
+                      - null
+                      - null
+                    simple: {}
+                    structure:
+                      tag: "tag"
                 var:
                   description: "description"
                   type:
@@ -5708,6 +5958,20 @@ definitions:
                     simple: {}
                     structure:
                       tag: "tag"
+                artifact_query:
+                  artifact_key:
+                    domain: "domain"
+                    name: "name"
+                    project: "project"
+                  alias:
+                    value: "value"
+                    key: "key"
+                  version: "version"
+                  tags:
+                  - value: "value"
+                    key: "key"
+                  - value: "value"
+                    key: "key"
                 required: true
         spec:
           workflow_id:
@@ -5899,6 +6163,57 @@ definitions:
                   map:
                     literals: {}
                   hash: "hash"
+                  literal_type:
+                    schema:
+                      columns:
+                      - name: "name"
+                        type: {}
+                      - name: "name"
+                        type: {}
+                    annotation:
+                      annotations:
+                        fields:
+                          key:
+                            list_value:
+                              values:
+                              - null
+                              - null
+                            number_value: 6.027456183070403
+                            string_value: "string_value"
+                            null_value: {}
+                            bool_value: true
+                    structured_dataset_type:
+                      external_schema_type: "external_schema_type"
+                      columns:
+                      - name: "name"
+                      - name: "name"
+                      format: "format"
+                      external_schema_bytes: "external_schema_bytes"
+                    metadata:
+                      fields:
+                        key:
+                          list_value:
+                            values:
+                            - null
+                            - null
+                          number_value: 6.027456183070403
+                          string_value: "string_value"
+                          null_value: {}
+                          bool_value: true
+                    blob:
+                      dimensionality: {}
+                      format: "format"
+                    enum_type:
+                      values:
+                      - "values"
+                      - "values"
+                    union_type:
+                      variants:
+                      - null
+                      - null
+                    simple: {}
+                    structure:
+                      tag: "tag"
                 var:
                   description: "description"
                   type:
@@ -5952,6 +6267,20 @@ definitions:
                     simple: {}
                     structure:
                       tag: "tag"
+                artifact_query:
+                  artifact_key:
+                    domain: "domain"
+                    name: "name"
+                    project: "project"
+                  alias:
+                    value: "value"
+                    key: "key"
+                  version: "version"
+                  tags:
+                  - value: "value"
+                    key: "key"
+                  - value: "value"
+                    key: "key"
                 required: true
           security_context:
             run_as:
@@ -6180,6 +6509,57 @@ definitions:
                   map:
                     literals: {}
                   hash: "hash"
+                  literal_type:
+                    schema:
+                      columns:
+                      - name: "name"
+                        type: {}
+                      - name: "name"
+                        type: {}
+                    annotation:
+                      annotations:
+                        fields:
+                          key:
+                            list_value:
+                              values:
+                              - null
+                              - null
+                            number_value: 6.027456183070403
+                            string_value: "string_value"
+                            null_value: {}
+                            bool_value: true
+                    structured_dataset_type:
+                      external_schema_type: "external_schema_type"
+                      columns:
+                      - name: "name"
+                      - name: "name"
+                      format: "format"
+                      external_schema_bytes: "external_schema_bytes"
+                    metadata:
+                      fields:
+                        key:
+                          list_value:
+                            values:
+                            - null
+                            - null
+                          number_value: 6.027456183070403
+                          string_value: "string_value"
+                          null_value: {}
+                          bool_value: true
+                    blob:
+                      dimensionality: {}
+                      format: "format"
+                    enum_type:
+                      values:
+                      - "values"
+                      - "values"
+                    union_type:
+                      variants:
+                      - null
+                      - null
+                    simple: {}
+                    structure:
+                      tag: "tag"
                 var:
                   description: "description"
                   type:
@@ -6233,6 +6613,20 @@ definitions:
                     simple: {}
                     structure:
                       tag: "tag"
+                artifact_query:
+                  artifact_key:
+                    domain: "domain"
+                    name: "name"
+                    project: "project"
+                  alias:
+                    value: "value"
+                    key: "key"
+                  version: "version"
+                  tags:
+                  - value: "value"
+                    key: "key"
+                  - value: "value"
+                    key: "key"
                 required: true
         spec:
           workflow_id:
@@ -6424,6 +6818,57 @@ definitions:
                   map:
                     literals: {}
                   hash: "hash"
+                  literal_type:
+                    schema:
+                      columns:
+                      - name: "name"
+                        type: {}
+                      - name: "name"
+                        type: {}
+                    annotation:
+                      annotations:
+                        fields:
+                          key:
+                            list_value:
+                              values:
+                              - null
+                              - null
+                            number_value: 6.027456183070403
+                            string_value: "string_value"
+                            null_value: {}
+                            bool_value: true
+                    structured_dataset_type:
+                      external_schema_type: "external_schema_type"
+                      columns:
+                      - name: "name"
+                      - name: "name"
+                      format: "format"
+                      external_schema_bytes: "external_schema_bytes"
+                    metadata:
+                      fields:
+                        key:
+                          list_value:
+                            values:
+                            - null
+                            - null
+                          number_value: 6.027456183070403
+                          string_value: "string_value"
+                          null_value: {}
+                          bool_value: true
+                    blob:
+                      dimensionality: {}
+                      format: "format"
+                    enum_type:
+                      values:
+                      - "values"
+                      - "values"
+                    union_type:
+                      variants:
+                      - null
+                      - null
+                    simple: {}
+                    structure:
+                      tag: "tag"
                 var:
                   description: "description"
                   type:
@@ -6477,6 +6922,20 @@ definitions:
                     simple: {}
                     structure:
                       tag: "tag"
+                artifact_query:
+                  artifact_key:
+                    domain: "domain"
+                    name: "name"
+                    project: "project"
+                  alias:
+                    value: "value"
+                    key: "key"
+                  version: "version"
+                  tags:
+                  - value: "value"
+                    key: "key"
+                  - value: "value"
+                    key: "key"
                 required: true
           security_context:
             run_as:
@@ -6839,6 +7298,57 @@ definitions:
               map:
                 literals: {}
               hash: "hash"
+              literal_type:
+                schema:
+                  columns:
+                  - name: "name"
+                    type: {}
+                  - name: "name"
+                    type: {}
+                annotation:
+                  annotations:
+                    fields:
+                      key:
+                        list_value:
+                          values:
+                          - null
+                          - null
+                        number_value: 6.027456183070403
+                        string_value: "string_value"
+                        null_value: {}
+                        bool_value: true
+                structured_dataset_type:
+                  external_schema_type: "external_schema_type"
+                  columns:
+                  - name: "name"
+                  - name: "name"
+                  format: "format"
+                  external_schema_bytes: "external_schema_bytes"
+                metadata:
+                  fields:
+                    key:
+                      list_value:
+                        values:
+                        - null
+                        - null
+                      number_value: 6.027456183070403
+                      string_value: "string_value"
+                      null_value: {}
+                      bool_value: true
+                blob:
+                  dimensionality: {}
+                  format: "format"
+                enum_type:
+                  values:
+                  - "values"
+                  - "values"
+                union_type:
+                  variants:
+                  - null
+                  - null
+                simple: {}
+                structure:
+                  tag: "tag"
             var:
               description: "description"
               type:
@@ -6892,6 +7402,20 @@ definitions:
                 simple: {}
                 structure:
                   tag: "tag"
+            artifact_query:
+              artifact_key:
+                domain: "domain"
+                name: "name"
+                project: "project"
+              alias:
+                value: "value"
+                key: "key"
+              version: "version"
+              tags:
+              - value: "value"
+                key: "key"
+              - value: "value"
+                key: "key"
             required: true
       security_context:
         run_as:
@@ -43797,20 +44321,78 @@ definitions:
         $ref: "#/definitions/adminDescriptionEntity"
     description: "Represents a structure that encapsulates the specification of the\
       \ workflow."
-  coreAlias:
+  artifactArtifactID:
     type: "object"
     properties:
-      var:
+      artifact_key:
+        $ref: "#/definitions/artifactArtifactKey"
+      version:
         type: "string"
-        description: "Must match one of the output variable names on a node."
-      alias:
+        description: "Version is always autogenerated unless specifically overridden\
+          \ by the user. This will usually be the wf exec id\nThe things that users\
+          \ want, the ability to tag various versions with user-friendly semvers or\
+          \ something\ncan be managed separately in Tags and Aliases."
+  artifactArtifactKey:
+    type: "object"
+    properties:
+      project:
         type: "string"
-        description: "A workflow-level unique alias that downstream nodes can refer\
-          \ to in their input."
-    description: "Links a variable to an alias."
+        description: "Project and domain as we're all used to. Just to align with\
+          \ existing uniqueness constructs."
+      domain:
+        type: "string"
+      name:
+        type: "string"
+        description: "name can be auto-generated by the system in the case of natural\
+          \ outputs or un-named uploads\nor manually named by the user, if they care\
+          \ to."
     example:
-      var: "var"
-      alias: "alias"
+      domain: "domain"
+      name: "name"
+      project: "project"
+  artifactArtifactQuery:
+    type: "object"
+    properties:
+      artifact_key:
+        $ref: "#/definitions/artifactArtifactKey"
+      version:
+        type: "string"
+      alias:
+        $ref: "#/definitions/flyteidlartifactAlias"
+      tags:
+        type: "array"
+        items:
+          $ref: "#/definitions/artifactTag"
+    example:
+      artifact_key:
+        domain: "domain"
+        name: "name"
+        project: "project"
+      alias:
+        value: "value"
+        key: "key"
+      version: "version"
+      tags:
+      - value: "value"
+        key: "key"
+      - value: "value"
+        key: "key"
+  artifactTag:
+    type: "object"
+    properties:
+      key:
+        type: "string"
+        description: "tag types can be user specified if they want, though we'd probably\
+          \ recommend sticking with some constants\nthat we embed in various libraries."
+      value:
+        type: "string"
+    description: "Tags are general key/value pairs associated with an Artifact. They\
+      \ can be used to search and filter things.\nTags have to be unique by key for\
+      \ a given artifact. That is, for a given project/domain/name/version/key, there\n\
+      can only be one value, obviously."
+    example:
+      value: "value"
+      key: "key"
   coreApproveCondition:
     type: "object"
     properties:
@@ -53982,9 +54564,15 @@ definitions:
           \ For more details refer to RFC 1893\n(https://github.com/flyteorg/flyte/blob/master/rfc/system/1893-caching-of-offloaded-objects.md)"
       metadata:
         type: "object"
-        title: "this should probably be a proto Struct/json"
+        description: "Rejected: We were going to add the Artifact (or at least ArtifactID)\
+          \ here as a way to keep track of lineage\nBut this was deemed too janky."
         additionalProperties:
           type: "string"
+      literal_type:
+        title: "Rejected: We were going to add the literal type here because we decided\
+          \ it was general enough, but this\nis a lot of work to update everything.\
+          \ Can we think of an easier way?"
+        $ref: "#/definitions/coreLiteralType"
     description: "A simple value. This supports any level of nesting (e.g. array of\
       \ array of array of Blobs) as well as simple primitives."
     example:
@@ -54099,6 +54687,57 @@ definitions:
       map:
         literals: {}
       hash: "hash"
+      literal_type:
+        schema:
+          columns:
+          - name: "name"
+            type: {}
+          - name: "name"
+            type: {}
+        annotation:
+          annotations:
+            fields:
+              key:
+                list_value:
+                  values:
+                  - null
+                  - null
+                number_value: 6.027456183070403
+                string_value: "string_value"
+                null_value: {}
+                bool_value: true
+        structured_dataset_type:
+          external_schema_type: "external_schema_type"
+          columns:
+          - name: "name"
+          - name: "name"
+          format: "format"
+          external_schema_bytes: "external_schema_bytes"
+        metadata:
+          fields:
+            key:
+              list_value:
+                values:
+                - null
+                - null
+              number_value: 6.027456183070403
+              string_value: "string_value"
+              null_value: {}
+              bool_value: true
+        blob:
+          dimensionality: {}
+          format: "format"
+        enum_type:
+          values:
+          - "values"
+          - "values"
+        union_type:
+          variants:
+          - null
+          - null
+        simple: {}
+        structure:
+          tag: "tag"
   coreLiteralCollection:
     type: "object"
     properties:
@@ -54250,7 +54889,7 @@ definitions:
           \ same interface (e.g. all branches in a branch node). Downstream nodes\
           \ must refer to this\nnodes outputs using the alias if one's specified."
         items:
-          $ref: "#/definitions/coreAlias"
+          $ref: "#/definitions/flyteidlcoreAlias"
       task_node:
         description: "Information about the Task to execute in this node."
         $ref: "#/definitions/coreTaskNode"
@@ -54948,6 +55587,8 @@ definitions:
         type: "boolean"
         format: "boolean"
         description: "+optional, is this value required to be filled."
+      artifact_query:
+        $ref: "#/definitions/artifactArtifactQuery"
     description: "A parameter is used as input to a launch plan and has\nthe special\
       \ ability to have a default value or mark itself as required."
     example:
@@ -55063,6 +55704,57 @@ definitions:
         map:
           literals: {}
         hash: "hash"
+        literal_type:
+          schema:
+            columns:
+            - name: "name"
+              type: {}
+            - name: "name"
+              type: {}
+          annotation:
+            annotations:
+              fields:
+                key:
+                  list_value:
+                    values:
+                    - null
+                    - null
+                  number_value: 6.027456183070403
+                  string_value: "string_value"
+                  null_value: {}
+                  bool_value: true
+          structured_dataset_type:
+            external_schema_type: "external_schema_type"
+            columns:
+            - name: "name"
+            - name: "name"
+            format: "format"
+            external_schema_bytes: "external_schema_bytes"
+          metadata:
+            fields:
+              key:
+                list_value:
+                  values:
+                  - null
+                  - null
+                number_value: 6.027456183070403
+                string_value: "string_value"
+                null_value: {}
+                bool_value: true
+          blob:
+            dimensionality: {}
+            format: "format"
+          enum_type:
+            values:
+            - "values"
+            - "values"
+          union_type:
+            variants:
+            - null
+            - null
+          simple: {}
+          structure:
+            tag: "tag"
       var:
         description: "description"
         type:
@@ -55116,6 +55808,20 @@ definitions:
           simple: {}
           structure:
             tag: "tag"
+      artifact_query:
+        artifact_key:
+          domain: "domain"
+          name: "name"
+          project: "project"
+        alias:
+          value: "value"
+          key: "key"
+        version: "version"
+        tags:
+        - value: "value"
+          key: "key"
+        - value: "value"
+          key: "key"
       required: true
   coreParameterMap:
     type: "object"
@@ -55241,6 +55947,57 @@ definitions:
             map:
               literals: {}
             hash: "hash"
+            literal_type:
+              schema:
+                columns:
+                - name: "name"
+                  type: {}
+                - name: "name"
+                  type: {}
+              annotation:
+                annotations:
+                  fields:
+                    key:
+                      list_value:
+                        values:
+                        - null
+                        - null
+                      number_value: 6.027456183070403
+                      string_value: "string_value"
+                      null_value: {}
+                      bool_value: true
+              structured_dataset_type:
+                external_schema_type: "external_schema_type"
+                columns:
+                - name: "name"
+                - name: "name"
+                format: "format"
+                external_schema_bytes: "external_schema_bytes"
+              metadata:
+                fields:
+                  key:
+                    list_value:
+                      values:
+                      - null
+                      - null
+                    number_value: 6.027456183070403
+                    string_value: "string_value"
+                    null_value: {}
+                    bool_value: true
+              blob:
+                dimensionality: {}
+                format: "format"
+              enum_type:
+                values:
+                - "values"
+                - "values"
+              union_type:
+                variants:
+                - null
+                - null
+              simple: {}
+              structure:
+                tag: "tag"
           var:
             description: "description"
             type:
@@ -55294,6 +56051,20 @@ definitions:
               simple: {}
               structure:
                 tag: "tag"
+          artifact_query:
+            artifact_key:
+              domain: "domain"
+              name: "name"
+              project: "project"
+            alias:
+              value: "value"
+              key: "key"
+            version: "version"
+            tags:
+            - value: "value"
+              key: "key"
+            - value: "value"
+              key: "key"
           required: true
   corePrimitive:
     type: "object"
@@ -66169,6 +66940,35 @@ definitions:
         domain: "domain"
         name: "name"
         project: "project"
+  flyteidlartifactAlias:
+    type: "object"
+    properties:
+      key:
+        type: "string"
+        description: "Should this be an enum? I think it should be. version is the\
+          \ canonical example.\nIf we leave this as a string, we could merge this\
+          \ with Tag, like use a Tag in this message instead."
+      value:
+        type: "string"
+    title: "This is the key/value pair. For example an alias kind might be user facing\
+      \ version like a semver"
+    example:
+      value: "value"
+      key: "key"
+  flyteidlcoreAlias:
+    type: "object"
+    properties:
+      var:
+        type: "string"
+        description: "Must match one of the output variable names on a node."
+      alias:
+        type: "string"
+        description: "A workflow-level unique alias that downstream nodes can refer\
+          \ to in their input."
+    description: "Links a variable to an alias."
+    example:
+      var: "var"
+      alias: "alias"
   flyteidleventDynamicWorkflowNodeMetadata:
     type: "object"
     properties:

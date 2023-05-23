@@ -6,6 +6,7 @@ option go_package = "github.com/flyteorg/flyteidl/gen/pb-go/flyteidl/core";
 
 import "flyteidl/core/types.proto";
 import "flyteidl/core/literals.proto";
+import "flyteidl/artifact/artifacts.proto";
 
 // Defines a strongly typed variable.
 message Variable {
@@ -41,6 +42,8 @@ message Parameter {
 
         //+optional, is this value required to be filled.
         bool required = 3;
+
+        artifact.ArtifactQuery artifact_query = 4;
     }
 }
 

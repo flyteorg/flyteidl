@@ -2771,6 +2771,9 @@ export namespace flyteidl {
 
             /** Literal metadata */
             metadata?: ({ [k: string]: string }|null);
+
+            /** Literal literalType */
+            literalType?: (flyteidl.core.ILiteralType|null);
         }
 
         /** Represents a Literal. */
@@ -2796,6 +2799,9 @@ export namespace flyteidl {
 
             /** Literal metadata. */
             public metadata: { [k: string]: string };
+
+            /** Literal literalType. */
+            public literalType?: (flyteidl.core.ILiteralType|null);
 
             /** Literal value. */
             public value?: ("scalar"|"collection"|"map");
@@ -4768,6 +4774,9 @@ export namespace flyteidl {
 
             /** Parameter required */
             required?: (boolean|null);
+
+            /** Parameter artifactQuery */
+            artifactQuery?: (flyteidl.artifact.IArtifactQuery|null);
         }
 
         /** Represents a Parameter. */
@@ -4788,8 +4797,11 @@ export namespace flyteidl {
             /** Parameter required. */
             public required: boolean;
 
+            /** Parameter artifactQuery. */
+            public artifactQuery?: (flyteidl.artifact.IArtifactQuery|null);
+
             /** Parameter behavior. */
-            public behavior?: ("default"|"required");
+            public behavior?: ("default"|"required"|"artifactQuery");
 
             /**
              * Creates a new Parameter instance using the specified properties.
@@ -6534,6 +6546,1496 @@ export namespace flyteidl {
              * @returns `null` if valid, otherwise the reason why it is not
              */
             public static verify(message: { [k: string]: any }): (string|null);
+        }
+    }
+
+    /** Namespace artifact. */
+    namespace artifact {
+
+        /** Properties of an ArtifactKey. */
+        interface IArtifactKey {
+
+            /** ArtifactKey project */
+            project?: (string|null);
+
+            /** ArtifactKey domain */
+            domain?: (string|null);
+
+            /** ArtifactKey name */
+            name?: (string|null);
+        }
+
+        /** Represents an ArtifactKey. */
+        class ArtifactKey implements IArtifactKey {
+
+            /**
+             * Constructs a new ArtifactKey.
+             * @param [properties] Properties to set
+             */
+            constructor(properties?: flyteidl.artifact.IArtifactKey);
+
+            /** ArtifactKey project. */
+            public project: string;
+
+            /** ArtifactKey domain. */
+            public domain: string;
+
+            /** ArtifactKey name. */
+            public name: string;
+
+            /**
+             * Creates a new ArtifactKey instance using the specified properties.
+             * @param [properties] Properties to set
+             * @returns ArtifactKey instance
+             */
+            public static create(properties?: flyteidl.artifact.IArtifactKey): flyteidl.artifact.ArtifactKey;
+
+            /**
+             * Encodes the specified ArtifactKey message. Does not implicitly {@link flyteidl.artifact.ArtifactKey.verify|verify} messages.
+             * @param message ArtifactKey message or plain object to encode
+             * @param [writer] Writer to encode to
+             * @returns Writer
+             */
+            public static encode(message: flyteidl.artifact.IArtifactKey, writer?: $protobuf.Writer): $protobuf.Writer;
+
+            /**
+             * Decodes an ArtifactKey message from the specified reader or buffer.
+             * @param reader Reader or buffer to decode from
+             * @param [length] Message length if known beforehand
+             * @returns ArtifactKey
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): flyteidl.artifact.ArtifactKey;
+
+            /**
+             * Verifies an ArtifactKey message.
+             * @param message Plain object to verify
+             * @returns `null` if valid, otherwise the reason why it is not
+             */
+            public static verify(message: { [k: string]: any }): (string|null);
+        }
+
+        /** Properties of an ArtifactID. */
+        interface IArtifactID {
+
+            /** ArtifactID artifactKey */
+            artifactKey?: (flyteidl.artifact.IArtifactKey|null);
+
+            /** ArtifactID version */
+            version?: (string|null);
+        }
+
+        /** Represents an ArtifactID. */
+        class ArtifactID implements IArtifactID {
+
+            /**
+             * Constructs a new ArtifactID.
+             * @param [properties] Properties to set
+             */
+            constructor(properties?: flyteidl.artifact.IArtifactID);
+
+            /** ArtifactID artifactKey. */
+            public artifactKey?: (flyteidl.artifact.IArtifactKey|null);
+
+            /** ArtifactID version. */
+            public version: string;
+
+            /**
+             * Creates a new ArtifactID instance using the specified properties.
+             * @param [properties] Properties to set
+             * @returns ArtifactID instance
+             */
+            public static create(properties?: flyteidl.artifact.IArtifactID): flyteidl.artifact.ArtifactID;
+
+            /**
+             * Encodes the specified ArtifactID message. Does not implicitly {@link flyteidl.artifact.ArtifactID.verify|verify} messages.
+             * @param message ArtifactID message or plain object to encode
+             * @param [writer] Writer to encode to
+             * @returns Writer
+             */
+            public static encode(message: flyteidl.artifact.IArtifactID, writer?: $protobuf.Writer): $protobuf.Writer;
+
+            /**
+             * Decodes an ArtifactID message from the specified reader or buffer.
+             * @param reader Reader or buffer to decode from
+             * @param [length] Message length if known beforehand
+             * @returns ArtifactID
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): flyteidl.artifact.ArtifactID;
+
+            /**
+             * Verifies an ArtifactID message.
+             * @param message Plain object to verify
+             * @returns `null` if valid, otherwise the reason why it is not
+             */
+            public static verify(message: { [k: string]: any }): (string|null);
+        }
+
+        /** Properties of an Artifact. */
+        interface IArtifact {
+
+            /** Artifact artifactId */
+            artifactId?: (flyteidl.artifact.IArtifactID|null);
+
+            /** Artifact uri */
+            uri?: (string|null);
+
+            /** Artifact spec */
+            spec?: (flyteidl.artifact.IArtifactSpec|null);
+        }
+
+        /** Represents an Artifact. */
+        class Artifact implements IArtifact {
+
+            /**
+             * Constructs a new Artifact.
+             * @param [properties] Properties to set
+             */
+            constructor(properties?: flyteidl.artifact.IArtifact);
+
+            /** Artifact artifactId. */
+            public artifactId?: (flyteidl.artifact.IArtifactID|null);
+
+            /** Artifact uri. */
+            public uri: string;
+
+            /** Artifact spec. */
+            public spec?: (flyteidl.artifact.IArtifactSpec|null);
+
+            /**
+             * Creates a new Artifact instance using the specified properties.
+             * @param [properties] Properties to set
+             * @returns Artifact instance
+             */
+            public static create(properties?: flyteidl.artifact.IArtifact): flyteidl.artifact.Artifact;
+
+            /**
+             * Encodes the specified Artifact message. Does not implicitly {@link flyteidl.artifact.Artifact.verify|verify} messages.
+             * @param message Artifact message or plain object to encode
+             * @param [writer] Writer to encode to
+             * @returns Writer
+             */
+            public static encode(message: flyteidl.artifact.IArtifact, writer?: $protobuf.Writer): $protobuf.Writer;
+
+            /**
+             * Decodes an Artifact message from the specified reader or buffer.
+             * @param reader Reader or buffer to decode from
+             * @param [length] Message length if known beforehand
+             * @returns Artifact
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): flyteidl.artifact.Artifact;
+
+            /**
+             * Verifies an Artifact message.
+             * @param message Plain object to verify
+             * @returns `null` if valid, otherwise the reason why it is not
+             */
+            public static verify(message: { [k: string]: any }): (string|null);
+        }
+
+        /** Properties of an ArtifactSpec. */
+        interface IArtifactSpec {
+
+            /** ArtifactSpec value */
+            value?: (flyteidl.core.ILiteral|null);
+
+            /** ArtifactSpec type */
+            type?: (flyteidl.core.ILiteralType|null);
+
+            /** ArtifactSpec tags */
+            tags?: (flyteidl.artifact.ITag[]|null);
+
+            /** ArtifactSpec alias */
+            alias?: (flyteidl.artifact.IAlias|null);
+
+            /** ArtifactSpec taskExecution */
+            taskExecution?: (flyteidl.core.ITaskExecutionIdentifier|null);
+
+            /** ArtifactSpec execution */
+            execution?: (flyteidl.core.IWorkflowExecutionIdentifier|null);
+
+            /** ArtifactSpec principal */
+            principal?: (string|null);
+
+            /** ArtifactSpec shortDescription */
+            shortDescription?: (string|null);
+
+            /** ArtifactSpec longDescription */
+            longDescription?: (string|null);
+        }
+
+        /** Represents an ArtifactSpec. */
+        class ArtifactSpec implements IArtifactSpec {
+
+            /**
+             * Constructs a new ArtifactSpec.
+             * @param [properties] Properties to set
+             */
+            constructor(properties?: flyteidl.artifact.IArtifactSpec);
+
+            /** ArtifactSpec value. */
+            public value?: (flyteidl.core.ILiteral|null);
+
+            /** ArtifactSpec type. */
+            public type?: (flyteidl.core.ILiteralType|null);
+
+            /** ArtifactSpec tags. */
+            public tags: flyteidl.artifact.ITag[];
+
+            /** ArtifactSpec alias. */
+            public alias?: (flyteidl.artifact.IAlias|null);
+
+            /** ArtifactSpec taskExecution. */
+            public taskExecution?: (flyteidl.core.ITaskExecutionIdentifier|null);
+
+            /** ArtifactSpec execution. */
+            public execution?: (flyteidl.core.IWorkflowExecutionIdentifier|null);
+
+            /** ArtifactSpec principal. */
+            public principal: string;
+
+            /** ArtifactSpec shortDescription. */
+            public shortDescription: string;
+
+            /** ArtifactSpec longDescription. */
+            public longDescription: string;
+
+            /** ArtifactSpec source. */
+            public source?: ("taskExecution"|"execution"|"principal");
+
+            /**
+             * Creates a new ArtifactSpec instance using the specified properties.
+             * @param [properties] Properties to set
+             * @returns ArtifactSpec instance
+             */
+            public static create(properties?: flyteidl.artifact.IArtifactSpec): flyteidl.artifact.ArtifactSpec;
+
+            /**
+             * Encodes the specified ArtifactSpec message. Does not implicitly {@link flyteidl.artifact.ArtifactSpec.verify|verify} messages.
+             * @param message ArtifactSpec message or plain object to encode
+             * @param [writer] Writer to encode to
+             * @returns Writer
+             */
+            public static encode(message: flyteidl.artifact.IArtifactSpec, writer?: $protobuf.Writer): $protobuf.Writer;
+
+            /**
+             * Decodes an ArtifactSpec message from the specified reader or buffer.
+             * @param reader Reader or buffer to decode from
+             * @param [length] Message length if known beforehand
+             * @returns ArtifactSpec
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): flyteidl.artifact.ArtifactSpec;
+
+            /**
+             * Verifies an ArtifactSpec message.
+             * @param message Plain object to verify
+             * @returns `null` if valid, otherwise the reason why it is not
+             */
+            public static verify(message: { [k: string]: any }): (string|null);
+        }
+
+        /** Properties of an ArtifactQuery. */
+        interface IArtifactQuery {
+
+            /** ArtifactQuery artifactKey */
+            artifactKey?: (flyteidl.artifact.IArtifactKey|null);
+
+            /** ArtifactQuery version */
+            version?: (string|null);
+
+            /** ArtifactQuery alias */
+            alias?: (flyteidl.artifact.IAlias|null);
+
+            /** ArtifactQuery tags */
+            tags?: (flyteidl.artifact.ITag[]|null);
+        }
+
+        /** Represents an ArtifactQuery. */
+        class ArtifactQuery implements IArtifactQuery {
+
+            /**
+             * Constructs a new ArtifactQuery.
+             * @param [properties] Properties to set
+             */
+            constructor(properties?: flyteidl.artifact.IArtifactQuery);
+
+            /** ArtifactQuery artifactKey. */
+            public artifactKey?: (flyteidl.artifact.IArtifactKey|null);
+
+            /** ArtifactQuery version. */
+            public version: string;
+
+            /** ArtifactQuery alias. */
+            public alias?: (flyteidl.artifact.IAlias|null);
+
+            /** ArtifactQuery tags. */
+            public tags: flyteidl.artifact.ITag[];
+
+            /**
+             * Creates a new ArtifactQuery instance using the specified properties.
+             * @param [properties] Properties to set
+             * @returns ArtifactQuery instance
+             */
+            public static create(properties?: flyteidl.artifact.IArtifactQuery): flyteidl.artifact.ArtifactQuery;
+
+            /**
+             * Encodes the specified ArtifactQuery message. Does not implicitly {@link flyteidl.artifact.ArtifactQuery.verify|verify} messages.
+             * @param message ArtifactQuery message or plain object to encode
+             * @param [writer] Writer to encode to
+             * @returns Writer
+             */
+            public static encode(message: flyteidl.artifact.IArtifactQuery, writer?: $protobuf.Writer): $protobuf.Writer;
+
+            /**
+             * Decodes an ArtifactQuery message from the specified reader or buffer.
+             * @param reader Reader or buffer to decode from
+             * @param [length] Message length if known beforehand
+             * @returns ArtifactQuery
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): flyteidl.artifact.ArtifactQuery;
+
+            /**
+             * Verifies an ArtifactQuery message.
+             * @param message Plain object to verify
+             * @returns `null` if valid, otherwise the reason why it is not
+             */
+            public static verify(message: { [k: string]: any }): (string|null);
+        }
+
+        /** Properties of a CreateArtifactRequest. */
+        interface ICreateArtifactRequest {
+
+            /** CreateArtifactRequest artifactKey */
+            artifactKey?: (flyteidl.artifact.IArtifactKey|null);
+
+            /** CreateArtifactRequest version */
+            version?: (string|null);
+
+            /** CreateArtifactRequest spec */
+            spec?: (flyteidl.artifact.IArtifactSpec|null);
+        }
+
+        /** Represents a CreateArtifactRequest. */
+        class CreateArtifactRequest implements ICreateArtifactRequest {
+
+            /**
+             * Constructs a new CreateArtifactRequest.
+             * @param [properties] Properties to set
+             */
+            constructor(properties?: flyteidl.artifact.ICreateArtifactRequest);
+
+            /** CreateArtifactRequest artifactKey. */
+            public artifactKey?: (flyteidl.artifact.IArtifactKey|null);
+
+            /** CreateArtifactRequest version. */
+            public version: string;
+
+            /** CreateArtifactRequest spec. */
+            public spec?: (flyteidl.artifact.IArtifactSpec|null);
+
+            /**
+             * Creates a new CreateArtifactRequest instance using the specified properties.
+             * @param [properties] Properties to set
+             * @returns CreateArtifactRequest instance
+             */
+            public static create(properties?: flyteidl.artifact.ICreateArtifactRequest): flyteidl.artifact.CreateArtifactRequest;
+
+            /**
+             * Encodes the specified CreateArtifactRequest message. Does not implicitly {@link flyteidl.artifact.CreateArtifactRequest.verify|verify} messages.
+             * @param message CreateArtifactRequest message or plain object to encode
+             * @param [writer] Writer to encode to
+             * @returns Writer
+             */
+            public static encode(message: flyteidl.artifact.ICreateArtifactRequest, writer?: $protobuf.Writer): $protobuf.Writer;
+
+            /**
+             * Decodes a CreateArtifactRequest message from the specified reader or buffer.
+             * @param reader Reader or buffer to decode from
+             * @param [length] Message length if known beforehand
+             * @returns CreateArtifactRequest
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): flyteidl.artifact.CreateArtifactRequest;
+
+            /**
+             * Verifies a CreateArtifactRequest message.
+             * @param message Plain object to verify
+             * @returns `null` if valid, otherwise the reason why it is not
+             */
+            public static verify(message: { [k: string]: any }): (string|null);
+        }
+
+        /** Properties of a CreateArtifactResponse. */
+        interface ICreateArtifactResponse {
+
+            /** CreateArtifactResponse artifact */
+            artifact?: (flyteidl.artifact.IArtifact|null);
+        }
+
+        /** Represents a CreateArtifactResponse. */
+        class CreateArtifactResponse implements ICreateArtifactResponse {
+
+            /**
+             * Constructs a new CreateArtifactResponse.
+             * @param [properties] Properties to set
+             */
+            constructor(properties?: flyteidl.artifact.ICreateArtifactResponse);
+
+            /** CreateArtifactResponse artifact. */
+            public artifact?: (flyteidl.artifact.IArtifact|null);
+
+            /**
+             * Creates a new CreateArtifactResponse instance using the specified properties.
+             * @param [properties] Properties to set
+             * @returns CreateArtifactResponse instance
+             */
+            public static create(properties?: flyteidl.artifact.ICreateArtifactResponse): flyteidl.artifact.CreateArtifactResponse;
+
+            /**
+             * Encodes the specified CreateArtifactResponse message. Does not implicitly {@link flyteidl.artifact.CreateArtifactResponse.verify|verify} messages.
+             * @param message CreateArtifactResponse message or plain object to encode
+             * @param [writer] Writer to encode to
+             * @returns Writer
+             */
+            public static encode(message: flyteidl.artifact.ICreateArtifactResponse, writer?: $protobuf.Writer): $protobuf.Writer;
+
+            /**
+             * Decodes a CreateArtifactResponse message from the specified reader or buffer.
+             * @param reader Reader or buffer to decode from
+             * @param [length] Message length if known beforehand
+             * @returns CreateArtifactResponse
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): flyteidl.artifact.CreateArtifactResponse;
+
+            /**
+             * Verifies a CreateArtifactResponse message.
+             * @param message Plain object to verify
+             * @returns `null` if valid, otherwise the reason why it is not
+             */
+            public static verify(message: { [k: string]: any }): (string|null);
+        }
+
+        /** Properties of a GetArtifactRequest. */
+        interface IGetArtifactRequest {
+
+            /** GetArtifactRequest artifactId */
+            artifactId?: (flyteidl.artifact.IArtifactID|null);
+
+            /** GetArtifactRequest uri */
+            uri?: (string|null);
+
+            /** GetArtifactRequest details */
+            details?: (boolean|null);
+        }
+
+        /** Represents a GetArtifactRequest. */
+        class GetArtifactRequest implements IGetArtifactRequest {
+
+            /**
+             * Constructs a new GetArtifactRequest.
+             * @param [properties] Properties to set
+             */
+            constructor(properties?: flyteidl.artifact.IGetArtifactRequest);
+
+            /** GetArtifactRequest artifactId. */
+            public artifactId?: (flyteidl.artifact.IArtifactID|null);
+
+            /** GetArtifactRequest uri. */
+            public uri: string;
+
+            /** GetArtifactRequest details. */
+            public details: boolean;
+
+            /** GetArtifactRequest identifier. */
+            public identifier?: ("artifactId"|"uri");
+
+            /**
+             * Creates a new GetArtifactRequest instance using the specified properties.
+             * @param [properties] Properties to set
+             * @returns GetArtifactRequest instance
+             */
+            public static create(properties?: flyteidl.artifact.IGetArtifactRequest): flyteidl.artifact.GetArtifactRequest;
+
+            /**
+             * Encodes the specified GetArtifactRequest message. Does not implicitly {@link flyteidl.artifact.GetArtifactRequest.verify|verify} messages.
+             * @param message GetArtifactRequest message or plain object to encode
+             * @param [writer] Writer to encode to
+             * @returns Writer
+             */
+            public static encode(message: flyteidl.artifact.IGetArtifactRequest, writer?: $protobuf.Writer): $protobuf.Writer;
+
+            /**
+             * Decodes a GetArtifactRequest message from the specified reader or buffer.
+             * @param reader Reader or buffer to decode from
+             * @param [length] Message length if known beforehand
+             * @returns GetArtifactRequest
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): flyteidl.artifact.GetArtifactRequest;
+
+            /**
+             * Verifies a GetArtifactRequest message.
+             * @param message Plain object to verify
+             * @returns `null` if valid, otherwise the reason why it is not
+             */
+            public static verify(message: { [k: string]: any }): (string|null);
+        }
+
+        /** Properties of a Tag. */
+        interface ITag {
+
+            /** Tag key */
+            key?: (string|null);
+
+            /** Tag value */
+            value?: (string|null);
+        }
+
+        /** Represents a Tag. */
+        class Tag implements ITag {
+
+            /**
+             * Constructs a new Tag.
+             * @param [properties] Properties to set
+             */
+            constructor(properties?: flyteidl.artifact.ITag);
+
+            /** Tag key. */
+            public key: string;
+
+            /** Tag value. */
+            public value: string;
+
+            /**
+             * Creates a new Tag instance using the specified properties.
+             * @param [properties] Properties to set
+             * @returns Tag instance
+             */
+            public static create(properties?: flyteidl.artifact.ITag): flyteidl.artifact.Tag;
+
+            /**
+             * Encodes the specified Tag message. Does not implicitly {@link flyteidl.artifact.Tag.verify|verify} messages.
+             * @param message Tag message or plain object to encode
+             * @param [writer] Writer to encode to
+             * @returns Writer
+             */
+            public static encode(message: flyteidl.artifact.ITag, writer?: $protobuf.Writer): $protobuf.Writer;
+
+            /**
+             * Decodes a Tag message from the specified reader or buffer.
+             * @param reader Reader or buffer to decode from
+             * @param [length] Message length if known beforehand
+             * @returns Tag
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): flyteidl.artifact.Tag;
+
+            /**
+             * Verifies a Tag message.
+             * @param message Plain object to verify
+             * @returns `null` if valid, otherwise the reason why it is not
+             */
+            public static verify(message: { [k: string]: any }): (string|null);
+        }
+
+        /** Properties of an AddTagsRequest. */
+        interface IAddTagsRequest {
+
+            /** AddTagsRequest artifactId */
+            artifactId?: (flyteidl.artifact.IArtifactID|null);
+
+            /** AddTagsRequest tags */
+            tags?: (flyteidl.artifact.ITag[]|null);
+        }
+
+        /** Represents an AddTagsRequest. */
+        class AddTagsRequest implements IAddTagsRequest {
+
+            /**
+             * Constructs a new AddTagsRequest.
+             * @param [properties] Properties to set
+             */
+            constructor(properties?: flyteidl.artifact.IAddTagsRequest);
+
+            /** AddTagsRequest artifactId. */
+            public artifactId?: (flyteidl.artifact.IArtifactID|null);
+
+            /** AddTagsRequest tags. */
+            public tags: flyteidl.artifact.ITag[];
+
+            /**
+             * Creates a new AddTagsRequest instance using the specified properties.
+             * @param [properties] Properties to set
+             * @returns AddTagsRequest instance
+             */
+            public static create(properties?: flyteidl.artifact.IAddTagsRequest): flyteidl.artifact.AddTagsRequest;
+
+            /**
+             * Encodes the specified AddTagsRequest message. Does not implicitly {@link flyteidl.artifact.AddTagsRequest.verify|verify} messages.
+             * @param message AddTagsRequest message or plain object to encode
+             * @param [writer] Writer to encode to
+             * @returns Writer
+             */
+            public static encode(message: flyteidl.artifact.IAddTagsRequest, writer?: $protobuf.Writer): $protobuf.Writer;
+
+            /**
+             * Decodes an AddTagsRequest message from the specified reader or buffer.
+             * @param reader Reader or buffer to decode from
+             * @param [length] Message length if known beforehand
+             * @returns AddTagsRequest
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): flyteidl.artifact.AddTagsRequest;
+
+            /**
+             * Verifies an AddTagsRequest message.
+             * @param message Plain object to verify
+             * @returns `null` if valid, otherwise the reason why it is not
+             */
+            public static verify(message: { [k: string]: any }): (string|null);
+        }
+
+        /** Properties of an AddTagsResponse. */
+        interface IAddTagsResponse {
+        }
+
+        /** Represents an AddTagsResponse. */
+        class AddTagsResponse implements IAddTagsResponse {
+
+            /**
+             * Constructs a new AddTagsResponse.
+             * @param [properties] Properties to set
+             */
+            constructor(properties?: flyteidl.artifact.IAddTagsResponse);
+
+            /**
+             * Creates a new AddTagsResponse instance using the specified properties.
+             * @param [properties] Properties to set
+             * @returns AddTagsResponse instance
+             */
+            public static create(properties?: flyteidl.artifact.IAddTagsResponse): flyteidl.artifact.AddTagsResponse;
+
+            /**
+             * Encodes the specified AddTagsResponse message. Does not implicitly {@link flyteidl.artifact.AddTagsResponse.verify|verify} messages.
+             * @param message AddTagsResponse message or plain object to encode
+             * @param [writer] Writer to encode to
+             * @returns Writer
+             */
+            public static encode(message: flyteidl.artifact.IAddTagsResponse, writer?: $protobuf.Writer): $protobuf.Writer;
+
+            /**
+             * Decodes an AddTagsResponse message from the specified reader or buffer.
+             * @param reader Reader or buffer to decode from
+             * @param [length] Message length if known beforehand
+             * @returns AddTagsResponse
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): flyteidl.artifact.AddTagsResponse;
+
+            /**
+             * Verifies an AddTagsResponse message.
+             * @param message Plain object to verify
+             * @returns `null` if valid, otherwise the reason why it is not
+             */
+            public static verify(message: { [k: string]: any }): (string|null);
+        }
+
+        /** Properties of a RemoveTagsRequest. */
+        interface IRemoveTagsRequest {
+
+            /** RemoveTagsRequest artifactId */
+            artifactId?: (flyteidl.artifact.IArtifactID|null);
+
+            /** RemoveTagsRequest tags */
+            tags?: (flyteidl.artifact.ITag[]|null);
+        }
+
+        /** Represents a RemoveTagsRequest. */
+        class RemoveTagsRequest implements IRemoveTagsRequest {
+
+            /**
+             * Constructs a new RemoveTagsRequest.
+             * @param [properties] Properties to set
+             */
+            constructor(properties?: flyteidl.artifact.IRemoveTagsRequest);
+
+            /** RemoveTagsRequest artifactId. */
+            public artifactId?: (flyteidl.artifact.IArtifactID|null);
+
+            /** RemoveTagsRequest tags. */
+            public tags: flyteidl.artifact.ITag[];
+
+            /**
+             * Creates a new RemoveTagsRequest instance using the specified properties.
+             * @param [properties] Properties to set
+             * @returns RemoveTagsRequest instance
+             */
+            public static create(properties?: flyteidl.artifact.IRemoveTagsRequest): flyteidl.artifact.RemoveTagsRequest;
+
+            /**
+             * Encodes the specified RemoveTagsRequest message. Does not implicitly {@link flyteidl.artifact.RemoveTagsRequest.verify|verify} messages.
+             * @param message RemoveTagsRequest message or plain object to encode
+             * @param [writer] Writer to encode to
+             * @returns Writer
+             */
+            public static encode(message: flyteidl.artifact.IRemoveTagsRequest, writer?: $protobuf.Writer): $protobuf.Writer;
+
+            /**
+             * Decodes a RemoveTagsRequest message from the specified reader or buffer.
+             * @param reader Reader or buffer to decode from
+             * @param [length] Message length if known beforehand
+             * @returns RemoveTagsRequest
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): flyteidl.artifact.RemoveTagsRequest;
+
+            /**
+             * Verifies a RemoveTagsRequest message.
+             * @param message Plain object to verify
+             * @returns `null` if valid, otherwise the reason why it is not
+             */
+            public static verify(message: { [k: string]: any }): (string|null);
+        }
+
+        /** Properties of a RemoveTagsResponse. */
+        interface IRemoveTagsResponse {
+        }
+
+        /** Represents a RemoveTagsResponse. */
+        class RemoveTagsResponse implements IRemoveTagsResponse {
+
+            /**
+             * Constructs a new RemoveTagsResponse.
+             * @param [properties] Properties to set
+             */
+            constructor(properties?: flyteidl.artifact.IRemoveTagsResponse);
+
+            /**
+             * Creates a new RemoveTagsResponse instance using the specified properties.
+             * @param [properties] Properties to set
+             * @returns RemoveTagsResponse instance
+             */
+            public static create(properties?: flyteidl.artifact.IRemoveTagsResponse): flyteidl.artifact.RemoveTagsResponse;
+
+            /**
+             * Encodes the specified RemoveTagsResponse message. Does not implicitly {@link flyteidl.artifact.RemoveTagsResponse.verify|verify} messages.
+             * @param message RemoveTagsResponse message or plain object to encode
+             * @param [writer] Writer to encode to
+             * @returns Writer
+             */
+            public static encode(message: flyteidl.artifact.IRemoveTagsResponse, writer?: $protobuf.Writer): $protobuf.Writer;
+
+            /**
+             * Decodes a RemoveTagsResponse message from the specified reader or buffer.
+             * @param reader Reader or buffer to decode from
+             * @param [length] Message length if known beforehand
+             * @returns RemoveTagsResponse
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): flyteidl.artifact.RemoveTagsResponse;
+
+            /**
+             * Verifies a RemoveTagsResponse message.
+             * @param message Plain object to verify
+             * @returns `null` if valid, otherwise the reason why it is not
+             */
+            public static verify(message: { [k: string]: any }): (string|null);
+        }
+
+        /** Properties of a ListArtifactNamesRequest. */
+        interface IListArtifactNamesRequest {
+
+            /** ListArtifactNamesRequest project */
+            project?: (string|null);
+
+            /** ListArtifactNamesRequest domain */
+            domain?: (string|null);
+        }
+
+        /** Represents a ListArtifactNamesRequest. */
+        class ListArtifactNamesRequest implements IListArtifactNamesRequest {
+
+            /**
+             * Constructs a new ListArtifactNamesRequest.
+             * @param [properties] Properties to set
+             */
+            constructor(properties?: flyteidl.artifact.IListArtifactNamesRequest);
+
+            /** ListArtifactNamesRequest project. */
+            public project: string;
+
+            /** ListArtifactNamesRequest domain. */
+            public domain: string;
+
+            /**
+             * Creates a new ListArtifactNamesRequest instance using the specified properties.
+             * @param [properties] Properties to set
+             * @returns ListArtifactNamesRequest instance
+             */
+            public static create(properties?: flyteidl.artifact.IListArtifactNamesRequest): flyteidl.artifact.ListArtifactNamesRequest;
+
+            /**
+             * Encodes the specified ListArtifactNamesRequest message. Does not implicitly {@link flyteidl.artifact.ListArtifactNamesRequest.verify|verify} messages.
+             * @param message ListArtifactNamesRequest message or plain object to encode
+             * @param [writer] Writer to encode to
+             * @returns Writer
+             */
+            public static encode(message: flyteidl.artifact.IListArtifactNamesRequest, writer?: $protobuf.Writer): $protobuf.Writer;
+
+            /**
+             * Decodes a ListArtifactNamesRequest message from the specified reader or buffer.
+             * @param reader Reader or buffer to decode from
+             * @param [length] Message length if known beforehand
+             * @returns ListArtifactNamesRequest
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): flyteidl.artifact.ListArtifactNamesRequest;
+
+            /**
+             * Verifies a ListArtifactNamesRequest message.
+             * @param message Plain object to verify
+             * @returns `null` if valid, otherwise the reason why it is not
+             */
+            public static verify(message: { [k: string]: any }): (string|null);
+        }
+
+        /** Properties of a ListArtifactNamesResponse. */
+        interface IListArtifactNamesResponse {
+
+            /** ListArtifactNamesResponse artifactKeys */
+            artifactKeys?: (flyteidl.artifact.IArtifactKey[]|null);
+        }
+
+        /** Represents a ListArtifactNamesResponse. */
+        class ListArtifactNamesResponse implements IListArtifactNamesResponse {
+
+            /**
+             * Constructs a new ListArtifactNamesResponse.
+             * @param [properties] Properties to set
+             */
+            constructor(properties?: flyteidl.artifact.IListArtifactNamesResponse);
+
+            /** ListArtifactNamesResponse artifactKeys. */
+            public artifactKeys: flyteidl.artifact.IArtifactKey[];
+
+            /**
+             * Creates a new ListArtifactNamesResponse instance using the specified properties.
+             * @param [properties] Properties to set
+             * @returns ListArtifactNamesResponse instance
+             */
+            public static create(properties?: flyteidl.artifact.IListArtifactNamesResponse): flyteidl.artifact.ListArtifactNamesResponse;
+
+            /**
+             * Encodes the specified ListArtifactNamesResponse message. Does not implicitly {@link flyteidl.artifact.ListArtifactNamesResponse.verify|verify} messages.
+             * @param message ListArtifactNamesResponse message or plain object to encode
+             * @param [writer] Writer to encode to
+             * @returns Writer
+             */
+            public static encode(message: flyteidl.artifact.IListArtifactNamesResponse, writer?: $protobuf.Writer): $protobuf.Writer;
+
+            /**
+             * Decodes a ListArtifactNamesResponse message from the specified reader or buffer.
+             * @param reader Reader or buffer to decode from
+             * @param [length] Message length if known beforehand
+             * @returns ListArtifactNamesResponse
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): flyteidl.artifact.ListArtifactNamesResponse;
+
+            /**
+             * Verifies a ListArtifactNamesResponse message.
+             * @param message Plain object to verify
+             * @returns `null` if valid, otherwise the reason why it is not
+             */
+            public static verify(message: { [k: string]: any }): (string|null);
+        }
+
+        /** Properties of a ListArtifactsRequest. */
+        interface IListArtifactsRequest {
+
+            /** ListArtifactsRequest artifactKey */
+            artifactKey?: (flyteidl.artifact.IArtifactKey|null);
+        }
+
+        /** Represents a ListArtifactsRequest. */
+        class ListArtifactsRequest implements IListArtifactsRequest {
+
+            /**
+             * Constructs a new ListArtifactsRequest.
+             * @param [properties] Properties to set
+             */
+            constructor(properties?: flyteidl.artifact.IListArtifactsRequest);
+
+            /** ListArtifactsRequest artifactKey. */
+            public artifactKey?: (flyteidl.artifact.IArtifactKey|null);
+
+            /**
+             * Creates a new ListArtifactsRequest instance using the specified properties.
+             * @param [properties] Properties to set
+             * @returns ListArtifactsRequest instance
+             */
+            public static create(properties?: flyteidl.artifact.IListArtifactsRequest): flyteidl.artifact.ListArtifactsRequest;
+
+            /**
+             * Encodes the specified ListArtifactsRequest message. Does not implicitly {@link flyteidl.artifact.ListArtifactsRequest.verify|verify} messages.
+             * @param message ListArtifactsRequest message or plain object to encode
+             * @param [writer] Writer to encode to
+             * @returns Writer
+             */
+            public static encode(message: flyteidl.artifact.IListArtifactsRequest, writer?: $protobuf.Writer): $protobuf.Writer;
+
+            /**
+             * Decodes a ListArtifactsRequest message from the specified reader or buffer.
+             * @param reader Reader or buffer to decode from
+             * @param [length] Message length if known beforehand
+             * @returns ListArtifactsRequest
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): flyteidl.artifact.ListArtifactsRequest;
+
+            /**
+             * Verifies a ListArtifactsRequest message.
+             * @param message Plain object to verify
+             * @returns `null` if valid, otherwise the reason why it is not
+             */
+            public static verify(message: { [k: string]: any }): (string|null);
+        }
+
+        /** Properties of a ListArtifactsResponse. */
+        interface IListArtifactsResponse {
+
+            /** ListArtifactsResponse artifacts */
+            artifacts?: (flyteidl.artifact.IArtifact[]|null);
+        }
+
+        /** Represents a ListArtifactsResponse. */
+        class ListArtifactsResponse implements IListArtifactsResponse {
+
+            /**
+             * Constructs a new ListArtifactsResponse.
+             * @param [properties] Properties to set
+             */
+            constructor(properties?: flyteidl.artifact.IListArtifactsResponse);
+
+            /** ListArtifactsResponse artifacts. */
+            public artifacts: flyteidl.artifact.IArtifact[];
+
+            /**
+             * Creates a new ListArtifactsResponse instance using the specified properties.
+             * @param [properties] Properties to set
+             * @returns ListArtifactsResponse instance
+             */
+            public static create(properties?: flyteidl.artifact.IListArtifactsResponse): flyteidl.artifact.ListArtifactsResponse;
+
+            /**
+             * Encodes the specified ListArtifactsResponse message. Does not implicitly {@link flyteidl.artifact.ListArtifactsResponse.verify|verify} messages.
+             * @param message ListArtifactsResponse message or plain object to encode
+             * @param [writer] Writer to encode to
+             * @returns Writer
+             */
+            public static encode(message: flyteidl.artifact.IListArtifactsResponse, writer?: $protobuf.Writer): $protobuf.Writer;
+
+            /**
+             * Decodes a ListArtifactsResponse message from the specified reader or buffer.
+             * @param reader Reader or buffer to decode from
+             * @param [length] Message length if known beforehand
+             * @returns ListArtifactsResponse
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): flyteidl.artifact.ListArtifactsResponse;
+
+            /**
+             * Verifies a ListArtifactsResponse message.
+             * @param message Plain object to verify
+             * @returns `null` if valid, otherwise the reason why it is not
+             */
+            public static verify(message: { [k: string]: any }): (string|null);
+        }
+
+        /** Properties of a CreateAliasRequest. */
+        interface ICreateAliasRequest {
+
+            /** CreateAliasRequest artifactKey */
+            artifactKey?: (flyteidl.artifact.IArtifactKey|null);
+
+            /** CreateAliasRequest alias */
+            alias?: (flyteidl.artifact.IAlias|null);
+
+            /** CreateAliasRequest overwrite */
+            overwrite?: (boolean|null);
+        }
+
+        /** Represents a CreateAliasRequest. */
+        class CreateAliasRequest implements ICreateAliasRequest {
+
+            /**
+             * Constructs a new CreateAliasRequest.
+             * @param [properties] Properties to set
+             */
+            constructor(properties?: flyteidl.artifact.ICreateAliasRequest);
+
+            /** CreateAliasRequest artifactKey. */
+            public artifactKey?: (flyteidl.artifact.IArtifactKey|null);
+
+            /** CreateAliasRequest alias. */
+            public alias?: (flyteidl.artifact.IAlias|null);
+
+            /** CreateAliasRequest overwrite. */
+            public overwrite: boolean;
+
+            /**
+             * Creates a new CreateAliasRequest instance using the specified properties.
+             * @param [properties] Properties to set
+             * @returns CreateAliasRequest instance
+             */
+            public static create(properties?: flyteidl.artifact.ICreateAliasRequest): flyteidl.artifact.CreateAliasRequest;
+
+            /**
+             * Encodes the specified CreateAliasRequest message. Does not implicitly {@link flyteidl.artifact.CreateAliasRequest.verify|verify} messages.
+             * @param message CreateAliasRequest message or plain object to encode
+             * @param [writer] Writer to encode to
+             * @returns Writer
+             */
+            public static encode(message: flyteidl.artifact.ICreateAliasRequest, writer?: $protobuf.Writer): $protobuf.Writer;
+
+            /**
+             * Decodes a CreateAliasRequest message from the specified reader or buffer.
+             * @param reader Reader or buffer to decode from
+             * @param [length] Message length if known beforehand
+             * @returns CreateAliasRequest
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): flyteidl.artifact.CreateAliasRequest;
+
+            /**
+             * Verifies a CreateAliasRequest message.
+             * @param message Plain object to verify
+             * @returns `null` if valid, otherwise the reason why it is not
+             */
+            public static verify(message: { [k: string]: any }): (string|null);
+        }
+
+        /** Properties of a CreateAliasResponse. */
+        interface ICreateAliasResponse {
+        }
+
+        /** Represents a CreateAliasResponse. */
+        class CreateAliasResponse implements ICreateAliasResponse {
+
+            /**
+             * Constructs a new CreateAliasResponse.
+             * @param [properties] Properties to set
+             */
+            constructor(properties?: flyteidl.artifact.ICreateAliasResponse);
+
+            /**
+             * Creates a new CreateAliasResponse instance using the specified properties.
+             * @param [properties] Properties to set
+             * @returns CreateAliasResponse instance
+             */
+            public static create(properties?: flyteidl.artifact.ICreateAliasResponse): flyteidl.artifact.CreateAliasResponse;
+
+            /**
+             * Encodes the specified CreateAliasResponse message. Does not implicitly {@link flyteidl.artifact.CreateAliasResponse.verify|verify} messages.
+             * @param message CreateAliasResponse message or plain object to encode
+             * @param [writer] Writer to encode to
+             * @returns Writer
+             */
+            public static encode(message: flyteidl.artifact.ICreateAliasResponse, writer?: $protobuf.Writer): $protobuf.Writer;
+
+            /**
+             * Decodes a CreateAliasResponse message from the specified reader or buffer.
+             * @param reader Reader or buffer to decode from
+             * @param [length] Message length if known beforehand
+             * @returns CreateAliasResponse
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): flyteidl.artifact.CreateAliasResponse;
+
+            /**
+             * Verifies a CreateAliasResponse message.
+             * @param message Plain object to verify
+             * @returns `null` if valid, otherwise the reason why it is not
+             */
+            public static verify(message: { [k: string]: any }): (string|null);
+        }
+
+        /** Properties of a RemoveAliasRequest. */
+        interface IRemoveAliasRequest {
+
+            /** RemoveAliasRequest artifactId */
+            artifactId?: (flyteidl.artifact.IArtifactID|null);
+
+            /** RemoveAliasRequest alias */
+            alias?: (flyteidl.artifact.IAlias|null);
+        }
+
+        /** Represents a RemoveAliasRequest. */
+        class RemoveAliasRequest implements IRemoveAliasRequest {
+
+            /**
+             * Constructs a new RemoveAliasRequest.
+             * @param [properties] Properties to set
+             */
+            constructor(properties?: flyteidl.artifact.IRemoveAliasRequest);
+
+            /** RemoveAliasRequest artifactId. */
+            public artifactId?: (flyteidl.artifact.IArtifactID|null);
+
+            /** RemoveAliasRequest alias. */
+            public alias?: (flyteidl.artifact.IAlias|null);
+
+            /**
+             * Creates a new RemoveAliasRequest instance using the specified properties.
+             * @param [properties] Properties to set
+             * @returns RemoveAliasRequest instance
+             */
+            public static create(properties?: flyteidl.artifact.IRemoveAliasRequest): flyteidl.artifact.RemoveAliasRequest;
+
+            /**
+             * Encodes the specified RemoveAliasRequest message. Does not implicitly {@link flyteidl.artifact.RemoveAliasRequest.verify|verify} messages.
+             * @param message RemoveAliasRequest message or plain object to encode
+             * @param [writer] Writer to encode to
+             * @returns Writer
+             */
+            public static encode(message: flyteidl.artifact.IRemoveAliasRequest, writer?: $protobuf.Writer): $protobuf.Writer;
+
+            /**
+             * Decodes a RemoveAliasRequest message from the specified reader or buffer.
+             * @param reader Reader or buffer to decode from
+             * @param [length] Message length if known beforehand
+             * @returns RemoveAliasRequest
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): flyteidl.artifact.RemoveAliasRequest;
+
+            /**
+             * Verifies a RemoveAliasRequest message.
+             * @param message Plain object to verify
+             * @returns `null` if valid, otherwise the reason why it is not
+             */
+            public static verify(message: { [k: string]: any }): (string|null);
+        }
+
+        /** Properties of a RemoveAliasResponse. */
+        interface IRemoveAliasResponse {
+        }
+
+        /** Represents a RemoveAliasResponse. */
+        class RemoveAliasResponse implements IRemoveAliasResponse {
+
+            /**
+             * Constructs a new RemoveAliasResponse.
+             * @param [properties] Properties to set
+             */
+            constructor(properties?: flyteidl.artifact.IRemoveAliasResponse);
+
+            /**
+             * Creates a new RemoveAliasResponse instance using the specified properties.
+             * @param [properties] Properties to set
+             * @returns RemoveAliasResponse instance
+             */
+            public static create(properties?: flyteidl.artifact.IRemoveAliasResponse): flyteidl.artifact.RemoveAliasResponse;
+
+            /**
+             * Encodes the specified RemoveAliasResponse message. Does not implicitly {@link flyteidl.artifact.RemoveAliasResponse.verify|verify} messages.
+             * @param message RemoveAliasResponse message or plain object to encode
+             * @param [writer] Writer to encode to
+             * @returns Writer
+             */
+            public static encode(message: flyteidl.artifact.IRemoveAliasResponse, writer?: $protobuf.Writer): $protobuf.Writer;
+
+            /**
+             * Decodes a RemoveAliasResponse message from the specified reader or buffer.
+             * @param reader Reader or buffer to decode from
+             * @param [length] Message length if known beforehand
+             * @returns RemoveAliasResponse
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): flyteidl.artifact.RemoveAliasResponse;
+
+            /**
+             * Verifies a RemoveAliasResponse message.
+             * @param message Plain object to verify
+             * @returns `null` if valid, otherwise the reason why it is not
+             */
+            public static verify(message: { [k: string]: any }): (string|null);
+        }
+
+        /** Properties of an Alias. */
+        interface IAlias {
+
+            /** Alias key */
+            key?: (string|null);
+
+            /** Alias value */
+            value?: (string|null);
+        }
+
+        /** Represents an Alias. */
+        class Alias implements IAlias {
+
+            /**
+             * Constructs a new Alias.
+             * @param [properties] Properties to set
+             */
+            constructor(properties?: flyteidl.artifact.IAlias);
+
+            /** Alias key. */
+            public key: string;
+
+            /** Alias value. */
+            public value: string;
+
+            /**
+             * Creates a new Alias instance using the specified properties.
+             * @param [properties] Properties to set
+             * @returns Alias instance
+             */
+            public static create(properties?: flyteidl.artifact.IAlias): flyteidl.artifact.Alias;
+
+            /**
+             * Encodes the specified Alias message. Does not implicitly {@link flyteidl.artifact.Alias.verify|verify} messages.
+             * @param message Alias message or plain object to encode
+             * @param [writer] Writer to encode to
+             * @returns Writer
+             */
+            public static encode(message: flyteidl.artifact.IAlias, writer?: $protobuf.Writer): $protobuf.Writer;
+
+            /**
+             * Decodes an Alias message from the specified reader or buffer.
+             * @param reader Reader or buffer to decode from
+             * @param [length] Message length if known beforehand
+             * @returns Alias
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): flyteidl.artifact.Alias;
+
+            /**
+             * Verifies an Alias message.
+             * @param message Plain object to verify
+             * @returns `null` if valid, otherwise the reason why it is not
+             */
+            public static verify(message: { [k: string]: any }): (string|null);
+        }
+
+        /** Represents an ArtifactRegistry */
+        class ArtifactRegistry extends $protobuf.rpc.Service {
+
+            /**
+             * Constructs a new ArtifactRegistry service.
+             * @param rpcImpl RPC implementation
+             * @param [requestDelimited=false] Whether requests are length-delimited
+             * @param [responseDelimited=false] Whether responses are length-delimited
+             */
+            constructor(rpcImpl: $protobuf.RPCImpl, requestDelimited?: boolean, responseDelimited?: boolean);
+
+            /**
+             * Creates new ArtifactRegistry service using the specified rpc implementation.
+             * @param rpcImpl RPC implementation
+             * @param [requestDelimited=false] Whether requests are length-delimited
+             * @param [responseDelimited=false] Whether responses are length-delimited
+             * @returns RPC service. Useful where requests and/or responses are streamed.
+             */
+            public static create(rpcImpl: $protobuf.RPCImpl, requestDelimited?: boolean, responseDelimited?: boolean): ArtifactRegistry;
+
+            /**
+             * Calls CreateArtifact.
+             * @param request CreateArtifactRequest message or plain object
+             * @param callback Node-style callback called with the error, if any, and CreateArtifactResponse
+             */
+            public createArtifact(request: flyteidl.artifact.ICreateArtifactRequest, callback: flyteidl.artifact.ArtifactRegistry.CreateArtifactCallback): void;
+
+            /**
+             * Calls CreateArtifact.
+             * @param request CreateArtifactRequest message or plain object
+             * @returns Promise
+             */
+            public createArtifact(request: flyteidl.artifact.ICreateArtifactRequest): Promise<flyteidl.artifact.CreateArtifactResponse>;
+
+            /**
+             * Calls GetArtifact.
+             * @param request GetArtifactRequest message or plain object
+             * @param callback Node-style callback called with the error, if any, and Artifact
+             */
+            public getArtifact(request: flyteidl.artifact.IGetArtifactRequest, callback: flyteidl.artifact.ArtifactRegistry.GetArtifactCallback): void;
+
+            /**
+             * Calls GetArtifact.
+             * @param request GetArtifactRequest message or plain object
+             * @returns Promise
+             */
+            public getArtifact(request: flyteidl.artifact.IGetArtifactRequest): Promise<flyteidl.artifact.Artifact>;
+
+            /**
+             * Calls ListArtifactNames.
+             * @param request ListArtifactNamesRequest message or plain object
+             * @param callback Node-style callback called with the error, if any, and ListArtifactNamesResponse
+             */
+            public listArtifactNames(request: flyteidl.artifact.IListArtifactNamesRequest, callback: flyteidl.artifact.ArtifactRegistry.ListArtifactNamesCallback): void;
+
+            /**
+             * Calls ListArtifactNames.
+             * @param request ListArtifactNamesRequest message or plain object
+             * @returns Promise
+             */
+            public listArtifactNames(request: flyteidl.artifact.IListArtifactNamesRequest): Promise<flyteidl.artifact.ListArtifactNamesResponse>;
+
+            /**
+             * Calls ListArtifacts.
+             * @param request ListArtifactsRequest message or plain object
+             * @param callback Node-style callback called with the error, if any, and ListArtifactsResponse
+             */
+            public listArtifacts(request: flyteidl.artifact.IListArtifactsRequest, callback: flyteidl.artifact.ArtifactRegistry.ListArtifactsCallback): void;
+
+            /**
+             * Calls ListArtifacts.
+             * @param request ListArtifactsRequest message or plain object
+             * @returns Promise
+             */
+            public listArtifacts(request: flyteidl.artifact.IListArtifactsRequest): Promise<flyteidl.artifact.ListArtifactsResponse>;
+
+            /**
+             * Calls TagArtifact.
+             * @param request AddTagsRequest message or plain object
+             * @param callback Node-style callback called with the error, if any, and AddTagsResponse
+             */
+            public tagArtifact(request: flyteidl.artifact.IAddTagsRequest, callback: flyteidl.artifact.ArtifactRegistry.TagArtifactCallback): void;
+
+            /**
+             * Calls TagArtifact.
+             * @param request AddTagsRequest message or plain object
+             * @returns Promise
+             */
+            public tagArtifact(request: flyteidl.artifact.IAddTagsRequest): Promise<flyteidl.artifact.AddTagsResponse>;
+
+            /**
+             * Calls RemoveTags.
+             * @param request RemoveTagsRequest message or plain object
+             * @param callback Node-style callback called with the error, if any, and RemoveTagsResponse
+             */
+            public removeTags(request: flyteidl.artifact.IRemoveTagsRequest, callback: flyteidl.artifact.ArtifactRegistry.RemoveTagsCallback): void;
+
+            /**
+             * Calls RemoveTags.
+             * @param request RemoveTagsRequest message or plain object
+             * @returns Promise
+             */
+            public removeTags(request: flyteidl.artifact.IRemoveTagsRequest): Promise<flyteidl.artifact.RemoveTagsResponse>;
+
+            /**
+             * Calls CreateAlias.
+             * @param request CreateAliasRequest message or plain object
+             * @param callback Node-style callback called with the error, if any, and CreateAliasResponse
+             */
+            public createAlias(request: flyteidl.artifact.ICreateAliasRequest, callback: flyteidl.artifact.ArtifactRegistry.CreateAliasCallback): void;
+
+            /**
+             * Calls CreateAlias.
+             * @param request CreateAliasRequest message or plain object
+             * @returns Promise
+             */
+            public createAlias(request: flyteidl.artifact.ICreateAliasRequest): Promise<flyteidl.artifact.CreateAliasResponse>;
+
+            /**
+             * Calls RemoveAlias.
+             * @param request RemoveAliasRequest message or plain object
+             * @param callback Node-style callback called with the error, if any, and RemoveAliasResponse
+             */
+            public removeAlias(request: flyteidl.artifact.IRemoveAliasRequest, callback: flyteidl.artifact.ArtifactRegistry.RemoveAliasCallback): void;
+
+            /**
+             * Calls RemoveAlias.
+             * @param request RemoveAliasRequest message or plain object
+             * @returns Promise
+             */
+            public removeAlias(request: flyteidl.artifact.IRemoveAliasRequest): Promise<flyteidl.artifact.RemoveAliasResponse>;
+        }
+
+        namespace ArtifactRegistry {
+
+            /**
+             * Callback as used by {@link flyteidl.artifact.ArtifactRegistry#createArtifact}.
+             * @param error Error, if any
+             * @param [response] CreateArtifactResponse
+             */
+            type CreateArtifactCallback = (error: (Error|null), response?: flyteidl.artifact.CreateArtifactResponse) => void;
+
+            /**
+             * Callback as used by {@link flyteidl.artifact.ArtifactRegistry#getArtifact}.
+             * @param error Error, if any
+             * @param [response] Artifact
+             */
+            type GetArtifactCallback = (error: (Error|null), response?: flyteidl.artifact.Artifact) => void;
+
+            /**
+             * Callback as used by {@link flyteidl.artifact.ArtifactRegistry#listArtifactNames}.
+             * @param error Error, if any
+             * @param [response] ListArtifactNamesResponse
+             */
+            type ListArtifactNamesCallback = (error: (Error|null), response?: flyteidl.artifact.ListArtifactNamesResponse) => void;
+
+            /**
+             * Callback as used by {@link flyteidl.artifact.ArtifactRegistry#listArtifacts}.
+             * @param error Error, if any
+             * @param [response] ListArtifactsResponse
+             */
+            type ListArtifactsCallback = (error: (Error|null), response?: flyteidl.artifact.ListArtifactsResponse) => void;
+
+            /**
+             * Callback as used by {@link flyteidl.artifact.ArtifactRegistry#tagArtifact}.
+             * @param error Error, if any
+             * @param [response] AddTagsResponse
+             */
+            type TagArtifactCallback = (error: (Error|null), response?: flyteidl.artifact.AddTagsResponse) => void;
+
+            /**
+             * Callback as used by {@link flyteidl.artifact.ArtifactRegistry#removeTags}.
+             * @param error Error, if any
+             * @param [response] RemoveTagsResponse
+             */
+            type RemoveTagsCallback = (error: (Error|null), response?: flyteidl.artifact.RemoveTagsResponse) => void;
+
+            /**
+             * Callback as used by {@link flyteidl.artifact.ArtifactRegistry#createAlias}.
+             * @param error Error, if any
+             * @param [response] CreateAliasResponse
+             */
+            type CreateAliasCallback = (error: (Error|null), response?: flyteidl.artifact.CreateAliasResponse) => void;
+
+            /**
+             * Callback as used by {@link flyteidl.artifact.ArtifactRegistry#removeAlias}.
+             * @param error Error, if any
+             * @param [response] RemoveAliasResponse
+             */
+            type RemoveAliasCallback = (error: (Error|null), response?: flyteidl.artifact.RemoveAliasResponse) => void;
         }
     }
 
@@ -9857,6 +11359,9 @@ export namespace flyteidl {
 
             /** ExecutionCreateRequest inputs */
             inputs?: (flyteidl.core.ILiteralMap|null);
+
+            /** ExecutionCreateRequest artifacts */
+            artifacts?: ({ [k: string]: flyteidl.artifact.IArtifactID }|null);
         }
 
         /** Represents an ExecutionCreateRequest. */
@@ -9882,6 +11387,9 @@ export namespace flyteidl {
 
             /** ExecutionCreateRequest inputs. */
             public inputs?: (flyteidl.core.ILiteralMap|null);
+
+            /** ExecutionCreateRequest artifacts. */
+            public artifacts: { [k: string]: flyteidl.artifact.IArtifactID };
 
             /**
              * Creates a new ExecutionCreateRequest instance using the specified properties.

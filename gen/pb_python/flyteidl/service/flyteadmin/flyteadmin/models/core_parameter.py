@@ -16,6 +16,7 @@ import re  # noqa: F401
 
 import six
 
+from flyteadmin.models.artifact_artifact_query import ArtifactArtifactQuery  # noqa: F401,E501
 from flyteadmin.models.core_literal import CoreLiteral  # noqa: F401,E501
 from flyteadmin.models.core_variable import CoreVariable  # noqa: F401,E501
 
@@ -36,21 +37,24 @@ class CoreParameter(object):
     swagger_types = {
         'var': 'CoreVariable',
         'default': 'CoreLiteral',
-        'required': 'bool'
+        'required': 'bool',
+        'artifact_query': 'ArtifactArtifactQuery'
     }
 
     attribute_map = {
         'var': 'var',
         'default': 'default',
-        'required': 'required'
+        'required': 'required',
+        'artifact_query': 'artifact_query'
     }
 
-    def __init__(self, var=None, default=None, required=None):  # noqa: E501
+    def __init__(self, var=None, default=None, required=None, artifact_query=None):  # noqa: E501
         """CoreParameter - a model defined in Swagger"""  # noqa: E501
 
         self._var = None
         self._default = None
         self._required = None
+        self._artifact_query = None
         self.discriminator = None
 
         if var is not None:
@@ -59,6 +63,8 @@ class CoreParameter(object):
             self.default = default
         if required is not None:
             self.required = required
+        if artifact_query is not None:
+            self.artifact_query = artifact_query
 
     @property
     def var(self):
@@ -128,6 +134,27 @@ class CoreParameter(object):
         """
 
         self._required = required
+
+    @property
+    def artifact_query(self):
+        """Gets the artifact_query of this CoreParameter.  # noqa: E501
+
+
+        :return: The artifact_query of this CoreParameter.  # noqa: E501
+        :rtype: ArtifactArtifactQuery
+        """
+        return self._artifact_query
+
+    @artifact_query.setter
+    def artifact_query(self, artifact_query):
+        """Sets the artifact_query of this CoreParameter.
+
+
+        :param artifact_query: The artifact_query of this CoreParameter.  # noqa: E501
+        :type: ArtifactArtifactQuery
+        """
+
+        self._artifact_query = artifact_query
 
     def to_dict(self):
         """Returns the model properties as a dict"""

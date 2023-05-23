@@ -16,7 +16,7 @@ from flyteidl.core import types_pb2 as flyteidl_dot_core_dot_types__pb2
 from flyteidl.core import identifier_pb2 as flyteidl_dot_core_dot_identifier__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n!flyteidl/artifact/artifacts.proto\x12\x10\x66lyteidl.service\x1a\x1c\x66lyteidl/core/literals.proto\x1a\x19\x66lyteidl/core/types.proto\x1a\x1e\x66lyteidl/core/identifier.proto\"S\n\x0b\x41rtifactKey\x12\x18\n\x07project\x18\x01 \x01(\tR\x07project\x12\x16\n\x06\x64omain\x18\x02 \x01(\tR\x06\x64omain\x12\x12\n\x04name\x18\x03 \x01(\tR\x04name\"h\n\nArtifactID\x12@\n\x0c\x61rtifact_key\x18\x01 \x01(\x0b\x32\x1d.flyteidl.service.ArtifactKeyR\x0b\x61rtifactKey\x12\x18\n\x07version\x18\x04 \x01(\tR\x07version\"\x8f\x01\n\x08\x41rtifact\x12=\n\x0b\x61rtifact_id\x18\x01 \x01(\x0b\x32\x1c.flyteidl.service.ArtifactIDR\nartifactId\x12\x10\n\x03uri\x18\x02 \x01(\tR\x03uri\x12\x32\n\x04spec\x18\x03 \x01(\x0b\x32\x1e.flyteidl.service.ArtifactSpecR\x04spec\"\xe5\x03\n\x0c\x41rtifactSpec\x12,\n\x05value\x18\x01 \x01(\x0b\x32\x16.flyteidl.core.LiteralR\x05value\x12.\n\x04type\x18\x02 \x01(\x0b\x32\x1a.flyteidl.core.LiteralTypeR\x04type\x12)\n\x04tags\x18\x03 \x03(\x0b\x32\x15.flyteidl.service.TagR\x04tags\x12-\n\x05\x61lias\x18\x04 \x01(\x0b\x32\x17.flyteidl.service.AliasR\x05\x61lias\x12O\n\x0etask_execution\x18\x05 \x01(\x0b\x32&.flyteidl.core.TaskExecutionIdentifierH\x00R\rtaskExecution\x12J\n\texecution\x18\x06 \x01(\x0b\x32*.flyteidl.core.WorkflowExecutionIdentifierH\x00R\texecution\x12\x1e\n\tprincipal\x18\x07 \x01(\tH\x00R\tprincipal\x12+\n\x11short_description\x18\x08 \x01(\tR\x10shortDescription\x12)\n\x10long_description\x18\t \x01(\tR\x0flongDescriptionB\x08\n\x06source\"\xa7\x01\n\x15\x43reateArtifactRequest\x12@\n\x0c\x61rtifact_key\x18\x01 \x01(\x0b\x32\x1d.flyteidl.service.ArtifactKeyR\x0b\x61rtifactKey\x12\x18\n\x07version\x18\x02 \x01(\tR\x07version\x12\x32\n\x04spec\x18\x03 \x01(\x0b\x32\x1e.flyteidl.service.ArtifactSpecR\x04spec\"P\n\x16\x43reateArtifactResponse\x12\x36\n\x08\x61rtifact\x18\x01 \x01(\x0b\x32\x1a.flyteidl.service.ArtifactR\x08\x61rtifact\"\x91\x01\n\x12GetArtifactRequest\x12?\n\x0b\x61rtifact_id\x18\x01 \x01(\x0b\x32\x1c.flyteidl.service.ArtifactIDH\x00R\nartifactId\x12\x12\n\x03uri\x18\x02 \x01(\tH\x00R\x03uri\x12\x18\n\x07\x64\x65tails\x18\x03 \x01(\x08R\x07\x64\x65tailsB\x0c\n\nidentifier\"-\n\x03Tag\x12\x10\n\x03key\x18\x01 \x01(\tR\x03key\x12\x14\n\x05value\x18\x02 \x01(\tR\x05value\"z\n\x0e\x41\x64\x64TagsRequest\x12=\n\x0b\x61rtifact_id\x18\x01 \x01(\x0b\x32\x1c.flyteidl.service.ArtifactIDR\nartifactId\x12)\n\x04tags\x18\x02 \x03(\x0b\x32\x15.flyteidl.service.TagR\x04tags\"\x11\n\x0f\x41\x64\x64TagsResponse\"}\n\x11RemoveTagsRequest\x12=\n\x0b\x61rtifact_id\x18\x01 \x01(\x0b\x32\x1c.flyteidl.service.ArtifactIDR\nartifactId\x12)\n\x04tags\x18\x02 \x03(\x0b\x32\x15.flyteidl.service.TagR\x04tags\"\x14\n\x12RemoveTagsResponse\"L\n\x18ListArtifactNamesRequest\x12\x18\n\x07project\x18\x01 \x01(\tR\x07project\x12\x16\n\x06\x64omain\x18\x02 \x01(\tR\x06\x64omain\"_\n\x19ListArtifactNamesResponse\x12\x42\n\rartifact_keys\x18\x01 \x03(\x0b\x32\x1d.flyteidl.service.ArtifactKeyR\x0c\x61rtifactKeys\"X\n\x14ListArtifactsRequest\x12@\n\x0c\x61rtifact_key\x18\x01 \x01(\x0b\x32\x1d.flyteidl.service.ArtifactKeyR\x0b\x61rtifactKey\"Q\n\x15ListArtifactsResponse\x12\x38\n\tartifacts\x18\x01 \x03(\x0b\x32\x1a.flyteidl.service.ArtifactR\tartifacts\"\xa3\x01\n\x12\x43reateAliasRequest\x12@\n\x0c\x61rtifact_key\x18\x01 \x01(\x0b\x32\x1d.flyteidl.service.ArtifactKeyR\x0b\x61rtifactKey\x12-\n\x05\x61lias\x18\x02 \x01(\x0b\x32\x17.flyteidl.service.AliasR\x05\x61lias\x12\x1c\n\toverwrite\x18\x03 \x01(\x08R\toverwrite\"\x15\n\x13\x43reateAliasResponse\"\x82\x01\n\x12RemoveAliasRequest\x12=\n\x0b\x61rtifact_id\x18\x01 \x01(\x0b\x32\x1c.flyteidl.service.ArtifactIDR\nartifactId\x12-\n\x05\x61lias\x18\x02 \x01(\x0b\x32\x17.flyteidl.service.AliasR\x05\x61lias\"\x15\n\x13RemoveAliasResponse\"/\n\x05\x41lias\x12\x10\n\x03key\x18\x01 \x01(\tR\x03key\x12\x14\n\x05value\x18\x02 \x01(\tR\x05value2\x8d\x06\n\x10\x41rtifactRegistry\x12\x65\n\x0e\x43reateArtifact\x12\'.flyteidl.service.CreateArtifactRequest\x1a(.flyteidl.service.CreateArtifactResponse\"\x00\x12Q\n\x0bGetArtifact\x12$.flyteidl.service.GetArtifactRequest\x1a\x1a.flyteidl.service.Artifact\"\x00\x12n\n\x11ListArtifactNames\x12*.flyteidl.service.ListArtifactNamesRequest\x1a+.flyteidl.service.ListArtifactNamesResponse\"\x00\x12\x62\n\rListArtifacts\x12&.flyteidl.service.ListArtifactsRequest\x1a\'.flyteidl.service.ListArtifactsResponse\"\x00\x12T\n\x0bTagArtifact\x12 .flyteidl.service.AddTagsRequest\x1a!.flyteidl.service.AddTagsResponse\"\x00\x12Y\n\nRemoveTags\x12#.flyteidl.service.RemoveTagsRequest\x1a$.flyteidl.service.RemoveTagsResponse\"\x00\x12\\\n\x0b\x43reateAlias\x12$.flyteidl.service.CreateAliasRequest\x1a%.flyteidl.service.CreateAliasResponse\"\x00\x12\\\n\x0bRemoveAlias\x12$.flyteidl.service.RemoveAliasRequest\x1a%.flyteidl.service.RemoveAliasResponse\"\x00\x42\xc1\x01\n\x14\x63om.flyteidl.serviceB\x0e\x41rtifactsProtoP\x01Z8github.com/flyteorg/flyteidl/gen/pb-go/flyteidl/artifact\xa2\x02\x03\x46SX\xaa\x02\x10\x46lyteidl.Service\xca\x02\x10\x46lyteidl\\Service\xe2\x02\x1c\x46lyteidl\\Service\\GPBMetadata\xea\x02\x11\x46lyteidl::Serviceb\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n!flyteidl/artifact/artifacts.proto\x12\x11\x66lyteidl.artifact\x1a\x1c\x66lyteidl/core/literals.proto\x1a\x19\x66lyteidl/core/types.proto\x1a\x1e\x66lyteidl/core/identifier.proto\"S\n\x0b\x41rtifactKey\x12\x18\n\x07project\x18\x01 \x01(\tR\x07project\x12\x16\n\x06\x64omain\x18\x02 \x01(\tR\x06\x64omain\x12\x12\n\x04name\x18\x03 \x01(\tR\x04name\"i\n\nArtifactID\x12\x41\n\x0c\x61rtifact_key\x18\x01 \x01(\x0b\x32\x1e.flyteidl.artifact.ArtifactKeyR\x0b\x61rtifactKey\x12\x18\n\x07version\x18\x04 \x01(\tR\x07version\"\x91\x01\n\x08\x41rtifact\x12>\n\x0b\x61rtifact_id\x18\x01 \x01(\x0b\x32\x1d.flyteidl.artifact.ArtifactIDR\nartifactId\x12\x10\n\x03uri\x18\x02 \x01(\tR\x03uri\x12\x33\n\x04spec\x18\x03 \x01(\x0b\x32\x1f.flyteidl.artifact.ArtifactSpecR\x04spec\"\xe7\x03\n\x0c\x41rtifactSpec\x12,\n\x05value\x18\x01 \x01(\x0b\x32\x16.flyteidl.core.LiteralR\x05value\x12.\n\x04type\x18\x02 \x01(\x0b\x32\x1a.flyteidl.core.LiteralTypeR\x04type\x12*\n\x04tags\x18\x03 \x03(\x0b\x32\x16.flyteidl.artifact.TagR\x04tags\x12.\n\x05\x61lias\x18\x04 \x01(\x0b\x32\x18.flyteidl.artifact.AliasR\x05\x61lias\x12O\n\x0etask_execution\x18\x05 \x01(\x0b\x32&.flyteidl.core.TaskExecutionIdentifierH\x00R\rtaskExecution\x12J\n\texecution\x18\x06 \x01(\x0b\x32*.flyteidl.core.WorkflowExecutionIdentifierH\x00R\texecution\x12\x1e\n\tprincipal\x18\x07 \x01(\tH\x00R\tprincipal\x12+\n\x11short_description\x18\x08 \x01(\tR\x10shortDescription\x12)\n\x10long_description\x18\t \x01(\tR\x0flongDescriptionB\x08\n\x06source\"\xc8\x01\n\rArtifactQuery\x12\x41\n\x0c\x61rtifact_key\x18\x01 \x01(\x0b\x32\x1e.flyteidl.artifact.ArtifactKeyR\x0b\x61rtifactKey\x12\x18\n\x07version\x18\x02 \x01(\tR\x07version\x12.\n\x05\x61lias\x18\x03 \x01(\x0b\x32\x18.flyteidl.artifact.AliasR\x05\x61lias\x12*\n\x04tags\x18\x04 \x03(\x0b\x32\x16.flyteidl.artifact.TagR\x04tags\"\xa9\x01\n\x15\x43reateArtifactRequest\x12\x41\n\x0c\x61rtifact_key\x18\x01 \x01(\x0b\x32\x1e.flyteidl.artifact.ArtifactKeyR\x0b\x61rtifactKey\x12\x18\n\x07version\x18\x02 \x01(\tR\x07version\x12\x33\n\x04spec\x18\x03 \x01(\x0b\x32\x1f.flyteidl.artifact.ArtifactSpecR\x04spec\"Q\n\x16\x43reateArtifactResponse\x12\x37\n\x08\x61rtifact\x18\x01 \x01(\x0b\x32\x1b.flyteidl.artifact.ArtifactR\x08\x61rtifact\"\x92\x01\n\x12GetArtifactRequest\x12@\n\x0b\x61rtifact_id\x18\x01 \x01(\x0b\x32\x1d.flyteidl.artifact.ArtifactIDH\x00R\nartifactId\x12\x12\n\x03uri\x18\x02 \x01(\tH\x00R\x03uri\x12\x18\n\x07\x64\x65tails\x18\x03 \x01(\x08R\x07\x64\x65tailsB\x0c\n\nidentifier\"-\n\x03Tag\x12\x10\n\x03key\x18\x01 \x01(\tR\x03key\x12\x14\n\x05value\x18\x02 \x01(\tR\x05value\"|\n\x0e\x41\x64\x64TagsRequest\x12>\n\x0b\x61rtifact_id\x18\x01 \x01(\x0b\x32\x1d.flyteidl.artifact.ArtifactIDR\nartifactId\x12*\n\x04tags\x18\x02 \x03(\x0b\x32\x16.flyteidl.artifact.TagR\x04tags\"\x11\n\x0f\x41\x64\x64TagsResponse\"\x7f\n\x11RemoveTagsRequest\x12>\n\x0b\x61rtifact_id\x18\x01 \x01(\x0b\x32\x1d.flyteidl.artifact.ArtifactIDR\nartifactId\x12*\n\x04tags\x18\x02 \x03(\x0b\x32\x16.flyteidl.artifact.TagR\x04tags\"\x14\n\x12RemoveTagsResponse\"L\n\x18ListArtifactNamesRequest\x12\x18\n\x07project\x18\x01 \x01(\tR\x07project\x12\x16\n\x06\x64omain\x18\x02 \x01(\tR\x06\x64omain\"`\n\x19ListArtifactNamesResponse\x12\x43\n\rartifact_keys\x18\x01 \x03(\x0b\x32\x1e.flyteidl.artifact.ArtifactKeyR\x0c\x61rtifactKeys\"Y\n\x14ListArtifactsRequest\x12\x41\n\x0c\x61rtifact_key\x18\x01 \x01(\x0b\x32\x1e.flyteidl.artifact.ArtifactKeyR\x0b\x61rtifactKey\"R\n\x15ListArtifactsResponse\x12\x39\n\tartifacts\x18\x01 \x03(\x0b\x32\x1b.flyteidl.artifact.ArtifactR\tartifacts\"\xa5\x01\n\x12\x43reateAliasRequest\x12\x41\n\x0c\x61rtifact_key\x18\x01 \x01(\x0b\x32\x1e.flyteidl.artifact.ArtifactKeyR\x0b\x61rtifactKey\x12.\n\x05\x61lias\x18\x02 \x01(\x0b\x32\x18.flyteidl.artifact.AliasR\x05\x61lias\x12\x1c\n\toverwrite\x18\x03 \x01(\x08R\toverwrite\"\x15\n\x13\x43reateAliasResponse\"\x84\x01\n\x12RemoveAliasRequest\x12>\n\x0b\x61rtifact_id\x18\x01 \x01(\x0b\x32\x1d.flyteidl.artifact.ArtifactIDR\nartifactId\x12.\n\x05\x61lias\x18\x02 \x01(\x0b\x32\x18.flyteidl.artifact.AliasR\x05\x61lias\"\x15\n\x13RemoveAliasResponse\"/\n\x05\x41lias\x12\x10\n\x03key\x18\x01 \x01(\tR\x03key\x12\x14\n\x05value\x18\x02 \x01(\tR\x05value2\x9d\x06\n\x10\x41rtifactRegistry\x12g\n\x0e\x43reateArtifact\x12(.flyteidl.artifact.CreateArtifactRequest\x1a).flyteidl.artifact.CreateArtifactResponse\"\x00\x12S\n\x0bGetArtifact\x12%.flyteidl.artifact.GetArtifactRequest\x1a\x1b.flyteidl.artifact.Artifact\"\x00\x12p\n\x11ListArtifactNames\x12+.flyteidl.artifact.ListArtifactNamesRequest\x1a,.flyteidl.artifact.ListArtifactNamesResponse\"\x00\x12\x64\n\rListArtifacts\x12\'.flyteidl.artifact.ListArtifactsRequest\x1a(.flyteidl.artifact.ListArtifactsResponse\"\x00\x12V\n\x0bTagArtifact\x12!.flyteidl.artifact.AddTagsRequest\x1a\".flyteidl.artifact.AddTagsResponse\"\x00\x12[\n\nRemoveTags\x12$.flyteidl.artifact.RemoveTagsRequest\x1a%.flyteidl.artifact.RemoveTagsResponse\"\x00\x12^\n\x0b\x43reateAlias\x12%.flyteidl.artifact.CreateAliasRequest\x1a&.flyteidl.artifact.CreateAliasResponse\"\x00\x12^\n\x0bRemoveAlias\x12%.flyteidl.artifact.RemoveAliasRequest\x1a&.flyteidl.artifact.RemoveAliasResponse\"\x00\x42\xc6\x01\n\x15\x63om.flyteidl.artifactB\x0e\x41rtifactsProtoP\x01Z8github.com/flyteorg/flyteidl/gen/pb-go/flyteidl/artifact\xa2\x02\x03\x46\x41X\xaa\x02\x11\x46lyteidl.Artifact\xca\x02\x11\x46lyteidl\\Artifact\xe2\x02\x1d\x46lyteidl\\Artifact\\GPBMetadata\xea\x02\x12\x46lyteidl::Artifactb\x06proto3')
 
 _globals = globals()
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, _globals)
@@ -24,49 +24,51 @@ _builder.BuildTopDescriptorsAndMessages(DESCRIPTOR, 'flyteidl.artifact.artifacts
 if _descriptor._USE_C_DESCRIPTORS == False:
 
   DESCRIPTOR._options = None
-  DESCRIPTOR._serialized_options = b'\n\024com.flyteidl.serviceB\016ArtifactsProtoP\001Z8github.com/flyteorg/flyteidl/gen/pb-go/flyteidl/artifact\242\002\003FSX\252\002\020Flyteidl.Service\312\002\020Flyteidl\\Service\342\002\034Flyteidl\\Service\\GPBMetadata\352\002\021Flyteidl::Service'
-  _globals['_ARTIFACTKEY']._serialized_start=144
-  _globals['_ARTIFACTKEY']._serialized_end=227
-  _globals['_ARTIFACTID']._serialized_start=229
-  _globals['_ARTIFACTID']._serialized_end=333
-  _globals['_ARTIFACT']._serialized_start=336
-  _globals['_ARTIFACT']._serialized_end=479
-  _globals['_ARTIFACTSPEC']._serialized_start=482
-  _globals['_ARTIFACTSPEC']._serialized_end=967
-  _globals['_CREATEARTIFACTREQUEST']._serialized_start=970
-  _globals['_CREATEARTIFACTREQUEST']._serialized_end=1137
-  _globals['_CREATEARTIFACTRESPONSE']._serialized_start=1139
-  _globals['_CREATEARTIFACTRESPONSE']._serialized_end=1219
-  _globals['_GETARTIFACTREQUEST']._serialized_start=1222
-  _globals['_GETARTIFACTREQUEST']._serialized_end=1367
-  _globals['_TAG']._serialized_start=1369
-  _globals['_TAG']._serialized_end=1414
-  _globals['_ADDTAGSREQUEST']._serialized_start=1416
-  _globals['_ADDTAGSREQUEST']._serialized_end=1538
-  _globals['_ADDTAGSRESPONSE']._serialized_start=1540
-  _globals['_ADDTAGSRESPONSE']._serialized_end=1557
-  _globals['_REMOVETAGSREQUEST']._serialized_start=1559
-  _globals['_REMOVETAGSREQUEST']._serialized_end=1684
-  _globals['_REMOVETAGSRESPONSE']._serialized_start=1686
-  _globals['_REMOVETAGSRESPONSE']._serialized_end=1706
-  _globals['_LISTARTIFACTNAMESREQUEST']._serialized_start=1708
-  _globals['_LISTARTIFACTNAMESREQUEST']._serialized_end=1784
-  _globals['_LISTARTIFACTNAMESRESPONSE']._serialized_start=1786
-  _globals['_LISTARTIFACTNAMESRESPONSE']._serialized_end=1881
-  _globals['_LISTARTIFACTSREQUEST']._serialized_start=1883
-  _globals['_LISTARTIFACTSREQUEST']._serialized_end=1971
-  _globals['_LISTARTIFACTSRESPONSE']._serialized_start=1973
-  _globals['_LISTARTIFACTSRESPONSE']._serialized_end=2054
-  _globals['_CREATEALIASREQUEST']._serialized_start=2057
-  _globals['_CREATEALIASREQUEST']._serialized_end=2220
-  _globals['_CREATEALIASRESPONSE']._serialized_start=2222
-  _globals['_CREATEALIASRESPONSE']._serialized_end=2243
-  _globals['_REMOVEALIASREQUEST']._serialized_start=2246
-  _globals['_REMOVEALIASREQUEST']._serialized_end=2376
-  _globals['_REMOVEALIASRESPONSE']._serialized_start=2378
-  _globals['_REMOVEALIASRESPONSE']._serialized_end=2399
-  _globals['_ALIAS']._serialized_start=2401
-  _globals['_ALIAS']._serialized_end=2448
-  _globals['_ARTIFACTREGISTRY']._serialized_start=2451
-  _globals['_ARTIFACTREGISTRY']._serialized_end=3232
+  DESCRIPTOR._serialized_options = b'\n\025com.flyteidl.artifactB\016ArtifactsProtoP\001Z8github.com/flyteorg/flyteidl/gen/pb-go/flyteidl/artifact\242\002\003FAX\252\002\021Flyteidl.Artifact\312\002\021Flyteidl\\Artifact\342\002\035Flyteidl\\Artifact\\GPBMetadata\352\002\022Flyteidl::Artifact'
+  _globals['_ARTIFACTKEY']._serialized_start=145
+  _globals['_ARTIFACTKEY']._serialized_end=228
+  _globals['_ARTIFACTID']._serialized_start=230
+  _globals['_ARTIFACTID']._serialized_end=335
+  _globals['_ARTIFACT']._serialized_start=338
+  _globals['_ARTIFACT']._serialized_end=483
+  _globals['_ARTIFACTSPEC']._serialized_start=486
+  _globals['_ARTIFACTSPEC']._serialized_end=973
+  _globals['_ARTIFACTQUERY']._serialized_start=976
+  _globals['_ARTIFACTQUERY']._serialized_end=1176
+  _globals['_CREATEARTIFACTREQUEST']._serialized_start=1179
+  _globals['_CREATEARTIFACTREQUEST']._serialized_end=1348
+  _globals['_CREATEARTIFACTRESPONSE']._serialized_start=1350
+  _globals['_CREATEARTIFACTRESPONSE']._serialized_end=1431
+  _globals['_GETARTIFACTREQUEST']._serialized_start=1434
+  _globals['_GETARTIFACTREQUEST']._serialized_end=1580
+  _globals['_TAG']._serialized_start=1582
+  _globals['_TAG']._serialized_end=1627
+  _globals['_ADDTAGSREQUEST']._serialized_start=1629
+  _globals['_ADDTAGSREQUEST']._serialized_end=1753
+  _globals['_ADDTAGSRESPONSE']._serialized_start=1755
+  _globals['_ADDTAGSRESPONSE']._serialized_end=1772
+  _globals['_REMOVETAGSREQUEST']._serialized_start=1774
+  _globals['_REMOVETAGSREQUEST']._serialized_end=1901
+  _globals['_REMOVETAGSRESPONSE']._serialized_start=1903
+  _globals['_REMOVETAGSRESPONSE']._serialized_end=1923
+  _globals['_LISTARTIFACTNAMESREQUEST']._serialized_start=1925
+  _globals['_LISTARTIFACTNAMESREQUEST']._serialized_end=2001
+  _globals['_LISTARTIFACTNAMESRESPONSE']._serialized_start=2003
+  _globals['_LISTARTIFACTNAMESRESPONSE']._serialized_end=2099
+  _globals['_LISTARTIFACTSREQUEST']._serialized_start=2101
+  _globals['_LISTARTIFACTSREQUEST']._serialized_end=2190
+  _globals['_LISTARTIFACTSRESPONSE']._serialized_start=2192
+  _globals['_LISTARTIFACTSRESPONSE']._serialized_end=2274
+  _globals['_CREATEALIASREQUEST']._serialized_start=2277
+  _globals['_CREATEALIASREQUEST']._serialized_end=2442
+  _globals['_CREATEALIASRESPONSE']._serialized_start=2444
+  _globals['_CREATEALIASRESPONSE']._serialized_end=2465
+  _globals['_REMOVEALIASREQUEST']._serialized_start=2468
+  _globals['_REMOVEALIASREQUEST']._serialized_end=2600
+  _globals['_REMOVEALIASRESPONSE']._serialized_start=2602
+  _globals['_REMOVEALIASRESPONSE']._serialized_end=2623
+  _globals['_ALIAS']._serialized_start=2625
+  _globals['_ALIAS']._serialized_end=2672
+  _globals['_ARTIFACTREGISTRY']._serialized_start=2675
+  _globals['_ARTIFACTREGISTRY']._serialized_end=3472
 # @@protoc_insertion_point(module_scope)
