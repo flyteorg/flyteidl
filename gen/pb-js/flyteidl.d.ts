@@ -10527,6 +10527,9 @@ export namespace flyteidl {
 
             /** SystemMetadata executionCluster */
             executionCluster?: (string|null);
+
+            /** SystemMetadata namespace */
+            namespace?: (string|null);
         }
 
         /** Represents a SystemMetadata. */
@@ -10540,6 +10543,9 @@ export namespace flyteidl {
 
             /** SystemMetadata executionCluster. */
             public executionCluster: string;
+
+            /** SystemMetadata namespace. */
+            public namespace: string;
 
             /**
              * Creates a new SystemMetadata instance using the specified properties.

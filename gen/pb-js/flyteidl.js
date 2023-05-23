@@ -25418,6 +25418,7 @@
                  * @memberof flyteidl.admin
                  * @interface ISystemMetadata
                  * @property {string|null} [executionCluster] SystemMetadata executionCluster
+                 * @property {string|null} [namespace] SystemMetadata namespace
                  */
     
                 /**
@@ -25442,6 +25443,14 @@
                  * @instance
                  */
                 SystemMetadata.prototype.executionCluster = "";
+    
+                /**
+                 * SystemMetadata namespace.
+                 * @member {string} namespace
+                 * @memberof flyteidl.admin.SystemMetadata
+                 * @instance
+                 */
+                SystemMetadata.prototype.namespace = "";
     
                 /**
                  * Creates a new SystemMetadata instance using the specified properties.
@@ -25469,6 +25478,8 @@
                         writer = $Writer.create();
                     if (message.executionCluster != null && message.hasOwnProperty("executionCluster"))
                         writer.uint32(/* id 1, wireType 2 =*/10).string(message.executionCluster);
+                    if (message.namespace != null && message.hasOwnProperty("namespace"))
+                        writer.uint32(/* id 2, wireType 2 =*/18).string(message.namespace);
                     return writer;
                 };
     
@@ -25493,6 +25504,9 @@
                         case 1:
                             message.executionCluster = reader.string();
                             break;
+                        case 2:
+                            message.namespace = reader.string();
+                            break;
                         default:
                             reader.skipType(tag & 7);
                             break;
@@ -25515,6 +25529,9 @@
                     if (message.executionCluster != null && message.hasOwnProperty("executionCluster"))
                         if (!$util.isString(message.executionCluster))
                             return "executionCluster: string expected";
+                    if (message.namespace != null && message.hasOwnProperty("namespace"))
+                        if (!$util.isString(message.namespace))
+                            return "namespace: string expected";
                     return null;
                 };
     

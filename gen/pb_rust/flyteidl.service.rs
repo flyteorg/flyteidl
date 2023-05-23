@@ -419,6 +419,7 @@ pub struct GetDataRequest {
     /// backend, identifies a Flyte artifact (\[i\]nput, \[o\]utput, flyte \[d\]eck, etc.).
     /// e.g. flyte://v1/proj/development/execid/n2/0/i (for 0th task execution attempt input)
     ///       flyte://v1/proj/development/execid/n2/i (for node execution input)
+    ///       flyte://v1/proj/development/execid/n2/o/o3 (the o3 output of the second node)
     #[prost(string, tag="1")]
     pub flyte_url: ::prost::alloc::string::String,
 }
@@ -439,7 +440,8 @@ pub mod get_data_response {
         /// Flyte deck html will be returned as a signed url users can download
         #[prost(message, tag="2")]
         PreSignedUrls(super::PreSignedUrLs),
-        /// Single literal will be returned
+        /// Single literal will be returned. This is returned when the user/url requests a specific output or input
+        /// by name. See the o3 example above.
         #[prost(message, tag="3")]
         Literal(super::super::core::Literal),
     }

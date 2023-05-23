@@ -7538,6 +7538,7 @@ public final class Dataproxy {
      * backend, identifies a Flyte artifact ([i]nput, [o]utput, flyte [d]eck, etc.).
      * e.g. flyte://v1/proj/development/execid/n2/0/i (for 0th task execution attempt input)
      *      flyte://v1/proj/development/execid/n2/i (for node execution input)
+     *      flyte://v1/proj/development/execid/n2/o/o3 (the o3 output of the second node)
      * </pre>
      *
      * <code>string flyte_url = 1;</code>
@@ -7549,6 +7550,7 @@ public final class Dataproxy {
      * backend, identifies a Flyte artifact ([i]nput, [o]utput, flyte [d]eck, etc.).
      * e.g. flyte://v1/proj/development/execid/n2/0/i (for 0th task execution attempt input)
      *      flyte://v1/proj/development/execid/n2/i (for node execution input)
+     *      flyte://v1/proj/development/execid/n2/o/o3 (the o3 output of the second node)
      * </pre>
      *
      * <code>string flyte_url = 1;</code>
@@ -7646,6 +7648,7 @@ public final class Dataproxy {
      * backend, identifies a Flyte artifact ([i]nput, [o]utput, flyte [d]eck, etc.).
      * e.g. flyte://v1/proj/development/execid/n2/0/i (for 0th task execution attempt input)
      *      flyte://v1/proj/development/execid/n2/i (for node execution input)
+     *      flyte://v1/proj/development/execid/n2/o/o3 (the o3 output of the second node)
      * </pre>
      *
      * <code>string flyte_url = 1;</code>
@@ -7668,6 +7671,7 @@ public final class Dataproxy {
      * backend, identifies a Flyte artifact ([i]nput, [o]utput, flyte [d]eck, etc.).
      * e.g. flyte://v1/proj/development/execid/n2/0/i (for 0th task execution attempt input)
      *      flyte://v1/proj/development/execid/n2/i (for node execution input)
+     *      flyte://v1/proj/development/execid/n2/o/o3 (the o3 output of the second node)
      * </pre>
      *
      * <code>string flyte_url = 1;</code>
@@ -7999,6 +8003,7 @@ public final class Dataproxy {
        * backend, identifies a Flyte artifact ([i]nput, [o]utput, flyte [d]eck, etc.).
        * e.g. flyte://v1/proj/development/execid/n2/0/i (for 0th task execution attempt input)
        *      flyte://v1/proj/development/execid/n2/i (for node execution input)
+       *      flyte://v1/proj/development/execid/n2/o/o3 (the o3 output of the second node)
        * </pre>
        *
        * <code>string flyte_url = 1;</code>
@@ -8021,6 +8026,7 @@ public final class Dataproxy {
        * backend, identifies a Flyte artifact ([i]nput, [o]utput, flyte [d]eck, etc.).
        * e.g. flyte://v1/proj/development/execid/n2/0/i (for 0th task execution attempt input)
        *      flyte://v1/proj/development/execid/n2/i (for node execution input)
+       *      flyte://v1/proj/development/execid/n2/o/o3 (the o3 output of the second node)
        * </pre>
        *
        * <code>string flyte_url = 1;</code>
@@ -8044,6 +8050,7 @@ public final class Dataproxy {
        * backend, identifies a Flyte artifact ([i]nput, [o]utput, flyte [d]eck, etc.).
        * e.g. flyte://v1/proj/development/execid/n2/0/i (for 0th task execution attempt input)
        *      flyte://v1/proj/development/execid/n2/i (for node execution input)
+       *      flyte://v1/proj/development/execid/n2/o/o3 (the o3 output of the second node)
        * </pre>
        *
        * <code>string flyte_url = 1;</code>
@@ -8064,6 +8071,7 @@ public final class Dataproxy {
        * backend, identifies a Flyte artifact ([i]nput, [o]utput, flyte [d]eck, etc.).
        * e.g. flyte://v1/proj/development/execid/n2/0/i (for 0th task execution attempt input)
        *      flyte://v1/proj/development/execid/n2/i (for node execution input)
+       *      flyte://v1/proj/development/execid/n2/o/o3 (the o3 output of the second node)
        * </pre>
        *
        * <code>string flyte_url = 1;</code>
@@ -8080,6 +8088,7 @@ public final class Dataproxy {
        * backend, identifies a Flyte artifact ([i]nput, [o]utput, flyte [d]eck, etc.).
        * e.g. flyte://v1/proj/development/execid/n2/0/i (for 0th task execution attempt input)
        *      flyte://v1/proj/development/execid/n2/i (for node execution input)
+       *      flyte://v1/proj/development/execid/n2/o/o3 (the o3 output of the second node)
        * </pre>
        *
        * <code>string flyte_url = 1;</code>
@@ -8204,7 +8213,8 @@ public final class Dataproxy {
 
     /**
      * <pre>
-     * Single literal will be returned
+     * Single literal will be returned. This is returned when the user/url requests a specific output or input
+     * by name. See the o3 example above.
      * </pre>
      *
      * <code>.flyteidl.core.Literal literal = 3;</code>
@@ -8212,7 +8222,8 @@ public final class Dataproxy {
     boolean hasLiteral();
     /**
      * <pre>
-     * Single literal will be returned
+     * Single literal will be returned. This is returned when the user/url requests a specific output or input
+     * by name. See the o3 example above.
      * </pre>
      *
      * <code>.flyteidl.core.Literal literal = 3;</code>
@@ -8220,7 +8231,8 @@ public final class Dataproxy {
     flyteidl.core.Literals.Literal getLiteral();
     /**
      * <pre>
-     * Single literal will be returned
+     * Single literal will be returned. This is returned when the user/url requests a specific output or input
+     * by name. See the o3 example above.
      * </pre>
      *
      * <code>.flyteidl.core.Literal literal = 3;</code>
@@ -8461,7 +8473,8 @@ public final class Dataproxy {
     public static final int LITERAL_FIELD_NUMBER = 3;
     /**
      * <pre>
-     * Single literal will be returned
+     * Single literal will be returned. This is returned when the user/url requests a specific output or input
+     * by name. See the o3 example above.
      * </pre>
      *
      * <code>.flyteidl.core.Literal literal = 3;</code>
@@ -8471,7 +8484,8 @@ public final class Dataproxy {
     }
     /**
      * <pre>
-     * Single literal will be returned
+     * Single literal will be returned. This is returned when the user/url requests a specific output or input
+     * by name. See the o3 example above.
      * </pre>
      *
      * <code>.flyteidl.core.Literal literal = 3;</code>
@@ -8484,7 +8498,8 @@ public final class Dataproxy {
     }
     /**
      * <pre>
-     * Single literal will be returned
+     * Single literal will be returned. This is returned when the user/url requests a specific output or input
+     * by name. See the o3 example above.
      * </pre>
      *
      * <code>.flyteidl.core.Literal literal = 3;</code>
@@ -9239,7 +9254,8 @@ public final class Dataproxy {
           flyteidl.core.Literals.Literal, flyteidl.core.Literals.Literal.Builder, flyteidl.core.Literals.LiteralOrBuilder> literalBuilder_;
       /**
        * <pre>
-       * Single literal will be returned
+       * Single literal will be returned. This is returned when the user/url requests a specific output or input
+       * by name. See the o3 example above.
        * </pre>
        *
        * <code>.flyteidl.core.Literal literal = 3;</code>
@@ -9249,7 +9265,8 @@ public final class Dataproxy {
       }
       /**
        * <pre>
-       * Single literal will be returned
+       * Single literal will be returned. This is returned when the user/url requests a specific output or input
+       * by name. See the o3 example above.
        * </pre>
        *
        * <code>.flyteidl.core.Literal literal = 3;</code>
@@ -9269,7 +9286,8 @@ public final class Dataproxy {
       }
       /**
        * <pre>
-       * Single literal will be returned
+       * Single literal will be returned. This is returned when the user/url requests a specific output or input
+       * by name. See the o3 example above.
        * </pre>
        *
        * <code>.flyteidl.core.Literal literal = 3;</code>
@@ -9289,7 +9307,8 @@ public final class Dataproxy {
       }
       /**
        * <pre>
-       * Single literal will be returned
+       * Single literal will be returned. This is returned when the user/url requests a specific output or input
+       * by name. See the o3 example above.
        * </pre>
        *
        * <code>.flyteidl.core.Literal literal = 3;</code>
@@ -9307,7 +9326,8 @@ public final class Dataproxy {
       }
       /**
        * <pre>
-       * Single literal will be returned
+       * Single literal will be returned. This is returned when the user/url requests a specific output or input
+       * by name. See the o3 example above.
        * </pre>
        *
        * <code>.flyteidl.core.Literal literal = 3;</code>
@@ -9333,7 +9353,8 @@ public final class Dataproxy {
       }
       /**
        * <pre>
-       * Single literal will be returned
+       * Single literal will be returned. This is returned when the user/url requests a specific output or input
+       * by name. See the o3 example above.
        * </pre>
        *
        * <code>.flyteidl.core.Literal literal = 3;</code>
@@ -9356,7 +9377,8 @@ public final class Dataproxy {
       }
       /**
        * <pre>
-       * Single literal will be returned
+       * Single literal will be returned. This is returned when the user/url requests a specific output or input
+       * by name. See the o3 example above.
        * </pre>
        *
        * <code>.flyteidl.core.Literal literal = 3;</code>
@@ -9366,7 +9388,8 @@ public final class Dataproxy {
       }
       /**
        * <pre>
-       * Single literal will be returned
+       * Single literal will be returned. This is returned when the user/url requests a specific output or input
+       * by name. See the o3 example above.
        * </pre>
        *
        * <code>.flyteidl.core.Literal literal = 3;</code>
@@ -9383,7 +9406,8 @@ public final class Dataproxy {
       }
       /**
        * <pre>
-       * Single literal will be returned
+       * Single literal will be returned. This is returned when the user/url requests a specific output or input
+       * by name. See the o3 example above.
        * </pre>
        *
        * <code>.flyteidl.core.Literal literal = 3;</code>
