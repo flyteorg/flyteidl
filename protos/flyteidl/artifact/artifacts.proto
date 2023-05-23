@@ -37,7 +37,6 @@ message Artifact {
 }
 
 message ArtifactSpec {
-
   core.Literal value = 1;
 
   // This type will not form part of the artifact key, so for user-named artifacts, if the user changes the type, but
@@ -192,5 +191,4 @@ service ArtifactRegistry {
   rpc CreateAlias(CreateAliasRequest) returns (CreateAliasResponse) {}
 
   rpc RemoveAlias(RemoveAliasRequest) returns (RemoveAliasResponse) {}
-
 }

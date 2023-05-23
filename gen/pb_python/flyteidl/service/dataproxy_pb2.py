@@ -16,9 +16,10 @@ from google.protobuf import duration_pb2 as google_dot_protobuf_dot_duration__pb
 from google.protobuf import timestamp_pb2 as google_dot_protobuf_dot_timestamp__pb2
 from flyteidl.core import identifier_pb2 as flyteidl_dot_core_dot_identifier__pb2
 from flyteidl.core import literals_pb2 as flyteidl_dot_core_dot_literals__pb2
+from flyteidl.artifact import artifacts_pb2 as flyteidl_dot_artifact_dot_artifacts__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n flyteidl/service/dataproxy.proto\x12\x10\x66lyteidl.service\x1a\x1cgoogle/api/annotations.proto\x1a\x1egoogle/protobuf/duration.proto\x1a\x1fgoogle/protobuf/timestamp.proto\x1a\x1e\x66lyteidl/core/identifier.proto\x1a\x1c\x66lyteidl/core/literals.proto\"\x97\x01\n\x1c\x43reateUploadLocationResponse\x12\x1d\n\nsigned_url\x18\x01 \x01(\tR\tsignedUrl\x12\x1d\n\nnative_url\x18\x02 \x01(\tR\tnativeUrl\x12\x39\n\nexpires_at\x18\x03 \x01(\x0b\x32\x1a.google.protobuf.TimestampR\texpiresAt\"\xc6\x01\n\x1b\x43reateUploadLocationRequest\x12\x18\n\x07project\x18\x01 \x01(\tR\x07project\x12\x16\n\x06\x64omain\x18\x02 \x01(\tR\x06\x64omain\x12\x1a\n\x08\x66ilename\x18\x03 \x01(\tR\x08\x66ilename\x12\x38\n\nexpires_in\x18\x04 \x01(\x0b\x32\x19.google.protobuf.DurationR\texpiresIn\x12\x1f\n\x0b\x63ontent_md5\x18\x05 \x01(\x0cR\ncontentMd5\"|\n\x1d\x43reateDownloadLocationRequest\x12\x1d\n\nnative_url\x18\x01 \x01(\tR\tnativeUrl\x12\x38\n\nexpires_in\x18\x02 \x01(\x0b\x32\x19.google.protobuf.DurationR\texpiresIn:\x02\x18\x01\"~\n\x1e\x43reateDownloadLocationResponse\x12\x1d\n\nsigned_url\x18\x01 \x01(\tR\tsignedUrl\x12\x39\n\nexpires_at\x18\x02 \x01(\x0b\x32\x1a.google.protobuf.TimestampR\texpiresAt:\x02\x18\x01\"\xfa\x01\n\x19\x43reateDownloadLinkRequest\x12\x43\n\rartifact_type\x18\x01 \x01(\x0e\x32\x1e.flyteidl.service.ArtifactTypeR\x0c\x61rtifactType\x12\x38\n\nexpires_in\x18\x02 \x01(\x0b\x32\x19.google.protobuf.DurationR\texpiresIn\x12T\n\x11node_execution_id\x18\x03 \x01(\x0b\x32&.flyteidl.core.NodeExecutionIdentifierH\x00R\x0fnodeExecutionIdB\x08\n\x06source\"\xc7\x01\n\x1a\x43reateDownloadLinkResponse\x12!\n\nsigned_url\x18\x01 \x03(\tB\x02\x18\x01R\tsignedUrl\x12=\n\nexpires_at\x18\x02 \x01(\x0b\x32\x1a.google.protobuf.TimestampB\x02\x18\x01R\texpiresAt\x12G\n\x0fpre_signed_urls\x18\x03 \x01(\x0b\x32\x1f.flyteidl.service.PreSignedURLsR\rpreSignedUrls\"i\n\rPreSignedURLs\x12\x1d\n\nsigned_url\x18\x01 \x03(\tR\tsignedUrl\x12\x39\n\nexpires_at\x18\x02 \x01(\x0b\x32\x1a.google.protobuf.TimestampR\texpiresAt\"-\n\x0eGetDataRequest\x12\x1b\n\tflyte_url\x18\x01 \x01(\tR\x08\x66lyteUrl\"\xd6\x01\n\x0fGetDataResponse\x12<\n\x0bliteral_map\x18\x01 \x01(\x0b\x32\x19.flyteidl.core.LiteralMapH\x00R\nliteralMap\x12I\n\x0fpre_signed_urls\x18\x02 \x01(\x0b\x32\x1f.flyteidl.service.PreSignedURLsH\x00R\rpreSignedUrls\x12\x32\n\x07literal\x18\x03 \x01(\x0b\x32\x16.flyteidl.core.LiteralH\x00R\x07literalB\x06\n\x04\x64\x61ta*C\n\x0c\x41rtifactType\x12\x1b\n\x17\x41RTIFACT_TYPE_UNDEFINED\x10\x00\x12\x16\n\x12\x41RTIFACT_TYPE_DECK\x10\x01\x32\xe2\x04\n\x10\x44\x61taProxyService\x12\xa0\x01\n\x14\x43reateUploadLocation\x12-.flyteidl.service.CreateUploadLocationRequest\x1a..flyteidl.service.CreateUploadLocationResponse\")\x82\xd3\xe4\x93\x02#:\x01*\"\x1e/api/v1/dataproxy/artifact_urn\x12\xa6\x01\n\x16\x43reateDownloadLocation\x12/.flyteidl.service.CreateDownloadLocationRequest\x1a\x30.flyteidl.service.CreateDownloadLocationResponse\")\x88\x02\x01\x82\xd3\xe4\x93\x02 \x12\x1e/api/v1/dataproxy/artifact_urn\x12\x9b\x01\n\x12\x43reateDownloadLink\x12+.flyteidl.service.CreateDownloadLinkRequest\x1a,.flyteidl.service.CreateDownloadLinkResponse\"*\x82\xd3\xe4\x93\x02$:\x01*\"\x1f/api/v1/dataproxy/artifact_link\x12\x64\n\x07GetData\x12 .flyteidl.service.GetDataRequest\x1a!.flyteidl.service.GetDataResponse\"\x14\x82\xd3\xe4\x93\x02\x0e\x12\x0c/api/v1/dataB\xc0\x01\n\x14\x63om.flyteidl.serviceB\x0e\x44\x61taproxyProtoP\x01Z7github.com/flyteorg/flyteidl/gen/pb-go/flyteidl/service\xa2\x02\x03\x46SX\xaa\x02\x10\x46lyteidl.Service\xca\x02\x10\x46lyteidl\\Service\xe2\x02\x1c\x46lyteidl\\Service\\GPBMetadata\xea\x02\x11\x46lyteidl::Serviceb\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n flyteidl/service/dataproxy.proto\x12\x10\x66lyteidl.service\x1a\x1cgoogle/api/annotations.proto\x1a\x1egoogle/protobuf/duration.proto\x1a\x1fgoogle/protobuf/timestamp.proto\x1a\x1e\x66lyteidl/core/identifier.proto\x1a\x1c\x66lyteidl/core/literals.proto\x1a!flyteidl/artifact/artifacts.proto\"\xd0\x01\n\x1c\x43reateUploadLocationResponse\x12\x1d\n\nsigned_url\x18\x01 \x01(\tR\tsignedUrl\x12\x1d\n\nnative_url\x18\x02 \x01(\tR\tnativeUrl\x12\x39\n\nexpires_at\x18\x03 \x01(\x0b\x32\x1a.google.protobuf.TimestampR\texpiresAt\x12\x37\n\x08\x61rtifact\x18\x04 \x01(\x0b\x32\x1b.flyteidl.artifact.ArtifactR\x08\x61rtifact\"\xc6\x01\n\x1b\x43reateUploadLocationRequest\x12\x18\n\x07project\x18\x01 \x01(\tR\x07project\x12\x16\n\x06\x64omain\x18\x02 \x01(\tR\x06\x64omain\x12\x1a\n\x08\x66ilename\x18\x03 \x01(\tR\x08\x66ilename\x12\x38\n\nexpires_in\x18\x04 \x01(\x0b\x32\x19.google.protobuf.DurationR\texpiresIn\x12\x1f\n\x0b\x63ontent_md5\x18\x05 \x01(\x0cR\ncontentMd5\"|\n\x1d\x43reateDownloadLocationRequest\x12\x1d\n\nnative_url\x18\x01 \x01(\tR\tnativeUrl\x12\x38\n\nexpires_in\x18\x02 \x01(\x0b\x32\x19.google.protobuf.DurationR\texpiresIn:\x02\x18\x01\"~\n\x1e\x43reateDownloadLocationResponse\x12\x1d\n\nsigned_url\x18\x01 \x01(\tR\tsignedUrl\x12\x39\n\nexpires_at\x18\x02 \x01(\x0b\x32\x1a.google.protobuf.TimestampR\texpiresAt:\x02\x18\x01\"\xfa\x01\n\x19\x43reateDownloadLinkRequest\x12\x43\n\rartifact_type\x18\x01 \x01(\x0e\x32\x1e.flyteidl.service.ArtifactTypeR\x0c\x61rtifactType\x12\x38\n\nexpires_in\x18\x02 \x01(\x0b\x32\x19.google.protobuf.DurationR\texpiresIn\x12T\n\x11node_execution_id\x18\x03 \x01(\x0b\x32&.flyteidl.core.NodeExecutionIdentifierH\x00R\x0fnodeExecutionIdB\x08\n\x06source\"\xc7\x01\n\x1a\x43reateDownloadLinkResponse\x12!\n\nsigned_url\x18\x01 \x03(\tB\x02\x18\x01R\tsignedUrl\x12=\n\nexpires_at\x18\x02 \x01(\x0b\x32\x1a.google.protobuf.TimestampB\x02\x18\x01R\texpiresAt\x12G\n\x0fpre_signed_urls\x18\x03 \x01(\x0b\x32\x1f.flyteidl.service.PreSignedURLsR\rpreSignedUrls\"i\n\rPreSignedURLs\x12\x1d\n\nsigned_url\x18\x01 \x03(\tR\tsignedUrl\x12\x39\n\nexpires_at\x18\x02 \x01(\x0b\x32\x1a.google.protobuf.TimestampR\texpiresAt\"z\n\x0eGetDataRequest\x12\x1d\n\tflyte_url\x18\x01 \x01(\tH\x00R\x08\x66lyteUrl\x12@\n\x0b\x61rtifact_id\x18\x02 \x01(\x0b\x32\x1d.flyteidl.artifact.ArtifactIDH\x00R\nartifactIdB\x07\n\x05query\"\x91\x02\n\x0fGetDataResponse\x12<\n\x0bliteral_map\x18\x01 \x01(\x0b\x32\x19.flyteidl.core.LiteralMapH\x00R\nliteralMap\x12I\n\x0fpre_signed_urls\x18\x02 \x01(\x0b\x32\x1f.flyteidl.service.PreSignedURLsH\x00R\rpreSignedUrls\x12\x32\n\x07literal\x18\x03 \x01(\x0b\x32\x16.flyteidl.core.LiteralH\x00R\x07literal\x12\x39\n\x08\x61rtifact\x18\x04 \x01(\x0b\x32\x1b.flyteidl.artifact.ArtifactH\x00R\x08\x61rtifactB\x06\n\x04\x64\x61ta*C\n\x0c\x41rtifactType\x12\x1b\n\x17\x41RTIFACT_TYPE_UNDEFINED\x10\x00\x12\x16\n\x12\x41RTIFACT_TYPE_DECK\x10\x01\x32\xe2\x04\n\x10\x44\x61taProxyService\x12\xa0\x01\n\x14\x43reateUploadLocation\x12-.flyteidl.service.CreateUploadLocationRequest\x1a..flyteidl.service.CreateUploadLocationResponse\")\x82\xd3\xe4\x93\x02#:\x01*\"\x1e/api/v1/dataproxy/artifact_urn\x12\xa6\x01\n\x16\x43reateDownloadLocation\x12/.flyteidl.service.CreateDownloadLocationRequest\x1a\x30.flyteidl.service.CreateDownloadLocationResponse\")\x88\x02\x01\x82\xd3\xe4\x93\x02 \x12\x1e/api/v1/dataproxy/artifact_urn\x12\x9b\x01\n\x12\x43reateDownloadLink\x12+.flyteidl.service.CreateDownloadLinkRequest\x1a,.flyteidl.service.CreateDownloadLinkResponse\"*\x82\xd3\xe4\x93\x02$:\x01*\"\x1f/api/v1/dataproxy/artifact_link\x12\x64\n\x07GetData\x12 .flyteidl.service.GetDataRequest\x1a!.flyteidl.service.GetDataResponse\"\x14\x82\xd3\xe4\x93\x02\x0e\x12\x0c/api/v1/dataB\xc0\x01\n\x14\x63om.flyteidl.serviceB\x0e\x44\x61taproxyProtoP\x01Z7github.com/flyteorg/flyteidl/gen/pb-go/flyteidl/service\xa2\x02\x03\x46SX\xaa\x02\x10\x46lyteidl.Service\xca\x02\x10\x46lyteidl\\Service\xe2\x02\x1c\x46lyteidl\\Service\\GPBMetadata\xea\x02\x11\x46lyteidl::Serviceb\x06proto3')
 
 _globals = globals()
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, _globals)
@@ -43,26 +44,26 @@ if _descriptor._USE_C_DESCRIPTORS == False:
   _DATAPROXYSERVICE.methods_by_name['CreateDownloadLink']._serialized_options = b'\202\323\344\223\002$:\001*\"\037/api/v1/dataproxy/artifact_link'
   _DATAPROXYSERVICE.methods_by_name['GetData']._options = None
   _DATAPROXYSERVICE.methods_by_name['GetData']._serialized_options = b'\202\323\344\223\002\016\022\014/api/v1/data'
-  _globals['_ARTIFACTTYPE']._serialized_start=1646
-  _globals['_ARTIFACTTYPE']._serialized_end=1713
-  _globals['_CREATEUPLOADLOCATIONRESPONSE']._serialized_start=212
-  _globals['_CREATEUPLOADLOCATIONRESPONSE']._serialized_end=363
-  _globals['_CREATEUPLOADLOCATIONREQUEST']._serialized_start=366
-  _globals['_CREATEUPLOADLOCATIONREQUEST']._serialized_end=564
-  _globals['_CREATEDOWNLOADLOCATIONREQUEST']._serialized_start=566
-  _globals['_CREATEDOWNLOADLOCATIONREQUEST']._serialized_end=690
-  _globals['_CREATEDOWNLOADLOCATIONRESPONSE']._serialized_start=692
-  _globals['_CREATEDOWNLOADLOCATIONRESPONSE']._serialized_end=818
-  _globals['_CREATEDOWNLOADLINKREQUEST']._serialized_start=821
-  _globals['_CREATEDOWNLOADLINKREQUEST']._serialized_end=1071
-  _globals['_CREATEDOWNLOADLINKRESPONSE']._serialized_start=1074
-  _globals['_CREATEDOWNLOADLINKRESPONSE']._serialized_end=1273
-  _globals['_PRESIGNEDURLS']._serialized_start=1275
-  _globals['_PRESIGNEDURLS']._serialized_end=1380
-  _globals['_GETDATAREQUEST']._serialized_start=1382
-  _globals['_GETDATAREQUEST']._serialized_end=1427
-  _globals['_GETDATARESPONSE']._serialized_start=1430
-  _globals['_GETDATARESPONSE']._serialized_end=1644
-  _globals['_DATAPROXYSERVICE']._serialized_start=1716
-  _globals['_DATAPROXYSERVICE']._serialized_end=2326
+  _globals['_ARTIFACTTYPE']._serialized_start=1874
+  _globals['_ARTIFACTTYPE']._serialized_end=1941
+  _globals['_CREATEUPLOADLOCATIONRESPONSE']._serialized_start=247
+  _globals['_CREATEUPLOADLOCATIONRESPONSE']._serialized_end=455
+  _globals['_CREATEUPLOADLOCATIONREQUEST']._serialized_start=458
+  _globals['_CREATEUPLOADLOCATIONREQUEST']._serialized_end=656
+  _globals['_CREATEDOWNLOADLOCATIONREQUEST']._serialized_start=658
+  _globals['_CREATEDOWNLOADLOCATIONREQUEST']._serialized_end=782
+  _globals['_CREATEDOWNLOADLOCATIONRESPONSE']._serialized_start=784
+  _globals['_CREATEDOWNLOADLOCATIONRESPONSE']._serialized_end=910
+  _globals['_CREATEDOWNLOADLINKREQUEST']._serialized_start=913
+  _globals['_CREATEDOWNLOADLINKREQUEST']._serialized_end=1163
+  _globals['_CREATEDOWNLOADLINKRESPONSE']._serialized_start=1166
+  _globals['_CREATEDOWNLOADLINKRESPONSE']._serialized_end=1365
+  _globals['_PRESIGNEDURLS']._serialized_start=1367
+  _globals['_PRESIGNEDURLS']._serialized_end=1472
+  _globals['_GETDATAREQUEST']._serialized_start=1474
+  _globals['_GETDATAREQUEST']._serialized_end=1596
+  _globals['_GETDATARESPONSE']._serialized_start=1599
+  _globals['_GETDATARESPONSE']._serialized_end=1872
+  _globals['_DATAPROXYSERVICE']._serialized_start=1944
+  _globals['_DATAPROXYSERVICE']._serialized_end=2554
 # @@protoc_insertion_point(module_scope)

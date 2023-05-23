@@ -2526,14 +2526,29 @@ public final class Interface {
     boolean getRequired();
 
     /**
+     * <pre>
+     * This is an execution time search basically that should result in exactly one Artifact with a Type that
+     * matches the type of the variable.
+     * </pre>
+     *
      * <code>.flyteidl.artifact.ArtifactQuery artifact_query = 4;</code>
      */
     boolean hasArtifactQuery();
     /**
+     * <pre>
+     * This is an execution time search basically that should result in exactly one Artifact with a Type that
+     * matches the type of the variable.
+     * </pre>
+     *
      * <code>.flyteidl.artifact.ArtifactQuery artifact_query = 4;</code>
      */
     flyteidl.artifact.Artifacts.ArtifactQuery getArtifactQuery();
     /**
+     * <pre>
+     * This is an execution time search basically that should result in exactly one Artifact with a Type that
+     * matches the type of the variable.
+     * </pre>
+     *
      * <code>.flyteidl.artifact.ArtifactQuery artifact_query = 4;</code>
      */
     flyteidl.artifact.Artifacts.ArtifactQueryOrBuilder getArtifactQueryOrBuilder();
@@ -2790,12 +2805,22 @@ public final class Interface {
 
     public static final int ARTIFACT_QUERY_FIELD_NUMBER = 4;
     /**
+     * <pre>
+     * This is an execution time search basically that should result in exactly one Artifact with a Type that
+     * matches the type of the variable.
+     * </pre>
+     *
      * <code>.flyteidl.artifact.ArtifactQuery artifact_query = 4;</code>
      */
     public boolean hasArtifactQuery() {
       return behaviorCase_ == 4;
     }
     /**
+     * <pre>
+     * This is an execution time search basically that should result in exactly one Artifact with a Type that
+     * matches the type of the variable.
+     * </pre>
+     *
      * <code>.flyteidl.artifact.ArtifactQuery artifact_query = 4;</code>
      */
     public flyteidl.artifact.Artifacts.ArtifactQuery getArtifactQuery() {
@@ -2805,6 +2830,11 @@ public final class Interface {
       return flyteidl.artifact.Artifacts.ArtifactQuery.getDefaultInstance();
     }
     /**
+     * <pre>
+     * This is an execution time search basically that should result in exactly one Artifact with a Type that
+     * matches the type of the variable.
+     * </pre>
+     *
      * <code>.flyteidl.artifact.ArtifactQuery artifact_query = 4;</code>
      */
     public flyteidl.artifact.Artifacts.ArtifactQueryOrBuilder getArtifactQueryOrBuilder() {
@@ -3613,12 +3643,22 @@ public final class Interface {
       private com.google.protobuf.SingleFieldBuilderV3<
           flyteidl.artifact.Artifacts.ArtifactQuery, flyteidl.artifact.Artifacts.ArtifactQuery.Builder, flyteidl.artifact.Artifacts.ArtifactQueryOrBuilder> artifactQueryBuilder_;
       /**
+       * <pre>
+       * This is an execution time search basically that should result in exactly one Artifact with a Type that
+       * matches the type of the variable.
+       * </pre>
+       *
        * <code>.flyteidl.artifact.ArtifactQuery artifact_query = 4;</code>
        */
       public boolean hasArtifactQuery() {
         return behaviorCase_ == 4;
       }
       /**
+       * <pre>
+       * This is an execution time search basically that should result in exactly one Artifact with a Type that
+       * matches the type of the variable.
+       * </pre>
+       *
        * <code>.flyteidl.artifact.ArtifactQuery artifact_query = 4;</code>
        */
       public flyteidl.artifact.Artifacts.ArtifactQuery getArtifactQuery() {
@@ -3635,6 +3675,11 @@ public final class Interface {
         }
       }
       /**
+       * <pre>
+       * This is an execution time search basically that should result in exactly one Artifact with a Type that
+       * matches the type of the variable.
+       * </pre>
+       *
        * <code>.flyteidl.artifact.ArtifactQuery artifact_query = 4;</code>
        */
       public Builder setArtifactQuery(flyteidl.artifact.Artifacts.ArtifactQuery value) {
@@ -3651,6 +3696,11 @@ public final class Interface {
         return this;
       }
       /**
+       * <pre>
+       * This is an execution time search basically that should result in exactly one Artifact with a Type that
+       * matches the type of the variable.
+       * </pre>
+       *
        * <code>.flyteidl.artifact.ArtifactQuery artifact_query = 4;</code>
        */
       public Builder setArtifactQuery(
@@ -3665,6 +3715,11 @@ public final class Interface {
         return this;
       }
       /**
+       * <pre>
+       * This is an execution time search basically that should result in exactly one Artifact with a Type that
+       * matches the type of the variable.
+       * </pre>
+       *
        * <code>.flyteidl.artifact.ArtifactQuery artifact_query = 4;</code>
        */
       public Builder mergeArtifactQuery(flyteidl.artifact.Artifacts.ArtifactQuery value) {
@@ -3687,6 +3742,11 @@ public final class Interface {
         return this;
       }
       /**
+       * <pre>
+       * This is an execution time search basically that should result in exactly one Artifact with a Type that
+       * matches the type of the variable.
+       * </pre>
+       *
        * <code>.flyteidl.artifact.ArtifactQuery artifact_query = 4;</code>
        */
       public Builder clearArtifactQuery() {
@@ -3706,12 +3766,22 @@ public final class Interface {
         return this;
       }
       /**
+       * <pre>
+       * This is an execution time search basically that should result in exactly one Artifact with a Type that
+       * matches the type of the variable.
+       * </pre>
+       *
        * <code>.flyteidl.artifact.ArtifactQuery artifact_query = 4;</code>
        */
       public flyteidl.artifact.Artifacts.ArtifactQuery.Builder getArtifactQueryBuilder() {
         return getArtifactQueryFieldBuilder().getBuilder();
       }
       /**
+       * <pre>
+       * This is an execution time search basically that should result in exactly one Artifact with a Type that
+       * matches the type of the variable.
+       * </pre>
+       *
        * <code>.flyteidl.artifact.ArtifactQuery artifact_query = 4;</code>
        */
       public flyteidl.artifact.Artifacts.ArtifactQueryOrBuilder getArtifactQueryOrBuilder() {
@@ -3725,6 +3795,11 @@ public final class Interface {
         }
       }
       /**
+       * <pre>
+       * This is an execution time search basically that should result in exactly one Artifact with a Type that
+       * matches the type of the variable.
+       * </pre>
+       *
        * <code>.flyteidl.artifact.ArtifactQuery artifact_query = 4;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<

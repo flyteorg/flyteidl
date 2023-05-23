@@ -20646,6 +20646,9 @@ export namespace flyteidl {
 
             /** CreateUploadLocationResponse expiresAt */
             expiresAt?: (google.protobuf.ITimestamp|null);
+
+            /** CreateUploadLocationResponse artifact */
+            artifact?: (flyteidl.artifact.IArtifact|null);
         }
 
         /** Represents a CreateUploadLocationResponse. */
@@ -20665,6 +20668,9 @@ export namespace flyteidl {
 
             /** CreateUploadLocationResponse expiresAt. */
             public expiresAt?: (google.protobuf.ITimestamp|null);
+
+            /** CreateUploadLocationResponse artifact. */
+            public artifact?: (flyteidl.artifact.IArtifact|null);
 
             /**
              * Creates a new CreateUploadLocationResponse instance using the specified properties.
@@ -21091,6 +21097,9 @@ export namespace flyteidl {
 
             /** GetDataRequest flyteUrl */
             flyteUrl?: (string|null);
+
+            /** GetDataRequest artifactId */
+            artifactId?: (flyteidl.artifact.IArtifactID|null);
         }
 
         /** Represents a GetDataRequest. */
@@ -21104,6 +21113,12 @@ export namespace flyteidl {
 
             /** GetDataRequest flyteUrl. */
             public flyteUrl: string;
+
+            /** GetDataRequest artifactId. */
+            public artifactId?: (flyteidl.artifact.IArtifactID|null);
+
+            /** GetDataRequest query. */
+            public query?: ("flyteUrl"|"artifactId");
 
             /**
              * Creates a new GetDataRequest instance using the specified properties.
@@ -21149,6 +21164,9 @@ export namespace flyteidl {
 
             /** GetDataResponse literal */
             literal?: (flyteidl.core.ILiteral|null);
+
+            /** GetDataResponse artifact */
+            artifact?: (flyteidl.artifact.IArtifact|null);
         }
 
         /** Represents a GetDataResponse. */
@@ -21169,8 +21187,11 @@ export namespace flyteidl {
             /** GetDataResponse literal. */
             public literal?: (flyteidl.core.ILiteral|null);
 
+            /** GetDataResponse artifact. */
+            public artifact?: (flyteidl.artifact.IArtifact|null);
+
             /** GetDataResponse data. */
-            public data?: ("literalMap"|"preSignedUrls"|"literal");
+            public data?: ("literalMap"|"preSignedUrls"|"literal"|"artifact");
 
             /**
              * Creates a new GetDataResponse instance using the specified properties.

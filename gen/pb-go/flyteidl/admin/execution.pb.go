@@ -116,7 +116,8 @@ type ExecutionCreateRequest struct {
 	// The inputs required to start the execution. All required inputs must be
 	// included in this map. If not required and not provided, defaults apply.
 	// +optional
-	Inputs               *core.LiteralMap                `protobuf:"bytes,5,opt,name=inputs,proto3" json:"inputs,omitempty"`
+	Inputs *core.LiteralMap `protobuf:"bytes,5,opt,name=inputs,proto3" json:"inputs,omitempty"`
+	// These are alternatives to the inputs.
 	Artifacts            map[string]*artifact.ArtifactID `protobuf:"bytes,6,rep,name=artifacts,proto3" json:"artifacts,omitempty" protobuf_key:"bytes,1,opt,name=key,proto3" protobuf_val:"bytes,2,opt,name=value,proto3"`
 	XXX_NoUnkeyedLiteral struct{}                        `json:"-"`
 	XXX_unrecognized     []byte                          `json:"-"`

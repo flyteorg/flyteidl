@@ -139,6 +139,7 @@ class CoreParameter(object):
     def artifact_query(self):
         """Gets the artifact_query of this CoreParameter.  # noqa: E501
 
+        This is an execution time search basically that should result in exactly one Artifact with a Type that matches the type of the variable.  # noqa: E501
 
         :return: The artifact_query of this CoreParameter.  # noqa: E501
         :rtype: ArtifactArtifactQuery
@@ -149,6 +150,7 @@ class CoreParameter(object):
     def artifact_query(self, artifact_query):
         """Sets the artifact_query of this CoreParameter.
 
+        This is an execution time search basically that should result in exactly one Artifact with a Type that matches the type of the variable.  # noqa: E501
 
         :param artifact_query: The artifact_query of this CoreParameter.  # noqa: E501
         :type: ArtifactArtifactQuery

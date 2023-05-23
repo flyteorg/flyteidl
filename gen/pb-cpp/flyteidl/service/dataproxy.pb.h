@@ -37,6 +37,7 @@
 #include <google/protobuf/timestamp.pb.h>
 #include "flyteidl/core/identifier.pb.h"
 #include "flyteidl/core/literals.pb.h"
+#include "flyteidl/artifact/artifacts.pb.h"
 // @@protoc_insertion_point(includes)
 #include <google/protobuf/port_def.inc>
 #define PROTOBUF_INTERNAL_EXPORT_flyteidl_2fservice_2fdataproxy_2eproto
@@ -256,6 +257,15 @@ class CreateUploadLocationResponse final :
   ::google::protobuf::Timestamp* mutable_expires_at();
   void set_allocated_expires_at(::google::protobuf::Timestamp* expires_at);
 
+  // .flyteidl.artifact.Artifact artifact = 4;
+  bool has_artifact() const;
+  void clear_artifact();
+  static const int kArtifactFieldNumber = 4;
+  const ::flyteidl::artifact::Artifact& artifact() const;
+  ::flyteidl::artifact::Artifact* release_artifact();
+  ::flyteidl::artifact::Artifact* mutable_artifact();
+  void set_allocated_artifact(::flyteidl::artifact::Artifact* artifact);
+
   // @@protoc_insertion_point(class_scope:flyteidl.service.CreateUploadLocationResponse)
  private:
   class HasBitSetters;
@@ -264,6 +274,7 @@ class CreateUploadLocationResponse final :
   ::google::protobuf::internal::ArenaStringPtr signed_url_;
   ::google::protobuf::internal::ArenaStringPtr native_url_;
   ::google::protobuf::Timestamp* expires_at_;
+  ::flyteidl::artifact::Artifact* artifact_;
   mutable ::google::protobuf::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_flyteidl_2fservice_2fdataproxy_2eproto;
 };
@@ -1170,6 +1181,12 @@ class GetDataRequest final :
   }
   static const GetDataRequest& default_instance();
 
+  enum QueryCase {
+    kFlyteUrl = 1,
+    kArtifactId = 2,
+    QUERY_NOT_SET = 0,
+  };
+
   static void InitAsDefaultInstance();  // FOR INTERNAL USE ONLY
   static inline const GetDataRequest* internal_default_instance() {
     return reinterpret_cast<const GetDataRequest*>(
@@ -1234,6 +1251,9 @@ class GetDataRequest final :
   // accessors -------------------------------------------------------
 
   // string flyte_url = 1;
+  private:
+  bool has_flyte_url() const;
+  public:
   void clear_flyte_url();
   static const int kFlyteUrlFieldNumber = 1;
   const ::std::string& flyte_url() const;
@@ -1247,13 +1267,35 @@ class GetDataRequest final :
   ::std::string* release_flyte_url();
   void set_allocated_flyte_url(::std::string* flyte_url);
 
+  // .flyteidl.artifact.ArtifactID artifact_id = 2;
+  bool has_artifact_id() const;
+  void clear_artifact_id();
+  static const int kArtifactIdFieldNumber = 2;
+  const ::flyteidl::artifact::ArtifactID& artifact_id() const;
+  ::flyteidl::artifact::ArtifactID* release_artifact_id();
+  ::flyteidl::artifact::ArtifactID* mutable_artifact_id();
+  void set_allocated_artifact_id(::flyteidl::artifact::ArtifactID* artifact_id);
+
+  void clear_query();
+  QueryCase query_case() const;
   // @@protoc_insertion_point(class_scope:flyteidl.service.GetDataRequest)
  private:
   class HasBitSetters;
+  void set_has_flyte_url();
+  void set_has_artifact_id();
+
+  inline bool has_query() const;
+  inline void clear_has_query();
 
   ::google::protobuf::internal::InternalMetadataWithArena _internal_metadata_;
-  ::google::protobuf::internal::ArenaStringPtr flyte_url_;
+  union QueryUnion {
+    QueryUnion() {}
+    ::google::protobuf::internal::ArenaStringPtr flyte_url_;
+    ::flyteidl::artifact::ArtifactID* artifact_id_;
+  } query_;
   mutable ::google::protobuf::internal::CachedSize _cached_size_;
+  ::google::protobuf::uint32 _oneof_case_[1];
+
   friend struct ::TableStruct_flyteidl_2fservice_2fdataproxy_2eproto;
 };
 // -------------------------------------------------------------------
@@ -1294,6 +1336,7 @@ class GetDataResponse final :
     kLiteralMap = 1,
     kPreSignedUrls = 2,
     kLiteral = 3,
+    kArtifact = 4,
     DATA_NOT_SET = 0,
   };
 
@@ -1387,6 +1430,15 @@ class GetDataResponse final :
   ::flyteidl::core::Literal* mutable_literal();
   void set_allocated_literal(::flyteidl::core::Literal* literal);
 
+  // .flyteidl.artifact.Artifact artifact = 4;
+  bool has_artifact() const;
+  void clear_artifact();
+  static const int kArtifactFieldNumber = 4;
+  const ::flyteidl::artifact::Artifact& artifact() const;
+  ::flyteidl::artifact::Artifact* release_artifact();
+  ::flyteidl::artifact::Artifact* mutable_artifact();
+  void set_allocated_artifact(::flyteidl::artifact::Artifact* artifact);
+
   void clear_data();
   DataCase data_case() const;
   // @@protoc_insertion_point(class_scope:flyteidl.service.GetDataResponse)
@@ -1395,6 +1447,7 @@ class GetDataResponse final :
   void set_has_literal_map();
   void set_has_pre_signed_urls();
   void set_has_literal();
+  void set_has_artifact();
 
   inline bool has_data() const;
   inline void clear_has_data();
@@ -1405,6 +1458,7 @@ class GetDataResponse final :
     ::flyteidl::core::LiteralMap* literal_map_;
     ::flyteidl::service::PreSignedURLs* pre_signed_urls_;
     ::flyteidl::core::Literal* literal_;
+    ::flyteidl::artifact::Artifact* artifact_;
   } data_;
   mutable ::google::protobuf::internal::CachedSize _cached_size_;
   ::google::protobuf::uint32 _oneof_case_[1];
@@ -1572,6 +1626,51 @@ inline void CreateUploadLocationResponse::set_allocated_expires_at(::google::pro
   }
   expires_at_ = expires_at;
   // @@protoc_insertion_point(field_set_allocated:flyteidl.service.CreateUploadLocationResponse.expires_at)
+}
+
+// .flyteidl.artifact.Artifact artifact = 4;
+inline bool CreateUploadLocationResponse::has_artifact() const {
+  return this != internal_default_instance() && artifact_ != nullptr;
+}
+inline const ::flyteidl::artifact::Artifact& CreateUploadLocationResponse::artifact() const {
+  const ::flyteidl::artifact::Artifact* p = artifact_;
+  // @@protoc_insertion_point(field_get:flyteidl.service.CreateUploadLocationResponse.artifact)
+  return p != nullptr ? *p : *reinterpret_cast<const ::flyteidl::artifact::Artifact*>(
+      &::flyteidl::artifact::_Artifact_default_instance_);
+}
+inline ::flyteidl::artifact::Artifact* CreateUploadLocationResponse::release_artifact() {
+  // @@protoc_insertion_point(field_release:flyteidl.service.CreateUploadLocationResponse.artifact)
+  
+  ::flyteidl::artifact::Artifact* temp = artifact_;
+  artifact_ = nullptr;
+  return temp;
+}
+inline ::flyteidl::artifact::Artifact* CreateUploadLocationResponse::mutable_artifact() {
+  
+  if (artifact_ == nullptr) {
+    auto* p = CreateMaybeMessage<::flyteidl::artifact::Artifact>(GetArenaNoVirtual());
+    artifact_ = p;
+  }
+  // @@protoc_insertion_point(field_mutable:flyteidl.service.CreateUploadLocationResponse.artifact)
+  return artifact_;
+}
+inline void CreateUploadLocationResponse::set_allocated_artifact(::flyteidl::artifact::Artifact* artifact) {
+  ::google::protobuf::Arena* message_arena = GetArenaNoVirtual();
+  if (message_arena == nullptr) {
+    delete reinterpret_cast< ::google::protobuf::MessageLite*>(artifact_);
+  }
+  if (artifact) {
+    ::google::protobuf::Arena* submessage_arena = nullptr;
+    if (message_arena != submessage_arena) {
+      artifact = ::google::protobuf::internal::GetOwnedMessage(
+          message_arena, artifact, submessage_arena);
+    }
+    
+  } else {
+    
+  }
+  artifact_ = artifact;
+  // @@protoc_insertion_point(field_set_allocated:flyteidl.service.CreateUploadLocationResponse.artifact)
 }
 
 // -------------------------------------------------------------------
@@ -2444,58 +2543,141 @@ inline void PreSignedURLs::set_allocated_expires_at(::google::protobuf::Timestam
 // GetDataRequest
 
 // string flyte_url = 1;
+inline bool GetDataRequest::has_flyte_url() const {
+  return query_case() == kFlyteUrl;
+}
+inline void GetDataRequest::set_has_flyte_url() {
+  _oneof_case_[0] = kFlyteUrl;
+}
 inline void GetDataRequest::clear_flyte_url() {
-  flyte_url_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  if (has_flyte_url()) {
+    query_.flyte_url_.DestroyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+    clear_has_query();
+  }
 }
 inline const ::std::string& GetDataRequest::flyte_url() const {
   // @@protoc_insertion_point(field_get:flyteidl.service.GetDataRequest.flyte_url)
-  return flyte_url_.GetNoArena();
+  if (has_flyte_url()) {
+    return query_.flyte_url_.GetNoArena();
+  }
+  return *&::google::protobuf::internal::GetEmptyStringAlreadyInited();
 }
 inline void GetDataRequest::set_flyte_url(const ::std::string& value) {
-  
-  flyte_url_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
+  // @@protoc_insertion_point(field_set:flyteidl.service.GetDataRequest.flyte_url)
+  if (!has_flyte_url()) {
+    clear_query();
+    set_has_flyte_url();
+    query_.flyte_url_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  }
+  query_.flyte_url_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
   // @@protoc_insertion_point(field_set:flyteidl.service.GetDataRequest.flyte_url)
 }
 #if LANG_CXX11
 inline void GetDataRequest::set_flyte_url(::std::string&& value) {
-  
-  flyte_url_.SetNoArena(
-    &::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::move(value));
+  // @@protoc_insertion_point(field_set:flyteidl.service.GetDataRequest.flyte_url)
+  if (!has_flyte_url()) {
+    clear_query();
+    set_has_flyte_url();
+    query_.flyte_url_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  }
+  query_.flyte_url_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::move(value));
   // @@protoc_insertion_point(field_set_rvalue:flyteidl.service.GetDataRequest.flyte_url)
 }
 #endif
 inline void GetDataRequest::set_flyte_url(const char* value) {
   GOOGLE_DCHECK(value != nullptr);
-  
-  flyte_url_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
+  if (!has_flyte_url()) {
+    clear_query();
+    set_has_flyte_url();
+    query_.flyte_url_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  }
+  query_.flyte_url_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
+      ::std::string(value));
   // @@protoc_insertion_point(field_set_char:flyteidl.service.GetDataRequest.flyte_url)
 }
 inline void GetDataRequest::set_flyte_url(const char* value, size_t size) {
-  
-  flyte_url_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
-      ::std::string(reinterpret_cast<const char*>(value), size));
+  if (!has_flyte_url()) {
+    clear_query();
+    set_has_flyte_url();
+    query_.flyte_url_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  }
+  query_.flyte_url_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(
+      reinterpret_cast<const char*>(value), size));
   // @@protoc_insertion_point(field_set_pointer:flyteidl.service.GetDataRequest.flyte_url)
 }
 inline ::std::string* GetDataRequest::mutable_flyte_url() {
-  
+  if (!has_flyte_url()) {
+    clear_query();
+    set_has_flyte_url();
+    query_.flyte_url_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  }
   // @@protoc_insertion_point(field_mutable:flyteidl.service.GetDataRequest.flyte_url)
-  return flyte_url_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  return query_.flyte_url_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
 }
 inline ::std::string* GetDataRequest::release_flyte_url() {
   // @@protoc_insertion_point(field_release:flyteidl.service.GetDataRequest.flyte_url)
-  
-  return flyte_url_.ReleaseNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  if (has_flyte_url()) {
+    clear_has_query();
+    return query_.flyte_url_.ReleaseNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  } else {
+    return nullptr;
+  }
 }
 inline void GetDataRequest::set_allocated_flyte_url(::std::string* flyte_url) {
-  if (flyte_url != nullptr) {
-    
-  } else {
-    
+  if (has_query()) {
+    clear_query();
   }
-  flyte_url_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), flyte_url);
+  if (flyte_url != nullptr) {
+    set_has_flyte_url();
+    query_.flyte_url_.UnsafeSetDefault(flyte_url);
+  }
   // @@protoc_insertion_point(field_set_allocated:flyteidl.service.GetDataRequest.flyte_url)
 }
 
+// .flyteidl.artifact.ArtifactID artifact_id = 2;
+inline bool GetDataRequest::has_artifact_id() const {
+  return query_case() == kArtifactId;
+}
+inline void GetDataRequest::set_has_artifact_id() {
+  _oneof_case_[0] = kArtifactId;
+}
+inline ::flyteidl::artifact::ArtifactID* GetDataRequest::release_artifact_id() {
+  // @@protoc_insertion_point(field_release:flyteidl.service.GetDataRequest.artifact_id)
+  if (has_artifact_id()) {
+    clear_has_query();
+      ::flyteidl::artifact::ArtifactID* temp = query_.artifact_id_;
+    query_.artifact_id_ = nullptr;
+    return temp;
+  } else {
+    return nullptr;
+  }
+}
+inline const ::flyteidl::artifact::ArtifactID& GetDataRequest::artifact_id() const {
+  // @@protoc_insertion_point(field_get:flyteidl.service.GetDataRequest.artifact_id)
+  return has_artifact_id()
+      ? *query_.artifact_id_
+      : *reinterpret_cast< ::flyteidl::artifact::ArtifactID*>(&::flyteidl::artifact::_ArtifactID_default_instance_);
+}
+inline ::flyteidl::artifact::ArtifactID* GetDataRequest::mutable_artifact_id() {
+  if (!has_artifact_id()) {
+    clear_query();
+    set_has_artifact_id();
+    query_.artifact_id_ = CreateMaybeMessage< ::flyteidl::artifact::ArtifactID >(
+        GetArenaNoVirtual());
+  }
+  // @@protoc_insertion_point(field_mutable:flyteidl.service.GetDataRequest.artifact_id)
+  return query_.artifact_id_;
+}
+
+inline bool GetDataRequest::has_query() const {
+  return query_case() != QUERY_NOT_SET;
+}
+inline void GetDataRequest::clear_has_query() {
+  _oneof_case_[0] = QUERY_NOT_SET;
+}
+inline GetDataRequest::QueryCase GetDataRequest::query_case() const {
+  return GetDataRequest::QueryCase(_oneof_case_[0]);
+}
 // -------------------------------------------------------------------
 
 // GetDataResponse
@@ -2609,6 +2791,41 @@ inline ::flyteidl::core::Literal* GetDataResponse::mutable_literal() {
   }
   // @@protoc_insertion_point(field_mutable:flyteidl.service.GetDataResponse.literal)
   return data_.literal_;
+}
+
+// .flyteidl.artifact.Artifact artifact = 4;
+inline bool GetDataResponse::has_artifact() const {
+  return data_case() == kArtifact;
+}
+inline void GetDataResponse::set_has_artifact() {
+  _oneof_case_[0] = kArtifact;
+}
+inline ::flyteidl::artifact::Artifact* GetDataResponse::release_artifact() {
+  // @@protoc_insertion_point(field_release:flyteidl.service.GetDataResponse.artifact)
+  if (has_artifact()) {
+    clear_has_data();
+      ::flyteidl::artifact::Artifact* temp = data_.artifact_;
+    data_.artifact_ = nullptr;
+    return temp;
+  } else {
+    return nullptr;
+  }
+}
+inline const ::flyteidl::artifact::Artifact& GetDataResponse::artifact() const {
+  // @@protoc_insertion_point(field_get:flyteidl.service.GetDataResponse.artifact)
+  return has_artifact()
+      ? *data_.artifact_
+      : *reinterpret_cast< ::flyteidl::artifact::Artifact*>(&::flyteidl::artifact::_Artifact_default_instance_);
+}
+inline ::flyteidl::artifact::Artifact* GetDataResponse::mutable_artifact() {
+  if (!has_artifact()) {
+    clear_data();
+    set_has_artifact();
+    data_.artifact_ = CreateMaybeMessage< ::flyteidl::artifact::Artifact >(
+        GetArenaNoVirtual());
+  }
+  // @@protoc_insertion_point(field_mutable:flyteidl.service.GetDataResponse.artifact)
+  return data_.artifact_;
 }
 
 inline bool GetDataResponse::has_data() const {

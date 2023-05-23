@@ -85,6 +85,8 @@ pub struct CreateUploadLocationResponse {
     /// ExpiresAt defines when will the signed URL expires.
     #[prost(message, optional, tag="3")]
     pub expires_at: ::core::option::Option<::prost_types::Timestamp>,
+    #[prost(message, optional, tag="4")]
+    pub artifact: ::core::option::Option<super::artifact::Artifact>,
 }
 /// CreateUploadLocationRequest specified request for the CreateUploadLocation API.
 #[allow(clippy::derive_partial_eq_without_eq)]
@@ -198,13 +200,29 @@ pub struct GetDataRequest {
     /// e.g. flyte://v1/proj/development/execid/n2/0/i (for 0th task execution attempt input)
     ///       flyte://v1/proj/development/execid/n2/i (for node execution input)
     ///       flyte://v1/proj/development/execid/n2/o/o3 (the o3 output of the second node)
-    #[prost(string, tag="1")]
-    pub flyte_url: ::prost::alloc::string::String,
+    #[prost(oneof="get_data_request::Query", tags="1, 2")]
+    pub query: ::core::option::Option<get_data_request::Query>,
+}
+/// Nested message and enum types in `GetDataRequest`.
+pub mod get_data_request {
+    /// A unique identifier in the form of flyte://<something> that uniquely, for a given Flyte
+    /// backend, identifies a Flyte artifact (\[i\]nput, \[o\]utput, flyte \[d\]eck, etc.).
+    /// e.g. flyte://v1/proj/development/execid/n2/0/i (for 0th task execution attempt input)
+    ///       flyte://v1/proj/development/execid/n2/i (for node execution input)
+    ///       flyte://v1/proj/development/execid/n2/o/o3 (the o3 output of the second node)
+    #[allow(clippy::derive_partial_eq_without_eq)]
+#[derive(Clone, PartialEq, ::prost::Oneof)]
+    pub enum Query {
+        #[prost(string, tag="1")]
+        FlyteUrl(::prost::alloc::string::String),
+        #[prost(message, tag="2")]
+        ArtifactId(super::super::artifact::ArtifactId),
+    }
 }
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(Clone, PartialEq, ::prost::Message)]
 pub struct GetDataResponse {
-    #[prost(oneof="get_data_response::Data", tags="1, 2, 3")]
+    #[prost(oneof="get_data_response::Data", tags="1, 2, 3, 4")]
     pub data: ::core::option::Option<get_data_response::Data>,
 }
 /// Nested message and enum types in `GetDataResponse`.
@@ -222,6 +240,8 @@ pub mod get_data_response {
         /// by name. See the o3 example above.
         #[prost(message, tag="3")]
         Literal(super::super::core::Literal),
+        #[prost(message, tag="4")]
+        Artifact(super::super::artifact::Artifact),
     }
 }
 /// ArtifactType

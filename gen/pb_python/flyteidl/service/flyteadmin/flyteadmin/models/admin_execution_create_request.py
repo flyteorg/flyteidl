@@ -185,6 +185,7 @@ class AdminExecutionCreateRequest(object):
     def artifacts(self):
         """Gets the artifacts of this AdminExecutionCreateRequest.  # noqa: E501
 
+        These are alternatives to the inputs.  # noqa: E501
 
         :return: The artifacts of this AdminExecutionCreateRequest.  # noqa: E501
         :rtype: dict(str, ArtifactArtifactID)
@@ -195,6 +196,7 @@ class AdminExecutionCreateRequest(object):
     def artifacts(self, artifacts):
         """Sets the artifacts of this AdminExecutionCreateRequest.
 
+        These are alternatives to the inputs.  # noqa: E501
 
         :param artifacts: The artifacts of this AdminExecutionCreateRequest.  # noqa: E501
         :type: dict(str, ArtifactArtifactID)

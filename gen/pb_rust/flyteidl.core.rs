@@ -1194,6 +1194,8 @@ pub mod parameter {
         /// +optional, is this value required to be filled.
         #[prost(bool, tag="3")]
         Required(bool),
+        /// This is an execution time search basically that should result in exactly one Artifact with a Type that
+        /// matches the type of the variable.
         #[prost(message, tag="4")]
         ArtifactQuery(super::super::artifact::ArtifactQuery),
     }

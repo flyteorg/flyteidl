@@ -43,6 +43,8 @@ message Parameter {
         //+optional, is this value required to be filled.
         bool required = 3;
 
+        // This is an execution time search basically that should result in exactly one Artifact with a Type that
+        // matches the type of the variable.
         artifact.ArtifactQuery artifact_query = 4;
     }
 }

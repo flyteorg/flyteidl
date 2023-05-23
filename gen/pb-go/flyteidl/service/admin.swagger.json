@@ -3844,7 +3844,8 @@
           "type": "object",
           "additionalProperties": {
             "$ref": "#/definitions/artifactArtifactID"
-          }
+          },
+          "description": "These are alternatives to the inputs."
         }
       },
       "description": "Request to launch an execution with the given project, domain and optionally-assigned name."
@@ -6518,7 +6519,8 @@
           "description": "+optional, is this value required to be filled."
         },
         "artifact_query": {
-          "$ref": "#/definitions/artifactArtifactQuery"
+          "$ref": "#/definitions/artifactArtifactQuery",
+          "description": "This is an execution time search basically that should result in exactly one Artifact with a Type that\nmatches the type of the variable."
         }
       },
       "description": "A parameter is used as input to a launch plan and has\nthe special ability to have a default value or mark itself as required."

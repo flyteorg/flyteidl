@@ -48072,6 +48072,7 @@
                  * @property {string|null} [signedUrl] CreateUploadLocationResponse signedUrl
                  * @property {string|null} [nativeUrl] CreateUploadLocationResponse nativeUrl
                  * @property {google.protobuf.ITimestamp|null} [expiresAt] CreateUploadLocationResponse expiresAt
+                 * @property {flyteidl.artifact.IArtifact|null} [artifact] CreateUploadLocationResponse artifact
                  */
     
                 /**
@@ -48114,6 +48115,14 @@
                 CreateUploadLocationResponse.prototype.expiresAt = null;
     
                 /**
+                 * CreateUploadLocationResponse artifact.
+                 * @member {flyteidl.artifact.IArtifact|null|undefined} artifact
+                 * @memberof flyteidl.service.CreateUploadLocationResponse
+                 * @instance
+                 */
+                CreateUploadLocationResponse.prototype.artifact = null;
+    
+                /**
                  * Creates a new CreateUploadLocationResponse instance using the specified properties.
                  * @function create
                  * @memberof flyteidl.service.CreateUploadLocationResponse
@@ -48143,6 +48152,8 @@
                         writer.uint32(/* id 2, wireType 2 =*/18).string(message.nativeUrl);
                     if (message.expiresAt != null && message.hasOwnProperty("expiresAt"))
                         $root.google.protobuf.Timestamp.encode(message.expiresAt, writer.uint32(/* id 3, wireType 2 =*/26).fork()).ldelim();
+                    if (message.artifact != null && message.hasOwnProperty("artifact"))
+                        $root.flyteidl.artifact.Artifact.encode(message.artifact, writer.uint32(/* id 4, wireType 2 =*/34).fork()).ldelim();
                     return writer;
                 };
     
@@ -48173,6 +48184,9 @@
                         case 3:
                             message.expiresAt = $root.google.protobuf.Timestamp.decode(reader, reader.uint32());
                             break;
+                        case 4:
+                            message.artifact = $root.flyteidl.artifact.Artifact.decode(reader, reader.uint32());
+                            break;
                         default:
                             reader.skipType(tag & 7);
                             break;
@@ -48202,6 +48216,11 @@
                         var error = $root.google.protobuf.Timestamp.verify(message.expiresAt);
                         if (error)
                             return "expiresAt." + error;
+                    }
+                    if (message.artifact != null && message.hasOwnProperty("artifact")) {
+                        var error = $root.flyteidl.artifact.Artifact.verify(message.artifact);
+                        if (error)
+                            return "artifact." + error;
                     }
                     return null;
                 };
@@ -49132,6 +49151,7 @@
                  * @memberof flyteidl.service
                  * @interface IGetDataRequest
                  * @property {string|null} [flyteUrl] GetDataRequest flyteUrl
+                 * @property {flyteidl.artifact.IArtifactID|null} [artifactId] GetDataRequest artifactId
                  */
     
                 /**
@@ -49156,6 +49176,28 @@
                  * @instance
                  */
                 GetDataRequest.prototype.flyteUrl = "";
+    
+                /**
+                 * GetDataRequest artifactId.
+                 * @member {flyteidl.artifact.IArtifactID|null|undefined} artifactId
+                 * @memberof flyteidl.service.GetDataRequest
+                 * @instance
+                 */
+                GetDataRequest.prototype.artifactId = null;
+    
+                // OneOf field names bound to virtual getters and setters
+                var $oneOfFields;
+    
+                /**
+                 * GetDataRequest query.
+                 * @member {"flyteUrl"|"artifactId"|undefined} query
+                 * @memberof flyteidl.service.GetDataRequest
+                 * @instance
+                 */
+                Object.defineProperty(GetDataRequest.prototype, "query", {
+                    get: $util.oneOfGetter($oneOfFields = ["flyteUrl", "artifactId"]),
+                    set: $util.oneOfSetter($oneOfFields)
+                });
     
                 /**
                  * Creates a new GetDataRequest instance using the specified properties.
@@ -49183,6 +49225,8 @@
                         writer = $Writer.create();
                     if (message.flyteUrl != null && message.hasOwnProperty("flyteUrl"))
                         writer.uint32(/* id 1, wireType 2 =*/10).string(message.flyteUrl);
+                    if (message.artifactId != null && message.hasOwnProperty("artifactId"))
+                        $root.flyteidl.artifact.ArtifactID.encode(message.artifactId, writer.uint32(/* id 2, wireType 2 =*/18).fork()).ldelim();
                     return writer;
                 };
     
@@ -49207,6 +49251,9 @@
                         case 1:
                             message.flyteUrl = reader.string();
                             break;
+                        case 2:
+                            message.artifactId = $root.flyteidl.artifact.ArtifactID.decode(reader, reader.uint32());
+                            break;
                         default:
                             reader.skipType(tag & 7);
                             break;
@@ -49226,9 +49273,22 @@
                 GetDataRequest.verify = function verify(message) {
                     if (typeof message !== "object" || message === null)
                         return "object expected";
-                    if (message.flyteUrl != null && message.hasOwnProperty("flyteUrl"))
+                    var properties = {};
+                    if (message.flyteUrl != null && message.hasOwnProperty("flyteUrl")) {
+                        properties.query = 1;
                         if (!$util.isString(message.flyteUrl))
                             return "flyteUrl: string expected";
+                    }
+                    if (message.artifactId != null && message.hasOwnProperty("artifactId")) {
+                        if (properties.query === 1)
+                            return "query: multiple values";
+                        properties.query = 1;
+                        {
+                            var error = $root.flyteidl.artifact.ArtifactID.verify(message.artifactId);
+                            if (error)
+                                return "artifactId." + error;
+                        }
+                    }
                     return null;
                 };
     
@@ -49244,6 +49304,7 @@
                  * @property {flyteidl.core.ILiteralMap|null} [literalMap] GetDataResponse literalMap
                  * @property {flyteidl.service.IPreSignedURLs|null} [preSignedUrls] GetDataResponse preSignedUrls
                  * @property {flyteidl.core.ILiteral|null} [literal] GetDataResponse literal
+                 * @property {flyteidl.artifact.IArtifact|null} [artifact] GetDataResponse artifact
                  */
     
                 /**
@@ -49285,17 +49346,25 @@
                  */
                 GetDataResponse.prototype.literal = null;
     
+                /**
+                 * GetDataResponse artifact.
+                 * @member {flyteidl.artifact.IArtifact|null|undefined} artifact
+                 * @memberof flyteidl.service.GetDataResponse
+                 * @instance
+                 */
+                GetDataResponse.prototype.artifact = null;
+    
                 // OneOf field names bound to virtual getters and setters
                 var $oneOfFields;
     
                 /**
                  * GetDataResponse data.
-                 * @member {"literalMap"|"preSignedUrls"|"literal"|undefined} data
+                 * @member {"literalMap"|"preSignedUrls"|"literal"|"artifact"|undefined} data
                  * @memberof flyteidl.service.GetDataResponse
                  * @instance
                  */
                 Object.defineProperty(GetDataResponse.prototype, "data", {
-                    get: $util.oneOfGetter($oneOfFields = ["literalMap", "preSignedUrls", "literal"]),
+                    get: $util.oneOfGetter($oneOfFields = ["literalMap", "preSignedUrls", "literal", "artifact"]),
                     set: $util.oneOfSetter($oneOfFields)
                 });
     
@@ -49329,6 +49398,8 @@
                         $root.flyteidl.service.PreSignedURLs.encode(message.preSignedUrls, writer.uint32(/* id 2, wireType 2 =*/18).fork()).ldelim();
                     if (message.literal != null && message.hasOwnProperty("literal"))
                         $root.flyteidl.core.Literal.encode(message.literal, writer.uint32(/* id 3, wireType 2 =*/26).fork()).ldelim();
+                    if (message.artifact != null && message.hasOwnProperty("artifact"))
+                        $root.flyteidl.artifact.Artifact.encode(message.artifact, writer.uint32(/* id 4, wireType 2 =*/34).fork()).ldelim();
                     return writer;
                 };
     
@@ -49358,6 +49429,9 @@
                             break;
                         case 3:
                             message.literal = $root.flyteidl.core.Literal.decode(reader, reader.uint32());
+                            break;
+                        case 4:
+                            message.artifact = $root.flyteidl.artifact.Artifact.decode(reader, reader.uint32());
                             break;
                         default:
                             reader.skipType(tag & 7);
@@ -49405,6 +49479,16 @@
                             var error = $root.flyteidl.core.Literal.verify(message.literal);
                             if (error)
                                 return "literal." + error;
+                        }
+                    }
+                    if (message.artifact != null && message.hasOwnProperty("artifact")) {
+                        if (properties.data === 1)
+                            return "data: multiple values";
+                        properties.data = 1;
+                        {
+                            var error = $root.flyteidl.artifact.Artifact.verify(message.artifact);
+                            if (error)
+                                return "artifact." + error;
                         }
                     }
                     return null;

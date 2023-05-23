@@ -260,10 +260,18 @@ public final class ExecutionOuterClass {
     flyteidl.core.Literals.LiteralMapOrBuilder getInputsOrBuilder();
 
     /**
+     * <pre>
+     * These are alternatives to the inputs.
+     * </pre>
+     *
      * <code>map&lt;string, .flyteidl.artifact.ArtifactID&gt; artifacts = 6;</code>
      */
     int getArtifactsCount();
     /**
+     * <pre>
+     * These are alternatives to the inputs.
+     * </pre>
+     *
      * <code>map&lt;string, .flyteidl.artifact.ArtifactID&gt; artifacts = 6;</code>
      */
     boolean containsArtifacts(
@@ -275,11 +283,19 @@ public final class ExecutionOuterClass {
     java.util.Map<java.lang.String, flyteidl.artifact.Artifacts.ArtifactID>
     getArtifacts();
     /**
+     * <pre>
+     * These are alternatives to the inputs.
+     * </pre>
+     *
      * <code>map&lt;string, .flyteidl.artifact.ArtifactID&gt; artifacts = 6;</code>
      */
     java.util.Map<java.lang.String, flyteidl.artifact.Artifacts.ArtifactID>
     getArtifactsMap();
     /**
+     * <pre>
+     * These are alternatives to the inputs.
+     * </pre>
+     *
      * <code>map&lt;string, .flyteidl.artifact.ArtifactID&gt; artifacts = 6;</code>
      */
 
@@ -287,6 +303,10 @@ public final class ExecutionOuterClass {
         java.lang.String key,
         flyteidl.artifact.Artifacts.ArtifactID defaultValue);
     /**
+     * <pre>
+     * These are alternatives to the inputs.
+     * </pre>
+     *
      * <code>map&lt;string, .flyteidl.artifact.ArtifactID&gt; artifacts = 6;</code>
      */
 
@@ -679,6 +699,10 @@ public final class ExecutionOuterClass {
       return internalGetArtifacts().getMap().size();
     }
     /**
+     * <pre>
+     * These are alternatives to the inputs.
+     * </pre>
+     *
      * <code>map&lt;string, .flyteidl.artifact.ArtifactID&gt; artifacts = 6;</code>
      */
 
@@ -695,6 +719,10 @@ public final class ExecutionOuterClass {
       return getArtifactsMap();
     }
     /**
+     * <pre>
+     * These are alternatives to the inputs.
+     * </pre>
+     *
      * <code>map&lt;string, .flyteidl.artifact.ArtifactID&gt; artifacts = 6;</code>
      */
 
@@ -702,6 +730,10 @@ public final class ExecutionOuterClass {
       return internalGetArtifacts().getMap();
     }
     /**
+     * <pre>
+     * These are alternatives to the inputs.
+     * </pre>
+     *
      * <code>map&lt;string, .flyteidl.artifact.ArtifactID&gt; artifacts = 6;</code>
      */
 
@@ -714,6 +746,10 @@ public final class ExecutionOuterClass {
       return map.containsKey(key) ? map.get(key) : defaultValue;
     }
     /**
+     * <pre>
+     * These are alternatives to the inputs.
+     * </pre>
+     *
      * <code>map&lt;string, .flyteidl.artifact.ArtifactID&gt; artifacts = 6;</code>
      */
 
@@ -1833,6 +1869,10 @@ public final class ExecutionOuterClass {
         return internalGetArtifacts().getMap().size();
       }
       /**
+       * <pre>
+       * These are alternatives to the inputs.
+       * </pre>
+       *
        * <code>map&lt;string, .flyteidl.artifact.ArtifactID&gt; artifacts = 6;</code>
        */
 
@@ -1849,6 +1889,10 @@ public final class ExecutionOuterClass {
         return getArtifactsMap();
       }
       /**
+       * <pre>
+       * These are alternatives to the inputs.
+       * </pre>
+       *
        * <code>map&lt;string, .flyteidl.artifact.ArtifactID&gt; artifacts = 6;</code>
        */
 
@@ -1856,6 +1900,10 @@ public final class ExecutionOuterClass {
         return internalGetArtifacts().getMap();
       }
       /**
+       * <pre>
+       * These are alternatives to the inputs.
+       * </pre>
+       *
        * <code>map&lt;string, .flyteidl.artifact.ArtifactID&gt; artifacts = 6;</code>
        */
 
@@ -1868,6 +1916,10 @@ public final class ExecutionOuterClass {
         return map.containsKey(key) ? map.get(key) : defaultValue;
       }
       /**
+       * <pre>
+       * These are alternatives to the inputs.
+       * </pre>
+       *
        * <code>map&lt;string, .flyteidl.artifact.ArtifactID&gt; artifacts = 6;</code>
        */
 
@@ -1888,6 +1940,10 @@ public final class ExecutionOuterClass {
         return this;
       }
       /**
+       * <pre>
+       * These are alternatives to the inputs.
+       * </pre>
+       *
        * <code>map&lt;string, .flyteidl.artifact.ArtifactID&gt; artifacts = 6;</code>
        */
 
@@ -1907,6 +1963,10 @@ public final class ExecutionOuterClass {
         return internalGetMutableArtifacts().getMutableMap();
       }
       /**
+       * <pre>
+       * These are alternatives to the inputs.
+       * </pre>
+       *
        * <code>map&lt;string, .flyteidl.artifact.ArtifactID&gt; artifacts = 6;</code>
        */
       public Builder putArtifacts(
@@ -1919,6 +1979,10 @@ public final class ExecutionOuterClass {
         return this;
       }
       /**
+       * <pre>
+       * These are alternatives to the inputs.
+       * </pre>
+       *
        * <code>map&lt;string, .flyteidl.artifact.ArtifactID&gt; artifacts = 6;</code>
        */
 
