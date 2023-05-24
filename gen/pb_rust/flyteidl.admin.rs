@@ -283,6 +283,22 @@ pub struct SlackNotification {
     #[prost(string, repeated, tag="1")]
     pub recipients_email: ::prost::alloc::vec::Vec<::prost::alloc::string::String>,
 }
+/// Defines a webhook notification specification.
+#[allow(clippy::derive_partial_eq_without_eq)]
+#[derive(Clone, PartialEq, ::prost::Message)]
+pub struct WebhookNotification {
+    /// webhook url to trigger the notification.
+    /// +required
+    #[prost(string, tag="1")]
+    pub url: ::prost::alloc::string::String,
+    /// The secret name to use to trigger the webhook.
+    #[prost(string, tag="2")]
+    pub secret_name: ::prost::alloc::string::String,
+    /// The payload to send to the webhook.
+    /// +required
+    #[prost(string, tag="3")]
+    pub payload: ::prost::alloc::string::String,
+}
 /// Represents a structure for notifications based on execution status.
 /// The notification content is configured within flyte admin but can be templatized.
 /// Future iterations could expose configuring notifications with custom content.
@@ -295,7 +311,7 @@ pub struct Notification {
     pub phases: ::prost::alloc::vec::Vec<i32>,
     /// The type of notification to trigger.
     /// +required
-    #[prost(oneof="notification::Type", tags="2, 3, 4")]
+    #[prost(oneof="notification::Type", tags="2, 3, 4, 5")]
     pub r#type: ::core::option::Option<notification::Type>,
 }
 /// Nested message and enum types in `Notification`.
@@ -311,6 +327,8 @@ pub mod notification {
         PagerDuty(super::PagerDutyNotification),
         #[prost(message, tag="4")]
         Slack(super::SlackNotification),
+        #[prost(message, tag="5")]
+        Webhook(super::WebhookNotification),
     }
 }
 /// Represents a string url and associated metadata used throughout the platform.

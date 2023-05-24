@@ -238,12 +238,13 @@ message SlackNotification {
 
 // Defines a webhook notification specification.
 message WebhookNotification {
-    // The list of webhook urls to trigger a notification.
+    // webhook url to trigger the notification.
     // +required
-    string urls = 1;
-    // The secret to use to trigger the webhook.
-    string secret = 2;
+    string url = 1;
+    // The secret name to use to trigger the webhook.
+    string secret_name = 2;
     // The payload to send to the webhook.
+    // +required
     string payload = 3;
 }
 

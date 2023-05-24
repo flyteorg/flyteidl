@@ -171,17 +171,29 @@ class SlackNotification(_message.Message):
     recipients_email: _containers.RepeatedScalarFieldContainer[str]
     def __init__(self, recipients_email: _Optional[_Iterable[str]] = ...) -> None: ...
 
+class WebhookNotification(_message.Message):
+    __slots__ = ["url", "secret_name", "payload"]
+    URL_FIELD_NUMBER: _ClassVar[int]
+    SECRET_NAME_FIELD_NUMBER: _ClassVar[int]
+    PAYLOAD_FIELD_NUMBER: _ClassVar[int]
+    url: str
+    secret_name: str
+    payload: str
+    def __init__(self, url: _Optional[str] = ..., secret_name: _Optional[str] = ..., payload: _Optional[str] = ...) -> None: ...
+
 class Notification(_message.Message):
-    __slots__ = ["phases", "email", "pager_duty", "slack"]
+    __slots__ = ["phases", "email", "pager_duty", "slack", "webhook"]
     PHASES_FIELD_NUMBER: _ClassVar[int]
     EMAIL_FIELD_NUMBER: _ClassVar[int]
     PAGER_DUTY_FIELD_NUMBER: _ClassVar[int]
     SLACK_FIELD_NUMBER: _ClassVar[int]
+    WEBHOOK_FIELD_NUMBER: _ClassVar[int]
     phases: _containers.RepeatedScalarFieldContainer[_execution_pb2.WorkflowExecution.Phase]
     email: EmailNotification
     pager_duty: PagerDutyNotification
     slack: SlackNotification
-    def __init__(self, phases: _Optional[_Iterable[_Union[_execution_pb2.WorkflowExecution.Phase, str]]] = ..., email: _Optional[_Union[EmailNotification, _Mapping]] = ..., pager_duty: _Optional[_Union[PagerDutyNotification, _Mapping]] = ..., slack: _Optional[_Union[SlackNotification, _Mapping]] = ...) -> None: ...
+    webhook: WebhookNotification
+    def __init__(self, phases: _Optional[_Iterable[_Union[_execution_pb2.WorkflowExecution.Phase, str]]] = ..., email: _Optional[_Union[EmailNotification, _Mapping]] = ..., pager_duty: _Optional[_Union[PagerDutyNotification, _Mapping]] = ..., slack: _Optional[_Union[SlackNotification, _Mapping]] = ..., webhook: _Optional[_Union[WebhookNotification, _Mapping]] = ...) -> None: ...
 
 class UrlBlob(_message.Message):
     __slots__ = ["url", "bytes"]

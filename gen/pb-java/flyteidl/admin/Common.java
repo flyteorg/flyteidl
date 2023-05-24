@@ -15586,6 +15586,963 @@ public final class Common {
 
   }
 
+  public interface WebhookNotificationOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:flyteidl.admin.WebhookNotification)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <pre>
+     * webhook url to trigger the notification.
+     * +required
+     * </pre>
+     *
+     * <code>string url = 1;</code>
+     */
+    java.lang.String getUrl();
+    /**
+     * <pre>
+     * webhook url to trigger the notification.
+     * +required
+     * </pre>
+     *
+     * <code>string url = 1;</code>
+     */
+    com.google.protobuf.ByteString
+        getUrlBytes();
+
+    /**
+     * <pre>
+     * The secret name to use to trigger the webhook.
+     * </pre>
+     *
+     * <code>string secret_name = 2;</code>
+     */
+    java.lang.String getSecretName();
+    /**
+     * <pre>
+     * The secret name to use to trigger the webhook.
+     * </pre>
+     *
+     * <code>string secret_name = 2;</code>
+     */
+    com.google.protobuf.ByteString
+        getSecretNameBytes();
+
+    /**
+     * <pre>
+     * The payload to send to the webhook.
+     * +required
+     * </pre>
+     *
+     * <code>string payload = 3;</code>
+     */
+    java.lang.String getPayload();
+    /**
+     * <pre>
+     * The payload to send to the webhook.
+     * +required
+     * </pre>
+     *
+     * <code>string payload = 3;</code>
+     */
+    com.google.protobuf.ByteString
+        getPayloadBytes();
+  }
+  /**
+   * <pre>
+   * Defines a webhook notification specification.
+   * </pre>
+   *
+   * Protobuf type {@code flyteidl.admin.WebhookNotification}
+   */
+  public  static final class WebhookNotification extends
+      com.google.protobuf.GeneratedMessageV3 implements
+      // @@protoc_insertion_point(message_implements:flyteidl.admin.WebhookNotification)
+      WebhookNotificationOrBuilder {
+  private static final long serialVersionUID = 0L;
+    // Use WebhookNotification.newBuilder() to construct.
+    private WebhookNotification(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+    private WebhookNotification() {
+      url_ = "";
+      secretName_ = "";
+      payload_ = "";
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+      return this.unknownFields;
+    }
+    private WebhookNotification(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              url_ = s;
+              break;
+            }
+            case 18: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              secretName_ = s;
+              break;
+            }
+            case 26: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              payload_ = s;
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return flyteidl.admin.Common.internal_static_flyteidl_admin_WebhookNotification_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return flyteidl.admin.Common.internal_static_flyteidl_admin_WebhookNotification_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              flyteidl.admin.Common.WebhookNotification.class, flyteidl.admin.Common.WebhookNotification.Builder.class);
+    }
+
+    public static final int URL_FIELD_NUMBER = 1;
+    private volatile java.lang.Object url_;
+    /**
+     * <pre>
+     * webhook url to trigger the notification.
+     * +required
+     * </pre>
+     *
+     * <code>string url = 1;</code>
+     */
+    public java.lang.String getUrl() {
+      java.lang.Object ref = url_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        url_ = s;
+        return s;
+      }
+    }
+    /**
+     * <pre>
+     * webhook url to trigger the notification.
+     * +required
+     * </pre>
+     *
+     * <code>string url = 1;</code>
+     */
+    public com.google.protobuf.ByteString
+        getUrlBytes() {
+      java.lang.Object ref = url_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        url_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int SECRET_NAME_FIELD_NUMBER = 2;
+    private volatile java.lang.Object secretName_;
+    /**
+     * <pre>
+     * The secret name to use to trigger the webhook.
+     * </pre>
+     *
+     * <code>string secret_name = 2;</code>
+     */
+    public java.lang.String getSecretName() {
+      java.lang.Object ref = secretName_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        secretName_ = s;
+        return s;
+      }
+    }
+    /**
+     * <pre>
+     * The secret name to use to trigger the webhook.
+     * </pre>
+     *
+     * <code>string secret_name = 2;</code>
+     */
+    public com.google.protobuf.ByteString
+        getSecretNameBytes() {
+      java.lang.Object ref = secretName_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        secretName_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int PAYLOAD_FIELD_NUMBER = 3;
+    private volatile java.lang.Object payload_;
+    /**
+     * <pre>
+     * The payload to send to the webhook.
+     * +required
+     * </pre>
+     *
+     * <code>string payload = 3;</code>
+     */
+    public java.lang.String getPayload() {
+      java.lang.Object ref = payload_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        payload_ = s;
+        return s;
+      }
+    }
+    /**
+     * <pre>
+     * The payload to send to the webhook.
+     * +required
+     * </pre>
+     *
+     * <code>string payload = 3;</code>
+     */
+    public com.google.protobuf.ByteString
+        getPayloadBytes() {
+      java.lang.Object ref = payload_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        payload_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    private byte memoizedIsInitialized = -1;
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      if (!getUrlBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, url_);
+      }
+      if (!getSecretNameBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 2, secretName_);
+      }
+      if (!getPayloadBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 3, payload_);
+      }
+      unknownFields.writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (!getUrlBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, url_);
+      }
+      if (!getSecretNameBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, secretName_);
+      }
+      if (!getPayloadBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, payload_);
+      }
+      size += unknownFields.getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof flyteidl.admin.Common.WebhookNotification)) {
+        return super.equals(obj);
+      }
+      flyteidl.admin.Common.WebhookNotification other = (flyteidl.admin.Common.WebhookNotification) obj;
+
+      if (!getUrl()
+          .equals(other.getUrl())) return false;
+      if (!getSecretName()
+          .equals(other.getSecretName())) return false;
+      if (!getPayload()
+          .equals(other.getPayload())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + URL_FIELD_NUMBER;
+      hash = (53 * hash) + getUrl().hashCode();
+      hash = (37 * hash) + SECRET_NAME_FIELD_NUMBER;
+      hash = (53 * hash) + getSecretName().hashCode();
+      hash = (37 * hash) + PAYLOAD_FIELD_NUMBER;
+      hash = (53 * hash) + getPayload().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static flyteidl.admin.Common.WebhookNotification parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static flyteidl.admin.Common.WebhookNotification parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static flyteidl.admin.Common.WebhookNotification parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static flyteidl.admin.Common.WebhookNotification parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static flyteidl.admin.Common.WebhookNotification parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static flyteidl.admin.Common.WebhookNotification parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static flyteidl.admin.Common.WebhookNotification parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static flyteidl.admin.Common.WebhookNotification parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static flyteidl.admin.Common.WebhookNotification parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+    public static flyteidl.admin.Common.WebhookNotification parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static flyteidl.admin.Common.WebhookNotification parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static flyteidl.admin.Common.WebhookNotification parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(flyteidl.admin.Common.WebhookNotification prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * <pre>
+     * Defines a webhook notification specification.
+     * </pre>
+     *
+     * Protobuf type {@code flyteidl.admin.WebhookNotification}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:flyteidl.admin.WebhookNotification)
+        flyteidl.admin.Common.WebhookNotificationOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return flyteidl.admin.Common.internal_static_flyteidl_admin_WebhookNotification_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return flyteidl.admin.Common.internal_static_flyteidl_admin_WebhookNotification_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                flyteidl.admin.Common.WebhookNotification.class, flyteidl.admin.Common.WebhookNotification.Builder.class);
+      }
+
+      // Construct using flyteidl.admin.Common.WebhookNotification.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
+      }
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        url_ = "";
+
+        secretName_ = "";
+
+        payload_ = "";
+
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return flyteidl.admin.Common.internal_static_flyteidl_admin_WebhookNotification_descriptor;
+      }
+
+      @java.lang.Override
+      public flyteidl.admin.Common.WebhookNotification getDefaultInstanceForType() {
+        return flyteidl.admin.Common.WebhookNotification.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public flyteidl.admin.Common.WebhookNotification build() {
+        flyteidl.admin.Common.WebhookNotification result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public flyteidl.admin.Common.WebhookNotification buildPartial() {
+        flyteidl.admin.Common.WebhookNotification result = new flyteidl.admin.Common.WebhookNotification(this);
+        result.url_ = url_;
+        result.secretName_ = secretName_;
+        result.payload_ = payload_;
+        onBuilt();
+        return result;
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.setField(field, value);
+      }
+      @java.lang.Override
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+      @java.lang.Override
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof flyteidl.admin.Common.WebhookNotification) {
+          return mergeFrom((flyteidl.admin.Common.WebhookNotification)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(flyteidl.admin.Common.WebhookNotification other) {
+        if (other == flyteidl.admin.Common.WebhookNotification.getDefaultInstance()) return this;
+        if (!other.getUrl().isEmpty()) {
+          url_ = other.url_;
+          onChanged();
+        }
+        if (!other.getSecretName().isEmpty()) {
+          secretName_ = other.secretName_;
+          onChanged();
+        }
+        if (!other.getPayload().isEmpty()) {
+          payload_ = other.payload_;
+          onChanged();
+        }
+        this.mergeUnknownFields(other.unknownFields);
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        flyteidl.admin.Common.WebhookNotification parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (flyteidl.admin.Common.WebhookNotification) e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+
+      private java.lang.Object url_ = "";
+      /**
+       * <pre>
+       * webhook url to trigger the notification.
+       * +required
+       * </pre>
+       *
+       * <code>string url = 1;</code>
+       */
+      public java.lang.String getUrl() {
+        java.lang.Object ref = url_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          url_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <pre>
+       * webhook url to trigger the notification.
+       * +required
+       * </pre>
+       *
+       * <code>string url = 1;</code>
+       */
+      public com.google.protobuf.ByteString
+          getUrlBytes() {
+        java.lang.Object ref = url_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          url_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <pre>
+       * webhook url to trigger the notification.
+       * +required
+       * </pre>
+       *
+       * <code>string url = 1;</code>
+       */
+      public Builder setUrl(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        url_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * webhook url to trigger the notification.
+       * +required
+       * </pre>
+       *
+       * <code>string url = 1;</code>
+       */
+      public Builder clearUrl() {
+        
+        url_ = getDefaultInstance().getUrl();
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * webhook url to trigger the notification.
+       * +required
+       * </pre>
+       *
+       * <code>string url = 1;</code>
+       */
+      public Builder setUrlBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        url_ = value;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object secretName_ = "";
+      /**
+       * <pre>
+       * The secret name to use to trigger the webhook.
+       * </pre>
+       *
+       * <code>string secret_name = 2;</code>
+       */
+      public java.lang.String getSecretName() {
+        java.lang.Object ref = secretName_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          secretName_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <pre>
+       * The secret name to use to trigger the webhook.
+       * </pre>
+       *
+       * <code>string secret_name = 2;</code>
+       */
+      public com.google.protobuf.ByteString
+          getSecretNameBytes() {
+        java.lang.Object ref = secretName_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          secretName_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <pre>
+       * The secret name to use to trigger the webhook.
+       * </pre>
+       *
+       * <code>string secret_name = 2;</code>
+       */
+      public Builder setSecretName(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        secretName_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * The secret name to use to trigger the webhook.
+       * </pre>
+       *
+       * <code>string secret_name = 2;</code>
+       */
+      public Builder clearSecretName() {
+        
+        secretName_ = getDefaultInstance().getSecretName();
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * The secret name to use to trigger the webhook.
+       * </pre>
+       *
+       * <code>string secret_name = 2;</code>
+       */
+      public Builder setSecretNameBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        secretName_ = value;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object payload_ = "";
+      /**
+       * <pre>
+       * The payload to send to the webhook.
+       * +required
+       * </pre>
+       *
+       * <code>string payload = 3;</code>
+       */
+      public java.lang.String getPayload() {
+        java.lang.Object ref = payload_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          payload_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <pre>
+       * The payload to send to the webhook.
+       * +required
+       * </pre>
+       *
+       * <code>string payload = 3;</code>
+       */
+      public com.google.protobuf.ByteString
+          getPayloadBytes() {
+        java.lang.Object ref = payload_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          payload_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <pre>
+       * The payload to send to the webhook.
+       * +required
+       * </pre>
+       *
+       * <code>string payload = 3;</code>
+       */
+      public Builder setPayload(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        payload_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * The payload to send to the webhook.
+       * +required
+       * </pre>
+       *
+       * <code>string payload = 3;</code>
+       */
+      public Builder clearPayload() {
+        
+        payload_ = getDefaultInstance().getPayload();
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * The payload to send to the webhook.
+       * +required
+       * </pre>
+       *
+       * <code>string payload = 3;</code>
+       */
+      public Builder setPayloadBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        payload_ = value;
+        onChanged();
+        return this;
+      }
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+
+      // @@protoc_insertion_point(builder_scope:flyteidl.admin.WebhookNotification)
+    }
+
+    // @@protoc_insertion_point(class_scope:flyteidl.admin.WebhookNotification)
+    private static final flyteidl.admin.Common.WebhookNotification DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new flyteidl.admin.Common.WebhookNotification();
+    }
+
+    public static flyteidl.admin.Common.WebhookNotification getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<WebhookNotification>
+        PARSER = new com.google.protobuf.AbstractParser<WebhookNotification>() {
+      @java.lang.Override
+      public WebhookNotification parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new WebhookNotification(input, extensionRegistry);
+      }
+    };
+
+    public static com.google.protobuf.Parser<WebhookNotification> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<WebhookNotification> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public flyteidl.admin.Common.WebhookNotification getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
   public interface NotificationOrBuilder extends
       // @@protoc_insertion_point(interface_extends:flyteidl.admin.Notification)
       com.google.protobuf.MessageOrBuilder {
@@ -15675,6 +16632,19 @@ public final class Common {
      * <code>.flyteidl.admin.SlackNotification slack = 4;</code>
      */
     flyteidl.admin.Common.SlackNotificationOrBuilder getSlackOrBuilder();
+
+    /**
+     * <code>.flyteidl.admin.WebhookNotification webhook = 5;</code>
+     */
+    boolean hasWebhook();
+    /**
+     * <code>.flyteidl.admin.WebhookNotification webhook = 5;</code>
+     */
+    flyteidl.admin.Common.WebhookNotification getWebhook();
+    /**
+     * <code>.flyteidl.admin.WebhookNotification webhook = 5;</code>
+     */
+    flyteidl.admin.Common.WebhookNotificationOrBuilder getWebhookOrBuilder();
 
     public flyteidl.admin.Common.Notification.TypeCase getTypeCase();
   }
@@ -15789,6 +16759,20 @@ public final class Common {
               typeCase_ = 4;
               break;
             }
+            case 42: {
+              flyteidl.admin.Common.WebhookNotification.Builder subBuilder = null;
+              if (typeCase_ == 5) {
+                subBuilder = ((flyteidl.admin.Common.WebhookNotification) type_).toBuilder();
+              }
+              type_ =
+                  input.readMessage(flyteidl.admin.Common.WebhookNotification.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom((flyteidl.admin.Common.WebhookNotification) type_);
+                type_ = subBuilder.buildPartial();
+              }
+              typeCase_ = 5;
+              break;
+            }
             default: {
               if (!parseUnknownField(
                   input, unknownFields, extensionRegistry, tag)) {
@@ -15832,6 +16816,7 @@ public final class Common {
       EMAIL(2),
       PAGER_DUTY(3),
       SLACK(4),
+      WEBHOOK(5),
       TYPE_NOT_SET(0);
       private final int value;
       private TypeCase(int value) {
@@ -15850,6 +16835,7 @@ public final class Common {
           case 2: return EMAIL;
           case 3: return PAGER_DUTY;
           case 4: return SLACK;
+          case 5: return WEBHOOK;
           case 0: return TYPE_NOT_SET;
           default: return null;
         }
@@ -16014,6 +17000,32 @@ public final class Common {
       return flyteidl.admin.Common.SlackNotification.getDefaultInstance();
     }
 
+    public static final int WEBHOOK_FIELD_NUMBER = 5;
+    /**
+     * <code>.flyteidl.admin.WebhookNotification webhook = 5;</code>
+     */
+    public boolean hasWebhook() {
+      return typeCase_ == 5;
+    }
+    /**
+     * <code>.flyteidl.admin.WebhookNotification webhook = 5;</code>
+     */
+    public flyteidl.admin.Common.WebhookNotification getWebhook() {
+      if (typeCase_ == 5) {
+         return (flyteidl.admin.Common.WebhookNotification) type_;
+      }
+      return flyteidl.admin.Common.WebhookNotification.getDefaultInstance();
+    }
+    /**
+     * <code>.flyteidl.admin.WebhookNotification webhook = 5;</code>
+     */
+    public flyteidl.admin.Common.WebhookNotificationOrBuilder getWebhookOrBuilder() {
+      if (typeCase_ == 5) {
+         return (flyteidl.admin.Common.WebhookNotification) type_;
+      }
+      return flyteidl.admin.Common.WebhookNotification.getDefaultInstance();
+    }
+
     private byte memoizedIsInitialized = -1;
     @java.lang.Override
     public final boolean isInitialized() {
@@ -16044,6 +17056,9 @@ public final class Common {
       }
       if (typeCase_ == 4) {
         output.writeMessage(4, (flyteidl.admin.Common.SlackNotification) type_);
+      }
+      if (typeCase_ == 5) {
+        output.writeMessage(5, (flyteidl.admin.Common.WebhookNotification) type_);
       }
       unknownFields.writeTo(output);
     }
@@ -16078,6 +17093,10 @@ public final class Common {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(4, (flyteidl.admin.Common.SlackNotification) type_);
       }
+      if (typeCase_ == 5) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(5, (flyteidl.admin.Common.WebhookNotification) type_);
+      }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
@@ -16107,6 +17126,10 @@ public final class Common {
         case 4:
           if (!getSlack()
               .equals(other.getSlack())) return false;
+          break;
+        case 5:
+          if (!getWebhook()
+              .equals(other.getWebhook())) return false;
           break;
         case 0:
         default:
@@ -16138,6 +17161,10 @@ public final class Common {
         case 4:
           hash = (37 * hash) + SLACK_FIELD_NUMBER;
           hash = (53 * hash) + getSlack().hashCode();
+          break;
+        case 5:
+          hash = (37 * hash) + WEBHOOK_FIELD_NUMBER;
+          hash = (53 * hash) + getWebhook().hashCode();
           break;
         case 0:
         default:
@@ -16339,6 +17366,13 @@ public final class Common {
             result.type_ = slackBuilder_.build();
           }
         }
+        if (typeCase_ == 5) {
+          if (webhookBuilder_ == null) {
+            result.type_ = type_;
+          } else {
+            result.type_ = webhookBuilder_.build();
+          }
+        }
         result.bitField0_ = to_bitField0_;
         result.typeCase_ = typeCase_;
         onBuilt();
@@ -16410,6 +17444,10 @@ public final class Common {
           }
           case SLACK: {
             mergeSlack(other.getSlack());
+            break;
+          }
+          case WEBHOOK: {
+            mergeWebhook(other.getWebhook());
             break;
           }
           case TYPE_NOT_SET: {
@@ -17045,6 +18083,142 @@ public final class Common {
         typeCase_ = 4;
         onChanged();;
         return slackBuilder_;
+      }
+
+      private com.google.protobuf.SingleFieldBuilderV3<
+          flyteidl.admin.Common.WebhookNotification, flyteidl.admin.Common.WebhookNotification.Builder, flyteidl.admin.Common.WebhookNotificationOrBuilder> webhookBuilder_;
+      /**
+       * <code>.flyteidl.admin.WebhookNotification webhook = 5;</code>
+       */
+      public boolean hasWebhook() {
+        return typeCase_ == 5;
+      }
+      /**
+       * <code>.flyteidl.admin.WebhookNotification webhook = 5;</code>
+       */
+      public flyteidl.admin.Common.WebhookNotification getWebhook() {
+        if (webhookBuilder_ == null) {
+          if (typeCase_ == 5) {
+            return (flyteidl.admin.Common.WebhookNotification) type_;
+          }
+          return flyteidl.admin.Common.WebhookNotification.getDefaultInstance();
+        } else {
+          if (typeCase_ == 5) {
+            return webhookBuilder_.getMessage();
+          }
+          return flyteidl.admin.Common.WebhookNotification.getDefaultInstance();
+        }
+      }
+      /**
+       * <code>.flyteidl.admin.WebhookNotification webhook = 5;</code>
+       */
+      public Builder setWebhook(flyteidl.admin.Common.WebhookNotification value) {
+        if (webhookBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          type_ = value;
+          onChanged();
+        } else {
+          webhookBuilder_.setMessage(value);
+        }
+        typeCase_ = 5;
+        return this;
+      }
+      /**
+       * <code>.flyteidl.admin.WebhookNotification webhook = 5;</code>
+       */
+      public Builder setWebhook(
+          flyteidl.admin.Common.WebhookNotification.Builder builderForValue) {
+        if (webhookBuilder_ == null) {
+          type_ = builderForValue.build();
+          onChanged();
+        } else {
+          webhookBuilder_.setMessage(builderForValue.build());
+        }
+        typeCase_ = 5;
+        return this;
+      }
+      /**
+       * <code>.flyteidl.admin.WebhookNotification webhook = 5;</code>
+       */
+      public Builder mergeWebhook(flyteidl.admin.Common.WebhookNotification value) {
+        if (webhookBuilder_ == null) {
+          if (typeCase_ == 5 &&
+              type_ != flyteidl.admin.Common.WebhookNotification.getDefaultInstance()) {
+            type_ = flyteidl.admin.Common.WebhookNotification.newBuilder((flyteidl.admin.Common.WebhookNotification) type_)
+                .mergeFrom(value).buildPartial();
+          } else {
+            type_ = value;
+          }
+          onChanged();
+        } else {
+          if (typeCase_ == 5) {
+            webhookBuilder_.mergeFrom(value);
+          }
+          webhookBuilder_.setMessage(value);
+        }
+        typeCase_ = 5;
+        return this;
+      }
+      /**
+       * <code>.flyteidl.admin.WebhookNotification webhook = 5;</code>
+       */
+      public Builder clearWebhook() {
+        if (webhookBuilder_ == null) {
+          if (typeCase_ == 5) {
+            typeCase_ = 0;
+            type_ = null;
+            onChanged();
+          }
+        } else {
+          if (typeCase_ == 5) {
+            typeCase_ = 0;
+            type_ = null;
+          }
+          webhookBuilder_.clear();
+        }
+        return this;
+      }
+      /**
+       * <code>.flyteidl.admin.WebhookNotification webhook = 5;</code>
+       */
+      public flyteidl.admin.Common.WebhookNotification.Builder getWebhookBuilder() {
+        return getWebhookFieldBuilder().getBuilder();
+      }
+      /**
+       * <code>.flyteidl.admin.WebhookNotification webhook = 5;</code>
+       */
+      public flyteidl.admin.Common.WebhookNotificationOrBuilder getWebhookOrBuilder() {
+        if ((typeCase_ == 5) && (webhookBuilder_ != null)) {
+          return webhookBuilder_.getMessageOrBuilder();
+        } else {
+          if (typeCase_ == 5) {
+            return (flyteidl.admin.Common.WebhookNotification) type_;
+          }
+          return flyteidl.admin.Common.WebhookNotification.getDefaultInstance();
+        }
+      }
+      /**
+       * <code>.flyteidl.admin.WebhookNotification webhook = 5;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+          flyteidl.admin.Common.WebhookNotification, flyteidl.admin.Common.WebhookNotification.Builder, flyteidl.admin.Common.WebhookNotificationOrBuilder> 
+          getWebhookFieldBuilder() {
+        if (webhookBuilder_ == null) {
+          if (!(typeCase_ == 5)) {
+            type_ = flyteidl.admin.Common.WebhookNotification.getDefaultInstance();
+          }
+          webhookBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              flyteidl.admin.Common.WebhookNotification, flyteidl.admin.Common.WebhookNotification.Builder, flyteidl.admin.Common.WebhookNotificationOrBuilder>(
+                  (flyteidl.admin.Common.WebhookNotification) type_,
+                  getParentForChildren(),
+                  isClean());
+          type_ = null;
+        }
+        typeCase_ = 5;
+        onChanged();;
+        return webhookBuilder_;
       }
       @java.lang.Override
       public final Builder setUnknownFields(
@@ -22560,6 +23734,11 @@ public final class Common {
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_flyteidl_admin_SlackNotification_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_flyteidl_admin_WebhookNotification_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_flyteidl_admin_WebhookNotification_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_flyteidl_admin_Notification_descriptor;
   private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
@@ -22664,30 +23843,34 @@ public final class Common {
       "n.Sort\"-\n\021EmailNotification\022\030\n\020recipient" +
       "s_email\030\001 \003(\t\"1\n\025PagerDutyNotification\022\030" +
       "\n\020recipients_email\030\001 \003(\t\"-\n\021SlackNotific" +
-      "ation\022\030\n\020recipients_email\030\001 \003(\t\"\363\001\n\014Noti" +
-      "fication\0226\n\006phases\030\001 \003(\0162&.flyteidl.core" +
-      ".WorkflowExecution.Phase\0222\n\005email\030\002 \001(\0132" +
-      "!.flyteidl.admin.EmailNotificationH\000\022;\n\n" +
-      "pager_duty\030\003 \001(\0132%.flyteidl.admin.PagerD" +
-      "utyNotificationH\000\0222\n\005slack\030\004 \001(\0132!.flyte" +
-      "idl.admin.SlackNotificationH\000B\006\n\004type\")\n" +
-      "\007UrlBlob\022\013\n\003url\030\001 \001(\t\022\r\n\005bytes\030\002 \001(\003:\002\030\001" +
-      "\"k\n\006Labels\0222\n\006values\030\001 \003(\0132\".flyteidl.ad" +
-      "min.Labels.ValuesEntry\032-\n\013ValuesEntry\022\013\n" +
-      "\003key\030\001 \001(\t\022\r\n\005value\030\002 \001(\t:\0028\001\"u\n\013Annotat" +
-      "ions\0227\n\006values\030\001 \003(\0132\'.flyteidl.admin.An" +
-      "notations.ValuesEntry\032-\n\013ValuesEntry\022\013\n\003" +
-      "key\030\001 \001(\t\022\r\n\005value\030\002 \001(\t:\0028\001\"3\n\004Envs\022+\n\006" +
-      "values\030\001 \003(\0132\033.flyteidl.core.KeyValuePai" +
-      "r\"N\n\010AuthRole\022\032\n\022assumable_iam_role\030\001 \001(" +
-      "\t\022\"\n\032kubernetes_service_account\030\002 \001(\t:\002\030" +
-      "\001\"5\n\023RawOutputDataConfig\022\036\n\026output_locat" +
-      "ion_prefix\030\001 \001(\t\":\n\tFlyteURLs\022\016\n\006inputs\030" +
-      "\001 \001(\t\022\017\n\007outputs\030\002 \001(\t\022\014\n\004deck\030\003 \001(\t*\\\n\020" +
-      "NamedEntityState\022\027\n\023NAMED_ENTITY_ACTIVE\020" +
-      "\000\022\031\n\025NAMED_ENTITY_ARCHIVED\020\001\022\024\n\020SYSTEM_G" +
-      "ENERATED\020\002B7Z5github.com/flyteorg/flytei" +
-      "dl/gen/pb-go/flyteidl/adminb\006proto3"
+      "ation\022\030\n\020recipients_email\030\001 \003(\t\"H\n\023Webho" +
+      "okNotification\022\013\n\003url\030\001 \001(\t\022\023\n\013secret_na" +
+      "me\030\002 \001(\t\022\017\n\007payload\030\003 \001(\t\"\253\002\n\014Notificati" +
+      "on\0226\n\006phases\030\001 \003(\0162&.flyteidl.core.Workf" +
+      "lowExecution.Phase\0222\n\005email\030\002 \001(\0132!.flyt" +
+      "eidl.admin.EmailNotificationH\000\022;\n\npager_" +
+      "duty\030\003 \001(\0132%.flyteidl.admin.PagerDutyNot" +
+      "ificationH\000\0222\n\005slack\030\004 \001(\0132!.flyteidl.ad" +
+      "min.SlackNotificationH\000\0226\n\007webhook\030\005 \001(\013" +
+      "2#.flyteidl.admin.WebhookNotificationH\000B" +
+      "\006\n\004type\")\n\007UrlBlob\022\013\n\003url\030\001 \001(\t\022\r\n\005bytes" +
+      "\030\002 \001(\003:\002\030\001\"k\n\006Labels\0222\n\006values\030\001 \003(\0132\".f" +
+      "lyteidl.admin.Labels.ValuesEntry\032-\n\013Valu" +
+      "esEntry\022\013\n\003key\030\001 \001(\t\022\r\n\005value\030\002 \001(\t:\0028\001\"" +
+      "u\n\013Annotations\0227\n\006values\030\001 \003(\0132\'.flyteid" +
+      "l.admin.Annotations.ValuesEntry\032-\n\013Value" +
+      "sEntry\022\013\n\003key\030\001 \001(\t\022\r\n\005value\030\002 \001(\t:\0028\001\"3" +
+      "\n\004Envs\022+\n\006values\030\001 \003(\0132\033.flyteidl.core.K" +
+      "eyValuePair\"N\n\010AuthRole\022\032\n\022assumable_iam" +
+      "_role\030\001 \001(\t\022\"\n\032kubernetes_service_accoun" +
+      "t\030\002 \001(\t:\002\030\001\"5\n\023RawOutputDataConfig\022\036\n\026ou" +
+      "tput_location_prefix\030\001 \001(\t\":\n\tFlyteURLs\022" +
+      "\016\n\006inputs\030\001 \001(\t\022\017\n\007outputs\030\002 \001(\t\022\014\n\004deck" +
+      "\030\003 \001(\t*\\\n\020NamedEntityState\022\027\n\023NAMED_ENTI" +
+      "TY_ACTIVE\020\000\022\031\n\025NAMED_ENTITY_ARCHIVED\020\001\022\024" +
+      "\n\020SYSTEM_GENERATED\020\002B7Z5github.com/flyte" +
+      "org/flyteidl/gen/pb-go/flyteidl/adminb\006p" +
+      "roto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
@@ -22801,20 +23984,26 @@ public final class Common {
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_flyteidl_admin_SlackNotification_descriptor,
         new java.lang.String[] { "RecipientsEmail", });
-    internal_static_flyteidl_admin_Notification_descriptor =
+    internal_static_flyteidl_admin_WebhookNotification_descriptor =
       getDescriptor().getMessageTypes().get(16);
+    internal_static_flyteidl_admin_WebhookNotification_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_flyteidl_admin_WebhookNotification_descriptor,
+        new java.lang.String[] { "Url", "SecretName", "Payload", });
+    internal_static_flyteidl_admin_Notification_descriptor =
+      getDescriptor().getMessageTypes().get(17);
     internal_static_flyteidl_admin_Notification_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_flyteidl_admin_Notification_descriptor,
-        new java.lang.String[] { "Phases", "Email", "PagerDuty", "Slack", "Type", });
+        new java.lang.String[] { "Phases", "Email", "PagerDuty", "Slack", "Webhook", "Type", });
     internal_static_flyteidl_admin_UrlBlob_descriptor =
-      getDescriptor().getMessageTypes().get(17);
+      getDescriptor().getMessageTypes().get(18);
     internal_static_flyteidl_admin_UrlBlob_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_flyteidl_admin_UrlBlob_descriptor,
         new java.lang.String[] { "Url", "Bytes", });
     internal_static_flyteidl_admin_Labels_descriptor =
-      getDescriptor().getMessageTypes().get(18);
+      getDescriptor().getMessageTypes().get(19);
     internal_static_flyteidl_admin_Labels_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_flyteidl_admin_Labels_descriptor,
@@ -22826,7 +24015,7 @@ public final class Common {
         internal_static_flyteidl_admin_Labels_ValuesEntry_descriptor,
         new java.lang.String[] { "Key", "Value", });
     internal_static_flyteidl_admin_Annotations_descriptor =
-      getDescriptor().getMessageTypes().get(19);
+      getDescriptor().getMessageTypes().get(20);
     internal_static_flyteidl_admin_Annotations_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_flyteidl_admin_Annotations_descriptor,
@@ -22838,25 +24027,25 @@ public final class Common {
         internal_static_flyteidl_admin_Annotations_ValuesEntry_descriptor,
         new java.lang.String[] { "Key", "Value", });
     internal_static_flyteidl_admin_Envs_descriptor =
-      getDescriptor().getMessageTypes().get(20);
+      getDescriptor().getMessageTypes().get(21);
     internal_static_flyteidl_admin_Envs_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_flyteidl_admin_Envs_descriptor,
         new java.lang.String[] { "Values", });
     internal_static_flyteidl_admin_AuthRole_descriptor =
-      getDescriptor().getMessageTypes().get(21);
+      getDescriptor().getMessageTypes().get(22);
     internal_static_flyteidl_admin_AuthRole_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_flyteidl_admin_AuthRole_descriptor,
         new java.lang.String[] { "AssumableIamRole", "KubernetesServiceAccount", });
     internal_static_flyteidl_admin_RawOutputDataConfig_descriptor =
-      getDescriptor().getMessageTypes().get(22);
+      getDescriptor().getMessageTypes().get(23);
     internal_static_flyteidl_admin_RawOutputDataConfig_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_flyteidl_admin_RawOutputDataConfig_descriptor,
         new java.lang.String[] { "OutputLocationPrefix", });
     internal_static_flyteidl_admin_FlyteURLs_descriptor =
-      getDescriptor().getMessageTypes().get(23);
+      getDescriptor().getMessageTypes().get(24);
     internal_static_flyteidl_admin_FlyteURLs_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_flyteidl_admin_FlyteURLs_descriptor,

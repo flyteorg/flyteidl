@@ -3482,6 +3482,10 @@ definitions:
             recipients_email:
             - "recipients_email"
             - "recipients_email"
+          webhook:
+            secret_name: "secret_name"
+            payload: "payload"
+            url: "url"
           slack:
             recipients_email:
             - "recipients_email"
@@ -3497,6 +3501,10 @@ definitions:
             recipients_email:
             - "recipients_email"
             - "recipients_email"
+          webhook:
+            secret_name: "secret_name"
+            payload: "payload"
+            url: "url"
           slack:
             recipients_email:
             - "recipients_email"
@@ -3565,6 +3573,10 @@ definitions:
               recipients_email:
               - "recipients_email"
               - "recipients_email"
+            webhook:
+              secret_name: "secret_name"
+              payload: "payload"
+              url: "url"
             slack:
               recipients_email:
               - "recipients_email"
@@ -3580,6 +3592,10 @@ definitions:
               recipients_email:
               - "recipients_email"
               - "recipients_email"
+            webhook:
+              secret_name: "secret_name"
+              payload: "payload"
+              url: "url"
             slack:
               recipients_email:
               - "recipients_email"
@@ -3735,6 +3751,10 @@ definitions:
           recipients_email:
           - "recipients_email"
           - "recipients_email"
+        webhook:
+          secret_name: "secret_name"
+          payload: "payload"
+          url: "url"
         slack:
           recipients_email:
           - "recipients_email"
@@ -3750,6 +3770,10 @@ definitions:
           recipients_email:
           - "recipients_email"
           - "recipients_email"
+        webhook:
+          secret_name: "secret_name"
+          payload: "payload"
+          url: "url"
         slack:
           recipients_email:
           - "recipients_email"
@@ -3864,6 +3888,10 @@ definitions:
               recipients_email:
               - "recipients_email"
               - "recipients_email"
+            webhook:
+              secret_name: "secret_name"
+              payload: "payload"
+              url: "url"
             slack:
               recipients_email:
               - "recipients_email"
@@ -3879,6 +3907,10 @@ definitions:
               recipients_email:
               - "recipients_email"
               - "recipients_email"
+            webhook:
+              secret_name: "secret_name"
+              payload: "payload"
+              url: "url"
             slack:
               recipients_email:
               - "recipients_email"
@@ -3947,6 +3979,10 @@ definitions:
                 recipients_email:
                 - "recipients_email"
                 - "recipients_email"
+              webhook:
+                secret_name: "secret_name"
+                payload: "payload"
+                url: "url"
               slack:
                 recipients_email:
                 - "recipients_email"
@@ -3962,6 +3998,10 @@ definitions:
                 recipients_email:
                 - "recipients_email"
                 - "recipients_email"
+              webhook:
+                secret_name: "secret_name"
+                payload: "payload"
+                url: "url"
               slack:
                 recipients_email:
                 - "recipients_email"
@@ -4062,6 +4102,10 @@ definitions:
               recipients_email:
               - "recipients_email"
               - "recipients_email"
+            webhook:
+              secret_name: "secret_name"
+              payload: "payload"
+              url: "url"
             slack:
               recipients_email:
               - "recipients_email"
@@ -4077,6 +4121,10 @@ definitions:
               recipients_email:
               - "recipients_email"
               - "recipients_email"
+            webhook:
+              secret_name: "secret_name"
+              payload: "payload"
+              url: "url"
             slack:
               recipients_email:
               - "recipients_email"
@@ -4145,6 +4193,10 @@ definitions:
                 recipients_email:
                 - "recipients_email"
                 - "recipients_email"
+              webhook:
+                secret_name: "secret_name"
+                payload: "payload"
+                url: "url"
               slack:
                 recipients_email:
                 - "recipients_email"
@@ -4160,6 +4212,10 @@ definitions:
                 recipients_email:
                 - "recipients_email"
                 - "recipients_email"
+              webhook:
+                secret_name: "secret_name"
+                payload: "payload"
+                url: "url"
               slack:
                 recipients_email:
                 - "recipients_email"
@@ -4452,6 +4508,10 @@ definitions:
             recipients_email:
             - "recipients_email"
             - "recipients_email"
+          webhook:
+            secret_name: "secret_name"
+            payload: "payload"
+            url: "url"
           slack:
             recipients_email:
             - "recipients_email"
@@ -4467,6 +4527,10 @@ definitions:
             recipients_email:
             - "recipients_email"
             - "recipients_email"
+          webhook:
+            secret_name: "secret_name"
+            payload: "payload"
+            url: "url"
           slack:
             recipients_email:
             - "recipients_email"
@@ -4923,6 +4987,10 @@ definitions:
               recipients_email:
               - "recipients_email"
               - "recipients_email"
+            webhook:
+              secret_name: "secret_name"
+              payload: "payload"
+              url: "url"
             slack:
               recipients_email:
               - "recipients_email"
@@ -4938,6 +5006,10 @@ definitions:
               recipients_email:
               - "recipients_email"
               - "recipients_email"
+            webhook:
+              secret_name: "secret_name"
+              payload: "payload"
+              url: "url"
             slack:
               recipients_email:
               - "recipients_email"
@@ -5729,6 +5801,10 @@ definitions:
                 recipients_email:
                 - "recipients_email"
                 - "recipients_email"
+              webhook:
+                secret_name: "secret_name"
+                payload: "payload"
+                url: "url"
               slack:
                 recipients_email:
                 - "recipients_email"
@@ -5744,6 +5820,10 @@ definitions:
                 recipients_email:
                 - "recipients_email"
                 - "recipients_email"
+              webhook:
+                secret_name: "secret_name"
+                payload: "payload"
+                url: "url"
               slack:
                 recipients_email:
                 - "recipients_email"
@@ -6250,6 +6330,10 @@ definitions:
                 recipients_email:
                 - "recipients_email"
                 - "recipients_email"
+              webhook:
+                secret_name: "secret_name"
+                payload: "payload"
+                url: "url"
               slack:
                 recipients_email:
                 - "recipients_email"
@@ -6265,6 +6349,10 @@ definitions:
                 recipients_email:
                 - "recipients_email"
                 - "recipients_email"
+              webhook:
+                secret_name: "secret_name"
+                payload: "payload"
+                url: "url"
               slack:
                 recipients_email:
                 - "recipients_email"
@@ -6540,6 +6628,10 @@ definitions:
           recipients_email:
           - "recipients_email"
           - "recipients_email"
+        webhook:
+          secret_name: "secret_name"
+          payload: "payload"
+          url: "url"
         slack:
           recipients_email:
           - "recipients_email"
@@ -6555,6 +6647,10 @@ definitions:
           recipients_email:
           - "recipients_email"
           - "recipients_email"
+        webhook:
+          secret_name: "secret_name"
+          payload: "payload"
+          url: "url"
         slack:
           recipients_email:
           - "recipients_email"
@@ -6663,6 +6759,10 @@ definitions:
             recipients_email:
             - "recipients_email"
             - "recipients_email"
+          webhook:
+            secret_name: "secret_name"
+            payload: "payload"
+            url: "url"
           slack:
             recipients_email:
             - "recipients_email"
@@ -6678,6 +6778,10 @@ definitions:
             recipients_email:
             - "recipients_email"
             - "recipients_email"
+          webhook:
+            secret_name: "secret_name"
+            payload: "payload"
+            url: "url"
           slack:
             recipients_email:
             - "recipients_email"
@@ -14513,6 +14617,8 @@ definitions:
         $ref: "#/definitions/adminPagerDutyNotification"
       slack:
         $ref: "#/definitions/adminSlackNotification"
+      webhook:
+        $ref: "#/definitions/adminWebhookNotification"
     description: "Represents a structure for notifications based on execution status.\n\
       The notification content is configured within flyte admin but can be templatized.\n\
       Future iterations could expose configuring notifications with custom content."
@@ -14521,6 +14627,10 @@ definitions:
         recipients_email:
         - "recipients_email"
         - "recipients_email"
+      webhook:
+        secret_name: "secret_name"
+        payload: "payload"
+        url: "url"
       slack:
         recipients_email:
         - "recipients_email"
@@ -14545,6 +14655,10 @@ definitions:
           recipients_email:
           - "recipients_email"
           - "recipients_email"
+        webhook:
+          secret_name: "secret_name"
+          payload: "payload"
+          url: "url"
         slack:
           recipients_email:
           - "recipients_email"
@@ -14560,6 +14674,10 @@ definitions:
           recipients_email:
           - "recipients_email"
           - "recipients_email"
+        webhook:
+          secret_name: "secret_name"
+          payload: "payload"
+          url: "url"
         slack:
           recipients_email:
           - "recipients_email"
@@ -16959,6 +17077,23 @@ definitions:
       Version: "Version"
       Build: "Build"
       BuildTime: "BuildTime"
+  adminWebhookNotification:
+    type: "object"
+    properties:
+      url:
+        type: "string"
+        title: "webhook url to trigger the notification.\n+required"
+      secret_name:
+        type: "string"
+        description: "The secret name to use to trigger the webhook."
+      payload:
+        type: "string"
+        title: "The payload to send to the webhook.\n+required"
+    description: "Defines a webhook notification specification."
+    example:
+      secret_name: "secret_name"
+      payload: "payload"
+      url: "url"
   adminWorkflow:
     type: "object"
     properties:

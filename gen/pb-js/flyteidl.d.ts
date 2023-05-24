@@ -8547,6 +8547,70 @@ export namespace flyteidl {
             public static verify(message: { [k: string]: any }): (string|null);
         }
 
+        /** Properties of a WebhookNotification. */
+        interface IWebhookNotification {
+
+            /** WebhookNotification url */
+            url?: (string|null);
+
+            /** WebhookNotification secretName */
+            secretName?: (string|null);
+
+            /** WebhookNotification payload */
+            payload?: (string|null);
+        }
+
+        /** Represents a WebhookNotification. */
+        class WebhookNotification implements IWebhookNotification {
+
+            /**
+             * Constructs a new WebhookNotification.
+             * @param [properties] Properties to set
+             */
+            constructor(properties?: flyteidl.admin.IWebhookNotification);
+
+            /** WebhookNotification url. */
+            public url: string;
+
+            /** WebhookNotification secretName. */
+            public secretName: string;
+
+            /** WebhookNotification payload. */
+            public payload: string;
+
+            /**
+             * Creates a new WebhookNotification instance using the specified properties.
+             * @param [properties] Properties to set
+             * @returns WebhookNotification instance
+             */
+            public static create(properties?: flyteidl.admin.IWebhookNotification): flyteidl.admin.WebhookNotification;
+
+            /**
+             * Encodes the specified WebhookNotification message. Does not implicitly {@link flyteidl.admin.WebhookNotification.verify|verify} messages.
+             * @param message WebhookNotification message or plain object to encode
+             * @param [writer] Writer to encode to
+             * @returns Writer
+             */
+            public static encode(message: flyteidl.admin.IWebhookNotification, writer?: $protobuf.Writer): $protobuf.Writer;
+
+            /**
+             * Decodes a WebhookNotification message from the specified reader or buffer.
+             * @param reader Reader or buffer to decode from
+             * @param [length] Message length if known beforehand
+             * @returns WebhookNotification
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): flyteidl.admin.WebhookNotification;
+
+            /**
+             * Verifies a WebhookNotification message.
+             * @param message Plain object to verify
+             * @returns `null` if valid, otherwise the reason why it is not
+             */
+            public static verify(message: { [k: string]: any }): (string|null);
+        }
+
         /** Properties of a Notification. */
         interface INotification {
 
@@ -8561,6 +8625,9 @@ export namespace flyteidl {
 
             /** Notification slack */
             slack?: (flyteidl.admin.ISlackNotification|null);
+
+            /** Notification webhook */
+            webhook?: (flyteidl.admin.IWebhookNotification|null);
         }
 
         /** Represents a Notification. */
@@ -8584,8 +8651,11 @@ export namespace flyteidl {
             /** Notification slack. */
             public slack?: (flyteidl.admin.ISlackNotification|null);
 
+            /** Notification webhook. */
+            public webhook?: (flyteidl.admin.IWebhookNotification|null);
+
             /** Notification type. */
-            public type?: ("email"|"pagerDuty"|"slack");
+            public type?: ("email"|"pagerDuty"|"slack"|"webhook");
 
             /**
              * Creates a new Notification instance using the specified properties.
