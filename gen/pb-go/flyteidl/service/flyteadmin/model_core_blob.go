@@ -13,4 +13,5 @@ package flyteadmin
 type CoreBlob struct {
 	Metadata *CoreBlobMetadata `json:"metadata,omitempty"`
 	Uri string `json:"uri,omitempty"`
+	PickleMetadata *CorePickleMetadata `json:"pickle_metadata,omitempty"`
 }

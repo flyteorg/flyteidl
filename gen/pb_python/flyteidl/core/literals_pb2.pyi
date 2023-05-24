@@ -30,12 +30,20 @@ class Void(_message.Message):
     def __init__(self) -> None: ...
 
 class Blob(_message.Message):
-    __slots__ = ["metadata", "uri"]
+    __slots__ = ["metadata", "uri", "pickle_metadata"]
     METADATA_FIELD_NUMBER: _ClassVar[int]
     URI_FIELD_NUMBER: _ClassVar[int]
+    PICKLE_METADATA_FIELD_NUMBER: _ClassVar[int]
     metadata: BlobMetadata
     uri: str
-    def __init__(self, metadata: _Optional[_Union[BlobMetadata, _Mapping]] = ..., uri: _Optional[str] = ...) -> None: ...
+    pickle_metadata: PickleMetadata
+    def __init__(self, metadata: _Optional[_Union[BlobMetadata, _Mapping]] = ..., uri: _Optional[str] = ..., pickle_metadata: _Optional[_Union[PickleMetadata, _Mapping]] = ...) -> None: ...
+
+class PickleMetadata(_message.Message):
+    __slots__ = ["list_size"]
+    LIST_SIZE_FIELD_NUMBER: _ClassVar[int]
+    list_size: int
+    def __init__(self, list_size: _Optional[int] = ...) -> None: ...
 
 class BlobMetadata(_message.Message):
     __slots__ = ["type"]

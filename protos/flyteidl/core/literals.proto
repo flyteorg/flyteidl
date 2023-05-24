@@ -33,6 +33,14 @@ message Void {
 message Blob {
     BlobMetadata metadata = 1;
     string uri = 3;
+    PickleMetadata pickle_metadata = 4;
+}
+
+// PickleMetadata is used to store metadata about a pickled object.
+message PickleMetadata {
+    // In flytekit, we serialize a list into single pickle file. we need to save original list size, so that propeller
+    // can know how many pods to launch in the map task.
+    uint64 list_size = 1;
 }
 
 message BlobMetadata {

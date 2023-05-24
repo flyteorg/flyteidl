@@ -17,6 +17,7 @@ import re  # noqa: F401
 import six
 
 from flyteadmin.models.core_blob_metadata import CoreBlobMetadata  # noqa: F401,E501
+from flyteadmin.models.core_pickle_metadata import CorePickleMetadata  # noqa: F401,E501
 
 
 class CoreBlob(object):
@@ -34,25 +35,30 @@ class CoreBlob(object):
     """
     swagger_types = {
         'metadata': 'CoreBlobMetadata',
-        'uri': 'str'
+        'uri': 'str',
+        'pickle_metadata': 'CorePickleMetadata'
     }
 
     attribute_map = {
         'metadata': 'metadata',
-        'uri': 'uri'
+        'uri': 'uri',
+        'pickle_metadata': 'pickle_metadata'
     }
 
-    def __init__(self, metadata=None, uri=None):  # noqa: E501
+    def __init__(self, metadata=None, uri=None, pickle_metadata=None):  # noqa: E501
         """CoreBlob - a model defined in Swagger"""  # noqa: E501
 
         self._metadata = None
         self._uri = None
+        self._pickle_metadata = None
         self.discriminator = None
 
         if metadata is not None:
             self.metadata = metadata
         if uri is not None:
             self.uri = uri
+        if pickle_metadata is not None:
+            self.pickle_metadata = pickle_metadata
 
     @property
     def metadata(self):
@@ -95,6 +101,27 @@ class CoreBlob(object):
         """
 
         self._uri = uri
+
+    @property
+    def pickle_metadata(self):
+        """Gets the pickle_metadata of this CoreBlob.  # noqa: E501
+
+
+        :return: The pickle_metadata of this CoreBlob.  # noqa: E501
+        :rtype: CorePickleMetadata
+        """
+        return self._pickle_metadata
+
+    @pickle_metadata.setter
+    def pickle_metadata(self, pickle_metadata):
+        """Sets the pickle_metadata of this CoreBlob.
+
+
+        :param pickle_metadata: The pickle_metadata of this CoreBlob.  # noqa: E501
+        :type: CorePickleMetadata
+        """
+
+        self._pickle_metadata = pickle_metadata
 
     def to_dict(self):
         """Returns the model properties as a dict"""
