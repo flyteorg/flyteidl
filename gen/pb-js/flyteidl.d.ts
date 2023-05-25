@@ -2324,8 +2324,8 @@ export namespace flyteidl {
         /** Properties of a PickleMetadata. */
         interface IPickleMetadata {
 
-            /** PickleMetadata listSize */
-            listSize?: (Long|null);
+            /** PickleMetadata size */
+            size?: (Long|null);
         }
 
         /** Represents a PickleMetadata. */
@@ -2337,8 +2337,8 @@ export namespace flyteidl {
              */
             constructor(properties?: flyteidl.core.IPickleMetadata);
 
-            /** PickleMetadata listSize. */
-            public listSize: Long;
+            /** PickleMetadata size. */
+            public size: Long;
 
             /**
              * Creates a new PickleMetadata instance using the specified properties.

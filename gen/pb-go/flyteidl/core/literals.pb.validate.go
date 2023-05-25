@@ -298,7 +298,7 @@ func (m *PickleMetadata) Validate() error {
 		return nil
 	}
 
-	// no validation rules for ListSize
+	// no validation rules for Size
 
 	return nil
 }

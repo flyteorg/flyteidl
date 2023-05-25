@@ -795,7 +795,7 @@ pub struct PickleMetadata {
     /// In flytekit, we serialize a list into single pickle file. we need to save original list size, so that propeller
     /// can know how many pods to launch in the map task.
     #[prost(uint64, tag="1")]
-    pub list_size: u64,
+    pub size: u64,
 }
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(Clone, PartialEq, ::prost::Message)]

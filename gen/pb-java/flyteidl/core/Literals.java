@@ -2713,9 +2713,9 @@ public final class Literals {
      * can know how many pods to launch in the map task.
      * </pre>
      *
-     * <code>uint64 list_size = 1;</code>
+     * <code>uint64 size = 1;</code>
      */
-    long getListSize();
+    long getSize();
   }
   /**
    * <pre>
@@ -2762,7 +2762,7 @@ public final class Literals {
               break;
             case 8: {
 
-              listSize_ = input.readUInt64();
+              size_ = input.readUInt64();
               break;
             }
             default: {
@@ -2797,18 +2797,18 @@ public final class Literals {
               flyteidl.core.Literals.PickleMetadata.class, flyteidl.core.Literals.PickleMetadata.Builder.class);
     }
 
-    public static final int LIST_SIZE_FIELD_NUMBER = 1;
-    private long listSize_;
+    public static final int SIZE_FIELD_NUMBER = 1;
+    private long size_;
     /**
      * <pre>
      * In flytekit, we serialize a list into single pickle file. we need to save original list size, so that propeller
      * can know how many pods to launch in the map task.
      * </pre>
      *
-     * <code>uint64 list_size = 1;</code>
+     * <code>uint64 size = 1;</code>
      */
-    public long getListSize() {
-      return listSize_;
+    public long getSize() {
+      return size_;
     }
 
     private byte memoizedIsInitialized = -1;
@@ -2825,8 +2825,8 @@ public final class Literals {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (listSize_ != 0L) {
-        output.writeUInt64(1, listSize_);
+      if (size_ != 0L) {
+        output.writeUInt64(1, size_);
       }
       unknownFields.writeTo(output);
     }
@@ -2837,9 +2837,9 @@ public final class Literals {
       if (size != -1) return size;
 
       size = 0;
-      if (listSize_ != 0L) {
+      if (size_ != 0L) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt64Size(1, listSize_);
+          .computeUInt64Size(1, size_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -2856,8 +2856,8 @@ public final class Literals {
       }
       flyteidl.core.Literals.PickleMetadata other = (flyteidl.core.Literals.PickleMetadata) obj;
 
-      if (getListSize()
-          != other.getListSize()) return false;
+      if (getSize()
+          != other.getSize()) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -2869,9 +2869,9 @@ public final class Literals {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
-      hash = (37 * hash) + LIST_SIZE_FIELD_NUMBER;
+      hash = (37 * hash) + SIZE_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
-          getListSize());
+          getSize());
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -3009,7 +3009,7 @@ public final class Literals {
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        listSize_ = 0L;
+        size_ = 0L;
 
         return this;
       }
@@ -3037,7 +3037,7 @@ public final class Literals {
       @java.lang.Override
       public flyteidl.core.Literals.PickleMetadata buildPartial() {
         flyteidl.core.Literals.PickleMetadata result = new flyteidl.core.Literals.PickleMetadata(this);
-        result.listSize_ = listSize_;
+        result.size_ = size_;
         onBuilt();
         return result;
       }
@@ -3086,8 +3086,8 @@ public final class Literals {
 
       public Builder mergeFrom(flyteidl.core.Literals.PickleMetadata other) {
         if (other == flyteidl.core.Literals.PickleMetadata.getDefaultInstance()) return this;
-        if (other.getListSize() != 0L) {
-          setListSize(other.getListSize());
+        if (other.getSize() != 0L) {
+          setSize(other.getSize());
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -3118,17 +3118,17 @@ public final class Literals {
         return this;
       }
 
-      private long listSize_ ;
+      private long size_ ;
       /**
        * <pre>
        * In flytekit, we serialize a list into single pickle file. we need to save original list size, so that propeller
        * can know how many pods to launch in the map task.
        * </pre>
        *
-       * <code>uint64 list_size = 1;</code>
+       * <code>uint64 size = 1;</code>
        */
-      public long getListSize() {
-        return listSize_;
+      public long getSize() {
+        return size_;
       }
       /**
        * <pre>
@@ -3136,11 +3136,11 @@ public final class Literals {
        * can know how many pods to launch in the map task.
        * </pre>
        *
-       * <code>uint64 list_size = 1;</code>
+       * <code>uint64 size = 1;</code>
        */
-      public Builder setListSize(long value) {
+      public Builder setSize(long value) {
         
-        listSize_ = value;
+        size_ = value;
         onChanged();
         return this;
       }
@@ -3150,11 +3150,11 @@ public final class Literals {
        * can know how many pods to launch in the map task.
        * </pre>
        *
-       * <code>uint64 list_size = 1;</code>
+       * <code>uint64 size = 1;</code>
        */
-      public Builder clearListSize() {
+      public Builder clearSize() {
         
-        listSize_ = 0L;
+        size_ = 0L;
         onChanged();
         return this;
       }
@@ -19191,58 +19191,58 @@ public final class Literals {
       "\000B\007\n\005value\"\006\n\004Void\"z\n\004Blob\022-\n\010metadata\030\001" +
       " \001(\0132\033.flyteidl.core.BlobMetadata\022\013\n\003uri" +
       "\030\003 \001(\t\0226\n\017pickle_metadata\030\004 \001(\0132\035.flytei" +
-      "dl.core.PickleMetadata\"#\n\016PickleMetadata" +
-      "\022\021\n\tlist_size\030\001 \001(\004\"5\n\014BlobMetadata\022%\n\004t" +
-      "ype\030\001 \001(\0132\027.flyteidl.core.BlobType\"$\n\006Bi" +
-      "nary\022\r\n\005value\030\001 \001(\014\022\013\n\003tag\030\002 \001(\t\">\n\006Sche" +
-      "ma\022\013\n\003uri\030\001 \001(\t\022\'\n\004type\030\003 \001(\0132\031.flyteidl" +
-      ".core.SchemaType\"X\n\005Union\022%\n\005value\030\001 \001(\013" +
-      "2\026.flyteidl.core.Literal\022(\n\004type\030\002 \001(\0132\032" +
-      ".flyteidl.core.LiteralType\"b\n\031Structured" +
-      "DatasetMetadata\022E\n\027structured_dataset_ty" +
-      "pe\030\001 \001(\0132$.flyteidl.core.StructuredDatas" +
-      "etType\"\\\n\021StructuredDataset\022\013\n\003uri\030\001 \001(\t" +
-      "\022:\n\010metadata\030\002 \001(\0132(.flyteidl.core.Struc" +
-      "turedDatasetMetadata\"\233\003\n\006Scalar\022-\n\tprimi" +
-      "tive\030\001 \001(\0132\030.flyteidl.core.PrimitiveH\000\022#" +
-      "\n\004blob\030\002 \001(\0132\023.flyteidl.core.BlobH\000\022\'\n\006b" +
-      "inary\030\003 \001(\0132\025.flyteidl.core.BinaryH\000\022\'\n\006" +
-      "schema\030\004 \001(\0132\025.flyteidl.core.SchemaH\000\022(\n" +
-      "\tnone_type\030\005 \001(\0132\023.flyteidl.core.VoidH\000\022" +
-      "%\n\005error\030\006 \001(\0132\024.flyteidl.core.ErrorH\000\022*" +
-      "\n\007generic\030\007 \001(\0132\027.google.protobuf.Struct" +
-      "H\000\022>\n\022structured_dataset\030\010 \001(\0132 .flyteid" +
-      "l.core.StructuredDatasetH\000\022%\n\005union\030\t \001(" +
-      "\0132\024.flyteidl.core.UnionH\000B\007\n\005value\"\253\001\n\007L" +
-      "iteral\022\'\n\006scalar\030\001 \001(\0132\025.flyteidl.core.S" +
-      "calarH\000\0226\n\ncollection\030\002 \001(\0132 .flyteidl.c" +
-      "ore.LiteralCollectionH\000\022(\n\003map\030\003 \001(\0132\031.f" +
-      "lyteidl.core.LiteralMapH\000\022\014\n\004hash\030\004 \001(\tB" +
-      "\007\n\005value\"=\n\021LiteralCollection\022(\n\010literal" +
-      "s\030\001 \003(\0132\026.flyteidl.core.Literal\"\220\001\n\nLite" +
-      "ralMap\0229\n\010literals\030\001 \003(\0132\'.flyteidl.core" +
-      ".LiteralMap.LiteralsEntry\032G\n\rLiteralsEnt" +
-      "ry\022\013\n\003key\030\001 \001(\t\022%\n\005value\030\002 \001(\0132\026.flyteid" +
-      "l.core.Literal:\0028\001\"E\n\025BindingDataCollect" +
-      "ion\022,\n\010bindings\030\001 \003(\0132\032.flyteidl.core.Bi" +
-      "ndingData\"\234\001\n\016BindingDataMap\022=\n\010bindings" +
-      "\030\001 \003(\0132+.flyteidl.core.BindingDataMap.Bi" +
-      "ndingsEntry\032K\n\rBindingsEntry\022\013\n\003key\030\001 \001(" +
-      "\t\022)\n\005value\030\002 \001(\0132\032.flyteidl.core.Binding" +
-      "Data:\0028\001\";\n\tUnionInfo\022.\n\ntargetType\030\001 \001(" +
-      "\0132\032.flyteidl.core.LiteralType\"\205\002\n\013Bindin" +
-      "gData\022\'\n\006scalar\030\001 \001(\0132\025.flyteidl.core.Sc" +
-      "alarH\000\022:\n\ncollection\030\002 \001(\0132$.flyteidl.co" +
-      "re.BindingDataCollectionH\000\0221\n\007promise\030\003 " +
-      "\001(\0132\036.flyteidl.core.OutputReferenceH\000\022,\n" +
-      "\003map\030\004 \001(\0132\035.flyteidl.core.BindingDataMa" +
-      "pH\000\022\'\n\005union\030\005 \001(\0132\030.flyteidl.core.Union" +
-      "InfoB\007\n\005value\"C\n\007Binding\022\013\n\003var\030\001 \001(\t\022+\n" +
-      "\007binding\030\002 \001(\0132\032.flyteidl.core.BindingDa" +
-      "ta\"*\n\014KeyValuePair\022\013\n\003key\030\001 \001(\t\022\r\n\005value" +
-      "\030\002 \001(\t\" \n\rRetryStrategy\022\017\n\007retries\030\005 \001(\r" +
-      "B6Z4github.com/flyteorg/flyteidl/gen/pb-" +
-      "go/flyteidl/coreb\006proto3"
+      "dl.core.PickleMetadata\"\036\n\016PickleMetadata" +
+      "\022\014\n\004size\030\001 \001(\004\"5\n\014BlobMetadata\022%\n\004type\030\001" +
+      " \001(\0132\027.flyteidl.core.BlobType\"$\n\006Binary\022" +
+      "\r\n\005value\030\001 \001(\014\022\013\n\003tag\030\002 \001(\t\">\n\006Schema\022\013\n" +
+      "\003uri\030\001 \001(\t\022\'\n\004type\030\003 \001(\0132\031.flyteidl.core" +
+      ".SchemaType\"X\n\005Union\022%\n\005value\030\001 \001(\0132\026.fl" +
+      "yteidl.core.Literal\022(\n\004type\030\002 \001(\0132\032.flyt" +
+      "eidl.core.LiteralType\"b\n\031StructuredDatas" +
+      "etMetadata\022E\n\027structured_dataset_type\030\001 " +
+      "\001(\0132$.flyteidl.core.StructuredDatasetTyp" +
+      "e\"\\\n\021StructuredDataset\022\013\n\003uri\030\001 \001(\t\022:\n\010m" +
+      "etadata\030\002 \001(\0132(.flyteidl.core.Structured" +
+      "DatasetMetadata\"\233\003\n\006Scalar\022-\n\tprimitive\030" +
+      "\001 \001(\0132\030.flyteidl.core.PrimitiveH\000\022#\n\004blo" +
+      "b\030\002 \001(\0132\023.flyteidl.core.BlobH\000\022\'\n\006binary" +
+      "\030\003 \001(\0132\025.flyteidl.core.BinaryH\000\022\'\n\006schem" +
+      "a\030\004 \001(\0132\025.flyteidl.core.SchemaH\000\022(\n\tnone" +
+      "_type\030\005 \001(\0132\023.flyteidl.core.VoidH\000\022%\n\005er" +
+      "ror\030\006 \001(\0132\024.flyteidl.core.ErrorH\000\022*\n\007gen" +
+      "eric\030\007 \001(\0132\027.google.protobuf.StructH\000\022>\n" +
+      "\022structured_dataset\030\010 \001(\0132 .flyteidl.cor" +
+      "e.StructuredDatasetH\000\022%\n\005union\030\t \001(\0132\024.f" +
+      "lyteidl.core.UnionH\000B\007\n\005value\"\253\001\n\007Litera" +
+      "l\022\'\n\006scalar\030\001 \001(\0132\025.flyteidl.core.Scalar" +
+      "H\000\0226\n\ncollection\030\002 \001(\0132 .flyteidl.core.L" +
+      "iteralCollectionH\000\022(\n\003map\030\003 \001(\0132\031.flytei" +
+      "dl.core.LiteralMapH\000\022\014\n\004hash\030\004 \001(\tB\007\n\005va" +
+      "lue\"=\n\021LiteralCollection\022(\n\010literals\030\001 \003" +
+      "(\0132\026.flyteidl.core.Literal\"\220\001\n\nLiteralMa" +
+      "p\0229\n\010literals\030\001 \003(\0132\'.flyteidl.core.Lite" +
+      "ralMap.LiteralsEntry\032G\n\rLiteralsEntry\022\013\n" +
+      "\003key\030\001 \001(\t\022%\n\005value\030\002 \001(\0132\026.flyteidl.cor" +
+      "e.Literal:\0028\001\"E\n\025BindingDataCollection\022," +
+      "\n\010bindings\030\001 \003(\0132\032.flyteidl.core.Binding" +
+      "Data\"\234\001\n\016BindingDataMap\022=\n\010bindings\030\001 \003(" +
+      "\0132+.flyteidl.core.BindingDataMap.Binding" +
+      "sEntry\032K\n\rBindingsEntry\022\013\n\003key\030\001 \001(\t\022)\n\005" +
+      "value\030\002 \001(\0132\032.flyteidl.core.BindingData:" +
+      "\0028\001\";\n\tUnionInfo\022.\n\ntargetType\030\001 \001(\0132\032.f" +
+      "lyteidl.core.LiteralType\"\205\002\n\013BindingData" +
+      "\022\'\n\006scalar\030\001 \001(\0132\025.flyteidl.core.ScalarH" +
+      "\000\022:\n\ncollection\030\002 \001(\0132$.flyteidl.core.Bi" +
+      "ndingDataCollectionH\000\0221\n\007promise\030\003 \001(\0132\036" +
+      ".flyteidl.core.OutputReferenceH\000\022,\n\003map\030" +
+      "\004 \001(\0132\035.flyteidl.core.BindingDataMapH\000\022\'" +
+      "\n\005union\030\005 \001(\0132\030.flyteidl.core.UnionInfoB" +
+      "\007\n\005value\"C\n\007Binding\022\013\n\003var\030\001 \001(\t\022+\n\007bind" +
+      "ing\030\002 \001(\0132\032.flyteidl.core.BindingData\"*\n" +
+      "\014KeyValuePair\022\013\n\003key\030\001 \001(\t\022\r\n\005value\030\002 \001(" +
+      "\t\" \n\rRetryStrategy\022\017\n\007retries\030\005 \001(\rB6Z4g" +
+      "ithub.com/flyteorg/flyteidl/gen/pb-go/fl" +
+      "yteidl/coreb\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
@@ -19283,7 +19283,7 @@ public final class Literals {
     internal_static_flyteidl_core_PickleMetadata_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_flyteidl_core_PickleMetadata_descriptor,
-        new java.lang.String[] { "ListSize", });
+        new java.lang.String[] { "Size", });
     internal_static_flyteidl_core_BlobMetadata_descriptor =
       getDescriptor().getMessageTypes().get(4);
     internal_static_flyteidl_core_BlobMetadata_fieldAccessorTable = new

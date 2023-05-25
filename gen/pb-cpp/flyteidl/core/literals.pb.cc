@@ -485,7 +485,7 @@ const ::google::protobuf::uint32 TableStruct_flyteidl_2fcore_2fliterals_2eproto:
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
-  PROTOBUF_FIELD_OFFSET(::flyteidl::core::PickleMetadata, list_size_),
+  PROTOBUF_FIELD_OFFSET(::flyteidl::core::PickleMetadata, size_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::flyteidl::core::BlobMetadata, _internal_metadata_),
   ~0u,  // no _extensions_
@@ -702,63 +702,63 @@ const char descriptor_table_protodef_flyteidl_2fcore_2fliterals_2eproto[] =
   "\000B\007\n\005value\"\006\n\004Void\"z\n\004Blob\022-\n\010metadata\030\001"
   " \001(\0132\033.flyteidl.core.BlobMetadata\022\013\n\003uri"
   "\030\003 \001(\t\0226\n\017pickle_metadata\030\004 \001(\0132\035.flytei"
-  "dl.core.PickleMetadata\"#\n\016PickleMetadata"
-  "\022\021\n\tlist_size\030\001 \001(\004\"5\n\014BlobMetadata\022%\n\004t"
-  "ype\030\001 \001(\0132\027.flyteidl.core.BlobType\"$\n\006Bi"
-  "nary\022\r\n\005value\030\001 \001(\014\022\013\n\003tag\030\002 \001(\t\">\n\006Sche"
-  "ma\022\013\n\003uri\030\001 \001(\t\022\'\n\004type\030\003 \001(\0132\031.flyteidl"
-  ".core.SchemaType\"X\n\005Union\022%\n\005value\030\001 \001(\013"
-  "2\026.flyteidl.core.Literal\022(\n\004type\030\002 \001(\0132\032"
-  ".flyteidl.core.LiteralType\"b\n\031Structured"
-  "DatasetMetadata\022E\n\027structured_dataset_ty"
-  "pe\030\001 \001(\0132$.flyteidl.core.StructuredDatas"
-  "etType\"\\\n\021StructuredDataset\022\013\n\003uri\030\001 \001(\t"
-  "\022:\n\010metadata\030\002 \001(\0132(.flyteidl.core.Struc"
-  "turedDatasetMetadata\"\233\003\n\006Scalar\022-\n\tprimi"
-  "tive\030\001 \001(\0132\030.flyteidl.core.PrimitiveH\000\022#"
-  "\n\004blob\030\002 \001(\0132\023.flyteidl.core.BlobH\000\022\'\n\006b"
-  "inary\030\003 \001(\0132\025.flyteidl.core.BinaryH\000\022\'\n\006"
-  "schema\030\004 \001(\0132\025.flyteidl.core.SchemaH\000\022(\n"
-  "\tnone_type\030\005 \001(\0132\023.flyteidl.core.VoidH\000\022"
-  "%\n\005error\030\006 \001(\0132\024.flyteidl.core.ErrorH\000\022*"
-  "\n\007generic\030\007 \001(\0132\027.google.protobuf.Struct"
-  "H\000\022>\n\022structured_dataset\030\010 \001(\0132 .flyteid"
-  "l.core.StructuredDatasetH\000\022%\n\005union\030\t \001("
-  "\0132\024.flyteidl.core.UnionH\000B\007\n\005value\"\253\001\n\007L"
-  "iteral\022\'\n\006scalar\030\001 \001(\0132\025.flyteidl.core.S"
-  "calarH\000\0226\n\ncollection\030\002 \001(\0132 .flyteidl.c"
-  "ore.LiteralCollectionH\000\022(\n\003map\030\003 \001(\0132\031.f"
-  "lyteidl.core.LiteralMapH\000\022\014\n\004hash\030\004 \001(\tB"
-  "\007\n\005value\"=\n\021LiteralCollection\022(\n\010literal"
-  "s\030\001 \003(\0132\026.flyteidl.core.Literal\"\220\001\n\nLite"
-  "ralMap\0229\n\010literals\030\001 \003(\0132\'.flyteidl.core"
-  ".LiteralMap.LiteralsEntry\032G\n\rLiteralsEnt"
-  "ry\022\013\n\003key\030\001 \001(\t\022%\n\005value\030\002 \001(\0132\026.flyteid"
-  "l.core.Literal:\0028\001\"E\n\025BindingDataCollect"
-  "ion\022,\n\010bindings\030\001 \003(\0132\032.flyteidl.core.Bi"
-  "ndingData\"\234\001\n\016BindingDataMap\022=\n\010bindings"
-  "\030\001 \003(\0132+.flyteidl.core.BindingDataMap.Bi"
-  "ndingsEntry\032K\n\rBindingsEntry\022\013\n\003key\030\001 \001("
-  "\t\022)\n\005value\030\002 \001(\0132\032.flyteidl.core.Binding"
-  "Data:\0028\001\";\n\tUnionInfo\022.\n\ntargetType\030\001 \001("
-  "\0132\032.flyteidl.core.LiteralType\"\205\002\n\013Bindin"
-  "gData\022\'\n\006scalar\030\001 \001(\0132\025.flyteidl.core.Sc"
-  "alarH\000\022:\n\ncollection\030\002 \001(\0132$.flyteidl.co"
-  "re.BindingDataCollectionH\000\0221\n\007promise\030\003 "
-  "\001(\0132\036.flyteidl.core.OutputReferenceH\000\022,\n"
-  "\003map\030\004 \001(\0132\035.flyteidl.core.BindingDataMa"
-  "pH\000\022\'\n\005union\030\005 \001(\0132\030.flyteidl.core.Union"
-  "InfoB\007\n\005value\"C\n\007Binding\022\013\n\003var\030\001 \001(\t\022+\n"
-  "\007binding\030\002 \001(\0132\032.flyteidl.core.BindingDa"
-  "ta\"*\n\014KeyValuePair\022\013\n\003key\030\001 \001(\t\022\r\n\005value"
-  "\030\002 \001(\t\" \n\rRetryStrategy\022\017\n\007retries\030\005 \001(\r"
-  "B6Z4github.com/flyteorg/flyteidl/gen/pb-"
-  "go/flyteidl/coreb\006proto3"
+  "dl.core.PickleMetadata\"\036\n\016PickleMetadata"
+  "\022\014\n\004size\030\001 \001(\004\"5\n\014BlobMetadata\022%\n\004type\030\001"
+  " \001(\0132\027.flyteidl.core.BlobType\"$\n\006Binary\022"
+  "\r\n\005value\030\001 \001(\014\022\013\n\003tag\030\002 \001(\t\">\n\006Schema\022\013\n"
+  "\003uri\030\001 \001(\t\022\'\n\004type\030\003 \001(\0132\031.flyteidl.core"
+  ".SchemaType\"X\n\005Union\022%\n\005value\030\001 \001(\0132\026.fl"
+  "yteidl.core.Literal\022(\n\004type\030\002 \001(\0132\032.flyt"
+  "eidl.core.LiteralType\"b\n\031StructuredDatas"
+  "etMetadata\022E\n\027structured_dataset_type\030\001 "
+  "\001(\0132$.flyteidl.core.StructuredDatasetTyp"
+  "e\"\\\n\021StructuredDataset\022\013\n\003uri\030\001 \001(\t\022:\n\010m"
+  "etadata\030\002 \001(\0132(.flyteidl.core.Structured"
+  "DatasetMetadata\"\233\003\n\006Scalar\022-\n\tprimitive\030"
+  "\001 \001(\0132\030.flyteidl.core.PrimitiveH\000\022#\n\004blo"
+  "b\030\002 \001(\0132\023.flyteidl.core.BlobH\000\022\'\n\006binary"
+  "\030\003 \001(\0132\025.flyteidl.core.BinaryH\000\022\'\n\006schem"
+  "a\030\004 \001(\0132\025.flyteidl.core.SchemaH\000\022(\n\tnone"
+  "_type\030\005 \001(\0132\023.flyteidl.core.VoidH\000\022%\n\005er"
+  "ror\030\006 \001(\0132\024.flyteidl.core.ErrorH\000\022*\n\007gen"
+  "eric\030\007 \001(\0132\027.google.protobuf.StructH\000\022>\n"
+  "\022structured_dataset\030\010 \001(\0132 .flyteidl.cor"
+  "e.StructuredDatasetH\000\022%\n\005union\030\t \001(\0132\024.f"
+  "lyteidl.core.UnionH\000B\007\n\005value\"\253\001\n\007Litera"
+  "l\022\'\n\006scalar\030\001 \001(\0132\025.flyteidl.core.Scalar"
+  "H\000\0226\n\ncollection\030\002 \001(\0132 .flyteidl.core.L"
+  "iteralCollectionH\000\022(\n\003map\030\003 \001(\0132\031.flytei"
+  "dl.core.LiteralMapH\000\022\014\n\004hash\030\004 \001(\tB\007\n\005va"
+  "lue\"=\n\021LiteralCollection\022(\n\010literals\030\001 \003"
+  "(\0132\026.flyteidl.core.Literal\"\220\001\n\nLiteralMa"
+  "p\0229\n\010literals\030\001 \003(\0132\'.flyteidl.core.Lite"
+  "ralMap.LiteralsEntry\032G\n\rLiteralsEntry\022\013\n"
+  "\003key\030\001 \001(\t\022%\n\005value\030\002 \001(\0132\026.flyteidl.cor"
+  "e.Literal:\0028\001\"E\n\025BindingDataCollection\022,"
+  "\n\010bindings\030\001 \003(\0132\032.flyteidl.core.Binding"
+  "Data\"\234\001\n\016BindingDataMap\022=\n\010bindings\030\001 \003("
+  "\0132+.flyteidl.core.BindingDataMap.Binding"
+  "sEntry\032K\n\rBindingsEntry\022\013\n\003key\030\001 \001(\t\022)\n\005"
+  "value\030\002 \001(\0132\032.flyteidl.core.BindingData:"
+  "\0028\001\";\n\tUnionInfo\022.\n\ntargetType\030\001 \001(\0132\032.f"
+  "lyteidl.core.LiteralType\"\205\002\n\013BindingData"
+  "\022\'\n\006scalar\030\001 \001(\0132\025.flyteidl.core.ScalarH"
+  "\000\022:\n\ncollection\030\002 \001(\0132$.flyteidl.core.Bi"
+  "ndingDataCollectionH\000\0221\n\007promise\030\003 \001(\0132\036"
+  ".flyteidl.core.OutputReferenceH\000\022,\n\003map\030"
+  "\004 \001(\0132\035.flyteidl.core.BindingDataMapH\000\022\'"
+  "\n\005union\030\005 \001(\0132\030.flyteidl.core.UnionInfoB"
+  "\007\n\005value\"C\n\007Binding\022\013\n\003var\030\001 \001(\t\022+\n\007bind"
+  "ing\030\002 \001(\0132\032.flyteidl.core.BindingData\"*\n"
+  "\014KeyValuePair\022\013\n\003key\030\001 \001(\t\022\r\n\005value\030\002 \001("
+  "\t\" \n\rRetryStrategy\022\017\n\007retries\030\005 \001(\rB6Z4g"
+  "ithub.com/flyteorg/flyteidl/gen/pb-go/fl"
+  "yteidl/coreb\006proto3"
   ;
 ::google::protobuf::internal::DescriptorTable descriptor_table_flyteidl_2fcore_2fliterals_2eproto = {
   false, InitDefaults_flyteidl_2fcore_2fliterals_2eproto, 
   descriptor_table_protodef_flyteidl_2fcore_2fliterals_2eproto,
-  "flyteidl/core/literals.proto", &assign_descriptors_table_flyteidl_2fcore_2fliterals_2eproto, 2544,
+  "flyteidl/core/literals.proto", &assign_descriptors_table_flyteidl_2fcore_2fliterals_2eproto, 2539,
 };
 
 void AddDescriptors_flyteidl_2fcore_2fliterals_2eproto() {
@@ -2081,7 +2081,7 @@ class PickleMetadata::HasBitSetters {
 };
 
 #if !defined(_MSC_VER) || _MSC_VER >= 1900
-const int PickleMetadata::kListSizeFieldNumber;
+const int PickleMetadata::kSizeFieldNumber;
 #endif  // !defined(_MSC_VER) || _MSC_VER >= 1900
 
 PickleMetadata::PickleMetadata()
@@ -2093,12 +2093,12 @@ PickleMetadata::PickleMetadata(const PickleMetadata& from)
   : ::google::protobuf::Message(),
       _internal_metadata_(nullptr) {
   _internal_metadata_.MergeFrom(from._internal_metadata_);
-  list_size_ = from.list_size_;
+  size_ = from.size_;
   // @@protoc_insertion_point(copy_constructor:flyteidl.core.PickleMetadata)
 }
 
 void PickleMetadata::SharedCtor() {
-  list_size_ = PROTOBUF_ULONGLONG(0);
+  size_ = PROTOBUF_ULONGLONG(0);
 }
 
 PickleMetadata::~PickleMetadata() {
@@ -2124,7 +2124,7 @@ void PickleMetadata::Clear() {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  list_size_ = PROTOBUF_ULONGLONG(0);
+  size_ = PROTOBUF_ULONGLONG(0);
   _internal_metadata_.Clear();
 }
 
@@ -2141,10 +2141,10 @@ const char* PickleMetadata::_InternalParse(const char* begin, const char* end, v
     ptr = ::google::protobuf::io::Parse32(ptr, &tag);
     GOOGLE_PROTOBUF_PARSER_ASSERT(ptr);
     switch (tag >> 3) {
-      // uint64 list_size = 1;
+      // uint64 size = 1;
       case 1: {
         if (static_cast<::google::protobuf::uint8>(tag) != 8) goto handle_unusual;
-        msg->set_list_size(::google::protobuf::internal::ReadVarint(&ptr));
+        msg->set_size(::google::protobuf::internal::ReadVarint(&ptr));
         GOOGLE_PROTOBUF_PARSER_ASSERT(ptr);
         break;
       }
@@ -2175,13 +2175,13 @@ bool PickleMetadata::MergePartialFromCodedStream(
     tag = p.first;
     if (!p.second) goto handle_unusual;
     switch (::google::protobuf::internal::WireFormatLite::GetTagFieldNumber(tag)) {
-      // uint64 list_size = 1;
+      // uint64 size = 1;
       case 1: {
         if (static_cast< ::google::protobuf::uint8>(tag) == (8 & 0xFF)) {
 
           DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
                    ::google::protobuf::uint64, ::google::protobuf::internal::WireFormatLite::TYPE_UINT64>(
-                 input, &list_size_)));
+                 input, &size_)));
         } else {
           goto handle_unusual;
         }
@@ -2215,9 +2215,9 @@ void PickleMetadata::SerializeWithCachedSizes(
   ::google::protobuf::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  // uint64 list_size = 1;
-  if (this->list_size() != 0) {
-    ::google::protobuf::internal::WireFormatLite::WriteUInt64(1, this->list_size(), output);
+  // uint64 size = 1;
+  if (this->size() != 0) {
+    ::google::protobuf::internal::WireFormatLite::WriteUInt64(1, this->size(), output);
   }
 
   if (_internal_metadata_.have_unknown_fields()) {
@@ -2233,9 +2233,9 @@ void PickleMetadata::SerializeWithCachedSizes(
   ::google::protobuf::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  // uint64 list_size = 1;
-  if (this->list_size() != 0) {
-    target = ::google::protobuf::internal::WireFormatLite::WriteUInt64ToArray(1, this->list_size(), target);
+  // uint64 size = 1;
+  if (this->size() != 0) {
+    target = ::google::protobuf::internal::WireFormatLite::WriteUInt64ToArray(1, this->size(), target);
   }
 
   if (_internal_metadata_.have_unknown_fields()) {
@@ -2259,11 +2259,11 @@ size_t PickleMetadata::ByteSizeLong() const {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  // uint64 list_size = 1;
-  if (this->list_size() != 0) {
+  // uint64 size = 1;
+  if (this->size() != 0) {
     total_size += 1 +
       ::google::protobuf::internal::WireFormatLite::UInt64Size(
-        this->list_size());
+        this->size());
   }
 
   int cached_size = ::google::protobuf::internal::ToCachedSize(total_size);
@@ -2293,8 +2293,8 @@ void PickleMetadata::MergeFrom(const PickleMetadata& from) {
   ::google::protobuf::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  if (from.list_size() != 0) {
-    set_list_size(from.list_size());
+  if (from.size() != 0) {
+    set_size(from.size());
   }
 }
 
@@ -2323,7 +2323,7 @@ void PickleMetadata::Swap(PickleMetadata* other) {
 void PickleMetadata::InternalSwap(PickleMetadata* other) {
   using std::swap;
   _internal_metadata_.Swap(&other->_internal_metadata_);
-  swap(list_size_, other->list_size_);
+  swap(size_, other->size_);
 }
 
 ::google::protobuf::Metadata PickleMetadata::GetMetadata() const {

@@ -5603,7 +5603,7 @@
                  * Properties of a PickleMetadata.
                  * @memberof flyteidl.core
                  * @interface IPickleMetadata
-                 * @property {Long|null} [listSize] PickleMetadata listSize
+                 * @property {Long|null} [size] PickleMetadata size
                  */
     
                 /**
@@ -5622,12 +5622,12 @@
                 }
     
                 /**
-                 * PickleMetadata listSize.
-                 * @member {Long} listSize
+                 * PickleMetadata size.
+                 * @member {Long} size
                  * @memberof flyteidl.core.PickleMetadata
                  * @instance
                  */
-                PickleMetadata.prototype.listSize = $util.Long ? $util.Long.fromBits(0,0,true) : 0;
+                PickleMetadata.prototype.size = $util.Long ? $util.Long.fromBits(0,0,true) : 0;
     
                 /**
                  * Creates a new PickleMetadata instance using the specified properties.
@@ -5653,8 +5653,8 @@
                 PickleMetadata.encode = function encode(message, writer) {
                     if (!writer)
                         writer = $Writer.create();
-                    if (message.listSize != null && message.hasOwnProperty("listSize"))
-                        writer.uint32(/* id 1, wireType 0 =*/8).uint64(message.listSize);
+                    if (message.size != null && message.hasOwnProperty("size"))
+                        writer.uint32(/* id 1, wireType 0 =*/8).uint64(message.size);
                     return writer;
                 };
     
@@ -5677,7 +5677,7 @@
                         var tag = reader.uint32();
                         switch (tag >>> 3) {
                         case 1:
-                            message.listSize = reader.uint64();
+                            message.size = reader.uint64();
                             break;
                         default:
                             reader.skipType(tag & 7);
@@ -5698,9 +5698,9 @@
                 PickleMetadata.verify = function verify(message) {
                     if (typeof message !== "object" || message === null)
                         return "object expected";
-                    if (message.listSize != null && message.hasOwnProperty("listSize"))
-                        if (!$util.isInteger(message.listSize) && !(message.listSize && $util.isInteger(message.listSize.low) && $util.isInteger(message.listSize.high)))
-                            return "listSize: integer|Long expected";
+                    if (message.size != null && message.hasOwnProperty("size"))
+                        if (!$util.isInteger(message.size) && !(message.size && $util.isInteger(message.size.low) && $util.isInteger(message.size.high)))
+                            return "size: integer|Long expected";
                     return null;
                 };
     

@@ -40,10 +40,10 @@ class Blob(_message.Message):
     def __init__(self, metadata: _Optional[_Union[BlobMetadata, _Mapping]] = ..., uri: _Optional[str] = ..., pickle_metadata: _Optional[_Union[PickleMetadata, _Mapping]] = ...) -> None: ...
 
 class PickleMetadata(_message.Message):
-    __slots__ = ["list_size"]
-    LIST_SIZE_FIELD_NUMBER: _ClassVar[int]
-    list_size: int
-    def __init__(self, list_size: _Optional[int] = ...) -> None: ...
+    __slots__ = ["size"]
+    SIZE_FIELD_NUMBER: _ClassVar[int]
+    size: int
+    def __init__(self, size: _Optional[int] = ...) -> None: ...
 
 class BlobMetadata(_message.Message):
     __slots__ = ["type"]

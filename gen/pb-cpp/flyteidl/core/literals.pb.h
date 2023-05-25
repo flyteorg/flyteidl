@@ -699,18 +699,18 @@ class PickleMetadata final :
 
   // accessors -------------------------------------------------------
 
-  // uint64 list_size = 1;
-  void clear_list_size();
-  static const int kListSizeFieldNumber = 1;
-  ::google::protobuf::uint64 list_size() const;
-  void set_list_size(::google::protobuf::uint64 value);
+  // uint64 size = 1;
+  void clear_size();
+  static const int kSizeFieldNumber = 1;
+  ::google::protobuf::uint64 size() const;
+  void set_size(::google::protobuf::uint64 value);
 
   // @@protoc_insertion_point(class_scope:flyteidl.core.PickleMetadata)
  private:
   class HasBitSetters;
 
   ::google::protobuf::internal::InternalMetadataWithArena _internal_metadata_;
-  ::google::protobuf::uint64 list_size_;
+  ::google::protobuf::uint64 size_;
   mutable ::google::protobuf::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_flyteidl_2fcore_2fliterals_2eproto;
 };
@@ -3492,18 +3492,18 @@ inline void Blob::set_allocated_pickle_metadata(::flyteidl::core::PickleMetadata
 
 // PickleMetadata
 
-// uint64 list_size = 1;
-inline void PickleMetadata::clear_list_size() {
-  list_size_ = PROTOBUF_ULONGLONG(0);
+// uint64 size = 1;
+inline void PickleMetadata::clear_size() {
+  size_ = PROTOBUF_ULONGLONG(0);
 }
-inline ::google::protobuf::uint64 PickleMetadata::list_size() const {
-  // @@protoc_insertion_point(field_get:flyteidl.core.PickleMetadata.list_size)
-  return list_size_;
+inline ::google::protobuf::uint64 PickleMetadata::size() const {
+  // @@protoc_insertion_point(field_get:flyteidl.core.PickleMetadata.size)
+  return size_;
 }
-inline void PickleMetadata::set_list_size(::google::protobuf::uint64 value) {
+inline void PickleMetadata::set_size(::google::protobuf::uint64 value) {
   
-  list_size_ = value;
-  // @@protoc_insertion_point(field_set:flyteidl.core.PickleMetadata.list_size)
+  size_ = value;
+  // @@protoc_insertion_point(field_set:flyteidl.core.PickleMetadata.size)
 }
 
 // -------------------------------------------------------------------

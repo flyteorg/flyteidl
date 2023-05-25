@@ -12,5 +12,5 @@ package flyteadmin
 // PickleMetadata is used to store metadata about a pickled object.
 type CorePickleMetadata struct {
 	// In flytekit, we serialize a list into single pickle file. we need to save original list size, so that propeller can know how many pods to launch in the map task.
-	ListSize string `json:"list_size,omitempty"`
+	Size string `json:"size,omitempty"`
 }

@@ -4748,7 +4748,7 @@ definitions:
                         format: "format"
                     uri: "uri"
                     pickle_metadata:
-                      list_size: "list_size"
+                      size: "size"
                   none_type: {}
                   primitive:
                     duration: "duration"
@@ -4992,7 +4992,7 @@ definitions:
                         format: "format"
                     uri: "uri"
                     pickle_metadata:
-                      list_size: "list_size"
+                      size: "size"
                   none_type: {}
                   primitive:
                     duration: "duration"
@@ -5293,7 +5293,7 @@ definitions:
                       format: "format"
                   uri: "uri"
                   pickle_metadata:
-                    list_size: "list_size"
+                    size: "size"
                 none_type: {}
                 primitive:
                   duration: "duration"
@@ -5560,7 +5560,7 @@ definitions:
                           format: "format"
                       uri: "uri"
                       pickle_metadata:
-                        list_size: "list_size"
+                        size: "size"
                     none_type: {}
                     primitive:
                       duration: "duration"
@@ -5804,7 +5804,7 @@ definitions:
                           format: "format"
                       uri: "uri"
                       pickle_metadata:
-                        list_size: "list_size"
+                        size: "size"
                     none_type: {}
                     primitive:
                       duration: "duration"
@@ -6085,7 +6085,7 @@ definitions:
                           format: "format"
                       uri: "uri"
                       pickle_metadata:
-                        list_size: "list_size"
+                        size: "size"
                     none_type: {}
                     primitive:
                       duration: "duration"
@@ -6329,7 +6329,7 @@ definitions:
                           format: "format"
                       uri: "uri"
                       pickle_metadata:
-                        list_size: "list_size"
+                        size: "size"
                     none_type: {}
                     primitive:
                       duration: "duration"
@@ -6744,7 +6744,7 @@ definitions:
                       format: "format"
                   uri: "uri"
                   pickle_metadata:
-                    list_size: "list_size"
+                    size: "size"
                 none_type: {}
                 primitive:
                   duration: "duration"
@@ -7795,7 +7795,7 @@ definitions:
                           format: "format"
                       uri: "uri"
                       pickle_metadata:
-                        list_size: "list_size"
+                        size: "size"
                     none_type: {}
                     primitive:
                       duration: "duration"
@@ -7962,7 +7962,7 @@ definitions:
                           format: "format"
                       uri: "uri"
                       pickle_metadata:
-                        list_size: "list_size"
+                        size: "size"
                     none_type: {}
                     primitive:
                       duration: "duration"
@@ -8283,7 +8283,7 @@ definitions:
                             format: "format"
                         uri: "uri"
                         pickle_metadata:
-                          list_size: "list_size"
+                          size: "size"
                       none_type: {}
                       primitive:
                         duration: "duration"
@@ -8450,7 +8450,7 @@ definitions:
                             format: "format"
                         uri: "uri"
                         pickle_metadata:
-                          list_size: "list_size"
+                          size: "size"
                       none_type: {}
                       primitive:
                         duration: "duration"
@@ -8801,7 +8801,7 @@ definitions:
                             format: "format"
                         uri: "uri"
                         pickle_metadata:
-                          list_size: "list_size"
+                          size: "size"
                       none_type: {}
                       primitive:
                         duration: "duration"
@@ -8968,7 +8968,7 @@ definitions:
                             format: "format"
                         uri: "uri"
                         pickle_metadata:
-                          list_size: "list_size"
+                          size: "size"
                       none_type: {}
                       primitive:
                         duration: "duration"
@@ -9318,7 +9318,7 @@ definitions:
                             format: "format"
                         uri: "uri"
                         pickle_metadata:
-                          list_size: "list_size"
+                          size: "size"
                       none_type: {}
                       primitive:
                         duration: "duration"
@@ -9485,7 +9485,7 @@ definitions:
                             format: "format"
                         uri: "uri"
                         pickle_metadata:
-                          list_size: "list_size"
+                          size: "size"
                       none_type: {}
                       primitive:
                         duration: "duration"
@@ -9822,7 +9822,7 @@ definitions:
                           format: "format"
                       uri: "uri"
                       pickle_metadata:
-                        list_size: "list_size"
+                        size: "size"
                     none_type: {}
                     primitive:
                       duration: "duration"
@@ -9989,7 +9989,7 @@ definitions:
                           format: "format"
                       uri: "uri"
                       pickle_metadata:
-                        list_size: "list_size"
+                        size: "size"
                     none_type: {}
                     primitive:
                       duration: "duration"
@@ -10310,7 +10310,7 @@ definitions:
                             format: "format"
                         uri: "uri"
                         pickle_metadata:
-                          list_size: "list_size"
+                          size: "size"
                       none_type: {}
                       primitive:
                         duration: "duration"
@@ -10477,7 +10477,7 @@ definitions:
                             format: "format"
                         uri: "uri"
                         pickle_metadata:
-                          list_size: "list_size"
+                          size: "size"
                       none_type: {}
                       primitive:
                         duration: "duration"
@@ -10828,7 +10828,7 @@ definitions:
                             format: "format"
                         uri: "uri"
                         pickle_metadata:
-                          list_size: "list_size"
+                          size: "size"
                       none_type: {}
                       primitive:
                         duration: "duration"
@@ -10995,7 +10995,7 @@ definitions:
                             format: "format"
                         uri: "uri"
                         pickle_metadata:
-                          list_size: "list_size"
+                          size: "size"
                       none_type: {}
                       primitive:
                         duration: "duration"
@@ -11345,7 +11345,7 @@ definitions:
                             format: "format"
                         uri: "uri"
                         pickle_metadata:
-                          list_size: "list_size"
+                          size: "size"
                       none_type: {}
                       primitive:
                         duration: "duration"
@@ -11512,7 +11512,7 @@ definitions:
                             format: "format"
                         uri: "uri"
                         pickle_metadata:
-                          list_size: "list_size"
+                          size: "size"
                       none_type: {}
                       primitive:
                         duration: "duration"
@@ -12377,7 +12377,7 @@ definitions:
                           format: "format"
                       uri: "uri"
                       pickle_metadata:
-                        list_size: "list_size"
+                        size: "size"
                     none_type: {}
                     primitive:
                       duration: "duration"
@@ -12544,7 +12544,7 @@ definitions:
                           format: "format"
                       uri: "uri"
                       pickle_metadata:
-                        list_size: "list_size"
+                        size: "size"
                     none_type: {}
                     primitive:
                       duration: "duration"
@@ -12865,7 +12865,7 @@ definitions:
                             format: "format"
                         uri: "uri"
                         pickle_metadata:
-                          list_size: "list_size"
+                          size: "size"
                       none_type: {}
                       primitive:
                         duration: "duration"
@@ -13032,7 +13032,7 @@ definitions:
                             format: "format"
                         uri: "uri"
                         pickle_metadata:
-                          list_size: "list_size"
+                          size: "size"
                       none_type: {}
                       primitive:
                         duration: "duration"
@@ -13383,7 +13383,7 @@ definitions:
                             format: "format"
                         uri: "uri"
                         pickle_metadata:
-                          list_size: "list_size"
+                          size: "size"
                       none_type: {}
                       primitive:
                         duration: "duration"
@@ -13550,7 +13550,7 @@ definitions:
                             format: "format"
                         uri: "uri"
                         pickle_metadata:
-                          list_size: "list_size"
+                          size: "size"
                       none_type: {}
                       primitive:
                         duration: "duration"
@@ -13900,7 +13900,7 @@ definitions:
                             format: "format"
                         uri: "uri"
                         pickle_metadata:
-                          list_size: "list_size"
+                          size: "size"
                       none_type: {}
                       primitive:
                         duration: "duration"
@@ -14067,7 +14067,7 @@ definitions:
                             format: "format"
                         uri: "uri"
                         pickle_metadata:
-                          list_size: "list_size"
+                          size: "size"
                       none_type: {}
                       primitive:
                         duration: "duration"
@@ -17070,7 +17070,7 @@ definitions:
                           format: "format"
                       uri: "uri"
                       pickle_metadata:
-                        list_size: "list_size"
+                        size: "size"
                     none_type: {}
                     primitive:
                       duration: "duration"
@@ -17237,7 +17237,7 @@ definitions:
                           format: "format"
                       uri: "uri"
                       pickle_metadata:
-                        list_size: "list_size"
+                        size: "size"
                     none_type: {}
                     primitive:
                       duration: "duration"
@@ -17558,7 +17558,7 @@ definitions:
                             format: "format"
                         uri: "uri"
                         pickle_metadata:
-                          list_size: "list_size"
+                          size: "size"
                       none_type: {}
                       primitive:
                         duration: "duration"
@@ -17725,7 +17725,7 @@ definitions:
                             format: "format"
                         uri: "uri"
                         pickle_metadata:
-                          list_size: "list_size"
+                          size: "size"
                       none_type: {}
                       primitive:
                         duration: "duration"
@@ -18076,7 +18076,7 @@ definitions:
                             format: "format"
                         uri: "uri"
                         pickle_metadata:
-                          list_size: "list_size"
+                          size: "size"
                       none_type: {}
                       primitive:
                         duration: "duration"
@@ -18243,7 +18243,7 @@ definitions:
                             format: "format"
                         uri: "uri"
                         pickle_metadata:
-                          list_size: "list_size"
+                          size: "size"
                       none_type: {}
                       primitive:
                         duration: "duration"
@@ -18593,7 +18593,7 @@ definitions:
                             format: "format"
                         uri: "uri"
                         pickle_metadata:
-                          list_size: "list_size"
+                          size: "size"
                       none_type: {}
                       primitive:
                         duration: "duration"
@@ -18760,7 +18760,7 @@ definitions:
                             format: "format"
                         uri: "uri"
                         pickle_metadata:
-                          list_size: "list_size"
+                          size: "size"
                       none_type: {}
                       primitive:
                         duration: "duration"
@@ -19097,7 +19097,7 @@ definitions:
                           format: "format"
                       uri: "uri"
                       pickle_metadata:
-                        list_size: "list_size"
+                        size: "size"
                     none_type: {}
                     primitive:
                       duration: "duration"
@@ -19264,7 +19264,7 @@ definitions:
                           format: "format"
                       uri: "uri"
                       pickle_metadata:
-                        list_size: "list_size"
+                        size: "size"
                     none_type: {}
                     primitive:
                       duration: "duration"
@@ -19585,7 +19585,7 @@ definitions:
                             format: "format"
                         uri: "uri"
                         pickle_metadata:
-                          list_size: "list_size"
+                          size: "size"
                       none_type: {}
                       primitive:
                         duration: "duration"
@@ -19752,7 +19752,7 @@ definitions:
                             format: "format"
                         uri: "uri"
                         pickle_metadata:
-                          list_size: "list_size"
+                          size: "size"
                       none_type: {}
                       primitive:
                         duration: "duration"
@@ -20103,7 +20103,7 @@ definitions:
                             format: "format"
                         uri: "uri"
                         pickle_metadata:
-                          list_size: "list_size"
+                          size: "size"
                       none_type: {}
                       primitive:
                         duration: "duration"
@@ -20270,7 +20270,7 @@ definitions:
                             format: "format"
                         uri: "uri"
                         pickle_metadata:
-                          list_size: "list_size"
+                          size: "size"
                       none_type: {}
                       primitive:
                         duration: "duration"
@@ -20620,7 +20620,7 @@ definitions:
                             format: "format"
                         uri: "uri"
                         pickle_metadata:
-                          list_size: "list_size"
+                          size: "size"
                       none_type: {}
                       primitive:
                         duration: "duration"
@@ -20787,7 +20787,7 @@ definitions:
                             format: "format"
                         uri: "uri"
                         pickle_metadata:
-                          list_size: "list_size"
+                          size: "size"
                       none_type: {}
                       primitive:
                         duration: "duration"
@@ -21652,7 +21652,7 @@ definitions:
                           format: "format"
                       uri: "uri"
                       pickle_metadata:
-                        list_size: "list_size"
+                        size: "size"
                     none_type: {}
                     primitive:
                       duration: "duration"
@@ -21819,7 +21819,7 @@ definitions:
                           format: "format"
                       uri: "uri"
                       pickle_metadata:
-                        list_size: "list_size"
+                        size: "size"
                     none_type: {}
                     primitive:
                       duration: "duration"
@@ -22140,7 +22140,7 @@ definitions:
                             format: "format"
                         uri: "uri"
                         pickle_metadata:
-                          list_size: "list_size"
+                          size: "size"
                       none_type: {}
                       primitive:
                         duration: "duration"
@@ -22307,7 +22307,7 @@ definitions:
                             format: "format"
                         uri: "uri"
                         pickle_metadata:
-                          list_size: "list_size"
+                          size: "size"
                       none_type: {}
                       primitive:
                         duration: "duration"
@@ -22658,7 +22658,7 @@ definitions:
                             format: "format"
                         uri: "uri"
                         pickle_metadata:
-                          list_size: "list_size"
+                          size: "size"
                       none_type: {}
                       primitive:
                         duration: "duration"
@@ -22825,7 +22825,7 @@ definitions:
                             format: "format"
                         uri: "uri"
                         pickle_metadata:
-                          list_size: "list_size"
+                          size: "size"
                       none_type: {}
                       primitive:
                         duration: "duration"
@@ -23175,7 +23175,7 @@ definitions:
                             format: "format"
                         uri: "uri"
                         pickle_metadata:
-                          list_size: "list_size"
+                          size: "size"
                       none_type: {}
                       primitive:
                         duration: "duration"
@@ -23342,7 +23342,7 @@ definitions:
                             format: "format"
                         uri: "uri"
                         pickle_metadata:
-                          list_size: "list_size"
+                          size: "size"
                       none_type: {}
                       primitive:
                         duration: "duration"
@@ -23964,7 +23964,7 @@ definitions:
                         format: "format"
                     uri: "uri"
                     pickle_metadata:
-                      list_size: "list_size"
+                      size: "size"
                   none_type: {}
                   primitive:
                     duration: "duration"
@@ -24131,7 +24131,7 @@ definitions:
                         format: "format"
                     uri: "uri"
                     pickle_metadata:
-                      list_size: "list_size"
+                      size: "size"
                   none_type: {}
                   primitive:
                     duration: "duration"
@@ -24452,7 +24452,7 @@ definitions:
                           format: "format"
                       uri: "uri"
                       pickle_metadata:
-                        list_size: "list_size"
+                        size: "size"
                     none_type: {}
                     primitive:
                       duration: "duration"
@@ -24619,7 +24619,7 @@ definitions:
                           format: "format"
                       uri: "uri"
                       pickle_metadata:
-                        list_size: "list_size"
+                        size: "size"
                     none_type: {}
                     primitive:
                       duration: "duration"
@@ -24970,7 +24970,7 @@ definitions:
                           format: "format"
                       uri: "uri"
                       pickle_metadata:
-                        list_size: "list_size"
+                        size: "size"
                     none_type: {}
                     primitive:
                       duration: "duration"
@@ -25137,7 +25137,7 @@ definitions:
                           format: "format"
                       uri: "uri"
                       pickle_metadata:
-                        list_size: "list_size"
+                        size: "size"
                     none_type: {}
                     primitive:
                       duration: "duration"
@@ -25487,7 +25487,7 @@ definitions:
                           format: "format"
                       uri: "uri"
                       pickle_metadata:
-                        list_size: "list_size"
+                        size: "size"
                     none_type: {}
                     primitive:
                       duration: "duration"
@@ -25654,7 +25654,7 @@ definitions:
                           format: "format"
                       uri: "uri"
                       pickle_metadata:
-                        list_size: "list_size"
+                        size: "size"
                     none_type: {}
                     primitive:
                       duration: "duration"
@@ -25991,7 +25991,7 @@ definitions:
                         format: "format"
                     uri: "uri"
                     pickle_metadata:
-                      list_size: "list_size"
+                      size: "size"
                   none_type: {}
                   primitive:
                     duration: "duration"
@@ -26158,7 +26158,7 @@ definitions:
                         format: "format"
                     uri: "uri"
                     pickle_metadata:
-                      list_size: "list_size"
+                      size: "size"
                   none_type: {}
                   primitive:
                     duration: "duration"
@@ -26479,7 +26479,7 @@ definitions:
                           format: "format"
                       uri: "uri"
                       pickle_metadata:
-                        list_size: "list_size"
+                        size: "size"
                     none_type: {}
                     primitive:
                       duration: "duration"
@@ -26646,7 +26646,7 @@ definitions:
                           format: "format"
                       uri: "uri"
                       pickle_metadata:
-                        list_size: "list_size"
+                        size: "size"
                     none_type: {}
                     primitive:
                       duration: "duration"
@@ -26997,7 +26997,7 @@ definitions:
                           format: "format"
                       uri: "uri"
                       pickle_metadata:
-                        list_size: "list_size"
+                        size: "size"
                     none_type: {}
                     primitive:
                       duration: "duration"
@@ -27164,7 +27164,7 @@ definitions:
                           format: "format"
                       uri: "uri"
                       pickle_metadata:
-                        list_size: "list_size"
+                        size: "size"
                     none_type: {}
                     primitive:
                       duration: "duration"
@@ -27514,7 +27514,7 @@ definitions:
                           format: "format"
                       uri: "uri"
                       pickle_metadata:
-                        list_size: "list_size"
+                        size: "size"
                     none_type: {}
                     primitive:
                       duration: "duration"
@@ -27681,7 +27681,7 @@ definitions:
                           format: "format"
                       uri: "uri"
                       pickle_metadata:
-                        list_size: "list_size"
+                        size: "size"
                     none_type: {}
                     primitive:
                       duration: "duration"
@@ -28546,7 +28546,7 @@ definitions:
                         format: "format"
                     uri: "uri"
                     pickle_metadata:
-                      list_size: "list_size"
+                      size: "size"
                   none_type: {}
                   primitive:
                     duration: "duration"
@@ -28713,7 +28713,7 @@ definitions:
                         format: "format"
                     uri: "uri"
                     pickle_metadata:
-                      list_size: "list_size"
+                      size: "size"
                   none_type: {}
                   primitive:
                     duration: "duration"
@@ -29034,7 +29034,7 @@ definitions:
                           format: "format"
                       uri: "uri"
                       pickle_metadata:
-                        list_size: "list_size"
+                        size: "size"
                     none_type: {}
                     primitive:
                       duration: "duration"
@@ -29201,7 +29201,7 @@ definitions:
                           format: "format"
                       uri: "uri"
                       pickle_metadata:
-                        list_size: "list_size"
+                        size: "size"
                     none_type: {}
                     primitive:
                       duration: "duration"
@@ -29552,7 +29552,7 @@ definitions:
                           format: "format"
                       uri: "uri"
                       pickle_metadata:
-                        list_size: "list_size"
+                        size: "size"
                     none_type: {}
                     primitive:
                       duration: "duration"
@@ -29719,7 +29719,7 @@ definitions:
                           format: "format"
                       uri: "uri"
                       pickle_metadata:
-                        list_size: "list_size"
+                        size: "size"
                     none_type: {}
                     primitive:
                       duration: "duration"
@@ -30069,7 +30069,7 @@ definitions:
                           format: "format"
                       uri: "uri"
                       pickle_metadata:
-                        list_size: "list_size"
+                        size: "size"
                     none_type: {}
                     primitive:
                       duration: "duration"
@@ -30236,7 +30236,7 @@ definitions:
                           format: "format"
                       uri: "uri"
                       pickle_metadata:
-                        list_size: "list_size"
+                        size: "size"
                     none_type: {}
                     primitive:
                       duration: "duration"
@@ -30805,7 +30805,7 @@ definitions:
                             format: "format"
                         uri: "uri"
                         pickle_metadata:
-                          list_size: "list_size"
+                          size: "size"
                       none_type: {}
                       primitive:
                         duration: "duration"
@@ -30972,7 +30972,7 @@ definitions:
                             format: "format"
                         uri: "uri"
                         pickle_metadata:
-                          list_size: "list_size"
+                          size: "size"
                       none_type: {}
                       primitive:
                         duration: "duration"
@@ -31293,7 +31293,7 @@ definitions:
                               format: "format"
                           uri: "uri"
                           pickle_metadata:
-                            list_size: "list_size"
+                            size: "size"
                         none_type: {}
                         primitive:
                           duration: "duration"
@@ -31460,7 +31460,7 @@ definitions:
                               format: "format"
                           uri: "uri"
                           pickle_metadata:
-                            list_size: "list_size"
+                            size: "size"
                         none_type: {}
                         primitive:
                           duration: "duration"
@@ -31811,7 +31811,7 @@ definitions:
                               format: "format"
                           uri: "uri"
                           pickle_metadata:
-                            list_size: "list_size"
+                            size: "size"
                         none_type: {}
                         primitive:
                           duration: "duration"
@@ -31978,7 +31978,7 @@ definitions:
                               format: "format"
                           uri: "uri"
                           pickle_metadata:
-                            list_size: "list_size"
+                            size: "size"
                         none_type: {}
                         primitive:
                           duration: "duration"
@@ -32328,7 +32328,7 @@ definitions:
                               format: "format"
                           uri: "uri"
                           pickle_metadata:
-                            list_size: "list_size"
+                            size: "size"
                         none_type: {}
                         primitive:
                           duration: "duration"
@@ -32495,7 +32495,7 @@ definitions:
                               format: "format"
                           uri: "uri"
                           pickle_metadata:
-                            list_size: "list_size"
+                            size: "size"
                         none_type: {}
                         primitive:
                           duration: "duration"
@@ -32832,7 +32832,7 @@ definitions:
                             format: "format"
                         uri: "uri"
                         pickle_metadata:
-                          list_size: "list_size"
+                          size: "size"
                       none_type: {}
                       primitive:
                         duration: "duration"
@@ -32999,7 +32999,7 @@ definitions:
                             format: "format"
                         uri: "uri"
                         pickle_metadata:
-                          list_size: "list_size"
+                          size: "size"
                       none_type: {}
                       primitive:
                         duration: "duration"
@@ -33320,7 +33320,7 @@ definitions:
                               format: "format"
                           uri: "uri"
                           pickle_metadata:
-                            list_size: "list_size"
+                            size: "size"
                         none_type: {}
                         primitive:
                           duration: "duration"
@@ -33487,7 +33487,7 @@ definitions:
                               format: "format"
                           uri: "uri"
                           pickle_metadata:
-                            list_size: "list_size"
+                            size: "size"
                         none_type: {}
                         primitive:
                           duration: "duration"
@@ -33838,7 +33838,7 @@ definitions:
                               format: "format"
                           uri: "uri"
                           pickle_metadata:
-                            list_size: "list_size"
+                            size: "size"
                         none_type: {}
                         primitive:
                           duration: "duration"
@@ -34005,7 +34005,7 @@ definitions:
                               format: "format"
                           uri: "uri"
                           pickle_metadata:
-                            list_size: "list_size"
+                            size: "size"
                         none_type: {}
                         primitive:
                           duration: "duration"
@@ -34355,7 +34355,7 @@ definitions:
                               format: "format"
                           uri: "uri"
                           pickle_metadata:
-                            list_size: "list_size"
+                            size: "size"
                         none_type: {}
                         primitive:
                           duration: "duration"
@@ -34522,7 +34522,7 @@ definitions:
                               format: "format"
                           uri: "uri"
                           pickle_metadata:
-                            list_size: "list_size"
+                            size: "size"
                         none_type: {}
                         primitive:
                           duration: "duration"
@@ -35387,7 +35387,7 @@ definitions:
                             format: "format"
                         uri: "uri"
                         pickle_metadata:
-                          list_size: "list_size"
+                          size: "size"
                       none_type: {}
                       primitive:
                         duration: "duration"
@@ -35554,7 +35554,7 @@ definitions:
                             format: "format"
                         uri: "uri"
                         pickle_metadata:
-                          list_size: "list_size"
+                          size: "size"
                       none_type: {}
                       primitive:
                         duration: "duration"
@@ -35875,7 +35875,7 @@ definitions:
                               format: "format"
                           uri: "uri"
                           pickle_metadata:
-                            list_size: "list_size"
+                            size: "size"
                         none_type: {}
                         primitive:
                           duration: "duration"
@@ -36042,7 +36042,7 @@ definitions:
                               format: "format"
                           uri: "uri"
                           pickle_metadata:
-                            list_size: "list_size"
+                            size: "size"
                         none_type: {}
                         primitive:
                           duration: "duration"
@@ -36393,7 +36393,7 @@ definitions:
                               format: "format"
                           uri: "uri"
                           pickle_metadata:
-                            list_size: "list_size"
+                            size: "size"
                         none_type: {}
                         primitive:
                           duration: "duration"
@@ -36560,7 +36560,7 @@ definitions:
                               format: "format"
                           uri: "uri"
                           pickle_metadata:
-                            list_size: "list_size"
+                            size: "size"
                         none_type: {}
                         primitive:
                           duration: "duration"
@@ -36910,7 +36910,7 @@ definitions:
                               format: "format"
                           uri: "uri"
                           pickle_metadata:
-                            list_size: "list_size"
+                            size: "size"
                         none_type: {}
                         primitive:
                           duration: "duration"
@@ -37077,7 +37077,7 @@ definitions:
                               format: "format"
                           uri: "uri"
                           pickle_metadata:
-                            list_size: "list_size"
+                            size: "size"
                         none_type: {}
                         primitive:
                           duration: "duration"
@@ -37425,7 +37425,7 @@ definitions:
                             format: "format"
                         uri: "uri"
                         pickle_metadata:
-                          list_size: "list_size"
+                          size: "size"
                       none_type: {}
                       primitive:
                         duration: "duration"
@@ -37592,7 +37592,7 @@ definitions:
                             format: "format"
                         uri: "uri"
                         pickle_metadata:
-                          list_size: "list_size"
+                          size: "size"
                       none_type: {}
                       primitive:
                         duration: "duration"
@@ -37913,7 +37913,7 @@ definitions:
                               format: "format"
                           uri: "uri"
                           pickle_metadata:
-                            list_size: "list_size"
+                            size: "size"
                         none_type: {}
                         primitive:
                           duration: "duration"
@@ -38080,7 +38080,7 @@ definitions:
                               format: "format"
                           uri: "uri"
                           pickle_metadata:
-                            list_size: "list_size"
+                            size: "size"
                         none_type: {}
                         primitive:
                           duration: "duration"
@@ -38431,7 +38431,7 @@ definitions:
                               format: "format"
                           uri: "uri"
                           pickle_metadata:
-                            list_size: "list_size"
+                            size: "size"
                         none_type: {}
                         primitive:
                           duration: "duration"
@@ -38598,7 +38598,7 @@ definitions:
                               format: "format"
                           uri: "uri"
                           pickle_metadata:
-                            list_size: "list_size"
+                            size: "size"
                         none_type: {}
                         primitive:
                           duration: "duration"
@@ -38948,7 +38948,7 @@ definitions:
                               format: "format"
                           uri: "uri"
                           pickle_metadata:
-                            list_size: "list_size"
+                            size: "size"
                         none_type: {}
                         primitive:
                           duration: "duration"
@@ -39115,7 +39115,7 @@ definitions:
                               format: "format"
                           uri: "uri"
                           pickle_metadata:
-                            list_size: "list_size"
+                            size: "size"
                         none_type: {}
                         primitive:
                           duration: "duration"
@@ -39452,7 +39452,7 @@ definitions:
                             format: "format"
                         uri: "uri"
                         pickle_metadata:
-                          list_size: "list_size"
+                          size: "size"
                       none_type: {}
                       primitive:
                         duration: "duration"
@@ -39619,7 +39619,7 @@ definitions:
                             format: "format"
                         uri: "uri"
                         pickle_metadata:
-                          list_size: "list_size"
+                          size: "size"
                       none_type: {}
                       primitive:
                         duration: "duration"
@@ -39940,7 +39940,7 @@ definitions:
                               format: "format"
                           uri: "uri"
                           pickle_metadata:
-                            list_size: "list_size"
+                            size: "size"
                         none_type: {}
                         primitive:
                           duration: "duration"
@@ -40107,7 +40107,7 @@ definitions:
                               format: "format"
                           uri: "uri"
                           pickle_metadata:
-                            list_size: "list_size"
+                            size: "size"
                         none_type: {}
                         primitive:
                           duration: "duration"
@@ -40458,7 +40458,7 @@ definitions:
                               format: "format"
                           uri: "uri"
                           pickle_metadata:
-                            list_size: "list_size"
+                            size: "size"
                         none_type: {}
                         primitive:
                           duration: "duration"
@@ -40625,7 +40625,7 @@ definitions:
                               format: "format"
                           uri: "uri"
                           pickle_metadata:
-                            list_size: "list_size"
+                            size: "size"
                         none_type: {}
                         primitive:
                           duration: "duration"
@@ -40975,7 +40975,7 @@ definitions:
                               format: "format"
                           uri: "uri"
                           pickle_metadata:
-                            list_size: "list_size"
+                            size: "size"
                         none_type: {}
                         primitive:
                           duration: "duration"
@@ -41142,7 +41142,7 @@ definitions:
                               format: "format"
                           uri: "uri"
                           pickle_metadata:
-                            list_size: "list_size"
+                            size: "size"
                         none_type: {}
                         primitive:
                           duration: "duration"
@@ -42007,7 +42007,7 @@ definitions:
                             format: "format"
                         uri: "uri"
                         pickle_metadata:
-                          list_size: "list_size"
+                          size: "size"
                       none_type: {}
                       primitive:
                         duration: "duration"
@@ -42174,7 +42174,7 @@ definitions:
                             format: "format"
                         uri: "uri"
                         pickle_metadata:
-                          list_size: "list_size"
+                          size: "size"
                       none_type: {}
                       primitive:
                         duration: "duration"
@@ -42495,7 +42495,7 @@ definitions:
                               format: "format"
                           uri: "uri"
                           pickle_metadata:
-                            list_size: "list_size"
+                            size: "size"
                         none_type: {}
                         primitive:
                           duration: "duration"
@@ -42662,7 +42662,7 @@ definitions:
                               format: "format"
                           uri: "uri"
                           pickle_metadata:
-                            list_size: "list_size"
+                            size: "size"
                         none_type: {}
                         primitive:
                           duration: "duration"
@@ -43013,7 +43013,7 @@ definitions:
                               format: "format"
                           uri: "uri"
                           pickle_metadata:
-                            list_size: "list_size"
+                            size: "size"
                         none_type: {}
                         primitive:
                           duration: "duration"
@@ -43180,7 +43180,7 @@ definitions:
                               format: "format"
                           uri: "uri"
                           pickle_metadata:
-                            list_size: "list_size"
+                            size: "size"
                         none_type: {}
                         primitive:
                           duration: "duration"
@@ -43530,7 +43530,7 @@ definitions:
                               format: "format"
                           uri: "uri"
                           pickle_metadata:
-                            list_size: "list_size"
+                            size: "size"
                         none_type: {}
                         primitive:
                           duration: "duration"
@@ -43697,7 +43697,7 @@ definitions:
                               format: "format"
                           uri: "uri"
                           pickle_metadata:
-                            list_size: "list_size"
+                            size: "size"
                         none_type: {}
                         primitive:
                           duration: "duration"
@@ -44108,7 +44108,7 @@ definitions:
                 format: "format"
             uri: "uri"
             pickle_metadata:
-              list_size: "list_size"
+              size: "size"
           none_type: {}
           primitive:
             duration: "duration"
@@ -44293,7 +44293,7 @@ definitions:
               format: "format"
           uri: "uri"
           pickle_metadata:
-            list_size: "list_size"
+            size: "size"
         none_type: {}
         primitive:
           duration: "duration"
@@ -44484,7 +44484,7 @@ definitions:
           format: "format"
       uri: "uri"
       pickle_metadata:
-        list_size: "list_size"
+        size: "size"
   coreBlobMetadata:
     type: "object"
     properties:
@@ -45034,7 +45034,7 @@ definitions:
                     format: "format"
                 uri: "uri"
                 pickle_metadata:
-                  list_size: "list_size"
+                  size: "size"
               none_type: {}
               primitive:
                 duration: "duration"
@@ -45201,7 +45201,7 @@ definitions:
                     format: "format"
                 uri: "uri"
                 pickle_metadata:
-                  list_size: "list_size"
+                  size: "size"
               none_type: {}
               primitive:
                 duration: "duration"
@@ -45522,7 +45522,7 @@ definitions:
                       format: "format"
                   uri: "uri"
                   pickle_metadata:
-                    list_size: "list_size"
+                    size: "size"
                 none_type: {}
                 primitive:
                   duration: "duration"
@@ -45689,7 +45689,7 @@ definitions:
                       format: "format"
                   uri: "uri"
                   pickle_metadata:
-                    list_size: "list_size"
+                    size: "size"
                 none_type: {}
                 primitive:
                   duration: "duration"
@@ -46040,7 +46040,7 @@ definitions:
                       format: "format"
                   uri: "uri"
                   pickle_metadata:
-                    list_size: "list_size"
+                    size: "size"
                 none_type: {}
                 primitive:
                   duration: "duration"
@@ -46207,7 +46207,7 @@ definitions:
                       format: "format"
                   uri: "uri"
                   pickle_metadata:
-                    list_size: "list_size"
+                    size: "size"
                 none_type: {}
                 primitive:
                   duration: "duration"
@@ -46557,7 +46557,7 @@ definitions:
                       format: "format"
                   uri: "uri"
                   pickle_metadata:
-                    list_size: "list_size"
+                    size: "size"
                 none_type: {}
                 primitive:
                   duration: "duration"
@@ -46724,7 +46724,7 @@ definitions:
                       format: "format"
                   uri: "uri"
                   pickle_metadata:
-                    list_size: "list_size"
+                    size: "size"
                 none_type: {}
                 primitive:
                   duration: "duration"
@@ -47088,7 +47088,7 @@ definitions:
                       format: "format"
                   uri: "uri"
                   pickle_metadata:
-                    list_size: "list_size"
+                    size: "size"
                 none_type: {}
                 primitive:
                   duration: "duration"
@@ -47255,7 +47255,7 @@ definitions:
                       format: "format"
                   uri: "uri"
                   pickle_metadata:
-                    list_size: "list_size"
+                    size: "size"
                 none_type: {}
                 primitive:
                   duration: "duration"
@@ -47576,7 +47576,7 @@ definitions:
                         format: "format"
                     uri: "uri"
                     pickle_metadata:
-                      list_size: "list_size"
+                      size: "size"
                   none_type: {}
                   primitive:
                     duration: "duration"
@@ -47743,7 +47743,7 @@ definitions:
                         format: "format"
                     uri: "uri"
                     pickle_metadata:
-                      list_size: "list_size"
+                      size: "size"
                   none_type: {}
                   primitive:
                     duration: "duration"
@@ -48094,7 +48094,7 @@ definitions:
                         format: "format"
                     uri: "uri"
                     pickle_metadata:
-                      list_size: "list_size"
+                      size: "size"
                   none_type: {}
                   primitive:
                     duration: "duration"
@@ -48261,7 +48261,7 @@ definitions:
                         format: "format"
                     uri: "uri"
                     pickle_metadata:
-                      list_size: "list_size"
+                      size: "size"
                   none_type: {}
                   primitive:
                     duration: "duration"
@@ -48611,7 +48611,7 @@ definitions:
                         format: "format"
                     uri: "uri"
                     pickle_metadata:
-                      list_size: "list_size"
+                      size: "size"
                   none_type: {}
                   primitive:
                     duration: "duration"
@@ -48778,7 +48778,7 @@ definitions:
                         format: "format"
                     uri: "uri"
                     pickle_metadata:
-                      list_size: "list_size"
+                      size: "size"
                   none_type: {}
                   primitive:
                     duration: "duration"
@@ -49115,7 +49115,7 @@ definitions:
                       format: "format"
                   uri: "uri"
                   pickle_metadata:
-                    list_size: "list_size"
+                    size: "size"
                 none_type: {}
                 primitive:
                   duration: "duration"
@@ -49282,7 +49282,7 @@ definitions:
                       format: "format"
                   uri: "uri"
                   pickle_metadata:
-                    list_size: "list_size"
+                    size: "size"
                 none_type: {}
                 primitive:
                   duration: "duration"
@@ -49603,7 +49603,7 @@ definitions:
                         format: "format"
                     uri: "uri"
                     pickle_metadata:
-                      list_size: "list_size"
+                      size: "size"
                   none_type: {}
                   primitive:
                     duration: "duration"
@@ -49770,7 +49770,7 @@ definitions:
                         format: "format"
                     uri: "uri"
                     pickle_metadata:
-                      list_size: "list_size"
+                      size: "size"
                   none_type: {}
                   primitive:
                     duration: "duration"
@@ -50121,7 +50121,7 @@ definitions:
                         format: "format"
                     uri: "uri"
                     pickle_metadata:
-                      list_size: "list_size"
+                      size: "size"
                   none_type: {}
                   primitive:
                     duration: "duration"
@@ -50288,7 +50288,7 @@ definitions:
                         format: "format"
                     uri: "uri"
                     pickle_metadata:
-                      list_size: "list_size"
+                      size: "size"
                   none_type: {}
                   primitive:
                     duration: "duration"
@@ -50638,7 +50638,7 @@ definitions:
                         format: "format"
                     uri: "uri"
                     pickle_metadata:
-                      list_size: "list_size"
+                      size: "size"
                   none_type: {}
                   primitive:
                     duration: "duration"
@@ -50805,7 +50805,7 @@ definitions:
                         format: "format"
                     uri: "uri"
                     pickle_metadata:
-                      list_size: "list_size"
+                      size: "size"
                   none_type: {}
                   primitive:
                     duration: "duration"
@@ -51670,7 +51670,7 @@ definitions:
                       format: "format"
                   uri: "uri"
                   pickle_metadata:
-                    list_size: "list_size"
+                    size: "size"
                 none_type: {}
                 primitive:
                   duration: "duration"
@@ -51837,7 +51837,7 @@ definitions:
                       format: "format"
                   uri: "uri"
                   pickle_metadata:
-                    list_size: "list_size"
+                    size: "size"
                 none_type: {}
                 primitive:
                   duration: "duration"
@@ -52158,7 +52158,7 @@ definitions:
                         format: "format"
                     uri: "uri"
                     pickle_metadata:
-                      list_size: "list_size"
+                      size: "size"
                   none_type: {}
                   primitive:
                     duration: "duration"
@@ -52325,7 +52325,7 @@ definitions:
                         format: "format"
                     uri: "uri"
                     pickle_metadata:
-                      list_size: "list_size"
+                      size: "size"
                   none_type: {}
                   primitive:
                     duration: "duration"
@@ -52676,7 +52676,7 @@ definitions:
                         format: "format"
                     uri: "uri"
                     pickle_metadata:
-                      list_size: "list_size"
+                      size: "size"
                   none_type: {}
                   primitive:
                     duration: "duration"
@@ -52843,7 +52843,7 @@ definitions:
                         format: "format"
                     uri: "uri"
                     pickle_metadata:
-                      list_size: "list_size"
+                      size: "size"
                   none_type: {}
                   primitive:
                     duration: "duration"
@@ -53193,7 +53193,7 @@ definitions:
                         format: "format"
                     uri: "uri"
                     pickle_metadata:
-                      list_size: "list_size"
+                      size: "size"
                   none_type: {}
                   primitive:
                     duration: "duration"
@@ -53360,7 +53360,7 @@ definitions:
                         format: "format"
                     uri: "uri"
                     pickle_metadata:
-                      list_size: "list_size"
+                      size: "size"
                   none_type: {}
                   primitive:
                     duration: "duration"
@@ -54311,7 +54311,7 @@ definitions:
               format: "format"
           uri: "uri"
           pickle_metadata:
-            list_size: "list_size"
+            size: "size"
         none_type: {}
         primitive:
           duration: "duration"
@@ -54736,7 +54736,7 @@ definitions:
                   format: "format"
               uri: "uri"
               pickle_metadata:
-                list_size: "list_size"
+                size: "size"
             none_type: {}
             primitive:
               duration: "duration"
@@ -54903,7 +54903,7 @@ definitions:
                   format: "format"
               uri: "uri"
               pickle_metadata:
-                list_size: "list_size"
+                size: "size"
             none_type: {}
             primitive:
               duration: "duration"
@@ -55279,7 +55279,7 @@ definitions:
                 format: "format"
             uri: "uri"
             pickle_metadata:
-              list_size: "list_size"
+              size: "size"
           none_type: {}
           primitive:
             duration: "duration"
@@ -55457,7 +55457,7 @@ definitions:
                     format: "format"
                 uri: "uri"
                 pickle_metadata:
-                  list_size: "list_size"
+                  size: "size"
               none_type: {}
               primitive:
                 duration: "duration"
@@ -55609,7 +55609,7 @@ definitions:
   corePickleMetadata:
     type: "object"
     properties:
-      list_size:
+      size:
         type: "string"
         format: "uint64"
         description: "In flytekit, we serialize a list into single pickle file. we\
@@ -55617,7 +55617,7 @@ definitions:
           \ pods to launch in the map task."
     description: "PickleMetadata is used to store metadata about a pickled object."
     example:
-      list_size: "list_size"
+      size: "size"
   corePrimitive:
     type: "object"
     properties:
@@ -55778,7 +55778,7 @@ definitions:
             format: "format"
         uri: "uri"
         pickle_metadata:
-          list_size: "list_size"
+          size: "size"
       none_type: {}
       primitive:
         duration: "duration"
@@ -57328,7 +57328,7 @@ definitions:
                   format: "format"
               uri: "uri"
               pickle_metadata:
-                list_size: "list_size"
+                size: "size"
             none_type: {}
             primitive:
               duration: "duration"
@@ -57495,7 +57495,7 @@ definitions:
                   format: "format"
               uri: "uri"
               pickle_metadata:
-                list_size: "list_size"
+                size: "size"
             none_type: {}
             primitive:
               duration: "duration"
@@ -57816,7 +57816,7 @@ definitions:
                     format: "format"
                 uri: "uri"
                 pickle_metadata:
-                  list_size: "list_size"
+                  size: "size"
               none_type: {}
               primitive:
                 duration: "duration"
@@ -57983,7 +57983,7 @@ definitions:
                     format: "format"
                 uri: "uri"
                 pickle_metadata:
-                  list_size: "list_size"
+                  size: "size"
               none_type: {}
               primitive:
                 duration: "duration"
@@ -58334,7 +58334,7 @@ definitions:
                     format: "format"
                 uri: "uri"
                 pickle_metadata:
-                  list_size: "list_size"
+                  size: "size"
               none_type: {}
               primitive:
                 duration: "duration"
@@ -58501,7 +58501,7 @@ definitions:
                     format: "format"
                 uri: "uri"
                 pickle_metadata:
-                  list_size: "list_size"
+                  size: "size"
               none_type: {}
               primitive:
                 duration: "duration"
@@ -58851,7 +58851,7 @@ definitions:
                     format: "format"
                 uri: "uri"
                 pickle_metadata:
-                  list_size: "list_size"
+                  size: "size"
               none_type: {}
               primitive:
                 duration: "duration"
@@ -59018,7 +59018,7 @@ definitions:
                     format: "format"
                 uri: "uri"
                 pickle_metadata:
-                  list_size: "list_size"
+                  size: "size"
               none_type: {}
               primitive:
                 duration: "duration"
@@ -59700,7 +59700,7 @@ definitions:
                         format: "format"
                     uri: "uri"
                     pickle_metadata:
-                      list_size: "list_size"
+                      size: "size"
                   none_type: {}
                   primitive:
                     duration: "duration"
@@ -59867,7 +59867,7 @@ definitions:
                         format: "format"
                     uri: "uri"
                     pickle_metadata:
-                      list_size: "list_size"
+                      size: "size"
                   none_type: {}
                   primitive:
                     duration: "duration"
@@ -60188,7 +60188,7 @@ definitions:
                           format: "format"
                       uri: "uri"
                       pickle_metadata:
-                        list_size: "list_size"
+                        size: "size"
                     none_type: {}
                     primitive:
                       duration: "duration"
@@ -60355,7 +60355,7 @@ definitions:
                           format: "format"
                       uri: "uri"
                       pickle_metadata:
-                        list_size: "list_size"
+                        size: "size"
                     none_type: {}
                     primitive:
                       duration: "duration"
@@ -60706,7 +60706,7 @@ definitions:
                           format: "format"
                       uri: "uri"
                       pickle_metadata:
-                        list_size: "list_size"
+                        size: "size"
                     none_type: {}
                     primitive:
                       duration: "duration"
@@ -60873,7 +60873,7 @@ definitions:
                           format: "format"
                       uri: "uri"
                       pickle_metadata:
-                        list_size: "list_size"
+                        size: "size"
                     none_type: {}
                     primitive:
                       duration: "duration"
@@ -61223,7 +61223,7 @@ definitions:
                           format: "format"
                       uri: "uri"
                       pickle_metadata:
-                        list_size: "list_size"
+                        size: "size"
                     none_type: {}
                     primitive:
                       duration: "duration"
@@ -61390,7 +61390,7 @@ definitions:
                           format: "format"
                       uri: "uri"
                       pickle_metadata:
-                        list_size: "list_size"
+                        size: "size"
                     none_type: {}
                     primitive:
                       duration: "duration"
@@ -61727,7 +61727,7 @@ definitions:
                         format: "format"
                     uri: "uri"
                     pickle_metadata:
-                      list_size: "list_size"
+                      size: "size"
                   none_type: {}
                   primitive:
                     duration: "duration"
@@ -61894,7 +61894,7 @@ definitions:
                         format: "format"
                     uri: "uri"
                     pickle_metadata:
-                      list_size: "list_size"
+                      size: "size"
                   none_type: {}
                   primitive:
                     duration: "duration"
@@ -62215,7 +62215,7 @@ definitions:
                           format: "format"
                       uri: "uri"
                       pickle_metadata:
-                        list_size: "list_size"
+                        size: "size"
                     none_type: {}
                     primitive:
                       duration: "duration"
@@ -62382,7 +62382,7 @@ definitions:
                           format: "format"
                       uri: "uri"
                       pickle_metadata:
-                        list_size: "list_size"
+                        size: "size"
                     none_type: {}
                     primitive:
                       duration: "duration"
@@ -62733,7 +62733,7 @@ definitions:
                           format: "format"
                       uri: "uri"
                       pickle_metadata:
-                        list_size: "list_size"
+                        size: "size"
                     none_type: {}
                     primitive:
                       duration: "duration"
@@ -62900,7 +62900,7 @@ definitions:
                           format: "format"
                       uri: "uri"
                       pickle_metadata:
-                        list_size: "list_size"
+                        size: "size"
                     none_type: {}
                     primitive:
                       duration: "duration"
@@ -63250,7 +63250,7 @@ definitions:
                           format: "format"
                       uri: "uri"
                       pickle_metadata:
-                        list_size: "list_size"
+                        size: "size"
                     none_type: {}
                     primitive:
                       duration: "duration"
@@ -63417,7 +63417,7 @@ definitions:
                           format: "format"
                       uri: "uri"
                       pickle_metadata:
-                        list_size: "list_size"
+                        size: "size"
                     none_type: {}
                     primitive:
                       duration: "duration"
@@ -64282,7 +64282,7 @@ definitions:
                         format: "format"
                     uri: "uri"
                     pickle_metadata:
-                      list_size: "list_size"
+                      size: "size"
                   none_type: {}
                   primitive:
                     duration: "duration"
@@ -64449,7 +64449,7 @@ definitions:
                         format: "format"
                     uri: "uri"
                     pickle_metadata:
-                      list_size: "list_size"
+                      size: "size"
                   none_type: {}
                   primitive:
                     duration: "duration"
@@ -64770,7 +64770,7 @@ definitions:
                           format: "format"
                       uri: "uri"
                       pickle_metadata:
-                        list_size: "list_size"
+                        size: "size"
                     none_type: {}
                     primitive:
                       duration: "duration"
@@ -64937,7 +64937,7 @@ definitions:
                           format: "format"
                       uri: "uri"
                       pickle_metadata:
-                        list_size: "list_size"
+                        size: "size"
                     none_type: {}
                     primitive:
                       duration: "duration"
@@ -65288,7 +65288,7 @@ definitions:
                           format: "format"
                       uri: "uri"
                       pickle_metadata:
-                        list_size: "list_size"
+                        size: "size"
                     none_type: {}
                     primitive:
                       duration: "duration"
@@ -65455,7 +65455,7 @@ definitions:
                           format: "format"
                       uri: "uri"
                       pickle_metadata:
-                        list_size: "list_size"
+                        size: "size"
                     none_type: {}
                     primitive:
                       duration: "duration"
@@ -65805,7 +65805,7 @@ definitions:
                           format: "format"
                       uri: "uri"
                       pickle_metadata:
-                        list_size: "list_size"
+                        size: "size"
                     none_type: {}
                     primitive:
                       duration: "duration"
@@ -65972,7 +65972,7 @@ definitions:
                           format: "format"
                       uri: "uri"
                       pickle_metadata:
-                        list_size: "list_size"
+                        size: "size"
                     none_type: {}
                     primitive:
                       duration: "duration"

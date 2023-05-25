@@ -360,7 +360,7 @@
     "corePickleMetadata": {
       "type": "object",
       "properties": {
-        "list_size": {
+        "size": {
           "type": "string",
           "format": "uint64",
           "description": "In flytekit, we serialize a list into single pickle file. we need to save original list size, so that propeller\ncan know how many pods to launch in the map task."

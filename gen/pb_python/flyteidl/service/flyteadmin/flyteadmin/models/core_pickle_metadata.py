@@ -31,44 +31,44 @@ class CorePickleMetadata(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'list_size': 'str'
+        'size': 'str'
     }
 
     attribute_map = {
-        'list_size': 'list_size'
+        'size': 'size'
     }
 
-    def __init__(self, list_size=None):  # noqa: E501
+    def __init__(self, size=None):  # noqa: E501
         """CorePickleMetadata - a model defined in Swagger"""  # noqa: E501
 
-        self._list_size = None
+        self._size = None
         self.discriminator = None
 
-        if list_size is not None:
-            self.list_size = list_size
+        if size is not None:
+            self.size = size
 
     @property
-    def list_size(self):
-        """Gets the list_size of this CorePickleMetadata.  # noqa: E501
+    def size(self):
+        """Gets the size of this CorePickleMetadata.  # noqa: E501
 
         In flytekit, we serialize a list into single pickle file. we need to save original list size, so that propeller can know how many pods to launch in the map task.  # noqa: E501
 
-        :return: The list_size of this CorePickleMetadata.  # noqa: E501
+        :return: The size of this CorePickleMetadata.  # noqa: E501
         :rtype: str
         """
-        return self._list_size
+        return self._size
 
-    @list_size.setter
-    def list_size(self, list_size):
-        """Sets the list_size of this CorePickleMetadata.
+    @size.setter
+    def size(self, size):
+        """Sets the size of this CorePickleMetadata.
 
         In flytekit, we serialize a list into single pickle file. we need to save original list size, so that propeller can know how many pods to launch in the map task.  # noqa: E501
 
-        :param list_size: The list_size of this CorePickleMetadata.  # noqa: E501
+        :param size: The size of this CorePickleMetadata.  # noqa: E501
         :type: str
         """
 
-        self._list_size = list_size
+        self._size = size
 
     def to_dict(self):
         """Returns the model properties as a dict"""
