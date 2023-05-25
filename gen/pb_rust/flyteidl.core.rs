@@ -1152,6 +1152,10 @@ pub struct Variable {
     /// +optional string describing input variable
     #[prost(string, tag="2")]
     pub description: ::prost::alloc::string::String,
+    /// +optional If specified by user, this is still just a partial artifact. It's here so the user can control the
+    /// name, tags, aliases, of the artifact creation.
+    #[prost(message, optional, tag="3")]
+    pub artifact: ::core::option::Option<super::artifact::Artifact>,
 }
 /// A map of Variables
 #[allow(clippy::derive_partial_eq_without_eq)]

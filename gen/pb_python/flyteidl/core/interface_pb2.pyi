@@ -9,12 +9,14 @@ from typing import ClassVar as _ClassVar, Mapping as _Mapping, Optional as _Opti
 DESCRIPTOR: _descriptor.FileDescriptor
 
 class Variable(_message.Message):
-    __slots__ = ["type", "description"]
+    __slots__ = ["type", "description", "artifact"]
     TYPE_FIELD_NUMBER: _ClassVar[int]
     DESCRIPTION_FIELD_NUMBER: _ClassVar[int]
+    ARTIFACT_FIELD_NUMBER: _ClassVar[int]
     type: _types_pb2.LiteralType
     description: str
-    def __init__(self, type: _Optional[_Union[_types_pb2.LiteralType, _Mapping]] = ..., description: _Optional[str] = ...) -> None: ...
+    artifact: _artifacts_pb2.Artifact
+    def __init__(self, type: _Optional[_Union[_types_pb2.LiteralType, _Mapping]] = ..., description: _Optional[str] = ..., artifact: _Optional[_Union[_artifacts_pb2.Artifact, _Mapping]] = ...) -> None: ...
 
 class VariableMap(_message.Message):
     __slots__ = ["variables"]

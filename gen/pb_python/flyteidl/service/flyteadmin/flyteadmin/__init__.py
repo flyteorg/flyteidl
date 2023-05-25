@@ -146,9 +146,11 @@ from flyteadmin.models.admin_workflow_execution_get_data_response import AdminWo
 from flyteadmin.models.admin_workflow_execution_get_metrics_response import AdminWorkflowExecutionGetMetricsResponse
 from flyteadmin.models.admin_workflow_list import AdminWorkflowList
 from flyteadmin.models.admin_workflow_spec import AdminWorkflowSpec
+from flyteadmin.models.artifact_artifact import ArtifactArtifact
 from flyteadmin.models.artifact_artifact_id import ArtifactArtifactID
 from flyteadmin.models.artifact_artifact_key import ArtifactArtifactKey
 from flyteadmin.models.artifact_artifact_query import ArtifactArtifactQuery
+from flyteadmin.models.artifact_artifact_spec import ArtifactArtifactSpec
 from flyteadmin.models.artifact_tag import ArtifactTag
 from flyteadmin.models.blob_type_blob_dimensionality import BlobTypeBlobDimensionality
 from flyteadmin.models.catalog_reservation_status import CatalogReservationStatus

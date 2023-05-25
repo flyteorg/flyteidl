@@ -15,6 +15,10 @@ message Variable {
 
     //+optional string describing input variable
     string description = 2;
+
+    //+optional If specified by user, this is still just a partial artifact. It's here so the user can control the
+    // name, tags, aliases, of the artifact creation.
+    artifact.Artifact artifact = 3;
 }
 
 // A map of Variables

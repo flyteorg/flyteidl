@@ -5562,6 +5562,21 @@
       },
       "description": "Represents a structure that encapsulates the specification of the workflow."
     },
+    "artifactArtifact": {
+      "type": "object",
+      "properties": {
+        "artifact_id": {
+          "$ref": "#/definitions/artifactArtifactID"
+        },
+        "uri": {
+          "type": "string",
+          "description": "This has to be unique across the entire installation. For OSS, we will write the flyte url here for now."
+        },
+        "spec": {
+          "$ref": "#/definitions/artifactArtifactSpec"
+        }
+      }
+    },
     "artifactArtifactID": {
       "type": "object",
       "properties": {
@@ -5607,6 +5622,47 @@
           "items": {
             "$ref": "#/definitions/artifactTag"
           }
+        }
+      }
+    },
+    "artifactArtifactSpec": {
+      "type": "object",
+      "properties": {
+        "value": {
+          "$ref": "#/definitions/coreLiteral"
+        },
+        "type": {
+          "$ref": "#/definitions/coreLiteralType",
+          "description": "This type will not form part of the artifact key, so for user-named artifacts, if the user changes the type, but\nforgets to change the name, that is okay. And the reason why this is a separate field is because adding the\ntype to all Literals is a lot of work."
+        },
+        "tags": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/artifactTag"
+          },
+          "description": "When you want to set tags on creation."
+        },
+        "alias": {
+          "$ref": "#/definitions/flyteidlartifactAlias",
+          "title": "When you want to set an alias on creation. should this also be repeated?"
+        },
+        "task_execution": {
+          "$ref": "#/definitions/coreTaskExecutionIdentifier",
+          "description": "Outputs of tasks will have this."
+        },
+        "execution": {
+          "$ref": "#/definitions/coreWorkflowExecutionIdentifier",
+          "description": "Workflow outputs will have this."
+        },
+        "principal": {
+          "type": "string",
+          "description": "Uploads, either from the UI or from the CLI, or FlyteRemote, will have this."
+        },
+        "short_description": {
+          "type": "string"
+        },
+        "long_description": {
+          "type": "string"
         }
       }
     },
@@ -7150,6 +7206,10 @@
         "description": {
           "type": "string",
           "title": "+optional string describing input variable"
+        },
+        "artifact": {
+          "$ref": "#/definitions/artifactArtifact",
+          "description": "+optional If specified by user, this is still just a partial artifact. It's here so the user can control the\nname, tags, aliases, of the artifact creation."
         }
       },
       "description": "Defines a strongly typed variable."

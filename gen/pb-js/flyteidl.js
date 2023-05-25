@@ -10938,6 +10938,7 @@
                  * @interface IVariable
                  * @property {flyteidl.core.ILiteralType|null} [type] Variable type
                  * @property {string|null} [description] Variable description
+                 * @property {flyteidl.artifact.IArtifact|null} [artifact] Variable artifact
                  */
     
                 /**
@@ -10972,6 +10973,14 @@
                 Variable.prototype.description = "";
     
                 /**
+                 * Variable artifact.
+                 * @member {flyteidl.artifact.IArtifact|null|undefined} artifact
+                 * @memberof flyteidl.core.Variable
+                 * @instance
+                 */
+                Variable.prototype.artifact = null;
+    
+                /**
                  * Creates a new Variable instance using the specified properties.
                  * @function create
                  * @memberof flyteidl.core.Variable
@@ -10999,6 +11008,8 @@
                         $root.flyteidl.core.LiteralType.encode(message.type, writer.uint32(/* id 1, wireType 2 =*/10).fork()).ldelim();
                     if (message.description != null && message.hasOwnProperty("description"))
                         writer.uint32(/* id 2, wireType 2 =*/18).string(message.description);
+                    if (message.artifact != null && message.hasOwnProperty("artifact"))
+                        $root.flyteidl.artifact.Artifact.encode(message.artifact, writer.uint32(/* id 3, wireType 2 =*/26).fork()).ldelim();
                     return writer;
                 };
     
@@ -11025,6 +11036,9 @@
                             break;
                         case 2:
                             message.description = reader.string();
+                            break;
+                        case 3:
+                            message.artifact = $root.flyteidl.artifact.Artifact.decode(reader, reader.uint32());
                             break;
                         default:
                             reader.skipType(tag & 7);
@@ -11053,6 +11067,11 @@
                     if (message.description != null && message.hasOwnProperty("description"))
                         if (!$util.isString(message.description))
                             return "description: string expected";
+                    if (message.artifact != null && message.hasOwnProperty("artifact")) {
+                        var error = $root.flyteidl.artifact.Artifact.verify(message.artifact);
+                        if (error)
+                            return "artifact." + error;
+                    }
                     return null;
                 };
     

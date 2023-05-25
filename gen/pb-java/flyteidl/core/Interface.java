@@ -60,6 +60,34 @@ public final class Interface {
      */
     com.google.protobuf.ByteString
         getDescriptionBytes();
+
+    /**
+     * <pre>
+     *+optional If specified by user, this is still just a partial artifact. It's here so the user can control the
+     * name, tags, aliases, of the artifact creation.
+     * </pre>
+     *
+     * <code>.flyteidl.artifact.Artifact artifact = 3;</code>
+     */
+    boolean hasArtifact();
+    /**
+     * <pre>
+     *+optional If specified by user, this is still just a partial artifact. It's here so the user can control the
+     * name, tags, aliases, of the artifact creation.
+     * </pre>
+     *
+     * <code>.flyteidl.artifact.Artifact artifact = 3;</code>
+     */
+    flyteidl.artifact.Artifacts.Artifact getArtifact();
+    /**
+     * <pre>
+     *+optional If specified by user, this is still just a partial artifact. It's here so the user can control the
+     * name, tags, aliases, of the artifact creation.
+     * </pre>
+     *
+     * <code>.flyteidl.artifact.Artifact artifact = 3;</code>
+     */
+    flyteidl.artifact.Artifacts.ArtifactOrBuilder getArtifactOrBuilder();
   }
   /**
    * <pre>
@@ -122,6 +150,19 @@ public final class Interface {
               java.lang.String s = input.readStringRequireUtf8();
 
               description_ = s;
+              break;
+            }
+            case 26: {
+              flyteidl.artifact.Artifacts.Artifact.Builder subBuilder = null;
+              if (artifact_ != null) {
+                subBuilder = artifact_.toBuilder();
+              }
+              artifact_ = input.readMessage(flyteidl.artifact.Artifacts.Artifact.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(artifact_);
+                artifact_ = subBuilder.buildPartial();
+              }
+
               break;
             }
             default: {
@@ -231,6 +272,42 @@ public final class Interface {
       }
     }
 
+    public static final int ARTIFACT_FIELD_NUMBER = 3;
+    private flyteidl.artifact.Artifacts.Artifact artifact_;
+    /**
+     * <pre>
+     *+optional If specified by user, this is still just a partial artifact. It's here so the user can control the
+     * name, tags, aliases, of the artifact creation.
+     * </pre>
+     *
+     * <code>.flyteidl.artifact.Artifact artifact = 3;</code>
+     */
+    public boolean hasArtifact() {
+      return artifact_ != null;
+    }
+    /**
+     * <pre>
+     *+optional If specified by user, this is still just a partial artifact. It's here so the user can control the
+     * name, tags, aliases, of the artifact creation.
+     * </pre>
+     *
+     * <code>.flyteidl.artifact.Artifact artifact = 3;</code>
+     */
+    public flyteidl.artifact.Artifacts.Artifact getArtifact() {
+      return artifact_ == null ? flyteidl.artifact.Artifacts.Artifact.getDefaultInstance() : artifact_;
+    }
+    /**
+     * <pre>
+     *+optional If specified by user, this is still just a partial artifact. It's here so the user can control the
+     * name, tags, aliases, of the artifact creation.
+     * </pre>
+     *
+     * <code>.flyteidl.artifact.Artifact artifact = 3;</code>
+     */
+    public flyteidl.artifact.Artifacts.ArtifactOrBuilder getArtifactOrBuilder() {
+      return getArtifact();
+    }
+
     private byte memoizedIsInitialized = -1;
     @java.lang.Override
     public final boolean isInitialized() {
@@ -251,6 +328,9 @@ public final class Interface {
       if (!getDescriptionBytes().isEmpty()) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 2, description_);
       }
+      if (artifact_ != null) {
+        output.writeMessage(3, getArtifact());
+      }
       unknownFields.writeTo(output);
     }
 
@@ -266,6 +346,10 @@ public final class Interface {
       }
       if (!getDescriptionBytes().isEmpty()) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, description_);
+      }
+      if (artifact_ != null) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(3, getArtifact());
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -289,6 +373,11 @@ public final class Interface {
       }
       if (!getDescription()
           .equals(other.getDescription())) return false;
+      if (hasArtifact() != other.hasArtifact()) return false;
+      if (hasArtifact()) {
+        if (!getArtifact()
+            .equals(other.getArtifact())) return false;
+      }
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -306,6 +395,10 @@ public final class Interface {
       }
       hash = (37 * hash) + DESCRIPTION_FIELD_NUMBER;
       hash = (53 * hash) + getDescription().hashCode();
+      if (hasArtifact()) {
+        hash = (37 * hash) + ARTIFACT_FIELD_NUMBER;
+        hash = (53 * hash) + getArtifact().hashCode();
+      }
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -451,6 +544,12 @@ public final class Interface {
         }
         description_ = "";
 
+        if (artifactBuilder_ == null) {
+          artifact_ = null;
+        } else {
+          artifact_ = null;
+          artifactBuilder_ = null;
+        }
         return this;
       }
 
@@ -483,6 +582,11 @@ public final class Interface {
           result.type_ = typeBuilder_.build();
         }
         result.description_ = description_;
+        if (artifactBuilder_ == null) {
+          result.artifact_ = artifact_;
+        } else {
+          result.artifact_ = artifactBuilder_.build();
+        }
         onBuilt();
         return result;
       }
@@ -537,6 +641,9 @@ public final class Interface {
         if (!other.getDescription().isEmpty()) {
           description_ = other.description_;
           onChanged();
+        }
+        if (other.hasArtifact()) {
+          mergeArtifact(other.getArtifact());
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -807,6 +914,168 @@ public final class Interface {
         description_ = value;
         onChanged();
         return this;
+      }
+
+      private flyteidl.artifact.Artifacts.Artifact artifact_;
+      private com.google.protobuf.SingleFieldBuilderV3<
+          flyteidl.artifact.Artifacts.Artifact, flyteidl.artifact.Artifacts.Artifact.Builder, flyteidl.artifact.Artifacts.ArtifactOrBuilder> artifactBuilder_;
+      /**
+       * <pre>
+       *+optional If specified by user, this is still just a partial artifact. It's here so the user can control the
+       * name, tags, aliases, of the artifact creation.
+       * </pre>
+       *
+       * <code>.flyteidl.artifact.Artifact artifact = 3;</code>
+       */
+      public boolean hasArtifact() {
+        return artifactBuilder_ != null || artifact_ != null;
+      }
+      /**
+       * <pre>
+       *+optional If specified by user, this is still just a partial artifact. It's here so the user can control the
+       * name, tags, aliases, of the artifact creation.
+       * </pre>
+       *
+       * <code>.flyteidl.artifact.Artifact artifact = 3;</code>
+       */
+      public flyteidl.artifact.Artifacts.Artifact getArtifact() {
+        if (artifactBuilder_ == null) {
+          return artifact_ == null ? flyteidl.artifact.Artifacts.Artifact.getDefaultInstance() : artifact_;
+        } else {
+          return artifactBuilder_.getMessage();
+        }
+      }
+      /**
+       * <pre>
+       *+optional If specified by user, this is still just a partial artifact. It's here so the user can control the
+       * name, tags, aliases, of the artifact creation.
+       * </pre>
+       *
+       * <code>.flyteidl.artifact.Artifact artifact = 3;</code>
+       */
+      public Builder setArtifact(flyteidl.artifact.Artifacts.Artifact value) {
+        if (artifactBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          artifact_ = value;
+          onChanged();
+        } else {
+          artifactBuilder_.setMessage(value);
+        }
+
+        return this;
+      }
+      /**
+       * <pre>
+       *+optional If specified by user, this is still just a partial artifact. It's here so the user can control the
+       * name, tags, aliases, of the artifact creation.
+       * </pre>
+       *
+       * <code>.flyteidl.artifact.Artifact artifact = 3;</code>
+       */
+      public Builder setArtifact(
+          flyteidl.artifact.Artifacts.Artifact.Builder builderForValue) {
+        if (artifactBuilder_ == null) {
+          artifact_ = builderForValue.build();
+          onChanged();
+        } else {
+          artifactBuilder_.setMessage(builderForValue.build());
+        }
+
+        return this;
+      }
+      /**
+       * <pre>
+       *+optional If specified by user, this is still just a partial artifact. It's here so the user can control the
+       * name, tags, aliases, of the artifact creation.
+       * </pre>
+       *
+       * <code>.flyteidl.artifact.Artifact artifact = 3;</code>
+       */
+      public Builder mergeArtifact(flyteidl.artifact.Artifacts.Artifact value) {
+        if (artifactBuilder_ == null) {
+          if (artifact_ != null) {
+            artifact_ =
+              flyteidl.artifact.Artifacts.Artifact.newBuilder(artifact_).mergeFrom(value).buildPartial();
+          } else {
+            artifact_ = value;
+          }
+          onChanged();
+        } else {
+          artifactBuilder_.mergeFrom(value);
+        }
+
+        return this;
+      }
+      /**
+       * <pre>
+       *+optional If specified by user, this is still just a partial artifact. It's here so the user can control the
+       * name, tags, aliases, of the artifact creation.
+       * </pre>
+       *
+       * <code>.flyteidl.artifact.Artifact artifact = 3;</code>
+       */
+      public Builder clearArtifact() {
+        if (artifactBuilder_ == null) {
+          artifact_ = null;
+          onChanged();
+        } else {
+          artifact_ = null;
+          artifactBuilder_ = null;
+        }
+
+        return this;
+      }
+      /**
+       * <pre>
+       *+optional If specified by user, this is still just a partial artifact. It's here so the user can control the
+       * name, tags, aliases, of the artifact creation.
+       * </pre>
+       *
+       * <code>.flyteidl.artifact.Artifact artifact = 3;</code>
+       */
+      public flyteidl.artifact.Artifacts.Artifact.Builder getArtifactBuilder() {
+        
+        onChanged();
+        return getArtifactFieldBuilder().getBuilder();
+      }
+      /**
+       * <pre>
+       *+optional If specified by user, this is still just a partial artifact. It's here so the user can control the
+       * name, tags, aliases, of the artifact creation.
+       * </pre>
+       *
+       * <code>.flyteidl.artifact.Artifact artifact = 3;</code>
+       */
+      public flyteidl.artifact.Artifacts.ArtifactOrBuilder getArtifactOrBuilder() {
+        if (artifactBuilder_ != null) {
+          return artifactBuilder_.getMessageOrBuilder();
+        } else {
+          return artifact_ == null ?
+              flyteidl.artifact.Artifacts.Artifact.getDefaultInstance() : artifact_;
+        }
+      }
+      /**
+       * <pre>
+       *+optional If specified by user, this is still just a partial artifact. It's here so the user can control the
+       * name, tags, aliases, of the artifact creation.
+       * </pre>
+       *
+       * <code>.flyteidl.artifact.Artifact artifact = 3;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+          flyteidl.artifact.Artifacts.Artifact, flyteidl.artifact.Artifacts.Artifact.Builder, flyteidl.artifact.Artifacts.ArtifactOrBuilder> 
+          getArtifactFieldBuilder() {
+        if (artifactBuilder_ == null) {
+          artifactBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              flyteidl.artifact.Artifacts.Artifact, flyteidl.artifact.Artifacts.Artifact.Builder, flyteidl.artifact.Artifacts.ArtifactOrBuilder>(
+                  getArtifact(),
+                  getParentForChildren(),
+                  isClean());
+          artifact_ = null;
+        }
+        return artifactBuilder_;
       }
       @java.lang.Override
       public final Builder setUnknownFields(
@@ -4713,26 +4982,27 @@ public final class Interface {
       "\n\035flyteidl/core/interface.proto\022\rflyteid" +
       "l.core\032\031flyteidl/core/types.proto\032\034flyte" +
       "idl/core/literals.proto\032!flyteidl/artifa" +
-      "ct/artifacts.proto\"I\n\010Variable\022(\n\004type\030\001" +
+      "ct/artifacts.proto\"x\n\010Variable\022(\n\004type\030\001" +
       " \001(\0132\032.flyteidl.core.LiteralType\022\023\n\013desc" +
-      "ription\030\002 \001(\t\"\226\001\n\013VariableMap\022<\n\tvariabl" +
-      "es\030\001 \003(\0132).flyteidl.core.VariableMap.Var" +
-      "iablesEntry\032I\n\016VariablesEntry\022\013\n\003key\030\001 \001" +
-      "(\t\022&\n\005value\030\002 \001(\0132\027.flyteidl.core.Variab" +
-      "le:\0028\001\"i\n\016TypedInterface\022*\n\006inputs\030\001 \001(\013" +
-      "2\032.flyteidl.core.VariableMap\022+\n\007outputs\030" +
-      "\002 \001(\0132\032.flyteidl.core.VariableMap\"\270\001\n\tPa" +
-      "rameter\022$\n\003var\030\001 \001(\0132\027.flyteidl.core.Var" +
-      "iable\022)\n\007default\030\002 \001(\0132\026.flyteidl.core.L" +
-      "iteralH\000\022\022\n\010required\030\003 \001(\010H\000\022:\n\016artifact" +
-      "_query\030\004 \001(\0132 .flyteidl.artifact.Artifac" +
-      "tQueryH\000B\n\n\010behavior\"\234\001\n\014ParameterMap\022?\n" +
-      "\nparameters\030\001 \003(\0132+.flyteidl.core.Parame" +
-      "terMap.ParametersEntry\032K\n\017ParametersEntr" +
-      "y\022\013\n\003key\030\001 \001(\t\022\'\n\005value\030\002 \001(\0132\030.flyteidl" +
-      ".core.Parameter:\0028\001B6Z4github.com/flyteo" +
-      "rg/flyteidl/gen/pb-go/flyteidl/coreb\006pro" +
-      "to3"
+      "ription\030\002 \001(\t\022-\n\010artifact\030\003 \001(\0132\033.flytei" +
+      "dl.artifact.Artifact\"\226\001\n\013VariableMap\022<\n\t" +
+      "variables\030\001 \003(\0132).flyteidl.core.Variable" +
+      "Map.VariablesEntry\032I\n\016VariablesEntry\022\013\n\003" +
+      "key\030\001 \001(\t\022&\n\005value\030\002 \001(\0132\027.flyteidl.core" +
+      ".Variable:\0028\001\"i\n\016TypedInterface\022*\n\006input" +
+      "s\030\001 \001(\0132\032.flyteidl.core.VariableMap\022+\n\007o" +
+      "utputs\030\002 \001(\0132\032.flyteidl.core.VariableMap" +
+      "\"\270\001\n\tParameter\022$\n\003var\030\001 \001(\0132\027.flyteidl.c" +
+      "ore.Variable\022)\n\007default\030\002 \001(\0132\026.flyteidl" +
+      ".core.LiteralH\000\022\022\n\010required\030\003 \001(\010H\000\022:\n\016a" +
+      "rtifact_query\030\004 \001(\0132 .flyteidl.artifact." +
+      "ArtifactQueryH\000B\n\n\010behavior\"\234\001\n\014Paramete" +
+      "rMap\022?\n\nparameters\030\001 \003(\0132+.flyteidl.core" +
+      ".ParameterMap.ParametersEntry\032K\n\017Paramet" +
+      "ersEntry\022\013\n\003key\030\001 \001(\t\022\'\n\005value\030\002 \001(\0132\030.f" +
+      "lyteidl.core.Parameter:\0028\001B6Z4github.com" +
+      "/flyteorg/flyteidl/gen/pb-go/flyteidl/co" +
+      "reb\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
@@ -4754,7 +5024,7 @@ public final class Interface {
     internal_static_flyteidl_core_Variable_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_flyteidl_core_Variable_descriptor,
-        new java.lang.String[] { "Type", "Description", });
+        new java.lang.String[] { "Type", "Description", "Artifact", });
     internal_static_flyteidl_core_VariableMap_descriptor =
       getDescriptor().getMessageTypes().get(1);
     internal_static_flyteidl_core_VariableMap_fieldAccessorTable = new

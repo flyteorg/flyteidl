@@ -4603,6 +4603,9 @@ export namespace flyteidl {
 
             /** Variable description */
             description?: (string|null);
+
+            /** Variable artifact */
+            artifact?: (flyteidl.artifact.IArtifact|null);
         }
 
         /** Represents a Variable. */
@@ -4619,6 +4622,9 @@ export namespace flyteidl {
 
             /** Variable description. */
             public description: string;
+
+            /** Variable artifact. */
+            public artifact?: (flyteidl.artifact.IArtifact|null);
 
             /**
              * Creates a new Variable instance using the specified properties.

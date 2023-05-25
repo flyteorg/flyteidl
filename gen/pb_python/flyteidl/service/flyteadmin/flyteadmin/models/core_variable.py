@@ -16,6 +16,7 @@ import re  # noqa: F401
 
 import six
 
+from flyteadmin.models.artifact_artifact import ArtifactArtifact  # noqa: F401,E501
 from flyteadmin.models.core_literal_type import CoreLiteralType  # noqa: F401,E501
 
 
@@ -34,25 +35,30 @@ class CoreVariable(object):
     """
     swagger_types = {
         'type': 'CoreLiteralType',
-        'description': 'str'
+        'description': 'str',
+        'artifact': 'ArtifactArtifact'
     }
 
     attribute_map = {
         'type': 'type',
-        'description': 'description'
+        'description': 'description',
+        'artifact': 'artifact'
     }
 
-    def __init__(self, type=None, description=None):  # noqa: E501
+    def __init__(self, type=None, description=None, artifact=None):  # noqa: E501
         """CoreVariable - a model defined in Swagger"""  # noqa: E501
 
         self._type = None
         self._description = None
+        self._artifact = None
         self.discriminator = None
 
         if type is not None:
             self.type = type
         if description is not None:
             self.description = description
+        if artifact is not None:
+            self.artifact = artifact
 
     @property
     def type(self):
@@ -97,6 +103,29 @@ class CoreVariable(object):
         """
 
         self._description = description
+
+    @property
+    def artifact(self):
+        """Gets the artifact of this CoreVariable.  # noqa: E501
+
+        +optional If specified by user, this is still just a partial artifact. It's here so the user can control the name, tags, aliases, of the artifact creation.  # noqa: E501
+
+        :return: The artifact of this CoreVariable.  # noqa: E501
+        :rtype: ArtifactArtifact
+        """
+        return self._artifact
+
+    @artifact.setter
+    def artifact(self, artifact):
+        """Sets the artifact of this CoreVariable.
+
+        +optional If specified by user, this is still just a partial artifact. It's here so the user can control the name, tags, aliases, of the artifact creation.  # noqa: E501
+
+        :param artifact: The artifact of this CoreVariable.  # noqa: E501
+        :type: ArtifactArtifact
+        """
+
+        self._artifact = artifact
 
     def to_dict(self):
         """Returns the model properties as a dict"""
