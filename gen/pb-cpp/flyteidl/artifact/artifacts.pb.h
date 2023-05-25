@@ -686,6 +686,18 @@ class ArtifactSpec final :
   const ::google::protobuf::RepeatedPtrField< ::flyteidl::artifact::Tag >&
       tags() const;
 
+  // repeated .flyteidl.artifact.Alias aliases = 4;
+  int aliases_size() const;
+  void clear_aliases();
+  static const int kAliasesFieldNumber = 4;
+  ::flyteidl::artifact::Alias* mutable_aliases(int index);
+  ::google::protobuf::RepeatedPtrField< ::flyteidl::artifact::Alias >*
+      mutable_aliases();
+  const ::flyteidl::artifact::Alias& aliases(int index) const;
+  ::flyteidl::artifact::Alias* add_aliases();
+  const ::google::protobuf::RepeatedPtrField< ::flyteidl::artifact::Alias >&
+      aliases() const;
+
   // string short_description = 8;
   void clear_short_description();
   static const int kShortDescriptionFieldNumber = 8;
@@ -731,15 +743,6 @@ class ArtifactSpec final :
   ::flyteidl::core::LiteralType* release_type();
   ::flyteidl::core::LiteralType* mutable_type();
   void set_allocated_type(::flyteidl::core::LiteralType* type);
-
-  // .flyteidl.artifact.Alias alias = 4;
-  bool has_alias() const;
-  void clear_alias();
-  static const int kAliasFieldNumber = 4;
-  const ::flyteidl::artifact::Alias& alias() const;
-  ::flyteidl::artifact::Alias* release_alias();
-  ::flyteidl::artifact::Alias* mutable_alias();
-  void set_allocated_alias(::flyteidl::artifact::Alias* alias);
 
   // .flyteidl.core.TaskExecutionIdentifier task_execution = 5;
   bool has_task_execution() const;
@@ -790,11 +793,11 @@ class ArtifactSpec final :
 
   ::google::protobuf::internal::InternalMetadataWithArena _internal_metadata_;
   ::google::protobuf::RepeatedPtrField< ::flyteidl::artifact::Tag > tags_;
+  ::google::protobuf::RepeatedPtrField< ::flyteidl::artifact::Alias > aliases_;
   ::google::protobuf::internal::ArenaStringPtr short_description_;
   ::google::protobuf::internal::ArenaStringPtr long_description_;
   ::flyteidl::core::Literal* value_;
   ::flyteidl::core::LiteralType* type_;
-  ::flyteidl::artifact::Alias* alias_;
   union SourceUnion {
     SourceUnion() {}
     ::flyteidl::core::TaskExecutionIdentifier* task_execution_;
@@ -3622,55 +3625,34 @@ ArtifactSpec::tags() const {
   return tags_;
 }
 
-// .flyteidl.artifact.Alias alias = 4;
-inline bool ArtifactSpec::has_alias() const {
-  return this != internal_default_instance() && alias_ != nullptr;
+// repeated .flyteidl.artifact.Alias aliases = 4;
+inline int ArtifactSpec::aliases_size() const {
+  return aliases_.size();
 }
-inline void ArtifactSpec::clear_alias() {
-  if (GetArenaNoVirtual() == nullptr && alias_ != nullptr) {
-    delete alias_;
-  }
-  alias_ = nullptr;
+inline void ArtifactSpec::clear_aliases() {
+  aliases_.Clear();
 }
-inline const ::flyteidl::artifact::Alias& ArtifactSpec::alias() const {
-  const ::flyteidl::artifact::Alias* p = alias_;
-  // @@protoc_insertion_point(field_get:flyteidl.artifact.ArtifactSpec.alias)
-  return p != nullptr ? *p : *reinterpret_cast<const ::flyteidl::artifact::Alias*>(
-      &::flyteidl::artifact::_Alias_default_instance_);
+inline ::flyteidl::artifact::Alias* ArtifactSpec::mutable_aliases(int index) {
+  // @@protoc_insertion_point(field_mutable:flyteidl.artifact.ArtifactSpec.aliases)
+  return aliases_.Mutable(index);
 }
-inline ::flyteidl::artifact::Alias* ArtifactSpec::release_alias() {
-  // @@protoc_insertion_point(field_release:flyteidl.artifact.ArtifactSpec.alias)
-  
-  ::flyteidl::artifact::Alias* temp = alias_;
-  alias_ = nullptr;
-  return temp;
+inline ::google::protobuf::RepeatedPtrField< ::flyteidl::artifact::Alias >*
+ArtifactSpec::mutable_aliases() {
+  // @@protoc_insertion_point(field_mutable_list:flyteidl.artifact.ArtifactSpec.aliases)
+  return &aliases_;
 }
-inline ::flyteidl::artifact::Alias* ArtifactSpec::mutable_alias() {
-  
-  if (alias_ == nullptr) {
-    auto* p = CreateMaybeMessage<::flyteidl::artifact::Alias>(GetArenaNoVirtual());
-    alias_ = p;
-  }
-  // @@protoc_insertion_point(field_mutable:flyteidl.artifact.ArtifactSpec.alias)
-  return alias_;
+inline const ::flyteidl::artifact::Alias& ArtifactSpec::aliases(int index) const {
+  // @@protoc_insertion_point(field_get:flyteidl.artifact.ArtifactSpec.aliases)
+  return aliases_.Get(index);
 }
-inline void ArtifactSpec::set_allocated_alias(::flyteidl::artifact::Alias* alias) {
-  ::google::protobuf::Arena* message_arena = GetArenaNoVirtual();
-  if (message_arena == nullptr) {
-    delete alias_;
-  }
-  if (alias) {
-    ::google::protobuf::Arena* submessage_arena = nullptr;
-    if (message_arena != submessage_arena) {
-      alias = ::google::protobuf::internal::GetOwnedMessage(
-          message_arena, alias, submessage_arena);
-    }
-    
-  } else {
-    
-  }
-  alias_ = alias;
-  // @@protoc_insertion_point(field_set_allocated:flyteidl.artifact.ArtifactSpec.alias)
+inline ::flyteidl::artifact::Alias* ArtifactSpec::add_aliases() {
+  // @@protoc_insertion_point(field_add:flyteidl.artifact.ArtifactSpec.aliases)
+  return aliases_.Add();
+}
+inline const ::google::protobuf::RepeatedPtrField< ::flyteidl::artifact::Alias >&
+ArtifactSpec::aliases() const {
+  // @@protoc_insertion_point(field_list:flyteidl.artifact.ArtifactSpec.aliases)
+  return aliases_;
 }
 
 // .flyteidl.core.TaskExecutionIdentifier task_execution = 5;

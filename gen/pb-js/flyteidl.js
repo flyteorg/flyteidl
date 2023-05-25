@@ -16232,7 +16232,7 @@
                  * @property {flyteidl.core.ILiteral|null} [value] ArtifactSpec value
                  * @property {flyteidl.core.ILiteralType|null} [type] ArtifactSpec type
                  * @property {Array.<flyteidl.artifact.ITag>|null} [tags] ArtifactSpec tags
-                 * @property {flyteidl.artifact.IAlias|null} [alias] ArtifactSpec alias
+                 * @property {Array.<flyteidl.artifact.IAlias>|null} [aliases] ArtifactSpec aliases
                  * @property {flyteidl.core.ITaskExecutionIdentifier|null} [taskExecution] ArtifactSpec taskExecution
                  * @property {flyteidl.core.IWorkflowExecutionIdentifier|null} [execution] ArtifactSpec execution
                  * @property {string|null} [principal] ArtifactSpec principal
@@ -16250,6 +16250,7 @@
                  */
                 function ArtifactSpec(properties) {
                     this.tags = [];
+                    this.aliases = [];
                     if (properties)
                         for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
                             if (properties[keys[i]] != null)
@@ -16281,12 +16282,12 @@
                 ArtifactSpec.prototype.tags = $util.emptyArray;
     
                 /**
-                 * ArtifactSpec alias.
-                 * @member {flyteidl.artifact.IAlias|null|undefined} alias
+                 * ArtifactSpec aliases.
+                 * @member {Array.<flyteidl.artifact.IAlias>} aliases
                  * @memberof flyteidl.artifact.ArtifactSpec
                  * @instance
                  */
-                ArtifactSpec.prototype.alias = null;
+                ArtifactSpec.prototype.aliases = $util.emptyArray;
     
                 /**
                  * ArtifactSpec taskExecution.
@@ -16373,8 +16374,9 @@
                     if (message.tags != null && message.tags.length)
                         for (var i = 0; i < message.tags.length; ++i)
                             $root.flyteidl.artifact.Tag.encode(message.tags[i], writer.uint32(/* id 3, wireType 2 =*/26).fork()).ldelim();
-                    if (message.alias != null && message.hasOwnProperty("alias"))
-                        $root.flyteidl.artifact.Alias.encode(message.alias, writer.uint32(/* id 4, wireType 2 =*/34).fork()).ldelim();
+                    if (message.aliases != null && message.aliases.length)
+                        for (var i = 0; i < message.aliases.length; ++i)
+                            $root.flyteidl.artifact.Alias.encode(message.aliases[i], writer.uint32(/* id 4, wireType 2 =*/34).fork()).ldelim();
                     if (message.taskExecution != null && message.hasOwnProperty("taskExecution"))
                         $root.flyteidl.core.TaskExecutionIdentifier.encode(message.taskExecution, writer.uint32(/* id 5, wireType 2 =*/42).fork()).ldelim();
                     if (message.execution != null && message.hasOwnProperty("execution"))
@@ -16418,7 +16420,9 @@
                             message.tags.push($root.flyteidl.artifact.Tag.decode(reader, reader.uint32()));
                             break;
                         case 4:
-                            message.alias = $root.flyteidl.artifact.Alias.decode(reader, reader.uint32());
+                            if (!(message.aliases && message.aliases.length))
+                                message.aliases = [];
+                            message.aliases.push($root.flyteidl.artifact.Alias.decode(reader, reader.uint32()));
                             break;
                         case 5:
                             message.taskExecution = $root.flyteidl.core.TaskExecutionIdentifier.decode(reader, reader.uint32());
@@ -16474,10 +16478,14 @@
                                 return "tags." + error;
                         }
                     }
-                    if (message.alias != null && message.hasOwnProperty("alias")) {
-                        var error = $root.flyteidl.artifact.Alias.verify(message.alias);
-                        if (error)
-                            return "alias." + error;
+                    if (message.aliases != null && message.hasOwnProperty("aliases")) {
+                        if (!Array.isArray(message.aliases))
+                            return "aliases: array expected";
+                        for (var i = 0; i < message.aliases.length; ++i) {
+                            var error = $root.flyteidl.artifact.Alias.verify(message.aliases[i]);
+                            if (error)
+                                return "aliases." + error;
+                        }
                     }
                     if (message.taskExecution != null && message.hasOwnProperty("taskExecution")) {
                         properties.source = 1;

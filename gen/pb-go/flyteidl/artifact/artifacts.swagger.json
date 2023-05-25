@@ -138,8 +138,11 @@
           },
           "description": "When you want to set tags on creation."
         },
-        "alias": {
-          "$ref": "#/definitions/artifactAlias",
+        "aliases": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/artifactAlias"
+          },
           "title": "When you want to set an alias on creation. should this also be repeated?"
         },
         "task_execution": {

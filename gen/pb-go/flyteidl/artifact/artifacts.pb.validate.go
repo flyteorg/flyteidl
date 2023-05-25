@@ -312,14 +312,19 @@ func (m *ArtifactSpec) Validate() error {
 
 	}
 
-	if v, ok := interface{}(m.GetAlias()).(interface{ Validate() error }); ok {
-		if err := v.Validate(); err != nil {
-			return ArtifactSpecValidationError{
-				field:  "Alias",
-				reason: "embedded message failed validation",
-				cause:  err,
+	for idx, item := range m.GetAliases() {
+		_, _ = idx, item
+
+		if v, ok := interface{}(item).(interface{ Validate() error }); ok {
+			if err := v.Validate(); err != nil {
+				return ArtifactSpecValidationError{
+					field:  fmt.Sprintf("Aliases[%v]", idx),
+					reason: "embedded message failed validation",
+					cause:  err,
+				}
 			}
 		}
+
 	}
 
 	// no validation rules for ShortDescription

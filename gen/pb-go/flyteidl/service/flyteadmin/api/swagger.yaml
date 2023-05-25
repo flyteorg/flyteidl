@@ -4693,8 +4693,10 @@ definitions:
                     name: "name"
                     project: "project"
                   short_description: "short_description"
-                  alias:
-                    value: "value"
+                  aliases:
+                  - value: "value"
+                    key: "key"
+                  - value: "value"
                     key: "key"
                   long_description: "long_description"
                   type:
@@ -5167,8 +5169,10 @@ definitions:
                       name: "name"
                       project: "project"
                     short_description: "short_description"
-                    alias:
-                      value: "value"
+                    aliases:
+                    - value: "value"
+                      key: "key"
+                    - value: "value"
                       key: "key"
                     long_description: "long_description"
                     type:
@@ -5728,8 +5732,10 @@ definitions:
                       name: "name"
                       project: "project"
                     short_description: "short_description"
-                    alias:
-                      value: "value"
+                    aliases:
+                    - value: "value"
+                      key: "key"
+                    - value: "value"
                       key: "key"
                     long_description: "long_description"
                     type:
@@ -6124,8 +6130,10 @@ definitions:
                   name: "name"
                   project: "project"
                 short_description: "short_description"
-                alias:
-                  value: "value"
+                aliases:
+                - value: "value"
+                  key: "key"
+                - value: "value"
                   key: "key"
                 long_description: "long_description"
                 type:
@@ -6598,8 +6606,10 @@ definitions:
                     name: "name"
                     project: "project"
                   short_description: "short_description"
-                  alias:
-                    value: "value"
+                  aliases:
+                  - value: "value"
+                    key: "key"
+                  - value: "value"
                     key: "key"
                   long_description: "long_description"
                   type:
@@ -6960,8 +6970,10 @@ definitions:
                       name: "name"
                       project: "project"
                     short_description: "short_description"
-                    alias:
-                      value: "value"
+                    aliases:
+                    - value: "value"
+                      key: "key"
+                    - value: "value"
                       key: "key"
                     long_description: "long_description"
                     type:
@@ -7434,8 +7446,10 @@ definitions:
                         name: "name"
                         project: "project"
                       short_description: "short_description"
-                      alias:
-                        value: "value"
+                      aliases:
+                      - value: "value"
+                        key: "key"
+                      - value: "value"
                         key: "key"
                       long_description: "long_description"
                       type:
@@ -7995,8 +8009,10 @@ definitions:
                         name: "name"
                         project: "project"
                       short_description: "short_description"
-                      alias:
-                        value: "value"
+                      aliases:
+                      - value: "value"
+                        key: "key"
+                      - value: "value"
                         key: "key"
                       long_description: "long_description"
                       type:
@@ -8371,8 +8387,10 @@ definitions:
                       name: "name"
                       project: "project"
                     short_description: "short_description"
-                    alias:
-                      value: "value"
+                    aliases:
+                    - value: "value"
+                      key: "key"
+                    - value: "value"
                       key: "key"
                     long_description: "long_description"
                     type:
@@ -8845,8 +8863,10 @@ definitions:
                         name: "name"
                         project: "project"
                       short_description: "short_description"
-                      alias:
-                        value: "value"
+                      aliases:
+                      - value: "value"
+                        key: "key"
+                      - value: "value"
                         key: "key"
                       long_description: "long_description"
                       type:
@@ -9406,8 +9426,10 @@ definitions:
                         name: "name"
                         project: "project"
                       short_description: "short_description"
-                      alias:
-                        value: "value"
+                      aliases:
+                      - value: "value"
+                        key: "key"
+                      - value: "value"
                         key: "key"
                       long_description: "long_description"
                       type:
@@ -10138,8 +10160,10 @@ definitions:
                     name: "name"
                     project: "project"
                   short_description: "short_description"
-                  alias:
-                    value: "value"
+                  aliases:
+                  - value: "value"
+                    key: "key"
+                  - value: "value"
                     key: "key"
                   long_description: "long_description"
                   type:
@@ -13232,8 +13256,10 @@ definitions:
                             name: "name"
                             project: "project"
                           short_description: "short_description"
-                          alias:
-                            value: "value"
+                          aliases:
+                          - value: "value"
+                            key: "key"
+                          - value: "value"
                             key: "key"
                           long_description: "long_description"
                           type:
@@ -13539,8 +13565,10 @@ definitions:
                             name: "name"
                             project: "project"
                           short_description: "short_description"
-                          alias:
-                            value: "value"
+                          aliases:
+                          - value: "value"
+                            key: "key"
+                          - value: "value"
                             key: "key"
                           long_description: "long_description"
                           type:
@@ -15747,8 +15775,10 @@ definitions:
                             name: "name"
                             project: "project"
                           short_description: "short_description"
-                          alias:
-                            value: "value"
+                          aliases:
+                          - value: "value"
+                            key: "key"
+                          - value: "value"
                             key: "key"
                           long_description: "long_description"
                           type:
@@ -16054,8 +16084,10 @@ definitions:
                             name: "name"
                             project: "project"
                           short_description: "short_description"
-                          alias:
-                            value: "value"
+                          aliases:
+                          - value: "value"
+                            key: "key"
+                          - value: "value"
                             key: "key"
                           long_description: "long_description"
                           type:
@@ -16477,8 +16509,10 @@ definitions:
                             name: "name"
                             project: "project"
                           short_description: "short_description"
-                          alias:
-                            value: "value"
+                          aliases:
+                          - value: "value"
+                            key: "key"
+                          - value: "value"
                             key: "key"
                           long_description: "long_description"
                           type:
@@ -16784,8 +16818,10 @@ definitions:
                             name: "name"
                             project: "project"
                           short_description: "short_description"
-                          alias:
-                            value: "value"
+                          aliases:
+                          - value: "value"
+                            key: "key"
+                          - value: "value"
                             key: "key"
                           long_description: "long_description"
                           type:
@@ -17244,8 +17280,10 @@ definitions:
                             name: "name"
                             project: "project"
                           short_description: "short_description"
-                          alias:
-                            value: "value"
+                          aliases:
+                          - value: "value"
+                            key: "key"
+                          - value: "value"
                             key: "key"
                           long_description: "long_description"
                           type:
@@ -17551,8 +17589,10 @@ definitions:
                             name: "name"
                             project: "project"
                           short_description: "short_description"
-                          alias:
-                            value: "value"
+                          aliases:
+                          - value: "value"
+                            key: "key"
+                          - value: "value"
                             key: "key"
                           long_description: "long_description"
                           type:
@@ -19798,8 +19838,10 @@ definitions:
                             name: "name"
                             project: "project"
                           short_description: "short_description"
-                          alias:
-                            value: "value"
+                          aliases:
+                          - value: "value"
+                            key: "key"
+                          - value: "value"
                             key: "key"
                           long_description: "long_description"
                           type:
@@ -20105,8 +20147,10 @@ definitions:
                             name: "name"
                             project: "project"
                           short_description: "short_description"
-                          alias:
-                            value: "value"
+                          aliases:
+                          - value: "value"
+                            key: "key"
+                          - value: "value"
                             key: "key"
                           long_description: "long_description"
                           type:
@@ -21571,8 +21615,10 @@ definitions:
                           name: "name"
                           project: "project"
                         short_description: "short_description"
-                        alias:
-                          value: "value"
+                        aliases:
+                        - value: "value"
+                          key: "key"
+                        - value: "value"
                           key: "key"
                         long_description: "long_description"
                         type:
@@ -21878,8 +21924,10 @@ definitions:
                           name: "name"
                           project: "project"
                         short_description: "short_description"
-                        alias:
-                          value: "value"
+                        aliases:
+                        - value: "value"
+                          key: "key"
+                        - value: "value"
                           key: "key"
                         long_description: "long_description"
                         type:
@@ -22354,8 +22402,10 @@ definitions:
                         name: "name"
                         project: "project"
                       short_description: "short_description"
-                      alias:
-                        value: "value"
+                      aliases:
+                      - value: "value"
+                        key: "key"
+                      - value: "value"
                         key: "key"
                       long_description: "long_description"
                       type:
@@ -22661,8 +22711,10 @@ definitions:
                         name: "name"
                         project: "project"
                       short_description: "short_description"
-                      alias:
-                        value: "value"
+                      aliases:
+                      - value: "value"
+                        key: "key"
+                      - value: "value"
                         key: "key"
                       long_description: "long_description"
                       type:
@@ -23550,8 +23602,10 @@ definitions:
                             name: "name"
                             project: "project"
                           short_description: "short_description"
-                          alias:
-                            value: "value"
+                          aliases:
+                          - value: "value"
+                            key: "key"
+                          - value: "value"
                             key: "key"
                           long_description: "long_description"
                           type:
@@ -23857,8 +23911,10 @@ definitions:
                             name: "name"
                             project: "project"
                           short_description: "short_description"
-                          alias:
-                            value: "value"
+                          aliases:
+                          - value: "value"
+                            key: "key"
+                          - value: "value"
                             key: "key"
                           long_description: "long_description"
                           type:
@@ -24327,8 +24383,10 @@ definitions:
                             name: "name"
                             project: "project"
                           short_description: "short_description"
-                          alias:
-                            value: "value"
+                          aliases:
+                          - value: "value"
+                            key: "key"
+                          - value: "value"
                             key: "key"
                           long_description: "long_description"
                           type:
@@ -24634,8 +24692,10 @@ definitions:
                             name: "name"
                             project: "project"
                           short_description: "short_description"
-                          alias:
-                            value: "value"
+                          aliases:
+                          - value: "value"
+                            key: "key"
+                          - value: "value"
                             key: "key"
                           long_description: "long_description"
                           type:
@@ -26995,8 +27055,10 @@ definitions:
                             name: "name"
                             project: "project"
                           short_description: "short_description"
-                          alias:
-                            value: "value"
+                          aliases:
+                          - value: "value"
+                            key: "key"
+                          - value: "value"
                             key: "key"
                           long_description: "long_description"
                           type:
@@ -27302,8 +27364,10 @@ definitions:
                             name: "name"
                             project: "project"
                           short_description: "short_description"
-                          alias:
-                            value: "value"
+                          aliases:
+                          - value: "value"
+                            key: "key"
+                          - value: "value"
                             key: "key"
                           long_description: "long_description"
                           type:
@@ -29510,8 +29574,10 @@ definitions:
                             name: "name"
                             project: "project"
                           short_description: "short_description"
-                          alias:
-                            value: "value"
+                          aliases:
+                          - value: "value"
+                            key: "key"
+                          - value: "value"
                             key: "key"
                           long_description: "long_description"
                           type:
@@ -29817,8 +29883,10 @@ definitions:
                             name: "name"
                             project: "project"
                           short_description: "short_description"
-                          alias:
-                            value: "value"
+                          aliases:
+                          - value: "value"
+                            key: "key"
+                          - value: "value"
                             key: "key"
                           long_description: "long_description"
                           type:
@@ -30240,8 +30308,10 @@ definitions:
                             name: "name"
                             project: "project"
                           short_description: "short_description"
-                          alias:
-                            value: "value"
+                          aliases:
+                          - value: "value"
+                            key: "key"
+                          - value: "value"
                             key: "key"
                           long_description: "long_description"
                           type:
@@ -30547,8 +30617,10 @@ definitions:
                             name: "name"
                             project: "project"
                           short_description: "short_description"
-                          alias:
-                            value: "value"
+                          aliases:
+                          - value: "value"
+                            key: "key"
+                          - value: "value"
                             key: "key"
                           long_description: "long_description"
                           type:
@@ -31007,8 +31079,10 @@ definitions:
                             name: "name"
                             project: "project"
                           short_description: "short_description"
-                          alias:
-                            value: "value"
+                          aliases:
+                          - value: "value"
+                            key: "key"
+                          - value: "value"
                             key: "key"
                           long_description: "long_description"
                           type:
@@ -31314,8 +31388,10 @@ definitions:
                             name: "name"
                             project: "project"
                           short_description: "short_description"
-                          alias:
-                            value: "value"
+                          aliases:
+                          - value: "value"
+                            key: "key"
+                          - value: "value"
                             key: "key"
                           long_description: "long_description"
                           type:
@@ -33561,8 +33637,10 @@ definitions:
                             name: "name"
                             project: "project"
                           short_description: "short_description"
-                          alias:
-                            value: "value"
+                          aliases:
+                          - value: "value"
+                            key: "key"
+                          - value: "value"
                             key: "key"
                           long_description: "long_description"
                           type:
@@ -33868,8 +33946,10 @@ definitions:
                             name: "name"
                             project: "project"
                           short_description: "short_description"
-                          alias:
-                            value: "value"
+                          aliases:
+                          - value: "value"
+                            key: "key"
+                          - value: "value"
                             key: "key"
                           long_description: "long_description"
                           type:
@@ -36361,8 +36441,10 @@ definitions:
                           name: "name"
                           project: "project"
                         short_description: "short_description"
-                        alias:
-                          value: "value"
+                        aliases:
+                        - value: "value"
+                          key: "key"
+                        - value: "value"
                           key: "key"
                         long_description: "long_description"
                         type:
@@ -36668,8 +36750,10 @@ definitions:
                           name: "name"
                           project: "project"
                         short_description: "short_description"
-                        alias:
-                          value: "value"
+                        aliases:
+                        - value: "value"
+                          key: "key"
+                        - value: "value"
                           key: "key"
                         long_description: "long_description"
                         type:
@@ -38876,8 +38960,10 @@ definitions:
                           name: "name"
                           project: "project"
                         short_description: "short_description"
-                        alias:
-                          value: "value"
+                        aliases:
+                        - value: "value"
+                          key: "key"
+                        - value: "value"
                           key: "key"
                         long_description: "long_description"
                         type:
@@ -39183,8 +39269,10 @@ definitions:
                           name: "name"
                           project: "project"
                         short_description: "short_description"
-                        alias:
-                          value: "value"
+                        aliases:
+                        - value: "value"
+                          key: "key"
+                        - value: "value"
                           key: "key"
                         long_description: "long_description"
                         type:
@@ -39606,8 +39694,10 @@ definitions:
                           name: "name"
                           project: "project"
                         short_description: "short_description"
-                        alias:
-                          value: "value"
+                        aliases:
+                        - value: "value"
+                          key: "key"
+                        - value: "value"
                           key: "key"
                         long_description: "long_description"
                         type:
@@ -39913,8 +40003,10 @@ definitions:
                           name: "name"
                           project: "project"
                         short_description: "short_description"
-                        alias:
-                          value: "value"
+                        aliases:
+                        - value: "value"
+                          key: "key"
+                        - value: "value"
                           key: "key"
                         long_description: "long_description"
                         type:
@@ -40373,8 +40465,10 @@ definitions:
                           name: "name"
                           project: "project"
                         short_description: "short_description"
-                        alias:
-                          value: "value"
+                        aliases:
+                        - value: "value"
+                          key: "key"
+                        - value: "value"
                           key: "key"
                         long_description: "long_description"
                         type:
@@ -40680,8 +40774,10 @@ definitions:
                           name: "name"
                           project: "project"
                         short_description: "short_description"
-                        alias:
-                          value: "value"
+                        aliases:
+                        - value: "value"
+                          key: "key"
+                        - value: "value"
                           key: "key"
                         long_description: "long_description"
                         type:
@@ -42927,8 +43023,10 @@ definitions:
                           name: "name"
                           project: "project"
                         short_description: "short_description"
-                        alias:
-                          value: "value"
+                        aliases:
+                        - value: "value"
+                          key: "key"
+                        - value: "value"
                           key: "key"
                         long_description: "long_description"
                         type:
@@ -43234,8 +43332,10 @@ definitions:
                           name: "name"
                           project: "project"
                         short_description: "short_description"
-                        alias:
-                          value: "value"
+                        aliases:
+                        - value: "value"
+                          key: "key"
+                        - value: "value"
                           key: "key"
                         long_description: "long_description"
                         type:
@@ -45674,8 +45774,10 @@ definitions:
                               name: "name"
                               project: "project"
                             short_description: "short_description"
-                            alias:
-                              value: "value"
+                            aliases:
+                            - value: "value"
+                              key: "key"
+                            - value: "value"
                               key: "key"
                             long_description: "long_description"
                             type:
@@ -45981,8 +46083,10 @@ definitions:
                               name: "name"
                               project: "project"
                             short_description: "short_description"
-                            alias:
-                              value: "value"
+                            aliases:
+                            - value: "value"
+                              key: "key"
+                            - value: "value"
                               key: "key"
                             long_description: "long_description"
                             type:
@@ -48189,8 +48293,10 @@ definitions:
                               name: "name"
                               project: "project"
                             short_description: "short_description"
-                            alias:
-                              value: "value"
+                            aliases:
+                            - value: "value"
+                              key: "key"
+                            - value: "value"
                               key: "key"
                             long_description: "long_description"
                             type:
@@ -48496,8 +48602,10 @@ definitions:
                               name: "name"
                               project: "project"
                             short_description: "short_description"
-                            alias:
-                              value: "value"
+                            aliases:
+                            - value: "value"
+                              key: "key"
+                            - value: "value"
                               key: "key"
                             long_description: "long_description"
                             type:
@@ -48919,8 +49027,10 @@ definitions:
                               name: "name"
                               project: "project"
                             short_description: "short_description"
-                            alias:
-                              value: "value"
+                            aliases:
+                            - value: "value"
+                              key: "key"
+                            - value: "value"
                               key: "key"
                             long_description: "long_description"
                             type:
@@ -49226,8 +49336,10 @@ definitions:
                               name: "name"
                               project: "project"
                             short_description: "short_description"
-                            alias:
-                              value: "value"
+                            aliases:
+                            - value: "value"
+                              key: "key"
+                            - value: "value"
                               key: "key"
                             long_description: "long_description"
                             type:
@@ -49686,8 +49798,10 @@ definitions:
                               name: "name"
                               project: "project"
                             short_description: "short_description"
-                            alias:
-                              value: "value"
+                            aliases:
+                            - value: "value"
+                              key: "key"
+                            - value: "value"
                               key: "key"
                             long_description: "long_description"
                             type:
@@ -49993,8 +50107,10 @@ definitions:
                               name: "name"
                               project: "project"
                             short_description: "short_description"
-                            alias:
-                              value: "value"
+                            aliases:
+                            - value: "value"
+                              key: "key"
+                            - value: "value"
                               key: "key"
                             long_description: "long_description"
                             type:
@@ -52240,8 +52356,10 @@ definitions:
                               name: "name"
                               project: "project"
                             short_description: "short_description"
-                            alias:
-                              value: "value"
+                            aliases:
+                            - value: "value"
+                              key: "key"
+                            - value: "value"
                               key: "key"
                             long_description: "long_description"
                             type:
@@ -52547,8 +52665,10 @@ definitions:
                               name: "name"
                               project: "project"
                             short_description: "short_description"
-                            alias:
-                              value: "value"
+                            aliases:
+                            - value: "value"
+                              key: "key"
+                            - value: "value"
                               key: "key"
                             long_description: "long_description"
                             type:
@@ -54766,8 +54886,10 @@ definitions:
                               name: "name"
                               project: "project"
                             short_description: "short_description"
-                            alias:
-                              value: "value"
+                            aliases:
+                            - value: "value"
+                              key: "key"
+                            - value: "value"
                               key: "key"
                             long_description: "long_description"
                             type:
@@ -55073,8 +55195,10 @@ definitions:
                               name: "name"
                               project: "project"
                             short_description: "short_description"
-                            alias:
-                              value: "value"
+                            aliases:
+                            - value: "value"
+                              key: "key"
+                            - value: "value"
                               key: "key"
                             long_description: "long_description"
                             type:
@@ -57281,8 +57405,10 @@ definitions:
                               name: "name"
                               project: "project"
                             short_description: "short_description"
-                            alias:
-                              value: "value"
+                            aliases:
+                            - value: "value"
+                              key: "key"
+                            - value: "value"
                               key: "key"
                             long_description: "long_description"
                             type:
@@ -57588,8 +57714,10 @@ definitions:
                               name: "name"
                               project: "project"
                             short_description: "short_description"
-                            alias:
-                              value: "value"
+                            aliases:
+                            - value: "value"
+                              key: "key"
+                            - value: "value"
                               key: "key"
                             long_description: "long_description"
                             type:
@@ -58011,8 +58139,10 @@ definitions:
                               name: "name"
                               project: "project"
                             short_description: "short_description"
-                            alias:
-                              value: "value"
+                            aliases:
+                            - value: "value"
+                              key: "key"
+                            - value: "value"
                               key: "key"
                             long_description: "long_description"
                             type:
@@ -58318,8 +58448,10 @@ definitions:
                               name: "name"
                               project: "project"
                             short_description: "short_description"
-                            alias:
-                              value: "value"
+                            aliases:
+                            - value: "value"
+                              key: "key"
+                            - value: "value"
                               key: "key"
                             long_description: "long_description"
                             type:
@@ -58778,8 +58910,10 @@ definitions:
                               name: "name"
                               project: "project"
                             short_description: "short_description"
-                            alias:
-                              value: "value"
+                            aliases:
+                            - value: "value"
+                              key: "key"
+                            - value: "value"
                               key: "key"
                             long_description: "long_description"
                             type:
@@ -59085,8 +59219,10 @@ definitions:
                               name: "name"
                               project: "project"
                             short_description: "short_description"
-                            alias:
-                              value: "value"
+                            aliases:
+                            - value: "value"
+                              key: "key"
+                            - value: "value"
                               key: "key"
                             long_description: "long_description"
                             type:
@@ -61332,8 +61468,10 @@ definitions:
                               name: "name"
                               project: "project"
                             short_description: "short_description"
-                            alias:
-                              value: "value"
+                            aliases:
+                            - value: "value"
+                              key: "key"
+                            - value: "value"
                               key: "key"
                             long_description: "long_description"
                             type:
@@ -61639,8 +61777,10 @@ definitions:
                               name: "name"
                               project: "project"
                             short_description: "short_description"
-                            alias:
-                              value: "value"
+                            aliases:
+                            - value: "value"
+                              key: "key"
+                            - value: "value"
                               key: "key"
                             long_description: "long_description"
                             type:
@@ -61988,8 +62128,10 @@ definitions:
           name: "name"
           project: "project"
         short_description: "short_description"
-        alias:
-          value: "value"
+        aliases:
+        - value: "value"
+          key: "key"
+        - value: "value"
           key: "key"
         long_description: "long_description"
         type:
@@ -62305,9 +62447,11 @@ definitions:
         description: "When you want to set tags on creation."
         items:
           $ref: "#/definitions/artifactTag"
-      alias:
+      aliases:
+        type: "array"
         title: "When you want to set an alias on creation. should this also be repeated?"
-        $ref: "#/definitions/flyteidlartifactAlias"
+        items:
+          $ref: "#/definitions/flyteidlartifactAlias"
       task_execution:
         description: "Outputs of tasks will have this."
         $ref: "#/definitions/coreTaskExecutionIdentifier"
@@ -62329,8 +62473,10 @@ definitions:
         name: "name"
         project: "project"
       short_description: "short_description"
-      alias:
-        value: "value"
+      aliases:
+      - value: "value"
+        key: "key"
+      - value: "value"
         key: "key"
       long_description: "long_description"
       type:
@@ -63383,8 +63529,10 @@ definitions:
                       name: "name"
                       project: "project"
                     short_description: "short_description"
-                    alias:
-                      value: "value"
+                    aliases:
+                    - value: "value"
+                      key: "key"
+                    - value: "value"
                       key: "key"
                     long_description: "long_description"
                     type:
@@ -63690,8 +63838,10 @@ definitions:
                       name: "name"
                       project: "project"
                     short_description: "short_description"
-                    alias:
-                      value: "value"
+                    aliases:
+                    - value: "value"
+                      key: "key"
+                    - value: "value"
                       key: "key"
                     long_description: "long_description"
                     type:
@@ -65949,8 +66099,10 @@ definitions:
                       name: "name"
                       project: "project"
                     short_description: "short_description"
-                    alias:
-                      value: "value"
+                    aliases:
+                    - value: "value"
+                      key: "key"
+                    - value: "value"
                       key: "key"
                     long_description: "long_description"
                     type:
@@ -66256,8 +66408,10 @@ definitions:
                       name: "name"
                       project: "project"
                     short_description: "short_description"
-                    alias:
-                      value: "value"
+                    aliases:
+                    - value: "value"
+                      key: "key"
+                    - value: "value"
                       key: "key"
                     long_description: "long_description"
                     type:
@@ -68491,8 +68645,10 @@ definitions:
                         name: "name"
                         project: "project"
                       short_description: "short_description"
-                      alias:
-                        value: "value"
+                      aliases:
+                      - value: "value"
+                        key: "key"
+                      - value: "value"
                         key: "key"
                       long_description: "long_description"
                       type:
@@ -68798,8 +68954,10 @@ definitions:
                         name: "name"
                         project: "project"
                       short_description: "short_description"
-                      alias:
-                        value: "value"
+                      aliases:
+                      - value: "value"
+                        key: "key"
+                      - value: "value"
                         key: "key"
                       long_description: "long_description"
                       type:
@@ -71006,8 +71164,10 @@ definitions:
                         name: "name"
                         project: "project"
                       short_description: "short_description"
-                      alias:
-                        value: "value"
+                      aliases:
+                      - value: "value"
+                        key: "key"
+                      - value: "value"
                         key: "key"
                       long_description: "long_description"
                       type:
@@ -71313,8 +71473,10 @@ definitions:
                         name: "name"
                         project: "project"
                       short_description: "short_description"
-                      alias:
-                        value: "value"
+                      aliases:
+                      - value: "value"
+                        key: "key"
+                      - value: "value"
                         key: "key"
                       long_description: "long_description"
                       type:
@@ -71736,8 +71898,10 @@ definitions:
                         name: "name"
                         project: "project"
                       short_description: "short_description"
-                      alias:
-                        value: "value"
+                      aliases:
+                      - value: "value"
+                        key: "key"
+                      - value: "value"
                         key: "key"
                       long_description: "long_description"
                       type:
@@ -72043,8 +72207,10 @@ definitions:
                         name: "name"
                         project: "project"
                       short_description: "short_description"
-                      alias:
-                        value: "value"
+                      aliases:
+                      - value: "value"
+                        key: "key"
+                      - value: "value"
                         key: "key"
                       long_description: "long_description"
                       type:
@@ -72503,8 +72669,10 @@ definitions:
                         name: "name"
                         project: "project"
                       short_description: "short_description"
-                      alias:
-                        value: "value"
+                      aliases:
+                      - value: "value"
+                        key: "key"
+                      - value: "value"
                         key: "key"
                       long_description: "long_description"
                       type:
@@ -72810,8 +72978,10 @@ definitions:
                         name: "name"
                         project: "project"
                       short_description: "short_description"
-                      alias:
-                        value: "value"
+                      aliases:
+                      - value: "value"
+                        key: "key"
+                      - value: "value"
                         key: "key"
                       long_description: "long_description"
                       type:
@@ -75057,8 +75227,10 @@ definitions:
                         name: "name"
                         project: "project"
                       short_description: "short_description"
-                      alias:
-                        value: "value"
+                      aliases:
+                      - value: "value"
+                        key: "key"
+                      - value: "value"
                         key: "key"
                       long_description: "long_description"
                       type:
@@ -75364,8 +75536,10 @@ definitions:
                         name: "name"
                         project: "project"
                       short_description: "short_description"
-                      alias:
-                        value: "value"
+                      aliases:
+                      - value: "value"
+                        key: "key"
+                      - value: "value"
                         key: "key"
                       long_description: "long_description"
                       type:
@@ -77490,8 +77664,10 @@ definitions:
               name: "name"
               project: "project"
             short_description: "short_description"
-            alias:
-              value: "value"
+            aliases:
+            - value: "value"
+              key: "key"
+            - value: "value"
               key: "key"
             long_description: "long_description"
             type:
@@ -77985,8 +78161,10 @@ definitions:
                   name: "name"
                   project: "project"
                 short_description: "short_description"
-                alias:
-                  value: "value"
+                aliases:
+                - value: "value"
+                  key: "key"
+                - value: "value"
                   key: "key"
                 long_description: "long_description"
                 type:
@@ -79272,8 +79450,10 @@ definitions:
                     name: "name"
                     project: "project"
                   short_description: "short_description"
-                  alias:
-                    value: "value"
+                  aliases:
+                  - value: "value"
+                    key: "key"
+                  - value: "value"
                     key: "key"
                   long_description: "long_description"
                   type:
@@ -79579,8 +79759,10 @@ definitions:
                     name: "name"
                     project: "project"
                   short_description: "short_description"
-                  alias:
-                    value: "value"
+                  aliases:
+                  - value: "value"
+                    key: "key"
+                  - value: "value"
                     key: "key"
                   long_description: "long_description"
                   type:
@@ -79975,8 +80157,10 @@ definitions:
                   name: "name"
                   project: "project"
                 short_description: "short_description"
-                alias:
-                  value: "value"
+                aliases:
+                - value: "value"
+                  key: "key"
+                - value: "value"
                   key: "key"
                 long_description: "long_description"
                 type:
@@ -80282,8 +80466,10 @@ definitions:
                   name: "name"
                   project: "project"
                 short_description: "short_description"
-                alias:
-                  value: "value"
+                aliases:
+                - value: "value"
+                  key: "key"
+                - value: "value"
                   key: "key"
                 long_description: "long_description"
                 type:
@@ -80741,8 +80927,10 @@ definitions:
             name: "name"
             project: "project"
           short_description: "short_description"
-          alias:
-            value: "value"
+          aliases:
+          - value: "value"
+            key: "key"
+          - value: "value"
             key: "key"
           long_description: "long_description"
           type:
@@ -81057,8 +81245,10 @@ definitions:
                 name: "name"
                 project: "project"
               short_description: "short_description"
-              alias:
-                value: "value"
+              aliases:
+              - value: "value"
+                key: "key"
+              - value: "value"
                 key: "key"
               long_description: "long_description"
               type:
@@ -83402,8 +83592,10 @@ definitions:
                     name: "name"
                     project: "project"
                   short_description: "short_description"
-                  alias:
-                    value: "value"
+                  aliases:
+                  - value: "value"
+                    key: "key"
+                  - value: "value"
                     key: "key"
                   long_description: "long_description"
                   type:
@@ -83709,8 +83901,10 @@ definitions:
                     name: "name"
                     project: "project"
                   short_description: "short_description"
-                  alias:
-                    value: "value"
+                  aliases:
+                  - value: "value"
+                    key: "key"
+                  - value: "value"
                     key: "key"
                   long_description: "long_description"
                   type:
@@ -86262,8 +86456,10 @@ definitions:
                           name: "name"
                           project: "project"
                         short_description: "short_description"
-                        alias:
-                          value: "value"
+                        aliases:
+                        - value: "value"
+                          key: "key"
+                        - value: "value"
                           key: "key"
                         long_description: "long_description"
                         type:
@@ -86569,8 +86765,10 @@ definitions:
                           name: "name"
                           project: "project"
                         short_description: "short_description"
-                        alias:
-                          value: "value"
+                        aliases:
+                        - value: "value"
+                          key: "key"
+                        - value: "value"
                           key: "key"
                         long_description: "long_description"
                         type:
@@ -88777,8 +88975,10 @@ definitions:
                           name: "name"
                           project: "project"
                         short_description: "short_description"
-                        alias:
-                          value: "value"
+                        aliases:
+                        - value: "value"
+                          key: "key"
+                        - value: "value"
                           key: "key"
                         long_description: "long_description"
                         type:
@@ -89084,8 +89284,10 @@ definitions:
                           name: "name"
                           project: "project"
                         short_description: "short_description"
-                        alias:
-                          value: "value"
+                        aliases:
+                        - value: "value"
+                          key: "key"
+                        - value: "value"
                           key: "key"
                         long_description: "long_description"
                         type:
@@ -89507,8 +89709,10 @@ definitions:
                           name: "name"
                           project: "project"
                         short_description: "short_description"
-                        alias:
-                          value: "value"
+                        aliases:
+                        - value: "value"
+                          key: "key"
+                        - value: "value"
                           key: "key"
                         long_description: "long_description"
                         type:
@@ -89814,8 +90018,10 @@ definitions:
                           name: "name"
                           project: "project"
                         short_description: "short_description"
-                        alias:
-                          value: "value"
+                        aliases:
+                        - value: "value"
+                          key: "key"
+                        - value: "value"
                           key: "key"
                         long_description: "long_description"
                         type:
@@ -90274,8 +90480,10 @@ definitions:
                           name: "name"
                           project: "project"
                         short_description: "short_description"
-                        alias:
-                          value: "value"
+                        aliases:
+                        - value: "value"
+                          key: "key"
+                        - value: "value"
                           key: "key"
                         long_description: "long_description"
                         type:
@@ -90581,8 +90789,10 @@ definitions:
                           name: "name"
                           project: "project"
                         short_description: "short_description"
-                        alias:
-                          value: "value"
+                        aliases:
+                        - value: "value"
+                          key: "key"
+                        - value: "value"
                           key: "key"
                         long_description: "long_description"
                         type:
@@ -92828,8 +93038,10 @@ definitions:
                           name: "name"
                           project: "project"
                         short_description: "short_description"
-                        alias:
-                          value: "value"
+                        aliases:
+                        - value: "value"
+                          key: "key"
+                        - value: "value"
                           key: "key"
                         long_description: "long_description"
                         type:
@@ -93135,8 +93347,10 @@ definitions:
                           name: "name"
                           project: "project"
                         short_description: "short_description"
-                        alias:
-                          value: "value"
+                        aliases:
+                        - value: "value"
+                          key: "key"
+                        - value: "value"
                           key: "key"
                         long_description: "long_description"
                         type:

@@ -50,7 +50,7 @@ message ArtifactSpec {
   repeated Tag tags = 3;
 
   // When you want to set an alias on creation. should this also be repeated?
-  Alias alias = 4;
+  repeated Alias aliases = 4;
 
   oneof source {
     // Outputs of tasks will have this.

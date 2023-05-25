@@ -5642,8 +5642,11 @@
           },
           "description": "When you want to set tags on creation."
         },
-        "alias": {
-          "$ref": "#/definitions/flyteidlartifactAlias",
+        "aliases": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/flyteidlartifactAlias"
+          },
           "title": "When you want to set an alias on creation. should this also be repeated?"
         },
         "task_execution": {

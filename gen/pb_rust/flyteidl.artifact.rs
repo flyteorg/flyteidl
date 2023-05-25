@@ -50,8 +50,8 @@ pub struct ArtifactSpec {
     #[prost(message, repeated, tag="3")]
     pub tags: ::prost::alloc::vec::Vec<Tag>,
     /// When you want to set an alias on creation. should this also be repeated?
-    #[prost(message, optional, tag="4")]
-    pub alias: ::core::option::Option<Alias>,
+    #[prost(message, repeated, tag="4")]
+    pub aliases: ::prost::alloc::vec::Vec<Alias>,
     #[prost(string, tag="8")]
     pub short_description: ::prost::alloc::string::String,
     #[prost(string, tag="9")]

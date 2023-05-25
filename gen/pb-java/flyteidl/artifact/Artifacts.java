@@ -2803,25 +2803,44 @@ public final class Artifacts {
      * When you want to set an alias on creation. should this also be repeated?
      * </pre>
      *
-     * <code>.flyteidl.artifact.Alias alias = 4;</code>
+     * <code>repeated .flyteidl.artifact.Alias aliases = 4;</code>
      */
-    boolean hasAlias();
+    java.util.List<flyteidl.artifact.Artifacts.Alias> 
+        getAliasesList();
     /**
      * <pre>
      * When you want to set an alias on creation. should this also be repeated?
      * </pre>
      *
-     * <code>.flyteidl.artifact.Alias alias = 4;</code>
+     * <code>repeated .flyteidl.artifact.Alias aliases = 4;</code>
      */
-    flyteidl.artifact.Artifacts.Alias getAlias();
+    flyteidl.artifact.Artifacts.Alias getAliases(int index);
     /**
      * <pre>
      * When you want to set an alias on creation. should this also be repeated?
      * </pre>
      *
-     * <code>.flyteidl.artifact.Alias alias = 4;</code>
+     * <code>repeated .flyteidl.artifact.Alias aliases = 4;</code>
      */
-    flyteidl.artifact.Artifacts.AliasOrBuilder getAliasOrBuilder();
+    int getAliasesCount();
+    /**
+     * <pre>
+     * When you want to set an alias on creation. should this also be repeated?
+     * </pre>
+     *
+     * <code>repeated .flyteidl.artifact.Alias aliases = 4;</code>
+     */
+    java.util.List<? extends flyteidl.artifact.Artifacts.AliasOrBuilder> 
+        getAliasesOrBuilderList();
+    /**
+     * <pre>
+     * When you want to set an alias on creation. should this also be repeated?
+     * </pre>
+     *
+     * <code>repeated .flyteidl.artifact.Alias aliases = 4;</code>
+     */
+    flyteidl.artifact.Artifacts.AliasOrBuilder getAliasesOrBuilder(
+        int index);
 
     /**
      * <pre>
@@ -2927,6 +2946,7 @@ public final class Artifacts {
     }
     private ArtifactSpec() {
       tags_ = java.util.Collections.emptyList();
+      aliases_ = java.util.Collections.emptyList();
       shortDescription_ = "";
       longDescription_ = "";
     }
@@ -2991,16 +3011,12 @@ public final class Artifacts {
               break;
             }
             case 34: {
-              flyteidl.artifact.Artifacts.Alias.Builder subBuilder = null;
-              if (alias_ != null) {
-                subBuilder = alias_.toBuilder();
+              if (!((mutable_bitField0_ & 0x00000008) != 0)) {
+                aliases_ = new java.util.ArrayList<flyteidl.artifact.Artifacts.Alias>();
+                mutable_bitField0_ |= 0x00000008;
               }
-              alias_ = input.readMessage(flyteidl.artifact.Artifacts.Alias.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(alias_);
-                alias_ = subBuilder.buildPartial();
-              }
-
+              aliases_.add(
+                  input.readMessage(flyteidl.artifact.Artifacts.Alias.parser(), extensionRegistry));
               break;
             }
             case 42: {
@@ -3066,6 +3082,9 @@ public final class Artifacts {
       } finally {
         if (((mutable_bitField0_ & 0x00000004) != 0)) {
           tags_ = java.util.Collections.unmodifiableList(tags_);
+        }
+        if (((mutable_bitField0_ & 0x00000008) != 0)) {
+          aliases_ = java.util.Collections.unmodifiableList(aliases_);
         }
         this.unknownFields = unknownFields.build();
         makeExtensionsImmutable();
@@ -3240,37 +3259,59 @@ public final class Artifacts {
       return tags_.get(index);
     }
 
-    public static final int ALIAS_FIELD_NUMBER = 4;
-    private flyteidl.artifact.Artifacts.Alias alias_;
+    public static final int ALIASES_FIELD_NUMBER = 4;
+    private java.util.List<flyteidl.artifact.Artifacts.Alias> aliases_;
     /**
      * <pre>
      * When you want to set an alias on creation. should this also be repeated?
      * </pre>
      *
-     * <code>.flyteidl.artifact.Alias alias = 4;</code>
+     * <code>repeated .flyteidl.artifact.Alias aliases = 4;</code>
      */
-    public boolean hasAlias() {
-      return alias_ != null;
+    public java.util.List<flyteidl.artifact.Artifacts.Alias> getAliasesList() {
+      return aliases_;
     }
     /**
      * <pre>
      * When you want to set an alias on creation. should this also be repeated?
      * </pre>
      *
-     * <code>.flyteidl.artifact.Alias alias = 4;</code>
+     * <code>repeated .flyteidl.artifact.Alias aliases = 4;</code>
      */
-    public flyteidl.artifact.Artifacts.Alias getAlias() {
-      return alias_ == null ? flyteidl.artifact.Artifacts.Alias.getDefaultInstance() : alias_;
+    public java.util.List<? extends flyteidl.artifact.Artifacts.AliasOrBuilder> 
+        getAliasesOrBuilderList() {
+      return aliases_;
     }
     /**
      * <pre>
      * When you want to set an alias on creation. should this also be repeated?
      * </pre>
      *
-     * <code>.flyteidl.artifact.Alias alias = 4;</code>
+     * <code>repeated .flyteidl.artifact.Alias aliases = 4;</code>
      */
-    public flyteidl.artifact.Artifacts.AliasOrBuilder getAliasOrBuilder() {
-      return getAlias();
+    public int getAliasesCount() {
+      return aliases_.size();
+    }
+    /**
+     * <pre>
+     * When you want to set an alias on creation. should this also be repeated?
+     * </pre>
+     *
+     * <code>repeated .flyteidl.artifact.Alias aliases = 4;</code>
+     */
+    public flyteidl.artifact.Artifacts.Alias getAliases(int index) {
+      return aliases_.get(index);
+    }
+    /**
+     * <pre>
+     * When you want to set an alias on creation. should this also be repeated?
+     * </pre>
+     *
+     * <code>repeated .flyteidl.artifact.Alias aliases = 4;</code>
+     */
+    public flyteidl.artifact.Artifacts.AliasOrBuilder getAliasesOrBuilder(
+        int index) {
+      return aliases_.get(index);
     }
 
     public static final int TASK_EXECUTION_FIELD_NUMBER = 5;
@@ -3491,8 +3532,8 @@ public final class Artifacts {
       for (int i = 0; i < tags_.size(); i++) {
         output.writeMessage(3, tags_.get(i));
       }
-      if (alias_ != null) {
-        output.writeMessage(4, getAlias());
+      for (int i = 0; i < aliases_.size(); i++) {
+        output.writeMessage(4, aliases_.get(i));
       }
       if (sourceCase_ == 5) {
         output.writeMessage(5, (flyteidl.core.IdentifierOuterClass.TaskExecutionIdentifier) source_);
@@ -3530,9 +3571,9 @@ public final class Artifacts {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(3, tags_.get(i));
       }
-      if (alias_ != null) {
+      for (int i = 0; i < aliases_.size(); i++) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(4, getAlias());
+          .computeMessageSize(4, aliases_.get(i));
       }
       if (sourceCase_ == 5) {
         size += com.google.protobuf.CodedOutputStream
@@ -3578,11 +3619,8 @@ public final class Artifacts {
       }
       if (!getTagsList()
           .equals(other.getTagsList())) return false;
-      if (hasAlias() != other.hasAlias()) return false;
-      if (hasAlias()) {
-        if (!getAlias()
-            .equals(other.getAlias())) return false;
-      }
+      if (!getAliasesList()
+          .equals(other.getAliasesList())) return false;
       if (!getShortDescription()
           .equals(other.getShortDescription())) return false;
       if (!getLongDescription()
@@ -3627,9 +3665,9 @@ public final class Artifacts {
         hash = (37 * hash) + TAGS_FIELD_NUMBER;
         hash = (53 * hash) + getTagsList().hashCode();
       }
-      if (hasAlias()) {
-        hash = (37 * hash) + ALIAS_FIELD_NUMBER;
-        hash = (53 * hash) + getAlias().hashCode();
+      if (getAliasesCount() > 0) {
+        hash = (37 * hash) + ALIASES_FIELD_NUMBER;
+        hash = (53 * hash) + getAliasesList().hashCode();
       }
       hash = (37 * hash) + SHORT_DESCRIPTION_FIELD_NUMBER;
       hash = (53 * hash) + getShortDescription().hashCode();
@@ -3780,6 +3818,7 @@ public final class Artifacts {
         if (com.google.protobuf.GeneratedMessageV3
                 .alwaysUseFieldBuilders) {
           getTagsFieldBuilder();
+          getAliasesFieldBuilder();
         }
       }
       @java.lang.Override
@@ -3803,11 +3842,11 @@ public final class Artifacts {
         } else {
           tagsBuilder_.clear();
         }
-        if (aliasBuilder_ == null) {
-          alias_ = null;
+        if (aliasesBuilder_ == null) {
+          aliases_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000008);
         } else {
-          alias_ = null;
-          aliasBuilder_ = null;
+          aliasesBuilder_.clear();
         }
         shortDescription_ = "";
 
@@ -3862,10 +3901,14 @@ public final class Artifacts {
         } else {
           result.tags_ = tagsBuilder_.build();
         }
-        if (aliasBuilder_ == null) {
-          result.alias_ = alias_;
+        if (aliasesBuilder_ == null) {
+          if (((bitField0_ & 0x00000008) != 0)) {
+            aliases_ = java.util.Collections.unmodifiableList(aliases_);
+            bitField0_ = (bitField0_ & ~0x00000008);
+          }
+          result.aliases_ = aliases_;
         } else {
-          result.alias_ = aliasBuilder_.build();
+          result.aliases_ = aliasesBuilder_.build();
         }
         if (sourceCase_ == 5) {
           if (taskExecutionBuilder_ == null) {
@@ -3968,8 +4011,31 @@ public final class Artifacts {
             }
           }
         }
-        if (other.hasAlias()) {
-          mergeAlias(other.getAlias());
+        if (aliasesBuilder_ == null) {
+          if (!other.aliases_.isEmpty()) {
+            if (aliases_.isEmpty()) {
+              aliases_ = other.aliases_;
+              bitField0_ = (bitField0_ & ~0x00000008);
+            } else {
+              ensureAliasesIsMutable();
+              aliases_.addAll(other.aliases_);
+            }
+            onChanged();
+          }
+        } else {
+          if (!other.aliases_.isEmpty()) {
+            if (aliasesBuilder_.isEmpty()) {
+              aliasesBuilder_.dispose();
+              aliasesBuilder_ = null;
+              aliases_ = other.aliases_;
+              bitField0_ = (bitField0_ & ~0x00000008);
+              aliasesBuilder_ = 
+                com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
+                   getAliasesFieldBuilder() : null;
+            } else {
+              aliasesBuilder_.addAllMessages(other.aliases_);
+            }
+          }
         }
         if (!other.getShortDescription().isEmpty()) {
           shortDescription_ = other.shortDescription_;
@@ -4643,31 +4709,30 @@ public final class Artifacts {
         return tagsBuilder_;
       }
 
-      private flyteidl.artifact.Artifacts.Alias alias_;
-      private com.google.protobuf.SingleFieldBuilderV3<
-          flyteidl.artifact.Artifacts.Alias, flyteidl.artifact.Artifacts.Alias.Builder, flyteidl.artifact.Artifacts.AliasOrBuilder> aliasBuilder_;
-      /**
-       * <pre>
-       * When you want to set an alias on creation. should this also be repeated?
-       * </pre>
-       *
-       * <code>.flyteidl.artifact.Alias alias = 4;</code>
-       */
-      public boolean hasAlias() {
-        return aliasBuilder_ != null || alias_ != null;
+      private java.util.List<flyteidl.artifact.Artifacts.Alias> aliases_ =
+        java.util.Collections.emptyList();
+      private void ensureAliasesIsMutable() {
+        if (!((bitField0_ & 0x00000008) != 0)) {
+          aliases_ = new java.util.ArrayList<flyteidl.artifact.Artifacts.Alias>(aliases_);
+          bitField0_ |= 0x00000008;
+         }
       }
+
+      private com.google.protobuf.RepeatedFieldBuilderV3<
+          flyteidl.artifact.Artifacts.Alias, flyteidl.artifact.Artifacts.Alias.Builder, flyteidl.artifact.Artifacts.AliasOrBuilder> aliasesBuilder_;
+
       /**
        * <pre>
        * When you want to set an alias on creation. should this also be repeated?
        * </pre>
        *
-       * <code>.flyteidl.artifact.Alias alias = 4;</code>
+       * <code>repeated .flyteidl.artifact.Alias aliases = 4;</code>
        */
-      public flyteidl.artifact.Artifacts.Alias getAlias() {
-        if (aliasBuilder_ == null) {
-          return alias_ == null ? flyteidl.artifact.Artifacts.Alias.getDefaultInstance() : alias_;
+      public java.util.List<flyteidl.artifact.Artifacts.Alias> getAliasesList() {
+        if (aliasesBuilder_ == null) {
+          return java.util.Collections.unmodifiableList(aliases_);
         } else {
-          return aliasBuilder_.getMessage();
+          return aliasesBuilder_.getMessageList();
         }
       }
       /**
@@ -4675,19 +4740,48 @@ public final class Artifacts {
        * When you want to set an alias on creation. should this also be repeated?
        * </pre>
        *
-       * <code>.flyteidl.artifact.Alias alias = 4;</code>
+       * <code>repeated .flyteidl.artifact.Alias aliases = 4;</code>
        */
-      public Builder setAlias(flyteidl.artifact.Artifacts.Alias value) {
-        if (aliasBuilder_ == null) {
+      public int getAliasesCount() {
+        if (aliasesBuilder_ == null) {
+          return aliases_.size();
+        } else {
+          return aliasesBuilder_.getCount();
+        }
+      }
+      /**
+       * <pre>
+       * When you want to set an alias on creation. should this also be repeated?
+       * </pre>
+       *
+       * <code>repeated .flyteidl.artifact.Alias aliases = 4;</code>
+       */
+      public flyteidl.artifact.Artifacts.Alias getAliases(int index) {
+        if (aliasesBuilder_ == null) {
+          return aliases_.get(index);
+        } else {
+          return aliasesBuilder_.getMessage(index);
+        }
+      }
+      /**
+       * <pre>
+       * When you want to set an alias on creation. should this also be repeated?
+       * </pre>
+       *
+       * <code>repeated .flyteidl.artifact.Alias aliases = 4;</code>
+       */
+      public Builder setAliases(
+          int index, flyteidl.artifact.Artifacts.Alias value) {
+        if (aliasesBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
           }
-          alias_ = value;
+          ensureAliasesIsMutable();
+          aliases_.set(index, value);
           onChanged();
         } else {
-          aliasBuilder_.setMessage(value);
+          aliasesBuilder_.setMessage(index, value);
         }
-
         return this;
       }
       /**
@@ -4695,17 +4789,17 @@ public final class Artifacts {
        * When you want to set an alias on creation. should this also be repeated?
        * </pre>
        *
-       * <code>.flyteidl.artifact.Alias alias = 4;</code>
+       * <code>repeated .flyteidl.artifact.Alias aliases = 4;</code>
        */
-      public Builder setAlias(
-          flyteidl.artifact.Artifacts.Alias.Builder builderForValue) {
-        if (aliasBuilder_ == null) {
-          alias_ = builderForValue.build();
+      public Builder setAliases(
+          int index, flyteidl.artifact.Artifacts.Alias.Builder builderForValue) {
+        if (aliasesBuilder_ == null) {
+          ensureAliasesIsMutable();
+          aliases_.set(index, builderForValue.build());
           onChanged();
         } else {
-          aliasBuilder_.setMessage(builderForValue.build());
+          aliasesBuilder_.setMessage(index, builderForValue.build());
         }
-
         return this;
       }
       /**
@@ -4713,21 +4807,19 @@ public final class Artifacts {
        * When you want to set an alias on creation. should this also be repeated?
        * </pre>
        *
-       * <code>.flyteidl.artifact.Alias alias = 4;</code>
+       * <code>repeated .flyteidl.artifact.Alias aliases = 4;</code>
        */
-      public Builder mergeAlias(flyteidl.artifact.Artifacts.Alias value) {
-        if (aliasBuilder_ == null) {
-          if (alias_ != null) {
-            alias_ =
-              flyteidl.artifact.Artifacts.Alias.newBuilder(alias_).mergeFrom(value).buildPartial();
-          } else {
-            alias_ = value;
+      public Builder addAliases(flyteidl.artifact.Artifacts.Alias value) {
+        if (aliasesBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
           }
+          ensureAliasesIsMutable();
+          aliases_.add(value);
           onChanged();
         } else {
-          aliasBuilder_.mergeFrom(value);
+          aliasesBuilder_.addMessage(value);
         }
-
         return this;
       }
       /**
@@ -4735,17 +4827,20 @@ public final class Artifacts {
        * When you want to set an alias on creation. should this also be repeated?
        * </pre>
        *
-       * <code>.flyteidl.artifact.Alias alias = 4;</code>
+       * <code>repeated .flyteidl.artifact.Alias aliases = 4;</code>
        */
-      public Builder clearAlias() {
-        if (aliasBuilder_ == null) {
-          alias_ = null;
+      public Builder addAliases(
+          int index, flyteidl.artifact.Artifacts.Alias value) {
+        if (aliasesBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureAliasesIsMutable();
+          aliases_.add(index, value);
           onChanged();
         } else {
-          alias_ = null;
-          aliasBuilder_ = null;
+          aliasesBuilder_.addMessage(index, value);
         }
-
         return this;
       }
       /**
@@ -4753,26 +4848,113 @@ public final class Artifacts {
        * When you want to set an alias on creation. should this also be repeated?
        * </pre>
        *
-       * <code>.flyteidl.artifact.Alias alias = 4;</code>
+       * <code>repeated .flyteidl.artifact.Alias aliases = 4;</code>
        */
-      public flyteidl.artifact.Artifacts.Alias.Builder getAliasBuilder() {
-        
-        onChanged();
-        return getAliasFieldBuilder().getBuilder();
+      public Builder addAliases(
+          flyteidl.artifact.Artifacts.Alias.Builder builderForValue) {
+        if (aliasesBuilder_ == null) {
+          ensureAliasesIsMutable();
+          aliases_.add(builderForValue.build());
+          onChanged();
+        } else {
+          aliasesBuilder_.addMessage(builderForValue.build());
+        }
+        return this;
       }
       /**
        * <pre>
        * When you want to set an alias on creation. should this also be repeated?
        * </pre>
        *
-       * <code>.flyteidl.artifact.Alias alias = 4;</code>
+       * <code>repeated .flyteidl.artifact.Alias aliases = 4;</code>
        */
-      public flyteidl.artifact.Artifacts.AliasOrBuilder getAliasOrBuilder() {
-        if (aliasBuilder_ != null) {
-          return aliasBuilder_.getMessageOrBuilder();
+      public Builder addAliases(
+          int index, flyteidl.artifact.Artifacts.Alias.Builder builderForValue) {
+        if (aliasesBuilder_ == null) {
+          ensureAliasesIsMutable();
+          aliases_.add(index, builderForValue.build());
+          onChanged();
         } else {
-          return alias_ == null ?
-              flyteidl.artifact.Artifacts.Alias.getDefaultInstance() : alias_;
+          aliasesBuilder_.addMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * When you want to set an alias on creation. should this also be repeated?
+       * </pre>
+       *
+       * <code>repeated .flyteidl.artifact.Alias aliases = 4;</code>
+       */
+      public Builder addAllAliases(
+          java.lang.Iterable<? extends flyteidl.artifact.Artifacts.Alias> values) {
+        if (aliasesBuilder_ == null) {
+          ensureAliasesIsMutable();
+          com.google.protobuf.AbstractMessageLite.Builder.addAll(
+              values, aliases_);
+          onChanged();
+        } else {
+          aliasesBuilder_.addAllMessages(values);
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * When you want to set an alias on creation. should this also be repeated?
+       * </pre>
+       *
+       * <code>repeated .flyteidl.artifact.Alias aliases = 4;</code>
+       */
+      public Builder clearAliases() {
+        if (aliasesBuilder_ == null) {
+          aliases_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000008);
+          onChanged();
+        } else {
+          aliasesBuilder_.clear();
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * When you want to set an alias on creation. should this also be repeated?
+       * </pre>
+       *
+       * <code>repeated .flyteidl.artifact.Alias aliases = 4;</code>
+       */
+      public Builder removeAliases(int index) {
+        if (aliasesBuilder_ == null) {
+          ensureAliasesIsMutable();
+          aliases_.remove(index);
+          onChanged();
+        } else {
+          aliasesBuilder_.remove(index);
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * When you want to set an alias on creation. should this also be repeated?
+       * </pre>
+       *
+       * <code>repeated .flyteidl.artifact.Alias aliases = 4;</code>
+       */
+      public flyteidl.artifact.Artifacts.Alias.Builder getAliasesBuilder(
+          int index) {
+        return getAliasesFieldBuilder().getBuilder(index);
+      }
+      /**
+       * <pre>
+       * When you want to set an alias on creation. should this also be repeated?
+       * </pre>
+       *
+       * <code>repeated .flyteidl.artifact.Alias aliases = 4;</code>
+       */
+      public flyteidl.artifact.Artifacts.AliasOrBuilder getAliasesOrBuilder(
+          int index) {
+        if (aliasesBuilder_ == null) {
+          return aliases_.get(index);  } else {
+          return aliasesBuilder_.getMessageOrBuilder(index);
         }
       }
       /**
@@ -4780,20 +4962,63 @@ public final class Artifacts {
        * When you want to set an alias on creation. should this also be repeated?
        * </pre>
        *
-       * <code>.flyteidl.artifact.Alias alias = 4;</code>
+       * <code>repeated .flyteidl.artifact.Alias aliases = 4;</code>
        */
-      private com.google.protobuf.SingleFieldBuilderV3<
+      public java.util.List<? extends flyteidl.artifact.Artifacts.AliasOrBuilder> 
+           getAliasesOrBuilderList() {
+        if (aliasesBuilder_ != null) {
+          return aliasesBuilder_.getMessageOrBuilderList();
+        } else {
+          return java.util.Collections.unmodifiableList(aliases_);
+        }
+      }
+      /**
+       * <pre>
+       * When you want to set an alias on creation. should this also be repeated?
+       * </pre>
+       *
+       * <code>repeated .flyteidl.artifact.Alias aliases = 4;</code>
+       */
+      public flyteidl.artifact.Artifacts.Alias.Builder addAliasesBuilder() {
+        return getAliasesFieldBuilder().addBuilder(
+            flyteidl.artifact.Artifacts.Alias.getDefaultInstance());
+      }
+      /**
+       * <pre>
+       * When you want to set an alias on creation. should this also be repeated?
+       * </pre>
+       *
+       * <code>repeated .flyteidl.artifact.Alias aliases = 4;</code>
+       */
+      public flyteidl.artifact.Artifacts.Alias.Builder addAliasesBuilder(
+          int index) {
+        return getAliasesFieldBuilder().addBuilder(
+            index, flyteidl.artifact.Artifacts.Alias.getDefaultInstance());
+      }
+      /**
+       * <pre>
+       * When you want to set an alias on creation. should this also be repeated?
+       * </pre>
+       *
+       * <code>repeated .flyteidl.artifact.Alias aliases = 4;</code>
+       */
+      public java.util.List<flyteidl.artifact.Artifacts.Alias.Builder> 
+           getAliasesBuilderList() {
+        return getAliasesFieldBuilder().getBuilderList();
+      }
+      private com.google.protobuf.RepeatedFieldBuilderV3<
           flyteidl.artifact.Artifacts.Alias, flyteidl.artifact.Artifacts.Alias.Builder, flyteidl.artifact.Artifacts.AliasOrBuilder> 
-          getAliasFieldBuilder() {
-        if (aliasBuilder_ == null) {
-          aliasBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+          getAliasesFieldBuilder() {
+        if (aliasesBuilder_ == null) {
+          aliasesBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
               flyteidl.artifact.Artifacts.Alias, flyteidl.artifact.Artifacts.Alias.Builder, flyteidl.artifact.Artifacts.AliasOrBuilder>(
-                  getAlias(),
+                  aliases_,
+                  ((bitField0_ & 0x00000008) != 0),
                   getParentForChildren(),
                   isClean());
-          alias_ = null;
+          aliases_ = null;
         }
-        return aliasBuilder_;
+        return aliasesBuilder_;
       }
 
       private com.google.protobuf.SingleFieldBuilderV3<
@@ -19300,74 +19525,74 @@ public final class Artifacts {
       "sion\030\004 \001(\t\"z\n\010Artifact\0222\n\013artifact_id\030\001 " +
       "\001(\0132\035.flyteidl.artifact.ArtifactID\022\013\n\003ur" +
       "i\030\002 \001(\t\022-\n\004spec\030\003 \001(\0132\037.flyteidl.artifac" +
-      "t.ArtifactSpec\"\205\003\n\014ArtifactSpec\022%\n\005value" +
+      "t.ArtifactSpec\"\207\003\n\014ArtifactSpec\022%\n\005value" +
       "\030\001 \001(\0132\026.flyteidl.core.Literal\022(\n\004type\030\002" +
       " \001(\0132\032.flyteidl.core.LiteralType\022$\n\004tags" +
-      "\030\003 \003(\0132\026.flyteidl.artifact.Tag\022\'\n\005alias\030" +
-      "\004 \001(\0132\030.flyteidl.artifact.Alias\022@\n\016task_" +
-      "execution\030\005 \001(\0132&.flyteidl.core.TaskExec" +
-      "utionIdentifierH\000\022?\n\texecution\030\006 \001(\0132*.f" +
-      "lyteidl.core.WorkflowExecutionIdentifier" +
-      "H\000\022\023\n\tprincipal\030\007 \001(\tH\000\022\031\n\021short_descrip" +
-      "tion\030\010 \001(\t\022\030\n\020long_description\030\t \001(\tB\010\n\006" +
-      "source\"\245\001\n\rArtifactQuery\0224\n\014artifact_key" +
-      "\030\001 \001(\0132\036.flyteidl.artifact.ArtifactKey\022\017" +
-      "\n\007version\030\002 \001(\t\022\'\n\005alias\030\003 \001(\0132\030.flyteid" +
-      "l.artifact.Alias\022$\n\004tags\030\004 \003(\0132\026.flyteid" +
-      "l.artifact.Tag\"\215\001\n\025CreateArtifactRequest" +
-      "\0224\n\014artifact_key\030\001 \001(\0132\036.flyteidl.artifa" +
-      "ct.ArtifactKey\022\017\n\007version\030\002 \001(\t\022-\n\004spec\030" +
-      "\003 \001(\0132\037.flyteidl.artifact.ArtifactSpec\"G" +
-      "\n\026CreateArtifactResponse\022-\n\010artifact\030\001 \001" +
-      "(\0132\033.flyteidl.artifact.Artifact\"x\n\022GetAr" +
-      "tifactRequest\0224\n\013artifact_id\030\001 \001(\0132\035.fly" +
-      "teidl.artifact.ArtifactIDH\000\022\r\n\003uri\030\002 \001(\t" +
-      "H\000\022\017\n\007details\030\003 \001(\010B\014\n\nidentifier\"!\n\003Tag" +
-      "\022\013\n\003key\030\001 \001(\t\022\r\n\005value\030\002 \001(\t\"j\n\016AddTagsR" +
-      "equest\0222\n\013artifact_id\030\001 \001(\0132\035.flyteidl.a" +
-      "rtifact.ArtifactID\022$\n\004tags\030\002 \003(\0132\026.flyte" +
-      "idl.artifact.Tag\"\021\n\017AddTagsResponse\"m\n\021R" +
-      "emoveTagsRequest\0222\n\013artifact_id\030\001 \001(\0132\035." +
-      "flyteidl.artifact.ArtifactID\022$\n\004tags\030\002 \003" +
-      "(\0132\026.flyteidl.artifact.Tag\"\024\n\022RemoveTags" +
-      "Response\";\n\030ListArtifactNamesRequest\022\017\n\007" +
-      "project\030\001 \001(\t\022\016\n\006domain\030\002 \001(\t\"R\n\031ListArt" +
-      "ifactNamesResponse\0225\n\rartifact_keys\030\001 \003(" +
-      "\0132\036.flyteidl.artifact.ArtifactKey\"L\n\024Lis" +
-      "tArtifactsRequest\0224\n\014artifact_key\030\001 \001(\0132" +
-      "\036.flyteidl.artifact.ArtifactKey\"G\n\025ListA" +
-      "rtifactsResponse\022.\n\tartifacts\030\001 \003(\0132\033.fl" +
-      "yteidl.artifact.Artifact\"\206\001\n\022CreateAlias" +
-      "Request\0224\n\014artifact_key\030\001 \001(\0132\036.flyteidl" +
-      ".artifact.ArtifactKey\022\'\n\005alias\030\002 \001(\0132\030.f" +
-      "lyteidl.artifact.Alias\022\021\n\toverwrite\030\003 \001(" +
-      "\010\"\025\n\023CreateAliasResponse\"q\n\022RemoveAliasR" +
-      "equest\0222\n\013artifact_id\030\001 \001(\0132\035.flyteidl.a" +
-      "rtifact.ArtifactID\022\'\n\005alias\030\002 \001(\0132\030.flyt" +
-      "eidl.artifact.Alias\"\025\n\023RemoveAliasRespon" +
-      "se\"#\n\005Alias\022\013\n\003key\030\001 \001(\t\022\r\n\005value\030\002 \001(\t2" +
-      "\235\006\n\020ArtifactRegistry\022g\n\016CreateArtifact\022(" +
-      ".flyteidl.artifact.CreateArtifactRequest" +
-      "\032).flyteidl.artifact.CreateArtifactRespo" +
-      "nse\"\000\022S\n\013GetArtifact\022%.flyteidl.artifact" +
-      ".GetArtifactRequest\032\033.flyteidl.artifact." +
-      "Artifact\"\000\022p\n\021ListArtifactNames\022+.flytei" +
-      "dl.artifact.ListArtifactNamesRequest\032,.f" +
-      "lyteidl.artifact.ListArtifactNamesRespon" +
-      "se\"\000\022d\n\rListArtifacts\022\'.flyteidl.artifac" +
-      "t.ListArtifactsRequest\032(.flyteidl.artifa" +
-      "ct.ListArtifactsResponse\"\000\022V\n\013TagArtifac" +
-      "t\022!.flyteidl.artifact.AddTagsRequest\032\".f" +
-      "lyteidl.artifact.AddTagsResponse\"\000\022[\n\nRe" +
-      "moveTags\022$.flyteidl.artifact.RemoveTagsR" +
-      "equest\032%.flyteidl.artifact.RemoveTagsRes" +
-      "ponse\"\000\022^\n\013CreateAlias\022%.flyteidl.artifa" +
-      "ct.CreateAliasRequest\032&.flyteidl.artifac" +
-      "t.CreateAliasResponse\"\000\022^\n\013RemoveAlias\022%" +
-      ".flyteidl.artifact.RemoveAliasRequest\032&." +
-      "flyteidl.artifact.RemoveAliasResponse\"\000B" +
-      ":Z8github.com/flyteorg/flyteidl/gen/pb-g" +
-      "o/flyteidl/artifactb\006proto3"
+      "\030\003 \003(\0132\026.flyteidl.artifact.Tag\022)\n\007aliase" +
+      "s\030\004 \003(\0132\030.flyteidl.artifact.Alias\022@\n\016tas" +
+      "k_execution\030\005 \001(\0132&.flyteidl.core.TaskEx" +
+      "ecutionIdentifierH\000\022?\n\texecution\030\006 \001(\0132*" +
+      ".flyteidl.core.WorkflowExecutionIdentifi" +
+      "erH\000\022\023\n\tprincipal\030\007 \001(\tH\000\022\031\n\021short_descr" +
+      "iption\030\010 \001(\t\022\030\n\020long_description\030\t \001(\tB\010" +
+      "\n\006source\"\245\001\n\rArtifactQuery\0224\n\014artifact_k" +
+      "ey\030\001 \001(\0132\036.flyteidl.artifact.ArtifactKey" +
+      "\022\017\n\007version\030\002 \001(\t\022\'\n\005alias\030\003 \001(\0132\030.flyte" +
+      "idl.artifact.Alias\022$\n\004tags\030\004 \003(\0132\026.flyte" +
+      "idl.artifact.Tag\"\215\001\n\025CreateArtifactReque" +
+      "st\0224\n\014artifact_key\030\001 \001(\0132\036.flyteidl.arti" +
+      "fact.ArtifactKey\022\017\n\007version\030\002 \001(\t\022-\n\004spe" +
+      "c\030\003 \001(\0132\037.flyteidl.artifact.ArtifactSpec" +
+      "\"G\n\026CreateArtifactResponse\022-\n\010artifact\030\001" +
+      " \001(\0132\033.flyteidl.artifact.Artifact\"x\n\022Get" +
+      "ArtifactRequest\0224\n\013artifact_id\030\001 \001(\0132\035.f" +
+      "lyteidl.artifact.ArtifactIDH\000\022\r\n\003uri\030\002 \001" +
+      "(\tH\000\022\017\n\007details\030\003 \001(\010B\014\n\nidentifier\"!\n\003T" +
+      "ag\022\013\n\003key\030\001 \001(\t\022\r\n\005value\030\002 \001(\t\"j\n\016AddTag" +
+      "sRequest\0222\n\013artifact_id\030\001 \001(\0132\035.flyteidl" +
+      ".artifact.ArtifactID\022$\n\004tags\030\002 \003(\0132\026.fly" +
+      "teidl.artifact.Tag\"\021\n\017AddTagsResponse\"m\n" +
+      "\021RemoveTagsRequest\0222\n\013artifact_id\030\001 \001(\0132" +
+      "\035.flyteidl.artifact.ArtifactID\022$\n\004tags\030\002" +
+      " \003(\0132\026.flyteidl.artifact.Tag\"\024\n\022RemoveTa" +
+      "gsResponse\";\n\030ListArtifactNamesRequest\022\017" +
+      "\n\007project\030\001 \001(\t\022\016\n\006domain\030\002 \001(\t\"R\n\031ListA" +
+      "rtifactNamesResponse\0225\n\rartifact_keys\030\001 " +
+      "\003(\0132\036.flyteidl.artifact.ArtifactKey\"L\n\024L" +
+      "istArtifactsRequest\0224\n\014artifact_key\030\001 \001(" +
+      "\0132\036.flyteidl.artifact.ArtifactKey\"G\n\025Lis" +
+      "tArtifactsResponse\022.\n\tartifacts\030\001 \003(\0132\033." +
+      "flyteidl.artifact.Artifact\"\206\001\n\022CreateAli" +
+      "asRequest\0224\n\014artifact_key\030\001 \001(\0132\036.flytei" +
+      "dl.artifact.ArtifactKey\022\'\n\005alias\030\002 \001(\0132\030" +
+      ".flyteidl.artifact.Alias\022\021\n\toverwrite\030\003 " +
+      "\001(\010\"\025\n\023CreateAliasResponse\"q\n\022RemoveAlia" +
+      "sRequest\0222\n\013artifact_id\030\001 \001(\0132\035.flyteidl" +
+      ".artifact.ArtifactID\022\'\n\005alias\030\002 \001(\0132\030.fl" +
+      "yteidl.artifact.Alias\"\025\n\023RemoveAliasResp" +
+      "onse\"#\n\005Alias\022\013\n\003key\030\001 \001(\t\022\r\n\005value\030\002 \001(" +
+      "\t2\235\006\n\020ArtifactRegistry\022g\n\016CreateArtifact" +
+      "\022(.flyteidl.artifact.CreateArtifactReque" +
+      "st\032).flyteidl.artifact.CreateArtifactRes" +
+      "ponse\"\000\022S\n\013GetArtifact\022%.flyteidl.artifa" +
+      "ct.GetArtifactRequest\032\033.flyteidl.artifac" +
+      "t.Artifact\"\000\022p\n\021ListArtifactNames\022+.flyt" +
+      "eidl.artifact.ListArtifactNamesRequest\032," +
+      ".flyteidl.artifact.ListArtifactNamesResp" +
+      "onse\"\000\022d\n\rListArtifacts\022\'.flyteidl.artif" +
+      "act.ListArtifactsRequest\032(.flyteidl.arti" +
+      "fact.ListArtifactsResponse\"\000\022V\n\013TagArtif" +
+      "act\022!.flyteidl.artifact.AddTagsRequest\032\"" +
+      ".flyteidl.artifact.AddTagsResponse\"\000\022[\n\n" +
+      "RemoveTags\022$.flyteidl.artifact.RemoveTag" +
+      "sRequest\032%.flyteidl.artifact.RemoveTagsR" +
+      "esponse\"\000\022^\n\013CreateAlias\022%.flyteidl.arti" +
+      "fact.CreateAliasRequest\032&.flyteidl.artif" +
+      "act.CreateAliasResponse\"\000\022^\n\013RemoveAlias" +
+      "\022%.flyteidl.artifact.RemoveAliasRequest\032" +
+      "&.flyteidl.artifact.RemoveAliasResponse\"" +
+      "\000B:Z8github.com/flyteorg/flyteidl/gen/pb" +
+      "-go/flyteidl/artifactb\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
@@ -19407,7 +19632,7 @@ public final class Artifacts {
     internal_static_flyteidl_artifact_ArtifactSpec_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_flyteidl_artifact_ArtifactSpec_descriptor,
-        new java.lang.String[] { "Value", "Type", "Tags", "Alias", "TaskExecution", "Execution", "Principal", "ShortDescription", "LongDescription", "Source", });
+        new java.lang.String[] { "Value", "Type", "Tags", "Aliases", "TaskExecution", "Execution", "Principal", "ShortDescription", "LongDescription", "Source", });
     internal_static_flyteidl_artifact_ArtifactQuery_descriptor =
       getDescriptor().getMessageTypes().get(4);
     internal_static_flyteidl_artifact_ArtifactQuery_fieldAccessorTable = new

@@ -41,7 +41,7 @@ class ArtifactArtifactSpec(object):
         'value': 'CoreLiteral',
         'type': 'CoreLiteralType',
         'tags': 'list[ArtifactTag]',
-        'alias': 'FlyteidlartifactAlias',
+        'aliases': 'list[FlyteidlartifactAlias]',
         'task_execution': 'CoreTaskExecutionIdentifier',
         'execution': 'CoreWorkflowExecutionIdentifier',
         'principal': 'str',
@@ -53,7 +53,7 @@ class ArtifactArtifactSpec(object):
         'value': 'value',
         'type': 'type',
         'tags': 'tags',
-        'alias': 'alias',
+        'aliases': 'aliases',
         'task_execution': 'task_execution',
         'execution': 'execution',
         'principal': 'principal',
@@ -61,13 +61,13 @@ class ArtifactArtifactSpec(object):
         'long_description': 'long_description'
     }
 
-    def __init__(self, value=None, type=None, tags=None, alias=None, task_execution=None, execution=None, principal=None, short_description=None, long_description=None):  # noqa: E501
+    def __init__(self, value=None, type=None, tags=None, aliases=None, task_execution=None, execution=None, principal=None, short_description=None, long_description=None):  # noqa: E501
         """ArtifactArtifactSpec - a model defined in Swagger"""  # noqa: E501
 
         self._value = None
         self._type = None
         self._tags = None
-        self._alias = None
+        self._aliases = None
         self._task_execution = None
         self._execution = None
         self._principal = None
@@ -81,8 +81,8 @@ class ArtifactArtifactSpec(object):
             self.type = type
         if tags is not None:
             self.tags = tags
-        if alias is not None:
-            self.alias = alias
+        if aliases is not None:
+            self.aliases = aliases
         if task_execution is not None:
             self.task_execution = task_execution
         if execution is not None:
@@ -162,25 +162,25 @@ class ArtifactArtifactSpec(object):
         self._tags = tags
 
     @property
-    def alias(self):
-        """Gets the alias of this ArtifactArtifactSpec.  # noqa: E501
+    def aliases(self):
+        """Gets the aliases of this ArtifactArtifactSpec.  # noqa: E501
 
 
-        :return: The alias of this ArtifactArtifactSpec.  # noqa: E501
-        :rtype: FlyteidlartifactAlias
+        :return: The aliases of this ArtifactArtifactSpec.  # noqa: E501
+        :rtype: list[FlyteidlartifactAlias]
         """
-        return self._alias
+        return self._aliases
 
-    @alias.setter
-    def alias(self, alias):
-        """Sets the alias of this ArtifactArtifactSpec.
+    @aliases.setter
+    def aliases(self, aliases):
+        """Sets the aliases of this ArtifactArtifactSpec.
 
 
-        :param alias: The alias of this ArtifactArtifactSpec.  # noqa: E501
-        :type: FlyteidlartifactAlias
+        :param aliases: The aliases of this ArtifactArtifactSpec.  # noqa: E501
+        :type: list[FlyteidlartifactAlias]
         """
 
-        self._alias = alias
+        self._aliases = aliases
 
     @property
     def task_execution(self):

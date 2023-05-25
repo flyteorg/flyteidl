@@ -37,11 +37,11 @@ class Artifact(_message.Message):
     def __init__(self, artifact_id: _Optional[_Union[ArtifactID, _Mapping]] = ..., uri: _Optional[str] = ..., spec: _Optional[_Union[ArtifactSpec, _Mapping]] = ...) -> None: ...
 
 class ArtifactSpec(_message.Message):
-    __slots__ = ["value", "type", "tags", "alias", "task_execution", "execution", "principal", "short_description", "long_description"]
+    __slots__ = ["value", "type", "tags", "aliases", "task_execution", "execution", "principal", "short_description", "long_description"]
     VALUE_FIELD_NUMBER: _ClassVar[int]
     TYPE_FIELD_NUMBER: _ClassVar[int]
     TAGS_FIELD_NUMBER: _ClassVar[int]
-    ALIAS_FIELD_NUMBER: _ClassVar[int]
+    ALIASES_FIELD_NUMBER: _ClassVar[int]
     TASK_EXECUTION_FIELD_NUMBER: _ClassVar[int]
     EXECUTION_FIELD_NUMBER: _ClassVar[int]
     PRINCIPAL_FIELD_NUMBER: _ClassVar[int]
@@ -50,13 +50,13 @@ class ArtifactSpec(_message.Message):
     value: _literals_pb2.Literal
     type: _types_pb2.LiteralType
     tags: _containers.RepeatedCompositeFieldContainer[Tag]
-    alias: Alias
+    aliases: _containers.RepeatedCompositeFieldContainer[Alias]
     task_execution: _identifier_pb2.TaskExecutionIdentifier
     execution: _identifier_pb2.WorkflowExecutionIdentifier
     principal: str
     short_description: str
     long_description: str
-    def __init__(self, value: _Optional[_Union[_literals_pb2.Literal, _Mapping]] = ..., type: _Optional[_Union[_types_pb2.LiteralType, _Mapping]] = ..., tags: _Optional[_Iterable[_Union[Tag, _Mapping]]] = ..., alias: _Optional[_Union[Alias, _Mapping]] = ..., task_execution: _Optional[_Union[_identifier_pb2.TaskExecutionIdentifier, _Mapping]] = ..., execution: _Optional[_Union[_identifier_pb2.WorkflowExecutionIdentifier, _Mapping]] = ..., principal: _Optional[str] = ..., short_description: _Optional[str] = ..., long_description: _Optional[str] = ...) -> None: ...
+    def __init__(self, value: _Optional[_Union[_literals_pb2.Literal, _Mapping]] = ..., type: _Optional[_Union[_types_pb2.LiteralType, _Mapping]] = ..., tags: _Optional[_Iterable[_Union[Tag, _Mapping]]] = ..., aliases: _Optional[_Iterable[_Union[Alias, _Mapping]]] = ..., task_execution: _Optional[_Union[_identifier_pb2.TaskExecutionIdentifier, _Mapping]] = ..., execution: _Optional[_Union[_identifier_pb2.WorkflowExecutionIdentifier, _Mapping]] = ..., principal: _Optional[str] = ..., short_description: _Optional[str] = ..., long_description: _Optional[str] = ...) -> None: ...
 
 class ArtifactQuery(_message.Message):
     __slots__ = ["artifact_key", "version", "alias", "tags"]

@@ -15,7 +15,7 @@ type ArtifactArtifactSpec struct {
 	Type_ *CoreLiteralType `json:"type,omitempty"`
 	// When you want to set tags on creation.
 	Tags []ArtifactTag `json:"tags,omitempty"`
-	Alias *FlyteidlartifactAlias `json:"alias,omitempty"`
+	Aliases []FlyteidlartifactAlias `json:"aliases,omitempty"`
 	// Outputs of tasks will have this.
 	TaskExecution *CoreTaskExecutionIdentifier `json:"task_execution,omitempty"`
 	// Workflow outputs will have this.

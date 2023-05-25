@@ -6756,8 +6756,8 @@ export namespace flyteidl {
             /** ArtifactSpec tags */
             tags?: (flyteidl.artifact.ITag[]|null);
 
-            /** ArtifactSpec alias */
-            alias?: (flyteidl.artifact.IAlias|null);
+            /** ArtifactSpec aliases */
+            aliases?: (flyteidl.artifact.IAlias[]|null);
 
             /** ArtifactSpec taskExecution */
             taskExecution?: (flyteidl.core.ITaskExecutionIdentifier|null);
@@ -6793,8 +6793,8 @@ export namespace flyteidl {
             /** ArtifactSpec tags. */
             public tags: flyteidl.artifact.ITag[];
 
-            /** ArtifactSpec alias. */
-            public alias?: (flyteidl.artifact.IAlias|null);
+            /** ArtifactSpec aliases. */
+            public aliases: flyteidl.artifact.IAlias[];
 
             /** ArtifactSpec taskExecution. */
             public taskExecution?: (flyteidl.core.ITaskExecutionIdentifier|null);
