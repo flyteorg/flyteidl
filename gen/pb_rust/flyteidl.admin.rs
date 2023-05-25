@@ -2028,6 +2028,12 @@ pub struct EmailMessage {
     #[prost(string, tag="4")]
     pub body: ::prost::alloc::string::String,
 }
+#[allow(clippy::derive_partial_eq_without_eq)]
+#[derive(Clone, PartialEq, ::prost::Message)]
+pub struct WebhookPayload {
+    #[prost(string, tag="1")]
+    pub message: ::prost::alloc::string::String,
+}
 /// Namespace within a project commonly used to differentiate between different service instances.
 /// e.g. "production", "development", etc.
 #[allow(clippy::derive_partial_eq_without_eq)]

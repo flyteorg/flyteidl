@@ -16,3 +16,9 @@ class EmailMessage(_message.Message):
     subject_line: str
     body: str
     def __init__(self, recipients_email: _Optional[_Iterable[str]] = ..., sender_email: _Optional[str] = ..., subject_line: _Optional[str] = ..., body: _Optional[str] = ...) -> None: ...
+
+class WebhookPayload(_message.Message):
+    __slots__ = ["message"]
+    MESSAGE_FIELD_NUMBER: _ClassVar[int]
+    message: str
+    def __init__(self, message: _Optional[str] = ...) -> None: ...

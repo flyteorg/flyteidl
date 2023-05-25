@@ -14160,6 +14160,58 @@ export namespace flyteidl {
             public static verify(message: { [k: string]: any }): (string|null);
         }
 
+        /** Properties of a WebhookPayload. */
+        interface IWebhookPayload {
+
+            /** WebhookPayload message */
+            message?: (string|null);
+        }
+
+        /** Represents a WebhookPayload. */
+        class WebhookPayload implements IWebhookPayload {
+
+            /**
+             * Constructs a new WebhookPayload.
+             * @param [properties] Properties to set
+             */
+            constructor(properties?: flyteidl.admin.IWebhookPayload);
+
+            /** WebhookPayload message. */
+            public message: string;
+
+            /**
+             * Creates a new WebhookPayload instance using the specified properties.
+             * @param [properties] Properties to set
+             * @returns WebhookPayload instance
+             */
+            public static create(properties?: flyteidl.admin.IWebhookPayload): flyteidl.admin.WebhookPayload;
+
+            /**
+             * Encodes the specified WebhookPayload message. Does not implicitly {@link flyteidl.admin.WebhookPayload.verify|verify} messages.
+             * @param message WebhookPayload message or plain object to encode
+             * @param [writer] Writer to encode to
+             * @returns Writer
+             */
+            public static encode(message: flyteidl.admin.IWebhookPayload, writer?: $protobuf.Writer): $protobuf.Writer;
+
+            /**
+             * Decodes a WebhookPayload message from the specified reader or buffer.
+             * @param reader Reader or buffer to decode from
+             * @param [length] Message length if known beforehand
+             * @returns WebhookPayload
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): flyteidl.admin.WebhookPayload;
+
+            /**
+             * Verifies a WebhookPayload message.
+             * @param message Plain object to verify
+             * @returns `null` if valid, otherwise the reason why it is not
+             */
+            public static verify(message: { [k: string]: any }): (string|null);
+        }
+
         /** Properties of a Domain. */
         interface IDomain {
 
