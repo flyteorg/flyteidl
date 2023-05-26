@@ -105,7 +105,7 @@ message Literal {
         LiteralMap map = 3;
 
         // A reference to another Literal
-        core.ArtifactID artifact = 7;
+        core.ArtifactID artifact_id = 7;
     }
 
     // A hash representing this literal.

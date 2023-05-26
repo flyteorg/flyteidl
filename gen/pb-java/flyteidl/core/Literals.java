@@ -9360,25 +9360,25 @@ public final class Literals {
      * A reference to another Literal
      * </pre>
      *
-     * <code>.flyteidl.core.ArtifactID artifact = 7;</code>
+     * <code>.flyteidl.core.ArtifactID artifact_id = 7;</code>
      */
-    boolean hasArtifact();
+    boolean hasArtifactId();
     /**
      * <pre>
      * A reference to another Literal
      * </pre>
      *
-     * <code>.flyteidl.core.ArtifactID artifact = 7;</code>
+     * <code>.flyteidl.core.ArtifactID artifact_id = 7;</code>
      */
-    flyteidl.core.IdentifierOuterClass.ArtifactID getArtifact();
+    flyteidl.core.IdentifierOuterClass.ArtifactID getArtifactId();
     /**
      * <pre>
      * A reference to another Literal
      * </pre>
      *
-     * <code>.flyteidl.core.ArtifactID artifact = 7;</code>
+     * <code>.flyteidl.core.ArtifactID artifact_id = 7;</code>
      */
-    flyteidl.core.IdentifierOuterClass.ArtifactIDOrBuilder getArtifactOrBuilder();
+    flyteidl.core.IdentifierOuterClass.ArtifactIDOrBuilder getArtifactIdOrBuilder();
 
     /**
      * <pre>
@@ -9675,7 +9675,7 @@ public final class Literals {
       SCALAR(1),
       COLLECTION(2),
       MAP(3),
-      ARTIFACT(7),
+      ARTIFACT_ID(7),
       VALUE_NOT_SET(0);
       private final int value;
       private ValueCase(int value) {
@@ -9694,7 +9694,7 @@ public final class Literals {
           case 1: return SCALAR;
           case 2: return COLLECTION;
           case 3: return MAP;
-          case 7: return ARTIFACT;
+          case 7: return ARTIFACT_ID;
           case 0: return VALUE_NOT_SET;
           default: return null;
         }
@@ -9824,15 +9824,15 @@ public final class Literals {
       return flyteidl.core.Literals.LiteralMap.getDefaultInstance();
     }
 
-    public static final int ARTIFACT_FIELD_NUMBER = 7;
+    public static final int ARTIFACT_ID_FIELD_NUMBER = 7;
     /**
      * <pre>
      * A reference to another Literal
      * </pre>
      *
-     * <code>.flyteidl.core.ArtifactID artifact = 7;</code>
+     * <code>.flyteidl.core.ArtifactID artifact_id = 7;</code>
      */
-    public boolean hasArtifact() {
+    public boolean hasArtifactId() {
       return valueCase_ == 7;
     }
     /**
@@ -9840,9 +9840,9 @@ public final class Literals {
      * A reference to another Literal
      * </pre>
      *
-     * <code>.flyteidl.core.ArtifactID artifact = 7;</code>
+     * <code>.flyteidl.core.ArtifactID artifact_id = 7;</code>
      */
-    public flyteidl.core.IdentifierOuterClass.ArtifactID getArtifact() {
+    public flyteidl.core.IdentifierOuterClass.ArtifactID getArtifactId() {
       if (valueCase_ == 7) {
          return (flyteidl.core.IdentifierOuterClass.ArtifactID) value_;
       }
@@ -9853,9 +9853,9 @@ public final class Literals {
      * A reference to another Literal
      * </pre>
      *
-     * <code>.flyteidl.core.ArtifactID artifact = 7;</code>
+     * <code>.flyteidl.core.ArtifactID artifact_id = 7;</code>
      */
-    public flyteidl.core.IdentifierOuterClass.ArtifactIDOrBuilder getArtifactOrBuilder() {
+    public flyteidl.core.IdentifierOuterClass.ArtifactIDOrBuilder getArtifactIdOrBuilder() {
       if (valueCase_ == 7) {
          return (flyteidl.core.IdentifierOuterClass.ArtifactID) value_;
       }
@@ -10159,8 +10159,8 @@ public final class Literals {
               .equals(other.getMap())) return false;
           break;
         case 7:
-          if (!getArtifact()
-              .equals(other.getArtifact())) return false;
+          if (!getArtifactId()
+              .equals(other.getArtifactId())) return false;
           break;
         case 0:
         default:
@@ -10200,8 +10200,8 @@ public final class Literals {
           hash = (53 * hash) + getMap().hashCode();
           break;
         case 7:
-          hash = (37 * hash) + ARTIFACT_FIELD_NUMBER;
-          hash = (53 * hash) + getArtifact().hashCode();
+          hash = (37 * hash) + ARTIFACT_ID_FIELD_NUMBER;
+          hash = (53 * hash) + getArtifactId().hashCode();
           break;
         case 0:
         default:
@@ -10426,10 +10426,10 @@ public final class Literals {
           }
         }
         if (valueCase_ == 7) {
-          if (artifactBuilder_ == null) {
+          if (artifactIdBuilder_ == null) {
             result.value_ = value_;
           } else {
-            result.value_ = artifactBuilder_.build();
+            result.value_ = artifactIdBuilder_.build();
           }
         }
         result.hash_ = hash_;
@@ -10512,8 +10512,8 @@ public final class Literals {
             mergeMap(other.getMap());
             break;
           }
-          case ARTIFACT: {
-            mergeArtifact(other.getArtifact());
+          case ARTIFACT_ID: {
+            mergeArtifactId(other.getArtifactId());
             break;
           }
           case VALUE_NOT_SET: {
@@ -11082,15 +11082,15 @@ public final class Literals {
       }
 
       private com.google.protobuf.SingleFieldBuilderV3<
-          flyteidl.core.IdentifierOuterClass.ArtifactID, flyteidl.core.IdentifierOuterClass.ArtifactID.Builder, flyteidl.core.IdentifierOuterClass.ArtifactIDOrBuilder> artifactBuilder_;
+          flyteidl.core.IdentifierOuterClass.ArtifactID, flyteidl.core.IdentifierOuterClass.ArtifactID.Builder, flyteidl.core.IdentifierOuterClass.ArtifactIDOrBuilder> artifactIdBuilder_;
       /**
        * <pre>
        * A reference to another Literal
        * </pre>
        *
-       * <code>.flyteidl.core.ArtifactID artifact = 7;</code>
+       * <code>.flyteidl.core.ArtifactID artifact_id = 7;</code>
        */
-      public boolean hasArtifact() {
+      public boolean hasArtifactId() {
         return valueCase_ == 7;
       }
       /**
@@ -11098,17 +11098,17 @@ public final class Literals {
        * A reference to another Literal
        * </pre>
        *
-       * <code>.flyteidl.core.ArtifactID artifact = 7;</code>
+       * <code>.flyteidl.core.ArtifactID artifact_id = 7;</code>
        */
-      public flyteidl.core.IdentifierOuterClass.ArtifactID getArtifact() {
-        if (artifactBuilder_ == null) {
+      public flyteidl.core.IdentifierOuterClass.ArtifactID getArtifactId() {
+        if (artifactIdBuilder_ == null) {
           if (valueCase_ == 7) {
             return (flyteidl.core.IdentifierOuterClass.ArtifactID) value_;
           }
           return flyteidl.core.IdentifierOuterClass.ArtifactID.getDefaultInstance();
         } else {
           if (valueCase_ == 7) {
-            return artifactBuilder_.getMessage();
+            return artifactIdBuilder_.getMessage();
           }
           return flyteidl.core.IdentifierOuterClass.ArtifactID.getDefaultInstance();
         }
@@ -11118,17 +11118,17 @@ public final class Literals {
        * A reference to another Literal
        * </pre>
        *
-       * <code>.flyteidl.core.ArtifactID artifact = 7;</code>
+       * <code>.flyteidl.core.ArtifactID artifact_id = 7;</code>
        */
-      public Builder setArtifact(flyteidl.core.IdentifierOuterClass.ArtifactID value) {
-        if (artifactBuilder_ == null) {
+      public Builder setArtifactId(flyteidl.core.IdentifierOuterClass.ArtifactID value) {
+        if (artifactIdBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
           }
           value_ = value;
           onChanged();
         } else {
-          artifactBuilder_.setMessage(value);
+          artifactIdBuilder_.setMessage(value);
         }
         valueCase_ = 7;
         return this;
@@ -11138,15 +11138,15 @@ public final class Literals {
        * A reference to another Literal
        * </pre>
        *
-       * <code>.flyteidl.core.ArtifactID artifact = 7;</code>
+       * <code>.flyteidl.core.ArtifactID artifact_id = 7;</code>
        */
-      public Builder setArtifact(
+      public Builder setArtifactId(
           flyteidl.core.IdentifierOuterClass.ArtifactID.Builder builderForValue) {
-        if (artifactBuilder_ == null) {
+        if (artifactIdBuilder_ == null) {
           value_ = builderForValue.build();
           onChanged();
         } else {
-          artifactBuilder_.setMessage(builderForValue.build());
+          artifactIdBuilder_.setMessage(builderForValue.build());
         }
         valueCase_ = 7;
         return this;
@@ -11156,10 +11156,10 @@ public final class Literals {
        * A reference to another Literal
        * </pre>
        *
-       * <code>.flyteidl.core.ArtifactID artifact = 7;</code>
+       * <code>.flyteidl.core.ArtifactID artifact_id = 7;</code>
        */
-      public Builder mergeArtifact(flyteidl.core.IdentifierOuterClass.ArtifactID value) {
-        if (artifactBuilder_ == null) {
+      public Builder mergeArtifactId(flyteidl.core.IdentifierOuterClass.ArtifactID value) {
+        if (artifactIdBuilder_ == null) {
           if (valueCase_ == 7 &&
               value_ != flyteidl.core.IdentifierOuterClass.ArtifactID.getDefaultInstance()) {
             value_ = flyteidl.core.IdentifierOuterClass.ArtifactID.newBuilder((flyteidl.core.IdentifierOuterClass.ArtifactID) value_)
@@ -11170,9 +11170,9 @@ public final class Literals {
           onChanged();
         } else {
           if (valueCase_ == 7) {
-            artifactBuilder_.mergeFrom(value);
+            artifactIdBuilder_.mergeFrom(value);
           }
-          artifactBuilder_.setMessage(value);
+          artifactIdBuilder_.setMessage(value);
         }
         valueCase_ = 7;
         return this;
@@ -11182,10 +11182,10 @@ public final class Literals {
        * A reference to another Literal
        * </pre>
        *
-       * <code>.flyteidl.core.ArtifactID artifact = 7;</code>
+       * <code>.flyteidl.core.ArtifactID artifact_id = 7;</code>
        */
-      public Builder clearArtifact() {
-        if (artifactBuilder_ == null) {
+      public Builder clearArtifactId() {
+        if (artifactIdBuilder_ == null) {
           if (valueCase_ == 7) {
             valueCase_ = 0;
             value_ = null;
@@ -11196,7 +11196,7 @@ public final class Literals {
             valueCase_ = 0;
             value_ = null;
           }
-          artifactBuilder_.clear();
+          artifactIdBuilder_.clear();
         }
         return this;
       }
@@ -11205,21 +11205,21 @@ public final class Literals {
        * A reference to another Literal
        * </pre>
        *
-       * <code>.flyteidl.core.ArtifactID artifact = 7;</code>
+       * <code>.flyteidl.core.ArtifactID artifact_id = 7;</code>
        */
-      public flyteidl.core.IdentifierOuterClass.ArtifactID.Builder getArtifactBuilder() {
-        return getArtifactFieldBuilder().getBuilder();
+      public flyteidl.core.IdentifierOuterClass.ArtifactID.Builder getArtifactIdBuilder() {
+        return getArtifactIdFieldBuilder().getBuilder();
       }
       /**
        * <pre>
        * A reference to another Literal
        * </pre>
        *
-       * <code>.flyteidl.core.ArtifactID artifact = 7;</code>
+       * <code>.flyteidl.core.ArtifactID artifact_id = 7;</code>
        */
-      public flyteidl.core.IdentifierOuterClass.ArtifactIDOrBuilder getArtifactOrBuilder() {
-        if ((valueCase_ == 7) && (artifactBuilder_ != null)) {
-          return artifactBuilder_.getMessageOrBuilder();
+      public flyteidl.core.IdentifierOuterClass.ArtifactIDOrBuilder getArtifactIdOrBuilder() {
+        if ((valueCase_ == 7) && (artifactIdBuilder_ != null)) {
+          return artifactIdBuilder_.getMessageOrBuilder();
         } else {
           if (valueCase_ == 7) {
             return (flyteidl.core.IdentifierOuterClass.ArtifactID) value_;
@@ -11232,16 +11232,16 @@ public final class Literals {
        * A reference to another Literal
        * </pre>
        *
-       * <code>.flyteidl.core.ArtifactID artifact = 7;</code>
+       * <code>.flyteidl.core.ArtifactID artifact_id = 7;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
           flyteidl.core.IdentifierOuterClass.ArtifactID, flyteidl.core.IdentifierOuterClass.ArtifactID.Builder, flyteidl.core.IdentifierOuterClass.ArtifactIDOrBuilder> 
-          getArtifactFieldBuilder() {
-        if (artifactBuilder_ == null) {
+          getArtifactIdFieldBuilder() {
+        if (artifactIdBuilder_ == null) {
           if (!(valueCase_ == 7)) {
             value_ = flyteidl.core.IdentifierOuterClass.ArtifactID.getDefaultInstance();
           }
-          artifactBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+          artifactIdBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
               flyteidl.core.IdentifierOuterClass.ArtifactID, flyteidl.core.IdentifierOuterClass.ArtifactID.Builder, flyteidl.core.IdentifierOuterClass.ArtifactIDOrBuilder>(
                   (flyteidl.core.IdentifierOuterClass.ArtifactID) value_,
                   getParentForChildren(),
@@ -11250,7 +11250,7 @@ public final class Literals {
         }
         valueCase_ = 7;
         onChanged();;
-        return artifactBuilder_;
+        return artifactIdBuilder_;
       }
 
       private java.lang.Object hash_ = "";
@@ -19448,41 +19448,41 @@ public final class Literals {
       "gle.protobuf.StructH\000\022>\n\022structured_data" +
       "set\030\010 \001(\0132 .flyteidl.core.StructuredData" +
       "setH\000\022%\n\005union\030\t \001(\0132\024.flyteidl.core.Uni" +
-      "onH\000B\007\n\005value\"\365\002\n\007Literal\022\'\n\006scalar\030\001 \001(" +
+      "onH\000B\007\n\005value\"\370\002\n\007Literal\022\'\n\006scalar\030\001 \001(" +
       "\0132\025.flyteidl.core.ScalarH\000\0226\n\ncollection" +
       "\030\002 \001(\0132 .flyteidl.core.LiteralCollection" +
       "H\000\022(\n\003map\030\003 \001(\0132\031.flyteidl.core.LiteralM" +
-      "apH\000\022-\n\010artifact\030\007 \001(\0132\031.flyteidl.core.A" +
-      "rtifactIDH\000\022\014\n\004hash\030\004 \001(\t\0226\n\010metadata\030\005 " +
-      "\003(\0132$.flyteidl.core.Literal.MetadataEntr" +
-      "y\0220\n\014literal_type\030\006 \001(\0132\032.flyteidl.core." +
-      "LiteralType\032/\n\rMetadataEntry\022\013\n\003key\030\001 \001(" +
-      "\t\022\r\n\005value\030\002 \001(\t:\0028\001B\007\n\005value\"=\n\021Literal" +
-      "Collection\022(\n\010literals\030\001 \003(\0132\026.flyteidl." +
-      "core.Literal\"\220\001\n\nLiteralMap\0229\n\010literals\030" +
-      "\001 \003(\0132\'.flyteidl.core.LiteralMap.Literal" +
-      "sEntry\032G\n\rLiteralsEntry\022\013\n\003key\030\001 \001(\t\022%\n\005" +
-      "value\030\002 \001(\0132\026.flyteidl.core.Literal:\0028\001\"" +
-      "E\n\025BindingDataCollection\022,\n\010bindings\030\001 \003" +
-      "(\0132\032.flyteidl.core.BindingData\"\234\001\n\016Bindi" +
-      "ngDataMap\022=\n\010bindings\030\001 \003(\0132+.flyteidl.c" +
-      "ore.BindingDataMap.BindingsEntry\032K\n\rBind" +
-      "ingsEntry\022\013\n\003key\030\001 \001(\t\022)\n\005value\030\002 \001(\0132\032." +
-      "flyteidl.core.BindingData:\0028\001\";\n\tUnionIn" +
-      "fo\022.\n\ntargetType\030\001 \001(\0132\032.flyteidl.core.L" +
-      "iteralType\"\205\002\n\013BindingData\022\'\n\006scalar\030\001 \001" +
-      "(\0132\025.flyteidl.core.ScalarH\000\022:\n\ncollectio" +
-      "n\030\002 \001(\0132$.flyteidl.core.BindingDataColle" +
-      "ctionH\000\0221\n\007promise\030\003 \001(\0132\036.flyteidl.core" +
-      ".OutputReferenceH\000\022,\n\003map\030\004 \001(\0132\035.flytei" +
-      "dl.core.BindingDataMapH\000\022\'\n\005union\030\005 \001(\0132" +
-      "\030.flyteidl.core.UnionInfoB\007\n\005value\"C\n\007Bi" +
-      "nding\022\013\n\003var\030\001 \001(\t\022+\n\007binding\030\002 \001(\0132\032.fl" +
-      "yteidl.core.BindingData\"*\n\014KeyValuePair\022" +
-      "\013\n\003key\030\001 \001(\t\022\r\n\005value\030\002 \001(\t\" \n\rRetryStra" +
-      "tegy\022\017\n\007retries\030\005 \001(\rB6Z4github.com/flyt" +
-      "eorg/flyteidl/gen/pb-go/flyteidl/coreb\006p" +
-      "roto3"
+      "apH\000\0220\n\013artifact_id\030\007 \001(\0132\031.flyteidl.cor" +
+      "e.ArtifactIDH\000\022\014\n\004hash\030\004 \001(\t\0226\n\010metadata" +
+      "\030\005 \003(\0132$.flyteidl.core.Literal.MetadataE" +
+      "ntry\0220\n\014literal_type\030\006 \001(\0132\032.flyteidl.co" +
+      "re.LiteralType\032/\n\rMetadataEntry\022\013\n\003key\030\001" +
+      " \001(\t\022\r\n\005value\030\002 \001(\t:\0028\001B\007\n\005value\"=\n\021Lite" +
+      "ralCollection\022(\n\010literals\030\001 \003(\0132\026.flytei" +
+      "dl.core.Literal\"\220\001\n\nLiteralMap\0229\n\010litera" +
+      "ls\030\001 \003(\0132\'.flyteidl.core.LiteralMap.Lite" +
+      "ralsEntry\032G\n\rLiteralsEntry\022\013\n\003key\030\001 \001(\t\022" +
+      "%\n\005value\030\002 \001(\0132\026.flyteidl.core.Literal:\002" +
+      "8\001\"E\n\025BindingDataCollection\022,\n\010bindings\030" +
+      "\001 \003(\0132\032.flyteidl.core.BindingData\"\234\001\n\016Bi" +
+      "ndingDataMap\022=\n\010bindings\030\001 \003(\0132+.flyteid" +
+      "l.core.BindingDataMap.BindingsEntry\032K\n\rB" +
+      "indingsEntry\022\013\n\003key\030\001 \001(\t\022)\n\005value\030\002 \001(\013" +
+      "2\032.flyteidl.core.BindingData:\0028\001\";\n\tUnio" +
+      "nInfo\022.\n\ntargetType\030\001 \001(\0132\032.flyteidl.cor" +
+      "e.LiteralType\"\205\002\n\013BindingData\022\'\n\006scalar\030" +
+      "\001 \001(\0132\025.flyteidl.core.ScalarH\000\022:\n\ncollec" +
+      "tion\030\002 \001(\0132$.flyteidl.core.BindingDataCo" +
+      "llectionH\000\0221\n\007promise\030\003 \001(\0132\036.flyteidl.c" +
+      "ore.OutputReferenceH\000\022,\n\003map\030\004 \001(\0132\035.fly" +
+      "teidl.core.BindingDataMapH\000\022\'\n\005union\030\005 \001" +
+      "(\0132\030.flyteidl.core.UnionInfoB\007\n\005value\"C\n" +
+      "\007Binding\022\013\n\003var\030\001 \001(\t\022+\n\007binding\030\002 \001(\0132\032" +
+      ".flyteidl.core.BindingData\"*\n\014KeyValuePa" +
+      "ir\022\013\n\003key\030\001 \001(\t\022\r\n\005value\030\002 \001(\t\" \n\rRetryS" +
+      "trategy\022\017\n\007retries\030\005 \001(\rB6Z4github.com/f" +
+      "lyteorg/flyteidl/gen/pb-go/flyteidl/core" +
+      "b\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
@@ -19566,7 +19566,7 @@ public final class Literals {
     internal_static_flyteidl_core_Literal_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_flyteidl_core_Literal_descriptor,
-        new java.lang.String[] { "Scalar", "Collection", "Map", "Artifact", "Hash", "Metadata", "LiteralType", "Value", });
+        new java.lang.String[] { "Scalar", "Collection", "Map", "ArtifactId", "Hash", "Metadata", "LiteralType", "Value", });
     internal_static_flyteidl_core_Literal_MetadataEntry_descriptor =
       internal_static_flyteidl_core_Literal_descriptor.getNestedTypes().get(0);
     internal_static_flyteidl_core_Literal_MetadataEntry_fieldAccessorTable = new

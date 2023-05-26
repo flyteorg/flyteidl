@@ -6922,7 +6922,7 @@
                  * @property {flyteidl.core.IScalar|null} [scalar] Literal scalar
                  * @property {flyteidl.core.ILiteralCollection|null} [collection] Literal collection
                  * @property {flyteidl.core.ILiteralMap|null} [map] Literal map
-                 * @property {flyteidl.core.IArtifactID|null} [artifact] Literal artifact
+                 * @property {flyteidl.core.IArtifactID|null} [artifactId] Literal artifactId
                  * @property {string|null} [hash] Literal hash
                  * @property {Object.<string,string>|null} [metadata] Literal metadata
                  * @property {flyteidl.core.ILiteralType|null} [literalType] Literal literalType
@@ -6969,12 +6969,12 @@
                 Literal.prototype.map = null;
     
                 /**
-                 * Literal artifact.
-                 * @member {flyteidl.core.IArtifactID|null|undefined} artifact
+                 * Literal artifactId.
+                 * @member {flyteidl.core.IArtifactID|null|undefined} artifactId
                  * @memberof flyteidl.core.Literal
                  * @instance
                  */
-                Literal.prototype.artifact = null;
+                Literal.prototype.artifactId = null;
     
                 /**
                  * Literal hash.
@@ -7005,12 +7005,12 @@
     
                 /**
                  * Literal value.
-                 * @member {"scalar"|"collection"|"map"|"artifact"|undefined} value
+                 * @member {"scalar"|"collection"|"map"|"artifactId"|undefined} value
                  * @memberof flyteidl.core.Literal
                  * @instance
                  */
                 Object.defineProperty(Literal.prototype, "value", {
-                    get: $util.oneOfGetter($oneOfFields = ["scalar", "collection", "map", "artifact"]),
+                    get: $util.oneOfGetter($oneOfFields = ["scalar", "collection", "map", "artifactId"]),
                     set: $util.oneOfSetter($oneOfFields)
                 });
     
@@ -7051,8 +7051,8 @@
                             writer.uint32(/* id 5, wireType 2 =*/42).fork().uint32(/* id 1, wireType 2 =*/10).string(keys[i]).uint32(/* id 2, wireType 2 =*/18).string(message.metadata[keys[i]]).ldelim();
                     if (message.literalType != null && message.hasOwnProperty("literalType"))
                         $root.flyteidl.core.LiteralType.encode(message.literalType, writer.uint32(/* id 6, wireType 2 =*/50).fork()).ldelim();
-                    if (message.artifact != null && message.hasOwnProperty("artifact"))
-                        $root.flyteidl.core.ArtifactID.encode(message.artifact, writer.uint32(/* id 7, wireType 2 =*/58).fork()).ldelim();
+                    if (message.artifactId != null && message.hasOwnProperty("artifactId"))
+                        $root.flyteidl.core.ArtifactID.encode(message.artifactId, writer.uint32(/* id 7, wireType 2 =*/58).fork()).ldelim();
                     return writer;
                 };
     
@@ -7084,7 +7084,7 @@
                             message.map = $root.flyteidl.core.LiteralMap.decode(reader, reader.uint32());
                             break;
                         case 7:
-                            message.artifact = $root.flyteidl.core.ArtifactID.decode(reader, reader.uint32());
+                            message.artifactId = $root.flyteidl.core.ArtifactID.decode(reader, reader.uint32());
                             break;
                         case 4:
                             message.hash = reader.string();
@@ -7148,14 +7148,14 @@
                                 return "map." + error;
                         }
                     }
-                    if (message.artifact != null && message.hasOwnProperty("artifact")) {
+                    if (message.artifactId != null && message.hasOwnProperty("artifactId")) {
                         if (properties.value === 1)
                             return "value: multiple values";
                         properties.value = 1;
                         {
-                            var error = $root.flyteidl.core.ArtifactID.verify(message.artifact);
+                            var error = $root.flyteidl.core.ArtifactID.verify(message.artifactId);
                             if (error)
-                                return "artifact." + error;
+                                return "artifactId." + error;
                         }
                     }
                     if (message.hash != null && message.hasOwnProperty("hash"))

@@ -936,7 +936,7 @@ pub mod literal {
         Map(super::LiteralMap),
         /// A reference to another Literal
         #[prost(message, tag="7")]
-        Artifact(super::ArtifactId),
+        ArtifactId(super::ArtifactId),
     }
 }
 /// A collection of literals. This is a workaround since oneofs in proto messages cannot contain a repeated field.

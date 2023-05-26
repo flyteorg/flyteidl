@@ -2888,8 +2888,8 @@ export namespace flyteidl {
             /** Literal map */
             map?: (flyteidl.core.ILiteralMap|null);
 
-            /** Literal artifact */
-            artifact?: (flyteidl.core.IArtifactID|null);
+            /** Literal artifactId */
+            artifactId?: (flyteidl.core.IArtifactID|null);
 
             /** Literal hash */
             hash?: (string|null);
@@ -2919,8 +2919,8 @@ export namespace flyteidl {
             /** Literal map. */
             public map?: (flyteidl.core.ILiteralMap|null);
 
-            /** Literal artifact. */
-            public artifact?: (flyteidl.core.IArtifactID|null);
+            /** Literal artifactId. */
+            public artifactId?: (flyteidl.core.IArtifactID|null);
 
             /** Literal hash. */
             public hash: string;
@@ -2932,7 +2932,7 @@ export namespace flyteidl {
             public literalType?: (flyteidl.core.ILiteralType|null);
 
             /** Literal value. */
-            public value?: ("scalar"|"collection"|"map"|"artifact");
+            public value?: ("scalar"|"collection"|"map"|"artifactId");
 
             /**
              * Creates a new Literal instance using the specified properties.

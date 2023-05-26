@@ -104,7 +104,7 @@ class LiteralDefaultTypeInternal {
   const ::flyteidl::core::Scalar* scalar_;
   const ::flyteidl::core::LiteralCollection* collection_;
   const ::flyteidl::core::LiteralMap* map_;
-  const ::flyteidl::core::ArtifactID* artifact_;
+  const ::flyteidl::core::ArtifactID* artifact_id_;
 } _Literal_default_instance_;
 class LiteralCollectionDefaultTypeInternal {
  public:
@@ -553,7 +553,7 @@ const ::google::protobuf::uint32 TableStruct_flyteidl_2fcore_2fliterals_2eproto:
   offsetof(::flyteidl::core::LiteralDefaultTypeInternal, scalar_),
   offsetof(::flyteidl::core::LiteralDefaultTypeInternal, collection_),
   offsetof(::flyteidl::core::LiteralDefaultTypeInternal, map_),
-  offsetof(::flyteidl::core::LiteralDefaultTypeInternal, artifact_),
+  offsetof(::flyteidl::core::LiteralDefaultTypeInternal, artifact_id_),
   PROTOBUF_FIELD_OFFSET(::flyteidl::core::Literal, hash_),
   PROTOBUF_FIELD_OFFSET(::flyteidl::core::Literal, metadata_),
   PROTOBUF_FIELD_OFFSET(::flyteidl::core::Literal, literal_type_),
@@ -730,46 +730,46 @@ const char descriptor_table_protodef_flyteidl_2fcore_2fliterals_2eproto[] =
   "gle.protobuf.StructH\000\022>\n\022structured_data"
   "set\030\010 \001(\0132 .flyteidl.core.StructuredData"
   "setH\000\022%\n\005union\030\t \001(\0132\024.flyteidl.core.Uni"
-  "onH\000B\007\n\005value\"\365\002\n\007Literal\022\'\n\006scalar\030\001 \001("
+  "onH\000B\007\n\005value\"\370\002\n\007Literal\022\'\n\006scalar\030\001 \001("
   "\0132\025.flyteidl.core.ScalarH\000\0226\n\ncollection"
   "\030\002 \001(\0132 .flyteidl.core.LiteralCollection"
   "H\000\022(\n\003map\030\003 \001(\0132\031.flyteidl.core.LiteralM"
-  "apH\000\022-\n\010artifact\030\007 \001(\0132\031.flyteidl.core.A"
-  "rtifactIDH\000\022\014\n\004hash\030\004 \001(\t\0226\n\010metadata\030\005 "
-  "\003(\0132$.flyteidl.core.Literal.MetadataEntr"
-  "y\0220\n\014literal_type\030\006 \001(\0132\032.flyteidl.core."
-  "LiteralType\032/\n\rMetadataEntry\022\013\n\003key\030\001 \001("
-  "\t\022\r\n\005value\030\002 \001(\t:\0028\001B\007\n\005value\"=\n\021Literal"
-  "Collection\022(\n\010literals\030\001 \003(\0132\026.flyteidl."
-  "core.Literal\"\220\001\n\nLiteralMap\0229\n\010literals\030"
-  "\001 \003(\0132\'.flyteidl.core.LiteralMap.Literal"
-  "sEntry\032G\n\rLiteralsEntry\022\013\n\003key\030\001 \001(\t\022%\n\005"
-  "value\030\002 \001(\0132\026.flyteidl.core.Literal:\0028\001\""
-  "E\n\025BindingDataCollection\022,\n\010bindings\030\001 \003"
-  "(\0132\032.flyteidl.core.BindingData\"\234\001\n\016Bindi"
-  "ngDataMap\022=\n\010bindings\030\001 \003(\0132+.flyteidl.c"
-  "ore.BindingDataMap.BindingsEntry\032K\n\rBind"
-  "ingsEntry\022\013\n\003key\030\001 \001(\t\022)\n\005value\030\002 \001(\0132\032."
-  "flyteidl.core.BindingData:\0028\001\";\n\tUnionIn"
-  "fo\022.\n\ntargetType\030\001 \001(\0132\032.flyteidl.core.L"
-  "iteralType\"\205\002\n\013BindingData\022\'\n\006scalar\030\001 \001"
-  "(\0132\025.flyteidl.core.ScalarH\000\022:\n\ncollectio"
-  "n\030\002 \001(\0132$.flyteidl.core.BindingDataColle"
-  "ctionH\000\0221\n\007promise\030\003 \001(\0132\036.flyteidl.core"
-  ".OutputReferenceH\000\022,\n\003map\030\004 \001(\0132\035.flytei"
-  "dl.core.BindingDataMapH\000\022\'\n\005union\030\005 \001(\0132"
-  "\030.flyteidl.core.UnionInfoB\007\n\005value\"C\n\007Bi"
-  "nding\022\013\n\003var\030\001 \001(\t\022+\n\007binding\030\002 \001(\0132\032.fl"
-  "yteidl.core.BindingData\"*\n\014KeyValuePair\022"
-  "\013\n\003key\030\001 \001(\t\022\r\n\005value\030\002 \001(\t\" \n\rRetryStra"
-  "tegy\022\017\n\007retries\030\005 \001(\rB6Z4github.com/flyt"
-  "eorg/flyteidl/gen/pb-go/flyteidl/coreb\006p"
-  "roto3"
+  "apH\000\0220\n\013artifact_id\030\007 \001(\0132\031.flyteidl.cor"
+  "e.ArtifactIDH\000\022\014\n\004hash\030\004 \001(\t\0226\n\010metadata"
+  "\030\005 \003(\0132$.flyteidl.core.Literal.MetadataE"
+  "ntry\0220\n\014literal_type\030\006 \001(\0132\032.flyteidl.co"
+  "re.LiteralType\032/\n\rMetadataEntry\022\013\n\003key\030\001"
+  " \001(\t\022\r\n\005value\030\002 \001(\t:\0028\001B\007\n\005value\"=\n\021Lite"
+  "ralCollection\022(\n\010literals\030\001 \003(\0132\026.flytei"
+  "dl.core.Literal\"\220\001\n\nLiteralMap\0229\n\010litera"
+  "ls\030\001 \003(\0132\'.flyteidl.core.LiteralMap.Lite"
+  "ralsEntry\032G\n\rLiteralsEntry\022\013\n\003key\030\001 \001(\t\022"
+  "%\n\005value\030\002 \001(\0132\026.flyteidl.core.Literal:\002"
+  "8\001\"E\n\025BindingDataCollection\022,\n\010bindings\030"
+  "\001 \003(\0132\032.flyteidl.core.BindingData\"\234\001\n\016Bi"
+  "ndingDataMap\022=\n\010bindings\030\001 \003(\0132+.flyteid"
+  "l.core.BindingDataMap.BindingsEntry\032K\n\rB"
+  "indingsEntry\022\013\n\003key\030\001 \001(\t\022)\n\005value\030\002 \001(\013"
+  "2\032.flyteidl.core.BindingData:\0028\001\";\n\tUnio"
+  "nInfo\022.\n\ntargetType\030\001 \001(\0132\032.flyteidl.cor"
+  "e.LiteralType\"\205\002\n\013BindingData\022\'\n\006scalar\030"
+  "\001 \001(\0132\025.flyteidl.core.ScalarH\000\022:\n\ncollec"
+  "tion\030\002 \001(\0132$.flyteidl.core.BindingDataCo"
+  "llectionH\000\0221\n\007promise\030\003 \001(\0132\036.flyteidl.c"
+  "ore.OutputReferenceH\000\022,\n\003map\030\004 \001(\0132\035.fly"
+  "teidl.core.BindingDataMapH\000\022\'\n\005union\030\005 \001"
+  "(\0132\030.flyteidl.core.UnionInfoB\007\n\005value\"C\n"
+  "\007Binding\022\013\n\003var\030\001 \001(\t\022+\n\007binding\030\002 \001(\0132\032"
+  ".flyteidl.core.BindingData\"*\n\014KeyValuePa"
+  "ir\022\013\n\003key\030\001 \001(\t\022\r\n\005value\030\002 \001(\t\" \n\rRetryS"
+  "trategy\022\017\n\007retries\030\005 \001(\rB6Z4github.com/f"
+  "lyteorg/flyteidl/gen/pb-go/flyteidl/core"
+  "b\006proto3"
   ;
 ::google::protobuf::internal::DescriptorTable descriptor_table_flyteidl_2fcore_2fliterals_2eproto = {
   false, InitDefaults_flyteidl_2fcore_2fliterals_2eproto, 
   descriptor_table_protodef_flyteidl_2fcore_2fliterals_2eproto,
-  "flyteidl/core/literals.proto", &assign_descriptors_table_flyteidl_2fcore_2fliterals_2eproto, 2685,
+  "flyteidl/core/literals.proto", &assign_descriptors_table_flyteidl_2fcore_2fliterals_2eproto, 2688,
 };
 
 void AddDescriptors_flyteidl_2fcore_2fliterals_2eproto() {
@@ -5073,7 +5073,7 @@ void Literal::InitAsDefaultInstance() {
       ::flyteidl::core::LiteralCollection::internal_default_instance());
   ::flyteidl::core::_Literal_default_instance_.map_ = const_cast< ::flyteidl::core::LiteralMap*>(
       ::flyteidl::core::LiteralMap::internal_default_instance());
-  ::flyteidl::core::_Literal_default_instance_.artifact_ = const_cast< ::flyteidl::core::ArtifactID*>(
+  ::flyteidl::core::_Literal_default_instance_.artifact_id_ = const_cast< ::flyteidl::core::ArtifactID*>(
       ::flyteidl::core::ArtifactID::internal_default_instance());
   ::flyteidl::core::_Literal_default_instance_._instance.get_mutable()->literal_type_ = const_cast< ::flyteidl::core::LiteralType*>(
       ::flyteidl::core::LiteralType::internal_default_instance());
@@ -5083,7 +5083,7 @@ class Literal::HasBitSetters {
   static const ::flyteidl::core::Scalar& scalar(const Literal* msg);
   static const ::flyteidl::core::LiteralCollection& collection(const Literal* msg);
   static const ::flyteidl::core::LiteralMap& map(const Literal* msg);
-  static const ::flyteidl::core::ArtifactID& artifact(const Literal* msg);
+  static const ::flyteidl::core::ArtifactID& artifact_id(const Literal* msg);
   static const ::flyteidl::core::LiteralType& literal_type(const Literal* msg);
 };
 
@@ -5100,8 +5100,8 @@ Literal::HasBitSetters::map(const Literal* msg) {
   return *msg->value_.map_;
 }
 const ::flyteidl::core::ArtifactID&
-Literal::HasBitSetters::artifact(const Literal* msg) {
-  return *msg->value_.artifact_;
+Literal::HasBitSetters::artifact_id(const Literal* msg) {
+  return *msg->value_.artifact_id_;
 }
 const ::flyteidl::core::LiteralType&
 Literal::HasBitSetters::literal_type(const Literal* msg) {
@@ -5149,23 +5149,23 @@ void Literal::set_allocated_map(::flyteidl::core::LiteralMap* map) {
   }
   // @@protoc_insertion_point(field_set_allocated:flyteidl.core.Literal.map)
 }
-void Literal::set_allocated_artifact(::flyteidl::core::ArtifactID* artifact) {
+void Literal::set_allocated_artifact_id(::flyteidl::core::ArtifactID* artifact_id) {
   ::google::protobuf::Arena* message_arena = GetArenaNoVirtual();
   clear_value();
-  if (artifact) {
+  if (artifact_id) {
     ::google::protobuf::Arena* submessage_arena = nullptr;
     if (message_arena != submessage_arena) {
-      artifact = ::google::protobuf::internal::GetOwnedMessage(
-          message_arena, artifact, submessage_arena);
+      artifact_id = ::google::protobuf::internal::GetOwnedMessage(
+          message_arena, artifact_id, submessage_arena);
     }
-    set_has_artifact();
-    value_.artifact_ = artifact;
+    set_has_artifact_id();
+    value_.artifact_id_ = artifact_id;
   }
-  // @@protoc_insertion_point(field_set_allocated:flyteidl.core.Literal.artifact)
+  // @@protoc_insertion_point(field_set_allocated:flyteidl.core.Literal.artifact_id)
 }
-void Literal::clear_artifact() {
-  if (has_artifact()) {
-    delete value_.artifact_;
+void Literal::clear_artifact_id() {
+  if (has_artifact_id()) {
+    delete value_.artifact_id_;
     clear_has_value();
   }
 }
@@ -5179,7 +5179,7 @@ void Literal::clear_literal_type() {
 const int Literal::kScalarFieldNumber;
 const int Literal::kCollectionFieldNumber;
 const int Literal::kMapFieldNumber;
-const int Literal::kArtifactFieldNumber;
+const int Literal::kArtifactIdFieldNumber;
 const int Literal::kHashFieldNumber;
 const int Literal::kMetadataFieldNumber;
 const int Literal::kLiteralTypeFieldNumber;
@@ -5218,8 +5218,8 @@ Literal::Literal(const Literal& from)
       mutable_map()->::flyteidl::core::LiteralMap::MergeFrom(from.map());
       break;
     }
-    case kArtifact: {
-      mutable_artifact()->::flyteidl::core::ArtifactID::MergeFrom(from.artifact());
+    case kArtifactId: {
+      mutable_artifact_id()->::flyteidl::core::ArtifactID::MergeFrom(from.artifact_id());
       break;
     }
     case VALUE_NOT_SET: {
@@ -5274,8 +5274,8 @@ void Literal::clear_value() {
       delete value_.map_;
       break;
     }
-    case kArtifact: {
-      delete value_.artifact_;
+    case kArtifactId: {
+      delete value_.artifact_id_;
       break;
     }
     case VALUE_NOT_SET: {
@@ -5402,13 +5402,13 @@ const char* Literal::_InternalParse(const char* begin, const char* end, void* ob
             {parser_till_end, object}, ptr - size, ptr));
         break;
       }
-      // .flyteidl.core.ArtifactID artifact = 7;
+      // .flyteidl.core.ArtifactID artifact_id = 7;
       case 7: {
         if (static_cast<::google::protobuf::uint8>(tag) != 58) goto handle_unusual;
         ptr = ::google::protobuf::io::ReadSize(ptr, &size);
         GOOGLE_PROTOBUF_PARSER_ASSERT(ptr);
         parser_till_end = ::flyteidl::core::ArtifactID::_InternalParse;
-        object = msg->mutable_artifact();
+        object = msg->mutable_artifact_id();
         if (size > end - ptr) goto len_delim_till_end;
         ptr += size;
         GOOGLE_PROTOBUF_PARSER_ASSERT(ctx->ParseExactRange(
@@ -5534,11 +5534,11 @@ bool Literal::MergePartialFromCodedStream(
         break;
       }
 
-      // .flyteidl.core.ArtifactID artifact = 7;
+      // .flyteidl.core.ArtifactID artifact_id = 7;
       case 7: {
         if (static_cast< ::google::protobuf::uint8>(tag) == (58 & 0xFF)) {
           DO_(::google::protobuf::internal::WireFormatLite::ReadMessage(
-               input, mutable_artifact()));
+               input, mutable_artifact_id()));
         } else {
           goto handle_unusual;
         }
@@ -5655,10 +5655,10 @@ void Literal::SerializeWithCachedSizes(
       6, HasBitSetters::literal_type(this), output);
   }
 
-  // .flyteidl.core.ArtifactID artifact = 7;
-  if (has_artifact()) {
+  // .flyteidl.core.ArtifactID artifact_id = 7;
+  if (has_artifact_id()) {
     ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
-      7, HasBitSetters::artifact(this), output);
+      7, HasBitSetters::artifact_id(this), output);
   }
 
   if (_internal_metadata_.have_unknown_fields()) {
@@ -5762,11 +5762,11 @@ void Literal::SerializeWithCachedSizes(
         6, HasBitSetters::literal_type(this), target);
   }
 
-  // .flyteidl.core.ArtifactID artifact = 7;
-  if (has_artifact()) {
+  // .flyteidl.core.ArtifactID artifact_id = 7;
+  if (has_artifact_id()) {
     target = ::google::protobuf::internal::WireFormatLite::
       InternalWriteMessageToArray(
-        7, HasBitSetters::artifact(this), target);
+        7, HasBitSetters::artifact_id(this), target);
   }
 
   if (_internal_metadata_.have_unknown_fields()) {
@@ -5840,11 +5840,11 @@ size_t Literal::ByteSizeLong() const {
           *value_.map_);
       break;
     }
-    // .flyteidl.core.ArtifactID artifact = 7;
-    case kArtifact: {
+    // .flyteidl.core.ArtifactID artifact_id = 7;
+    case kArtifactId: {
       total_size += 1 +
         ::google::protobuf::internal::WireFormatLite::MessageSize(
-          *value_.artifact_);
+          *value_.artifact_id_);
       break;
     }
     case VALUE_NOT_SET: {
@@ -5899,8 +5899,8 @@ void Literal::MergeFrom(const Literal& from) {
       mutable_map()->::flyteidl::core::LiteralMap::MergeFrom(from.map());
       break;
     }
-    case kArtifact: {
-      mutable_artifact()->::flyteidl::core::ArtifactID::MergeFrom(from.artifact());
+    case kArtifactId: {
+      mutable_artifact_id()->::flyteidl::core::ArtifactID::MergeFrom(from.artifact_id());
       break;
     }
     case VALUE_NOT_SET: {

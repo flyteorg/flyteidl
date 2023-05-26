@@ -4760,12 +4760,6 @@ definitions:
                       node_id: "node_id"
                     retry_attempt: 5
                   value:
-                    artifact:
-                      artifact_key:
-                        domain: "domain"
-                        name: "name"
-                        project: "project"
-                      version: "version"
                     scalar:
                       schema:
                         type:
@@ -4874,6 +4868,12 @@ definitions:
                       literals:
                       - null
                       - null
+                    artifact_id:
+                      artifact_key:
+                        domain: "domain"
+                        name: "name"
+                        project: "project"
+                      version: "version"
                     map:
                       literals: {}
                     hash: "hash"
@@ -4992,12 +4992,6 @@ definitions:
           parameters:
             key:
               default:
-                artifact:
-                  artifact_key:
-                    domain: "domain"
-                    name: "name"
-                    project: "project"
-                  version: "version"
                 scalar:
                   schema:
                     type:
@@ -5106,6 +5100,12 @@ definitions:
                   literals:
                   - null
                   - null
+                artifact_id:
+                  artifact_key:
+                    domain: "domain"
+                    name: "name"
+                    project: "project"
+                  version: "version"
                 map:
                   literals: {}
                 hash: "hash"
@@ -5248,12 +5248,6 @@ definitions:
                         node_id: "node_id"
                       retry_attempt: 5
                     value:
-                      artifact:
-                        artifact_key:
-                          domain: "domain"
-                          name: "name"
-                          project: "project"
-                        version: "version"
                       scalar:
                         schema:
                           type:
@@ -5362,6 +5356,12 @@ definitions:
                         literals:
                         - null
                         - null
+                      artifact_id:
+                        artifact_key:
+                          domain: "domain"
+                          name: "name"
+                          project: "project"
+                        version: "version"
                       map:
                         literals: {}
                       hash: "hash"
@@ -5567,12 +5567,6 @@ definitions:
           parameters:
             key:
               default:
-                artifact:
-                  artifact_key:
-                    domain: "domain"
-                    name: "name"
-                    project: "project"
-                  version: "version"
                 scalar:
                   schema:
                     type:
@@ -5681,6 +5675,12 @@ definitions:
                   literals:
                   - null
                   - null
+                artifact_id:
+                  artifact_key:
+                    domain: "domain"
+                    name: "name"
+                    project: "project"
+                  version: "version"
                 map:
                   literals: {}
                 hash: "hash"
@@ -5823,12 +5823,6 @@ definitions:
                         node_id: "node_id"
                       retry_attempt: 5
                     value:
-                      artifact:
-                        artifact_key:
-                          domain: "domain"
-                          name: "name"
-                          project: "project"
-                        version: "version"
                       scalar:
                         schema:
                           type:
@@ -5937,6 +5931,12 @@ definitions:
                         literals:
                         - null
                         - null
+                      artifact_id:
+                        artifact_key:
+                          domain: "domain"
+                          name: "name"
+                          project: "project"
+                        version: "version"
                       map:
                         literals: {}
                       hash: "hash"
@@ -6227,12 +6227,6 @@ definitions:
                     node_id: "node_id"
                   retry_attempt: 5
                 value:
-                  artifact:
-                    artifact_key:
-                      domain: "domain"
-                      name: "name"
-                      project: "project"
-                    version: "version"
                   scalar:
                     schema:
                       type:
@@ -6341,6 +6335,12 @@ definitions:
                     literals:
                     - null
                     - null
+                  artifact_id:
+                    artifact_key:
+                      domain: "domain"
+                      name: "name"
+                      project: "project"
+                    version: "version"
                   map:
                     literals: {}
                   hash: "hash"
@@ -6459,12 +6459,6 @@ definitions:
         parameters:
           key:
             default:
-              artifact:
-                artifact_key:
-                  domain: "domain"
-                  name: "name"
-                  project: "project"
-                version: "version"
               scalar:
                 schema:
                   type:
@@ -6573,6 +6567,12 @@ definitions:
                 literals:
                 - null
                 - null
+              artifact_id:
+                artifact_key:
+                  domain: "domain"
+                  name: "name"
+                  project: "project"
+                version: "version"
               map:
                 literals: {}
               hash: "hash"
@@ -6715,12 +6715,6 @@ definitions:
                       node_id: "node_id"
                     retry_attempt: 5
                   value:
-                    artifact:
-                      artifact_key:
-                        domain: "domain"
-                        name: "name"
-                        project: "project"
-                      version: "version"
                     scalar:
                       schema:
                         type:
@@ -6829,6 +6823,12 @@ definitions:
                       literals:
                       - null
                       - null
+                    artifact_id:
+                      artifact_key:
+                        domain: "domain"
+                        name: "name"
+                        project: "project"
+                      version: "version"
                     map:
                       literals: {}
                     hash: "hash"
@@ -7085,12 +7085,6 @@ definitions:
                         node_id: "node_id"
                       retry_attempt: 5
                     value:
-                      artifact:
-                        artifact_key:
-                          domain: "domain"
-                          name: "name"
-                          project: "project"
-                        version: "version"
                       scalar:
                         schema:
                           type:
@@ -7199,6 +7193,12 @@ definitions:
                         literals:
                         - null
                         - null
+                      artifact_id:
+                        artifact_key:
+                          domain: "domain"
+                          name: "name"
+                          project: "project"
+                        version: "version"
                       map:
                         literals: {}
                       hash: "hash"
@@ -7317,12 +7317,6 @@ definitions:
             parameters:
               key:
                 default:
-                  artifact:
-                    artifact_key:
-                      domain: "domain"
-                      name: "name"
-                      project: "project"
-                    version: "version"
                   scalar:
                     schema:
                       type:
@@ -7431,6 +7425,12 @@ definitions:
                     literals:
                     - null
                     - null
+                  artifact_id:
+                    artifact_key:
+                      domain: "domain"
+                      name: "name"
+                      project: "project"
+                    version: "version"
                   map:
                     literals: {}
                   hash: "hash"
@@ -7573,12 +7573,6 @@ definitions:
                           node_id: "node_id"
                         retry_attempt: 5
                       value:
-                        artifact:
-                          artifact_key:
-                            domain: "domain"
-                            name: "name"
-                            project: "project"
-                          version: "version"
                         scalar:
                           schema:
                             type:
@@ -7687,6 +7681,12 @@ definitions:
                           literals:
                           - null
                           - null
+                        artifact_id:
+                          artifact_key:
+                            domain: "domain"
+                            name: "name"
+                            project: "project"
+                          version: "version"
                         map:
                           literals: {}
                         hash: "hash"
@@ -7892,12 +7892,6 @@ definitions:
             parameters:
               key:
                 default:
-                  artifact:
-                    artifact_key:
-                      domain: "domain"
-                      name: "name"
-                      project: "project"
-                    version: "version"
                   scalar:
                     schema:
                       type:
@@ -8006,6 +8000,12 @@ definitions:
                     literals:
                     - null
                     - null
+                  artifact_id:
+                    artifact_key:
+                      domain: "domain"
+                      name: "name"
+                      project: "project"
+                    version: "version"
                   map:
                     literals: {}
                   hash: "hash"
@@ -8148,12 +8148,6 @@ definitions:
                           node_id: "node_id"
                         retry_attempt: 5
                       value:
-                        artifact:
-                          artifact_key:
-                            domain: "domain"
-                            name: "name"
-                            project: "project"
-                          version: "version"
                         scalar:
                           schema:
                             type:
@@ -8262,6 +8256,12 @@ definitions:
                           literals:
                           - null
                           - null
+                        artifact_id:
+                          artifact_key:
+                            domain: "domain"
+                            name: "name"
+                            project: "project"
+                          version: "version"
                         map:
                           literals: {}
                         hash: "hash"
@@ -8532,12 +8532,6 @@ definitions:
                         node_id: "node_id"
                       retry_attempt: 5
                     value:
-                      artifact:
-                        artifact_key:
-                          domain: "domain"
-                          name: "name"
-                          project: "project"
-                        version: "version"
                       scalar:
                         schema:
                           type:
@@ -8646,6 +8640,12 @@ definitions:
                         literals:
                         - null
                         - null
+                      artifact_id:
+                        artifact_key:
+                          domain: "domain"
+                          name: "name"
+                          project: "project"
+                        version: "version"
                       map:
                         literals: {}
                       hash: "hash"
@@ -8764,12 +8764,6 @@ definitions:
             parameters:
               key:
                 default:
-                  artifact:
-                    artifact_key:
-                      domain: "domain"
-                      name: "name"
-                      project: "project"
-                    version: "version"
                   scalar:
                     schema:
                       type:
@@ -8878,6 +8872,12 @@ definitions:
                     literals:
                     - null
                     - null
+                  artifact_id:
+                    artifact_key:
+                      domain: "domain"
+                      name: "name"
+                      project: "project"
+                    version: "version"
                   map:
                     literals: {}
                   hash: "hash"
@@ -9020,12 +9020,6 @@ definitions:
                           node_id: "node_id"
                         retry_attempt: 5
                       value:
-                        artifact:
-                          artifact_key:
-                            domain: "domain"
-                            name: "name"
-                            project: "project"
-                          version: "version"
                         scalar:
                           schema:
                             type:
@@ -9134,6 +9128,12 @@ definitions:
                           literals:
                           - null
                           - null
+                        artifact_id:
+                          artifact_key:
+                            domain: "domain"
+                            name: "name"
+                            project: "project"
+                          version: "version"
                         map:
                           literals: {}
                         hash: "hash"
@@ -9339,12 +9339,6 @@ definitions:
             parameters:
               key:
                 default:
-                  artifact:
-                    artifact_key:
-                      domain: "domain"
-                      name: "name"
-                      project: "project"
-                    version: "version"
                   scalar:
                     schema:
                       type:
@@ -9453,6 +9447,12 @@ definitions:
                     literals:
                     - null
                     - null
+                  artifact_id:
+                    artifact_key:
+                      domain: "domain"
+                      name: "name"
+                      project: "project"
+                    version: "version"
                   map:
                     literals: {}
                   hash: "hash"
@@ -9595,12 +9595,6 @@ definitions:
                           node_id: "node_id"
                         retry_attempt: 5
                       value:
-                        artifact:
-                          artifact_key:
-                            domain: "domain"
-                            name: "name"
-                            project: "project"
-                          version: "version"
                         scalar:
                           schema:
                             type:
@@ -9709,6 +9703,12 @@ definitions:
                           literals:
                           - null
                           - null
+                        artifact_id:
+                          artifact_key:
+                            domain: "domain"
+                            name: "name"
+                            project: "project"
+                          version: "version"
                         map:
                           literals: {}
                         hash: "hash"
@@ -10085,12 +10085,6 @@ definitions:
         parameters:
           key:
             default:
-              artifact:
-                artifact_key:
-                  domain: "domain"
-                  name: "name"
-                  project: "project"
-                version: "version"
               scalar:
                 schema:
                   type:
@@ -10199,6 +10193,12 @@ definitions:
                 literals:
                 - null
                 - null
+              artifact_id:
+                artifact_key:
+                  domain: "domain"
+                  name: "name"
+                  project: "project"
+                version: "version"
               map:
                 literals: {}
               hash: "hash"
@@ -10341,12 +10341,6 @@ definitions:
                       node_id: "node_id"
                     retry_attempt: 5
                   value:
-                    artifact:
-                      artifact_key:
-                        domain: "domain"
-                        name: "name"
-                        project: "project"
-                      version: "version"
                     scalar:
                       schema:
                         type:
@@ -10455,6 +10449,12 @@ definitions:
                       literals:
                       - null
                       - null
+                    artifact_id:
+                      artifact_key:
+                        domain: "domain"
+                        name: "name"
+                        project: "project"
+                      version: "version"
                     map:
                       literals: {}
                     hash: "hash"
@@ -13443,12 +13443,6 @@ definitions:
                               node_id: "node_id"
                             retry_attempt: 5
                           value:
-                            artifact:
-                              artifact_key:
-                                domain: "domain"
-                                name: "name"
-                                project: "project"
-                              version: "version"
                             scalar:
                               schema:
                                 type:
@@ -13557,6 +13551,12 @@ definitions:
                               literals:
                               - null
                               - null
+                            artifact_id:
+                              artifact_key:
+                                domain: "domain"
+                                name: "name"
+                                project: "project"
+                              version: "version"
                             map:
                               literals: {}
                             hash: "hash"
@@ -13758,12 +13758,6 @@ definitions:
                               node_id: "node_id"
                             retry_attempt: 5
                           value:
-                            artifact:
-                              artifact_key:
-                                domain: "domain"
-                                name: "name"
-                                project: "project"
-                              version: "version"
                             scalar:
                               schema:
                                 type:
@@ -13872,6 +13866,12 @@ definitions:
                               literals:
                               - null
                               - null
+                            artifact_id:
+                              artifact_key:
+                                domain: "domain"
+                                name: "name"
+                                project: "project"
+                              version: "version"
                             map:
                               literals: {}
                             hash: "hash"
@@ -15974,12 +15974,6 @@ definitions:
                               node_id: "node_id"
                             retry_attempt: 5
                           value:
-                            artifact:
-                              artifact_key:
-                                domain: "domain"
-                                name: "name"
-                                project: "project"
-                              version: "version"
                             scalar:
                               schema:
                                 type:
@@ -16088,6 +16082,12 @@ definitions:
                               literals:
                               - null
                               - null
+                            artifact_id:
+                              artifact_key:
+                                domain: "domain"
+                                name: "name"
+                                project: "project"
+                              version: "version"
                             map:
                               literals: {}
                             hash: "hash"
@@ -16289,12 +16289,6 @@ definitions:
                               node_id: "node_id"
                             retry_attempt: 5
                           value:
-                            artifact:
-                              artifact_key:
-                                domain: "domain"
-                                name: "name"
-                                project: "project"
-                              version: "version"
                             scalar:
                               schema:
                                 type:
@@ -16403,6 +16397,12 @@ definitions:
                               literals:
                               - null
                               - null
+                            artifact_id:
+                              artifact_key:
+                                domain: "domain"
+                                name: "name"
+                                project: "project"
+                              version: "version"
                             map:
                               literals: {}
                             hash: "hash"
@@ -16720,12 +16720,6 @@ definitions:
                               node_id: "node_id"
                             retry_attempt: 5
                           value:
-                            artifact:
-                              artifact_key:
-                                domain: "domain"
-                                name: "name"
-                                project: "project"
-                              version: "version"
                             scalar:
                               schema:
                                 type:
@@ -16834,6 +16828,12 @@ definitions:
                               literals:
                               - null
                               - null
+                            artifact_id:
+                              artifact_key:
+                                domain: "domain"
+                                name: "name"
+                                project: "project"
+                              version: "version"
                             map:
                               literals: {}
                             hash: "hash"
@@ -17035,12 +17035,6 @@ definitions:
                               node_id: "node_id"
                             retry_attempt: 5
                           value:
-                            artifact:
-                              artifact_key:
-                                domain: "domain"
-                                name: "name"
-                                project: "project"
-                              version: "version"
                             scalar:
                               schema:
                                 type:
@@ -17149,6 +17143,12 @@ definitions:
                               literals:
                               - null
                               - null
+                            artifact_id:
+                              artifact_key:
+                                domain: "domain"
+                                name: "name"
+                                project: "project"
+                              version: "version"
                             map:
                               literals: {}
                             hash: "hash"
@@ -17503,12 +17503,6 @@ definitions:
                               node_id: "node_id"
                             retry_attempt: 5
                           value:
-                            artifact:
-                              artifact_key:
-                                domain: "domain"
-                                name: "name"
-                                project: "project"
-                              version: "version"
                             scalar:
                               schema:
                                 type:
@@ -17617,6 +17611,12 @@ definitions:
                               literals:
                               - null
                               - null
+                            artifact_id:
+                              artifact_key:
+                                domain: "domain"
+                                name: "name"
+                                project: "project"
+                              version: "version"
                             map:
                               literals: {}
                             hash: "hash"
@@ -17818,12 +17818,6 @@ definitions:
                               node_id: "node_id"
                             retry_attempt: 5
                           value:
-                            artifact:
-                              artifact_key:
-                                domain: "domain"
-                                name: "name"
-                                project: "project"
-                              version: "version"
                             scalar:
                               schema:
                                 type:
@@ -17932,6 +17926,12 @@ definitions:
                               literals:
                               - null
                               - null
+                            artifact_id:
+                              artifact_key:
+                                domain: "domain"
+                                name: "name"
+                                project: "project"
+                              version: "version"
                             map:
                               literals: {}
                             hash: "hash"
@@ -20073,12 +20073,6 @@ definitions:
                               node_id: "node_id"
                             retry_attempt: 5
                           value:
-                            artifact:
-                              artifact_key:
-                                domain: "domain"
-                                name: "name"
-                                project: "project"
-                              version: "version"
                             scalar:
                               schema:
                                 type:
@@ -20187,6 +20181,12 @@ definitions:
                               literals:
                               - null
                               - null
+                            artifact_id:
+                              artifact_key:
+                                domain: "domain"
+                                name: "name"
+                                project: "project"
+                              version: "version"
                             map:
                               literals: {}
                             hash: "hash"
@@ -20388,12 +20388,6 @@ definitions:
                               node_id: "node_id"
                             retry_attempt: 5
                           value:
-                            artifact:
-                              artifact_key:
-                                domain: "domain"
-                                name: "name"
-                                project: "project"
-                              version: "version"
                             scalar:
                               schema:
                                 type:
@@ -20502,6 +20496,12 @@ definitions:
                               literals:
                               - null
                               - null
+                            artifact_id:
+                              artifact_key:
+                                domain: "domain"
+                                name: "name"
+                                project: "project"
+                              version: "version"
                             map:
                               literals: {}
                             hash: "hash"
@@ -21862,12 +21862,6 @@ definitions:
                             node_id: "node_id"
                           retry_attempt: 5
                         value:
-                          artifact:
-                            artifact_key:
-                              domain: "domain"
-                              name: "name"
-                              project: "project"
-                            version: "version"
                           scalar:
                             schema:
                               type:
@@ -21976,6 +21970,12 @@ definitions:
                             literals:
                             - null
                             - null
+                          artifact_id:
+                            artifact_key:
+                              domain: "domain"
+                              name: "name"
+                              project: "project"
+                            version: "version"
                           map:
                             literals: {}
                           hash: "hash"
@@ -22177,12 +22177,6 @@ definitions:
                             node_id: "node_id"
                           retry_attempt: 5
                         value:
-                          artifact:
-                            artifact_key:
-                              domain: "domain"
-                              name: "name"
-                              project: "project"
-                            version: "version"
                           scalar:
                             schema:
                               type:
@@ -22291,6 +22285,12 @@ definitions:
                             literals:
                             - null
                             - null
+                          artifact_id:
+                            artifact_key:
+                              domain: "domain"
+                              name: "name"
+                              project: "project"
+                            version: "version"
                           map:
                             literals: {}
                           hash: "hash"
@@ -22661,12 +22661,6 @@ definitions:
                           node_id: "node_id"
                         retry_attempt: 5
                       value:
-                        artifact:
-                          artifact_key:
-                            domain: "domain"
-                            name: "name"
-                            project: "project"
-                          version: "version"
                         scalar:
                           schema:
                             type:
@@ -22775,6 +22769,12 @@ definitions:
                           literals:
                           - null
                           - null
+                        artifact_id:
+                          artifact_key:
+                            domain: "domain"
+                            name: "name"
+                            project: "project"
+                          version: "version"
                         map:
                           literals: {}
                         hash: "hash"
@@ -22976,12 +22976,6 @@ definitions:
                           node_id: "node_id"
                         retry_attempt: 5
                       value:
-                        artifact:
-                          artifact_key:
-                            domain: "domain"
-                            name: "name"
-                            project: "project"
-                          version: "version"
                         scalar:
                           schema:
                             type:
@@ -23090,6 +23084,12 @@ definitions:
                           literals:
                           - null
                           - null
+                        artifact_id:
+                          artifact_key:
+                            domain: "domain"
+                            name: "name"
+                            project: "project"
+                          version: "version"
                         map:
                           literals: {}
                         hash: "hash"
@@ -23873,12 +23873,6 @@ definitions:
                               node_id: "node_id"
                             retry_attempt: 5
                           value:
-                            artifact:
-                              artifact_key:
-                                domain: "domain"
-                                name: "name"
-                                project: "project"
-                              version: "version"
                             scalar:
                               schema:
                                 type:
@@ -23987,6 +23981,12 @@ definitions:
                               literals:
                               - null
                               - null
+                            artifact_id:
+                              artifact_key:
+                                domain: "domain"
+                                name: "name"
+                                project: "project"
+                              version: "version"
                             map:
                               literals: {}
                             hash: "hash"
@@ -24188,12 +24188,6 @@ definitions:
                               node_id: "node_id"
                             retry_attempt: 5
                           value:
-                            artifact:
-                              artifact_key:
-                                domain: "domain"
-                                name: "name"
-                                project: "project"
-                              version: "version"
                             scalar:
                               schema:
                                 type:
@@ -24302,6 +24296,12 @@ definitions:
                               literals:
                               - null
                               - null
+                            artifact_id:
+                              artifact_key:
+                                domain: "domain"
+                                name: "name"
+                                project: "project"
+                              version: "version"
                             map:
                               literals: {}
                             hash: "hash"
@@ -24666,12 +24666,6 @@ definitions:
                               node_id: "node_id"
                             retry_attempt: 5
                           value:
-                            artifact:
-                              artifact_key:
-                                domain: "domain"
-                                name: "name"
-                                project: "project"
-                              version: "version"
                             scalar:
                               schema:
                                 type:
@@ -24780,6 +24774,12 @@ definitions:
                               literals:
                               - null
                               - null
+                            artifact_id:
+                              artifact_key:
+                                domain: "domain"
+                                name: "name"
+                                project: "project"
+                              version: "version"
                             map:
                               literals: {}
                             hash: "hash"
@@ -24981,12 +24981,6 @@ definitions:
                               node_id: "node_id"
                             retry_attempt: 5
                           value:
-                            artifact:
-                              artifact_key:
-                                domain: "domain"
-                                name: "name"
-                                project: "project"
-                              version: "version"
                             scalar:
                               schema:
                                 type:
@@ -25095,6 +25089,12 @@ definitions:
                               literals:
                               - null
                               - null
+                            artifact_id:
+                              artifact_key:
+                                domain: "domain"
+                                name: "name"
+                                project: "project"
+                              version: "version"
                             map:
                               literals: {}
                             hash: "hash"
@@ -27350,12 +27350,6 @@ definitions:
                               node_id: "node_id"
                             retry_attempt: 5
                           value:
-                            artifact:
-                              artifact_key:
-                                domain: "domain"
-                                name: "name"
-                                project: "project"
-                              version: "version"
                             scalar:
                               schema:
                                 type:
@@ -27464,6 +27458,12 @@ definitions:
                               literals:
                               - null
                               - null
+                            artifact_id:
+                              artifact_key:
+                                domain: "domain"
+                                name: "name"
+                                project: "project"
+                              version: "version"
                             map:
                               literals: {}
                             hash: "hash"
@@ -27665,12 +27665,6 @@ definitions:
                               node_id: "node_id"
                             retry_attempt: 5
                           value:
-                            artifact:
-                              artifact_key:
-                                domain: "domain"
-                                name: "name"
-                                project: "project"
-                              version: "version"
                             scalar:
                               schema:
                                 type:
@@ -27779,6 +27773,12 @@ definitions:
                               literals:
                               - null
                               - null
+                            artifact_id:
+                              artifact_key:
+                                domain: "domain"
+                                name: "name"
+                                project: "project"
+                              version: "version"
                             map:
                               literals: {}
                             hash: "hash"
@@ -29881,12 +29881,6 @@ definitions:
                               node_id: "node_id"
                             retry_attempt: 5
                           value:
-                            artifact:
-                              artifact_key:
-                                domain: "domain"
-                                name: "name"
-                                project: "project"
-                              version: "version"
                             scalar:
                               schema:
                                 type:
@@ -29995,6 +29989,12 @@ definitions:
                               literals:
                               - null
                               - null
+                            artifact_id:
+                              artifact_key:
+                                domain: "domain"
+                                name: "name"
+                                project: "project"
+                              version: "version"
                             map:
                               literals: {}
                             hash: "hash"
@@ -30196,12 +30196,6 @@ definitions:
                               node_id: "node_id"
                             retry_attempt: 5
                           value:
-                            artifact:
-                              artifact_key:
-                                domain: "domain"
-                                name: "name"
-                                project: "project"
-                              version: "version"
                             scalar:
                               schema:
                                 type:
@@ -30310,6 +30304,12 @@ definitions:
                               literals:
                               - null
                               - null
+                            artifact_id:
+                              artifact_key:
+                                domain: "domain"
+                                name: "name"
+                                project: "project"
+                              version: "version"
                             map:
                               literals: {}
                             hash: "hash"
@@ -30627,12 +30627,6 @@ definitions:
                               node_id: "node_id"
                             retry_attempt: 5
                           value:
-                            artifact:
-                              artifact_key:
-                                domain: "domain"
-                                name: "name"
-                                project: "project"
-                              version: "version"
                             scalar:
                               schema:
                                 type:
@@ -30741,6 +30735,12 @@ definitions:
                               literals:
                               - null
                               - null
+                            artifact_id:
+                              artifact_key:
+                                domain: "domain"
+                                name: "name"
+                                project: "project"
+                              version: "version"
                             map:
                               literals: {}
                             hash: "hash"
@@ -30942,12 +30942,6 @@ definitions:
                               node_id: "node_id"
                             retry_attempt: 5
                           value:
-                            artifact:
-                              artifact_key:
-                                domain: "domain"
-                                name: "name"
-                                project: "project"
-                              version: "version"
                             scalar:
                               schema:
                                 type:
@@ -31056,6 +31050,12 @@ definitions:
                               literals:
                               - null
                               - null
+                            artifact_id:
+                              artifact_key:
+                                domain: "domain"
+                                name: "name"
+                                project: "project"
+                              version: "version"
                             map:
                               literals: {}
                             hash: "hash"
@@ -31410,12 +31410,6 @@ definitions:
                               node_id: "node_id"
                             retry_attempt: 5
                           value:
-                            artifact:
-                              artifact_key:
-                                domain: "domain"
-                                name: "name"
-                                project: "project"
-                              version: "version"
                             scalar:
                               schema:
                                 type:
@@ -31524,6 +31518,12 @@ definitions:
                               literals:
                               - null
                               - null
+                            artifact_id:
+                              artifact_key:
+                                domain: "domain"
+                                name: "name"
+                                project: "project"
+                              version: "version"
                             map:
                               literals: {}
                             hash: "hash"
@@ -31725,12 +31725,6 @@ definitions:
                               node_id: "node_id"
                             retry_attempt: 5
                           value:
-                            artifact:
-                              artifact_key:
-                                domain: "domain"
-                                name: "name"
-                                project: "project"
-                              version: "version"
                             scalar:
                               schema:
                                 type:
@@ -31839,6 +31833,12 @@ definitions:
                               literals:
                               - null
                               - null
+                            artifact_id:
+                              artifact_key:
+                                domain: "domain"
+                                name: "name"
+                                project: "project"
+                              version: "version"
                             map:
                               literals: {}
                             hash: "hash"
@@ -33980,12 +33980,6 @@ definitions:
                               node_id: "node_id"
                             retry_attempt: 5
                           value:
-                            artifact:
-                              artifact_key:
-                                domain: "domain"
-                                name: "name"
-                                project: "project"
-                              version: "version"
                             scalar:
                               schema:
                                 type:
@@ -34094,6 +34088,12 @@ definitions:
                               literals:
                               - null
                               - null
+                            artifact_id:
+                              artifact_key:
+                                domain: "domain"
+                                name: "name"
+                                project: "project"
+                              version: "version"
                             map:
                               literals: {}
                             hash: "hash"
@@ -34295,12 +34295,6 @@ definitions:
                               node_id: "node_id"
                             retry_attempt: 5
                           value:
-                            artifact:
-                              artifact_key:
-                                domain: "domain"
-                                name: "name"
-                                project: "project"
-                              version: "version"
                             scalar:
                               schema:
                                 type:
@@ -34409,6 +34403,12 @@ definitions:
                               literals:
                               - null
                               - null
+                            artifact_id:
+                              artifact_key:
+                                domain: "domain"
+                                name: "name"
+                                project: "project"
+                              version: "version"
                             map:
                               literals: {}
                             hash: "hash"
@@ -36796,12 +36796,6 @@ definitions:
                             node_id: "node_id"
                           retry_attempt: 5
                         value:
-                          artifact:
-                            artifact_key:
-                              domain: "domain"
-                              name: "name"
-                              project: "project"
-                            version: "version"
                           scalar:
                             schema:
                               type:
@@ -36910,6 +36904,12 @@ definitions:
                             literals:
                             - null
                             - null
+                          artifact_id:
+                            artifact_key:
+                              domain: "domain"
+                              name: "name"
+                              project: "project"
+                            version: "version"
                           map:
                             literals: {}
                           hash: "hash"
@@ -37111,12 +37111,6 @@ definitions:
                             node_id: "node_id"
                           retry_attempt: 5
                         value:
-                          artifact:
-                            artifact_key:
-                              domain: "domain"
-                              name: "name"
-                              project: "project"
-                            version: "version"
                           scalar:
                             schema:
                               type:
@@ -37225,6 +37219,12 @@ definitions:
                             literals:
                             - null
                             - null
+                          artifact_id:
+                            artifact_key:
+                              domain: "domain"
+                              name: "name"
+                              project: "project"
+                            version: "version"
                           map:
                             literals: {}
                           hash: "hash"
@@ -39327,12 +39327,6 @@ definitions:
                             node_id: "node_id"
                           retry_attempt: 5
                         value:
-                          artifact:
-                            artifact_key:
-                              domain: "domain"
-                              name: "name"
-                              project: "project"
-                            version: "version"
                           scalar:
                             schema:
                               type:
@@ -39441,6 +39435,12 @@ definitions:
                             literals:
                             - null
                             - null
+                          artifact_id:
+                            artifact_key:
+                              domain: "domain"
+                              name: "name"
+                              project: "project"
+                            version: "version"
                           map:
                             literals: {}
                           hash: "hash"
@@ -39642,12 +39642,6 @@ definitions:
                             node_id: "node_id"
                           retry_attempt: 5
                         value:
-                          artifact:
-                            artifact_key:
-                              domain: "domain"
-                              name: "name"
-                              project: "project"
-                            version: "version"
                           scalar:
                             schema:
                               type:
@@ -39756,6 +39750,12 @@ definitions:
                             literals:
                             - null
                             - null
+                          artifact_id:
+                            artifact_key:
+                              domain: "domain"
+                              name: "name"
+                              project: "project"
+                            version: "version"
                           map:
                             literals: {}
                           hash: "hash"
@@ -40073,12 +40073,6 @@ definitions:
                             node_id: "node_id"
                           retry_attempt: 5
                         value:
-                          artifact:
-                            artifact_key:
-                              domain: "domain"
-                              name: "name"
-                              project: "project"
-                            version: "version"
                           scalar:
                             schema:
                               type:
@@ -40187,6 +40181,12 @@ definitions:
                             literals:
                             - null
                             - null
+                          artifact_id:
+                            artifact_key:
+                              domain: "domain"
+                              name: "name"
+                              project: "project"
+                            version: "version"
                           map:
                             literals: {}
                           hash: "hash"
@@ -40388,12 +40388,6 @@ definitions:
                             node_id: "node_id"
                           retry_attempt: 5
                         value:
-                          artifact:
-                            artifact_key:
-                              domain: "domain"
-                              name: "name"
-                              project: "project"
-                            version: "version"
                           scalar:
                             schema:
                               type:
@@ -40502,6 +40496,12 @@ definitions:
                             literals:
                             - null
                             - null
+                          artifact_id:
+                            artifact_key:
+                              domain: "domain"
+                              name: "name"
+                              project: "project"
+                            version: "version"
                           map:
                             literals: {}
                           hash: "hash"
@@ -40856,12 +40856,6 @@ definitions:
                             node_id: "node_id"
                           retry_attempt: 5
                         value:
-                          artifact:
-                            artifact_key:
-                              domain: "domain"
-                              name: "name"
-                              project: "project"
-                            version: "version"
                           scalar:
                             schema:
                               type:
@@ -40970,6 +40964,12 @@ definitions:
                             literals:
                             - null
                             - null
+                          artifact_id:
+                            artifact_key:
+                              domain: "domain"
+                              name: "name"
+                              project: "project"
+                            version: "version"
                           map:
                             literals: {}
                           hash: "hash"
@@ -41171,12 +41171,6 @@ definitions:
                             node_id: "node_id"
                           retry_attempt: 5
                         value:
-                          artifact:
-                            artifact_key:
-                              domain: "domain"
-                              name: "name"
-                              project: "project"
-                            version: "version"
                           scalar:
                             schema:
                               type:
@@ -41285,6 +41279,12 @@ definitions:
                             literals:
                             - null
                             - null
+                          artifact_id:
+                            artifact_key:
+                              domain: "domain"
+                              name: "name"
+                              project: "project"
+                            version: "version"
                           map:
                             literals: {}
                           hash: "hash"
@@ -43426,12 +43426,6 @@ definitions:
                             node_id: "node_id"
                           retry_attempt: 5
                         value:
-                          artifact:
-                            artifact_key:
-                              domain: "domain"
-                              name: "name"
-                              project: "project"
-                            version: "version"
                           scalar:
                             schema:
                               type:
@@ -43540,6 +43534,12 @@ definitions:
                             literals:
                             - null
                             - null
+                          artifact_id:
+                            artifact_key:
+                              domain: "domain"
+                              name: "name"
+                              project: "project"
+                            version: "version"
                           map:
                             literals: {}
                           hash: "hash"
@@ -43741,12 +43741,6 @@ definitions:
                             node_id: "node_id"
                           retry_attempt: 5
                         value:
-                          artifact:
-                            artifact_key:
-                              domain: "domain"
-                              name: "name"
-                              project: "project"
-                            version: "version"
                           scalar:
                             schema:
                               type:
@@ -43855,6 +43849,12 @@ definitions:
                             literals:
                             - null
                             - null
+                          artifact_id:
+                            artifact_key:
+                              domain: "domain"
+                              name: "name"
+                              project: "project"
+                            version: "version"
                           map:
                             literals: {}
                           hash: "hash"
@@ -46189,12 +46189,6 @@ definitions:
                                 node_id: "node_id"
                               retry_attempt: 5
                             value:
-                              artifact:
-                                artifact_key:
-                                  domain: "domain"
-                                  name: "name"
-                                  project: "project"
-                                version: "version"
                               scalar:
                                 schema:
                                   type:
@@ -46303,6 +46297,12 @@ definitions:
                                 literals:
                                 - null
                                 - null
+                              artifact_id:
+                                artifact_key:
+                                  domain: "domain"
+                                  name: "name"
+                                  project: "project"
+                                version: "version"
                               map:
                                 literals: {}
                               hash: "hash"
@@ -46504,12 +46504,6 @@ definitions:
                                 node_id: "node_id"
                               retry_attempt: 5
                             value:
-                              artifact:
-                                artifact_key:
-                                  domain: "domain"
-                                  name: "name"
-                                  project: "project"
-                                version: "version"
                               scalar:
                                 schema:
                                   type:
@@ -46618,6 +46612,12 @@ definitions:
                                 literals:
                                 - null
                                 - null
+                              artifact_id:
+                                artifact_key:
+                                  domain: "domain"
+                                  name: "name"
+                                  project: "project"
+                                version: "version"
                               map:
                                 literals: {}
                               hash: "hash"
@@ -48720,12 +48720,6 @@ definitions:
                                 node_id: "node_id"
                               retry_attempt: 5
                             value:
-                              artifact:
-                                artifact_key:
-                                  domain: "domain"
-                                  name: "name"
-                                  project: "project"
-                                version: "version"
                               scalar:
                                 schema:
                                   type:
@@ -48834,6 +48828,12 @@ definitions:
                                 literals:
                                 - null
                                 - null
+                              artifact_id:
+                                artifact_key:
+                                  domain: "domain"
+                                  name: "name"
+                                  project: "project"
+                                version: "version"
                               map:
                                 literals: {}
                               hash: "hash"
@@ -49035,12 +49035,6 @@ definitions:
                                 node_id: "node_id"
                               retry_attempt: 5
                             value:
-                              artifact:
-                                artifact_key:
-                                  domain: "domain"
-                                  name: "name"
-                                  project: "project"
-                                version: "version"
                               scalar:
                                 schema:
                                   type:
@@ -49149,6 +49143,12 @@ definitions:
                                 literals:
                                 - null
                                 - null
+                              artifact_id:
+                                artifact_key:
+                                  domain: "domain"
+                                  name: "name"
+                                  project: "project"
+                                version: "version"
                               map:
                                 literals: {}
                               hash: "hash"
@@ -49466,12 +49466,6 @@ definitions:
                                 node_id: "node_id"
                               retry_attempt: 5
                             value:
-                              artifact:
-                                artifact_key:
-                                  domain: "domain"
-                                  name: "name"
-                                  project: "project"
-                                version: "version"
                               scalar:
                                 schema:
                                   type:
@@ -49580,6 +49574,12 @@ definitions:
                                 literals:
                                 - null
                                 - null
+                              artifact_id:
+                                artifact_key:
+                                  domain: "domain"
+                                  name: "name"
+                                  project: "project"
+                                version: "version"
                               map:
                                 literals: {}
                               hash: "hash"
@@ -49781,12 +49781,6 @@ definitions:
                                 node_id: "node_id"
                               retry_attempt: 5
                             value:
-                              artifact:
-                                artifact_key:
-                                  domain: "domain"
-                                  name: "name"
-                                  project: "project"
-                                version: "version"
                               scalar:
                                 schema:
                                   type:
@@ -49895,6 +49889,12 @@ definitions:
                                 literals:
                                 - null
                                 - null
+                              artifact_id:
+                                artifact_key:
+                                  domain: "domain"
+                                  name: "name"
+                                  project: "project"
+                                version: "version"
                               map:
                                 literals: {}
                               hash: "hash"
@@ -50249,12 +50249,6 @@ definitions:
                                 node_id: "node_id"
                               retry_attempt: 5
                             value:
-                              artifact:
-                                artifact_key:
-                                  domain: "domain"
-                                  name: "name"
-                                  project: "project"
-                                version: "version"
                               scalar:
                                 schema:
                                   type:
@@ -50363,6 +50357,12 @@ definitions:
                                 literals:
                                 - null
                                 - null
+                              artifact_id:
+                                artifact_key:
+                                  domain: "domain"
+                                  name: "name"
+                                  project: "project"
+                                version: "version"
                               map:
                                 literals: {}
                               hash: "hash"
@@ -50564,12 +50564,6 @@ definitions:
                                 node_id: "node_id"
                               retry_attempt: 5
                             value:
-                              artifact:
-                                artifact_key:
-                                  domain: "domain"
-                                  name: "name"
-                                  project: "project"
-                                version: "version"
                               scalar:
                                 schema:
                                   type:
@@ -50678,6 +50672,12 @@ definitions:
                                 literals:
                                 - null
                                 - null
+                              artifact_id:
+                                artifact_key:
+                                  domain: "domain"
+                                  name: "name"
+                                  project: "project"
+                                version: "version"
                               map:
                                 literals: {}
                               hash: "hash"
@@ -52819,12 +52819,6 @@ definitions:
                                 node_id: "node_id"
                               retry_attempt: 5
                             value:
-                              artifact:
-                                artifact_key:
-                                  domain: "domain"
-                                  name: "name"
-                                  project: "project"
-                                version: "version"
                               scalar:
                                 schema:
                                   type:
@@ -52933,6 +52927,12 @@ definitions:
                                 literals:
                                 - null
                                 - null
+                              artifact_id:
+                                artifact_key:
+                                  domain: "domain"
+                                  name: "name"
+                                  project: "project"
+                                version: "version"
                               map:
                                 literals: {}
                               hash: "hash"
@@ -53134,12 +53134,6 @@ definitions:
                                 node_id: "node_id"
                               retry_attempt: 5
                             value:
-                              artifact:
-                                artifact_key:
-                                  domain: "domain"
-                                  name: "name"
-                                  project: "project"
-                                version: "version"
                               scalar:
                                 schema:
                                   type:
@@ -53248,6 +53242,12 @@ definitions:
                                 literals:
                                 - null
                                 - null
+                              artifact_id:
+                                artifact_key:
+                                  domain: "domain"
+                                  name: "name"
+                                  project: "project"
+                                version: "version"
                               map:
                                 literals: {}
                               hash: "hash"
@@ -55361,12 +55361,6 @@ definitions:
                                 node_id: "node_id"
                               retry_attempt: 5
                             value:
-                              artifact:
-                                artifact_key:
-                                  domain: "domain"
-                                  name: "name"
-                                  project: "project"
-                                version: "version"
                               scalar:
                                 schema:
                                   type:
@@ -55475,6 +55469,12 @@ definitions:
                                 literals:
                                 - null
                                 - null
+                              artifact_id:
+                                artifact_key:
+                                  domain: "domain"
+                                  name: "name"
+                                  project: "project"
+                                version: "version"
                               map:
                                 literals: {}
                               hash: "hash"
@@ -55676,12 +55676,6 @@ definitions:
                                 node_id: "node_id"
                               retry_attempt: 5
                             value:
-                              artifact:
-                                artifact_key:
-                                  domain: "domain"
-                                  name: "name"
-                                  project: "project"
-                                version: "version"
                               scalar:
                                 schema:
                                   type:
@@ -55790,6 +55784,12 @@ definitions:
                                 literals:
                                 - null
                                 - null
+                              artifact_id:
+                                artifact_key:
+                                  domain: "domain"
+                                  name: "name"
+                                  project: "project"
+                                version: "version"
                               map:
                                 literals: {}
                               hash: "hash"
@@ -57892,12 +57892,6 @@ definitions:
                                 node_id: "node_id"
                               retry_attempt: 5
                             value:
-                              artifact:
-                                artifact_key:
-                                  domain: "domain"
-                                  name: "name"
-                                  project: "project"
-                                version: "version"
                               scalar:
                                 schema:
                                   type:
@@ -58006,6 +58000,12 @@ definitions:
                                 literals:
                                 - null
                                 - null
+                              artifact_id:
+                                artifact_key:
+                                  domain: "domain"
+                                  name: "name"
+                                  project: "project"
+                                version: "version"
                               map:
                                 literals: {}
                               hash: "hash"
@@ -58207,12 +58207,6 @@ definitions:
                                 node_id: "node_id"
                               retry_attempt: 5
                             value:
-                              artifact:
-                                artifact_key:
-                                  domain: "domain"
-                                  name: "name"
-                                  project: "project"
-                                version: "version"
                               scalar:
                                 schema:
                                   type:
@@ -58321,6 +58315,12 @@ definitions:
                                 literals:
                                 - null
                                 - null
+                              artifact_id:
+                                artifact_key:
+                                  domain: "domain"
+                                  name: "name"
+                                  project: "project"
+                                version: "version"
                               map:
                                 literals: {}
                               hash: "hash"
@@ -58638,12 +58638,6 @@ definitions:
                                 node_id: "node_id"
                               retry_attempt: 5
                             value:
-                              artifact:
-                                artifact_key:
-                                  domain: "domain"
-                                  name: "name"
-                                  project: "project"
-                                version: "version"
                               scalar:
                                 schema:
                                   type:
@@ -58752,6 +58746,12 @@ definitions:
                                 literals:
                                 - null
                                 - null
+                              artifact_id:
+                                artifact_key:
+                                  domain: "domain"
+                                  name: "name"
+                                  project: "project"
+                                version: "version"
                               map:
                                 literals: {}
                               hash: "hash"
@@ -58953,12 +58953,6 @@ definitions:
                                 node_id: "node_id"
                               retry_attempt: 5
                             value:
-                              artifact:
-                                artifact_key:
-                                  domain: "domain"
-                                  name: "name"
-                                  project: "project"
-                                version: "version"
                               scalar:
                                 schema:
                                   type:
@@ -59067,6 +59061,12 @@ definitions:
                                 literals:
                                 - null
                                 - null
+                              artifact_id:
+                                artifact_key:
+                                  domain: "domain"
+                                  name: "name"
+                                  project: "project"
+                                version: "version"
                               map:
                                 literals: {}
                               hash: "hash"
@@ -59421,12 +59421,6 @@ definitions:
                                 node_id: "node_id"
                               retry_attempt: 5
                             value:
-                              artifact:
-                                artifact_key:
-                                  domain: "domain"
-                                  name: "name"
-                                  project: "project"
-                                version: "version"
                               scalar:
                                 schema:
                                   type:
@@ -59535,6 +59529,12 @@ definitions:
                                 literals:
                                 - null
                                 - null
+                              artifact_id:
+                                artifact_key:
+                                  domain: "domain"
+                                  name: "name"
+                                  project: "project"
+                                version: "version"
                               map:
                                 literals: {}
                               hash: "hash"
@@ -59736,12 +59736,6 @@ definitions:
                                 node_id: "node_id"
                               retry_attempt: 5
                             value:
-                              artifact:
-                                artifact_key:
-                                  domain: "domain"
-                                  name: "name"
-                                  project: "project"
-                                version: "version"
                               scalar:
                                 schema:
                                   type:
@@ -59850,6 +59844,12 @@ definitions:
                                 literals:
                                 - null
                                 - null
+                              artifact_id:
+                                artifact_key:
+                                  domain: "domain"
+                                  name: "name"
+                                  project: "project"
+                                version: "version"
                               map:
                                 literals: {}
                               hash: "hash"
@@ -61991,12 +61991,6 @@ definitions:
                                 node_id: "node_id"
                               retry_attempt: 5
                             value:
-                              artifact:
-                                artifact_key:
-                                  domain: "domain"
-                                  name: "name"
-                                  project: "project"
-                                version: "version"
                               scalar:
                                 schema:
                                   type:
@@ -62105,6 +62099,12 @@ definitions:
                                 literals:
                                 - null
                                 - null
+                              artifact_id:
+                                artifact_key:
+                                  domain: "domain"
+                                  name: "name"
+                                  project: "project"
+                                version: "version"
                               map:
                                 literals: {}
                               hash: "hash"
@@ -62306,12 +62306,6 @@ definitions:
                                 node_id: "node_id"
                               retry_attempt: 5
                             value:
-                              artifact:
-                                artifact_key:
-                                  domain: "domain"
-                                  name: "name"
-                                  project: "project"
-                                version: "version"
                               scalar:
                                 schema:
                                   type:
@@ -62420,6 +62414,12 @@ definitions:
                                 literals:
                                 - null
                                 - null
+                              artifact_id:
+                                artifact_key:
+                                  domain: "domain"
+                                  name: "name"
+                                  project: "project"
+                                version: "version"
                               map:
                                 literals: {}
                               hash: "hash"
@@ -62663,12 +62663,6 @@ definitions:
             node_id: "node_id"
           retry_attempt: 5
         value:
-          artifact:
-            artifact_key:
-              domain: "domain"
-              name: "name"
-              project: "project"
-            version: "version"
           scalar:
             schema:
               type:
@@ -62777,6 +62771,12 @@ definitions:
             literals:
             - null
             - null
+          artifact_id:
+            artifact_key:
+              domain: "domain"
+              name: "name"
+              project: "project"
+            version: "version"
           map:
             literals: {}
           hash: "hash"
@@ -62977,12 +62977,6 @@ definitions:
           node_id: "node_id"
         retry_attempt: 5
       value:
-        artifact:
-          artifact_key:
-            domain: "domain"
-            name: "name"
-            project: "project"
-          version: "version"
         scalar:
           schema:
             type:
@@ -63091,6 +63085,12 @@ definitions:
           literals:
           - null
           - null
+        artifact_id:
+          artifact_key:
+            domain: "domain"
+            name: "name"
+            project: "project"
+          version: "version"
         map:
           literals: {}
         hash: "hash"
@@ -64076,12 +64076,6 @@ definitions:
                         node_id: "node_id"
                       retry_attempt: 5
                     value:
-                      artifact:
-                        artifact_key:
-                          domain: "domain"
-                          name: "name"
-                          project: "project"
-                        version: "version"
                       scalar:
                         schema:
                           type:
@@ -64190,6 +64184,12 @@ definitions:
                         literals:
                         - null
                         - null
+                      artifact_id:
+                        artifact_key:
+                          domain: "domain"
+                          name: "name"
+                          project: "project"
+                        version: "version"
                       map:
                         literals: {}
                       hash: "hash"
@@ -64391,12 +64391,6 @@ definitions:
                         node_id: "node_id"
                       retry_attempt: 5
                     value:
-                      artifact:
-                        artifact_key:
-                          domain: "domain"
-                          name: "name"
-                          project: "project"
-                        version: "version"
                       scalar:
                         schema:
                           type:
@@ -64505,6 +64499,12 @@ definitions:
                         literals:
                         - null
                         - null
+                      artifact_id:
+                        artifact_key:
+                          domain: "domain"
+                          name: "name"
+                          project: "project"
+                        version: "version"
                       map:
                         literals: {}
                       hash: "hash"
@@ -66658,12 +66658,6 @@ definitions:
                         node_id: "node_id"
                       retry_attempt: 5
                     value:
-                      artifact:
-                        artifact_key:
-                          domain: "domain"
-                          name: "name"
-                          project: "project"
-                        version: "version"
                       scalar:
                         schema:
                           type:
@@ -66772,6 +66766,12 @@ definitions:
                         literals:
                         - null
                         - null
+                      artifact_id:
+                        artifact_key:
+                          domain: "domain"
+                          name: "name"
+                          project: "project"
+                        version: "version"
                       map:
                         literals: {}
                       hash: "hash"
@@ -66973,12 +66973,6 @@ definitions:
                         node_id: "node_id"
                       retry_attempt: 5
                     value:
-                      artifact:
-                        artifact_key:
-                          domain: "domain"
-                          name: "name"
-                          project: "project"
-                        version: "version"
                       scalar:
                         schema:
                           type:
@@ -67087,6 +67081,12 @@ definitions:
                         literals:
                         - null
                         - null
+                      artifact_id:
+                        artifact_key:
+                          domain: "domain"
+                          name: "name"
+                          project: "project"
+                        version: "version"
                       map:
                         literals: {}
                       hash: "hash"
@@ -69216,12 +69216,6 @@ definitions:
                           node_id: "node_id"
                         retry_attempt: 5
                       value:
-                        artifact:
-                          artifact_key:
-                            domain: "domain"
-                            name: "name"
-                            project: "project"
-                          version: "version"
                         scalar:
                           schema:
                             type:
@@ -69330,6 +69324,12 @@ definitions:
                           literals:
                           - null
                           - null
+                        artifact_id:
+                          artifact_key:
+                            domain: "domain"
+                            name: "name"
+                            project: "project"
+                          version: "version"
                         map:
                           literals: {}
                         hash: "hash"
@@ -69531,12 +69531,6 @@ definitions:
                           node_id: "node_id"
                         retry_attempt: 5
                       value:
-                        artifact:
-                          artifact_key:
-                            domain: "domain"
-                            name: "name"
-                            project: "project"
-                          version: "version"
                         scalar:
                           schema:
                             type:
@@ -69645,6 +69639,12 @@ definitions:
                           literals:
                           - null
                           - null
+                        artifact_id:
+                          artifact_key:
+                            domain: "domain"
+                            name: "name"
+                            project: "project"
+                          version: "version"
                         map:
                           literals: {}
                         hash: "hash"
@@ -71747,12 +71747,6 @@ definitions:
                           node_id: "node_id"
                         retry_attempt: 5
                       value:
-                        artifact:
-                          artifact_key:
-                            domain: "domain"
-                            name: "name"
-                            project: "project"
-                          version: "version"
                         scalar:
                           schema:
                             type:
@@ -71861,6 +71855,12 @@ definitions:
                           literals:
                           - null
                           - null
+                        artifact_id:
+                          artifact_key:
+                            domain: "domain"
+                            name: "name"
+                            project: "project"
+                          version: "version"
                         map:
                           literals: {}
                         hash: "hash"
@@ -72062,12 +72062,6 @@ definitions:
                           node_id: "node_id"
                         retry_attempt: 5
                       value:
-                        artifact:
-                          artifact_key:
-                            domain: "domain"
-                            name: "name"
-                            project: "project"
-                          version: "version"
                         scalar:
                           schema:
                             type:
@@ -72176,6 +72170,12 @@ definitions:
                           literals:
                           - null
                           - null
+                        artifact_id:
+                          artifact_key:
+                            domain: "domain"
+                            name: "name"
+                            project: "project"
+                          version: "version"
                         map:
                           literals: {}
                         hash: "hash"
@@ -72493,12 +72493,6 @@ definitions:
                           node_id: "node_id"
                         retry_attempt: 5
                       value:
-                        artifact:
-                          artifact_key:
-                            domain: "domain"
-                            name: "name"
-                            project: "project"
-                          version: "version"
                         scalar:
                           schema:
                             type:
@@ -72607,6 +72601,12 @@ definitions:
                           literals:
                           - null
                           - null
+                        artifact_id:
+                          artifact_key:
+                            domain: "domain"
+                            name: "name"
+                            project: "project"
+                          version: "version"
                         map:
                           literals: {}
                         hash: "hash"
@@ -72808,12 +72808,6 @@ definitions:
                           node_id: "node_id"
                         retry_attempt: 5
                       value:
-                        artifact:
-                          artifact_key:
-                            domain: "domain"
-                            name: "name"
-                            project: "project"
-                          version: "version"
                         scalar:
                           schema:
                             type:
@@ -72922,6 +72916,12 @@ definitions:
                           literals:
                           - null
                           - null
+                        artifact_id:
+                          artifact_key:
+                            domain: "domain"
+                            name: "name"
+                            project: "project"
+                          version: "version"
                         map:
                           literals: {}
                         hash: "hash"
@@ -73276,12 +73276,6 @@ definitions:
                           node_id: "node_id"
                         retry_attempt: 5
                       value:
-                        artifact:
-                          artifact_key:
-                            domain: "domain"
-                            name: "name"
-                            project: "project"
-                          version: "version"
                         scalar:
                           schema:
                             type:
@@ -73390,6 +73384,12 @@ definitions:
                           literals:
                           - null
                           - null
+                        artifact_id:
+                          artifact_key:
+                            domain: "domain"
+                            name: "name"
+                            project: "project"
+                          version: "version"
                         map:
                           literals: {}
                         hash: "hash"
@@ -73591,12 +73591,6 @@ definitions:
                           node_id: "node_id"
                         retry_attempt: 5
                       value:
-                        artifact:
-                          artifact_key:
-                            domain: "domain"
-                            name: "name"
-                            project: "project"
-                          version: "version"
                         scalar:
                           schema:
                             type:
@@ -73705,6 +73699,12 @@ definitions:
                           literals:
                           - null
                           - null
+                        artifact_id:
+                          artifact_key:
+                            domain: "domain"
+                            name: "name"
+                            project: "project"
+                          version: "version"
                         map:
                           literals: {}
                         hash: "hash"
@@ -75846,12 +75846,6 @@ definitions:
                           node_id: "node_id"
                         retry_attempt: 5
                       value:
-                        artifact:
-                          artifact_key:
-                            domain: "domain"
-                            name: "name"
-                            project: "project"
-                          version: "version"
                         scalar:
                           schema:
                             type:
@@ -75960,6 +75954,12 @@ definitions:
                           literals:
                           - null
                           - null
+                        artifact_id:
+                          artifact_key:
+                            domain: "domain"
+                            name: "name"
+                            project: "project"
+                          version: "version"
                         map:
                           literals: {}
                         hash: "hash"
@@ -76161,12 +76161,6 @@ definitions:
                           node_id: "node_id"
                         retry_attempt: 5
                       value:
-                        artifact:
-                          artifact_key:
-                            domain: "domain"
-                            name: "name"
-                            project: "project"
-                          version: "version"
                         scalar:
                           schema:
                             type:
@@ -76275,6 +76269,12 @@ definitions:
                           literals:
                           - null
                           - null
+                        artifact_id:
+                          artifact_key:
+                            domain: "domain"
+                            name: "name"
+                            project: "project"
+                          version: "version"
                         map:
                           literals: {}
                         hash: "hash"
@@ -77008,7 +77008,7 @@ definitions:
       map:
         description: "A map of strings to literals."
         $ref: "#/definitions/coreLiteralMap"
-      artifact:
+      artifact_id:
         title: "A reference to another Literal"
         $ref: "#/definitions/coreArtifactID"
       hash:
@@ -77029,12 +77029,6 @@ definitions:
     description: "A simple value. This supports any level of nesting (e.g. array of\
       \ array of array of Blobs) as well as simple primitives."
     example:
-      artifact:
-        artifact_key:
-          domain: "domain"
-          name: "name"
-          project: "project"
-        version: "version"
       scalar:
         schema:
           type:
@@ -77143,6 +77137,12 @@ definitions:
         literals:
         - null
         - null
+      artifact_id:
+        artifact_key:
+          domain: "domain"
+          name: "name"
+          project: "project"
+        version: "version"
       map:
         literals: {}
       hash: "hash"
@@ -78054,12 +78054,6 @@ definitions:
       \ ability to have a default value or mark itself as required."
     example:
       default:
-        artifact:
-          artifact_key:
-            domain: "domain"
-            name: "name"
-            project: "project"
-          version: "version"
         scalar:
           schema:
             type:
@@ -78168,6 +78162,12 @@ definitions:
           literals:
           - null
           - null
+        artifact_id:
+          artifact_key:
+            domain: "domain"
+            name: "name"
+            project: "project"
+          version: "version"
         map:
           literals: {}
         hash: "hash"
@@ -78310,12 +78310,6 @@ definitions:
                 node_id: "node_id"
               retry_attempt: 5
             value:
-              artifact:
-                artifact_key:
-                  domain: "domain"
-                  name: "name"
-                  project: "project"
-                version: "version"
               scalar:
                 schema:
                   type:
@@ -78424,6 +78418,12 @@ definitions:
                 literals:
                 - null
                 - null
+              artifact_id:
+                artifact_key:
+                  domain: "domain"
+                  name: "name"
+                  project: "project"
+                version: "version"
               map:
                 literals: {}
               hash: "hash"
@@ -78563,12 +78563,6 @@ definitions:
       parameters:
         key:
           default:
-            artifact:
-              artifact_key:
-                domain: "domain"
-                name: "name"
-                project: "project"
-              version: "version"
             scalar:
               schema:
                 type:
@@ -78677,6 +78671,12 @@ definitions:
               literals:
               - null
               - null
+            artifact_id:
+              artifact_key:
+                domain: "domain"
+                name: "name"
+                project: "project"
+              version: "version"
             map:
               literals: {}
             hash: "hash"
@@ -78819,12 +78819,6 @@ definitions:
                     node_id: "node_id"
                   retry_attempt: 5
                 value:
-                  artifact:
-                    artifact_key:
-                      domain: "domain"
-                      name: "name"
-                      project: "project"
-                    version: "version"
                   scalar:
                     schema:
                       type:
@@ -78933,6 +78927,12 @@ definitions:
                     literals:
                     - null
                     - null
+                  artifact_id:
+                    artifact_key:
+                      domain: "domain"
+                      name: "name"
+                      project: "project"
+                    version: "version"
                   map:
                     literals: {}
                   hash: "hash"
@@ -80114,12 +80114,6 @@ definitions:
                       node_id: "node_id"
                     retry_attempt: 5
                   value:
-                    artifact:
-                      artifact_key:
-                        domain: "domain"
-                        name: "name"
-                        project: "project"
-                      version: "version"
                     scalar:
                       schema:
                         type:
@@ -80228,6 +80222,12 @@ definitions:
                       literals:
                       - null
                       - null
+                    artifact_id:
+                      artifact_key:
+                        domain: "domain"
+                        name: "name"
+                        project: "project"
+                      version: "version"
                     map:
                       literals: {}
                     hash: "hash"
@@ -80429,12 +80429,6 @@ definitions:
                       node_id: "node_id"
                     retry_attempt: 5
                   value:
-                    artifact:
-                      artifact_key:
-                        domain: "domain"
-                        name: "name"
-                        project: "project"
-                      version: "version"
                     scalar:
                       schema:
                         type:
@@ -80543,6 +80537,12 @@ definitions:
                       literals:
                       - null
                       - null
+                    artifact_id:
+                      artifact_key:
+                        domain: "domain"
+                        name: "name"
+                        project: "project"
+                      version: "version"
                     map:
                       literals: {}
                     hash: "hash"
@@ -80833,12 +80833,6 @@ definitions:
                     node_id: "node_id"
                   retry_attempt: 5
                 value:
-                  artifact:
-                    artifact_key:
-                      domain: "domain"
-                      name: "name"
-                      project: "project"
-                    version: "version"
                   scalar:
                     schema:
                       type:
@@ -80947,6 +80941,12 @@ definitions:
                     literals:
                     - null
                     - null
+                  artifact_id:
+                    artifact_key:
+                      domain: "domain"
+                      name: "name"
+                      project: "project"
+                    version: "version"
                   map:
                     literals: {}
                   hash: "hash"
@@ -81148,12 +81148,6 @@ definitions:
                     node_id: "node_id"
                   retry_attempt: 5
                 value:
-                  artifact:
-                    artifact_key:
-                      domain: "domain"
-                      name: "name"
-                      project: "project"
-                    version: "version"
                   scalar:
                     schema:
                       type:
@@ -81262,6 +81256,12 @@ definitions:
                     literals:
                     - null
                     - null
+                  artifact_id:
+                    artifact_key:
+                      domain: "domain"
+                      name: "name"
+                      project: "project"
+                    version: "version"
                   map:
                     literals: {}
                   hash: "hash"
@@ -81615,12 +81615,6 @@ definitions:
               node_id: "node_id"
             retry_attempt: 5
           value:
-            artifact:
-              artifact_key:
-                domain: "domain"
-                name: "name"
-                project: "project"
-              version: "version"
             scalar:
               schema:
                 type:
@@ -81729,6 +81723,12 @@ definitions:
               literals:
               - null
               - null
+            artifact_id:
+              artifact_key:
+                domain: "domain"
+                name: "name"
+                project: "project"
+              version: "version"
             map:
               literals: {}
             hash: "hash"
@@ -81939,12 +81939,6 @@ definitions:
                   node_id: "node_id"
                 retry_attempt: 5
               value:
-                artifact:
-                  artifact_key:
-                    domain: "domain"
-                    name: "name"
-                    project: "project"
-                  version: "version"
                 scalar:
                   schema:
                     type:
@@ -82053,6 +82047,12 @@ definitions:
                   literals:
                   - null
                   - null
+                artifact_id:
+                  artifact_key:
+                    domain: "domain"
+                    name: "name"
+                    project: "project"
+                  version: "version"
                 map:
                   literals: {}
                 hash: "hash"
@@ -84292,12 +84292,6 @@ definitions:
                       node_id: "node_id"
                     retry_attempt: 5
                   value:
-                    artifact:
-                      artifact_key:
-                        domain: "domain"
-                        name: "name"
-                        project: "project"
-                      version: "version"
                     scalar:
                       schema:
                         type:
@@ -84406,6 +84400,12 @@ definitions:
                       literals:
                       - null
                       - null
+                    artifact_id:
+                      artifact_key:
+                        domain: "domain"
+                        name: "name"
+                        project: "project"
+                      version: "version"
                     map:
                       literals: {}
                     hash: "hash"
@@ -84607,12 +84607,6 @@ definitions:
                       node_id: "node_id"
                     retry_attempt: 5
                   value:
-                    artifact:
-                      artifact_key:
-                        domain: "domain"
-                        name: "name"
-                        project: "project"
-                      version: "version"
                     scalar:
                       schema:
                         type:
@@ -84721,6 +84715,12 @@ definitions:
                       literals:
                       - null
                       - null
+                    artifact_id:
+                      artifact_key:
+                        domain: "domain"
+                        name: "name"
+                        project: "project"
+                      version: "version"
                     map:
                       literals: {}
                     hash: "hash"
@@ -87168,12 +87168,6 @@ definitions:
                             node_id: "node_id"
                           retry_attempt: 5
                         value:
-                          artifact:
-                            artifact_key:
-                              domain: "domain"
-                              name: "name"
-                              project: "project"
-                            version: "version"
                           scalar:
                             schema:
                               type:
@@ -87282,6 +87276,12 @@ definitions:
                             literals:
                             - null
                             - null
+                          artifact_id:
+                            artifact_key:
+                              domain: "domain"
+                              name: "name"
+                              project: "project"
+                            version: "version"
                           map:
                             literals: {}
                           hash: "hash"
@@ -87483,12 +87483,6 @@ definitions:
                             node_id: "node_id"
                           retry_attempt: 5
                         value:
-                          artifact:
-                            artifact_key:
-                              domain: "domain"
-                              name: "name"
-                              project: "project"
-                            version: "version"
                           scalar:
                             schema:
                               type:
@@ -87597,6 +87591,12 @@ definitions:
                             literals:
                             - null
                             - null
+                          artifact_id:
+                            artifact_key:
+                              domain: "domain"
+                              name: "name"
+                              project: "project"
+                            version: "version"
                           map:
                             literals: {}
                           hash: "hash"
@@ -89699,12 +89699,6 @@ definitions:
                             node_id: "node_id"
                           retry_attempt: 5
                         value:
-                          artifact:
-                            artifact_key:
-                              domain: "domain"
-                              name: "name"
-                              project: "project"
-                            version: "version"
                           scalar:
                             schema:
                               type:
@@ -89813,6 +89807,12 @@ definitions:
                             literals:
                             - null
                             - null
+                          artifact_id:
+                            artifact_key:
+                              domain: "domain"
+                              name: "name"
+                              project: "project"
+                            version: "version"
                           map:
                             literals: {}
                           hash: "hash"
@@ -90014,12 +90014,6 @@ definitions:
                             node_id: "node_id"
                           retry_attempt: 5
                         value:
-                          artifact:
-                            artifact_key:
-                              domain: "domain"
-                              name: "name"
-                              project: "project"
-                            version: "version"
                           scalar:
                             schema:
                               type:
@@ -90128,6 +90122,12 @@ definitions:
                             literals:
                             - null
                             - null
+                          artifact_id:
+                            artifact_key:
+                              domain: "domain"
+                              name: "name"
+                              project: "project"
+                            version: "version"
                           map:
                             literals: {}
                           hash: "hash"
@@ -90445,12 +90445,6 @@ definitions:
                             node_id: "node_id"
                           retry_attempt: 5
                         value:
-                          artifact:
-                            artifact_key:
-                              domain: "domain"
-                              name: "name"
-                              project: "project"
-                            version: "version"
                           scalar:
                             schema:
                               type:
@@ -90559,6 +90553,12 @@ definitions:
                             literals:
                             - null
                             - null
+                          artifact_id:
+                            artifact_key:
+                              domain: "domain"
+                              name: "name"
+                              project: "project"
+                            version: "version"
                           map:
                             literals: {}
                           hash: "hash"
@@ -90760,12 +90760,6 @@ definitions:
                             node_id: "node_id"
                           retry_attempt: 5
                         value:
-                          artifact:
-                            artifact_key:
-                              domain: "domain"
-                              name: "name"
-                              project: "project"
-                            version: "version"
                           scalar:
                             schema:
                               type:
@@ -90874,6 +90868,12 @@ definitions:
                             literals:
                             - null
                             - null
+                          artifact_id:
+                            artifact_key:
+                              domain: "domain"
+                              name: "name"
+                              project: "project"
+                            version: "version"
                           map:
                             literals: {}
                           hash: "hash"
@@ -91228,12 +91228,6 @@ definitions:
                             node_id: "node_id"
                           retry_attempt: 5
                         value:
-                          artifact:
-                            artifact_key:
-                              domain: "domain"
-                              name: "name"
-                              project: "project"
-                            version: "version"
                           scalar:
                             schema:
                               type:
@@ -91342,6 +91336,12 @@ definitions:
                             literals:
                             - null
                             - null
+                          artifact_id:
+                            artifact_key:
+                              domain: "domain"
+                              name: "name"
+                              project: "project"
+                            version: "version"
                           map:
                             literals: {}
                           hash: "hash"
@@ -91543,12 +91543,6 @@ definitions:
                             node_id: "node_id"
                           retry_attempt: 5
                         value:
-                          artifact:
-                            artifact_key:
-                              domain: "domain"
-                              name: "name"
-                              project: "project"
-                            version: "version"
                           scalar:
                             schema:
                               type:
@@ -91657,6 +91651,12 @@ definitions:
                             literals:
                             - null
                             - null
+                          artifact_id:
+                            artifact_key:
+                              domain: "domain"
+                              name: "name"
+                              project: "project"
+                            version: "version"
                           map:
                             literals: {}
                           hash: "hash"
@@ -93798,12 +93798,6 @@ definitions:
                             node_id: "node_id"
                           retry_attempt: 5
                         value:
-                          artifact:
-                            artifact_key:
-                              domain: "domain"
-                              name: "name"
-                              project: "project"
-                            version: "version"
                           scalar:
                             schema:
                               type:
@@ -93912,6 +93906,12 @@ definitions:
                             literals:
                             - null
                             - null
+                          artifact_id:
+                            artifact_key:
+                              domain: "domain"
+                              name: "name"
+                              project: "project"
+                            version: "version"
                           map:
                             literals: {}
                           hash: "hash"
@@ -94113,12 +94113,6 @@ definitions:
                             node_id: "node_id"
                           retry_attempt: 5
                         value:
-                          artifact:
-                            artifact_key:
-                              domain: "domain"
-                              name: "name"
-                              project: "project"
-                            version: "version"
                           scalar:
                             schema:
                               type:
@@ -94227,6 +94221,12 @@ definitions:
                             literals:
                             - null
                             - null
+                          artifact_id:
+                            artifact_key:
+                              domain: "domain"
+                              name: "name"
+                              project: "project"
+                            version: "version"
                           map:
                             literals: {}
                           hash: "hash"

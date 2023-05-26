@@ -974,12 +974,12 @@ func (m *Literal) Validate() error {
 			}
 		}
 
-	case *Literal_Artifact:
+	case *Literal_ArtifactId:
 
-		if v, ok := interface{}(m.GetArtifact()).(interface{ Validate() error }); ok {
+		if v, ok := interface{}(m.GetArtifactId()).(interface{ Validate() error }); ok {
 			if err := v.Validate(); err != nil {
 				return LiteralValidationError{
-					field:  "Artifact",
+					field:  "ArtifactId",
 					reason: "embedded message failed validation",
 					cause:  err,
 				}

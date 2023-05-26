@@ -1632,7 +1632,7 @@ class Literal final :
     kScalar = 1,
     kCollection = 2,
     kMap = 3,
-    kArtifact = 7,
+    kArtifactId = 7,
     VALUE_NOT_SET = 0,
   };
 
@@ -1759,14 +1759,14 @@ class Literal final :
   ::flyteidl::core::LiteralMap* mutable_map();
   void set_allocated_map(::flyteidl::core::LiteralMap* map);
 
-  // .flyteidl.core.ArtifactID artifact = 7;
-  bool has_artifact() const;
-  void clear_artifact();
-  static const int kArtifactFieldNumber = 7;
-  const ::flyteidl::core::ArtifactID& artifact() const;
-  ::flyteidl::core::ArtifactID* release_artifact();
-  ::flyteidl::core::ArtifactID* mutable_artifact();
-  void set_allocated_artifact(::flyteidl::core::ArtifactID* artifact);
+  // .flyteidl.core.ArtifactID artifact_id = 7;
+  bool has_artifact_id() const;
+  void clear_artifact_id();
+  static const int kArtifactIdFieldNumber = 7;
+  const ::flyteidl::core::ArtifactID& artifact_id() const;
+  ::flyteidl::core::ArtifactID* release_artifact_id();
+  ::flyteidl::core::ArtifactID* mutable_artifact_id();
+  void set_allocated_artifact_id(::flyteidl::core::ArtifactID* artifact_id);
 
   void clear_value();
   ValueCase value_case() const;
@@ -1776,7 +1776,7 @@ class Literal final :
   void set_has_scalar();
   void set_has_collection();
   void set_has_map();
-  void set_has_artifact();
+  void set_has_artifact_id();
 
   inline bool has_value() const;
   inline void clear_has_value();
@@ -1795,7 +1795,7 @@ class Literal final :
     ::flyteidl::core::Scalar* scalar_;
     ::flyteidl::core::LiteralCollection* collection_;
     ::flyteidl::core::LiteralMap* map_;
-    ::flyteidl::core::ArtifactID* artifact_;
+    ::flyteidl::core::ArtifactID* artifact_id_;
   } value_;
   mutable ::google::protobuf::internal::CachedSize _cached_size_;
   ::google::protobuf::uint32 _oneof_case_[1];
@@ -4395,39 +4395,39 @@ inline ::flyteidl::core::LiteralMap* Literal::mutable_map() {
   return value_.map_;
 }
 
-// .flyteidl.core.ArtifactID artifact = 7;
-inline bool Literal::has_artifact() const {
-  return value_case() == kArtifact;
+// .flyteidl.core.ArtifactID artifact_id = 7;
+inline bool Literal::has_artifact_id() const {
+  return value_case() == kArtifactId;
 }
-inline void Literal::set_has_artifact() {
-  _oneof_case_[0] = kArtifact;
+inline void Literal::set_has_artifact_id() {
+  _oneof_case_[0] = kArtifactId;
 }
-inline ::flyteidl::core::ArtifactID* Literal::release_artifact() {
-  // @@protoc_insertion_point(field_release:flyteidl.core.Literal.artifact)
-  if (has_artifact()) {
+inline ::flyteidl::core::ArtifactID* Literal::release_artifact_id() {
+  // @@protoc_insertion_point(field_release:flyteidl.core.Literal.artifact_id)
+  if (has_artifact_id()) {
     clear_has_value();
-      ::flyteidl::core::ArtifactID* temp = value_.artifact_;
-    value_.artifact_ = nullptr;
+      ::flyteidl::core::ArtifactID* temp = value_.artifact_id_;
+    value_.artifact_id_ = nullptr;
     return temp;
   } else {
     return nullptr;
   }
 }
-inline const ::flyteidl::core::ArtifactID& Literal::artifact() const {
-  // @@protoc_insertion_point(field_get:flyteidl.core.Literal.artifact)
-  return has_artifact()
-      ? *value_.artifact_
+inline const ::flyteidl::core::ArtifactID& Literal::artifact_id() const {
+  // @@protoc_insertion_point(field_get:flyteidl.core.Literal.artifact_id)
+  return has_artifact_id()
+      ? *value_.artifact_id_
       : *reinterpret_cast< ::flyteidl::core::ArtifactID*>(&::flyteidl::core::_ArtifactID_default_instance_);
 }
-inline ::flyteidl::core::ArtifactID* Literal::mutable_artifact() {
-  if (!has_artifact()) {
+inline ::flyteidl::core::ArtifactID* Literal::mutable_artifact_id() {
+  if (!has_artifact_id()) {
     clear_value();
-    set_has_artifact();
-    value_.artifact_ = CreateMaybeMessage< ::flyteidl::core::ArtifactID >(
+    set_has_artifact_id();
+    value_.artifact_id_ = CreateMaybeMessage< ::flyteidl::core::ArtifactID >(
         GetArenaNoVirtual());
   }
-  // @@protoc_insertion_point(field_mutable:flyteidl.core.Literal.artifact)
-  return value_.artifact_;
+  // @@protoc_insertion_point(field_mutable:flyteidl.core.Literal.artifact_id)
+  return value_.artifact_id_;
 }
 
 // string hash = 4;
