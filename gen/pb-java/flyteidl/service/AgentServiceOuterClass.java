@@ -2620,7 +2620,7 @@ public final class AgentServiceOuterClass {
 
     /**
      * <pre>
-     * The outputs of the execution. It's typically used by sql task. agent service will create a
+     * The outputs of the execution. It's typically used by sql task. Agent service will create a
      * Structured dataset pointing to the query result table.
      * +optional
      * </pre>
@@ -2630,7 +2630,7 @@ public final class AgentServiceOuterClass {
     boolean hasOutputs();
     /**
      * <pre>
-     * The outputs of the execution. It's typically used by sql task. agent service will create a
+     * The outputs of the execution. It's typically used by sql task. Agent service will create a
      * Structured dataset pointing to the query result table.
      * +optional
      * </pre>
@@ -2640,7 +2640,7 @@ public final class AgentServiceOuterClass {
     flyteidl.core.Literals.LiteralMap getOutputs();
     /**
      * <pre>
-     * The outputs of the execution. It's typically used by sql task. agent service will create a
+     * The outputs of the execution. It's typically used by sql task. Agent service will create a
      * Structured dataset pointing to the query result table.
      * +optional
      * </pre>
@@ -2773,7 +2773,7 @@ public final class AgentServiceOuterClass {
     private flyteidl.core.Literals.LiteralMap outputs_;
     /**
      * <pre>
-     * The outputs of the execution. It's typically used by sql task. agent service will create a
+     * The outputs of the execution. It's typically used by sql task. Agent service will create a
      * Structured dataset pointing to the query result table.
      * +optional
      * </pre>
@@ -2785,7 +2785,7 @@ public final class AgentServiceOuterClass {
     }
     /**
      * <pre>
-     * The outputs of the execution. It's typically used by sql task. agent service will create a
+     * The outputs of the execution. It's typically used by sql task. Agent service will create a
      * Structured dataset pointing to the query result table.
      * +optional
      * </pre>
@@ -2797,7 +2797,7 @@ public final class AgentServiceOuterClass {
     }
     /**
      * <pre>
-     * The outputs of the execution. It's typically used by sql task. agent service will create a
+     * The outputs of the execution. It's typically used by sql task. Agent service will create a
      * Structured dataset pointing to the query result table.
      * +optional
      * </pre>
@@ -3213,7 +3213,7 @@ public final class AgentServiceOuterClass {
           flyteidl.core.Literals.LiteralMap, flyteidl.core.Literals.LiteralMap.Builder, flyteidl.core.Literals.LiteralMapOrBuilder> outputsBuilder_;
       /**
        * <pre>
-       * The outputs of the execution. It's typically used by sql task. agent service will create a
+       * The outputs of the execution. It's typically used by sql task. Agent service will create a
        * Structured dataset pointing to the query result table.
        * +optional
        * </pre>
@@ -3225,7 +3225,7 @@ public final class AgentServiceOuterClass {
       }
       /**
        * <pre>
-       * The outputs of the execution. It's typically used by sql task. agent service will create a
+       * The outputs of the execution. It's typically used by sql task. Agent service will create a
        * Structured dataset pointing to the query result table.
        * +optional
        * </pre>
@@ -3241,7 +3241,7 @@ public final class AgentServiceOuterClass {
       }
       /**
        * <pre>
-       * The outputs of the execution. It's typically used by sql task. agent service will create a
+       * The outputs of the execution. It's typically used by sql task. Agent service will create a
        * Structured dataset pointing to the query result table.
        * +optional
        * </pre>
@@ -3263,7 +3263,7 @@ public final class AgentServiceOuterClass {
       }
       /**
        * <pre>
-       * The outputs of the execution. It's typically used by sql task. agent service will create a
+       * The outputs of the execution. It's typically used by sql task. Agent service will create a
        * Structured dataset pointing to the query result table.
        * +optional
        * </pre>
@@ -3283,7 +3283,7 @@ public final class AgentServiceOuterClass {
       }
       /**
        * <pre>
-       * The outputs of the execution. It's typically used by sql task. agent service will create a
+       * The outputs of the execution. It's typically used by sql task. Agent service will create a
        * Structured dataset pointing to the query result table.
        * +optional
        * </pre>
@@ -3307,7 +3307,7 @@ public final class AgentServiceOuterClass {
       }
       /**
        * <pre>
-       * The outputs of the execution. It's typically used by sql task. agent service will create a
+       * The outputs of the execution. It's typically used by sql task. Agent service will create a
        * Structured dataset pointing to the query result table.
        * +optional
        * </pre>
@@ -3327,7 +3327,7 @@ public final class AgentServiceOuterClass {
       }
       /**
        * <pre>
-       * The outputs of the execution. It's typically used by sql task. agent service will create a
+       * The outputs of the execution. It's typically used by sql task. Agent service will create a
        * Structured dataset pointing to the query result table.
        * +optional
        * </pre>
@@ -3341,7 +3341,7 @@ public final class AgentServiceOuterClass {
       }
       /**
        * <pre>
-       * The outputs of the execution. It's typically used by sql task. agent service will create a
+       * The outputs of the execution. It's typically used by sql task. Agent service will create a
        * Structured dataset pointing to the query result table.
        * +optional
        * </pre>
@@ -3358,7 +3358,7 @@ public final class AgentServiceOuterClass {
       }
       /**
        * <pre>
-       * The outputs of the execution. It's typically used by sql task. agent service will create a
+       * The outputs of the execution. It's typically used by sql task. Agent service will create a
        * Structured dataset pointing to the query result table.
        * +optional
        * </pre>

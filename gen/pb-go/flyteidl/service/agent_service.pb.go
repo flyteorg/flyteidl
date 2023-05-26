@@ -215,7 +215,7 @@ func (m *TaskGetRequest) GetJobId() string {
 type TaskGetResponse struct {
 	// The state of the execution is used to control its visibility in the UI/CLI.
 	State State `protobuf:"varint,1,opt,name=state,proto3,enum=flyteidl.service.State" json:"state,omitempty"`
-	// The outputs of the execution. It's typically used by sql task. agent service will create a
+	// The outputs of the execution. It's typically used by sql task. Agent service will create a
 	// Structured dataset pointing to the query result table.
 	// +optional
 	Outputs              *core.LiteralMap `protobuf:"bytes,2,opt,name=outputs,proto3" json:"outputs,omitempty"`

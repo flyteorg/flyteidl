@@ -40,7 +40,7 @@ pub struct TaskGetResponse {
     /// The state of the execution is used to control its visibility in the UI/CLI.
     #[prost(enumeration="State", tag="1")]
     pub state: i32,
-    /// The outputs of the execution. It's typically used by sql task. agent service will create a
+    /// The outputs of the execution. It's typically used by sql task. Agent service will create a
     /// Structured dataset pointing to the query result table.
     /// +optional
     #[prost(message, optional, tag="2")]
