@@ -16,6 +16,4 @@ type AdminExecutionCreateRequest struct {
 	Name string `json:"name,omitempty"`
 	Spec *AdminExecutionSpec `json:"spec,omitempty"`
 	Inputs *CoreLiteralMap `json:"inputs,omitempty"`
-	// These are alternatives to the inputs.
-	Artifacts map[string]ArtifactArtifactId `json:"artifacts,omitempty"`
 }

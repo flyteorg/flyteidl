@@ -1267,14 +1267,14 @@ class GetDataRequest final :
   ::std::string* release_flyte_url();
   void set_allocated_flyte_url(::std::string* flyte_url);
 
-  // .flyteidl.artifact.ArtifactID artifact_id = 2;
+  // .flyteidl.core.ArtifactID artifact_id = 2;
   bool has_artifact_id() const;
   void clear_artifact_id();
   static const int kArtifactIdFieldNumber = 2;
-  const ::flyteidl::artifact::ArtifactID& artifact_id() const;
-  ::flyteidl::artifact::ArtifactID* release_artifact_id();
-  ::flyteidl::artifact::ArtifactID* mutable_artifact_id();
-  void set_allocated_artifact_id(::flyteidl::artifact::ArtifactID* artifact_id);
+  const ::flyteidl::core::ArtifactID& artifact_id() const;
+  ::flyteidl::core::ArtifactID* release_artifact_id();
+  ::flyteidl::core::ArtifactID* mutable_artifact_id();
+  void set_allocated_artifact_id(::flyteidl::core::ArtifactID* artifact_id);
 
   void clear_query();
   QueryCase query_case() const;
@@ -1291,7 +1291,7 @@ class GetDataRequest final :
   union QueryUnion {
     QueryUnion() {}
     ::google::protobuf::internal::ArenaStringPtr flyte_url_;
-    ::flyteidl::artifact::ArtifactID* artifact_id_;
+    ::flyteidl::core::ArtifactID* artifact_id_;
   } query_;
   mutable ::google::protobuf::internal::CachedSize _cached_size_;
   ::google::protobuf::uint32 _oneof_case_[1];
@@ -2634,35 +2634,35 @@ inline void GetDataRequest::set_allocated_flyte_url(::std::string* flyte_url) {
   // @@protoc_insertion_point(field_set_allocated:flyteidl.service.GetDataRequest.flyte_url)
 }
 
-// .flyteidl.artifact.ArtifactID artifact_id = 2;
+// .flyteidl.core.ArtifactID artifact_id = 2;
 inline bool GetDataRequest::has_artifact_id() const {
   return query_case() == kArtifactId;
 }
 inline void GetDataRequest::set_has_artifact_id() {
   _oneof_case_[0] = kArtifactId;
 }
-inline ::flyteidl::artifact::ArtifactID* GetDataRequest::release_artifact_id() {
+inline ::flyteidl::core::ArtifactID* GetDataRequest::release_artifact_id() {
   // @@protoc_insertion_point(field_release:flyteidl.service.GetDataRequest.artifact_id)
   if (has_artifact_id()) {
     clear_has_query();
-      ::flyteidl::artifact::ArtifactID* temp = query_.artifact_id_;
+      ::flyteidl::core::ArtifactID* temp = query_.artifact_id_;
     query_.artifact_id_ = nullptr;
     return temp;
   } else {
     return nullptr;
   }
 }
-inline const ::flyteidl::artifact::ArtifactID& GetDataRequest::artifact_id() const {
+inline const ::flyteidl::core::ArtifactID& GetDataRequest::artifact_id() const {
   // @@protoc_insertion_point(field_get:flyteidl.service.GetDataRequest.artifact_id)
   return has_artifact_id()
       ? *query_.artifact_id_
-      : *reinterpret_cast< ::flyteidl::artifact::ArtifactID*>(&::flyteidl::artifact::_ArtifactID_default_instance_);
+      : *reinterpret_cast< ::flyteidl::core::ArtifactID*>(&::flyteidl::core::_ArtifactID_default_instance_);
 }
-inline ::flyteidl::artifact::ArtifactID* GetDataRequest::mutable_artifact_id() {
+inline ::flyteidl::core::ArtifactID* GetDataRequest::mutable_artifact_id() {
   if (!has_artifact_id()) {
     clear_query();
     set_has_artifact_id();
-    query_.artifact_id_ = CreateMaybeMessage< ::flyteidl::artifact::ArtifactID >(
+    query_.artifact_id_ = CreateMaybeMessage< ::flyteidl::core::ArtifactID >(
         GetArenaNoVirtual());
   }
   // @@protoc_insertion_point(field_mutable:flyteidl.service.GetDataRequest.artifact_id)

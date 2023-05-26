@@ -94,8 +94,8 @@ class GetDataRequest(_message.Message):
     FLYTE_URL_FIELD_NUMBER: _ClassVar[int]
     ARTIFACT_ID_FIELD_NUMBER: _ClassVar[int]
     flyte_url: str
-    artifact_id: _artifacts_pb2.ArtifactID
-    def __init__(self, flyte_url: _Optional[str] = ..., artifact_id: _Optional[_Union[_artifacts_pb2.ArtifactID, _Mapping]] = ...) -> None: ...
+    artifact_id: _identifier_pb2.ArtifactID
+    def __init__(self, flyte_url: _Optional[str] = ..., artifact_id: _Optional[_Union[_identifier_pb2.ArtifactID, _Mapping]] = ...) -> None: ...
 
 class GetDataResponse(_message.Message):
     __slots__ = ["literal_map", "pre_signed_urls", "literal", "artifact"]

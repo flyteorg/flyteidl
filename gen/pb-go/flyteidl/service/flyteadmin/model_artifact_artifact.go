@@ -10,7 +10,7 @@
 package flyteadmin
 
 type ArtifactArtifact struct {
-	ArtifactId *ArtifactArtifactId `json:"artifact_id,omitempty"`
+	ArtifactId *CoreArtifactId `json:"artifact_id,omitempty"`
 	// This has to be unique across the entire installation. For OSS, we will write the flyte url here for now.
 	Uri string `json:"uri,omitempty"`
 	Spec *ArtifactArtifactSpec `json:"spec,omitempty"`

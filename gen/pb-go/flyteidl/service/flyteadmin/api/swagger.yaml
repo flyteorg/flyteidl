@@ -3791,11 +3791,6 @@ definitions:
           \ be\nincluded in this map. If not required and not provided, defaults apply.\n\
           +optional"
         $ref: "#/definitions/coreLiteralMap"
-      artifacts:
-        type: "object"
-        description: "These are alternatives to the inputs."
-        additionalProperties:
-          $ref: "#/definitions/artifactArtifactID"
     description: "Request to launch an execution with the given project, domain and\
       \ optionally-assigned name."
   adminExecutionCreateResponse:
@@ -4765,6 +4760,12 @@ definitions:
                       node_id: "node_id"
                     retry_attempt: 5
                   value:
+                    artifact:
+                      artifact_key:
+                        domain: "domain"
+                        name: "name"
+                        project: "project"
+                      version: "version"
                     scalar:
                       schema:
                         type:
@@ -4991,6 +4992,12 @@ definitions:
           parameters:
             key:
               default:
+                artifact:
+                  artifact_key:
+                    domain: "domain"
+                    name: "name"
+                    project: "project"
+                  version: "version"
                 scalar:
                   schema:
                     type:
@@ -5241,6 +5248,12 @@ definitions:
                         node_id: "node_id"
                       retry_attempt: 5
                     value:
+                      artifact:
+                        artifact_key:
+                          domain: "domain"
+                          name: "name"
+                          project: "project"
+                        version: "version"
                       scalar:
                         schema:
                           type:
@@ -5554,6 +5567,12 @@ definitions:
           parameters:
             key:
               default:
+                artifact:
+                  artifact_key:
+                    domain: "domain"
+                    name: "name"
+                    project: "project"
+                  version: "version"
                 scalar:
                   schema:
                     type:
@@ -5804,6 +5823,12 @@ definitions:
                         node_id: "node_id"
                       retry_attempt: 5
                     value:
+                      artifact:
+                        artifact_key:
+                          domain: "domain"
+                          name: "name"
+                          project: "project"
+                        version: "version"
                       scalar:
                         schema:
                           type:
@@ -6202,6 +6227,12 @@ definitions:
                     node_id: "node_id"
                   retry_attempt: 5
                 value:
+                  artifact:
+                    artifact_key:
+                      domain: "domain"
+                      name: "name"
+                      project: "project"
+                    version: "version"
                   scalar:
                     schema:
                       type:
@@ -6428,6 +6459,12 @@ definitions:
         parameters:
           key:
             default:
+              artifact:
+                artifact_key:
+                  domain: "domain"
+                  name: "name"
+                  project: "project"
+                version: "version"
               scalar:
                 schema:
                   type:
@@ -6678,6 +6715,12 @@ definitions:
                       node_id: "node_id"
                     retry_attempt: 5
                   value:
+                    artifact:
+                      artifact_key:
+                        domain: "domain"
+                        name: "name"
+                        project: "project"
+                      version: "version"
                     scalar:
                       schema:
                         type:
@@ -7042,6 +7085,12 @@ definitions:
                         node_id: "node_id"
                       retry_attempt: 5
                     value:
+                      artifact:
+                        artifact_key:
+                          domain: "domain"
+                          name: "name"
+                          project: "project"
+                        version: "version"
                       scalar:
                         schema:
                           type:
@@ -7268,6 +7317,12 @@ definitions:
             parameters:
               key:
                 default:
+                  artifact:
+                    artifact_key:
+                      domain: "domain"
+                      name: "name"
+                      project: "project"
+                    version: "version"
                   scalar:
                     schema:
                       type:
@@ -7518,6 +7573,12 @@ definitions:
                           node_id: "node_id"
                         retry_attempt: 5
                       value:
+                        artifact:
+                          artifact_key:
+                            domain: "domain"
+                            name: "name"
+                            project: "project"
+                          version: "version"
                         scalar:
                           schema:
                             type:
@@ -7831,6 +7892,12 @@ definitions:
             parameters:
               key:
                 default:
+                  artifact:
+                    artifact_key:
+                      domain: "domain"
+                      name: "name"
+                      project: "project"
+                    version: "version"
                   scalar:
                     schema:
                       type:
@@ -8081,6 +8148,12 @@ definitions:
                           node_id: "node_id"
                         retry_attempt: 5
                       value:
+                        artifact:
+                          artifact_key:
+                            domain: "domain"
+                            name: "name"
+                            project: "project"
+                          version: "version"
                         scalar:
                           schema:
                             type:
@@ -8459,6 +8532,12 @@ definitions:
                         node_id: "node_id"
                       retry_attempt: 5
                     value:
+                      artifact:
+                        artifact_key:
+                          domain: "domain"
+                          name: "name"
+                          project: "project"
+                        version: "version"
                       scalar:
                         schema:
                           type:
@@ -8685,6 +8764,12 @@ definitions:
             parameters:
               key:
                 default:
+                  artifact:
+                    artifact_key:
+                      domain: "domain"
+                      name: "name"
+                      project: "project"
+                    version: "version"
                   scalar:
                     schema:
                       type:
@@ -8935,6 +9020,12 @@ definitions:
                           node_id: "node_id"
                         retry_attempt: 5
                       value:
+                        artifact:
+                          artifact_key:
+                            domain: "domain"
+                            name: "name"
+                            project: "project"
+                          version: "version"
                         scalar:
                           schema:
                             type:
@@ -9248,6 +9339,12 @@ definitions:
             parameters:
               key:
                 default:
+                  artifact:
+                    artifact_key:
+                      domain: "domain"
+                      name: "name"
+                      project: "project"
+                    version: "version"
                   scalar:
                     schema:
                       type:
@@ -9498,6 +9595,12 @@ definitions:
                           node_id: "node_id"
                         retry_attempt: 5
                       value:
+                        artifact:
+                          artifact_key:
+                            domain: "domain"
+                            name: "name"
+                            project: "project"
+                          version: "version"
                         scalar:
                           schema:
                             type:
@@ -9982,6 +10085,12 @@ definitions:
         parameters:
           key:
             default:
+              artifact:
+                artifact_key:
+                  domain: "domain"
+                  name: "name"
+                  project: "project"
+                version: "version"
               scalar:
                 schema:
                   type:
@@ -10232,6 +10341,12 @@ definitions:
                       node_id: "node_id"
                     retry_attempt: 5
                   value:
+                    artifact:
+                      artifact_key:
+                        domain: "domain"
+                        name: "name"
+                        project: "project"
+                      version: "version"
                     scalar:
                       schema:
                         type:
@@ -13328,6 +13443,12 @@ definitions:
                               node_id: "node_id"
                             retry_attempt: 5
                           value:
+                            artifact:
+                              artifact_key:
+                                domain: "domain"
+                                name: "name"
+                                project: "project"
+                              version: "version"
                             scalar:
                               schema:
                                 type:
@@ -13637,6 +13758,12 @@ definitions:
                               node_id: "node_id"
                             retry_attempt: 5
                           value:
+                            artifact:
+                              artifact_key:
+                                domain: "domain"
+                                name: "name"
+                                project: "project"
+                              version: "version"
                             scalar:
                               schema:
                                 type:
@@ -15847,6 +15974,12 @@ definitions:
                               node_id: "node_id"
                             retry_attempt: 5
                           value:
+                            artifact:
+                              artifact_key:
+                                domain: "domain"
+                                name: "name"
+                                project: "project"
+                              version: "version"
                             scalar:
                               schema:
                                 type:
@@ -16156,6 +16289,12 @@ definitions:
                               node_id: "node_id"
                             retry_attempt: 5
                           value:
+                            artifact:
+                              artifact_key:
+                                domain: "domain"
+                                name: "name"
+                                project: "project"
+                              version: "version"
                             scalar:
                               schema:
                                 type:
@@ -16581,6 +16720,12 @@ definitions:
                               node_id: "node_id"
                             retry_attempt: 5
                           value:
+                            artifact:
+                              artifact_key:
+                                domain: "domain"
+                                name: "name"
+                                project: "project"
+                              version: "version"
                             scalar:
                               schema:
                                 type:
@@ -16890,6 +17035,12 @@ definitions:
                               node_id: "node_id"
                             retry_attempt: 5
                           value:
+                            artifact:
+                              artifact_key:
+                                domain: "domain"
+                                name: "name"
+                                project: "project"
+                              version: "version"
                             scalar:
                               schema:
                                 type:
@@ -17352,6 +17503,12 @@ definitions:
                               node_id: "node_id"
                             retry_attempt: 5
                           value:
+                            artifact:
+                              artifact_key:
+                                domain: "domain"
+                                name: "name"
+                                project: "project"
+                              version: "version"
                             scalar:
                               schema:
                                 type:
@@ -17661,6 +17818,12 @@ definitions:
                               node_id: "node_id"
                             retry_attempt: 5
                           value:
+                            artifact:
+                              artifact_key:
+                                domain: "domain"
+                                name: "name"
+                                project: "project"
+                              version: "version"
                             scalar:
                               schema:
                                 type:
@@ -19910,6 +20073,12 @@ definitions:
                               node_id: "node_id"
                             retry_attempt: 5
                           value:
+                            artifact:
+                              artifact_key:
+                                domain: "domain"
+                                name: "name"
+                                project: "project"
+                              version: "version"
                             scalar:
                               schema:
                                 type:
@@ -20219,6 +20388,12 @@ definitions:
                               node_id: "node_id"
                             retry_attempt: 5
                           value:
+                            artifact:
+                              artifact_key:
+                                domain: "domain"
+                                name: "name"
+                                project: "project"
+                              version: "version"
                             scalar:
                               schema:
                                 type:
@@ -21687,6 +21862,12 @@ definitions:
                             node_id: "node_id"
                           retry_attempt: 5
                         value:
+                          artifact:
+                            artifact_key:
+                              domain: "domain"
+                              name: "name"
+                              project: "project"
+                            version: "version"
                           scalar:
                             schema:
                               type:
@@ -21996,6 +22177,12 @@ definitions:
                             node_id: "node_id"
                           retry_attempt: 5
                         value:
+                          artifact:
+                            artifact_key:
+                              domain: "domain"
+                              name: "name"
+                              project: "project"
+                            version: "version"
                           scalar:
                             schema:
                               type:
@@ -22474,6 +22661,12 @@ definitions:
                           node_id: "node_id"
                         retry_attempt: 5
                       value:
+                        artifact:
+                          artifact_key:
+                            domain: "domain"
+                            name: "name"
+                            project: "project"
+                          version: "version"
                         scalar:
                           schema:
                             type:
@@ -22783,6 +22976,12 @@ definitions:
                           node_id: "node_id"
                         retry_attempt: 5
                       value:
+                        artifact:
+                          artifact_key:
+                            domain: "domain"
+                            name: "name"
+                            project: "project"
+                          version: "version"
                         scalar:
                           schema:
                             type:
@@ -23674,6 +23873,12 @@ definitions:
                               node_id: "node_id"
                             retry_attempt: 5
                           value:
+                            artifact:
+                              artifact_key:
+                                domain: "domain"
+                                name: "name"
+                                project: "project"
+                              version: "version"
                             scalar:
                               schema:
                                 type:
@@ -23983,6 +24188,12 @@ definitions:
                               node_id: "node_id"
                             retry_attempt: 5
                           value:
+                            artifact:
+                              artifact_key:
+                                domain: "domain"
+                                name: "name"
+                                project: "project"
+                              version: "version"
                             scalar:
                               schema:
                                 type:
@@ -24455,6 +24666,12 @@ definitions:
                               node_id: "node_id"
                             retry_attempt: 5
                           value:
+                            artifact:
+                              artifact_key:
+                                domain: "domain"
+                                name: "name"
+                                project: "project"
+                              version: "version"
                             scalar:
                               schema:
                                 type:
@@ -24764,6 +24981,12 @@ definitions:
                               node_id: "node_id"
                             retry_attempt: 5
                           value:
+                            artifact:
+                              artifact_key:
+                                domain: "domain"
+                                name: "name"
+                                project: "project"
+                              version: "version"
                             scalar:
                               schema:
                                 type:
@@ -27127,6 +27350,12 @@ definitions:
                               node_id: "node_id"
                             retry_attempt: 5
                           value:
+                            artifact:
+                              artifact_key:
+                                domain: "domain"
+                                name: "name"
+                                project: "project"
+                              version: "version"
                             scalar:
                               schema:
                                 type:
@@ -27436,6 +27665,12 @@ definitions:
                               node_id: "node_id"
                             retry_attempt: 5
                           value:
+                            artifact:
+                              artifact_key:
+                                domain: "domain"
+                                name: "name"
+                                project: "project"
+                              version: "version"
                             scalar:
                               schema:
                                 type:
@@ -29646,6 +29881,12 @@ definitions:
                               node_id: "node_id"
                             retry_attempt: 5
                           value:
+                            artifact:
+                              artifact_key:
+                                domain: "domain"
+                                name: "name"
+                                project: "project"
+                              version: "version"
                             scalar:
                               schema:
                                 type:
@@ -29955,6 +30196,12 @@ definitions:
                               node_id: "node_id"
                             retry_attempt: 5
                           value:
+                            artifact:
+                              artifact_key:
+                                domain: "domain"
+                                name: "name"
+                                project: "project"
+                              version: "version"
                             scalar:
                               schema:
                                 type:
@@ -30380,6 +30627,12 @@ definitions:
                               node_id: "node_id"
                             retry_attempt: 5
                           value:
+                            artifact:
+                              artifact_key:
+                                domain: "domain"
+                                name: "name"
+                                project: "project"
+                              version: "version"
                             scalar:
                               schema:
                                 type:
@@ -30689,6 +30942,12 @@ definitions:
                               node_id: "node_id"
                             retry_attempt: 5
                           value:
+                            artifact:
+                              artifact_key:
+                                domain: "domain"
+                                name: "name"
+                                project: "project"
+                              version: "version"
                             scalar:
                               schema:
                                 type:
@@ -31151,6 +31410,12 @@ definitions:
                               node_id: "node_id"
                             retry_attempt: 5
                           value:
+                            artifact:
+                              artifact_key:
+                                domain: "domain"
+                                name: "name"
+                                project: "project"
+                              version: "version"
                             scalar:
                               schema:
                                 type:
@@ -31460,6 +31725,12 @@ definitions:
                               node_id: "node_id"
                             retry_attempt: 5
                           value:
+                            artifact:
+                              artifact_key:
+                                domain: "domain"
+                                name: "name"
+                                project: "project"
+                              version: "version"
                             scalar:
                               schema:
                                 type:
@@ -33709,6 +33980,12 @@ definitions:
                               node_id: "node_id"
                             retry_attempt: 5
                           value:
+                            artifact:
+                              artifact_key:
+                                domain: "domain"
+                                name: "name"
+                                project: "project"
+                              version: "version"
                             scalar:
                               schema:
                                 type:
@@ -34018,6 +34295,12 @@ definitions:
                               node_id: "node_id"
                             retry_attempt: 5
                           value:
+                            artifact:
+                              artifact_key:
+                                domain: "domain"
+                                name: "name"
+                                project: "project"
+                              version: "version"
                             scalar:
                               schema:
                                 type:
@@ -36513,6 +36796,12 @@ definitions:
                             node_id: "node_id"
                           retry_attempt: 5
                         value:
+                          artifact:
+                            artifact_key:
+                              domain: "domain"
+                              name: "name"
+                              project: "project"
+                            version: "version"
                           scalar:
                             schema:
                               type:
@@ -36822,6 +37111,12 @@ definitions:
                             node_id: "node_id"
                           retry_attempt: 5
                         value:
+                          artifact:
+                            artifact_key:
+                              domain: "domain"
+                              name: "name"
+                              project: "project"
+                            version: "version"
                           scalar:
                             schema:
                               type:
@@ -39032,6 +39327,12 @@ definitions:
                             node_id: "node_id"
                           retry_attempt: 5
                         value:
+                          artifact:
+                            artifact_key:
+                              domain: "domain"
+                              name: "name"
+                              project: "project"
+                            version: "version"
                           scalar:
                             schema:
                               type:
@@ -39341,6 +39642,12 @@ definitions:
                             node_id: "node_id"
                           retry_attempt: 5
                         value:
+                          artifact:
+                            artifact_key:
+                              domain: "domain"
+                              name: "name"
+                              project: "project"
+                            version: "version"
                           scalar:
                             schema:
                               type:
@@ -39766,6 +40073,12 @@ definitions:
                             node_id: "node_id"
                           retry_attempt: 5
                         value:
+                          artifact:
+                            artifact_key:
+                              domain: "domain"
+                              name: "name"
+                              project: "project"
+                            version: "version"
                           scalar:
                             schema:
                               type:
@@ -40075,6 +40388,12 @@ definitions:
                             node_id: "node_id"
                           retry_attempt: 5
                         value:
+                          artifact:
+                            artifact_key:
+                              domain: "domain"
+                              name: "name"
+                              project: "project"
+                            version: "version"
                           scalar:
                             schema:
                               type:
@@ -40537,6 +40856,12 @@ definitions:
                             node_id: "node_id"
                           retry_attempt: 5
                         value:
+                          artifact:
+                            artifact_key:
+                              domain: "domain"
+                              name: "name"
+                              project: "project"
+                            version: "version"
                           scalar:
                             schema:
                               type:
@@ -40846,6 +41171,12 @@ definitions:
                             node_id: "node_id"
                           retry_attempt: 5
                         value:
+                          artifact:
+                            artifact_key:
+                              domain: "domain"
+                              name: "name"
+                              project: "project"
+                            version: "version"
                           scalar:
                             schema:
                               type:
@@ -43095,6 +43426,12 @@ definitions:
                             node_id: "node_id"
                           retry_attempt: 5
                         value:
+                          artifact:
+                            artifact_key:
+                              domain: "domain"
+                              name: "name"
+                              project: "project"
+                            version: "version"
                           scalar:
                             schema:
                               type:
@@ -43404,6 +43741,12 @@ definitions:
                             node_id: "node_id"
                           retry_attempt: 5
                         value:
+                          artifact:
+                            artifact_key:
+                              domain: "domain"
+                              name: "name"
+                              project: "project"
+                            version: "version"
                           scalar:
                             schema:
                               type:
@@ -45846,6 +46189,12 @@ definitions:
                                 node_id: "node_id"
                               retry_attempt: 5
                             value:
+                              artifact:
+                                artifact_key:
+                                  domain: "domain"
+                                  name: "name"
+                                  project: "project"
+                                version: "version"
                               scalar:
                                 schema:
                                   type:
@@ -46155,6 +46504,12 @@ definitions:
                                 node_id: "node_id"
                               retry_attempt: 5
                             value:
+                              artifact:
+                                artifact_key:
+                                  domain: "domain"
+                                  name: "name"
+                                  project: "project"
+                                version: "version"
                               scalar:
                                 schema:
                                   type:
@@ -48365,6 +48720,12 @@ definitions:
                                 node_id: "node_id"
                               retry_attempt: 5
                             value:
+                              artifact:
+                                artifact_key:
+                                  domain: "domain"
+                                  name: "name"
+                                  project: "project"
+                                version: "version"
                               scalar:
                                 schema:
                                   type:
@@ -48674,6 +49035,12 @@ definitions:
                                 node_id: "node_id"
                               retry_attempt: 5
                             value:
+                              artifact:
+                                artifact_key:
+                                  domain: "domain"
+                                  name: "name"
+                                  project: "project"
+                                version: "version"
                               scalar:
                                 schema:
                                   type:
@@ -49099,6 +49466,12 @@ definitions:
                                 node_id: "node_id"
                               retry_attempt: 5
                             value:
+                              artifact:
+                                artifact_key:
+                                  domain: "domain"
+                                  name: "name"
+                                  project: "project"
+                                version: "version"
                               scalar:
                                 schema:
                                   type:
@@ -49408,6 +49781,12 @@ definitions:
                                 node_id: "node_id"
                               retry_attempt: 5
                             value:
+                              artifact:
+                                artifact_key:
+                                  domain: "domain"
+                                  name: "name"
+                                  project: "project"
+                                version: "version"
                               scalar:
                                 schema:
                                   type:
@@ -49870,6 +50249,12 @@ definitions:
                                 node_id: "node_id"
                               retry_attempt: 5
                             value:
+                              artifact:
+                                artifact_key:
+                                  domain: "domain"
+                                  name: "name"
+                                  project: "project"
+                                version: "version"
                               scalar:
                                 schema:
                                   type:
@@ -50179,6 +50564,12 @@ definitions:
                                 node_id: "node_id"
                               retry_attempt: 5
                             value:
+                              artifact:
+                                artifact_key:
+                                  domain: "domain"
+                                  name: "name"
+                                  project: "project"
+                                version: "version"
                               scalar:
                                 schema:
                                   type:
@@ -52428,6 +52819,12 @@ definitions:
                                 node_id: "node_id"
                               retry_attempt: 5
                             value:
+                              artifact:
+                                artifact_key:
+                                  domain: "domain"
+                                  name: "name"
+                                  project: "project"
+                                version: "version"
                               scalar:
                                 schema:
                                   type:
@@ -52737,6 +53134,12 @@ definitions:
                                 node_id: "node_id"
                               retry_attempt: 5
                             value:
+                              artifact:
+                                artifact_key:
+                                  domain: "domain"
+                                  name: "name"
+                                  project: "project"
+                                version: "version"
                               scalar:
                                 schema:
                                   type:
@@ -54958,6 +55361,12 @@ definitions:
                                 node_id: "node_id"
                               retry_attempt: 5
                             value:
+                              artifact:
+                                artifact_key:
+                                  domain: "domain"
+                                  name: "name"
+                                  project: "project"
+                                version: "version"
                               scalar:
                                 schema:
                                   type:
@@ -55267,6 +55676,12 @@ definitions:
                                 node_id: "node_id"
                               retry_attempt: 5
                             value:
+                              artifact:
+                                artifact_key:
+                                  domain: "domain"
+                                  name: "name"
+                                  project: "project"
+                                version: "version"
                               scalar:
                                 schema:
                                   type:
@@ -57477,6 +57892,12 @@ definitions:
                                 node_id: "node_id"
                               retry_attempt: 5
                             value:
+                              artifact:
+                                artifact_key:
+                                  domain: "domain"
+                                  name: "name"
+                                  project: "project"
+                                version: "version"
                               scalar:
                                 schema:
                                   type:
@@ -57786,6 +58207,12 @@ definitions:
                                 node_id: "node_id"
                               retry_attempt: 5
                             value:
+                              artifact:
+                                artifact_key:
+                                  domain: "domain"
+                                  name: "name"
+                                  project: "project"
+                                version: "version"
                               scalar:
                                 schema:
                                   type:
@@ -58211,6 +58638,12 @@ definitions:
                                 node_id: "node_id"
                               retry_attempt: 5
                             value:
+                              artifact:
+                                artifact_key:
+                                  domain: "domain"
+                                  name: "name"
+                                  project: "project"
+                                version: "version"
                               scalar:
                                 schema:
                                   type:
@@ -58520,6 +58953,12 @@ definitions:
                                 node_id: "node_id"
                               retry_attempt: 5
                             value:
+                              artifact:
+                                artifact_key:
+                                  domain: "domain"
+                                  name: "name"
+                                  project: "project"
+                                version: "version"
                               scalar:
                                 schema:
                                   type:
@@ -58982,6 +59421,12 @@ definitions:
                                 node_id: "node_id"
                               retry_attempt: 5
                             value:
+                              artifact:
+                                artifact_key:
+                                  domain: "domain"
+                                  name: "name"
+                                  project: "project"
+                                version: "version"
                               scalar:
                                 schema:
                                   type:
@@ -59291,6 +59736,12 @@ definitions:
                                 node_id: "node_id"
                               retry_attempt: 5
                             value:
+                              artifact:
+                                artifact_key:
+                                  domain: "domain"
+                                  name: "name"
+                                  project: "project"
+                                version: "version"
                               scalar:
                                 schema:
                                   type:
@@ -61540,6 +61991,12 @@ definitions:
                                 node_id: "node_id"
                               retry_attempt: 5
                             value:
+                              artifact:
+                                artifact_key:
+                                  domain: "domain"
+                                  name: "name"
+                                  project: "project"
+                                version: "version"
                               scalar:
                                 schema:
                                   type:
@@ -61849,6 +62306,12 @@ definitions:
                                 node_id: "node_id"
                               retry_attempt: 5
                             value:
+                              artifact:
+                                artifact_key:
+                                  domain: "domain"
+                                  name: "name"
+                                  project: "project"
+                                version: "version"
                               scalar:
                                 schema:
                                   type:
@@ -62106,7 +62569,7 @@ definitions:
     type: "object"
     properties:
       artifact_id:
-        $ref: "#/definitions/artifactArtifactID"
+        $ref: "#/definitions/coreArtifactID"
       uri:
         type: "string"
         description: "This has to be unique across the entire installation. For OSS,\
@@ -62200,6 +62663,12 @@ definitions:
             node_id: "node_id"
           retry_attempt: 5
         value:
+          artifact:
+            artifact_key:
+              domain: "domain"
+              name: "name"
+              project: "project"
+            version: "version"
           scalar:
             schema:
               type:
@@ -62367,48 +62836,11 @@ definitions:
           key: "key"
         - value: "value"
           key: "key"
-  artifactArtifactID:
-    type: "object"
-    properties:
-      artifact_key:
-        $ref: "#/definitions/artifactArtifactKey"
-      version:
-        type: "string"
-        description: "Version is always autogenerated unless specifically overridden\
-          \ by the user. This will usually be the wf exec id\nThe things that users\
-          \ want, the ability to tag various versions with user-friendly semvers or\
-          \ something\ncan be managed separately in Tags and Aliases."
-    example:
-      artifact_key:
-        domain: "domain"
-        name: "name"
-        project: "project"
-      version: "version"
-  artifactArtifactKey:
-    type: "object"
-    properties:
-      project:
-        type: "string"
-        description: "Project and domain as we're all used to. Just to align with\
-          \ existing uniqueness constructs."
-      domain:
-        type: "string"
-      name:
-        type: "string"
-        description: "name can be auto-generated by the system in the case of natural\
-          \ outputs or un-named uploads\nor manually named by the user, if they care\
-          \ to.\nPlease see the confluence doc for more discussion, this is one of\
-          \ the trickier bits of the design.\nMaybe we should always have an auto-generated\
-          \ string here and the user-facing \"name\" is a different field."
-    example:
-      domain: "domain"
-      name: "name"
-      project: "project"
   artifactArtifactQuery:
     type: "object"
     properties:
       artifact_key:
-        $ref: "#/definitions/artifactArtifactKey"
+        $ref: "#/definitions/coreArtifactKey"
       version:
         type: "string"
       alias:
@@ -62545,6 +62977,12 @@ definitions:
           node_id: "node_id"
         retry_attempt: 5
       value:
+        artifact:
+          artifact_key:
+            domain: "domain"
+            name: "name"
+            project: "project"
+          version: "version"
         scalar:
           schema:
             type:
@@ -62739,6 +63177,43 @@ definitions:
       \ signal_id."
     example:
       signal_id: "signal_id"
+  coreArtifactID:
+    type: "object"
+    properties:
+      artifact_key:
+        $ref: "#/definitions/coreArtifactKey"
+      version:
+        type: "string"
+        description: "Version is always autogenerated unless specifically overridden\
+          \ by the user. This will usually be the wf exec id\nThe things that users\
+          \ want, the ability to tag various versions with user-friendly semvers or\
+          \ something\ncan be managed separately in Tags and Aliases."
+    example:
+      artifact_key:
+        domain: "domain"
+        name: "name"
+        project: "project"
+      version: "version"
+  coreArtifactKey:
+    type: "object"
+    properties:
+      project:
+        type: "string"
+        description: "Project and domain as we're all used to. Just to align with\
+          \ existing uniqueness constructs."
+      domain:
+        type: "string"
+      name:
+        type: "string"
+        description: "name can be auto-generated by the system in the case of natural\
+          \ outputs or un-named uploads\nor manually named by the user, if they care\
+          \ to.\nPlease see the confluence doc for more discussion, this is one of\
+          \ the trickier bits of the design.\nMaybe we should always have an auto-generated\
+          \ string here and the user-facing \"name\" is a different field."
+    example:
+      domain: "domain"
+      name: "name"
+      project: "project"
   coreBinary:
     type: "object"
     properties:
@@ -63601,6 +64076,12 @@ definitions:
                         node_id: "node_id"
                       retry_attempt: 5
                     value:
+                      artifact:
+                        artifact_key:
+                          domain: "domain"
+                          name: "name"
+                          project: "project"
+                        version: "version"
                       scalar:
                         schema:
                           type:
@@ -63910,6 +64391,12 @@ definitions:
                         node_id: "node_id"
                       retry_attempt: 5
                     value:
+                      artifact:
+                        artifact_key:
+                          domain: "domain"
+                          name: "name"
+                          project: "project"
+                        version: "version"
                       scalar:
                         schema:
                           type:
@@ -66171,6 +66658,12 @@ definitions:
                         node_id: "node_id"
                       retry_attempt: 5
                     value:
+                      artifact:
+                        artifact_key:
+                          domain: "domain"
+                          name: "name"
+                          project: "project"
+                        version: "version"
                       scalar:
                         schema:
                           type:
@@ -66480,6 +66973,12 @@ definitions:
                         node_id: "node_id"
                       retry_attempt: 5
                     value:
+                      artifact:
+                        artifact_key:
+                          domain: "domain"
+                          name: "name"
+                          project: "project"
+                        version: "version"
                       scalar:
                         schema:
                           type:
@@ -68717,6 +69216,12 @@ definitions:
                           node_id: "node_id"
                         retry_attempt: 5
                       value:
+                        artifact:
+                          artifact_key:
+                            domain: "domain"
+                            name: "name"
+                            project: "project"
+                          version: "version"
                         scalar:
                           schema:
                             type:
@@ -69026,6 +69531,12 @@ definitions:
                           node_id: "node_id"
                         retry_attempt: 5
                       value:
+                        artifact:
+                          artifact_key:
+                            domain: "domain"
+                            name: "name"
+                            project: "project"
+                          version: "version"
                         scalar:
                           schema:
                             type:
@@ -71236,6 +71747,12 @@ definitions:
                           node_id: "node_id"
                         retry_attempt: 5
                       value:
+                        artifact:
+                          artifact_key:
+                            domain: "domain"
+                            name: "name"
+                            project: "project"
+                          version: "version"
                         scalar:
                           schema:
                             type:
@@ -71545,6 +72062,12 @@ definitions:
                           node_id: "node_id"
                         retry_attempt: 5
                       value:
+                        artifact:
+                          artifact_key:
+                            domain: "domain"
+                            name: "name"
+                            project: "project"
+                          version: "version"
                         scalar:
                           schema:
                             type:
@@ -71970,6 +72493,12 @@ definitions:
                           node_id: "node_id"
                         retry_attempt: 5
                       value:
+                        artifact:
+                          artifact_key:
+                            domain: "domain"
+                            name: "name"
+                            project: "project"
+                          version: "version"
                         scalar:
                           schema:
                             type:
@@ -72279,6 +72808,12 @@ definitions:
                           node_id: "node_id"
                         retry_attempt: 5
                       value:
+                        artifact:
+                          artifact_key:
+                            domain: "domain"
+                            name: "name"
+                            project: "project"
+                          version: "version"
                         scalar:
                           schema:
                             type:
@@ -72741,6 +73276,12 @@ definitions:
                           node_id: "node_id"
                         retry_attempt: 5
                       value:
+                        artifact:
+                          artifact_key:
+                            domain: "domain"
+                            name: "name"
+                            project: "project"
+                          version: "version"
                         scalar:
                           schema:
                             type:
@@ -73050,6 +73591,12 @@ definitions:
                           node_id: "node_id"
                         retry_attempt: 5
                       value:
+                        artifact:
+                          artifact_key:
+                            domain: "domain"
+                            name: "name"
+                            project: "project"
+                          version: "version"
                         scalar:
                           schema:
                             type:
@@ -75299,6 +75846,12 @@ definitions:
                           node_id: "node_id"
                         retry_attempt: 5
                       value:
+                        artifact:
+                          artifact_key:
+                            domain: "domain"
+                            name: "name"
+                            project: "project"
+                          version: "version"
                         scalar:
                           schema:
                             type:
@@ -75608,6 +76161,12 @@ definitions:
                           node_id: "node_id"
                         retry_attempt: 5
                       value:
+                        artifact:
+                          artifact_key:
+                            domain: "domain"
+                            name: "name"
+                            project: "project"
+                          version: "version"
                         scalar:
                           schema:
                             type:
@@ -76449,6 +77008,9 @@ definitions:
       map:
         description: "A map of strings to literals."
         $ref: "#/definitions/coreLiteralMap"
+      artifact:
+        title: "A reference to another Literal"
+        $ref: "#/definitions/coreArtifactID"
       hash:
         type: "string"
         title: "A hash representing this literal.\nThis is used for caching purposes.\
@@ -76467,6 +77029,12 @@ definitions:
     description: "A simple value. This supports any level of nesting (e.g. array of\
       \ array of array of Blobs) as well as simple primitives."
     example:
+      artifact:
+        artifact_key:
+          domain: "domain"
+          name: "name"
+          project: "project"
+        version: "version"
       scalar:
         schema:
           type:
@@ -77486,6 +78054,12 @@ definitions:
       \ ability to have a default value or mark itself as required."
     example:
       default:
+        artifact:
+          artifact_key:
+            domain: "domain"
+            name: "name"
+            project: "project"
+          version: "version"
         scalar:
           schema:
             type:
@@ -77736,6 +78310,12 @@ definitions:
                 node_id: "node_id"
               retry_attempt: 5
             value:
+              artifact:
+                artifact_key:
+                  domain: "domain"
+                  name: "name"
+                  project: "project"
+                version: "version"
               scalar:
                 schema:
                   type:
@@ -77983,6 +78563,12 @@ definitions:
       parameters:
         key:
           default:
+            artifact:
+              artifact_key:
+                domain: "domain"
+                name: "name"
+                project: "project"
+              version: "version"
             scalar:
               schema:
                 type:
@@ -78233,6 +78819,12 @@ definitions:
                     node_id: "node_id"
                   retry_attempt: 5
                 value:
+                  artifact:
+                    artifact_key:
+                      domain: "domain"
+                      name: "name"
+                      project: "project"
+                    version: "version"
                   scalar:
                     schema:
                       type:
@@ -79522,6 +80114,12 @@ definitions:
                       node_id: "node_id"
                     retry_attempt: 5
                   value:
+                    artifact:
+                      artifact_key:
+                        domain: "domain"
+                        name: "name"
+                        project: "project"
+                      version: "version"
                     scalar:
                       schema:
                         type:
@@ -79831,6 +80429,12 @@ definitions:
                       node_id: "node_id"
                     retry_attempt: 5
                   value:
+                    artifact:
+                      artifact_key:
+                        domain: "domain"
+                        name: "name"
+                        project: "project"
+                      version: "version"
                     scalar:
                       schema:
                         type:
@@ -80229,6 +80833,12 @@ definitions:
                     node_id: "node_id"
                   retry_attempt: 5
                 value:
+                  artifact:
+                    artifact_key:
+                      domain: "domain"
+                      name: "name"
+                      project: "project"
+                    version: "version"
                   scalar:
                     schema:
                       type:
@@ -80538,6 +81148,12 @@ definitions:
                     node_id: "node_id"
                   retry_attempt: 5
                 value:
+                  artifact:
+                    artifact_key:
+                      domain: "domain"
+                      name: "name"
+                      project: "project"
+                    version: "version"
                   scalar:
                     schema:
                       type:
@@ -80999,6 +81615,12 @@ definitions:
               node_id: "node_id"
             retry_attempt: 5
           value:
+            artifact:
+              artifact_key:
+                domain: "domain"
+                name: "name"
+                project: "project"
+              version: "version"
             scalar:
               schema:
                 type:
@@ -81317,6 +81939,12 @@ definitions:
                   node_id: "node_id"
                 retry_attempt: 5
               value:
+                artifact:
+                  artifact_key:
+                    domain: "domain"
+                    name: "name"
+                    project: "project"
+                  version: "version"
                 scalar:
                   schema:
                     type:
@@ -83664,6 +84292,12 @@ definitions:
                       node_id: "node_id"
                     retry_attempt: 5
                   value:
+                    artifact:
+                      artifact_key:
+                        domain: "domain"
+                        name: "name"
+                        project: "project"
+                      version: "version"
                     scalar:
                       schema:
                         type:
@@ -83973,6 +84607,12 @@ definitions:
                       node_id: "node_id"
                     retry_attempt: 5
                   value:
+                    artifact:
+                      artifact_key:
+                        domain: "domain"
+                        name: "name"
+                        project: "project"
+                      version: "version"
                     scalar:
                       schema:
                         type:
@@ -86528,6 +87168,12 @@ definitions:
                             node_id: "node_id"
                           retry_attempt: 5
                         value:
+                          artifact:
+                            artifact_key:
+                              domain: "domain"
+                              name: "name"
+                              project: "project"
+                            version: "version"
                           scalar:
                             schema:
                               type:
@@ -86837,6 +87483,12 @@ definitions:
                             node_id: "node_id"
                           retry_attempt: 5
                         value:
+                          artifact:
+                            artifact_key:
+                              domain: "domain"
+                              name: "name"
+                              project: "project"
+                            version: "version"
                           scalar:
                             schema:
                               type:
@@ -89047,6 +89699,12 @@ definitions:
                             node_id: "node_id"
                           retry_attempt: 5
                         value:
+                          artifact:
+                            artifact_key:
+                              domain: "domain"
+                              name: "name"
+                              project: "project"
+                            version: "version"
                           scalar:
                             schema:
                               type:
@@ -89356,6 +90014,12 @@ definitions:
                             node_id: "node_id"
                           retry_attempt: 5
                         value:
+                          artifact:
+                            artifact_key:
+                              domain: "domain"
+                              name: "name"
+                              project: "project"
+                            version: "version"
                           scalar:
                             schema:
                               type:
@@ -89781,6 +90445,12 @@ definitions:
                             node_id: "node_id"
                           retry_attempt: 5
                         value:
+                          artifact:
+                            artifact_key:
+                              domain: "domain"
+                              name: "name"
+                              project: "project"
+                            version: "version"
                           scalar:
                             schema:
                               type:
@@ -90090,6 +90760,12 @@ definitions:
                             node_id: "node_id"
                           retry_attempt: 5
                         value:
+                          artifact:
+                            artifact_key:
+                              domain: "domain"
+                              name: "name"
+                              project: "project"
+                            version: "version"
                           scalar:
                             schema:
                               type:
@@ -90552,6 +91228,12 @@ definitions:
                             node_id: "node_id"
                           retry_attempt: 5
                         value:
+                          artifact:
+                            artifact_key:
+                              domain: "domain"
+                              name: "name"
+                              project: "project"
+                            version: "version"
                           scalar:
                             schema:
                               type:
@@ -90861,6 +91543,12 @@ definitions:
                             node_id: "node_id"
                           retry_attempt: 5
                         value:
+                          artifact:
+                            artifact_key:
+                              domain: "domain"
+                              name: "name"
+                              project: "project"
+                            version: "version"
                           scalar:
                             schema:
                               type:
@@ -93110,6 +93798,12 @@ definitions:
                             node_id: "node_id"
                           retry_attempt: 5
                         value:
+                          artifact:
+                            artifact_key:
+                              domain: "domain"
+                              name: "name"
+                              project: "project"
+                            version: "version"
                           scalar:
                             schema:
                               type:
@@ -93419,6 +94113,12 @@ definitions:
                             node_id: "node_id"
                           retry_attempt: 5
                         value:
+                          artifact:
+                            artifact_key:
+                              domain: "domain"
+                              name: "name"
+                              project: "project"
+                            version: "version"
                           scalar:
                             schema:
                               type:

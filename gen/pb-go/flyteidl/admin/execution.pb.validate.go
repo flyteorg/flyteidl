@@ -74,23 +74,6 @@ func (m *ExecutionCreateRequest) Validate() error {
 		}
 	}
 
-	for key, val := range m.GetArtifacts() {
-		_ = val
-
-		// no validation rules for Artifacts[key]
-
-		if v, ok := interface{}(val).(interface{ Validate() error }); ok {
-			if err := v.Validate(); err != nil {
-				return ExecutionCreateRequestValidationError{
-					field:  fmt.Sprintf("Artifacts[%v]", key),
-					reason: "embedded message failed validation",
-					cause:  err,
-				}
-			}
-		}
-
-	}
-
 	return nil
 }
 

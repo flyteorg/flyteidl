@@ -16,12 +16,12 @@ from __future__ import absolute_import
 import unittest
 
 import flyteadmin
-from flyteadmin.models.artifact_artifact_key import ArtifactArtifactKey  # noqa: E501
+from flyteadmin.models.core_artifact_key import CoreArtifactKey  # noqa: E501
 from flyteadmin.rest import ApiException
 
 
-class TestArtifactArtifactKey(unittest.TestCase):
-    """ArtifactArtifactKey unit test stubs"""
+class TestCoreArtifactKey(unittest.TestCase):
+    """CoreArtifactKey unit test stubs"""
 
     def setUp(self):
         pass
@@ -29,10 +29,10 @@ class TestArtifactArtifactKey(unittest.TestCase):
     def tearDown(self):
         pass
 
-    def testArtifactArtifactKey(self):
-        """Test ArtifactArtifactKey"""
+    def testCoreArtifactKey(self):
+        """Test CoreArtifactKey"""
         # FIXME: construct object with mandatory attributes with example values
-        # model = flyteadmin.models.artifact_artifact_key.ArtifactArtifactKey()  # noqa: E501
+        # model = flyteadmin.models.core_artifact_key.CoreArtifactKey()  # noqa: E501
         pass
 
 

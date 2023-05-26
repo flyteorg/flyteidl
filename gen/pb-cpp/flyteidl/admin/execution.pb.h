@@ -30,9 +30,6 @@
 #include <google/protobuf/message.h>
 #include <google/protobuf/repeated_field.h>  // IWYU pragma: export
 #include <google/protobuf/extension_set.h>  // IWYU pragma: export
-#include <google/protobuf/map.h>  // IWYU pragma: export
-#include <google/protobuf/map_entry.h>
-#include <google/protobuf/map_field_inl.h>
 #include <google/protobuf/generated_enum_reflection.h>
 #include <google/protobuf/unknown_field_set.h>
 #include "flyteidl/admin/cluster_assignment.pb.h"
@@ -56,7 +53,7 @@ struct TableStruct_flyteidl_2fadmin_2fexecution_2eproto {
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
   static const ::google::protobuf::internal::AuxillaryParseTableField aux[]
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
-  static const ::google::protobuf::internal::ParseTable schema[24]
+  static const ::google::protobuf::internal::ParseTable schema[23]
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
   static const ::google::protobuf::internal::FieldMetadata field_metadata[];
   static const ::google::protobuf::internal::SerializationTable serialization_table[];
@@ -77,9 +74,6 @@ extern ExecutionClosureDefaultTypeInternal _ExecutionClosure_default_instance_;
 class ExecutionCreateRequest;
 class ExecutionCreateRequestDefaultTypeInternal;
 extern ExecutionCreateRequestDefaultTypeInternal _ExecutionCreateRequest_default_instance_;
-class ExecutionCreateRequest_ArtifactsEntry_DoNotUse;
-class ExecutionCreateRequest_ArtifactsEntry_DoNotUseDefaultTypeInternal;
-extern ExecutionCreateRequest_ArtifactsEntry_DoNotUseDefaultTypeInternal _ExecutionCreateRequest_ArtifactsEntry_DoNotUse_default_instance_;
 class ExecutionCreateResponse;
 class ExecutionCreateResponseDefaultTypeInternal;
 extern ExecutionCreateResponseDefaultTypeInternal _ExecutionCreateResponse_default_instance_;
@@ -145,7 +139,6 @@ template<> ::flyteidl::admin::AbortMetadata* Arena::CreateMaybeMessage<::flyteid
 template<> ::flyteidl::admin::Execution* Arena::CreateMaybeMessage<::flyteidl::admin::Execution>(Arena*);
 template<> ::flyteidl::admin::ExecutionClosure* Arena::CreateMaybeMessage<::flyteidl::admin::ExecutionClosure>(Arena*);
 template<> ::flyteidl::admin::ExecutionCreateRequest* Arena::CreateMaybeMessage<::flyteidl::admin::ExecutionCreateRequest>(Arena*);
-template<> ::flyteidl::admin::ExecutionCreateRequest_ArtifactsEntry_DoNotUse* Arena::CreateMaybeMessage<::flyteidl::admin::ExecutionCreateRequest_ArtifactsEntry_DoNotUse>(Arena*);
 template<> ::flyteidl::admin::ExecutionCreateResponse* Arena::CreateMaybeMessage<::flyteidl::admin::ExecutionCreateResponse>(Arena*);
 template<> ::flyteidl::admin::ExecutionList* Arena::CreateMaybeMessage<::flyteidl::admin::ExecutionList>(Arena*);
 template<> ::flyteidl::admin::ExecutionMetadata* Arena::CreateMaybeMessage<::flyteidl::admin::ExecutionMetadata>(Arena*);
@@ -218,30 +211,6 @@ inline bool ExecutionState_Parse(
 }
 // ===================================================================
 
-class ExecutionCreateRequest_ArtifactsEntry_DoNotUse : public ::google::protobuf::internal::MapEntry<ExecutionCreateRequest_ArtifactsEntry_DoNotUse, 
-    ::std::string, ::flyteidl::artifact::ArtifactID,
-    ::google::protobuf::internal::WireFormatLite::TYPE_STRING,
-    ::google::protobuf::internal::WireFormatLite::TYPE_MESSAGE,
-    0 > {
-public:
-#if GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
-static bool _ParseMap(const char* begin, const char* end, void* object, ::google::protobuf::internal::ParseContext* ctx);
-#endif  // GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
-  typedef ::google::protobuf::internal::MapEntry<ExecutionCreateRequest_ArtifactsEntry_DoNotUse, 
-    ::std::string, ::flyteidl::artifact::ArtifactID,
-    ::google::protobuf::internal::WireFormatLite::TYPE_STRING,
-    ::google::protobuf::internal::WireFormatLite::TYPE_MESSAGE,
-    0 > SuperType;
-  ExecutionCreateRequest_ArtifactsEntry_DoNotUse();
-  ExecutionCreateRequest_ArtifactsEntry_DoNotUse(::google::protobuf::Arena* arena);
-  void MergeFrom(const ExecutionCreateRequest_ArtifactsEntry_DoNotUse& other);
-  static const ExecutionCreateRequest_ArtifactsEntry_DoNotUse* internal_default_instance() { return reinterpret_cast<const ExecutionCreateRequest_ArtifactsEntry_DoNotUse*>(&_ExecutionCreateRequest_ArtifactsEntry_DoNotUse_default_instance_); }
-  void MergeFrom(const ::google::protobuf::Message& other) final;
-  ::google::protobuf::Metadata GetMetadata() const;
-};
-
-// -------------------------------------------------------------------
-
 class ExecutionCreateRequest final :
     public ::google::protobuf::Message /* @@protoc_insertion_point(class_definition:flyteidl.admin.ExecutionCreateRequest) */ {
  public:
@@ -280,7 +249,7 @@ class ExecutionCreateRequest final :
                &_ExecutionCreateRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    1;
+    0;
 
   void Swap(ExecutionCreateRequest* other);
   friend void swap(ExecutionCreateRequest& a, ExecutionCreateRequest& b) {
@@ -335,17 +304,7 @@ class ExecutionCreateRequest final :
 
   // nested types ----------------------------------------------------
 
-
   // accessors -------------------------------------------------------
-
-  // map<string, .flyteidl.artifact.ArtifactID> artifacts = 6;
-  int artifacts_size() const;
-  void clear_artifacts();
-  static const int kArtifactsFieldNumber = 6;
-  const ::google::protobuf::Map< ::std::string, ::flyteidl::artifact::ArtifactID >&
-      artifacts() const;
-  ::google::protobuf::Map< ::std::string, ::flyteidl::artifact::ArtifactID >*
-      mutable_artifacts();
 
   // string project = 1;
   void clear_project();
@@ -412,12 +371,6 @@ class ExecutionCreateRequest final :
   class HasBitSetters;
 
   ::google::protobuf::internal::InternalMetadataWithArena _internal_metadata_;
-  ::google::protobuf::internal::MapField<
-      ExecutionCreateRequest_ArtifactsEntry_DoNotUse,
-      ::std::string, ::flyteidl::artifact::ArtifactID,
-      ::google::protobuf::internal::WireFormatLite::TYPE_STRING,
-      ::google::protobuf::internal::WireFormatLite::TYPE_MESSAGE,
-      0 > artifacts_;
   ::google::protobuf::internal::ArenaStringPtr project_;
   ::google::protobuf::internal::ArenaStringPtr domain_;
   ::google::protobuf::internal::ArenaStringPtr name_;
@@ -466,7 +419,7 @@ class ExecutionRelaunchRequest final :
                &_ExecutionRelaunchRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    2;
+    1;
 
   void Swap(ExecutionRelaunchRequest* other);
   friend void swap(ExecutionRelaunchRequest& a, ExecutionRelaunchRequest& b) {
@@ -603,7 +556,7 @@ class ExecutionRecoverRequest final :
                &_ExecutionRecoverRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    3;
+    2;
 
   void Swap(ExecutionRecoverRequest* other);
   friend void swap(ExecutionRecoverRequest& a, ExecutionRecoverRequest& b) {
@@ -743,7 +696,7 @@ class ExecutionCreateResponse final :
                &_ExecutionCreateResponse_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    4;
+    3;
 
   void Swap(ExecutionCreateResponse* other);
   friend void swap(ExecutionCreateResponse& a, ExecutionCreateResponse& b) {
@@ -858,7 +811,7 @@ class WorkflowExecutionGetRequest final :
                &_WorkflowExecutionGetRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    5;
+    4;
 
   void Swap(WorkflowExecutionGetRequest* other);
   friend void swap(WorkflowExecutionGetRequest& a, WorkflowExecutionGetRequest& b) {
@@ -973,7 +926,7 @@ class Execution final :
                &_Execution_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    6;
+    5;
 
   void Swap(Execution* other);
   friend void swap(Execution& a, Execution& b) {
@@ -1108,7 +1061,7 @@ class ExecutionList final :
                &_ExecutionList_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    7;
+    6;
 
   void Swap(ExecutionList* other);
   friend void swap(ExecutionList& a, ExecutionList& b) {
@@ -1247,7 +1200,7 @@ class LiteralMapBlob final :
                &_LiteralMapBlob_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    8;
+    7;
 
   void Swap(LiteralMapBlob* other);
   friend void swap(LiteralMapBlob& a, LiteralMapBlob& b) {
@@ -1392,7 +1345,7 @@ class AbortMetadata final :
                &_AbortMetadata_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    9;
+    8;
 
   void Swap(AbortMetadata* other);
   friend void swap(AbortMetadata& a, AbortMetadata& b) {
@@ -1536,7 +1489,7 @@ class ExecutionClosure final :
                &_ExecutionClosure_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    10;
+    9;
 
   void Swap(ExecutionClosure* other);
   friend void swap(ExecutionClosure& a, ExecutionClosure& b) {
@@ -1804,7 +1757,7 @@ class SystemMetadata final :
                &_SystemMetadata_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    11;
+    10;
 
   void Swap(SystemMetadata* other);
   friend void swap(SystemMetadata& a, SystemMetadata& b) {
@@ -1939,7 +1892,7 @@ class ExecutionMetadata final :
                &_ExecutionMetadata_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    12;
+    11;
 
   void Swap(ExecutionMetadata* other);
   friend void swap(ExecutionMetadata& a, ExecutionMetadata& b) {
@@ -2147,7 +2100,7 @@ class NotificationList final :
                &_NotificationList_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    13;
+    12;
 
   void Swap(NotificationList* other);
   friend void swap(NotificationList& a, NotificationList& b) {
@@ -2271,7 +2224,7 @@ class ExecutionSpec final :
                &_ExecutionSpec_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    14;
+    13;
 
   void Swap(ExecutionSpec* other);
   friend void swap(ExecutionSpec& a, ExecutionSpec& b) {
@@ -2542,7 +2495,7 @@ class ExecutionTerminateRequest final :
                &_ExecutionTerminateRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    15;
+    14;
 
   void Swap(ExecutionTerminateRequest* other);
   friend void swap(ExecutionTerminateRequest& a, ExecutionTerminateRequest& b) {
@@ -2672,7 +2625,7 @@ class ExecutionTerminateResponse final :
                &_ExecutionTerminateResponse_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    16;
+    15;
 
   void Swap(ExecutionTerminateResponse* other);
   friend void swap(ExecutionTerminateResponse& a, ExecutionTerminateResponse& b) {
@@ -2777,7 +2730,7 @@ class WorkflowExecutionGetDataRequest final :
                &_WorkflowExecutionGetDataRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    17;
+    16;
 
   void Swap(WorkflowExecutionGetDataRequest* other);
   friend void swap(WorkflowExecutionGetDataRequest& a, WorkflowExecutionGetDataRequest& b) {
@@ -2892,7 +2845,7 @@ class WorkflowExecutionGetDataResponse final :
                &_WorkflowExecutionGetDataResponse_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    18;
+    17;
 
   void Swap(WorkflowExecutionGetDataResponse* other);
   friend void swap(WorkflowExecutionGetDataResponse& a, WorkflowExecutionGetDataResponse& b) {
@@ -3037,7 +2990,7 @@ class ExecutionUpdateRequest final :
                &_ExecutionUpdateRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    19;
+    18;
 
   void Swap(ExecutionUpdateRequest* other);
   friend void swap(ExecutionUpdateRequest& a, ExecutionUpdateRequest& b) {
@@ -3159,7 +3112,7 @@ class ExecutionStateChangeDetails final :
                &_ExecutionStateChangeDetails_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    20;
+    19;
 
   void Swap(ExecutionStateChangeDetails* other);
   friend void swap(ExecutionStateChangeDetails& a, ExecutionStateChangeDetails& b) {
@@ -3296,7 +3249,7 @@ class ExecutionUpdateResponse final :
                &_ExecutionUpdateResponse_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    21;
+    20;
 
   void Swap(ExecutionUpdateResponse* other);
   friend void swap(ExecutionUpdateResponse& a, ExecutionUpdateResponse& b) {
@@ -3401,7 +3354,7 @@ class WorkflowExecutionGetMetricsRequest final :
                &_WorkflowExecutionGetMetricsRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    22;
+    21;
 
   void Swap(WorkflowExecutionGetMetricsRequest* other);
   friend void swap(WorkflowExecutionGetMetricsRequest& a, WorkflowExecutionGetMetricsRequest& b) {
@@ -3523,7 +3476,7 @@ class WorkflowExecutionGetMetricsResponse final :
                &_WorkflowExecutionGetMetricsResponse_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    23;
+    22;
 
   void Swap(WorkflowExecutionGetMetricsResponse* other);
   friend void swap(WorkflowExecutionGetMetricsResponse& a, WorkflowExecutionGetMetricsResponse& b) {
@@ -3607,8 +3560,6 @@ class WorkflowExecutionGetMetricsResponse final :
   #pragma GCC diagnostic push
   #pragma GCC diagnostic ignored "-Wstrict-aliasing"
 #endif  // __GNUC__
-// -------------------------------------------------------------------
-
 // ExecutionCreateRequest
 
 // string project = 1;
@@ -3864,21 +3815,6 @@ inline void ExecutionCreateRequest::set_allocated_inputs(::flyteidl::core::Liter
   }
   inputs_ = inputs;
   // @@protoc_insertion_point(field_set_allocated:flyteidl.admin.ExecutionCreateRequest.inputs)
-}
-
-// map<string, .flyteidl.artifact.ArtifactID> artifacts = 6;
-inline int ExecutionCreateRequest::artifacts_size() const {
-  return artifacts_.size();
-}
-inline const ::google::protobuf::Map< ::std::string, ::flyteidl::artifact::ArtifactID >&
-ExecutionCreateRequest::artifacts() const {
-  // @@protoc_insertion_point(field_map:flyteidl.admin.ExecutionCreateRequest.artifacts)
-  return artifacts_.GetMap();
-}
-inline ::google::protobuf::Map< ::std::string, ::flyteidl::artifact::ArtifactID >*
-ExecutionCreateRequest::mutable_artifacts() {
-  // @@protoc_insertion_point(field_mutable_map:flyteidl.admin.ExecutionCreateRequest.artifacts)
-  return artifacts_.MutableMap();
 }
 
 // -------------------------------------------------------------------
@@ -7068,8 +7004,6 @@ inline void WorkflowExecutionGetMetricsResponse::set_allocated_span(::flyteidl::
 #ifdef __GNUC__
   #pragma GCC diagnostic pop
 #endif  // __GNUC__
-// -------------------------------------------------------------------
-
 // -------------------------------------------------------------------
 
 // -------------------------------------------------------------------

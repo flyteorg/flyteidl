@@ -128,7 +128,7 @@ message GetDataRequest {
   //      flyte://v1/proj/development/execid/n2/o/o3 (the o3 output of the second node)
   oneof query {
     string flyte_url = 1;
-    artifact.ArtifactID artifact_id = 2;
+    core.ArtifactID artifact_id = 2;
   }
 }
 

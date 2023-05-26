@@ -39,9 +39,6 @@ message ExecutionCreateRequest {
     // included in this map. If not required and not provided, defaults apply.
     // +optional
     core.LiteralMap inputs = 5;
-
-    // These are alternatives to the inputs.
-    map<string, artifact.ArtifactID> artifacts = 6;
 }
 
 // Request to relaunch the referenced execution.

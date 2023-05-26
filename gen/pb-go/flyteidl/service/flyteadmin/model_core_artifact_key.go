@@ -9,7 +9,7 @@
 
 package flyteadmin
 
-type ArtifactArtifactKey struct {
+type CoreArtifactKey struct {
 	// Project and domain as we're all used to. Just to align with existing uniqueness constructs.
 	Project string `json:"project,omitempty"`
 	Domain string `json:"domain,omitempty"`

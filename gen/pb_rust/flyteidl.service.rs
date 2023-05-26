@@ -216,7 +216,7 @@ pub mod get_data_request {
         #[prost(string, tag="1")]
         FlyteUrl(::prost::alloc::string::String),
         #[prost(message, tag="2")]
-        ArtifactId(super::super::artifact::ArtifactId),
+        ArtifactId(super::super::core::ArtifactId),
     }
 }
 #[allow(clippy::derive_partial_eq_without_eq)]

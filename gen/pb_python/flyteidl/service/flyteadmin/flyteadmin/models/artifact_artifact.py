@@ -16,8 +16,8 @@ import re  # noqa: F401
 
 import six
 
-from flyteadmin.models.artifact_artifact_id import ArtifactArtifactID  # noqa: F401,E501
 from flyteadmin.models.artifact_artifact_spec import ArtifactArtifactSpec  # noqa: F401,E501
+from flyteadmin.models.core_artifact_id import CoreArtifactID  # noqa: F401,E501
 
 
 class ArtifactArtifact(object):
@@ -34,7 +34,7 @@ class ArtifactArtifact(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'artifact_id': 'ArtifactArtifactID',
+        'artifact_id': 'CoreArtifactID',
         'uri': 'str',
         'spec': 'ArtifactArtifactSpec'
     }
@@ -66,7 +66,7 @@ class ArtifactArtifact(object):
 
 
         :return: The artifact_id of this ArtifactArtifact.  # noqa: E501
-        :rtype: ArtifactArtifactID
+        :rtype: CoreArtifactID
         """
         return self._artifact_id
 
@@ -76,7 +76,7 @@ class ArtifactArtifact(object):
 
 
         :param artifact_id: The artifact_id of this ArtifactArtifact.  # noqa: E501
-        :type: ArtifactArtifactID
+        :type: CoreArtifactID
         """
 
         self._artifact_id = artifact_id

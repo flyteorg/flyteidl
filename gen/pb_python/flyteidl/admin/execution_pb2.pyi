@@ -25,27 +25,18 @@ EXECUTION_ACTIVE: ExecutionState
 EXECUTION_ARCHIVED: ExecutionState
 
 class ExecutionCreateRequest(_message.Message):
-    __slots__ = ["project", "domain", "name", "spec", "inputs", "artifacts"]
-    class ArtifactsEntry(_message.Message):
-        __slots__ = ["key", "value"]
-        KEY_FIELD_NUMBER: _ClassVar[int]
-        VALUE_FIELD_NUMBER: _ClassVar[int]
-        key: str
-        value: _artifacts_pb2.ArtifactID
-        def __init__(self, key: _Optional[str] = ..., value: _Optional[_Union[_artifacts_pb2.ArtifactID, _Mapping]] = ...) -> None: ...
+    __slots__ = ["project", "domain", "name", "spec", "inputs"]
     PROJECT_FIELD_NUMBER: _ClassVar[int]
     DOMAIN_FIELD_NUMBER: _ClassVar[int]
     NAME_FIELD_NUMBER: _ClassVar[int]
     SPEC_FIELD_NUMBER: _ClassVar[int]
     INPUTS_FIELD_NUMBER: _ClassVar[int]
-    ARTIFACTS_FIELD_NUMBER: _ClassVar[int]
     project: str
     domain: str
     name: str
     spec: ExecutionSpec
     inputs: _literals_pb2.LiteralMap
-    artifacts: _containers.MessageMap[str, _artifacts_pb2.ArtifactID]
-    def __init__(self, project: _Optional[str] = ..., domain: _Optional[str] = ..., name: _Optional[str] = ..., spec: _Optional[_Union[ExecutionSpec, _Mapping]] = ..., inputs: _Optional[_Union[_literals_pb2.LiteralMap, _Mapping]] = ..., artifacts: _Optional[_Mapping[str, _artifacts_pb2.ArtifactID]] = ...) -> None: ...
+    def __init__(self, project: _Optional[str] = ..., domain: _Optional[str] = ..., name: _Optional[str] = ..., spec: _Optional[_Union[ExecutionSpec, _Mapping]] = ..., inputs: _Optional[_Union[_literals_pb2.LiteralMap, _Mapping]] = ...) -> None: ...
 
 class ExecutionRelaunchRequest(_message.Message):
     __slots__ = ["id", "name", "overwrite_cache"]

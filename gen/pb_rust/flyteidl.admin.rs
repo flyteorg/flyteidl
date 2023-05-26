@@ -672,9 +672,6 @@ pub struct ExecutionCreateRequest {
     /// +optional
     #[prost(message, optional, tag="5")]
     pub inputs: ::core::option::Option<super::core::LiteralMap>,
-    /// These are alternatives to the inputs.
-    #[prost(map="string, message", tag="6")]
-    pub artifacts: ::std::collections::HashMap<::prost::alloc::string::String, super::artifact::ArtifactId>,
 }
 /// Request to relaunch the referenced execution.
 #[allow(clippy::derive_partial_eq_without_eq)]

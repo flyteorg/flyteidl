@@ -428,3 +428,150 @@ var _ interface {
 	Cause() error
 	ErrorName() string
 } = SignalIdentifierValidationError{}
+
+// Validate checks the field values on ArtifactKey with the rules defined in
+// the proto definition for this message. If any rules are violated, an error
+// is returned.
+func (m *ArtifactKey) Validate() error {
+	if m == nil {
+		return nil
+	}
+
+	// no validation rules for Project
+
+	// no validation rules for Domain
+
+	// no validation rules for Name
+
+	return nil
+}
+
+// ArtifactKeyValidationError is the validation error returned by
+// ArtifactKey.Validate if the designated constraints aren't met.
+type ArtifactKeyValidationError struct {
+	field  string
+	reason string
+	cause  error
+	key    bool
+}
+
+// Field function returns field value.
+func (e ArtifactKeyValidationError) Field() string { return e.field }
+
+// Reason function returns reason value.
+func (e ArtifactKeyValidationError) Reason() string { return e.reason }
+
+// Cause function returns cause value.
+func (e ArtifactKeyValidationError) Cause() error { return e.cause }
+
+// Key function returns key value.
+func (e ArtifactKeyValidationError) Key() bool { return e.key }
+
+// ErrorName returns error name.
+func (e ArtifactKeyValidationError) ErrorName() string { return "ArtifactKeyValidationError" }
+
+// Error satisfies the builtin error interface
+func (e ArtifactKeyValidationError) Error() string {
+	cause := ""
+	if e.cause != nil {
+		cause = fmt.Sprintf(" | caused by: %v", e.cause)
+	}
+
+	key := ""
+	if e.key {
+		key = "key for "
+	}
+
+	return fmt.Sprintf(
+		"invalid %sArtifactKey.%s: %s%s",
+		key,
+		e.field,
+		e.reason,
+		cause)
+}
+
+var _ error = ArtifactKeyValidationError{}
+
+var _ interface {
+	Field() string
+	Reason() string
+	Key() bool
+	Cause() error
+	ErrorName() string
+} = ArtifactKeyValidationError{}
+
+// Validate checks the field values on ArtifactID with the rules defined in the
+// proto definition for this message. If any rules are violated, an error is returned.
+func (m *ArtifactID) Validate() error {
+	if m == nil {
+		return nil
+	}
+
+	if v, ok := interface{}(m.GetArtifactKey()).(interface{ Validate() error }); ok {
+		if err := v.Validate(); err != nil {
+			return ArtifactIDValidationError{
+				field:  "ArtifactKey",
+				reason: "embedded message failed validation",
+				cause:  err,
+			}
+		}
+	}
+
+	// no validation rules for Version
+
+	return nil
+}
+
+// ArtifactIDValidationError is the validation error returned by
+// ArtifactID.Validate if the designated constraints aren't met.
+type ArtifactIDValidationError struct {
+	field  string
+	reason string
+	cause  error
+	key    bool
+}
+
+// Field function returns field value.
+func (e ArtifactIDValidationError) Field() string { return e.field }
+
+// Reason function returns reason value.
+func (e ArtifactIDValidationError) Reason() string { return e.reason }
+
+// Cause function returns cause value.
+func (e ArtifactIDValidationError) Cause() error { return e.cause }
+
+// Key function returns key value.
+func (e ArtifactIDValidationError) Key() bool { return e.key }
+
+// ErrorName returns error name.
+func (e ArtifactIDValidationError) ErrorName() string { return "ArtifactIDValidationError" }
+
+// Error satisfies the builtin error interface
+func (e ArtifactIDValidationError) Error() string {
+	cause := ""
+	if e.cause != nil {
+		cause = fmt.Sprintf(" | caused by: %v", e.cause)
+	}
+
+	key := ""
+	if e.key {
+		key = "key for "
+	}
+
+	return fmt.Sprintf(
+		"invalid %sArtifactID.%s: %s%s",
+		key,
+		e.field,
+		e.reason,
+		cause)
+}
+
+var _ error = ArtifactIDValidationError{}
+
+var _ interface {
+	Field() string
+	Reason() string
+	Key() bool
+	Cause() error
+	ErrorName() string
+} = ArtifactIDValidationError{}

@@ -528,6 +528,128 @@ export namespace flyteidl {
             public static verify(message: { [k: string]: any }): (string|null);
         }
 
+        /** Properties of an ArtifactKey. */
+        interface IArtifactKey {
+
+            /** ArtifactKey project */
+            project?: (string|null);
+
+            /** ArtifactKey domain */
+            domain?: (string|null);
+
+            /** ArtifactKey name */
+            name?: (string|null);
+        }
+
+        /** Represents an ArtifactKey. */
+        class ArtifactKey implements IArtifactKey {
+
+            /**
+             * Constructs a new ArtifactKey.
+             * @param [properties] Properties to set
+             */
+            constructor(properties?: flyteidl.core.IArtifactKey);
+
+            /** ArtifactKey project. */
+            public project: string;
+
+            /** ArtifactKey domain. */
+            public domain: string;
+
+            /** ArtifactKey name. */
+            public name: string;
+
+            /**
+             * Creates a new ArtifactKey instance using the specified properties.
+             * @param [properties] Properties to set
+             * @returns ArtifactKey instance
+             */
+            public static create(properties?: flyteidl.core.IArtifactKey): flyteidl.core.ArtifactKey;
+
+            /**
+             * Encodes the specified ArtifactKey message. Does not implicitly {@link flyteidl.core.ArtifactKey.verify|verify} messages.
+             * @param message ArtifactKey message or plain object to encode
+             * @param [writer] Writer to encode to
+             * @returns Writer
+             */
+            public static encode(message: flyteidl.core.IArtifactKey, writer?: $protobuf.Writer): $protobuf.Writer;
+
+            /**
+             * Decodes an ArtifactKey message from the specified reader or buffer.
+             * @param reader Reader or buffer to decode from
+             * @param [length] Message length if known beforehand
+             * @returns ArtifactKey
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): flyteidl.core.ArtifactKey;
+
+            /**
+             * Verifies an ArtifactKey message.
+             * @param message Plain object to verify
+             * @returns `null` if valid, otherwise the reason why it is not
+             */
+            public static verify(message: { [k: string]: any }): (string|null);
+        }
+
+        /** Properties of an ArtifactID. */
+        interface IArtifactID {
+
+            /** ArtifactID artifactKey */
+            artifactKey?: (flyteidl.core.IArtifactKey|null);
+
+            /** ArtifactID version */
+            version?: (string|null);
+        }
+
+        /** Represents an ArtifactID. */
+        class ArtifactID implements IArtifactID {
+
+            /**
+             * Constructs a new ArtifactID.
+             * @param [properties] Properties to set
+             */
+            constructor(properties?: flyteidl.core.IArtifactID);
+
+            /** ArtifactID artifactKey. */
+            public artifactKey?: (flyteidl.core.IArtifactKey|null);
+
+            /** ArtifactID version. */
+            public version: string;
+
+            /**
+             * Creates a new ArtifactID instance using the specified properties.
+             * @param [properties] Properties to set
+             * @returns ArtifactID instance
+             */
+            public static create(properties?: flyteidl.core.IArtifactID): flyteidl.core.ArtifactID;
+
+            /**
+             * Encodes the specified ArtifactID message. Does not implicitly {@link flyteidl.core.ArtifactID.verify|verify} messages.
+             * @param message ArtifactID message or plain object to encode
+             * @param [writer] Writer to encode to
+             * @returns Writer
+             */
+            public static encode(message: flyteidl.core.IArtifactID, writer?: $protobuf.Writer): $protobuf.Writer;
+
+            /**
+             * Decodes an ArtifactID message from the specified reader or buffer.
+             * @param reader Reader or buffer to decode from
+             * @param [length] Message length if known beforehand
+             * @returns ArtifactID
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): flyteidl.core.ArtifactID;
+
+            /**
+             * Verifies an ArtifactID message.
+             * @param message Plain object to verify
+             * @returns `null` if valid, otherwise the reason why it is not
+             */
+            public static verify(message: { [k: string]: any }): (string|null);
+        }
+
         /** Properties of a ConnectionSet. */
         interface IConnectionSet {
 
@@ -2766,6 +2888,9 @@ export namespace flyteidl {
             /** Literal map */
             map?: (flyteidl.core.ILiteralMap|null);
 
+            /** Literal artifact */
+            artifact?: (flyteidl.core.IArtifactID|null);
+
             /** Literal hash */
             hash?: (string|null);
 
@@ -2794,6 +2919,9 @@ export namespace flyteidl {
             /** Literal map. */
             public map?: (flyteidl.core.ILiteralMap|null);
 
+            /** Literal artifact. */
+            public artifact?: (flyteidl.core.IArtifactID|null);
+
             /** Literal hash. */
             public hash: string;
 
@@ -2804,7 +2932,7 @@ export namespace flyteidl {
             public literalType?: (flyteidl.core.ILiteralType|null);
 
             /** Literal value. */
-            public value?: ("scalar"|"collection"|"map");
+            public value?: ("scalar"|"collection"|"map"|"artifact");
 
             /**
              * Creates a new Literal instance using the specified properties.
@@ -6558,133 +6686,11 @@ export namespace flyteidl {
     /** Namespace artifact. */
     namespace artifact {
 
-        /** Properties of an ArtifactKey. */
-        interface IArtifactKey {
-
-            /** ArtifactKey project */
-            project?: (string|null);
-
-            /** ArtifactKey domain */
-            domain?: (string|null);
-
-            /** ArtifactKey name */
-            name?: (string|null);
-        }
-
-        /** Represents an ArtifactKey. */
-        class ArtifactKey implements IArtifactKey {
-
-            /**
-             * Constructs a new ArtifactKey.
-             * @param [properties] Properties to set
-             */
-            constructor(properties?: flyteidl.artifact.IArtifactKey);
-
-            /** ArtifactKey project. */
-            public project: string;
-
-            /** ArtifactKey domain. */
-            public domain: string;
-
-            /** ArtifactKey name. */
-            public name: string;
-
-            /**
-             * Creates a new ArtifactKey instance using the specified properties.
-             * @param [properties] Properties to set
-             * @returns ArtifactKey instance
-             */
-            public static create(properties?: flyteidl.artifact.IArtifactKey): flyteidl.artifact.ArtifactKey;
-
-            /**
-             * Encodes the specified ArtifactKey message. Does not implicitly {@link flyteidl.artifact.ArtifactKey.verify|verify} messages.
-             * @param message ArtifactKey message or plain object to encode
-             * @param [writer] Writer to encode to
-             * @returns Writer
-             */
-            public static encode(message: flyteidl.artifact.IArtifactKey, writer?: $protobuf.Writer): $protobuf.Writer;
-
-            /**
-             * Decodes an ArtifactKey message from the specified reader or buffer.
-             * @param reader Reader or buffer to decode from
-             * @param [length] Message length if known beforehand
-             * @returns ArtifactKey
-             * @throws {Error} If the payload is not a reader or valid buffer
-             * @throws {$protobuf.util.ProtocolError} If required fields are missing
-             */
-            public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): flyteidl.artifact.ArtifactKey;
-
-            /**
-             * Verifies an ArtifactKey message.
-             * @param message Plain object to verify
-             * @returns `null` if valid, otherwise the reason why it is not
-             */
-            public static verify(message: { [k: string]: any }): (string|null);
-        }
-
-        /** Properties of an ArtifactID. */
-        interface IArtifactID {
-
-            /** ArtifactID artifactKey */
-            artifactKey?: (flyteidl.artifact.IArtifactKey|null);
-
-            /** ArtifactID version */
-            version?: (string|null);
-        }
-
-        /** Represents an ArtifactID. */
-        class ArtifactID implements IArtifactID {
-
-            /**
-             * Constructs a new ArtifactID.
-             * @param [properties] Properties to set
-             */
-            constructor(properties?: flyteidl.artifact.IArtifactID);
-
-            /** ArtifactID artifactKey. */
-            public artifactKey?: (flyteidl.artifact.IArtifactKey|null);
-
-            /** ArtifactID version. */
-            public version: string;
-
-            /**
-             * Creates a new ArtifactID instance using the specified properties.
-             * @param [properties] Properties to set
-             * @returns ArtifactID instance
-             */
-            public static create(properties?: flyteidl.artifact.IArtifactID): flyteidl.artifact.ArtifactID;
-
-            /**
-             * Encodes the specified ArtifactID message. Does not implicitly {@link flyteidl.artifact.ArtifactID.verify|verify} messages.
-             * @param message ArtifactID message or plain object to encode
-             * @param [writer] Writer to encode to
-             * @returns Writer
-             */
-            public static encode(message: flyteidl.artifact.IArtifactID, writer?: $protobuf.Writer): $protobuf.Writer;
-
-            /**
-             * Decodes an ArtifactID message from the specified reader or buffer.
-             * @param reader Reader or buffer to decode from
-             * @param [length] Message length if known beforehand
-             * @returns ArtifactID
-             * @throws {Error} If the payload is not a reader or valid buffer
-             * @throws {$protobuf.util.ProtocolError} If required fields are missing
-             */
-            public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): flyteidl.artifact.ArtifactID;
-
-            /**
-             * Verifies an ArtifactID message.
-             * @param message Plain object to verify
-             * @returns `null` if valid, otherwise the reason why it is not
-             */
-            public static verify(message: { [k: string]: any }): (string|null);
-        }
-
         /** Properties of an Artifact. */
         interface IArtifact {
 
             /** Artifact artifactId */
-            artifactId?: (flyteidl.artifact.IArtifactID|null);
+            artifactId?: (flyteidl.core.IArtifactID|null);
 
             /** Artifact uri */
             uri?: (string|null);
@@ -6703,7 +6709,7 @@ export namespace flyteidl {
             constructor(properties?: flyteidl.artifact.IArtifact);
 
             /** Artifact artifactId. */
-            public artifactId?: (flyteidl.artifact.IArtifactID|null);
+            public artifactId?: (flyteidl.core.IArtifactID|null);
 
             /** Artifact uri. */
             public uri: string;
@@ -6851,7 +6857,7 @@ export namespace flyteidl {
         interface IArtifactQuery {
 
             /** ArtifactQuery artifactKey */
-            artifactKey?: (flyteidl.artifact.IArtifactKey|null);
+            artifactKey?: (flyteidl.core.IArtifactKey|null);
 
             /** ArtifactQuery version */
             version?: (string|null);
@@ -6873,7 +6879,7 @@ export namespace flyteidl {
             constructor(properties?: flyteidl.artifact.IArtifactQuery);
 
             /** ArtifactQuery artifactKey. */
-            public artifactKey?: (flyteidl.artifact.IArtifactKey|null);
+            public artifactKey?: (flyteidl.core.IArtifactKey|null);
 
             /** ArtifactQuery version. */
             public version: string;
@@ -6921,7 +6927,7 @@ export namespace flyteidl {
         interface ICreateArtifactRequest {
 
             /** CreateArtifactRequest artifactKey */
-            artifactKey?: (flyteidl.artifact.IArtifactKey|null);
+            artifactKey?: (flyteidl.core.IArtifactKey|null);
 
             /** CreateArtifactRequest version */
             version?: (string|null);
@@ -6940,7 +6946,7 @@ export namespace flyteidl {
             constructor(properties?: flyteidl.artifact.ICreateArtifactRequest);
 
             /** CreateArtifactRequest artifactKey. */
-            public artifactKey?: (flyteidl.artifact.IArtifactKey|null);
+            public artifactKey?: (flyteidl.core.IArtifactKey|null);
 
             /** CreateArtifactRequest version. */
             public version: string;
@@ -7037,7 +7043,7 @@ export namespace flyteidl {
         interface IGetArtifactRequest {
 
             /** GetArtifactRequest artifactId */
-            artifactId?: (flyteidl.artifact.IArtifactID|null);
+            artifactId?: (flyteidl.core.IArtifactID|null);
 
             /** GetArtifactRequest uri */
             uri?: (string|null);
@@ -7056,7 +7062,7 @@ export namespace flyteidl {
             constructor(properties?: flyteidl.artifact.IGetArtifactRequest);
 
             /** GetArtifactRequest artifactId. */
-            public artifactId?: (flyteidl.artifact.IArtifactID|null);
+            public artifactId?: (flyteidl.core.IArtifactID|null);
 
             /** GetArtifactRequest uri. */
             public uri: string;
@@ -7162,7 +7168,7 @@ export namespace flyteidl {
         interface IAddTagsRequest {
 
             /** AddTagsRequest artifactId */
-            artifactId?: (flyteidl.artifact.IArtifactID|null);
+            artifactId?: (flyteidl.core.IArtifactID|null);
 
             /** AddTagsRequest tags */
             tags?: (flyteidl.artifact.ITag[]|null);
@@ -7178,7 +7184,7 @@ export namespace flyteidl {
             constructor(properties?: flyteidl.artifact.IAddTagsRequest);
 
             /** AddTagsRequest artifactId. */
-            public artifactId?: (flyteidl.artifact.IArtifactID|null);
+            public artifactId?: (flyteidl.core.IArtifactID|null);
 
             /** AddTagsRequest tags. */
             public tags: flyteidl.artifact.ITag[];
@@ -7266,7 +7272,7 @@ export namespace flyteidl {
         interface IRemoveTagsRequest {
 
             /** RemoveTagsRequest artifactId */
-            artifactId?: (flyteidl.artifact.IArtifactID|null);
+            artifactId?: (flyteidl.core.IArtifactID|null);
 
             /** RemoveTagsRequest tags */
             tags?: (flyteidl.artifact.ITag[]|null);
@@ -7282,7 +7288,7 @@ export namespace flyteidl {
             constructor(properties?: flyteidl.artifact.IRemoveTagsRequest);
 
             /** RemoveTagsRequest artifactId. */
-            public artifactId?: (flyteidl.artifact.IArtifactID|null);
+            public artifactId?: (flyteidl.core.IArtifactID|null);
 
             /** RemoveTagsRequest tags. */
             public tags: flyteidl.artifact.ITag[];
@@ -7428,7 +7434,7 @@ export namespace flyteidl {
         interface IListArtifactNamesResponse {
 
             /** ListArtifactNamesResponse artifactKeys */
-            artifactKeys?: (flyteidl.artifact.IArtifactKey[]|null);
+            artifactKeys?: (flyteidl.core.IArtifactKey[]|null);
         }
 
         /** Represents a ListArtifactNamesResponse. */
@@ -7441,7 +7447,7 @@ export namespace flyteidl {
             constructor(properties?: flyteidl.artifact.IListArtifactNamesResponse);
 
             /** ListArtifactNamesResponse artifactKeys. */
-            public artifactKeys: flyteidl.artifact.IArtifactKey[];
+            public artifactKeys: flyteidl.core.IArtifactKey[];
 
             /**
              * Creates a new ListArtifactNamesResponse instance using the specified properties.
@@ -7480,7 +7486,7 @@ export namespace flyteidl {
         interface IListArtifactsRequest {
 
             /** ListArtifactsRequest artifactKey */
-            artifactKey?: (flyteidl.artifact.IArtifactKey|null);
+            artifactKey?: (flyteidl.core.IArtifactKey|null);
         }
 
         /** Represents a ListArtifactsRequest. */
@@ -7493,7 +7499,7 @@ export namespace flyteidl {
             constructor(properties?: flyteidl.artifact.IListArtifactsRequest);
 
             /** ListArtifactsRequest artifactKey. */
-            public artifactKey?: (flyteidl.artifact.IArtifactKey|null);
+            public artifactKey?: (flyteidl.core.IArtifactKey|null);
 
             /**
              * Creates a new ListArtifactsRequest instance using the specified properties.
@@ -7584,7 +7590,7 @@ export namespace flyteidl {
         interface ICreateAliasRequest {
 
             /** CreateAliasRequest artifactKey */
-            artifactKey?: (flyteidl.artifact.IArtifactKey|null);
+            artifactKey?: (flyteidl.core.IArtifactKey|null);
 
             /** CreateAliasRequest alias */
             alias?: (flyteidl.artifact.IAlias|null);
@@ -7603,7 +7609,7 @@ export namespace flyteidl {
             constructor(properties?: flyteidl.artifact.ICreateAliasRequest);
 
             /** CreateAliasRequest artifactKey. */
-            public artifactKey?: (flyteidl.artifact.IArtifactKey|null);
+            public artifactKey?: (flyteidl.core.IArtifactKey|null);
 
             /** CreateAliasRequest alias. */
             public alias?: (flyteidl.artifact.IAlias|null);
@@ -7694,7 +7700,7 @@ export namespace flyteidl {
         interface IRemoveAliasRequest {
 
             /** RemoveAliasRequest artifactId */
-            artifactId?: (flyteidl.artifact.IArtifactID|null);
+            artifactId?: (flyteidl.core.IArtifactID|null);
 
             /** RemoveAliasRequest alias */
             alias?: (flyteidl.artifact.IAlias|null);
@@ -7710,7 +7716,7 @@ export namespace flyteidl {
             constructor(properties?: flyteidl.artifact.IRemoveAliasRequest);
 
             /** RemoveAliasRequest artifactId. */
-            public artifactId?: (flyteidl.artifact.IArtifactID|null);
+            public artifactId?: (flyteidl.core.IArtifactID|null);
 
             /** RemoveAliasRequest alias. */
             public alias?: (flyteidl.artifact.IAlias|null);
@@ -11365,9 +11371,6 @@ export namespace flyteidl {
 
             /** ExecutionCreateRequest inputs */
             inputs?: (flyteidl.core.ILiteralMap|null);
-
-            /** ExecutionCreateRequest artifacts */
-            artifacts?: ({ [k: string]: flyteidl.artifact.IArtifactID }|null);
         }
 
         /** Represents an ExecutionCreateRequest. */
@@ -11393,9 +11396,6 @@ export namespace flyteidl {
 
             /** ExecutionCreateRequest inputs. */
             public inputs?: (flyteidl.core.ILiteralMap|null);
-
-            /** ExecutionCreateRequest artifacts. */
-            public artifacts: { [k: string]: flyteidl.artifact.IArtifactID };
 
             /**
              * Creates a new ExecutionCreateRequest instance using the specified properties.
@@ -21105,7 +21105,7 @@ export namespace flyteidl {
             flyteUrl?: (string|null);
 
             /** GetDataRequest artifactId */
-            artifactId?: (flyteidl.artifact.IArtifactID|null);
+            artifactId?: (flyteidl.core.IArtifactID|null);
         }
 
         /** Represents a GetDataRequest. */
@@ -21121,7 +21121,7 @@ export namespace flyteidl {
             public flyteUrl: string;
 
             /** GetDataRequest artifactId. */
-            public artifactId?: (flyteidl.artifact.IArtifactID|null);
+            public artifactId?: (flyteidl.core.IArtifactID|null);
 
             /** GetDataRequest query. */
             public query?: ("flyteUrl"|"artifactId");

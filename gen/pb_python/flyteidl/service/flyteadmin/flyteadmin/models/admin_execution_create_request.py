@@ -17,7 +17,6 @@ import re  # noqa: F401
 import six
 
 from flyteadmin.models.admin_execution_spec import AdminExecutionSpec  # noqa: F401,E501
-from flyteadmin.models.artifact_artifact_id import ArtifactArtifactID  # noqa: F401,E501
 from flyteadmin.models.core_literal_map import CoreLiteralMap  # noqa: F401,E501
 
 
@@ -39,8 +38,7 @@ class AdminExecutionCreateRequest(object):
         'domain': 'str',
         'name': 'str',
         'spec': 'AdminExecutionSpec',
-        'inputs': 'CoreLiteralMap',
-        'artifacts': 'dict(str, ArtifactArtifactID)'
+        'inputs': 'CoreLiteralMap'
     }
 
     attribute_map = {
@@ -48,11 +46,10 @@ class AdminExecutionCreateRequest(object):
         'domain': 'domain',
         'name': 'name',
         'spec': 'spec',
-        'inputs': 'inputs',
-        'artifacts': 'artifacts'
+        'inputs': 'inputs'
     }
 
-    def __init__(self, project=None, domain=None, name=None, spec=None, inputs=None, artifacts=None):  # noqa: E501
+    def __init__(self, project=None, domain=None, name=None, spec=None, inputs=None):  # noqa: E501
         """AdminExecutionCreateRequest - a model defined in Swagger"""  # noqa: E501
 
         self._project = None
@@ -60,7 +57,6 @@ class AdminExecutionCreateRequest(object):
         self._name = None
         self._spec = None
         self._inputs = None
-        self._artifacts = None
         self.discriminator = None
 
         if project is not None:
@@ -73,8 +69,6 @@ class AdminExecutionCreateRequest(object):
             self.spec = spec
         if inputs is not None:
             self.inputs = inputs
-        if artifacts is not None:
-            self.artifacts = artifacts
 
     @property
     def project(self):
@@ -180,29 +174,6 @@ class AdminExecutionCreateRequest(object):
         """
 
         self._inputs = inputs
-
-    @property
-    def artifacts(self):
-        """Gets the artifacts of this AdminExecutionCreateRequest.  # noqa: E501
-
-        These are alternatives to the inputs.  # noqa: E501
-
-        :return: The artifacts of this AdminExecutionCreateRequest.  # noqa: E501
-        :rtype: dict(str, ArtifactArtifactID)
-        """
-        return self._artifacts
-
-    @artifacts.setter
-    def artifacts(self, artifacts):
-        """Sets the artifacts of this AdminExecutionCreateRequest.
-
-        These are alternatives to the inputs.  # noqa: E501
-
-        :param artifacts: The artifacts of this AdminExecutionCreateRequest.  # noqa: E501
-        :type: dict(str, ArtifactArtifactID)
-        """
-
-        self._artifacts = artifacts
 
     def to_dict(self):
         """Returns the model properties as a dict"""

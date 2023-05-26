@@ -147,8 +147,6 @@ from flyteadmin.models.admin_workflow_execution_get_metrics_response import Admi
 from flyteadmin.models.admin_workflow_list import AdminWorkflowList
 from flyteadmin.models.admin_workflow_spec import AdminWorkflowSpec
 from flyteadmin.models.artifact_artifact import ArtifactArtifact
-from flyteadmin.models.artifact_artifact_id import ArtifactArtifactID
-from flyteadmin.models.artifact_artifact_key import ArtifactArtifactKey
 from flyteadmin.models.artifact_artifact_query import ArtifactArtifactQuery
 from flyteadmin.models.artifact_artifact_spec import ArtifactArtifactSpec
 from flyteadmin.models.artifact_tag import ArtifactTag
@@ -159,6 +157,8 @@ from flyteadmin.models.conjunction_expression_logical_operator import Conjunctio
 from flyteadmin.models.connection_set_id_list import ConnectionSetIdList
 from flyteadmin.models.container_architecture import ContainerArchitecture
 from flyteadmin.models.core_approve_condition import CoreApproveCondition
+from flyteadmin.models.core_artifact_id import CoreArtifactID
+from flyteadmin.models.core_artifact_key import CoreArtifactKey
 from flyteadmin.models.core_binary import CoreBinary
 from flyteadmin.models.core_binding import CoreBinding
 from flyteadmin.models.core_binding_data import CoreBindingData
