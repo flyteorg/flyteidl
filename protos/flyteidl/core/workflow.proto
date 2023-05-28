@@ -13,6 +13,7 @@ import "flyteidl/core/tasks.proto";
 import "flyteidl/core/types.proto";
 import "flyteidl/core/security.proto";
 import "google/protobuf/duration.proto";
+import "google/protobuf/struct.proto";
 
 // Defines a condition and the execution unit that should be executed if the condition is satisfied.
 message IfBlock {
@@ -55,6 +56,9 @@ message TaskNode {
 
     // Optional overrides applied at task execution time.
     TaskNodeOverrides overrides = 2;
+
+    
+    string runtime_override_name = 3;
 }
 
 // Refers to a the workflow the node is to execute.
@@ -249,4 +253,20 @@ message WorkflowTemplate {
 message TaskNodeOverrides {
     // A customizable interface to convey resources requested for a task container. 
     Resources resources = 1;
+
+    bool cache = 2;
+    
+    bool cache_serialize = 3;
+
+    string cache_version = 4;
+
+    int32 retries = 5;
+
+    bool interruptible = 6;
+
+    string container_image = 7;
+
+    map<string, string> environment = 9;
+
+    google.protobuf.Struct task_config = 10;
 }

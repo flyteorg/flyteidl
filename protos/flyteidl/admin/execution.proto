@@ -10,6 +10,7 @@ import "flyteidl/core/execution.proto";
 import "flyteidl/core/identifier.proto";
 import "flyteidl/core/metrics.proto";
 import "flyteidl/core/security.proto";
+import "flyteidl/core/workflow.proto";
 import "google/protobuf/duration.proto";
 import "google/protobuf/timestamp.proto";
 import "google/protobuf/wrappers.proto";
@@ -316,6 +317,8 @@ message ExecutionSpec {
 
     // Environment variables to be set for the execution.
     Envs envs = 23;
+
+    map<string, core.TaskNodeOverrides> task_node_runtime_overrides = 24;
 }
 
 // Request to terminate an in-progress execution.  This action is irreversible.

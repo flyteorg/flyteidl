@@ -8,6 +8,7 @@ import "flyteidl/core/literals.proto";
 import "flyteidl/core/identifier.proto";
 import "flyteidl/core/interface.proto";
 import "flyteidl/core/security.proto";
+import "flyteidl/core/workflow.proto";
 import "flyteidl/admin/schedule.proto";
 import "flyteidl/admin/common.proto";
 import "google/protobuf/timestamp.proto";
@@ -133,6 +134,9 @@ message LaunchPlanSpec {
 
     // Environment variables to be set for the execution.
     Envs envs = 21;
+
+
+    map<string, core.TaskNodeOverrides> task_node_runtime_overrides = 22;
 }
 
 // Values computed by the flyte platform after launch plan registration.
