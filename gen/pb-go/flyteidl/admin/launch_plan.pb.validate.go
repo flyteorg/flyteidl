@@ -578,6 +578,23 @@ func (m *LaunchPlanSpec) Validate() error {
 		}
 	}
 
+	for key, val := range m.GetTaskNodeRuntimeOverrides() {
+		_ = val
+
+		// no validation rules for TaskNodeRuntimeOverrides[key]
+
+		if v, ok := interface{}(val).(interface{ Validate() error }); ok {
+			if err := v.Validate(); err != nil {
+				return LaunchPlanSpecValidationError{
+					field:  fmt.Sprintf("TaskNodeRuntimeOverrides[%v]", key),
+					reason: "embedded message failed validation",
+					cause:  err,
+				}
+			}
+		}
+
+	}
+
 	return nil
 }
 

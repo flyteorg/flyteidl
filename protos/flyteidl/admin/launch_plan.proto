@@ -135,7 +135,7 @@ message LaunchPlanSpec {
     // Environment variables to be set for the execution.
     Envs envs = 21;
 
-
+    // Allows the task node with "runtime_override_name" to be overriden with "TaskNodeOverrides" at runtime.
     map<string, core.TaskNodeOverrides> task_node_runtime_overrides = 22;
 }
 

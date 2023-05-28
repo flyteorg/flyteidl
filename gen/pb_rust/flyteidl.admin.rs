@@ -1006,6 +1006,9 @@ pub struct ExecutionSpec {
     /// Environment variables to be set for the execution.
     #[prost(message, optional, tag="23")]
     pub envs: ::core::option::Option<Envs>,
+    /// Allows the task node with "runtime_override_name" to be overriden with "TaskNodeOverrides" at runtime.
+    #[prost(map="string, message", tag="24")]
+    pub task_node_runtime_overrides: ::std::collections::HashMap<::prost::alloc::string::String, super::core::TaskNodeOverrides>,
     #[prost(oneof="execution_spec::NotificationOverrides", tags="5, 6")]
     pub notification_overrides: ::core::option::Option<execution_spec::NotificationOverrides>,
 }
@@ -1351,6 +1354,9 @@ pub struct LaunchPlanSpec {
     /// Environment variables to be set for the execution.
     #[prost(message, optional, tag="21")]
     pub envs: ::core::option::Option<Envs>,
+    /// Allows the task node with "runtime_override_name" to be overriden with "TaskNodeOverrides" at runtime.
+    #[prost(map="string, message", tag="22")]
+    pub task_node_runtime_overrides: ::std::collections::HashMap<::prost::alloc::string::String, super::core::TaskNodeOverrides>,
 }
 /// Values computed by the flyte platform after launch plan registration.
 /// These include expected_inputs required to be present in a CreateExecutionRequest

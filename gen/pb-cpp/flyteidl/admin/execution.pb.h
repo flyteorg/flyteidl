@@ -30,6 +30,9 @@
 #include <google/protobuf/message.h>
 #include <google/protobuf/repeated_field.h>  // IWYU pragma: export
 #include <google/protobuf/extension_set.h>  // IWYU pragma: export
+#include <google/protobuf/map.h>  // IWYU pragma: export
+#include <google/protobuf/map_entry.h>
+#include <google/protobuf/map_field_inl.h>
 #include <google/protobuf/generated_enum_reflection.h>
 #include <google/protobuf/unknown_field_set.h>
 #include "flyteidl/admin/cluster_assignment.pb.h"
@@ -39,6 +42,7 @@
 #include "flyteidl/core/identifier.pb.h"
 #include "flyteidl/core/metrics.pb.h"
 #include "flyteidl/core/security.pb.h"
+#include "flyteidl/core/workflow.pb.h"
 #include <google/protobuf/duration.pb.h>
 #include <google/protobuf/timestamp.pb.h>
 #include <google/protobuf/wrappers.pb.h>
@@ -52,7 +56,7 @@ struct TableStruct_flyteidl_2fadmin_2fexecution_2eproto {
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
   static const ::google::protobuf::internal::AuxillaryParseTableField aux[]
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
-  static const ::google::protobuf::internal::ParseTable schema[23]
+  static const ::google::protobuf::internal::ParseTable schema[24]
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
   static const ::google::protobuf::internal::FieldMetadata field_metadata[];
   static const ::google::protobuf::internal::SerializationTable serialization_table[];
@@ -91,6 +95,9 @@ extern ExecutionRelaunchRequestDefaultTypeInternal _ExecutionRelaunchRequest_def
 class ExecutionSpec;
 class ExecutionSpecDefaultTypeInternal;
 extern ExecutionSpecDefaultTypeInternal _ExecutionSpec_default_instance_;
+class ExecutionSpec_TaskNodeRuntimeOverridesEntry_DoNotUse;
+class ExecutionSpec_TaskNodeRuntimeOverridesEntry_DoNotUseDefaultTypeInternal;
+extern ExecutionSpec_TaskNodeRuntimeOverridesEntry_DoNotUseDefaultTypeInternal _ExecutionSpec_TaskNodeRuntimeOverridesEntry_DoNotUse_default_instance_;
 class ExecutionStateChangeDetails;
 class ExecutionStateChangeDetailsDefaultTypeInternal;
 extern ExecutionStateChangeDetailsDefaultTypeInternal _ExecutionStateChangeDetails_default_instance_;
@@ -144,6 +151,7 @@ template<> ::flyteidl::admin::ExecutionMetadata* Arena::CreateMaybeMessage<::fly
 template<> ::flyteidl::admin::ExecutionRecoverRequest* Arena::CreateMaybeMessage<::flyteidl::admin::ExecutionRecoverRequest>(Arena*);
 template<> ::flyteidl::admin::ExecutionRelaunchRequest* Arena::CreateMaybeMessage<::flyteidl::admin::ExecutionRelaunchRequest>(Arena*);
 template<> ::flyteidl::admin::ExecutionSpec* Arena::CreateMaybeMessage<::flyteidl::admin::ExecutionSpec>(Arena*);
+template<> ::flyteidl::admin::ExecutionSpec_TaskNodeRuntimeOverridesEntry_DoNotUse* Arena::CreateMaybeMessage<::flyteidl::admin::ExecutionSpec_TaskNodeRuntimeOverridesEntry_DoNotUse>(Arena*);
 template<> ::flyteidl::admin::ExecutionStateChangeDetails* Arena::CreateMaybeMessage<::flyteidl::admin::ExecutionStateChangeDetails>(Arena*);
 template<> ::flyteidl::admin::ExecutionTerminateRequest* Arena::CreateMaybeMessage<::flyteidl::admin::ExecutionTerminateRequest>(Arena*);
 template<> ::flyteidl::admin::ExecutionTerminateResponse* Arena::CreateMaybeMessage<::flyteidl::admin::ExecutionTerminateResponse>(Arena*);
@@ -2179,6 +2187,30 @@ class NotificationList final :
 };
 // -------------------------------------------------------------------
 
+class ExecutionSpec_TaskNodeRuntimeOverridesEntry_DoNotUse : public ::google::protobuf::internal::MapEntry<ExecutionSpec_TaskNodeRuntimeOverridesEntry_DoNotUse, 
+    ::std::string, ::flyteidl::core::TaskNodeOverrides,
+    ::google::protobuf::internal::WireFormatLite::TYPE_STRING,
+    ::google::protobuf::internal::WireFormatLite::TYPE_MESSAGE,
+    0 > {
+public:
+#if GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
+static bool _ParseMap(const char* begin, const char* end, void* object, ::google::protobuf::internal::ParseContext* ctx);
+#endif  // GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
+  typedef ::google::protobuf::internal::MapEntry<ExecutionSpec_TaskNodeRuntimeOverridesEntry_DoNotUse, 
+    ::std::string, ::flyteidl::core::TaskNodeOverrides,
+    ::google::protobuf::internal::WireFormatLite::TYPE_STRING,
+    ::google::protobuf::internal::WireFormatLite::TYPE_MESSAGE,
+    0 > SuperType;
+  ExecutionSpec_TaskNodeRuntimeOverridesEntry_DoNotUse();
+  ExecutionSpec_TaskNodeRuntimeOverridesEntry_DoNotUse(::google::protobuf::Arena* arena);
+  void MergeFrom(const ExecutionSpec_TaskNodeRuntimeOverridesEntry_DoNotUse& other);
+  static const ExecutionSpec_TaskNodeRuntimeOverridesEntry_DoNotUse* internal_default_instance() { return reinterpret_cast<const ExecutionSpec_TaskNodeRuntimeOverridesEntry_DoNotUse*>(&_ExecutionSpec_TaskNodeRuntimeOverridesEntry_DoNotUse_default_instance_); }
+  void MergeFrom(const ::google::protobuf::Message& other) final;
+  ::google::protobuf::Metadata GetMetadata() const;
+};
+
+// -------------------------------------------------------------------
+
 class ExecutionSpec final :
     public ::google::protobuf::Message /* @@protoc_insertion_point(class_definition:flyteidl.admin.ExecutionSpec) */ {
  public:
@@ -2223,7 +2255,7 @@ class ExecutionSpec final :
                &_ExecutionSpec_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    13;
+    14;
 
   void Swap(ExecutionSpec* other);
   friend void swap(ExecutionSpec& a, ExecutionSpec& b) {
@@ -2278,7 +2310,17 @@ class ExecutionSpec final :
 
   // nested types ----------------------------------------------------
 
+
   // accessors -------------------------------------------------------
+
+  // map<string, .flyteidl.core.TaskNodeOverrides> task_node_runtime_overrides = 24;
+  int task_node_runtime_overrides_size() const;
+  void clear_task_node_runtime_overrides();
+  static const int kTaskNodeRuntimeOverridesFieldNumber = 24;
+  const ::google::protobuf::Map< ::std::string, ::flyteidl::core::TaskNodeOverrides >&
+      task_node_runtime_overrides() const;
+  ::google::protobuf::Map< ::std::string, ::flyteidl::core::TaskNodeOverrides >*
+      mutable_task_node_runtime_overrides();
 
   // .flyteidl.core.Identifier launch_plan = 1;
   bool has_launch_plan() const;
@@ -2430,6 +2472,12 @@ class ExecutionSpec final :
   inline void clear_has_notification_overrides();
 
   ::google::protobuf::internal::InternalMetadataWithArena _internal_metadata_;
+  ::google::protobuf::internal::MapField<
+      ExecutionSpec_TaskNodeRuntimeOverridesEntry_DoNotUse,
+      ::std::string, ::flyteidl::core::TaskNodeOverrides,
+      ::google::protobuf::internal::WireFormatLite::TYPE_STRING,
+      ::google::protobuf::internal::WireFormatLite::TYPE_MESSAGE,
+      0 > task_node_runtime_overrides_;
   ::flyteidl::core::Identifier* launch_plan_;
   ::flyteidl::core::LiteralMap* inputs_;
   ::flyteidl::admin::ExecutionMetadata* metadata_;
@@ -2494,7 +2542,7 @@ class ExecutionTerminateRequest final :
                &_ExecutionTerminateRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    14;
+    15;
 
   void Swap(ExecutionTerminateRequest* other);
   friend void swap(ExecutionTerminateRequest& a, ExecutionTerminateRequest& b) {
@@ -2624,7 +2672,7 @@ class ExecutionTerminateResponse final :
                &_ExecutionTerminateResponse_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    15;
+    16;
 
   void Swap(ExecutionTerminateResponse* other);
   friend void swap(ExecutionTerminateResponse& a, ExecutionTerminateResponse& b) {
@@ -2729,7 +2777,7 @@ class WorkflowExecutionGetDataRequest final :
                &_WorkflowExecutionGetDataRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    16;
+    17;
 
   void Swap(WorkflowExecutionGetDataRequest* other);
   friend void swap(WorkflowExecutionGetDataRequest& a, WorkflowExecutionGetDataRequest& b) {
@@ -2844,7 +2892,7 @@ class WorkflowExecutionGetDataResponse final :
                &_WorkflowExecutionGetDataResponse_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    17;
+    18;
 
   void Swap(WorkflowExecutionGetDataResponse* other);
   friend void swap(WorkflowExecutionGetDataResponse& a, WorkflowExecutionGetDataResponse& b) {
@@ -2989,7 +3037,7 @@ class ExecutionUpdateRequest final :
                &_ExecutionUpdateRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    18;
+    19;
 
   void Swap(ExecutionUpdateRequest* other);
   friend void swap(ExecutionUpdateRequest& a, ExecutionUpdateRequest& b) {
@@ -3111,7 +3159,7 @@ class ExecutionStateChangeDetails final :
                &_ExecutionStateChangeDetails_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    19;
+    20;
 
   void Swap(ExecutionStateChangeDetails* other);
   friend void swap(ExecutionStateChangeDetails& a, ExecutionStateChangeDetails& b) {
@@ -3248,7 +3296,7 @@ class ExecutionUpdateResponse final :
                &_ExecutionUpdateResponse_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    20;
+    21;
 
   void Swap(ExecutionUpdateResponse* other);
   friend void swap(ExecutionUpdateResponse& a, ExecutionUpdateResponse& b) {
@@ -3353,7 +3401,7 @@ class WorkflowExecutionGetMetricsRequest final :
                &_WorkflowExecutionGetMetricsRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    21;
+    22;
 
   void Swap(WorkflowExecutionGetMetricsRequest* other);
   friend void swap(WorkflowExecutionGetMetricsRequest& a, WorkflowExecutionGetMetricsRequest& b) {
@@ -3475,7 +3523,7 @@ class WorkflowExecutionGetMetricsResponse final :
                &_WorkflowExecutionGetMetricsResponse_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    22;
+    23;
 
   void Swap(WorkflowExecutionGetMetricsResponse* other);
   friend void swap(WorkflowExecutionGetMetricsResponse& a, WorkflowExecutionGetMetricsResponse& b) {
@@ -5709,6 +5757,8 @@ NotificationList::notifications() const {
 
 // -------------------------------------------------------------------
 
+// -------------------------------------------------------------------
+
 // ExecutionSpec
 
 // .flyteidl.core.Identifier launch_plan = 1;
@@ -6354,6 +6404,21 @@ inline void ExecutionSpec::set_allocated_envs(::flyteidl::admin::Envs* envs) {
   }
   envs_ = envs;
   // @@protoc_insertion_point(field_set_allocated:flyteidl.admin.ExecutionSpec.envs)
+}
+
+// map<string, .flyteidl.core.TaskNodeOverrides> task_node_runtime_overrides = 24;
+inline int ExecutionSpec::task_node_runtime_overrides_size() const {
+  return task_node_runtime_overrides_.size();
+}
+inline const ::google::protobuf::Map< ::std::string, ::flyteidl::core::TaskNodeOverrides >&
+ExecutionSpec::task_node_runtime_overrides() const {
+  // @@protoc_insertion_point(field_map:flyteidl.admin.ExecutionSpec.task_node_runtime_overrides)
+  return task_node_runtime_overrides_.GetMap();
+}
+inline ::google::protobuf::Map< ::std::string, ::flyteidl::core::TaskNodeOverrides >*
+ExecutionSpec::mutable_task_node_runtime_overrides() {
+  // @@protoc_insertion_point(field_mutable_map:flyteidl.admin.ExecutionSpec.task_node_runtime_overrides)
+  return task_node_runtime_overrides_.MutableMap();
 }
 
 inline bool ExecutionSpec::has_notification_overrides() const {
@@ -7003,6 +7068,8 @@ inline void WorkflowExecutionGetMetricsResponse::set_allocated_span(::flyteidl::
 #ifdef __GNUC__
   #pragma GCC diagnostic pop
 #endif  // __GNUC__
+// -------------------------------------------------------------------
+
 // -------------------------------------------------------------------
 
 // -------------------------------------------------------------------

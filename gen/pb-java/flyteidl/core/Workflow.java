@@ -3334,6 +3334,24 @@ public final class Workflow {
      */
     flyteidl.core.Workflow.TaskNodeOverridesOrBuilder getOverridesOrBuilder();
 
+    /**
+     * <pre>
+     * Optional: if specified, the task can be overridden at runtime.
+     * </pre>
+     *
+     * <code>string runtime_override_name = 3;</code>
+     */
+    java.lang.String getRuntimeOverrideName();
+    /**
+     * <pre>
+     * Optional: if specified, the task can be overridden at runtime.
+     * </pre>
+     *
+     * <code>string runtime_override_name = 3;</code>
+     */
+    com.google.protobuf.ByteString
+        getRuntimeOverrideNameBytes();
+
     public flyteidl.core.Workflow.TaskNode.ReferenceCase getReferenceCase();
   }
   /**
@@ -3353,6 +3371,7 @@ public final class Workflow {
       super(builder);
     }
     private TaskNode() {
+      runtimeOverrideName_ = "";
     }
 
     @java.lang.Override
@@ -3404,6 +3423,12 @@ public final class Workflow {
                 overrides_ = subBuilder.buildPartial();
               }
 
+              break;
+            }
+            case 26: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              runtimeOverrideName_ = s;
               break;
             }
             default: {
@@ -3545,6 +3570,48 @@ public final class Workflow {
       return getOverrides();
     }
 
+    public static final int RUNTIME_OVERRIDE_NAME_FIELD_NUMBER = 3;
+    private volatile java.lang.Object runtimeOverrideName_;
+    /**
+     * <pre>
+     * Optional: if specified, the task can be overridden at runtime.
+     * </pre>
+     *
+     * <code>string runtime_override_name = 3;</code>
+     */
+    public java.lang.String getRuntimeOverrideName() {
+      java.lang.Object ref = runtimeOverrideName_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        runtimeOverrideName_ = s;
+        return s;
+      }
+    }
+    /**
+     * <pre>
+     * Optional: if specified, the task can be overridden at runtime.
+     * </pre>
+     *
+     * <code>string runtime_override_name = 3;</code>
+     */
+    public com.google.protobuf.ByteString
+        getRuntimeOverrideNameBytes() {
+      java.lang.Object ref = runtimeOverrideName_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        runtimeOverrideName_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
     private byte memoizedIsInitialized = -1;
     @java.lang.Override
     public final boolean isInitialized() {
@@ -3565,6 +3632,9 @@ public final class Workflow {
       if (overrides_ != null) {
         output.writeMessage(2, getOverrides());
       }
+      if (!getRuntimeOverrideNameBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 3, runtimeOverrideName_);
+      }
       unknownFields.writeTo(output);
     }
 
@@ -3581,6 +3651,9 @@ public final class Workflow {
       if (overrides_ != null) {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(2, getOverrides());
+      }
+      if (!getRuntimeOverrideNameBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, runtimeOverrideName_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -3602,6 +3675,8 @@ public final class Workflow {
         if (!getOverrides()
             .equals(other.getOverrides())) return false;
       }
+      if (!getRuntimeOverrideName()
+          .equals(other.getRuntimeOverrideName())) return false;
       if (!getReferenceCase().equals(other.getReferenceCase())) return false;
       switch (referenceCase_) {
         case 1:
@@ -3626,6 +3701,8 @@ public final class Workflow {
         hash = (37 * hash) + OVERRIDES_FIELD_NUMBER;
         hash = (53 * hash) + getOverrides().hashCode();
       }
+      hash = (37 * hash) + RUNTIME_OVERRIDE_NAME_FIELD_NUMBER;
+      hash = (53 * hash) + getRuntimeOverrideName().hashCode();
       switch (referenceCase_) {
         case 1:
           hash = (37 * hash) + REFERENCE_ID_FIELD_NUMBER;
@@ -3777,6 +3854,8 @@ public final class Workflow {
           overrides_ = null;
           overridesBuilder_ = null;
         }
+        runtimeOverrideName_ = "";
+
         referenceCase_ = 0;
         reference_ = null;
         return this;
@@ -3817,6 +3896,7 @@ public final class Workflow {
         } else {
           result.overrides_ = overridesBuilder_.build();
         }
+        result.runtimeOverrideName_ = runtimeOverrideName_;
         result.referenceCase_ = referenceCase_;
         onBuilt();
         return result;
@@ -3868,6 +3948,10 @@ public final class Workflow {
         if (other == flyteidl.core.Workflow.TaskNode.getDefaultInstance()) return this;
         if (other.hasOverrides()) {
           mergeOverrides(other.getOverrides());
+        }
+        if (!other.getRuntimeOverrideName().isEmpty()) {
+          runtimeOverrideName_ = other.runtimeOverrideName_;
+          onChanged();
         }
         switch (other.getReferenceCase()) {
           case REFERENCE_ID: {
@@ -4245,6 +4329,95 @@ public final class Workflow {
           overrides_ = null;
         }
         return overridesBuilder_;
+      }
+
+      private java.lang.Object runtimeOverrideName_ = "";
+      /**
+       * <pre>
+       * Optional: if specified, the task can be overridden at runtime.
+       * </pre>
+       *
+       * <code>string runtime_override_name = 3;</code>
+       */
+      public java.lang.String getRuntimeOverrideName() {
+        java.lang.Object ref = runtimeOverrideName_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          runtimeOverrideName_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <pre>
+       * Optional: if specified, the task can be overridden at runtime.
+       * </pre>
+       *
+       * <code>string runtime_override_name = 3;</code>
+       */
+      public com.google.protobuf.ByteString
+          getRuntimeOverrideNameBytes() {
+        java.lang.Object ref = runtimeOverrideName_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          runtimeOverrideName_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <pre>
+       * Optional: if specified, the task can be overridden at runtime.
+       * </pre>
+       *
+       * <code>string runtime_override_name = 3;</code>
+       */
+      public Builder setRuntimeOverrideName(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        runtimeOverrideName_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * Optional: if specified, the task can be overridden at runtime.
+       * </pre>
+       *
+       * <code>string runtime_override_name = 3;</code>
+       */
+      public Builder clearRuntimeOverrideName() {
+        
+        runtimeOverrideName_ = getDefaultInstance().getRuntimeOverrideName();
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * Optional: if specified, the task can be overridden at runtime.
+       * </pre>
+       *
+       * <code>string runtime_override_name = 3;</code>
+       */
+      public Builder setRuntimeOverrideNameBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        runtimeOverrideName_ = value;
+        onChanged();
+        return this;
       }
       @java.lang.Override
       public final Builder setUnknownFields(
@@ -19038,6 +19211,158 @@ public final class Workflow {
      * <code>.flyteidl.core.Resources resources = 1;</code>
      */
     flyteidl.core.Tasks.ResourcesOrBuilder getResourcesOrBuilder();
+
+    /**
+     * <pre>
+     * Boolean that indicates if caching should be enabled
+     * </pre>
+     *
+     * <code>bool cache = 2;</code>
+     */
+    boolean getCache();
+
+    /**
+     * <pre>
+     * Boolean that indicates if identical (ie. same inputs) instances of this task should be
+     * executed in serial when caching is enabled.
+     * </pre>
+     *
+     * <code>bool cache_serialize = 3;</code>
+     */
+    boolean getCacheSerialize();
+
+    /**
+     * <pre>
+     * Cache version to use
+     * </pre>
+     *
+     * <code>string cache_version = 4;</code>
+     */
+    java.lang.String getCacheVersion();
+    /**
+     * <pre>
+     * Cache version to use
+     * </pre>
+     *
+     * <code>string cache_version = 4;</code>
+     */
+    com.google.protobuf.ByteString
+        getCacheVersionBytes();
+
+    /**
+     * <pre>
+     *  Number of times to retry this task during a workflow execution
+     * </pre>
+     *
+     * <code>int32 retries = 5;</code>
+     */
+    int getRetries();
+
+    /**
+     * <pre>
+     * Boolean that indicates that this task can be interrupted and/or scheduled on nodes with lower QoS guarantees
+     * </pre>
+     *
+     * <code>bool interruptible = 6;</code>
+     */
+    boolean getInterruptible();
+
+    /**
+     * <pre>
+     * Container image to use
+     * </pre>
+     *
+     * <code>string container_image = 7;</code>
+     */
+    java.lang.String getContainerImage();
+    /**
+     * <pre>
+     * Container image to use
+     * </pre>
+     *
+     * <code>string container_image = 7;</code>
+     */
+    com.google.protobuf.ByteString
+        getContainerImageBytes();
+
+    /**
+     * <pre>
+     * Environment variables that should be added for this tasks execution
+     * </pre>
+     *
+     * <code>map&lt;string, string&gt; environment = 9;</code>
+     */
+    int getEnvironmentCount();
+    /**
+     * <pre>
+     * Environment variables that should be added for this tasks execution
+     * </pre>
+     *
+     * <code>map&lt;string, string&gt; environment = 9;</code>
+     */
+    boolean containsEnvironment(
+        java.lang.String key);
+    /**
+     * Use {@link #getEnvironmentMap()} instead.
+     */
+    @java.lang.Deprecated
+    java.util.Map<java.lang.String, java.lang.String>
+    getEnvironment();
+    /**
+     * <pre>
+     * Environment variables that should be added for this tasks execution
+     * </pre>
+     *
+     * <code>map&lt;string, string&gt; environment = 9;</code>
+     */
+    java.util.Map<java.lang.String, java.lang.String>
+    getEnvironmentMap();
+    /**
+     * <pre>
+     * Environment variables that should be added for this tasks execution
+     * </pre>
+     *
+     * <code>map&lt;string, string&gt; environment = 9;</code>
+     */
+
+    java.lang.String getEnvironmentOrDefault(
+        java.lang.String key,
+        java.lang.String defaultValue);
+    /**
+     * <pre>
+     * Environment variables that should be added for this tasks execution
+     * </pre>
+     *
+     * <code>map&lt;string, string&gt; environment = 9;</code>
+     */
+
+    java.lang.String getEnvironmentOrThrow(
+        java.lang.String key);
+
+    /**
+     * <pre>
+     * This argument provides configuration for a specific task types.
+     * </pre>
+     *
+     * <code>.google.protobuf.Struct task_config = 10;</code>
+     */
+    boolean hasTaskConfig();
+    /**
+     * <pre>
+     * This argument provides configuration for a specific task types.
+     * </pre>
+     *
+     * <code>.google.protobuf.Struct task_config = 10;</code>
+     */
+    com.google.protobuf.Struct getTaskConfig();
+    /**
+     * <pre>
+     * This argument provides configuration for a specific task types.
+     * </pre>
+     *
+     * <code>.google.protobuf.Struct task_config = 10;</code>
+     */
+    com.google.protobuf.StructOrBuilder getTaskConfigOrBuilder();
   }
   /**
    * <pre>
@@ -19056,6 +19381,8 @@ public final class Workflow {
       super(builder);
     }
     private TaskNodeOverrides() {
+      cacheVersion_ = "";
+      containerImage_ = "";
     }
 
     @java.lang.Override
@@ -19095,6 +19422,64 @@ public final class Workflow {
 
               break;
             }
+            case 16: {
+
+              cache_ = input.readBool();
+              break;
+            }
+            case 24: {
+
+              cacheSerialize_ = input.readBool();
+              break;
+            }
+            case 34: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              cacheVersion_ = s;
+              break;
+            }
+            case 40: {
+
+              retries_ = input.readInt32();
+              break;
+            }
+            case 48: {
+
+              interruptible_ = input.readBool();
+              break;
+            }
+            case 58: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              containerImage_ = s;
+              break;
+            }
+            case 74: {
+              if (!((mutable_bitField0_ & 0x00000080) != 0)) {
+                environment_ = com.google.protobuf.MapField.newMapField(
+                    EnvironmentDefaultEntryHolder.defaultEntry);
+                mutable_bitField0_ |= 0x00000080;
+              }
+              com.google.protobuf.MapEntry<java.lang.String, java.lang.String>
+              environment__ = input.readMessage(
+                  EnvironmentDefaultEntryHolder.defaultEntry.getParserForType(), extensionRegistry);
+              environment_.getMutableMap().put(
+                  environment__.getKey(), environment__.getValue());
+              break;
+            }
+            case 82: {
+              com.google.protobuf.Struct.Builder subBuilder = null;
+              if (taskConfig_ != null) {
+                subBuilder = taskConfig_.toBuilder();
+              }
+              taskConfig_ = input.readMessage(com.google.protobuf.Struct.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(taskConfig_);
+                taskConfig_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
             default: {
               if (!parseUnknownField(
                   input, unknownFields, extensionRegistry, tag)) {
@@ -19119,6 +19504,18 @@ public final class Workflow {
       return flyteidl.core.Workflow.internal_static_flyteidl_core_TaskNodeOverrides_descriptor;
     }
 
+    @SuppressWarnings({"rawtypes"})
+    @java.lang.Override
+    protected com.google.protobuf.MapField internalGetMapField(
+        int number) {
+      switch (number) {
+        case 9:
+          return internalGetEnvironment();
+        default:
+          throw new RuntimeException(
+              "Invalid map field number: " + number);
+      }
+    }
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
@@ -19127,6 +19524,7 @@ public final class Workflow {
               flyteidl.core.Workflow.TaskNodeOverrides.class, flyteidl.core.Workflow.TaskNodeOverrides.Builder.class);
     }
 
+    private int bitField0_;
     public static final int RESOURCES_FIELD_NUMBER = 1;
     private flyteidl.core.Tasks.Resources resources_;
     /**
@@ -19160,6 +19558,268 @@ public final class Workflow {
       return getResources();
     }
 
+    public static final int CACHE_FIELD_NUMBER = 2;
+    private boolean cache_;
+    /**
+     * <pre>
+     * Boolean that indicates if caching should be enabled
+     * </pre>
+     *
+     * <code>bool cache = 2;</code>
+     */
+    public boolean getCache() {
+      return cache_;
+    }
+
+    public static final int CACHE_SERIALIZE_FIELD_NUMBER = 3;
+    private boolean cacheSerialize_;
+    /**
+     * <pre>
+     * Boolean that indicates if identical (ie. same inputs) instances of this task should be
+     * executed in serial when caching is enabled.
+     * </pre>
+     *
+     * <code>bool cache_serialize = 3;</code>
+     */
+    public boolean getCacheSerialize() {
+      return cacheSerialize_;
+    }
+
+    public static final int CACHE_VERSION_FIELD_NUMBER = 4;
+    private volatile java.lang.Object cacheVersion_;
+    /**
+     * <pre>
+     * Cache version to use
+     * </pre>
+     *
+     * <code>string cache_version = 4;</code>
+     */
+    public java.lang.String getCacheVersion() {
+      java.lang.Object ref = cacheVersion_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        cacheVersion_ = s;
+        return s;
+      }
+    }
+    /**
+     * <pre>
+     * Cache version to use
+     * </pre>
+     *
+     * <code>string cache_version = 4;</code>
+     */
+    public com.google.protobuf.ByteString
+        getCacheVersionBytes() {
+      java.lang.Object ref = cacheVersion_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        cacheVersion_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int RETRIES_FIELD_NUMBER = 5;
+    private int retries_;
+    /**
+     * <pre>
+     *  Number of times to retry this task during a workflow execution
+     * </pre>
+     *
+     * <code>int32 retries = 5;</code>
+     */
+    public int getRetries() {
+      return retries_;
+    }
+
+    public static final int INTERRUPTIBLE_FIELD_NUMBER = 6;
+    private boolean interruptible_;
+    /**
+     * <pre>
+     * Boolean that indicates that this task can be interrupted and/or scheduled on nodes with lower QoS guarantees
+     * </pre>
+     *
+     * <code>bool interruptible = 6;</code>
+     */
+    public boolean getInterruptible() {
+      return interruptible_;
+    }
+
+    public static final int CONTAINER_IMAGE_FIELD_NUMBER = 7;
+    private volatile java.lang.Object containerImage_;
+    /**
+     * <pre>
+     * Container image to use
+     * </pre>
+     *
+     * <code>string container_image = 7;</code>
+     */
+    public java.lang.String getContainerImage() {
+      java.lang.Object ref = containerImage_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        containerImage_ = s;
+        return s;
+      }
+    }
+    /**
+     * <pre>
+     * Container image to use
+     * </pre>
+     *
+     * <code>string container_image = 7;</code>
+     */
+    public com.google.protobuf.ByteString
+        getContainerImageBytes() {
+      java.lang.Object ref = containerImage_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        containerImage_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int ENVIRONMENT_FIELD_NUMBER = 9;
+    private static final class EnvironmentDefaultEntryHolder {
+      static final com.google.protobuf.MapEntry<
+          java.lang.String, java.lang.String> defaultEntry =
+              com.google.protobuf.MapEntry
+              .<java.lang.String, java.lang.String>newDefaultInstance(
+                  flyteidl.core.Workflow.internal_static_flyteidl_core_TaskNodeOverrides_EnvironmentEntry_descriptor, 
+                  com.google.protobuf.WireFormat.FieldType.STRING,
+                  "",
+                  com.google.protobuf.WireFormat.FieldType.STRING,
+                  "");
+    }
+    private com.google.protobuf.MapField<
+        java.lang.String, java.lang.String> environment_;
+    private com.google.protobuf.MapField<java.lang.String, java.lang.String>
+    internalGetEnvironment() {
+      if (environment_ == null) {
+        return com.google.protobuf.MapField.emptyMapField(
+            EnvironmentDefaultEntryHolder.defaultEntry);
+      }
+      return environment_;
+    }
+
+    public int getEnvironmentCount() {
+      return internalGetEnvironment().getMap().size();
+    }
+    /**
+     * <pre>
+     * Environment variables that should be added for this tasks execution
+     * </pre>
+     *
+     * <code>map&lt;string, string&gt; environment = 9;</code>
+     */
+
+    public boolean containsEnvironment(
+        java.lang.String key) {
+      if (key == null) { throw new java.lang.NullPointerException(); }
+      return internalGetEnvironment().getMap().containsKey(key);
+    }
+    /**
+     * Use {@link #getEnvironmentMap()} instead.
+     */
+    @java.lang.Deprecated
+    public java.util.Map<java.lang.String, java.lang.String> getEnvironment() {
+      return getEnvironmentMap();
+    }
+    /**
+     * <pre>
+     * Environment variables that should be added for this tasks execution
+     * </pre>
+     *
+     * <code>map&lt;string, string&gt; environment = 9;</code>
+     */
+
+    public java.util.Map<java.lang.String, java.lang.String> getEnvironmentMap() {
+      return internalGetEnvironment().getMap();
+    }
+    /**
+     * <pre>
+     * Environment variables that should be added for this tasks execution
+     * </pre>
+     *
+     * <code>map&lt;string, string&gt; environment = 9;</code>
+     */
+
+    public java.lang.String getEnvironmentOrDefault(
+        java.lang.String key,
+        java.lang.String defaultValue) {
+      if (key == null) { throw new java.lang.NullPointerException(); }
+      java.util.Map<java.lang.String, java.lang.String> map =
+          internalGetEnvironment().getMap();
+      return map.containsKey(key) ? map.get(key) : defaultValue;
+    }
+    /**
+     * <pre>
+     * Environment variables that should be added for this tasks execution
+     * </pre>
+     *
+     * <code>map&lt;string, string&gt; environment = 9;</code>
+     */
+
+    public java.lang.String getEnvironmentOrThrow(
+        java.lang.String key) {
+      if (key == null) { throw new java.lang.NullPointerException(); }
+      java.util.Map<java.lang.String, java.lang.String> map =
+          internalGetEnvironment().getMap();
+      if (!map.containsKey(key)) {
+        throw new java.lang.IllegalArgumentException();
+      }
+      return map.get(key);
+    }
+
+    public static final int TASK_CONFIG_FIELD_NUMBER = 10;
+    private com.google.protobuf.Struct taskConfig_;
+    /**
+     * <pre>
+     * This argument provides configuration for a specific task types.
+     * </pre>
+     *
+     * <code>.google.protobuf.Struct task_config = 10;</code>
+     */
+    public boolean hasTaskConfig() {
+      return taskConfig_ != null;
+    }
+    /**
+     * <pre>
+     * This argument provides configuration for a specific task types.
+     * </pre>
+     *
+     * <code>.google.protobuf.Struct task_config = 10;</code>
+     */
+    public com.google.protobuf.Struct getTaskConfig() {
+      return taskConfig_ == null ? com.google.protobuf.Struct.getDefaultInstance() : taskConfig_;
+    }
+    /**
+     * <pre>
+     * This argument provides configuration for a specific task types.
+     * </pre>
+     *
+     * <code>.google.protobuf.Struct task_config = 10;</code>
+     */
+    public com.google.protobuf.StructOrBuilder getTaskConfigOrBuilder() {
+      return getTaskConfig();
+    }
+
     private byte memoizedIsInitialized = -1;
     @java.lang.Override
     public final boolean isInitialized() {
@@ -19177,6 +19837,33 @@ public final class Workflow {
       if (resources_ != null) {
         output.writeMessage(1, getResources());
       }
+      if (cache_ != false) {
+        output.writeBool(2, cache_);
+      }
+      if (cacheSerialize_ != false) {
+        output.writeBool(3, cacheSerialize_);
+      }
+      if (!getCacheVersionBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 4, cacheVersion_);
+      }
+      if (retries_ != 0) {
+        output.writeInt32(5, retries_);
+      }
+      if (interruptible_ != false) {
+        output.writeBool(6, interruptible_);
+      }
+      if (!getContainerImageBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 7, containerImage_);
+      }
+      com.google.protobuf.GeneratedMessageV3
+        .serializeStringMapTo(
+          output,
+          internalGetEnvironment(),
+          EnvironmentDefaultEntryHolder.defaultEntry,
+          9);
+      if (taskConfig_ != null) {
+        output.writeMessage(10, getTaskConfig());
+      }
       unknownFields.writeTo(output);
     }
 
@@ -19189,6 +19876,42 @@ public final class Workflow {
       if (resources_ != null) {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(1, getResources());
+      }
+      if (cache_ != false) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeBoolSize(2, cache_);
+      }
+      if (cacheSerialize_ != false) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeBoolSize(3, cacheSerialize_);
+      }
+      if (!getCacheVersionBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, cacheVersion_);
+      }
+      if (retries_ != 0) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt32Size(5, retries_);
+      }
+      if (interruptible_ != false) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeBoolSize(6, interruptible_);
+      }
+      if (!getContainerImageBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(7, containerImage_);
+      }
+      for (java.util.Map.Entry<java.lang.String, java.lang.String> entry
+           : internalGetEnvironment().getMap().entrySet()) {
+        com.google.protobuf.MapEntry<java.lang.String, java.lang.String>
+        environment__ = EnvironmentDefaultEntryHolder.defaultEntry.newBuilderForType()
+            .setKey(entry.getKey())
+            .setValue(entry.getValue())
+            .build();
+        size += com.google.protobuf.CodedOutputStream
+            .computeMessageSize(9, environment__);
+      }
+      if (taskConfig_ != null) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(10, getTaskConfig());
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -19210,6 +19933,25 @@ public final class Workflow {
         if (!getResources()
             .equals(other.getResources())) return false;
       }
+      if (getCache()
+          != other.getCache()) return false;
+      if (getCacheSerialize()
+          != other.getCacheSerialize()) return false;
+      if (!getCacheVersion()
+          .equals(other.getCacheVersion())) return false;
+      if (getRetries()
+          != other.getRetries()) return false;
+      if (getInterruptible()
+          != other.getInterruptible()) return false;
+      if (!getContainerImage()
+          .equals(other.getContainerImage())) return false;
+      if (!internalGetEnvironment().equals(
+          other.internalGetEnvironment())) return false;
+      if (hasTaskConfig() != other.hasTaskConfig()) return false;
+      if (hasTaskConfig()) {
+        if (!getTaskConfig()
+            .equals(other.getTaskConfig())) return false;
+      }
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -19224,6 +19966,29 @@ public final class Workflow {
       if (hasResources()) {
         hash = (37 * hash) + RESOURCES_FIELD_NUMBER;
         hash = (53 * hash) + getResources().hashCode();
+      }
+      hash = (37 * hash) + CACHE_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
+          getCache());
+      hash = (37 * hash) + CACHE_SERIALIZE_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
+          getCacheSerialize());
+      hash = (37 * hash) + CACHE_VERSION_FIELD_NUMBER;
+      hash = (53 * hash) + getCacheVersion().hashCode();
+      hash = (37 * hash) + RETRIES_FIELD_NUMBER;
+      hash = (53 * hash) + getRetries();
+      hash = (37 * hash) + INTERRUPTIBLE_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
+          getInterruptible());
+      hash = (37 * hash) + CONTAINER_IMAGE_FIELD_NUMBER;
+      hash = (53 * hash) + getContainerImage().hashCode();
+      if (!internalGetEnvironment().getMap().isEmpty()) {
+        hash = (37 * hash) + ENVIRONMENT_FIELD_NUMBER;
+        hash = (53 * hash) + internalGetEnvironment().hashCode();
+      }
+      if (hasTaskConfig()) {
+        hash = (37 * hash) + TASK_CONFIG_FIELD_NUMBER;
+        hash = (53 * hash) + getTaskConfig().hashCode();
       }
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
@@ -19336,6 +20101,28 @@ public final class Workflow {
         return flyteidl.core.Workflow.internal_static_flyteidl_core_TaskNodeOverrides_descriptor;
       }
 
+      @SuppressWarnings({"rawtypes"})
+      protected com.google.protobuf.MapField internalGetMapField(
+          int number) {
+        switch (number) {
+          case 9:
+            return internalGetEnvironment();
+          default:
+            throw new RuntimeException(
+                "Invalid map field number: " + number);
+        }
+      }
+      @SuppressWarnings({"rawtypes"})
+      protected com.google.protobuf.MapField internalGetMutableMapField(
+          int number) {
+        switch (number) {
+          case 9:
+            return internalGetMutableEnvironment();
+          default:
+            throw new RuntimeException(
+                "Invalid map field number: " + number);
+        }
+      }
       @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
@@ -19368,6 +20155,25 @@ public final class Workflow {
           resources_ = null;
           resourcesBuilder_ = null;
         }
+        cache_ = false;
+
+        cacheSerialize_ = false;
+
+        cacheVersion_ = "";
+
+        retries_ = 0;
+
+        interruptible_ = false;
+
+        containerImage_ = "";
+
+        internalGetMutableEnvironment().clear();
+        if (taskConfigBuilder_ == null) {
+          taskConfig_ = null;
+        } else {
+          taskConfig_ = null;
+          taskConfigBuilder_ = null;
+        }
         return this;
       }
 
@@ -19394,11 +20200,27 @@ public final class Workflow {
       @java.lang.Override
       public flyteidl.core.Workflow.TaskNodeOverrides buildPartial() {
         flyteidl.core.Workflow.TaskNodeOverrides result = new flyteidl.core.Workflow.TaskNodeOverrides(this);
+        int from_bitField0_ = bitField0_;
+        int to_bitField0_ = 0;
         if (resourcesBuilder_ == null) {
           result.resources_ = resources_;
         } else {
           result.resources_ = resourcesBuilder_.build();
         }
+        result.cache_ = cache_;
+        result.cacheSerialize_ = cacheSerialize_;
+        result.cacheVersion_ = cacheVersion_;
+        result.retries_ = retries_;
+        result.interruptible_ = interruptible_;
+        result.containerImage_ = containerImage_;
+        result.environment_ = internalGetEnvironment();
+        result.environment_.makeImmutable();
+        if (taskConfigBuilder_ == null) {
+          result.taskConfig_ = taskConfig_;
+        } else {
+          result.taskConfig_ = taskConfigBuilder_.build();
+        }
+        result.bitField0_ = to_bitField0_;
         onBuilt();
         return result;
       }
@@ -19450,6 +20272,31 @@ public final class Workflow {
         if (other.hasResources()) {
           mergeResources(other.getResources());
         }
+        if (other.getCache() != false) {
+          setCache(other.getCache());
+        }
+        if (other.getCacheSerialize() != false) {
+          setCacheSerialize(other.getCacheSerialize());
+        }
+        if (!other.getCacheVersion().isEmpty()) {
+          cacheVersion_ = other.cacheVersion_;
+          onChanged();
+        }
+        if (other.getRetries() != 0) {
+          setRetries(other.getRetries());
+        }
+        if (other.getInterruptible() != false) {
+          setInterruptible(other.getInterruptible());
+        }
+        if (!other.getContainerImage().isEmpty()) {
+          containerImage_ = other.containerImage_;
+          onChanged();
+        }
+        internalGetMutableEnvironment().mergeFrom(
+            other.internalGetEnvironment());
+        if (other.hasTaskConfig()) {
+          mergeTaskConfig(other.getTaskConfig());
+        }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
@@ -19478,6 +20325,7 @@ public final class Workflow {
         }
         return this;
       }
+      private int bitField0_;
 
       private flyteidl.core.Tasks.Resources resources_;
       private com.google.protobuf.SingleFieldBuilderV3<
@@ -19631,6 +20479,643 @@ public final class Workflow {
         }
         return resourcesBuilder_;
       }
+
+      private boolean cache_ ;
+      /**
+       * <pre>
+       * Boolean that indicates if caching should be enabled
+       * </pre>
+       *
+       * <code>bool cache = 2;</code>
+       */
+      public boolean getCache() {
+        return cache_;
+      }
+      /**
+       * <pre>
+       * Boolean that indicates if caching should be enabled
+       * </pre>
+       *
+       * <code>bool cache = 2;</code>
+       */
+      public Builder setCache(boolean value) {
+        
+        cache_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * Boolean that indicates if caching should be enabled
+       * </pre>
+       *
+       * <code>bool cache = 2;</code>
+       */
+      public Builder clearCache() {
+        
+        cache_ = false;
+        onChanged();
+        return this;
+      }
+
+      private boolean cacheSerialize_ ;
+      /**
+       * <pre>
+       * Boolean that indicates if identical (ie. same inputs) instances of this task should be
+       * executed in serial when caching is enabled.
+       * </pre>
+       *
+       * <code>bool cache_serialize = 3;</code>
+       */
+      public boolean getCacheSerialize() {
+        return cacheSerialize_;
+      }
+      /**
+       * <pre>
+       * Boolean that indicates if identical (ie. same inputs) instances of this task should be
+       * executed in serial when caching is enabled.
+       * </pre>
+       *
+       * <code>bool cache_serialize = 3;</code>
+       */
+      public Builder setCacheSerialize(boolean value) {
+        
+        cacheSerialize_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * Boolean that indicates if identical (ie. same inputs) instances of this task should be
+       * executed in serial when caching is enabled.
+       * </pre>
+       *
+       * <code>bool cache_serialize = 3;</code>
+       */
+      public Builder clearCacheSerialize() {
+        
+        cacheSerialize_ = false;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object cacheVersion_ = "";
+      /**
+       * <pre>
+       * Cache version to use
+       * </pre>
+       *
+       * <code>string cache_version = 4;</code>
+       */
+      public java.lang.String getCacheVersion() {
+        java.lang.Object ref = cacheVersion_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          cacheVersion_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <pre>
+       * Cache version to use
+       * </pre>
+       *
+       * <code>string cache_version = 4;</code>
+       */
+      public com.google.protobuf.ByteString
+          getCacheVersionBytes() {
+        java.lang.Object ref = cacheVersion_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          cacheVersion_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <pre>
+       * Cache version to use
+       * </pre>
+       *
+       * <code>string cache_version = 4;</code>
+       */
+      public Builder setCacheVersion(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        cacheVersion_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * Cache version to use
+       * </pre>
+       *
+       * <code>string cache_version = 4;</code>
+       */
+      public Builder clearCacheVersion() {
+        
+        cacheVersion_ = getDefaultInstance().getCacheVersion();
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * Cache version to use
+       * </pre>
+       *
+       * <code>string cache_version = 4;</code>
+       */
+      public Builder setCacheVersionBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        cacheVersion_ = value;
+        onChanged();
+        return this;
+      }
+
+      private int retries_ ;
+      /**
+       * <pre>
+       *  Number of times to retry this task during a workflow execution
+       * </pre>
+       *
+       * <code>int32 retries = 5;</code>
+       */
+      public int getRetries() {
+        return retries_;
+      }
+      /**
+       * <pre>
+       *  Number of times to retry this task during a workflow execution
+       * </pre>
+       *
+       * <code>int32 retries = 5;</code>
+       */
+      public Builder setRetries(int value) {
+        
+        retries_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       *  Number of times to retry this task during a workflow execution
+       * </pre>
+       *
+       * <code>int32 retries = 5;</code>
+       */
+      public Builder clearRetries() {
+        
+        retries_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private boolean interruptible_ ;
+      /**
+       * <pre>
+       * Boolean that indicates that this task can be interrupted and/or scheduled on nodes with lower QoS guarantees
+       * </pre>
+       *
+       * <code>bool interruptible = 6;</code>
+       */
+      public boolean getInterruptible() {
+        return interruptible_;
+      }
+      /**
+       * <pre>
+       * Boolean that indicates that this task can be interrupted and/or scheduled on nodes with lower QoS guarantees
+       * </pre>
+       *
+       * <code>bool interruptible = 6;</code>
+       */
+      public Builder setInterruptible(boolean value) {
+        
+        interruptible_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * Boolean that indicates that this task can be interrupted and/or scheduled on nodes with lower QoS guarantees
+       * </pre>
+       *
+       * <code>bool interruptible = 6;</code>
+       */
+      public Builder clearInterruptible() {
+        
+        interruptible_ = false;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object containerImage_ = "";
+      /**
+       * <pre>
+       * Container image to use
+       * </pre>
+       *
+       * <code>string container_image = 7;</code>
+       */
+      public java.lang.String getContainerImage() {
+        java.lang.Object ref = containerImage_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          containerImage_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <pre>
+       * Container image to use
+       * </pre>
+       *
+       * <code>string container_image = 7;</code>
+       */
+      public com.google.protobuf.ByteString
+          getContainerImageBytes() {
+        java.lang.Object ref = containerImage_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          containerImage_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <pre>
+       * Container image to use
+       * </pre>
+       *
+       * <code>string container_image = 7;</code>
+       */
+      public Builder setContainerImage(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        containerImage_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * Container image to use
+       * </pre>
+       *
+       * <code>string container_image = 7;</code>
+       */
+      public Builder clearContainerImage() {
+        
+        containerImage_ = getDefaultInstance().getContainerImage();
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * Container image to use
+       * </pre>
+       *
+       * <code>string container_image = 7;</code>
+       */
+      public Builder setContainerImageBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        containerImage_ = value;
+        onChanged();
+        return this;
+      }
+
+      private com.google.protobuf.MapField<
+          java.lang.String, java.lang.String> environment_;
+      private com.google.protobuf.MapField<java.lang.String, java.lang.String>
+      internalGetEnvironment() {
+        if (environment_ == null) {
+          return com.google.protobuf.MapField.emptyMapField(
+              EnvironmentDefaultEntryHolder.defaultEntry);
+        }
+        return environment_;
+      }
+      private com.google.protobuf.MapField<java.lang.String, java.lang.String>
+      internalGetMutableEnvironment() {
+        onChanged();;
+        if (environment_ == null) {
+          environment_ = com.google.protobuf.MapField.newMapField(
+              EnvironmentDefaultEntryHolder.defaultEntry);
+        }
+        if (!environment_.isMutable()) {
+          environment_ = environment_.copy();
+        }
+        return environment_;
+      }
+
+      public int getEnvironmentCount() {
+        return internalGetEnvironment().getMap().size();
+      }
+      /**
+       * <pre>
+       * Environment variables that should be added for this tasks execution
+       * </pre>
+       *
+       * <code>map&lt;string, string&gt; environment = 9;</code>
+       */
+
+      public boolean containsEnvironment(
+          java.lang.String key) {
+        if (key == null) { throw new java.lang.NullPointerException(); }
+        return internalGetEnvironment().getMap().containsKey(key);
+      }
+      /**
+       * Use {@link #getEnvironmentMap()} instead.
+       */
+      @java.lang.Deprecated
+      public java.util.Map<java.lang.String, java.lang.String> getEnvironment() {
+        return getEnvironmentMap();
+      }
+      /**
+       * <pre>
+       * Environment variables that should be added for this tasks execution
+       * </pre>
+       *
+       * <code>map&lt;string, string&gt; environment = 9;</code>
+       */
+
+      public java.util.Map<java.lang.String, java.lang.String> getEnvironmentMap() {
+        return internalGetEnvironment().getMap();
+      }
+      /**
+       * <pre>
+       * Environment variables that should be added for this tasks execution
+       * </pre>
+       *
+       * <code>map&lt;string, string&gt; environment = 9;</code>
+       */
+
+      public java.lang.String getEnvironmentOrDefault(
+          java.lang.String key,
+          java.lang.String defaultValue) {
+        if (key == null) { throw new java.lang.NullPointerException(); }
+        java.util.Map<java.lang.String, java.lang.String> map =
+            internalGetEnvironment().getMap();
+        return map.containsKey(key) ? map.get(key) : defaultValue;
+      }
+      /**
+       * <pre>
+       * Environment variables that should be added for this tasks execution
+       * </pre>
+       *
+       * <code>map&lt;string, string&gt; environment = 9;</code>
+       */
+
+      public java.lang.String getEnvironmentOrThrow(
+          java.lang.String key) {
+        if (key == null) { throw new java.lang.NullPointerException(); }
+        java.util.Map<java.lang.String, java.lang.String> map =
+            internalGetEnvironment().getMap();
+        if (!map.containsKey(key)) {
+          throw new java.lang.IllegalArgumentException();
+        }
+        return map.get(key);
+      }
+
+      public Builder clearEnvironment() {
+        internalGetMutableEnvironment().getMutableMap()
+            .clear();
+        return this;
+      }
+      /**
+       * <pre>
+       * Environment variables that should be added for this tasks execution
+       * </pre>
+       *
+       * <code>map&lt;string, string&gt; environment = 9;</code>
+       */
+
+      public Builder removeEnvironment(
+          java.lang.String key) {
+        if (key == null) { throw new java.lang.NullPointerException(); }
+        internalGetMutableEnvironment().getMutableMap()
+            .remove(key);
+        return this;
+      }
+      /**
+       * Use alternate mutation accessors instead.
+       */
+      @java.lang.Deprecated
+      public java.util.Map<java.lang.String, java.lang.String>
+      getMutableEnvironment() {
+        return internalGetMutableEnvironment().getMutableMap();
+      }
+      /**
+       * <pre>
+       * Environment variables that should be added for this tasks execution
+       * </pre>
+       *
+       * <code>map&lt;string, string&gt; environment = 9;</code>
+       */
+      public Builder putEnvironment(
+          java.lang.String key,
+          java.lang.String value) {
+        if (key == null) { throw new java.lang.NullPointerException(); }
+        if (value == null) { throw new java.lang.NullPointerException(); }
+        internalGetMutableEnvironment().getMutableMap()
+            .put(key, value);
+        return this;
+      }
+      /**
+       * <pre>
+       * Environment variables that should be added for this tasks execution
+       * </pre>
+       *
+       * <code>map&lt;string, string&gt; environment = 9;</code>
+       */
+
+      public Builder putAllEnvironment(
+          java.util.Map<java.lang.String, java.lang.String> values) {
+        internalGetMutableEnvironment().getMutableMap()
+            .putAll(values);
+        return this;
+      }
+
+      private com.google.protobuf.Struct taskConfig_;
+      private com.google.protobuf.SingleFieldBuilderV3<
+          com.google.protobuf.Struct, com.google.protobuf.Struct.Builder, com.google.protobuf.StructOrBuilder> taskConfigBuilder_;
+      /**
+       * <pre>
+       * This argument provides configuration for a specific task types.
+       * </pre>
+       *
+       * <code>.google.protobuf.Struct task_config = 10;</code>
+       */
+      public boolean hasTaskConfig() {
+        return taskConfigBuilder_ != null || taskConfig_ != null;
+      }
+      /**
+       * <pre>
+       * This argument provides configuration for a specific task types.
+       * </pre>
+       *
+       * <code>.google.protobuf.Struct task_config = 10;</code>
+       */
+      public com.google.protobuf.Struct getTaskConfig() {
+        if (taskConfigBuilder_ == null) {
+          return taskConfig_ == null ? com.google.protobuf.Struct.getDefaultInstance() : taskConfig_;
+        } else {
+          return taskConfigBuilder_.getMessage();
+        }
+      }
+      /**
+       * <pre>
+       * This argument provides configuration for a specific task types.
+       * </pre>
+       *
+       * <code>.google.protobuf.Struct task_config = 10;</code>
+       */
+      public Builder setTaskConfig(com.google.protobuf.Struct value) {
+        if (taskConfigBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          taskConfig_ = value;
+          onChanged();
+        } else {
+          taskConfigBuilder_.setMessage(value);
+        }
+
+        return this;
+      }
+      /**
+       * <pre>
+       * This argument provides configuration for a specific task types.
+       * </pre>
+       *
+       * <code>.google.protobuf.Struct task_config = 10;</code>
+       */
+      public Builder setTaskConfig(
+          com.google.protobuf.Struct.Builder builderForValue) {
+        if (taskConfigBuilder_ == null) {
+          taskConfig_ = builderForValue.build();
+          onChanged();
+        } else {
+          taskConfigBuilder_.setMessage(builderForValue.build());
+        }
+
+        return this;
+      }
+      /**
+       * <pre>
+       * This argument provides configuration for a specific task types.
+       * </pre>
+       *
+       * <code>.google.protobuf.Struct task_config = 10;</code>
+       */
+      public Builder mergeTaskConfig(com.google.protobuf.Struct value) {
+        if (taskConfigBuilder_ == null) {
+          if (taskConfig_ != null) {
+            taskConfig_ =
+              com.google.protobuf.Struct.newBuilder(taskConfig_).mergeFrom(value).buildPartial();
+          } else {
+            taskConfig_ = value;
+          }
+          onChanged();
+        } else {
+          taskConfigBuilder_.mergeFrom(value);
+        }
+
+        return this;
+      }
+      /**
+       * <pre>
+       * This argument provides configuration for a specific task types.
+       * </pre>
+       *
+       * <code>.google.protobuf.Struct task_config = 10;</code>
+       */
+      public Builder clearTaskConfig() {
+        if (taskConfigBuilder_ == null) {
+          taskConfig_ = null;
+          onChanged();
+        } else {
+          taskConfig_ = null;
+          taskConfigBuilder_ = null;
+        }
+
+        return this;
+      }
+      /**
+       * <pre>
+       * This argument provides configuration for a specific task types.
+       * </pre>
+       *
+       * <code>.google.protobuf.Struct task_config = 10;</code>
+       */
+      public com.google.protobuf.Struct.Builder getTaskConfigBuilder() {
+        
+        onChanged();
+        return getTaskConfigFieldBuilder().getBuilder();
+      }
+      /**
+       * <pre>
+       * This argument provides configuration for a specific task types.
+       * </pre>
+       *
+       * <code>.google.protobuf.Struct task_config = 10;</code>
+       */
+      public com.google.protobuf.StructOrBuilder getTaskConfigOrBuilder() {
+        if (taskConfigBuilder_ != null) {
+          return taskConfigBuilder_.getMessageOrBuilder();
+        } else {
+          return taskConfig_ == null ?
+              com.google.protobuf.Struct.getDefaultInstance() : taskConfig_;
+        }
+      }
+      /**
+       * <pre>
+       * This argument provides configuration for a specific task types.
+       * </pre>
+       *
+       * <code>.google.protobuf.Struct task_config = 10;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+          com.google.protobuf.Struct, com.google.protobuf.Struct.Builder, com.google.protobuf.StructOrBuilder> 
+          getTaskConfigFieldBuilder() {
+        if (taskConfigBuilder_ == null) {
+          taskConfigBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              com.google.protobuf.Struct, com.google.protobuf.Struct.Builder, com.google.protobuf.StructOrBuilder>(
+                  getTaskConfig(),
+                  getParentForChildren(),
+                  isClean());
+          taskConfig_ = null;
+        }
+        return taskConfigBuilder_;
+      }
       @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
@@ -19769,6 +21254,11 @@ public final class Workflow {
   private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_flyteidl_core_TaskNodeOverrides_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_flyteidl_core_TaskNodeOverrides_EnvironmentEntry_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_flyteidl_core_TaskNodeOverrides_EnvironmentEntry_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor
       getDescriptor() {
@@ -19785,69 +21275,78 @@ public final class Workflow {
       "face.proto\032\034flyteidl/core/literals.proto" +
       "\032\031flyteidl/core/tasks.proto\032\031flyteidl/co" +
       "re/types.proto\032\034flyteidl/core/security.p" +
-      "roto\032\036google/protobuf/duration.proto\"f\n\007" +
-      "IfBlock\0223\n\tcondition\030\001 \001(\0132 .flyteidl.co" +
-      "re.BooleanExpression\022&\n\tthen_node\030\002 \001(\0132" +
-      "\023.flyteidl.core.Node\"\266\001\n\013IfElseBlock\022$\n\004" +
-      "case\030\001 \001(\0132\026.flyteidl.core.IfBlock\022%\n\005ot" +
-      "her\030\002 \003(\0132\026.flyteidl.core.IfBlock\022(\n\tels" +
-      "e_node\030\003 \001(\0132\023.flyteidl.core.NodeH\000\022%\n\005e" +
-      "rror\030\004 \001(\0132\024.flyteidl.core.ErrorH\000B\t\n\007de" +
-      "fault\"9\n\nBranchNode\022+\n\007if_else\030\001 \001(\0132\032.f" +
-      "lyteidl.core.IfElseBlock\"\177\n\010TaskNode\0221\n\014" +
-      "reference_id\030\001 \001(\0132\031.flyteidl.core.Ident" +
-      "ifierH\000\0223\n\toverrides\030\002 \001(\0132 .flyteidl.co" +
-      "re.TaskNodeOverridesB\013\n\treference\"\207\001\n\014Wo" +
-      "rkflowNode\0223\n\016launchplan_ref\030\001 \001(\0132\031.fly" +
-      "teidl.core.IdentifierH\000\0225\n\020sub_workflow_" +
-      "ref\030\002 \001(\0132\031.flyteidl.core.IdentifierH\000B\013" +
-      "\n\treference\"%\n\020ApproveCondition\022\021\n\tsigna" +
-      "l_id\030\001 \001(\t\"l\n\017SignalCondition\022\021\n\tsignal_" +
-      "id\030\001 \001(\t\022(\n\004type\030\002 \001(\0132\032.flyteidl.core.L" +
-      "iteralType\022\034\n\024output_variable_name\030\003 \001(\t" +
-      "\"=\n\016SleepCondition\022+\n\010duration\030\001 \001(\0132\031.g" +
-      "oogle.protobuf.Duration\"\255\001\n\010GateNode\0222\n\007" +
-      "approve\030\001 \001(\0132\037.flyteidl.core.ApproveCon" +
-      "ditionH\000\0220\n\006signal\030\002 \001(\0132\036.flyteidl.core" +
-      ".SignalConditionH\000\022.\n\005sleep\030\003 \001(\0132\035.flyt" +
-      "eidl.core.SleepConditionH\000B\013\n\tcondition\"" +
-      "\247\001\n\014NodeMetadata\022\014\n\004name\030\001 \001(\t\022*\n\007timeou" +
-      "t\030\004 \001(\0132\031.google.protobuf.Duration\022-\n\007re" +
-      "tries\030\005 \001(\0132\034.flyteidl.core.RetryStrateg" +
-      "y\022\027\n\rinterruptible\030\006 \001(\010H\000B\025\n\023interrupti" +
-      "ble_value\"#\n\005Alias\022\013\n\003var\030\001 \001(\t\022\r\n\005alias" +
-      "\030\002 \001(\t\"\200\003\n\004Node\022\n\n\002id\030\001 \001(\t\022-\n\010metadata\030" +
-      "\002 \001(\0132\033.flyteidl.core.NodeMetadata\022&\n\006in" +
-      "puts\030\003 \003(\0132\026.flyteidl.core.Binding\022\031\n\021up" +
-      "stream_node_ids\030\004 \003(\t\022,\n\016output_aliases\030" +
-      "\005 \003(\0132\024.flyteidl.core.Alias\022,\n\ttask_node" +
-      "\030\006 \001(\0132\027.flyteidl.core.TaskNodeH\000\0224\n\rwor" +
-      "kflow_node\030\007 \001(\0132\033.flyteidl.core.Workflo" +
-      "wNodeH\000\0220\n\013branch_node\030\010 \001(\0132\031.flyteidl." +
-      "core.BranchNodeH\000\022,\n\tgate_node\030\t \001(\0132\027.f" +
-      "lyteidl.core.GateNodeH\000B\010\n\006target\"\315\002\n\020Wo" +
-      "rkflowMetadata\022;\n\022quality_of_service\030\001 \001" +
-      "(\0132\037.flyteidl.core.QualityOfService\022C\n\no" +
-      "n_failure\030\002 \001(\0162/.flyteidl.core.Workflow" +
-      "Metadata.OnFailurePolicy\0227\n\004tags\030\003 \003(\0132)" +
-      ".flyteidl.core.WorkflowMetadata.TagsEntr" +
-      "y\032+\n\tTagsEntry\022\013\n\003key\030\001 \001(\t\022\r\n\005value\030\002 \001" +
-      "(\t:\0028\001\"Q\n\017OnFailurePolicy\022\024\n\020FAIL_IMMEDI" +
-      "ATELY\020\000\022(\n$FAIL_AFTER_EXECUTABLE_NODES_C" +
-      "OMPLETE\020\001\"1\n\030WorkflowMetadataDefaults\022\025\n" +
-      "\rinterruptible\030\001 \001(\010\"\332\002\n\020WorkflowTemplat" +
-      "e\022%\n\002id\030\001 \001(\0132\031.flyteidl.core.Identifier" +
-      "\0221\n\010metadata\030\002 \001(\0132\037.flyteidl.core.Workf" +
-      "lowMetadata\0220\n\tinterface\030\003 \001(\0132\035.flyteid" +
-      "l.core.TypedInterface\022\"\n\005nodes\030\004 \003(\0132\023.f" +
-      "lyteidl.core.Node\022\'\n\007outputs\030\005 \003(\0132\026.fly" +
-      "teidl.core.Binding\022)\n\014failure_node\030\006 \001(\013" +
-      "2\023.flyteidl.core.Node\022B\n\021metadata_defaul" +
-      "ts\030\007 \001(\0132\'.flyteidl.core.WorkflowMetadat" +
-      "aDefaults\"@\n\021TaskNodeOverrides\022+\n\tresour" +
-      "ces\030\001 \001(\0132\030.flyteidl.core.ResourcesB6Z4g" +
-      "ithub.com/flyteorg/flyteidl/gen/pb-go/fl" +
-      "yteidl/coreb\006proto3"
+      "roto\032\036google/protobuf/duration.proto\032\034go" +
+      "ogle/protobuf/struct.proto\"f\n\007IfBlock\0223\n" +
+      "\tcondition\030\001 \001(\0132 .flyteidl.core.Boolean" +
+      "Expression\022&\n\tthen_node\030\002 \001(\0132\023.flyteidl" +
+      ".core.Node\"\266\001\n\013IfElseBlock\022$\n\004case\030\001 \001(\013" +
+      "2\026.flyteidl.core.IfBlock\022%\n\005other\030\002 \003(\0132" +
+      "\026.flyteidl.core.IfBlock\022(\n\telse_node\030\003 \001" +
+      "(\0132\023.flyteidl.core.NodeH\000\022%\n\005error\030\004 \001(\013" +
+      "2\024.flyteidl.core.ErrorH\000B\t\n\007default\"9\n\nB" +
+      "ranchNode\022+\n\007if_else\030\001 \001(\0132\032.flyteidl.co" +
+      "re.IfElseBlock\"\236\001\n\010TaskNode\0221\n\014reference" +
+      "_id\030\001 \001(\0132\031.flyteidl.core.IdentifierH\000\0223" +
+      "\n\toverrides\030\002 \001(\0132 .flyteidl.core.TaskNo" +
+      "deOverrides\022\035\n\025runtime_override_name\030\003 \001" +
+      "(\tB\013\n\treference\"\207\001\n\014WorkflowNode\0223\n\016laun" +
+      "chplan_ref\030\001 \001(\0132\031.flyteidl.core.Identif" +
+      "ierH\000\0225\n\020sub_workflow_ref\030\002 \001(\0132\031.flytei" +
+      "dl.core.IdentifierH\000B\013\n\treference\"%\n\020App" +
+      "roveCondition\022\021\n\tsignal_id\030\001 \001(\t\"l\n\017Sign" +
+      "alCondition\022\021\n\tsignal_id\030\001 \001(\t\022(\n\004type\030\002" +
+      " \001(\0132\032.flyteidl.core.LiteralType\022\034\n\024outp" +
+      "ut_variable_name\030\003 \001(\t\"=\n\016SleepCondition" +
+      "\022+\n\010duration\030\001 \001(\0132\031.google.protobuf.Dur" +
+      "ation\"\255\001\n\010GateNode\0222\n\007approve\030\001 \001(\0132\037.fl" +
+      "yteidl.core.ApproveConditionH\000\0220\n\006signal" +
+      "\030\002 \001(\0132\036.flyteidl.core.SignalConditionH\000" +
+      "\022.\n\005sleep\030\003 \001(\0132\035.flyteidl.core.SleepCon" +
+      "ditionH\000B\013\n\tcondition\"\247\001\n\014NodeMetadata\022\014" +
+      "\n\004name\030\001 \001(\t\022*\n\007timeout\030\004 \001(\0132\031.google.p" +
+      "rotobuf.Duration\022-\n\007retries\030\005 \001(\0132\034.flyt" +
+      "eidl.core.RetryStrategy\022\027\n\rinterruptible" +
+      "\030\006 \001(\010H\000B\025\n\023interruptible_value\"#\n\005Alias" +
+      "\022\013\n\003var\030\001 \001(\t\022\r\n\005alias\030\002 \001(\t\"\200\003\n\004Node\022\n\n" +
+      "\002id\030\001 \001(\t\022-\n\010metadata\030\002 \001(\0132\033.flyteidl.c" +
+      "ore.NodeMetadata\022&\n\006inputs\030\003 \003(\0132\026.flyte" +
+      "idl.core.Binding\022\031\n\021upstream_node_ids\030\004 " +
+      "\003(\t\022,\n\016output_aliases\030\005 \003(\0132\024.flyteidl.c" +
+      "ore.Alias\022,\n\ttask_node\030\006 \001(\0132\027.flyteidl." +
+      "core.TaskNodeH\000\0224\n\rworkflow_node\030\007 \001(\0132\033" +
+      ".flyteidl.core.WorkflowNodeH\000\0220\n\013branch_" +
+      "node\030\010 \001(\0132\031.flyteidl.core.BranchNodeH\000\022" +
+      ",\n\tgate_node\030\t \001(\0132\027.flyteidl.core.GateN" +
+      "odeH\000B\010\n\006target\"\315\002\n\020WorkflowMetadata\022;\n\022" +
+      "quality_of_service\030\001 \001(\0132\037.flyteidl.core" +
+      ".QualityOfService\022C\n\non_failure\030\002 \001(\0162/." +
+      "flyteidl.core.WorkflowMetadata.OnFailure" +
+      "Policy\0227\n\004tags\030\003 \003(\0132).flyteidl.core.Wor" +
+      "kflowMetadata.TagsEntry\032+\n\tTagsEntry\022\013\n\003" +
+      "key\030\001 \001(\t\022\r\n\005value\030\002 \001(\t:\0028\001\"Q\n\017OnFailur" +
+      "ePolicy\022\024\n\020FAIL_IMMEDIATELY\020\000\022(\n$FAIL_AF" +
+      "TER_EXECUTABLE_NODES_COMPLETE\020\001\"1\n\030Workf" +
+      "lowMetadataDefaults\022\025\n\rinterruptible\030\001 \001" +
+      "(\010\"\332\002\n\020WorkflowTemplate\022%\n\002id\030\001 \001(\0132\031.fl" +
+      "yteidl.core.Identifier\0221\n\010metadata\030\002 \001(\013" +
+      "2\037.flyteidl.core.WorkflowMetadata\0220\n\tint" +
+      "erface\030\003 \001(\0132\035.flyteidl.core.TypedInterf" +
+      "ace\022\"\n\005nodes\030\004 \003(\0132\023.flyteidl.core.Node\022" +
+      "\'\n\007outputs\030\005 \003(\0132\026.flyteidl.core.Binding" +
+      "\022)\n\014failure_node\030\006 \001(\0132\023.flyteidl.core.N" +
+      "ode\022B\n\021metadata_defaults\030\007 \001(\0132\'.flyteid" +
+      "l.core.WorkflowMetadataDefaults\"\352\002\n\021Task" +
+      "NodeOverrides\022+\n\tresources\030\001 \001(\0132\030.flyte" +
+      "idl.core.Resources\022\r\n\005cache\030\002 \001(\010\022\027\n\017cac" +
+      "he_serialize\030\003 \001(\010\022\025\n\rcache_version\030\004 \001(" +
+      "\t\022\017\n\007retries\030\005 \001(\005\022\025\n\rinterruptible\030\006 \001(" +
+      "\010\022\027\n\017container_image\030\007 \001(\t\022F\n\013environmen" +
+      "t\030\t \003(\01321.flyteidl.core.TaskNodeOverride" +
+      "s.EnvironmentEntry\022,\n\013task_config\030\n \001(\0132" +
+      "\027.google.protobuf.Struct\0322\n\020EnvironmentE" +
+      "ntry\022\013\n\003key\030\001 \001(\t\022\r\n\005value\030\002 \001(\t:\0028\001B6Z4" +
+      "github.com/flyteorg/flyteidl/gen/pb-go/f" +
+      "lyteidl/coreb\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
@@ -19869,6 +21368,7 @@ public final class Workflow {
           flyteidl.core.Types.getDescriptor(),
           flyteidl.core.Security.getDescriptor(),
           com.google.protobuf.DurationProto.getDescriptor(),
+          com.google.protobuf.StructProto.getDescriptor(),
         }, assigner);
     internal_static_flyteidl_core_IfBlock_descriptor =
       getDescriptor().getMessageTypes().get(0);
@@ -19893,7 +21393,7 @@ public final class Workflow {
     internal_static_flyteidl_core_TaskNode_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_flyteidl_core_TaskNode_descriptor,
-        new java.lang.String[] { "ReferenceId", "Overrides", "Reference", });
+        new java.lang.String[] { "ReferenceId", "Overrides", "RuntimeOverrideName", "Reference", });
     internal_static_flyteidl_core_WorkflowNode_descriptor =
       getDescriptor().getMessageTypes().get(4);
     internal_static_flyteidl_core_WorkflowNode_fieldAccessorTable = new
@@ -19971,7 +21471,13 @@ public final class Workflow {
     internal_static_flyteidl_core_TaskNodeOverrides_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_flyteidl_core_TaskNodeOverrides_descriptor,
-        new java.lang.String[] { "Resources", });
+        new java.lang.String[] { "Resources", "Cache", "CacheSerialize", "CacheVersion", "Retries", "Interruptible", "ContainerImage", "Environment", "TaskConfig", });
+    internal_static_flyteidl_core_TaskNodeOverrides_EnvironmentEntry_descriptor =
+      internal_static_flyteidl_core_TaskNodeOverrides_descriptor.getNestedTypes().get(0);
+    internal_static_flyteidl_core_TaskNodeOverrides_EnvironmentEntry_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_flyteidl_core_TaskNodeOverrides_EnvironmentEntry_descriptor,
+        new java.lang.String[] { "Key", "Value", });
     flyteidl.core.Condition.getDescriptor();
     flyteidl.core.Execution.getDescriptor();
     flyteidl.core.IdentifierOuterClass.getDescriptor();
@@ -19981,6 +21487,7 @@ public final class Workflow {
     flyteidl.core.Types.getDescriptor();
     flyteidl.core.Security.getDescriptor();
     com.google.protobuf.DurationProto.getDescriptor();
+    com.google.protobuf.StructProto.getDescriptor();
   }
 
   // @@protoc_insertion_point(outer_class_scope)

@@ -2359,6 +2359,7 @@
                  * @interface ITaskNode
                  * @property {flyteidl.core.IIdentifier|null} [referenceId] TaskNode referenceId
                  * @property {flyteidl.core.ITaskNodeOverrides|null} [overrides] TaskNode overrides
+                 * @property {string|null} [runtimeOverrideName] TaskNode runtimeOverrideName
                  */
     
                 /**
@@ -2391,6 +2392,14 @@
                  * @instance
                  */
                 TaskNode.prototype.overrides = null;
+    
+                /**
+                 * TaskNode runtimeOverrideName.
+                 * @member {string} runtimeOverrideName
+                 * @memberof flyteidl.core.TaskNode
+                 * @instance
+                 */
+                TaskNode.prototype.runtimeOverrideName = "";
     
                 // OneOf field names bound to virtual getters and setters
                 var $oneOfFields;
@@ -2434,6 +2443,8 @@
                         $root.flyteidl.core.Identifier.encode(message.referenceId, writer.uint32(/* id 1, wireType 2 =*/10).fork()).ldelim();
                     if (message.overrides != null && message.hasOwnProperty("overrides"))
                         $root.flyteidl.core.TaskNodeOverrides.encode(message.overrides, writer.uint32(/* id 2, wireType 2 =*/18).fork()).ldelim();
+                    if (message.runtimeOverrideName != null && message.hasOwnProperty("runtimeOverrideName"))
+                        writer.uint32(/* id 3, wireType 2 =*/26).string(message.runtimeOverrideName);
                     return writer;
                 };
     
@@ -2460,6 +2471,9 @@
                             break;
                         case 2:
                             message.overrides = $root.flyteidl.core.TaskNodeOverrides.decode(reader, reader.uint32());
+                            break;
+                        case 3:
+                            message.runtimeOverrideName = reader.string();
                             break;
                         default:
                             reader.skipType(tag & 7);
@@ -2494,6 +2508,9 @@
                         if (error)
                             return "overrides." + error;
                     }
+                    if (message.runtimeOverrideName != null && message.hasOwnProperty("runtimeOverrideName"))
+                        if (!$util.isString(message.runtimeOverrideName))
+                            return "runtimeOverrideName: string expected";
                     return null;
                 };
     
@@ -4362,6 +4379,14 @@
                  * @memberof flyteidl.core
                  * @interface ITaskNodeOverrides
                  * @property {flyteidl.core.IResources|null} [resources] TaskNodeOverrides resources
+                 * @property {boolean|null} [cache] TaskNodeOverrides cache
+                 * @property {boolean|null} [cacheSerialize] TaskNodeOverrides cacheSerialize
+                 * @property {string|null} [cacheVersion] TaskNodeOverrides cacheVersion
+                 * @property {number|null} [retries] TaskNodeOverrides retries
+                 * @property {boolean|null} [interruptible] TaskNodeOverrides interruptible
+                 * @property {string|null} [containerImage] TaskNodeOverrides containerImage
+                 * @property {Object.<string,string>|null} [environment] TaskNodeOverrides environment
+                 * @property {google.protobuf.IStruct|null} [taskConfig] TaskNodeOverrides taskConfig
                  */
     
                 /**
@@ -4373,6 +4398,7 @@
                  * @param {flyteidl.core.ITaskNodeOverrides=} [properties] Properties to set
                  */
                 function TaskNodeOverrides(properties) {
+                    this.environment = {};
                     if (properties)
                         for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
                             if (properties[keys[i]] != null)
@@ -4386,6 +4412,70 @@
                  * @instance
                  */
                 TaskNodeOverrides.prototype.resources = null;
+    
+                /**
+                 * TaskNodeOverrides cache.
+                 * @member {boolean} cache
+                 * @memberof flyteidl.core.TaskNodeOverrides
+                 * @instance
+                 */
+                TaskNodeOverrides.prototype.cache = false;
+    
+                /**
+                 * TaskNodeOverrides cacheSerialize.
+                 * @member {boolean} cacheSerialize
+                 * @memberof flyteidl.core.TaskNodeOverrides
+                 * @instance
+                 */
+                TaskNodeOverrides.prototype.cacheSerialize = false;
+    
+                /**
+                 * TaskNodeOverrides cacheVersion.
+                 * @member {string} cacheVersion
+                 * @memberof flyteidl.core.TaskNodeOverrides
+                 * @instance
+                 */
+                TaskNodeOverrides.prototype.cacheVersion = "";
+    
+                /**
+                 * TaskNodeOverrides retries.
+                 * @member {number} retries
+                 * @memberof flyteidl.core.TaskNodeOverrides
+                 * @instance
+                 */
+                TaskNodeOverrides.prototype.retries = 0;
+    
+                /**
+                 * TaskNodeOverrides interruptible.
+                 * @member {boolean} interruptible
+                 * @memberof flyteidl.core.TaskNodeOverrides
+                 * @instance
+                 */
+                TaskNodeOverrides.prototype.interruptible = false;
+    
+                /**
+                 * TaskNodeOverrides containerImage.
+                 * @member {string} containerImage
+                 * @memberof flyteidl.core.TaskNodeOverrides
+                 * @instance
+                 */
+                TaskNodeOverrides.prototype.containerImage = "";
+    
+                /**
+                 * TaskNodeOverrides environment.
+                 * @member {Object.<string,string>} environment
+                 * @memberof flyteidl.core.TaskNodeOverrides
+                 * @instance
+                 */
+                TaskNodeOverrides.prototype.environment = $util.emptyObject;
+    
+                /**
+                 * TaskNodeOverrides taskConfig.
+                 * @member {google.protobuf.IStruct|null|undefined} taskConfig
+                 * @memberof flyteidl.core.TaskNodeOverrides
+                 * @instance
+                 */
+                TaskNodeOverrides.prototype.taskConfig = null;
     
                 /**
                  * Creates a new TaskNodeOverrides instance using the specified properties.
@@ -4413,6 +4503,23 @@
                         writer = $Writer.create();
                     if (message.resources != null && message.hasOwnProperty("resources"))
                         $root.flyteidl.core.Resources.encode(message.resources, writer.uint32(/* id 1, wireType 2 =*/10).fork()).ldelim();
+                    if (message.cache != null && message.hasOwnProperty("cache"))
+                        writer.uint32(/* id 2, wireType 0 =*/16).bool(message.cache);
+                    if (message.cacheSerialize != null && message.hasOwnProperty("cacheSerialize"))
+                        writer.uint32(/* id 3, wireType 0 =*/24).bool(message.cacheSerialize);
+                    if (message.cacheVersion != null && message.hasOwnProperty("cacheVersion"))
+                        writer.uint32(/* id 4, wireType 2 =*/34).string(message.cacheVersion);
+                    if (message.retries != null && message.hasOwnProperty("retries"))
+                        writer.uint32(/* id 5, wireType 0 =*/40).int32(message.retries);
+                    if (message.interruptible != null && message.hasOwnProperty("interruptible"))
+                        writer.uint32(/* id 6, wireType 0 =*/48).bool(message.interruptible);
+                    if (message.containerImage != null && message.hasOwnProperty("containerImage"))
+                        writer.uint32(/* id 7, wireType 2 =*/58).string(message.containerImage);
+                    if (message.environment != null && message.hasOwnProperty("environment"))
+                        for (var keys = Object.keys(message.environment), i = 0; i < keys.length; ++i)
+                            writer.uint32(/* id 9, wireType 2 =*/74).fork().uint32(/* id 1, wireType 2 =*/10).string(keys[i]).uint32(/* id 2, wireType 2 =*/18).string(message.environment[keys[i]]).ldelim();
+                    if (message.taskConfig != null && message.hasOwnProperty("taskConfig"))
+                        $root.google.protobuf.Struct.encode(message.taskConfig, writer.uint32(/* id 10, wireType 2 =*/82).fork()).ldelim();
                     return writer;
                 };
     
@@ -4430,12 +4537,41 @@
                 TaskNodeOverrides.decode = function decode(reader, length) {
                     if (!(reader instanceof $Reader))
                         reader = $Reader.create(reader);
-                    var end = length === undefined ? reader.len : reader.pos + length, message = new $root.flyteidl.core.TaskNodeOverrides();
+                    var end = length === undefined ? reader.len : reader.pos + length, message = new $root.flyteidl.core.TaskNodeOverrides(), key;
                     while (reader.pos < end) {
                         var tag = reader.uint32();
                         switch (tag >>> 3) {
                         case 1:
                             message.resources = $root.flyteidl.core.Resources.decode(reader, reader.uint32());
+                            break;
+                        case 2:
+                            message.cache = reader.bool();
+                            break;
+                        case 3:
+                            message.cacheSerialize = reader.bool();
+                            break;
+                        case 4:
+                            message.cacheVersion = reader.string();
+                            break;
+                        case 5:
+                            message.retries = reader.int32();
+                            break;
+                        case 6:
+                            message.interruptible = reader.bool();
+                            break;
+                        case 7:
+                            message.containerImage = reader.string();
+                            break;
+                        case 9:
+                            reader.skip().pos++;
+                            if (message.environment === $util.emptyObject)
+                                message.environment = {};
+                            key = reader.string();
+                            reader.pos++;
+                            message.environment[key] = reader.string();
+                            break;
+                        case 10:
+                            message.taskConfig = $root.google.protobuf.Struct.decode(reader, reader.uint32());
                             break;
                         default:
                             reader.skipType(tag & 7);
@@ -4460,6 +4596,37 @@
                         var error = $root.flyteidl.core.Resources.verify(message.resources);
                         if (error)
                             return "resources." + error;
+                    }
+                    if (message.cache != null && message.hasOwnProperty("cache"))
+                        if (typeof message.cache !== "boolean")
+                            return "cache: boolean expected";
+                    if (message.cacheSerialize != null && message.hasOwnProperty("cacheSerialize"))
+                        if (typeof message.cacheSerialize !== "boolean")
+                            return "cacheSerialize: boolean expected";
+                    if (message.cacheVersion != null && message.hasOwnProperty("cacheVersion"))
+                        if (!$util.isString(message.cacheVersion))
+                            return "cacheVersion: string expected";
+                    if (message.retries != null && message.hasOwnProperty("retries"))
+                        if (!$util.isInteger(message.retries))
+                            return "retries: integer expected";
+                    if (message.interruptible != null && message.hasOwnProperty("interruptible"))
+                        if (typeof message.interruptible !== "boolean")
+                            return "interruptible: boolean expected";
+                    if (message.containerImage != null && message.hasOwnProperty("containerImage"))
+                        if (!$util.isString(message.containerImage))
+                            return "containerImage: string expected";
+                    if (message.environment != null && message.hasOwnProperty("environment")) {
+                        if (!$util.isObject(message.environment))
+                            return "environment: object expected";
+                        var key = Object.keys(message.environment);
+                        for (var i = 0; i < key.length; ++i)
+                            if (!$util.isString(message.environment[key[i]]))
+                                return "environment: string{k:string} expected";
+                    }
+                    if (message.taskConfig != null && message.hasOwnProperty("taskConfig")) {
+                        var error = $root.google.protobuf.Struct.verify(message.taskConfig);
+                        if (error)
+                            return "taskConfig." + error;
                     }
                     return null;
                 };
@@ -25902,6 +26069,7 @@
                  * @property {google.protobuf.IBoolValue|null} [interruptible] ExecutionSpec interruptible
                  * @property {boolean|null} [overwriteCache] ExecutionSpec overwriteCache
                  * @property {flyteidl.admin.IEnvs|null} [envs] ExecutionSpec envs
+                 * @property {Object.<string,flyteidl.core.ITaskNodeOverrides>|null} [taskNodeRuntimeOverrides] ExecutionSpec taskNodeRuntimeOverrides
                  */
     
                 /**
@@ -25913,6 +26081,7 @@
                  * @param {flyteidl.admin.IExecutionSpec=} [properties] Properties to set
                  */
                 function ExecutionSpec(properties) {
+                    this.taskNodeRuntimeOverrides = {};
                     if (properties)
                         for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
                             if (properties[keys[i]] != null)
@@ -26047,6 +26216,14 @@
                  */
                 ExecutionSpec.prototype.envs = null;
     
+                /**
+                 * ExecutionSpec taskNodeRuntimeOverrides.
+                 * @member {Object.<string,flyteidl.core.ITaskNodeOverrides>} taskNodeRuntimeOverrides
+                 * @memberof flyteidl.admin.ExecutionSpec
+                 * @instance
+                 */
+                ExecutionSpec.prototype.taskNodeRuntimeOverrides = $util.emptyObject;
+    
                 // OneOf field names bound to virtual getters and setters
                 var $oneOfFields;
     
@@ -26117,6 +26294,11 @@
                         writer.uint32(/* id 22, wireType 0 =*/176).bool(message.overwriteCache);
                     if (message.envs != null && message.hasOwnProperty("envs"))
                         $root.flyteidl.admin.Envs.encode(message.envs, writer.uint32(/* id 23, wireType 2 =*/186).fork()).ldelim();
+                    if (message.taskNodeRuntimeOverrides != null && message.hasOwnProperty("taskNodeRuntimeOverrides"))
+                        for (var keys = Object.keys(message.taskNodeRuntimeOverrides), i = 0; i < keys.length; ++i) {
+                            writer.uint32(/* id 24, wireType 2 =*/194).fork().uint32(/* id 1, wireType 2 =*/10).string(keys[i]);
+                            $root.flyteidl.core.TaskNodeOverrides.encode(message.taskNodeRuntimeOverrides[keys[i]], writer.uint32(/* id 2, wireType 2 =*/18).fork()).ldelim().ldelim();
+                        }
                     return writer;
                 };
     
@@ -26134,7 +26316,7 @@
                 ExecutionSpec.decode = function decode(reader, length) {
                     if (!(reader instanceof $Reader))
                         reader = $Reader.create(reader);
-                    var end = length === undefined ? reader.len : reader.pos + length, message = new $root.flyteidl.admin.ExecutionSpec();
+                    var end = length === undefined ? reader.len : reader.pos + length, message = new $root.flyteidl.admin.ExecutionSpec(), key;
                     while (reader.pos < end) {
                         var tag = reader.uint32();
                         switch (tag >>> 3) {
@@ -26185,6 +26367,14 @@
                             break;
                         case 23:
                             message.envs = $root.flyteidl.admin.Envs.decode(reader, reader.uint32());
+                            break;
+                        case 24:
+                            reader.skip().pos++;
+                            if (message.taskNodeRuntimeOverrides === $util.emptyObject)
+                                message.taskNodeRuntimeOverrides = {};
+                            key = reader.string();
+                            reader.pos++;
+                            message.taskNodeRuntimeOverrides[key] = $root.flyteidl.core.TaskNodeOverrides.decode(reader, reader.uint32());
                             break;
                         default:
                             reader.skipType(tag & 7);
@@ -26286,6 +26476,16 @@
                         var error = $root.flyteidl.admin.Envs.verify(message.envs);
                         if (error)
                             return "envs." + error;
+                    }
+                    if (message.taskNodeRuntimeOverrides != null && message.hasOwnProperty("taskNodeRuntimeOverrides")) {
+                        if (!$util.isObject(message.taskNodeRuntimeOverrides))
+                            return "taskNodeRuntimeOverrides: object expected";
+                        var key = Object.keys(message.taskNodeRuntimeOverrides);
+                        for (var i = 0; i < key.length; ++i) {
+                            var error = $root.flyteidl.core.TaskNodeOverrides.verify(message.taskNodeRuntimeOverrides[key[i]]);
+                            if (error)
+                                return "taskNodeRuntimeOverrides." + error;
+                        }
                     }
                     return null;
                 };
@@ -28103,6 +28303,7 @@
                  * @property {google.protobuf.IBoolValue|null} [interruptible] LaunchPlanSpec interruptible
                  * @property {boolean|null} [overwriteCache] LaunchPlanSpec overwriteCache
                  * @property {flyteidl.admin.IEnvs|null} [envs] LaunchPlanSpec envs
+                 * @property {Object.<string,flyteidl.core.ITaskNodeOverrides>|null} [taskNodeRuntimeOverrides] LaunchPlanSpec taskNodeRuntimeOverrides
                  */
     
                 /**
@@ -28114,6 +28315,7 @@
                  * @param {flyteidl.admin.ILaunchPlanSpec=} [properties] Properties to set
                  */
                 function LaunchPlanSpec(properties) {
+                    this.taskNodeRuntimeOverrides = {};
                     if (properties)
                         for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
                             if (properties[keys[i]] != null)
@@ -28249,6 +28451,14 @@
                 LaunchPlanSpec.prototype.envs = null;
     
                 /**
+                 * LaunchPlanSpec taskNodeRuntimeOverrides.
+                 * @member {Object.<string,flyteidl.core.ITaskNodeOverrides>} taskNodeRuntimeOverrides
+                 * @memberof flyteidl.admin.LaunchPlanSpec
+                 * @instance
+                 */
+                LaunchPlanSpec.prototype.taskNodeRuntimeOverrides = $util.emptyObject;
+    
+                /**
                  * Creates a new LaunchPlanSpec instance using the specified properties.
                  * @function create
                  * @memberof flyteidl.admin.LaunchPlanSpec
@@ -28304,6 +28514,11 @@
                         writer.uint32(/* id 20, wireType 0 =*/160).bool(message.overwriteCache);
                     if (message.envs != null && message.hasOwnProperty("envs"))
                         $root.flyteidl.admin.Envs.encode(message.envs, writer.uint32(/* id 21, wireType 2 =*/170).fork()).ldelim();
+                    if (message.taskNodeRuntimeOverrides != null && message.hasOwnProperty("taskNodeRuntimeOverrides"))
+                        for (var keys = Object.keys(message.taskNodeRuntimeOverrides), i = 0; i < keys.length; ++i) {
+                            writer.uint32(/* id 22, wireType 2 =*/178).fork().uint32(/* id 1, wireType 2 =*/10).string(keys[i]);
+                            $root.flyteidl.core.TaskNodeOverrides.encode(message.taskNodeRuntimeOverrides[keys[i]], writer.uint32(/* id 2, wireType 2 =*/18).fork()).ldelim().ldelim();
+                        }
                     return writer;
                 };
     
@@ -28321,7 +28536,7 @@
                 LaunchPlanSpec.decode = function decode(reader, length) {
                     if (!(reader instanceof $Reader))
                         reader = $Reader.create(reader);
-                    var end = length === undefined ? reader.len : reader.pos + length, message = new $root.flyteidl.admin.LaunchPlanSpec();
+                    var end = length === undefined ? reader.len : reader.pos + length, message = new $root.flyteidl.admin.LaunchPlanSpec(), key;
                     while (reader.pos < end) {
                         var tag = reader.uint32();
                         switch (tag >>> 3) {
@@ -28372,6 +28587,14 @@
                             break;
                         case 21:
                             message.envs = $root.flyteidl.admin.Envs.decode(reader, reader.uint32());
+                            break;
+                        case 22:
+                            reader.skip().pos++;
+                            if (message.taskNodeRuntimeOverrides === $util.emptyObject)
+                                message.taskNodeRuntimeOverrides = {};
+                            key = reader.string();
+                            reader.pos++;
+                            message.taskNodeRuntimeOverrides[key] = $root.flyteidl.core.TaskNodeOverrides.decode(reader, reader.uint32());
                             break;
                         default:
                             reader.skipType(tag & 7);
@@ -28465,6 +28688,16 @@
                         var error = $root.flyteidl.admin.Envs.verify(message.envs);
                         if (error)
                             return "envs." + error;
+                    }
+                    if (message.taskNodeRuntimeOverrides != null && message.hasOwnProperty("taskNodeRuntimeOverrides")) {
+                        if (!$util.isObject(message.taskNodeRuntimeOverrides))
+                            return "taskNodeRuntimeOverrides: object expected";
+                        var key = Object.keys(message.taskNodeRuntimeOverrides);
+                        for (var i = 0; i < key.length; ++i) {
+                            var error = $root.flyteidl.core.TaskNodeOverrides.verify(message.taskNodeRuntimeOverrides[key[i]]);
+                            if (error)
+                                return "taskNodeRuntimeOverrides." + error;
+                        }
                     }
                     return null;
                 };

@@ -1991,6 +1991,9 @@ pub struct TaskNode {
     /// Optional overrides applied at task execution time.
     #[prost(message, optional, tag="2")]
     pub overrides: ::core::option::Option<TaskNodeOverrides>,
+    /// Optional: if specified, the task can be overridden at runtime.
+    #[prost(string, tag="3")]
+    pub runtime_override_name: ::prost::alloc::string::String,
     #[prost(oneof="task_node::Reference", tags="1")]
     pub reference: ::core::option::Option<task_node::Reference>,
 }
@@ -2273,6 +2276,31 @@ pub struct TaskNodeOverrides {
     /// A customizable interface to convey resources requested for a task container. 
     #[prost(message, optional, tag="1")]
     pub resources: ::core::option::Option<Resources>,
+    /// Boolean that indicates if caching should be enabled
+    #[prost(bool, tag="2")]
+    pub cache: bool,
+    /// Boolean that indicates if identical (ie. same inputs) instances of this task should be
+    /// executed in serial when caching is enabled.
+    #[prost(bool, tag="3")]
+    pub cache_serialize: bool,
+    /// Cache version to use
+    #[prost(string, tag="4")]
+    pub cache_version: ::prost::alloc::string::String,
+    ///   Number of times to retry this task during a workflow execution
+    #[prost(int32, tag="5")]
+    pub retries: i32,
+    /// Boolean that indicates that this task can be interrupted and/or scheduled on nodes with lower QoS guarantees
+    #[prost(bool, tag="6")]
+    pub interruptible: bool,
+    /// Container image to use
+    #[prost(string, tag="7")]
+    pub container_image: ::prost::alloc::string::String,
+    /// Environment variables that should be added for this tasks execution
+    #[prost(map="string, string", tag="9")]
+    pub environment: ::std::collections::HashMap<::prost::alloc::string::String, ::prost::alloc::string::String>,
+    /// This argument provides configuration for a specific task types.
+    #[prost(message, optional, tag="10")]
+    pub task_config: ::core::option::Option<::prost_types::Struct>,
 }
 /// Adjacency list for the workflow. This is created as part of the compilation process. Every process after the compilation
 /// step uses this created ConnectionSet

@@ -5,6 +5,7 @@ from flyteidl.core import execution_pb2 as _execution_pb2
 from flyteidl.core import identifier_pb2 as _identifier_pb2
 from flyteidl.core import metrics_pb2 as _metrics_pb2
 from flyteidl.core import security_pb2 as _security_pb2
+from flyteidl.core import workflow_pb2 as _workflow_pb2
 from google.protobuf import duration_pb2 as _duration_pb2
 from google.protobuf import timestamp_pb2 as _timestamp_pb2
 from google.protobuf import wrappers_pb2 as _wrappers_pb2
@@ -182,7 +183,14 @@ class NotificationList(_message.Message):
     def __init__(self, notifications: _Optional[_Iterable[_Union[_common_pb2.Notification, _Mapping]]] = ...) -> None: ...
 
 class ExecutionSpec(_message.Message):
-    __slots__ = ["launch_plan", "inputs", "metadata", "notifications", "disable_all", "labels", "annotations", "security_context", "auth_role", "quality_of_service", "max_parallelism", "raw_output_data_config", "cluster_assignment", "interruptible", "overwrite_cache", "envs"]
+    __slots__ = ["launch_plan", "inputs", "metadata", "notifications", "disable_all", "labels", "annotations", "security_context", "auth_role", "quality_of_service", "max_parallelism", "raw_output_data_config", "cluster_assignment", "interruptible", "overwrite_cache", "envs", "task_node_runtime_overrides"]
+    class TaskNodeRuntimeOverridesEntry(_message.Message):
+        __slots__ = ["key", "value"]
+        KEY_FIELD_NUMBER: _ClassVar[int]
+        VALUE_FIELD_NUMBER: _ClassVar[int]
+        key: str
+        value: _workflow_pb2.TaskNodeOverrides
+        def __init__(self, key: _Optional[str] = ..., value: _Optional[_Union[_workflow_pb2.TaskNodeOverrides, _Mapping]] = ...) -> None: ...
     LAUNCH_PLAN_FIELD_NUMBER: _ClassVar[int]
     INPUTS_FIELD_NUMBER: _ClassVar[int]
     METADATA_FIELD_NUMBER: _ClassVar[int]
@@ -199,6 +207,7 @@ class ExecutionSpec(_message.Message):
     INTERRUPTIBLE_FIELD_NUMBER: _ClassVar[int]
     OVERWRITE_CACHE_FIELD_NUMBER: _ClassVar[int]
     ENVS_FIELD_NUMBER: _ClassVar[int]
+    TASK_NODE_RUNTIME_OVERRIDES_FIELD_NUMBER: _ClassVar[int]
     launch_plan: _identifier_pb2.Identifier
     inputs: _literals_pb2.LiteralMap
     metadata: ExecutionMetadata
@@ -215,7 +224,8 @@ class ExecutionSpec(_message.Message):
     interruptible: _wrappers_pb2.BoolValue
     overwrite_cache: bool
     envs: _common_pb2.Envs
-    def __init__(self, launch_plan: _Optional[_Union[_identifier_pb2.Identifier, _Mapping]] = ..., inputs: _Optional[_Union[_literals_pb2.LiteralMap, _Mapping]] = ..., metadata: _Optional[_Union[ExecutionMetadata, _Mapping]] = ..., notifications: _Optional[_Union[NotificationList, _Mapping]] = ..., disable_all: bool = ..., labels: _Optional[_Union[_common_pb2.Labels, _Mapping]] = ..., annotations: _Optional[_Union[_common_pb2.Annotations, _Mapping]] = ..., security_context: _Optional[_Union[_security_pb2.SecurityContext, _Mapping]] = ..., auth_role: _Optional[_Union[_common_pb2.AuthRole, _Mapping]] = ..., quality_of_service: _Optional[_Union[_execution_pb2.QualityOfService, _Mapping]] = ..., max_parallelism: _Optional[int] = ..., raw_output_data_config: _Optional[_Union[_common_pb2.RawOutputDataConfig, _Mapping]] = ..., cluster_assignment: _Optional[_Union[_cluster_assignment_pb2.ClusterAssignment, _Mapping]] = ..., interruptible: _Optional[_Union[_wrappers_pb2.BoolValue, _Mapping]] = ..., overwrite_cache: bool = ..., envs: _Optional[_Union[_common_pb2.Envs, _Mapping]] = ...) -> None: ...
+    task_node_runtime_overrides: _containers.MessageMap[str, _workflow_pb2.TaskNodeOverrides]
+    def __init__(self, launch_plan: _Optional[_Union[_identifier_pb2.Identifier, _Mapping]] = ..., inputs: _Optional[_Union[_literals_pb2.LiteralMap, _Mapping]] = ..., metadata: _Optional[_Union[ExecutionMetadata, _Mapping]] = ..., notifications: _Optional[_Union[NotificationList, _Mapping]] = ..., disable_all: bool = ..., labels: _Optional[_Union[_common_pb2.Labels, _Mapping]] = ..., annotations: _Optional[_Union[_common_pb2.Annotations, _Mapping]] = ..., security_context: _Optional[_Union[_security_pb2.SecurityContext, _Mapping]] = ..., auth_role: _Optional[_Union[_common_pb2.AuthRole, _Mapping]] = ..., quality_of_service: _Optional[_Union[_execution_pb2.QualityOfService, _Mapping]] = ..., max_parallelism: _Optional[int] = ..., raw_output_data_config: _Optional[_Union[_common_pb2.RawOutputDataConfig, _Mapping]] = ..., cluster_assignment: _Optional[_Union[_cluster_assignment_pb2.ClusterAssignment, _Mapping]] = ..., interruptible: _Optional[_Union[_wrappers_pb2.BoolValue, _Mapping]] = ..., overwrite_cache: bool = ..., envs: _Optional[_Union[_common_pb2.Envs, _Mapping]] = ..., task_node_runtime_overrides: _Optional[_Mapping[str, _workflow_pb2.TaskNodeOverrides]] = ...) -> None: ...
 
 class ExecutionTerminateRequest(_message.Message):
     __slots__ = ["id", "cause"]

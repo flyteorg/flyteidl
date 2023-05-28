@@ -329,6 +329,8 @@ func (m *TaskNode) Validate() error {
 		}
 	}
 
+	// no validation rules for RuntimeOverrideName
+
 	switch m.Reference.(type) {
 
 	case *TaskNode_ReferenceId:
@@ -1445,6 +1447,30 @@ func (m *TaskNodeOverrides) Validate() error {
 		if err := v.Validate(); err != nil {
 			return TaskNodeOverridesValidationError{
 				field:  "Resources",
+				reason: "embedded message failed validation",
+				cause:  err,
+			}
+		}
+	}
+
+	// no validation rules for Cache
+
+	// no validation rules for CacheSerialize
+
+	// no validation rules for CacheVersion
+
+	// no validation rules for Retries
+
+	// no validation rules for Interruptible
+
+	// no validation rules for ContainerImage
+
+	// no validation rules for Environment
+
+	if v, ok := interface{}(m.GetTaskConfig()).(interface{ Validate() error }); ok {
+		if err := v.Validate(); err != nil {
+			return TaskNodeOverridesValidationError{
+				field:  "TaskConfig",
 				reason: "embedded message failed validation",
 				cause:  err,
 			}

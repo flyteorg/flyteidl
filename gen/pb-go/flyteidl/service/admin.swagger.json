@@ -4022,6 +4022,13 @@
         "envs": {
           "$ref": "#/definitions/adminEnvs",
           "description": "Environment variables to be set for the execution."
+        },
+        "task_node_runtime_overrides": {
+          "type": "object",
+          "additionalProperties": {
+            "$ref": "#/definitions/coreTaskNodeOverrides"
+          },
+          "description": "Allows the task node with \"runtime_override_name\" to be overriden with \"TaskNodeOverrides\" at runtime."
         }
       },
       "description": "An ExecutionSpec encompasses all data used to launch this execution. The Spec does not change over the lifetime\nof an execution as it progresses across phase changes."
@@ -4311,6 +4318,13 @@
         "envs": {
           "$ref": "#/definitions/adminEnvs",
           "description": "Environment variables to be set for the execution."
+        },
+        "task_node_runtime_overrides": {
+          "type": "object",
+          "additionalProperties": {
+            "$ref": "#/definitions/coreTaskNodeOverrides"
+          },
+          "description": "Allows the task node with \"runtime_override_name\" to be overriden with \"TaskNodeOverrides\" at runtime."
         }
       },
       "description": "User-provided launch plan definition and configuration values."
@@ -6941,6 +6955,10 @@
         "overrides": {
           "$ref": "#/definitions/coreTaskNodeOverrides",
           "description": "Optional overrides applied at task execution time."
+        },
+        "runtime_override_name": {
+          "type": "string",
+          "description": "Optional: if specified, the task can be overridden at runtime."
         }
       },
       "description": "Refers to the task that the Node is to execute."
@@ -6951,6 +6969,45 @@
         "resources": {
           "$ref": "#/definitions/coreResources",
           "description": "A customizable interface to convey resources requested for a task container."
+        },
+        "cache": {
+          "type": "boolean",
+          "format": "boolean",
+          "title": "Boolean that indicates if caching should be enabled"
+        },
+        "cache_serialize": {
+          "type": "boolean",
+          "format": "boolean",
+          "description": "Boolean that indicates if identical (ie. same inputs) instances of this task should be\nexecuted in serial when caching is enabled."
+        },
+        "cache_version": {
+          "type": "string",
+          "title": "Cache version to use"
+        },
+        "retries": {
+          "type": "integer",
+          "format": "int32",
+          "title": "Number of times to retry this task during a workflow execution"
+        },
+        "interruptible": {
+          "type": "boolean",
+          "format": "boolean",
+          "title": "Boolean that indicates that this task can be interrupted and/or scheduled on nodes with lower QoS guarantees"
+        },
+        "container_image": {
+          "type": "string",
+          "title": "Container image to use"
+        },
+        "environment": {
+          "type": "object",
+          "additionalProperties": {
+            "type": "string"
+          },
+          "title": "Environment variables that should be added for this tasks execution"
+        },
+        "task_config": {
+          "$ref": "#/definitions/protobufStruct",
+          "description": "This argument provides configuration for a specific task types."
         }
       },
       "description": "Optional task node overrides that will be applied at task execution time."

@@ -17,6 +17,7 @@ import re  # noqa: F401
 import six
 
 from flyteadmin.models.core_resources import CoreResources  # noqa: F401,E501
+from flyteadmin.models.protobuf_struct import ProtobufStruct  # noqa: F401,E501
 
 
 class CoreTaskNodeOverrides(object):
@@ -33,21 +34,61 @@ class CoreTaskNodeOverrides(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'resources': 'CoreResources'
+        'resources': 'CoreResources',
+        'cache': 'bool',
+        'cache_serialize': 'bool',
+        'cache_version': 'str',
+        'retries': 'int',
+        'interruptible': 'bool',
+        'container_image': 'str',
+        'environment': 'dict(str, str)',
+        'task_config': 'ProtobufStruct'
     }
 
     attribute_map = {
-        'resources': 'resources'
+        'resources': 'resources',
+        'cache': 'cache',
+        'cache_serialize': 'cache_serialize',
+        'cache_version': 'cache_version',
+        'retries': 'retries',
+        'interruptible': 'interruptible',
+        'container_image': 'container_image',
+        'environment': 'environment',
+        'task_config': 'task_config'
     }
 
-    def __init__(self, resources=None):  # noqa: E501
+    def __init__(self, resources=None, cache=None, cache_serialize=None, cache_version=None, retries=None, interruptible=None, container_image=None, environment=None, task_config=None):  # noqa: E501
         """CoreTaskNodeOverrides - a model defined in Swagger"""  # noqa: E501
 
         self._resources = None
+        self._cache = None
+        self._cache_serialize = None
+        self._cache_version = None
+        self._retries = None
+        self._interruptible = None
+        self._container_image = None
+        self._environment = None
+        self._task_config = None
         self.discriminator = None
 
         if resources is not None:
             self.resources = resources
+        if cache is not None:
+            self.cache = cache
+        if cache_serialize is not None:
+            self.cache_serialize = cache_serialize
+        if cache_version is not None:
+            self.cache_version = cache_version
+        if retries is not None:
+            self.retries = retries
+        if interruptible is not None:
+            self.interruptible = interruptible
+        if container_image is not None:
+            self.container_image = container_image
+        if environment is not None:
+            self.environment = environment
+        if task_config is not None:
+            self.task_config = task_config
 
     @property
     def resources(self):
@@ -71,6 +112,178 @@ class CoreTaskNodeOverrides(object):
         """
 
         self._resources = resources
+
+    @property
+    def cache(self):
+        """Gets the cache of this CoreTaskNodeOverrides.  # noqa: E501
+
+
+        :return: The cache of this CoreTaskNodeOverrides.  # noqa: E501
+        :rtype: bool
+        """
+        return self._cache
+
+    @cache.setter
+    def cache(self, cache):
+        """Sets the cache of this CoreTaskNodeOverrides.
+
+
+        :param cache: The cache of this CoreTaskNodeOverrides.  # noqa: E501
+        :type: bool
+        """
+
+        self._cache = cache
+
+    @property
+    def cache_serialize(self):
+        """Gets the cache_serialize of this CoreTaskNodeOverrides.  # noqa: E501
+
+        Boolean that indicates if identical (ie. same inputs) instances of this task should be executed in serial when caching is enabled.  # noqa: E501
+
+        :return: The cache_serialize of this CoreTaskNodeOverrides.  # noqa: E501
+        :rtype: bool
+        """
+        return self._cache_serialize
+
+    @cache_serialize.setter
+    def cache_serialize(self, cache_serialize):
+        """Sets the cache_serialize of this CoreTaskNodeOverrides.
+
+        Boolean that indicates if identical (ie. same inputs) instances of this task should be executed in serial when caching is enabled.  # noqa: E501
+
+        :param cache_serialize: The cache_serialize of this CoreTaskNodeOverrides.  # noqa: E501
+        :type: bool
+        """
+
+        self._cache_serialize = cache_serialize
+
+    @property
+    def cache_version(self):
+        """Gets the cache_version of this CoreTaskNodeOverrides.  # noqa: E501
+
+
+        :return: The cache_version of this CoreTaskNodeOverrides.  # noqa: E501
+        :rtype: str
+        """
+        return self._cache_version
+
+    @cache_version.setter
+    def cache_version(self, cache_version):
+        """Sets the cache_version of this CoreTaskNodeOverrides.
+
+
+        :param cache_version: The cache_version of this CoreTaskNodeOverrides.  # noqa: E501
+        :type: str
+        """
+
+        self._cache_version = cache_version
+
+    @property
+    def retries(self):
+        """Gets the retries of this CoreTaskNodeOverrides.  # noqa: E501
+
+
+        :return: The retries of this CoreTaskNodeOverrides.  # noqa: E501
+        :rtype: int
+        """
+        return self._retries
+
+    @retries.setter
+    def retries(self, retries):
+        """Sets the retries of this CoreTaskNodeOverrides.
+
+
+        :param retries: The retries of this CoreTaskNodeOverrides.  # noqa: E501
+        :type: int
+        """
+
+        self._retries = retries
+
+    @property
+    def interruptible(self):
+        """Gets the interruptible of this CoreTaskNodeOverrides.  # noqa: E501
+
+
+        :return: The interruptible of this CoreTaskNodeOverrides.  # noqa: E501
+        :rtype: bool
+        """
+        return self._interruptible
+
+    @interruptible.setter
+    def interruptible(self, interruptible):
+        """Sets the interruptible of this CoreTaskNodeOverrides.
+
+
+        :param interruptible: The interruptible of this CoreTaskNodeOverrides.  # noqa: E501
+        :type: bool
+        """
+
+        self._interruptible = interruptible
+
+    @property
+    def container_image(self):
+        """Gets the container_image of this CoreTaskNodeOverrides.  # noqa: E501
+
+
+        :return: The container_image of this CoreTaskNodeOverrides.  # noqa: E501
+        :rtype: str
+        """
+        return self._container_image
+
+    @container_image.setter
+    def container_image(self, container_image):
+        """Sets the container_image of this CoreTaskNodeOverrides.
+
+
+        :param container_image: The container_image of this CoreTaskNodeOverrides.  # noqa: E501
+        :type: str
+        """
+
+        self._container_image = container_image
+
+    @property
+    def environment(self):
+        """Gets the environment of this CoreTaskNodeOverrides.  # noqa: E501
+
+
+        :return: The environment of this CoreTaskNodeOverrides.  # noqa: E501
+        :rtype: dict(str, str)
+        """
+        return self._environment
+
+    @environment.setter
+    def environment(self, environment):
+        """Sets the environment of this CoreTaskNodeOverrides.
+
+
+        :param environment: The environment of this CoreTaskNodeOverrides.  # noqa: E501
+        :type: dict(str, str)
+        """
+
+        self._environment = environment
+
+    @property
+    def task_config(self):
+        """Gets the task_config of this CoreTaskNodeOverrides.  # noqa: E501
+
+        This argument provides configuration for a specific task types.  # noqa: E501
+
+        :return: The task_config of this CoreTaskNodeOverrides.  # noqa: E501
+        :rtype: ProtobufStruct
+        """
+        return self._task_config
+
+    @task_config.setter
+    def task_config(self, task_config):
+        """Sets the task_config of this CoreTaskNodeOverrides.
+
+        This argument provides configuration for a specific task types.  # noqa: E501
+
+        :param task_config: The task_config of this CoreTaskNodeOverrides.  # noqa: E501
+        :type: ProtobufStruct
+        """
+
+        self._task_config = task_config
 
     def to_dict(self):
         """Returns the model properties as a dict"""

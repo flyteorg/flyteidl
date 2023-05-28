@@ -57,7 +57,7 @@ message TaskNode {
     // Optional overrides applied at task execution time.
     TaskNodeOverrides overrides = 2;
 
-    
+    // Optional: if specified, the task can be overridden at runtime.
     string runtime_override_name = 3;
 }
 
@@ -254,19 +254,28 @@ message TaskNodeOverrides {
     // A customizable interface to convey resources requested for a task container. 
     Resources resources = 1;
 
+    // Boolean that indicates if caching should be enabled
     bool cache = 2;
     
+    // Boolean that indicates if identical (ie. same inputs) instances of this task should be
+    // executed in serial when caching is enabled.
     bool cache_serialize = 3;
 
+    // Cache version to use
     string cache_version = 4;
 
+    //  Number of times to retry this task during a workflow execution
     int32 retries = 5;
 
+    // Boolean that indicates that this task can be interrupted and/or scheduled on nodes with lower QoS guarantees
     bool interruptible = 6;
 
+    // Container image to use
     string container_image = 7;
-
+    
+    // Environment variables that should be added for this tasks execution
     map<string, string> environment = 9;
 
+    // This argument provides configuration for a specific task types.
     google.protobuf.Struct task_config = 10;
 }

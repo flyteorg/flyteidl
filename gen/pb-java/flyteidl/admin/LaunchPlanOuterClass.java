@@ -4776,6 +4776,60 @@ public final class LaunchPlanOuterClass {
      * <code>.flyteidl.admin.Envs envs = 21;</code>
      */
     flyteidl.admin.Common.EnvsOrBuilder getEnvsOrBuilder();
+
+    /**
+     * <pre>
+     * Allows the task node with "runtime_override_name" to be overriden with "TaskNodeOverrides" at runtime.
+     * </pre>
+     *
+     * <code>map&lt;string, .flyteidl.core.TaskNodeOverrides&gt; task_node_runtime_overrides = 22;</code>
+     */
+    int getTaskNodeRuntimeOverridesCount();
+    /**
+     * <pre>
+     * Allows the task node with "runtime_override_name" to be overriden with "TaskNodeOverrides" at runtime.
+     * </pre>
+     *
+     * <code>map&lt;string, .flyteidl.core.TaskNodeOverrides&gt; task_node_runtime_overrides = 22;</code>
+     */
+    boolean containsTaskNodeRuntimeOverrides(
+        java.lang.String key);
+    /**
+     * Use {@link #getTaskNodeRuntimeOverridesMap()} instead.
+     */
+    @java.lang.Deprecated
+    java.util.Map<java.lang.String, flyteidl.core.Workflow.TaskNodeOverrides>
+    getTaskNodeRuntimeOverrides();
+    /**
+     * <pre>
+     * Allows the task node with "runtime_override_name" to be overriden with "TaskNodeOverrides" at runtime.
+     * </pre>
+     *
+     * <code>map&lt;string, .flyteidl.core.TaskNodeOverrides&gt; task_node_runtime_overrides = 22;</code>
+     */
+    java.util.Map<java.lang.String, flyteidl.core.Workflow.TaskNodeOverrides>
+    getTaskNodeRuntimeOverridesMap();
+    /**
+     * <pre>
+     * Allows the task node with "runtime_override_name" to be overriden with "TaskNodeOverrides" at runtime.
+     * </pre>
+     *
+     * <code>map&lt;string, .flyteidl.core.TaskNodeOverrides&gt; task_node_runtime_overrides = 22;</code>
+     */
+
+    flyteidl.core.Workflow.TaskNodeOverrides getTaskNodeRuntimeOverridesOrDefault(
+        java.lang.String key,
+        flyteidl.core.Workflow.TaskNodeOverrides defaultValue);
+    /**
+     * <pre>
+     * Allows the task node with "runtime_override_name" to be overriden with "TaskNodeOverrides" at runtime.
+     * </pre>
+     *
+     * <code>map&lt;string, .flyteidl.core.TaskNodeOverrides&gt; task_node_runtime_overrides = 22;</code>
+     */
+
+    flyteidl.core.Workflow.TaskNodeOverrides getTaskNodeRuntimeOverridesOrThrow(
+        java.lang.String key);
   }
   /**
    * <pre>
@@ -5006,6 +5060,19 @@ public final class LaunchPlanOuterClass {
 
               break;
             }
+            case 178: {
+              if (!((mutable_bitField0_ & 0x00010000) != 0)) {
+                taskNodeRuntimeOverrides_ = com.google.protobuf.MapField.newMapField(
+                    TaskNodeRuntimeOverridesDefaultEntryHolder.defaultEntry);
+                mutable_bitField0_ |= 0x00010000;
+              }
+              com.google.protobuf.MapEntry<java.lang.String, flyteidl.core.Workflow.TaskNodeOverrides>
+              taskNodeRuntimeOverrides__ = input.readMessage(
+                  TaskNodeRuntimeOverridesDefaultEntryHolder.defaultEntry.getParserForType(), extensionRegistry);
+              taskNodeRuntimeOverrides_.getMutableMap().put(
+                  taskNodeRuntimeOverrides__.getKey(), taskNodeRuntimeOverrides__.getValue());
+              break;
+            }
             default: {
               if (!parseUnknownField(
                   input, unknownFields, extensionRegistry, tag)) {
@@ -5030,6 +5097,18 @@ public final class LaunchPlanOuterClass {
       return flyteidl.admin.LaunchPlanOuterClass.internal_static_flyteidl_admin_LaunchPlanSpec_descriptor;
     }
 
+    @SuppressWarnings({"rawtypes"})
+    @java.lang.Override
+    protected com.google.protobuf.MapField internalGetMapField(
+        int number) {
+      switch (number) {
+        case 22:
+          return internalGetTaskNodeRuntimeOverrides();
+        default:
+          throw new RuntimeException(
+              "Invalid map field number: " + number);
+      }
+    }
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
@@ -5038,6 +5117,7 @@ public final class LaunchPlanOuterClass {
               flyteidl.admin.LaunchPlanOuterClass.LaunchPlanSpec.class, flyteidl.admin.LaunchPlanOuterClass.LaunchPlanSpec.Builder.class);
     }
 
+    private int bitField0_;
     public static final int WORKFLOW_ID_FIELD_NUMBER = 1;
     private flyteidl.core.IdentifierOuterClass.Identifier workflowId_;
     /**
@@ -5542,6 +5622,98 @@ public final class LaunchPlanOuterClass {
       return getEnvs();
     }
 
+    public static final int TASK_NODE_RUNTIME_OVERRIDES_FIELD_NUMBER = 22;
+    private static final class TaskNodeRuntimeOverridesDefaultEntryHolder {
+      static final com.google.protobuf.MapEntry<
+          java.lang.String, flyteidl.core.Workflow.TaskNodeOverrides> defaultEntry =
+              com.google.protobuf.MapEntry
+              .<java.lang.String, flyteidl.core.Workflow.TaskNodeOverrides>newDefaultInstance(
+                  flyteidl.admin.LaunchPlanOuterClass.internal_static_flyteidl_admin_LaunchPlanSpec_TaskNodeRuntimeOverridesEntry_descriptor, 
+                  com.google.protobuf.WireFormat.FieldType.STRING,
+                  "",
+                  com.google.protobuf.WireFormat.FieldType.MESSAGE,
+                  flyteidl.core.Workflow.TaskNodeOverrides.getDefaultInstance());
+    }
+    private com.google.protobuf.MapField<
+        java.lang.String, flyteidl.core.Workflow.TaskNodeOverrides> taskNodeRuntimeOverrides_;
+    private com.google.protobuf.MapField<java.lang.String, flyteidl.core.Workflow.TaskNodeOverrides>
+    internalGetTaskNodeRuntimeOverrides() {
+      if (taskNodeRuntimeOverrides_ == null) {
+        return com.google.protobuf.MapField.emptyMapField(
+            TaskNodeRuntimeOverridesDefaultEntryHolder.defaultEntry);
+      }
+      return taskNodeRuntimeOverrides_;
+    }
+
+    public int getTaskNodeRuntimeOverridesCount() {
+      return internalGetTaskNodeRuntimeOverrides().getMap().size();
+    }
+    /**
+     * <pre>
+     * Allows the task node with "runtime_override_name" to be overriden with "TaskNodeOverrides" at runtime.
+     * </pre>
+     *
+     * <code>map&lt;string, .flyteidl.core.TaskNodeOverrides&gt; task_node_runtime_overrides = 22;</code>
+     */
+
+    public boolean containsTaskNodeRuntimeOverrides(
+        java.lang.String key) {
+      if (key == null) { throw new java.lang.NullPointerException(); }
+      return internalGetTaskNodeRuntimeOverrides().getMap().containsKey(key);
+    }
+    /**
+     * Use {@link #getTaskNodeRuntimeOverridesMap()} instead.
+     */
+    @java.lang.Deprecated
+    public java.util.Map<java.lang.String, flyteidl.core.Workflow.TaskNodeOverrides> getTaskNodeRuntimeOverrides() {
+      return getTaskNodeRuntimeOverridesMap();
+    }
+    /**
+     * <pre>
+     * Allows the task node with "runtime_override_name" to be overriden with "TaskNodeOverrides" at runtime.
+     * </pre>
+     *
+     * <code>map&lt;string, .flyteidl.core.TaskNodeOverrides&gt; task_node_runtime_overrides = 22;</code>
+     */
+
+    public java.util.Map<java.lang.String, flyteidl.core.Workflow.TaskNodeOverrides> getTaskNodeRuntimeOverridesMap() {
+      return internalGetTaskNodeRuntimeOverrides().getMap();
+    }
+    /**
+     * <pre>
+     * Allows the task node with "runtime_override_name" to be overriden with "TaskNodeOverrides" at runtime.
+     * </pre>
+     *
+     * <code>map&lt;string, .flyteidl.core.TaskNodeOverrides&gt; task_node_runtime_overrides = 22;</code>
+     */
+
+    public flyteidl.core.Workflow.TaskNodeOverrides getTaskNodeRuntimeOverridesOrDefault(
+        java.lang.String key,
+        flyteidl.core.Workflow.TaskNodeOverrides defaultValue) {
+      if (key == null) { throw new java.lang.NullPointerException(); }
+      java.util.Map<java.lang.String, flyteidl.core.Workflow.TaskNodeOverrides> map =
+          internalGetTaskNodeRuntimeOverrides().getMap();
+      return map.containsKey(key) ? map.get(key) : defaultValue;
+    }
+    /**
+     * <pre>
+     * Allows the task node with "runtime_override_name" to be overriden with "TaskNodeOverrides" at runtime.
+     * </pre>
+     *
+     * <code>map&lt;string, .flyteidl.core.TaskNodeOverrides&gt; task_node_runtime_overrides = 22;</code>
+     */
+
+    public flyteidl.core.Workflow.TaskNodeOverrides getTaskNodeRuntimeOverridesOrThrow(
+        java.lang.String key) {
+      if (key == null) { throw new java.lang.NullPointerException(); }
+      java.util.Map<java.lang.String, flyteidl.core.Workflow.TaskNodeOverrides> map =
+          internalGetTaskNodeRuntimeOverrides().getMap();
+      if (!map.containsKey(key)) {
+        throw new java.lang.IllegalArgumentException();
+      }
+      return map.get(key);
+    }
+
     private byte memoizedIsInitialized = -1;
     @java.lang.Override
     public final boolean isInitialized() {
@@ -5604,6 +5776,12 @@ public final class LaunchPlanOuterClass {
       if (envs_ != null) {
         output.writeMessage(21, getEnvs());
       }
+      com.google.protobuf.GeneratedMessageV3
+        .serializeStringMapTo(
+          output,
+          internalGetTaskNodeRuntimeOverrides(),
+          TaskNodeRuntimeOverridesDefaultEntryHolder.defaultEntry,
+          22);
       unknownFields.writeTo(output);
     }
 
@@ -5675,6 +5853,16 @@ public final class LaunchPlanOuterClass {
       if (envs_ != null) {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(21, getEnvs());
+      }
+      for (java.util.Map.Entry<java.lang.String, flyteidl.core.Workflow.TaskNodeOverrides> entry
+           : internalGetTaskNodeRuntimeOverrides().getMap().entrySet()) {
+        com.google.protobuf.MapEntry<java.lang.String, flyteidl.core.Workflow.TaskNodeOverrides>
+        taskNodeRuntimeOverrides__ = TaskNodeRuntimeOverridesDefaultEntryHolder.defaultEntry.newBuilderForType()
+            .setKey(entry.getKey())
+            .setValue(entry.getValue())
+            .build();
+        size += com.google.protobuf.CodedOutputStream
+            .computeMessageSize(22, taskNodeRuntimeOverrides__);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -5762,6 +5950,8 @@ public final class LaunchPlanOuterClass {
         if (!getEnvs()
             .equals(other.getEnvs())) return false;
       }
+      if (!internalGetTaskNodeRuntimeOverrides().equals(
+          other.internalGetTaskNodeRuntimeOverrides())) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -5831,6 +6021,10 @@ public final class LaunchPlanOuterClass {
       if (hasEnvs()) {
         hash = (37 * hash) + ENVS_FIELD_NUMBER;
         hash = (53 * hash) + getEnvs().hashCode();
+      }
+      if (!internalGetTaskNodeRuntimeOverrides().getMap().isEmpty()) {
+        hash = (37 * hash) + TASK_NODE_RUNTIME_OVERRIDES_FIELD_NUMBER;
+        hash = (53 * hash) + internalGetTaskNodeRuntimeOverrides().hashCode();
       }
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
@@ -5943,6 +6137,28 @@ public final class LaunchPlanOuterClass {
         return flyteidl.admin.LaunchPlanOuterClass.internal_static_flyteidl_admin_LaunchPlanSpec_descriptor;
       }
 
+      @SuppressWarnings({"rawtypes"})
+      protected com.google.protobuf.MapField internalGetMapField(
+          int number) {
+        switch (number) {
+          case 22:
+            return internalGetTaskNodeRuntimeOverrides();
+          default:
+            throw new RuntimeException(
+                "Invalid map field number: " + number);
+        }
+      }
+      @SuppressWarnings({"rawtypes"})
+      protected com.google.protobuf.MapField internalGetMutableMapField(
+          int number) {
+        switch (number) {
+          case 22:
+            return internalGetMutableTaskNodeRuntimeOverrides();
+          default:
+            throw new RuntimeException(
+                "Invalid map field number: " + number);
+        }
+      }
       @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
@@ -6053,6 +6269,7 @@ public final class LaunchPlanOuterClass {
           envs_ = null;
           envsBuilder_ = null;
         }
+        internalGetMutableTaskNodeRuntimeOverrides().clear();
         return this;
       }
 
@@ -6079,6 +6296,8 @@ public final class LaunchPlanOuterClass {
       @java.lang.Override
       public flyteidl.admin.LaunchPlanOuterClass.LaunchPlanSpec buildPartial() {
         flyteidl.admin.LaunchPlanOuterClass.LaunchPlanSpec result = new flyteidl.admin.LaunchPlanOuterClass.LaunchPlanSpec(this);
+        int from_bitField0_ = bitField0_;
+        int to_bitField0_ = 0;
         if (workflowIdBuilder_ == null) {
           result.workflowId_ = workflowId_;
         } else {
@@ -6147,6 +6366,9 @@ public final class LaunchPlanOuterClass {
         } else {
           result.envs_ = envsBuilder_.build();
         }
+        result.taskNodeRuntimeOverrides_ = internalGetTaskNodeRuntimeOverrides();
+        result.taskNodeRuntimeOverrides_.makeImmutable();
+        result.bitField0_ = to_bitField0_;
         onBuilt();
         return result;
       }
@@ -6244,6 +6466,8 @@ public final class LaunchPlanOuterClass {
         if (other.hasEnvs()) {
           mergeEnvs(other.getEnvs());
         }
+        internalGetMutableTaskNodeRuntimeOverrides().mergeFrom(
+            other.internalGetTaskNodeRuntimeOverrides());
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
@@ -6272,6 +6496,7 @@ public final class LaunchPlanOuterClass {
         }
         return this;
       }
+      private int bitField0_;
 
       private flyteidl.core.IdentifierOuterClass.Identifier workflowId_;
       private com.google.protobuf.SingleFieldBuilderV3<
@@ -8446,6 +8671,157 @@ public final class LaunchPlanOuterClass {
           envs_ = null;
         }
         return envsBuilder_;
+      }
+
+      private com.google.protobuf.MapField<
+          java.lang.String, flyteidl.core.Workflow.TaskNodeOverrides> taskNodeRuntimeOverrides_;
+      private com.google.protobuf.MapField<java.lang.String, flyteidl.core.Workflow.TaskNodeOverrides>
+      internalGetTaskNodeRuntimeOverrides() {
+        if (taskNodeRuntimeOverrides_ == null) {
+          return com.google.protobuf.MapField.emptyMapField(
+              TaskNodeRuntimeOverridesDefaultEntryHolder.defaultEntry);
+        }
+        return taskNodeRuntimeOverrides_;
+      }
+      private com.google.protobuf.MapField<java.lang.String, flyteidl.core.Workflow.TaskNodeOverrides>
+      internalGetMutableTaskNodeRuntimeOverrides() {
+        onChanged();;
+        if (taskNodeRuntimeOverrides_ == null) {
+          taskNodeRuntimeOverrides_ = com.google.protobuf.MapField.newMapField(
+              TaskNodeRuntimeOverridesDefaultEntryHolder.defaultEntry);
+        }
+        if (!taskNodeRuntimeOverrides_.isMutable()) {
+          taskNodeRuntimeOverrides_ = taskNodeRuntimeOverrides_.copy();
+        }
+        return taskNodeRuntimeOverrides_;
+      }
+
+      public int getTaskNodeRuntimeOverridesCount() {
+        return internalGetTaskNodeRuntimeOverrides().getMap().size();
+      }
+      /**
+       * <pre>
+       * Allows the task node with "runtime_override_name" to be overriden with "TaskNodeOverrides" at runtime.
+       * </pre>
+       *
+       * <code>map&lt;string, .flyteidl.core.TaskNodeOverrides&gt; task_node_runtime_overrides = 22;</code>
+       */
+
+      public boolean containsTaskNodeRuntimeOverrides(
+          java.lang.String key) {
+        if (key == null) { throw new java.lang.NullPointerException(); }
+        return internalGetTaskNodeRuntimeOverrides().getMap().containsKey(key);
+      }
+      /**
+       * Use {@link #getTaskNodeRuntimeOverridesMap()} instead.
+       */
+      @java.lang.Deprecated
+      public java.util.Map<java.lang.String, flyteidl.core.Workflow.TaskNodeOverrides> getTaskNodeRuntimeOverrides() {
+        return getTaskNodeRuntimeOverridesMap();
+      }
+      /**
+       * <pre>
+       * Allows the task node with "runtime_override_name" to be overriden with "TaskNodeOverrides" at runtime.
+       * </pre>
+       *
+       * <code>map&lt;string, .flyteidl.core.TaskNodeOverrides&gt; task_node_runtime_overrides = 22;</code>
+       */
+
+      public java.util.Map<java.lang.String, flyteidl.core.Workflow.TaskNodeOverrides> getTaskNodeRuntimeOverridesMap() {
+        return internalGetTaskNodeRuntimeOverrides().getMap();
+      }
+      /**
+       * <pre>
+       * Allows the task node with "runtime_override_name" to be overriden with "TaskNodeOverrides" at runtime.
+       * </pre>
+       *
+       * <code>map&lt;string, .flyteidl.core.TaskNodeOverrides&gt; task_node_runtime_overrides = 22;</code>
+       */
+
+      public flyteidl.core.Workflow.TaskNodeOverrides getTaskNodeRuntimeOverridesOrDefault(
+          java.lang.String key,
+          flyteidl.core.Workflow.TaskNodeOverrides defaultValue) {
+        if (key == null) { throw new java.lang.NullPointerException(); }
+        java.util.Map<java.lang.String, flyteidl.core.Workflow.TaskNodeOverrides> map =
+            internalGetTaskNodeRuntimeOverrides().getMap();
+        return map.containsKey(key) ? map.get(key) : defaultValue;
+      }
+      /**
+       * <pre>
+       * Allows the task node with "runtime_override_name" to be overriden with "TaskNodeOverrides" at runtime.
+       * </pre>
+       *
+       * <code>map&lt;string, .flyteidl.core.TaskNodeOverrides&gt; task_node_runtime_overrides = 22;</code>
+       */
+
+      public flyteidl.core.Workflow.TaskNodeOverrides getTaskNodeRuntimeOverridesOrThrow(
+          java.lang.String key) {
+        if (key == null) { throw new java.lang.NullPointerException(); }
+        java.util.Map<java.lang.String, flyteidl.core.Workflow.TaskNodeOverrides> map =
+            internalGetTaskNodeRuntimeOverrides().getMap();
+        if (!map.containsKey(key)) {
+          throw new java.lang.IllegalArgumentException();
+        }
+        return map.get(key);
+      }
+
+      public Builder clearTaskNodeRuntimeOverrides() {
+        internalGetMutableTaskNodeRuntimeOverrides().getMutableMap()
+            .clear();
+        return this;
+      }
+      /**
+       * <pre>
+       * Allows the task node with "runtime_override_name" to be overriden with "TaskNodeOverrides" at runtime.
+       * </pre>
+       *
+       * <code>map&lt;string, .flyteidl.core.TaskNodeOverrides&gt; task_node_runtime_overrides = 22;</code>
+       */
+
+      public Builder removeTaskNodeRuntimeOverrides(
+          java.lang.String key) {
+        if (key == null) { throw new java.lang.NullPointerException(); }
+        internalGetMutableTaskNodeRuntimeOverrides().getMutableMap()
+            .remove(key);
+        return this;
+      }
+      /**
+       * Use alternate mutation accessors instead.
+       */
+      @java.lang.Deprecated
+      public java.util.Map<java.lang.String, flyteidl.core.Workflow.TaskNodeOverrides>
+      getMutableTaskNodeRuntimeOverrides() {
+        return internalGetMutableTaskNodeRuntimeOverrides().getMutableMap();
+      }
+      /**
+       * <pre>
+       * Allows the task node with "runtime_override_name" to be overriden with "TaskNodeOverrides" at runtime.
+       * </pre>
+       *
+       * <code>map&lt;string, .flyteidl.core.TaskNodeOverrides&gt; task_node_runtime_overrides = 22;</code>
+       */
+      public Builder putTaskNodeRuntimeOverrides(
+          java.lang.String key,
+          flyteidl.core.Workflow.TaskNodeOverrides value) {
+        if (key == null) { throw new java.lang.NullPointerException(); }
+        if (value == null) { throw new java.lang.NullPointerException(); }
+        internalGetMutableTaskNodeRuntimeOverrides().getMutableMap()
+            .put(key, value);
+        return this;
+      }
+      /**
+       * <pre>
+       * Allows the task node with "runtime_override_name" to be overriden with "TaskNodeOverrides" at runtime.
+       * </pre>
+       *
+       * <code>map&lt;string, .flyteidl.core.TaskNodeOverrides&gt; task_node_runtime_overrides = 22;</code>
+       */
+
+      public Builder putAllTaskNodeRuntimeOverrides(
+          java.util.Map<java.lang.String, flyteidl.core.Workflow.TaskNodeOverrides> values) {
+        internalGetMutableTaskNodeRuntimeOverrides().getMutableMap()
+            .putAll(values);
+        return this;
       }
       @java.lang.Override
       public final Builder setUnknownFields(
@@ -14519,6 +14895,11 @@ public final class LaunchPlanOuterClass {
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_flyteidl_admin_LaunchPlanSpec_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_flyteidl_admin_LaunchPlanSpec_TaskNodeRuntimeOverridesEntry_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_flyteidl_admin_LaunchPlanSpec_TaskNodeRuntimeOverridesEntry_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_flyteidl_admin_LaunchPlanClosure_descriptor;
   private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
@@ -14562,61 +14943,67 @@ public final class LaunchPlanOuterClass {
       "o\032\034flyteidl/core/literals.proto\032\036flyteid" +
       "l/core/identifier.proto\032\035flyteidl/core/i" +
       "nterface.proto\032\034flyteidl/core/security.p" +
-      "roto\032\035flyteidl/admin/schedule.proto\032\033fly" +
-      "teidl/admin/common.proto\032\037google/protobu" +
-      "f/timestamp.proto\032\036google/protobuf/wrapp" +
-      "ers.proto\"n\n\027LaunchPlanCreateRequest\022%\n\002" +
-      "id\030\001 \001(\0132\031.flyteidl.core.Identifier\022,\n\004s" +
-      "pec\030\002 \001(\0132\036.flyteidl.admin.LaunchPlanSpe" +
-      "c\"\032\n\030LaunchPlanCreateResponse\"\225\001\n\nLaunch" +
-      "Plan\022%\n\002id\030\001 \001(\0132\031.flyteidl.core.Identif" +
-      "ier\022,\n\004spec\030\002 \001(\0132\036.flyteidl.admin.Launc" +
-      "hPlanSpec\0222\n\007closure\030\003 \001(\0132!.flyteidl.ad" +
-      "min.LaunchPlanClosure\"Q\n\016LaunchPlanList\022" +
-      "0\n\014launch_plans\030\001 \003(\0132\032.flyteidl.admin.L" +
-      "aunchPlan\022\r\n\005token\030\002 \001(\t\"J\n\004Auth\022\032\n\022assu" +
-      "mable_iam_role\030\001 \001(\t\022\"\n\032kubernetes_servi" +
-      "ce_account\030\002 \001(\t:\002\030\001\"\355\005\n\016LaunchPlanSpec\022" +
-      ".\n\013workflow_id\030\001 \001(\0132\031.flyteidl.core.Ide" +
-      "ntifier\022;\n\017entity_metadata\030\002 \001(\0132\".flyte" +
-      "idl.admin.LaunchPlanMetadata\0223\n\016default_" +
-      "inputs\030\003 \001(\0132\033.flyteidl.core.ParameterMa" +
-      "p\022/\n\014fixed_inputs\030\004 \001(\0132\031.flyteidl.core." +
-      "LiteralMap\022\020\n\004role\030\005 \001(\tB\002\030\001\022&\n\006labels\030\006" +
-      " \001(\0132\026.flyteidl.admin.Labels\0220\n\013annotati" +
-      "ons\030\007 \001(\0132\033.flyteidl.admin.Annotations\022&" +
-      "\n\004auth\030\010 \001(\0132\024.flyteidl.admin.AuthB\002\030\001\022/" +
-      "\n\tauth_role\030\t \001(\0132\030.flyteidl.admin.AuthR" +
-      "oleB\002\030\001\0228\n\020security_context\030\n \001(\0132\036.flyt" +
-      "eidl.core.SecurityContext\022;\n\022quality_of_" +
-      "service\030\020 \001(\0132\037.flyteidl.core.QualityOfS" +
-      "ervice\022C\n\026raw_output_data_config\030\021 \001(\0132#" +
-      ".flyteidl.admin.RawOutputDataConfig\022\027\n\017m" +
-      "ax_parallelism\030\022 \001(\005\0221\n\rinterruptible\030\023 " +
-      "\001(\0132\032.google.protobuf.BoolValue\022\027\n\017overw" +
-      "rite_cache\030\024 \001(\010\022\"\n\004envs\030\025 \001(\0132\024.flyteid" +
-      "l.admin.Envs\"\217\002\n\021LaunchPlanClosure\022.\n\005st" +
-      "ate\030\001 \001(\0162\037.flyteidl.admin.LaunchPlanSta" +
-      "te\0224\n\017expected_inputs\030\002 \001(\0132\033.flyteidl.c" +
-      "ore.ParameterMap\0224\n\020expected_outputs\030\003 \001" +
-      "(\0132\032.flyteidl.core.VariableMap\022.\n\ncreate" +
-      "d_at\030\004 \001(\0132\032.google.protobuf.Timestamp\022." +
-      "\n\nupdated_at\030\005 \001(\0132\032.google.protobuf.Tim" +
-      "estamp\"u\n\022LaunchPlanMetadata\022*\n\010schedule" +
-      "\030\001 \001(\0132\030.flyteidl.admin.Schedule\0223\n\rnoti" +
-      "fications\030\002 \003(\0132\034.flyteidl.admin.Notific" +
-      "ation\"p\n\027LaunchPlanUpdateRequest\022%\n\002id\030\001" +
-      " \001(\0132\031.flyteidl.core.Identifier\022.\n\005state" +
-      "\030\002 \001(\0162\037.flyteidl.admin.LaunchPlanState\"" +
-      "\032\n\030LaunchPlanUpdateResponse\"L\n\027ActiveLau" +
-      "nchPlanRequest\0221\n\002id\030\001 \001(\0132%.flyteidl.ad" +
-      "min.NamedEntityIdentifier\"\203\001\n\033ActiveLaun" +
-      "chPlanListRequest\022\017\n\007project\030\001 \001(\t\022\016\n\006do" +
-      "main\030\002 \001(\t\022\r\n\005limit\030\003 \001(\r\022\r\n\005token\030\004 \001(\t" +
-      "\022%\n\007sort_by\030\005 \001(\0132\024.flyteidl.admin.Sort*" +
-      "+\n\017LaunchPlanState\022\014\n\010INACTIVE\020\000\022\n\n\006ACTI" +
-      "VE\020\001B7Z5github.com/flyteorg/flyteidl/gen" +
-      "/pb-go/flyteidl/adminb\006proto3"
+      "roto\032\034flyteidl/core/workflow.proto\032\035flyt" +
+      "eidl/admin/schedule.proto\032\033flyteidl/admi" +
+      "n/common.proto\032\037google/protobuf/timestam" +
+      "p.proto\032\036google/protobuf/wrappers.proto\"" +
+      "n\n\027LaunchPlanCreateRequest\022%\n\002id\030\001 \001(\0132\031" +
+      ".flyteidl.core.Identifier\022,\n\004spec\030\002 \001(\0132" +
+      "\036.flyteidl.admin.LaunchPlanSpec\"\032\n\030Launc" +
+      "hPlanCreateResponse\"\225\001\n\nLaunchPlan\022%\n\002id" +
+      "\030\001 \001(\0132\031.flyteidl.core.Identifier\022,\n\004spe" +
+      "c\030\002 \001(\0132\036.flyteidl.admin.LaunchPlanSpec\022" +
+      "2\n\007closure\030\003 \001(\0132!.flyteidl.admin.Launch" +
+      "PlanClosure\"Q\n\016LaunchPlanList\0220\n\014launch_" +
+      "plans\030\001 \003(\0132\032.flyteidl.admin.LaunchPlan\022" +
+      "\r\n\005token\030\002 \001(\t\"J\n\004Auth\022\032\n\022assumable_iam_" +
+      "role\030\001 \001(\t\022\"\n\032kubernetes_service_account" +
+      "\030\002 \001(\t:\002\030\001\"\263\007\n\016LaunchPlanSpec\022.\n\013workflo" +
+      "w_id\030\001 \001(\0132\031.flyteidl.core.Identifier\022;\n" +
+      "\017entity_metadata\030\002 \001(\0132\".flyteidl.admin." +
+      "LaunchPlanMetadata\0223\n\016default_inputs\030\003 \001" +
+      "(\0132\033.flyteidl.core.ParameterMap\022/\n\014fixed" +
+      "_inputs\030\004 \001(\0132\031.flyteidl.core.LiteralMap" +
+      "\022\020\n\004role\030\005 \001(\tB\002\030\001\022&\n\006labels\030\006 \001(\0132\026.fly" +
+      "teidl.admin.Labels\0220\n\013annotations\030\007 \001(\0132" +
+      "\033.flyteidl.admin.Annotations\022&\n\004auth\030\010 \001" +
+      "(\0132\024.flyteidl.admin.AuthB\002\030\001\022/\n\tauth_rol" +
+      "e\030\t \001(\0132\030.flyteidl.admin.AuthRoleB\002\030\001\0228\n" +
+      "\020security_context\030\n \001(\0132\036.flyteidl.core." +
+      "SecurityContext\022;\n\022quality_of_service\030\020 " +
+      "\001(\0132\037.flyteidl.core.QualityOfService\022C\n\026" +
+      "raw_output_data_config\030\021 \001(\0132#.flyteidl." +
+      "admin.RawOutputDataConfig\022\027\n\017max_paralle" +
+      "lism\030\022 \001(\005\0221\n\rinterruptible\030\023 \001(\0132\032.goog" +
+      "le.protobuf.BoolValue\022\027\n\017overwrite_cache" +
+      "\030\024 \001(\010\022\"\n\004envs\030\025 \001(\0132\024.flyteidl.admin.En" +
+      "vs\022a\n\033task_node_runtime_overrides\030\026 \003(\0132" +
+      "<.flyteidl.admin.LaunchPlanSpec.TaskNode" +
+      "RuntimeOverridesEntry\032a\n\035TaskNodeRuntime" +
+      "OverridesEntry\022\013\n\003key\030\001 \001(\t\022/\n\005value\030\002 \001" +
+      "(\0132 .flyteidl.core.TaskNodeOverrides:\0028\001" +
+      "\"\217\002\n\021LaunchPlanClosure\022.\n\005state\030\001 \001(\0162\037." +
+      "flyteidl.admin.LaunchPlanState\0224\n\017expect" +
+      "ed_inputs\030\002 \001(\0132\033.flyteidl.core.Paramete" +
+      "rMap\0224\n\020expected_outputs\030\003 \001(\0132\032.flyteid" +
+      "l.core.VariableMap\022.\n\ncreated_at\030\004 \001(\0132\032" +
+      ".google.protobuf.Timestamp\022.\n\nupdated_at" +
+      "\030\005 \001(\0132\032.google.protobuf.Timestamp\"u\n\022La" +
+      "unchPlanMetadata\022*\n\010schedule\030\001 \001(\0132\030.fly" +
+      "teidl.admin.Schedule\0223\n\rnotifications\030\002 " +
+      "\003(\0132\034.flyteidl.admin.Notification\"p\n\027Lau" +
+      "nchPlanUpdateRequest\022%\n\002id\030\001 \001(\0132\031.flyte" +
+      "idl.core.Identifier\022.\n\005state\030\002 \001(\0162\037.fly" +
+      "teidl.admin.LaunchPlanState\"\032\n\030LaunchPla" +
+      "nUpdateResponse\"L\n\027ActiveLaunchPlanReque" +
+      "st\0221\n\002id\030\001 \001(\0132%.flyteidl.admin.NamedEnt" +
+      "ityIdentifier\"\203\001\n\033ActiveLaunchPlanListRe" +
+      "quest\022\017\n\007project\030\001 \001(\t\022\016\n\006domain\030\002 \001(\t\022\r" +
+      "\n\005limit\030\003 \001(\r\022\r\n\005token\030\004 \001(\t\022%\n\007sort_by\030" +
+      "\005 \001(\0132\024.flyteidl.admin.Sort*+\n\017LaunchPla" +
+      "nState\022\014\n\010INACTIVE\020\000\022\n\n\006ACTIVE\020\001B7Z5gith" +
+      "ub.com/flyteorg/flyteidl/gen/pb-go/flyte" +
+      "idl/adminb\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
@@ -14634,6 +15021,7 @@ public final class LaunchPlanOuterClass {
           flyteidl.core.IdentifierOuterClass.getDescriptor(),
           flyteidl.core.Interface.getDescriptor(),
           flyteidl.core.Security.getDescriptor(),
+          flyteidl.core.Workflow.getDescriptor(),
           flyteidl.admin.ScheduleOuterClass.getDescriptor(),
           flyteidl.admin.Common.getDescriptor(),
           com.google.protobuf.TimestampProto.getDescriptor(),
@@ -14674,7 +15062,13 @@ public final class LaunchPlanOuterClass {
     internal_static_flyteidl_admin_LaunchPlanSpec_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_flyteidl_admin_LaunchPlanSpec_descriptor,
-        new java.lang.String[] { "WorkflowId", "EntityMetadata", "DefaultInputs", "FixedInputs", "Role", "Labels", "Annotations", "Auth", "AuthRole", "SecurityContext", "QualityOfService", "RawOutputDataConfig", "MaxParallelism", "Interruptible", "OverwriteCache", "Envs", });
+        new java.lang.String[] { "WorkflowId", "EntityMetadata", "DefaultInputs", "FixedInputs", "Role", "Labels", "Annotations", "Auth", "AuthRole", "SecurityContext", "QualityOfService", "RawOutputDataConfig", "MaxParallelism", "Interruptible", "OverwriteCache", "Envs", "TaskNodeRuntimeOverrides", });
+    internal_static_flyteidl_admin_LaunchPlanSpec_TaskNodeRuntimeOverridesEntry_descriptor =
+      internal_static_flyteidl_admin_LaunchPlanSpec_descriptor.getNestedTypes().get(0);
+    internal_static_flyteidl_admin_LaunchPlanSpec_TaskNodeRuntimeOverridesEntry_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_flyteidl_admin_LaunchPlanSpec_TaskNodeRuntimeOverridesEntry_descriptor,
+        new java.lang.String[] { "Key", "Value", });
     internal_static_flyteidl_admin_LaunchPlanClosure_descriptor =
       getDescriptor().getMessageTypes().get(6);
     internal_static_flyteidl_admin_LaunchPlanClosure_fieldAccessorTable = new
@@ -14716,6 +15110,7 @@ public final class LaunchPlanOuterClass {
     flyteidl.core.IdentifierOuterClass.getDescriptor();
     flyteidl.core.Interface.getDescriptor();
     flyteidl.core.Security.getDescriptor();
+    flyteidl.core.Workflow.getDescriptor();
     flyteidl.admin.ScheduleOuterClass.getDescriptor();
     flyteidl.admin.Common.getDescriptor();
     com.google.protobuf.TimestampProto.getDescriptor();

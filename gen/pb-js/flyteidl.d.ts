@@ -1006,6 +1006,9 @@ export namespace flyteidl {
 
             /** TaskNode overrides */
             overrides?: (flyteidl.core.ITaskNodeOverrides|null);
+
+            /** TaskNode runtimeOverrideName */
+            runtimeOverrideName?: (string|null);
         }
 
         /** Represents a TaskNode. */
@@ -1022,6 +1025,9 @@ export namespace flyteidl {
 
             /** TaskNode overrides. */
             public overrides?: (flyteidl.core.ITaskNodeOverrides|null);
+
+            /** TaskNode runtimeOverrideName. */
+            public runtimeOverrideName: string;
 
             /** TaskNode reference. */
             public reference?: "referenceId";
@@ -1807,6 +1813,30 @@ export namespace flyteidl {
 
             /** TaskNodeOverrides resources */
             resources?: (flyteidl.core.IResources|null);
+
+            /** TaskNodeOverrides cache */
+            cache?: (boolean|null);
+
+            /** TaskNodeOverrides cacheSerialize */
+            cacheSerialize?: (boolean|null);
+
+            /** TaskNodeOverrides cacheVersion */
+            cacheVersion?: (string|null);
+
+            /** TaskNodeOverrides retries */
+            retries?: (number|null);
+
+            /** TaskNodeOverrides interruptible */
+            interruptible?: (boolean|null);
+
+            /** TaskNodeOverrides containerImage */
+            containerImage?: (string|null);
+
+            /** TaskNodeOverrides environment */
+            environment?: ({ [k: string]: string }|null);
+
+            /** TaskNodeOverrides taskConfig */
+            taskConfig?: (google.protobuf.IStruct|null);
         }
 
         /** Represents a TaskNodeOverrides. */
@@ -1820,6 +1850,30 @@ export namespace flyteidl {
 
             /** TaskNodeOverrides resources. */
             public resources?: (flyteidl.core.IResources|null);
+
+            /** TaskNodeOverrides cache. */
+            public cache: boolean;
+
+            /** TaskNodeOverrides cacheSerialize. */
+            public cacheSerialize: boolean;
+
+            /** TaskNodeOverrides cacheVersion. */
+            public cacheVersion: string;
+
+            /** TaskNodeOverrides retries. */
+            public retries: number;
+
+            /** TaskNodeOverrides interruptible. */
+            public interruptible: boolean;
+
+            /** TaskNodeOverrides containerImage. */
+            public containerImage: string;
+
+            /** TaskNodeOverrides environment. */
+            public environment: { [k: string]: string };
+
+            /** TaskNodeOverrides taskConfig. */
+            public taskConfig?: (google.protobuf.IStruct|null);
 
             /**
              * Creates a new TaskNodeOverrides instance using the specified properties.
@@ -10777,6 +10831,9 @@ export namespace flyteidl {
 
             /** ExecutionSpec envs */
             envs?: (flyteidl.admin.IEnvs|null);
+
+            /** ExecutionSpec taskNodeRuntimeOverrides */
+            taskNodeRuntimeOverrides?: ({ [k: string]: flyteidl.core.ITaskNodeOverrides }|null);
         }
 
         /** Represents an ExecutionSpec. */
@@ -10835,6 +10892,9 @@ export namespace flyteidl {
 
             /** ExecutionSpec envs. */
             public envs?: (flyteidl.admin.IEnvs|null);
+
+            /** ExecutionSpec taskNodeRuntimeOverrides. */
+            public taskNodeRuntimeOverrides: { [k: string]: flyteidl.core.ITaskNodeOverrides };
 
             /** ExecutionSpec notificationOverrides. */
             public notificationOverrides?: ("notifications"|"disableAll");
@@ -11722,6 +11782,9 @@ export namespace flyteidl {
 
             /** LaunchPlanSpec envs */
             envs?: (flyteidl.admin.IEnvs|null);
+
+            /** LaunchPlanSpec taskNodeRuntimeOverrides */
+            taskNodeRuntimeOverrides?: ({ [k: string]: flyteidl.core.ITaskNodeOverrides }|null);
         }
 
         /** Represents a LaunchPlanSpec. */
@@ -11780,6 +11843,9 @@ export namespace flyteidl {
 
             /** LaunchPlanSpec envs. */
             public envs?: (flyteidl.admin.IEnvs|null);
+
+            /** LaunchPlanSpec taskNodeRuntimeOverrides. */
+            public taskNodeRuntimeOverrides: { [k: string]: flyteidl.core.ITaskNodeOverrides };
 
             /**
              * Creates a new LaunchPlanSpec instance using the specified properties.

@@ -3541,6 +3541,38 @@ definitions:
           - value: "value"
             key: "key"
         interruptible: true
+        task_node_runtime_overrides:
+          key:
+            retries: 5
+            cache: true
+            environment:
+              key: "environment"
+            task_config:
+              fields:
+                key:
+                  list_value:
+                    values:
+                    - null
+                    - null
+                  number_value: 6.027456183070403
+                  string_value: "string_value"
+                  null_value: {}
+                  bool_value: true
+            cache_serialize: true
+            resources:
+              requests:
+              - name: {}
+                value: "value"
+              - name: {}
+                value: "value"
+              limits:
+              - name: {}
+                value: "value"
+              - name: {}
+                value: "value"
+            cache_version: "cache_version"
+            interruptible: true
+            container_image: "container_image"
         labels:
           values:
             key: "values"
@@ -3923,6 +3955,38 @@ definitions:
             - value: "value"
               key: "key"
           interruptible: true
+          task_node_runtime_overrides:
+            key:
+              retries: 5
+              cache: true
+              environment:
+                key: "environment"
+              task_config:
+                fields:
+                  key:
+                    list_value:
+                      values:
+                      - null
+                      - null
+                    number_value: 6.027456183070403
+                    string_value: "string_value"
+                    null_value: {}
+                    bool_value: true
+              cache_serialize: true
+              resources:
+                requests:
+                - name: {}
+                  value: "value"
+                - name: {}
+                  value: "value"
+                limits:
+                - name: {}
+                  value: "value"
+                - name: {}
+                  value: "value"
+              cache_version: "cache_version"
+              interruptible: true
+              container_image: "container_image"
           labels:
             values:
               key: "values"
@@ -4121,6 +4185,38 @@ definitions:
             - value: "value"
               key: "key"
           interruptible: true
+          task_node_runtime_overrides:
+            key:
+              retries: 5
+              cache: true
+              environment:
+                key: "environment"
+              task_config:
+                fields:
+                  key:
+                    list_value:
+                      values:
+                      - null
+                      - null
+                    number_value: 6.027456183070403
+                    string_value: "string_value"
+                    null_value: {}
+                    bool_value: true
+              cache_serialize: true
+              resources:
+                requests:
+                - name: {}
+                  value: "value"
+                - name: {}
+                  value: "value"
+                limits:
+                - name: {}
+                  value: "value"
+                - name: {}
+                  value: "value"
+              cache_version: "cache_version"
+              interruptible: true
+              container_image: "container_image"
           labels:
             values:
               key: "values"
@@ -4392,6 +4488,12 @@ definitions:
       envs:
         description: "Environment variables to be set for the execution."
         $ref: "#/definitions/adminEnvs"
+      task_node_runtime_overrides:
+        type: "object"
+        description: "Allows the task node with \"runtime_override_name\" to be overriden\
+          \ with \"TaskNodeOverrides\" at runtime."
+        additionalProperties:
+          $ref: "#/definitions/coreTaskNodeOverrides"
     description: "An ExecutionSpec encompasses all data used to launch this execution.\
       \ The Spec does not change over the lifetime\nof an execution as it progresses\
       \ across phase changes."
@@ -4428,6 +4530,38 @@ definitions:
         - value: "value"
           key: "key"
       interruptible: true
+      task_node_runtime_overrides:
+        key:
+          retries: 5
+          cache: true
+          environment:
+            key: "environment"
+          task_config:
+            fields:
+              key:
+                list_value:
+                  values:
+                  - null
+                  - null
+                number_value: 6.027456183070403
+                string_value: "string_value"
+                null_value: {}
+                bool_value: true
+          cache_serialize: true
+          resources:
+            requests:
+            - name: {}
+              value: "value"
+            - name: {}
+              value: "value"
+            limits:
+            - name: {}
+              value: "value"
+            - name: {}
+              value: "value"
+          cache_version: "cache_version"
+          interruptible: true
+          container_image: "container_image"
       labels:
         values:
           key: "values"
@@ -4960,6 +5094,38 @@ definitions:
           - value: "value"
             key: "key"
         interruptible: true
+        task_node_runtime_overrides:
+          key:
+            retries: 5
+            cache: true
+            environment:
+              key: "environment"
+            task_config:
+              fields:
+                key:
+                  list_value:
+                    values:
+                    - null
+                    - null
+                  number_value: 6.027456183070403
+                  string_value: "string_value"
+                  null_value: {}
+                  bool_value: true
+            cache_serialize: true
+            resources:
+              requests:
+              - name: {}
+                value: "value"
+              - name: {}
+                value: "value"
+              limits:
+              - name: {}
+                value: "value"
+              - name: {}
+                value: "value"
+            cache_version: "cache_version"
+            interruptible: true
+            container_image: "container_image"
         labels:
           values:
             key: "values"
@@ -5766,6 +5932,38 @@ definitions:
             - value: "value"
               key: "key"
           interruptible: true
+          task_node_runtime_overrides:
+            key:
+              retries: 5
+              cache: true
+              environment:
+                key: "environment"
+              task_config:
+                fields:
+                  key:
+                    list_value:
+                      values:
+                      - null
+                      - null
+                    number_value: 6.027456183070403
+                    string_value: "string_value"
+                    null_value: {}
+                    bool_value: true
+              cache_serialize: true
+              resources:
+                requests:
+                - name: {}
+                  value: "value"
+                - name: {}
+                  value: "value"
+                limits:
+                - name: {}
+                  value: "value"
+                - name: {}
+                  value: "value"
+              cache_version: "cache_version"
+              interruptible: true
+              container_image: "container_image"
           labels:
             values:
               key: "values"
@@ -6287,6 +6485,38 @@ definitions:
             - value: "value"
               key: "key"
           interruptible: true
+          task_node_runtime_overrides:
+            key:
+              retries: 5
+              cache: true
+              environment:
+                key: "environment"
+              task_config:
+                fields:
+                  key:
+                    list_value:
+                      values:
+                      - null
+                      - null
+                    number_value: 6.027456183070403
+                    string_value: "string_value"
+                    null_value: {}
+                    bool_value: true
+              cache_serialize: true
+              resources:
+                requests:
+                - name: {}
+                  value: "value"
+                - name: {}
+                  value: "value"
+                limits:
+                - name: {}
+                  value: "value"
+                - name: {}
+                  value: "value"
+              cache_version: "cache_version"
+              interruptible: true
+              container_image: "container_image"
           labels:
             values:
               key: "values"
@@ -6634,6 +6864,12 @@ definitions:
       envs:
         description: "Environment variables to be set for the execution."
         $ref: "#/definitions/adminEnvs"
+      task_node_runtime_overrides:
+        type: "object"
+        description: "Allows the task node with \"runtime_override_name\" to be overriden\
+          \ with \"TaskNodeOverrides\" at runtime."
+        additionalProperties:
+          $ref: "#/definitions/coreTaskNodeOverrides"
     description: "User-provided launch plan definition and configuration values."
     example:
       workflow_id:
@@ -6700,6 +6936,38 @@ definitions:
         - value: "value"
           key: "key"
       interruptible: true
+      task_node_runtime_overrides:
+        key:
+          retries: 5
+          cache: true
+          environment:
+            key: "environment"
+          task_config:
+            fields:
+              key:
+                list_value:
+                  values:
+                  - null
+                  - null
+                number_value: 6.027456183070403
+                string_value: "string_value"
+                null_value: {}
+                bool_value: true
+          cache_serialize: true
+          resources:
+            requests:
+            - name: {}
+              value: "value"
+            - name: {}
+              value: "value"
+            limits:
+            - name: {}
+              value: "value"
+            - name: {}
+              value: "value"
+          cache_version: "cache_version"
+          interruptible: true
+          container_image: "container_image"
       labels:
         values:
           key: "values"
@@ -8581,6 +8849,7 @@ definitions:
                 - var: "var"
                   alias: "alias"
                 task_node:
+                  runtime_override_name: "runtime_override_name"
                   reference_id:
                     domain: "domain"
                     resource_type: {}
@@ -8588,6 +8857,22 @@ definitions:
                     project: "project"
                     version: "version"
                   overrides:
+                    retries: 5
+                    cache: true
+                    environment:
+                      key: "environment"
+                    task_config:
+                      fields:
+                        key:
+                          list_value:
+                            values:
+                            - null
+                            - null
+                          number_value: 6.027456183070403
+                          string_value: "string_value"
+                          null_value: {}
+                          bool_value: true
+                    cache_serialize: true
                     resources:
                       requests:
                       - name: {}
@@ -8599,6 +8884,9 @@ definitions:
                         value: "value"
                       - name: {}
                         value: "value"
+                    cache_version: "cache_version"
+                    interruptible: true
+                    container_image: "container_image"
                 id: "id"
                 workflow_node:
                   launchplan_ref:
@@ -9095,6 +9383,7 @@ definitions:
                 - var: "var"
                   alias: "alias"
                 task_node:
+                  runtime_override_name: "runtime_override_name"
                   reference_id:
                     domain: "domain"
                     resource_type: {}
@@ -9102,6 +9391,22 @@ definitions:
                     project: "project"
                     version: "version"
                   overrides:
+                    retries: 5
+                    cache: true
+                    environment:
+                      key: "environment"
+                    task_config:
+                      fields:
+                        key:
+                          list_value:
+                            values:
+                            - null
+                            - null
+                          number_value: 6.027456183070403
+                          string_value: "string_value"
+                          null_value: {}
+                          bool_value: true
+                    cache_serialize: true
                     resources:
                       requests:
                       - name: {}
@@ -9113,6 +9418,9 @@ definitions:
                         value: "value"
                       - name: {}
                         value: "value"
+                    cache_version: "cache_version"
+                    interruptible: true
+                    container_image: "container_image"
                 id: "id"
                 workflow_node:
                   launchplan_ref:
@@ -9608,6 +9916,7 @@ definitions:
                 - var: "var"
                   alias: "alias"
                 task_node:
+                  runtime_override_name: "runtime_override_name"
                   reference_id:
                     domain: "domain"
                     resource_type: {}
@@ -9615,6 +9924,22 @@ definitions:
                     project: "project"
                     version: "version"
                   overrides:
+                    retries: 5
+                    cache: true
+                    environment:
+                      key: "environment"
+                    task_config:
+                      fields:
+                        key:
+                          list_value:
+                            values:
+                            - null
+                            - null
+                          number_value: 6.027456183070403
+                          string_value: "string_value"
+                          null_value: {}
+                          bool_value: true
+                    cache_serialize: true
                     resources:
                       requests:
                       - name: {}
@@ -9626,6 +9951,9 @@ definitions:
                         value: "value"
                       - name: {}
                         value: "value"
+                    cache_version: "cache_version"
+                    interruptible: true
+                    container_image: "container_image"
                 id: "id"
                 workflow_node:
                   launchplan_ref:
@@ -10592,6 +10920,7 @@ definitions:
                 - var: "var"
                   alias: "alias"
                 task_node:
+                  runtime_override_name: "runtime_override_name"
                   reference_id:
                     domain: "domain"
                     resource_type: {}
@@ -10599,6 +10928,22 @@ definitions:
                     project: "project"
                     version: "version"
                   overrides:
+                    retries: 5
+                    cache: true
+                    environment:
+                      key: "environment"
+                    task_config:
+                      fields:
+                        key:
+                          list_value:
+                            values:
+                            - null
+                            - null
+                          number_value: 6.027456183070403
+                          string_value: "string_value"
+                          null_value: {}
+                          bool_value: true
+                    cache_serialize: true
                     resources:
                       requests:
                       - name: {}
@@ -10610,6 +10955,9 @@ definitions:
                         value: "value"
                       - name: {}
                         value: "value"
+                    cache_version: "cache_version"
+                    interruptible: true
+                    container_image: "container_image"
                 id: "id"
                 workflow_node:
                   launchplan_ref:
@@ -11106,6 +11454,7 @@ definitions:
                 - var: "var"
                   alias: "alias"
                 task_node:
+                  runtime_override_name: "runtime_override_name"
                   reference_id:
                     domain: "domain"
                     resource_type: {}
@@ -11113,6 +11462,22 @@ definitions:
                     project: "project"
                     version: "version"
                   overrides:
+                    retries: 5
+                    cache: true
+                    environment:
+                      key: "environment"
+                    task_config:
+                      fields:
+                        key:
+                          list_value:
+                            values:
+                            - null
+                            - null
+                          number_value: 6.027456183070403
+                          string_value: "string_value"
+                          null_value: {}
+                          bool_value: true
+                    cache_serialize: true
                     resources:
                       requests:
                       - name: {}
@@ -11124,6 +11489,9 @@ definitions:
                         value: "value"
                       - name: {}
                         value: "value"
+                    cache_version: "cache_version"
+                    interruptible: true
+                    container_image: "container_image"
                 id: "id"
                 workflow_node:
                   launchplan_ref:
@@ -11619,6 +11987,7 @@ definitions:
                 - var: "var"
                   alias: "alias"
                 task_node:
+                  runtime_override_name: "runtime_override_name"
                   reference_id:
                     domain: "domain"
                     resource_type: {}
@@ -11626,6 +11995,22 @@ definitions:
                     project: "project"
                     version: "version"
                   overrides:
+                    retries: 5
+                    cache: true
+                    environment:
+                      key: "environment"
+                    task_config:
+                      fields:
+                        key:
+                          list_value:
+                            values:
+                            - null
+                            - null
+                          number_value: 6.027456183070403
+                          string_value: "string_value"
+                          null_value: {}
+                          bool_value: true
+                    cache_serialize: true
                     resources:
                       requests:
                       - name: {}
@@ -11637,6 +12022,9 @@ definitions:
                         value: "value"
                       - name: {}
                         value: "value"
+                    cache_version: "cache_version"
+                    interruptible: true
+                    container_image: "container_image"
                 id: "id"
                 workflow_node:
                   launchplan_ref:
@@ -13131,6 +13519,7 @@ definitions:
                 - var: "var"
                   alias: "alias"
                 task_node:
+                  runtime_override_name: "runtime_override_name"
                   reference_id:
                     domain: "domain"
                     resource_type: {}
@@ -13138,6 +13527,22 @@ definitions:
                     project: "project"
                     version: "version"
                   overrides:
+                    retries: 5
+                    cache: true
+                    environment:
+                      key: "environment"
+                    task_config:
+                      fields:
+                        key:
+                          list_value:
+                            values:
+                            - null
+                            - null
+                          number_value: 6.027456183070403
+                          string_value: "string_value"
+                          null_value: {}
+                          bool_value: true
+                    cache_serialize: true
                     resources:
                       requests:
                       - name: {}
@@ -13149,6 +13554,9 @@ definitions:
                         value: "value"
                       - name: {}
                         value: "value"
+                    cache_version: "cache_version"
+                    interruptible: true
+                    container_image: "container_image"
                 id: "id"
                 workflow_node:
                   launchplan_ref:
@@ -13645,6 +14053,7 @@ definitions:
                 - var: "var"
                   alias: "alias"
                 task_node:
+                  runtime_override_name: "runtime_override_name"
                   reference_id:
                     domain: "domain"
                     resource_type: {}
@@ -13652,6 +14061,22 @@ definitions:
                     project: "project"
                     version: "version"
                   overrides:
+                    retries: 5
+                    cache: true
+                    environment:
+                      key: "environment"
+                    task_config:
+                      fields:
+                        key:
+                          list_value:
+                            values:
+                            - null
+                            - null
+                          number_value: 6.027456183070403
+                          string_value: "string_value"
+                          null_value: {}
+                          bool_value: true
+                    cache_serialize: true
                     resources:
                       requests:
                       - name: {}
@@ -13663,6 +14088,9 @@ definitions:
                         value: "value"
                       - name: {}
                         value: "value"
+                    cache_version: "cache_version"
+                    interruptible: true
+                    container_image: "container_image"
                 id: "id"
                 workflow_node:
                   launchplan_ref:
@@ -14158,6 +14586,7 @@ definitions:
                 - var: "var"
                   alias: "alias"
                 task_node:
+                  runtime_override_name: "runtime_override_name"
                   reference_id:
                     domain: "domain"
                     resource_type: {}
@@ -14165,6 +14594,22 @@ definitions:
                     project: "project"
                     version: "version"
                   overrides:
+                    retries: 5
+                    cache: true
+                    environment:
+                      key: "environment"
+                    task_config:
+                      fields:
+                        key:
+                          list_value:
+                            values:
+                            - null
+                            - null
+                          number_value: 6.027456183070403
+                          string_value: "string_value"
+                          null_value: {}
+                          bool_value: true
+                    cache_serialize: true
                     resources:
                       requests:
                       - name: {}
@@ -14176,6 +14621,9 @@ definitions:
                         value: "value"
                       - name: {}
                         value: "value"
+                    cache_version: "cache_version"
+                    interruptible: true
+                    container_image: "container_image"
                 id: "id"
                 workflow_node:
                   launchplan_ref:
@@ -17808,6 +18256,7 @@ definitions:
                 - var: "var"
                   alias: "alias"
                 task_node:
+                  runtime_override_name: "runtime_override_name"
                   reference_id:
                     domain: "domain"
                     resource_type: {}
@@ -17815,6 +18264,22 @@ definitions:
                     project: "project"
                     version: "version"
                   overrides:
+                    retries: 5
+                    cache: true
+                    environment:
+                      key: "environment"
+                    task_config:
+                      fields:
+                        key:
+                          list_value:
+                            values:
+                            - null
+                            - null
+                          number_value: 6.027456183070403
+                          string_value: "string_value"
+                          null_value: {}
+                          bool_value: true
+                    cache_serialize: true
                     resources:
                       requests:
                       - name: {}
@@ -17826,6 +18291,9 @@ definitions:
                         value: "value"
                       - name: {}
                         value: "value"
+                    cache_version: "cache_version"
+                    interruptible: true
+                    container_image: "container_image"
                 id: "id"
                 workflow_node:
                   launchplan_ref:
@@ -18322,6 +18790,7 @@ definitions:
                 - var: "var"
                   alias: "alias"
                 task_node:
+                  runtime_override_name: "runtime_override_name"
                   reference_id:
                     domain: "domain"
                     resource_type: {}
@@ -18329,6 +18798,22 @@ definitions:
                     project: "project"
                     version: "version"
                   overrides:
+                    retries: 5
+                    cache: true
+                    environment:
+                      key: "environment"
+                    task_config:
+                      fields:
+                        key:
+                          list_value:
+                            values:
+                            - null
+                            - null
+                          number_value: 6.027456183070403
+                          string_value: "string_value"
+                          null_value: {}
+                          bool_value: true
+                    cache_serialize: true
                     resources:
                       requests:
                       - name: {}
@@ -18340,6 +18825,9 @@ definitions:
                         value: "value"
                       - name: {}
                         value: "value"
+                    cache_version: "cache_version"
+                    interruptible: true
+                    container_image: "container_image"
                 id: "id"
                 workflow_node:
                   launchplan_ref:
@@ -18835,6 +19323,7 @@ definitions:
                 - var: "var"
                   alias: "alias"
                 task_node:
+                  runtime_override_name: "runtime_override_name"
                   reference_id:
                     domain: "domain"
                     resource_type: {}
@@ -18842,6 +19331,22 @@ definitions:
                     project: "project"
                     version: "version"
                   overrides:
+                    retries: 5
+                    cache: true
+                    environment:
+                      key: "environment"
+                    task_config:
+                      fields:
+                        key:
+                          list_value:
+                            values:
+                            - null
+                            - null
+                          number_value: 6.027456183070403
+                          string_value: "string_value"
+                          null_value: {}
+                          bool_value: true
+                    cache_serialize: true
                     resources:
                       requests:
                       - name: {}
@@ -18853,6 +19358,9 @@ definitions:
                         value: "value"
                       - name: {}
                         value: "value"
+                    cache_version: "cache_version"
+                    interruptible: true
+                    container_image: "container_image"
                 id: "id"
                 workflow_node:
                   launchplan_ref:
@@ -19819,6 +20327,7 @@ definitions:
                 - var: "var"
                   alias: "alias"
                 task_node:
+                  runtime_override_name: "runtime_override_name"
                   reference_id:
                     domain: "domain"
                     resource_type: {}
@@ -19826,6 +20335,22 @@ definitions:
                     project: "project"
                     version: "version"
                   overrides:
+                    retries: 5
+                    cache: true
+                    environment:
+                      key: "environment"
+                    task_config:
+                      fields:
+                        key:
+                          list_value:
+                            values:
+                            - null
+                            - null
+                          number_value: 6.027456183070403
+                          string_value: "string_value"
+                          null_value: {}
+                          bool_value: true
+                    cache_serialize: true
                     resources:
                       requests:
                       - name: {}
@@ -19837,6 +20362,9 @@ definitions:
                         value: "value"
                       - name: {}
                         value: "value"
+                    cache_version: "cache_version"
+                    interruptible: true
+                    container_image: "container_image"
                 id: "id"
                 workflow_node:
                   launchplan_ref:
@@ -20333,6 +20861,7 @@ definitions:
                 - var: "var"
                   alias: "alias"
                 task_node:
+                  runtime_override_name: "runtime_override_name"
                   reference_id:
                     domain: "domain"
                     resource_type: {}
@@ -20340,6 +20869,22 @@ definitions:
                     project: "project"
                     version: "version"
                   overrides:
+                    retries: 5
+                    cache: true
+                    environment:
+                      key: "environment"
+                    task_config:
+                      fields:
+                        key:
+                          list_value:
+                            values:
+                            - null
+                            - null
+                          number_value: 6.027456183070403
+                          string_value: "string_value"
+                          null_value: {}
+                          bool_value: true
+                    cache_serialize: true
                     resources:
                       requests:
                       - name: {}
@@ -20351,6 +20896,9 @@ definitions:
                         value: "value"
                       - name: {}
                         value: "value"
+                    cache_version: "cache_version"
+                    interruptible: true
+                    container_image: "container_image"
                 id: "id"
                 workflow_node:
                   launchplan_ref:
@@ -20846,6 +21394,7 @@ definitions:
                 - var: "var"
                   alias: "alias"
                 task_node:
+                  runtime_override_name: "runtime_override_name"
                   reference_id:
                     domain: "domain"
                     resource_type: {}
@@ -20853,6 +21402,22 @@ definitions:
                     project: "project"
                     version: "version"
                   overrides:
+                    retries: 5
+                    cache: true
+                    environment:
+                      key: "environment"
+                    task_config:
+                      fields:
+                        key:
+                          list_value:
+                            values:
+                            - null
+                            - null
+                          number_value: 6.027456183070403
+                          string_value: "string_value"
+                          null_value: {}
+                          bool_value: true
+                    cache_serialize: true
                     resources:
                       requests:
                       - name: {}
@@ -20864,6 +21429,9 @@ definitions:
                         value: "value"
                       - name: {}
                         value: "value"
+                    cache_version: "cache_version"
+                    interruptible: true
+                    container_image: "container_image"
                 id: "id"
                 workflow_node:
                   launchplan_ref:
@@ -22358,6 +22926,7 @@ definitions:
                 - var: "var"
                   alias: "alias"
                 task_node:
+                  runtime_override_name: "runtime_override_name"
                   reference_id:
                     domain: "domain"
                     resource_type: {}
@@ -22365,6 +22934,22 @@ definitions:
                     project: "project"
                     version: "version"
                   overrides:
+                    retries: 5
+                    cache: true
+                    environment:
+                      key: "environment"
+                    task_config:
+                      fields:
+                        key:
+                          list_value:
+                            values:
+                            - null
+                            - null
+                          number_value: 6.027456183070403
+                          string_value: "string_value"
+                          null_value: {}
+                          bool_value: true
+                    cache_serialize: true
                     resources:
                       requests:
                       - name: {}
@@ -22376,6 +22961,9 @@ definitions:
                         value: "value"
                       - name: {}
                         value: "value"
+                    cache_version: "cache_version"
+                    interruptible: true
+                    container_image: "container_image"
                 id: "id"
                 workflow_node:
                   launchplan_ref:
@@ -22872,6 +23460,7 @@ definitions:
                 - var: "var"
                   alias: "alias"
                 task_node:
+                  runtime_override_name: "runtime_override_name"
                   reference_id:
                     domain: "domain"
                     resource_type: {}
@@ -22879,6 +23468,22 @@ definitions:
                     project: "project"
                     version: "version"
                   overrides:
+                    retries: 5
+                    cache: true
+                    environment:
+                      key: "environment"
+                    task_config:
+                      fields:
+                        key:
+                          list_value:
+                            values:
+                            - null
+                            - null
+                          number_value: 6.027456183070403
+                          string_value: "string_value"
+                          null_value: {}
+                          bool_value: true
+                    cache_serialize: true
                     resources:
                       requests:
                       - name: {}
@@ -22890,6 +23495,9 @@ definitions:
                         value: "value"
                       - name: {}
                         value: "value"
+                    cache_version: "cache_version"
+                    interruptible: true
+                    container_image: "container_image"
                 id: "id"
                 workflow_node:
                   launchplan_ref:
@@ -23385,6 +23993,7 @@ definitions:
                 - var: "var"
                   alias: "alias"
                 task_node:
+                  runtime_override_name: "runtime_override_name"
                   reference_id:
                     domain: "domain"
                     resource_type: {}
@@ -23392,6 +24001,22 @@ definitions:
                     project: "project"
                     version: "version"
                   overrides:
+                    retries: 5
+                    cache: true
+                    environment:
+                      key: "environment"
+                    task_config:
+                      fields:
+                        key:
+                          list_value:
+                            values:
+                            - null
+                            - null
+                          number_value: 6.027456183070403
+                          string_value: "string_value"
+                          null_value: {}
+                          bool_value: true
+                    cache_serialize: true
                     resources:
                       requests:
                       - name: {}
@@ -23403,6 +24028,9 @@ definitions:
                         value: "value"
                       - name: {}
                         value: "value"
+                    cache_version: "cache_version"
+                    interruptible: true
+                    container_image: "container_image"
                 id: "id"
                 workflow_node:
                   launchplan_ref:
@@ -24654,6 +25282,7 @@ definitions:
               - var: "var"
                 alias: "alias"
               task_node:
+                runtime_override_name: "runtime_override_name"
                 reference_id:
                   domain: "domain"
                   resource_type: {}
@@ -24661,6 +25290,22 @@ definitions:
                   project: "project"
                   version: "version"
                 overrides:
+                  retries: 5
+                  cache: true
+                  environment:
+                    key: "environment"
+                  task_config:
+                    fields:
+                      key:
+                        list_value:
+                          values:
+                          - null
+                          - null
+                        number_value: 6.027456183070403
+                        string_value: "string_value"
+                        null_value: {}
+                        bool_value: true
+                  cache_serialize: true
                   resources:
                     requests:
                     - name: {}
@@ -24672,6 +25317,9 @@ definitions:
                       value: "value"
                     - name: {}
                       value: "value"
+                  cache_version: "cache_version"
+                  interruptible: true
+                  container_image: "container_image"
               id: "id"
               workflow_node:
                 launchplan_ref:
@@ -25168,6 +25816,7 @@ definitions:
               - var: "var"
                 alias: "alias"
               task_node:
+                runtime_override_name: "runtime_override_name"
                 reference_id:
                   domain: "domain"
                   resource_type: {}
@@ -25175,6 +25824,22 @@ definitions:
                   project: "project"
                   version: "version"
                 overrides:
+                  retries: 5
+                  cache: true
+                  environment:
+                    key: "environment"
+                  task_config:
+                    fields:
+                      key:
+                        list_value:
+                          values:
+                          - null
+                          - null
+                        number_value: 6.027456183070403
+                        string_value: "string_value"
+                        null_value: {}
+                        bool_value: true
+                  cache_serialize: true
                   resources:
                     requests:
                     - name: {}
@@ -25186,6 +25851,9 @@ definitions:
                       value: "value"
                     - name: {}
                       value: "value"
+                  cache_version: "cache_version"
+                  interruptible: true
+                  container_image: "container_image"
               id: "id"
               workflow_node:
                 launchplan_ref:
@@ -25681,6 +26349,7 @@ definitions:
               - var: "var"
                 alias: "alias"
               task_node:
+                runtime_override_name: "runtime_override_name"
                 reference_id:
                   domain: "domain"
                   resource_type: {}
@@ -25688,6 +26357,22 @@ definitions:
                   project: "project"
                   version: "version"
                 overrides:
+                  retries: 5
+                  cache: true
+                  environment:
+                    key: "environment"
+                  task_config:
+                    fields:
+                      key:
+                        list_value:
+                          values:
+                          - null
+                          - null
+                        number_value: 6.027456183070403
+                        string_value: "string_value"
+                        null_value: {}
+                        bool_value: true
+                  cache_serialize: true
                   resources:
                     requests:
                     - name: {}
@@ -25699,6 +26384,9 @@ definitions:
                       value: "value"
                     - name: {}
                       value: "value"
+                  cache_version: "cache_version"
+                  interruptible: true
+                  container_image: "container_image"
               id: "id"
               workflow_node:
                 launchplan_ref:
@@ -26665,6 +27353,7 @@ definitions:
               - var: "var"
                 alias: "alias"
               task_node:
+                runtime_override_name: "runtime_override_name"
                 reference_id:
                   domain: "domain"
                   resource_type: {}
@@ -26672,6 +27361,22 @@ definitions:
                   project: "project"
                   version: "version"
                 overrides:
+                  retries: 5
+                  cache: true
+                  environment:
+                    key: "environment"
+                  task_config:
+                    fields:
+                      key:
+                        list_value:
+                          values:
+                          - null
+                          - null
+                        number_value: 6.027456183070403
+                        string_value: "string_value"
+                        null_value: {}
+                        bool_value: true
+                  cache_serialize: true
                   resources:
                     requests:
                     - name: {}
@@ -26683,6 +27388,9 @@ definitions:
                       value: "value"
                     - name: {}
                       value: "value"
+                  cache_version: "cache_version"
+                  interruptible: true
+                  container_image: "container_image"
               id: "id"
               workflow_node:
                 launchplan_ref:
@@ -27179,6 +27887,7 @@ definitions:
               - var: "var"
                 alias: "alias"
               task_node:
+                runtime_override_name: "runtime_override_name"
                 reference_id:
                   domain: "domain"
                   resource_type: {}
@@ -27186,6 +27895,22 @@ definitions:
                   project: "project"
                   version: "version"
                 overrides:
+                  retries: 5
+                  cache: true
+                  environment:
+                    key: "environment"
+                  task_config:
+                    fields:
+                      key:
+                        list_value:
+                          values:
+                          - null
+                          - null
+                        number_value: 6.027456183070403
+                        string_value: "string_value"
+                        null_value: {}
+                        bool_value: true
+                  cache_serialize: true
                   resources:
                     requests:
                     - name: {}
@@ -27197,6 +27922,9 @@ definitions:
                       value: "value"
                     - name: {}
                       value: "value"
+                  cache_version: "cache_version"
+                  interruptible: true
+                  container_image: "container_image"
               id: "id"
               workflow_node:
                 launchplan_ref:
@@ -27692,6 +28420,7 @@ definitions:
               - var: "var"
                 alias: "alias"
               task_node:
+                runtime_override_name: "runtime_override_name"
                 reference_id:
                   domain: "domain"
                   resource_type: {}
@@ -27699,6 +28428,22 @@ definitions:
                   project: "project"
                   version: "version"
                 overrides:
+                  retries: 5
+                  cache: true
+                  environment:
+                    key: "environment"
+                  task_config:
+                    fields:
+                      key:
+                        list_value:
+                          values:
+                          - null
+                          - null
+                        number_value: 6.027456183070403
+                        string_value: "string_value"
+                        null_value: {}
+                        bool_value: true
+                  cache_serialize: true
                   resources:
                     requests:
                     - name: {}
@@ -27710,6 +28455,9 @@ definitions:
                       value: "value"
                     - name: {}
                       value: "value"
+                  cache_version: "cache_version"
+                  interruptible: true
+                  container_image: "container_image"
               id: "id"
               workflow_node:
                 launchplan_ref:
@@ -29204,6 +29952,7 @@ definitions:
               - var: "var"
                 alias: "alias"
               task_node:
+                runtime_override_name: "runtime_override_name"
                 reference_id:
                   domain: "domain"
                   resource_type: {}
@@ -29211,6 +29960,22 @@ definitions:
                   project: "project"
                   version: "version"
                 overrides:
+                  retries: 5
+                  cache: true
+                  environment:
+                    key: "environment"
+                  task_config:
+                    fields:
+                      key:
+                        list_value:
+                          values:
+                          - null
+                          - null
+                        number_value: 6.027456183070403
+                        string_value: "string_value"
+                        null_value: {}
+                        bool_value: true
+                  cache_serialize: true
                   resources:
                     requests:
                     - name: {}
@@ -29222,6 +29987,9 @@ definitions:
                       value: "value"
                     - name: {}
                       value: "value"
+                  cache_version: "cache_version"
+                  interruptible: true
+                  container_image: "container_image"
               id: "id"
               workflow_node:
                 launchplan_ref:
@@ -29718,6 +30486,7 @@ definitions:
               - var: "var"
                 alias: "alias"
               task_node:
+                runtime_override_name: "runtime_override_name"
                 reference_id:
                   domain: "domain"
                   resource_type: {}
@@ -29725,6 +30494,22 @@ definitions:
                   project: "project"
                   version: "version"
                 overrides:
+                  retries: 5
+                  cache: true
+                  environment:
+                    key: "environment"
+                  task_config:
+                    fields:
+                      key:
+                        list_value:
+                          values:
+                          - null
+                          - null
+                        number_value: 6.027456183070403
+                        string_value: "string_value"
+                        null_value: {}
+                        bool_value: true
+                  cache_serialize: true
                   resources:
                     requests:
                     - name: {}
@@ -29736,6 +30521,9 @@ definitions:
                       value: "value"
                     - name: {}
                       value: "value"
+                  cache_version: "cache_version"
+                  interruptible: true
+                  container_image: "container_image"
               id: "id"
               workflow_node:
                 launchplan_ref:
@@ -30231,6 +31019,7 @@ definitions:
               - var: "var"
                 alias: "alias"
               task_node:
+                runtime_override_name: "runtime_override_name"
                 reference_id:
                   domain: "domain"
                   resource_type: {}
@@ -30238,6 +31027,22 @@ definitions:
                   project: "project"
                   version: "version"
                 overrides:
+                  retries: 5
+                  cache: true
+                  environment:
+                    key: "environment"
+                  task_config:
+                    fields:
+                      key:
+                        list_value:
+                          values:
+                          - null
+                          - null
+                        number_value: 6.027456183070403
+                        string_value: "string_value"
+                        null_value: {}
+                        bool_value: true
+                  cache_serialize: true
                   resources:
                     requests:
                     - name: {}
@@ -30249,6 +31054,9 @@ definitions:
                       value: "value"
                     - name: {}
                       value: "value"
+                  cache_version: "cache_version"
+                  interruptible: true
+                  container_image: "container_image"
               id: "id"
               workflow_node:
                 launchplan_ref:
@@ -31447,6 +32255,7 @@ definitions:
                   - var: "var"
                     alias: "alias"
                   task_node:
+                    runtime_override_name: "runtime_override_name"
                     reference_id:
                       domain: "domain"
                       resource_type: {}
@@ -31454,6 +32263,22 @@ definitions:
                       project: "project"
                       version: "version"
                     overrides:
+                      retries: 5
+                      cache: true
+                      environment:
+                        key: "environment"
+                      task_config:
+                        fields:
+                          key:
+                            list_value:
+                              values:
+                              - null
+                              - null
+                            number_value: 6.027456183070403
+                            string_value: "string_value"
+                            null_value: {}
+                            bool_value: true
+                      cache_serialize: true
                       resources:
                         requests:
                         - name: {}
@@ -31465,6 +32290,9 @@ definitions:
                           value: "value"
                         - name: {}
                           value: "value"
+                      cache_version: "cache_version"
+                      interruptible: true
+                      container_image: "container_image"
                   id: "id"
                   workflow_node:
                     launchplan_ref:
@@ -31961,6 +32789,7 @@ definitions:
                   - var: "var"
                     alias: "alias"
                   task_node:
+                    runtime_override_name: "runtime_override_name"
                     reference_id:
                       domain: "domain"
                       resource_type: {}
@@ -31968,6 +32797,22 @@ definitions:
                       project: "project"
                       version: "version"
                     overrides:
+                      retries: 5
+                      cache: true
+                      environment:
+                        key: "environment"
+                      task_config:
+                        fields:
+                          key:
+                            list_value:
+                              values:
+                              - null
+                              - null
+                            number_value: 6.027456183070403
+                            string_value: "string_value"
+                            null_value: {}
+                            bool_value: true
+                      cache_serialize: true
                       resources:
                         requests:
                         - name: {}
@@ -31979,6 +32824,9 @@ definitions:
                           value: "value"
                         - name: {}
                           value: "value"
+                      cache_version: "cache_version"
+                      interruptible: true
+                      container_image: "container_image"
                   id: "id"
                   workflow_node:
                     launchplan_ref:
@@ -32474,6 +33322,7 @@ definitions:
                   - var: "var"
                     alias: "alias"
                   task_node:
+                    runtime_override_name: "runtime_override_name"
                     reference_id:
                       domain: "domain"
                       resource_type: {}
@@ -32481,6 +33330,22 @@ definitions:
                       project: "project"
                       version: "version"
                     overrides:
+                      retries: 5
+                      cache: true
+                      environment:
+                        key: "environment"
+                      task_config:
+                        fields:
+                          key:
+                            list_value:
+                              values:
+                              - null
+                              - null
+                            number_value: 6.027456183070403
+                            string_value: "string_value"
+                            null_value: {}
+                            bool_value: true
+                      cache_serialize: true
                       resources:
                         requests:
                         - name: {}
@@ -32492,6 +33357,9 @@ definitions:
                           value: "value"
                         - name: {}
                           value: "value"
+                      cache_version: "cache_version"
+                      interruptible: true
+                      container_image: "container_image"
                   id: "id"
                   workflow_node:
                     launchplan_ref:
@@ -33458,6 +34326,7 @@ definitions:
                   - var: "var"
                     alias: "alias"
                   task_node:
+                    runtime_override_name: "runtime_override_name"
                     reference_id:
                       domain: "domain"
                       resource_type: {}
@@ -33465,6 +34334,22 @@ definitions:
                       project: "project"
                       version: "version"
                     overrides:
+                      retries: 5
+                      cache: true
+                      environment:
+                        key: "environment"
+                      task_config:
+                        fields:
+                          key:
+                            list_value:
+                              values:
+                              - null
+                              - null
+                            number_value: 6.027456183070403
+                            string_value: "string_value"
+                            null_value: {}
+                            bool_value: true
+                      cache_serialize: true
                       resources:
                         requests:
                         - name: {}
@@ -33476,6 +34361,9 @@ definitions:
                           value: "value"
                         - name: {}
                           value: "value"
+                      cache_version: "cache_version"
+                      interruptible: true
+                      container_image: "container_image"
                   id: "id"
                   workflow_node:
                     launchplan_ref:
@@ -33972,6 +34860,7 @@ definitions:
                   - var: "var"
                     alias: "alias"
                   task_node:
+                    runtime_override_name: "runtime_override_name"
                     reference_id:
                       domain: "domain"
                       resource_type: {}
@@ -33979,6 +34868,22 @@ definitions:
                       project: "project"
                       version: "version"
                     overrides:
+                      retries: 5
+                      cache: true
+                      environment:
+                        key: "environment"
+                      task_config:
+                        fields:
+                          key:
+                            list_value:
+                              values:
+                              - null
+                              - null
+                            number_value: 6.027456183070403
+                            string_value: "string_value"
+                            null_value: {}
+                            bool_value: true
+                      cache_serialize: true
                       resources:
                         requests:
                         - name: {}
@@ -33990,6 +34895,9 @@ definitions:
                           value: "value"
                         - name: {}
                           value: "value"
+                      cache_version: "cache_version"
+                      interruptible: true
+                      container_image: "container_image"
                   id: "id"
                   workflow_node:
                     launchplan_ref:
@@ -34485,6 +35393,7 @@ definitions:
                   - var: "var"
                     alias: "alias"
                   task_node:
+                    runtime_override_name: "runtime_override_name"
                     reference_id:
                       domain: "domain"
                       resource_type: {}
@@ -34492,6 +35401,22 @@ definitions:
                       project: "project"
                       version: "version"
                     overrides:
+                      retries: 5
+                      cache: true
+                      environment:
+                        key: "environment"
+                      task_config:
+                        fields:
+                          key:
+                            list_value:
+                              values:
+                              - null
+                              - null
+                            number_value: 6.027456183070403
+                            string_value: "string_value"
+                            null_value: {}
+                            bool_value: true
+                      cache_serialize: true
                       resources:
                         requests:
                         - name: {}
@@ -34503,6 +35428,9 @@ definitions:
                           value: "value"
                         - name: {}
                           value: "value"
+                      cache_version: "cache_version"
+                      interruptible: true
+                      container_image: "container_image"
                   id: "id"
                   workflow_node:
                     launchplan_ref:
@@ -35997,6 +36925,7 @@ definitions:
                   - var: "var"
                     alias: "alias"
                   task_node:
+                    runtime_override_name: "runtime_override_name"
                     reference_id:
                       domain: "domain"
                       resource_type: {}
@@ -36004,6 +36933,22 @@ definitions:
                       project: "project"
                       version: "version"
                     overrides:
+                      retries: 5
+                      cache: true
+                      environment:
+                        key: "environment"
+                      task_config:
+                        fields:
+                          key:
+                            list_value:
+                              values:
+                              - null
+                              - null
+                            number_value: 6.027456183070403
+                            string_value: "string_value"
+                            null_value: {}
+                            bool_value: true
+                      cache_serialize: true
                       resources:
                         requests:
                         - name: {}
@@ -36015,6 +36960,9 @@ definitions:
                           value: "value"
                         - name: {}
                           value: "value"
+                      cache_version: "cache_version"
+                      interruptible: true
+                      container_image: "container_image"
                   id: "id"
                   workflow_node:
                     launchplan_ref:
@@ -36511,6 +37459,7 @@ definitions:
                   - var: "var"
                     alias: "alias"
                   task_node:
+                    runtime_override_name: "runtime_override_name"
                     reference_id:
                       domain: "domain"
                       resource_type: {}
@@ -36518,6 +37467,22 @@ definitions:
                       project: "project"
                       version: "version"
                     overrides:
+                      retries: 5
+                      cache: true
+                      environment:
+                        key: "environment"
+                      task_config:
+                        fields:
+                          key:
+                            list_value:
+                              values:
+                              - null
+                              - null
+                            number_value: 6.027456183070403
+                            string_value: "string_value"
+                            null_value: {}
+                            bool_value: true
+                      cache_serialize: true
                       resources:
                         requests:
                         - name: {}
@@ -36529,6 +37494,9 @@ definitions:
                           value: "value"
                         - name: {}
                           value: "value"
+                      cache_version: "cache_version"
+                      interruptible: true
+                      container_image: "container_image"
                   id: "id"
                   workflow_node:
                     launchplan_ref:
@@ -37024,6 +37992,7 @@ definitions:
                   - var: "var"
                     alias: "alias"
                   task_node:
+                    runtime_override_name: "runtime_override_name"
                     reference_id:
                       domain: "domain"
                       resource_type: {}
@@ -37031,6 +38000,22 @@ definitions:
                       project: "project"
                       version: "version"
                     overrides:
+                      retries: 5
+                      cache: true
+                      environment:
+                        key: "environment"
+                      task_config:
+                        fields:
+                          key:
+                            list_value:
+                              values:
+                              - null
+                              - null
+                            number_value: 6.027456183070403
+                            string_value: "string_value"
+                            null_value: {}
+                            bool_value: true
+                      cache_serialize: true
                       resources:
                         requests:
                         - name: {}
@@ -37042,6 +38027,9 @@ definitions:
                           value: "value"
                         - name: {}
                           value: "value"
+                      cache_version: "cache_version"
+                      interruptible: true
+                      container_image: "container_image"
                   id: "id"
                   workflow_node:
                     launchplan_ref:
@@ -38019,6 +39007,7 @@ definitions:
                   - var: "var"
                     alias: "alias"
                   task_node:
+                    runtime_override_name: "runtime_override_name"
                     reference_id:
                       domain: "domain"
                       resource_type: {}
@@ -38026,6 +39015,22 @@ definitions:
                       project: "project"
                       version: "version"
                     overrides:
+                      retries: 5
+                      cache: true
+                      environment:
+                        key: "environment"
+                      task_config:
+                        fields:
+                          key:
+                            list_value:
+                              values:
+                              - null
+                              - null
+                            number_value: 6.027456183070403
+                            string_value: "string_value"
+                            null_value: {}
+                            bool_value: true
+                      cache_serialize: true
                       resources:
                         requests:
                         - name: {}
@@ -38037,6 +39042,9 @@ definitions:
                           value: "value"
                         - name: {}
                           value: "value"
+                      cache_version: "cache_version"
+                      interruptible: true
+                      container_image: "container_image"
                   id: "id"
                   workflow_node:
                     launchplan_ref:
@@ -38533,6 +39541,7 @@ definitions:
                   - var: "var"
                     alias: "alias"
                   task_node:
+                    runtime_override_name: "runtime_override_name"
                     reference_id:
                       domain: "domain"
                       resource_type: {}
@@ -38540,6 +39549,22 @@ definitions:
                       project: "project"
                       version: "version"
                     overrides:
+                      retries: 5
+                      cache: true
+                      environment:
+                        key: "environment"
+                      task_config:
+                        fields:
+                          key:
+                            list_value:
+                              values:
+                              - null
+                              - null
+                            number_value: 6.027456183070403
+                            string_value: "string_value"
+                            null_value: {}
+                            bool_value: true
+                      cache_serialize: true
                       resources:
                         requests:
                         - name: {}
@@ -38551,6 +39576,9 @@ definitions:
                           value: "value"
                         - name: {}
                           value: "value"
+                      cache_version: "cache_version"
+                      interruptible: true
+                      container_image: "container_image"
                   id: "id"
                   workflow_node:
                     launchplan_ref:
@@ -39046,6 +40074,7 @@ definitions:
                   - var: "var"
                     alias: "alias"
                   task_node:
+                    runtime_override_name: "runtime_override_name"
                     reference_id:
                       domain: "domain"
                       resource_type: {}
@@ -39053,6 +40082,22 @@ definitions:
                       project: "project"
                       version: "version"
                     overrides:
+                      retries: 5
+                      cache: true
+                      environment:
+                        key: "environment"
+                      task_config:
+                        fields:
+                          key:
+                            list_value:
+                              values:
+                              - null
+                              - null
+                            number_value: 6.027456183070403
+                            string_value: "string_value"
+                            null_value: {}
+                            bool_value: true
+                      cache_serialize: true
                       resources:
                         requests:
                         - name: {}
@@ -39064,6 +40109,9 @@ definitions:
                           value: "value"
                         - name: {}
                           value: "value"
+                      cache_version: "cache_version"
+                      interruptible: true
+                      container_image: "container_image"
                   id: "id"
                   workflow_node:
                     launchplan_ref:
@@ -40030,6 +41078,7 @@ definitions:
                   - var: "var"
                     alias: "alias"
                   task_node:
+                    runtime_override_name: "runtime_override_name"
                     reference_id:
                       domain: "domain"
                       resource_type: {}
@@ -40037,6 +41086,22 @@ definitions:
                       project: "project"
                       version: "version"
                     overrides:
+                      retries: 5
+                      cache: true
+                      environment:
+                        key: "environment"
+                      task_config:
+                        fields:
+                          key:
+                            list_value:
+                              values:
+                              - null
+                              - null
+                            number_value: 6.027456183070403
+                            string_value: "string_value"
+                            null_value: {}
+                            bool_value: true
+                      cache_serialize: true
                       resources:
                         requests:
                         - name: {}
@@ -40048,6 +41113,9 @@ definitions:
                           value: "value"
                         - name: {}
                           value: "value"
+                      cache_version: "cache_version"
+                      interruptible: true
+                      container_image: "container_image"
                   id: "id"
                   workflow_node:
                     launchplan_ref:
@@ -40544,6 +41612,7 @@ definitions:
                   - var: "var"
                     alias: "alias"
                   task_node:
+                    runtime_override_name: "runtime_override_name"
                     reference_id:
                       domain: "domain"
                       resource_type: {}
@@ -40551,6 +41620,22 @@ definitions:
                       project: "project"
                       version: "version"
                     overrides:
+                      retries: 5
+                      cache: true
+                      environment:
+                        key: "environment"
+                      task_config:
+                        fields:
+                          key:
+                            list_value:
+                              values:
+                              - null
+                              - null
+                            number_value: 6.027456183070403
+                            string_value: "string_value"
+                            null_value: {}
+                            bool_value: true
+                      cache_serialize: true
                       resources:
                         requests:
                         - name: {}
@@ -40562,6 +41647,9 @@ definitions:
                           value: "value"
                         - name: {}
                           value: "value"
+                      cache_version: "cache_version"
+                      interruptible: true
+                      container_image: "container_image"
                   id: "id"
                   workflow_node:
                     launchplan_ref:
@@ -41057,6 +42145,7 @@ definitions:
                   - var: "var"
                     alias: "alias"
                   task_node:
+                    runtime_override_name: "runtime_override_name"
                     reference_id:
                       domain: "domain"
                       resource_type: {}
@@ -41064,6 +42153,22 @@ definitions:
                       project: "project"
                       version: "version"
                     overrides:
+                      retries: 5
+                      cache: true
+                      environment:
+                        key: "environment"
+                      task_config:
+                        fields:
+                          key:
+                            list_value:
+                              values:
+                              - null
+                              - null
+                            number_value: 6.027456183070403
+                            string_value: "string_value"
+                            null_value: {}
+                            bool_value: true
+                      cache_serialize: true
                       resources:
                         requests:
                         - name: {}
@@ -41075,6 +42180,9 @@ definitions:
                           value: "value"
                         - name: {}
                           value: "value"
+                      cache_version: "cache_version"
+                      interruptible: true
+                      container_image: "container_image"
                   id: "id"
                   workflow_node:
                     launchplan_ref:
@@ -42569,6 +43677,7 @@ definitions:
                   - var: "var"
                     alias: "alias"
                   task_node:
+                    runtime_override_name: "runtime_override_name"
                     reference_id:
                       domain: "domain"
                       resource_type: {}
@@ -42576,6 +43685,22 @@ definitions:
                       project: "project"
                       version: "version"
                     overrides:
+                      retries: 5
+                      cache: true
+                      environment:
+                        key: "environment"
+                      task_config:
+                        fields:
+                          key:
+                            list_value:
+                              values:
+                              - null
+                              - null
+                            number_value: 6.027456183070403
+                            string_value: "string_value"
+                            null_value: {}
+                            bool_value: true
+                      cache_serialize: true
                       resources:
                         requests:
                         - name: {}
@@ -42587,6 +43712,9 @@ definitions:
                           value: "value"
                         - name: {}
                           value: "value"
+                      cache_version: "cache_version"
+                      interruptible: true
+                      container_image: "container_image"
                   id: "id"
                   workflow_node:
                     launchplan_ref:
@@ -43083,6 +44211,7 @@ definitions:
                   - var: "var"
                     alias: "alias"
                   task_node:
+                    runtime_override_name: "runtime_override_name"
                     reference_id:
                       domain: "domain"
                       resource_type: {}
@@ -43090,6 +44219,22 @@ definitions:
                       project: "project"
                       version: "version"
                     overrides:
+                      retries: 5
+                      cache: true
+                      environment:
+                        key: "environment"
+                      task_config:
+                        fields:
+                          key:
+                            list_value:
+                              values:
+                              - null
+                              - null
+                            number_value: 6.027456183070403
+                            string_value: "string_value"
+                            null_value: {}
+                            bool_value: true
+                      cache_serialize: true
                       resources:
                         requests:
                         - name: {}
@@ -43101,6 +44246,9 @@ definitions:
                           value: "value"
                         - name: {}
                           value: "value"
+                      cache_version: "cache_version"
+                      interruptible: true
+                      container_image: "container_image"
                   id: "id"
                   workflow_node:
                     launchplan_ref:
@@ -43596,6 +44744,7 @@ definitions:
                   - var: "var"
                     alias: "alias"
                   task_node:
+                    runtime_override_name: "runtime_override_name"
                     reference_id:
                       domain: "domain"
                       resource_type: {}
@@ -43603,6 +44752,22 @@ definitions:
                       project: "project"
                       version: "version"
                     overrides:
+                      retries: 5
+                      cache: true
+                      environment:
+                        key: "environment"
+                      task_config:
+                        fields:
+                          key:
+                            list_value:
+                              values:
+                              - null
+                              - null
+                            number_value: 6.027456183070403
+                            string_value: "string_value"
+                            null_value: {}
+                            bool_value: true
+                      cache_serialize: true
                       resources:
                         requests:
                         - name: {}
@@ -43614,6 +44779,9 @@ definitions:
                           value: "value"
                         - name: {}
                           value: "value"
+                      cache_version: "cache_version"
+                      interruptible: true
+                      container_image: "container_image"
                   id: "id"
                   workflow_node:
                     launchplan_ref:
@@ -45572,6 +46740,7 @@ definitions:
           - var: "var"
             alias: "alias"
           task_node:
+            runtime_override_name: "runtime_override_name"
             reference_id:
               domain: "domain"
               resource_type: {}
@@ -45579,6 +46748,22 @@ definitions:
               project: "project"
               version: "version"
             overrides:
+              retries: 5
+              cache: true
+              environment:
+                key: "environment"
+              task_config:
+                fields:
+                  key:
+                    list_value:
+                      values:
+                      - null
+                      - null
+                    number_value: 6.027456183070403
+                    string_value: "string_value"
+                    null_value: {}
+                    bool_value: true
+              cache_serialize: true
               resources:
                 requests:
                 - name: {}
@@ -45590,6 +46775,9 @@ definitions:
                   value: "value"
                 - name: {}
                   value: "value"
+              cache_version: "cache_version"
+              interruptible: true
+              container_image: "container_image"
           id: "id"
           workflow_node:
             launchplan_ref:
@@ -46086,6 +47274,7 @@ definitions:
           - var: "var"
             alias: "alias"
           task_node:
+            runtime_override_name: "runtime_override_name"
             reference_id:
               domain: "domain"
               resource_type: {}
@@ -46093,6 +47282,22 @@ definitions:
               project: "project"
               version: "version"
             overrides:
+              retries: 5
+              cache: true
+              environment:
+                key: "environment"
+              task_config:
+                fields:
+                  key:
+                    list_value:
+                      values:
+                      - null
+                      - null
+                    number_value: 6.027456183070403
+                    string_value: "string_value"
+                    null_value: {}
+                    bool_value: true
+              cache_serialize: true
               resources:
                 requests:
                 - name: {}
@@ -46104,6 +47309,9 @@ definitions:
                   value: "value"
                 - name: {}
                   value: "value"
+              cache_version: "cache_version"
+              interruptible: true
+              container_image: "container_image"
           id: "id"
           workflow_node:
             launchplan_ref:
@@ -46599,6 +47807,7 @@ definitions:
           - var: "var"
             alias: "alias"
           task_node:
+            runtime_override_name: "runtime_override_name"
             reference_id:
               domain: "domain"
               resource_type: {}
@@ -46606,6 +47815,22 @@ definitions:
               project: "project"
               version: "version"
             overrides:
+              retries: 5
+              cache: true
+              environment:
+                key: "environment"
+              task_config:
+                fields:
+                  key:
+                    list_value:
+                      values:
+                      - null
+                      - null
+                    number_value: 6.027456183070403
+                    string_value: "string_value"
+                    null_value: {}
+                    bool_value: true
+              cache_serialize: true
               resources:
                 requests:
                 - name: {}
@@ -46617,6 +47842,9 @@ definitions:
                   value: "value"
                 - name: {}
                   value: "value"
+              cache_version: "cache_version"
+              interruptible: true
+              container_image: "container_image"
           id: "id"
           workflow_node:
             launchplan_ref:
@@ -47610,6 +48838,7 @@ definitions:
             - var: "var"
               alias: "alias"
             task_node:
+              runtime_override_name: "runtime_override_name"
               reference_id:
                 domain: "domain"
                 resource_type: {}
@@ -47617,6 +48846,22 @@ definitions:
                 project: "project"
                 version: "version"
               overrides:
+                retries: 5
+                cache: true
+                environment:
+                  key: "environment"
+                task_config:
+                  fields:
+                    key:
+                      list_value:
+                        values:
+                        - null
+                        - null
+                      number_value: 6.027456183070403
+                      string_value: "string_value"
+                      null_value: {}
+                      bool_value: true
+                cache_serialize: true
                 resources:
                   requests:
                   - name: {}
@@ -47628,6 +48873,9 @@ definitions:
                     value: "value"
                   - name: {}
                     value: "value"
+                cache_version: "cache_version"
+                interruptible: true
+                container_image: "container_image"
             id: "id"
             workflow_node:
               launchplan_ref:
@@ -48124,6 +49372,7 @@ definitions:
             - var: "var"
               alias: "alias"
             task_node:
+              runtime_override_name: "runtime_override_name"
               reference_id:
                 domain: "domain"
                 resource_type: {}
@@ -48131,6 +49380,22 @@ definitions:
                 project: "project"
                 version: "version"
               overrides:
+                retries: 5
+                cache: true
+                environment:
+                  key: "environment"
+                task_config:
+                  fields:
+                    key:
+                      list_value:
+                        values:
+                        - null
+                        - null
+                      number_value: 6.027456183070403
+                      string_value: "string_value"
+                      null_value: {}
+                      bool_value: true
+                cache_serialize: true
                 resources:
                   requests:
                   - name: {}
@@ -48142,6 +49407,9 @@ definitions:
                     value: "value"
                   - name: {}
                     value: "value"
+                cache_version: "cache_version"
+                interruptible: true
+                container_image: "container_image"
             id: "id"
             workflow_node:
               launchplan_ref:
@@ -48637,6 +49905,7 @@ definitions:
             - var: "var"
               alias: "alias"
             task_node:
+              runtime_override_name: "runtime_override_name"
               reference_id:
                 domain: "domain"
                 resource_type: {}
@@ -48644,6 +49913,22 @@ definitions:
                 project: "project"
                 version: "version"
               overrides:
+                retries: 5
+                cache: true
+                environment:
+                  key: "environment"
+                task_config:
+                  fields:
+                    key:
+                      list_value:
+                        values:
+                        - null
+                        - null
+                      number_value: 6.027456183070403
+                      string_value: "string_value"
+                      null_value: {}
+                      bool_value: true
+                cache_serialize: true
                 resources:
                   requests:
                   - name: {}
@@ -48655,6 +49940,9 @@ definitions:
                     value: "value"
                   - name: {}
                     value: "value"
+                cache_version: "cache_version"
+                interruptible: true
+                container_image: "container_image"
             id: "id"
             workflow_node:
               launchplan_ref:
@@ -49621,6 +50909,7 @@ definitions:
             - var: "var"
               alias: "alias"
             task_node:
+              runtime_override_name: "runtime_override_name"
               reference_id:
                 domain: "domain"
                 resource_type: {}
@@ -49628,6 +50917,22 @@ definitions:
                 project: "project"
                 version: "version"
               overrides:
+                retries: 5
+                cache: true
+                environment:
+                  key: "environment"
+                task_config:
+                  fields:
+                    key:
+                      list_value:
+                        values:
+                        - null
+                        - null
+                      number_value: 6.027456183070403
+                      string_value: "string_value"
+                      null_value: {}
+                      bool_value: true
+                cache_serialize: true
                 resources:
                   requests:
                   - name: {}
@@ -49639,6 +50944,9 @@ definitions:
                     value: "value"
                   - name: {}
                     value: "value"
+                cache_version: "cache_version"
+                interruptible: true
+                container_image: "container_image"
             id: "id"
             workflow_node:
               launchplan_ref:
@@ -50135,6 +51443,7 @@ definitions:
             - var: "var"
               alias: "alias"
             task_node:
+              runtime_override_name: "runtime_override_name"
               reference_id:
                 domain: "domain"
                 resource_type: {}
@@ -50142,6 +51451,22 @@ definitions:
                 project: "project"
                 version: "version"
               overrides:
+                retries: 5
+                cache: true
+                environment:
+                  key: "environment"
+                task_config:
+                  fields:
+                    key:
+                      list_value:
+                        values:
+                        - null
+                        - null
+                      number_value: 6.027456183070403
+                      string_value: "string_value"
+                      null_value: {}
+                      bool_value: true
+                cache_serialize: true
                 resources:
                   requests:
                   - name: {}
@@ -50153,6 +51478,9 @@ definitions:
                     value: "value"
                   - name: {}
                     value: "value"
+                cache_version: "cache_version"
+                interruptible: true
+                container_image: "container_image"
             id: "id"
             workflow_node:
               launchplan_ref:
@@ -50648,6 +51976,7 @@ definitions:
             - var: "var"
               alias: "alias"
             task_node:
+              runtime_override_name: "runtime_override_name"
               reference_id:
                 domain: "domain"
                 resource_type: {}
@@ -50655,6 +51984,22 @@ definitions:
                 project: "project"
                 version: "version"
               overrides:
+                retries: 5
+                cache: true
+                environment:
+                  key: "environment"
+                task_config:
+                  fields:
+                    key:
+                      list_value:
+                        values:
+                        - null
+                        - null
+                      number_value: 6.027456183070403
+                      string_value: "string_value"
+                      null_value: {}
+                      bool_value: true
+                cache_serialize: true
                 resources:
                   requests:
                   - name: {}
@@ -50666,6 +52011,9 @@ definitions:
                     value: "value"
                   - name: {}
                     value: "value"
+                cache_version: "cache_version"
+                interruptible: true
+                container_image: "container_image"
             id: "id"
             workflow_node:
               launchplan_ref:
@@ -52160,6 +53508,7 @@ definitions:
             - var: "var"
               alias: "alias"
             task_node:
+              runtime_override_name: "runtime_override_name"
               reference_id:
                 domain: "domain"
                 resource_type: {}
@@ -52167,6 +53516,22 @@ definitions:
                 project: "project"
                 version: "version"
               overrides:
+                retries: 5
+                cache: true
+                environment:
+                  key: "environment"
+                task_config:
+                  fields:
+                    key:
+                      list_value:
+                        values:
+                        - null
+                        - null
+                      number_value: 6.027456183070403
+                      string_value: "string_value"
+                      null_value: {}
+                      bool_value: true
+                cache_serialize: true
                 resources:
                   requests:
                   - name: {}
@@ -52178,6 +53543,9 @@ definitions:
                     value: "value"
                   - name: {}
                     value: "value"
+                cache_version: "cache_version"
+                interruptible: true
+                container_image: "container_image"
             id: "id"
             workflow_node:
               launchplan_ref:
@@ -52674,6 +54042,7 @@ definitions:
             - var: "var"
               alias: "alias"
             task_node:
+              runtime_override_name: "runtime_override_name"
               reference_id:
                 domain: "domain"
                 resource_type: {}
@@ -52681,6 +54050,22 @@ definitions:
                 project: "project"
                 version: "version"
               overrides:
+                retries: 5
+                cache: true
+                environment:
+                  key: "environment"
+                task_config:
+                  fields:
+                    key:
+                      list_value:
+                        values:
+                        - null
+                        - null
+                      number_value: 6.027456183070403
+                      string_value: "string_value"
+                      null_value: {}
+                      bool_value: true
+                cache_serialize: true
                 resources:
                   requests:
                   - name: {}
@@ -52692,6 +54077,9 @@ definitions:
                     value: "value"
                   - name: {}
                     value: "value"
+                cache_version: "cache_version"
+                interruptible: true
+                container_image: "container_image"
             id: "id"
             workflow_node:
               launchplan_ref:
@@ -53187,6 +54575,7 @@ definitions:
             - var: "var"
               alias: "alias"
             task_node:
+              runtime_override_name: "runtime_override_name"
               reference_id:
                 domain: "domain"
                 resource_type: {}
@@ -53194,6 +54583,22 @@ definitions:
                 project: "project"
                 version: "version"
               overrides:
+                retries: 5
+                cache: true
+                environment:
+                  key: "environment"
+                task_config:
+                  fields:
+                    key:
+                      list_value:
+                        values:
+                        - null
+                        - null
+                      number_value: 6.027456183070403
+                      string_value: "string_value"
+                      null_value: {}
+                      bool_value: true
+                cache_serialize: true
                 resources:
                   requests:
                   - name: {}
@@ -53205,6 +54610,9 @@ definitions:
                     value: "value"
                   - name: {}
                     value: "value"
+                cache_version: "cache_version"
+                interruptible: true
+                container_image: "container_image"
             id: "id"
             workflow_node:
               launchplan_ref:
@@ -54724,6 +56132,7 @@ definitions:
       - var: "var"
         alias: "alias"
       task_node:
+        runtime_override_name: "runtime_override_name"
         reference_id:
           domain: "domain"
           resource_type: {}
@@ -54731,6 +56140,22 @@ definitions:
           project: "project"
           version: "version"
         overrides:
+          retries: 5
+          cache: true
+          environment:
+            key: "environment"
+          task_config:
+            fields:
+              key:
+                list_value:
+                  values:
+                  - null
+                  - null
+                number_value: 6.027456183070403
+                string_value: "string_value"
+                null_value: {}
+                bool_value: true
+          cache_serialize: true
           resources:
             requests:
             - name: {}
@@ -54742,6 +56167,9 @@ definitions:
               value: "value"
             - name: {}
               value: "value"
+          cache_version: "cache_version"
+          interruptible: true
+          container_image: "container_image"
       id: "id"
       workflow_node:
         launchplan_ref:
@@ -56039,8 +57467,12 @@ definitions:
       overrides:
         description: "Optional overrides applied at task execution time."
         $ref: "#/definitions/coreTaskNodeOverrides"
+      runtime_override_name:
+        type: "string"
+        description: "Optional: if specified, the task can be overridden at runtime."
     description: "Refers to the task that the Node is to execute."
     example:
+      runtime_override_name: "runtime_override_name"
       reference_id:
         domain: "domain"
         resource_type: {}
@@ -56048,6 +57480,22 @@ definitions:
         project: "project"
         version: "version"
       overrides:
+        retries: 5
+        cache: true
+        environment:
+          key: "environment"
+        task_config:
+          fields:
+            key:
+              list_value:
+                values:
+                - null
+                - null
+              number_value: 6.027456183070403
+              string_value: "string_value"
+              null_value: {}
+              bool_value: true
+        cache_serialize: true
         resources:
           requests:
           - name: {}
@@ -56059,6 +57507,9 @@ definitions:
             value: "value"
           - name: {}
             value: "value"
+        cache_version: "cache_version"
+        interruptible: true
+        container_image: "container_image"
   coreTaskNodeOverrides:
     type: "object"
     properties:
@@ -56066,9 +57517,57 @@ definitions:
         description: "A customizable interface to convey resources requested for a\
           \ task container."
         $ref: "#/definitions/coreResources"
+      cache:
+        type: "boolean"
+        format: "boolean"
+        title: "Boolean that indicates if caching should be enabled"
+      cache_serialize:
+        type: "boolean"
+        format: "boolean"
+        description: "Boolean that indicates if identical (ie. same inputs) instances\
+          \ of this task should be\nexecuted in serial when caching is enabled."
+      cache_version:
+        type: "string"
+        title: "Cache version to use"
+      retries:
+        type: "integer"
+        format: "int32"
+        title: "Number of times to retry this task during a workflow execution"
+      interruptible:
+        type: "boolean"
+        format: "boolean"
+        title: "Boolean that indicates that this task can be interrupted and/or scheduled\
+          \ on nodes with lower QoS guarantees"
+      container_image:
+        type: "string"
+        title: "Container image to use"
+      environment:
+        type: "object"
+        title: "Environment variables that should be added for this tasks execution"
+        additionalProperties:
+          type: "string"
+      task_config:
+        description: "This argument provides configuration for a specific task types."
+        $ref: "#/definitions/protobufStruct"
     description: "Optional task node overrides that will be applied at task execution\
       \ time."
     example:
+      retries: 5
+      cache: true
+      environment:
+        key: "environment"
+      task_config:
+        fields:
+          key:
+            list_value:
+              values:
+              - null
+              - null
+            number_value: 6.027456183070403
+            string_value: "string_value"
+            null_value: {}
+            bool_value: true
+      cache_serialize: true
       resources:
         requests:
         - name: {}
@@ -56080,6 +57579,9 @@ definitions:
           value: "value"
         - name: {}
           value: "value"
+      cache_version: "cache_version"
+      interruptible: true
+      container_image: "container_image"
   coreTaskTemplate:
     type: "object"
     properties:
@@ -57778,6 +59280,7 @@ definitions:
         - var: "var"
           alias: "alias"
         task_node:
+          runtime_override_name: "runtime_override_name"
           reference_id:
             domain: "domain"
             resource_type: {}
@@ -57785,6 +59288,22 @@ definitions:
             project: "project"
             version: "version"
           overrides:
+            retries: 5
+            cache: true
+            environment:
+              key: "environment"
+            task_config:
+              fields:
+                key:
+                  list_value:
+                    values:
+                    - null
+                    - null
+                  number_value: 6.027456183070403
+                  string_value: "string_value"
+                  null_value: {}
+                  bool_value: true
+            cache_serialize: true
             resources:
               requests:
               - name: {}
@@ -57796,6 +59315,9 @@ definitions:
                 value: "value"
               - name: {}
                 value: "value"
+            cache_version: "cache_version"
+            interruptible: true
+            container_image: "container_image"
         id: "id"
         workflow_node:
           launchplan_ref:
@@ -58292,6 +59814,7 @@ definitions:
         - var: "var"
           alias: "alias"
         task_node:
+          runtime_override_name: "runtime_override_name"
           reference_id:
             domain: "domain"
             resource_type: {}
@@ -58299,6 +59822,22 @@ definitions:
             project: "project"
             version: "version"
           overrides:
+            retries: 5
+            cache: true
+            environment:
+              key: "environment"
+            task_config:
+              fields:
+                key:
+                  list_value:
+                    values:
+                    - null
+                    - null
+                  number_value: 6.027456183070403
+                  string_value: "string_value"
+                  null_value: {}
+                  bool_value: true
+            cache_serialize: true
             resources:
               requests:
               - name: {}
@@ -58310,6 +59849,9 @@ definitions:
                 value: "value"
               - name: {}
                 value: "value"
+            cache_version: "cache_version"
+            interruptible: true
+            container_image: "container_image"
         id: "id"
         workflow_node:
           launchplan_ref:
@@ -58805,6 +60347,7 @@ definitions:
         - var: "var"
           alias: "alias"
         task_node:
+          runtime_override_name: "runtime_override_name"
           reference_id:
             domain: "domain"
             resource_type: {}
@@ -58812,6 +60355,22 @@ definitions:
             project: "project"
             version: "version"
           overrides:
+            retries: 5
+            cache: true
+            environment:
+              key: "environment"
+            task_config:
+              fields:
+                key:
+                  list_value:
+                    values:
+                    - null
+                    - null
+                  number_value: 6.027456183070403
+                  string_value: "string_value"
+                  null_value: {}
+                  bool_value: true
+            cache_serialize: true
             resources:
               requests:
               - name: {}
@@ -58823,6 +60382,9 @@ definitions:
                 value: "value"
               - name: {}
                 value: "value"
+            cache_version: "cache_version"
+            interruptible: true
+            container_image: "container_image"
         id: "id"
         workflow_node:
           launchplan_ref:
@@ -60134,6 +61696,7 @@ definitions:
               - var: "var"
                 alias: "alias"
               task_node:
+                runtime_override_name: "runtime_override_name"
                 reference_id:
                   domain: "domain"
                   resource_type: {}
@@ -60141,6 +61704,22 @@ definitions:
                   project: "project"
                   version: "version"
                 overrides:
+                  retries: 5
+                  cache: true
+                  environment:
+                    key: "environment"
+                  task_config:
+                    fields:
+                      key:
+                        list_value:
+                          values:
+                          - null
+                          - null
+                        number_value: 6.027456183070403
+                        string_value: "string_value"
+                        null_value: {}
+                        bool_value: true
+                  cache_serialize: true
                   resources:
                     requests:
                     - name: {}
@@ -60152,6 +61731,9 @@ definitions:
                       value: "value"
                     - name: {}
                       value: "value"
+                  cache_version: "cache_version"
+                  interruptible: true
+                  container_image: "container_image"
               id: "id"
               workflow_node:
                 launchplan_ref:
@@ -60648,6 +62230,7 @@ definitions:
               - var: "var"
                 alias: "alias"
               task_node:
+                runtime_override_name: "runtime_override_name"
                 reference_id:
                   domain: "domain"
                   resource_type: {}
@@ -60655,6 +62238,22 @@ definitions:
                   project: "project"
                   version: "version"
                 overrides:
+                  retries: 5
+                  cache: true
+                  environment:
+                    key: "environment"
+                  task_config:
+                    fields:
+                      key:
+                        list_value:
+                          values:
+                          - null
+                          - null
+                        number_value: 6.027456183070403
+                        string_value: "string_value"
+                        null_value: {}
+                        bool_value: true
+                  cache_serialize: true
                   resources:
                     requests:
                     - name: {}
@@ -60666,6 +62265,9 @@ definitions:
                       value: "value"
                     - name: {}
                       value: "value"
+                  cache_version: "cache_version"
+                  interruptible: true
+                  container_image: "container_image"
               id: "id"
               workflow_node:
                 launchplan_ref:
@@ -61161,6 +62763,7 @@ definitions:
               - var: "var"
                 alias: "alias"
               task_node:
+                runtime_override_name: "runtime_override_name"
                 reference_id:
                   domain: "domain"
                   resource_type: {}
@@ -61168,6 +62771,22 @@ definitions:
                   project: "project"
                   version: "version"
                 overrides:
+                  retries: 5
+                  cache: true
+                  environment:
+                    key: "environment"
+                  task_config:
+                    fields:
+                      key:
+                        list_value:
+                          values:
+                          - null
+                          - null
+                        number_value: 6.027456183070403
+                        string_value: "string_value"
+                        null_value: {}
+                        bool_value: true
+                  cache_serialize: true
                   resources:
                     requests:
                     - name: {}
@@ -61179,6 +62798,9 @@ definitions:
                       value: "value"
                     - name: {}
                       value: "value"
+                  cache_version: "cache_version"
+                  interruptible: true
+                  container_image: "container_image"
               id: "id"
               workflow_node:
                 launchplan_ref:
@@ -62145,6 +63767,7 @@ definitions:
               - var: "var"
                 alias: "alias"
               task_node:
+                runtime_override_name: "runtime_override_name"
                 reference_id:
                   domain: "domain"
                   resource_type: {}
@@ -62152,6 +63775,22 @@ definitions:
                   project: "project"
                   version: "version"
                 overrides:
+                  retries: 5
+                  cache: true
+                  environment:
+                    key: "environment"
+                  task_config:
+                    fields:
+                      key:
+                        list_value:
+                          values:
+                          - null
+                          - null
+                        number_value: 6.027456183070403
+                        string_value: "string_value"
+                        null_value: {}
+                        bool_value: true
+                  cache_serialize: true
                   resources:
                     requests:
                     - name: {}
@@ -62163,6 +63802,9 @@ definitions:
                       value: "value"
                     - name: {}
                       value: "value"
+                  cache_version: "cache_version"
+                  interruptible: true
+                  container_image: "container_image"
               id: "id"
               workflow_node:
                 launchplan_ref:
@@ -62659,6 +64301,7 @@ definitions:
               - var: "var"
                 alias: "alias"
               task_node:
+                runtime_override_name: "runtime_override_name"
                 reference_id:
                   domain: "domain"
                   resource_type: {}
@@ -62666,6 +64309,22 @@ definitions:
                   project: "project"
                   version: "version"
                 overrides:
+                  retries: 5
+                  cache: true
+                  environment:
+                    key: "environment"
+                  task_config:
+                    fields:
+                      key:
+                        list_value:
+                          values:
+                          - null
+                          - null
+                        number_value: 6.027456183070403
+                        string_value: "string_value"
+                        null_value: {}
+                        bool_value: true
+                  cache_serialize: true
                   resources:
                     requests:
                     - name: {}
@@ -62677,6 +64336,9 @@ definitions:
                       value: "value"
                     - name: {}
                       value: "value"
+                  cache_version: "cache_version"
+                  interruptible: true
+                  container_image: "container_image"
               id: "id"
               workflow_node:
                 launchplan_ref:
@@ -63172,6 +64834,7 @@ definitions:
               - var: "var"
                 alias: "alias"
               task_node:
+                runtime_override_name: "runtime_override_name"
                 reference_id:
                   domain: "domain"
                   resource_type: {}
@@ -63179,6 +64842,22 @@ definitions:
                   project: "project"
                   version: "version"
                 overrides:
+                  retries: 5
+                  cache: true
+                  environment:
+                    key: "environment"
+                  task_config:
+                    fields:
+                      key:
+                        list_value:
+                          values:
+                          - null
+                          - null
+                        number_value: 6.027456183070403
+                        string_value: "string_value"
+                        null_value: {}
+                        bool_value: true
+                  cache_serialize: true
                   resources:
                     requests:
                     - name: {}
@@ -63190,6 +64869,9 @@ definitions:
                       value: "value"
                     - name: {}
                       value: "value"
+                  cache_version: "cache_version"
+                  interruptible: true
+                  container_image: "container_image"
               id: "id"
               workflow_node:
                 launchplan_ref:
@@ -64684,6 +66366,7 @@ definitions:
               - var: "var"
                 alias: "alias"
               task_node:
+                runtime_override_name: "runtime_override_name"
                 reference_id:
                   domain: "domain"
                   resource_type: {}
@@ -64691,6 +66374,22 @@ definitions:
                   project: "project"
                   version: "version"
                 overrides:
+                  retries: 5
+                  cache: true
+                  environment:
+                    key: "environment"
+                  task_config:
+                    fields:
+                      key:
+                        list_value:
+                          values:
+                          - null
+                          - null
+                        number_value: 6.027456183070403
+                        string_value: "string_value"
+                        null_value: {}
+                        bool_value: true
+                  cache_serialize: true
                   resources:
                     requests:
                     - name: {}
@@ -64702,6 +66401,9 @@ definitions:
                       value: "value"
                     - name: {}
                       value: "value"
+                  cache_version: "cache_version"
+                  interruptible: true
+                  container_image: "container_image"
               id: "id"
               workflow_node:
                 launchplan_ref:
@@ -65198,6 +66900,7 @@ definitions:
               - var: "var"
                 alias: "alias"
               task_node:
+                runtime_override_name: "runtime_override_name"
                 reference_id:
                   domain: "domain"
                   resource_type: {}
@@ -65205,6 +66908,22 @@ definitions:
                   project: "project"
                   version: "version"
                 overrides:
+                  retries: 5
+                  cache: true
+                  environment:
+                    key: "environment"
+                  task_config:
+                    fields:
+                      key:
+                        list_value:
+                          values:
+                          - null
+                          - null
+                        number_value: 6.027456183070403
+                        string_value: "string_value"
+                        null_value: {}
+                        bool_value: true
+                  cache_serialize: true
                   resources:
                     requests:
                     - name: {}
@@ -65216,6 +66935,9 @@ definitions:
                       value: "value"
                     - name: {}
                       value: "value"
+                  cache_version: "cache_version"
+                  interruptible: true
+                  container_image: "container_image"
               id: "id"
               workflow_node:
                 launchplan_ref:
@@ -65711,6 +67433,7 @@ definitions:
               - var: "var"
                 alias: "alias"
               task_node:
+                runtime_override_name: "runtime_override_name"
                 reference_id:
                   domain: "domain"
                   resource_type: {}
@@ -65718,6 +67441,22 @@ definitions:
                   project: "project"
                   version: "version"
                 overrides:
+                  retries: 5
+                  cache: true
+                  environment:
+                    key: "environment"
+                  task_config:
+                    fields:
+                      key:
+                        list_value:
+                          values:
+                          - null
+                          - null
+                        number_value: 6.027456183070403
+                        string_value: "string_value"
+                        null_value: {}
+                        bool_value: true
+                  cache_serialize: true
                   resources:
                     requests:
                     - name: {}
@@ -65729,6 +67468,9 @@ definitions:
                       value: "value"
                     - name: {}
                       value: "value"
+                  cache_version: "cache_version"
+                  interruptible: true
+                  container_image: "container_image"
               id: "id"
               workflow_node:
                 launchplan_ref:

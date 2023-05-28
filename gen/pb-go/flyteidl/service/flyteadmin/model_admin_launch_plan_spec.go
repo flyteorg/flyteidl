@@ -38,4 +38,6 @@ type AdminLaunchPlanSpec struct {
 	OverwriteCache bool `json:"overwrite_cache,omitempty"`
 	// Environment variables to be set for the execution.
 	Envs *AdminEnvs `json:"envs,omitempty"`
+	// Allows the task node with \"runtime_override_name\" to be overriden with \"TaskNodeOverrides\" at runtime.
+	TaskNodeRuntimeOverrides map[string]CoreTaskNodeOverrides `json:"task_node_runtime_overrides,omitempty"`
 }

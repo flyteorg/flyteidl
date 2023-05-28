@@ -15,4 +15,6 @@ type CoreTaskNode struct {
 	ReferenceId *CoreIdentifier `json:"reference_id,omitempty"`
 	// Optional overrides applied at task execution time.
 	Overrides *CoreTaskNodeOverrides `json:"overrides,omitempty"`
+	// Optional: if specified, the task can be overridden at runtime.
+	RuntimeOverrideName string `json:"runtime_override_name,omitempty"`
 }

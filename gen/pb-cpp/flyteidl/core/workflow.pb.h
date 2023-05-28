@@ -44,6 +44,7 @@
 #include "flyteidl/core/types.pb.h"
 #include "flyteidl/core/security.pb.h"
 #include <google/protobuf/duration.pb.h>
+#include <google/protobuf/struct.pb.h>
 // @@protoc_insertion_point(includes)
 #include <google/protobuf/port_def.inc>
 #define PROTOBUF_INTERNAL_EXPORT_flyteidl_2fcore_2fworkflow_2eproto
@@ -54,7 +55,7 @@ struct TableStruct_flyteidl_2fcore_2fworkflow_2eproto {
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
   static const ::google::protobuf::internal::AuxillaryParseTableField aux[]
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
-  static const ::google::protobuf::internal::ParseTable schema[17]
+  static const ::google::protobuf::internal::ParseTable schema[18]
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
   static const ::google::protobuf::internal::FieldMetadata field_metadata[];
   static const ::google::protobuf::internal::SerializationTable serialization_table[];
@@ -99,6 +100,9 @@ extern TaskNodeDefaultTypeInternal _TaskNode_default_instance_;
 class TaskNodeOverrides;
 class TaskNodeOverridesDefaultTypeInternal;
 extern TaskNodeOverridesDefaultTypeInternal _TaskNodeOverrides_default_instance_;
+class TaskNodeOverrides_EnvironmentEntry_DoNotUse;
+class TaskNodeOverrides_EnvironmentEntry_DoNotUseDefaultTypeInternal;
+extern TaskNodeOverrides_EnvironmentEntry_DoNotUseDefaultTypeInternal _TaskNodeOverrides_EnvironmentEntry_DoNotUse_default_instance_;
 class WorkflowMetadata;
 class WorkflowMetadataDefaultTypeInternal;
 extern WorkflowMetadataDefaultTypeInternal _WorkflowMetadata_default_instance_;
@@ -130,6 +134,7 @@ template<> ::flyteidl::core::SignalCondition* Arena::CreateMaybeMessage<::flytei
 template<> ::flyteidl::core::SleepCondition* Arena::CreateMaybeMessage<::flyteidl::core::SleepCondition>(Arena*);
 template<> ::flyteidl::core::TaskNode* Arena::CreateMaybeMessage<::flyteidl::core::TaskNode>(Arena*);
 template<> ::flyteidl::core::TaskNodeOverrides* Arena::CreateMaybeMessage<::flyteidl::core::TaskNodeOverrides>(Arena*);
+template<> ::flyteidl::core::TaskNodeOverrides_EnvironmentEntry_DoNotUse* Arena::CreateMaybeMessage<::flyteidl::core::TaskNodeOverrides_EnvironmentEntry_DoNotUse>(Arena*);
 template<> ::flyteidl::core::WorkflowMetadata* Arena::CreateMaybeMessage<::flyteidl::core::WorkflowMetadata>(Arena*);
 template<> ::flyteidl::core::WorkflowMetadataDefaults* Arena::CreateMaybeMessage<::flyteidl::core::WorkflowMetadataDefaults>(Arena*);
 template<> ::flyteidl::core::WorkflowMetadata_TagsEntry_DoNotUse* Arena::CreateMaybeMessage<::flyteidl::core::WorkflowMetadata_TagsEntry_DoNotUse>(Arena*);
@@ -669,6 +674,20 @@ class TaskNode final :
 
   // accessors -------------------------------------------------------
 
+  // string runtime_override_name = 3;
+  void clear_runtime_override_name();
+  static const int kRuntimeOverrideNameFieldNumber = 3;
+  const ::std::string& runtime_override_name() const;
+  void set_runtime_override_name(const ::std::string& value);
+  #if LANG_CXX11
+  void set_runtime_override_name(::std::string&& value);
+  #endif
+  void set_runtime_override_name(const char* value);
+  void set_runtime_override_name(const char* value, size_t size);
+  ::std::string* mutable_runtime_override_name();
+  ::std::string* release_runtime_override_name();
+  void set_allocated_runtime_override_name(::std::string* runtime_override_name);
+
   // .flyteidl.core.TaskNodeOverrides overrides = 2;
   bool has_overrides() const;
   void clear_overrides();
@@ -698,6 +717,7 @@ class TaskNode final :
   inline void clear_has_reference();
 
   ::google::protobuf::internal::InternalMetadataWithArena _internal_metadata_;
+  ::google::protobuf::internal::ArenaStringPtr runtime_override_name_;
   ::flyteidl::core::TaskNodeOverrides* overrides_;
   union ReferenceUnion {
     ReferenceUnion() {}
@@ -2411,6 +2431,30 @@ class WorkflowTemplate final :
 };
 // -------------------------------------------------------------------
 
+class TaskNodeOverrides_EnvironmentEntry_DoNotUse : public ::google::protobuf::internal::MapEntry<TaskNodeOverrides_EnvironmentEntry_DoNotUse, 
+    ::std::string, ::std::string,
+    ::google::protobuf::internal::WireFormatLite::TYPE_STRING,
+    ::google::protobuf::internal::WireFormatLite::TYPE_STRING,
+    0 > {
+public:
+#if GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
+static bool _ParseMap(const char* begin, const char* end, void* object, ::google::protobuf::internal::ParseContext* ctx);
+#endif  // GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
+  typedef ::google::protobuf::internal::MapEntry<TaskNodeOverrides_EnvironmentEntry_DoNotUse, 
+    ::std::string, ::std::string,
+    ::google::protobuf::internal::WireFormatLite::TYPE_STRING,
+    ::google::protobuf::internal::WireFormatLite::TYPE_STRING,
+    0 > SuperType;
+  TaskNodeOverrides_EnvironmentEntry_DoNotUse();
+  TaskNodeOverrides_EnvironmentEntry_DoNotUse(::google::protobuf::Arena* arena);
+  void MergeFrom(const TaskNodeOverrides_EnvironmentEntry_DoNotUse& other);
+  static const TaskNodeOverrides_EnvironmentEntry_DoNotUse* internal_default_instance() { return reinterpret_cast<const TaskNodeOverrides_EnvironmentEntry_DoNotUse*>(&_TaskNodeOverrides_EnvironmentEntry_DoNotUse_default_instance_); }
+  void MergeFrom(const ::google::protobuf::Message& other) final;
+  ::google::protobuf::Metadata GetMetadata() const;
+};
+
+// -------------------------------------------------------------------
+
 class TaskNodeOverrides final :
     public ::google::protobuf::Message /* @@protoc_insertion_point(class_definition:flyteidl.core.TaskNodeOverrides) */ {
  public:
@@ -2449,7 +2493,7 @@ class TaskNodeOverrides final :
                &_TaskNodeOverrides_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    16;
+    17;
 
   void Swap(TaskNodeOverrides* other);
   friend void swap(TaskNodeOverrides& a, TaskNodeOverrides& b) {
@@ -2504,7 +2548,45 @@ class TaskNodeOverrides final :
 
   // nested types ----------------------------------------------------
 
+
   // accessors -------------------------------------------------------
+
+  // map<string, string> environment = 9;
+  int environment_size() const;
+  void clear_environment();
+  static const int kEnvironmentFieldNumber = 9;
+  const ::google::protobuf::Map< ::std::string, ::std::string >&
+      environment() const;
+  ::google::protobuf::Map< ::std::string, ::std::string >*
+      mutable_environment();
+
+  // string cache_version = 4;
+  void clear_cache_version();
+  static const int kCacheVersionFieldNumber = 4;
+  const ::std::string& cache_version() const;
+  void set_cache_version(const ::std::string& value);
+  #if LANG_CXX11
+  void set_cache_version(::std::string&& value);
+  #endif
+  void set_cache_version(const char* value);
+  void set_cache_version(const char* value, size_t size);
+  ::std::string* mutable_cache_version();
+  ::std::string* release_cache_version();
+  void set_allocated_cache_version(::std::string* cache_version);
+
+  // string container_image = 7;
+  void clear_container_image();
+  static const int kContainerImageFieldNumber = 7;
+  const ::std::string& container_image() const;
+  void set_container_image(const ::std::string& value);
+  #if LANG_CXX11
+  void set_container_image(::std::string&& value);
+  #endif
+  void set_container_image(const char* value);
+  void set_container_image(const char* value, size_t size);
+  ::std::string* mutable_container_image();
+  ::std::string* release_container_image();
+  void set_allocated_container_image(::std::string* container_image);
 
   // .flyteidl.core.Resources resources = 1;
   bool has_resources() const;
@@ -2515,12 +2597,58 @@ class TaskNodeOverrides final :
   ::flyteidl::core::Resources* mutable_resources();
   void set_allocated_resources(::flyteidl::core::Resources* resources);
 
+  // .google.protobuf.Struct task_config = 10;
+  bool has_task_config() const;
+  void clear_task_config();
+  static const int kTaskConfigFieldNumber = 10;
+  const ::google::protobuf::Struct& task_config() const;
+  ::google::protobuf::Struct* release_task_config();
+  ::google::protobuf::Struct* mutable_task_config();
+  void set_allocated_task_config(::google::protobuf::Struct* task_config);
+
+  // bool cache = 2;
+  void clear_cache();
+  static const int kCacheFieldNumber = 2;
+  bool cache() const;
+  void set_cache(bool value);
+
+  // bool cache_serialize = 3;
+  void clear_cache_serialize();
+  static const int kCacheSerializeFieldNumber = 3;
+  bool cache_serialize() const;
+  void set_cache_serialize(bool value);
+
+  // bool interruptible = 6;
+  void clear_interruptible();
+  static const int kInterruptibleFieldNumber = 6;
+  bool interruptible() const;
+  void set_interruptible(bool value);
+
+  // int32 retries = 5;
+  void clear_retries();
+  static const int kRetriesFieldNumber = 5;
+  ::google::protobuf::int32 retries() const;
+  void set_retries(::google::protobuf::int32 value);
+
   // @@protoc_insertion_point(class_scope:flyteidl.core.TaskNodeOverrides)
  private:
   class HasBitSetters;
 
   ::google::protobuf::internal::InternalMetadataWithArena _internal_metadata_;
+  ::google::protobuf::internal::MapField<
+      TaskNodeOverrides_EnvironmentEntry_DoNotUse,
+      ::std::string, ::std::string,
+      ::google::protobuf::internal::WireFormatLite::TYPE_STRING,
+      ::google::protobuf::internal::WireFormatLite::TYPE_STRING,
+      0 > environment_;
+  ::google::protobuf::internal::ArenaStringPtr cache_version_;
+  ::google::protobuf::internal::ArenaStringPtr container_image_;
   ::flyteidl::core::Resources* resources_;
+  ::google::protobuf::Struct* task_config_;
+  bool cache_;
+  bool cache_serialize_;
+  bool interruptible_;
+  ::google::protobuf::int32 retries_;
   mutable ::google::protobuf::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_flyteidl_2fcore_2fworkflow_2eproto;
 };
@@ -2944,6 +3072,59 @@ inline void TaskNode::set_allocated_overrides(::flyteidl::core::TaskNodeOverride
   }
   overrides_ = overrides;
   // @@protoc_insertion_point(field_set_allocated:flyteidl.core.TaskNode.overrides)
+}
+
+// string runtime_override_name = 3;
+inline void TaskNode::clear_runtime_override_name() {
+  runtime_override_name_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline const ::std::string& TaskNode::runtime_override_name() const {
+  // @@protoc_insertion_point(field_get:flyteidl.core.TaskNode.runtime_override_name)
+  return runtime_override_name_.GetNoArena();
+}
+inline void TaskNode::set_runtime_override_name(const ::std::string& value) {
+  
+  runtime_override_name_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
+  // @@protoc_insertion_point(field_set:flyteidl.core.TaskNode.runtime_override_name)
+}
+#if LANG_CXX11
+inline void TaskNode::set_runtime_override_name(::std::string&& value) {
+  
+  runtime_override_name_.SetNoArena(
+    &::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::move(value));
+  // @@protoc_insertion_point(field_set_rvalue:flyteidl.core.TaskNode.runtime_override_name)
+}
+#endif
+inline void TaskNode::set_runtime_override_name(const char* value) {
+  GOOGLE_DCHECK(value != nullptr);
+  
+  runtime_override_name_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
+  // @@protoc_insertion_point(field_set_char:flyteidl.core.TaskNode.runtime_override_name)
+}
+inline void TaskNode::set_runtime_override_name(const char* value, size_t size) {
+  
+  runtime_override_name_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
+      ::std::string(reinterpret_cast<const char*>(value), size));
+  // @@protoc_insertion_point(field_set_pointer:flyteidl.core.TaskNode.runtime_override_name)
+}
+inline ::std::string* TaskNode::mutable_runtime_override_name() {
+  
+  // @@protoc_insertion_point(field_mutable:flyteidl.core.TaskNode.runtime_override_name)
+  return runtime_override_name_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline ::std::string* TaskNode::release_runtime_override_name() {
+  // @@protoc_insertion_point(field_release:flyteidl.core.TaskNode.runtime_override_name)
+  
+  return runtime_override_name_.ReleaseNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline void TaskNode::set_allocated_runtime_override_name(::std::string* runtime_override_name) {
+  if (runtime_override_name != nullptr) {
+    
+  } else {
+    
+  }
+  runtime_override_name_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), runtime_override_name);
+  // @@protoc_insertion_point(field_set_allocated:flyteidl.core.TaskNode.runtime_override_name)
 }
 
 inline bool TaskNode::has_reference() const {
@@ -4546,6 +4727,8 @@ inline void WorkflowTemplate::set_allocated_metadata_defaults(::flyteidl::core::
 
 // -------------------------------------------------------------------
 
+// -------------------------------------------------------------------
+
 // TaskNodeOverrides
 
 // .flyteidl.core.Resources resources = 1;
@@ -4593,9 +4776,237 @@ inline void TaskNodeOverrides::set_allocated_resources(::flyteidl::core::Resourc
   // @@protoc_insertion_point(field_set_allocated:flyteidl.core.TaskNodeOverrides.resources)
 }
 
+// bool cache = 2;
+inline void TaskNodeOverrides::clear_cache() {
+  cache_ = false;
+}
+inline bool TaskNodeOverrides::cache() const {
+  // @@protoc_insertion_point(field_get:flyteidl.core.TaskNodeOverrides.cache)
+  return cache_;
+}
+inline void TaskNodeOverrides::set_cache(bool value) {
+  
+  cache_ = value;
+  // @@protoc_insertion_point(field_set:flyteidl.core.TaskNodeOverrides.cache)
+}
+
+// bool cache_serialize = 3;
+inline void TaskNodeOverrides::clear_cache_serialize() {
+  cache_serialize_ = false;
+}
+inline bool TaskNodeOverrides::cache_serialize() const {
+  // @@protoc_insertion_point(field_get:flyteidl.core.TaskNodeOverrides.cache_serialize)
+  return cache_serialize_;
+}
+inline void TaskNodeOverrides::set_cache_serialize(bool value) {
+  
+  cache_serialize_ = value;
+  // @@protoc_insertion_point(field_set:flyteidl.core.TaskNodeOverrides.cache_serialize)
+}
+
+// string cache_version = 4;
+inline void TaskNodeOverrides::clear_cache_version() {
+  cache_version_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline const ::std::string& TaskNodeOverrides::cache_version() const {
+  // @@protoc_insertion_point(field_get:flyteidl.core.TaskNodeOverrides.cache_version)
+  return cache_version_.GetNoArena();
+}
+inline void TaskNodeOverrides::set_cache_version(const ::std::string& value) {
+  
+  cache_version_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
+  // @@protoc_insertion_point(field_set:flyteidl.core.TaskNodeOverrides.cache_version)
+}
+#if LANG_CXX11
+inline void TaskNodeOverrides::set_cache_version(::std::string&& value) {
+  
+  cache_version_.SetNoArena(
+    &::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::move(value));
+  // @@protoc_insertion_point(field_set_rvalue:flyteidl.core.TaskNodeOverrides.cache_version)
+}
+#endif
+inline void TaskNodeOverrides::set_cache_version(const char* value) {
+  GOOGLE_DCHECK(value != nullptr);
+  
+  cache_version_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
+  // @@protoc_insertion_point(field_set_char:flyteidl.core.TaskNodeOverrides.cache_version)
+}
+inline void TaskNodeOverrides::set_cache_version(const char* value, size_t size) {
+  
+  cache_version_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
+      ::std::string(reinterpret_cast<const char*>(value), size));
+  // @@protoc_insertion_point(field_set_pointer:flyteidl.core.TaskNodeOverrides.cache_version)
+}
+inline ::std::string* TaskNodeOverrides::mutable_cache_version() {
+  
+  // @@protoc_insertion_point(field_mutable:flyteidl.core.TaskNodeOverrides.cache_version)
+  return cache_version_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline ::std::string* TaskNodeOverrides::release_cache_version() {
+  // @@protoc_insertion_point(field_release:flyteidl.core.TaskNodeOverrides.cache_version)
+  
+  return cache_version_.ReleaseNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline void TaskNodeOverrides::set_allocated_cache_version(::std::string* cache_version) {
+  if (cache_version != nullptr) {
+    
+  } else {
+    
+  }
+  cache_version_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), cache_version);
+  // @@protoc_insertion_point(field_set_allocated:flyteidl.core.TaskNodeOverrides.cache_version)
+}
+
+// int32 retries = 5;
+inline void TaskNodeOverrides::clear_retries() {
+  retries_ = 0;
+}
+inline ::google::protobuf::int32 TaskNodeOverrides::retries() const {
+  // @@protoc_insertion_point(field_get:flyteidl.core.TaskNodeOverrides.retries)
+  return retries_;
+}
+inline void TaskNodeOverrides::set_retries(::google::protobuf::int32 value) {
+  
+  retries_ = value;
+  // @@protoc_insertion_point(field_set:flyteidl.core.TaskNodeOverrides.retries)
+}
+
+// bool interruptible = 6;
+inline void TaskNodeOverrides::clear_interruptible() {
+  interruptible_ = false;
+}
+inline bool TaskNodeOverrides::interruptible() const {
+  // @@protoc_insertion_point(field_get:flyteidl.core.TaskNodeOverrides.interruptible)
+  return interruptible_;
+}
+inline void TaskNodeOverrides::set_interruptible(bool value) {
+  
+  interruptible_ = value;
+  // @@protoc_insertion_point(field_set:flyteidl.core.TaskNodeOverrides.interruptible)
+}
+
+// string container_image = 7;
+inline void TaskNodeOverrides::clear_container_image() {
+  container_image_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline const ::std::string& TaskNodeOverrides::container_image() const {
+  // @@protoc_insertion_point(field_get:flyteidl.core.TaskNodeOverrides.container_image)
+  return container_image_.GetNoArena();
+}
+inline void TaskNodeOverrides::set_container_image(const ::std::string& value) {
+  
+  container_image_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
+  // @@protoc_insertion_point(field_set:flyteidl.core.TaskNodeOverrides.container_image)
+}
+#if LANG_CXX11
+inline void TaskNodeOverrides::set_container_image(::std::string&& value) {
+  
+  container_image_.SetNoArena(
+    &::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::move(value));
+  // @@protoc_insertion_point(field_set_rvalue:flyteidl.core.TaskNodeOverrides.container_image)
+}
+#endif
+inline void TaskNodeOverrides::set_container_image(const char* value) {
+  GOOGLE_DCHECK(value != nullptr);
+  
+  container_image_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
+  // @@protoc_insertion_point(field_set_char:flyteidl.core.TaskNodeOverrides.container_image)
+}
+inline void TaskNodeOverrides::set_container_image(const char* value, size_t size) {
+  
+  container_image_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
+      ::std::string(reinterpret_cast<const char*>(value), size));
+  // @@protoc_insertion_point(field_set_pointer:flyteidl.core.TaskNodeOverrides.container_image)
+}
+inline ::std::string* TaskNodeOverrides::mutable_container_image() {
+  
+  // @@protoc_insertion_point(field_mutable:flyteidl.core.TaskNodeOverrides.container_image)
+  return container_image_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline ::std::string* TaskNodeOverrides::release_container_image() {
+  // @@protoc_insertion_point(field_release:flyteidl.core.TaskNodeOverrides.container_image)
+  
+  return container_image_.ReleaseNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline void TaskNodeOverrides::set_allocated_container_image(::std::string* container_image) {
+  if (container_image != nullptr) {
+    
+  } else {
+    
+  }
+  container_image_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), container_image);
+  // @@protoc_insertion_point(field_set_allocated:flyteidl.core.TaskNodeOverrides.container_image)
+}
+
+// map<string, string> environment = 9;
+inline int TaskNodeOverrides::environment_size() const {
+  return environment_.size();
+}
+inline void TaskNodeOverrides::clear_environment() {
+  environment_.Clear();
+}
+inline const ::google::protobuf::Map< ::std::string, ::std::string >&
+TaskNodeOverrides::environment() const {
+  // @@protoc_insertion_point(field_map:flyteidl.core.TaskNodeOverrides.environment)
+  return environment_.GetMap();
+}
+inline ::google::protobuf::Map< ::std::string, ::std::string >*
+TaskNodeOverrides::mutable_environment() {
+  // @@protoc_insertion_point(field_mutable_map:flyteidl.core.TaskNodeOverrides.environment)
+  return environment_.MutableMap();
+}
+
+// .google.protobuf.Struct task_config = 10;
+inline bool TaskNodeOverrides::has_task_config() const {
+  return this != internal_default_instance() && task_config_ != nullptr;
+}
+inline const ::google::protobuf::Struct& TaskNodeOverrides::task_config() const {
+  const ::google::protobuf::Struct* p = task_config_;
+  // @@protoc_insertion_point(field_get:flyteidl.core.TaskNodeOverrides.task_config)
+  return p != nullptr ? *p : *reinterpret_cast<const ::google::protobuf::Struct*>(
+      &::google::protobuf::_Struct_default_instance_);
+}
+inline ::google::protobuf::Struct* TaskNodeOverrides::release_task_config() {
+  // @@protoc_insertion_point(field_release:flyteidl.core.TaskNodeOverrides.task_config)
+  
+  ::google::protobuf::Struct* temp = task_config_;
+  task_config_ = nullptr;
+  return temp;
+}
+inline ::google::protobuf::Struct* TaskNodeOverrides::mutable_task_config() {
+  
+  if (task_config_ == nullptr) {
+    auto* p = CreateMaybeMessage<::google::protobuf::Struct>(GetArenaNoVirtual());
+    task_config_ = p;
+  }
+  // @@protoc_insertion_point(field_mutable:flyteidl.core.TaskNodeOverrides.task_config)
+  return task_config_;
+}
+inline void TaskNodeOverrides::set_allocated_task_config(::google::protobuf::Struct* task_config) {
+  ::google::protobuf::Arena* message_arena = GetArenaNoVirtual();
+  if (message_arena == nullptr) {
+    delete reinterpret_cast< ::google::protobuf::MessageLite*>(task_config_);
+  }
+  if (task_config) {
+    ::google::protobuf::Arena* submessage_arena =
+      reinterpret_cast<::google::protobuf::MessageLite*>(task_config)->GetArena();
+    if (message_arena != submessage_arena) {
+      task_config = ::google::protobuf::internal::GetOwnedMessage(
+          message_arena, task_config, submessage_arena);
+    }
+    
+  } else {
+    
+  }
+  task_config_ = task_config;
+  // @@protoc_insertion_point(field_set_allocated:flyteidl.core.TaskNodeOverrides.task_config)
+}
+
 #ifdef __GNUC__
   #pragma GCC diagnostic pop
 #endif  // __GNUC__
+// -------------------------------------------------------------------
+
 // -------------------------------------------------------------------
 
 // -------------------------------------------------------------------

@@ -28,6 +28,7 @@ from flyteadmin.models.core_identifier import CoreIdentifier  # noqa: F401,E501
 from flyteadmin.models.core_literal_map import CoreLiteralMap  # noqa: F401,E501
 from flyteadmin.models.core_quality_of_service import CoreQualityOfService  # noqa: F401,E501
 from flyteadmin.models.core_security_context import CoreSecurityContext  # noqa: F401,E501
+from flyteadmin.models.core_task_node_overrides import CoreTaskNodeOverrides  # noqa: F401,E501
 
 
 class AdminExecutionSpec(object):
@@ -59,7 +60,8 @@ class AdminExecutionSpec(object):
         'cluster_assignment': 'AdminClusterAssignment',
         'interruptible': 'bool',
         'overwrite_cache': 'bool',
-        'envs': 'AdminEnvs'
+        'envs': 'AdminEnvs',
+        'task_node_runtime_overrides': 'dict(str, CoreTaskNodeOverrides)'
     }
 
     attribute_map = {
@@ -78,10 +80,11 @@ class AdminExecutionSpec(object):
         'cluster_assignment': 'cluster_assignment',
         'interruptible': 'interruptible',
         'overwrite_cache': 'overwrite_cache',
-        'envs': 'envs'
+        'envs': 'envs',
+        'task_node_runtime_overrides': 'task_node_runtime_overrides'
     }
 
-    def __init__(self, launch_plan=None, inputs=None, metadata=None, notifications=None, disable_all=None, labels=None, annotations=None, security_context=None, auth_role=None, quality_of_service=None, max_parallelism=None, raw_output_data_config=None, cluster_assignment=None, interruptible=None, overwrite_cache=None, envs=None):  # noqa: E501
+    def __init__(self, launch_plan=None, inputs=None, metadata=None, notifications=None, disable_all=None, labels=None, annotations=None, security_context=None, auth_role=None, quality_of_service=None, max_parallelism=None, raw_output_data_config=None, cluster_assignment=None, interruptible=None, overwrite_cache=None, envs=None, task_node_runtime_overrides=None):  # noqa: E501
         """AdminExecutionSpec - a model defined in Swagger"""  # noqa: E501
 
         self._launch_plan = None
@@ -100,6 +103,7 @@ class AdminExecutionSpec(object):
         self._interruptible = None
         self._overwrite_cache = None
         self._envs = None
+        self._task_node_runtime_overrides = None
         self.discriminator = None
 
         if launch_plan is not None:
@@ -134,6 +138,8 @@ class AdminExecutionSpec(object):
             self.overwrite_cache = overwrite_cache
         if envs is not None:
             self.envs = envs
+        if task_node_runtime_overrides is not None:
+            self.task_node_runtime_overrides = task_node_runtime_overrides
 
     @property
     def launch_plan(self):
@@ -494,6 +500,29 @@ class AdminExecutionSpec(object):
         """
 
         self._envs = envs
+
+    @property
+    def task_node_runtime_overrides(self):
+        """Gets the task_node_runtime_overrides of this AdminExecutionSpec.  # noqa: E501
+
+        Allows the task node with \"runtime_override_name\" to be overriden with \"TaskNodeOverrides\" at runtime.  # noqa: E501
+
+        :return: The task_node_runtime_overrides of this AdminExecutionSpec.  # noqa: E501
+        :rtype: dict(str, CoreTaskNodeOverrides)
+        """
+        return self._task_node_runtime_overrides
+
+    @task_node_runtime_overrides.setter
+    def task_node_runtime_overrides(self, task_node_runtime_overrides):
+        """Sets the task_node_runtime_overrides of this AdminExecutionSpec.
+
+        Allows the task node with \"runtime_override_name\" to be overriden with \"TaskNodeOverrides\" at runtime.  # noqa: E501
+
+        :param task_node_runtime_overrides: The task_node_runtime_overrides of this AdminExecutionSpec.  # noqa: E501
+        :type: dict(str, CoreTaskNodeOverrides)
+        """
+
+        self._task_node_runtime_overrides = task_node_runtime_overrides
 
     def to_dict(self):
         """Returns the model properties as a dict"""

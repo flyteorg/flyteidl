@@ -13,4 +13,14 @@ package flyteadmin
 type CoreTaskNodeOverrides struct {
 	// A customizable interface to convey resources requested for a task container.
 	Resources *CoreResources `json:"resources,omitempty"`
+	Cache bool `json:"cache,omitempty"`
+	// Boolean that indicates if identical (ie. same inputs) instances of this task should be executed in serial when caching is enabled.
+	CacheSerialize bool `json:"cache_serialize,omitempty"`
+	CacheVersion string `json:"cache_version,omitempty"`
+	Retries int32 `json:"retries,omitempty"`
+	Interruptible bool `json:"interruptible,omitempty"`
+	ContainerImage string `json:"container_image,omitempty"`
+	Environment map[string]string `json:"environment,omitempty"`
+	// This argument provides configuration for a specific task types.
+	TaskConfig *ProtobufStruct `json:"task_config,omitempty"`
 }

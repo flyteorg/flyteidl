@@ -35,25 +35,30 @@ class CoreTaskNode(object):
     """
     swagger_types = {
         'reference_id': 'CoreIdentifier',
-        'overrides': 'CoreTaskNodeOverrides'
+        'overrides': 'CoreTaskNodeOverrides',
+        'runtime_override_name': 'str'
     }
 
     attribute_map = {
         'reference_id': 'reference_id',
-        'overrides': 'overrides'
+        'overrides': 'overrides',
+        'runtime_override_name': 'runtime_override_name'
     }
 
-    def __init__(self, reference_id=None, overrides=None):  # noqa: E501
+    def __init__(self, reference_id=None, overrides=None, runtime_override_name=None):  # noqa: E501
         """CoreTaskNode - a model defined in Swagger"""  # noqa: E501
 
         self._reference_id = None
         self._overrides = None
+        self._runtime_override_name = None
         self.discriminator = None
 
         if reference_id is not None:
             self.reference_id = reference_id
         if overrides is not None:
             self.overrides = overrides
+        if runtime_override_name is not None:
+            self.runtime_override_name = runtime_override_name
 
     @property
     def reference_id(self):
@@ -100,6 +105,29 @@ class CoreTaskNode(object):
         """
 
         self._overrides = overrides
+
+    @property
+    def runtime_override_name(self):
+        """Gets the runtime_override_name of this CoreTaskNode.  # noqa: E501
+
+        Optional: if specified, the task can be overridden at runtime.  # noqa: E501
+
+        :return: The runtime_override_name of this CoreTaskNode.  # noqa: E501
+        :rtype: str
+        """
+        return self._runtime_override_name
+
+    @runtime_override_name.setter
+    def runtime_override_name(self, runtime_override_name):
+        """Sets the runtime_override_name of this CoreTaskNode.
+
+        Optional: if specified, the task can be overridden at runtime.  # noqa: E501
+
+        :param runtime_override_name: The runtime_override_name of this CoreTaskNode.  # noqa: E501
+        :type: str
+        """
+
+        self._runtime_override_name = runtime_override_name
 
     def to_dict(self):
         """Returns the model properties as a dict"""

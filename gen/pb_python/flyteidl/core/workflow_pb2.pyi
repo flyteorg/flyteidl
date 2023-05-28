@@ -7,6 +7,7 @@ from flyteidl.core import tasks_pb2 as _tasks_pb2
 from flyteidl.core import types_pb2 as _types_pb2
 from flyteidl.core import security_pb2 as _security_pb2
 from google.protobuf import duration_pb2 as _duration_pb2
+from google.protobuf import struct_pb2 as _struct_pb2
 from google.protobuf.internal import containers as _containers
 from google.protobuf.internal import enum_type_wrapper as _enum_type_wrapper
 from google.protobuf import descriptor as _descriptor
@@ -42,12 +43,14 @@ class BranchNode(_message.Message):
     def __init__(self, if_else: _Optional[_Union[IfElseBlock, _Mapping]] = ...) -> None: ...
 
 class TaskNode(_message.Message):
-    __slots__ = ["reference_id", "overrides"]
+    __slots__ = ["reference_id", "overrides", "runtime_override_name"]
     REFERENCE_ID_FIELD_NUMBER: _ClassVar[int]
     OVERRIDES_FIELD_NUMBER: _ClassVar[int]
+    RUNTIME_OVERRIDE_NAME_FIELD_NUMBER: _ClassVar[int]
     reference_id: _identifier_pb2.Identifier
     overrides: TaskNodeOverrides
-    def __init__(self, reference_id: _Optional[_Union[_identifier_pb2.Identifier, _Mapping]] = ..., overrides: _Optional[_Union[TaskNodeOverrides, _Mapping]] = ...) -> None: ...
+    runtime_override_name: str
+    def __init__(self, reference_id: _Optional[_Union[_identifier_pb2.Identifier, _Mapping]] = ..., overrides: _Optional[_Union[TaskNodeOverrides, _Mapping]] = ..., runtime_override_name: _Optional[str] = ...) -> None: ...
 
 class WorkflowNode(_message.Message):
     __slots__ = ["launchplan_ref", "sub_workflow_ref"]
@@ -179,7 +182,30 @@ class WorkflowTemplate(_message.Message):
     def __init__(self, id: _Optional[_Union[_identifier_pb2.Identifier, _Mapping]] = ..., metadata: _Optional[_Union[WorkflowMetadata, _Mapping]] = ..., interface: _Optional[_Union[_interface_pb2.TypedInterface, _Mapping]] = ..., nodes: _Optional[_Iterable[_Union[Node, _Mapping]]] = ..., outputs: _Optional[_Iterable[_Union[_literals_pb2.Binding, _Mapping]]] = ..., failure_node: _Optional[_Union[Node, _Mapping]] = ..., metadata_defaults: _Optional[_Union[WorkflowMetadataDefaults, _Mapping]] = ...) -> None: ...
 
 class TaskNodeOverrides(_message.Message):
-    __slots__ = ["resources"]
+    __slots__ = ["resources", "cache", "cache_serialize", "cache_version", "retries", "interruptible", "container_image", "environment", "task_config"]
+    class EnvironmentEntry(_message.Message):
+        __slots__ = ["key", "value"]
+        KEY_FIELD_NUMBER: _ClassVar[int]
+        VALUE_FIELD_NUMBER: _ClassVar[int]
+        key: str
+        value: str
+        def __init__(self, key: _Optional[str] = ..., value: _Optional[str] = ...) -> None: ...
     RESOURCES_FIELD_NUMBER: _ClassVar[int]
+    CACHE_FIELD_NUMBER: _ClassVar[int]
+    CACHE_SERIALIZE_FIELD_NUMBER: _ClassVar[int]
+    CACHE_VERSION_FIELD_NUMBER: _ClassVar[int]
+    RETRIES_FIELD_NUMBER: _ClassVar[int]
+    INTERRUPTIBLE_FIELD_NUMBER: _ClassVar[int]
+    CONTAINER_IMAGE_FIELD_NUMBER: _ClassVar[int]
+    ENVIRONMENT_FIELD_NUMBER: _ClassVar[int]
+    TASK_CONFIG_FIELD_NUMBER: _ClassVar[int]
     resources: _tasks_pb2.Resources
-    def __init__(self, resources: _Optional[_Union[_tasks_pb2.Resources, _Mapping]] = ...) -> None: ...
+    cache: bool
+    cache_serialize: bool
+    cache_version: str
+    retries: int
+    interruptible: bool
+    container_image: str
+    environment: _containers.ScalarMap[str, str]
+    task_config: _struct_pb2.Struct
+    def __init__(self, resources: _Optional[_Union[_tasks_pb2.Resources, _Mapping]] = ..., cache: bool = ..., cache_serialize: bool = ..., cache_version: _Optional[str] = ..., retries: _Optional[int] = ..., interruptible: bool = ..., container_image: _Optional[str] = ..., environment: _Optional[_Mapping[str, str]] = ..., task_config: _Optional[_Union[_struct_pb2.Struct, _Mapping]] = ...) -> None: ...
