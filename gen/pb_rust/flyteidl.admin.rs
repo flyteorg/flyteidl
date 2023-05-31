@@ -19,24 +19,31 @@ pub struct CreateTaskRequest {
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(Clone, PartialEq, ::prost::Message)]
 pub struct CreateTaskResponse {
-    #[prost(string, tag="1")]
-    pub job_id: ::prost::alloc::string::String,
+    /// Metadata is created by the agent. It could be a string (jobId) or a dict (more complex metadata).
+    #[prost(bytes="vec", tag="1")]
+    pub resource_meta: ::prost::alloc::vec::Vec<u8>,
 }
-/// A message used to fetch a job state from flyte agent server.
+/// A message used to fetch a job resource from flyte agent server.
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(Clone, PartialEq, ::prost::Message)]
 pub struct GetTaskRequest {
     /// A predefined yet extensible Task type identifier.
     #[prost(string, tag="1")]
     pub task_type: ::prost::alloc::string::String,
-    /// The unique id identifying the job.
-    #[prost(string, tag="2")]
-    pub job_id: ::prost::alloc::string::String,
+    /// Metadata about the resource to be pass to the agent.
+    #[prost(bytes="vec", tag="2")]
+    pub resource_meta: ::prost::alloc::vec::Vec<u8>,
 }
-/// Response to get an individual task state.
+/// Response to get an individual task resource.
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(Clone, PartialEq, ::prost::Message)]
 pub struct GetTaskResponse {
+    #[prost(message, optional, tag="1")]
+    pub resource: ::core::option::Option<Resource>,
+}
+#[allow(clippy::derive_partial_eq_without_eq)]
+#[derive(Clone, PartialEq, ::prost::Message)]
+pub struct Resource {
     /// The state of the execution is used to control its visibility in the UI/CLI.
     #[prost(enumeration="State", tag="1")]
     pub state: i32,

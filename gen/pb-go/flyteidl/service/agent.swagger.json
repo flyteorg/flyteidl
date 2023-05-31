@@ -166,8 +166,10 @@
     "adminCreateTaskResponse": {
       "type": "object",
       "properties": {
-        "job_id": {
-          "type": "string"
+        "resource_meta": {
+          "type": "string",
+          "format": "byte",
+          "description": "Metadata is created by the agent. It could be a string (jobId) or a dict (more complex metadata)."
         }
       },
       "description": "Represents a create response structure."
@@ -179,6 +181,15 @@
     "adminGetTaskResponse": {
       "type": "object",
       "properties": {
+        "resource": {
+          "$ref": "#/definitions/adminresource"
+        }
+      },
+      "description": "Response to get an individual task resource."
+    },
+    "adminresource": {
+      "type": "object",
+      "properties": {
         "state": {
           "$ref": "#/definitions/flyteidladminState",
           "description": "The state of the execution is used to control its visibility in the UI/CLI."
@@ -187,8 +198,7 @@
           "$ref": "#/definitions/coreLiteralMap",
           "title": "The outputs of the execution. It's typically used by sql task. Agent service will create a\nStructured dataset pointing to the query result table.\n+optional"
         }
-      },
-      "description": "Response to get an individual task state."
+      }
     },
     "coreBinary": {
       "type": "object",

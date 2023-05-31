@@ -32,20 +32,26 @@ class CreateTaskRequest(_message.Message):
     def __init__(self, inputs: _Optional[_Union[_literals_pb2.LiteralMap, _Mapping]] = ..., template: _Optional[_Union[_tasks_pb2.TaskTemplate, _Mapping]] = ..., output_prefix: _Optional[str] = ...) -> None: ...
 
 class CreateTaskResponse(_message.Message):
-    __slots__ = ["job_id"]
-    JOB_ID_FIELD_NUMBER: _ClassVar[int]
-    job_id: str
-    def __init__(self, job_id: _Optional[str] = ...) -> None: ...
+    __slots__ = ["resource_meta"]
+    RESOURCE_META_FIELD_NUMBER: _ClassVar[int]
+    resource_meta: bytes
+    def __init__(self, resource_meta: _Optional[bytes] = ...) -> None: ...
 
 class GetTaskRequest(_message.Message):
-    __slots__ = ["task_type", "job_id"]
+    __slots__ = ["task_type", "resource_meta"]
     TASK_TYPE_FIELD_NUMBER: _ClassVar[int]
-    JOB_ID_FIELD_NUMBER: _ClassVar[int]
+    RESOURCE_META_FIELD_NUMBER: _ClassVar[int]
     task_type: str
-    job_id: str
-    def __init__(self, task_type: _Optional[str] = ..., job_id: _Optional[str] = ...) -> None: ...
+    resource_meta: bytes
+    def __init__(self, task_type: _Optional[str] = ..., resource_meta: _Optional[bytes] = ...) -> None: ...
 
 class GetTaskResponse(_message.Message):
+    __slots__ = ["resource"]
+    RESOURCE_FIELD_NUMBER: _ClassVar[int]
+    resource: resource
+    def __init__(self, resource: _Optional[_Union[resource, _Mapping]] = ...) -> None: ...
+
+class resource(_message.Message):
     __slots__ = ["state", "outputs"]
     STATE_FIELD_NUMBER: _ClassVar[int]
     OUTPUTS_FIELD_NUMBER: _ClassVar[int]

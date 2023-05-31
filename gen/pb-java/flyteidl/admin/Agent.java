@@ -1279,14 +1279,13 @@ public final class Agent {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>string job_id = 1;</code>
+     * <pre>
+     * Metadata is created by the agent. It could be a string (jobId) or a dict (more complex metadata).
+     * </pre>
+     *
+     * <code>bytes resource_meta = 1;</code>
      */
-    java.lang.String getJobId();
-    /**
-     * <code>string job_id = 1;</code>
-     */
-    com.google.protobuf.ByteString
-        getJobIdBytes();
+    com.google.protobuf.ByteString getResourceMeta();
   }
   /**
    * <pre>
@@ -1305,7 +1304,7 @@ public final class Agent {
       super(builder);
     }
     private CreateTaskResponse() {
-      jobId_ = "";
+      resourceMeta_ = com.google.protobuf.ByteString.EMPTY;
     }
 
     @java.lang.Override
@@ -1333,9 +1332,8 @@ public final class Agent {
               done = true;
               break;
             case 10: {
-              java.lang.String s = input.readStringRequireUtf8();
 
-              jobId_ = s;
+              resourceMeta_ = input.readBytes();
               break;
             }
             default: {
@@ -1370,38 +1368,17 @@ public final class Agent {
               flyteidl.admin.Agent.CreateTaskResponse.class, flyteidl.admin.Agent.CreateTaskResponse.Builder.class);
     }
 
-    public static final int JOB_ID_FIELD_NUMBER = 1;
-    private volatile java.lang.Object jobId_;
+    public static final int RESOURCE_META_FIELD_NUMBER = 1;
+    private com.google.protobuf.ByteString resourceMeta_;
     /**
-     * <code>string job_id = 1;</code>
+     * <pre>
+     * Metadata is created by the agent. It could be a string (jobId) or a dict (more complex metadata).
+     * </pre>
+     *
+     * <code>bytes resource_meta = 1;</code>
      */
-    public java.lang.String getJobId() {
-      java.lang.Object ref = jobId_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
-      } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        jobId_ = s;
-        return s;
-      }
-    }
-    /**
-     * <code>string job_id = 1;</code>
-     */
-    public com.google.protobuf.ByteString
-        getJobIdBytes() {
-      java.lang.Object ref = jobId_;
-      if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        jobId_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
+    public com.google.protobuf.ByteString getResourceMeta() {
+      return resourceMeta_;
     }
 
     private byte memoizedIsInitialized = -1;
@@ -1418,8 +1395,8 @@ public final class Agent {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (!getJobIdBytes().isEmpty()) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, jobId_);
+      if (!resourceMeta_.isEmpty()) {
+        output.writeBytes(1, resourceMeta_);
       }
       unknownFields.writeTo(output);
     }
@@ -1430,8 +1407,9 @@ public final class Agent {
       if (size != -1) return size;
 
       size = 0;
-      if (!getJobIdBytes().isEmpty()) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, jobId_);
+      if (!resourceMeta_.isEmpty()) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeBytesSize(1, resourceMeta_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -1448,8 +1426,8 @@ public final class Agent {
       }
       flyteidl.admin.Agent.CreateTaskResponse other = (flyteidl.admin.Agent.CreateTaskResponse) obj;
 
-      if (!getJobId()
-          .equals(other.getJobId())) return false;
+      if (!getResourceMeta()
+          .equals(other.getResourceMeta())) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -1461,8 +1439,8 @@ public final class Agent {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
-      hash = (37 * hash) + JOB_ID_FIELD_NUMBER;
-      hash = (53 * hash) + getJobId().hashCode();
+      hash = (37 * hash) + RESOURCE_META_FIELD_NUMBER;
+      hash = (53 * hash) + getResourceMeta().hashCode();
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -1600,7 +1578,7 @@ public final class Agent {
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        jobId_ = "";
+        resourceMeta_ = com.google.protobuf.ByteString.EMPTY;
 
         return this;
       }
@@ -1628,7 +1606,7 @@ public final class Agent {
       @java.lang.Override
       public flyteidl.admin.Agent.CreateTaskResponse buildPartial() {
         flyteidl.admin.Agent.CreateTaskResponse result = new flyteidl.admin.Agent.CreateTaskResponse(this);
-        result.jobId_ = jobId_;
+        result.resourceMeta_ = resourceMeta_;
         onBuilt();
         return result;
       }
@@ -1677,9 +1655,8 @@ public final class Agent {
 
       public Builder mergeFrom(flyteidl.admin.Agent.CreateTaskResponse other) {
         if (other == flyteidl.admin.Agent.CreateTaskResponse.getDefaultInstance()) return this;
-        if (!other.getJobId().isEmpty()) {
-          jobId_ = other.jobId_;
-          onChanged();
+        if (other.getResourceMeta() != com.google.protobuf.ByteString.EMPTY) {
+          setResourceMeta(other.getResourceMeta());
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -1710,71 +1687,43 @@ public final class Agent {
         return this;
       }
 
-      private java.lang.Object jobId_ = "";
+      private com.google.protobuf.ByteString resourceMeta_ = com.google.protobuf.ByteString.EMPTY;
       /**
-       * <code>string job_id = 1;</code>
+       * <pre>
+       * Metadata is created by the agent. It could be a string (jobId) or a dict (more complex metadata).
+       * </pre>
+       *
+       * <code>bytes resource_meta = 1;</code>
        */
-      public java.lang.String getJobId() {
-        java.lang.Object ref = jobId_;
-        if (!(ref instanceof java.lang.String)) {
-          com.google.protobuf.ByteString bs =
-              (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
-          jobId_ = s;
-          return s;
-        } else {
-          return (java.lang.String) ref;
-        }
+      public com.google.protobuf.ByteString getResourceMeta() {
+        return resourceMeta_;
       }
       /**
-       * <code>string job_id = 1;</code>
+       * <pre>
+       * Metadata is created by the agent. It could be a string (jobId) or a dict (more complex metadata).
+       * </pre>
+       *
+       * <code>bytes resource_meta = 1;</code>
        */
-      public com.google.protobuf.ByteString
-          getJobIdBytes() {
-        java.lang.Object ref = jobId_;
-        if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
-          jobId_ = b;
-          return b;
-        } else {
-          return (com.google.protobuf.ByteString) ref;
-        }
-      }
-      /**
-       * <code>string job_id = 1;</code>
-       */
-      public Builder setJobId(
-          java.lang.String value) {
+      public Builder setResourceMeta(com.google.protobuf.ByteString value) {
         if (value == null) {
     throw new NullPointerException();
   }
   
-        jobId_ = value;
+        resourceMeta_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>string job_id = 1;</code>
+       * <pre>
+       * Metadata is created by the agent. It could be a string (jobId) or a dict (more complex metadata).
+       * </pre>
+       *
+       * <code>bytes resource_meta = 1;</code>
        */
-      public Builder clearJobId() {
+      public Builder clearResourceMeta() {
         
-        jobId_ = getDefaultInstance().getJobId();
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>string job_id = 1;</code>
-       */
-      public Builder setJobIdBytes(
-          com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-        
-        jobId_ = value;
+        resourceMeta_ = getDefaultInstance().getResourceMeta();
         onChanged();
         return this;
       }
@@ -1855,25 +1804,16 @@ public final class Agent {
 
     /**
      * <pre>
-     * The unique id identifying the job.
+     * Metadata about the resource to be pass to the agent.
      * </pre>
      *
-     * <code>string job_id = 2;</code>
+     * <code>bytes resource_meta = 2;</code>
      */
-    java.lang.String getJobId();
-    /**
-     * <pre>
-     * The unique id identifying the job.
-     * </pre>
-     *
-     * <code>string job_id = 2;</code>
-     */
-    com.google.protobuf.ByteString
-        getJobIdBytes();
+    com.google.protobuf.ByteString getResourceMeta();
   }
   /**
    * <pre>
-   * A message used to fetch a job state from flyte agent server.
+   * A message used to fetch a job resource from flyte agent server.
    * </pre>
    *
    * Protobuf type {@code flyteidl.admin.GetTaskRequest}
@@ -1889,7 +1829,7 @@ public final class Agent {
     }
     private GetTaskRequest() {
       taskType_ = "";
-      jobId_ = "";
+      resourceMeta_ = com.google.protobuf.ByteString.EMPTY;
     }
 
     @java.lang.Override
@@ -1923,9 +1863,8 @@ public final class Agent {
               break;
             }
             case 18: {
-              java.lang.String s = input.readStringRequireUtf8();
 
-              jobId_ = s;
+              resourceMeta_ = input.readBytes();
               break;
             }
             default: {
@@ -2002,46 +1941,17 @@ public final class Agent {
       }
     }
 
-    public static final int JOB_ID_FIELD_NUMBER = 2;
-    private volatile java.lang.Object jobId_;
+    public static final int RESOURCE_META_FIELD_NUMBER = 2;
+    private com.google.protobuf.ByteString resourceMeta_;
     /**
      * <pre>
-     * The unique id identifying the job.
+     * Metadata about the resource to be pass to the agent.
      * </pre>
      *
-     * <code>string job_id = 2;</code>
+     * <code>bytes resource_meta = 2;</code>
      */
-    public java.lang.String getJobId() {
-      java.lang.Object ref = jobId_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
-      } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        jobId_ = s;
-        return s;
-      }
-    }
-    /**
-     * <pre>
-     * The unique id identifying the job.
-     * </pre>
-     *
-     * <code>string job_id = 2;</code>
-     */
-    public com.google.protobuf.ByteString
-        getJobIdBytes() {
-      java.lang.Object ref = jobId_;
-      if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        jobId_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
+    public com.google.protobuf.ByteString getResourceMeta() {
+      return resourceMeta_;
     }
 
     private byte memoizedIsInitialized = -1;
@@ -2061,8 +1971,8 @@ public final class Agent {
       if (!getTaskTypeBytes().isEmpty()) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 1, taskType_);
       }
-      if (!getJobIdBytes().isEmpty()) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 2, jobId_);
+      if (!resourceMeta_.isEmpty()) {
+        output.writeBytes(2, resourceMeta_);
       }
       unknownFields.writeTo(output);
     }
@@ -2076,8 +1986,9 @@ public final class Agent {
       if (!getTaskTypeBytes().isEmpty()) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, taskType_);
       }
-      if (!getJobIdBytes().isEmpty()) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, jobId_);
+      if (!resourceMeta_.isEmpty()) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeBytesSize(2, resourceMeta_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -2096,8 +2007,8 @@ public final class Agent {
 
       if (!getTaskType()
           .equals(other.getTaskType())) return false;
-      if (!getJobId()
-          .equals(other.getJobId())) return false;
+      if (!getResourceMeta()
+          .equals(other.getResourceMeta())) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -2111,8 +2022,8 @@ public final class Agent {
       hash = (19 * hash) + getDescriptor().hashCode();
       hash = (37 * hash) + TASK_TYPE_FIELD_NUMBER;
       hash = (53 * hash) + getTaskType().hashCode();
-      hash = (37 * hash) + JOB_ID_FIELD_NUMBER;
-      hash = (53 * hash) + getJobId().hashCode();
+      hash = (37 * hash) + RESOURCE_META_FIELD_NUMBER;
+      hash = (53 * hash) + getResourceMeta().hashCode();
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -2210,7 +2121,7 @@ public final class Agent {
     }
     /**
      * <pre>
-     * A message used to fetch a job state from flyte agent server.
+     * A message used to fetch a job resource from flyte agent server.
      * </pre>
      *
      * Protobuf type {@code flyteidl.admin.GetTaskRequest}
@@ -2252,7 +2163,7 @@ public final class Agent {
         super.clear();
         taskType_ = "";
 
-        jobId_ = "";
+        resourceMeta_ = com.google.protobuf.ByteString.EMPTY;
 
         return this;
       }
@@ -2281,7 +2192,7 @@ public final class Agent {
       public flyteidl.admin.Agent.GetTaskRequest buildPartial() {
         flyteidl.admin.Agent.GetTaskRequest result = new flyteidl.admin.Agent.GetTaskRequest(this);
         result.taskType_ = taskType_;
-        result.jobId_ = jobId_;
+        result.resourceMeta_ = resourceMeta_;
         onBuilt();
         return result;
       }
@@ -2334,9 +2245,8 @@ public final class Agent {
           taskType_ = other.taskType_;
           onChanged();
         }
-        if (!other.getJobId().isEmpty()) {
-          jobId_ = other.jobId_;
-          onChanged();
+        if (other.getResourceMeta() != com.google.protobuf.ByteString.EMPTY) {
+          setResourceMeta(other.getResourceMeta());
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -2456,91 +2366,43 @@ public final class Agent {
         return this;
       }
 
-      private java.lang.Object jobId_ = "";
+      private com.google.protobuf.ByteString resourceMeta_ = com.google.protobuf.ByteString.EMPTY;
       /**
        * <pre>
-       * The unique id identifying the job.
+       * Metadata about the resource to be pass to the agent.
        * </pre>
        *
-       * <code>string job_id = 2;</code>
+       * <code>bytes resource_meta = 2;</code>
        */
-      public java.lang.String getJobId() {
-        java.lang.Object ref = jobId_;
-        if (!(ref instanceof java.lang.String)) {
-          com.google.protobuf.ByteString bs =
-              (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
-          jobId_ = s;
-          return s;
-        } else {
-          return (java.lang.String) ref;
-        }
+      public com.google.protobuf.ByteString getResourceMeta() {
+        return resourceMeta_;
       }
       /**
        * <pre>
-       * The unique id identifying the job.
+       * Metadata about the resource to be pass to the agent.
        * </pre>
        *
-       * <code>string job_id = 2;</code>
+       * <code>bytes resource_meta = 2;</code>
        */
-      public com.google.protobuf.ByteString
-          getJobIdBytes() {
-        java.lang.Object ref = jobId_;
-        if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
-          jobId_ = b;
-          return b;
-        } else {
-          return (com.google.protobuf.ByteString) ref;
-        }
-      }
-      /**
-       * <pre>
-       * The unique id identifying the job.
-       * </pre>
-       *
-       * <code>string job_id = 2;</code>
-       */
-      public Builder setJobId(
-          java.lang.String value) {
+      public Builder setResourceMeta(com.google.protobuf.ByteString value) {
         if (value == null) {
     throw new NullPointerException();
   }
   
-        jobId_ = value;
+        resourceMeta_ = value;
         onChanged();
         return this;
       }
       /**
        * <pre>
-       * The unique id identifying the job.
+       * Metadata about the resource to be pass to the agent.
        * </pre>
        *
-       * <code>string job_id = 2;</code>
+       * <code>bytes resource_meta = 2;</code>
        */
-      public Builder clearJobId() {
+      public Builder clearResourceMeta() {
         
-        jobId_ = getDefaultInstance().getJobId();
-        onChanged();
-        return this;
-      }
-      /**
-       * <pre>
-       * The unique id identifying the job.
-       * </pre>
-       *
-       * <code>string job_id = 2;</code>
-       */
-      public Builder setJobIdBytes(
-          com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-        
-        jobId_ = value;
+        resourceMeta_ = getDefaultInstance().getResourceMeta();
         onChanged();
         return this;
       }
@@ -2602,6 +2464,620 @@ public final class Agent {
       com.google.protobuf.MessageOrBuilder {
 
     /**
+     * <code>.flyteidl.admin.resource resource = 1;</code>
+     */
+    boolean hasResource();
+    /**
+     * <code>.flyteidl.admin.resource resource = 1;</code>
+     */
+    flyteidl.admin.Agent.resource getResource();
+    /**
+     * <code>.flyteidl.admin.resource resource = 1;</code>
+     */
+    flyteidl.admin.Agent.resourceOrBuilder getResourceOrBuilder();
+  }
+  /**
+   * <pre>
+   * Response to get an individual task resource.
+   * </pre>
+   *
+   * Protobuf type {@code flyteidl.admin.GetTaskResponse}
+   */
+  public  static final class GetTaskResponse extends
+      com.google.protobuf.GeneratedMessageV3 implements
+      // @@protoc_insertion_point(message_implements:flyteidl.admin.GetTaskResponse)
+      GetTaskResponseOrBuilder {
+  private static final long serialVersionUID = 0L;
+    // Use GetTaskResponse.newBuilder() to construct.
+    private GetTaskResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+    private GetTaskResponse() {
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+      return this.unknownFields;
+    }
+    private GetTaskResponse(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10: {
+              flyteidl.admin.Agent.resource.Builder subBuilder = null;
+              if (resource_ != null) {
+                subBuilder = resource_.toBuilder();
+              }
+              resource_ = input.readMessage(flyteidl.admin.Agent.resource.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(resource_);
+                resource_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return flyteidl.admin.Agent.internal_static_flyteidl_admin_GetTaskResponse_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return flyteidl.admin.Agent.internal_static_flyteidl_admin_GetTaskResponse_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              flyteidl.admin.Agent.GetTaskResponse.class, flyteidl.admin.Agent.GetTaskResponse.Builder.class);
+    }
+
+    public static final int RESOURCE_FIELD_NUMBER = 1;
+    private flyteidl.admin.Agent.resource resource_;
+    /**
+     * <code>.flyteidl.admin.resource resource = 1;</code>
+     */
+    public boolean hasResource() {
+      return resource_ != null;
+    }
+    /**
+     * <code>.flyteidl.admin.resource resource = 1;</code>
+     */
+    public flyteidl.admin.Agent.resource getResource() {
+      return resource_ == null ? flyteidl.admin.Agent.resource.getDefaultInstance() : resource_;
+    }
+    /**
+     * <code>.flyteidl.admin.resource resource = 1;</code>
+     */
+    public flyteidl.admin.Agent.resourceOrBuilder getResourceOrBuilder() {
+      return getResource();
+    }
+
+    private byte memoizedIsInitialized = -1;
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      if (resource_ != null) {
+        output.writeMessage(1, getResource());
+      }
+      unknownFields.writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (resource_ != null) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(1, getResource());
+      }
+      size += unknownFields.getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof flyteidl.admin.Agent.GetTaskResponse)) {
+        return super.equals(obj);
+      }
+      flyteidl.admin.Agent.GetTaskResponse other = (flyteidl.admin.Agent.GetTaskResponse) obj;
+
+      if (hasResource() != other.hasResource()) return false;
+      if (hasResource()) {
+        if (!getResource()
+            .equals(other.getResource())) return false;
+      }
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      if (hasResource()) {
+        hash = (37 * hash) + RESOURCE_FIELD_NUMBER;
+        hash = (53 * hash) + getResource().hashCode();
+      }
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static flyteidl.admin.Agent.GetTaskResponse parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static flyteidl.admin.Agent.GetTaskResponse parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static flyteidl.admin.Agent.GetTaskResponse parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static flyteidl.admin.Agent.GetTaskResponse parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static flyteidl.admin.Agent.GetTaskResponse parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static flyteidl.admin.Agent.GetTaskResponse parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static flyteidl.admin.Agent.GetTaskResponse parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static flyteidl.admin.Agent.GetTaskResponse parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static flyteidl.admin.Agent.GetTaskResponse parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+    public static flyteidl.admin.Agent.GetTaskResponse parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static flyteidl.admin.Agent.GetTaskResponse parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static flyteidl.admin.Agent.GetTaskResponse parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(flyteidl.admin.Agent.GetTaskResponse prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * <pre>
+     * Response to get an individual task resource.
+     * </pre>
+     *
+     * Protobuf type {@code flyteidl.admin.GetTaskResponse}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:flyteidl.admin.GetTaskResponse)
+        flyteidl.admin.Agent.GetTaskResponseOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return flyteidl.admin.Agent.internal_static_flyteidl_admin_GetTaskResponse_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return flyteidl.admin.Agent.internal_static_flyteidl_admin_GetTaskResponse_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                flyteidl.admin.Agent.GetTaskResponse.class, flyteidl.admin.Agent.GetTaskResponse.Builder.class);
+      }
+
+      // Construct using flyteidl.admin.Agent.GetTaskResponse.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
+      }
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        if (resourceBuilder_ == null) {
+          resource_ = null;
+        } else {
+          resource_ = null;
+          resourceBuilder_ = null;
+        }
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return flyteidl.admin.Agent.internal_static_flyteidl_admin_GetTaskResponse_descriptor;
+      }
+
+      @java.lang.Override
+      public flyteidl.admin.Agent.GetTaskResponse getDefaultInstanceForType() {
+        return flyteidl.admin.Agent.GetTaskResponse.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public flyteidl.admin.Agent.GetTaskResponse build() {
+        flyteidl.admin.Agent.GetTaskResponse result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public flyteidl.admin.Agent.GetTaskResponse buildPartial() {
+        flyteidl.admin.Agent.GetTaskResponse result = new flyteidl.admin.Agent.GetTaskResponse(this);
+        if (resourceBuilder_ == null) {
+          result.resource_ = resource_;
+        } else {
+          result.resource_ = resourceBuilder_.build();
+        }
+        onBuilt();
+        return result;
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.setField(field, value);
+      }
+      @java.lang.Override
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+      @java.lang.Override
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof flyteidl.admin.Agent.GetTaskResponse) {
+          return mergeFrom((flyteidl.admin.Agent.GetTaskResponse)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(flyteidl.admin.Agent.GetTaskResponse other) {
+        if (other == flyteidl.admin.Agent.GetTaskResponse.getDefaultInstance()) return this;
+        if (other.hasResource()) {
+          mergeResource(other.getResource());
+        }
+        this.mergeUnknownFields(other.unknownFields);
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        flyteidl.admin.Agent.GetTaskResponse parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (flyteidl.admin.Agent.GetTaskResponse) e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+
+      private flyteidl.admin.Agent.resource resource_;
+      private com.google.protobuf.SingleFieldBuilderV3<
+          flyteidl.admin.Agent.resource, flyteidl.admin.Agent.resource.Builder, flyteidl.admin.Agent.resourceOrBuilder> resourceBuilder_;
+      /**
+       * <code>.flyteidl.admin.resource resource = 1;</code>
+       */
+      public boolean hasResource() {
+        return resourceBuilder_ != null || resource_ != null;
+      }
+      /**
+       * <code>.flyteidl.admin.resource resource = 1;</code>
+       */
+      public flyteidl.admin.Agent.resource getResource() {
+        if (resourceBuilder_ == null) {
+          return resource_ == null ? flyteidl.admin.Agent.resource.getDefaultInstance() : resource_;
+        } else {
+          return resourceBuilder_.getMessage();
+        }
+      }
+      /**
+       * <code>.flyteidl.admin.resource resource = 1;</code>
+       */
+      public Builder setResource(flyteidl.admin.Agent.resource value) {
+        if (resourceBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          resource_ = value;
+          onChanged();
+        } else {
+          resourceBuilder_.setMessage(value);
+        }
+
+        return this;
+      }
+      /**
+       * <code>.flyteidl.admin.resource resource = 1;</code>
+       */
+      public Builder setResource(
+          flyteidl.admin.Agent.resource.Builder builderForValue) {
+        if (resourceBuilder_ == null) {
+          resource_ = builderForValue.build();
+          onChanged();
+        } else {
+          resourceBuilder_.setMessage(builderForValue.build());
+        }
+
+        return this;
+      }
+      /**
+       * <code>.flyteidl.admin.resource resource = 1;</code>
+       */
+      public Builder mergeResource(flyteidl.admin.Agent.resource value) {
+        if (resourceBuilder_ == null) {
+          if (resource_ != null) {
+            resource_ =
+              flyteidl.admin.Agent.resource.newBuilder(resource_).mergeFrom(value).buildPartial();
+          } else {
+            resource_ = value;
+          }
+          onChanged();
+        } else {
+          resourceBuilder_.mergeFrom(value);
+        }
+
+        return this;
+      }
+      /**
+       * <code>.flyteidl.admin.resource resource = 1;</code>
+       */
+      public Builder clearResource() {
+        if (resourceBuilder_ == null) {
+          resource_ = null;
+          onChanged();
+        } else {
+          resource_ = null;
+          resourceBuilder_ = null;
+        }
+
+        return this;
+      }
+      /**
+       * <code>.flyteidl.admin.resource resource = 1;</code>
+       */
+      public flyteidl.admin.Agent.resource.Builder getResourceBuilder() {
+        
+        onChanged();
+        return getResourceFieldBuilder().getBuilder();
+      }
+      /**
+       * <code>.flyteidl.admin.resource resource = 1;</code>
+       */
+      public flyteidl.admin.Agent.resourceOrBuilder getResourceOrBuilder() {
+        if (resourceBuilder_ != null) {
+          return resourceBuilder_.getMessageOrBuilder();
+        } else {
+          return resource_ == null ?
+              flyteidl.admin.Agent.resource.getDefaultInstance() : resource_;
+        }
+      }
+      /**
+       * <code>.flyteidl.admin.resource resource = 1;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+          flyteidl.admin.Agent.resource, flyteidl.admin.Agent.resource.Builder, flyteidl.admin.Agent.resourceOrBuilder> 
+          getResourceFieldBuilder() {
+        if (resourceBuilder_ == null) {
+          resourceBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              flyteidl.admin.Agent.resource, flyteidl.admin.Agent.resource.Builder, flyteidl.admin.Agent.resourceOrBuilder>(
+                  getResource(),
+                  getParentForChildren(),
+                  isClean());
+          resource_ = null;
+        }
+        return resourceBuilder_;
+      }
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+
+      // @@protoc_insertion_point(builder_scope:flyteidl.admin.GetTaskResponse)
+    }
+
+    // @@protoc_insertion_point(class_scope:flyteidl.admin.GetTaskResponse)
+    private static final flyteidl.admin.Agent.GetTaskResponse DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new flyteidl.admin.Agent.GetTaskResponse();
+    }
+
+    public static flyteidl.admin.Agent.GetTaskResponse getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<GetTaskResponse>
+        PARSER = new com.google.protobuf.AbstractParser<GetTaskResponse>() {
+      @java.lang.Override
+      public GetTaskResponse parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new GetTaskResponse(input, extensionRegistry);
+      }
+    };
+
+    public static com.google.protobuf.Parser<GetTaskResponse> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<GetTaskResponse> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public flyteidl.admin.Agent.GetTaskResponse getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
+  public interface resourceOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:flyteidl.admin.resource)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
      * <pre>
      * The state of the execution is used to control its visibility in the UI/CLI.
      * </pre>
@@ -2650,22 +3126,18 @@ public final class Agent {
     flyteidl.core.Literals.LiteralMapOrBuilder getOutputsOrBuilder();
   }
   /**
-   * <pre>
-   * Response to get an individual task state.
-   * </pre>
-   *
-   * Protobuf type {@code flyteidl.admin.GetTaskResponse}
+   * Protobuf type {@code flyteidl.admin.resource}
    */
-  public  static final class GetTaskResponse extends
+  public  static final class resource extends
       com.google.protobuf.GeneratedMessageV3 implements
-      // @@protoc_insertion_point(message_implements:flyteidl.admin.GetTaskResponse)
-      GetTaskResponseOrBuilder {
+      // @@protoc_insertion_point(message_implements:flyteidl.admin.resource)
+      resourceOrBuilder {
   private static final long serialVersionUID = 0L;
-    // Use GetTaskResponse.newBuilder() to construct.
-    private GetTaskResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+    // Use resource.newBuilder() to construct.
+    private resource(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
     }
-    private GetTaskResponse() {
+    private resource() {
       state_ = 0;
     }
 
@@ -2674,7 +3146,7 @@ public final class Agent {
     getUnknownFields() {
       return this.unknownFields;
     }
-    private GetTaskResponse(
+    private resource(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
@@ -2733,15 +3205,15 @@ public final class Agent {
     }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return flyteidl.admin.Agent.internal_static_flyteidl_admin_GetTaskResponse_descriptor;
+      return flyteidl.admin.Agent.internal_static_flyteidl_admin_resource_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return flyteidl.admin.Agent.internal_static_flyteidl_admin_GetTaskResponse_fieldAccessorTable
+      return flyteidl.admin.Agent.internal_static_flyteidl_admin_resource_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              flyteidl.admin.Agent.GetTaskResponse.class, flyteidl.admin.Agent.GetTaskResponse.Builder.class);
+              flyteidl.admin.Agent.resource.class, flyteidl.admin.Agent.resource.Builder.class);
     }
 
     public static final int STATE_FIELD_NUMBER = 1;
@@ -2855,10 +3327,10 @@ public final class Agent {
       if (obj == this) {
        return true;
       }
-      if (!(obj instanceof flyteidl.admin.Agent.GetTaskResponse)) {
+      if (!(obj instanceof flyteidl.admin.Agent.resource)) {
         return super.equals(obj);
       }
-      flyteidl.admin.Agent.GetTaskResponse other = (flyteidl.admin.Agent.GetTaskResponse) obj;
+      flyteidl.admin.Agent.resource other = (flyteidl.admin.Agent.resource) obj;
 
       if (state_ != other.state_) return false;
       if (hasOutputs() != other.hasOutputs()) return false;
@@ -2888,69 +3360,69 @@ public final class Agent {
       return hash;
     }
 
-    public static flyteidl.admin.Agent.GetTaskResponse parseFrom(
+    public static flyteidl.admin.Agent.resource parseFrom(
         java.nio.ByteBuffer data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static flyteidl.admin.Agent.GetTaskResponse parseFrom(
+    public static flyteidl.admin.Agent.resource parseFrom(
         java.nio.ByteBuffer data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static flyteidl.admin.Agent.GetTaskResponse parseFrom(
+    public static flyteidl.admin.Agent.resource parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static flyteidl.admin.Agent.GetTaskResponse parseFrom(
+    public static flyteidl.admin.Agent.resource parseFrom(
         com.google.protobuf.ByteString data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static flyteidl.admin.Agent.GetTaskResponse parseFrom(byte[] data)
+    public static flyteidl.admin.Agent.resource parseFrom(byte[] data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static flyteidl.admin.Agent.GetTaskResponse parseFrom(
+    public static flyteidl.admin.Agent.resource parseFrom(
         byte[] data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static flyteidl.admin.Agent.GetTaskResponse parseFrom(java.io.InputStream input)
+    public static flyteidl.admin.Agent.resource parseFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
-    public static flyteidl.admin.Agent.GetTaskResponse parseFrom(
+    public static flyteidl.admin.Agent.resource parseFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
-    public static flyteidl.admin.Agent.GetTaskResponse parseDelimitedFrom(java.io.InputStream input)
+    public static flyteidl.admin.Agent.resource parseDelimitedFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input);
     }
-    public static flyteidl.admin.Agent.GetTaskResponse parseDelimitedFrom(
+    public static flyteidl.admin.Agent.resource parseDelimitedFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
     }
-    public static flyteidl.admin.Agent.GetTaskResponse parseFrom(
+    public static flyteidl.admin.Agent.resource parseFrom(
         com.google.protobuf.CodedInputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
-    public static flyteidl.admin.Agent.GetTaskResponse parseFrom(
+    public static flyteidl.admin.Agent.resource parseFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
@@ -2963,7 +3435,7 @@ public final class Agent {
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
     }
-    public static Builder newBuilder(flyteidl.admin.Agent.GetTaskResponse prototype) {
+    public static Builder newBuilder(flyteidl.admin.Agent.resource prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
     @java.lang.Override
@@ -2979,30 +3451,26 @@ public final class Agent {
       return builder;
     }
     /**
-     * <pre>
-     * Response to get an individual task state.
-     * </pre>
-     *
-     * Protobuf type {@code flyteidl.admin.GetTaskResponse}
+     * Protobuf type {@code flyteidl.admin.resource}
      */
     public static final class Builder extends
         com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-        // @@protoc_insertion_point(builder_implements:flyteidl.admin.GetTaskResponse)
-        flyteidl.admin.Agent.GetTaskResponseOrBuilder {
+        // @@protoc_insertion_point(builder_implements:flyteidl.admin.resource)
+        flyteidl.admin.Agent.resourceOrBuilder {
       public static final com.google.protobuf.Descriptors.Descriptor
           getDescriptor() {
-        return flyteidl.admin.Agent.internal_static_flyteidl_admin_GetTaskResponse_descriptor;
+        return flyteidl.admin.Agent.internal_static_flyteidl_admin_resource_descriptor;
       }
 
       @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
-        return flyteidl.admin.Agent.internal_static_flyteidl_admin_GetTaskResponse_fieldAccessorTable
+        return flyteidl.admin.Agent.internal_static_flyteidl_admin_resource_fieldAccessorTable
             .ensureFieldAccessorsInitialized(
-                flyteidl.admin.Agent.GetTaskResponse.class, flyteidl.admin.Agent.GetTaskResponse.Builder.class);
+                flyteidl.admin.Agent.resource.class, flyteidl.admin.Agent.resource.Builder.class);
       }
 
-      // Construct using flyteidl.admin.Agent.GetTaskResponse.newBuilder()
+      // Construct using flyteidl.admin.Agent.resource.newBuilder()
       private Builder() {
         maybeForceBuilderInitialization();
       }
@@ -3034,17 +3502,17 @@ public final class Agent {
       @java.lang.Override
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
-        return flyteidl.admin.Agent.internal_static_flyteidl_admin_GetTaskResponse_descriptor;
+        return flyteidl.admin.Agent.internal_static_flyteidl_admin_resource_descriptor;
       }
 
       @java.lang.Override
-      public flyteidl.admin.Agent.GetTaskResponse getDefaultInstanceForType() {
-        return flyteidl.admin.Agent.GetTaskResponse.getDefaultInstance();
+      public flyteidl.admin.Agent.resource getDefaultInstanceForType() {
+        return flyteidl.admin.Agent.resource.getDefaultInstance();
       }
 
       @java.lang.Override
-      public flyteidl.admin.Agent.GetTaskResponse build() {
-        flyteidl.admin.Agent.GetTaskResponse result = buildPartial();
+      public flyteidl.admin.Agent.resource build() {
+        flyteidl.admin.Agent.resource result = buildPartial();
         if (!result.isInitialized()) {
           throw newUninitializedMessageException(result);
         }
@@ -3052,8 +3520,8 @@ public final class Agent {
       }
 
       @java.lang.Override
-      public flyteidl.admin.Agent.GetTaskResponse buildPartial() {
-        flyteidl.admin.Agent.GetTaskResponse result = new flyteidl.admin.Agent.GetTaskResponse(this);
+      public flyteidl.admin.Agent.resource buildPartial() {
+        flyteidl.admin.Agent.resource result = new flyteidl.admin.Agent.resource(this);
         result.state_ = state_;
         if (outputsBuilder_ == null) {
           result.outputs_ = outputs_;
@@ -3098,16 +3566,16 @@ public final class Agent {
       }
       @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof flyteidl.admin.Agent.GetTaskResponse) {
-          return mergeFrom((flyteidl.admin.Agent.GetTaskResponse)other);
+        if (other instanceof flyteidl.admin.Agent.resource) {
+          return mergeFrom((flyteidl.admin.Agent.resource)other);
         } else {
           super.mergeFrom(other);
           return this;
         }
       }
 
-      public Builder mergeFrom(flyteidl.admin.Agent.GetTaskResponse other) {
-        if (other == flyteidl.admin.Agent.GetTaskResponse.getDefaultInstance()) return this;
+      public Builder mergeFrom(flyteidl.admin.Agent.resource other) {
+        if (other == flyteidl.admin.Agent.resource.getDefaultInstance()) return this;
         if (other.state_ != 0) {
           setStateValue(other.getStateValue());
         }
@@ -3129,11 +3597,11 @@ public final class Agent {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        flyteidl.admin.Agent.GetTaskResponse parsedMessage = null;
+        flyteidl.admin.Agent.resource parsedMessage = null;
         try {
           parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (flyteidl.admin.Agent.GetTaskResponse) e.getUnfinishedMessage();
+          parsedMessage = (flyteidl.admin.Agent.resource) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
           if (parsedMessage != null) {
@@ -3391,41 +3859,41 @@ public final class Agent {
       }
 
 
-      // @@protoc_insertion_point(builder_scope:flyteidl.admin.GetTaskResponse)
+      // @@protoc_insertion_point(builder_scope:flyteidl.admin.resource)
     }
 
-    // @@protoc_insertion_point(class_scope:flyteidl.admin.GetTaskResponse)
-    private static final flyteidl.admin.Agent.GetTaskResponse DEFAULT_INSTANCE;
+    // @@protoc_insertion_point(class_scope:flyteidl.admin.resource)
+    private static final flyteidl.admin.Agent.resource DEFAULT_INSTANCE;
     static {
-      DEFAULT_INSTANCE = new flyteidl.admin.Agent.GetTaskResponse();
+      DEFAULT_INSTANCE = new flyteidl.admin.Agent.resource();
     }
 
-    public static flyteidl.admin.Agent.GetTaskResponse getDefaultInstance() {
+    public static flyteidl.admin.Agent.resource getDefaultInstance() {
       return DEFAULT_INSTANCE;
     }
 
-    private static final com.google.protobuf.Parser<GetTaskResponse>
-        PARSER = new com.google.protobuf.AbstractParser<GetTaskResponse>() {
+    private static final com.google.protobuf.Parser<resource>
+        PARSER = new com.google.protobuf.AbstractParser<resource>() {
       @java.lang.Override
-      public GetTaskResponse parsePartialFrom(
+      public resource parsePartialFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new GetTaskResponse(input, extensionRegistry);
+        return new resource(input, extensionRegistry);
       }
     };
 
-    public static com.google.protobuf.Parser<GetTaskResponse> parser() {
+    public static com.google.protobuf.Parser<resource> parser() {
       return PARSER;
     }
 
     @java.lang.Override
-    public com.google.protobuf.Parser<GetTaskResponse> getParserForType() {
+    public com.google.protobuf.Parser<resource> getParserForType() {
       return PARSER;
     }
 
     @java.lang.Override
-    public flyteidl.admin.Agent.GetTaskResponse getDefaultInstanceForType() {
+    public flyteidl.admin.Agent.resource getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
 
@@ -4637,6 +5105,11 @@ public final class Agent {
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_flyteidl_admin_GetTaskResponse_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_flyteidl_admin_resource_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_flyteidl_admin_resource_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_flyteidl_admin_DeleteTaskRequest_descriptor;
   private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
@@ -4661,18 +5134,20 @@ public final class Agent {
       "erface.proto\"\204\001\n\021CreateTaskRequest\022)\n\006in" +
       "puts\030\001 \001(\0132\031.flyteidl.core.LiteralMap\022-\n" +
       "\010template\030\002 \001(\0132\033.flyteidl.core.TaskTemp" +
-      "late\022\025\n\routput_prefix\030\003 \001(\t\"$\n\022CreateTas" +
-      "kResponse\022\016\n\006job_id\030\001 \001(\t\"3\n\016GetTaskRequ" +
-      "est\022\021\n\ttask_type\030\001 \001(\t\022\016\n\006job_id\030\002 \001(\t\"c" +
-      "\n\017GetTaskResponse\022$\n\005state\030\001 \001(\0162\025.flyte" +
-      "idl.admin.State\022*\n\007outputs\030\002 \001(\0132\031.flyte" +
-      "idl.core.LiteralMap\"6\n\021DeleteTaskRequest" +
-      "\022\021\n\ttask_type\030\001 \001(\t\022\016\n\006job_id\030\002 \001(\t\"\024\n\022D" +
-      "eleteTaskResponse*^\n\005State\022\025\n\021RETRYABLE_" +
-      "FAILURE\020\000\022\025\n\021PERMANENT_FAILURE\020\001\022\013\n\007PEND" +
-      "ING\020\002\022\013\n\007RUNNING\020\003\022\r\n\tSUCCEEDED\020\004B7Z5git" +
-      "hub.com/flyteorg/flyteidl/gen/pb-go/flyt" +
-      "eidl/adminb\006proto3"
+      "late\022\025\n\routput_prefix\030\003 \001(\t\"+\n\022CreateTas" +
+      "kResponse\022\025\n\rresource_meta\030\001 \001(\014\":\n\016GetT" +
+      "askRequest\022\021\n\ttask_type\030\001 \001(\t\022\025\n\rresourc" +
+      "e_meta\030\002 \001(\014\"=\n\017GetTaskResponse\022*\n\010resou" +
+      "rce\030\001 \001(\0132\030.flyteidl.admin.resource\"\\\n\010r" +
+      "esource\022$\n\005state\030\001 \001(\0162\025.flyteidl.admin." +
+      "State\022*\n\007outputs\030\002 \001(\0132\031.flyteidl.core.L" +
+      "iteralMap\"6\n\021DeleteTaskRequest\022\021\n\ttask_t" +
+      "ype\030\001 \001(\t\022\016\n\006job_id\030\002 \001(\t\"\024\n\022DeleteTaskR" +
+      "esponse*^\n\005State\022\025\n\021RETRYABLE_FAILURE\020\000\022" +
+      "\025\n\021PERMANENT_FAILURE\020\001\022\013\n\007PENDING\020\002\022\013\n\007R" +
+      "UNNING\020\003\022\r\n\tSUCCEEDED\020\004B7Z5github.com/fl" +
+      "yteorg/flyteidl/gen/pb-go/flyteidl/admin" +
+      "b\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
@@ -4700,27 +5175,33 @@ public final class Agent {
     internal_static_flyteidl_admin_CreateTaskResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_flyteidl_admin_CreateTaskResponse_descriptor,
-        new java.lang.String[] { "JobId", });
+        new java.lang.String[] { "ResourceMeta", });
     internal_static_flyteidl_admin_GetTaskRequest_descriptor =
       getDescriptor().getMessageTypes().get(2);
     internal_static_flyteidl_admin_GetTaskRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_flyteidl_admin_GetTaskRequest_descriptor,
-        new java.lang.String[] { "TaskType", "JobId", });
+        new java.lang.String[] { "TaskType", "ResourceMeta", });
     internal_static_flyteidl_admin_GetTaskResponse_descriptor =
       getDescriptor().getMessageTypes().get(3);
     internal_static_flyteidl_admin_GetTaskResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_flyteidl_admin_GetTaskResponse_descriptor,
+        new java.lang.String[] { "Resource", });
+    internal_static_flyteidl_admin_resource_descriptor =
+      getDescriptor().getMessageTypes().get(4);
+    internal_static_flyteidl_admin_resource_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_flyteidl_admin_resource_descriptor,
         new java.lang.String[] { "State", "Outputs", });
     internal_static_flyteidl_admin_DeleteTaskRequest_descriptor =
-      getDescriptor().getMessageTypes().get(4);
+      getDescriptor().getMessageTypes().get(5);
     internal_static_flyteidl_admin_DeleteTaskRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_flyteidl_admin_DeleteTaskRequest_descriptor,
         new java.lang.String[] { "TaskType", "JobId", });
     internal_static_flyteidl_admin_DeleteTaskResponse_descriptor =
-      getDescriptor().getMessageTypes().get(5);
+      getDescriptor().getMessageTypes().get(6);
     internal_static_flyteidl_admin_DeleteTaskResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_flyteidl_admin_DeleteTaskResponse_descriptor,

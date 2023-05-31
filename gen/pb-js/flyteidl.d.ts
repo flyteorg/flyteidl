@@ -7573,8 +7573,8 @@ export namespace flyteidl {
         /** Properties of a CreateTaskResponse. */
         interface ICreateTaskResponse {
 
-            /** CreateTaskResponse jobId */
-            jobId?: (string|null);
+            /** CreateTaskResponse resourceMeta */
+            resourceMeta?: (Uint8Array|null);
         }
 
         /** Represents a CreateTaskResponse. */
@@ -7586,8 +7586,8 @@ export namespace flyteidl {
              */
             constructor(properties?: flyteidl.admin.ICreateTaskResponse);
 
-            /** CreateTaskResponse jobId. */
-            public jobId: string;
+            /** CreateTaskResponse resourceMeta. */
+            public resourceMeta: Uint8Array;
 
             /**
              * Creates a new CreateTaskResponse instance using the specified properties.
@@ -7628,8 +7628,8 @@ export namespace flyteidl {
             /** GetTaskRequest taskType */
             taskType?: (string|null);
 
-            /** GetTaskRequest jobId */
-            jobId?: (string|null);
+            /** GetTaskRequest resourceMeta */
+            resourceMeta?: (Uint8Array|null);
         }
 
         /** Represents a GetTaskRequest. */
@@ -7644,8 +7644,8 @@ export namespace flyteidl {
             /** GetTaskRequest taskType. */
             public taskType: string;
 
-            /** GetTaskRequest jobId. */
-            public jobId: string;
+            /** GetTaskRequest resourceMeta. */
+            public resourceMeta: Uint8Array;
 
             /**
              * Creates a new GetTaskRequest instance using the specified properties.
@@ -7683,11 +7683,8 @@ export namespace flyteidl {
         /** Properties of a GetTaskResponse. */
         interface IGetTaskResponse {
 
-            /** GetTaskResponse state */
-            state?: (flyteidl.admin.State|null);
-
-            /** GetTaskResponse outputs */
-            outputs?: (flyteidl.core.ILiteralMap|null);
+            /** GetTaskResponse resource */
+            resource?: (flyteidl.admin.Iresource|null);
         }
 
         /** Represents a GetTaskResponse. */
@@ -7699,11 +7696,8 @@ export namespace flyteidl {
              */
             constructor(properties?: flyteidl.admin.IGetTaskResponse);
 
-            /** GetTaskResponse state. */
-            public state: flyteidl.admin.State;
-
-            /** GetTaskResponse outputs. */
-            public outputs?: (flyteidl.core.ILiteralMap|null);
+            /** GetTaskResponse resource. */
+            public resource?: (flyteidl.admin.Iresource|null);
 
             /**
              * Creates a new GetTaskResponse instance using the specified properties.
@@ -7732,6 +7726,64 @@ export namespace flyteidl {
 
             /**
              * Verifies a GetTaskResponse message.
+             * @param message Plain object to verify
+             * @returns `null` if valid, otherwise the reason why it is not
+             */
+            public static verify(message: { [k: string]: any }): (string|null);
+        }
+
+        /** Properties of a resource. */
+        interface Iresource {
+
+            /** resource state */
+            state?: (flyteidl.admin.State|null);
+
+            /** resource outputs */
+            outputs?: (flyteidl.core.ILiteralMap|null);
+        }
+
+        /** Represents a resource. */
+        class resource implements Iresource {
+
+            /**
+             * Constructs a new resource.
+             * @param [properties] Properties to set
+             */
+            constructor(properties?: flyteidl.admin.Iresource);
+
+            /** resource state. */
+            public state: flyteidl.admin.State;
+
+            /** resource outputs. */
+            public outputs?: (flyteidl.core.ILiteralMap|null);
+
+            /**
+             * Creates a new resource instance using the specified properties.
+             * @param [properties] Properties to set
+             * @returns resource instance
+             */
+            public static create(properties?: flyteidl.admin.Iresource): flyteidl.admin.resource;
+
+            /**
+             * Encodes the specified resource message. Does not implicitly {@link flyteidl.admin.resource.verify|verify} messages.
+             * @param message resource message or plain object to encode
+             * @param [writer] Writer to encode to
+             * @returns Writer
+             */
+            public static encode(message: flyteidl.admin.Iresource, writer?: $protobuf.Writer): $protobuf.Writer;
+
+            /**
+             * Decodes a resource message from the specified reader or buffer.
+             * @param reader Reader or buffer to decode from
+             * @param [length] Message length if known beforehand
+             * @returns resource
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): flyteidl.admin.resource;
+
+            /**
+             * Verifies a resource message.
              * @param message Plain object to verify
              * @returns `null` if valid, otherwise the reason why it is not
              */
