@@ -424,7 +424,7 @@ func (m *DeleteTaskRequest) Validate() error {
 
 	// no validation rules for TaskType
 
-	// no validation rules for JobId
+	// no validation rules for ResourceMeta
 
 	return nil
 }

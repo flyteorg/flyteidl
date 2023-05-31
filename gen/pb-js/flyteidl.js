@@ -18944,7 +18944,7 @@
                  * @memberof flyteidl.admin
                  * @interface IDeleteTaskRequest
                  * @property {string|null} [taskType] DeleteTaskRequest taskType
-                 * @property {string|null} [jobId] DeleteTaskRequest jobId
+                 * @property {Uint8Array|null} [resourceMeta] DeleteTaskRequest resourceMeta
                  */
     
                 /**
@@ -18971,12 +18971,12 @@
                 DeleteTaskRequest.prototype.taskType = "";
     
                 /**
-                 * DeleteTaskRequest jobId.
-                 * @member {string} jobId
+                 * DeleteTaskRequest resourceMeta.
+                 * @member {Uint8Array} resourceMeta
                  * @memberof flyteidl.admin.DeleteTaskRequest
                  * @instance
                  */
-                DeleteTaskRequest.prototype.jobId = "";
+                DeleteTaskRequest.prototype.resourceMeta = $util.newBuffer([]);
     
                 /**
                  * Creates a new DeleteTaskRequest instance using the specified properties.
@@ -19004,8 +19004,8 @@
                         writer = $Writer.create();
                     if (message.taskType != null && message.hasOwnProperty("taskType"))
                         writer.uint32(/* id 1, wireType 2 =*/10).string(message.taskType);
-                    if (message.jobId != null && message.hasOwnProperty("jobId"))
-                        writer.uint32(/* id 2, wireType 2 =*/18).string(message.jobId);
+                    if (message.resourceMeta != null && message.hasOwnProperty("resourceMeta"))
+                        writer.uint32(/* id 2, wireType 2 =*/18).bytes(message.resourceMeta);
                     return writer;
                 };
     
@@ -19031,7 +19031,7 @@
                             message.taskType = reader.string();
                             break;
                         case 2:
-                            message.jobId = reader.string();
+                            message.resourceMeta = reader.bytes();
                             break;
                         default:
                             reader.skipType(tag & 7);
@@ -19055,9 +19055,9 @@
                     if (message.taskType != null && message.hasOwnProperty("taskType"))
                         if (!$util.isString(message.taskType))
                             return "taskType: string expected";
-                    if (message.jobId != null && message.hasOwnProperty("jobId"))
-                        if (!$util.isString(message.jobId))
-                            return "jobId: string expected";
+                    if (message.resourceMeta != null && message.hasOwnProperty("resourceMeta"))
+                        if (!(message.resourceMeta && typeof message.resourceMeta.length === "number" || $util.isString(message.resourceMeta)))
+                            return "resourceMeta: buffer expected";
                     return null;
                 };
     

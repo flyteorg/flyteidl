@@ -60,8 +60,8 @@ message resource {
 message DeleteTaskRequest {
   // A predefined yet extensible Task type identifier.
   string task_type = 1;
-  // The unique id identifying the job.
-  string job_id = 2;
+  // Metadata about the resource to be pass to the agent.
+  bytes resource_meta = 2;
 }
 
 // Response to delete a task.

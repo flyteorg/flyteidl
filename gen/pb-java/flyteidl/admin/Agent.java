@@ -3923,21 +3923,12 @@ public final class Agent {
 
     /**
      * <pre>
-     * The unique id identifying the job.
+     * Metadata about the resource to be pass to the agent.
      * </pre>
      *
-     * <code>string job_id = 2;</code>
+     * <code>bytes resource_meta = 2;</code>
      */
-    java.lang.String getJobId();
-    /**
-     * <pre>
-     * The unique id identifying the job.
-     * </pre>
-     *
-     * <code>string job_id = 2;</code>
-     */
-    com.google.protobuf.ByteString
-        getJobIdBytes();
+    com.google.protobuf.ByteString getResourceMeta();
   }
   /**
    * <pre>
@@ -3957,7 +3948,7 @@ public final class Agent {
     }
     private DeleteTaskRequest() {
       taskType_ = "";
-      jobId_ = "";
+      resourceMeta_ = com.google.protobuf.ByteString.EMPTY;
     }
 
     @java.lang.Override
@@ -3991,9 +3982,8 @@ public final class Agent {
               break;
             }
             case 18: {
-              java.lang.String s = input.readStringRequireUtf8();
 
-              jobId_ = s;
+              resourceMeta_ = input.readBytes();
               break;
             }
             default: {
@@ -4070,46 +4060,17 @@ public final class Agent {
       }
     }
 
-    public static final int JOB_ID_FIELD_NUMBER = 2;
-    private volatile java.lang.Object jobId_;
+    public static final int RESOURCE_META_FIELD_NUMBER = 2;
+    private com.google.protobuf.ByteString resourceMeta_;
     /**
      * <pre>
-     * The unique id identifying the job.
+     * Metadata about the resource to be pass to the agent.
      * </pre>
      *
-     * <code>string job_id = 2;</code>
+     * <code>bytes resource_meta = 2;</code>
      */
-    public java.lang.String getJobId() {
-      java.lang.Object ref = jobId_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
-      } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        jobId_ = s;
-        return s;
-      }
-    }
-    /**
-     * <pre>
-     * The unique id identifying the job.
-     * </pre>
-     *
-     * <code>string job_id = 2;</code>
-     */
-    public com.google.protobuf.ByteString
-        getJobIdBytes() {
-      java.lang.Object ref = jobId_;
-      if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        jobId_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
+    public com.google.protobuf.ByteString getResourceMeta() {
+      return resourceMeta_;
     }
 
     private byte memoizedIsInitialized = -1;
@@ -4129,8 +4090,8 @@ public final class Agent {
       if (!getTaskTypeBytes().isEmpty()) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 1, taskType_);
       }
-      if (!getJobIdBytes().isEmpty()) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 2, jobId_);
+      if (!resourceMeta_.isEmpty()) {
+        output.writeBytes(2, resourceMeta_);
       }
       unknownFields.writeTo(output);
     }
@@ -4144,8 +4105,9 @@ public final class Agent {
       if (!getTaskTypeBytes().isEmpty()) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, taskType_);
       }
-      if (!getJobIdBytes().isEmpty()) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, jobId_);
+      if (!resourceMeta_.isEmpty()) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeBytesSize(2, resourceMeta_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -4164,8 +4126,8 @@ public final class Agent {
 
       if (!getTaskType()
           .equals(other.getTaskType())) return false;
-      if (!getJobId()
-          .equals(other.getJobId())) return false;
+      if (!getResourceMeta()
+          .equals(other.getResourceMeta())) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -4179,8 +4141,8 @@ public final class Agent {
       hash = (19 * hash) + getDescriptor().hashCode();
       hash = (37 * hash) + TASK_TYPE_FIELD_NUMBER;
       hash = (53 * hash) + getTaskType().hashCode();
-      hash = (37 * hash) + JOB_ID_FIELD_NUMBER;
-      hash = (53 * hash) + getJobId().hashCode();
+      hash = (37 * hash) + RESOURCE_META_FIELD_NUMBER;
+      hash = (53 * hash) + getResourceMeta().hashCode();
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -4320,7 +4282,7 @@ public final class Agent {
         super.clear();
         taskType_ = "";
 
-        jobId_ = "";
+        resourceMeta_ = com.google.protobuf.ByteString.EMPTY;
 
         return this;
       }
@@ -4349,7 +4311,7 @@ public final class Agent {
       public flyteidl.admin.Agent.DeleteTaskRequest buildPartial() {
         flyteidl.admin.Agent.DeleteTaskRequest result = new flyteidl.admin.Agent.DeleteTaskRequest(this);
         result.taskType_ = taskType_;
-        result.jobId_ = jobId_;
+        result.resourceMeta_ = resourceMeta_;
         onBuilt();
         return result;
       }
@@ -4402,9 +4364,8 @@ public final class Agent {
           taskType_ = other.taskType_;
           onChanged();
         }
-        if (!other.getJobId().isEmpty()) {
-          jobId_ = other.jobId_;
-          onChanged();
+        if (other.getResourceMeta() != com.google.protobuf.ByteString.EMPTY) {
+          setResourceMeta(other.getResourceMeta());
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -4524,91 +4485,43 @@ public final class Agent {
         return this;
       }
 
-      private java.lang.Object jobId_ = "";
+      private com.google.protobuf.ByteString resourceMeta_ = com.google.protobuf.ByteString.EMPTY;
       /**
        * <pre>
-       * The unique id identifying the job.
+       * Metadata about the resource to be pass to the agent.
        * </pre>
        *
-       * <code>string job_id = 2;</code>
+       * <code>bytes resource_meta = 2;</code>
        */
-      public java.lang.String getJobId() {
-        java.lang.Object ref = jobId_;
-        if (!(ref instanceof java.lang.String)) {
-          com.google.protobuf.ByteString bs =
-              (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
-          jobId_ = s;
-          return s;
-        } else {
-          return (java.lang.String) ref;
-        }
+      public com.google.protobuf.ByteString getResourceMeta() {
+        return resourceMeta_;
       }
       /**
        * <pre>
-       * The unique id identifying the job.
+       * Metadata about the resource to be pass to the agent.
        * </pre>
        *
-       * <code>string job_id = 2;</code>
+       * <code>bytes resource_meta = 2;</code>
        */
-      public com.google.protobuf.ByteString
-          getJobIdBytes() {
-        java.lang.Object ref = jobId_;
-        if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
-          jobId_ = b;
-          return b;
-        } else {
-          return (com.google.protobuf.ByteString) ref;
-        }
-      }
-      /**
-       * <pre>
-       * The unique id identifying the job.
-       * </pre>
-       *
-       * <code>string job_id = 2;</code>
-       */
-      public Builder setJobId(
-          java.lang.String value) {
+      public Builder setResourceMeta(com.google.protobuf.ByteString value) {
         if (value == null) {
     throw new NullPointerException();
   }
   
-        jobId_ = value;
+        resourceMeta_ = value;
         onChanged();
         return this;
       }
       /**
        * <pre>
-       * The unique id identifying the job.
+       * Metadata about the resource to be pass to the agent.
        * </pre>
        *
-       * <code>string job_id = 2;</code>
+       * <code>bytes resource_meta = 2;</code>
        */
-      public Builder clearJobId() {
+      public Builder clearResourceMeta() {
         
-        jobId_ = getDefaultInstance().getJobId();
-        onChanged();
-        return this;
-      }
-      /**
-       * <pre>
-       * The unique id identifying the job.
-       * </pre>
-       *
-       * <code>string job_id = 2;</code>
-       */
-      public Builder setJobIdBytes(
-          com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-        
-        jobId_ = value;
+        resourceMeta_ = getDefaultInstance().getResourceMeta();
         onChanged();
         return this;
       }
@@ -5141,13 +5054,13 @@ public final class Agent {
       "rce\030\001 \001(\0132\030.flyteidl.admin.resource\"\\\n\010r" +
       "esource\022$\n\005state\030\001 \001(\0162\025.flyteidl.admin." +
       "State\022*\n\007outputs\030\002 \001(\0132\031.flyteidl.core.L" +
-      "iteralMap\"6\n\021DeleteTaskRequest\022\021\n\ttask_t" +
-      "ype\030\001 \001(\t\022\016\n\006job_id\030\002 \001(\t\"\024\n\022DeleteTaskR" +
-      "esponse*^\n\005State\022\025\n\021RETRYABLE_FAILURE\020\000\022" +
-      "\025\n\021PERMANENT_FAILURE\020\001\022\013\n\007PENDING\020\002\022\013\n\007R" +
-      "UNNING\020\003\022\r\n\tSUCCEEDED\020\004B7Z5github.com/fl" +
-      "yteorg/flyteidl/gen/pb-go/flyteidl/admin" +
-      "b\006proto3"
+      "iteralMap\"=\n\021DeleteTaskRequest\022\021\n\ttask_t" +
+      "ype\030\001 \001(\t\022\025\n\rresource_meta\030\002 \001(\014\"\024\n\022Dele" +
+      "teTaskResponse*^\n\005State\022\025\n\021RETRYABLE_FAI" +
+      "LURE\020\000\022\025\n\021PERMANENT_FAILURE\020\001\022\013\n\007PENDING" +
+      "\020\002\022\013\n\007RUNNING\020\003\022\r\n\tSUCCEEDED\020\004B7Z5github" +
+      ".com/flyteorg/flyteidl/gen/pb-go/flyteid" +
+      "l/adminb\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
@@ -5199,7 +5112,7 @@ public final class Agent {
     internal_static_flyteidl_admin_DeleteTaskRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_flyteidl_admin_DeleteTaskRequest_descriptor,
-        new java.lang.String[] { "TaskType", "JobId", });
+        new java.lang.String[] { "TaskType", "ResourceMeta", });
     internal_static_flyteidl_admin_DeleteTaskResponse_descriptor =
       getDescriptor().getMessageTypes().get(6);
     internal_static_flyteidl_admin_DeleteTaskResponse_fieldAccessorTable = new

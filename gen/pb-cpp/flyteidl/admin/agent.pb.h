@@ -858,19 +858,19 @@ class DeleteTaskRequest final :
   ::std::string* release_task_type();
   void set_allocated_task_type(::std::string* task_type);
 
-  // string job_id = 2;
-  void clear_job_id();
-  static const int kJobIdFieldNumber = 2;
-  const ::std::string& job_id() const;
-  void set_job_id(const ::std::string& value);
+  // bytes resource_meta = 2;
+  void clear_resource_meta();
+  static const int kResourceMetaFieldNumber = 2;
+  const ::std::string& resource_meta() const;
+  void set_resource_meta(const ::std::string& value);
   #if LANG_CXX11
-  void set_job_id(::std::string&& value);
+  void set_resource_meta(::std::string&& value);
   #endif
-  void set_job_id(const char* value);
-  void set_job_id(const char* value, size_t size);
-  ::std::string* mutable_job_id();
-  ::std::string* release_job_id();
-  void set_allocated_job_id(::std::string* job_id);
+  void set_resource_meta(const char* value);
+  void set_resource_meta(const void* value, size_t size);
+  ::std::string* mutable_resource_meta();
+  ::std::string* release_resource_meta();
+  void set_allocated_resource_meta(::std::string* resource_meta);
 
   // @@protoc_insertion_point(class_scope:flyteidl.admin.DeleteTaskRequest)
  private:
@@ -878,7 +878,7 @@ class DeleteTaskRequest final :
 
   ::google::protobuf::internal::InternalMetadataWithArena _internal_metadata_;
   ::google::protobuf::internal::ArenaStringPtr task_type_;
-  ::google::protobuf::internal::ArenaStringPtr job_id_;
+  ::google::protobuf::internal::ArenaStringPtr resource_meta_;
   mutable ::google::protobuf::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_flyteidl_2fadmin_2fagent_2eproto;
 };
@@ -1483,57 +1483,57 @@ inline void DeleteTaskRequest::set_allocated_task_type(::std::string* task_type)
   // @@protoc_insertion_point(field_set_allocated:flyteidl.admin.DeleteTaskRequest.task_type)
 }
 
-// string job_id = 2;
-inline void DeleteTaskRequest::clear_job_id() {
-  job_id_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+// bytes resource_meta = 2;
+inline void DeleteTaskRequest::clear_resource_meta() {
+  resource_meta_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
 }
-inline const ::std::string& DeleteTaskRequest::job_id() const {
-  // @@protoc_insertion_point(field_get:flyteidl.admin.DeleteTaskRequest.job_id)
-  return job_id_.GetNoArena();
+inline const ::std::string& DeleteTaskRequest::resource_meta() const {
+  // @@protoc_insertion_point(field_get:flyteidl.admin.DeleteTaskRequest.resource_meta)
+  return resource_meta_.GetNoArena();
 }
-inline void DeleteTaskRequest::set_job_id(const ::std::string& value) {
+inline void DeleteTaskRequest::set_resource_meta(const ::std::string& value) {
   
-  job_id_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
-  // @@protoc_insertion_point(field_set:flyteidl.admin.DeleteTaskRequest.job_id)
+  resource_meta_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
+  // @@protoc_insertion_point(field_set:flyteidl.admin.DeleteTaskRequest.resource_meta)
 }
 #if LANG_CXX11
-inline void DeleteTaskRequest::set_job_id(::std::string&& value) {
+inline void DeleteTaskRequest::set_resource_meta(::std::string&& value) {
   
-  job_id_.SetNoArena(
+  resource_meta_.SetNoArena(
     &::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::move(value));
-  // @@protoc_insertion_point(field_set_rvalue:flyteidl.admin.DeleteTaskRequest.job_id)
+  // @@protoc_insertion_point(field_set_rvalue:flyteidl.admin.DeleteTaskRequest.resource_meta)
 }
 #endif
-inline void DeleteTaskRequest::set_job_id(const char* value) {
+inline void DeleteTaskRequest::set_resource_meta(const char* value) {
   GOOGLE_DCHECK(value != nullptr);
   
-  job_id_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
-  // @@protoc_insertion_point(field_set_char:flyteidl.admin.DeleteTaskRequest.job_id)
+  resource_meta_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
+  // @@protoc_insertion_point(field_set_char:flyteidl.admin.DeleteTaskRequest.resource_meta)
 }
-inline void DeleteTaskRequest::set_job_id(const char* value, size_t size) {
+inline void DeleteTaskRequest::set_resource_meta(const void* value, size_t size) {
   
-  job_id_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
+  resource_meta_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
       ::std::string(reinterpret_cast<const char*>(value), size));
-  // @@protoc_insertion_point(field_set_pointer:flyteidl.admin.DeleteTaskRequest.job_id)
+  // @@protoc_insertion_point(field_set_pointer:flyteidl.admin.DeleteTaskRequest.resource_meta)
 }
-inline ::std::string* DeleteTaskRequest::mutable_job_id() {
+inline ::std::string* DeleteTaskRequest::mutable_resource_meta() {
   
-  // @@protoc_insertion_point(field_mutable:flyteidl.admin.DeleteTaskRequest.job_id)
-  return job_id_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  // @@protoc_insertion_point(field_mutable:flyteidl.admin.DeleteTaskRequest.resource_meta)
+  return resource_meta_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
 }
-inline ::std::string* DeleteTaskRequest::release_job_id() {
-  // @@protoc_insertion_point(field_release:flyteidl.admin.DeleteTaskRequest.job_id)
+inline ::std::string* DeleteTaskRequest::release_resource_meta() {
+  // @@protoc_insertion_point(field_release:flyteidl.admin.DeleteTaskRequest.resource_meta)
   
-  return job_id_.ReleaseNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  return resource_meta_.ReleaseNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
 }
-inline void DeleteTaskRequest::set_allocated_job_id(::std::string* job_id) {
-  if (job_id != nullptr) {
+inline void DeleteTaskRequest::set_allocated_resource_meta(::std::string* resource_meta) {
+  if (resource_meta != nullptr) {
     
   } else {
     
   }
-  job_id_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), job_id);
-  // @@protoc_insertion_point(field_set_allocated:flyteidl.admin.DeleteTaskRequest.job_id)
+  resource_meta_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), resource_meta);
+  // @@protoc_insertion_point(field_set_allocated:flyteidl.admin.DeleteTaskRequest.resource_meta)
 }
 
 // -------------------------------------------------------------------

@@ -7796,8 +7796,8 @@ export namespace flyteidl {
             /** DeleteTaskRequest taskType */
             taskType?: (string|null);
 
-            /** DeleteTaskRequest jobId */
-            jobId?: (string|null);
+            /** DeleteTaskRequest resourceMeta */
+            resourceMeta?: (Uint8Array|null);
         }
 
         /** Represents a DeleteTaskRequest. */
@@ -7812,8 +7812,8 @@ export namespace flyteidl {
             /** DeleteTaskRequest taskType. */
             public taskType: string;
 
-            /** DeleteTaskRequest jobId. */
-            public jobId: string;
+            /** DeleteTaskRequest resourceMeta. */
+            public resourceMeta: Uint8Array;
 
             /**
              * Creates a new DeleteTaskRequest instance using the specified properties.

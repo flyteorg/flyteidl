@@ -60,9 +60,9 @@ pub struct DeleteTaskRequest {
     /// A predefined yet extensible Task type identifier.
     #[prost(string, tag="1")]
     pub task_type: ::prost::alloc::string::String,
-    /// The unique id identifying the job.
-    #[prost(string, tag="2")]
-    pub job_id: ::prost::alloc::string::String,
+    /// Metadata about the resource to be pass to the agent.
+    #[prost(bytes="vec", tag="2")]
+    pub resource_meta: ::prost::alloc::vec::Vec<u8>,
 }
 /// Response to delete a task.
 #[allow(clippy::derive_partial_eq_without_eq)]

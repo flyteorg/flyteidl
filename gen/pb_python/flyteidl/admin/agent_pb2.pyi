@@ -60,12 +60,12 @@ class resource(_message.Message):
     def __init__(self, state: _Optional[_Union[State, str]] = ..., outputs: _Optional[_Union[_literals_pb2.LiteralMap, _Mapping]] = ...) -> None: ...
 
 class DeleteTaskRequest(_message.Message):
-    __slots__ = ["task_type", "job_id"]
+    __slots__ = ["task_type", "resource_meta"]
     TASK_TYPE_FIELD_NUMBER: _ClassVar[int]
-    JOB_ID_FIELD_NUMBER: _ClassVar[int]
+    RESOURCE_META_FIELD_NUMBER: _ClassVar[int]
     task_type: str
-    job_id: str
-    def __init__(self, task_type: _Optional[str] = ..., job_id: _Optional[str] = ...) -> None: ...
+    resource_meta: bytes
+    def __init__(self, task_type: _Optional[str] = ..., resource_meta: _Optional[bytes] = ...) -> None: ...
 
 class DeleteTaskResponse(_message.Message):
     __slots__ = []
