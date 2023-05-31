@@ -2,7 +2,7 @@
 """Client and server classes corresponding to protobuf-defined services."""
 import grpc
 
-from flyteidl.service import agent_service_pb2 as flyteidl_dot_service_dot_agent__service__pb2
+from flyteidl.admin import agent_pb2 as flyteidl_dot_admin_dot_agent__pb2
 
 
 class AgentServiceStub(object):
@@ -17,18 +17,18 @@ class AgentServiceStub(object):
         """
         self.CreateTask = channel.unary_unary(
                 '/flyteidl.service.AgentService/CreateTask',
-                request_serializer=flyteidl_dot_service_dot_agent__service__pb2.TaskCreateRequest.SerializeToString,
-                response_deserializer=flyteidl_dot_service_dot_agent__service__pb2.TaskCreateResponse.FromString,
+                request_serializer=flyteidl_dot_admin_dot_agent__pb2.CreateTaskRequest.SerializeToString,
+                response_deserializer=flyteidl_dot_admin_dot_agent__pb2.CreateTaskResponse.FromString,
                 )
         self.GetTask = channel.unary_unary(
                 '/flyteidl.service.AgentService/GetTask',
-                request_serializer=flyteidl_dot_service_dot_agent__service__pb2.TaskGetRequest.SerializeToString,
-                response_deserializer=flyteidl_dot_service_dot_agent__service__pb2.TaskGetResponse.FromString,
+                request_serializer=flyteidl_dot_admin_dot_agent__pb2.GetTaskRequest.SerializeToString,
+                response_deserializer=flyteidl_dot_admin_dot_agent__pb2.GetTaskResponse.FromString,
                 )
         self.DeleteTask = channel.unary_unary(
                 '/flyteidl.service.AgentService/DeleteTask',
-                request_serializer=flyteidl_dot_service_dot_agent__service__pb2.TaskDeleteRequest.SerializeToString,
-                response_deserializer=flyteidl_dot_service_dot_agent__service__pb2.TaskDeleteResponse.FromString,
+                request_serializer=flyteidl_dot_admin_dot_agent__pb2.DeleteTaskRequest.SerializeToString,
+                response_deserializer=flyteidl_dot_admin_dot_agent__pb2.DeleteTaskResponse.FromString,
                 )
 
 
@@ -62,18 +62,18 @@ def add_AgentServiceServicer_to_server(servicer, server):
     rpc_method_handlers = {
             'CreateTask': grpc.unary_unary_rpc_method_handler(
                     servicer.CreateTask,
-                    request_deserializer=flyteidl_dot_service_dot_agent__service__pb2.TaskCreateRequest.FromString,
-                    response_serializer=flyteidl_dot_service_dot_agent__service__pb2.TaskCreateResponse.SerializeToString,
+                    request_deserializer=flyteidl_dot_admin_dot_agent__pb2.CreateTaskRequest.FromString,
+                    response_serializer=flyteidl_dot_admin_dot_agent__pb2.CreateTaskResponse.SerializeToString,
             ),
             'GetTask': grpc.unary_unary_rpc_method_handler(
                     servicer.GetTask,
-                    request_deserializer=flyteidl_dot_service_dot_agent__service__pb2.TaskGetRequest.FromString,
-                    response_serializer=flyteidl_dot_service_dot_agent__service__pb2.TaskGetResponse.SerializeToString,
+                    request_deserializer=flyteidl_dot_admin_dot_agent__pb2.GetTaskRequest.FromString,
+                    response_serializer=flyteidl_dot_admin_dot_agent__pb2.GetTaskResponse.SerializeToString,
             ),
             'DeleteTask': grpc.unary_unary_rpc_method_handler(
                     servicer.DeleteTask,
-                    request_deserializer=flyteidl_dot_service_dot_agent__service__pb2.TaskDeleteRequest.FromString,
-                    response_serializer=flyteidl_dot_service_dot_agent__service__pb2.TaskDeleteResponse.SerializeToString,
+                    request_deserializer=flyteidl_dot_admin_dot_agent__pb2.DeleteTaskRequest.FromString,
+                    response_serializer=flyteidl_dot_admin_dot_agent__pb2.DeleteTaskResponse.SerializeToString,
             ),
     }
     generic_handler = grpc.method_handlers_generic_handler(
@@ -98,8 +98,8 @@ class AgentService(object):
             timeout=None,
             metadata=None):
         return grpc.experimental.unary_unary(request, target, '/flyteidl.service.AgentService/CreateTask',
-            flyteidl_dot_service_dot_agent__service__pb2.TaskCreateRequest.SerializeToString,
-            flyteidl_dot_service_dot_agent__service__pb2.TaskCreateResponse.FromString,
+            flyteidl_dot_admin_dot_agent__pb2.CreateTaskRequest.SerializeToString,
+            flyteidl_dot_admin_dot_agent__pb2.CreateTaskResponse.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
@@ -115,8 +115,8 @@ class AgentService(object):
             timeout=None,
             metadata=None):
         return grpc.experimental.unary_unary(request, target, '/flyteidl.service.AgentService/GetTask',
-            flyteidl_dot_service_dot_agent__service__pb2.TaskGetRequest.SerializeToString,
-            flyteidl_dot_service_dot_agent__service__pb2.TaskGetResponse.FromString,
+            flyteidl_dot_admin_dot_agent__pb2.GetTaskRequest.SerializeToString,
+            flyteidl_dot_admin_dot_agent__pb2.GetTaskResponse.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
@@ -132,7 +132,7 @@ class AgentService(object):
             timeout=None,
             metadata=None):
         return grpc.experimental.unary_unary(request, target, '/flyteidl.service.AgentService/DeleteTask',
-            flyteidl_dot_service_dot_agent__service__pb2.TaskDeleteRequest.SerializeToString,
-            flyteidl_dot_service_dot_agent__service__pb2.TaskDeleteResponse.FromString,
+            flyteidl_dot_admin_dot_agent__pb2.DeleteTaskRequest.SerializeToString,
+            flyteidl_dot_admin_dot_agent__pb2.DeleteTaskResponse.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)

@@ -1,7 +1,7 @@
 {
   "swagger": "2.0",
   "info": {
-    "title": "flyteidl/service/agent_service.proto",
+    "title": "flyteidl/service/agent.proto",
     "version": "version not set"
   },
   "schemes": [
@@ -162,6 +162,33 @@
           "description": "The column type."
         }
       }
+    },
+    "adminCreateTaskResponse": {
+      "type": "object",
+      "properties": {
+        "job_id": {
+          "type": "string"
+        }
+      },
+      "description": "Represents a create response structure."
+    },
+    "adminDeleteTaskResponse": {
+      "type": "object",
+      "description": "Response to delete a task."
+    },
+    "adminGetTaskResponse": {
+      "type": "object",
+      "properties": {
+        "state": {
+          "$ref": "#/definitions/flyteidladminState",
+          "description": "The state of the execution is used to control its visibility in the UI/CLI."
+        },
+        "outputs": {
+          "$ref": "#/definitions/coreLiteralMap",
+          "title": "The outputs of the execution. It's typically used by sql task. Agent service will create a\nStructured dataset pointing to the query result table.\n+optional"
+        }
+      },
+      "description": "Response to get an individual task state."
     },
     "coreBinary": {
       "type": "object",
@@ -1049,14 +1076,17 @@
       "type": "object",
       "description": "Used to denote a nil/null/None assignment to a scalar value. The underlying LiteralType for Void is intentionally\nundefined since it can be assigned to a scalar of any LiteralType."
     },
-    "flyteidlserviceTaskCreateResponse": {
-      "type": "object",
-      "properties": {
-        "job_id": {
-          "type": "string"
-        }
-      },
-      "description": "Represents a create response structure."
+    "flyteidladminState": {
+      "type": "string",
+      "enum": [
+        "RETRYABLE_FAILURE",
+        "PERMANENT_FAILURE",
+        "PENDING",
+        "RUNNING",
+        "SUCCEEDED"
+      ],
+      "default": "RETRYABLE_FAILURE",
+      "description": "The state of the execution is used to control its visibility in the UI/CLI."
     },
     "protobufListValue": {
       "type": "object",
@@ -1123,36 +1153,6 @@
         }
       },
       "description": "`Value` represents a dynamically typed value which can be either\nnull, a number, a string, a boolean, a recursive struct value, or a\nlist of values. A producer of value is expected to set one of that\nvariants, absence of any variant indicates an error.\n\nThe JSON representation for `Value` is JSON value."
-    },
-    "serviceState": {
-      "type": "string",
-      "enum": [
-        "RETRYABLE_FAILURE",
-        "PERMANENT_FAILURE",
-        "PENDING",
-        "RUNNING",
-        "SUCCEEDED"
-      ],
-      "default": "RETRYABLE_FAILURE",
-      "description": "The state of the execution is used to control its visibility in the UI/CLI."
-    },
-    "serviceTaskDeleteResponse": {
-      "type": "object",
-      "description": "Response to delete a task."
-    },
-    "serviceTaskGetResponse": {
-      "type": "object",
-      "properties": {
-        "state": {
-          "$ref": "#/definitions/serviceState",
-          "description": "The state of the execution is used to control its visibility in the UI/CLI."
-        },
-        "outputs": {
-          "$ref": "#/definitions/coreLiteralMap",
-          "title": "The outputs of the execution. It's typically used by sql task. Agent service will create a\nStructured dataset pointing to the query result table.\n+optional"
-        }
-      },
-      "description": "Response to get an individual task state."
     }
   }
 }
