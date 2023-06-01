@@ -44,10 +44,10 @@ message GetTaskRequest {
 
 // Response to get an individual task resource.
 message GetTaskResponse {
-  resource resource = 1;
+  Resource resource = 1;
 }
 
-message resource {
+message Resource {
   // The state of the execution is used to control its visibility in the UI/CLI.
   State state = 1;
   // The outputs of the execution. It's typically used by sql task. Agent service will create a

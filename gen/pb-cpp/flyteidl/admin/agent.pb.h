@@ -72,9 +72,9 @@ extern GetTaskRequestDefaultTypeInternal _GetTaskRequest_default_instance_;
 class GetTaskResponse;
 class GetTaskResponseDefaultTypeInternal;
 extern GetTaskResponseDefaultTypeInternal _GetTaskResponse_default_instance_;
-class resource;
-class resourceDefaultTypeInternal;
-extern resourceDefaultTypeInternal _resource_default_instance_;
+class Resource;
+class ResourceDefaultTypeInternal;
+extern ResourceDefaultTypeInternal _Resource_default_instance_;
 }  // namespace admin
 }  // namespace flyteidl
 namespace google {
@@ -85,7 +85,7 @@ template<> ::flyteidl::admin::DeleteTaskRequest* Arena::CreateMaybeMessage<::fly
 template<> ::flyteidl::admin::DeleteTaskResponse* Arena::CreateMaybeMessage<::flyteidl::admin::DeleteTaskResponse>(Arena*);
 template<> ::flyteidl::admin::GetTaskRequest* Arena::CreateMaybeMessage<::flyteidl::admin::GetTaskRequest>(Arena*);
 template<> ::flyteidl::admin::GetTaskResponse* Arena::CreateMaybeMessage<::flyteidl::admin::GetTaskResponse>(Arena*);
-template<> ::flyteidl::admin::resource* Arena::CreateMaybeMessage<::flyteidl::admin::resource>(Arena*);
+template<> ::flyteidl::admin::Resource* Arena::CreateMaybeMessage<::flyteidl::admin::Resource>(Arena*);
 }  // namespace protobuf
 }  // namespace google
 namespace flyteidl {
@@ -607,45 +607,45 @@ class GetTaskResponse final :
 
   // accessors -------------------------------------------------------
 
-  // .flyteidl.admin.resource resource = 1;
+  // .flyteidl.admin.Resource resource = 1;
   bool has_resource() const;
   void clear_resource();
   static const int kResourceFieldNumber = 1;
-  const ::flyteidl::admin::resource& resource() const;
-  ::flyteidl::admin::resource* release_resource();
-  ::flyteidl::admin::resource* mutable_resource();
-  void set_allocated_resource(::flyteidl::admin::resource* resource);
+  const ::flyteidl::admin::Resource& resource() const;
+  ::flyteidl::admin::Resource* release_resource();
+  ::flyteidl::admin::Resource* mutable_resource();
+  void set_allocated_resource(::flyteidl::admin::Resource* resource);
 
   // @@protoc_insertion_point(class_scope:flyteidl.admin.GetTaskResponse)
  private:
   class HasBitSetters;
 
   ::google::protobuf::internal::InternalMetadataWithArena _internal_metadata_;
-  ::flyteidl::admin::resource* resource_;
+  ::flyteidl::admin::Resource* resource_;
   mutable ::google::protobuf::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_flyteidl_2fadmin_2fagent_2eproto;
 };
 // -------------------------------------------------------------------
 
-class resource final :
-    public ::google::protobuf::Message /* @@protoc_insertion_point(class_definition:flyteidl.admin.resource) */ {
+class Resource final :
+    public ::google::protobuf::Message /* @@protoc_insertion_point(class_definition:flyteidl.admin.Resource) */ {
  public:
-  resource();
-  virtual ~resource();
+  Resource();
+  virtual ~Resource();
 
-  resource(const resource& from);
+  Resource(const Resource& from);
 
-  inline resource& operator=(const resource& from) {
+  inline Resource& operator=(const Resource& from) {
     CopyFrom(from);
     return *this;
   }
   #if LANG_CXX11
-  resource(resource&& from) noexcept
-    : resource() {
+  Resource(Resource&& from) noexcept
+    : Resource() {
     *this = ::std::move(from);
   }
 
-  inline resource& operator=(resource&& from) noexcept {
+  inline Resource& operator=(Resource&& from) noexcept {
     if (GetArenaNoVirtual() == from.GetArenaNoVirtual()) {
       if (this != &from) InternalSwap(&from);
     } else {
@@ -657,34 +657,34 @@ class resource final :
   static const ::google::protobuf::Descriptor* descriptor() {
     return default_instance().GetDescriptor();
   }
-  static const resource& default_instance();
+  static const Resource& default_instance();
 
   static void InitAsDefaultInstance();  // FOR INTERNAL USE ONLY
-  static inline const resource* internal_default_instance() {
-    return reinterpret_cast<const resource*>(
-               &_resource_default_instance_);
+  static inline const Resource* internal_default_instance() {
+    return reinterpret_cast<const Resource*>(
+               &_Resource_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
     4;
 
-  void Swap(resource* other);
-  friend void swap(resource& a, resource& b) {
+  void Swap(Resource* other);
+  friend void swap(Resource& a, Resource& b) {
     a.Swap(&b);
   }
 
   // implements Message ----------------------------------------------
 
-  inline resource* New() const final {
-    return CreateMaybeMessage<resource>(nullptr);
+  inline Resource* New() const final {
+    return CreateMaybeMessage<Resource>(nullptr);
   }
 
-  resource* New(::google::protobuf::Arena* arena) const final {
-    return CreateMaybeMessage<resource>(arena);
+  Resource* New(::google::protobuf::Arena* arena) const final {
+    return CreateMaybeMessage<Resource>(arena);
   }
   void CopyFrom(const ::google::protobuf::Message& from) final;
   void MergeFrom(const ::google::protobuf::Message& from) final;
-  void CopyFrom(const resource& from);
-  void MergeFrom(const resource& from);
+  void CopyFrom(const Resource& from);
+  void MergeFrom(const Resource& from);
   PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
   bool IsInitialized() const final;
 
@@ -706,7 +706,7 @@ class resource final :
   void SharedCtor();
   void SharedDtor();
   void SetCachedSize(int size) const final;
-  void InternalSwap(resource* other);
+  void InternalSwap(Resource* other);
   private:
   inline ::google::protobuf::Arena* GetArenaNoVirtual() const {
     return nullptr;
@@ -737,7 +737,7 @@ class resource final :
   ::flyteidl::admin::State state() const;
   void set_state(::flyteidl::admin::State value);
 
-  // @@protoc_insertion_point(class_scope:flyteidl.admin.resource)
+  // @@protoc_insertion_point(class_scope:flyteidl.admin.Resource)
  private:
   class HasBitSetters;
 
@@ -1312,7 +1312,7 @@ inline void GetTaskRequest::set_allocated_resource_meta(::std::string* resource_
 
 // GetTaskResponse
 
-// .flyteidl.admin.resource resource = 1;
+// .flyteidl.admin.Resource resource = 1;
 inline bool GetTaskResponse::has_resource() const {
   return this != internal_default_instance() && resource_ != nullptr;
 }
@@ -1322,29 +1322,29 @@ inline void GetTaskResponse::clear_resource() {
   }
   resource_ = nullptr;
 }
-inline const ::flyteidl::admin::resource& GetTaskResponse::resource() const {
-  const ::flyteidl::admin::resource* p = resource_;
+inline const ::flyteidl::admin::Resource& GetTaskResponse::resource() const {
+  const ::flyteidl::admin::Resource* p = resource_;
   // @@protoc_insertion_point(field_get:flyteidl.admin.GetTaskResponse.resource)
-  return p != nullptr ? *p : *reinterpret_cast<const ::flyteidl::admin::resource*>(
-      &::flyteidl::admin::_resource_default_instance_);
+  return p != nullptr ? *p : *reinterpret_cast<const ::flyteidl::admin::Resource*>(
+      &::flyteidl::admin::_Resource_default_instance_);
 }
-inline ::flyteidl::admin::resource* GetTaskResponse::release_resource() {
+inline ::flyteidl::admin::Resource* GetTaskResponse::release_resource() {
   // @@protoc_insertion_point(field_release:flyteidl.admin.GetTaskResponse.resource)
   
-  ::flyteidl::admin::resource* temp = resource_;
+  ::flyteidl::admin::Resource* temp = resource_;
   resource_ = nullptr;
   return temp;
 }
-inline ::flyteidl::admin::resource* GetTaskResponse::mutable_resource() {
+inline ::flyteidl::admin::Resource* GetTaskResponse::mutable_resource() {
   
   if (resource_ == nullptr) {
-    auto* p = CreateMaybeMessage<::flyteidl::admin::resource>(GetArenaNoVirtual());
+    auto* p = CreateMaybeMessage<::flyteidl::admin::Resource>(GetArenaNoVirtual());
     resource_ = p;
   }
   // @@protoc_insertion_point(field_mutable:flyteidl.admin.GetTaskResponse.resource)
   return resource_;
 }
-inline void GetTaskResponse::set_allocated_resource(::flyteidl::admin::resource* resource) {
+inline void GetTaskResponse::set_allocated_resource(::flyteidl::admin::Resource* resource) {
   ::google::protobuf::Arena* message_arena = GetArenaNoVirtual();
   if (message_arena == nullptr) {
     delete resource_;
@@ -1365,49 +1365,49 @@ inline void GetTaskResponse::set_allocated_resource(::flyteidl::admin::resource*
 
 // -------------------------------------------------------------------
 
-// resource
+// Resource
 
 // .flyteidl.admin.State state = 1;
-inline void resource::clear_state() {
+inline void Resource::clear_state() {
   state_ = 0;
 }
-inline ::flyteidl::admin::State resource::state() const {
-  // @@protoc_insertion_point(field_get:flyteidl.admin.resource.state)
+inline ::flyteidl::admin::State Resource::state() const {
+  // @@protoc_insertion_point(field_get:flyteidl.admin.Resource.state)
   return static_cast< ::flyteidl::admin::State >(state_);
 }
-inline void resource::set_state(::flyteidl::admin::State value) {
+inline void Resource::set_state(::flyteidl::admin::State value) {
   
   state_ = value;
-  // @@protoc_insertion_point(field_set:flyteidl.admin.resource.state)
+  // @@protoc_insertion_point(field_set:flyteidl.admin.Resource.state)
 }
 
 // .flyteidl.core.LiteralMap outputs = 2;
-inline bool resource::has_outputs() const {
+inline bool Resource::has_outputs() const {
   return this != internal_default_instance() && outputs_ != nullptr;
 }
-inline const ::flyteidl::core::LiteralMap& resource::outputs() const {
+inline const ::flyteidl::core::LiteralMap& Resource::outputs() const {
   const ::flyteidl::core::LiteralMap* p = outputs_;
-  // @@protoc_insertion_point(field_get:flyteidl.admin.resource.outputs)
+  // @@protoc_insertion_point(field_get:flyteidl.admin.Resource.outputs)
   return p != nullptr ? *p : *reinterpret_cast<const ::flyteidl::core::LiteralMap*>(
       &::flyteidl::core::_LiteralMap_default_instance_);
 }
-inline ::flyteidl::core::LiteralMap* resource::release_outputs() {
-  // @@protoc_insertion_point(field_release:flyteidl.admin.resource.outputs)
+inline ::flyteidl::core::LiteralMap* Resource::release_outputs() {
+  // @@protoc_insertion_point(field_release:flyteidl.admin.Resource.outputs)
   
   ::flyteidl::core::LiteralMap* temp = outputs_;
   outputs_ = nullptr;
   return temp;
 }
-inline ::flyteidl::core::LiteralMap* resource::mutable_outputs() {
+inline ::flyteidl::core::LiteralMap* Resource::mutable_outputs() {
   
   if (outputs_ == nullptr) {
     auto* p = CreateMaybeMessage<::flyteidl::core::LiteralMap>(GetArenaNoVirtual());
     outputs_ = p;
   }
-  // @@protoc_insertion_point(field_mutable:flyteidl.admin.resource.outputs)
+  // @@protoc_insertion_point(field_mutable:flyteidl.admin.Resource.outputs)
   return outputs_;
 }
-inline void resource::set_allocated_outputs(::flyteidl::core::LiteralMap* outputs) {
+inline void Resource::set_allocated_outputs(::flyteidl::core::LiteralMap* outputs) {
   ::google::protobuf::Arena* message_arena = GetArenaNoVirtual();
   if (message_arena == nullptr) {
     delete reinterpret_cast< ::google::protobuf::MessageLite*>(outputs_);
@@ -1423,7 +1423,7 @@ inline void resource::set_allocated_outputs(::flyteidl::core::LiteralMap* output
     
   }
   outputs_ = outputs;
-  // @@protoc_insertion_point(field_set_allocated:flyteidl.admin.resource.outputs)
+  // @@protoc_insertion_point(field_set_allocated:flyteidl.admin.Resource.outputs)
 }
 
 // -------------------------------------------------------------------

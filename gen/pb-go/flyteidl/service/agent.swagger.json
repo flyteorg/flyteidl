@@ -182,12 +182,12 @@
       "type": "object",
       "properties": {
         "resource": {
-          "$ref": "#/definitions/adminresource"
+          "$ref": "#/definitions/adminResource"
         }
       },
       "description": "Response to get an individual task resource."
     },
-    "adminresource": {
+    "adminResource": {
       "type": "object",
       "properties": {
         "state": {

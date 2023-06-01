@@ -7684,7 +7684,7 @@ export namespace flyteidl {
         interface IGetTaskResponse {
 
             /** GetTaskResponse resource */
-            resource?: (flyteidl.admin.Iresource|null);
+            resource?: (flyteidl.admin.IResource|null);
         }
 
         /** Represents a GetTaskResponse. */
@@ -7697,7 +7697,7 @@ export namespace flyteidl {
             constructor(properties?: flyteidl.admin.IGetTaskResponse);
 
             /** GetTaskResponse resource. */
-            public resource?: (flyteidl.admin.Iresource|null);
+            public resource?: (flyteidl.admin.IResource|null);
 
             /**
              * Creates a new GetTaskResponse instance using the specified properties.
@@ -7732,58 +7732,58 @@ export namespace flyteidl {
             public static verify(message: { [k: string]: any }): (string|null);
         }
 
-        /** Properties of a resource. */
-        interface Iresource {
+        /** Properties of a Resource. */
+        interface IResource {
 
-            /** resource state */
+            /** Resource state */
             state?: (flyteidl.admin.State|null);
 
-            /** resource outputs */
+            /** Resource outputs */
             outputs?: (flyteidl.core.ILiteralMap|null);
         }
 
-        /** Represents a resource. */
-        class resource implements Iresource {
+        /** Represents a Resource. */
+        class Resource implements IResource {
 
             /**
-             * Constructs a new resource.
+             * Constructs a new Resource.
              * @param [properties] Properties to set
              */
-            constructor(properties?: flyteidl.admin.Iresource);
+            constructor(properties?: flyteidl.admin.IResource);
 
-            /** resource state. */
+            /** Resource state. */
             public state: flyteidl.admin.State;
 
-            /** resource outputs. */
+            /** Resource outputs. */
             public outputs?: (flyteidl.core.ILiteralMap|null);
 
             /**
-             * Creates a new resource instance using the specified properties.
+             * Creates a new Resource instance using the specified properties.
              * @param [properties] Properties to set
-             * @returns resource instance
+             * @returns Resource instance
              */
-            public static create(properties?: flyteidl.admin.Iresource): flyteidl.admin.resource;
+            public static create(properties?: flyteidl.admin.IResource): flyteidl.admin.Resource;
 
             /**
-             * Encodes the specified resource message. Does not implicitly {@link flyteidl.admin.resource.verify|verify} messages.
-             * @param message resource message or plain object to encode
+             * Encodes the specified Resource message. Does not implicitly {@link flyteidl.admin.Resource.verify|verify} messages.
+             * @param message Resource message or plain object to encode
              * @param [writer] Writer to encode to
              * @returns Writer
              */
-            public static encode(message: flyteidl.admin.Iresource, writer?: $protobuf.Writer): $protobuf.Writer;
+            public static encode(message: flyteidl.admin.IResource, writer?: $protobuf.Writer): $protobuf.Writer;
 
             /**
-             * Decodes a resource message from the specified reader or buffer.
+             * Decodes a Resource message from the specified reader or buffer.
              * @param reader Reader or buffer to decode from
              * @param [length] Message length if known beforehand
-             * @returns resource
+             * @returns Resource
              * @throws {Error} If the payload is not a reader or valid buffer
              * @throws {$protobuf.util.ProtocolError} If required fields are missing
              */
-            public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): flyteidl.admin.resource;
+            public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): flyteidl.admin.Resource;
 
             /**
-             * Verifies a resource message.
+             * Verifies a Resource message.
              * @param message Plain object to verify
              * @returns `null` if valid, otherwise the reason why it is not
              */

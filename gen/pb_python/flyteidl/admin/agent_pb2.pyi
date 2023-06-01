@@ -48,10 +48,10 @@ class GetTaskRequest(_message.Message):
 class GetTaskResponse(_message.Message):
     __slots__ = ["resource"]
     RESOURCE_FIELD_NUMBER: _ClassVar[int]
-    resource: resource
-    def __init__(self, resource: _Optional[_Union[resource, _Mapping]] = ...) -> None: ...
+    resource: Resource
+    def __init__(self, resource: _Optional[_Union[Resource, _Mapping]] = ...) -> None: ...
 
-class resource(_message.Message):
+class Resource(_message.Message):
     __slots__ = ["state", "outputs"]
     STATE_FIELD_NUMBER: _ClassVar[int]
     OUTPUTS_FIELD_NUMBER: _ClassVar[int]

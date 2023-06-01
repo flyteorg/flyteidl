@@ -2464,17 +2464,17 @@ public final class Agent {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>.flyteidl.admin.resource resource = 1;</code>
+     * <code>.flyteidl.admin.Resource resource = 1;</code>
      */
     boolean hasResource();
     /**
-     * <code>.flyteidl.admin.resource resource = 1;</code>
+     * <code>.flyteidl.admin.Resource resource = 1;</code>
      */
-    flyteidl.admin.Agent.resource getResource();
+    flyteidl.admin.Agent.Resource getResource();
     /**
-     * <code>.flyteidl.admin.resource resource = 1;</code>
+     * <code>.flyteidl.admin.Resource resource = 1;</code>
      */
-    flyteidl.admin.Agent.resourceOrBuilder getResourceOrBuilder();
+    flyteidl.admin.Agent.ResourceOrBuilder getResourceOrBuilder();
   }
   /**
    * <pre>
@@ -2520,11 +2520,11 @@ public final class Agent {
               done = true;
               break;
             case 10: {
-              flyteidl.admin.Agent.resource.Builder subBuilder = null;
+              flyteidl.admin.Agent.Resource.Builder subBuilder = null;
               if (resource_ != null) {
                 subBuilder = resource_.toBuilder();
               }
-              resource_ = input.readMessage(flyteidl.admin.Agent.resource.parser(), extensionRegistry);
+              resource_ = input.readMessage(flyteidl.admin.Agent.Resource.parser(), extensionRegistry);
               if (subBuilder != null) {
                 subBuilder.mergeFrom(resource_);
                 resource_ = subBuilder.buildPartial();
@@ -2565,23 +2565,23 @@ public final class Agent {
     }
 
     public static final int RESOURCE_FIELD_NUMBER = 1;
-    private flyteidl.admin.Agent.resource resource_;
+    private flyteidl.admin.Agent.Resource resource_;
     /**
-     * <code>.flyteidl.admin.resource resource = 1;</code>
+     * <code>.flyteidl.admin.Resource resource = 1;</code>
      */
     public boolean hasResource() {
       return resource_ != null;
     }
     /**
-     * <code>.flyteidl.admin.resource resource = 1;</code>
+     * <code>.flyteidl.admin.Resource resource = 1;</code>
      */
-    public flyteidl.admin.Agent.resource getResource() {
-      return resource_ == null ? flyteidl.admin.Agent.resource.getDefaultInstance() : resource_;
+    public flyteidl.admin.Agent.Resource getResource() {
+      return resource_ == null ? flyteidl.admin.Agent.Resource.getDefaultInstance() : resource_;
     }
     /**
-     * <code>.flyteidl.admin.resource resource = 1;</code>
+     * <code>.flyteidl.admin.Resource resource = 1;</code>
      */
-    public flyteidl.admin.Agent.resourceOrBuilder getResourceOrBuilder() {
+    public flyteidl.admin.Agent.ResourceOrBuilder getResourceOrBuilder() {
       return getResource();
     }
 
@@ -2904,29 +2904,29 @@ public final class Agent {
         return this;
       }
 
-      private flyteidl.admin.Agent.resource resource_;
+      private flyteidl.admin.Agent.Resource resource_;
       private com.google.protobuf.SingleFieldBuilderV3<
-          flyteidl.admin.Agent.resource, flyteidl.admin.Agent.resource.Builder, flyteidl.admin.Agent.resourceOrBuilder> resourceBuilder_;
+          flyteidl.admin.Agent.Resource, flyteidl.admin.Agent.Resource.Builder, flyteidl.admin.Agent.ResourceOrBuilder> resourceBuilder_;
       /**
-       * <code>.flyteidl.admin.resource resource = 1;</code>
+       * <code>.flyteidl.admin.Resource resource = 1;</code>
        */
       public boolean hasResource() {
         return resourceBuilder_ != null || resource_ != null;
       }
       /**
-       * <code>.flyteidl.admin.resource resource = 1;</code>
+       * <code>.flyteidl.admin.Resource resource = 1;</code>
        */
-      public flyteidl.admin.Agent.resource getResource() {
+      public flyteidl.admin.Agent.Resource getResource() {
         if (resourceBuilder_ == null) {
-          return resource_ == null ? flyteidl.admin.Agent.resource.getDefaultInstance() : resource_;
+          return resource_ == null ? flyteidl.admin.Agent.Resource.getDefaultInstance() : resource_;
         } else {
           return resourceBuilder_.getMessage();
         }
       }
       /**
-       * <code>.flyteidl.admin.resource resource = 1;</code>
+       * <code>.flyteidl.admin.Resource resource = 1;</code>
        */
-      public Builder setResource(flyteidl.admin.Agent.resource value) {
+      public Builder setResource(flyteidl.admin.Agent.Resource value) {
         if (resourceBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
@@ -2940,10 +2940,10 @@ public final class Agent {
         return this;
       }
       /**
-       * <code>.flyteidl.admin.resource resource = 1;</code>
+       * <code>.flyteidl.admin.Resource resource = 1;</code>
        */
       public Builder setResource(
-          flyteidl.admin.Agent.resource.Builder builderForValue) {
+          flyteidl.admin.Agent.Resource.Builder builderForValue) {
         if (resourceBuilder_ == null) {
           resource_ = builderForValue.build();
           onChanged();
@@ -2954,13 +2954,13 @@ public final class Agent {
         return this;
       }
       /**
-       * <code>.flyteidl.admin.resource resource = 1;</code>
+       * <code>.flyteidl.admin.Resource resource = 1;</code>
        */
-      public Builder mergeResource(flyteidl.admin.Agent.resource value) {
+      public Builder mergeResource(flyteidl.admin.Agent.Resource value) {
         if (resourceBuilder_ == null) {
           if (resource_ != null) {
             resource_ =
-              flyteidl.admin.Agent.resource.newBuilder(resource_).mergeFrom(value).buildPartial();
+              flyteidl.admin.Agent.Resource.newBuilder(resource_).mergeFrom(value).buildPartial();
           } else {
             resource_ = value;
           }
@@ -2972,7 +2972,7 @@ public final class Agent {
         return this;
       }
       /**
-       * <code>.flyteidl.admin.resource resource = 1;</code>
+       * <code>.flyteidl.admin.Resource resource = 1;</code>
        */
       public Builder clearResource() {
         if (resourceBuilder_ == null) {
@@ -2986,33 +2986,33 @@ public final class Agent {
         return this;
       }
       /**
-       * <code>.flyteidl.admin.resource resource = 1;</code>
+       * <code>.flyteidl.admin.Resource resource = 1;</code>
        */
-      public flyteidl.admin.Agent.resource.Builder getResourceBuilder() {
+      public flyteidl.admin.Agent.Resource.Builder getResourceBuilder() {
         
         onChanged();
         return getResourceFieldBuilder().getBuilder();
       }
       /**
-       * <code>.flyteidl.admin.resource resource = 1;</code>
+       * <code>.flyteidl.admin.Resource resource = 1;</code>
        */
-      public flyteidl.admin.Agent.resourceOrBuilder getResourceOrBuilder() {
+      public flyteidl.admin.Agent.ResourceOrBuilder getResourceOrBuilder() {
         if (resourceBuilder_ != null) {
           return resourceBuilder_.getMessageOrBuilder();
         } else {
           return resource_ == null ?
-              flyteidl.admin.Agent.resource.getDefaultInstance() : resource_;
+              flyteidl.admin.Agent.Resource.getDefaultInstance() : resource_;
         }
       }
       /**
-       * <code>.flyteidl.admin.resource resource = 1;</code>
+       * <code>.flyteidl.admin.Resource resource = 1;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
-          flyteidl.admin.Agent.resource, flyteidl.admin.Agent.resource.Builder, flyteidl.admin.Agent.resourceOrBuilder> 
+          flyteidl.admin.Agent.Resource, flyteidl.admin.Agent.Resource.Builder, flyteidl.admin.Agent.ResourceOrBuilder> 
           getResourceFieldBuilder() {
         if (resourceBuilder_ == null) {
           resourceBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-              flyteidl.admin.Agent.resource, flyteidl.admin.Agent.resource.Builder, flyteidl.admin.Agent.resourceOrBuilder>(
+              flyteidl.admin.Agent.Resource, flyteidl.admin.Agent.Resource.Builder, flyteidl.admin.Agent.ResourceOrBuilder>(
                   getResource(),
                   getParentForChildren(),
                   isClean());
@@ -3073,8 +3073,8 @@ public final class Agent {
 
   }
 
-  public interface resourceOrBuilder extends
-      // @@protoc_insertion_point(interface_extends:flyteidl.admin.resource)
+  public interface ResourceOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:flyteidl.admin.Resource)
       com.google.protobuf.MessageOrBuilder {
 
     /**
@@ -3126,18 +3126,18 @@ public final class Agent {
     flyteidl.core.Literals.LiteralMapOrBuilder getOutputsOrBuilder();
   }
   /**
-   * Protobuf type {@code flyteidl.admin.resource}
+   * Protobuf type {@code flyteidl.admin.Resource}
    */
-  public  static final class resource extends
+  public  static final class Resource extends
       com.google.protobuf.GeneratedMessageV3 implements
-      // @@protoc_insertion_point(message_implements:flyteidl.admin.resource)
-      resourceOrBuilder {
+      // @@protoc_insertion_point(message_implements:flyteidl.admin.Resource)
+      ResourceOrBuilder {
   private static final long serialVersionUID = 0L;
-    // Use resource.newBuilder() to construct.
-    private resource(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+    // Use Resource.newBuilder() to construct.
+    private Resource(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
     }
-    private resource() {
+    private Resource() {
       state_ = 0;
     }
 
@@ -3146,7 +3146,7 @@ public final class Agent {
     getUnknownFields() {
       return this.unknownFields;
     }
-    private resource(
+    private Resource(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
@@ -3205,15 +3205,15 @@ public final class Agent {
     }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return flyteidl.admin.Agent.internal_static_flyteidl_admin_resource_descriptor;
+      return flyteidl.admin.Agent.internal_static_flyteidl_admin_Resource_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return flyteidl.admin.Agent.internal_static_flyteidl_admin_resource_fieldAccessorTable
+      return flyteidl.admin.Agent.internal_static_flyteidl_admin_Resource_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              flyteidl.admin.Agent.resource.class, flyteidl.admin.Agent.resource.Builder.class);
+              flyteidl.admin.Agent.Resource.class, flyteidl.admin.Agent.Resource.Builder.class);
     }
 
     public static final int STATE_FIELD_NUMBER = 1;
@@ -3327,10 +3327,10 @@ public final class Agent {
       if (obj == this) {
        return true;
       }
-      if (!(obj instanceof flyteidl.admin.Agent.resource)) {
+      if (!(obj instanceof flyteidl.admin.Agent.Resource)) {
         return super.equals(obj);
       }
-      flyteidl.admin.Agent.resource other = (flyteidl.admin.Agent.resource) obj;
+      flyteidl.admin.Agent.Resource other = (flyteidl.admin.Agent.Resource) obj;
 
       if (state_ != other.state_) return false;
       if (hasOutputs() != other.hasOutputs()) return false;
@@ -3360,69 +3360,69 @@ public final class Agent {
       return hash;
     }
 
-    public static flyteidl.admin.Agent.resource parseFrom(
+    public static flyteidl.admin.Agent.Resource parseFrom(
         java.nio.ByteBuffer data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static flyteidl.admin.Agent.resource parseFrom(
+    public static flyteidl.admin.Agent.Resource parseFrom(
         java.nio.ByteBuffer data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static flyteidl.admin.Agent.resource parseFrom(
+    public static flyteidl.admin.Agent.Resource parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static flyteidl.admin.Agent.resource parseFrom(
+    public static flyteidl.admin.Agent.Resource parseFrom(
         com.google.protobuf.ByteString data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static flyteidl.admin.Agent.resource parseFrom(byte[] data)
+    public static flyteidl.admin.Agent.Resource parseFrom(byte[] data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static flyteidl.admin.Agent.resource parseFrom(
+    public static flyteidl.admin.Agent.Resource parseFrom(
         byte[] data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static flyteidl.admin.Agent.resource parseFrom(java.io.InputStream input)
+    public static flyteidl.admin.Agent.Resource parseFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
-    public static flyteidl.admin.Agent.resource parseFrom(
+    public static flyteidl.admin.Agent.Resource parseFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
-    public static flyteidl.admin.Agent.resource parseDelimitedFrom(java.io.InputStream input)
+    public static flyteidl.admin.Agent.Resource parseDelimitedFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input);
     }
-    public static flyteidl.admin.Agent.resource parseDelimitedFrom(
+    public static flyteidl.admin.Agent.Resource parseDelimitedFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
     }
-    public static flyteidl.admin.Agent.resource parseFrom(
+    public static flyteidl.admin.Agent.Resource parseFrom(
         com.google.protobuf.CodedInputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
-    public static flyteidl.admin.Agent.resource parseFrom(
+    public static flyteidl.admin.Agent.Resource parseFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
@@ -3435,7 +3435,7 @@ public final class Agent {
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
     }
-    public static Builder newBuilder(flyteidl.admin.Agent.resource prototype) {
+    public static Builder newBuilder(flyteidl.admin.Agent.Resource prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
     @java.lang.Override
@@ -3451,26 +3451,26 @@ public final class Agent {
       return builder;
     }
     /**
-     * Protobuf type {@code flyteidl.admin.resource}
+     * Protobuf type {@code flyteidl.admin.Resource}
      */
     public static final class Builder extends
         com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-        // @@protoc_insertion_point(builder_implements:flyteidl.admin.resource)
-        flyteidl.admin.Agent.resourceOrBuilder {
+        // @@protoc_insertion_point(builder_implements:flyteidl.admin.Resource)
+        flyteidl.admin.Agent.ResourceOrBuilder {
       public static final com.google.protobuf.Descriptors.Descriptor
           getDescriptor() {
-        return flyteidl.admin.Agent.internal_static_flyteidl_admin_resource_descriptor;
+        return flyteidl.admin.Agent.internal_static_flyteidl_admin_Resource_descriptor;
       }
 
       @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
-        return flyteidl.admin.Agent.internal_static_flyteidl_admin_resource_fieldAccessorTable
+        return flyteidl.admin.Agent.internal_static_flyteidl_admin_Resource_fieldAccessorTable
             .ensureFieldAccessorsInitialized(
-                flyteidl.admin.Agent.resource.class, flyteidl.admin.Agent.resource.Builder.class);
+                flyteidl.admin.Agent.Resource.class, flyteidl.admin.Agent.Resource.Builder.class);
       }
 
-      // Construct using flyteidl.admin.Agent.resource.newBuilder()
+      // Construct using flyteidl.admin.Agent.Resource.newBuilder()
       private Builder() {
         maybeForceBuilderInitialization();
       }
@@ -3502,17 +3502,17 @@ public final class Agent {
       @java.lang.Override
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
-        return flyteidl.admin.Agent.internal_static_flyteidl_admin_resource_descriptor;
+        return flyteidl.admin.Agent.internal_static_flyteidl_admin_Resource_descriptor;
       }
 
       @java.lang.Override
-      public flyteidl.admin.Agent.resource getDefaultInstanceForType() {
-        return flyteidl.admin.Agent.resource.getDefaultInstance();
+      public flyteidl.admin.Agent.Resource getDefaultInstanceForType() {
+        return flyteidl.admin.Agent.Resource.getDefaultInstance();
       }
 
       @java.lang.Override
-      public flyteidl.admin.Agent.resource build() {
-        flyteidl.admin.Agent.resource result = buildPartial();
+      public flyteidl.admin.Agent.Resource build() {
+        flyteidl.admin.Agent.Resource result = buildPartial();
         if (!result.isInitialized()) {
           throw newUninitializedMessageException(result);
         }
@@ -3520,8 +3520,8 @@ public final class Agent {
       }
 
       @java.lang.Override
-      public flyteidl.admin.Agent.resource buildPartial() {
-        flyteidl.admin.Agent.resource result = new flyteidl.admin.Agent.resource(this);
+      public flyteidl.admin.Agent.Resource buildPartial() {
+        flyteidl.admin.Agent.Resource result = new flyteidl.admin.Agent.Resource(this);
         result.state_ = state_;
         if (outputsBuilder_ == null) {
           result.outputs_ = outputs_;
@@ -3566,16 +3566,16 @@ public final class Agent {
       }
       @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof flyteidl.admin.Agent.resource) {
-          return mergeFrom((flyteidl.admin.Agent.resource)other);
+        if (other instanceof flyteidl.admin.Agent.Resource) {
+          return mergeFrom((flyteidl.admin.Agent.Resource)other);
         } else {
           super.mergeFrom(other);
           return this;
         }
       }
 
-      public Builder mergeFrom(flyteidl.admin.Agent.resource other) {
-        if (other == flyteidl.admin.Agent.resource.getDefaultInstance()) return this;
+      public Builder mergeFrom(flyteidl.admin.Agent.Resource other) {
+        if (other == flyteidl.admin.Agent.Resource.getDefaultInstance()) return this;
         if (other.state_ != 0) {
           setStateValue(other.getStateValue());
         }
@@ -3597,11 +3597,11 @@ public final class Agent {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        flyteidl.admin.Agent.resource parsedMessage = null;
+        flyteidl.admin.Agent.Resource parsedMessage = null;
         try {
           parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (flyteidl.admin.Agent.resource) e.getUnfinishedMessage();
+          parsedMessage = (flyteidl.admin.Agent.Resource) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
           if (parsedMessage != null) {
@@ -3859,41 +3859,41 @@ public final class Agent {
       }
 
 
-      // @@protoc_insertion_point(builder_scope:flyteidl.admin.resource)
+      // @@protoc_insertion_point(builder_scope:flyteidl.admin.Resource)
     }
 
-    // @@protoc_insertion_point(class_scope:flyteidl.admin.resource)
-    private static final flyteidl.admin.Agent.resource DEFAULT_INSTANCE;
+    // @@protoc_insertion_point(class_scope:flyteidl.admin.Resource)
+    private static final flyteidl.admin.Agent.Resource DEFAULT_INSTANCE;
     static {
-      DEFAULT_INSTANCE = new flyteidl.admin.Agent.resource();
+      DEFAULT_INSTANCE = new flyteidl.admin.Agent.Resource();
     }
 
-    public static flyteidl.admin.Agent.resource getDefaultInstance() {
+    public static flyteidl.admin.Agent.Resource getDefaultInstance() {
       return DEFAULT_INSTANCE;
     }
 
-    private static final com.google.protobuf.Parser<resource>
-        PARSER = new com.google.protobuf.AbstractParser<resource>() {
+    private static final com.google.protobuf.Parser<Resource>
+        PARSER = new com.google.protobuf.AbstractParser<Resource>() {
       @java.lang.Override
-      public resource parsePartialFrom(
+      public Resource parsePartialFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new resource(input, extensionRegistry);
+        return new Resource(input, extensionRegistry);
       }
     };
 
-    public static com.google.protobuf.Parser<resource> parser() {
+    public static com.google.protobuf.Parser<Resource> parser() {
       return PARSER;
     }
 
     @java.lang.Override
-    public com.google.protobuf.Parser<resource> getParserForType() {
+    public com.google.protobuf.Parser<Resource> getParserForType() {
       return PARSER;
     }
 
     @java.lang.Override
-    public flyteidl.admin.Agent.resource getDefaultInstanceForType() {
+    public flyteidl.admin.Agent.Resource getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
 
@@ -5018,10 +5018,10 @@ public final class Agent {
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_flyteidl_admin_GetTaskResponse_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_flyteidl_admin_resource_descriptor;
+    internal_static_flyteidl_admin_Resource_descriptor;
   private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_flyteidl_admin_resource_fieldAccessorTable;
+      internal_static_flyteidl_admin_Resource_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_flyteidl_admin_DeleteTaskRequest_descriptor;
   private static final 
@@ -5051,7 +5051,7 @@ public final class Agent {
       "kResponse\022\025\n\rresource_meta\030\001 \001(\014\":\n\016GetT" +
       "askRequest\022\021\n\ttask_type\030\001 \001(\t\022\025\n\rresourc" +
       "e_meta\030\002 \001(\014\"=\n\017GetTaskResponse\022*\n\010resou" +
-      "rce\030\001 \001(\0132\030.flyteidl.admin.resource\"\\\n\010r" +
+      "rce\030\001 \001(\0132\030.flyteidl.admin.Resource\"\\\n\010R" +
       "esource\022$\n\005state\030\001 \001(\0162\025.flyteidl.admin." +
       "State\022*\n\007outputs\030\002 \001(\0132\031.flyteidl.core.L" +
       "iteralMap\"=\n\021DeleteTaskRequest\022\021\n\ttask_t" +
@@ -5101,11 +5101,11 @@ public final class Agent {
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_flyteidl_admin_GetTaskResponse_descriptor,
         new java.lang.String[] { "Resource", });
-    internal_static_flyteidl_admin_resource_descriptor =
+    internal_static_flyteidl_admin_Resource_descriptor =
       getDescriptor().getMessageTypes().get(4);
-    internal_static_flyteidl_admin_resource_fieldAccessorTable = new
+    internal_static_flyteidl_admin_Resource_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_flyteidl_admin_resource_descriptor,
+        internal_static_flyteidl_admin_Resource_descriptor,
         new java.lang.String[] { "State", "Outputs", });
     internal_static_flyteidl_admin_DeleteTaskRequest_descriptor =
       getDescriptor().getMessageTypes().get(5);
