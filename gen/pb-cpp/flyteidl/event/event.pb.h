@@ -37,6 +37,7 @@
 #include "flyteidl/core/execution.pb.h"
 #include "flyteidl/core/identifier.pb.h"
 #include "flyteidl/core/catalog.pb.h"
+#include "flyteidl/artifact/artifacts.pb.h"
 #include <google/protobuf/timestamp.pb.h>
 #include <google/protobuf/struct.pb.h>
 // @@protoc_insertion_point(includes)
@@ -49,7 +50,7 @@ struct TableStruct_flyteidl_2fevent_2fevent_2eproto {
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
   static const ::google::protobuf::internal::AuxillaryParseTableField aux[]
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
-  static const ::google::protobuf::internal::ParseTable schema[11]
+  static const ::google::protobuf::internal::ParseTable schema[12]
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
   static const ::google::protobuf::internal::FieldMetadata field_metadata[];
   static const ::google::protobuf::internal::SerializationTable serialization_table[];
@@ -58,6 +59,9 @@ struct TableStruct_flyteidl_2fevent_2fevent_2eproto {
 void AddDescriptors_flyteidl_2fevent_2fevent_2eproto();
 namespace flyteidl {
 namespace event {
+class ArtifactCreateEvent;
+class ArtifactCreateEventDefaultTypeInternal;
+extern ArtifactCreateEventDefaultTypeInternal _ArtifactCreateEvent_default_instance_;
 class DynamicWorkflowNodeMetadata;
 class DynamicWorkflowNodeMetadataDefaultTypeInternal;
 extern DynamicWorkflowNodeMetadataDefaultTypeInternal _DynamicWorkflowNodeMetadata_default_instance_;
@@ -95,6 +99,7 @@ extern WorkflowNodeMetadataDefaultTypeInternal _WorkflowNodeMetadata_default_ins
 }  // namespace flyteidl
 namespace google {
 namespace protobuf {
+template<> ::flyteidl::event::ArtifactCreateEvent* Arena::CreateMaybeMessage<::flyteidl::event::ArtifactCreateEvent>(Arena*);
 template<> ::flyteidl::event::DynamicWorkflowNodeMetadata* Arena::CreateMaybeMessage<::flyteidl::event::DynamicWorkflowNodeMetadata>(Arena*);
 template<> ::flyteidl::event::ExternalResourceInfo* Arena::CreateMaybeMessage<::flyteidl::event::ExternalResourceInfo>(Arena*);
 template<> ::flyteidl::event::NodeExecutionEvent* Arena::CreateMaybeMessage<::flyteidl::event::NodeExecutionEvent>(Arena*);
@@ -133,6 +138,121 @@ inline bool TaskExecutionMetadata_InstanceClass_Parse(
     TaskExecutionMetadata_InstanceClass_descriptor(), name, value);
 }
 // ===================================================================
+
+class ArtifactCreateEvent final :
+    public ::google::protobuf::Message /* @@protoc_insertion_point(class_definition:flyteidl.event.ArtifactCreateEvent) */ {
+ public:
+  ArtifactCreateEvent();
+  virtual ~ArtifactCreateEvent();
+
+  ArtifactCreateEvent(const ArtifactCreateEvent& from);
+
+  inline ArtifactCreateEvent& operator=(const ArtifactCreateEvent& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  #if LANG_CXX11
+  ArtifactCreateEvent(ArtifactCreateEvent&& from) noexcept
+    : ArtifactCreateEvent() {
+    *this = ::std::move(from);
+  }
+
+  inline ArtifactCreateEvent& operator=(ArtifactCreateEvent&& from) noexcept {
+    if (GetArenaNoVirtual() == from.GetArenaNoVirtual()) {
+      if (this != &from) InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+  #endif
+  static const ::google::protobuf::Descriptor* descriptor() {
+    return default_instance().GetDescriptor();
+  }
+  static const ArtifactCreateEvent& default_instance();
+
+  static void InitAsDefaultInstance();  // FOR INTERNAL USE ONLY
+  static inline const ArtifactCreateEvent* internal_default_instance() {
+    return reinterpret_cast<const ArtifactCreateEvent*>(
+               &_ArtifactCreateEvent_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    0;
+
+  void Swap(ArtifactCreateEvent* other);
+  friend void swap(ArtifactCreateEvent& a, ArtifactCreateEvent& b) {
+    a.Swap(&b);
+  }
+
+  // implements Message ----------------------------------------------
+
+  inline ArtifactCreateEvent* New() const final {
+    return CreateMaybeMessage<ArtifactCreateEvent>(nullptr);
+  }
+
+  ArtifactCreateEvent* New(::google::protobuf::Arena* arena) const final {
+    return CreateMaybeMessage<ArtifactCreateEvent>(arena);
+  }
+  void CopyFrom(const ::google::protobuf::Message& from) final;
+  void MergeFrom(const ::google::protobuf::Message& from) final;
+  void CopyFrom(const ArtifactCreateEvent& from);
+  void MergeFrom(const ArtifactCreateEvent& from);
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  #if GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
+  static const char* _InternalParse(const char* begin, const char* end, void* object, ::google::protobuf::internal::ParseContext* ctx);
+  ::google::protobuf::internal::ParseFunc _ParseFunc() const final { return _InternalParse; }
+  #else
+  bool MergePartialFromCodedStream(
+      ::google::protobuf::io::CodedInputStream* input) final;
+  #endif  // GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
+  void SerializeWithCachedSizes(
+      ::google::protobuf::io::CodedOutputStream* output) const final;
+  ::google::protobuf::uint8* InternalSerializeWithCachedSizesToArray(
+      ::google::protobuf::uint8* target) const final;
+  int GetCachedSize() const final { return _cached_size_.Get(); }
+
+  private:
+  void SharedCtor();
+  void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(ArtifactCreateEvent* other);
+  private:
+  inline ::google::protobuf::Arena* GetArenaNoVirtual() const {
+    return nullptr;
+  }
+  inline void* MaybeArenaPtr() const {
+    return nullptr;
+  }
+  public:
+
+  ::google::protobuf::Metadata GetMetadata() const final;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  // .flyteidl.artifact.CreateArtifactRequest create_request = 1;
+  bool has_create_request() const;
+  void clear_create_request();
+  static const int kCreateRequestFieldNumber = 1;
+  const ::flyteidl::artifact::CreateArtifactRequest& create_request() const;
+  ::flyteidl::artifact::CreateArtifactRequest* release_create_request();
+  ::flyteidl::artifact::CreateArtifactRequest* mutable_create_request();
+  void set_allocated_create_request(::flyteidl::artifact::CreateArtifactRequest* create_request);
+
+  // @@protoc_insertion_point(class_scope:flyteidl.event.ArtifactCreateEvent)
+ private:
+  class HasBitSetters;
+
+  ::google::protobuf::internal::InternalMetadataWithArena _internal_metadata_;
+  ::flyteidl::artifact::CreateArtifactRequest* create_request_;
+  mutable ::google::protobuf::internal::CachedSize _cached_size_;
+  friend struct ::TableStruct_flyteidl_2fevent_2fevent_2eproto;
+};
+// -------------------------------------------------------------------
 
 class WorkflowExecutionEvent final :
     public ::google::protobuf::Message /* @@protoc_insertion_point(class_definition:flyteidl.event.WorkflowExecutionEvent) */ {
@@ -179,7 +299,7 @@ class WorkflowExecutionEvent final :
                &_WorkflowExecutionEvent_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    0;
+    1;
 
   void Swap(WorkflowExecutionEvent* other);
   friend void swap(WorkflowExecutionEvent& a, WorkflowExecutionEvent& b) {
@@ -396,7 +516,7 @@ class NodeExecutionEvent final :
                &_NodeExecutionEvent_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    1;
+    2;
 
   void Swap(NodeExecutionEvent* other);
   friend void swap(NodeExecutionEvent& a, NodeExecutionEvent& b) {
@@ -773,7 +893,7 @@ class WorkflowNodeMetadata final :
                &_WorkflowNodeMetadata_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    2;
+    3;
 
   void Swap(WorkflowNodeMetadata* other);
   friend void swap(WorkflowNodeMetadata& a, WorkflowNodeMetadata& b) {
@@ -888,7 +1008,7 @@ class TaskNodeMetadata final :
                &_TaskNodeMetadata_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    3;
+    4;
 
   void Swap(TaskNodeMetadata* other);
   friend void swap(TaskNodeMetadata& a, TaskNodeMetadata& b) {
@@ -1042,7 +1162,7 @@ class DynamicWorkflowNodeMetadata final :
                &_DynamicWorkflowNodeMetadata_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    4;
+    5;
 
   void Swap(DynamicWorkflowNodeMetadata* other);
   friend void swap(DynamicWorkflowNodeMetadata& a, DynamicWorkflowNodeMetadata& b) {
@@ -1182,7 +1302,7 @@ class ParentTaskExecutionMetadata final :
                &_ParentTaskExecutionMetadata_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    5;
+    6;
 
   void Swap(ParentTaskExecutionMetadata* other);
   friend void swap(ParentTaskExecutionMetadata& a, ParentTaskExecutionMetadata& b) {
@@ -1297,7 +1417,7 @@ class ParentNodeExecutionMetadata final :
                &_ParentNodeExecutionMetadata_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    6;
+    7;
 
   void Swap(ParentNodeExecutionMetadata* other);
   friend void swap(ParentNodeExecutionMetadata& a, ParentNodeExecutionMetadata& b) {
@@ -1430,7 +1550,7 @@ class TaskExecutionEvent final :
                &_TaskExecutionEvent_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    7;
+    8;
 
   void Swap(TaskExecutionEvent* other);
   friend void swap(TaskExecutionEvent& a, TaskExecutionEvent& b) {
@@ -1770,7 +1890,7 @@ class ExternalResourceInfo final :
                &_ExternalResourceInfo_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    8;
+    9;
 
   void Swap(ExternalResourceInfo* other);
   friend void swap(ExternalResourceInfo& a, ExternalResourceInfo& b) {
@@ -1931,7 +2051,7 @@ class ResourcePoolInfo final :
                &_ResourcePoolInfo_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    9;
+    10;
 
   void Swap(ResourcePoolInfo* other);
   friend void swap(ResourcePoolInfo& a, ResourcePoolInfo& b) {
@@ -2066,7 +2186,7 @@ class TaskExecutionMetadata final :
                &_TaskExecutionMetadata_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    10;
+    11;
 
   void Swap(TaskExecutionMetadata* other);
   friend void swap(TaskExecutionMetadata& a, TaskExecutionMetadata& b) {
@@ -2229,6 +2349,55 @@ class TaskExecutionMetadata final :
   #pragma GCC diagnostic push
   #pragma GCC diagnostic ignored "-Wstrict-aliasing"
 #endif  // __GNUC__
+// ArtifactCreateEvent
+
+// .flyteidl.artifact.CreateArtifactRequest create_request = 1;
+inline bool ArtifactCreateEvent::has_create_request() const {
+  return this != internal_default_instance() && create_request_ != nullptr;
+}
+inline const ::flyteidl::artifact::CreateArtifactRequest& ArtifactCreateEvent::create_request() const {
+  const ::flyteidl::artifact::CreateArtifactRequest* p = create_request_;
+  // @@protoc_insertion_point(field_get:flyteidl.event.ArtifactCreateEvent.create_request)
+  return p != nullptr ? *p : *reinterpret_cast<const ::flyteidl::artifact::CreateArtifactRequest*>(
+      &::flyteidl::artifact::_CreateArtifactRequest_default_instance_);
+}
+inline ::flyteidl::artifact::CreateArtifactRequest* ArtifactCreateEvent::release_create_request() {
+  // @@protoc_insertion_point(field_release:flyteidl.event.ArtifactCreateEvent.create_request)
+  
+  ::flyteidl::artifact::CreateArtifactRequest* temp = create_request_;
+  create_request_ = nullptr;
+  return temp;
+}
+inline ::flyteidl::artifact::CreateArtifactRequest* ArtifactCreateEvent::mutable_create_request() {
+  
+  if (create_request_ == nullptr) {
+    auto* p = CreateMaybeMessage<::flyteidl::artifact::CreateArtifactRequest>(GetArenaNoVirtual());
+    create_request_ = p;
+  }
+  // @@protoc_insertion_point(field_mutable:flyteidl.event.ArtifactCreateEvent.create_request)
+  return create_request_;
+}
+inline void ArtifactCreateEvent::set_allocated_create_request(::flyteidl::artifact::CreateArtifactRequest* create_request) {
+  ::google::protobuf::Arena* message_arena = GetArenaNoVirtual();
+  if (message_arena == nullptr) {
+    delete reinterpret_cast< ::google::protobuf::MessageLite*>(create_request_);
+  }
+  if (create_request) {
+    ::google::protobuf::Arena* submessage_arena = nullptr;
+    if (message_arena != submessage_arena) {
+      create_request = ::google::protobuf::internal::GetOwnedMessage(
+          message_arena, create_request, submessage_arena);
+    }
+    
+  } else {
+    
+  }
+  create_request_ = create_request;
+  // @@protoc_insertion_point(field_set_allocated:flyteidl.event.ArtifactCreateEvent.create_request)
+}
+
+// -------------------------------------------------------------------
+
 // WorkflowExecutionEvent
 
 // .flyteidl.core.WorkflowExecutionIdentifier execution_id = 1;
@@ -5274,6 +5443,8 @@ inline void TaskExecutionMetadata::set_instance_class(::flyteidl::event::TaskExe
 #ifdef __GNUC__
   #pragma GCC diagnostic pop
 #endif  // __GNUC__
+// -------------------------------------------------------------------
+
 // -------------------------------------------------------------------
 
 // -------------------------------------------------------------------

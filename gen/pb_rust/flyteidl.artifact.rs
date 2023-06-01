@@ -69,7 +69,9 @@ pub struct CreateArtifactRequest {
     /// optional
     #[prost(string, tag="2")]
     pub version: ::prost::alloc::string::String,
-    #[prost(message, optional, tag="3")]
+    #[prost(string, tag="3")]
+    pub uri: ::prost::alloc::string::String,
+    #[prost(message, optional, tag="4")]
     pub spec: ::core::option::Option<ArtifactSpec>,
 }
 #[allow(clippy::derive_partial_eq_without_eq)]

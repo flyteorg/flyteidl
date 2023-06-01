@@ -58,7 +58,9 @@ message CreateArtifactRequest {
 
   string version = 2; // optional
 
-  ArtifactSpec spec = 3;
+  string uri = 3;
+
+  ArtifactSpec spec = 4;
 }
 
 message CreateArtifactResponse {

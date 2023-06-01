@@ -785,6 +785,20 @@ class CreateArtifactRequest final :
   ::std::string* release_version();
   void set_allocated_version(::std::string* version);
 
+  // string uri = 3;
+  void clear_uri();
+  static const int kUriFieldNumber = 3;
+  const ::std::string& uri() const;
+  void set_uri(const ::std::string& value);
+  #if LANG_CXX11
+  void set_uri(::std::string&& value);
+  #endif
+  void set_uri(const char* value);
+  void set_uri(const char* value, size_t size);
+  ::std::string* mutable_uri();
+  ::std::string* release_uri();
+  void set_allocated_uri(::std::string* uri);
+
   // .flyteidl.core.ArtifactKey artifact_key = 1;
   bool has_artifact_key() const;
   void clear_artifact_key();
@@ -794,10 +808,10 @@ class CreateArtifactRequest final :
   ::flyteidl::core::ArtifactKey* mutable_artifact_key();
   void set_allocated_artifact_key(::flyteidl::core::ArtifactKey* artifact_key);
 
-  // .flyteidl.artifact.ArtifactSpec spec = 3;
+  // .flyteidl.artifact.ArtifactSpec spec = 4;
   bool has_spec() const;
   void clear_spec();
-  static const int kSpecFieldNumber = 3;
+  static const int kSpecFieldNumber = 4;
   const ::flyteidl::artifact::ArtifactSpec& spec() const;
   ::flyteidl::artifact::ArtifactSpec* release_spec();
   ::flyteidl::artifact::ArtifactSpec* mutable_spec();
@@ -809,6 +823,7 @@ class CreateArtifactRequest final :
 
   ::google::protobuf::internal::InternalMetadataWithArena _internal_metadata_;
   ::google::protobuf::internal::ArenaStringPtr version_;
+  ::google::protobuf::internal::ArenaStringPtr uri_;
   ::flyteidl::core::ArtifactKey* artifact_key_;
   ::flyteidl::artifact::ArtifactSpec* spec_;
   mutable ::google::protobuf::internal::CachedSize _cached_size_;
@@ -3652,7 +3667,60 @@ inline void CreateArtifactRequest::set_allocated_version(::std::string* version)
   // @@protoc_insertion_point(field_set_allocated:flyteidl.artifact.CreateArtifactRequest.version)
 }
 
-// .flyteidl.artifact.ArtifactSpec spec = 3;
+// string uri = 3;
+inline void CreateArtifactRequest::clear_uri() {
+  uri_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline const ::std::string& CreateArtifactRequest::uri() const {
+  // @@protoc_insertion_point(field_get:flyteidl.artifact.CreateArtifactRequest.uri)
+  return uri_.GetNoArena();
+}
+inline void CreateArtifactRequest::set_uri(const ::std::string& value) {
+  
+  uri_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
+  // @@protoc_insertion_point(field_set:flyteidl.artifact.CreateArtifactRequest.uri)
+}
+#if LANG_CXX11
+inline void CreateArtifactRequest::set_uri(::std::string&& value) {
+  
+  uri_.SetNoArena(
+    &::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::move(value));
+  // @@protoc_insertion_point(field_set_rvalue:flyteidl.artifact.CreateArtifactRequest.uri)
+}
+#endif
+inline void CreateArtifactRequest::set_uri(const char* value) {
+  GOOGLE_DCHECK(value != nullptr);
+  
+  uri_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
+  // @@protoc_insertion_point(field_set_char:flyteidl.artifact.CreateArtifactRequest.uri)
+}
+inline void CreateArtifactRequest::set_uri(const char* value, size_t size) {
+  
+  uri_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
+      ::std::string(reinterpret_cast<const char*>(value), size));
+  // @@protoc_insertion_point(field_set_pointer:flyteidl.artifact.CreateArtifactRequest.uri)
+}
+inline ::std::string* CreateArtifactRequest::mutable_uri() {
+  
+  // @@protoc_insertion_point(field_mutable:flyteidl.artifact.CreateArtifactRequest.uri)
+  return uri_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline ::std::string* CreateArtifactRequest::release_uri() {
+  // @@protoc_insertion_point(field_release:flyteidl.artifact.CreateArtifactRequest.uri)
+  
+  return uri_.ReleaseNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline void CreateArtifactRequest::set_allocated_uri(::std::string* uri) {
+  if (uri != nullptr) {
+    
+  } else {
+    
+  }
+  uri_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), uri);
+  // @@protoc_insertion_point(field_set_allocated:flyteidl.artifact.CreateArtifactRequest.uri)
+}
+
+// .flyteidl.artifact.ArtifactSpec spec = 4;
 inline bool CreateArtifactRequest::has_spec() const {
   return this != internal_default_instance() && spec_ != nullptr;
 }

@@ -114,6 +114,9 @@ pub struct CreateUploadLocationRequest {
     /// +required
     #[prost(bytes="vec", tag="5")]
     pub content_md5: ::prost::alloc::vec::Vec<u8>,
+    /// If provided, the Artifact that the upload creates will contain the information specified here.
+    #[prost(message, optional, tag="6")]
+    pub artifact_spec: ::core::option::Option<super::artifact::ArtifactSpec>,
 }
 /// CreateDownloadLocationRequest specified request for the CreateDownloadLocation API.
 #[allow(clippy::derive_partial_eq_without_eq)]

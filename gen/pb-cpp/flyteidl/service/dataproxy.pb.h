@@ -440,6 +440,15 @@ class CreateUploadLocationRequest final :
   ::google::protobuf::Duration* mutable_expires_in();
   void set_allocated_expires_in(::google::protobuf::Duration* expires_in);
 
+  // .flyteidl.artifact.ArtifactSpec artifact_spec = 6;
+  bool has_artifact_spec() const;
+  void clear_artifact_spec();
+  static const int kArtifactSpecFieldNumber = 6;
+  const ::flyteidl::artifact::ArtifactSpec& artifact_spec() const;
+  ::flyteidl::artifact::ArtifactSpec* release_artifact_spec();
+  ::flyteidl::artifact::ArtifactSpec* mutable_artifact_spec();
+  void set_allocated_artifact_spec(::flyteidl::artifact::ArtifactSpec* artifact_spec);
+
   // @@protoc_insertion_point(class_scope:flyteidl.service.CreateUploadLocationRequest)
  private:
   class HasBitSetters;
@@ -450,6 +459,7 @@ class CreateUploadLocationRequest final :
   ::google::protobuf::internal::ArenaStringPtr filename_;
   ::google::protobuf::internal::ArenaStringPtr content_md5_;
   ::google::protobuf::Duration* expires_in_;
+  ::flyteidl::artifact::ArtifactSpec* artifact_spec_;
   mutable ::google::protobuf::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_flyteidl_2fservice_2fdataproxy_2eproto;
 };
@@ -1933,6 +1943,51 @@ inline void CreateUploadLocationRequest::set_allocated_content_md5(::std::string
   }
   content_md5_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), content_md5);
   // @@protoc_insertion_point(field_set_allocated:flyteidl.service.CreateUploadLocationRequest.content_md5)
+}
+
+// .flyteidl.artifact.ArtifactSpec artifact_spec = 6;
+inline bool CreateUploadLocationRequest::has_artifact_spec() const {
+  return this != internal_default_instance() && artifact_spec_ != nullptr;
+}
+inline const ::flyteidl::artifact::ArtifactSpec& CreateUploadLocationRequest::artifact_spec() const {
+  const ::flyteidl::artifact::ArtifactSpec* p = artifact_spec_;
+  // @@protoc_insertion_point(field_get:flyteidl.service.CreateUploadLocationRequest.artifact_spec)
+  return p != nullptr ? *p : *reinterpret_cast<const ::flyteidl::artifact::ArtifactSpec*>(
+      &::flyteidl::artifact::_ArtifactSpec_default_instance_);
+}
+inline ::flyteidl::artifact::ArtifactSpec* CreateUploadLocationRequest::release_artifact_spec() {
+  // @@protoc_insertion_point(field_release:flyteidl.service.CreateUploadLocationRequest.artifact_spec)
+  
+  ::flyteidl::artifact::ArtifactSpec* temp = artifact_spec_;
+  artifact_spec_ = nullptr;
+  return temp;
+}
+inline ::flyteidl::artifact::ArtifactSpec* CreateUploadLocationRequest::mutable_artifact_spec() {
+  
+  if (artifact_spec_ == nullptr) {
+    auto* p = CreateMaybeMessage<::flyteidl::artifact::ArtifactSpec>(GetArenaNoVirtual());
+    artifact_spec_ = p;
+  }
+  // @@protoc_insertion_point(field_mutable:flyteidl.service.CreateUploadLocationRequest.artifact_spec)
+  return artifact_spec_;
+}
+inline void CreateUploadLocationRequest::set_allocated_artifact_spec(::flyteidl::artifact::ArtifactSpec* artifact_spec) {
+  ::google::protobuf::Arena* message_arena = GetArenaNoVirtual();
+  if (message_arena == nullptr) {
+    delete reinterpret_cast< ::google::protobuf::MessageLite*>(artifact_spec_);
+  }
+  if (artifact_spec) {
+    ::google::protobuf::Arena* submessage_arena = nullptr;
+    if (message_arena != submessage_arena) {
+      artifact_spec = ::google::protobuf::internal::GetOwnedMessage(
+          message_arena, artifact_spec, submessage_arena);
+    }
+    
+  } else {
+    
+  }
+  artifact_spec_ = artifact_spec;
+  // @@protoc_insertion_point(field_set_allocated:flyteidl.service.CreateUploadLocationRequest.artifact_spec)
 }
 
 // -------------------------------------------------------------------

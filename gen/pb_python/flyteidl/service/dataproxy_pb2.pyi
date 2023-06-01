@@ -32,18 +32,20 @@ class CreateUploadLocationResponse(_message.Message):
     def __init__(self, signed_url: _Optional[str] = ..., native_url: _Optional[str] = ..., expires_at: _Optional[_Union[_timestamp_pb2.Timestamp, _Mapping]] = ..., artifact: _Optional[_Union[_artifacts_pb2.Artifact, _Mapping]] = ...) -> None: ...
 
 class CreateUploadLocationRequest(_message.Message):
-    __slots__ = ["project", "domain", "filename", "expires_in", "content_md5"]
+    __slots__ = ["project", "domain", "filename", "expires_in", "content_md5", "artifact_spec"]
     PROJECT_FIELD_NUMBER: _ClassVar[int]
     DOMAIN_FIELD_NUMBER: _ClassVar[int]
     FILENAME_FIELD_NUMBER: _ClassVar[int]
     EXPIRES_IN_FIELD_NUMBER: _ClassVar[int]
     CONTENT_MD5_FIELD_NUMBER: _ClassVar[int]
+    ARTIFACT_SPEC_FIELD_NUMBER: _ClassVar[int]
     project: str
     domain: str
     filename: str
     expires_in: _duration_pb2.Duration
     content_md5: bytes
-    def __init__(self, project: _Optional[str] = ..., domain: _Optional[str] = ..., filename: _Optional[str] = ..., expires_in: _Optional[_Union[_duration_pb2.Duration, _Mapping]] = ..., content_md5: _Optional[bytes] = ...) -> None: ...
+    artifact_spec: _artifacts_pb2.ArtifactSpec
+    def __init__(self, project: _Optional[str] = ..., domain: _Optional[str] = ..., filename: _Optional[str] = ..., expires_in: _Optional[_Union[_duration_pb2.Duration, _Mapping]] = ..., content_md5: _Optional[bytes] = ..., artifact_spec: _Optional[_Union[_artifacts_pb2.ArtifactSpec, _Mapping]] = ...) -> None: ...
 
 class CreateDownloadLocationRequest(_message.Message):
     __slots__ = ["native_url", "expires_in"]

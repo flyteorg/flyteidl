@@ -9,8 +9,22 @@ import "flyteidl/core/compiler.proto";
 import "flyteidl/core/execution.proto";
 import "flyteidl/core/identifier.proto";
 import "flyteidl/core/catalog.proto";
+import "flyteidl/artifact/artifacts.proto";
 import "google/protobuf/timestamp.proto";
 import "google/protobuf/struct.proto";
+
+/*
+  Message to be sent from Admin repo to the event stream. This event should effectively replace an
+  in-lined call to create an Artifact object in the table.
+  Consider removing this event if it's possible to just listen to the raw node/task execution events.
+  This event is also meant to capture:
+    * human-initiated uploads (like from pyflyte run or FlyteRemote or from the UI)
+        - FlyteRemote can explicitly create Artifact, or it can execute workflows with things that need to be
+          uploaded (just like pyflyte run).
+*/
+message ArtifactCreateEvent {
+    artifact.CreateArtifactRequest create_request = 1;
+}
 
 message WorkflowExecutionEvent {
     // Workflow execution id

@@ -53,14 +53,16 @@ class ArtifactQuery(_message.Message):
     def __init__(self, artifact_key: _Optional[_Union[_identifier_pb2.ArtifactKey, _Mapping]] = ..., version: _Optional[str] = ..., alias: _Optional[_Union[Alias, _Mapping]] = ..., tags: _Optional[_Iterable[_Union[Tag, _Mapping]]] = ...) -> None: ...
 
 class CreateArtifactRequest(_message.Message):
-    __slots__ = ["artifact_key", "version", "spec"]
+    __slots__ = ["artifact_key", "version", "uri", "spec"]
     ARTIFACT_KEY_FIELD_NUMBER: _ClassVar[int]
     VERSION_FIELD_NUMBER: _ClassVar[int]
+    URI_FIELD_NUMBER: _ClassVar[int]
     SPEC_FIELD_NUMBER: _ClassVar[int]
     artifact_key: _identifier_pb2.ArtifactKey
     version: str
+    uri: str
     spec: ArtifactSpec
-    def __init__(self, artifact_key: _Optional[_Union[_identifier_pb2.ArtifactKey, _Mapping]] = ..., version: _Optional[str] = ..., spec: _Optional[_Union[ArtifactSpec, _Mapping]] = ...) -> None: ...
+    def __init__(self, artifact_key: _Optional[_Union[_identifier_pb2.ArtifactKey, _Mapping]] = ..., version: _Optional[str] = ..., uri: _Optional[str] = ..., spec: _Optional[_Union[ArtifactSpec, _Mapping]] = ...) -> None: ...
 
 class CreateArtifactResponse(_message.Message):
     __slots__ = ["artifact"]

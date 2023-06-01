@@ -48,6 +48,9 @@ message CreateUploadLocationRequest {
   // generated path.
   // +required
   bytes content_md5 = 5;
+
+  // If provided, the Artifact that the upload creates will contain the information specified here.
+  artifact.ArtifactSpec artifact_spec = 6;
 }
 
 // CreateDownloadLocationRequest specified request for the CreateDownloadLocation API.

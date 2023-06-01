@@ -5281,15 +5281,25 @@ public final class Artifacts {
         getVersionBytes();
 
     /**
-     * <code>.flyteidl.artifact.ArtifactSpec spec = 3;</code>
+     * <code>string uri = 3;</code>
+     */
+    java.lang.String getUri();
+    /**
+     * <code>string uri = 3;</code>
+     */
+    com.google.protobuf.ByteString
+        getUriBytes();
+
+    /**
+     * <code>.flyteidl.artifact.ArtifactSpec spec = 4;</code>
      */
     boolean hasSpec();
     /**
-     * <code>.flyteidl.artifact.ArtifactSpec spec = 3;</code>
+     * <code>.flyteidl.artifact.ArtifactSpec spec = 4;</code>
      */
     flyteidl.artifact.Artifacts.ArtifactSpec getSpec();
     /**
-     * <code>.flyteidl.artifact.ArtifactSpec spec = 3;</code>
+     * <code>.flyteidl.artifact.ArtifactSpec spec = 4;</code>
      */
     flyteidl.artifact.Artifacts.ArtifactSpecOrBuilder getSpecOrBuilder();
   }
@@ -5307,6 +5317,7 @@ public final class Artifacts {
     }
     private CreateArtifactRequest() {
       version_ = "";
+      uri_ = "";
     }
 
     @java.lang.Override
@@ -5353,6 +5364,12 @@ public final class Artifacts {
               break;
             }
             case 26: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              uri_ = s;
+              break;
+            }
+            case 34: {
               flyteidl.artifact.Artifacts.ArtifactSpec.Builder subBuilder = null;
               if (spec_ != null) {
                 subBuilder = spec_.toBuilder();
@@ -5460,22 +5477,56 @@ public final class Artifacts {
       }
     }
 
-    public static final int SPEC_FIELD_NUMBER = 3;
+    public static final int URI_FIELD_NUMBER = 3;
+    private volatile java.lang.Object uri_;
+    /**
+     * <code>string uri = 3;</code>
+     */
+    public java.lang.String getUri() {
+      java.lang.Object ref = uri_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        uri_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string uri = 3;</code>
+     */
+    public com.google.protobuf.ByteString
+        getUriBytes() {
+      java.lang.Object ref = uri_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        uri_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int SPEC_FIELD_NUMBER = 4;
     private flyteidl.artifact.Artifacts.ArtifactSpec spec_;
     /**
-     * <code>.flyteidl.artifact.ArtifactSpec spec = 3;</code>
+     * <code>.flyteidl.artifact.ArtifactSpec spec = 4;</code>
      */
     public boolean hasSpec() {
       return spec_ != null;
     }
     /**
-     * <code>.flyteidl.artifact.ArtifactSpec spec = 3;</code>
+     * <code>.flyteidl.artifact.ArtifactSpec spec = 4;</code>
      */
     public flyteidl.artifact.Artifacts.ArtifactSpec getSpec() {
       return spec_ == null ? flyteidl.artifact.Artifacts.ArtifactSpec.getDefaultInstance() : spec_;
     }
     /**
-     * <code>.flyteidl.artifact.ArtifactSpec spec = 3;</code>
+     * <code>.flyteidl.artifact.ArtifactSpec spec = 4;</code>
      */
     public flyteidl.artifact.Artifacts.ArtifactSpecOrBuilder getSpecOrBuilder() {
       return getSpec();
@@ -5501,8 +5552,11 @@ public final class Artifacts {
       if (!getVersionBytes().isEmpty()) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 2, version_);
       }
+      if (!getUriBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 3, uri_);
+      }
       if (spec_ != null) {
-        output.writeMessage(3, getSpec());
+        output.writeMessage(4, getSpec());
       }
       unknownFields.writeTo(output);
     }
@@ -5520,9 +5574,12 @@ public final class Artifacts {
       if (!getVersionBytes().isEmpty()) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, version_);
       }
+      if (!getUriBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, uri_);
+      }
       if (spec_ != null) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(3, getSpec());
+          .computeMessageSize(4, getSpec());
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -5546,6 +5603,8 @@ public final class Artifacts {
       }
       if (!getVersion()
           .equals(other.getVersion())) return false;
+      if (!getUri()
+          .equals(other.getUri())) return false;
       if (hasSpec() != other.hasSpec()) return false;
       if (hasSpec()) {
         if (!getSpec()
@@ -5568,6 +5627,8 @@ public final class Artifacts {
       }
       hash = (37 * hash) + VERSION_FIELD_NUMBER;
       hash = (53 * hash) + getVersion().hashCode();
+      hash = (37 * hash) + URI_FIELD_NUMBER;
+      hash = (53 * hash) + getUri().hashCode();
       if (hasSpec()) {
         hash = (37 * hash) + SPEC_FIELD_NUMBER;
         hash = (53 * hash) + getSpec().hashCode();
@@ -5713,6 +5774,8 @@ public final class Artifacts {
         }
         version_ = "";
 
+        uri_ = "";
+
         if (specBuilder_ == null) {
           spec_ = null;
         } else {
@@ -5751,6 +5814,7 @@ public final class Artifacts {
           result.artifactKey_ = artifactKeyBuilder_.build();
         }
         result.version_ = version_;
+        result.uri_ = uri_;
         if (specBuilder_ == null) {
           result.spec_ = spec_;
         } else {
@@ -5809,6 +5873,10 @@ public final class Artifacts {
         }
         if (!other.getVersion().isEmpty()) {
           version_ = other.version_;
+          onChanged();
+        }
+        if (!other.getUri().isEmpty()) {
+          uri_ = other.uri_;
           onChanged();
         }
         if (other.hasSpec()) {
@@ -6049,17 +6117,86 @@ public final class Artifacts {
         return this;
       }
 
+      private java.lang.Object uri_ = "";
+      /**
+       * <code>string uri = 3;</code>
+       */
+      public java.lang.String getUri() {
+        java.lang.Object ref = uri_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          uri_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>string uri = 3;</code>
+       */
+      public com.google.protobuf.ByteString
+          getUriBytes() {
+        java.lang.Object ref = uri_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          uri_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string uri = 3;</code>
+       */
+      public Builder setUri(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        uri_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string uri = 3;</code>
+       */
+      public Builder clearUri() {
+        
+        uri_ = getDefaultInstance().getUri();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string uri = 3;</code>
+       */
+      public Builder setUriBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        uri_ = value;
+        onChanged();
+        return this;
+      }
+
       private flyteidl.artifact.Artifacts.ArtifactSpec spec_;
       private com.google.protobuf.SingleFieldBuilderV3<
           flyteidl.artifact.Artifacts.ArtifactSpec, flyteidl.artifact.Artifacts.ArtifactSpec.Builder, flyteidl.artifact.Artifacts.ArtifactSpecOrBuilder> specBuilder_;
       /**
-       * <code>.flyteidl.artifact.ArtifactSpec spec = 3;</code>
+       * <code>.flyteidl.artifact.ArtifactSpec spec = 4;</code>
        */
       public boolean hasSpec() {
         return specBuilder_ != null || spec_ != null;
       }
       /**
-       * <code>.flyteidl.artifact.ArtifactSpec spec = 3;</code>
+       * <code>.flyteidl.artifact.ArtifactSpec spec = 4;</code>
        */
       public flyteidl.artifact.Artifacts.ArtifactSpec getSpec() {
         if (specBuilder_ == null) {
@@ -6069,7 +6206,7 @@ public final class Artifacts {
         }
       }
       /**
-       * <code>.flyteidl.artifact.ArtifactSpec spec = 3;</code>
+       * <code>.flyteidl.artifact.ArtifactSpec spec = 4;</code>
        */
       public Builder setSpec(flyteidl.artifact.Artifacts.ArtifactSpec value) {
         if (specBuilder_ == null) {
@@ -6085,7 +6222,7 @@ public final class Artifacts {
         return this;
       }
       /**
-       * <code>.flyteidl.artifact.ArtifactSpec spec = 3;</code>
+       * <code>.flyteidl.artifact.ArtifactSpec spec = 4;</code>
        */
       public Builder setSpec(
           flyteidl.artifact.Artifacts.ArtifactSpec.Builder builderForValue) {
@@ -6099,7 +6236,7 @@ public final class Artifacts {
         return this;
       }
       /**
-       * <code>.flyteidl.artifact.ArtifactSpec spec = 3;</code>
+       * <code>.flyteidl.artifact.ArtifactSpec spec = 4;</code>
        */
       public Builder mergeSpec(flyteidl.artifact.Artifacts.ArtifactSpec value) {
         if (specBuilder_ == null) {
@@ -6117,7 +6254,7 @@ public final class Artifacts {
         return this;
       }
       /**
-       * <code>.flyteidl.artifact.ArtifactSpec spec = 3;</code>
+       * <code>.flyteidl.artifact.ArtifactSpec spec = 4;</code>
        */
       public Builder clearSpec() {
         if (specBuilder_ == null) {
@@ -6131,7 +6268,7 @@ public final class Artifacts {
         return this;
       }
       /**
-       * <code>.flyteidl.artifact.ArtifactSpec spec = 3;</code>
+       * <code>.flyteidl.artifact.ArtifactSpec spec = 4;</code>
        */
       public flyteidl.artifact.Artifacts.ArtifactSpec.Builder getSpecBuilder() {
         
@@ -6139,7 +6276,7 @@ public final class Artifacts {
         return getSpecFieldBuilder().getBuilder();
       }
       /**
-       * <code>.flyteidl.artifact.ArtifactSpec spec = 3;</code>
+       * <code>.flyteidl.artifact.ArtifactSpec spec = 4;</code>
        */
       public flyteidl.artifact.Artifacts.ArtifactSpecOrBuilder getSpecOrBuilder() {
         if (specBuilder_ != null) {
@@ -6150,7 +6287,7 @@ public final class Artifacts {
         }
       }
       /**
-       * <code>.flyteidl.artifact.ArtifactSpec spec = 3;</code>
+       * <code>.flyteidl.artifact.ArtifactSpec spec = 4;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
           flyteidl.artifact.Artifacts.ArtifactSpec, flyteidl.artifact.Artifacts.ArtifactSpec.Builder, flyteidl.artifact.Artifacts.ArtifactSpecOrBuilder> 
@@ -17806,60 +17943,60 @@ public final class Artifacts {
       "rtifact_key\030\001 \001(\0132\032.flyteidl.core.Artifa" +
       "ctKey\022\017\n\007version\030\002 \001(\t\022\'\n\005alias\030\003 \001(\0132\030." +
       "flyteidl.artifact.Alias\022$\n\004tags\030\004 \003(\0132\026." +
-      "flyteidl.artifact.Tag\"\211\001\n\025CreateArtifact" +
+      "flyteidl.artifact.Tag\"\226\001\n\025CreateArtifact" +
       "Request\0220\n\014artifact_key\030\001 \001(\0132\032.flyteidl" +
-      ".core.ArtifactKey\022\017\n\007version\030\002 \001(\t\022-\n\004sp" +
-      "ec\030\003 \001(\0132\037.flyteidl.artifact.ArtifactSpe" +
-      "c\"G\n\026CreateArtifactResponse\022-\n\010artifact\030" +
-      "\001 \001(\0132\033.flyteidl.artifact.Artifact\"t\n\022Ge" +
-      "tArtifactRequest\0220\n\013artifact_id\030\001 \001(\0132\031." +
-      "flyteidl.core.ArtifactIDH\000\022\r\n\003uri\030\002 \001(\tH" +
-      "\000\022\017\n\007details\030\003 \001(\010B\014\n\nidentifier\"!\n\003Tag\022" +
-      "\013\n\003key\030\001 \001(\t\022\r\n\005value\030\002 \001(\t\"f\n\016AddTagsRe" +
-      "quest\022.\n\013artifact_id\030\001 \001(\0132\031.flyteidl.co" +
-      "re.ArtifactID\022$\n\004tags\030\002 \003(\0132\026.flyteidl.a" +
-      "rtifact.Tag\"\021\n\017AddTagsResponse\"i\n\021Remove" +
-      "TagsRequest\022.\n\013artifact_id\030\001 \001(\0132\031.flyte" +
-      "idl.core.ArtifactID\022$\n\004tags\030\002 \003(\0132\026.flyt" +
-      "eidl.artifact.Tag\"\024\n\022RemoveTagsResponse\"" +
-      ";\n\030ListArtifactNamesRequest\022\017\n\007project\030\001" +
-      " \001(\t\022\016\n\006domain\030\002 \001(\t\"N\n\031ListArtifactName" +
-      "sResponse\0221\n\rartifact_keys\030\001 \003(\0132\032.flyte" +
-      "idl.core.ArtifactKey\"H\n\024ListArtifactsReq" +
-      "uest\0220\n\014artifact_key\030\001 \001(\0132\032.flyteidl.co" +
-      "re.ArtifactKey\"G\n\025ListArtifactsResponse\022" +
-      ".\n\tartifacts\030\001 \003(\0132\033.flyteidl.artifact.A" +
-      "rtifact\"\202\001\n\022CreateAliasRequest\0220\n\014artifa" +
-      "ct_key\030\001 \001(\0132\032.flyteidl.core.ArtifactKey" +
-      "\022\'\n\005alias\030\002 \001(\0132\030.flyteidl.artifact.Alia" +
-      "s\022\021\n\toverwrite\030\003 \001(\010\"\025\n\023CreateAliasRespo" +
-      "nse\"m\n\022RemoveAliasRequest\022.\n\013artifact_id" +
-      "\030\001 \001(\0132\031.flyteidl.core.ArtifactID\022\'\n\005ali" +
-      "as\030\002 \001(\0132\030.flyteidl.artifact.Alias\"\025\n\023Re" +
-      "moveAliasResponse\"#\n\005Alias\022\013\n\003key\030\001 \001(\t\022" +
-      "\r\n\005value\030\002 \001(\t2\235\006\n\020ArtifactRegistry\022g\n\016C" +
-      "reateArtifact\022(.flyteidl.artifact.Create" +
-      "ArtifactRequest\032).flyteidl.artifact.Crea" +
-      "teArtifactResponse\"\000\022S\n\013GetArtifact\022%.fl" +
-      "yteidl.artifact.GetArtifactRequest\032\033.fly" +
-      "teidl.artifact.Artifact\"\000\022p\n\021ListArtifac" +
-      "tNames\022+.flyteidl.artifact.ListArtifactN" +
-      "amesRequest\032,.flyteidl.artifact.ListArti" +
-      "factNamesResponse\"\000\022d\n\rListArtifacts\022\'.f" +
-      "lyteidl.artifact.ListArtifactsRequest\032(." +
-      "flyteidl.artifact.ListArtifactsResponse\"" +
-      "\000\022V\n\013TagArtifact\022!.flyteidl.artifact.Add" +
-      "TagsRequest\032\".flyteidl.artifact.AddTagsR" +
-      "esponse\"\000\022[\n\nRemoveTags\022$.flyteidl.artif" +
-      "act.RemoveTagsRequest\032%.flyteidl.artifac" +
-      "t.RemoveTagsResponse\"\000\022^\n\013CreateAlias\022%." +
-      "flyteidl.artifact.CreateAliasRequest\032&.f" +
-      "lyteidl.artifact.CreateAliasResponse\"\000\022^" +
-      "\n\013RemoveAlias\022%.flyteidl.artifact.Remove" +
-      "AliasRequest\032&.flyteidl.artifact.RemoveA" +
-      "liasResponse\"\000B:Z8github.com/flyteorg/fl" +
-      "yteidl/gen/pb-go/flyteidl/artifactb\006prot" +
-      "o3"
+      ".core.ArtifactKey\022\017\n\007version\030\002 \001(\t\022\013\n\003ur" +
+      "i\030\003 \001(\t\022-\n\004spec\030\004 \001(\0132\037.flyteidl.artifac" +
+      "t.ArtifactSpec\"G\n\026CreateArtifactResponse" +
+      "\022-\n\010artifact\030\001 \001(\0132\033.flyteidl.artifact.A" +
+      "rtifact\"t\n\022GetArtifactRequest\0220\n\013artifac" +
+      "t_id\030\001 \001(\0132\031.flyteidl.core.ArtifactIDH\000\022" +
+      "\r\n\003uri\030\002 \001(\tH\000\022\017\n\007details\030\003 \001(\010B\014\n\nident" +
+      "ifier\"!\n\003Tag\022\013\n\003key\030\001 \001(\t\022\r\n\005value\030\002 \001(\t" +
+      "\"f\n\016AddTagsRequest\022.\n\013artifact_id\030\001 \001(\0132" +
+      "\031.flyteidl.core.ArtifactID\022$\n\004tags\030\002 \003(\013" +
+      "2\026.flyteidl.artifact.Tag\"\021\n\017AddTagsRespo" +
+      "nse\"i\n\021RemoveTagsRequest\022.\n\013artifact_id\030" +
+      "\001 \001(\0132\031.flyteidl.core.ArtifactID\022$\n\004tags" +
+      "\030\002 \003(\0132\026.flyteidl.artifact.Tag\"\024\n\022Remove" +
+      "TagsResponse\";\n\030ListArtifactNamesRequest" +
+      "\022\017\n\007project\030\001 \001(\t\022\016\n\006domain\030\002 \001(\t\"N\n\031Lis" +
+      "tArtifactNamesResponse\0221\n\rartifact_keys\030" +
+      "\001 \003(\0132\032.flyteidl.core.ArtifactKey\"H\n\024Lis" +
+      "tArtifactsRequest\0220\n\014artifact_key\030\001 \001(\0132" +
+      "\032.flyteidl.core.ArtifactKey\"G\n\025ListArtif" +
+      "actsResponse\022.\n\tartifacts\030\001 \003(\0132\033.flytei" +
+      "dl.artifact.Artifact\"\202\001\n\022CreateAliasRequ" +
+      "est\0220\n\014artifact_key\030\001 \001(\0132\032.flyteidl.cor" +
+      "e.ArtifactKey\022\'\n\005alias\030\002 \001(\0132\030.flyteidl." +
+      "artifact.Alias\022\021\n\toverwrite\030\003 \001(\010\"\025\n\023Cre" +
+      "ateAliasResponse\"m\n\022RemoveAliasRequest\022." +
+      "\n\013artifact_id\030\001 \001(\0132\031.flyteidl.core.Arti" +
+      "factID\022\'\n\005alias\030\002 \001(\0132\030.flyteidl.artifac" +
+      "t.Alias\"\025\n\023RemoveAliasResponse\"#\n\005Alias\022" +
+      "\013\n\003key\030\001 \001(\t\022\r\n\005value\030\002 \001(\t2\235\006\n\020Artifact" +
+      "Registry\022g\n\016CreateArtifact\022(.flyteidl.ar" +
+      "tifact.CreateArtifactRequest\032).flyteidl." +
+      "artifact.CreateArtifactResponse\"\000\022S\n\013Get" +
+      "Artifact\022%.flyteidl.artifact.GetArtifact" +
+      "Request\032\033.flyteidl.artifact.Artifact\"\000\022p" +
+      "\n\021ListArtifactNames\022+.flyteidl.artifact." +
+      "ListArtifactNamesRequest\032,.flyteidl.arti" +
+      "fact.ListArtifactNamesResponse\"\000\022d\n\rList" +
+      "Artifacts\022\'.flyteidl.artifact.ListArtifa" +
+      "ctsRequest\032(.flyteidl.artifact.ListArtif" +
+      "actsResponse\"\000\022V\n\013TagArtifact\022!.flyteidl" +
+      ".artifact.AddTagsRequest\032\".flyteidl.arti" +
+      "fact.AddTagsResponse\"\000\022[\n\nRemoveTags\022$.f" +
+      "lyteidl.artifact.RemoveTagsRequest\032%.fly" +
+      "teidl.artifact.RemoveTagsResponse\"\000\022^\n\013C" +
+      "reateAlias\022%.flyteidl.artifact.CreateAli" +
+      "asRequest\032&.flyteidl.artifact.CreateAlia" +
+      "sResponse\"\000\022^\n\013RemoveAlias\022%.flyteidl.ar" +
+      "tifact.RemoveAliasRequest\032&.flyteidl.art" +
+      "ifact.RemoveAliasResponse\"\000B:Z8github.co" +
+      "m/flyteorg/flyteidl/gen/pb-go/flyteidl/a" +
+      "rtifactb\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
@@ -17899,7 +18036,7 @@ public final class Artifacts {
     internal_static_flyteidl_artifact_CreateArtifactRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_flyteidl_artifact_CreateArtifactRequest_descriptor,
-        new java.lang.String[] { "ArtifactKey", "Version", "Spec", });
+        new java.lang.String[] { "ArtifactKey", "Version", "Uri", "Spec", });
     internal_static_flyteidl_artifact_CreateArtifactResponse_descriptor =
       getDescriptor().getMessageTypes().get(4);
     internal_static_flyteidl_artifact_CreateArtifactResponse_fieldAccessorTable = new

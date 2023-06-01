@@ -14,6 +14,632 @@ public final class Event {
     registerAllExtensions(
         (com.google.protobuf.ExtensionRegistryLite) registry);
   }
+  public interface ArtifactCreateEventOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:flyteidl.event.ArtifactCreateEvent)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <code>.flyteidl.artifact.CreateArtifactRequest create_request = 1;</code>
+     */
+    boolean hasCreateRequest();
+    /**
+     * <code>.flyteidl.artifact.CreateArtifactRequest create_request = 1;</code>
+     */
+    flyteidl.artifact.Artifacts.CreateArtifactRequest getCreateRequest();
+    /**
+     * <code>.flyteidl.artifact.CreateArtifactRequest create_request = 1;</code>
+     */
+    flyteidl.artifact.Artifacts.CreateArtifactRequestOrBuilder getCreateRequestOrBuilder();
+  }
+  /**
+   * <pre>
+   *Message to be sent from Admin repo to the event stream. This event should effectively replace an
+   *in-lined call to create an Artifact object in the table.
+   *Consider removing this event if it's possible to just listen to the raw node/task execution events.
+   *This event is also meant to capture:
+   * human-initiated uploads (like from pyflyte run or FlyteRemote or from the UI)
+   *- FlyteRemote can explicitly create Artifact, or it can execute workflows with things that need to be
+   *uploaded (just like pyflyte run).
+   * </pre>
+   *
+   * Protobuf type {@code flyteidl.event.ArtifactCreateEvent}
+   */
+  public  static final class ArtifactCreateEvent extends
+      com.google.protobuf.GeneratedMessageV3 implements
+      // @@protoc_insertion_point(message_implements:flyteidl.event.ArtifactCreateEvent)
+      ArtifactCreateEventOrBuilder {
+  private static final long serialVersionUID = 0L;
+    // Use ArtifactCreateEvent.newBuilder() to construct.
+    private ArtifactCreateEvent(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+    private ArtifactCreateEvent() {
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+      return this.unknownFields;
+    }
+    private ArtifactCreateEvent(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10: {
+              flyteidl.artifact.Artifacts.CreateArtifactRequest.Builder subBuilder = null;
+              if (createRequest_ != null) {
+                subBuilder = createRequest_.toBuilder();
+              }
+              createRequest_ = input.readMessage(flyteidl.artifact.Artifacts.CreateArtifactRequest.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(createRequest_);
+                createRequest_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return flyteidl.event.Event.internal_static_flyteidl_event_ArtifactCreateEvent_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return flyteidl.event.Event.internal_static_flyteidl_event_ArtifactCreateEvent_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              flyteidl.event.Event.ArtifactCreateEvent.class, flyteidl.event.Event.ArtifactCreateEvent.Builder.class);
+    }
+
+    public static final int CREATE_REQUEST_FIELD_NUMBER = 1;
+    private flyteidl.artifact.Artifacts.CreateArtifactRequest createRequest_;
+    /**
+     * <code>.flyteidl.artifact.CreateArtifactRequest create_request = 1;</code>
+     */
+    public boolean hasCreateRequest() {
+      return createRequest_ != null;
+    }
+    /**
+     * <code>.flyteidl.artifact.CreateArtifactRequest create_request = 1;</code>
+     */
+    public flyteidl.artifact.Artifacts.CreateArtifactRequest getCreateRequest() {
+      return createRequest_ == null ? flyteidl.artifact.Artifacts.CreateArtifactRequest.getDefaultInstance() : createRequest_;
+    }
+    /**
+     * <code>.flyteidl.artifact.CreateArtifactRequest create_request = 1;</code>
+     */
+    public flyteidl.artifact.Artifacts.CreateArtifactRequestOrBuilder getCreateRequestOrBuilder() {
+      return getCreateRequest();
+    }
+
+    private byte memoizedIsInitialized = -1;
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      if (createRequest_ != null) {
+        output.writeMessage(1, getCreateRequest());
+      }
+      unknownFields.writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (createRequest_ != null) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(1, getCreateRequest());
+      }
+      size += unknownFields.getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof flyteidl.event.Event.ArtifactCreateEvent)) {
+        return super.equals(obj);
+      }
+      flyteidl.event.Event.ArtifactCreateEvent other = (flyteidl.event.Event.ArtifactCreateEvent) obj;
+
+      if (hasCreateRequest() != other.hasCreateRequest()) return false;
+      if (hasCreateRequest()) {
+        if (!getCreateRequest()
+            .equals(other.getCreateRequest())) return false;
+      }
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      if (hasCreateRequest()) {
+        hash = (37 * hash) + CREATE_REQUEST_FIELD_NUMBER;
+        hash = (53 * hash) + getCreateRequest().hashCode();
+      }
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static flyteidl.event.Event.ArtifactCreateEvent parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static flyteidl.event.Event.ArtifactCreateEvent parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static flyteidl.event.Event.ArtifactCreateEvent parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static flyteidl.event.Event.ArtifactCreateEvent parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static flyteidl.event.Event.ArtifactCreateEvent parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static flyteidl.event.Event.ArtifactCreateEvent parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static flyteidl.event.Event.ArtifactCreateEvent parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static flyteidl.event.Event.ArtifactCreateEvent parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static flyteidl.event.Event.ArtifactCreateEvent parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+    public static flyteidl.event.Event.ArtifactCreateEvent parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static flyteidl.event.Event.ArtifactCreateEvent parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static flyteidl.event.Event.ArtifactCreateEvent parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(flyteidl.event.Event.ArtifactCreateEvent prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * <pre>
+     *Message to be sent from Admin repo to the event stream. This event should effectively replace an
+     *in-lined call to create an Artifact object in the table.
+     *Consider removing this event if it's possible to just listen to the raw node/task execution events.
+     *This event is also meant to capture:
+     * human-initiated uploads (like from pyflyte run or FlyteRemote or from the UI)
+     *- FlyteRemote can explicitly create Artifact, or it can execute workflows with things that need to be
+     *uploaded (just like pyflyte run).
+     * </pre>
+     *
+     * Protobuf type {@code flyteidl.event.ArtifactCreateEvent}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:flyteidl.event.ArtifactCreateEvent)
+        flyteidl.event.Event.ArtifactCreateEventOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return flyteidl.event.Event.internal_static_flyteidl_event_ArtifactCreateEvent_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return flyteidl.event.Event.internal_static_flyteidl_event_ArtifactCreateEvent_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                flyteidl.event.Event.ArtifactCreateEvent.class, flyteidl.event.Event.ArtifactCreateEvent.Builder.class);
+      }
+
+      // Construct using flyteidl.event.Event.ArtifactCreateEvent.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
+      }
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        if (createRequestBuilder_ == null) {
+          createRequest_ = null;
+        } else {
+          createRequest_ = null;
+          createRequestBuilder_ = null;
+        }
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return flyteidl.event.Event.internal_static_flyteidl_event_ArtifactCreateEvent_descriptor;
+      }
+
+      @java.lang.Override
+      public flyteidl.event.Event.ArtifactCreateEvent getDefaultInstanceForType() {
+        return flyteidl.event.Event.ArtifactCreateEvent.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public flyteidl.event.Event.ArtifactCreateEvent build() {
+        flyteidl.event.Event.ArtifactCreateEvent result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public flyteidl.event.Event.ArtifactCreateEvent buildPartial() {
+        flyteidl.event.Event.ArtifactCreateEvent result = new flyteidl.event.Event.ArtifactCreateEvent(this);
+        if (createRequestBuilder_ == null) {
+          result.createRequest_ = createRequest_;
+        } else {
+          result.createRequest_ = createRequestBuilder_.build();
+        }
+        onBuilt();
+        return result;
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.setField(field, value);
+      }
+      @java.lang.Override
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+      @java.lang.Override
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof flyteidl.event.Event.ArtifactCreateEvent) {
+          return mergeFrom((flyteidl.event.Event.ArtifactCreateEvent)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(flyteidl.event.Event.ArtifactCreateEvent other) {
+        if (other == flyteidl.event.Event.ArtifactCreateEvent.getDefaultInstance()) return this;
+        if (other.hasCreateRequest()) {
+          mergeCreateRequest(other.getCreateRequest());
+        }
+        this.mergeUnknownFields(other.unknownFields);
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        flyteidl.event.Event.ArtifactCreateEvent parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (flyteidl.event.Event.ArtifactCreateEvent) e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+
+      private flyteidl.artifact.Artifacts.CreateArtifactRequest createRequest_;
+      private com.google.protobuf.SingleFieldBuilderV3<
+          flyteidl.artifact.Artifacts.CreateArtifactRequest, flyteidl.artifact.Artifacts.CreateArtifactRequest.Builder, flyteidl.artifact.Artifacts.CreateArtifactRequestOrBuilder> createRequestBuilder_;
+      /**
+       * <code>.flyteidl.artifact.CreateArtifactRequest create_request = 1;</code>
+       */
+      public boolean hasCreateRequest() {
+        return createRequestBuilder_ != null || createRequest_ != null;
+      }
+      /**
+       * <code>.flyteidl.artifact.CreateArtifactRequest create_request = 1;</code>
+       */
+      public flyteidl.artifact.Artifacts.CreateArtifactRequest getCreateRequest() {
+        if (createRequestBuilder_ == null) {
+          return createRequest_ == null ? flyteidl.artifact.Artifacts.CreateArtifactRequest.getDefaultInstance() : createRequest_;
+        } else {
+          return createRequestBuilder_.getMessage();
+        }
+      }
+      /**
+       * <code>.flyteidl.artifact.CreateArtifactRequest create_request = 1;</code>
+       */
+      public Builder setCreateRequest(flyteidl.artifact.Artifacts.CreateArtifactRequest value) {
+        if (createRequestBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          createRequest_ = value;
+          onChanged();
+        } else {
+          createRequestBuilder_.setMessage(value);
+        }
+
+        return this;
+      }
+      /**
+       * <code>.flyteidl.artifact.CreateArtifactRequest create_request = 1;</code>
+       */
+      public Builder setCreateRequest(
+          flyteidl.artifact.Artifacts.CreateArtifactRequest.Builder builderForValue) {
+        if (createRequestBuilder_ == null) {
+          createRequest_ = builderForValue.build();
+          onChanged();
+        } else {
+          createRequestBuilder_.setMessage(builderForValue.build());
+        }
+
+        return this;
+      }
+      /**
+       * <code>.flyteidl.artifact.CreateArtifactRequest create_request = 1;</code>
+       */
+      public Builder mergeCreateRequest(flyteidl.artifact.Artifacts.CreateArtifactRequest value) {
+        if (createRequestBuilder_ == null) {
+          if (createRequest_ != null) {
+            createRequest_ =
+              flyteidl.artifact.Artifacts.CreateArtifactRequest.newBuilder(createRequest_).mergeFrom(value).buildPartial();
+          } else {
+            createRequest_ = value;
+          }
+          onChanged();
+        } else {
+          createRequestBuilder_.mergeFrom(value);
+        }
+
+        return this;
+      }
+      /**
+       * <code>.flyteidl.artifact.CreateArtifactRequest create_request = 1;</code>
+       */
+      public Builder clearCreateRequest() {
+        if (createRequestBuilder_ == null) {
+          createRequest_ = null;
+          onChanged();
+        } else {
+          createRequest_ = null;
+          createRequestBuilder_ = null;
+        }
+
+        return this;
+      }
+      /**
+       * <code>.flyteidl.artifact.CreateArtifactRequest create_request = 1;</code>
+       */
+      public flyteidl.artifact.Artifacts.CreateArtifactRequest.Builder getCreateRequestBuilder() {
+        
+        onChanged();
+        return getCreateRequestFieldBuilder().getBuilder();
+      }
+      /**
+       * <code>.flyteidl.artifact.CreateArtifactRequest create_request = 1;</code>
+       */
+      public flyteidl.artifact.Artifacts.CreateArtifactRequestOrBuilder getCreateRequestOrBuilder() {
+        if (createRequestBuilder_ != null) {
+          return createRequestBuilder_.getMessageOrBuilder();
+        } else {
+          return createRequest_ == null ?
+              flyteidl.artifact.Artifacts.CreateArtifactRequest.getDefaultInstance() : createRequest_;
+        }
+      }
+      /**
+       * <code>.flyteidl.artifact.CreateArtifactRequest create_request = 1;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+          flyteidl.artifact.Artifacts.CreateArtifactRequest, flyteidl.artifact.Artifacts.CreateArtifactRequest.Builder, flyteidl.artifact.Artifacts.CreateArtifactRequestOrBuilder> 
+          getCreateRequestFieldBuilder() {
+        if (createRequestBuilder_ == null) {
+          createRequestBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              flyteidl.artifact.Artifacts.CreateArtifactRequest, flyteidl.artifact.Artifacts.CreateArtifactRequest.Builder, flyteidl.artifact.Artifacts.CreateArtifactRequestOrBuilder>(
+                  getCreateRequest(),
+                  getParentForChildren(),
+                  isClean());
+          createRequest_ = null;
+        }
+        return createRequestBuilder_;
+      }
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+
+      // @@protoc_insertion_point(builder_scope:flyteidl.event.ArtifactCreateEvent)
+    }
+
+    // @@protoc_insertion_point(class_scope:flyteidl.event.ArtifactCreateEvent)
+    private static final flyteidl.event.Event.ArtifactCreateEvent DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new flyteidl.event.Event.ArtifactCreateEvent();
+    }
+
+    public static flyteidl.event.Event.ArtifactCreateEvent getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<ArtifactCreateEvent>
+        PARSER = new com.google.protobuf.AbstractParser<ArtifactCreateEvent>() {
+      @java.lang.Override
+      public ArtifactCreateEvent parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new ArtifactCreateEvent(input, extensionRegistry);
+      }
+    };
+
+    public static com.google.protobuf.Parser<ArtifactCreateEvent> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<ArtifactCreateEvent> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public flyteidl.event.Event.ArtifactCreateEvent getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
   public interface WorkflowExecutionEventOrBuilder extends
       // @@protoc_insertion_point(interface_extends:flyteidl.event.WorkflowExecutionEvent)
       com.google.protobuf.MessageOrBuilder {
@@ -20209,6 +20835,11 @@ public final class Event {
   }
 
   private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_flyteidl_event_ArtifactCreateEvent_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_flyteidl_event_ArtifactCreateEvent_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_flyteidl_event_WorkflowExecutionEvent_descriptor;
   private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
@@ -20276,95 +20907,98 @@ public final class Event {
       "vent\032\034flyteidl/core/literals.proto\032\034flyt" +
       "eidl/core/compiler.proto\032\035flyteidl/core/" +
       "execution.proto\032\036flyteidl/core/identifie" +
-      "r.proto\032\033flyteidl/core/catalog.proto\032\037go" +
-      "ogle/protobuf/timestamp.proto\032\034google/pr" +
-      "otobuf/struct.proto\"\340\002\n\026WorkflowExecutio" +
-      "nEvent\022@\n\014execution_id\030\001 \001(\0132*.flyteidl." +
-      "core.WorkflowExecutionIdentifier\022\023\n\013prod" +
-      "ucer_id\030\002 \001(\t\0225\n\005phase\030\003 \001(\0162&.flyteidl." +
-      "core.WorkflowExecution.Phase\022/\n\013occurred" +
-      "_at\030\004 \001(\0132\032.google.protobuf.Timestamp\022\024\n" +
-      "\noutput_uri\030\005 \001(\tH\000\022.\n\005error\030\006 \001(\0132\035.fly" +
-      "teidl.core.ExecutionErrorH\000\0220\n\013output_da" +
-      "ta\030\007 \001(\0132\031.flyteidl.core.LiteralMapH\000B\017\n" +
-      "\routput_result\"\217\007\n\022NodeExecutionEvent\0222\n" +
-      "\002id\030\001 \001(\0132&.flyteidl.core.NodeExecutionI" +
-      "dentifier\022\023\n\013producer_id\030\002 \001(\t\0221\n\005phase\030" +
-      "\003 \001(\0162\".flyteidl.core.NodeExecution.Phas" +
-      "e\022/\n\013occurred_at\030\004 \001(\0132\032.google.protobuf" +
-      ".Timestamp\022\023\n\tinput_uri\030\005 \001(\tH\000\022/\n\ninput" +
-      "_data\030\024 \001(\0132\031.flyteidl.core.LiteralMapH\000" +
-      "\022\024\n\noutput_uri\030\006 \001(\tH\001\022.\n\005error\030\007 \001(\0132\035." +
-      "flyteidl.core.ExecutionErrorH\001\0220\n\013output" +
-      "_data\030\017 \001(\0132\031.flyteidl.core.LiteralMapH\001" +
-      "\022F\n\026workflow_node_metadata\030\010 \001(\0132$.flyte" +
-      "idl.event.WorkflowNodeMetadataH\002\022>\n\022task" +
-      "_node_metadata\030\016 \001(\0132 .flyteidl.event.Ta" +
-      "skNodeMetadataH\002\022I\n\024parent_task_metadata" +
-      "\030\t \001(\0132+.flyteidl.event.ParentTaskExecut" +
-      "ionMetadata\022I\n\024parent_node_metadata\030\n \001(" +
-      "\0132+.flyteidl.event.ParentNodeExecutionMe" +
-      "tadata\022\023\n\013retry_group\030\013 \001(\t\022\024\n\014spec_node" +
-      "_id\030\014 \001(\t\022\021\n\tnode_name\030\r \001(\t\022\025\n\revent_ve" +
-      "rsion\030\020 \001(\005\022\021\n\tis_parent\030\021 \001(\010\022\022\n\nis_dyn" +
-      "amic\030\022 \001(\010\022\020\n\010deck_uri\030\023 \001(\t\022/\n\013reported" +
-      "_at\030\025 \001(\0132\032.google.protobuf.TimestampB\r\n" +
-      "\013input_valueB\017\n\routput_resultB\021\n\017target_" +
-      "metadata\"X\n\024WorkflowNodeMetadata\022@\n\014exec" +
-      "ution_id\030\001 \001(\0132*.flyteidl.core.WorkflowE" +
-      "xecutionIdentifier\"\245\002\n\020TaskNodeMetadata\022" +
-      "7\n\014cache_status\030\001 \001(\0162!.flyteidl.core.Ca" +
-      "talogCacheStatus\0223\n\013catalog_key\030\002 \001(\0132\036." +
-      "flyteidl.core.CatalogMetadata\022D\n\022reserva" +
-      "tion_status\030\003 \001(\0162(.flyteidl.core.Catalo" +
-      "gReservation.Status\022\026\n\016checkpoint_uri\030\004 " +
-      "\001(\t\022E\n\020dynamic_workflow\030\020 \001(\0132+.flyteidl" +
-      ".event.DynamicWorkflowNodeMetadata\"\245\001\n\033D" +
-      "ynamicWorkflowNodeMetadata\022%\n\002id\030\001 \001(\0132\031" +
-      ".flyteidl.core.Identifier\022A\n\021compiled_wo" +
-      "rkflow\030\002 \001(\0132&.flyteidl.core.CompiledWor" +
-      "kflowClosure\022\034\n\024dynamic_job_spec_uri\030\003 \001" +
-      "(\t\"Q\n\033ParentTaskExecutionMetadata\0222\n\002id\030" +
-      "\001 \001(\0132&.flyteidl.core.TaskExecutionIdent" +
-      "ifier\".\n\033ParentNodeExecutionMetadata\022\017\n\007" +
-      "node_id\030\001 \001(\t\"\207\006\n\022TaskExecutionEvent\022*\n\007" +
-      "task_id\030\001 \001(\0132\031.flyteidl.core.Identifier" +
-      "\022H\n\030parent_node_execution_id\030\002 \001(\0132&.fly" +
-      "teidl.core.NodeExecutionIdentifier\022\025\n\rre" +
-      "try_attempt\030\003 \001(\r\0221\n\005phase\030\004 \001(\0162\".flyte" +
-      "idl.core.TaskExecution.Phase\022\023\n\013producer" +
-      "_id\030\005 \001(\t\022$\n\004logs\030\006 \003(\0132\026.flyteidl.core." +
-      "TaskLog\022/\n\013occurred_at\030\007 \001(\0132\032.google.pr" +
-      "otobuf.Timestamp\022\023\n\tinput_uri\030\010 \001(\tH\000\022/\n" +
-      "\ninput_data\030\023 \001(\0132\031.flyteidl.core.Litera" +
-      "lMapH\000\022\024\n\noutput_uri\030\t \001(\tH\001\022.\n\005error\030\n " +
-      "\001(\0132\035.flyteidl.core.ExecutionErrorH\001\0220\n\013" +
-      "output_data\030\021 \001(\0132\031.flyteidl.core.Litera" +
-      "lMapH\001\022,\n\013custom_info\030\013 \001(\0132\027.google.pro" +
-      "tobuf.Struct\022\025\n\rphase_version\030\014 \001(\r\022\016\n\006r" +
-      "eason\030\r \001(\t\022\021\n\ttask_type\030\016 \001(\t\0227\n\010metada" +
-      "ta\030\020 \001(\0132%.flyteidl.event.TaskExecutionM" +
-      "etadata\022\025\n\revent_version\030\022 \001(\005\022/\n\013report" +
-      "ed_at\030\024 \001(\0132\032.google.protobuf.TimestampB" +
-      "\r\n\013input_valueB\017\n\routput_result\"\343\001\n\024Exte" +
-      "rnalResourceInfo\022\023\n\013external_id\030\001 \001(\t\022\r\n" +
-      "\005index\030\002 \001(\r\022\025\n\rretry_attempt\030\003 \001(\r\0221\n\005p" +
-      "hase\030\004 \001(\0162\".flyteidl.core.TaskExecution" +
-      ".Phase\0227\n\014cache_status\030\005 \001(\0162!.flyteidl." +
-      "core.CatalogCacheStatus\022$\n\004logs\030\006 \003(\0132\026." +
-      "flyteidl.core.TaskLog\"?\n\020ResourcePoolInf" +
-      "o\022\030\n\020allocation_token\030\001 \001(\t\022\021\n\tnamespace" +
-      "\030\002 \001(\t\"\310\002\n\025TaskExecutionMetadata\022\026\n\016gene" +
-      "rated_name\030\001 \001(\t\022@\n\022external_resources\030\002" +
-      " \003(\0132$.flyteidl.event.ExternalResourceIn" +
-      "fo\022<\n\022resource_pool_info\030\003 \003(\0132 .flyteid" +
-      "l.event.ResourcePoolInfo\022\031\n\021plugin_ident" +
-      "ifier\030\004 \001(\t\022K\n\016instance_class\030\020 \001(\01623.fl" +
-      "yteidl.event.TaskExecutionMetadata.Insta" +
-      "nceClass\"/\n\rInstanceClass\022\013\n\007DEFAULT\020\000\022\021" +
-      "\n\rINTERRUPTIBLE\020\001B7Z5github.com/flyteorg" +
-      "/flyteidl/gen/pb-go/flyteidl/eventb\006prot" +
-      "o3"
+      "r.proto\032\033flyteidl/core/catalog.proto\032!fl" +
+      "yteidl/artifact/artifacts.proto\032\037google/" +
+      "protobuf/timestamp.proto\032\034google/protobu" +
+      "f/struct.proto\"W\n\023ArtifactCreateEvent\022@\n" +
+      "\016create_request\030\001 \001(\0132(.flyteidl.artifac" +
+      "t.CreateArtifactRequest\"\340\002\n\026WorkflowExec" +
+      "utionEvent\022@\n\014execution_id\030\001 \001(\0132*.flyte" +
+      "idl.core.WorkflowExecutionIdentifier\022\023\n\013" +
+      "producer_id\030\002 \001(\t\0225\n\005phase\030\003 \001(\0162&.flyte" +
+      "idl.core.WorkflowExecution.Phase\022/\n\013occu" +
+      "rred_at\030\004 \001(\0132\032.google.protobuf.Timestam" +
+      "p\022\024\n\noutput_uri\030\005 \001(\tH\000\022.\n\005error\030\006 \001(\0132\035" +
+      ".flyteidl.core.ExecutionErrorH\000\0220\n\013outpu" +
+      "t_data\030\007 \001(\0132\031.flyteidl.core.LiteralMapH" +
+      "\000B\017\n\routput_result\"\217\007\n\022NodeExecutionEven" +
+      "t\0222\n\002id\030\001 \001(\0132&.flyteidl.core.NodeExecut" +
+      "ionIdentifier\022\023\n\013producer_id\030\002 \001(\t\0221\n\005ph" +
+      "ase\030\003 \001(\0162\".flyteidl.core.NodeExecution." +
+      "Phase\022/\n\013occurred_at\030\004 \001(\0132\032.google.prot" +
+      "obuf.Timestamp\022\023\n\tinput_uri\030\005 \001(\tH\000\022/\n\ni" +
+      "nput_data\030\024 \001(\0132\031.flyteidl.core.LiteralM" +
+      "apH\000\022\024\n\noutput_uri\030\006 \001(\tH\001\022.\n\005error\030\007 \001(" +
+      "\0132\035.flyteidl.core.ExecutionErrorH\001\0220\n\013ou" +
+      "tput_data\030\017 \001(\0132\031.flyteidl.core.LiteralM" +
+      "apH\001\022F\n\026workflow_node_metadata\030\010 \001(\0132$.f" +
+      "lyteidl.event.WorkflowNodeMetadataH\002\022>\n\022" +
+      "task_node_metadata\030\016 \001(\0132 .flyteidl.even" +
+      "t.TaskNodeMetadataH\002\022I\n\024parent_task_meta" +
+      "data\030\t \001(\0132+.flyteidl.event.ParentTaskEx" +
+      "ecutionMetadata\022I\n\024parent_node_metadata\030" +
+      "\n \001(\0132+.flyteidl.event.ParentNodeExecuti" +
+      "onMetadata\022\023\n\013retry_group\030\013 \001(\t\022\024\n\014spec_" +
+      "node_id\030\014 \001(\t\022\021\n\tnode_name\030\r \001(\t\022\025\n\reven" +
+      "t_version\030\020 \001(\005\022\021\n\tis_parent\030\021 \001(\010\022\022\n\nis" +
+      "_dynamic\030\022 \001(\010\022\020\n\010deck_uri\030\023 \001(\t\022/\n\013repo" +
+      "rted_at\030\025 \001(\0132\032.google.protobuf.Timestam" +
+      "pB\r\n\013input_valueB\017\n\routput_resultB\021\n\017tar" +
+      "get_metadata\"X\n\024WorkflowNodeMetadata\022@\n\014" +
+      "execution_id\030\001 \001(\0132*.flyteidl.core.Workf" +
+      "lowExecutionIdentifier\"\245\002\n\020TaskNodeMetad" +
+      "ata\0227\n\014cache_status\030\001 \001(\0162!.flyteidl.cor" +
+      "e.CatalogCacheStatus\0223\n\013catalog_key\030\002 \001(" +
+      "\0132\036.flyteidl.core.CatalogMetadata\022D\n\022res" +
+      "ervation_status\030\003 \001(\0162(.flyteidl.core.Ca" +
+      "talogReservation.Status\022\026\n\016checkpoint_ur" +
+      "i\030\004 \001(\t\022E\n\020dynamic_workflow\030\020 \001(\0132+.flyt" +
+      "eidl.event.DynamicWorkflowNodeMetadata\"\245" +
+      "\001\n\033DynamicWorkflowNodeMetadata\022%\n\002id\030\001 \001" +
+      "(\0132\031.flyteidl.core.Identifier\022A\n\021compile" +
+      "d_workflow\030\002 \001(\0132&.flyteidl.core.Compile" +
+      "dWorkflowClosure\022\034\n\024dynamic_job_spec_uri" +
+      "\030\003 \001(\t\"Q\n\033ParentTaskExecutionMetadata\0222\n" +
+      "\002id\030\001 \001(\0132&.flyteidl.core.TaskExecutionI" +
+      "dentifier\".\n\033ParentNodeExecutionMetadata" +
+      "\022\017\n\007node_id\030\001 \001(\t\"\207\006\n\022TaskExecutionEvent" +
+      "\022*\n\007task_id\030\001 \001(\0132\031.flyteidl.core.Identi" +
+      "fier\022H\n\030parent_node_execution_id\030\002 \001(\0132&" +
+      ".flyteidl.core.NodeExecutionIdentifier\022\025" +
+      "\n\rretry_attempt\030\003 \001(\r\0221\n\005phase\030\004 \001(\0162\".f" +
+      "lyteidl.core.TaskExecution.Phase\022\023\n\013prod" +
+      "ucer_id\030\005 \001(\t\022$\n\004logs\030\006 \003(\0132\026.flyteidl.c" +
+      "ore.TaskLog\022/\n\013occurred_at\030\007 \001(\0132\032.googl" +
+      "e.protobuf.Timestamp\022\023\n\tinput_uri\030\010 \001(\tH" +
+      "\000\022/\n\ninput_data\030\023 \001(\0132\031.flyteidl.core.Li" +
+      "teralMapH\000\022\024\n\noutput_uri\030\t \001(\tH\001\022.\n\005erro" +
+      "r\030\n \001(\0132\035.flyteidl.core.ExecutionErrorH\001" +
+      "\0220\n\013output_data\030\021 \001(\0132\031.flyteidl.core.Li" +
+      "teralMapH\001\022,\n\013custom_info\030\013 \001(\0132\027.google" +
+      ".protobuf.Struct\022\025\n\rphase_version\030\014 \001(\r\022" +
+      "\016\n\006reason\030\r \001(\t\022\021\n\ttask_type\030\016 \001(\t\0227\n\010me" +
+      "tadata\030\020 \001(\0132%.flyteidl.event.TaskExecut" +
+      "ionMetadata\022\025\n\revent_version\030\022 \001(\005\022/\n\013re" +
+      "ported_at\030\024 \001(\0132\032.google.protobuf.Timest" +
+      "ampB\r\n\013input_valueB\017\n\routput_result\"\343\001\n\024" +
+      "ExternalResourceInfo\022\023\n\013external_id\030\001 \001(" +
+      "\t\022\r\n\005index\030\002 \001(\r\022\025\n\rretry_attempt\030\003 \001(\r\022" +
+      "1\n\005phase\030\004 \001(\0162\".flyteidl.core.TaskExecu" +
+      "tion.Phase\0227\n\014cache_status\030\005 \001(\0162!.flyte" +
+      "idl.core.CatalogCacheStatus\022$\n\004logs\030\006 \003(" +
+      "\0132\026.flyteidl.core.TaskLog\"?\n\020ResourcePoo" +
+      "lInfo\022\030\n\020allocation_token\030\001 \001(\t\022\021\n\tnames" +
+      "pace\030\002 \001(\t\"\310\002\n\025TaskExecutionMetadata\022\026\n\016" +
+      "generated_name\030\001 \001(\t\022@\n\022external_resourc" +
+      "es\030\002 \003(\0132$.flyteidl.event.ExternalResour" +
+      "ceInfo\022<\n\022resource_pool_info\030\003 \003(\0132 .fly" +
+      "teidl.event.ResourcePoolInfo\022\031\n\021plugin_i" +
+      "dentifier\030\004 \001(\t\022K\n\016instance_class\030\020 \001(\0162" +
+      "3.flyteidl.event.TaskExecutionMetadata.I" +
+      "nstanceClass\"/\n\rInstanceClass\022\013\n\007DEFAULT" +
+      "\020\000\022\021\n\rINTERRUPTIBLE\020\001B7Z5github.com/flyt" +
+      "eorg/flyteidl/gen/pb-go/flyteidl/eventb\006" +
+      "proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
@@ -20382,71 +21016,78 @@ public final class Event {
           flyteidl.core.Execution.getDescriptor(),
           flyteidl.core.IdentifierOuterClass.getDescriptor(),
           flyteidl.core.Catalog.getDescriptor(),
+          flyteidl.artifact.Artifacts.getDescriptor(),
           com.google.protobuf.TimestampProto.getDescriptor(),
           com.google.protobuf.StructProto.getDescriptor(),
         }, assigner);
-    internal_static_flyteidl_event_WorkflowExecutionEvent_descriptor =
+    internal_static_flyteidl_event_ArtifactCreateEvent_descriptor =
       getDescriptor().getMessageTypes().get(0);
+    internal_static_flyteidl_event_ArtifactCreateEvent_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_flyteidl_event_ArtifactCreateEvent_descriptor,
+        new java.lang.String[] { "CreateRequest", });
+    internal_static_flyteidl_event_WorkflowExecutionEvent_descriptor =
+      getDescriptor().getMessageTypes().get(1);
     internal_static_flyteidl_event_WorkflowExecutionEvent_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_flyteidl_event_WorkflowExecutionEvent_descriptor,
         new java.lang.String[] { "ExecutionId", "ProducerId", "Phase", "OccurredAt", "OutputUri", "Error", "OutputData", "OutputResult", });
     internal_static_flyteidl_event_NodeExecutionEvent_descriptor =
-      getDescriptor().getMessageTypes().get(1);
+      getDescriptor().getMessageTypes().get(2);
     internal_static_flyteidl_event_NodeExecutionEvent_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_flyteidl_event_NodeExecutionEvent_descriptor,
         new java.lang.String[] { "Id", "ProducerId", "Phase", "OccurredAt", "InputUri", "InputData", "OutputUri", "Error", "OutputData", "WorkflowNodeMetadata", "TaskNodeMetadata", "ParentTaskMetadata", "ParentNodeMetadata", "RetryGroup", "SpecNodeId", "NodeName", "EventVersion", "IsParent", "IsDynamic", "DeckUri", "ReportedAt", "InputValue", "OutputResult", "TargetMetadata", });
     internal_static_flyteidl_event_WorkflowNodeMetadata_descriptor =
-      getDescriptor().getMessageTypes().get(2);
+      getDescriptor().getMessageTypes().get(3);
     internal_static_flyteidl_event_WorkflowNodeMetadata_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_flyteidl_event_WorkflowNodeMetadata_descriptor,
         new java.lang.String[] { "ExecutionId", });
     internal_static_flyteidl_event_TaskNodeMetadata_descriptor =
-      getDescriptor().getMessageTypes().get(3);
+      getDescriptor().getMessageTypes().get(4);
     internal_static_flyteidl_event_TaskNodeMetadata_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_flyteidl_event_TaskNodeMetadata_descriptor,
         new java.lang.String[] { "CacheStatus", "CatalogKey", "ReservationStatus", "CheckpointUri", "DynamicWorkflow", });
     internal_static_flyteidl_event_DynamicWorkflowNodeMetadata_descriptor =
-      getDescriptor().getMessageTypes().get(4);
+      getDescriptor().getMessageTypes().get(5);
     internal_static_flyteidl_event_DynamicWorkflowNodeMetadata_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_flyteidl_event_DynamicWorkflowNodeMetadata_descriptor,
         new java.lang.String[] { "Id", "CompiledWorkflow", "DynamicJobSpecUri", });
     internal_static_flyteidl_event_ParentTaskExecutionMetadata_descriptor =
-      getDescriptor().getMessageTypes().get(5);
+      getDescriptor().getMessageTypes().get(6);
     internal_static_flyteidl_event_ParentTaskExecutionMetadata_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_flyteidl_event_ParentTaskExecutionMetadata_descriptor,
         new java.lang.String[] { "Id", });
     internal_static_flyteidl_event_ParentNodeExecutionMetadata_descriptor =
-      getDescriptor().getMessageTypes().get(6);
+      getDescriptor().getMessageTypes().get(7);
     internal_static_flyteidl_event_ParentNodeExecutionMetadata_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_flyteidl_event_ParentNodeExecutionMetadata_descriptor,
         new java.lang.String[] { "NodeId", });
     internal_static_flyteidl_event_TaskExecutionEvent_descriptor =
-      getDescriptor().getMessageTypes().get(7);
+      getDescriptor().getMessageTypes().get(8);
     internal_static_flyteidl_event_TaskExecutionEvent_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_flyteidl_event_TaskExecutionEvent_descriptor,
         new java.lang.String[] { "TaskId", "ParentNodeExecutionId", "RetryAttempt", "Phase", "ProducerId", "Logs", "OccurredAt", "InputUri", "InputData", "OutputUri", "Error", "OutputData", "CustomInfo", "PhaseVersion", "Reason", "TaskType", "Metadata", "EventVersion", "ReportedAt", "InputValue", "OutputResult", });
     internal_static_flyteidl_event_ExternalResourceInfo_descriptor =
-      getDescriptor().getMessageTypes().get(8);
+      getDescriptor().getMessageTypes().get(9);
     internal_static_flyteidl_event_ExternalResourceInfo_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_flyteidl_event_ExternalResourceInfo_descriptor,
         new java.lang.String[] { "ExternalId", "Index", "RetryAttempt", "Phase", "CacheStatus", "Logs", });
     internal_static_flyteidl_event_ResourcePoolInfo_descriptor =
-      getDescriptor().getMessageTypes().get(9);
+      getDescriptor().getMessageTypes().get(10);
     internal_static_flyteidl_event_ResourcePoolInfo_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_flyteidl_event_ResourcePoolInfo_descriptor,
         new java.lang.String[] { "AllocationToken", "Namespace", });
     internal_static_flyteidl_event_TaskExecutionMetadata_descriptor =
-      getDescriptor().getMessageTypes().get(10);
+      getDescriptor().getMessageTypes().get(11);
     internal_static_flyteidl_event_TaskExecutionMetadata_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_flyteidl_event_TaskExecutionMetadata_descriptor,
@@ -20456,6 +21097,7 @@ public final class Event {
     flyteidl.core.Execution.getDescriptor();
     flyteidl.core.IdentifierOuterClass.getDescriptor();
     flyteidl.core.Catalog.getDescriptor();
+    flyteidl.artifact.Artifacts.getDescriptor();
     com.google.protobuf.TimestampProto.getDescriptor();
     com.google.protobuf.StructProto.getDescriptor();
   }

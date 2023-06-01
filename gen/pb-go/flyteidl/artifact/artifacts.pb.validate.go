@@ -394,6 +394,8 @@ func (m *CreateArtifactRequest) Validate() error {
 
 	// no validation rules for Version
 
+	// no validation rules for Uri
+
 	if v, ok := interface{}(m.GetSpec()).(interface{ Validate() error }); ok {
 		if err := v.Validate(); err != nil {
 			return CreateArtifactRequestValidationError{

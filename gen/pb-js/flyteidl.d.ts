@@ -6932,6 +6932,9 @@ export namespace flyteidl {
             /** CreateArtifactRequest version */
             version?: (string|null);
 
+            /** CreateArtifactRequest uri */
+            uri?: (string|null);
+
             /** CreateArtifactRequest spec */
             spec?: (flyteidl.artifact.IArtifactSpec|null);
         }
@@ -6950,6 +6953,9 @@ export namespace flyteidl {
 
             /** CreateArtifactRequest version. */
             public version: string;
+
+            /** CreateArtifactRequest uri. */
+            public uri: string;
 
             /** CreateArtifactRequest spec. */
             public spec?: (flyteidl.artifact.IArtifactSpec|null);
@@ -8053,6 +8059,58 @@ export namespace flyteidl {
 
     /** Namespace event. */
     namespace event {
+
+        /** Properties of an ArtifactCreateEvent. */
+        interface IArtifactCreateEvent {
+
+            /** ArtifactCreateEvent createRequest */
+            createRequest?: (flyteidl.artifact.ICreateArtifactRequest|null);
+        }
+
+        /** Represents an ArtifactCreateEvent. */
+        class ArtifactCreateEvent implements IArtifactCreateEvent {
+
+            /**
+             * Constructs a new ArtifactCreateEvent.
+             * @param [properties] Properties to set
+             */
+            constructor(properties?: flyteidl.event.IArtifactCreateEvent);
+
+            /** ArtifactCreateEvent createRequest. */
+            public createRequest?: (flyteidl.artifact.ICreateArtifactRequest|null);
+
+            /**
+             * Creates a new ArtifactCreateEvent instance using the specified properties.
+             * @param [properties] Properties to set
+             * @returns ArtifactCreateEvent instance
+             */
+            public static create(properties?: flyteidl.event.IArtifactCreateEvent): flyteidl.event.ArtifactCreateEvent;
+
+            /**
+             * Encodes the specified ArtifactCreateEvent message. Does not implicitly {@link flyteidl.event.ArtifactCreateEvent.verify|verify} messages.
+             * @param message ArtifactCreateEvent message or plain object to encode
+             * @param [writer] Writer to encode to
+             * @returns Writer
+             */
+            public static encode(message: flyteidl.event.IArtifactCreateEvent, writer?: $protobuf.Writer): $protobuf.Writer;
+
+            /**
+             * Decodes an ArtifactCreateEvent message from the specified reader or buffer.
+             * @param reader Reader or buffer to decode from
+             * @param [length] Message length if known beforehand
+             * @returns ArtifactCreateEvent
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): flyteidl.event.ArtifactCreateEvent;
+
+            /**
+             * Verifies an ArtifactCreateEvent message.
+             * @param message Plain object to verify
+             * @returns `null` if valid, otherwise the reason why it is not
+             */
+            public static verify(message: { [k: string]: any }): (string|null);
+        }
 
         /** Properties of a WorkflowExecutionEvent. */
         interface IWorkflowExecutionEvent {
@@ -20728,6 +20786,9 @@ export namespace flyteidl {
 
             /** CreateUploadLocationRequest contentMd5 */
             contentMd5?: (Uint8Array|null);
+
+            /** CreateUploadLocationRequest artifactSpec */
+            artifactSpec?: (flyteidl.artifact.IArtifactSpec|null);
         }
 
         /** Represents a CreateUploadLocationRequest. */
@@ -20753,6 +20814,9 @@ export namespace flyteidl {
 
             /** CreateUploadLocationRequest contentMd5. */
             public contentMd5: Uint8Array;
+
+            /** CreateUploadLocationRequest artifactSpec. */
+            public artifactSpec?: (flyteidl.artifact.IArtifactSpec|null);
 
             /**
              * Creates a new CreateUploadLocationRequest instance using the specified properties.

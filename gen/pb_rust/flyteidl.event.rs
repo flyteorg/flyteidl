@@ -1,4 +1,18 @@
 // @generated
+///
+/// Message to be sent from Admin repo to the event stream. This event should effectively replace an
+/// in-lined call to create an Artifact object in the table.
+/// Consider removing this event if it's possible to just listen to the raw node/task execution events.
+/// This event is also meant to capture:
+/// human-initiated uploads (like from pyflyte run or FlyteRemote or from the UI)
+/// - FlyteRemote can explicitly create Artifact, or it can execute workflows with things that need to be
+/// uploaded (just like pyflyte run).
+#[allow(clippy::derive_partial_eq_without_eq)]
+#[derive(Clone, PartialEq, ::prost::Message)]
+pub struct ArtifactCreateEvent {
+    #[prost(message, optional, tag="1")]
+    pub create_request: ::core::option::Option<super::artifact::CreateArtifactRequest>,
+}
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(Clone, PartialEq, ::prost::Message)]
 pub struct WorkflowExecutionEvent {

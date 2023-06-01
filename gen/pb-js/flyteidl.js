@@ -16731,6 +16731,7 @@
                  * @interface ICreateArtifactRequest
                  * @property {flyteidl.core.IArtifactKey|null} [artifactKey] CreateArtifactRequest artifactKey
                  * @property {string|null} [version] CreateArtifactRequest version
+                 * @property {string|null} [uri] CreateArtifactRequest uri
                  * @property {flyteidl.artifact.IArtifactSpec|null} [spec] CreateArtifactRequest spec
                  */
     
@@ -16764,6 +16765,14 @@
                  * @instance
                  */
                 CreateArtifactRequest.prototype.version = "";
+    
+                /**
+                 * CreateArtifactRequest uri.
+                 * @member {string} uri
+                 * @memberof flyteidl.artifact.CreateArtifactRequest
+                 * @instance
+                 */
+                CreateArtifactRequest.prototype.uri = "";
     
                 /**
                  * CreateArtifactRequest spec.
@@ -16801,8 +16810,10 @@
                         $root.flyteidl.core.ArtifactKey.encode(message.artifactKey, writer.uint32(/* id 1, wireType 2 =*/10).fork()).ldelim();
                     if (message.version != null && message.hasOwnProperty("version"))
                         writer.uint32(/* id 2, wireType 2 =*/18).string(message.version);
+                    if (message.uri != null && message.hasOwnProperty("uri"))
+                        writer.uint32(/* id 3, wireType 2 =*/26).string(message.uri);
                     if (message.spec != null && message.hasOwnProperty("spec"))
-                        $root.flyteidl.artifact.ArtifactSpec.encode(message.spec, writer.uint32(/* id 3, wireType 2 =*/26).fork()).ldelim();
+                        $root.flyteidl.artifact.ArtifactSpec.encode(message.spec, writer.uint32(/* id 4, wireType 2 =*/34).fork()).ldelim();
                     return writer;
                 };
     
@@ -16831,6 +16842,9 @@
                             message.version = reader.string();
                             break;
                         case 3:
+                            message.uri = reader.string();
+                            break;
+                        case 4:
                             message.spec = $root.flyteidl.artifact.ArtifactSpec.decode(reader, reader.uint32());
                             break;
                         default:
@@ -16860,6 +16874,9 @@
                     if (message.version != null && message.hasOwnProperty("version"))
                         if (!$util.isString(message.version))
                             return "version: string expected";
+                    if (message.uri != null && message.hasOwnProperty("uri"))
+                        if (!$util.isString(message.uri))
+                            return "uri: string expected";
                     if (message.spec != null && message.hasOwnProperty("spec")) {
                         var error = $root.flyteidl.artifact.ArtifactSpec.verify(message.spec);
                         if (error)
@@ -19123,6 +19140,118 @@
              * @namespace
              */
             var event = {};
+    
+            event.ArtifactCreateEvent = (function() {
+    
+                /**
+                 * Properties of an ArtifactCreateEvent.
+                 * @memberof flyteidl.event
+                 * @interface IArtifactCreateEvent
+                 * @property {flyteidl.artifact.ICreateArtifactRequest|null} [createRequest] ArtifactCreateEvent createRequest
+                 */
+    
+                /**
+                 * Constructs a new ArtifactCreateEvent.
+                 * @memberof flyteidl.event
+                 * @classdesc Represents an ArtifactCreateEvent.
+                 * @implements IArtifactCreateEvent
+                 * @constructor
+                 * @param {flyteidl.event.IArtifactCreateEvent=} [properties] Properties to set
+                 */
+                function ArtifactCreateEvent(properties) {
+                    if (properties)
+                        for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                            if (properties[keys[i]] != null)
+                                this[keys[i]] = properties[keys[i]];
+                }
+    
+                /**
+                 * ArtifactCreateEvent createRequest.
+                 * @member {flyteidl.artifact.ICreateArtifactRequest|null|undefined} createRequest
+                 * @memberof flyteidl.event.ArtifactCreateEvent
+                 * @instance
+                 */
+                ArtifactCreateEvent.prototype.createRequest = null;
+    
+                /**
+                 * Creates a new ArtifactCreateEvent instance using the specified properties.
+                 * @function create
+                 * @memberof flyteidl.event.ArtifactCreateEvent
+                 * @static
+                 * @param {flyteidl.event.IArtifactCreateEvent=} [properties] Properties to set
+                 * @returns {flyteidl.event.ArtifactCreateEvent} ArtifactCreateEvent instance
+                 */
+                ArtifactCreateEvent.create = function create(properties) {
+                    return new ArtifactCreateEvent(properties);
+                };
+    
+                /**
+                 * Encodes the specified ArtifactCreateEvent message. Does not implicitly {@link flyteidl.event.ArtifactCreateEvent.verify|verify} messages.
+                 * @function encode
+                 * @memberof flyteidl.event.ArtifactCreateEvent
+                 * @static
+                 * @param {flyteidl.event.IArtifactCreateEvent} message ArtifactCreateEvent message or plain object to encode
+                 * @param {$protobuf.Writer} [writer] Writer to encode to
+                 * @returns {$protobuf.Writer} Writer
+                 */
+                ArtifactCreateEvent.encode = function encode(message, writer) {
+                    if (!writer)
+                        writer = $Writer.create();
+                    if (message.createRequest != null && message.hasOwnProperty("createRequest"))
+                        $root.flyteidl.artifact.CreateArtifactRequest.encode(message.createRequest, writer.uint32(/* id 1, wireType 2 =*/10).fork()).ldelim();
+                    return writer;
+                };
+    
+                /**
+                 * Decodes an ArtifactCreateEvent message from the specified reader or buffer.
+                 * @function decode
+                 * @memberof flyteidl.event.ArtifactCreateEvent
+                 * @static
+                 * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+                 * @param {number} [length] Message length if known beforehand
+                 * @returns {flyteidl.event.ArtifactCreateEvent} ArtifactCreateEvent
+                 * @throws {Error} If the payload is not a reader or valid buffer
+                 * @throws {$protobuf.util.ProtocolError} If required fields are missing
+                 */
+                ArtifactCreateEvent.decode = function decode(reader, length) {
+                    if (!(reader instanceof $Reader))
+                        reader = $Reader.create(reader);
+                    var end = length === undefined ? reader.len : reader.pos + length, message = new $root.flyteidl.event.ArtifactCreateEvent();
+                    while (reader.pos < end) {
+                        var tag = reader.uint32();
+                        switch (tag >>> 3) {
+                        case 1:
+                            message.createRequest = $root.flyteidl.artifact.CreateArtifactRequest.decode(reader, reader.uint32());
+                            break;
+                        default:
+                            reader.skipType(tag & 7);
+                            break;
+                        }
+                    }
+                    return message;
+                };
+    
+                /**
+                 * Verifies an ArtifactCreateEvent message.
+                 * @function verify
+                 * @memberof flyteidl.event.ArtifactCreateEvent
+                 * @static
+                 * @param {Object.<string,*>} message Plain object to verify
+                 * @returns {string|null} `null` if valid, otherwise the reason why it is not
+                 */
+                ArtifactCreateEvent.verify = function verify(message) {
+                    if (typeof message !== "object" || message === null)
+                        return "object expected";
+                    if (message.createRequest != null && message.hasOwnProperty("createRequest")) {
+                        var error = $root.flyteidl.artifact.CreateArtifactRequest.verify(message.createRequest);
+                        if (error)
+                            return "createRequest." + error;
+                    }
+                    return null;
+                };
+    
+                return ArtifactCreateEvent;
+            })();
     
             event.WorkflowExecutionEvent = (function() {
     
@@ -48257,6 +48386,7 @@
                  * @property {string|null} [filename] CreateUploadLocationRequest filename
                  * @property {google.protobuf.IDuration|null} [expiresIn] CreateUploadLocationRequest expiresIn
                  * @property {Uint8Array|null} [contentMd5] CreateUploadLocationRequest contentMd5
+                 * @property {flyteidl.artifact.IArtifactSpec|null} [artifactSpec] CreateUploadLocationRequest artifactSpec
                  */
     
                 /**
@@ -48315,6 +48445,14 @@
                 CreateUploadLocationRequest.prototype.contentMd5 = $util.newBuffer([]);
     
                 /**
+                 * CreateUploadLocationRequest artifactSpec.
+                 * @member {flyteidl.artifact.IArtifactSpec|null|undefined} artifactSpec
+                 * @memberof flyteidl.service.CreateUploadLocationRequest
+                 * @instance
+                 */
+                CreateUploadLocationRequest.prototype.artifactSpec = null;
+    
+                /**
                  * Creates a new CreateUploadLocationRequest instance using the specified properties.
                  * @function create
                  * @memberof flyteidl.service.CreateUploadLocationRequest
@@ -48348,6 +48486,8 @@
                         $root.google.protobuf.Duration.encode(message.expiresIn, writer.uint32(/* id 4, wireType 2 =*/34).fork()).ldelim();
                     if (message.contentMd5 != null && message.hasOwnProperty("contentMd5"))
                         writer.uint32(/* id 5, wireType 2 =*/42).bytes(message.contentMd5);
+                    if (message.artifactSpec != null && message.hasOwnProperty("artifactSpec"))
+                        $root.flyteidl.artifact.ArtifactSpec.encode(message.artifactSpec, writer.uint32(/* id 6, wireType 2 =*/50).fork()).ldelim();
                     return writer;
                 };
     
@@ -48383,6 +48523,9 @@
                             break;
                         case 5:
                             message.contentMd5 = reader.bytes();
+                            break;
+                        case 6:
+                            message.artifactSpec = $root.flyteidl.artifact.ArtifactSpec.decode(reader, reader.uint32());
                             break;
                         default:
                             reader.skipType(tag & 7);
@@ -48420,6 +48563,11 @@
                     if (message.contentMd5 != null && message.hasOwnProperty("contentMd5"))
                         if (!(message.contentMd5 && typeof message.contentMd5.length === "number" || $util.isString(message.contentMd5)))
                             return "contentMd5: buffer expected";
+                    if (message.artifactSpec != null && message.hasOwnProperty("artifactSpec")) {
+                        var error = $root.flyteidl.artifact.ArtifactSpec.verify(message.artifactSpec);
+                        if (error)
+                            return "artifactSpec." + error;
+                    }
                     return null;
                 };
     

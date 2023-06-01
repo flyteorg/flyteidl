@@ -3,6 +3,7 @@ from flyteidl.core import compiler_pb2 as _compiler_pb2
 from flyteidl.core import execution_pb2 as _execution_pb2
 from flyteidl.core import identifier_pb2 as _identifier_pb2
 from flyteidl.core import catalog_pb2 as _catalog_pb2
+from flyteidl.artifact import artifacts_pb2 as _artifacts_pb2
 from google.protobuf import timestamp_pb2 as _timestamp_pb2
 from google.protobuf import struct_pb2 as _struct_pb2
 from google.protobuf.internal import containers as _containers
@@ -12,6 +13,12 @@ from google.protobuf import message as _message
 from typing import ClassVar as _ClassVar, Iterable as _Iterable, Mapping as _Mapping, Optional as _Optional, Union as _Union
 
 DESCRIPTOR: _descriptor.FileDescriptor
+
+class ArtifactCreateEvent(_message.Message):
+    __slots__ = ["create_request"]
+    CREATE_REQUEST_FIELD_NUMBER: _ClassVar[int]
+    create_request: _artifacts_pb2.CreateArtifactRequest
+    def __init__(self, create_request: _Optional[_Union[_artifacts_pb2.CreateArtifactRequest, _Mapping]] = ...) -> None: ...
 
 class WorkflowExecutionEvent(_message.Message):
     __slots__ = ["execution_id", "producer_id", "phase", "occurred_at", "output_uri", "error", "output_data"]
