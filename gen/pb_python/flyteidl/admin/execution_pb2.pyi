@@ -5,7 +5,6 @@ from flyteidl.core import execution_pb2 as _execution_pb2
 from flyteidl.core import identifier_pb2 as _identifier_pb2
 from flyteidl.core import metrics_pb2 as _metrics_pb2
 from flyteidl.core import security_pb2 as _security_pb2
-from flyteidl.artifact import artifacts_pb2 as _artifacts_pb2
 from google.protobuf import duration_pb2 as _duration_pb2
 from google.protobuf import timestamp_pb2 as _timestamp_pb2
 from google.protobuf import wrappers_pb2 as _wrappers_pb2
@@ -145,7 +144,7 @@ class SystemMetadata(_message.Message):
     def __init__(self, execution_cluster: _Optional[str] = ..., namespace: _Optional[str] = ...) -> None: ...
 
 class ExecutionMetadata(_message.Message):
-    __slots__ = ["mode", "principal", "nesting", "scheduled_at", "parent_node_execution", "reference_execution", "system_metadata"]
+    __slots__ = ["mode", "principal", "nesting", "scheduled_at", "parent_node_execution", "reference_execution", "system_metadata", "artifact_ids"]
     class ExecutionMode(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
         __slots__ = []
         MANUAL: _ClassVar[ExecutionMetadata.ExecutionMode]
@@ -160,6 +159,13 @@ class ExecutionMetadata(_message.Message):
     RELAUNCH: ExecutionMetadata.ExecutionMode
     CHILD_WORKFLOW: ExecutionMetadata.ExecutionMode
     RECOVERED: ExecutionMetadata.ExecutionMode
+    class ArtifactIdsEntry(_message.Message):
+        __slots__ = ["key", "value"]
+        KEY_FIELD_NUMBER: _ClassVar[int]
+        VALUE_FIELD_NUMBER: _ClassVar[int]
+        key: str
+        value: _identifier_pb2.ArtifactID
+        def __init__(self, key: _Optional[str] = ..., value: _Optional[_Union[_identifier_pb2.ArtifactID, _Mapping]] = ...) -> None: ...
     MODE_FIELD_NUMBER: _ClassVar[int]
     PRINCIPAL_FIELD_NUMBER: _ClassVar[int]
     NESTING_FIELD_NUMBER: _ClassVar[int]
@@ -167,6 +173,7 @@ class ExecutionMetadata(_message.Message):
     PARENT_NODE_EXECUTION_FIELD_NUMBER: _ClassVar[int]
     REFERENCE_EXECUTION_FIELD_NUMBER: _ClassVar[int]
     SYSTEM_METADATA_FIELD_NUMBER: _ClassVar[int]
+    ARTIFACT_IDS_FIELD_NUMBER: _ClassVar[int]
     mode: ExecutionMetadata.ExecutionMode
     principal: str
     nesting: int
@@ -174,7 +181,8 @@ class ExecutionMetadata(_message.Message):
     parent_node_execution: _identifier_pb2.NodeExecutionIdentifier
     reference_execution: _identifier_pb2.WorkflowExecutionIdentifier
     system_metadata: SystemMetadata
-    def __init__(self, mode: _Optional[_Union[ExecutionMetadata.ExecutionMode, str]] = ..., principal: _Optional[str] = ..., nesting: _Optional[int] = ..., scheduled_at: _Optional[_Union[_timestamp_pb2.Timestamp, _Mapping]] = ..., parent_node_execution: _Optional[_Union[_identifier_pb2.NodeExecutionIdentifier, _Mapping]] = ..., reference_execution: _Optional[_Union[_identifier_pb2.WorkflowExecutionIdentifier, _Mapping]] = ..., system_metadata: _Optional[_Union[SystemMetadata, _Mapping]] = ...) -> None: ...
+    artifact_ids: _containers.MessageMap[str, _identifier_pb2.ArtifactID]
+    def __init__(self, mode: _Optional[_Union[ExecutionMetadata.ExecutionMode, str]] = ..., principal: _Optional[str] = ..., nesting: _Optional[int] = ..., scheduled_at: _Optional[_Union[_timestamp_pb2.Timestamp, _Mapping]] = ..., parent_node_execution: _Optional[_Union[_identifier_pb2.NodeExecutionIdentifier, _Mapping]] = ..., reference_execution: _Optional[_Union[_identifier_pb2.WorkflowExecutionIdentifier, _Mapping]] = ..., system_metadata: _Optional[_Union[SystemMetadata, _Mapping]] = ..., artifact_ids: _Optional[_Mapping[str, _identifier_pb2.ArtifactID]] = ...) -> None: ...
 
 class NotificationList(_message.Message):
     __slots__ = ["notifications"]

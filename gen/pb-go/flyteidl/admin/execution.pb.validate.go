@@ -1117,6 +1117,23 @@ func (m *ExecutionMetadata) Validate() error {
 		}
 	}
 
+	for key, val := range m.GetArtifactIds() {
+		_ = val
+
+		// no validation rules for ArtifactIds[key]
+
+		if v, ok := interface{}(val).(interface{ Validate() error }); ok {
+			if err := v.Validate(); err != nil {
+				return ExecutionMetadataValidationError{
+					field:  fmt.Sprintf("ArtifactIds[%v]", key),
+					reason: "embedded message failed validation",
+					cause:  err,
+				}
+			}
+		}
+
+	}
+
 	return nil
 }
 

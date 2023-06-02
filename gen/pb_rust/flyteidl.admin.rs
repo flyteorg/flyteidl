@@ -894,6 +894,8 @@ pub struct ExecutionMetadata {
     /// In this the future this may be gated behind an ACL or some sort of authorization.
     #[prost(message, optional, tag="17")]
     pub system_metadata: ::core::option::Option<SystemMetadata>,
+    #[prost(map="string, message", tag="18")]
+    pub artifact_ids: ::std::collections::HashMap<::prost::alloc::string::String, super::core::ArtifactId>,
 }
 /// Nested message and enum types in `ExecutionMetadata`.
 pub mod execution_metadata {

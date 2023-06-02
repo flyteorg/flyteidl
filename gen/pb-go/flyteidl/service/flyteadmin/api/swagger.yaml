@@ -3522,6 +3522,13 @@ definitions:
             domain: "domain"
             name: "name"
             project: "project"
+          artifact_ids:
+            key:
+              artifact_key:
+                domain: "domain"
+                name: "name"
+                project: "project"
+              version: "version"
           scheduled_at: "2000-01-23T04:56:07.000+00:00"
           nesting: 0
           system_metadata:
@@ -3904,6 +3911,13 @@ definitions:
               domain: "domain"
               name: "name"
               project: "project"
+            artifact_ids:
+              key:
+                artifact_key:
+                  domain: "domain"
+                  name: "name"
+                  project: "project"
+                version: "version"
             scheduled_at: "2000-01-23T04:56:07.000+00:00"
             nesting: 0
             system_metadata:
@@ -4102,6 +4116,13 @@ definitions:
               domain: "domain"
               name: "name"
               project: "project"
+            artifact_ids:
+              key:
+                artifact_key:
+                  domain: "domain"
+                  name: "name"
+                  project: "project"
+                version: "version"
             scheduled_at: "2000-01-23T04:56:07.000+00:00"
             nesting: 0
             system_metadata:
@@ -4253,6 +4274,10 @@ definitions:
         description: "Optional, platform-specific metadata about the execution.\n\
           In this the future this may be gated behind an ACL or some sort of authorization."
         $ref: "#/definitions/adminSystemMetadata"
+      artifact_ids:
+        type: "object"
+        additionalProperties:
+          $ref: "#/definitions/coreArtifactID"
     description: "Represents attributes about an execution which are not required\
       \ to launch the execution but are useful to record.\nThese attributes are assigned\
       \ at launch time and do not change."
@@ -4269,6 +4294,13 @@ definitions:
         domain: "domain"
         name: "name"
         project: "project"
+      artifact_ids:
+        key:
+          artifact_key:
+            domain: "domain"
+            name: "name"
+            project: "project"
+          version: "version"
       scheduled_at: "2000-01-23T04:56:07.000+00:00"
       nesting: 0
       system_metadata:
@@ -4409,6 +4441,13 @@ definitions:
           domain: "domain"
           name: "name"
           project: "project"
+        artifact_ids:
+          key:
+            artifact_key:
+              domain: "domain"
+              name: "name"
+              project: "project"
+            version: "version"
         scheduled_at: "2000-01-23T04:56:07.000+00:00"
         nesting: 0
         system_metadata:

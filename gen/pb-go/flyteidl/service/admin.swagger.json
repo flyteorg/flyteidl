@@ -3899,6 +3899,12 @@
         "system_metadata": {
           "$ref": "#/definitions/adminSystemMetadata",
           "description": "Optional, platform-specific metadata about the execution.\nIn this the future this may be gated behind an ACL or some sort of authorization."
+        },
+        "artifact_ids": {
+          "type": "object",
+          "additionalProperties": {
+            "$ref": "#/definitions/coreArtifactID"
+          }
         }
       },
       "description": "Represents attributes about an execution which are not required to launch the execution but are useful to record.\nThese attributes are assigned at launch time and do not change."

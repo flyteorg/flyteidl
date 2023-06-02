@@ -27,4 +27,5 @@ type AdminExecutionMetadata struct {
 	ReferenceExecution *CoreWorkflowExecutionIdentifier `json:"reference_execution,omitempty"`
 	// Optional, platform-specific metadata about the execution. In this the future this may be gated behind an ACL or some sort of authorization.
 	SystemMetadata *AdminSystemMetadata `json:"system_metadata,omitempty"`
+	ArtifactIds map[string]CoreArtifactId `json:"artifact_ids,omitempty"`
 }

@@ -10,7 +10,6 @@ import "flyteidl/core/execution.proto";
 import "flyteidl/core/identifier.proto";
 import "flyteidl/core/metrics.proto";
 import "flyteidl/core/security.proto";
-import "flyteidl/artifact/artifacts.proto";
 import "google/protobuf/duration.proto";
 import "google/protobuf/timestamp.proto";
 import "google/protobuf/wrappers.proto";
@@ -246,6 +245,8 @@ message ExecutionMetadata {
     // Optional, platform-specific metadata about the execution.
     // In this the future this may be gated behind an ACL or some sort of authorization.
     SystemMetadata system_metadata = 17;
+
+    map<string, core.ArtifactID> artifact_ids = 18;
 }
 
 message NotificationList {
