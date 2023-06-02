@@ -41,10 +41,10 @@ namespace flyteidl {
 namespace service {
 
 // AgentService defines an RPC Service that allows propeller to send the request to the agent server.
-class AgentService final {
+class AsyncAgentService final {
  public:
   static constexpr char const* service_full_name() {
-    return "flyteidl.service.AgentService";
+    return "flyteidl.service.AsyncAgentService";
   }
   class StubInterface {
    public:

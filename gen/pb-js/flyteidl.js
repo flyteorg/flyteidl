@@ -44749,41 +44749,41 @@
                 return AdminService;
             })();
     
-            service.AgentService = (function() {
+            service.AsyncAgentService = (function() {
     
                 /**
-                 * Constructs a new AgentService service.
+                 * Constructs a new AsyncAgentService service.
                  * @memberof flyteidl.service
-                 * @classdesc Represents an AgentService
+                 * @classdesc Represents an AsyncAgentService
                  * @extends $protobuf.rpc.Service
                  * @constructor
                  * @param {$protobuf.RPCImpl} rpcImpl RPC implementation
                  * @param {boolean} [requestDelimited=false] Whether requests are length-delimited
                  * @param {boolean} [responseDelimited=false] Whether responses are length-delimited
                  */
-                function AgentService(rpcImpl, requestDelimited, responseDelimited) {
+                function AsyncAgentService(rpcImpl, requestDelimited, responseDelimited) {
                     $protobuf.rpc.Service.call(this, rpcImpl, requestDelimited, responseDelimited);
                 }
     
-                (AgentService.prototype = Object.create($protobuf.rpc.Service.prototype)).constructor = AgentService;
+                (AsyncAgentService.prototype = Object.create($protobuf.rpc.Service.prototype)).constructor = AsyncAgentService;
     
                 /**
-                 * Creates new AgentService service using the specified rpc implementation.
+                 * Creates new AsyncAgentService service using the specified rpc implementation.
                  * @function create
-                 * @memberof flyteidl.service.AgentService
+                 * @memberof flyteidl.service.AsyncAgentService
                  * @static
                  * @param {$protobuf.RPCImpl} rpcImpl RPC implementation
                  * @param {boolean} [requestDelimited=false] Whether requests are length-delimited
                  * @param {boolean} [responseDelimited=false] Whether responses are length-delimited
-                 * @returns {AgentService} RPC service. Useful where requests and/or responses are streamed.
+                 * @returns {AsyncAgentService} RPC service. Useful where requests and/or responses are streamed.
                  */
-                AgentService.create = function create(rpcImpl, requestDelimited, responseDelimited) {
+                AsyncAgentService.create = function create(rpcImpl, requestDelimited, responseDelimited) {
                     return new this(rpcImpl, requestDelimited, responseDelimited);
                 };
     
                 /**
-                 * Callback as used by {@link flyteidl.service.AgentService#createTask}.
-                 * @memberof flyteidl.service.AgentService
+                 * Callback as used by {@link flyteidl.service.AsyncAgentService#createTask}.
+                 * @memberof flyteidl.service.AsyncAgentService
                  * @typedef CreateTaskCallback
                  * @type {function}
                  * @param {Error|null} error Error, if any
@@ -44793,21 +44793,21 @@
                 /**
                  * Calls CreateTask.
                  * @function createTask
-                 * @memberof flyteidl.service.AgentService
+                 * @memberof flyteidl.service.AsyncAgentService
                  * @instance
                  * @param {flyteidl.admin.ICreateTaskRequest} request CreateTaskRequest message or plain object
-                 * @param {flyteidl.service.AgentService.CreateTaskCallback} callback Node-style callback called with the error, if any, and CreateTaskResponse
+                 * @param {flyteidl.service.AsyncAgentService.CreateTaskCallback} callback Node-style callback called with the error, if any, and CreateTaskResponse
                  * @returns {undefined}
                  * @variation 1
                  */
-                Object.defineProperty(AgentService.prototype.createTask = function createTask(request, callback) {
+                Object.defineProperty(AsyncAgentService.prototype.createTask = function createTask(request, callback) {
                     return this.rpcCall(createTask, $root.flyteidl.admin.CreateTaskRequest, $root.flyteidl.admin.CreateTaskResponse, request, callback);
                 }, "name", { value: "CreateTask" });
     
                 /**
                  * Calls CreateTask.
                  * @function createTask
-                 * @memberof flyteidl.service.AgentService
+                 * @memberof flyteidl.service.AsyncAgentService
                  * @instance
                  * @param {flyteidl.admin.ICreateTaskRequest} request CreateTaskRequest message or plain object
                  * @returns {Promise<flyteidl.admin.CreateTaskResponse>} Promise
@@ -44815,8 +44815,8 @@
                  */
     
                 /**
-                 * Callback as used by {@link flyteidl.service.AgentService#getTask}.
-                 * @memberof flyteidl.service.AgentService
+                 * Callback as used by {@link flyteidl.service.AsyncAgentService#getTask}.
+                 * @memberof flyteidl.service.AsyncAgentService
                  * @typedef GetTaskCallback
                  * @type {function}
                  * @param {Error|null} error Error, if any
@@ -44826,21 +44826,21 @@
                 /**
                  * Calls GetTask.
                  * @function getTask
-                 * @memberof flyteidl.service.AgentService
+                 * @memberof flyteidl.service.AsyncAgentService
                  * @instance
                  * @param {flyteidl.admin.IGetTaskRequest} request GetTaskRequest message or plain object
-                 * @param {flyteidl.service.AgentService.GetTaskCallback} callback Node-style callback called with the error, if any, and GetTaskResponse
+                 * @param {flyteidl.service.AsyncAgentService.GetTaskCallback} callback Node-style callback called with the error, if any, and GetTaskResponse
                  * @returns {undefined}
                  * @variation 1
                  */
-                Object.defineProperty(AgentService.prototype.getTask = function getTask(request, callback) {
+                Object.defineProperty(AsyncAgentService.prototype.getTask = function getTask(request, callback) {
                     return this.rpcCall(getTask, $root.flyteidl.admin.GetTaskRequest, $root.flyteidl.admin.GetTaskResponse, request, callback);
                 }, "name", { value: "GetTask" });
     
                 /**
                  * Calls GetTask.
                  * @function getTask
-                 * @memberof flyteidl.service.AgentService
+                 * @memberof flyteidl.service.AsyncAgentService
                  * @instance
                  * @param {flyteidl.admin.IGetTaskRequest} request GetTaskRequest message or plain object
                  * @returns {Promise<flyteidl.admin.GetTaskResponse>} Promise
@@ -44848,8 +44848,8 @@
                  */
     
                 /**
-                 * Callback as used by {@link flyteidl.service.AgentService#deleteTask}.
-                 * @memberof flyteidl.service.AgentService
+                 * Callback as used by {@link flyteidl.service.AsyncAgentService#deleteTask}.
+                 * @memberof flyteidl.service.AsyncAgentService
                  * @typedef DeleteTaskCallback
                  * @type {function}
                  * @param {Error|null} error Error, if any
@@ -44859,28 +44859,28 @@
                 /**
                  * Calls DeleteTask.
                  * @function deleteTask
-                 * @memberof flyteidl.service.AgentService
+                 * @memberof flyteidl.service.AsyncAgentService
                  * @instance
                  * @param {flyteidl.admin.IDeleteTaskRequest} request DeleteTaskRequest message or plain object
-                 * @param {flyteidl.service.AgentService.DeleteTaskCallback} callback Node-style callback called with the error, if any, and DeleteTaskResponse
+                 * @param {flyteidl.service.AsyncAgentService.DeleteTaskCallback} callback Node-style callback called with the error, if any, and DeleteTaskResponse
                  * @returns {undefined}
                  * @variation 1
                  */
-                Object.defineProperty(AgentService.prototype.deleteTask = function deleteTask(request, callback) {
+                Object.defineProperty(AsyncAgentService.prototype.deleteTask = function deleteTask(request, callback) {
                     return this.rpcCall(deleteTask, $root.flyteidl.admin.DeleteTaskRequest, $root.flyteidl.admin.DeleteTaskResponse, request, callback);
                 }, "name", { value: "DeleteTask" });
     
                 /**
                  * Calls DeleteTask.
                  * @function deleteTask
-                 * @memberof flyteidl.service.AgentService
+                 * @memberof flyteidl.service.AsyncAgentService
                  * @instance
                  * @param {flyteidl.admin.IDeleteTaskRequest} request DeleteTaskRequest message or plain object
                  * @returns {Promise<flyteidl.admin.DeleteTaskResponse>} Promise
                  * @variation 2
                  */
     
-                return AgentService;
+                return AsyncAgentService;
             })();
     
             service.OAuth2MetadataRequest = (function() {

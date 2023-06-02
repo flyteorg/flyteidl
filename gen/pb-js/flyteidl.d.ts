@@ -19172,11 +19172,11 @@ export namespace flyteidl {
             type GetExecutionMetricsCallback = (error: (Error|null), response?: flyteidl.admin.WorkflowExecutionGetMetricsResponse) => void;
         }
 
-        /** Represents an AgentService */
-        class AgentService extends $protobuf.rpc.Service {
+        /** Represents an AsyncAgentService */
+        class AsyncAgentService extends $protobuf.rpc.Service {
 
             /**
-             * Constructs a new AgentService service.
+             * Constructs a new AsyncAgentService service.
              * @param rpcImpl RPC implementation
              * @param [requestDelimited=false] Whether requests are length-delimited
              * @param [responseDelimited=false] Whether responses are length-delimited
@@ -19184,20 +19184,20 @@ export namespace flyteidl {
             constructor(rpcImpl: $protobuf.RPCImpl, requestDelimited?: boolean, responseDelimited?: boolean);
 
             /**
-             * Creates new AgentService service using the specified rpc implementation.
+             * Creates new AsyncAgentService service using the specified rpc implementation.
              * @param rpcImpl RPC implementation
              * @param [requestDelimited=false] Whether requests are length-delimited
              * @param [responseDelimited=false] Whether responses are length-delimited
              * @returns RPC service. Useful where requests and/or responses are streamed.
              */
-            public static create(rpcImpl: $protobuf.RPCImpl, requestDelimited?: boolean, responseDelimited?: boolean): AgentService;
+            public static create(rpcImpl: $protobuf.RPCImpl, requestDelimited?: boolean, responseDelimited?: boolean): AsyncAgentService;
 
             /**
              * Calls CreateTask.
              * @param request CreateTaskRequest message or plain object
              * @param callback Node-style callback called with the error, if any, and CreateTaskResponse
              */
-            public createTask(request: flyteidl.admin.ICreateTaskRequest, callback: flyteidl.service.AgentService.CreateTaskCallback): void;
+            public createTask(request: flyteidl.admin.ICreateTaskRequest, callback: flyteidl.service.AsyncAgentService.CreateTaskCallback): void;
 
             /**
              * Calls CreateTask.
@@ -19211,7 +19211,7 @@ export namespace flyteidl {
              * @param request GetTaskRequest message or plain object
              * @param callback Node-style callback called with the error, if any, and GetTaskResponse
              */
-            public getTask(request: flyteidl.admin.IGetTaskRequest, callback: flyteidl.service.AgentService.GetTaskCallback): void;
+            public getTask(request: flyteidl.admin.IGetTaskRequest, callback: flyteidl.service.AsyncAgentService.GetTaskCallback): void;
 
             /**
              * Calls GetTask.
@@ -19225,7 +19225,7 @@ export namespace flyteidl {
              * @param request DeleteTaskRequest message or plain object
              * @param callback Node-style callback called with the error, if any, and DeleteTaskResponse
              */
-            public deleteTask(request: flyteidl.admin.IDeleteTaskRequest, callback: flyteidl.service.AgentService.DeleteTaskCallback): void;
+            public deleteTask(request: flyteidl.admin.IDeleteTaskRequest, callback: flyteidl.service.AsyncAgentService.DeleteTaskCallback): void;
 
             /**
              * Calls DeleteTask.
@@ -19235,24 +19235,24 @@ export namespace flyteidl {
             public deleteTask(request: flyteidl.admin.IDeleteTaskRequest): Promise<flyteidl.admin.DeleteTaskResponse>;
         }
 
-        namespace AgentService {
+        namespace AsyncAgentService {
 
             /**
-             * Callback as used by {@link flyteidl.service.AgentService#createTask}.
+             * Callback as used by {@link flyteidl.service.AsyncAgentService#createTask}.
              * @param error Error, if any
              * @param [response] CreateTaskResponse
              */
             type CreateTaskCallback = (error: (Error|null), response?: flyteidl.admin.CreateTaskResponse) => void;
 
             /**
-             * Callback as used by {@link flyteidl.service.AgentService#getTask}.
+             * Callback as used by {@link flyteidl.service.AsyncAgentService#getTask}.
              * @param error Error, if any
              * @param [response] GetTaskResponse
              */
             type GetTaskCallback = (error: (Error|null), response?: flyteidl.admin.GetTaskResponse) => void;
 
             /**
-             * Callback as used by {@link flyteidl.service.AgentService#deleteTask}.
+             * Callback as used by {@link flyteidl.service.AsyncAgentService#deleteTask}.
              * @param error Error, if any
              * @param [response] DeleteTaskResponse
              */
