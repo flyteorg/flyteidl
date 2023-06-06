@@ -5457,6 +5457,7 @@
                  * @interface IBlob
                  * @property {flyteidl.core.IBlobMetadata|null} [metadata] Blob metadata
                  * @property {string|null} [uri] Blob uri
+                 * @property {flyteidl.core.IPickleMetadata|null} [pickleMetadata] Blob pickleMetadata
                  */
     
                 /**
@@ -5491,6 +5492,14 @@
                 Blob.prototype.uri = "";
     
                 /**
+                 * Blob pickleMetadata.
+                 * @member {flyteidl.core.IPickleMetadata|null|undefined} pickleMetadata
+                 * @memberof flyteidl.core.Blob
+                 * @instance
+                 */
+                Blob.prototype.pickleMetadata = null;
+    
+                /**
                  * Creates a new Blob instance using the specified properties.
                  * @function create
                  * @memberof flyteidl.core.Blob
@@ -5518,6 +5527,8 @@
                         $root.flyteidl.core.BlobMetadata.encode(message.metadata, writer.uint32(/* id 1, wireType 2 =*/10).fork()).ldelim();
                     if (message.uri != null && message.hasOwnProperty("uri"))
                         writer.uint32(/* id 3, wireType 2 =*/26).string(message.uri);
+                    if (message.pickleMetadata != null && message.hasOwnProperty("pickleMetadata"))
+                        $root.flyteidl.core.PickleMetadata.encode(message.pickleMetadata, writer.uint32(/* id 4, wireType 2 =*/34).fork()).ldelim();
                     return writer;
                 };
     
@@ -5544,6 +5555,9 @@
                             break;
                         case 3:
                             message.uri = reader.string();
+                            break;
+                        case 4:
+                            message.pickleMetadata = $root.flyteidl.core.PickleMetadata.decode(reader, reader.uint32());
                             break;
                         default:
                             reader.skipType(tag & 7);
@@ -5572,10 +5586,125 @@
                     if (message.uri != null && message.hasOwnProperty("uri"))
                         if (!$util.isString(message.uri))
                             return "uri: string expected";
+                    if (message.pickleMetadata != null && message.hasOwnProperty("pickleMetadata")) {
+                        var error = $root.flyteidl.core.PickleMetadata.verify(message.pickleMetadata);
+                        if (error)
+                            return "pickleMetadata." + error;
+                    }
                     return null;
                 };
     
                 return Blob;
+            })();
+    
+            core.PickleMetadata = (function() {
+    
+                /**
+                 * Properties of a PickleMetadata.
+                 * @memberof flyteidl.core
+                 * @interface IPickleMetadata
+                 * @property {Long|null} [size] PickleMetadata size
+                 */
+    
+                /**
+                 * Constructs a new PickleMetadata.
+                 * @memberof flyteidl.core
+                 * @classdesc Represents a PickleMetadata.
+                 * @implements IPickleMetadata
+                 * @constructor
+                 * @param {flyteidl.core.IPickleMetadata=} [properties] Properties to set
+                 */
+                function PickleMetadata(properties) {
+                    if (properties)
+                        for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                            if (properties[keys[i]] != null)
+                                this[keys[i]] = properties[keys[i]];
+                }
+    
+                /**
+                 * PickleMetadata size.
+                 * @member {Long} size
+                 * @memberof flyteidl.core.PickleMetadata
+                 * @instance
+                 */
+                PickleMetadata.prototype.size = $util.Long ? $util.Long.fromBits(0,0,true) : 0;
+    
+                /**
+                 * Creates a new PickleMetadata instance using the specified properties.
+                 * @function create
+                 * @memberof flyteidl.core.PickleMetadata
+                 * @static
+                 * @param {flyteidl.core.IPickleMetadata=} [properties] Properties to set
+                 * @returns {flyteidl.core.PickleMetadata} PickleMetadata instance
+                 */
+                PickleMetadata.create = function create(properties) {
+                    return new PickleMetadata(properties);
+                };
+    
+                /**
+                 * Encodes the specified PickleMetadata message. Does not implicitly {@link flyteidl.core.PickleMetadata.verify|verify} messages.
+                 * @function encode
+                 * @memberof flyteidl.core.PickleMetadata
+                 * @static
+                 * @param {flyteidl.core.IPickleMetadata} message PickleMetadata message or plain object to encode
+                 * @param {$protobuf.Writer} [writer] Writer to encode to
+                 * @returns {$protobuf.Writer} Writer
+                 */
+                PickleMetadata.encode = function encode(message, writer) {
+                    if (!writer)
+                        writer = $Writer.create();
+                    if (message.size != null && message.hasOwnProperty("size"))
+                        writer.uint32(/* id 1, wireType 0 =*/8).uint64(message.size);
+                    return writer;
+                };
+    
+                /**
+                 * Decodes a PickleMetadata message from the specified reader or buffer.
+                 * @function decode
+                 * @memberof flyteidl.core.PickleMetadata
+                 * @static
+                 * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+                 * @param {number} [length] Message length if known beforehand
+                 * @returns {flyteidl.core.PickleMetadata} PickleMetadata
+                 * @throws {Error} If the payload is not a reader or valid buffer
+                 * @throws {$protobuf.util.ProtocolError} If required fields are missing
+                 */
+                PickleMetadata.decode = function decode(reader, length) {
+                    if (!(reader instanceof $Reader))
+                        reader = $Reader.create(reader);
+                    var end = length === undefined ? reader.len : reader.pos + length, message = new $root.flyteidl.core.PickleMetadata();
+                    while (reader.pos < end) {
+                        var tag = reader.uint32();
+                        switch (tag >>> 3) {
+                        case 1:
+                            message.size = reader.uint64();
+                            break;
+                        default:
+                            reader.skipType(tag & 7);
+                            break;
+                        }
+                    }
+                    return message;
+                };
+    
+                /**
+                 * Verifies a PickleMetadata message.
+                 * @function verify
+                 * @memberof flyteidl.core.PickleMetadata
+                 * @static
+                 * @param {Object.<string,*>} message Plain object to verify
+                 * @returns {string|null} `null` if valid, otherwise the reason why it is not
+                 */
+                PickleMetadata.verify = function verify(message) {
+                    if (typeof message !== "object" || message === null)
+                        return "object expected";
+                    if (message.size != null && message.hasOwnProperty("size"))
+                        if (!$util.isInteger(message.size) && !(message.size && $util.isInteger(message.size.low) && $util.isInteger(message.size.high)))
+                            return "size: integer|Long expected";
+                    return null;
+                };
+    
+                return PickleMetadata;
             })();
     
             core.BlobMetadata = (function() {

@@ -312,6 +312,7 @@ Class | Method | HTTP request | Description
  - [CoreOutputReference](docs/CoreOutputReference.md)
  - [CoreParameter](docs/CoreParameter.md)
  - [CoreParameterMap](docs/CoreParameterMap.md)
+ - [CorePickleMetadata](docs/CorePickleMetadata.md)
  - [CorePrimitive](docs/CorePrimitive.md)
  - [CoreQualityOfService](docs/CoreQualityOfService.md)
  - [CoreQualityOfServiceSpec](docs/CoreQualityOfServiceSpec.md)

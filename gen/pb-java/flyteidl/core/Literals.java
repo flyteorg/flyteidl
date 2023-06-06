@@ -1782,6 +1782,19 @@ public final class Literals {
      */
     com.google.protobuf.ByteString
         getUriBytes();
+
+    /**
+     * <code>.flyteidl.core.PickleMetadata pickle_metadata = 4;</code>
+     */
+    boolean hasPickleMetadata();
+    /**
+     * <code>.flyteidl.core.PickleMetadata pickle_metadata = 4;</code>
+     */
+    flyteidl.core.Literals.PickleMetadata getPickleMetadata();
+    /**
+     * <code>.flyteidl.core.PickleMetadata pickle_metadata = 4;</code>
+     */
+    flyteidl.core.Literals.PickleMetadataOrBuilder getPickleMetadataOrBuilder();
   }
   /**
    * <pre>
@@ -1845,6 +1858,19 @@ public final class Literals {
               java.lang.String s = input.readStringRequireUtf8();
 
               uri_ = s;
+              break;
+            }
+            case 34: {
+              flyteidl.core.Literals.PickleMetadata.Builder subBuilder = null;
+              if (pickleMetadata_ != null) {
+                subBuilder = pickleMetadata_.toBuilder();
+              }
+              pickleMetadata_ = input.readMessage(flyteidl.core.Literals.PickleMetadata.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(pickleMetadata_);
+                pickleMetadata_ = subBuilder.buildPartial();
+              }
+
               break;
             }
             default: {
@@ -1934,6 +1960,27 @@ public final class Literals {
       }
     }
 
+    public static final int PICKLE_METADATA_FIELD_NUMBER = 4;
+    private flyteidl.core.Literals.PickleMetadata pickleMetadata_;
+    /**
+     * <code>.flyteidl.core.PickleMetadata pickle_metadata = 4;</code>
+     */
+    public boolean hasPickleMetadata() {
+      return pickleMetadata_ != null;
+    }
+    /**
+     * <code>.flyteidl.core.PickleMetadata pickle_metadata = 4;</code>
+     */
+    public flyteidl.core.Literals.PickleMetadata getPickleMetadata() {
+      return pickleMetadata_ == null ? flyteidl.core.Literals.PickleMetadata.getDefaultInstance() : pickleMetadata_;
+    }
+    /**
+     * <code>.flyteidl.core.PickleMetadata pickle_metadata = 4;</code>
+     */
+    public flyteidl.core.Literals.PickleMetadataOrBuilder getPickleMetadataOrBuilder() {
+      return getPickleMetadata();
+    }
+
     private byte memoizedIsInitialized = -1;
     @java.lang.Override
     public final boolean isInitialized() {
@@ -1954,6 +2001,9 @@ public final class Literals {
       if (!getUriBytes().isEmpty()) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 3, uri_);
       }
+      if (pickleMetadata_ != null) {
+        output.writeMessage(4, getPickleMetadata());
+      }
       unknownFields.writeTo(output);
     }
 
@@ -1969,6 +2019,10 @@ public final class Literals {
       }
       if (!getUriBytes().isEmpty()) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, uri_);
+      }
+      if (pickleMetadata_ != null) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(4, getPickleMetadata());
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -1992,6 +2046,11 @@ public final class Literals {
       }
       if (!getUri()
           .equals(other.getUri())) return false;
+      if (hasPickleMetadata() != other.hasPickleMetadata()) return false;
+      if (hasPickleMetadata()) {
+        if (!getPickleMetadata()
+            .equals(other.getPickleMetadata())) return false;
+      }
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -2009,6 +2068,10 @@ public final class Literals {
       }
       hash = (37 * hash) + URI_FIELD_NUMBER;
       hash = (53 * hash) + getUri().hashCode();
+      if (hasPickleMetadata()) {
+        hash = (37 * hash) + PICKLE_METADATA_FIELD_NUMBER;
+        hash = (53 * hash) + getPickleMetadata().hashCode();
+      }
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -2155,6 +2218,12 @@ public final class Literals {
         }
         uri_ = "";
 
+        if (pickleMetadataBuilder_ == null) {
+          pickleMetadata_ = null;
+        } else {
+          pickleMetadata_ = null;
+          pickleMetadataBuilder_ = null;
+        }
         return this;
       }
 
@@ -2187,6 +2256,11 @@ public final class Literals {
           result.metadata_ = metadataBuilder_.build();
         }
         result.uri_ = uri_;
+        if (pickleMetadataBuilder_ == null) {
+          result.pickleMetadata_ = pickleMetadata_;
+        } else {
+          result.pickleMetadata_ = pickleMetadataBuilder_.build();
+        }
         onBuilt();
         return result;
       }
@@ -2241,6 +2315,9 @@ public final class Literals {
         if (!other.getUri().isEmpty()) {
           uri_ = other.uri_;
           onChanged();
+        }
+        if (other.hasPickleMetadata()) {
+          mergePickleMetadata(other.getPickleMetadata());
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -2456,6 +2533,123 @@ public final class Literals {
         onChanged();
         return this;
       }
+
+      private flyteidl.core.Literals.PickleMetadata pickleMetadata_;
+      private com.google.protobuf.SingleFieldBuilderV3<
+          flyteidl.core.Literals.PickleMetadata, flyteidl.core.Literals.PickleMetadata.Builder, flyteidl.core.Literals.PickleMetadataOrBuilder> pickleMetadataBuilder_;
+      /**
+       * <code>.flyteidl.core.PickleMetadata pickle_metadata = 4;</code>
+       */
+      public boolean hasPickleMetadata() {
+        return pickleMetadataBuilder_ != null || pickleMetadata_ != null;
+      }
+      /**
+       * <code>.flyteidl.core.PickleMetadata pickle_metadata = 4;</code>
+       */
+      public flyteidl.core.Literals.PickleMetadata getPickleMetadata() {
+        if (pickleMetadataBuilder_ == null) {
+          return pickleMetadata_ == null ? flyteidl.core.Literals.PickleMetadata.getDefaultInstance() : pickleMetadata_;
+        } else {
+          return pickleMetadataBuilder_.getMessage();
+        }
+      }
+      /**
+       * <code>.flyteidl.core.PickleMetadata pickle_metadata = 4;</code>
+       */
+      public Builder setPickleMetadata(flyteidl.core.Literals.PickleMetadata value) {
+        if (pickleMetadataBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          pickleMetadata_ = value;
+          onChanged();
+        } else {
+          pickleMetadataBuilder_.setMessage(value);
+        }
+
+        return this;
+      }
+      /**
+       * <code>.flyteidl.core.PickleMetadata pickle_metadata = 4;</code>
+       */
+      public Builder setPickleMetadata(
+          flyteidl.core.Literals.PickleMetadata.Builder builderForValue) {
+        if (pickleMetadataBuilder_ == null) {
+          pickleMetadata_ = builderForValue.build();
+          onChanged();
+        } else {
+          pickleMetadataBuilder_.setMessage(builderForValue.build());
+        }
+
+        return this;
+      }
+      /**
+       * <code>.flyteidl.core.PickleMetadata pickle_metadata = 4;</code>
+       */
+      public Builder mergePickleMetadata(flyteidl.core.Literals.PickleMetadata value) {
+        if (pickleMetadataBuilder_ == null) {
+          if (pickleMetadata_ != null) {
+            pickleMetadata_ =
+              flyteidl.core.Literals.PickleMetadata.newBuilder(pickleMetadata_).mergeFrom(value).buildPartial();
+          } else {
+            pickleMetadata_ = value;
+          }
+          onChanged();
+        } else {
+          pickleMetadataBuilder_.mergeFrom(value);
+        }
+
+        return this;
+      }
+      /**
+       * <code>.flyteidl.core.PickleMetadata pickle_metadata = 4;</code>
+       */
+      public Builder clearPickleMetadata() {
+        if (pickleMetadataBuilder_ == null) {
+          pickleMetadata_ = null;
+          onChanged();
+        } else {
+          pickleMetadata_ = null;
+          pickleMetadataBuilder_ = null;
+        }
+
+        return this;
+      }
+      /**
+       * <code>.flyteidl.core.PickleMetadata pickle_metadata = 4;</code>
+       */
+      public flyteidl.core.Literals.PickleMetadata.Builder getPickleMetadataBuilder() {
+        
+        onChanged();
+        return getPickleMetadataFieldBuilder().getBuilder();
+      }
+      /**
+       * <code>.flyteidl.core.PickleMetadata pickle_metadata = 4;</code>
+       */
+      public flyteidl.core.Literals.PickleMetadataOrBuilder getPickleMetadataOrBuilder() {
+        if (pickleMetadataBuilder_ != null) {
+          return pickleMetadataBuilder_.getMessageOrBuilder();
+        } else {
+          return pickleMetadata_ == null ?
+              flyteidl.core.Literals.PickleMetadata.getDefaultInstance() : pickleMetadata_;
+        }
+      }
+      /**
+       * <code>.flyteidl.core.PickleMetadata pickle_metadata = 4;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+          flyteidl.core.Literals.PickleMetadata, flyteidl.core.Literals.PickleMetadata.Builder, flyteidl.core.Literals.PickleMetadataOrBuilder> 
+          getPickleMetadataFieldBuilder() {
+        if (pickleMetadataBuilder_ == null) {
+          pickleMetadataBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              flyteidl.core.Literals.PickleMetadata, flyteidl.core.Literals.PickleMetadata.Builder, flyteidl.core.Literals.PickleMetadataOrBuilder>(
+                  getPickleMetadata(),
+                  getParentForChildren(),
+                  isClean());
+          pickleMetadata_ = null;
+        }
+        return pickleMetadataBuilder_;
+      }
       @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
@@ -2504,6 +2698,514 @@ public final class Literals {
 
     @java.lang.Override
     public flyteidl.core.Literals.Blob getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
+  public interface PickleMetadataOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:flyteidl.core.PickleMetadata)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <pre>
+     * In flytekit, we serialize a list into single pickle file. we need to save original list size, so that propeller
+     * can know how many pods to launch in the map task.
+     * </pre>
+     *
+     * <code>uint64 size = 1;</code>
+     */
+    long getSize();
+  }
+  /**
+   * <pre>
+   * PickleMetadata is used to store metadata about a pickled object.
+   * </pre>
+   *
+   * Protobuf type {@code flyteidl.core.PickleMetadata}
+   */
+  public  static final class PickleMetadata extends
+      com.google.protobuf.GeneratedMessageV3 implements
+      // @@protoc_insertion_point(message_implements:flyteidl.core.PickleMetadata)
+      PickleMetadataOrBuilder {
+  private static final long serialVersionUID = 0L;
+    // Use PickleMetadata.newBuilder() to construct.
+    private PickleMetadata(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+    private PickleMetadata() {
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+      return this.unknownFields;
+    }
+    private PickleMetadata(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 8: {
+
+              size_ = input.readUInt64();
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return flyteidl.core.Literals.internal_static_flyteidl_core_PickleMetadata_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return flyteidl.core.Literals.internal_static_flyteidl_core_PickleMetadata_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              flyteidl.core.Literals.PickleMetadata.class, flyteidl.core.Literals.PickleMetadata.Builder.class);
+    }
+
+    public static final int SIZE_FIELD_NUMBER = 1;
+    private long size_;
+    /**
+     * <pre>
+     * In flytekit, we serialize a list into single pickle file. we need to save original list size, so that propeller
+     * can know how many pods to launch in the map task.
+     * </pre>
+     *
+     * <code>uint64 size = 1;</code>
+     */
+    public long getSize() {
+      return size_;
+    }
+
+    private byte memoizedIsInitialized = -1;
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      if (size_ != 0L) {
+        output.writeUInt64(1, size_);
+      }
+      unknownFields.writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (size_ != 0L) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeUInt64Size(1, size_);
+      }
+      size += unknownFields.getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof flyteidl.core.Literals.PickleMetadata)) {
+        return super.equals(obj);
+      }
+      flyteidl.core.Literals.PickleMetadata other = (flyteidl.core.Literals.PickleMetadata) obj;
+
+      if (getSize()
+          != other.getSize()) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + SIZE_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+          getSize());
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static flyteidl.core.Literals.PickleMetadata parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static flyteidl.core.Literals.PickleMetadata parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static flyteidl.core.Literals.PickleMetadata parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static flyteidl.core.Literals.PickleMetadata parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static flyteidl.core.Literals.PickleMetadata parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static flyteidl.core.Literals.PickleMetadata parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static flyteidl.core.Literals.PickleMetadata parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static flyteidl.core.Literals.PickleMetadata parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static flyteidl.core.Literals.PickleMetadata parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+    public static flyteidl.core.Literals.PickleMetadata parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static flyteidl.core.Literals.PickleMetadata parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static flyteidl.core.Literals.PickleMetadata parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(flyteidl.core.Literals.PickleMetadata prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * <pre>
+     * PickleMetadata is used to store metadata about a pickled object.
+     * </pre>
+     *
+     * Protobuf type {@code flyteidl.core.PickleMetadata}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:flyteidl.core.PickleMetadata)
+        flyteidl.core.Literals.PickleMetadataOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return flyteidl.core.Literals.internal_static_flyteidl_core_PickleMetadata_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return flyteidl.core.Literals.internal_static_flyteidl_core_PickleMetadata_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                flyteidl.core.Literals.PickleMetadata.class, flyteidl.core.Literals.PickleMetadata.Builder.class);
+      }
+
+      // Construct using flyteidl.core.Literals.PickleMetadata.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
+      }
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        size_ = 0L;
+
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return flyteidl.core.Literals.internal_static_flyteidl_core_PickleMetadata_descriptor;
+      }
+
+      @java.lang.Override
+      public flyteidl.core.Literals.PickleMetadata getDefaultInstanceForType() {
+        return flyteidl.core.Literals.PickleMetadata.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public flyteidl.core.Literals.PickleMetadata build() {
+        flyteidl.core.Literals.PickleMetadata result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public flyteidl.core.Literals.PickleMetadata buildPartial() {
+        flyteidl.core.Literals.PickleMetadata result = new flyteidl.core.Literals.PickleMetadata(this);
+        result.size_ = size_;
+        onBuilt();
+        return result;
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.setField(field, value);
+      }
+      @java.lang.Override
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+      @java.lang.Override
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof flyteidl.core.Literals.PickleMetadata) {
+          return mergeFrom((flyteidl.core.Literals.PickleMetadata)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(flyteidl.core.Literals.PickleMetadata other) {
+        if (other == flyteidl.core.Literals.PickleMetadata.getDefaultInstance()) return this;
+        if (other.getSize() != 0L) {
+          setSize(other.getSize());
+        }
+        this.mergeUnknownFields(other.unknownFields);
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        flyteidl.core.Literals.PickleMetadata parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (flyteidl.core.Literals.PickleMetadata) e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+
+      private long size_ ;
+      /**
+       * <pre>
+       * In flytekit, we serialize a list into single pickle file. we need to save original list size, so that propeller
+       * can know how many pods to launch in the map task.
+       * </pre>
+       *
+       * <code>uint64 size = 1;</code>
+       */
+      public long getSize() {
+        return size_;
+      }
+      /**
+       * <pre>
+       * In flytekit, we serialize a list into single pickle file. we need to save original list size, so that propeller
+       * can know how many pods to launch in the map task.
+       * </pre>
+       *
+       * <code>uint64 size = 1;</code>
+       */
+      public Builder setSize(long value) {
+        
+        size_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * In flytekit, we serialize a list into single pickle file. we need to save original list size, so that propeller
+       * can know how many pods to launch in the map task.
+       * </pre>
+       *
+       * <code>uint64 size = 1;</code>
+       */
+      public Builder clearSize() {
+        
+        size_ = 0L;
+        onChanged();
+        return this;
+      }
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+
+      // @@protoc_insertion_point(builder_scope:flyteidl.core.PickleMetadata)
+    }
+
+    // @@protoc_insertion_point(class_scope:flyteidl.core.PickleMetadata)
+    private static final flyteidl.core.Literals.PickleMetadata DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new flyteidl.core.Literals.PickleMetadata();
+    }
+
+    public static flyteidl.core.Literals.PickleMetadata getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<PickleMetadata>
+        PARSER = new com.google.protobuf.AbstractParser<PickleMetadata>() {
+      @java.lang.Override
+      public PickleMetadata parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new PickleMetadata(input, extensionRegistry);
+      }
+    };
+
+    public static com.google.protobuf.Parser<PickleMetadata> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<PickleMetadata> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public flyteidl.core.Literals.PickleMetadata getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
 
@@ -18369,6 +19071,11 @@ public final class Literals {
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_flyteidl_core_Blob_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_flyteidl_core_PickleMetadata_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_flyteidl_core_PickleMetadata_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_flyteidl_core_BlobMetadata_descriptor;
   private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
@@ -18481,59 +19188,61 @@ public final class Literals {
       "\003 \001(\tH\000\022\021\n\007boolean\030\004 \001(\010H\000\022.\n\010datetime\030\005" +
       " \001(\0132\032.google.protobuf.TimestampH\000\022-\n\010du" +
       "ration\030\006 \001(\0132\031.google.protobuf.DurationH" +
-      "\000B\007\n\005value\"\006\n\004Void\"B\n\004Blob\022-\n\010metadata\030\001" +
+      "\000B\007\n\005value\"\006\n\004Void\"z\n\004Blob\022-\n\010metadata\030\001" +
       " \001(\0132\033.flyteidl.core.BlobMetadata\022\013\n\003uri" +
-      "\030\003 \001(\t\"5\n\014BlobMetadata\022%\n\004type\030\001 \001(\0132\027.f" +
-      "lyteidl.core.BlobType\"$\n\006Binary\022\r\n\005value" +
-      "\030\001 \001(\014\022\013\n\003tag\030\002 \001(\t\">\n\006Schema\022\013\n\003uri\030\001 \001" +
-      "(\t\022\'\n\004type\030\003 \001(\0132\031.flyteidl.core.SchemaT" +
-      "ype\"X\n\005Union\022%\n\005value\030\001 \001(\0132\026.flyteidl.c" +
-      "ore.Literal\022(\n\004type\030\002 \001(\0132\032.flyteidl.cor" +
-      "e.LiteralType\"b\n\031StructuredDatasetMetada" +
-      "ta\022E\n\027structured_dataset_type\030\001 \001(\0132$.fl" +
-      "yteidl.core.StructuredDatasetType\"\\\n\021Str" +
-      "ucturedDataset\022\013\n\003uri\030\001 \001(\t\022:\n\010metadata\030" +
-      "\002 \001(\0132(.flyteidl.core.StructuredDatasetM" +
-      "etadata\"\233\003\n\006Scalar\022-\n\tprimitive\030\001 \001(\0132\030." +
-      "flyteidl.core.PrimitiveH\000\022#\n\004blob\030\002 \001(\0132" +
-      "\023.flyteidl.core.BlobH\000\022\'\n\006binary\030\003 \001(\0132\025" +
-      ".flyteidl.core.BinaryH\000\022\'\n\006schema\030\004 \001(\0132" +
-      "\025.flyteidl.core.SchemaH\000\022(\n\tnone_type\030\005 " +
-      "\001(\0132\023.flyteidl.core.VoidH\000\022%\n\005error\030\006 \001(" +
-      "\0132\024.flyteidl.core.ErrorH\000\022*\n\007generic\030\007 \001" +
-      "(\0132\027.google.protobuf.StructH\000\022>\n\022structu" +
-      "red_dataset\030\010 \001(\0132 .flyteidl.core.Struct" +
-      "uredDatasetH\000\022%\n\005union\030\t \001(\0132\024.flyteidl." +
-      "core.UnionH\000B\007\n\005value\"\253\001\n\007Literal\022\'\n\006sca" +
-      "lar\030\001 \001(\0132\025.flyteidl.core.ScalarH\000\0226\n\nco" +
-      "llection\030\002 \001(\0132 .flyteidl.core.LiteralCo" +
-      "llectionH\000\022(\n\003map\030\003 \001(\0132\031.flyteidl.core." +
-      "LiteralMapH\000\022\014\n\004hash\030\004 \001(\tB\007\n\005value\"=\n\021L" +
-      "iteralCollection\022(\n\010literals\030\001 \003(\0132\026.fly" +
-      "teidl.core.Literal\"\220\001\n\nLiteralMap\0229\n\010lit" +
-      "erals\030\001 \003(\0132\'.flyteidl.core.LiteralMap.L" +
-      "iteralsEntry\032G\n\rLiteralsEntry\022\013\n\003key\030\001 \001" +
-      "(\t\022%\n\005value\030\002 \001(\0132\026.flyteidl.core.Litera" +
-      "l:\0028\001\"E\n\025BindingDataCollection\022,\n\010bindin" +
-      "gs\030\001 \003(\0132\032.flyteidl.core.BindingData\"\234\001\n" +
-      "\016BindingDataMap\022=\n\010bindings\030\001 \003(\0132+.flyt" +
-      "eidl.core.BindingDataMap.BindingsEntry\032K" +
-      "\n\rBindingsEntry\022\013\n\003key\030\001 \001(\t\022)\n\005value\030\002 " +
-      "\001(\0132\032.flyteidl.core.BindingData:\0028\001\";\n\tU" +
-      "nionInfo\022.\n\ntargetType\030\001 \001(\0132\032.flyteidl." +
-      "core.LiteralType\"\205\002\n\013BindingData\022\'\n\006scal" +
-      "ar\030\001 \001(\0132\025.flyteidl.core.ScalarH\000\022:\n\ncol" +
-      "lection\030\002 \001(\0132$.flyteidl.core.BindingDat" +
-      "aCollectionH\000\0221\n\007promise\030\003 \001(\0132\036.flyteid" +
-      "l.core.OutputReferenceH\000\022,\n\003map\030\004 \001(\0132\035." +
-      "flyteidl.core.BindingDataMapH\000\022\'\n\005union\030" +
-      "\005 \001(\0132\030.flyteidl.core.UnionInfoB\007\n\005value" +
-      "\"C\n\007Binding\022\013\n\003var\030\001 \001(\t\022+\n\007binding\030\002 \001(" +
-      "\0132\032.flyteidl.core.BindingData\"*\n\014KeyValu" +
-      "ePair\022\013\n\003key\030\001 \001(\t\022\r\n\005value\030\002 \001(\t\" \n\rRet" +
-      "ryStrategy\022\017\n\007retries\030\005 \001(\rB6Z4github.co" +
-      "m/flyteorg/flyteidl/gen/pb-go/flyteidl/c" +
-      "oreb\006proto3"
+      "\030\003 \001(\t\0226\n\017pickle_metadata\030\004 \001(\0132\035.flytei" +
+      "dl.core.PickleMetadata\"\036\n\016PickleMetadata" +
+      "\022\014\n\004size\030\001 \001(\004\"5\n\014BlobMetadata\022%\n\004type\030\001" +
+      " \001(\0132\027.flyteidl.core.BlobType\"$\n\006Binary\022" +
+      "\r\n\005value\030\001 \001(\014\022\013\n\003tag\030\002 \001(\t\">\n\006Schema\022\013\n" +
+      "\003uri\030\001 \001(\t\022\'\n\004type\030\003 \001(\0132\031.flyteidl.core" +
+      ".SchemaType\"X\n\005Union\022%\n\005value\030\001 \001(\0132\026.fl" +
+      "yteidl.core.Literal\022(\n\004type\030\002 \001(\0132\032.flyt" +
+      "eidl.core.LiteralType\"b\n\031StructuredDatas" +
+      "etMetadata\022E\n\027structured_dataset_type\030\001 " +
+      "\001(\0132$.flyteidl.core.StructuredDatasetTyp" +
+      "e\"\\\n\021StructuredDataset\022\013\n\003uri\030\001 \001(\t\022:\n\010m" +
+      "etadata\030\002 \001(\0132(.flyteidl.core.Structured" +
+      "DatasetMetadata\"\233\003\n\006Scalar\022-\n\tprimitive\030" +
+      "\001 \001(\0132\030.flyteidl.core.PrimitiveH\000\022#\n\004blo" +
+      "b\030\002 \001(\0132\023.flyteidl.core.BlobH\000\022\'\n\006binary" +
+      "\030\003 \001(\0132\025.flyteidl.core.BinaryH\000\022\'\n\006schem" +
+      "a\030\004 \001(\0132\025.flyteidl.core.SchemaH\000\022(\n\tnone" +
+      "_type\030\005 \001(\0132\023.flyteidl.core.VoidH\000\022%\n\005er" +
+      "ror\030\006 \001(\0132\024.flyteidl.core.ErrorH\000\022*\n\007gen" +
+      "eric\030\007 \001(\0132\027.google.protobuf.StructH\000\022>\n" +
+      "\022structured_dataset\030\010 \001(\0132 .flyteidl.cor" +
+      "e.StructuredDatasetH\000\022%\n\005union\030\t \001(\0132\024.f" +
+      "lyteidl.core.UnionH\000B\007\n\005value\"\253\001\n\007Litera" +
+      "l\022\'\n\006scalar\030\001 \001(\0132\025.flyteidl.core.Scalar" +
+      "H\000\0226\n\ncollection\030\002 \001(\0132 .flyteidl.core.L" +
+      "iteralCollectionH\000\022(\n\003map\030\003 \001(\0132\031.flytei" +
+      "dl.core.LiteralMapH\000\022\014\n\004hash\030\004 \001(\tB\007\n\005va" +
+      "lue\"=\n\021LiteralCollection\022(\n\010literals\030\001 \003" +
+      "(\0132\026.flyteidl.core.Literal\"\220\001\n\nLiteralMa" +
+      "p\0229\n\010literals\030\001 \003(\0132\'.flyteidl.core.Lite" +
+      "ralMap.LiteralsEntry\032G\n\rLiteralsEntry\022\013\n" +
+      "\003key\030\001 \001(\t\022%\n\005value\030\002 \001(\0132\026.flyteidl.cor" +
+      "e.Literal:\0028\001\"E\n\025BindingDataCollection\022," +
+      "\n\010bindings\030\001 \003(\0132\032.flyteidl.core.Binding" +
+      "Data\"\234\001\n\016BindingDataMap\022=\n\010bindings\030\001 \003(" +
+      "\0132+.flyteidl.core.BindingDataMap.Binding" +
+      "sEntry\032K\n\rBindingsEntry\022\013\n\003key\030\001 \001(\t\022)\n\005" +
+      "value\030\002 \001(\0132\032.flyteidl.core.BindingData:" +
+      "\0028\001\";\n\tUnionInfo\022.\n\ntargetType\030\001 \001(\0132\032.f" +
+      "lyteidl.core.LiteralType\"\205\002\n\013BindingData" +
+      "\022\'\n\006scalar\030\001 \001(\0132\025.flyteidl.core.ScalarH" +
+      "\000\022:\n\ncollection\030\002 \001(\0132$.flyteidl.core.Bi" +
+      "ndingDataCollectionH\000\0221\n\007promise\030\003 \001(\0132\036" +
+      ".flyteidl.core.OutputReferenceH\000\022,\n\003map\030" +
+      "\004 \001(\0132\035.flyteidl.core.BindingDataMapH\000\022\'" +
+      "\n\005union\030\005 \001(\0132\030.flyteidl.core.UnionInfoB" +
+      "\007\n\005value\"C\n\007Binding\022\013\n\003var\030\001 \001(\t\022+\n\007bind" +
+      "ing\030\002 \001(\0132\032.flyteidl.core.BindingData\"*\n" +
+      "\014KeyValuePair\022\013\n\003key\030\001 \001(\t\022\r\n\005value\030\002 \001(" +
+      "\t\" \n\rRetryStrategy\022\017\n\007retries\030\005 \001(\rB6Z4g" +
+      "ithub.com/flyteorg/flyteidl/gen/pb-go/fl" +
+      "yteidl/coreb\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
@@ -18568,63 +19277,69 @@ public final class Literals {
     internal_static_flyteidl_core_Blob_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_flyteidl_core_Blob_descriptor,
-        new java.lang.String[] { "Metadata", "Uri", });
-    internal_static_flyteidl_core_BlobMetadata_descriptor =
+        new java.lang.String[] { "Metadata", "Uri", "PickleMetadata", });
+    internal_static_flyteidl_core_PickleMetadata_descriptor =
       getDescriptor().getMessageTypes().get(3);
+    internal_static_flyteidl_core_PickleMetadata_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_flyteidl_core_PickleMetadata_descriptor,
+        new java.lang.String[] { "Size", });
+    internal_static_flyteidl_core_BlobMetadata_descriptor =
+      getDescriptor().getMessageTypes().get(4);
     internal_static_flyteidl_core_BlobMetadata_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_flyteidl_core_BlobMetadata_descriptor,
         new java.lang.String[] { "Type", });
     internal_static_flyteidl_core_Binary_descriptor =
-      getDescriptor().getMessageTypes().get(4);
+      getDescriptor().getMessageTypes().get(5);
     internal_static_flyteidl_core_Binary_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_flyteidl_core_Binary_descriptor,
         new java.lang.String[] { "Value", "Tag", });
     internal_static_flyteidl_core_Schema_descriptor =
-      getDescriptor().getMessageTypes().get(5);
+      getDescriptor().getMessageTypes().get(6);
     internal_static_flyteidl_core_Schema_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_flyteidl_core_Schema_descriptor,
         new java.lang.String[] { "Uri", "Type", });
     internal_static_flyteidl_core_Union_descriptor =
-      getDescriptor().getMessageTypes().get(6);
+      getDescriptor().getMessageTypes().get(7);
     internal_static_flyteidl_core_Union_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_flyteidl_core_Union_descriptor,
         new java.lang.String[] { "Value", "Type", });
     internal_static_flyteidl_core_StructuredDatasetMetadata_descriptor =
-      getDescriptor().getMessageTypes().get(7);
+      getDescriptor().getMessageTypes().get(8);
     internal_static_flyteidl_core_StructuredDatasetMetadata_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_flyteidl_core_StructuredDatasetMetadata_descriptor,
         new java.lang.String[] { "StructuredDatasetType", });
     internal_static_flyteidl_core_StructuredDataset_descriptor =
-      getDescriptor().getMessageTypes().get(8);
+      getDescriptor().getMessageTypes().get(9);
     internal_static_flyteidl_core_StructuredDataset_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_flyteidl_core_StructuredDataset_descriptor,
         new java.lang.String[] { "Uri", "Metadata", });
     internal_static_flyteidl_core_Scalar_descriptor =
-      getDescriptor().getMessageTypes().get(9);
+      getDescriptor().getMessageTypes().get(10);
     internal_static_flyteidl_core_Scalar_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_flyteidl_core_Scalar_descriptor,
         new java.lang.String[] { "Primitive", "Blob", "Binary", "Schema", "NoneType", "Error", "Generic", "StructuredDataset", "Union", "Value", });
     internal_static_flyteidl_core_Literal_descriptor =
-      getDescriptor().getMessageTypes().get(10);
+      getDescriptor().getMessageTypes().get(11);
     internal_static_flyteidl_core_Literal_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_flyteidl_core_Literal_descriptor,
         new java.lang.String[] { "Scalar", "Collection", "Map", "Hash", "Value", });
     internal_static_flyteidl_core_LiteralCollection_descriptor =
-      getDescriptor().getMessageTypes().get(11);
+      getDescriptor().getMessageTypes().get(12);
     internal_static_flyteidl_core_LiteralCollection_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_flyteidl_core_LiteralCollection_descriptor,
         new java.lang.String[] { "Literals", });
     internal_static_flyteidl_core_LiteralMap_descriptor =
-      getDescriptor().getMessageTypes().get(12);
+      getDescriptor().getMessageTypes().get(13);
     internal_static_flyteidl_core_LiteralMap_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_flyteidl_core_LiteralMap_descriptor,
@@ -18636,13 +19351,13 @@ public final class Literals {
         internal_static_flyteidl_core_LiteralMap_LiteralsEntry_descriptor,
         new java.lang.String[] { "Key", "Value", });
     internal_static_flyteidl_core_BindingDataCollection_descriptor =
-      getDescriptor().getMessageTypes().get(13);
+      getDescriptor().getMessageTypes().get(14);
     internal_static_flyteidl_core_BindingDataCollection_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_flyteidl_core_BindingDataCollection_descriptor,
         new java.lang.String[] { "Bindings", });
     internal_static_flyteidl_core_BindingDataMap_descriptor =
-      getDescriptor().getMessageTypes().get(14);
+      getDescriptor().getMessageTypes().get(15);
     internal_static_flyteidl_core_BindingDataMap_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_flyteidl_core_BindingDataMap_descriptor,
@@ -18654,31 +19369,31 @@ public final class Literals {
         internal_static_flyteidl_core_BindingDataMap_BindingsEntry_descriptor,
         new java.lang.String[] { "Key", "Value", });
     internal_static_flyteidl_core_UnionInfo_descriptor =
-      getDescriptor().getMessageTypes().get(15);
+      getDescriptor().getMessageTypes().get(16);
     internal_static_flyteidl_core_UnionInfo_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_flyteidl_core_UnionInfo_descriptor,
         new java.lang.String[] { "TargetType", });
     internal_static_flyteidl_core_BindingData_descriptor =
-      getDescriptor().getMessageTypes().get(16);
+      getDescriptor().getMessageTypes().get(17);
     internal_static_flyteidl_core_BindingData_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_flyteidl_core_BindingData_descriptor,
         new java.lang.String[] { "Scalar", "Collection", "Promise", "Map", "Union", "Value", });
     internal_static_flyteidl_core_Binding_descriptor =
-      getDescriptor().getMessageTypes().get(17);
+      getDescriptor().getMessageTypes().get(18);
     internal_static_flyteidl_core_Binding_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_flyteidl_core_Binding_descriptor,
         new java.lang.String[] { "Var", "Binding", });
     internal_static_flyteidl_core_KeyValuePair_descriptor =
-      getDescriptor().getMessageTypes().get(18);
+      getDescriptor().getMessageTypes().get(19);
     internal_static_flyteidl_core_KeyValuePair_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_flyteidl_core_KeyValuePair_descriptor,
         new java.lang.String[] { "Key", "Value", });
     internal_static_flyteidl_core_RetryStrategy_descriptor =
-      getDescriptor().getMessageTypes().get(19);
+      getDescriptor().getMessageTypes().get(20);
     internal_static_flyteidl_core_RetryStrategy_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_flyteidl_core_RetryStrategy_descriptor,

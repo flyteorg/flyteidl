@@ -48,7 +48,7 @@ struct TableStruct_flyteidl_2fcore_2fliterals_2eproto {
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
   static const ::google::protobuf::internal::AuxillaryParseTableField aux[]
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
-  static const ::google::protobuf::internal::ParseTable schema[22]
+  static const ::google::protobuf::internal::ParseTable schema[23]
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
   static const ::google::protobuf::internal::FieldMetadata field_metadata[];
   static const ::google::protobuf::internal::SerializationTable serialization_table[];
@@ -96,6 +96,9 @@ extern LiteralMapDefaultTypeInternal _LiteralMap_default_instance_;
 class LiteralMap_LiteralsEntry_DoNotUse;
 class LiteralMap_LiteralsEntry_DoNotUseDefaultTypeInternal;
 extern LiteralMap_LiteralsEntry_DoNotUseDefaultTypeInternal _LiteralMap_LiteralsEntry_DoNotUse_default_instance_;
+class PickleMetadata;
+class PickleMetadataDefaultTypeInternal;
+extern PickleMetadataDefaultTypeInternal _PickleMetadata_default_instance_;
 class Primitive;
 class PrimitiveDefaultTypeInternal;
 extern PrimitiveDefaultTypeInternal _Primitive_default_instance_;
@@ -140,6 +143,7 @@ template<> ::flyteidl::core::Literal* Arena::CreateMaybeMessage<::flyteidl::core
 template<> ::flyteidl::core::LiteralCollection* Arena::CreateMaybeMessage<::flyteidl::core::LiteralCollection>(Arena*);
 template<> ::flyteidl::core::LiteralMap* Arena::CreateMaybeMessage<::flyteidl::core::LiteralMap>(Arena*);
 template<> ::flyteidl::core::LiteralMap_LiteralsEntry_DoNotUse* Arena::CreateMaybeMessage<::flyteidl::core::LiteralMap_LiteralsEntry_DoNotUse>(Arena*);
+template<> ::flyteidl::core::PickleMetadata* Arena::CreateMaybeMessage<::flyteidl::core::PickleMetadata>(Arena*);
 template<> ::flyteidl::core::Primitive* Arena::CreateMaybeMessage<::flyteidl::core::Primitive>(Arena*);
 template<> ::flyteidl::core::RetryStrategy* Arena::CreateMaybeMessage<::flyteidl::core::RetryStrategy>(Arena*);
 template<> ::flyteidl::core::Scalar* Arena::CreateMaybeMessage<::flyteidl::core::Scalar>(Arena*);
@@ -578,6 +582,15 @@ class Blob final :
   ::flyteidl::core::BlobMetadata* mutable_metadata();
   void set_allocated_metadata(::flyteidl::core::BlobMetadata* metadata);
 
+  // .flyteidl.core.PickleMetadata pickle_metadata = 4;
+  bool has_pickle_metadata() const;
+  void clear_pickle_metadata();
+  static const int kPickleMetadataFieldNumber = 4;
+  const ::flyteidl::core::PickleMetadata& pickle_metadata() const;
+  ::flyteidl::core::PickleMetadata* release_pickle_metadata();
+  ::flyteidl::core::PickleMetadata* mutable_pickle_metadata();
+  void set_allocated_pickle_metadata(::flyteidl::core::PickleMetadata* pickle_metadata);
+
   // @@protoc_insertion_point(class_scope:flyteidl.core.Blob)
  private:
   class HasBitSetters;
@@ -585,6 +598,119 @@ class Blob final :
   ::google::protobuf::internal::InternalMetadataWithArena _internal_metadata_;
   ::google::protobuf::internal::ArenaStringPtr uri_;
   ::flyteidl::core::BlobMetadata* metadata_;
+  ::flyteidl::core::PickleMetadata* pickle_metadata_;
+  mutable ::google::protobuf::internal::CachedSize _cached_size_;
+  friend struct ::TableStruct_flyteidl_2fcore_2fliterals_2eproto;
+};
+// -------------------------------------------------------------------
+
+class PickleMetadata final :
+    public ::google::protobuf::Message /* @@protoc_insertion_point(class_definition:flyteidl.core.PickleMetadata) */ {
+ public:
+  PickleMetadata();
+  virtual ~PickleMetadata();
+
+  PickleMetadata(const PickleMetadata& from);
+
+  inline PickleMetadata& operator=(const PickleMetadata& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  #if LANG_CXX11
+  PickleMetadata(PickleMetadata&& from) noexcept
+    : PickleMetadata() {
+    *this = ::std::move(from);
+  }
+
+  inline PickleMetadata& operator=(PickleMetadata&& from) noexcept {
+    if (GetArenaNoVirtual() == from.GetArenaNoVirtual()) {
+      if (this != &from) InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+  #endif
+  static const ::google::protobuf::Descriptor* descriptor() {
+    return default_instance().GetDescriptor();
+  }
+  static const PickleMetadata& default_instance();
+
+  static void InitAsDefaultInstance();  // FOR INTERNAL USE ONLY
+  static inline const PickleMetadata* internal_default_instance() {
+    return reinterpret_cast<const PickleMetadata*>(
+               &_PickleMetadata_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    3;
+
+  void Swap(PickleMetadata* other);
+  friend void swap(PickleMetadata& a, PickleMetadata& b) {
+    a.Swap(&b);
+  }
+
+  // implements Message ----------------------------------------------
+
+  inline PickleMetadata* New() const final {
+    return CreateMaybeMessage<PickleMetadata>(nullptr);
+  }
+
+  PickleMetadata* New(::google::protobuf::Arena* arena) const final {
+    return CreateMaybeMessage<PickleMetadata>(arena);
+  }
+  void CopyFrom(const ::google::protobuf::Message& from) final;
+  void MergeFrom(const ::google::protobuf::Message& from) final;
+  void CopyFrom(const PickleMetadata& from);
+  void MergeFrom(const PickleMetadata& from);
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  #if GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
+  static const char* _InternalParse(const char* begin, const char* end, void* object, ::google::protobuf::internal::ParseContext* ctx);
+  ::google::protobuf::internal::ParseFunc _ParseFunc() const final { return _InternalParse; }
+  #else
+  bool MergePartialFromCodedStream(
+      ::google::protobuf::io::CodedInputStream* input) final;
+  #endif  // GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
+  void SerializeWithCachedSizes(
+      ::google::protobuf::io::CodedOutputStream* output) const final;
+  ::google::protobuf::uint8* InternalSerializeWithCachedSizesToArray(
+      ::google::protobuf::uint8* target) const final;
+  int GetCachedSize() const final { return _cached_size_.Get(); }
+
+  private:
+  void SharedCtor();
+  void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(PickleMetadata* other);
+  private:
+  inline ::google::protobuf::Arena* GetArenaNoVirtual() const {
+    return nullptr;
+  }
+  inline void* MaybeArenaPtr() const {
+    return nullptr;
+  }
+  public:
+
+  ::google::protobuf::Metadata GetMetadata() const final;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  // uint64 size = 1;
+  void clear_size();
+  static const int kSizeFieldNumber = 1;
+  ::google::protobuf::uint64 size() const;
+  void set_size(::google::protobuf::uint64 value);
+
+  // @@protoc_insertion_point(class_scope:flyteidl.core.PickleMetadata)
+ private:
+  class HasBitSetters;
+
+  ::google::protobuf::internal::InternalMetadataWithArena _internal_metadata_;
+  ::google::protobuf::uint64 size_;
   mutable ::google::protobuf::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_flyteidl_2fcore_2fliterals_2eproto;
 };
@@ -628,7 +754,7 @@ class BlobMetadata final :
                &_BlobMetadata_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    3;
+    4;
 
   void Swap(BlobMetadata* other);
   friend void swap(BlobMetadata& a, BlobMetadata& b) {
@@ -743,7 +869,7 @@ class Binary final :
                &_Binary_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    4;
+    5;
 
   void Swap(Binary* other);
   friend void swap(Binary& a, Binary& b) {
@@ -878,7 +1004,7 @@ class Schema final :
                &_Schema_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    5;
+    6;
 
   void Swap(Schema* other);
   friend void swap(Schema& a, Schema& b) {
@@ -1008,7 +1134,7 @@ class Union final :
                &_Union_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    6;
+    7;
 
   void Swap(Union* other);
   friend void swap(Union& a, Union& b) {
@@ -1133,7 +1259,7 @@ class StructuredDatasetMetadata final :
                &_StructuredDatasetMetadata_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    7;
+    8;
 
   void Swap(StructuredDatasetMetadata* other);
   friend void swap(StructuredDatasetMetadata& a, StructuredDatasetMetadata& b) {
@@ -1248,7 +1374,7 @@ class StructuredDataset final :
                &_StructuredDataset_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    8;
+    9;
 
   void Swap(StructuredDataset* other);
   friend void swap(StructuredDataset& a, StructuredDataset& b) {
@@ -1391,7 +1517,7 @@ class Scalar final :
                &_Scalar_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    9;
+    10;
 
   void Swap(Scalar* other);
   friend void swap(Scalar& a, Scalar& b) {
@@ -1612,7 +1738,7 @@ class Literal final :
                &_Literal_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    10;
+    11;
 
   void Swap(Literal* other);
   friend void swap(Literal& a, Literal& b) {
@@ -1775,7 +1901,7 @@ class LiteralCollection final :
                &_LiteralCollection_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    11;
+    12;
 
   void Swap(LiteralCollection* other);
   friend void swap(LiteralCollection& a, LiteralCollection& b) {
@@ -1917,7 +2043,7 @@ class LiteralMap final :
                &_LiteralMap_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    13;
+    14;
 
   void Swap(LiteralMap* other);
   friend void swap(LiteralMap& a, LiteralMap& b) {
@@ -2038,7 +2164,7 @@ class BindingDataCollection final :
                &_BindingDataCollection_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    14;
+    15;
 
   void Swap(BindingDataCollection* other);
   friend void swap(BindingDataCollection& a, BindingDataCollection& b) {
@@ -2180,7 +2306,7 @@ class BindingDataMap final :
                &_BindingDataMap_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    16;
+    17;
 
   void Swap(BindingDataMap* other);
   friend void swap(BindingDataMap& a, BindingDataMap& b) {
@@ -2301,7 +2427,7 @@ class UnionInfo final :
                &_UnionInfo_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    17;
+    18;
 
   void Swap(UnionInfo* other);
   friend void swap(UnionInfo& a, UnionInfo& b) {
@@ -2424,7 +2550,7 @@ class BindingData final :
                &_BindingData_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    18;
+    19;
 
   void Swap(BindingData* other);
   friend void swap(BindingData& a, BindingData& b) {
@@ -2593,7 +2719,7 @@ class Binding final :
                &_Binding_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    19;
+    20;
 
   void Swap(Binding* other);
   friend void swap(Binding& a, Binding& b) {
@@ -2723,7 +2849,7 @@ class KeyValuePair final :
                &_KeyValuePair_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    20;
+    21;
 
   void Swap(KeyValuePair* other);
   friend void swap(KeyValuePair& a, KeyValuePair& b) {
@@ -2858,7 +2984,7 @@ class RetryStrategy final :
                &_RetryStrategy_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    21;
+    22;
 
   void Swap(RetryStrategy* other);
   friend void swap(RetryStrategy& a, RetryStrategy& b) {
@@ -3309,6 +3435,75 @@ inline void Blob::set_allocated_uri(::std::string* uri) {
   }
   uri_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), uri);
   // @@protoc_insertion_point(field_set_allocated:flyteidl.core.Blob.uri)
+}
+
+// .flyteidl.core.PickleMetadata pickle_metadata = 4;
+inline bool Blob::has_pickle_metadata() const {
+  return this != internal_default_instance() && pickle_metadata_ != nullptr;
+}
+inline void Blob::clear_pickle_metadata() {
+  if (GetArenaNoVirtual() == nullptr && pickle_metadata_ != nullptr) {
+    delete pickle_metadata_;
+  }
+  pickle_metadata_ = nullptr;
+}
+inline const ::flyteidl::core::PickleMetadata& Blob::pickle_metadata() const {
+  const ::flyteidl::core::PickleMetadata* p = pickle_metadata_;
+  // @@protoc_insertion_point(field_get:flyteidl.core.Blob.pickle_metadata)
+  return p != nullptr ? *p : *reinterpret_cast<const ::flyteidl::core::PickleMetadata*>(
+      &::flyteidl::core::_PickleMetadata_default_instance_);
+}
+inline ::flyteidl::core::PickleMetadata* Blob::release_pickle_metadata() {
+  // @@protoc_insertion_point(field_release:flyteidl.core.Blob.pickle_metadata)
+  
+  ::flyteidl::core::PickleMetadata* temp = pickle_metadata_;
+  pickle_metadata_ = nullptr;
+  return temp;
+}
+inline ::flyteidl::core::PickleMetadata* Blob::mutable_pickle_metadata() {
+  
+  if (pickle_metadata_ == nullptr) {
+    auto* p = CreateMaybeMessage<::flyteidl::core::PickleMetadata>(GetArenaNoVirtual());
+    pickle_metadata_ = p;
+  }
+  // @@protoc_insertion_point(field_mutable:flyteidl.core.Blob.pickle_metadata)
+  return pickle_metadata_;
+}
+inline void Blob::set_allocated_pickle_metadata(::flyteidl::core::PickleMetadata* pickle_metadata) {
+  ::google::protobuf::Arena* message_arena = GetArenaNoVirtual();
+  if (message_arena == nullptr) {
+    delete pickle_metadata_;
+  }
+  if (pickle_metadata) {
+    ::google::protobuf::Arena* submessage_arena = nullptr;
+    if (message_arena != submessage_arena) {
+      pickle_metadata = ::google::protobuf::internal::GetOwnedMessage(
+          message_arena, pickle_metadata, submessage_arena);
+    }
+    
+  } else {
+    
+  }
+  pickle_metadata_ = pickle_metadata;
+  // @@protoc_insertion_point(field_set_allocated:flyteidl.core.Blob.pickle_metadata)
+}
+
+// -------------------------------------------------------------------
+
+// PickleMetadata
+
+// uint64 size = 1;
+inline void PickleMetadata::clear_size() {
+  size_ = PROTOBUF_ULONGLONG(0);
+}
+inline ::google::protobuf::uint64 PickleMetadata::size() const {
+  // @@protoc_insertion_point(field_get:flyteidl.core.PickleMetadata.size)
+  return size_;
+}
+inline void PickleMetadata::set_size(::google::protobuf::uint64 value) {
+  
+  size_ = value;
+  // @@protoc_insertion_point(field_set:flyteidl.core.PickleMetadata.size)
 }
 
 // -------------------------------------------------------------------
@@ -5014,6 +5209,8 @@ inline void RetryStrategy::set_retries(::google::protobuf::uint32 value) {
 #ifdef __GNUC__
   #pragma GCC diagnostic pop
 #endif  // __GNUC__
+// -------------------------------------------------------------------
+
 // -------------------------------------------------------------------
 
 // -------------------------------------------------------------------

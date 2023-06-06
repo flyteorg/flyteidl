@@ -194,6 +194,9 @@
         },
         "uri": {
           "type": "string"
+        },
+        "pickle_metadata": {
+          "$ref": "#/definitions/corePickleMetadata"
         }
       },
       "description": "Refers to an offloaded set of files. It encapsulates the type of the store and a unique uri for where the data is.\nThere are no restrictions on how the uri is formatted since it will depend on how to interact with the store."
@@ -353,6 +356,17 @@
         }
       },
       "description": "Encapsulation of fields that identify a Flyte node execution entity."
+    },
+    "corePickleMetadata": {
+      "type": "object",
+      "properties": {
+        "size": {
+          "type": "string",
+          "format": "uint64",
+          "description": "In flytekit, we serialize a list into single pickle file. we need to save original list size, so that propeller\ncan know how many pods to launch in the map task."
+        }
+      },
+      "description": "PickleMetadata is used to store metadata about a pickled object."
     },
     "corePrimitive": {
       "type": "object",

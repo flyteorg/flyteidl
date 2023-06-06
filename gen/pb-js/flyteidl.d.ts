@@ -2265,6 +2265,9 @@ export namespace flyteidl {
 
             /** Blob uri */
             uri?: (string|null);
+
+            /** Blob pickleMetadata */
+            pickleMetadata?: (flyteidl.core.IPickleMetadata|null);
         }
 
         /** Represents a Blob. */
@@ -2281,6 +2284,9 @@ export namespace flyteidl {
 
             /** Blob uri. */
             public uri: string;
+
+            /** Blob pickleMetadata. */
+            public pickleMetadata?: (flyteidl.core.IPickleMetadata|null);
 
             /**
              * Creates a new Blob instance using the specified properties.
@@ -2309,6 +2315,58 @@ export namespace flyteidl {
 
             /**
              * Verifies a Blob message.
+             * @param message Plain object to verify
+             * @returns `null` if valid, otherwise the reason why it is not
+             */
+            public static verify(message: { [k: string]: any }): (string|null);
+        }
+
+        /** Properties of a PickleMetadata. */
+        interface IPickleMetadata {
+
+            /** PickleMetadata size */
+            size?: (Long|null);
+        }
+
+        /** Represents a PickleMetadata. */
+        class PickleMetadata implements IPickleMetadata {
+
+            /**
+             * Constructs a new PickleMetadata.
+             * @param [properties] Properties to set
+             */
+            constructor(properties?: flyteidl.core.IPickleMetadata);
+
+            /** PickleMetadata size. */
+            public size: Long;
+
+            /**
+             * Creates a new PickleMetadata instance using the specified properties.
+             * @param [properties] Properties to set
+             * @returns PickleMetadata instance
+             */
+            public static create(properties?: flyteidl.core.IPickleMetadata): flyteidl.core.PickleMetadata;
+
+            /**
+             * Encodes the specified PickleMetadata message. Does not implicitly {@link flyteidl.core.PickleMetadata.verify|verify} messages.
+             * @param message PickleMetadata message or plain object to encode
+             * @param [writer] Writer to encode to
+             * @returns Writer
+             */
+            public static encode(message: flyteidl.core.IPickleMetadata, writer?: $protobuf.Writer): $protobuf.Writer;
+
+            /**
+             * Decodes a PickleMetadata message from the specified reader or buffer.
+             * @param reader Reader or buffer to decode from
+             * @param [length] Message length if known beforehand
+             * @returns PickleMetadata
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): flyteidl.core.PickleMetadata;
+
+            /**
+             * Verifies a PickleMetadata message.
              * @param message Plain object to verify
              * @returns `null` if valid, otherwise the reason why it is not
              */
