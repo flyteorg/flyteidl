@@ -88,7 +88,7 @@ class GateNodeDefaultTypeInternal {
 class ArrayNodeDefaultTypeInternal {
  public:
   ::google::protobuf::internal::ExplicitlyConstructed<ArrayNode> _instance;
-  ::google::protobuf::int32 min_successes_;
+  ::google::protobuf::uint32 min_successes_;
   float min_success_ratio_;
 } _ArrayNode_default_instance_;
 class NodeMetadataDefaultTypeInternal {
@@ -636,7 +636,7 @@ const char descriptor_table_protodef_flyteidl_2fcore_2fworkflow_2eproto[] =
   "eidl.core.SleepConditionH\000B\013\n\tcondition\""
   "\215\001\n\tArrayNode\022!\n\004node\030\001 \001(\0132\023.flyteidl.c"
   "ore.Node\022\023\n\013parallelism\030\002 \001(\r\022\027\n\rmin_suc"
-  "cesses\030\003 \001(\005H\000\022\033\n\021min_success_ratio\030\004 \001("
+  "cesses\030\003 \001(\rH\000\022\033\n\021min_success_ratio\030\004 \001("
   "\002H\000B\022\n\020success_criteria\"\247\001\n\014NodeMetadata"
   "\022\014\n\004name\030\001 \001(\t\022*\n\007timeout\030\004 \001(\0132\031.google"
   ".protobuf.Duration\022-\n\007retries\030\005 \001(\0132\034.fl"
@@ -4269,7 +4269,7 @@ void GateNode::InternalSwap(GateNode* other) {
 void ArrayNode::InitAsDefaultInstance() {
   ::flyteidl::core::_ArrayNode_default_instance_._instance.get_mutable()->node_ = const_cast< ::flyteidl::core::Node*>(
       ::flyteidl::core::Node::internal_default_instance());
-  ::flyteidl::core::_ArrayNode_default_instance_.min_successes_ = 0;
+  ::flyteidl::core::_ArrayNode_default_instance_.min_successes_ = 0u;
   ::flyteidl::core::_ArrayNode_default_instance_.min_success_ratio_ = 0;
 }
 class ArrayNode::HasBitSetters {
@@ -4417,7 +4417,7 @@ const char* ArrayNode::_InternalParse(const char* begin, const char* end, void* 
         GOOGLE_PROTOBUF_PARSER_ASSERT(ptr);
         break;
       }
-      // int32 min_successes = 3;
+      // uint32 min_successes = 3;
       case 3: {
         if (static_cast<::google::protobuf::uint8>(tag) != 24) goto handle_unusual;
         msg->set_min_successes(::google::protobuf::internal::ReadVarint(&ptr));
@@ -4485,12 +4485,12 @@ bool ArrayNode::MergePartialFromCodedStream(
         break;
       }
 
-      // int32 min_successes = 3;
+      // uint32 min_successes = 3;
       case 3: {
         if (static_cast< ::google::protobuf::uint8>(tag) == (24 & 0xFF)) {
           clear_success_criteria();
           DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
-                   ::google::protobuf::int32, ::google::protobuf::internal::WireFormatLite::TYPE_INT32>(
+                   ::google::protobuf::uint32, ::google::protobuf::internal::WireFormatLite::TYPE_UINT32>(
                  input, &success_criteria_.min_successes_)));
           set_has_min_successes();
         } else {
@@ -4551,9 +4551,9 @@ void ArrayNode::SerializeWithCachedSizes(
     ::google::protobuf::internal::WireFormatLite::WriteUInt32(2, this->parallelism(), output);
   }
 
-  // int32 min_successes = 3;
+  // uint32 min_successes = 3;
   if (has_min_successes()) {
-    ::google::protobuf::internal::WireFormatLite::WriteInt32(3, this->min_successes(), output);
+    ::google::protobuf::internal::WireFormatLite::WriteUInt32(3, this->min_successes(), output);
   }
 
   // float min_success_ratio = 4;
@@ -4586,9 +4586,9 @@ void ArrayNode::SerializeWithCachedSizes(
     target = ::google::protobuf::internal::WireFormatLite::WriteUInt32ToArray(2, this->parallelism(), target);
   }
 
-  // int32 min_successes = 3;
+  // uint32 min_successes = 3;
   if (has_min_successes()) {
-    target = ::google::protobuf::internal::WireFormatLite::WriteInt32ToArray(3, this->min_successes(), target);
+    target = ::google::protobuf::internal::WireFormatLite::WriteUInt32ToArray(3, this->min_successes(), target);
   }
 
   // float min_success_ratio = 4;
@@ -4632,10 +4632,10 @@ size_t ArrayNode::ByteSizeLong() const {
   }
 
   switch (success_criteria_case()) {
-    // int32 min_successes = 3;
+    // uint32 min_successes = 3;
     case kMinSuccesses: {
       total_size += 1 +
-        ::google::protobuf::internal::WireFormatLite::Int32Size(
+        ::google::protobuf::internal::WireFormatLite::UInt32Size(
           this->min_successes());
       break;
     }

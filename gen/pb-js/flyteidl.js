@@ -3302,7 +3302,7 @@
                     if (message.parallelism != null && message.hasOwnProperty("parallelism"))
                         writer.uint32(/* id 2, wireType 0 =*/16).uint32(message.parallelism);
                     if (message.minSuccesses != null && message.hasOwnProperty("minSuccesses"))
-                        writer.uint32(/* id 3, wireType 0 =*/24).int32(message.minSuccesses);
+                        writer.uint32(/* id 3, wireType 0 =*/24).uint32(message.minSuccesses);
                     if (message.minSuccessRatio != null && message.hasOwnProperty("minSuccessRatio"))
                         writer.uint32(/* id 4, wireType 5 =*/37).float(message.minSuccessRatio);
                     return writer;
@@ -3333,7 +3333,7 @@
                             message.parallelism = reader.uint32();
                             break;
                         case 3:
-                            message.minSuccesses = reader.int32();
+                            message.minSuccesses = reader.uint32();
                             break;
                         case 4:
                             message.minSuccessRatio = reader.float();

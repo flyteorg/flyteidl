@@ -1508,14 +1508,14 @@ class ArrayNode final :
   ::google::protobuf::uint32 parallelism() const;
   void set_parallelism(::google::protobuf::uint32 value);
 
-  // int32 min_successes = 3;
+  // uint32 min_successes = 3;
   private:
   bool has_min_successes() const;
   public:
   void clear_min_successes();
   static const int kMinSuccessesFieldNumber = 3;
-  ::google::protobuf::int32 min_successes() const;
-  void set_min_successes(::google::protobuf::int32 value);
+  ::google::protobuf::uint32 min_successes() const;
+  void set_min_successes(::google::protobuf::uint32 value);
 
   // float min_success_ratio = 4;
   private:
@@ -1542,7 +1542,7 @@ class ArrayNode final :
   ::google::protobuf::uint32 parallelism_;
   union SuccessCriteriaUnion {
     SuccessCriteriaUnion() {}
-    ::google::protobuf::int32 min_successes_;
+    ::google::protobuf::uint32 min_successes_;
     float min_success_ratio_;
   } success_criteria_;
   mutable ::google::protobuf::internal::CachedSize _cached_size_;
@@ -3681,7 +3681,7 @@ inline void ArrayNode::set_parallelism(::google::protobuf::uint32 value) {
   // @@protoc_insertion_point(field_set:flyteidl.core.ArrayNode.parallelism)
 }
 
-// int32 min_successes = 3;
+// uint32 min_successes = 3;
 inline bool ArrayNode::has_min_successes() const {
   return success_criteria_case() == kMinSuccesses;
 }
@@ -3690,18 +3690,18 @@ inline void ArrayNode::set_has_min_successes() {
 }
 inline void ArrayNode::clear_min_successes() {
   if (has_min_successes()) {
-    success_criteria_.min_successes_ = 0;
+    success_criteria_.min_successes_ = 0u;
     clear_has_success_criteria();
   }
 }
-inline ::google::protobuf::int32 ArrayNode::min_successes() const {
+inline ::google::protobuf::uint32 ArrayNode::min_successes() const {
   // @@protoc_insertion_point(field_get:flyteidl.core.ArrayNode.min_successes)
   if (has_min_successes()) {
     return success_criteria_.min_successes_;
   }
-  return 0;
+  return 0u;
 }
-inline void ArrayNode::set_min_successes(::google::protobuf::int32 value) {
+inline void ArrayNode::set_min_successes(::google::protobuf::uint32 value) {
   if (!has_min_successes()) {
     clear_success_criteria();
     set_has_min_successes();

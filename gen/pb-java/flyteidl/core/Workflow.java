@@ -8996,7 +8996,7 @@ public final class Workflow {
      * assigned. Default value is size (if specified).
      * </pre>
      *
-     * <code>int32 min_successes = 3;</code>
+     * <code>uint32 min_successes = 3;</code>
      */
     int getMinSuccesses();
 
@@ -9075,7 +9075,7 @@ public final class Workflow {
             }
             case 24: {
               successCriteriaCase_ = 3;
-              successCriteria_ = input.readInt32();
+              successCriteria_ = input.readUInt32();
               break;
             }
             case 37: {
@@ -9209,7 +9209,7 @@ public final class Workflow {
      * assigned. Default value is size (if specified).
      * </pre>
      *
-     * <code>int32 min_successes = 3;</code>
+     * <code>uint32 min_successes = 3;</code>
      */
     public int getMinSuccesses() {
       if (successCriteriaCase_ == 3) {
@@ -9255,7 +9255,7 @@ public final class Workflow {
         output.writeUInt32(2, parallelism_);
       }
       if (successCriteriaCase_ == 3) {
-        output.writeInt32(
+        output.writeUInt32(
             3, (int)((java.lang.Integer) successCriteria_));
       }
       if (successCriteriaCase_ == 4) {
@@ -9281,7 +9281,7 @@ public final class Workflow {
       }
       if (successCriteriaCase_ == 3) {
         size += com.google.protobuf.CodedOutputStream
-          .computeInt32Size(
+          .computeUInt32Size(
               3, (int)((java.lang.Integer) successCriteria_));
       }
       if (successCriteriaCase_ == 4) {
@@ -9856,7 +9856,7 @@ public final class Workflow {
        * assigned. Default value is size (if specified).
        * </pre>
        *
-       * <code>int32 min_successes = 3;</code>
+       * <code>uint32 min_successes = 3;</code>
        */
       public int getMinSuccesses() {
         if (successCriteriaCase_ == 3) {
@@ -9871,7 +9871,7 @@ public final class Workflow {
        * assigned. Default value is size (if specified).
        * </pre>
        *
-       * <code>int32 min_successes = 3;</code>
+       * <code>uint32 min_successes = 3;</code>
        */
       public Builder setMinSuccesses(int value) {
         successCriteriaCase_ = 3;
@@ -9886,7 +9886,7 @@ public final class Workflow {
        * assigned. Default value is size (if specified).
        * </pre>
        *
-       * <code>int32 min_successes = 3;</code>
+       * <code>uint32 min_successes = 3;</code>
        */
       public Builder clearMinSuccesses() {
         if (successCriteriaCase_ == 3) {
@@ -21140,7 +21140,7 @@ public final class Workflow {
       "eidl.core.SleepConditionH\000B\013\n\tcondition\"" +
       "\215\001\n\tArrayNode\022!\n\004node\030\001 \001(\0132\023.flyteidl.c" +
       "ore.Node\022\023\n\013parallelism\030\002 \001(\r\022\027\n\rmin_suc" +
-      "cesses\030\003 \001(\005H\000\022\033\n\021min_success_ratio\030\004 \001(" +
+      "cesses\030\003 \001(\rH\000\022\033\n\021min_success_ratio\030\004 \001(" +
       "\002H\000B\022\n\020success_criteria\"\247\001\n\014NodeMetadata" +
       "\022\014\n\004name\030\001 \001(\t\022*\n\007timeout\030\004 \001(\0132\031.google" +
       ".protobuf.Duration\022-\n\007retries\030\005 \001(\0132\034.fl" +

@@ -2101,8 +2101,8 @@ pub mod array_node {
         /// An absolute number of the minimum number of successful completions of subtasks. As soon as this criteria is met,
         /// the array job will be marked as successful and outputs will be computed. This has to be a non-negative number if
         /// assigned. Default value is size (if specified).
-        #[prost(int32, tag="3")]
-        MinSuccesses(i32),
+        #[prost(uint32, tag="3")]
+        MinSuccesses(u32),
         /// If the array job size is not known beforehand, the min_success_ratio can instead be used to determine when an array
         /// job can be marked successful.
         #[prost(float, tag="4")]
