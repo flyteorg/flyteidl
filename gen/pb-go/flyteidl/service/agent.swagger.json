@@ -1,7 +1,7 @@
 {
   "swagger": "2.0",
   "info": {
-    "title": "flyteidl/service/external_plugin_service.proto",
+    "title": "flyteidl/service/agent.proto",
     "version": "version not set"
   },
   "schemes": [
@@ -160,6 +160,43 @@
         "literal_type": {
           "$ref": "#/definitions/coreLiteralType",
           "description": "The column type."
+        }
+      }
+    },
+    "adminCreateTaskResponse": {
+      "type": "object",
+      "properties": {
+        "resource_meta": {
+          "type": "string",
+          "format": "byte",
+          "description": "Metadata is created by the agent. It could be a string (jobId) or a dict (more complex metadata)."
+        }
+      },
+      "description": "Represents a create response structure."
+    },
+    "adminDeleteTaskResponse": {
+      "type": "object",
+      "description": "Response to delete a task."
+    },
+    "adminGetTaskResponse": {
+      "type": "object",
+      "properties": {
+        "resource": {
+          "$ref": "#/definitions/adminResource"
+        }
+      },
+      "description": "Response to get an individual task resource."
+    },
+    "adminResource": {
+      "type": "object",
+      "properties": {
+        "state": {
+          "$ref": "#/definitions/flyteidladminState",
+          "description": "The state of the execution is used to control its visibility in the UI/CLI."
+        },
+        "outputs": {
+          "$ref": "#/definitions/coreLiteralMap",
+          "title": "The outputs of the execution. It's typically used by sql task. Agent service will create a\nStructured dataset pointing to the query result table.\n+optional"
         }
       }
     },
@@ -1049,7 +1086,7 @@
       "type": "object",
       "description": "Used to denote a nil/null/None assignment to a scalar value. The underlying LiteralType for Void is intentionally\nundefined since it can be assigned to a scalar of any LiteralType."
     },
-    "flyteidlserviceState": {
+    "flyteidladminState": {
       "type": "string",
       "enum": [
         "RETRYABLE_FAILURE",
@@ -1060,15 +1097,6 @@
       ],
       "default": "RETRYABLE_FAILURE",
       "description": "The state of the execution is used to control its visibility in the UI/CLI."
-    },
-    "flyteidlserviceTaskCreateResponse": {
-      "type": "object",
-      "properties": {
-        "job_id": {
-          "type": "string"
-        }
-      },
-      "description": "Represents a create response structure."
     },
     "protobufListValue": {
       "type": "object",
@@ -1135,24 +1163,6 @@
         }
       },
       "description": "`Value` represents a dynamically typed value which can be either\nnull, a number, a string, a boolean, a recursive struct value, or a\nlist of values. A producer of value is expected to set one of that\nvariants, absence of any variant indicates an error.\n\nThe JSON representation for `Value` is JSON value."
-    },
-    "serviceTaskDeleteResponse": {
-      "type": "object",
-      "description": "Response to delete a task."
-    },
-    "serviceTaskGetResponse": {
-      "type": "object",
-      "properties": {
-        "state": {
-          "$ref": "#/definitions/flyteidlserviceState",
-          "description": "The state of the execution is used to control its visibility in the UI/CLI."
-        },
-        "outputs": {
-          "$ref": "#/definitions/coreLiteralMap",
-          "title": "The outputs of the execution. It's typically used by sql task. Flyteplugins service will create a\nStructured dataset pointing to the query result table.\n+optional"
-        }
-      },
-      "description": "Response to get an individual task state."
     }
   }
 }
