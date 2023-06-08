@@ -26,6 +26,9 @@ message CreateTaskRequest {
   core.TaskTemplate template = 2;
   // Prefix for where task output data will be written. (e.g. s3://my-bucket/randomstring)
   string output_prefix = 3;
+
+  // Service account to use for impersonation
+  string service_account = 4;
 }
 
 // Represents a create response structure.
@@ -40,6 +43,8 @@ message GetTaskRequest {
   string task_type = 1;
   // Metadata about the resource to be pass to the agent.
   bytes resource_meta = 2;
+  // Service account to use for impersonation
+  string service_account = 4;
 }
 
 // Response to get an individual task resource.
@@ -62,6 +67,8 @@ message DeleteTaskRequest {
   string task_type = 1;
   // Metadata about the resource to be pass to the agent.
   bytes resource_meta = 2;
+  // Service account to use for impersonation
+  string service_account = 4;
 }
 
 // Response to delete a task.

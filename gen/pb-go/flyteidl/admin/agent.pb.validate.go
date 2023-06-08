@@ -66,6 +66,8 @@ func (m *CreateTaskRequest) Validate() error {
 
 	// no validation rules for OutputPrefix
 
+	// no validation rules for ServiceAccount
+
 	return nil
 }
 
@@ -205,6 +207,8 @@ func (m *GetTaskRequest) Validate() error {
 	// no validation rules for TaskType
 
 	// no validation rules for ResourceMeta
+
+	// no validation rules for ServiceAccount
 
 	return nil
 }
@@ -425,6 +429,8 @@ func (m *DeleteTaskRequest) Validate() error {
 	// no validation rules for TaskType
 
 	// no validation rules for ResourceMeta
+
+	// no validation rules for ServiceAccount
 
 	return nil
 }

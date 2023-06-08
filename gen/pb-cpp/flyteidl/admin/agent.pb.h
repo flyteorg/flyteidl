@@ -226,6 +226,20 @@ class CreateTaskRequest final :
   ::std::string* release_output_prefix();
   void set_allocated_output_prefix(::std::string* output_prefix);
 
+  // string service_account = 4;
+  void clear_service_account();
+  static const int kServiceAccountFieldNumber = 4;
+  const ::std::string& service_account() const;
+  void set_service_account(const ::std::string& value);
+  #if LANG_CXX11
+  void set_service_account(::std::string&& value);
+  #endif
+  void set_service_account(const char* value);
+  void set_service_account(const char* value, size_t size);
+  ::std::string* mutable_service_account();
+  ::std::string* release_service_account();
+  void set_allocated_service_account(::std::string* service_account);
+
   // .flyteidl.core.LiteralMap inputs = 1;
   bool has_inputs() const;
   void clear_inputs();
@@ -250,6 +264,7 @@ class CreateTaskRequest final :
 
   ::google::protobuf::internal::InternalMetadataWithArena _internal_metadata_;
   ::google::protobuf::internal::ArenaStringPtr output_prefix_;
+  ::google::protobuf::internal::ArenaStringPtr service_account_;
   ::flyteidl::core::LiteralMap* inputs_;
   ::flyteidl::core::TaskTemplate* template__;
   mutable ::google::protobuf::internal::CachedSize _cached_size_;
@@ -500,6 +515,20 @@ class GetTaskRequest final :
   ::std::string* release_resource_meta();
   void set_allocated_resource_meta(::std::string* resource_meta);
 
+  // string service_account = 4;
+  void clear_service_account();
+  static const int kServiceAccountFieldNumber = 4;
+  const ::std::string& service_account() const;
+  void set_service_account(const ::std::string& value);
+  #if LANG_CXX11
+  void set_service_account(::std::string&& value);
+  #endif
+  void set_service_account(const char* value);
+  void set_service_account(const char* value, size_t size);
+  ::std::string* mutable_service_account();
+  ::std::string* release_service_account();
+  void set_allocated_service_account(::std::string* service_account);
+
   // @@protoc_insertion_point(class_scope:flyteidl.admin.GetTaskRequest)
  private:
   class HasBitSetters;
@@ -507,6 +536,7 @@ class GetTaskRequest final :
   ::google::protobuf::internal::InternalMetadataWithArena _internal_metadata_;
   ::google::protobuf::internal::ArenaStringPtr task_type_;
   ::google::protobuf::internal::ArenaStringPtr resource_meta_;
+  ::google::protobuf::internal::ArenaStringPtr service_account_;
   mutable ::google::protobuf::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_flyteidl_2fadmin_2fagent_2eproto;
 };
@@ -872,6 +902,20 @@ class DeleteTaskRequest final :
   ::std::string* release_resource_meta();
   void set_allocated_resource_meta(::std::string* resource_meta);
 
+  // string service_account = 4;
+  void clear_service_account();
+  static const int kServiceAccountFieldNumber = 4;
+  const ::std::string& service_account() const;
+  void set_service_account(const ::std::string& value);
+  #if LANG_CXX11
+  void set_service_account(::std::string&& value);
+  #endif
+  void set_service_account(const char* value);
+  void set_service_account(const char* value, size_t size);
+  ::std::string* mutable_service_account();
+  ::std::string* release_service_account();
+  void set_allocated_service_account(::std::string* service_account);
+
   // @@protoc_insertion_point(class_scope:flyteidl.admin.DeleteTaskRequest)
  private:
   class HasBitSetters;
@@ -879,6 +923,7 @@ class DeleteTaskRequest final :
   ::google::protobuf::internal::InternalMetadataWithArena _internal_metadata_;
   ::google::protobuf::internal::ArenaStringPtr task_type_;
   ::google::protobuf::internal::ArenaStringPtr resource_meta_;
+  ::google::protobuf::internal::ArenaStringPtr service_account_;
   mutable ::google::protobuf::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_flyteidl_2fadmin_2fagent_2eproto;
 };
@@ -1141,6 +1186,59 @@ inline void CreateTaskRequest::set_allocated_output_prefix(::std::string* output
   // @@protoc_insertion_point(field_set_allocated:flyteidl.admin.CreateTaskRequest.output_prefix)
 }
 
+// string service_account = 4;
+inline void CreateTaskRequest::clear_service_account() {
+  service_account_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline const ::std::string& CreateTaskRequest::service_account() const {
+  // @@protoc_insertion_point(field_get:flyteidl.admin.CreateTaskRequest.service_account)
+  return service_account_.GetNoArena();
+}
+inline void CreateTaskRequest::set_service_account(const ::std::string& value) {
+  
+  service_account_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
+  // @@protoc_insertion_point(field_set:flyteidl.admin.CreateTaskRequest.service_account)
+}
+#if LANG_CXX11
+inline void CreateTaskRequest::set_service_account(::std::string&& value) {
+  
+  service_account_.SetNoArena(
+    &::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::move(value));
+  // @@protoc_insertion_point(field_set_rvalue:flyteidl.admin.CreateTaskRequest.service_account)
+}
+#endif
+inline void CreateTaskRequest::set_service_account(const char* value) {
+  GOOGLE_DCHECK(value != nullptr);
+  
+  service_account_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
+  // @@protoc_insertion_point(field_set_char:flyteidl.admin.CreateTaskRequest.service_account)
+}
+inline void CreateTaskRequest::set_service_account(const char* value, size_t size) {
+  
+  service_account_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
+      ::std::string(reinterpret_cast<const char*>(value), size));
+  // @@protoc_insertion_point(field_set_pointer:flyteidl.admin.CreateTaskRequest.service_account)
+}
+inline ::std::string* CreateTaskRequest::mutable_service_account() {
+  
+  // @@protoc_insertion_point(field_mutable:flyteidl.admin.CreateTaskRequest.service_account)
+  return service_account_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline ::std::string* CreateTaskRequest::release_service_account() {
+  // @@protoc_insertion_point(field_release:flyteidl.admin.CreateTaskRequest.service_account)
+  
+  return service_account_.ReleaseNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline void CreateTaskRequest::set_allocated_service_account(::std::string* service_account) {
+  if (service_account != nullptr) {
+    
+  } else {
+    
+  }
+  service_account_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), service_account);
+  // @@protoc_insertion_point(field_set_allocated:flyteidl.admin.CreateTaskRequest.service_account)
+}
+
 // -------------------------------------------------------------------
 
 // CreateTaskResponse
@@ -1306,6 +1404,59 @@ inline void GetTaskRequest::set_allocated_resource_meta(::std::string* resource_
   }
   resource_meta_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), resource_meta);
   // @@protoc_insertion_point(field_set_allocated:flyteidl.admin.GetTaskRequest.resource_meta)
+}
+
+// string service_account = 4;
+inline void GetTaskRequest::clear_service_account() {
+  service_account_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline const ::std::string& GetTaskRequest::service_account() const {
+  // @@protoc_insertion_point(field_get:flyteidl.admin.GetTaskRequest.service_account)
+  return service_account_.GetNoArena();
+}
+inline void GetTaskRequest::set_service_account(const ::std::string& value) {
+  
+  service_account_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
+  // @@protoc_insertion_point(field_set:flyteidl.admin.GetTaskRequest.service_account)
+}
+#if LANG_CXX11
+inline void GetTaskRequest::set_service_account(::std::string&& value) {
+  
+  service_account_.SetNoArena(
+    &::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::move(value));
+  // @@protoc_insertion_point(field_set_rvalue:flyteidl.admin.GetTaskRequest.service_account)
+}
+#endif
+inline void GetTaskRequest::set_service_account(const char* value) {
+  GOOGLE_DCHECK(value != nullptr);
+  
+  service_account_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
+  // @@protoc_insertion_point(field_set_char:flyteidl.admin.GetTaskRequest.service_account)
+}
+inline void GetTaskRequest::set_service_account(const char* value, size_t size) {
+  
+  service_account_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
+      ::std::string(reinterpret_cast<const char*>(value), size));
+  // @@protoc_insertion_point(field_set_pointer:flyteidl.admin.GetTaskRequest.service_account)
+}
+inline ::std::string* GetTaskRequest::mutable_service_account() {
+  
+  // @@protoc_insertion_point(field_mutable:flyteidl.admin.GetTaskRequest.service_account)
+  return service_account_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline ::std::string* GetTaskRequest::release_service_account() {
+  // @@protoc_insertion_point(field_release:flyteidl.admin.GetTaskRequest.service_account)
+  
+  return service_account_.ReleaseNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline void GetTaskRequest::set_allocated_service_account(::std::string* service_account) {
+  if (service_account != nullptr) {
+    
+  } else {
+    
+  }
+  service_account_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), service_account);
+  // @@protoc_insertion_point(field_set_allocated:flyteidl.admin.GetTaskRequest.service_account)
 }
 
 // -------------------------------------------------------------------
@@ -1534,6 +1685,59 @@ inline void DeleteTaskRequest::set_allocated_resource_meta(::std::string* resour
   }
   resource_meta_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), resource_meta);
   // @@protoc_insertion_point(field_set_allocated:flyteidl.admin.DeleteTaskRequest.resource_meta)
+}
+
+// string service_account = 4;
+inline void DeleteTaskRequest::clear_service_account() {
+  service_account_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline const ::std::string& DeleteTaskRequest::service_account() const {
+  // @@protoc_insertion_point(field_get:flyteidl.admin.DeleteTaskRequest.service_account)
+  return service_account_.GetNoArena();
+}
+inline void DeleteTaskRequest::set_service_account(const ::std::string& value) {
+  
+  service_account_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
+  // @@protoc_insertion_point(field_set:flyteidl.admin.DeleteTaskRequest.service_account)
+}
+#if LANG_CXX11
+inline void DeleteTaskRequest::set_service_account(::std::string&& value) {
+  
+  service_account_.SetNoArena(
+    &::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::move(value));
+  // @@protoc_insertion_point(field_set_rvalue:flyteidl.admin.DeleteTaskRequest.service_account)
+}
+#endif
+inline void DeleteTaskRequest::set_service_account(const char* value) {
+  GOOGLE_DCHECK(value != nullptr);
+  
+  service_account_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
+  // @@protoc_insertion_point(field_set_char:flyteidl.admin.DeleteTaskRequest.service_account)
+}
+inline void DeleteTaskRequest::set_service_account(const char* value, size_t size) {
+  
+  service_account_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
+      ::std::string(reinterpret_cast<const char*>(value), size));
+  // @@protoc_insertion_point(field_set_pointer:flyteidl.admin.DeleteTaskRequest.service_account)
+}
+inline ::std::string* DeleteTaskRequest::mutable_service_account() {
+  
+  // @@protoc_insertion_point(field_mutable:flyteidl.admin.DeleteTaskRequest.service_account)
+  return service_account_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline ::std::string* DeleteTaskRequest::release_service_account() {
+  // @@protoc_insertion_point(field_release:flyteidl.admin.DeleteTaskRequest.service_account)
+  
+  return service_account_.ReleaseNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline void DeleteTaskRequest::set_allocated_service_account(::std::string* service_account) {
+  if (service_account != nullptr) {
+    
+  } else {
+    
+  }
+  service_account_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), service_account);
+  // @@protoc_insertion_point(field_set_allocated:flyteidl.admin.DeleteTaskRequest.service_account)
 }
 
 // -------------------------------------------------------------------

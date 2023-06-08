@@ -7517,6 +7517,9 @@ export namespace flyteidl {
 
             /** CreateTaskRequest outputPrefix */
             outputPrefix?: (string|null);
+
+            /** CreateTaskRequest serviceAccount */
+            serviceAccount?: (string|null);
         }
 
         /** Represents a CreateTaskRequest. */
@@ -7536,6 +7539,9 @@ export namespace flyteidl {
 
             /** CreateTaskRequest outputPrefix. */
             public outputPrefix: string;
+
+            /** CreateTaskRequest serviceAccount. */
+            public serviceAccount: string;
 
             /**
              * Creates a new CreateTaskRequest instance using the specified properties.
@@ -7630,6 +7636,9 @@ export namespace flyteidl {
 
             /** GetTaskRequest resourceMeta */
             resourceMeta?: (Uint8Array|null);
+
+            /** GetTaskRequest serviceAccount */
+            serviceAccount?: (string|null);
         }
 
         /** Represents a GetTaskRequest. */
@@ -7646,6 +7655,9 @@ export namespace flyteidl {
 
             /** GetTaskRequest resourceMeta. */
             public resourceMeta: Uint8Array;
+
+            /** GetTaskRequest serviceAccount. */
+            public serviceAccount: string;
 
             /**
              * Creates a new GetTaskRequest instance using the specified properties.
@@ -7798,6 +7810,9 @@ export namespace flyteidl {
 
             /** DeleteTaskRequest resourceMeta */
             resourceMeta?: (Uint8Array|null);
+
+            /** DeleteTaskRequest serviceAccount */
+            serviceAccount?: (string|null);
         }
 
         /** Represents a DeleteTaskRequest. */
@@ -7814,6 +7829,9 @@ export namespace flyteidl {
 
             /** DeleteTaskRequest resourceMeta. */
             public resourceMeta: Uint8Array;
+
+            /** DeleteTaskRequest serviceAccount. */
+            public serviceAccount: string;
 
             /**
              * Creates a new DeleteTaskRequest instance using the specified properties.

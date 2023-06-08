@@ -18312,6 +18312,7 @@
                  * @property {flyteidl.core.ILiteralMap|null} [inputs] CreateTaskRequest inputs
                  * @property {flyteidl.core.ITaskTemplate|null} [template] CreateTaskRequest template
                  * @property {string|null} [outputPrefix] CreateTaskRequest outputPrefix
+                 * @property {string|null} [serviceAccount] CreateTaskRequest serviceAccount
                  */
     
                 /**
@@ -18354,6 +18355,14 @@
                 CreateTaskRequest.prototype.outputPrefix = "";
     
                 /**
+                 * CreateTaskRequest serviceAccount.
+                 * @member {string} serviceAccount
+                 * @memberof flyteidl.admin.CreateTaskRequest
+                 * @instance
+                 */
+                CreateTaskRequest.prototype.serviceAccount = "";
+    
+                /**
                  * Creates a new CreateTaskRequest instance using the specified properties.
                  * @function create
                  * @memberof flyteidl.admin.CreateTaskRequest
@@ -18383,6 +18392,8 @@
                         $root.flyteidl.core.TaskTemplate.encode(message.template, writer.uint32(/* id 2, wireType 2 =*/18).fork()).ldelim();
                     if (message.outputPrefix != null && message.hasOwnProperty("outputPrefix"))
                         writer.uint32(/* id 3, wireType 2 =*/26).string(message.outputPrefix);
+                    if (message.serviceAccount != null && message.hasOwnProperty("serviceAccount"))
+                        writer.uint32(/* id 4, wireType 2 =*/34).string(message.serviceAccount);
                     return writer;
                 };
     
@@ -18412,6 +18423,9 @@
                             break;
                         case 3:
                             message.outputPrefix = reader.string();
+                            break;
+                        case 4:
+                            message.serviceAccount = reader.string();
                             break;
                         default:
                             reader.skipType(tag & 7);
@@ -18445,6 +18459,9 @@
                     if (message.outputPrefix != null && message.hasOwnProperty("outputPrefix"))
                         if (!$util.isString(message.outputPrefix))
                             return "outputPrefix: string expected";
+                    if (message.serviceAccount != null && message.hasOwnProperty("serviceAccount"))
+                        if (!$util.isString(message.serviceAccount))
+                            return "serviceAccount: string expected";
                     return null;
                 };
     
@@ -18569,6 +18586,7 @@
                  * @interface IGetTaskRequest
                  * @property {string|null} [taskType] GetTaskRequest taskType
                  * @property {Uint8Array|null} [resourceMeta] GetTaskRequest resourceMeta
+                 * @property {string|null} [serviceAccount] GetTaskRequest serviceAccount
                  */
     
                 /**
@@ -18603,6 +18621,14 @@
                 GetTaskRequest.prototype.resourceMeta = $util.newBuffer([]);
     
                 /**
+                 * GetTaskRequest serviceAccount.
+                 * @member {string} serviceAccount
+                 * @memberof flyteidl.admin.GetTaskRequest
+                 * @instance
+                 */
+                GetTaskRequest.prototype.serviceAccount = "";
+    
+                /**
                  * Creates a new GetTaskRequest instance using the specified properties.
                  * @function create
                  * @memberof flyteidl.admin.GetTaskRequest
@@ -18630,6 +18656,8 @@
                         writer.uint32(/* id 1, wireType 2 =*/10).string(message.taskType);
                     if (message.resourceMeta != null && message.hasOwnProperty("resourceMeta"))
                         writer.uint32(/* id 2, wireType 2 =*/18).bytes(message.resourceMeta);
+                    if (message.serviceAccount != null && message.hasOwnProperty("serviceAccount"))
+                        writer.uint32(/* id 4, wireType 2 =*/34).string(message.serviceAccount);
                     return writer;
                 };
     
@@ -18657,6 +18685,9 @@
                         case 2:
                             message.resourceMeta = reader.bytes();
                             break;
+                        case 4:
+                            message.serviceAccount = reader.string();
+                            break;
                         default:
                             reader.skipType(tag & 7);
                             break;
@@ -18682,6 +18713,9 @@
                     if (message.resourceMeta != null && message.hasOwnProperty("resourceMeta"))
                         if (!(message.resourceMeta && typeof message.resourceMeta.length === "number" || $util.isString(message.resourceMeta)))
                             return "resourceMeta: buffer expected";
+                    if (message.serviceAccount != null && message.hasOwnProperty("serviceAccount"))
+                        if (!$util.isString(message.serviceAccount))
+                            return "serviceAccount: string expected";
                     return null;
                 };
     
@@ -18945,6 +18979,7 @@
                  * @interface IDeleteTaskRequest
                  * @property {string|null} [taskType] DeleteTaskRequest taskType
                  * @property {Uint8Array|null} [resourceMeta] DeleteTaskRequest resourceMeta
+                 * @property {string|null} [serviceAccount] DeleteTaskRequest serviceAccount
                  */
     
                 /**
@@ -18979,6 +19014,14 @@
                 DeleteTaskRequest.prototype.resourceMeta = $util.newBuffer([]);
     
                 /**
+                 * DeleteTaskRequest serviceAccount.
+                 * @member {string} serviceAccount
+                 * @memberof flyteidl.admin.DeleteTaskRequest
+                 * @instance
+                 */
+                DeleteTaskRequest.prototype.serviceAccount = "";
+    
+                /**
                  * Creates a new DeleteTaskRequest instance using the specified properties.
                  * @function create
                  * @memberof flyteidl.admin.DeleteTaskRequest
@@ -19006,6 +19049,8 @@
                         writer.uint32(/* id 1, wireType 2 =*/10).string(message.taskType);
                     if (message.resourceMeta != null && message.hasOwnProperty("resourceMeta"))
                         writer.uint32(/* id 2, wireType 2 =*/18).bytes(message.resourceMeta);
+                    if (message.serviceAccount != null && message.hasOwnProperty("serviceAccount"))
+                        writer.uint32(/* id 4, wireType 2 =*/34).string(message.serviceAccount);
                     return writer;
                 };
     
@@ -19033,6 +19078,9 @@
                         case 2:
                             message.resourceMeta = reader.bytes();
                             break;
+                        case 4:
+                            message.serviceAccount = reader.string();
+                            break;
                         default:
                             reader.skipType(tag & 7);
                             break;
@@ -19058,6 +19106,9 @@
                     if (message.resourceMeta != null && message.hasOwnProperty("resourceMeta"))
                         if (!(message.resourceMeta && typeof message.resourceMeta.length === "number" || $util.isString(message.resourceMeta)))
                             return "resourceMeta: buffer expected";
+                    if (message.serviceAccount != null && message.hasOwnProperty("serviceAccount"))
+                        if (!$util.isString(message.serviceAccount))
+                            return "serviceAccount: string expected";
                     return null;
                 };
     

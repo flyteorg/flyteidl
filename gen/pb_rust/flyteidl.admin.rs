@@ -14,6 +14,9 @@ pub struct CreateTaskRequest {
     /// Prefix for where task output data will be written. (e.g. s3://my-bucket/randomstring)
     #[prost(string, tag="3")]
     pub output_prefix: ::prost::alloc::string::String,
+    /// Service account to use for impersonation
+    #[prost(string, tag="4")]
+    pub service_account: ::prost::alloc::string::String,
 }
 /// Represents a create response structure.
 #[allow(clippy::derive_partial_eq_without_eq)]
@@ -33,6 +36,9 @@ pub struct GetTaskRequest {
     /// Metadata about the resource to be pass to the agent.
     #[prost(bytes="vec", tag="2")]
     pub resource_meta: ::prost::alloc::vec::Vec<u8>,
+    /// Service account to use for impersonation
+    #[prost(string, tag="4")]
+    pub service_account: ::prost::alloc::string::String,
 }
 /// Response to get an individual task resource.
 #[allow(clippy::derive_partial_eq_without_eq)]
@@ -63,6 +69,9 @@ pub struct DeleteTaskRequest {
     /// Metadata about the resource to be pass to the agent.
     #[prost(bytes="vec", tag="2")]
     pub resource_meta: ::prost::alloc::vec::Vec<u8>,
+    /// Service account to use for impersonation
+    #[prost(string, tag="4")]
+    pub service_account: ::prost::alloc::string::String,
 }
 /// Response to delete a task.
 #[allow(clippy::derive_partial_eq_without_eq)]

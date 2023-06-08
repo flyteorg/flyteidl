@@ -220,6 +220,24 @@ public final class Agent {
      */
     com.google.protobuf.ByteString
         getOutputPrefixBytes();
+
+    /**
+     * <pre>
+     * Service account to use for impersonation
+     * </pre>
+     *
+     * <code>string service_account = 4;</code>
+     */
+    java.lang.String getServiceAccount();
+    /**
+     * <pre>
+     * Service account to use for impersonation
+     * </pre>
+     *
+     * <code>string service_account = 4;</code>
+     */
+    com.google.protobuf.ByteString
+        getServiceAccountBytes();
   }
   /**
    * <pre>
@@ -239,6 +257,7 @@ public final class Agent {
     }
     private CreateTaskRequest() {
       outputPrefix_ = "";
+      serviceAccount_ = "";
     }
 
     @java.lang.Override
@@ -295,6 +314,12 @@ public final class Agent {
               java.lang.String s = input.readStringRequireUtf8();
 
               outputPrefix_ = s;
+              break;
+            }
+            case 34: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              serviceAccount_ = s;
               break;
             }
             default: {
@@ -443,6 +468,48 @@ public final class Agent {
       }
     }
 
+    public static final int SERVICE_ACCOUNT_FIELD_NUMBER = 4;
+    private volatile java.lang.Object serviceAccount_;
+    /**
+     * <pre>
+     * Service account to use for impersonation
+     * </pre>
+     *
+     * <code>string service_account = 4;</code>
+     */
+    public java.lang.String getServiceAccount() {
+      java.lang.Object ref = serviceAccount_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        serviceAccount_ = s;
+        return s;
+      }
+    }
+    /**
+     * <pre>
+     * Service account to use for impersonation
+     * </pre>
+     *
+     * <code>string service_account = 4;</code>
+     */
+    public com.google.protobuf.ByteString
+        getServiceAccountBytes() {
+      java.lang.Object ref = serviceAccount_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        serviceAccount_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
     private byte memoizedIsInitialized = -1;
     @java.lang.Override
     public final boolean isInitialized() {
@@ -466,6 +533,9 @@ public final class Agent {
       if (!getOutputPrefixBytes().isEmpty()) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 3, outputPrefix_);
       }
+      if (!getServiceAccountBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 4, serviceAccount_);
+      }
       unknownFields.writeTo(output);
     }
 
@@ -485,6 +555,9 @@ public final class Agent {
       }
       if (!getOutputPrefixBytes().isEmpty()) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, outputPrefix_);
+      }
+      if (!getServiceAccountBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, serviceAccount_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -513,6 +586,8 @@ public final class Agent {
       }
       if (!getOutputPrefix()
           .equals(other.getOutputPrefix())) return false;
+      if (!getServiceAccount()
+          .equals(other.getServiceAccount())) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -534,6 +609,8 @@ public final class Agent {
       }
       hash = (37 * hash) + OUTPUT_PREFIX_FIELD_NUMBER;
       hash = (53 * hash) + getOutputPrefix().hashCode();
+      hash = (37 * hash) + SERVICE_ACCOUNT_FIELD_NUMBER;
+      hash = (53 * hash) + getServiceAccount().hashCode();
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -685,6 +762,8 @@ public final class Agent {
         }
         outputPrefix_ = "";
 
+        serviceAccount_ = "";
+
         return this;
       }
 
@@ -722,6 +801,7 @@ public final class Agent {
           result.template_ = templateBuilder_.build();
         }
         result.outputPrefix_ = outputPrefix_;
+        result.serviceAccount_ = serviceAccount_;
         onBuilt();
         return result;
       }
@@ -778,6 +858,10 @@ public final class Agent {
         }
         if (!other.getOutputPrefix().isEmpty()) {
           outputPrefix_ = other.outputPrefix_;
+          onChanged();
+        }
+        if (!other.getServiceAccount().isEmpty()) {
+          serviceAccount_ = other.serviceAccount_;
           onChanged();
         }
         this.mergeUnknownFields(other.unknownFields);
@@ -1218,6 +1302,95 @@ public final class Agent {
   checkByteStringIsUtf8(value);
         
         outputPrefix_ = value;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object serviceAccount_ = "";
+      /**
+       * <pre>
+       * Service account to use for impersonation
+       * </pre>
+       *
+       * <code>string service_account = 4;</code>
+       */
+      public java.lang.String getServiceAccount() {
+        java.lang.Object ref = serviceAccount_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          serviceAccount_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <pre>
+       * Service account to use for impersonation
+       * </pre>
+       *
+       * <code>string service_account = 4;</code>
+       */
+      public com.google.protobuf.ByteString
+          getServiceAccountBytes() {
+        java.lang.Object ref = serviceAccount_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          serviceAccount_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <pre>
+       * Service account to use for impersonation
+       * </pre>
+       *
+       * <code>string service_account = 4;</code>
+       */
+      public Builder setServiceAccount(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        serviceAccount_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * Service account to use for impersonation
+       * </pre>
+       *
+       * <code>string service_account = 4;</code>
+       */
+      public Builder clearServiceAccount() {
+        
+        serviceAccount_ = getDefaultInstance().getServiceAccount();
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * Service account to use for impersonation
+       * </pre>
+       *
+       * <code>string service_account = 4;</code>
+       */
+      public Builder setServiceAccountBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        serviceAccount_ = value;
         onChanged();
         return this;
       }
@@ -1810,6 +1983,24 @@ public final class Agent {
      * <code>bytes resource_meta = 2;</code>
      */
     com.google.protobuf.ByteString getResourceMeta();
+
+    /**
+     * <pre>
+     * Service account to use for impersonation
+     * </pre>
+     *
+     * <code>string service_account = 4;</code>
+     */
+    java.lang.String getServiceAccount();
+    /**
+     * <pre>
+     * Service account to use for impersonation
+     * </pre>
+     *
+     * <code>string service_account = 4;</code>
+     */
+    com.google.protobuf.ByteString
+        getServiceAccountBytes();
   }
   /**
    * <pre>
@@ -1830,6 +2021,7 @@ public final class Agent {
     private GetTaskRequest() {
       taskType_ = "";
       resourceMeta_ = com.google.protobuf.ByteString.EMPTY;
+      serviceAccount_ = "";
     }
 
     @java.lang.Override
@@ -1865,6 +2057,12 @@ public final class Agent {
             case 18: {
 
               resourceMeta_ = input.readBytes();
+              break;
+            }
+            case 34: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              serviceAccount_ = s;
               break;
             }
             default: {
@@ -1954,6 +2152,48 @@ public final class Agent {
       return resourceMeta_;
     }
 
+    public static final int SERVICE_ACCOUNT_FIELD_NUMBER = 4;
+    private volatile java.lang.Object serviceAccount_;
+    /**
+     * <pre>
+     * Service account to use for impersonation
+     * </pre>
+     *
+     * <code>string service_account = 4;</code>
+     */
+    public java.lang.String getServiceAccount() {
+      java.lang.Object ref = serviceAccount_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        serviceAccount_ = s;
+        return s;
+      }
+    }
+    /**
+     * <pre>
+     * Service account to use for impersonation
+     * </pre>
+     *
+     * <code>string service_account = 4;</code>
+     */
+    public com.google.protobuf.ByteString
+        getServiceAccountBytes() {
+      java.lang.Object ref = serviceAccount_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        serviceAccount_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
     private byte memoizedIsInitialized = -1;
     @java.lang.Override
     public final boolean isInitialized() {
@@ -1974,6 +2214,9 @@ public final class Agent {
       if (!resourceMeta_.isEmpty()) {
         output.writeBytes(2, resourceMeta_);
       }
+      if (!getServiceAccountBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 4, serviceAccount_);
+      }
       unknownFields.writeTo(output);
     }
 
@@ -1989,6 +2232,9 @@ public final class Agent {
       if (!resourceMeta_.isEmpty()) {
         size += com.google.protobuf.CodedOutputStream
           .computeBytesSize(2, resourceMeta_);
+      }
+      if (!getServiceAccountBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, serviceAccount_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -2009,6 +2255,8 @@ public final class Agent {
           .equals(other.getTaskType())) return false;
       if (!getResourceMeta()
           .equals(other.getResourceMeta())) return false;
+      if (!getServiceAccount()
+          .equals(other.getServiceAccount())) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -2024,6 +2272,8 @@ public final class Agent {
       hash = (53 * hash) + getTaskType().hashCode();
       hash = (37 * hash) + RESOURCE_META_FIELD_NUMBER;
       hash = (53 * hash) + getResourceMeta().hashCode();
+      hash = (37 * hash) + SERVICE_ACCOUNT_FIELD_NUMBER;
+      hash = (53 * hash) + getServiceAccount().hashCode();
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -2165,6 +2415,8 @@ public final class Agent {
 
         resourceMeta_ = com.google.protobuf.ByteString.EMPTY;
 
+        serviceAccount_ = "";
+
         return this;
       }
 
@@ -2193,6 +2445,7 @@ public final class Agent {
         flyteidl.admin.Agent.GetTaskRequest result = new flyteidl.admin.Agent.GetTaskRequest(this);
         result.taskType_ = taskType_;
         result.resourceMeta_ = resourceMeta_;
+        result.serviceAccount_ = serviceAccount_;
         onBuilt();
         return result;
       }
@@ -2247,6 +2500,10 @@ public final class Agent {
         }
         if (other.getResourceMeta() != com.google.protobuf.ByteString.EMPTY) {
           setResourceMeta(other.getResourceMeta());
+        }
+        if (!other.getServiceAccount().isEmpty()) {
+          serviceAccount_ = other.serviceAccount_;
+          onChanged();
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -2403,6 +2660,95 @@ public final class Agent {
       public Builder clearResourceMeta() {
         
         resourceMeta_ = getDefaultInstance().getResourceMeta();
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object serviceAccount_ = "";
+      /**
+       * <pre>
+       * Service account to use for impersonation
+       * </pre>
+       *
+       * <code>string service_account = 4;</code>
+       */
+      public java.lang.String getServiceAccount() {
+        java.lang.Object ref = serviceAccount_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          serviceAccount_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <pre>
+       * Service account to use for impersonation
+       * </pre>
+       *
+       * <code>string service_account = 4;</code>
+       */
+      public com.google.protobuf.ByteString
+          getServiceAccountBytes() {
+        java.lang.Object ref = serviceAccount_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          serviceAccount_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <pre>
+       * Service account to use for impersonation
+       * </pre>
+       *
+       * <code>string service_account = 4;</code>
+       */
+      public Builder setServiceAccount(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        serviceAccount_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * Service account to use for impersonation
+       * </pre>
+       *
+       * <code>string service_account = 4;</code>
+       */
+      public Builder clearServiceAccount() {
+        
+        serviceAccount_ = getDefaultInstance().getServiceAccount();
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * Service account to use for impersonation
+       * </pre>
+       *
+       * <code>string service_account = 4;</code>
+       */
+      public Builder setServiceAccountBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        serviceAccount_ = value;
         onChanged();
         return this;
       }
@@ -3929,6 +4275,24 @@ public final class Agent {
      * <code>bytes resource_meta = 2;</code>
      */
     com.google.protobuf.ByteString getResourceMeta();
+
+    /**
+     * <pre>
+     * Service account to use for impersonation
+     * </pre>
+     *
+     * <code>string service_account = 4;</code>
+     */
+    java.lang.String getServiceAccount();
+    /**
+     * <pre>
+     * Service account to use for impersonation
+     * </pre>
+     *
+     * <code>string service_account = 4;</code>
+     */
+    com.google.protobuf.ByteString
+        getServiceAccountBytes();
   }
   /**
    * <pre>
@@ -3949,6 +4313,7 @@ public final class Agent {
     private DeleteTaskRequest() {
       taskType_ = "";
       resourceMeta_ = com.google.protobuf.ByteString.EMPTY;
+      serviceAccount_ = "";
     }
 
     @java.lang.Override
@@ -3984,6 +4349,12 @@ public final class Agent {
             case 18: {
 
               resourceMeta_ = input.readBytes();
+              break;
+            }
+            case 34: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              serviceAccount_ = s;
               break;
             }
             default: {
@@ -4073,6 +4444,48 @@ public final class Agent {
       return resourceMeta_;
     }
 
+    public static final int SERVICE_ACCOUNT_FIELD_NUMBER = 4;
+    private volatile java.lang.Object serviceAccount_;
+    /**
+     * <pre>
+     * Service account to use for impersonation
+     * </pre>
+     *
+     * <code>string service_account = 4;</code>
+     */
+    public java.lang.String getServiceAccount() {
+      java.lang.Object ref = serviceAccount_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        serviceAccount_ = s;
+        return s;
+      }
+    }
+    /**
+     * <pre>
+     * Service account to use for impersonation
+     * </pre>
+     *
+     * <code>string service_account = 4;</code>
+     */
+    public com.google.protobuf.ByteString
+        getServiceAccountBytes() {
+      java.lang.Object ref = serviceAccount_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        serviceAccount_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
     private byte memoizedIsInitialized = -1;
     @java.lang.Override
     public final boolean isInitialized() {
@@ -4093,6 +4506,9 @@ public final class Agent {
       if (!resourceMeta_.isEmpty()) {
         output.writeBytes(2, resourceMeta_);
       }
+      if (!getServiceAccountBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 4, serviceAccount_);
+      }
       unknownFields.writeTo(output);
     }
 
@@ -4108,6 +4524,9 @@ public final class Agent {
       if (!resourceMeta_.isEmpty()) {
         size += com.google.protobuf.CodedOutputStream
           .computeBytesSize(2, resourceMeta_);
+      }
+      if (!getServiceAccountBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, serviceAccount_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -4128,6 +4547,8 @@ public final class Agent {
           .equals(other.getTaskType())) return false;
       if (!getResourceMeta()
           .equals(other.getResourceMeta())) return false;
+      if (!getServiceAccount()
+          .equals(other.getServiceAccount())) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -4143,6 +4564,8 @@ public final class Agent {
       hash = (53 * hash) + getTaskType().hashCode();
       hash = (37 * hash) + RESOURCE_META_FIELD_NUMBER;
       hash = (53 * hash) + getResourceMeta().hashCode();
+      hash = (37 * hash) + SERVICE_ACCOUNT_FIELD_NUMBER;
+      hash = (53 * hash) + getServiceAccount().hashCode();
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -4284,6 +4707,8 @@ public final class Agent {
 
         resourceMeta_ = com.google.protobuf.ByteString.EMPTY;
 
+        serviceAccount_ = "";
+
         return this;
       }
 
@@ -4312,6 +4737,7 @@ public final class Agent {
         flyteidl.admin.Agent.DeleteTaskRequest result = new flyteidl.admin.Agent.DeleteTaskRequest(this);
         result.taskType_ = taskType_;
         result.resourceMeta_ = resourceMeta_;
+        result.serviceAccount_ = serviceAccount_;
         onBuilt();
         return result;
       }
@@ -4366,6 +4792,10 @@ public final class Agent {
         }
         if (other.getResourceMeta() != com.google.protobuf.ByteString.EMPTY) {
           setResourceMeta(other.getResourceMeta());
+        }
+        if (!other.getServiceAccount().isEmpty()) {
+          serviceAccount_ = other.serviceAccount_;
+          onChanged();
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -4522,6 +4952,95 @@ public final class Agent {
       public Builder clearResourceMeta() {
         
         resourceMeta_ = getDefaultInstance().getResourceMeta();
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object serviceAccount_ = "";
+      /**
+       * <pre>
+       * Service account to use for impersonation
+       * </pre>
+       *
+       * <code>string service_account = 4;</code>
+       */
+      public java.lang.String getServiceAccount() {
+        java.lang.Object ref = serviceAccount_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          serviceAccount_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <pre>
+       * Service account to use for impersonation
+       * </pre>
+       *
+       * <code>string service_account = 4;</code>
+       */
+      public com.google.protobuf.ByteString
+          getServiceAccountBytes() {
+        java.lang.Object ref = serviceAccount_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          serviceAccount_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <pre>
+       * Service account to use for impersonation
+       * </pre>
+       *
+       * <code>string service_account = 4;</code>
+       */
+      public Builder setServiceAccount(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        serviceAccount_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * Service account to use for impersonation
+       * </pre>
+       *
+       * <code>string service_account = 4;</code>
+       */
+      public Builder clearServiceAccount() {
+        
+        serviceAccount_ = getDefaultInstance().getServiceAccount();
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * Service account to use for impersonation
+       * </pre>
+       *
+       * <code>string service_account = 4;</code>
+       */
+      public Builder setServiceAccountBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        serviceAccount_ = value;
         onChanged();
         return this;
       }
@@ -5044,23 +5563,25 @@ public final class Agent {
       "\n\032flyteidl/admin/agent.proto\022\016flyteidl.a" +
       "dmin\032\034flyteidl/core/literals.proto\032\031flyt" +
       "eidl/core/tasks.proto\032\035flyteidl/core/int" +
-      "erface.proto\"\204\001\n\021CreateTaskRequest\022)\n\006in" +
+      "erface.proto\"\235\001\n\021CreateTaskRequest\022)\n\006in" +
       "puts\030\001 \001(\0132\031.flyteidl.core.LiteralMap\022-\n" +
       "\010template\030\002 \001(\0132\033.flyteidl.core.TaskTemp" +
-      "late\022\025\n\routput_prefix\030\003 \001(\t\"+\n\022CreateTas" +
-      "kResponse\022\025\n\rresource_meta\030\001 \001(\014\":\n\016GetT" +
-      "askRequest\022\021\n\ttask_type\030\001 \001(\t\022\025\n\rresourc" +
-      "e_meta\030\002 \001(\014\"=\n\017GetTaskResponse\022*\n\010resou" +
-      "rce\030\001 \001(\0132\030.flyteidl.admin.Resource\"\\\n\010R" +
-      "esource\022$\n\005state\030\001 \001(\0162\025.flyteidl.admin." +
-      "State\022*\n\007outputs\030\002 \001(\0132\031.flyteidl.core.L" +
-      "iteralMap\"=\n\021DeleteTaskRequest\022\021\n\ttask_t" +
-      "ype\030\001 \001(\t\022\025\n\rresource_meta\030\002 \001(\014\"\024\n\022Dele" +
-      "teTaskResponse*^\n\005State\022\025\n\021RETRYABLE_FAI" +
-      "LURE\020\000\022\025\n\021PERMANENT_FAILURE\020\001\022\013\n\007PENDING" +
-      "\020\002\022\013\n\007RUNNING\020\003\022\r\n\tSUCCEEDED\020\004B7Z5github" +
-      ".com/flyteorg/flyteidl/gen/pb-go/flyteid" +
-      "l/adminb\006proto3"
+      "late\022\025\n\routput_prefix\030\003 \001(\t\022\027\n\017service_a" +
+      "ccount\030\004 \001(\t\"+\n\022CreateTaskResponse\022\025\n\rre" +
+      "source_meta\030\001 \001(\014\"S\n\016GetTaskRequest\022\021\n\tt" +
+      "ask_type\030\001 \001(\t\022\025\n\rresource_meta\030\002 \001(\014\022\027\n" +
+      "\017service_account\030\004 \001(\t\"=\n\017GetTaskRespons" +
+      "e\022*\n\010resource\030\001 \001(\0132\030.flyteidl.admin.Res" +
+      "ource\"\\\n\010Resource\022$\n\005state\030\001 \001(\0162\025.flyte" +
+      "idl.admin.State\022*\n\007outputs\030\002 \001(\0132\031.flyte" +
+      "idl.core.LiteralMap\"V\n\021DeleteTaskRequest" +
+      "\022\021\n\ttask_type\030\001 \001(\t\022\025\n\rresource_meta\030\002 \001" +
+      "(\014\022\027\n\017service_account\030\004 \001(\t\"\024\n\022DeleteTas" +
+      "kResponse*^\n\005State\022\025\n\021RETRYABLE_FAILURE\020" +
+      "\000\022\025\n\021PERMANENT_FAILURE\020\001\022\013\n\007PENDING\020\002\022\013\n" +
+      "\007RUNNING\020\003\022\r\n\tSUCCEEDED\020\004B7Z5github.com/" +
+      "flyteorg/flyteidl/gen/pb-go/flyteidl/adm" +
+      "inb\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
@@ -5082,7 +5603,7 @@ public final class Agent {
     internal_static_flyteidl_admin_CreateTaskRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_flyteidl_admin_CreateTaskRequest_descriptor,
-        new java.lang.String[] { "Inputs", "Template", "OutputPrefix", });
+        new java.lang.String[] { "Inputs", "Template", "OutputPrefix", "ServiceAccount", });
     internal_static_flyteidl_admin_CreateTaskResponse_descriptor =
       getDescriptor().getMessageTypes().get(1);
     internal_static_flyteidl_admin_CreateTaskResponse_fieldAccessorTable = new
@@ -5094,7 +5615,7 @@ public final class Agent {
     internal_static_flyteidl_admin_GetTaskRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_flyteidl_admin_GetTaskRequest_descriptor,
-        new java.lang.String[] { "TaskType", "ResourceMeta", });
+        new java.lang.String[] { "TaskType", "ResourceMeta", "ServiceAccount", });
     internal_static_flyteidl_admin_GetTaskResponse_descriptor =
       getDescriptor().getMessageTypes().get(3);
     internal_static_flyteidl_admin_GetTaskResponse_fieldAccessorTable = new
@@ -5112,7 +5633,7 @@ public final class Agent {
     internal_static_flyteidl_admin_DeleteTaskRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_flyteidl_admin_DeleteTaskRequest_descriptor,
-        new java.lang.String[] { "TaskType", "ResourceMeta", });
+        new java.lang.String[] { "TaskType", "ResourceMeta", "ServiceAccount", });
     internal_static_flyteidl_admin_DeleteTaskResponse_descriptor =
       getDescriptor().getMessageTypes().get(6);
     internal_static_flyteidl_admin_DeleteTaskResponse_fieldAccessorTable = new

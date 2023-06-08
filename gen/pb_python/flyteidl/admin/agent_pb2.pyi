@@ -22,14 +22,16 @@ RUNNING: State
 SUCCEEDED: State
 
 class CreateTaskRequest(_message.Message):
-    __slots__ = ["inputs", "template", "output_prefix"]
+    __slots__ = ["inputs", "template", "output_prefix", "service_account"]
     INPUTS_FIELD_NUMBER: _ClassVar[int]
     TEMPLATE_FIELD_NUMBER: _ClassVar[int]
     OUTPUT_PREFIX_FIELD_NUMBER: _ClassVar[int]
+    SERVICE_ACCOUNT_FIELD_NUMBER: _ClassVar[int]
     inputs: _literals_pb2.LiteralMap
     template: _tasks_pb2.TaskTemplate
     output_prefix: str
-    def __init__(self, inputs: _Optional[_Union[_literals_pb2.LiteralMap, _Mapping]] = ..., template: _Optional[_Union[_tasks_pb2.TaskTemplate, _Mapping]] = ..., output_prefix: _Optional[str] = ...) -> None: ...
+    service_account: str
+    def __init__(self, inputs: _Optional[_Union[_literals_pb2.LiteralMap, _Mapping]] = ..., template: _Optional[_Union[_tasks_pb2.TaskTemplate, _Mapping]] = ..., output_prefix: _Optional[str] = ..., service_account: _Optional[str] = ...) -> None: ...
 
 class CreateTaskResponse(_message.Message):
     __slots__ = ["resource_meta"]
@@ -38,12 +40,14 @@ class CreateTaskResponse(_message.Message):
     def __init__(self, resource_meta: _Optional[bytes] = ...) -> None: ...
 
 class GetTaskRequest(_message.Message):
-    __slots__ = ["task_type", "resource_meta"]
+    __slots__ = ["task_type", "resource_meta", "service_account"]
     TASK_TYPE_FIELD_NUMBER: _ClassVar[int]
     RESOURCE_META_FIELD_NUMBER: _ClassVar[int]
+    SERVICE_ACCOUNT_FIELD_NUMBER: _ClassVar[int]
     task_type: str
     resource_meta: bytes
-    def __init__(self, task_type: _Optional[str] = ..., resource_meta: _Optional[bytes] = ...) -> None: ...
+    service_account: str
+    def __init__(self, task_type: _Optional[str] = ..., resource_meta: _Optional[bytes] = ..., service_account: _Optional[str] = ...) -> None: ...
 
 class GetTaskResponse(_message.Message):
     __slots__ = ["resource"]
@@ -60,12 +64,14 @@ class Resource(_message.Message):
     def __init__(self, state: _Optional[_Union[State, str]] = ..., outputs: _Optional[_Union[_literals_pb2.LiteralMap, _Mapping]] = ...) -> None: ...
 
 class DeleteTaskRequest(_message.Message):
-    __slots__ = ["task_type", "resource_meta"]
+    __slots__ = ["task_type", "resource_meta", "service_account"]
     TASK_TYPE_FIELD_NUMBER: _ClassVar[int]
     RESOURCE_META_FIELD_NUMBER: _ClassVar[int]
+    SERVICE_ACCOUNT_FIELD_NUMBER: _ClassVar[int]
     task_type: str
     resource_meta: bytes
-    def __init__(self, task_type: _Optional[str] = ..., resource_meta: _Optional[bytes] = ...) -> None: ...
+    service_account: str
+    def __init__(self, task_type: _Optional[str] = ..., resource_meta: _Optional[bytes] = ..., service_account: _Optional[str] = ...) -> None: ...
 
 class DeleteTaskResponse(_message.Message):
     __slots__ = []
