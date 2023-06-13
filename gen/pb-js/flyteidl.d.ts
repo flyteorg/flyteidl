@@ -6690,6 +6690,9 @@ export namespace flyteidl {
 
             /** NodeExecutionEvent reportedAt */
             reportedAt?: (google.protobuf.ITimestamp|null);
+
+            /** NodeExecutionEvent spanUri */
+            spanUri?: (string|null);
         }
 
         /** Represents a NodeExecutionEvent. */
@@ -6763,6 +6766,9 @@ export namespace flyteidl {
 
             /** NodeExecutionEvent reportedAt. */
             public reportedAt?: (google.protobuf.ITimestamp|null);
+
+            /** NodeExecutionEvent spanUri. */
+            public spanUri: string;
 
             /** NodeExecutionEvent inputValue. */
             public inputValue?: ("inputUri"|"inputData");
@@ -14017,6 +14023,9 @@ export namespace flyteidl {
 
             /** NodeExecutionClosure dynamicJobSpecUri */
             dynamicJobSpecUri?: (string|null);
+
+            /** NodeExecutionClosure spanUri */
+            spanUri?: (string|null);
         }
 
         /** Represents a NodeExecutionClosure. */
@@ -14063,6 +14072,9 @@ export namespace flyteidl {
 
             /** NodeExecutionClosure dynamicJobSpecUri. */
             public dynamicJobSpecUri: string;
+
+            /** NodeExecutionClosure spanUri. */
+            public spanUri: string;
 
             /** NodeExecutionClosure outputResult. */
             public outputResult?: ("outputUri"|"error"|"outputData");
@@ -18796,6 +18808,20 @@ export namespace flyteidl {
              * @returns Promise
              */
             public getExecutionMetrics(request: flyteidl.admin.IWorkflowExecutionGetMetricsRequest): Promise<flyteidl.admin.WorkflowExecutionGetMetricsResponse>;
+
+            /**
+             * Calls GetFlyteKitMetrics.
+             * @param request NodeExecutionGetRequest message or plain object
+             * @param callback Node-style callback called with the error, if any, and WorkflowExecutionGetMetricsResponse
+             */
+            public getFlyteKitMetrics(request: flyteidl.admin.INodeExecutionGetRequest, callback: flyteidl.service.AdminService.GetFlyteKitMetricsCallback): void;
+
+            /**
+             * Calls GetFlyteKitMetrics.
+             * @param request NodeExecutionGetRequest message or plain object
+             * @returns Promise
+             */
+            public getFlyteKitMetrics(request: flyteidl.admin.INodeExecutionGetRequest): Promise<flyteidl.admin.WorkflowExecutionGetMetricsResponse>;
         }
 
         namespace AdminService {
@@ -19170,6 +19196,13 @@ export namespace flyteidl {
              * @param [response] WorkflowExecutionGetMetricsResponse
              */
             type GetExecutionMetricsCallback = (error: (Error|null), response?: flyteidl.admin.WorkflowExecutionGetMetricsResponse) => void;
+
+            /**
+             * Callback as used by {@link flyteidl.service.AdminService#getFlyteKitMetrics}.
+             * @param error Error, if any
+             * @param [response] WorkflowExecutionGetMetricsResponse
+             */
+            type GetFlyteKitMetricsCallback = (error: (Error|null), response?: flyteidl.admin.WorkflowExecutionGetMetricsResponse) => void;
         }
 
         /** Represents an AsyncAgentService */

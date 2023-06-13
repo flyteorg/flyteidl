@@ -38,7 +38,7 @@ public final class Admin {
       "admin/task_execution.proto\032\034flyteidl/adm" +
       "in/version.proto\032\033flyteidl/admin/common." +
       "proto\032\'flyteidl/admin/description_entity" +
-      ".proto2\204N\n\014AdminService\022m\n\nCreateTask\022!." +
+      ".proto2\371O\n\014AdminService\022m\n\nCreateTask\022!." +
       "flyteidl.admin.TaskCreateRequest\032\".flyte" +
       "idl.admin.TaskCreateResponse\"\030\202\323\344\223\002\022\"\r/a" +
       "pi/v1/tasks:\001*\022\210\001\n\007GetTask\022 .flyteidl.ad" +
@@ -287,9 +287,15 @@ public final class Admin {
       "orkflowExecutionGetMetricsRequest\0323.flyt" +
       "eidl.admin.WorkflowExecutionGetMetricsRe" +
       "sponse\"E\202\323\344\223\002?\022=/api/v1/metrics/executio" +
-      "ns/{id.project}/{id.domain}/{id.name}B9Z" +
-      "7github.com/flyteorg/flyteidl/gen/pb-go/" +
-      "flyteidl/serviceb\006proto3"
+      "ns/{id.project}/{id.domain}/{id.name}\022\362\001" +
+      "\n\022GetFlyteKitMetrics\022\'.flyteidl.admin.No" +
+      "deExecutionGetRequest\0323.flyteidl.admin.W" +
+      "orkflowExecutionGetMetricsResponse\"~\202\323\344\223" +
+      "\002x\022v/api/v1/metrics/node_executions/{id." +
+      "execution_id.project}/{id.execution_id.d" +
+      "omain}/{id.execution_id.name}/{id.node_i" +
+      "d}B9Z7github.com/flyteorg/flyteidl/gen/p" +
+      "b-go/flyteidl/serviceb\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {

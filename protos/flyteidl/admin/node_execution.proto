@@ -171,6 +171,8 @@ message NodeExecutionClosure {
     // dynamic_job_spec_uri is the location of the DynamicJobSpec proto message for a DynamicWorkflow. This is required
     // to correctly recover partially completed executions where the subworkflow has already been compiled.
     string dynamic_job_spec_uri = 12;
+
+    string span_uri = 13;
 }
 
 // Metadata for a WorkflowNode

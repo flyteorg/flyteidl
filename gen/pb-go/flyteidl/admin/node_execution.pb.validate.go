@@ -618,6 +618,8 @@ func (m *NodeExecutionClosure) Validate() error {
 
 	// no validation rules for DynamicJobSpecUri
 
+	// no validation rules for SpanUri
+
 	switch m.OutputResult.(type) {
 
 	case *NodeExecutionClosure_OutputUri:

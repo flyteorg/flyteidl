@@ -737,6 +737,54 @@ func (_m *AdminServiceClient) GetExecutionMetrics(ctx context.Context, in *admin
 	return r0, r1
 }
 
+type AdminServiceClient_GetFlyteKitMetrics struct {
+	*mock.Call
+}
+
+func (_m AdminServiceClient_GetFlyteKitMetrics) Return(_a0 *admin.WorkflowExecutionGetMetricsResponse, _a1 error) *AdminServiceClient_GetFlyteKitMetrics {
+	return &AdminServiceClient_GetFlyteKitMetrics{Call: _m.Call.Return(_a0, _a1)}
+}
+
+func (_m *AdminServiceClient) OnGetFlyteKitMetrics(ctx context.Context, in *admin.NodeExecutionGetRequest, opts ...grpc.CallOption) *AdminServiceClient_GetFlyteKitMetrics {
+	c_call := _m.On("GetFlyteKitMetrics", ctx, in, opts)
+	return &AdminServiceClient_GetFlyteKitMetrics{Call: c_call}
+}
+
+func (_m *AdminServiceClient) OnGetFlyteKitMetricsMatch(matchers ...interface{}) *AdminServiceClient_GetFlyteKitMetrics {
+	c_call := _m.On("GetFlyteKitMetrics", matchers...)
+	return &AdminServiceClient_GetFlyteKitMetrics{Call: c_call}
+}
+
+// GetFlyteKitMetrics provides a mock function with given fields: ctx, in, opts
+func (_m *AdminServiceClient) GetFlyteKitMetrics(ctx context.Context, in *admin.NodeExecutionGetRequest, opts ...grpc.CallOption) (*admin.WorkflowExecutionGetMetricsResponse, error) {
+	_va := make([]interface{}, len(opts))
+	for _i := range opts {
+		_va[_i] = opts[_i]
+	}
+	var _ca []interface{}
+	_ca = append(_ca, ctx, in)
+	_ca = append(_ca, _va...)
+	ret := _m.Called(_ca...)
+
+	var r0 *admin.WorkflowExecutionGetMetricsResponse
+	if rf, ok := ret.Get(0).(func(context.Context, *admin.NodeExecutionGetRequest, ...grpc.CallOption) *admin.WorkflowExecutionGetMetricsResponse); ok {
+		r0 = rf(ctx, in, opts...)
+	} else {
+		if ret.Get(0) != nil {
+			r0 = ret.Get(0).(*admin.WorkflowExecutionGetMetricsResponse)
+		}
+	}
+
+	var r1 error
+	if rf, ok := ret.Get(1).(func(context.Context, *admin.NodeExecutionGetRequest, ...grpc.CallOption) error); ok {
+		r1 = rf(ctx, in, opts...)
+	} else {
+		r1 = ret.Error(1)
+	}
+
+	return r0, r1
+}
+
 type AdminServiceClient_GetLaunchPlan struct {
 	*mock.Call
 }

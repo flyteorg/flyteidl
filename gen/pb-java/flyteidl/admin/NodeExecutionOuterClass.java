@@ -7253,6 +7253,16 @@ public final class NodeExecutionOuterClass {
     com.google.protobuf.ByteString
         getDynamicJobSpecUriBytes();
 
+    /**
+     * <code>string span_uri = 13;</code>
+     */
+    java.lang.String getSpanUri();
+    /**
+     * <code>string span_uri = 13;</code>
+     */
+    com.google.protobuf.ByteString
+        getSpanUriBytes();
+
     public flyteidl.admin.NodeExecutionOuterClass.NodeExecutionClosure.OutputResultCase getOutputResultCase();
 
     public flyteidl.admin.NodeExecutionOuterClass.NodeExecutionClosure.TargetMetadataCase getTargetMetadataCase();
@@ -7277,6 +7287,7 @@ public final class NodeExecutionOuterClass {
       phase_ = 0;
       deckUri_ = "";
       dynamicJobSpecUri_ = "";
+      spanUri_ = "";
     }
 
     @java.lang.Override
@@ -7433,6 +7444,12 @@ public final class NodeExecutionOuterClass {
               java.lang.String s = input.readStringRequireUtf8();
 
               dynamicJobSpecUri_ = s;
+              break;
+            }
+            case 106: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              spanUri_ = s;
               break;
             }
             default: {
@@ -7974,6 +7991,40 @@ public final class NodeExecutionOuterClass {
       }
     }
 
+    public static final int SPAN_URI_FIELD_NUMBER = 13;
+    private volatile java.lang.Object spanUri_;
+    /**
+     * <code>string span_uri = 13;</code>
+     */
+    public java.lang.String getSpanUri() {
+      java.lang.Object ref = spanUri_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        spanUri_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string span_uri = 13;</code>
+     */
+    public com.google.protobuf.ByteString
+        getSpanUriBytes() {
+      java.lang.Object ref = spanUri_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        spanUri_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
     private byte memoizedIsInitialized = -1;
     @java.lang.Override
     public final boolean isInitialized() {
@@ -8023,6 +8074,9 @@ public final class NodeExecutionOuterClass {
       }
       if (!getDynamicJobSpecUriBytes().isEmpty()) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 12, dynamicJobSpecUri_);
+      }
+      if (!getSpanUriBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 13, spanUri_);
       }
       unknownFields.writeTo(output);
     }
@@ -8078,6 +8132,9 @@ public final class NodeExecutionOuterClass {
       if (!getDynamicJobSpecUriBytes().isEmpty()) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(12, dynamicJobSpecUri_);
       }
+      if (!getSpanUriBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(13, spanUri_);
+      }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
@@ -8118,6 +8175,8 @@ public final class NodeExecutionOuterClass {
           .equals(other.getDeckUri())) return false;
       if (!getDynamicJobSpecUri()
           .equals(other.getDynamicJobSpecUri())) return false;
+      if (!getSpanUri()
+          .equals(other.getSpanUri())) return false;
       if (!getOutputResultCase().equals(other.getOutputResultCase())) return false;
       switch (outputResultCase_) {
         case 1:
@@ -8181,6 +8240,8 @@ public final class NodeExecutionOuterClass {
       hash = (53 * hash) + getDeckUri().hashCode();
       hash = (37 * hash) + DYNAMIC_JOB_SPEC_URI_FIELD_NUMBER;
       hash = (53 * hash) + getDynamicJobSpecUri().hashCode();
+      hash = (37 * hash) + SPAN_URI_FIELD_NUMBER;
+      hash = (53 * hash) + getSpanUri().hashCode();
       switch (outputResultCase_) {
         case 1:
           hash = (37 * hash) + OUTPUT_URI_FIELD_NUMBER;
@@ -8376,6 +8437,8 @@ public final class NodeExecutionOuterClass {
 
         dynamicJobSpecUri_ = "";
 
+        spanUri_ = "";
+
         outputResultCase_ = 0;
         outputResult_ = null;
         targetMetadataCase_ = 0;
@@ -8460,6 +8523,7 @@ public final class NodeExecutionOuterClass {
         }
         result.deckUri_ = deckUri_;
         result.dynamicJobSpecUri_ = dynamicJobSpecUri_;
+        result.spanUri_ = spanUri_;
         result.outputResultCase_ = outputResultCase_;
         result.targetMetadataCase_ = targetMetadataCase_;
         onBuilt();
@@ -8531,6 +8595,10 @@ public final class NodeExecutionOuterClass {
         }
         if (!other.getDynamicJobSpecUri().isEmpty()) {
           dynamicJobSpecUri_ = other.dynamicJobSpecUri_;
+          onChanged();
+        }
+        if (!other.getSpanUri().isEmpty()) {
+          spanUri_ = other.spanUri_;
           onChanged();
         }
         switch (other.getOutputResultCase()) {
@@ -10215,6 +10283,75 @@ public final class NodeExecutionOuterClass {
   checkByteStringIsUtf8(value);
         
         dynamicJobSpecUri_ = value;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object spanUri_ = "";
+      /**
+       * <code>string span_uri = 13;</code>
+       */
+      public java.lang.String getSpanUri() {
+        java.lang.Object ref = spanUri_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          spanUri_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>string span_uri = 13;</code>
+       */
+      public com.google.protobuf.ByteString
+          getSpanUriBytes() {
+        java.lang.Object ref = spanUri_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          spanUri_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string span_uri = 13;</code>
+       */
+      public Builder setSpanUri(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        spanUri_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string span_uri = 13;</code>
+       */
+      public Builder clearSpanUri() {
+        
+        spanUri_ = getDefaultInstance().getSpanUri();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string span_uri = 13;</code>
+       */
+      public Builder setSpanUriBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        spanUri_ = value;
         onChanged();
         return this;
       }
@@ -15720,7 +15857,7 @@ public final class NodeExecutionOuterClass {
       "ent_node\030\002 \001(\010\022\024\n\014spec_node_id\030\003 \001(\t\022\022\n\n" +
       "is_dynamic\030\004 \001(\010\"Z\n\021NodeExecutionList\0226\n" +
       "\017node_executions\030\001 \003(\0132\035.flyteidl.admin." +
-      "NodeExecution\022\r\n\005token\030\002 \001(\t\"\342\004\n\024NodeExe" +
+      "NodeExecution\022\r\n\005token\030\002 \001(\t\"\364\004\n\024NodeExe" +
       "cutionClosure\022\030\n\noutput_uri\030\001 \001(\tB\002\030\001H\000\022" +
       ".\n\005error\030\002 \001(\0132\035.flyteidl.core.Execution" +
       "ErrorH\000\0224\n\013output_data\030\n \001(\0132\031.flyteidl." +
@@ -15735,30 +15872,30 @@ public final class NodeExecutionOuterClass {
       "odeMetadataH\001\022>\n\022task_node_metadata\030\t \001(" +
       "\0132 .flyteidl.admin.TaskNodeMetadataH\001\022\020\n" +
       "\010deck_uri\030\013 \001(\t\022\034\n\024dynamic_job_spec_uri\030" +
-      "\014 \001(\tB\017\n\routput_resultB\021\n\017target_metadat" +
-      "a\"W\n\024WorkflowNodeMetadata\022?\n\013executionId" +
-      "\030\001 \001(\0132*.flyteidl.core.WorkflowExecution" +
-      "Identifier\"\230\001\n\020TaskNodeMetadata\0227\n\014cache" +
-      "_status\030\001 \001(\0162!.flyteidl.core.CatalogCac" +
-      "heStatus\0223\n\013catalog_key\030\002 \001(\0132\036.flyteidl" +
-      ".core.CatalogMetadata\022\026\n\016checkpoint_uri\030" +
-      "\004 \001(\t\"\245\001\n\033DynamicWorkflowNodeMetadata\022%\n" +
-      "\002id\030\001 \001(\0132\031.flyteidl.core.Identifier\022A\n\021" +
-      "compiled_workflow\030\002 \001(\0132&.flyteidl.core." +
-      "CompiledWorkflowClosure\022\034\n\024dynamic_job_s" +
-      "pec_uri\030\003 \001(\t\"Q\n\033NodeExecutionGetDataReq" +
-      "uest\0222\n\002id\030\001 \001(\0132&.flyteidl.core.NodeExe" +
-      "cutionIdentifier\"\320\002\n\034NodeExecutionGetDat" +
-      "aResponse\022+\n\006inputs\030\001 \001(\0132\027.flyteidl.adm" +
-      "in.UrlBlobB\002\030\001\022,\n\007outputs\030\002 \001(\0132\027.flytei" +
-      "dl.admin.UrlBlobB\002\030\001\022.\n\013full_inputs\030\003 \001(" +
-      "\0132\031.flyteidl.core.LiteralMap\022/\n\014full_out" +
-      "puts\030\004 \001(\0132\031.flyteidl.core.LiteralMap\022E\n" +
-      "\020dynamic_workflow\030\020 \001(\0132+.flyteidl.admin" +
-      ".DynamicWorkflowNodeMetadata\022-\n\nflyte_ur" +
-      "ls\030\021 \001(\0132\031.flyteidl.admin.FlyteURLsB7Z5g" +
-      "ithub.com/flyteorg/flyteidl/gen/pb-go/fl" +
-      "yteidl/adminb\006proto3"
+      "\014 \001(\t\022\020\n\010span_uri\030\r \001(\tB\017\n\routput_result" +
+      "B\021\n\017target_metadata\"W\n\024WorkflowNodeMetad" +
+      "ata\022?\n\013executionId\030\001 \001(\0132*.flyteidl.core" +
+      ".WorkflowExecutionIdentifier\"\230\001\n\020TaskNod" +
+      "eMetadata\0227\n\014cache_status\030\001 \001(\0162!.flytei" +
+      "dl.core.CatalogCacheStatus\0223\n\013catalog_ke" +
+      "y\030\002 \001(\0132\036.flyteidl.core.CatalogMetadata\022" +
+      "\026\n\016checkpoint_uri\030\004 \001(\t\"\245\001\n\033DynamicWorkf" +
+      "lowNodeMetadata\022%\n\002id\030\001 \001(\0132\031.flyteidl.c" +
+      "ore.Identifier\022A\n\021compiled_workflow\030\002 \001(" +
+      "\0132&.flyteidl.core.CompiledWorkflowClosur" +
+      "e\022\034\n\024dynamic_job_spec_uri\030\003 \001(\t\"Q\n\033NodeE" +
+      "xecutionGetDataRequest\0222\n\002id\030\001 \001(\0132&.fly" +
+      "teidl.core.NodeExecutionIdentifier\"\320\002\n\034N" +
+      "odeExecutionGetDataResponse\022+\n\006inputs\030\001 " +
+      "\001(\0132\027.flyteidl.admin.UrlBlobB\002\030\001\022,\n\007outp" +
+      "uts\030\002 \001(\0132\027.flyteidl.admin.UrlBlobB\002\030\001\022." +
+      "\n\013full_inputs\030\003 \001(\0132\031.flyteidl.core.Lite" +
+      "ralMap\022/\n\014full_outputs\030\004 \001(\0132\031.flyteidl." +
+      "core.LiteralMap\022E\n\020dynamic_workflow\030\020 \001(" +
+      "\0132+.flyteidl.admin.DynamicWorkflowNodeMe" +
+      "tadata\022-\n\nflyte_urls\030\021 \001(\0132\031.flyteidl.ad" +
+      "min.FlyteURLsB7Z5github.com/flyteorg/fly" +
+      "teidl/gen/pb-go/flyteidl/adminb\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
@@ -15821,7 +15958,7 @@ public final class NodeExecutionOuterClass {
     internal_static_flyteidl_admin_NodeExecutionClosure_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_flyteidl_admin_NodeExecutionClosure_descriptor,
-        new java.lang.String[] { "OutputUri", "Error", "OutputData", "Phase", "StartedAt", "Duration", "CreatedAt", "UpdatedAt", "WorkflowNodeMetadata", "TaskNodeMetadata", "DeckUri", "DynamicJobSpecUri", "OutputResult", "TargetMetadata", });
+        new java.lang.String[] { "OutputUri", "Error", "OutputData", "Phase", "StartedAt", "Duration", "CreatedAt", "UpdatedAt", "WorkflowNodeMetadata", "TaskNodeMetadata", "DeckUri", "DynamicJobSpecUri", "SpanUri", "OutputResult", "TargetMetadata", });
     internal_static_flyteidl_admin_WorkflowNodeMetadata_descriptor =
       getDescriptor().getMessageTypes().get(7);
     internal_static_flyteidl_admin_WorkflowNodeMetadata_fieldAccessorTable = new

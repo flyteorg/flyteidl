@@ -15998,6 +15998,7 @@
                  * @property {boolean|null} [isDynamic] NodeExecutionEvent isDynamic
                  * @property {string|null} [deckUri] NodeExecutionEvent deckUri
                  * @property {google.protobuf.ITimestamp|null} [reportedAt] NodeExecutionEvent reportedAt
+                 * @property {string|null} [spanUri] NodeExecutionEvent spanUri
                  */
     
                 /**
@@ -16183,6 +16184,14 @@
                  */
                 NodeExecutionEvent.prototype.reportedAt = null;
     
+                /**
+                 * NodeExecutionEvent spanUri.
+                 * @member {string} spanUri
+                 * @memberof flyteidl.event.NodeExecutionEvent
+                 * @instance
+                 */
+                NodeExecutionEvent.prototype.spanUri = "";
+    
                 // OneOf field names bound to virtual getters and setters
                 var $oneOfFields;
     
@@ -16285,6 +16294,8 @@
                         $root.flyteidl.core.LiteralMap.encode(message.inputData, writer.uint32(/* id 20, wireType 2 =*/162).fork()).ldelim();
                     if (message.reportedAt != null && message.hasOwnProperty("reportedAt"))
                         $root.google.protobuf.Timestamp.encode(message.reportedAt, writer.uint32(/* id 21, wireType 2 =*/170).fork()).ldelim();
+                    if (message.spanUri != null && message.hasOwnProperty("spanUri"))
+                        writer.uint32(/* id 22, wireType 2 =*/178).string(message.spanUri);
                     return writer;
                 };
     
@@ -16368,6 +16379,9 @@
                             break;
                         case 21:
                             message.reportedAt = $root.google.protobuf.Timestamp.decode(reader, reader.uint32());
+                            break;
+                        case 22:
+                            message.spanUri = reader.string();
                             break;
                         default:
                             reader.skipType(tag & 7);
@@ -16513,6 +16527,9 @@
                         if (error)
                             return "reportedAt." + error;
                     }
+                    if (message.spanUri != null && message.hasOwnProperty("spanUri"))
+                        if (!$util.isString(message.spanUri))
+                            return "spanUri: string expected";
                     return null;
                 };
     
@@ -33575,6 +33592,7 @@
                  * @property {flyteidl.admin.ITaskNodeMetadata|null} [taskNodeMetadata] NodeExecutionClosure taskNodeMetadata
                  * @property {string|null} [deckUri] NodeExecutionClosure deckUri
                  * @property {string|null} [dynamicJobSpecUri] NodeExecutionClosure dynamicJobSpecUri
+                 * @property {string|null} [spanUri] NodeExecutionClosure spanUri
                  */
     
                 /**
@@ -33688,6 +33706,14 @@
                  */
                 NodeExecutionClosure.prototype.dynamicJobSpecUri = "";
     
+                /**
+                 * NodeExecutionClosure spanUri.
+                 * @member {string} spanUri
+                 * @memberof flyteidl.admin.NodeExecutionClosure
+                 * @instance
+                 */
+                NodeExecutionClosure.prototype.spanUri = "";
+    
                 // OneOf field names bound to virtual getters and setters
                 var $oneOfFields;
     
@@ -33761,6 +33787,8 @@
                         writer.uint32(/* id 11, wireType 2 =*/90).string(message.deckUri);
                     if (message.dynamicJobSpecUri != null && message.hasOwnProperty("dynamicJobSpecUri"))
                         writer.uint32(/* id 12, wireType 2 =*/98).string(message.dynamicJobSpecUri);
+                    if (message.spanUri != null && message.hasOwnProperty("spanUri"))
+                        writer.uint32(/* id 13, wireType 2 =*/106).string(message.spanUri);
                     return writer;
                 };
     
@@ -33817,6 +33845,9 @@
                             break;
                         case 12:
                             message.dynamicJobSpecUri = reader.string();
+                            break;
+                        case 13:
+                            message.spanUri = reader.string();
                             break;
                         default:
                             reader.skipType(tag & 7);
@@ -33924,6 +33955,9 @@
                     if (message.dynamicJobSpecUri != null && message.hasOwnProperty("dynamicJobSpecUri"))
                         if (!$util.isString(message.dynamicJobSpecUri))
                             return "dynamicJobSpecUri: string expected";
+                    if (message.spanUri != null && message.hasOwnProperty("spanUri"))
+                        if (!$util.isString(message.spanUri))
+                            return "spanUri: string expected";
                     return null;
                 };
     
@@ -44742,6 +44776,39 @@
                  * @memberof flyteidl.service.AdminService
                  * @instance
                  * @param {flyteidl.admin.IWorkflowExecutionGetMetricsRequest} request WorkflowExecutionGetMetricsRequest message or plain object
+                 * @returns {Promise<flyteidl.admin.WorkflowExecutionGetMetricsResponse>} Promise
+                 * @variation 2
+                 */
+    
+                /**
+                 * Callback as used by {@link flyteidl.service.AdminService#getFlyteKitMetrics}.
+                 * @memberof flyteidl.service.AdminService
+                 * @typedef GetFlyteKitMetricsCallback
+                 * @type {function}
+                 * @param {Error|null} error Error, if any
+                 * @param {flyteidl.admin.WorkflowExecutionGetMetricsResponse} [response] WorkflowExecutionGetMetricsResponse
+                 */
+    
+                /**
+                 * Calls GetFlyteKitMetrics.
+                 * @function getFlyteKitMetrics
+                 * @memberof flyteidl.service.AdminService
+                 * @instance
+                 * @param {flyteidl.admin.INodeExecutionGetRequest} request NodeExecutionGetRequest message or plain object
+                 * @param {flyteidl.service.AdminService.GetFlyteKitMetricsCallback} callback Node-style callback called with the error, if any, and WorkflowExecutionGetMetricsResponse
+                 * @returns {undefined}
+                 * @variation 1
+                 */
+                Object.defineProperty(AdminService.prototype.getFlyteKitMetrics = function getFlyteKitMetrics(request, callback) {
+                    return this.rpcCall(getFlyteKitMetrics, $root.flyteidl.admin.NodeExecutionGetRequest, $root.flyteidl.admin.WorkflowExecutionGetMetricsResponse, request, callback);
+                }, "name", { value: "GetFlyteKitMetrics" });
+    
+                /**
+                 * Calls GetFlyteKitMetrics.
+                 * @function getFlyteKitMetrics
+                 * @memberof flyteidl.service.AdminService
+                 * @instance
+                 * @param {flyteidl.admin.INodeExecutionGetRequest} request NodeExecutionGetRequest message or plain object
                  * @returns {Promise<flyteidl.admin.WorkflowExecutionGetMetricsResponse>} Promise
                  * @variation 2
                  */

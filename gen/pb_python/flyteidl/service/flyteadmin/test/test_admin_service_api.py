@@ -134,6 +134,13 @@ class TestAdminServiceApi(unittest.TestCase):
         """
         pass
 
+    def test_get_flyte_kit_metrics(self):
+        """Test case for get_flyte_kit_metrics
+
+        Fetches FlyteKit metrics for a :ref:`ref_flyteidl.admin.NodeExecution`.  # noqa: E501
+        """
+        pass
+
     def test_get_launch_plan(self):
         """Test case for get_launch_plan
 

@@ -1983,6 +1983,8 @@ pub struct NodeExecutionClosure {
     /// to correctly recover partially completed executions where the subworkflow has already been compiled.
     #[prost(string, tag="12")]
     pub dynamic_job_spec_uri: ::prost::alloc::string::String,
+    #[prost(string, tag="13")]
+    pub span_uri: ::prost::alloc::string::String,
     /// Only a node in a terminal state will have a non-empty output_result.
     #[prost(oneof="node_execution_closure::OutputResult", tags="1, 2, 10")]
     pub output_result: ::core::option::Option<node_execution_closure::OutputResult>,

@@ -110,6 +110,8 @@ message NodeExecutionEvent {
     // literal inputs are initially copied. The event however will not be sent until after the copy completes.
     // Extracting both of these timestamps facilitates a more accurate portrayal of the evaluation time-series.
     google.protobuf.Timestamp reported_at = 21;
+
+    string span_uri = 22;
 }
 
 // For Workflow Nodes we need to send information about the workflow that's launched

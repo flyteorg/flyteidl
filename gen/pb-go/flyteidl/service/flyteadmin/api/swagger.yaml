@@ -1339,6 +1339,42 @@ paths:
           description: "A successful response."
           schema:
             $ref: "#/definitions/adminWorkflowExecutionGetMetricsResponse"
+  /api/v1/metrics/node_executions/{id.execution_id.project}/{id.execution_id.domain}/{id.execution_id.name}/{id.node_id}:
+    get:
+      tags:
+      - "AdminService"
+      summary: "Fetches FlyteKit metrics for a :ref:`ref_flyteidl.admin.NodeExecution`."
+      operationId: "GetFlyteKitMetrics"
+      parameters:
+      - name: "id.execution_id.project"
+        in: "path"
+        description: "Name of the project the resource belongs to."
+        required: true
+        type: "string"
+        x-exportParamName: "IdExecutionIdProject"
+      - name: "id.execution_id.domain"
+        in: "path"
+        description: "Name of the domain the resource belongs to.\nA domain can be\
+          \ considered as a subset within a specific project."
+        required: true
+        type: "string"
+        x-exportParamName: "IdExecutionIdDomain"
+      - name: "id.execution_id.name"
+        in: "path"
+        description: "User or system provided value for the resource."
+        required: true
+        type: "string"
+        x-exportParamName: "IdExecutionIdName"
+      - name: "id.node_id"
+        in: "path"
+        required: true
+        type: "string"
+        x-exportParamName: "IdNodeId"
+      responses:
+        200:
+          description: "A successful response."
+          schema:
+            $ref: "#/definitions/adminWorkflowExecutionGetMetricsResponse"
   /api/v1/named_entities/{resource_type}/{id.project}/{id.domain}/{id.name}:
     get:
       tags:
@@ -7657,16 +7693,16 @@ definitions:
           \ message for a DynamicWorkflow. This is required\nto correctly recover\
           \ partially completed executions where the subworkflow has already been\
           \ compiled."
+      span_uri:
+        type: "string"
     description: "Container for node execution details and results."
     example:
       phase: {}
-      duration: "duration"
       workflow_node_metadata:
         executionId:
           domain: "domain"
           name: "name"
           project: "project"
-      updated_at: "2000-01-23T04:56:07.000+00:00"
       task_node_metadata:
         catalog_key:
           source_task_execution:
@@ -7694,15 +7730,18 @@ definitions:
             artifact_id: "artifact_id"
         checkpoint_uri: "checkpoint_uri"
         cache_status: {}
-      dynamic_job_spec_uri: "dynamic_job_spec_uri"
-      output_uri: "output_uri"
-      started_at: "2000-01-23T04:56:07.000+00:00"
       created_at: "2000-01-23T04:56:07.000+00:00"
       error:
         code: "code"
         kind: {}
         message: "message"
         error_uri: "error_uri"
+      duration: "duration"
+      updated_at: "2000-01-23T04:56:07.000+00:00"
+      dynamic_job_spec_uri: "dynamic_job_spec_uri"
+      span_uri: "span_uri"
+      output_uri: "output_uri"
+      started_at: "2000-01-23T04:56:07.000+00:00"
       output_data:
         literals: {}
       deck_uri: "deck_uri"
@@ -14362,13 +14401,11 @@ definitions:
           node_id: "node_id"
         closure:
           phase: {}
-          duration: "duration"
           workflow_node_metadata:
             executionId:
               domain: "domain"
               name: "name"
               project: "project"
-          updated_at: "2000-01-23T04:56:07.000+00:00"
           task_node_metadata:
             catalog_key:
               source_task_execution:
@@ -14396,15 +14433,18 @@ definitions:
                 artifact_id: "artifact_id"
             checkpoint_uri: "checkpoint_uri"
             cache_status: {}
-          dynamic_job_spec_uri: "dynamic_job_spec_uri"
-          output_uri: "output_uri"
-          started_at: "2000-01-23T04:56:07.000+00:00"
           created_at: "2000-01-23T04:56:07.000+00:00"
           error:
             code: "code"
             kind: {}
             message: "message"
             error_uri: "error_uri"
+          duration: "duration"
+          updated_at: "2000-01-23T04:56:07.000+00:00"
+          dynamic_job_spec_uri: "dynamic_job_spec_uri"
+          span_uri: "span_uri"
+          output_uri: "output_uri"
+          started_at: "2000-01-23T04:56:07.000+00:00"
           output_data:
             literals: {}
           deck_uri: "deck_uri"
@@ -14422,13 +14462,11 @@ definitions:
           node_id: "node_id"
         closure:
           phase: {}
-          duration: "duration"
           workflow_node_metadata:
             executionId:
               domain: "domain"
               name: "name"
               project: "project"
-          updated_at: "2000-01-23T04:56:07.000+00:00"
           task_node_metadata:
             catalog_key:
               source_task_execution:
@@ -14456,15 +14494,18 @@ definitions:
                 artifact_id: "artifact_id"
             checkpoint_uri: "checkpoint_uri"
             cache_status: {}
-          dynamic_job_spec_uri: "dynamic_job_spec_uri"
-          output_uri: "output_uri"
-          started_at: "2000-01-23T04:56:07.000+00:00"
           created_at: "2000-01-23T04:56:07.000+00:00"
           error:
             code: "code"
             kind: {}
             message: "message"
             error_uri: "error_uri"
+          duration: "duration"
+          updated_at: "2000-01-23T04:56:07.000+00:00"
+          dynamic_job_spec_uri: "dynamic_job_spec_uri"
+          span_uri: "span_uri"
+          output_uri: "output_uri"
+          started_at: "2000-01-23T04:56:07.000+00:00"
           output_data:
             literals: {}
           deck_uri: "deck_uri"
@@ -59080,6 +59121,8 @@ definitions:
           \ so when\nliteral inputs are initially copied. The event however will not\
           \ be sent until after the copy completes.\nExtracting both of these timestamps\
           \ facilitates a more accurate portrayal of the evaluation time-series."
+      span_uri:
+        type: "string"
   eventParentNodeExecutionMetadata:
     type: "object"
     properties:
@@ -65915,13 +65958,11 @@ definitions:
         node_id: "node_id"
       closure:
         phase: {}
-        duration: "duration"
         workflow_node_metadata:
           executionId:
             domain: "domain"
             name: "name"
             project: "project"
-        updated_at: "2000-01-23T04:56:07.000+00:00"
         task_node_metadata:
           catalog_key:
             source_task_execution:
@@ -65949,15 +65990,18 @@ definitions:
               artifact_id: "artifact_id"
           checkpoint_uri: "checkpoint_uri"
           cache_status: {}
-        dynamic_job_spec_uri: "dynamic_job_spec_uri"
-        output_uri: "output_uri"
-        started_at: "2000-01-23T04:56:07.000+00:00"
         created_at: "2000-01-23T04:56:07.000+00:00"
         error:
           code: "code"
           kind: {}
           message: "message"
           error_uri: "error_uri"
+        duration: "duration"
+        updated_at: "2000-01-23T04:56:07.000+00:00"
+        dynamic_job_spec_uri: "dynamic_job_spec_uri"
+        span_uri: "span_uri"
+        output_uri: "output_uri"
+        started_at: "2000-01-23T04:56:07.000+00:00"
         output_data:
           literals: {}
         deck_uri: "deck_uri"
