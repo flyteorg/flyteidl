@@ -1875,6 +1875,18 @@ export namespace flyteidl {
             /** TaskNodeOverrides taskConfig. */
             public taskConfig?: (google.protobuf.IStruct|null);
 
+            /** TaskNodeOverrides cacheValue. */
+            public cacheValue?: "cache";
+
+            /** TaskNodeOverrides cacheSerializeValue. */
+            public cacheSerializeValue?: "cacheSerialize";
+
+            /** TaskNodeOverrides retriesValue. */
+            public retriesValue?: "retries";
+
+            /** TaskNodeOverrides interruptibleValue. */
+            public interruptibleValue?: "interruptible";
+
             /**
              * Creates a new TaskNodeOverrides instance using the specified properties.
              * @param [properties] Properties to set

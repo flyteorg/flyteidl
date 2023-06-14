@@ -138,7 +138,6 @@ class CoreTaskNodeOverrides(object):
     def cache_serialize(self):
         """Gets the cache_serialize of this CoreTaskNodeOverrides.  # noqa: E501
 
-        Boolean that indicates if identical (ie. same inputs) instances of this task should be executed in serial when caching is enabled.  # noqa: E501
 
         :return: The cache_serialize of this CoreTaskNodeOverrides.  # noqa: E501
         :rtype: bool
@@ -149,7 +148,6 @@ class CoreTaskNodeOverrides(object):
     def cache_serialize(self, cache_serialize):
         """Sets the cache_serialize of this CoreTaskNodeOverrides.
 
-        Boolean that indicates if identical (ie. same inputs) instances of this task should be executed in serial when caching is enabled.  # noqa: E501
 
         :param cache_serialize: The cache_serialize of this CoreTaskNodeOverrides.  # noqa: E501
         :type: bool

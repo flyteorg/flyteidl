@@ -255,20 +255,28 @@ message TaskNodeOverrides {
     Resources resources = 1;
 
     // Boolean that indicates if caching should be enabled
-    bool cache = 2;
+    oneof cache_value {
+        bool cache = 2;
+    }
     
     // Boolean that indicates if identical (ie. same inputs) instances of this task should be
     // executed in serial when caching is enabled.
-    bool cache_serialize = 3;
+    oneof cache_serialize_value {
+        bool cache_serialize = 3;
+    }
 
     // Cache version to use
     string cache_version = 4;
 
     //  Number of times to retry this task during a workflow execution
-    int32 retries = 5;
+    oneof retries_value {
+        int32 retries = 5;
+    }
 
     // Boolean that indicates that this task can be interrupted and/or scheduled on nodes with lower QoS guarantees
-    bool interruptible = 6;
+    oneof interruptible_value {
+        bool interruptible = 6;
+    }
 
     // Container image to use
     string container_image = 7;

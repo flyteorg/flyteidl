@@ -14,7 +14,6 @@ type CoreTaskNodeOverrides struct {
 	// A customizable interface to convey resources requested for a task container.
 	Resources *CoreResources `json:"resources,omitempty"`
 	Cache bool `json:"cache,omitempty"`
-	// Boolean that indicates if identical (ie. same inputs) instances of this task should be executed in serial when caching is enabled.
 	CacheSerialize bool `json:"cache_serialize,omitempty"`
 	CacheVersion string `json:"cache_version,omitempty"`
 	Retries int32 `json:"retries,omitempty"`

@@ -2276,22 +2276,9 @@ pub struct TaskNodeOverrides {
     /// A customizable interface to convey resources requested for a task container. 
     #[prost(message, optional, tag="1")]
     pub resources: ::core::option::Option<Resources>,
-    /// Boolean that indicates if caching should be enabled
-    #[prost(bool, tag="2")]
-    pub cache: bool,
-    /// Boolean that indicates if identical (ie. same inputs) instances of this task should be
-    /// executed in serial when caching is enabled.
-    #[prost(bool, tag="3")]
-    pub cache_serialize: bool,
     /// Cache version to use
     #[prost(string, tag="4")]
     pub cache_version: ::prost::alloc::string::String,
-    ///   Number of times to retry this task during a workflow execution
-    #[prost(int32, tag="5")]
-    pub retries: i32,
-    /// Boolean that indicates that this task can be interrupted and/or scheduled on nodes with lower QoS guarantees
-    #[prost(bool, tag="6")]
-    pub interruptible: bool,
     /// Container image to use
     #[prost(string, tag="7")]
     pub container_image: ::prost::alloc::string::String,
@@ -2301,6 +2288,51 @@ pub struct TaskNodeOverrides {
     /// This argument provides configuration for a specific task types.
     #[prost(message, optional, tag="10")]
     pub task_config: ::core::option::Option<::prost_types::Struct>,
+    /// Boolean that indicates if caching should be enabled
+    #[prost(oneof="task_node_overrides::CacheValue", tags="2")]
+    pub cache_value: ::core::option::Option<task_node_overrides::CacheValue>,
+    /// Boolean that indicates if identical (ie. same inputs) instances of this task should be
+    /// executed in serial when caching is enabled.
+    #[prost(oneof="task_node_overrides::CacheSerializeValue", tags="3")]
+    pub cache_serialize_value: ::core::option::Option<task_node_overrides::CacheSerializeValue>,
+    ///   Number of times to retry this task during a workflow execution
+    #[prost(oneof="task_node_overrides::RetriesValue", tags="5")]
+    pub retries_value: ::core::option::Option<task_node_overrides::RetriesValue>,
+    /// Boolean that indicates that this task can be interrupted and/or scheduled on nodes with lower QoS guarantees
+    #[prost(oneof="task_node_overrides::InterruptibleValue", tags="6")]
+    pub interruptible_value: ::core::option::Option<task_node_overrides::InterruptibleValue>,
+}
+/// Nested message and enum types in `TaskNodeOverrides`.
+pub mod task_node_overrides {
+    /// Boolean that indicates if caching should be enabled
+    #[allow(clippy::derive_partial_eq_without_eq)]
+#[derive(Clone, PartialEq, ::prost::Oneof)]
+    pub enum CacheValue {
+        #[prost(bool, tag="2")]
+        Cache(bool),
+    }
+    /// Boolean that indicates if identical (ie. same inputs) instances of this task should be
+    /// executed in serial when caching is enabled.
+    #[allow(clippy::derive_partial_eq_without_eq)]
+#[derive(Clone, PartialEq, ::prost::Oneof)]
+    pub enum CacheSerializeValue {
+        #[prost(bool, tag="3")]
+        CacheSerialize(bool),
+    }
+    ///   Number of times to retry this task during a workflow execution
+    #[allow(clippy::derive_partial_eq_without_eq)]
+#[derive(Clone, PartialEq, ::prost::Oneof)]
+    pub enum RetriesValue {
+        #[prost(int32, tag="5")]
+        Retries(i32),
+    }
+    /// Boolean that indicates that this task can be interrupted and/or scheduled on nodes with lower QoS guarantees
+    #[allow(clippy::derive_partial_eq_without_eq)]
+#[derive(Clone, PartialEq, ::prost::Oneof)]
+    pub enum InterruptibleValue {
+        #[prost(bool, tag="6")]
+        Interruptible(bool),
+    }
 }
 /// Adjacency list for the workflow. This is created as part of the compilation process. Every process after the compilation
 /// step uses this created ConnectionSet

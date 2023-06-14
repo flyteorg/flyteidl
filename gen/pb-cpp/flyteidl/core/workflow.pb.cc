@@ -127,6 +127,10 @@ class TaskNodeOverrides_EnvironmentEntry_DoNotUseDefaultTypeInternal {
 class TaskNodeOverridesDefaultTypeInternal {
  public:
   ::google::protobuf::internal::ExplicitlyConstructed<TaskNodeOverrides> _instance;
+  bool cache_;
+  bool cache_serialize_;
+  ::google::protobuf::int32 retries_;
+  bool interruptible_;
 } _TaskNodeOverrides_default_instance_;
 }  // namespace core
 }  // namespace flyteidl
@@ -556,17 +560,21 @@ const ::google::protobuf::uint32 TableStruct_flyteidl_2fcore_2fworkflow_2eproto:
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::flyteidl::core::TaskNodeOverrides, _internal_metadata_),
   ~0u,  // no _extensions_
-  ~0u,  // no _oneof_case_
+  PROTOBUF_FIELD_OFFSET(::flyteidl::core::TaskNodeOverrides, _oneof_case_[0]),
   ~0u,  // no _weak_field_map_
   PROTOBUF_FIELD_OFFSET(::flyteidl::core::TaskNodeOverrides, resources_),
-  PROTOBUF_FIELD_OFFSET(::flyteidl::core::TaskNodeOverrides, cache_),
-  PROTOBUF_FIELD_OFFSET(::flyteidl::core::TaskNodeOverrides, cache_serialize_),
+  offsetof(::flyteidl::core::TaskNodeOverridesDefaultTypeInternal, cache_),
+  offsetof(::flyteidl::core::TaskNodeOverridesDefaultTypeInternal, cache_serialize_),
   PROTOBUF_FIELD_OFFSET(::flyteidl::core::TaskNodeOverrides, cache_version_),
-  PROTOBUF_FIELD_OFFSET(::flyteidl::core::TaskNodeOverrides, retries_),
-  PROTOBUF_FIELD_OFFSET(::flyteidl::core::TaskNodeOverrides, interruptible_),
+  offsetof(::flyteidl::core::TaskNodeOverridesDefaultTypeInternal, retries_),
+  offsetof(::flyteidl::core::TaskNodeOverridesDefaultTypeInternal, interruptible_),
   PROTOBUF_FIELD_OFFSET(::flyteidl::core::TaskNodeOverrides, container_image_),
   PROTOBUF_FIELD_OFFSET(::flyteidl::core::TaskNodeOverrides, environment_),
   PROTOBUF_FIELD_OFFSET(::flyteidl::core::TaskNodeOverrides, task_config_),
+  PROTOBUF_FIELD_OFFSET(::flyteidl::core::TaskNodeOverrides, cache_value_),
+  PROTOBUF_FIELD_OFFSET(::flyteidl::core::TaskNodeOverrides, cache_serialize_value_),
+  PROTOBUF_FIELD_OFFSET(::flyteidl::core::TaskNodeOverrides, retries_value_),
+  PROTOBUF_FIELD_OFFSET(::flyteidl::core::TaskNodeOverrides, interruptible_value_),
 };
 static const ::google::protobuf::internal::MigrationSchema schemas[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
   { 0, -1, sizeof(::flyteidl::core::IfBlock)},
@@ -684,23 +692,25 @@ const char descriptor_table_protodef_flyteidl_2fcore_2fworkflow_2eproto[] =
   "\'\n\007outputs\030\005 \003(\0132\026.flyteidl.core.Binding"
   "\022)\n\014failure_node\030\006 \001(\0132\023.flyteidl.core.N"
   "ode\022B\n\021metadata_defaults\030\007 \001(\0132\'.flyteid"
-  "l.core.WorkflowMetadataDefaults\"\352\002\n\021Task"
+  "l.core.WorkflowMetadataDefaults\"\302\003\n\021Task"
   "NodeOverrides\022+\n\tresources\030\001 \001(\0132\030.flyte"
-  "idl.core.Resources\022\r\n\005cache\030\002 \001(\010\022\027\n\017cac"
-  "he_serialize\030\003 \001(\010\022\025\n\rcache_version\030\004 \001("
-  "\t\022\017\n\007retries\030\005 \001(\005\022\025\n\rinterruptible\030\006 \001("
-  "\010\022\027\n\017container_image\030\007 \001(\t\022F\n\013environmen"
-  "t\030\t \003(\01321.flyteidl.core.TaskNodeOverride"
-  "s.EnvironmentEntry\022,\n\013task_config\030\n \001(\0132"
-  "\027.google.protobuf.Struct\0322\n\020EnvironmentE"
-  "ntry\022\013\n\003key\030\001 \001(\t\022\r\n\005value\030\002 \001(\t:\0028\001B6Z4"
-  "github.com/flyteorg/flyteidl/gen/pb-go/f"
-  "lyteidl/coreb\006proto3"
+  "idl.core.Resources\022\017\n\005cache\030\002 \001(\010H\000\022\031\n\017c"
+  "ache_serialize\030\003 \001(\010H\001\022\025\n\rcache_version\030"
+  "\004 \001(\t\022\021\n\007retries\030\005 \001(\005H\002\022\027\n\rinterruptibl"
+  "e\030\006 \001(\010H\003\022\027\n\017container_image\030\007 \001(\t\022F\n\013en"
+  "vironment\030\t \003(\01321.flyteidl.core.TaskNode"
+  "Overrides.EnvironmentEntry\022,\n\013task_confi"
+  "g\030\n \001(\0132\027.google.protobuf.Struct\0322\n\020Envi"
+  "ronmentEntry\022\013\n\003key\030\001 \001(\t\022\r\n\005value\030\002 \001(\t"
+  ":\0028\001B\r\n\013cache_valueB\027\n\025cache_serialize_v"
+  "alueB\017\n\rretries_valueB\025\n\023interruptible_v"
+  "alueB6Z4github.com/flyteorg/flyteidl/gen"
+  "/pb-go/flyteidl/coreb\006proto3"
   ;
 ::google::protobuf::internal::DescriptorTable descriptor_table_flyteidl_2fcore_2fworkflow_2eproto = {
   false, InitDefaults_flyteidl_2fcore_2fworkflow_2eproto, 
   descriptor_table_protodef_flyteidl_2fcore_2fworkflow_2eproto,
-  "flyteidl/core/workflow.proto", &assign_descriptors_table_flyteidl_2fcore_2fworkflow_2eproto, 3140,
+  "flyteidl/core/workflow.proto", &assign_descriptors_table_flyteidl_2fcore_2fworkflow_2eproto, 3228,
 };
 
 void AddDescriptors_flyteidl_2fcore_2fworkflow_2eproto() {
@@ -7698,6 +7708,10 @@ bool TaskNodeOverrides_EnvironmentEntry_DoNotUse::_ParseMap(const char* begin, c
 void TaskNodeOverrides::InitAsDefaultInstance() {
   ::flyteidl::core::_TaskNodeOverrides_default_instance_._instance.get_mutable()->resources_ = const_cast< ::flyteidl::core::Resources*>(
       ::flyteidl::core::Resources::internal_default_instance());
+  ::flyteidl::core::_TaskNodeOverrides_default_instance_.cache_ = false;
+  ::flyteidl::core::_TaskNodeOverrides_default_instance_.cache_serialize_ = false;
+  ::flyteidl::core::_TaskNodeOverrides_default_instance_.retries_ = 0;
+  ::flyteidl::core::_TaskNodeOverrides_default_instance_.interruptible_ = false;
   ::flyteidl::core::_TaskNodeOverrides_default_instance_._instance.get_mutable()->task_config_ = const_cast< ::google::protobuf::Struct*>(
       ::google::protobuf::Struct::internal_default_instance());
 }
@@ -7767,9 +7781,46 @@ TaskNodeOverrides::TaskNodeOverrides(const TaskNodeOverrides& from)
   } else {
     task_config_ = nullptr;
   }
-  ::memcpy(&cache_, &from.cache_,
-    static_cast<size_t>(reinterpret_cast<char*>(&retries_) -
-    reinterpret_cast<char*>(&cache_)) + sizeof(retries_));
+  clear_has_cache_value();
+  switch (from.cache_value_case()) {
+    case kCache: {
+      set_cache(from.cache());
+      break;
+    }
+    case CACHE_VALUE_NOT_SET: {
+      break;
+    }
+  }
+  clear_has_cache_serialize_value();
+  switch (from.cache_serialize_value_case()) {
+    case kCacheSerialize: {
+      set_cache_serialize(from.cache_serialize());
+      break;
+    }
+    case CACHE_SERIALIZE_VALUE_NOT_SET: {
+      break;
+    }
+  }
+  clear_has_retries_value();
+  switch (from.retries_value_case()) {
+    case kRetries: {
+      set_retries(from.retries());
+      break;
+    }
+    case RETRIES_VALUE_NOT_SET: {
+      break;
+    }
+  }
+  clear_has_interruptible_value();
+  switch (from.interruptible_value_case()) {
+    case kInterruptible: {
+      set_interruptible(from.interruptible());
+      break;
+    }
+    case INTERRUPTIBLE_VALUE_NOT_SET: {
+      break;
+    }
+  }
   // @@protoc_insertion_point(copy_constructor:flyteidl.core.TaskNodeOverrides)
 }
 
@@ -7779,8 +7830,12 @@ void TaskNodeOverrides::SharedCtor() {
   cache_version_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
   container_image_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
   ::memset(&resources_, 0, static_cast<size_t>(
-      reinterpret_cast<char*>(&retries_) -
-      reinterpret_cast<char*>(&resources_)) + sizeof(retries_));
+      reinterpret_cast<char*>(&task_config_) -
+      reinterpret_cast<char*>(&resources_)) + sizeof(task_config_));
+  clear_has_cache_value();
+  clear_has_cache_serialize_value();
+  clear_has_retries_value();
+  clear_has_interruptible_value();
 }
 
 TaskNodeOverrides::~TaskNodeOverrides() {
@@ -7793,6 +7848,18 @@ void TaskNodeOverrides::SharedDtor() {
   container_image_.DestroyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
   if (this != internal_default_instance()) delete resources_;
   if (this != internal_default_instance()) delete task_config_;
+  if (has_cache_value()) {
+    clear_cache_value();
+  }
+  if (has_cache_serialize_value()) {
+    clear_cache_serialize_value();
+  }
+  if (has_retries_value()) {
+    clear_retries_value();
+  }
+  if (has_interruptible_value()) {
+    clear_interruptible_value();
+  }
 }
 
 void TaskNodeOverrides::SetCachedSize(int size) const {
@@ -7801,6 +7868,63 @@ void TaskNodeOverrides::SetCachedSize(int size) const {
 const TaskNodeOverrides& TaskNodeOverrides::default_instance() {
   ::google::protobuf::internal::InitSCC(&::scc_info_TaskNodeOverrides_flyteidl_2fcore_2fworkflow_2eproto.base);
   return *internal_default_instance();
+}
+
+
+void TaskNodeOverrides::clear_cache_value() {
+// @@protoc_insertion_point(one_of_clear_start:flyteidl.core.TaskNodeOverrides)
+  switch (cache_value_case()) {
+    case kCache: {
+      // No need to clear
+      break;
+    }
+    case CACHE_VALUE_NOT_SET: {
+      break;
+    }
+  }
+  _oneof_case_[0] = CACHE_VALUE_NOT_SET;
+}
+
+void TaskNodeOverrides::clear_cache_serialize_value() {
+// @@protoc_insertion_point(one_of_clear_start:flyteidl.core.TaskNodeOverrides)
+  switch (cache_serialize_value_case()) {
+    case kCacheSerialize: {
+      // No need to clear
+      break;
+    }
+    case CACHE_SERIALIZE_VALUE_NOT_SET: {
+      break;
+    }
+  }
+  _oneof_case_[1] = CACHE_SERIALIZE_VALUE_NOT_SET;
+}
+
+void TaskNodeOverrides::clear_retries_value() {
+// @@protoc_insertion_point(one_of_clear_start:flyteidl.core.TaskNodeOverrides)
+  switch (retries_value_case()) {
+    case kRetries: {
+      // No need to clear
+      break;
+    }
+    case RETRIES_VALUE_NOT_SET: {
+      break;
+    }
+  }
+  _oneof_case_[2] = RETRIES_VALUE_NOT_SET;
+}
+
+void TaskNodeOverrides::clear_interruptible_value() {
+// @@protoc_insertion_point(one_of_clear_start:flyteidl.core.TaskNodeOverrides)
+  switch (interruptible_value_case()) {
+    case kInterruptible: {
+      // No need to clear
+      break;
+    }
+    case INTERRUPTIBLE_VALUE_NOT_SET: {
+      break;
+    }
+  }
+  _oneof_case_[3] = INTERRUPTIBLE_VALUE_NOT_SET;
 }
 
 
@@ -7821,9 +7945,10 @@ void TaskNodeOverrides::Clear() {
     delete task_config_;
   }
   task_config_ = nullptr;
-  ::memset(&cache_, 0, static_cast<size_t>(
-      reinterpret_cast<char*>(&retries_) -
-      reinterpret_cast<char*>(&cache_)) + sizeof(retries_));
+  clear_cache_value();
+  clear_cache_serialize_value();
+  clear_retries_value();
+  clear_interruptible_value();
   _internal_metadata_.Clear();
 }
 
@@ -7993,10 +8118,11 @@ bool TaskNodeOverrides::MergePartialFromCodedStream(
       // bool cache = 2;
       case 2: {
         if (static_cast< ::google::protobuf::uint8>(tag) == (16 & 0xFF)) {
-
+          clear_cache_value();
           DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
                    bool, ::google::protobuf::internal::WireFormatLite::TYPE_BOOL>(
-                 input, &cache_)));
+                 input, &cache_value_.cache_)));
+          set_has_cache();
         } else {
           goto handle_unusual;
         }
@@ -8006,10 +8132,11 @@ bool TaskNodeOverrides::MergePartialFromCodedStream(
       // bool cache_serialize = 3;
       case 3: {
         if (static_cast< ::google::protobuf::uint8>(tag) == (24 & 0xFF)) {
-
+          clear_cache_serialize_value();
           DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
                    bool, ::google::protobuf::internal::WireFormatLite::TYPE_BOOL>(
-                 input, &cache_serialize_)));
+                 input, &cache_serialize_value_.cache_serialize_)));
+          set_has_cache_serialize();
         } else {
           goto handle_unusual;
         }
@@ -8034,10 +8161,11 @@ bool TaskNodeOverrides::MergePartialFromCodedStream(
       // int32 retries = 5;
       case 5: {
         if (static_cast< ::google::protobuf::uint8>(tag) == (40 & 0xFF)) {
-
+          clear_retries_value();
           DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
                    ::google::protobuf::int32, ::google::protobuf::internal::WireFormatLite::TYPE_INT32>(
-                 input, &retries_)));
+                 input, &retries_value_.retries_)));
+          set_has_retries();
         } else {
           goto handle_unusual;
         }
@@ -8047,10 +8175,11 @@ bool TaskNodeOverrides::MergePartialFromCodedStream(
       // bool interruptible = 6;
       case 6: {
         if (static_cast< ::google::protobuf::uint8>(tag) == (48 & 0xFF)) {
-
+          clear_interruptible_value();
           DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
                    bool, ::google::protobuf::internal::WireFormatLite::TYPE_BOOL>(
-                 input, &interruptible_)));
+                 input, &interruptible_value_.interruptible_)));
+          set_has_interruptible();
         } else {
           goto handle_unusual;
         }
@@ -8143,12 +8272,12 @@ void TaskNodeOverrides::SerializeWithCachedSizes(
   }
 
   // bool cache = 2;
-  if (this->cache() != 0) {
+  if (has_cache()) {
     ::google::protobuf::internal::WireFormatLite::WriteBool(2, this->cache(), output);
   }
 
   // bool cache_serialize = 3;
-  if (this->cache_serialize() != 0) {
+  if (has_cache_serialize()) {
     ::google::protobuf::internal::WireFormatLite::WriteBool(3, this->cache_serialize(), output);
   }
 
@@ -8163,12 +8292,12 @@ void TaskNodeOverrides::SerializeWithCachedSizes(
   }
 
   // int32 retries = 5;
-  if (this->retries() != 0) {
+  if (has_retries()) {
     ::google::protobuf::internal::WireFormatLite::WriteInt32(5, this->retries(), output);
   }
 
   // bool interruptible = 6;
-  if (this->interruptible() != 0) {
+  if (has_interruptible()) {
     ::google::protobuf::internal::WireFormatLite::WriteBool(6, this->interruptible(), output);
   }
 
@@ -8258,12 +8387,12 @@ void TaskNodeOverrides::SerializeWithCachedSizes(
   }
 
   // bool cache = 2;
-  if (this->cache() != 0) {
+  if (has_cache()) {
     target = ::google::protobuf::internal::WireFormatLite::WriteBoolToArray(2, this->cache(), target);
   }
 
   // bool cache_serialize = 3;
-  if (this->cache_serialize() != 0) {
+  if (has_cache_serialize()) {
     target = ::google::protobuf::internal::WireFormatLite::WriteBoolToArray(3, this->cache_serialize(), target);
   }
 
@@ -8279,12 +8408,12 @@ void TaskNodeOverrides::SerializeWithCachedSizes(
   }
 
   // int32 retries = 5;
-  if (this->retries() != 0) {
+  if (has_retries()) {
     target = ::google::protobuf::internal::WireFormatLite::WriteInt32ToArray(5, this->retries(), target);
   }
 
   // bool interruptible = 6;
-  if (this->interruptible() != 0) {
+  if (has_interruptible()) {
     target = ::google::protobuf::internal::WireFormatLite::WriteBoolToArray(6, this->interruptible(), target);
   }
 
@@ -8418,28 +8547,48 @@ size_t TaskNodeOverrides::ByteSizeLong() const {
         *task_config_);
   }
 
-  // bool cache = 2;
-  if (this->cache() != 0) {
-    total_size += 1 + 1;
+  switch (cache_value_case()) {
+    // bool cache = 2;
+    case kCache: {
+      total_size += 1 + 1;
+      break;
+    }
+    case CACHE_VALUE_NOT_SET: {
+      break;
+    }
   }
-
-  // bool cache_serialize = 3;
-  if (this->cache_serialize() != 0) {
-    total_size += 1 + 1;
+  switch (cache_serialize_value_case()) {
+    // bool cache_serialize = 3;
+    case kCacheSerialize: {
+      total_size += 1 + 1;
+      break;
+    }
+    case CACHE_SERIALIZE_VALUE_NOT_SET: {
+      break;
+    }
   }
-
-  // bool interruptible = 6;
-  if (this->interruptible() != 0) {
-    total_size += 1 + 1;
+  switch (retries_value_case()) {
+    // int32 retries = 5;
+    case kRetries: {
+      total_size += 1 +
+        ::google::protobuf::internal::WireFormatLite::Int32Size(
+          this->retries());
+      break;
+    }
+    case RETRIES_VALUE_NOT_SET: {
+      break;
+    }
   }
-
-  // int32 retries = 5;
-  if (this->retries() != 0) {
-    total_size += 1 +
-      ::google::protobuf::internal::WireFormatLite::Int32Size(
-        this->retries());
+  switch (interruptible_value_case()) {
+    // bool interruptible = 6;
+    case kInterruptible: {
+      total_size += 1 + 1;
+      break;
+    }
+    case INTERRUPTIBLE_VALUE_NOT_SET: {
+      break;
+    }
   }
-
   int cached_size = ::google::protobuf::internal::ToCachedSize(total_size);
   SetCachedSize(cached_size);
   return total_size;
@@ -8482,17 +8631,41 @@ void TaskNodeOverrides::MergeFrom(const TaskNodeOverrides& from) {
   if (from.has_task_config()) {
     mutable_task_config()->::google::protobuf::Struct::MergeFrom(from.task_config());
   }
-  if (from.cache() != 0) {
-    set_cache(from.cache());
+  switch (from.cache_value_case()) {
+    case kCache: {
+      set_cache(from.cache());
+      break;
+    }
+    case CACHE_VALUE_NOT_SET: {
+      break;
+    }
   }
-  if (from.cache_serialize() != 0) {
-    set_cache_serialize(from.cache_serialize());
+  switch (from.cache_serialize_value_case()) {
+    case kCacheSerialize: {
+      set_cache_serialize(from.cache_serialize());
+      break;
+    }
+    case CACHE_SERIALIZE_VALUE_NOT_SET: {
+      break;
+    }
   }
-  if (from.interruptible() != 0) {
-    set_interruptible(from.interruptible());
+  switch (from.retries_value_case()) {
+    case kRetries: {
+      set_retries(from.retries());
+      break;
+    }
+    case RETRIES_VALUE_NOT_SET: {
+      break;
+    }
   }
-  if (from.retries() != 0) {
-    set_retries(from.retries());
+  switch (from.interruptible_value_case()) {
+    case kInterruptible: {
+      set_interruptible(from.interruptible());
+      break;
+    }
+    case INTERRUPTIBLE_VALUE_NOT_SET: {
+      break;
+    }
   }
 }
 
@@ -8528,10 +8701,14 @@ void TaskNodeOverrides::InternalSwap(TaskNodeOverrides* other) {
     GetArenaNoVirtual());
   swap(resources_, other->resources_);
   swap(task_config_, other->task_config_);
-  swap(cache_, other->cache_);
-  swap(cache_serialize_, other->cache_serialize_);
-  swap(interruptible_, other->interruptible_);
-  swap(retries_, other->retries_);
+  swap(cache_value_, other->cache_value_);
+  swap(cache_serialize_value_, other->cache_serialize_value_);
+  swap(retries_value_, other->retries_value_);
+  swap(interruptible_value_, other->interruptible_value_);
+  swap(_oneof_case_[0], other->_oneof_case_[0]);
+  swap(_oneof_case_[1], other->_oneof_case_[1]);
+  swap(_oneof_case_[2], other->_oneof_case_[2]);
+  swap(_oneof_case_[3], other->_oneof_case_[3]);
 }
 
 ::google::protobuf::Metadata TaskNodeOverrides::GetMetadata() const {

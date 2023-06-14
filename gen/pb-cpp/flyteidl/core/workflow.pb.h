@@ -2487,6 +2487,26 @@ class TaskNodeOverrides final :
   }
   static const TaskNodeOverrides& default_instance();
 
+  enum CacheValueCase {
+    kCache = 2,
+    CACHE_VALUE_NOT_SET = 0,
+  };
+
+  enum CacheSerializeValueCase {
+    kCacheSerialize = 3,
+    CACHE_SERIALIZE_VALUE_NOT_SET = 0,
+  };
+
+  enum RetriesValueCase {
+    kRetries = 5,
+    RETRIES_VALUE_NOT_SET = 0,
+  };
+
+  enum InterruptibleValueCase {
+    kInterruptible = 6,
+    INTERRUPTIBLE_VALUE_NOT_SET = 0,
+  };
+
   static void InitAsDefaultInstance();  // FOR INTERNAL USE ONLY
   static inline const TaskNodeOverrides* internal_default_instance() {
     return reinterpret_cast<const TaskNodeOverrides*>(
@@ -2607,32 +2627,68 @@ class TaskNodeOverrides final :
   void set_allocated_task_config(::google::protobuf::Struct* task_config);
 
   // bool cache = 2;
+  private:
+  bool has_cache() const;
+  public:
   void clear_cache();
   static const int kCacheFieldNumber = 2;
   bool cache() const;
   void set_cache(bool value);
 
   // bool cache_serialize = 3;
+  private:
+  bool has_cache_serialize() const;
+  public:
   void clear_cache_serialize();
   static const int kCacheSerializeFieldNumber = 3;
   bool cache_serialize() const;
   void set_cache_serialize(bool value);
 
-  // bool interruptible = 6;
-  void clear_interruptible();
-  static const int kInterruptibleFieldNumber = 6;
-  bool interruptible() const;
-  void set_interruptible(bool value);
-
   // int32 retries = 5;
+  private:
+  bool has_retries() const;
+  public:
   void clear_retries();
   static const int kRetriesFieldNumber = 5;
   ::google::protobuf::int32 retries() const;
   void set_retries(::google::protobuf::int32 value);
 
+  // bool interruptible = 6;
+  private:
+  bool has_interruptible() const;
+  public:
+  void clear_interruptible();
+  static const int kInterruptibleFieldNumber = 6;
+  bool interruptible() const;
+  void set_interruptible(bool value);
+
+  void clear_cache_value();
+  CacheValueCase cache_value_case() const;
+  void clear_cache_serialize_value();
+  CacheSerializeValueCase cache_serialize_value_case() const;
+  void clear_retries_value();
+  RetriesValueCase retries_value_case() const;
+  void clear_interruptible_value();
+  InterruptibleValueCase interruptible_value_case() const;
   // @@protoc_insertion_point(class_scope:flyteidl.core.TaskNodeOverrides)
  private:
   class HasBitSetters;
+  void set_has_cache();
+  void set_has_cache_serialize();
+  void set_has_retries();
+  void set_has_interruptible();
+
+  inline bool has_cache_value() const;
+  inline void clear_has_cache_value();
+
+  inline bool has_cache_serialize_value() const;
+  inline void clear_has_cache_serialize_value();
+
+  inline bool has_retries_value() const;
+  inline void clear_has_retries_value();
+
+  inline bool has_interruptible_value() const;
+  inline void clear_has_interruptible_value();
 
   ::google::protobuf::internal::InternalMetadataWithArena _internal_metadata_;
   ::google::protobuf::internal::MapField<
@@ -2645,11 +2701,25 @@ class TaskNodeOverrides final :
   ::google::protobuf::internal::ArenaStringPtr container_image_;
   ::flyteidl::core::Resources* resources_;
   ::google::protobuf::Struct* task_config_;
-  bool cache_;
-  bool cache_serialize_;
-  bool interruptible_;
-  ::google::protobuf::int32 retries_;
+  union CacheValueUnion {
+    CacheValueUnion() {}
+    bool cache_;
+  } cache_value_;
+  union CacheSerializeValueUnion {
+    CacheSerializeValueUnion() {}
+    bool cache_serialize_;
+  } cache_serialize_value_;
+  union RetriesValueUnion {
+    RetriesValueUnion() {}
+    ::google::protobuf::int32 retries_;
+  } retries_value_;
+  union InterruptibleValueUnion {
+    InterruptibleValueUnion() {}
+    bool interruptible_;
+  } interruptible_value_;
   mutable ::google::protobuf::internal::CachedSize _cached_size_;
+  ::google::protobuf::uint32 _oneof_case_[4];
+
   friend struct ::TableStruct_flyteidl_2fcore_2fworkflow_2eproto;
 };
 // ===================================================================
@@ -4777,30 +4847,60 @@ inline void TaskNodeOverrides::set_allocated_resources(::flyteidl::core::Resourc
 }
 
 // bool cache = 2;
+inline bool TaskNodeOverrides::has_cache() const {
+  return cache_value_case() == kCache;
+}
+inline void TaskNodeOverrides::set_has_cache() {
+  _oneof_case_[0] = kCache;
+}
 inline void TaskNodeOverrides::clear_cache() {
-  cache_ = false;
+  if (has_cache()) {
+    cache_value_.cache_ = false;
+    clear_has_cache_value();
+  }
 }
 inline bool TaskNodeOverrides::cache() const {
   // @@protoc_insertion_point(field_get:flyteidl.core.TaskNodeOverrides.cache)
-  return cache_;
+  if (has_cache()) {
+    return cache_value_.cache_;
+  }
+  return false;
 }
 inline void TaskNodeOverrides::set_cache(bool value) {
-  
-  cache_ = value;
+  if (!has_cache()) {
+    clear_cache_value();
+    set_has_cache();
+  }
+  cache_value_.cache_ = value;
   // @@protoc_insertion_point(field_set:flyteidl.core.TaskNodeOverrides.cache)
 }
 
 // bool cache_serialize = 3;
+inline bool TaskNodeOverrides::has_cache_serialize() const {
+  return cache_serialize_value_case() == kCacheSerialize;
+}
+inline void TaskNodeOverrides::set_has_cache_serialize() {
+  _oneof_case_[1] = kCacheSerialize;
+}
 inline void TaskNodeOverrides::clear_cache_serialize() {
-  cache_serialize_ = false;
+  if (has_cache_serialize()) {
+    cache_serialize_value_.cache_serialize_ = false;
+    clear_has_cache_serialize_value();
+  }
 }
 inline bool TaskNodeOverrides::cache_serialize() const {
   // @@protoc_insertion_point(field_get:flyteidl.core.TaskNodeOverrides.cache_serialize)
-  return cache_serialize_;
+  if (has_cache_serialize()) {
+    return cache_serialize_value_.cache_serialize_;
+  }
+  return false;
 }
 inline void TaskNodeOverrides::set_cache_serialize(bool value) {
-  
-  cache_serialize_ = value;
+  if (!has_cache_serialize()) {
+    clear_cache_serialize_value();
+    set_has_cache_serialize();
+  }
+  cache_serialize_value_.cache_serialize_ = value;
   // @@protoc_insertion_point(field_set:flyteidl.core.TaskNodeOverrides.cache_serialize)
 }
 
@@ -4858,30 +4958,60 @@ inline void TaskNodeOverrides::set_allocated_cache_version(::std::string* cache_
 }
 
 // int32 retries = 5;
+inline bool TaskNodeOverrides::has_retries() const {
+  return retries_value_case() == kRetries;
+}
+inline void TaskNodeOverrides::set_has_retries() {
+  _oneof_case_[2] = kRetries;
+}
 inline void TaskNodeOverrides::clear_retries() {
-  retries_ = 0;
+  if (has_retries()) {
+    retries_value_.retries_ = 0;
+    clear_has_retries_value();
+  }
 }
 inline ::google::protobuf::int32 TaskNodeOverrides::retries() const {
   // @@protoc_insertion_point(field_get:flyteidl.core.TaskNodeOverrides.retries)
-  return retries_;
+  if (has_retries()) {
+    return retries_value_.retries_;
+  }
+  return 0;
 }
 inline void TaskNodeOverrides::set_retries(::google::protobuf::int32 value) {
-  
-  retries_ = value;
+  if (!has_retries()) {
+    clear_retries_value();
+    set_has_retries();
+  }
+  retries_value_.retries_ = value;
   // @@protoc_insertion_point(field_set:flyteidl.core.TaskNodeOverrides.retries)
 }
 
 // bool interruptible = 6;
+inline bool TaskNodeOverrides::has_interruptible() const {
+  return interruptible_value_case() == kInterruptible;
+}
+inline void TaskNodeOverrides::set_has_interruptible() {
+  _oneof_case_[3] = kInterruptible;
+}
 inline void TaskNodeOverrides::clear_interruptible() {
-  interruptible_ = false;
+  if (has_interruptible()) {
+    interruptible_value_.interruptible_ = false;
+    clear_has_interruptible_value();
+  }
 }
 inline bool TaskNodeOverrides::interruptible() const {
   // @@protoc_insertion_point(field_get:flyteidl.core.TaskNodeOverrides.interruptible)
-  return interruptible_;
+  if (has_interruptible()) {
+    return interruptible_value_.interruptible_;
+  }
+  return false;
 }
 inline void TaskNodeOverrides::set_interruptible(bool value) {
-  
-  interruptible_ = value;
+  if (!has_interruptible()) {
+    clear_interruptible_value();
+    set_has_interruptible();
+  }
+  interruptible_value_.interruptible_ = value;
   // @@protoc_insertion_point(field_set:flyteidl.core.TaskNodeOverrides.interruptible)
 }
 
@@ -5002,6 +5132,42 @@ inline void TaskNodeOverrides::set_allocated_task_config(::google::protobuf::Str
   // @@protoc_insertion_point(field_set_allocated:flyteidl.core.TaskNodeOverrides.task_config)
 }
 
+inline bool TaskNodeOverrides::has_cache_value() const {
+  return cache_value_case() != CACHE_VALUE_NOT_SET;
+}
+inline void TaskNodeOverrides::clear_has_cache_value() {
+  _oneof_case_[0] = CACHE_VALUE_NOT_SET;
+}
+inline bool TaskNodeOverrides::has_cache_serialize_value() const {
+  return cache_serialize_value_case() != CACHE_SERIALIZE_VALUE_NOT_SET;
+}
+inline void TaskNodeOverrides::clear_has_cache_serialize_value() {
+  _oneof_case_[1] = CACHE_SERIALIZE_VALUE_NOT_SET;
+}
+inline bool TaskNodeOverrides::has_retries_value() const {
+  return retries_value_case() != RETRIES_VALUE_NOT_SET;
+}
+inline void TaskNodeOverrides::clear_has_retries_value() {
+  _oneof_case_[2] = RETRIES_VALUE_NOT_SET;
+}
+inline bool TaskNodeOverrides::has_interruptible_value() const {
+  return interruptible_value_case() != INTERRUPTIBLE_VALUE_NOT_SET;
+}
+inline void TaskNodeOverrides::clear_has_interruptible_value() {
+  _oneof_case_[3] = INTERRUPTIBLE_VALUE_NOT_SET;
+}
+inline TaskNodeOverrides::CacheValueCase TaskNodeOverrides::cache_value_case() const {
+  return TaskNodeOverrides::CacheValueCase(_oneof_case_[0]);
+}
+inline TaskNodeOverrides::CacheSerializeValueCase TaskNodeOverrides::cache_serialize_value_case() const {
+  return TaskNodeOverrides::CacheSerializeValueCase(_oneof_case_[1]);
+}
+inline TaskNodeOverrides::RetriesValueCase TaskNodeOverrides::retries_value_case() const {
+  return TaskNodeOverrides::RetriesValueCase(_oneof_case_[2]);
+}
+inline TaskNodeOverrides::InterruptibleValueCase TaskNodeOverrides::interruptible_value_case() const {
+  return TaskNodeOverrides::InterruptibleValueCase(_oneof_case_[3]);
+}
 #ifdef __GNUC__
   #pragma GCC diagnostic pop
 #endif  // __GNUC__

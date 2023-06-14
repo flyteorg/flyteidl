@@ -6972,13 +6972,11 @@
         },
         "cache": {
           "type": "boolean",
-          "format": "boolean",
-          "title": "Boolean that indicates if caching should be enabled"
+          "format": "boolean"
         },
         "cache_serialize": {
           "type": "boolean",
-          "format": "boolean",
-          "description": "Boolean that indicates if identical (ie. same inputs) instances of this task should be\nexecuted in serial when caching is enabled."
+          "format": "boolean"
         },
         "cache_version": {
           "type": "string",
@@ -6986,13 +6984,11 @@
         },
         "retries": {
           "type": "integer",
-          "format": "int32",
-          "title": "Number of times to retry this task during a workflow execution"
+          "format": "int32"
         },
         "interruptible": {
           "type": "boolean",
-          "format": "boolean",
-          "title": "Boolean that indicates that this task can be interrupted and/or scheduled on nodes with lower QoS guarantees"
+          "format": "boolean"
         },
         "container_image": {
           "type": "string",

@@ -4477,6 +4477,53 @@
                  */
                 TaskNodeOverrides.prototype.taskConfig = null;
     
+                // OneOf field names bound to virtual getters and setters
+                var $oneOfFields;
+    
+                /**
+                 * TaskNodeOverrides cacheValue.
+                 * @member {"cache"|undefined} cacheValue
+                 * @memberof flyteidl.core.TaskNodeOverrides
+                 * @instance
+                 */
+                Object.defineProperty(TaskNodeOverrides.prototype, "cacheValue", {
+                    get: $util.oneOfGetter($oneOfFields = ["cache"]),
+                    set: $util.oneOfSetter($oneOfFields)
+                });
+    
+                /**
+                 * TaskNodeOverrides cacheSerializeValue.
+                 * @member {"cacheSerialize"|undefined} cacheSerializeValue
+                 * @memberof flyteidl.core.TaskNodeOverrides
+                 * @instance
+                 */
+                Object.defineProperty(TaskNodeOverrides.prototype, "cacheSerializeValue", {
+                    get: $util.oneOfGetter($oneOfFields = ["cacheSerialize"]),
+                    set: $util.oneOfSetter($oneOfFields)
+                });
+    
+                /**
+                 * TaskNodeOverrides retriesValue.
+                 * @member {"retries"|undefined} retriesValue
+                 * @memberof flyteidl.core.TaskNodeOverrides
+                 * @instance
+                 */
+                Object.defineProperty(TaskNodeOverrides.prototype, "retriesValue", {
+                    get: $util.oneOfGetter($oneOfFields = ["retries"]),
+                    set: $util.oneOfSetter($oneOfFields)
+                });
+    
+                /**
+                 * TaskNodeOverrides interruptibleValue.
+                 * @member {"interruptible"|undefined} interruptibleValue
+                 * @memberof flyteidl.core.TaskNodeOverrides
+                 * @instance
+                 */
+                Object.defineProperty(TaskNodeOverrides.prototype, "interruptibleValue", {
+                    get: $util.oneOfGetter($oneOfFields = ["interruptible"]),
+                    set: $util.oneOfSetter($oneOfFields)
+                });
+    
                 /**
                  * Creates a new TaskNodeOverrides instance using the specified properties.
                  * @function create
@@ -4592,26 +4639,35 @@
                 TaskNodeOverrides.verify = function verify(message) {
                     if (typeof message !== "object" || message === null)
                         return "object expected";
+                    var properties = {};
                     if (message.resources != null && message.hasOwnProperty("resources")) {
                         var error = $root.flyteidl.core.Resources.verify(message.resources);
                         if (error)
                             return "resources." + error;
                     }
-                    if (message.cache != null && message.hasOwnProperty("cache"))
+                    if (message.cache != null && message.hasOwnProperty("cache")) {
+                        properties.cacheValue = 1;
                         if (typeof message.cache !== "boolean")
                             return "cache: boolean expected";
-                    if (message.cacheSerialize != null && message.hasOwnProperty("cacheSerialize"))
+                    }
+                    if (message.cacheSerialize != null && message.hasOwnProperty("cacheSerialize")) {
+                        properties.cacheSerializeValue = 1;
                         if (typeof message.cacheSerialize !== "boolean")
                             return "cacheSerialize: boolean expected";
+                    }
                     if (message.cacheVersion != null && message.hasOwnProperty("cacheVersion"))
                         if (!$util.isString(message.cacheVersion))
                             return "cacheVersion: string expected";
-                    if (message.retries != null && message.hasOwnProperty("retries"))
+                    if (message.retries != null && message.hasOwnProperty("retries")) {
+                        properties.retriesValue = 1;
                         if (!$util.isInteger(message.retries))
                             return "retries: integer expected";
-                    if (message.interruptible != null && message.hasOwnProperty("interruptible"))
+                    }
+                    if (message.interruptible != null && message.hasOwnProperty("interruptible")) {
+                        properties.interruptibleValue = 1;
                         if (typeof message.interruptible !== "boolean")
                             return "interruptible: boolean expected";
+                    }
                     if (message.containerImage != null && message.hasOwnProperty("containerImage"))
                         if (!$util.isString(message.containerImage))
                             return "containerImage: string expected";

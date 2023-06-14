@@ -1453,15 +1453,7 @@ func (m *TaskNodeOverrides) Validate() error {
 		}
 	}
 
-	// no validation rules for Cache
-
-	// no validation rules for CacheSerialize
-
 	// no validation rules for CacheVersion
-
-	// no validation rules for Retries
-
-	// no validation rules for Interruptible
 
 	// no validation rules for ContainerImage
 
@@ -1475,6 +1467,34 @@ func (m *TaskNodeOverrides) Validate() error {
 				cause:  err,
 			}
 		}
+	}
+
+	switch m.CacheValue.(type) {
+
+	case *TaskNodeOverrides_Cache:
+		// no validation rules for Cache
+
+	}
+
+	switch m.CacheSerializeValue.(type) {
+
+	case *TaskNodeOverrides_CacheSerialize:
+		// no validation rules for CacheSerialize
+
+	}
+
+	switch m.RetriesValue.(type) {
+
+	case *TaskNodeOverrides_Retries:
+		// no validation rules for Retries
+
+	}
+
+	switch m.InterruptibleValue.(type) {
+
+	case *TaskNodeOverrides_Interruptible:
+		// no validation rules for Interruptible
+
 	}
 
 	return nil

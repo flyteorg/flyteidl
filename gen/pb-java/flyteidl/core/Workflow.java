@@ -19213,20 +19213,11 @@ public final class Workflow {
     flyteidl.core.Tasks.ResourcesOrBuilder getResourcesOrBuilder();
 
     /**
-     * <pre>
-     * Boolean that indicates if caching should be enabled
-     * </pre>
-     *
      * <code>bool cache = 2;</code>
      */
     boolean getCache();
 
     /**
-     * <pre>
-     * Boolean that indicates if identical (ie. same inputs) instances of this task should be
-     * executed in serial when caching is enabled.
-     * </pre>
-     *
      * <code>bool cache_serialize = 3;</code>
      */
     boolean getCacheSerialize();
@@ -19250,19 +19241,11 @@ public final class Workflow {
         getCacheVersionBytes();
 
     /**
-     * <pre>
-     *  Number of times to retry this task during a workflow execution
-     * </pre>
-     *
      * <code>int32 retries = 5;</code>
      */
     int getRetries();
 
     /**
-     * <pre>
-     * Boolean that indicates that this task can be interrupted and/or scheduled on nodes with lower QoS guarantees
-     * </pre>
-     *
      * <code>bool interruptible = 6;</code>
      */
     boolean getInterruptible();
@@ -19363,6 +19346,14 @@ public final class Workflow {
      * <code>.google.protobuf.Struct task_config = 10;</code>
      */
     com.google.protobuf.StructOrBuilder getTaskConfigOrBuilder();
+
+    public flyteidl.core.Workflow.TaskNodeOverrides.CacheValueCase getCacheValueCase();
+
+    public flyteidl.core.Workflow.TaskNodeOverrides.CacheSerializeValueCase getCacheSerializeValueCase();
+
+    public flyteidl.core.Workflow.TaskNodeOverrides.RetriesValueCase getRetriesValueCase();
+
+    public flyteidl.core.Workflow.TaskNodeOverrides.InterruptibleValueCase getInterruptibleValueCase();
   }
   /**
    * <pre>
@@ -19423,13 +19414,13 @@ public final class Workflow {
               break;
             }
             case 16: {
-
-              cache_ = input.readBool();
+              cacheValueCase_ = 2;
+              cacheValue_ = input.readBool();
               break;
             }
             case 24: {
-
-              cacheSerialize_ = input.readBool();
+              cacheSerializeValueCase_ = 3;
+              cacheSerializeValue_ = input.readBool();
               break;
             }
             case 34: {
@@ -19439,13 +19430,13 @@ public final class Workflow {
               break;
             }
             case 40: {
-
-              retries_ = input.readInt32();
+              retriesValueCase_ = 5;
+              retriesValue_ = input.readInt32();
               break;
             }
             case 48: {
-
-              interruptible_ = input.readBool();
+              interruptibleValueCase_ = 6;
+              interruptibleValue_ = input.readBool();
               break;
             }
             case 58: {
@@ -19525,6 +19516,150 @@ public final class Workflow {
     }
 
     private int bitField0_;
+    private int cacheValueCase_ = 0;
+    private java.lang.Object cacheValue_;
+    public enum CacheValueCase
+        implements com.google.protobuf.Internal.EnumLite {
+      CACHE(2),
+      CACHEVALUE_NOT_SET(0);
+      private final int value;
+      private CacheValueCase(int value) {
+        this.value = value;
+      }
+      /**
+       * @deprecated Use {@link #forNumber(int)} instead.
+       */
+      @java.lang.Deprecated
+      public static CacheValueCase valueOf(int value) {
+        return forNumber(value);
+      }
+
+      public static CacheValueCase forNumber(int value) {
+        switch (value) {
+          case 2: return CACHE;
+          case 0: return CACHEVALUE_NOT_SET;
+          default: return null;
+        }
+      }
+      public int getNumber() {
+        return this.value;
+      }
+    };
+
+    public CacheValueCase
+    getCacheValueCase() {
+      return CacheValueCase.forNumber(
+          cacheValueCase_);
+    }
+
+    private int cacheSerializeValueCase_ = 0;
+    private java.lang.Object cacheSerializeValue_;
+    public enum CacheSerializeValueCase
+        implements com.google.protobuf.Internal.EnumLite {
+      CACHE_SERIALIZE(3),
+      CACHESERIALIZEVALUE_NOT_SET(0);
+      private final int value;
+      private CacheSerializeValueCase(int value) {
+        this.value = value;
+      }
+      /**
+       * @deprecated Use {@link #forNumber(int)} instead.
+       */
+      @java.lang.Deprecated
+      public static CacheSerializeValueCase valueOf(int value) {
+        return forNumber(value);
+      }
+
+      public static CacheSerializeValueCase forNumber(int value) {
+        switch (value) {
+          case 3: return CACHE_SERIALIZE;
+          case 0: return CACHESERIALIZEVALUE_NOT_SET;
+          default: return null;
+        }
+      }
+      public int getNumber() {
+        return this.value;
+      }
+    };
+
+    public CacheSerializeValueCase
+    getCacheSerializeValueCase() {
+      return CacheSerializeValueCase.forNumber(
+          cacheSerializeValueCase_);
+    }
+
+    private int retriesValueCase_ = 0;
+    private java.lang.Object retriesValue_;
+    public enum RetriesValueCase
+        implements com.google.protobuf.Internal.EnumLite {
+      RETRIES(5),
+      RETRIESVALUE_NOT_SET(0);
+      private final int value;
+      private RetriesValueCase(int value) {
+        this.value = value;
+      }
+      /**
+       * @deprecated Use {@link #forNumber(int)} instead.
+       */
+      @java.lang.Deprecated
+      public static RetriesValueCase valueOf(int value) {
+        return forNumber(value);
+      }
+
+      public static RetriesValueCase forNumber(int value) {
+        switch (value) {
+          case 5: return RETRIES;
+          case 0: return RETRIESVALUE_NOT_SET;
+          default: return null;
+        }
+      }
+      public int getNumber() {
+        return this.value;
+      }
+    };
+
+    public RetriesValueCase
+    getRetriesValueCase() {
+      return RetriesValueCase.forNumber(
+          retriesValueCase_);
+    }
+
+    private int interruptibleValueCase_ = 0;
+    private java.lang.Object interruptibleValue_;
+    public enum InterruptibleValueCase
+        implements com.google.protobuf.Internal.EnumLite {
+      INTERRUPTIBLE(6),
+      INTERRUPTIBLEVALUE_NOT_SET(0);
+      private final int value;
+      private InterruptibleValueCase(int value) {
+        this.value = value;
+      }
+      /**
+       * @deprecated Use {@link #forNumber(int)} instead.
+       */
+      @java.lang.Deprecated
+      public static InterruptibleValueCase valueOf(int value) {
+        return forNumber(value);
+      }
+
+      public static InterruptibleValueCase forNumber(int value) {
+        switch (value) {
+          case 6: return INTERRUPTIBLE;
+          case 0: return INTERRUPTIBLEVALUE_NOT_SET;
+          default: return null;
+        }
+      }
+      public int getNumber() {
+        return this.value;
+      }
+    };
+
+    public InterruptibleValueCase
+    getInterruptibleValueCase() {
+      return InterruptibleValueCase.forNumber(
+          interruptibleValueCase_);
+    }
+
     public static final int RESOURCES_FIELD_NUMBER = 1;
     private flyteidl.core.Tasks.Resources resources_;
     /**
@@ -19559,30 +19694,25 @@ public final class Workflow {
     }
 
     public static final int CACHE_FIELD_NUMBER = 2;
-    private boolean cache_;
     /**
-     * <pre>
-     * Boolean that indicates if caching should be enabled
-     * </pre>
-     *
      * <code>bool cache = 2;</code>
      */
     public boolean getCache() {
-      return cache_;
+      if (cacheValueCase_ == 2) {
+        return (java.lang.Boolean) cacheValue_;
+      }
+      return false;
     }
 
     public static final int CACHE_SERIALIZE_FIELD_NUMBER = 3;
-    private boolean cacheSerialize_;
     /**
-     * <pre>
-     * Boolean that indicates if identical (ie. same inputs) instances of this task should be
-     * executed in serial when caching is enabled.
-     * </pre>
-     *
      * <code>bool cache_serialize = 3;</code>
      */
     public boolean getCacheSerialize() {
-      return cacheSerialize_;
+      if (cacheSerializeValueCase_ == 3) {
+        return (java.lang.Boolean) cacheSerializeValue_;
+      }
+      return false;
     }
 
     public static final int CACHE_VERSION_FIELD_NUMBER = 4;
@@ -19628,29 +19758,25 @@ public final class Workflow {
     }
 
     public static final int RETRIES_FIELD_NUMBER = 5;
-    private int retries_;
     /**
-     * <pre>
-     *  Number of times to retry this task during a workflow execution
-     * </pre>
-     *
      * <code>int32 retries = 5;</code>
      */
     public int getRetries() {
-      return retries_;
+      if (retriesValueCase_ == 5) {
+        return (java.lang.Integer) retriesValue_;
+      }
+      return 0;
     }
 
     public static final int INTERRUPTIBLE_FIELD_NUMBER = 6;
-    private boolean interruptible_;
     /**
-     * <pre>
-     * Boolean that indicates that this task can be interrupted and/or scheduled on nodes with lower QoS guarantees
-     * </pre>
-     *
      * <code>bool interruptible = 6;</code>
      */
     public boolean getInterruptible() {
-      return interruptible_;
+      if (interruptibleValueCase_ == 6) {
+        return (java.lang.Boolean) interruptibleValue_;
+      }
+      return false;
     }
 
     public static final int CONTAINER_IMAGE_FIELD_NUMBER = 7;
@@ -19837,20 +19963,24 @@ public final class Workflow {
       if (resources_ != null) {
         output.writeMessage(1, getResources());
       }
-      if (cache_ != false) {
-        output.writeBool(2, cache_);
+      if (cacheValueCase_ == 2) {
+        output.writeBool(
+            2, (boolean)((java.lang.Boolean) cacheValue_));
       }
-      if (cacheSerialize_ != false) {
-        output.writeBool(3, cacheSerialize_);
+      if (cacheSerializeValueCase_ == 3) {
+        output.writeBool(
+            3, (boolean)((java.lang.Boolean) cacheSerializeValue_));
       }
       if (!getCacheVersionBytes().isEmpty()) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 4, cacheVersion_);
       }
-      if (retries_ != 0) {
-        output.writeInt32(5, retries_);
+      if (retriesValueCase_ == 5) {
+        output.writeInt32(
+            5, (int)((java.lang.Integer) retriesValue_));
       }
-      if (interruptible_ != false) {
-        output.writeBool(6, interruptible_);
+      if (interruptibleValueCase_ == 6) {
+        output.writeBool(
+            6, (boolean)((java.lang.Boolean) interruptibleValue_));
       }
       if (!getContainerImageBytes().isEmpty()) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 7, containerImage_);
@@ -19877,24 +20007,28 @@ public final class Workflow {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(1, getResources());
       }
-      if (cache_ != false) {
+      if (cacheValueCase_ == 2) {
         size += com.google.protobuf.CodedOutputStream
-          .computeBoolSize(2, cache_);
+          .computeBoolSize(
+              2, (boolean)((java.lang.Boolean) cacheValue_));
       }
-      if (cacheSerialize_ != false) {
+      if (cacheSerializeValueCase_ == 3) {
         size += com.google.protobuf.CodedOutputStream
-          .computeBoolSize(3, cacheSerialize_);
+          .computeBoolSize(
+              3, (boolean)((java.lang.Boolean) cacheSerializeValue_));
       }
       if (!getCacheVersionBytes().isEmpty()) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, cacheVersion_);
       }
-      if (retries_ != 0) {
+      if (retriesValueCase_ == 5) {
         size += com.google.protobuf.CodedOutputStream
-          .computeInt32Size(5, retries_);
+          .computeInt32Size(
+              5, (int)((java.lang.Integer) retriesValue_));
       }
-      if (interruptible_ != false) {
+      if (interruptibleValueCase_ == 6) {
         size += com.google.protobuf.CodedOutputStream
-          .computeBoolSize(6, interruptible_);
+          .computeBoolSize(
+              6, (boolean)((java.lang.Boolean) interruptibleValue_));
       }
       if (!getContainerImageBytes().isEmpty()) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(7, containerImage_);
@@ -19933,16 +20067,8 @@ public final class Workflow {
         if (!getResources()
             .equals(other.getResources())) return false;
       }
-      if (getCache()
-          != other.getCache()) return false;
-      if (getCacheSerialize()
-          != other.getCacheSerialize()) return false;
       if (!getCacheVersion()
           .equals(other.getCacheVersion())) return false;
-      if (getRetries()
-          != other.getRetries()) return false;
-      if (getInterruptible()
-          != other.getInterruptible()) return false;
       if (!getContainerImage()
           .equals(other.getContainerImage())) return false;
       if (!internalGetEnvironment().equals(
@@ -19951,6 +20077,42 @@ public final class Workflow {
       if (hasTaskConfig()) {
         if (!getTaskConfig()
             .equals(other.getTaskConfig())) return false;
+      }
+      if (!getCacheValueCase().equals(other.getCacheValueCase())) return false;
+      switch (cacheValueCase_) {
+        case 2:
+          if (getCache()
+              != other.getCache()) return false;
+          break;
+        case 0:
+        default:
+      }
+      if (!getCacheSerializeValueCase().equals(other.getCacheSerializeValueCase())) return false;
+      switch (cacheSerializeValueCase_) {
+        case 3:
+          if (getCacheSerialize()
+              != other.getCacheSerialize()) return false;
+          break;
+        case 0:
+        default:
+      }
+      if (!getRetriesValueCase().equals(other.getRetriesValueCase())) return false;
+      switch (retriesValueCase_) {
+        case 5:
+          if (getRetries()
+              != other.getRetries()) return false;
+          break;
+        case 0:
+        default:
+      }
+      if (!getInterruptibleValueCase().equals(other.getInterruptibleValueCase())) return false;
+      switch (interruptibleValueCase_) {
+        case 6:
+          if (getInterruptible()
+              != other.getInterruptible()) return false;
+          break;
+        case 0:
+        default:
       }
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
@@ -19967,19 +20129,8 @@ public final class Workflow {
         hash = (37 * hash) + RESOURCES_FIELD_NUMBER;
         hash = (53 * hash) + getResources().hashCode();
       }
-      hash = (37 * hash) + CACHE_FIELD_NUMBER;
-      hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
-          getCache());
-      hash = (37 * hash) + CACHE_SERIALIZE_FIELD_NUMBER;
-      hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
-          getCacheSerialize());
       hash = (37 * hash) + CACHE_VERSION_FIELD_NUMBER;
       hash = (53 * hash) + getCacheVersion().hashCode();
-      hash = (37 * hash) + RETRIES_FIELD_NUMBER;
-      hash = (53 * hash) + getRetries();
-      hash = (37 * hash) + INTERRUPTIBLE_FIELD_NUMBER;
-      hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
-          getInterruptible());
       hash = (37 * hash) + CONTAINER_IMAGE_FIELD_NUMBER;
       hash = (53 * hash) + getContainerImage().hashCode();
       if (!internalGetEnvironment().getMap().isEmpty()) {
@@ -19989,6 +20140,41 @@ public final class Workflow {
       if (hasTaskConfig()) {
         hash = (37 * hash) + TASK_CONFIG_FIELD_NUMBER;
         hash = (53 * hash) + getTaskConfig().hashCode();
+      }
+      switch (cacheValueCase_) {
+        case 2:
+          hash = (37 * hash) + CACHE_FIELD_NUMBER;
+          hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
+              getCache());
+          break;
+        case 0:
+        default:
+      }
+      switch (cacheSerializeValueCase_) {
+        case 3:
+          hash = (37 * hash) + CACHE_SERIALIZE_FIELD_NUMBER;
+          hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
+              getCacheSerialize());
+          break;
+        case 0:
+        default:
+      }
+      switch (retriesValueCase_) {
+        case 5:
+          hash = (37 * hash) + RETRIES_FIELD_NUMBER;
+          hash = (53 * hash) + getRetries();
+          break;
+        case 0:
+        default:
+      }
+      switch (interruptibleValueCase_) {
+        case 6:
+          hash = (37 * hash) + INTERRUPTIBLE_FIELD_NUMBER;
+          hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
+              getInterruptible());
+          break;
+        case 0:
+        default:
       }
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
@@ -20155,15 +20341,7 @@ public final class Workflow {
           resources_ = null;
           resourcesBuilder_ = null;
         }
-        cache_ = false;
-
-        cacheSerialize_ = false;
-
         cacheVersion_ = "";
-
-        retries_ = 0;
-
-        interruptible_ = false;
 
         containerImage_ = "";
 
@@ -20174,6 +20352,14 @@ public final class Workflow {
           taskConfig_ = null;
           taskConfigBuilder_ = null;
         }
+        cacheValueCase_ = 0;
+        cacheValue_ = null;
+        cacheSerializeValueCase_ = 0;
+        cacheSerializeValue_ = null;
+        retriesValueCase_ = 0;
+        retriesValue_ = null;
+        interruptibleValueCase_ = 0;
+        interruptibleValue_ = null;
         return this;
       }
 
@@ -20207,11 +20393,19 @@ public final class Workflow {
         } else {
           result.resources_ = resourcesBuilder_.build();
         }
-        result.cache_ = cache_;
-        result.cacheSerialize_ = cacheSerialize_;
+        if (cacheValueCase_ == 2) {
+          result.cacheValue_ = cacheValue_;
+        }
+        if (cacheSerializeValueCase_ == 3) {
+          result.cacheSerializeValue_ = cacheSerializeValue_;
+        }
         result.cacheVersion_ = cacheVersion_;
-        result.retries_ = retries_;
-        result.interruptible_ = interruptible_;
+        if (retriesValueCase_ == 5) {
+          result.retriesValue_ = retriesValue_;
+        }
+        if (interruptibleValueCase_ == 6) {
+          result.interruptibleValue_ = interruptibleValue_;
+        }
         result.containerImage_ = containerImage_;
         result.environment_ = internalGetEnvironment();
         result.environment_.makeImmutable();
@@ -20221,6 +20415,10 @@ public final class Workflow {
           result.taskConfig_ = taskConfigBuilder_.build();
         }
         result.bitField0_ = to_bitField0_;
+        result.cacheValueCase_ = cacheValueCase_;
+        result.cacheSerializeValueCase_ = cacheSerializeValueCase_;
+        result.retriesValueCase_ = retriesValueCase_;
+        result.interruptibleValueCase_ = interruptibleValueCase_;
         onBuilt();
         return result;
       }
@@ -20272,21 +20470,9 @@ public final class Workflow {
         if (other.hasResources()) {
           mergeResources(other.getResources());
         }
-        if (other.getCache() != false) {
-          setCache(other.getCache());
-        }
-        if (other.getCacheSerialize() != false) {
-          setCacheSerialize(other.getCacheSerialize());
-        }
         if (!other.getCacheVersion().isEmpty()) {
           cacheVersion_ = other.cacheVersion_;
           onChanged();
-        }
-        if (other.getRetries() != 0) {
-          setRetries(other.getRetries());
-        }
-        if (other.getInterruptible() != false) {
-          setInterruptible(other.getInterruptible());
         }
         if (!other.getContainerImage().isEmpty()) {
           containerImage_ = other.containerImage_;
@@ -20296,6 +20482,42 @@ public final class Workflow {
             other.internalGetEnvironment());
         if (other.hasTaskConfig()) {
           mergeTaskConfig(other.getTaskConfig());
+        }
+        switch (other.getCacheValueCase()) {
+          case CACHE: {
+            setCache(other.getCache());
+            break;
+          }
+          case CACHEVALUE_NOT_SET: {
+            break;
+          }
+        }
+        switch (other.getCacheSerializeValueCase()) {
+          case CACHE_SERIALIZE: {
+            setCacheSerialize(other.getCacheSerialize());
+            break;
+          }
+          case CACHESERIALIZEVALUE_NOT_SET: {
+            break;
+          }
+        }
+        switch (other.getRetriesValueCase()) {
+          case RETRIES: {
+            setRetries(other.getRetries());
+            break;
+          }
+          case RETRIESVALUE_NOT_SET: {
+            break;
+          }
+        }
+        switch (other.getInterruptibleValueCase()) {
+          case INTERRUPTIBLE: {
+            setInterruptible(other.getInterruptible());
+            break;
+          }
+          case INTERRUPTIBLEVALUE_NOT_SET: {
+            break;
+          }
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -20325,6 +20547,66 @@ public final class Workflow {
         }
         return this;
       }
+      private int cacheValueCase_ = 0;
+      private java.lang.Object cacheValue_;
+      public CacheValueCase
+          getCacheValueCase() {
+        return CacheValueCase.forNumber(
+            cacheValueCase_);
+      }
+
+      public Builder clearCacheValue() {
+        cacheValueCase_ = 0;
+        cacheValue_ = null;
+        onChanged();
+        return this;
+      }
+
+      private int cacheSerializeValueCase_ = 0;
+      private java.lang.Object cacheSerializeValue_;
+      public CacheSerializeValueCase
+          getCacheSerializeValueCase() {
+        return CacheSerializeValueCase.forNumber(
+            cacheSerializeValueCase_);
+      }
+
+      public Builder clearCacheSerializeValue() {
+        cacheSerializeValueCase_ = 0;
+        cacheSerializeValue_ = null;
+        onChanged();
+        return this;
+      }
+
+      private int retriesValueCase_ = 0;
+      private java.lang.Object retriesValue_;
+      public RetriesValueCase
+          getRetriesValueCase() {
+        return RetriesValueCase.forNumber(
+            retriesValueCase_);
+      }
+
+      public Builder clearRetriesValue() {
+        retriesValueCase_ = 0;
+        retriesValue_ = null;
+        onChanged();
+        return this;
+      }
+
+      private int interruptibleValueCase_ = 0;
+      private java.lang.Object interruptibleValue_;
+      public InterruptibleValueCase
+          getInterruptibleValueCase() {
+        return InterruptibleValueCase.forNumber(
+            interruptibleValueCase_);
+      }
+
+      public Builder clearInterruptibleValue() {
+        interruptibleValueCase_ = 0;
+        interruptibleValue_ = null;
+        onChanged();
+        return this;
+      }
+
       private int bitField0_;
 
       private flyteidl.core.Tasks.Resources resources_;
@@ -20480,82 +20762,63 @@ public final class Workflow {
         return resourcesBuilder_;
       }
 
-      private boolean cache_ ;
       /**
-       * <pre>
-       * Boolean that indicates if caching should be enabled
-       * </pre>
-       *
        * <code>bool cache = 2;</code>
        */
       public boolean getCache() {
-        return cache_;
+        if (cacheValueCase_ == 2) {
+          return (java.lang.Boolean) cacheValue_;
+        }
+        return false;
       }
       /**
-       * <pre>
-       * Boolean that indicates if caching should be enabled
-       * </pre>
-       *
        * <code>bool cache = 2;</code>
        */
       public Builder setCache(boolean value) {
-        
-        cache_ = value;
+        cacheValueCase_ = 2;
+        cacheValue_ = value;
         onChanged();
         return this;
       }
       /**
-       * <pre>
-       * Boolean that indicates if caching should be enabled
-       * </pre>
-       *
        * <code>bool cache = 2;</code>
        */
       public Builder clearCache() {
-        
-        cache_ = false;
-        onChanged();
+        if (cacheValueCase_ == 2) {
+          cacheValueCase_ = 0;
+          cacheValue_ = null;
+          onChanged();
+        }
         return this;
       }
 
-      private boolean cacheSerialize_ ;
       /**
-       * <pre>
-       * Boolean that indicates if identical (ie. same inputs) instances of this task should be
-       * executed in serial when caching is enabled.
-       * </pre>
-       *
        * <code>bool cache_serialize = 3;</code>
        */
       public boolean getCacheSerialize() {
-        return cacheSerialize_;
+        if (cacheSerializeValueCase_ == 3) {
+          return (java.lang.Boolean) cacheSerializeValue_;
+        }
+        return false;
       }
       /**
-       * <pre>
-       * Boolean that indicates if identical (ie. same inputs) instances of this task should be
-       * executed in serial when caching is enabled.
-       * </pre>
-       *
        * <code>bool cache_serialize = 3;</code>
        */
       public Builder setCacheSerialize(boolean value) {
-        
-        cacheSerialize_ = value;
+        cacheSerializeValueCase_ = 3;
+        cacheSerializeValue_ = value;
         onChanged();
         return this;
       }
       /**
-       * <pre>
-       * Boolean that indicates if identical (ie. same inputs) instances of this task should be
-       * executed in serial when caching is enabled.
-       * </pre>
-       *
        * <code>bool cache_serialize = 3;</code>
        */
       public Builder clearCacheSerialize() {
-        
-        cacheSerialize_ = false;
-        onChanged();
+        if (cacheSerializeValueCase_ == 3) {
+          cacheSerializeValueCase_ = 0;
+          cacheSerializeValue_ = null;
+          onChanged();
+        }
         return this;
       }
 
@@ -20648,79 +20911,63 @@ public final class Workflow {
         return this;
       }
 
-      private int retries_ ;
       /**
-       * <pre>
-       *  Number of times to retry this task during a workflow execution
-       * </pre>
-       *
        * <code>int32 retries = 5;</code>
        */
       public int getRetries() {
-        return retries_;
+        if (retriesValueCase_ == 5) {
+          return (java.lang.Integer) retriesValue_;
+        }
+        return 0;
       }
       /**
-       * <pre>
-       *  Number of times to retry this task during a workflow execution
-       * </pre>
-       *
        * <code>int32 retries = 5;</code>
        */
       public Builder setRetries(int value) {
-        
-        retries_ = value;
+        retriesValueCase_ = 5;
+        retriesValue_ = value;
         onChanged();
         return this;
       }
       /**
-       * <pre>
-       *  Number of times to retry this task during a workflow execution
-       * </pre>
-       *
        * <code>int32 retries = 5;</code>
        */
       public Builder clearRetries() {
-        
-        retries_ = 0;
-        onChanged();
+        if (retriesValueCase_ == 5) {
+          retriesValueCase_ = 0;
+          retriesValue_ = null;
+          onChanged();
+        }
         return this;
       }
 
-      private boolean interruptible_ ;
       /**
-       * <pre>
-       * Boolean that indicates that this task can be interrupted and/or scheduled on nodes with lower QoS guarantees
-       * </pre>
-       *
        * <code>bool interruptible = 6;</code>
        */
       public boolean getInterruptible() {
-        return interruptible_;
+        if (interruptibleValueCase_ == 6) {
+          return (java.lang.Boolean) interruptibleValue_;
+        }
+        return false;
       }
       /**
-       * <pre>
-       * Boolean that indicates that this task can be interrupted and/or scheduled on nodes with lower QoS guarantees
-       * </pre>
-       *
        * <code>bool interruptible = 6;</code>
        */
       public Builder setInterruptible(boolean value) {
-        
-        interruptible_ = value;
+        interruptibleValueCase_ = 6;
+        interruptibleValue_ = value;
         onChanged();
         return this;
       }
       /**
-       * <pre>
-       * Boolean that indicates that this task can be interrupted and/or scheduled on nodes with lower QoS guarantees
-       * </pre>
-       *
        * <code>bool interruptible = 6;</code>
        */
       public Builder clearInterruptible() {
-        
-        interruptible_ = false;
-        onChanged();
+        if (interruptibleValueCase_ == 6) {
+          interruptibleValueCase_ = 0;
+          interruptibleValue_ = null;
+          onChanged();
+        }
         return this;
       }
 
@@ -21335,18 +21582,20 @@ public final class Workflow {
       "\'\n\007outputs\030\005 \003(\0132\026.flyteidl.core.Binding" +
       "\022)\n\014failure_node\030\006 \001(\0132\023.flyteidl.core.N" +
       "ode\022B\n\021metadata_defaults\030\007 \001(\0132\'.flyteid" +
-      "l.core.WorkflowMetadataDefaults\"\352\002\n\021Task" +
+      "l.core.WorkflowMetadataDefaults\"\302\003\n\021Task" +
       "NodeOverrides\022+\n\tresources\030\001 \001(\0132\030.flyte" +
-      "idl.core.Resources\022\r\n\005cache\030\002 \001(\010\022\027\n\017cac" +
-      "he_serialize\030\003 \001(\010\022\025\n\rcache_version\030\004 \001(" +
-      "\t\022\017\n\007retries\030\005 \001(\005\022\025\n\rinterruptible\030\006 \001(" +
-      "\010\022\027\n\017container_image\030\007 \001(\t\022F\n\013environmen" +
-      "t\030\t \003(\01321.flyteidl.core.TaskNodeOverride" +
-      "s.EnvironmentEntry\022,\n\013task_config\030\n \001(\0132" +
-      "\027.google.protobuf.Struct\0322\n\020EnvironmentE" +
-      "ntry\022\013\n\003key\030\001 \001(\t\022\r\n\005value\030\002 \001(\t:\0028\001B6Z4" +
-      "github.com/flyteorg/flyteidl/gen/pb-go/f" +
-      "lyteidl/coreb\006proto3"
+      "idl.core.Resources\022\017\n\005cache\030\002 \001(\010H\000\022\031\n\017c" +
+      "ache_serialize\030\003 \001(\010H\001\022\025\n\rcache_version\030" +
+      "\004 \001(\t\022\021\n\007retries\030\005 \001(\005H\002\022\027\n\rinterruptibl" +
+      "e\030\006 \001(\010H\003\022\027\n\017container_image\030\007 \001(\t\022F\n\013en" +
+      "vironment\030\t \003(\01321.flyteidl.core.TaskNode" +
+      "Overrides.EnvironmentEntry\022,\n\013task_confi" +
+      "g\030\n \001(\0132\027.google.protobuf.Struct\0322\n\020Envi" +
+      "ronmentEntry\022\013\n\003key\030\001 \001(\t\022\r\n\005value\030\002 \001(\t" +
+      ":\0028\001B\r\n\013cache_valueB\027\n\025cache_serialize_v" +
+      "alueB\017\n\rretries_valueB\025\n\023interruptible_v" +
+      "alueB6Z4github.com/flyteorg/flyteidl/gen" +
+      "/pb-go/flyteidl/coreb\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
@@ -21471,7 +21720,7 @@ public final class Workflow {
     internal_static_flyteidl_core_TaskNodeOverrides_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_flyteidl_core_TaskNodeOverrides_descriptor,
-        new java.lang.String[] { "Resources", "Cache", "CacheSerialize", "CacheVersion", "Retries", "Interruptible", "ContainerImage", "Environment", "TaskConfig", });
+        new java.lang.String[] { "Resources", "Cache", "CacheSerialize", "CacheVersion", "Retries", "Interruptible", "ContainerImage", "Environment", "TaskConfig", "CacheValue", "CacheSerializeValue", "RetriesValue", "InterruptibleValue", });
     internal_static_flyteidl_core_TaskNodeOverrides_EnvironmentEntry_descriptor =
       internal_static_flyteidl_core_TaskNodeOverrides_descriptor.getNestedTypes().get(0);
     internal_static_flyteidl_core_TaskNodeOverrides_EnvironmentEntry_fieldAccessorTable = new
