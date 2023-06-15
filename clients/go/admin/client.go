@@ -6,12 +6,14 @@ import (
 	"crypto/x509"
 	"errors"
 	"fmt"
-
 	grpcRetry "github.com/grpc-ecosystem/go-grpc-middleware/retry"
 	grpcPrometheus "github.com/grpc-ecosystem/go-grpc-prometheus"
 	"google.golang.org/grpc"
 	"google.golang.org/grpc/credentials"
 	"google.golang.org/grpc/health/grpc_health_v1"
+	"google.golang.org/grpc/metadata"
+	"net/textproto"
+	"strings"
 
 	"github.com/flyteorg/flyteidl/clients/go/admin/cache"
 	"github.com/flyteorg/flyteidl/clients/go/admin/mocks"
@@ -64,6 +66,32 @@ func NewAdminClient(ctx context.Context, conn *grpc.ClientConn) service.AdminSer
 	return service.NewAdminServiceClient(conn)
 }
 
+func isCustomHeader(key string) bool {
+	return strings.HasPrefix(textproto.CanonicalMIMEHeaderKey(key), "X-")
+}
+
+// CustomHeaderClientInterceptor adds custom headers to outgoing metadata
+func CustomHeaderClientInterceptor(ctx context.Context, method string, req, reply interface{}, cc *grpc.ClientConn, invoker grpc.UnaryInvoker, opts ...grpc.CallOption) error {
+	// Extract custom headers from incoming metadata
+	incomingMD, ok := metadata.FromIncomingContext(ctx)
+	if ok {
+		var outgoingMetadataPairs []string
+		for key, values := range incomingMD {
+			if isCustomHeader(key) {
+				for _, val := range values {
+					outgoingMetadataPairs = append(outgoingMetadataPairs, key, val)
+				}
+			}
+		}
+
+		// Create a new context with the updated metadata
+		ctx = metadata.AppendToOutgoingContext(ctx, outgoingMetadataPairs...)
+	}
+
+	// Invoke the gRPC call with the updated context
+	return invoker(ctx, method, req, reply, cc, opts...)
+}
+
 func GetAdditionalAdminClientConfigOptions(cfg *Config) []grpc.DialOption {
 	opts := make([]grpc.DialOption, 0, 2)
 	backoffConfig := grpc.BackoffConfig{
@@ -78,7 +106,7 @@ func GetAdditionalAdminClientConfigOptions(cfg *Config) []grpc.DialOption {
 
 	// We only make unary calls in this client, no streaming calls.  We can add a streaming interceptor if admin
 	// ever has those endpoints
-	opts = append(opts, grpc.WithChainUnaryInterceptor(grpcPrometheus.UnaryClientInterceptor, retryInterceptor))
+	opts = append(opts, grpc.WithChainUnaryInterceptor(grpcPrometheus.UnaryClientInterceptor, retryInterceptor, CustomHeaderClientInterceptor))
 
 	return opts
 }
