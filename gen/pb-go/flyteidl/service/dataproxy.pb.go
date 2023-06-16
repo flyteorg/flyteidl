@@ -116,6 +116,10 @@ func (m *CreateUploadLocationResponse) GetExpiresAt() *timestamp.Timestamp {
 }
 
 // CreateUploadLocationRequest specified request for the CreateUploadLocation API.
+// The implementation in data proxy service will create the s3 location with some server side configured prefixes,
+// and then:
+//   - project/domain/(a deterministic str representation of the content_md5)/filename (if present); OR
+//   - project/domain/filename_root (if present)/filename (if present).
 type CreateUploadLocationRequest struct {
 	// Project to create the upload location for
 	// +required
