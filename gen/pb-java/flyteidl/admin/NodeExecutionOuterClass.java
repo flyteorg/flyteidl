@@ -7254,10 +7254,18 @@ public final class NodeExecutionOuterClass {
         getDynamicJobSpecUriBytes();
 
     /**
+     * <pre>
+     * String location uniquely identifying where the span.pb file is.
+     * </pre>
+     *
      * <code>string span_uri = 13;</code>
      */
     java.lang.String getSpanUri();
     /**
+     * <pre>
+     * String location uniquely identifying where the span.pb file is.
+     * </pre>
+     *
      * <code>string span_uri = 13;</code>
      */
     com.google.protobuf.ByteString
@@ -7994,6 +8002,10 @@ public final class NodeExecutionOuterClass {
     public static final int SPAN_URI_FIELD_NUMBER = 13;
     private volatile java.lang.Object spanUri_;
     /**
+     * <pre>
+     * String location uniquely identifying where the span.pb file is.
+     * </pre>
+     *
      * <code>string span_uri = 13;</code>
      */
     public java.lang.String getSpanUri() {
@@ -8009,6 +8021,10 @@ public final class NodeExecutionOuterClass {
       }
     }
     /**
+     * <pre>
+     * String location uniquely identifying where the span.pb file is.
+     * </pre>
+     *
      * <code>string span_uri = 13;</code>
      */
     public com.google.protobuf.ByteString
@@ -10289,6 +10305,10 @@ public final class NodeExecutionOuterClass {
 
       private java.lang.Object spanUri_ = "";
       /**
+       * <pre>
+       * String location uniquely identifying where the span.pb file is.
+       * </pre>
+       *
        * <code>string span_uri = 13;</code>
        */
       public java.lang.String getSpanUri() {
@@ -10304,6 +10324,10 @@ public final class NodeExecutionOuterClass {
         }
       }
       /**
+       * <pre>
+       * String location uniquely identifying where the span.pb file is.
+       * </pre>
+       *
        * <code>string span_uri = 13;</code>
        */
       public com.google.protobuf.ByteString
@@ -10320,6 +10344,10 @@ public final class NodeExecutionOuterClass {
         }
       }
       /**
+       * <pre>
+       * String location uniquely identifying where the span.pb file is.
+       * </pre>
+       *
        * <code>string span_uri = 13;</code>
        */
       public Builder setSpanUri(
@@ -10333,6 +10361,10 @@ public final class NodeExecutionOuterClass {
         return this;
       }
       /**
+       * <pre>
+       * String location uniquely identifying where the span.pb file is.
+       * </pre>
+       *
        * <code>string span_uri = 13;</code>
        */
       public Builder clearSpanUri() {
@@ -10342,6 +10374,10 @@ public final class NodeExecutionOuterClass {
         return this;
       }
       /**
+       * <pre>
+       * String location uniquely identifying where the span.pb file is.
+       * </pre>
+       *
        * <code>string span_uri = 13;</code>
        */
       public Builder setSpanUriBytes(

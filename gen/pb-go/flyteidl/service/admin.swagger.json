@@ -1532,13 +1532,13 @@
     },
     "/api/v1/metrics/node_executions/{id.execution_id.project}/{id.execution_id.domain}/{id.execution_id.name}/{id.node_id}": {
       "get": {
-        "summary": "Fetches FlyteKit metrics for a :ref:`ref_flyteidl.admin.NodeExecution`.",
-        "operationId": "GetFlyteKitMetrics",
+        "summary": "Fetches task runtime metrics for a :ref:`ref_flyteidl.admin.NodeExecution`.",
+        "operationId": "GetTaskMetrics",
         "responses": {
           "200": {
             "description": "A successful response.",
             "schema": {
-              "$ref": "#/definitions/adminWorkflowExecutionGetMetricsResponse"
+              "$ref": "#/definitions/adminGetTaskMetricsResponse"
             }
           }
         },
@@ -4170,6 +4170,16 @@
       },
       "description": "These URLs are returned as part of node and task execution data requests."
     },
+    "adminGetTaskMetricsResponse": {
+      "type": "object",
+      "properties": {
+        "span": {
+          "$ref": "#/definitions/coreSpan",
+          "description": "Span conatins a collection of time information for a paticular task.\nAll the infomation is in span.Spans."
+        }
+      },
+      "description": "GetTaskMetricsResponse represents the response containing task runtime metrics for the specified node execution."
+    },
     "adminGetVersionResponse": {
       "type": "object",
       "properties": {
@@ -4648,7 +4658,8 @@
           "description": "dynamic_job_spec_uri is the location of the DynamicJobSpec proto message for a DynamicWorkflow. This is required\nto correctly recover partially completed executions where the subworkflow has already been compiled."
         },
         "span_uri": {
-          "type": "string"
+          "type": "string",
+          "description": "String location uniquely identifying where the span.pb file is."
         }
       },
       "description": "Container for node execution details and results."
@@ -7394,7 +7405,8 @@
           "description": "This timestamp represents the instant when the event was reported by the executing framework. For example,\nwhen first processing a node the `occurred_at` timestamp should be the instant propeller makes progress, so when\nliteral inputs are initially copied. The event however will not be sent until after the copy completes.\nExtracting both of these timestamps facilitates a more accurate portrayal of the evaluation time-series."
         },
         "span_uri": {
-          "type": "string"
+          "type": "string",
+          "description": "String location uniquely identifying where the span.pb file is."
         }
       }
     },

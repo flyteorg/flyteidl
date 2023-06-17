@@ -2446,10 +2446,18 @@ public final class Event {
     com.google.protobuf.TimestampOrBuilder getReportedAtOrBuilder();
 
     /**
+     * <pre>
+     * String location uniquely identifying where the span.pb file is.
+     * </pre>
+     *
      * <code>string span_uri = 22;</code>
      */
     java.lang.String getSpanUri();
     /**
+     * <pre>
+     * String location uniquely identifying where the span.pb file is.
+     * </pre>
+     *
      * <code>string span_uri = 22;</code>
      */
     com.google.protobuf.ByteString
@@ -3567,6 +3575,10 @@ public final class Event {
     public static final int SPAN_URI_FIELD_NUMBER = 22;
     private volatile java.lang.Object spanUri_;
     /**
+     * <pre>
+     * String location uniquely identifying where the span.pb file is.
+     * </pre>
+     *
      * <code>string span_uri = 22;</code>
      */
     public java.lang.String getSpanUri() {
@@ -3582,6 +3594,10 @@ public final class Event {
       }
     }
     /**
+     * <pre>
+     * String location uniquely identifying where the span.pb file is.
+     * </pre>
+     *
      * <code>string span_uri = 22;</code>
      */
     public com.google.protobuf.ByteString
@@ -6854,6 +6870,10 @@ public final class Event {
 
       private java.lang.Object spanUri_ = "";
       /**
+       * <pre>
+       * String location uniquely identifying where the span.pb file is.
+       * </pre>
+       *
        * <code>string span_uri = 22;</code>
        */
       public java.lang.String getSpanUri() {
@@ -6869,6 +6889,10 @@ public final class Event {
         }
       }
       /**
+       * <pre>
+       * String location uniquely identifying where the span.pb file is.
+       * </pre>
+       *
        * <code>string span_uri = 22;</code>
        */
       public com.google.protobuf.ByteString
@@ -6885,6 +6909,10 @@ public final class Event {
         }
       }
       /**
+       * <pre>
+       * String location uniquely identifying where the span.pb file is.
+       * </pre>
+       *
        * <code>string span_uri = 22;</code>
        */
       public Builder setSpanUri(
@@ -6898,6 +6926,10 @@ public final class Event {
         return this;
       }
       /**
+       * <pre>
+       * String location uniquely identifying where the span.pb file is.
+       * </pre>
+       *
        * <code>string span_uri = 22;</code>
        */
       public Builder clearSpanUri() {
@@ -6907,6 +6939,10 @@ public final class Event {
         return this;
       }
       /**
+       * <pre>
+       * String location uniquely identifying where the span.pb file is.
+       * </pre>
+       *
        * <code>string span_uri = 22;</code>
        */
       public Builder setSpanUriBytes(

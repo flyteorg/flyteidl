@@ -637,13 +637,13 @@ service AdminService {
     // };
   };
 
-  // Fetches FlyteKit metrics for a :ref:`ref_flyteidl.admin.NodeExecution`.
-  rpc GetFlyteKitMetrics (flyteidl.admin.NodeExecutionGetRequest) returns (flyteidl.admin.WorkflowExecutionGetMetricsResponse) {
+  // Fetches task runtime metrics for a :ref:`ref_flyteidl.admin.NodeExecution`.
+  rpc GetTaskMetrics (flyteidl.admin.GetTaskMetricsRequest) returns (flyteidl.admin.GetTaskMetricsResponse) {
     option (google.api.http) = {
       get: "/api/v1/metrics/node_executions/{id.execution_id.project}/{id.execution_id.domain}/{id.execution_id.name}/{id.node_id}"
     };
     // option (grpc.gateway.protoc_gen_swagger.options.openapiv2_operation) = {
-    //   description: "Retrieve FlyteKit metrics from an existing node execution"
+    //   description: "Retrieve task runtime metrics from an existing node execution"
     // };
   }
 }

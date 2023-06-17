@@ -1227,6 +1227,23 @@ pub struct WorkflowExecutionGetMetricsResponse {
     #[prost(message, optional, tag="1")]
     pub span: ::core::option::Option<super::core::Span>,
 }
+/// GetTaskMetricsRequest represents a request to retrieve task runtime metrics for the specified node execution.
+#[allow(clippy::derive_partial_eq_without_eq)]
+#[derive(Clone, PartialEq, ::prost::Message)]
+pub struct GetTaskMetricsRequest {
+    /// Uniquely identifies an individual node execution.
+    #[prost(message, optional, tag="1")]
+    pub id: ::core::option::Option<super::core::NodeExecutionIdentifier>,
+}
+/// GetTaskMetricsResponse represents the response containing task runtime metrics for the specified node execution.
+#[allow(clippy::derive_partial_eq_without_eq)]
+#[derive(Clone, PartialEq, ::prost::Message)]
+pub struct GetTaskMetricsResponse {
+    /// Span conatins a collection of time information for a paticular task.
+    /// All the infomation is in span.Spans.
+    #[prost(message, optional, tag="1")]
+    pub span: ::core::option::Option<super::core::Span>,
+}
 /// The state of the execution is used to control its visibility in the UI/CLI.
 #[derive(Clone, Copy, Debug, PartialEq, Eq, Hash, PartialOrd, Ord, ::prost::Enumeration)]
 #[repr(i32)]
@@ -1983,6 +2000,7 @@ pub struct NodeExecutionClosure {
     /// to correctly recover partially completed executions where the subworkflow has already been compiled.
     #[prost(string, tag="12")]
     pub dynamic_job_spec_uri: ::prost::alloc::string::String,
+    /// String location uniquely identifying where the span.pb file is.
     #[prost(string, tag="13")]
     pub span_uri: ::prost::alloc::string::String,
     /// Only a node in a terminal state will have a non-empty output_result.

@@ -111,6 +111,7 @@ message NodeExecutionEvent {
     // Extracting both of these timestamps facilitates a more accurate portrayal of the evaluation time-series.
     google.protobuf.Timestamp reported_at = 21;
 
+    // String location uniquely identifying where the span.pb file is.
     string span_uri = 22;
 }
 

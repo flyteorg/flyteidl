@@ -2181,3 +2181,157 @@ var _ interface {
 	Cause() error
 	ErrorName() string
 } = WorkflowExecutionGetMetricsResponseValidationError{}
+
+// Validate checks the field values on GetTaskMetricsRequest with the rules
+// defined in the proto definition for this message. If any rules are
+// violated, an error is returned.
+func (m *GetTaskMetricsRequest) Validate() error {
+	if m == nil {
+		return nil
+	}
+
+	if v, ok := interface{}(m.GetId()).(interface{ Validate() error }); ok {
+		if err := v.Validate(); err != nil {
+			return GetTaskMetricsRequestValidationError{
+				field:  "Id",
+				reason: "embedded message failed validation",
+				cause:  err,
+			}
+		}
+	}
+
+	return nil
+}
+
+// GetTaskMetricsRequestValidationError is the validation error returned by
+// GetTaskMetricsRequest.Validate if the designated constraints aren't met.
+type GetTaskMetricsRequestValidationError struct {
+	field  string
+	reason string
+	cause  error
+	key    bool
+}
+
+// Field function returns field value.
+func (e GetTaskMetricsRequestValidationError) Field() string { return e.field }
+
+// Reason function returns reason value.
+func (e GetTaskMetricsRequestValidationError) Reason() string { return e.reason }
+
+// Cause function returns cause value.
+func (e GetTaskMetricsRequestValidationError) Cause() error { return e.cause }
+
+// Key function returns key value.
+func (e GetTaskMetricsRequestValidationError) Key() bool { return e.key }
+
+// ErrorName returns error name.
+func (e GetTaskMetricsRequestValidationError) ErrorName() string {
+	return "GetTaskMetricsRequestValidationError"
+}
+
+// Error satisfies the builtin error interface
+func (e GetTaskMetricsRequestValidationError) Error() string {
+	cause := ""
+	if e.cause != nil {
+		cause = fmt.Sprintf(" | caused by: %v", e.cause)
+	}
+
+	key := ""
+	if e.key {
+		key = "key for "
+	}
+
+	return fmt.Sprintf(
+		"invalid %sGetTaskMetricsRequest.%s: %s%s",
+		key,
+		e.field,
+		e.reason,
+		cause)
+}
+
+var _ error = GetTaskMetricsRequestValidationError{}
+
+var _ interface {
+	Field() string
+	Reason() string
+	Key() bool
+	Cause() error
+	ErrorName() string
+} = GetTaskMetricsRequestValidationError{}
+
+// Validate checks the field values on GetTaskMetricsResponse with the rules
+// defined in the proto definition for this message. If any rules are
+// violated, an error is returned.
+func (m *GetTaskMetricsResponse) Validate() error {
+	if m == nil {
+		return nil
+	}
+
+	if v, ok := interface{}(m.GetSpan()).(interface{ Validate() error }); ok {
+		if err := v.Validate(); err != nil {
+			return GetTaskMetricsResponseValidationError{
+				field:  "Span",
+				reason: "embedded message failed validation",
+				cause:  err,
+			}
+		}
+	}
+
+	return nil
+}
+
+// GetTaskMetricsResponseValidationError is the validation error returned by
+// GetTaskMetricsResponse.Validate if the designated constraints aren't met.
+type GetTaskMetricsResponseValidationError struct {
+	field  string
+	reason string
+	cause  error
+	key    bool
+}
+
+// Field function returns field value.
+func (e GetTaskMetricsResponseValidationError) Field() string { return e.field }
+
+// Reason function returns reason value.
+func (e GetTaskMetricsResponseValidationError) Reason() string { return e.reason }
+
+// Cause function returns cause value.
+func (e GetTaskMetricsResponseValidationError) Cause() error { return e.cause }
+
+// Key function returns key value.
+func (e GetTaskMetricsResponseValidationError) Key() bool { return e.key }
+
+// ErrorName returns error name.
+func (e GetTaskMetricsResponseValidationError) ErrorName() string {
+	return "GetTaskMetricsResponseValidationError"
+}
+
+// Error satisfies the builtin error interface
+func (e GetTaskMetricsResponseValidationError) Error() string {
+	cause := ""
+	if e.cause != nil {
+		cause = fmt.Sprintf(" | caused by: %v", e.cause)
+	}
+
+	key := ""
+	if e.key {
+		key = "key for "
+	}
+
+	return fmt.Sprintf(
+		"invalid %sGetTaskMetricsResponse.%s: %s%s",
+		key,
+		e.field,
+		e.reason,
+		cause)
+}
+
+var _ error = GetTaskMetricsResponseValidationError{}
+
+var _ interface {
+	Field() string
+	Reason() string
+	Key() bool
+	Cause() error
+	ErrorName() string
+} = GetTaskMetricsResponseValidationError{}

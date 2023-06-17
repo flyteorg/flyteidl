@@ -52,7 +52,7 @@ struct TableStruct_flyteidl_2fadmin_2fexecution_2eproto {
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
   static const ::google::protobuf::internal::AuxillaryParseTableField aux[]
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
-  static const ::google::protobuf::internal::ParseTable schema[23]
+  static const ::google::protobuf::internal::ParseTable schema[25]
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
   static const ::google::protobuf::internal::FieldMetadata field_metadata[];
   static const ::google::protobuf::internal::SerializationTable serialization_table[];
@@ -106,6 +106,12 @@ extern ExecutionUpdateRequestDefaultTypeInternal _ExecutionUpdateRequest_default
 class ExecutionUpdateResponse;
 class ExecutionUpdateResponseDefaultTypeInternal;
 extern ExecutionUpdateResponseDefaultTypeInternal _ExecutionUpdateResponse_default_instance_;
+class GetTaskMetricsRequest;
+class GetTaskMetricsRequestDefaultTypeInternal;
+extern GetTaskMetricsRequestDefaultTypeInternal _GetTaskMetricsRequest_default_instance_;
+class GetTaskMetricsResponse;
+class GetTaskMetricsResponseDefaultTypeInternal;
+extern GetTaskMetricsResponseDefaultTypeInternal _GetTaskMetricsResponse_default_instance_;
 class LiteralMapBlob;
 class LiteralMapBlobDefaultTypeInternal;
 extern LiteralMapBlobDefaultTypeInternal _LiteralMapBlob_default_instance_;
@@ -149,6 +155,8 @@ template<> ::flyteidl::admin::ExecutionTerminateRequest* Arena::CreateMaybeMessa
 template<> ::flyteidl::admin::ExecutionTerminateResponse* Arena::CreateMaybeMessage<::flyteidl::admin::ExecutionTerminateResponse>(Arena*);
 template<> ::flyteidl::admin::ExecutionUpdateRequest* Arena::CreateMaybeMessage<::flyteidl::admin::ExecutionUpdateRequest>(Arena*);
 template<> ::flyteidl::admin::ExecutionUpdateResponse* Arena::CreateMaybeMessage<::flyteidl::admin::ExecutionUpdateResponse>(Arena*);
+template<> ::flyteidl::admin::GetTaskMetricsRequest* Arena::CreateMaybeMessage<::flyteidl::admin::GetTaskMetricsRequest>(Arena*);
+template<> ::flyteidl::admin::GetTaskMetricsResponse* Arena::CreateMaybeMessage<::flyteidl::admin::GetTaskMetricsResponse>(Arena*);
 template<> ::flyteidl::admin::LiteralMapBlob* Arena::CreateMaybeMessage<::flyteidl::admin::LiteralMapBlob>(Arena*);
 template<> ::flyteidl::admin::NotificationList* Arena::CreateMaybeMessage<::flyteidl::admin::NotificationList>(Arena*);
 template<> ::flyteidl::admin::SystemMetadata* Arena::CreateMaybeMessage<::flyteidl::admin::SystemMetadata>(Arena*);
@@ -3542,6 +3550,236 @@ class WorkflowExecutionGetMetricsResponse final :
   void set_allocated_span(::flyteidl::core::Span* span);
 
   // @@protoc_insertion_point(class_scope:flyteidl.admin.WorkflowExecutionGetMetricsResponse)
+ private:
+  class HasBitSetters;
+
+  ::google::protobuf::internal::InternalMetadataWithArena _internal_metadata_;
+  ::flyteidl::core::Span* span_;
+  mutable ::google::protobuf::internal::CachedSize _cached_size_;
+  friend struct ::TableStruct_flyteidl_2fadmin_2fexecution_2eproto;
+};
+// -------------------------------------------------------------------
+
+class GetTaskMetricsRequest final :
+    public ::google::protobuf::Message /* @@protoc_insertion_point(class_definition:flyteidl.admin.GetTaskMetricsRequest) */ {
+ public:
+  GetTaskMetricsRequest();
+  virtual ~GetTaskMetricsRequest();
+
+  GetTaskMetricsRequest(const GetTaskMetricsRequest& from);
+
+  inline GetTaskMetricsRequest& operator=(const GetTaskMetricsRequest& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  #if LANG_CXX11
+  GetTaskMetricsRequest(GetTaskMetricsRequest&& from) noexcept
+    : GetTaskMetricsRequest() {
+    *this = ::std::move(from);
+  }
+
+  inline GetTaskMetricsRequest& operator=(GetTaskMetricsRequest&& from) noexcept {
+    if (GetArenaNoVirtual() == from.GetArenaNoVirtual()) {
+      if (this != &from) InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+  #endif
+  static const ::google::protobuf::Descriptor* descriptor() {
+    return default_instance().GetDescriptor();
+  }
+  static const GetTaskMetricsRequest& default_instance();
+
+  static void InitAsDefaultInstance();  // FOR INTERNAL USE ONLY
+  static inline const GetTaskMetricsRequest* internal_default_instance() {
+    return reinterpret_cast<const GetTaskMetricsRequest*>(
+               &_GetTaskMetricsRequest_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    23;
+
+  void Swap(GetTaskMetricsRequest* other);
+  friend void swap(GetTaskMetricsRequest& a, GetTaskMetricsRequest& b) {
+    a.Swap(&b);
+  }
+
+  // implements Message ----------------------------------------------
+
+  inline GetTaskMetricsRequest* New() const final {
+    return CreateMaybeMessage<GetTaskMetricsRequest>(nullptr);
+  }
+
+  GetTaskMetricsRequest* New(::google::protobuf::Arena* arena) const final {
+    return CreateMaybeMessage<GetTaskMetricsRequest>(arena);
+  }
+  void CopyFrom(const ::google::protobuf::Message& from) final;
+  void MergeFrom(const ::google::protobuf::Message& from) final;
+  void CopyFrom(const GetTaskMetricsRequest& from);
+  void MergeFrom(const GetTaskMetricsRequest& from);
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  #if GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
+  static const char* _InternalParse(const char* begin, const char* end, void* object, ::google::protobuf::internal::ParseContext* ctx);
+  ::google::protobuf::internal::ParseFunc _ParseFunc() const final { return _InternalParse; }
+  #else
+  bool MergePartialFromCodedStream(
+      ::google::protobuf::io::CodedInputStream* input) final;
+  #endif  // GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
+  void SerializeWithCachedSizes(
+      ::google::protobuf::io::CodedOutputStream* output) const final;
+  ::google::protobuf::uint8* InternalSerializeWithCachedSizesToArray(
+      ::google::protobuf::uint8* target) const final;
+  int GetCachedSize() const final { return _cached_size_.Get(); }
+
+  private:
+  void SharedCtor();
+  void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(GetTaskMetricsRequest* other);
+  private:
+  inline ::google::protobuf::Arena* GetArenaNoVirtual() const {
+    return nullptr;
+  }
+  inline void* MaybeArenaPtr() const {
+    return nullptr;
+  }
+  public:
+
+  ::google::protobuf::Metadata GetMetadata() const final;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  // .flyteidl.core.NodeExecutionIdentifier id = 1;
+  bool has_id() const;
+  void clear_id();
+  static const int kIdFieldNumber = 1;
+  const ::flyteidl::core::NodeExecutionIdentifier& id() const;
+  ::flyteidl::core::NodeExecutionIdentifier* release_id();
+  ::flyteidl::core::NodeExecutionIdentifier* mutable_id();
+  void set_allocated_id(::flyteidl::core::NodeExecutionIdentifier* id);
+
+  // @@protoc_insertion_point(class_scope:flyteidl.admin.GetTaskMetricsRequest)
+ private:
+  class HasBitSetters;
+
+  ::google::protobuf::internal::InternalMetadataWithArena _internal_metadata_;
+  ::flyteidl::core::NodeExecutionIdentifier* id_;
+  mutable ::google::protobuf::internal::CachedSize _cached_size_;
+  friend struct ::TableStruct_flyteidl_2fadmin_2fexecution_2eproto;
+};
+// -------------------------------------------------------------------
+
+class GetTaskMetricsResponse final :
+    public ::google::protobuf::Message /* @@protoc_insertion_point(class_definition:flyteidl.admin.GetTaskMetricsResponse) */ {
+ public:
+  GetTaskMetricsResponse();
+  virtual ~GetTaskMetricsResponse();
+
+  GetTaskMetricsResponse(const GetTaskMetricsResponse& from);
+
+  inline GetTaskMetricsResponse& operator=(const GetTaskMetricsResponse& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  #if LANG_CXX11
+  GetTaskMetricsResponse(GetTaskMetricsResponse&& from) noexcept
+    : GetTaskMetricsResponse() {
+    *this = ::std::move(from);
+  }
+
+  inline GetTaskMetricsResponse& operator=(GetTaskMetricsResponse&& from) noexcept {
+    if (GetArenaNoVirtual() == from.GetArenaNoVirtual()) {
+      if (this != &from) InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+  #endif
+  static const ::google::protobuf::Descriptor* descriptor() {
+    return default_instance().GetDescriptor();
+  }
+  static const GetTaskMetricsResponse& default_instance();
+
+  static void InitAsDefaultInstance();  // FOR INTERNAL USE ONLY
+  static inline const GetTaskMetricsResponse* internal_default_instance() {
+    return reinterpret_cast<const GetTaskMetricsResponse*>(
+               &_GetTaskMetricsResponse_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    24;
+
+  void Swap(GetTaskMetricsResponse* other);
+  friend void swap(GetTaskMetricsResponse& a, GetTaskMetricsResponse& b) {
+    a.Swap(&b);
+  }
+
+  // implements Message ----------------------------------------------
+
+  inline GetTaskMetricsResponse* New() const final {
+    return CreateMaybeMessage<GetTaskMetricsResponse>(nullptr);
+  }
+
+  GetTaskMetricsResponse* New(::google::protobuf::Arena* arena) const final {
+    return CreateMaybeMessage<GetTaskMetricsResponse>(arena);
+  }
+  void CopyFrom(const ::google::protobuf::Message& from) final;
+  void MergeFrom(const ::google::protobuf::Message& from) final;
+  void CopyFrom(const GetTaskMetricsResponse& from);
+  void MergeFrom(const GetTaskMetricsResponse& from);
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  #if GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
+  static const char* _InternalParse(const char* begin, const char* end, void* object, ::google::protobuf::internal::ParseContext* ctx);
+  ::google::protobuf::internal::ParseFunc _ParseFunc() const final { return _InternalParse; }
+  #else
+  bool MergePartialFromCodedStream(
+      ::google::protobuf::io::CodedInputStream* input) final;
+  #endif  // GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
+  void SerializeWithCachedSizes(
+      ::google::protobuf::io::CodedOutputStream* output) const final;
+  ::google::protobuf::uint8* InternalSerializeWithCachedSizesToArray(
+      ::google::protobuf::uint8* target) const final;
+  int GetCachedSize() const final { return _cached_size_.Get(); }
+
+  private:
+  void SharedCtor();
+  void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(GetTaskMetricsResponse* other);
+  private:
+  inline ::google::protobuf::Arena* GetArenaNoVirtual() const {
+    return nullptr;
+  }
+  inline void* MaybeArenaPtr() const {
+    return nullptr;
+  }
+  public:
+
+  ::google::protobuf::Metadata GetMetadata() const final;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  // .flyteidl.core.Span span = 1;
+  bool has_span() const;
+  void clear_span();
+  static const int kSpanFieldNumber = 1;
+  const ::flyteidl::core::Span& span() const;
+  ::flyteidl::core::Span* release_span();
+  ::flyteidl::core::Span* mutable_span();
+  void set_allocated_span(::flyteidl::core::Span* span);
+
+  // @@protoc_insertion_point(class_scope:flyteidl.admin.GetTaskMetricsResponse)
  private:
   class HasBitSetters;
 
@@ -7000,9 +7238,111 @@ inline void WorkflowExecutionGetMetricsResponse::set_allocated_span(::flyteidl::
   // @@protoc_insertion_point(field_set_allocated:flyteidl.admin.WorkflowExecutionGetMetricsResponse.span)
 }
 
+// -------------------------------------------------------------------
+
+// GetTaskMetricsRequest
+
+// .flyteidl.core.NodeExecutionIdentifier id = 1;
+inline bool GetTaskMetricsRequest::has_id() const {
+  return this != internal_default_instance() && id_ != nullptr;
+}
+inline const ::flyteidl::core::NodeExecutionIdentifier& GetTaskMetricsRequest::id() const {
+  const ::flyteidl::core::NodeExecutionIdentifier* p = id_;
+  // @@protoc_insertion_point(field_get:flyteidl.admin.GetTaskMetricsRequest.id)
+  return p != nullptr ? *p : *reinterpret_cast<const ::flyteidl::core::NodeExecutionIdentifier*>(
+      &::flyteidl::core::_NodeExecutionIdentifier_default_instance_);
+}
+inline ::flyteidl::core::NodeExecutionIdentifier* GetTaskMetricsRequest::release_id() {
+  // @@protoc_insertion_point(field_release:flyteidl.admin.GetTaskMetricsRequest.id)
+  
+  ::flyteidl::core::NodeExecutionIdentifier* temp = id_;
+  id_ = nullptr;
+  return temp;
+}
+inline ::flyteidl::core::NodeExecutionIdentifier* GetTaskMetricsRequest::mutable_id() {
+  
+  if (id_ == nullptr) {
+    auto* p = CreateMaybeMessage<::flyteidl::core::NodeExecutionIdentifier>(GetArenaNoVirtual());
+    id_ = p;
+  }
+  // @@protoc_insertion_point(field_mutable:flyteidl.admin.GetTaskMetricsRequest.id)
+  return id_;
+}
+inline void GetTaskMetricsRequest::set_allocated_id(::flyteidl::core::NodeExecutionIdentifier* id) {
+  ::google::protobuf::Arena* message_arena = GetArenaNoVirtual();
+  if (message_arena == nullptr) {
+    delete reinterpret_cast< ::google::protobuf::MessageLite*>(id_);
+  }
+  if (id) {
+    ::google::protobuf::Arena* submessage_arena = nullptr;
+    if (message_arena != submessage_arena) {
+      id = ::google::protobuf::internal::GetOwnedMessage(
+          message_arena, id, submessage_arena);
+    }
+    
+  } else {
+    
+  }
+  id_ = id;
+  // @@protoc_insertion_point(field_set_allocated:flyteidl.admin.GetTaskMetricsRequest.id)
+}
+
+// -------------------------------------------------------------------
+
+// GetTaskMetricsResponse
+
+// .flyteidl.core.Span span = 1;
+inline bool GetTaskMetricsResponse::has_span() const {
+  return this != internal_default_instance() && span_ != nullptr;
+}
+inline const ::flyteidl::core::Span& GetTaskMetricsResponse::span() const {
+  const ::flyteidl::core::Span* p = span_;
+  // @@protoc_insertion_point(field_get:flyteidl.admin.GetTaskMetricsResponse.span)
+  return p != nullptr ? *p : *reinterpret_cast<const ::flyteidl::core::Span*>(
+      &::flyteidl::core::_Span_default_instance_);
+}
+inline ::flyteidl::core::Span* GetTaskMetricsResponse::release_span() {
+  // @@protoc_insertion_point(field_release:flyteidl.admin.GetTaskMetricsResponse.span)
+  
+  ::flyteidl::core::Span* temp = span_;
+  span_ = nullptr;
+  return temp;
+}
+inline ::flyteidl::core::Span* GetTaskMetricsResponse::mutable_span() {
+  
+  if (span_ == nullptr) {
+    auto* p = CreateMaybeMessage<::flyteidl::core::Span>(GetArenaNoVirtual());
+    span_ = p;
+  }
+  // @@protoc_insertion_point(field_mutable:flyteidl.admin.GetTaskMetricsResponse.span)
+  return span_;
+}
+inline void GetTaskMetricsResponse::set_allocated_span(::flyteidl::core::Span* span) {
+  ::google::protobuf::Arena* message_arena = GetArenaNoVirtual();
+  if (message_arena == nullptr) {
+    delete reinterpret_cast< ::google::protobuf::MessageLite*>(span_);
+  }
+  if (span) {
+    ::google::protobuf::Arena* submessage_arena = nullptr;
+    if (message_arena != submessage_arena) {
+      span = ::google::protobuf::internal::GetOwnedMessage(
+          message_arena, span, submessage_arena);
+    }
+    
+  } else {
+    
+  }
+  span_ = span;
+  // @@protoc_insertion_point(field_set_allocated:flyteidl.admin.GetTaskMetricsResponse.span)
+}
+
 #ifdef __GNUC__
   #pragma GCC diagnostic pop
 #endif  // __GNUC__
+// -------------------------------------------------------------------
+
+// -------------------------------------------------------------------
+
 // -------------------------------------------------------------------
 
 // -------------------------------------------------------------------

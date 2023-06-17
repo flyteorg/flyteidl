@@ -295,10 +295,10 @@ class AdminServiceStub(object):
                 request_serializer=flyteidl_dot_admin_dot_execution__pb2.WorkflowExecutionGetMetricsRequest.SerializeToString,
                 response_deserializer=flyteidl_dot_admin_dot_execution__pb2.WorkflowExecutionGetMetricsResponse.FromString,
                 )
-        self.GetFlyteKitMetrics = channel.unary_unary(
-                '/flyteidl.service.AdminService/GetFlyteKitMetrics',
-                request_serializer=flyteidl_dot_admin_dot_node__execution__pb2.NodeExecutionGetRequest.SerializeToString,
-                response_deserializer=flyteidl_dot_admin_dot_execution__pb2.WorkflowExecutionGetMetricsResponse.FromString,
+        self.GetTaskMetrics = channel.unary_unary(
+                '/flyteidl.service.AdminService/GetTaskMetrics',
+                request_serializer=flyteidl_dot_admin_dot_execution__pb2.GetTaskMetricsRequest.SerializeToString,
+                response_deserializer=flyteidl_dot_admin_dot_execution__pb2.GetTaskMetricsResponse.FromString,
                 )
 
 
@@ -683,8 +683,8 @@ class AdminServiceServicer(object):
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
-    def GetFlyteKitMetrics(self, request, context):
-        """Fetches FlyteKit metrics for a :ref:`ref_flyteidl.admin.NodeExecution`.
+    def GetTaskMetrics(self, request, context):
+        """Fetches task runtime metrics for a :ref:`ref_flyteidl.admin.NodeExecution`.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
@@ -958,10 +958,10 @@ def add_AdminServiceServicer_to_server(servicer, server):
                     request_deserializer=flyteidl_dot_admin_dot_execution__pb2.WorkflowExecutionGetMetricsRequest.FromString,
                     response_serializer=flyteidl_dot_admin_dot_execution__pb2.WorkflowExecutionGetMetricsResponse.SerializeToString,
             ),
-            'GetFlyteKitMetrics': grpc.unary_unary_rpc_method_handler(
-                    servicer.GetFlyteKitMetrics,
-                    request_deserializer=flyteidl_dot_admin_dot_node__execution__pb2.NodeExecutionGetRequest.FromString,
-                    response_serializer=flyteidl_dot_admin_dot_execution__pb2.WorkflowExecutionGetMetricsResponse.SerializeToString,
+            'GetTaskMetrics': grpc.unary_unary_rpc_method_handler(
+                    servicer.GetTaskMetrics,
+                    request_deserializer=flyteidl_dot_admin_dot_execution__pb2.GetTaskMetricsRequest.FromString,
+                    response_serializer=flyteidl_dot_admin_dot_execution__pb2.GetTaskMetricsResponse.SerializeToString,
             ),
     }
     generic_handler = grpc.method_handlers_generic_handler(
@@ -1877,7 +1877,7 @@ class AdminService(object):
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
     @staticmethod
-    def GetFlyteKitMetrics(request,
+    def GetTaskMetrics(request,
             target,
             options=(),
             channel_credentials=None,
@@ -1887,8 +1887,8 @@ class AdminService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/flyteidl.service.AdminService/GetFlyteKitMetrics',
-            flyteidl_dot_admin_dot_node__execution__pb2.NodeExecutionGetRequest.SerializeToString,
-            flyteidl_dot_admin_dot_execution__pb2.WorkflowExecutionGetMetricsResponse.FromString,
+        return grpc.experimental.unary_unary(request, target, '/flyteidl.service.AdminService/GetTaskMetrics',
+            flyteidl_dot_admin_dot_execution__pb2.GetTaskMetricsRequest.SerializeToString,
+            flyteidl_dot_admin_dot_execution__pb2.GetTaskMetricsResponse.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)

@@ -85,7 +85,6 @@ Class | Method | HTTP request | Description
 *AdminServiceApi* | [**get_execution**](docs/AdminServiceApi.md#get_execution) | **GET** /api/v1/executions/{id.project}/{id.domain}/{id.name} | Fetches a :ref:&#x60;ref_flyteidl.admin.Execution&#x60;.
 *AdminServiceApi* | [**get_execution_data**](docs/AdminServiceApi.md#get_execution_data) | **GET** /api/v1/data/executions/{id.project}/{id.domain}/{id.name} | Fetches input and output data for a :ref:&#x60;ref_flyteidl.admin.Execution&#x60;.
 *AdminServiceApi* | [**get_execution_metrics**](docs/AdminServiceApi.md#get_execution_metrics) | **GET** /api/v1/metrics/executions/{id.project}/{id.domain}/{id.name} | Fetches runtime metrics for a :ref:&#x60;ref_flyteidl.admin.Execution&#x60;.
-*AdminServiceApi* | [**get_flyte_kit_metrics**](docs/AdminServiceApi.md#get_flyte_kit_metrics) | **GET** /api/v1/metrics/node_executions/{id.execution_id.project}/{id.execution_id.domain}/{id.execution_id.name}/{id.node_id} | Fetches FlyteKit metrics for a :ref:&#x60;ref_flyteidl.admin.NodeExecution&#x60;.
 *AdminServiceApi* | [**get_launch_plan**](docs/AdminServiceApi.md#get_launch_plan) | **GET** /api/v1/launch_plans/{id.project}/{id.domain}/{id.name}/{id.version} | Fetch a :ref:&#x60;ref_flyteidl.admin.LaunchPlan&#x60; definition.
 *AdminServiceApi* | [**get_named_entity**](docs/AdminServiceApi.md#get_named_entity) | **GET** /api/v1/named_entities/{resource_type}/{id.project}/{id.domain}/{id.name} | Returns a :ref:&#x60;ref_flyteidl.admin.NamedEntity&#x60; object.
 *AdminServiceApi* | [**get_node_execution**](docs/AdminServiceApi.md#get_node_execution) | **GET** /api/v1/node_executions/{id.execution_id.project}/{id.execution_id.domain}/{id.execution_id.name}/{id.node_id} | Fetches a :ref:&#x60;ref_flyteidl.admin.NodeExecution&#x60;.
@@ -95,6 +94,7 @@ Class | Method | HTTP request | Description
 *AdminServiceApi* | [**get_task**](docs/AdminServiceApi.md#get_task) | **GET** /api/v1/tasks/{id.project}/{id.domain}/{id.name}/{id.version} | Fetch a :ref:&#x60;ref_flyteidl.admin.Task&#x60; definition.
 *AdminServiceApi* | [**get_task_execution**](docs/AdminServiceApi.md#get_task_execution) | **GET** /api/v1/task_executions/{id.node_execution_id.execution_id.project}/{id.node_execution_id.execution_id.domain}/{id.node_execution_id.execution_id.name}/{id.node_execution_id.node_id}/{id.task_id.project}/{id.task_id.domain}/{id.task_id.name}/{id.task_id.version}/{id.retry_attempt} | Fetches a :ref:&#x60;ref_flyteidl.admin.TaskExecution&#x60;.
 *AdminServiceApi* | [**get_task_execution_data**](docs/AdminServiceApi.md#get_task_execution_data) | **GET** /api/v1/data/task_executions/{id.node_execution_id.execution_id.project}/{id.node_execution_id.execution_id.domain}/{id.node_execution_id.execution_id.name}/{id.node_execution_id.node_id}/{id.task_id.project}/{id.task_id.domain}/{id.task_id.name}/{id.task_id.version}/{id.retry_attempt} | Fetches input and output data for a :ref:&#x60;ref_flyteidl.admin.TaskExecution&#x60;.
+*AdminServiceApi* | [**get_task_metrics**](docs/AdminServiceApi.md#get_task_metrics) | **GET** /api/v1/metrics/node_executions/{id.execution_id.project}/{id.execution_id.domain}/{id.execution_id.name}/{id.node_id} | Fetches task runtime metrics for a :ref:&#x60;ref_flyteidl.admin.NodeExecution&#x60;.
 *AdminServiceApi* | [**get_version**](docs/AdminServiceApi.md#get_version) | **GET** /api/v1/version | 
 *AdminServiceApi* | [**get_workflow**](docs/AdminServiceApi.md#get_workflow) | **GET** /api/v1/workflows/{id.project}/{id.domain}/{id.name}/{id.version} | Fetch a :ref:&#x60;ref_flyteidl.admin.Workflow&#x60; definition.
 *AdminServiceApi* | [**get_workflow_attributes**](docs/AdminServiceApi.md#get_workflow_attributes) | **GET** /api/v1/workflow_attributes/{project}/{domain}/{workflow} | Fetches custom :ref:&#x60;ref_flyteidl.admin.MatchableAttributesConfiguration&#x60; for a project, domain and workflow.
@@ -166,6 +166,7 @@ Class | Method | HTTP request | Description
  - [AdminFixedRate](docs/AdminFixedRate.md)
  - [AdminFixedRateUnit](docs/AdminFixedRateUnit.md)
  - [AdminFlyteURLs](docs/AdminFlyteURLs.md)
+ - [AdminGetTaskMetricsResponse](docs/AdminGetTaskMetricsResponse.md)
  - [AdminGetVersionResponse](docs/AdminGetVersionResponse.md)
  - [AdminLabels](docs/AdminLabels.md)
  - [AdminLaunchPlan](docs/AdminLaunchPlan.md)

@@ -230,11 +230,12 @@ type NodeExecutionEvent struct {
 	// when first processing a node the `occurred_at` timestamp should be the instant propeller makes progress, so when
 	// literal inputs are initially copied. The event however will not be sent until after the copy completes.
 	// Extracting both of these timestamps facilitates a more accurate portrayal of the evaluation time-series.
-	ReportedAt           *timestamp.Timestamp `protobuf:"bytes,21,opt,name=reported_at,json=reportedAt,proto3" json:"reported_at,omitempty"`
-	SpanUri              string               `protobuf:"bytes,22,opt,name=span_uri,json=spanUri,proto3" json:"span_uri,omitempty"`
-	XXX_NoUnkeyedLiteral struct{}             `json:"-"`
-	XXX_unrecognized     []byte               `json:"-"`
-	XXX_sizecache        int32                `json:"-"`
+	ReportedAt *timestamp.Timestamp `protobuf:"bytes,21,opt,name=reported_at,json=reportedAt,proto3" json:"reported_at,omitempty"`
+	// String location uniquely identifying where the span.pb file is.
+	SpanUri              string   `protobuf:"bytes,22,opt,name=span_uri,json=spanUri,proto3" json:"span_uri,omitempty"`
+	XXX_NoUnkeyedLiteral struct{} `json:"-"`
+	XXX_unrecognized     []byte   `json:"-"`
+	XXX_sizecache        int32    `json:"-"`
 }
 
 func (m *NodeExecutionEvent) Reset()         { *m = NodeExecutionEvent{} }

@@ -282,3 +282,15 @@ class WorkflowExecutionGetMetricsResponse(_message.Message):
     SPAN_FIELD_NUMBER: _ClassVar[int]
     span: _metrics_pb2.Span
     def __init__(self, span: _Optional[_Union[_metrics_pb2.Span, _Mapping]] = ...) -> None: ...
+
+class GetTaskMetricsRequest(_message.Message):
+    __slots__ = ["id"]
+    ID_FIELD_NUMBER: _ClassVar[int]
+    id: _identifier_pb2.NodeExecutionIdentifier
+    def __init__(self, id: _Optional[_Union[_identifier_pb2.NodeExecutionIdentifier, _Mapping]] = ...) -> None: ...
+
+class GetTaskMetricsResponse(_message.Message):
+    __slots__ = ["span"]
+    SPAN_FIELD_NUMBER: _ClassVar[int]
+    span: _metrics_pb2.Span
+    def __init__(self, span: _Optional[_Union[_metrics_pb2.Span, _Mapping]] = ...) -> None: ...

@@ -1343,8 +1343,8 @@ paths:
     get:
       tags:
       - "AdminService"
-      summary: "Fetches FlyteKit metrics for a :ref:`ref_flyteidl.admin.NodeExecution`."
-      operationId: "GetFlyteKitMetrics"
+      summary: "Fetches task runtime metrics for a :ref:`ref_flyteidl.admin.NodeExecution`."
+      operationId: "GetTaskMetrics"
       parameters:
       - name: "id.execution_id.project"
         in: "path"
@@ -1374,7 +1374,7 @@ paths:
         200:
           description: "A successful response."
           schema:
-            $ref: "#/definitions/adminWorkflowExecutionGetMetricsResponse"
+            $ref: "#/definitions/adminGetTaskMetricsResponse"
   /api/v1/named_entities/{resource_type}/{id.project}/{id.domain}/{id.name}:
     get:
       tags:
@@ -4653,6 +4653,47 @@ definitions:
       outputs: "outputs"
       inputs: "inputs"
       deck: "deck"
+  adminGetTaskMetricsResponse:
+    type: "object"
+    properties:
+      span:
+        description: "Span conatins a collection of time information for a paticular\
+          \ task.\nAll the infomation is in span.Spans."
+        $ref: "#/definitions/coreSpan"
+    description: "GetTaskMetricsResponse represents the response containing task runtime\
+      \ metrics for the specified node execution."
+    example:
+      span:
+        start_time: "2000-01-23T04:56:07.000+00:00"
+        spans:
+        - null
+        - null
+        workflow_id:
+          domain: "domain"
+          name: "name"
+          project: "project"
+        end_time: "2000-01-23T04:56:07.000+00:00"
+        task_id:
+          task_id:
+            domain: "domain"
+            resource_type: {}
+            name: "name"
+            project: "project"
+            version: "version"
+          node_execution_id:
+            execution_id:
+              domain: "domain"
+              name: "name"
+              project: "project"
+            node_id: "node_id"
+          retry_attempt: 0
+        operation_id: "operation_id"
+        node_id:
+          execution_id:
+            domain: "domain"
+            name: "name"
+            project: "project"
+          node_id: "node_id"
   adminGetVersionResponse:
     type: "object"
     properties:
@@ -7695,6 +7736,8 @@ definitions:
           \ compiled."
       span_uri:
         type: "string"
+        description: "String location uniquely identifying where the span.pb file\
+          \ is."
     description: "Container for node execution details and results."
     example:
       phase: {}
@@ -59123,6 +59166,8 @@ definitions:
           \ facilitates a more accurate portrayal of the evaluation time-series."
       span_uri:
         type: "string"
+        description: "String location uniquely identifying where the span.pb file\
+          \ is."
   eventParentNodeExecutionMetadata:
     type: "object"
     properties:

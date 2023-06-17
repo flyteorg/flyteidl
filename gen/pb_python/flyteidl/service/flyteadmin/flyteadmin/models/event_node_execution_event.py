@@ -624,6 +624,7 @@ class EventNodeExecutionEvent(object):
     def span_uri(self):
         """Gets the span_uri of this EventNodeExecutionEvent.  # noqa: E501
 
+        String location uniquely identifying where the span.pb file is.  # noqa: E501
 
         :return: The span_uri of this EventNodeExecutionEvent.  # noqa: E501
         :rtype: str
@@ -634,6 +635,7 @@ class EventNodeExecutionEvent(object):
     def span_uri(self, span_uri):
         """Sets the span_uri of this EventNodeExecutionEvent.
 
+        String location uniquely identifying where the span.pb file is.  # noqa: E501
 
         :param span_uri: The span_uri of this EventNodeExecutionEvent.  # noqa: E501
         :type: str

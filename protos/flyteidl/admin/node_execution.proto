@@ -172,6 +172,7 @@ message NodeExecutionClosure {
     // to correctly recover partially completed executions where the subworkflow has already been compiled.
     string dynamic_job_spec_uri = 12;
 
+    // String location uniquely identifying where the span.pb file is.
     string span_uri = 13;
 }
 

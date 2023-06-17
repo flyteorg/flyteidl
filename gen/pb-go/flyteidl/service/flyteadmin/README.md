@@ -36,7 +36,6 @@ Class | Method | HTTP request | Description
 *AdminServiceApi* | [**GetExecution**](docs/AdminServiceApi.md#getexecution) | **Get** /api/v1/executions/{id.project}/{id.domain}/{id.name} | Fetches a :ref:&#x60;ref_flyteidl.admin.Execution&#x60;.
 *AdminServiceApi* | [**GetExecutionData**](docs/AdminServiceApi.md#getexecutiondata) | **Get** /api/v1/data/executions/{id.project}/{id.domain}/{id.name} | Fetches input and output data for a :ref:&#x60;ref_flyteidl.admin.Execution&#x60;.
 *AdminServiceApi* | [**GetExecutionMetrics**](docs/AdminServiceApi.md#getexecutionmetrics) | **Get** /api/v1/metrics/executions/{id.project}/{id.domain}/{id.name} | Fetches runtime metrics for a :ref:&#x60;ref_flyteidl.admin.Execution&#x60;.
-*AdminServiceApi* | [**GetFlyteKitMetrics**](docs/AdminServiceApi.md#getflytekitmetrics) | **Get** /api/v1/metrics/node_executions/{id.execution_id.project}/{id.execution_id.domain}/{id.execution_id.name}/{id.node_id} | Fetches FlyteKit metrics for a :ref:&#x60;ref_flyteidl.admin.NodeExecution&#x60;.
 *AdminServiceApi* | [**GetLaunchPlan**](docs/AdminServiceApi.md#getlaunchplan) | **Get** /api/v1/launch_plans/{id.project}/{id.domain}/{id.name}/{id.version} | Fetch a :ref:&#x60;ref_flyteidl.admin.LaunchPlan&#x60; definition.
 *AdminServiceApi* | [**GetNamedEntity**](docs/AdminServiceApi.md#getnamedentity) | **Get** /api/v1/named_entities/{resource_type}/{id.project}/{id.domain}/{id.name} | Returns a :ref:&#x60;ref_flyteidl.admin.NamedEntity&#x60; object.
 *AdminServiceApi* | [**GetNodeExecution**](docs/AdminServiceApi.md#getnodeexecution) | **Get** /api/v1/node_executions/{id.execution_id.project}/{id.execution_id.domain}/{id.execution_id.name}/{id.node_id} | Fetches a :ref:&#x60;ref_flyteidl.admin.NodeExecution&#x60;.
@@ -46,6 +45,7 @@ Class | Method | HTTP request | Description
 *AdminServiceApi* | [**GetTask**](docs/AdminServiceApi.md#gettask) | **Get** /api/v1/tasks/{id.project}/{id.domain}/{id.name}/{id.version} | Fetch a :ref:&#x60;ref_flyteidl.admin.Task&#x60; definition.
 *AdminServiceApi* | [**GetTaskExecution**](docs/AdminServiceApi.md#gettaskexecution) | **Get** /api/v1/task_executions/{id.node_execution_id.execution_id.project}/{id.node_execution_id.execution_id.domain}/{id.node_execution_id.execution_id.name}/{id.node_execution_id.node_id}/{id.task_id.project}/{id.task_id.domain}/{id.task_id.name}/{id.task_id.version}/{id.retry_attempt} | Fetches a :ref:&#x60;ref_flyteidl.admin.TaskExecution&#x60;.
 *AdminServiceApi* | [**GetTaskExecutionData**](docs/AdminServiceApi.md#gettaskexecutiondata) | **Get** /api/v1/data/task_executions/{id.node_execution_id.execution_id.project}/{id.node_execution_id.execution_id.domain}/{id.node_execution_id.execution_id.name}/{id.node_execution_id.node_id}/{id.task_id.project}/{id.task_id.domain}/{id.task_id.name}/{id.task_id.version}/{id.retry_attempt} | Fetches input and output data for a :ref:&#x60;ref_flyteidl.admin.TaskExecution&#x60;.
+*AdminServiceApi* | [**GetTaskMetrics**](docs/AdminServiceApi.md#gettaskmetrics) | **Get** /api/v1/metrics/node_executions/{id.execution_id.project}/{id.execution_id.domain}/{id.execution_id.name}/{id.node_id} | Fetches task runtime metrics for a :ref:&#x60;ref_flyteidl.admin.NodeExecution&#x60;.
 *AdminServiceApi* | [**GetVersion**](docs/AdminServiceApi.md#getversion) | **Get** /api/v1/version | 
 *AdminServiceApi* | [**GetWorkflow**](docs/AdminServiceApi.md#getworkflow) | **Get** /api/v1/workflows/{id.project}/{id.domain}/{id.name}/{id.version} | Fetch a :ref:&#x60;ref_flyteidl.admin.Workflow&#x60; definition.
 *AdminServiceApi* | [**GetWorkflowAttributes**](docs/AdminServiceApi.md#getworkflowattributes) | **Get** /api/v1/workflow_attributes/{project}/{domain}/{workflow} | Fetches custom :ref:&#x60;ref_flyteidl.admin.MatchableAttributesConfiguration&#x60; for a project, domain and workflow.
@@ -117,6 +117,7 @@ Class | Method | HTTP request | Description
  - [AdminFixedRate](docs/AdminFixedRate.md)
  - [AdminFixedRateUnit](docs/AdminFixedRateUnit.md)
  - [AdminFlyteUrLs](docs/AdminFlyteUrLs.md)
+ - [AdminGetTaskMetricsResponse](docs/AdminGetTaskMetricsResponse.md)
  - [AdminGetVersionResponse](docs/AdminGetVersionResponse.md)
  - [AdminLabels](docs/AdminLabels.md)
  - [AdminLaunchPlan](docs/AdminLaunchPlan.md)

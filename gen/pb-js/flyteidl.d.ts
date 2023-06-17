@@ -11785,6 +11785,110 @@ export namespace flyteidl {
             public static verify(message: { [k: string]: any }): (string|null);
         }
 
+        /** Properties of a GetTaskMetricsRequest. */
+        interface IGetTaskMetricsRequest {
+
+            /** GetTaskMetricsRequest id */
+            id?: (flyteidl.core.INodeExecutionIdentifier|null);
+        }
+
+        /** Represents a GetTaskMetricsRequest. */
+        class GetTaskMetricsRequest implements IGetTaskMetricsRequest {
+
+            /**
+             * Constructs a new GetTaskMetricsRequest.
+             * @param [properties] Properties to set
+             */
+            constructor(properties?: flyteidl.admin.IGetTaskMetricsRequest);
+
+            /** GetTaskMetricsRequest id. */
+            public id?: (flyteidl.core.INodeExecutionIdentifier|null);
+
+            /**
+             * Creates a new GetTaskMetricsRequest instance using the specified properties.
+             * @param [properties] Properties to set
+             * @returns GetTaskMetricsRequest instance
+             */
+            public static create(properties?: flyteidl.admin.IGetTaskMetricsRequest): flyteidl.admin.GetTaskMetricsRequest;
+
+            /**
+             * Encodes the specified GetTaskMetricsRequest message. Does not implicitly {@link flyteidl.admin.GetTaskMetricsRequest.verify|verify} messages.
+             * @param message GetTaskMetricsRequest message or plain object to encode
+             * @param [writer] Writer to encode to
+             * @returns Writer
+             */
+            public static encode(message: flyteidl.admin.IGetTaskMetricsRequest, writer?: $protobuf.Writer): $protobuf.Writer;
+
+            /**
+             * Decodes a GetTaskMetricsRequest message from the specified reader or buffer.
+             * @param reader Reader or buffer to decode from
+             * @param [length] Message length if known beforehand
+             * @returns GetTaskMetricsRequest
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): flyteidl.admin.GetTaskMetricsRequest;
+
+            /**
+             * Verifies a GetTaskMetricsRequest message.
+             * @param message Plain object to verify
+             * @returns `null` if valid, otherwise the reason why it is not
+             */
+            public static verify(message: { [k: string]: any }): (string|null);
+        }
+
+        /** Properties of a GetTaskMetricsResponse. */
+        interface IGetTaskMetricsResponse {
+
+            /** GetTaskMetricsResponse span */
+            span?: (flyteidl.core.ISpan|null);
+        }
+
+        /** Represents a GetTaskMetricsResponse. */
+        class GetTaskMetricsResponse implements IGetTaskMetricsResponse {
+
+            /**
+             * Constructs a new GetTaskMetricsResponse.
+             * @param [properties] Properties to set
+             */
+            constructor(properties?: flyteidl.admin.IGetTaskMetricsResponse);
+
+            /** GetTaskMetricsResponse span. */
+            public span?: (flyteidl.core.ISpan|null);
+
+            /**
+             * Creates a new GetTaskMetricsResponse instance using the specified properties.
+             * @param [properties] Properties to set
+             * @returns GetTaskMetricsResponse instance
+             */
+            public static create(properties?: flyteidl.admin.IGetTaskMetricsResponse): flyteidl.admin.GetTaskMetricsResponse;
+
+            /**
+             * Encodes the specified GetTaskMetricsResponse message. Does not implicitly {@link flyteidl.admin.GetTaskMetricsResponse.verify|verify} messages.
+             * @param message GetTaskMetricsResponse message or plain object to encode
+             * @param [writer] Writer to encode to
+             * @returns Writer
+             */
+            public static encode(message: flyteidl.admin.IGetTaskMetricsResponse, writer?: $protobuf.Writer): $protobuf.Writer;
+
+            /**
+             * Decodes a GetTaskMetricsResponse message from the specified reader or buffer.
+             * @param reader Reader or buffer to decode from
+             * @param [length] Message length if known beforehand
+             * @returns GetTaskMetricsResponse
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): flyteidl.admin.GetTaskMetricsResponse;
+
+            /**
+             * Verifies a GetTaskMetricsResponse message.
+             * @param message Plain object to verify
+             * @returns `null` if valid, otherwise the reason why it is not
+             */
+            public static verify(message: { [k: string]: any }): (string|null);
+        }
+
         /** Properties of a LaunchPlanCreateRequest. */
         interface ILaunchPlanCreateRequest {
 
@@ -18810,18 +18914,18 @@ export namespace flyteidl {
             public getExecutionMetrics(request: flyteidl.admin.IWorkflowExecutionGetMetricsRequest): Promise<flyteidl.admin.WorkflowExecutionGetMetricsResponse>;
 
             /**
-             * Calls GetFlyteKitMetrics.
-             * @param request NodeExecutionGetRequest message or plain object
-             * @param callback Node-style callback called with the error, if any, and WorkflowExecutionGetMetricsResponse
+             * Calls GetTaskMetrics.
+             * @param request GetTaskMetricsRequest message or plain object
+             * @param callback Node-style callback called with the error, if any, and GetTaskMetricsResponse
              */
-            public getFlyteKitMetrics(request: flyteidl.admin.INodeExecutionGetRequest, callback: flyteidl.service.AdminService.GetFlyteKitMetricsCallback): void;
+            public getTaskMetrics(request: flyteidl.admin.IGetTaskMetricsRequest, callback: flyteidl.service.AdminService.GetTaskMetricsCallback): void;
 
             /**
-             * Calls GetFlyteKitMetrics.
-             * @param request NodeExecutionGetRequest message or plain object
+             * Calls GetTaskMetrics.
+             * @param request GetTaskMetricsRequest message or plain object
              * @returns Promise
              */
-            public getFlyteKitMetrics(request: flyteidl.admin.INodeExecutionGetRequest): Promise<flyteidl.admin.WorkflowExecutionGetMetricsResponse>;
+            public getTaskMetrics(request: flyteidl.admin.IGetTaskMetricsRequest): Promise<flyteidl.admin.GetTaskMetricsResponse>;
         }
 
         namespace AdminService {
@@ -19198,11 +19302,11 @@ export namespace flyteidl {
             type GetExecutionMetricsCallback = (error: (Error|null), response?: flyteidl.admin.WorkflowExecutionGetMetricsResponse) => void;
 
             /**
-             * Callback as used by {@link flyteidl.service.AdminService#getFlyteKitMetrics}.
+             * Callback as used by {@link flyteidl.service.AdminService#getTaskMetrics}.
              * @param error Error, if any
-             * @param [response] WorkflowExecutionGetMetricsResponse
+             * @param [response] GetTaskMetricsResponse
              */
-            type GetFlyteKitMetricsCallback = (error: (Error|null), response?: flyteidl.admin.WorkflowExecutionGetMetricsResponse) => void;
+            type GetTaskMetricsCallback = (error: (Error|null), response?: flyteidl.admin.GetTaskMetricsResponse) => void;
         }
 
         /** Represents an AsyncAgentService */

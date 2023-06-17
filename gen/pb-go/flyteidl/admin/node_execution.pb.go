@@ -469,7 +469,8 @@ type NodeExecutionClosure struct {
 	DeckUri string `protobuf:"bytes,11,opt,name=deck_uri,json=deckUri,proto3" json:"deck_uri,omitempty"`
 	// dynamic_job_spec_uri is the location of the DynamicJobSpec proto message for a DynamicWorkflow. This is required
 	// to correctly recover partially completed executions where the subworkflow has already been compiled.
-	DynamicJobSpecUri    string   `protobuf:"bytes,12,opt,name=dynamic_job_spec_uri,json=dynamicJobSpecUri,proto3" json:"dynamic_job_spec_uri,omitempty"`
+	DynamicJobSpecUri string `protobuf:"bytes,12,opt,name=dynamic_job_spec_uri,json=dynamicJobSpecUri,proto3" json:"dynamic_job_spec_uri,omitempty"`
+	// String location uniquely identifying where the span.pb file is.
 	SpanUri              string   `protobuf:"bytes,13,opt,name=span_uri,json=spanUri,proto3" json:"span_uri,omitempty"`
 	XXX_NoUnkeyedLiteral struct{} `json:"-"`
 	XXX_unrecognized     []byte   `json:"-"`
