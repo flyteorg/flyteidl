@@ -53,7 +53,7 @@ class AdminGetTaskMetricsResponse(object):
     def span(self):
         """Gets the span of this AdminGetTaskMetricsResponse.  # noqa: E501
 
-        Span conatins a collection of time information for a paticular task. All the infomation is in span.Spans.  # noqa: E501
+        Span contains a collection of runtime metrics for a particular task. All specific metrics can be found in span.Spans.  # noqa: E501
 
         :return: The span of this AdminGetTaskMetricsResponse.  # noqa: E501
         :rtype: CoreSpan
@@ -64,7 +64,7 @@ class AdminGetTaskMetricsResponse(object):
     def span(self, span):
         """Sets the span of this AdminGetTaskMetricsResponse.
 
-        Span conatins a collection of time information for a paticular task. All the infomation is in span.Spans.  # noqa: E501
+        Span contains a collection of runtime metrics for a particular task. All specific metrics can be found in span.Spans.  # noqa: E501
 
         :param span: The span of this AdminGetTaskMetricsResponse.  # noqa: E501
         :type: CoreSpan

@@ -1239,8 +1239,8 @@ pub struct GetTaskMetricsRequest {
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(Clone, PartialEq, ::prost::Message)]
 pub struct GetTaskMetricsResponse {
-    /// Span conatins a collection of time information for a paticular task.
-    /// All the infomation is in span.Spans.
+    /// Span contains a collection of runtime metrics for a particular task.
+    /// All specific metrics can be found in span.Spans.
     #[prost(message, optional, tag="1")]
     pub span: ::core::option::Option<super::core::Span>,
 }

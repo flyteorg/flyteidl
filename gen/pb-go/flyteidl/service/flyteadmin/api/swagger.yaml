@@ -4657,8 +4657,8 @@ definitions:
     type: "object"
     properties:
       span:
-        description: "Span conatins a collection of time information for a paticular\
-          \ task.\nAll the infomation is in span.Spans."
+        description: "Span contains a collection of runtime metrics for a particular\
+          \ task.\nAll specific metrics can be found in span.Spans."
         $ref: "#/definitions/coreSpan"
     description: "GetTaskMetricsResponse represents the response containing task runtime\
       \ metrics for the specified node execution."

@@ -28728,8 +28728,8 @@ public final class ExecutionOuterClass {
 
     /**
      * <pre>
-     * Span conatins a collection of time information for a paticular task.
-     * All the infomation is in span.Spans.
+     * Span contains a collection of runtime metrics for a particular task.
+     * All specific metrics can be found in span.Spans.
      * </pre>
      *
      * <code>.flyteidl.core.Span span = 1;</code>
@@ -28737,8 +28737,8 @@ public final class ExecutionOuterClass {
     boolean hasSpan();
     /**
      * <pre>
-     * Span conatins a collection of time information for a paticular task.
-     * All the infomation is in span.Spans.
+     * Span contains a collection of runtime metrics for a particular task.
+     * All specific metrics can be found in span.Spans.
      * </pre>
      *
      * <code>.flyteidl.core.Span span = 1;</code>
@@ -28746,8 +28746,8 @@ public final class ExecutionOuterClass {
     flyteidl.core.Metrics.Span getSpan();
     /**
      * <pre>
-     * Span conatins a collection of time information for a paticular task.
-     * All the infomation is in span.Spans.
+     * Span contains a collection of runtime metrics for a particular task.
+     * All specific metrics can be found in span.Spans.
      * </pre>
      *
      * <code>.flyteidl.core.Span span = 1;</code>
@@ -28846,8 +28846,8 @@ public final class ExecutionOuterClass {
     private flyteidl.core.Metrics.Span span_;
     /**
      * <pre>
-     * Span conatins a collection of time information for a paticular task.
-     * All the infomation is in span.Spans.
+     * Span contains a collection of runtime metrics for a particular task.
+     * All specific metrics can be found in span.Spans.
      * </pre>
      *
      * <code>.flyteidl.core.Span span = 1;</code>
@@ -28857,8 +28857,8 @@ public final class ExecutionOuterClass {
     }
     /**
      * <pre>
-     * Span conatins a collection of time information for a paticular task.
-     * All the infomation is in span.Spans.
+     * Span contains a collection of runtime metrics for a particular task.
+     * All specific metrics can be found in span.Spans.
      * </pre>
      *
      * <code>.flyteidl.core.Span span = 1;</code>
@@ -28868,8 +28868,8 @@ public final class ExecutionOuterClass {
     }
     /**
      * <pre>
-     * Span conatins a collection of time information for a paticular task.
-     * All the infomation is in span.Spans.
+     * Span contains a collection of runtime metrics for a particular task.
+     * All specific metrics can be found in span.Spans.
      * </pre>
      *
      * <code>.flyteidl.core.Span span = 1;</code>
@@ -29202,8 +29202,8 @@ public final class ExecutionOuterClass {
           flyteidl.core.Metrics.Span, flyteidl.core.Metrics.Span.Builder, flyteidl.core.Metrics.SpanOrBuilder> spanBuilder_;
       /**
        * <pre>
-       * Span conatins a collection of time information for a paticular task.
-       * All the infomation is in span.Spans.
+       * Span contains a collection of runtime metrics for a particular task.
+       * All specific metrics can be found in span.Spans.
        * </pre>
        *
        * <code>.flyteidl.core.Span span = 1;</code>
@@ -29213,8 +29213,8 @@ public final class ExecutionOuterClass {
       }
       /**
        * <pre>
-       * Span conatins a collection of time information for a paticular task.
-       * All the infomation is in span.Spans.
+       * Span contains a collection of runtime metrics for a particular task.
+       * All specific metrics can be found in span.Spans.
        * </pre>
        *
        * <code>.flyteidl.core.Span span = 1;</code>
@@ -29228,8 +29228,8 @@ public final class ExecutionOuterClass {
       }
       /**
        * <pre>
-       * Span conatins a collection of time information for a paticular task.
-       * All the infomation is in span.Spans.
+       * Span contains a collection of runtime metrics for a particular task.
+       * All specific metrics can be found in span.Spans.
        * </pre>
        *
        * <code>.flyteidl.core.Span span = 1;</code>
@@ -29249,8 +29249,8 @@ public final class ExecutionOuterClass {
       }
       /**
        * <pre>
-       * Span conatins a collection of time information for a paticular task.
-       * All the infomation is in span.Spans.
+       * Span contains a collection of runtime metrics for a particular task.
+       * All specific metrics can be found in span.Spans.
        * </pre>
        *
        * <code>.flyteidl.core.Span span = 1;</code>
@@ -29268,8 +29268,8 @@ public final class ExecutionOuterClass {
       }
       /**
        * <pre>
-       * Span conatins a collection of time information for a paticular task.
-       * All the infomation is in span.Spans.
+       * Span contains a collection of runtime metrics for a particular task.
+       * All specific metrics can be found in span.Spans.
        * </pre>
        *
        * <code>.flyteidl.core.Span span = 1;</code>
@@ -29291,8 +29291,8 @@ public final class ExecutionOuterClass {
       }
       /**
        * <pre>
-       * Span conatins a collection of time information for a paticular task.
-       * All the infomation is in span.Spans.
+       * Span contains a collection of runtime metrics for a particular task.
+       * All specific metrics can be found in span.Spans.
        * </pre>
        *
        * <code>.flyteidl.core.Span span = 1;</code>
@@ -29310,8 +29310,8 @@ public final class ExecutionOuterClass {
       }
       /**
        * <pre>
-       * Span conatins a collection of time information for a paticular task.
-       * All the infomation is in span.Spans.
+       * Span contains a collection of runtime metrics for a particular task.
+       * All specific metrics can be found in span.Spans.
        * </pre>
        *
        * <code>.flyteidl.core.Span span = 1;</code>
@@ -29323,8 +29323,8 @@ public final class ExecutionOuterClass {
       }
       /**
        * <pre>
-       * Span conatins a collection of time information for a paticular task.
-       * All the infomation is in span.Spans.
+       * Span contains a collection of runtime metrics for a particular task.
+       * All specific metrics can be found in span.Spans.
        * </pre>
        *
        * <code>.flyteidl.core.Span span = 1;</code>
@@ -29339,8 +29339,8 @@ public final class ExecutionOuterClass {
       }
       /**
        * <pre>
-       * Span conatins a collection of time information for a paticular task.
-       * All the infomation is in span.Spans.
+       * Span contains a collection of runtime metrics for a particular task.
+       * All specific metrics can be found in span.Spans.
        * </pre>
        *
        * <code>.flyteidl.core.Span span = 1;</code>

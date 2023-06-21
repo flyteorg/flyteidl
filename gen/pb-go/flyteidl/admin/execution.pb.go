@@ -1732,8 +1732,8 @@ func (m *GetTaskMetricsRequest) GetId() *core.NodeExecutionIdentifier {
 
 // GetTaskMetricsResponse represents the response containing task runtime metrics for the specified node execution.
 type GetTaskMetricsResponse struct {
-	// Span conatins a collection of time information for a paticular task.
-	// All the infomation is in span.Spans.
+	// Span contains a collection of runtime metrics for a particular task.
+	// All specific metrics can be found in span.Spans.
 	Span                 *core.Span `protobuf:"bytes,1,opt,name=span,proto3" json:"span,omitempty"`
 	XXX_NoUnkeyedLiteral struct{}   `json:"-"`
 	XXX_unrecognized     []byte     `json:"-"`
