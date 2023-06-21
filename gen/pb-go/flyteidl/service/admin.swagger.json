@@ -1530,6 +1530,52 @@
         ]
       }
     },
+    "/api/v1/metrics/node_executions/{id.execution_id.project}/{id.execution_id.domain}/{id.execution_id.name}/{id.node_id}": {
+      "get": {
+        "summary": "Fetches task runtime metrics for a :ref:`ref_flyteidl.admin.NodeExecution`.",
+        "operationId": "GetTaskMetrics",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/adminGetTaskMetricsResponse"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "id.execution_id.project",
+            "description": "Name of the project the resource belongs to.",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "id.execution_id.domain",
+            "description": "Name of the domain the resource belongs to.\nA domain can be considered as a subset within a specific project.",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "id.execution_id.name",
+            "description": "User or system provided value for the resource.",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "id.node_id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "tags": [
+          "AdminService"
+        ]
+      }
+    },
     "/api/v1/named_entities/{resource_type}/{id.project}/{id.domain}/{id.name}": {
       "get": {
         "summary": "Returns a :ref:`ref_flyteidl.admin.NamedEntity` object.",
@@ -4124,6 +4170,16 @@
       },
       "description": "These URLs are returned as part of node and task execution data requests."
     },
+    "adminGetTaskMetricsResponse": {
+      "type": "object",
+      "properties": {
+        "span": {
+          "$ref": "#/definitions/coreSpan",
+          "description": "Span contains a collection of runtime metrics for a particular task.\nAll specific metrics can be found in span.Spans."
+        }
+      },
+      "description": "GetTaskMetricsResponse represents the response containing task runtime metrics for the specified node execution."
+    },
     "adminGetVersionResponse": {
       "type": "object",
       "properties": {
@@ -4600,6 +4656,10 @@
         "dynamic_job_spec_uri": {
           "type": "string",
           "description": "dynamic_job_spec_uri is the location of the DynamicJobSpec proto message for a DynamicWorkflow. This is required\nto correctly recover partially completed executions where the subworkflow has already been compiled."
+        },
+        "span_uri": {
+          "type": "string",
+          "description": "String location uniquely identifying where the span.pb file is."
         }
       },
       "description": "Container for node execution details and results."
@@ -7343,6 +7403,10 @@
           "type": "string",
           "format": "date-time",
           "description": "This timestamp represents the instant when the event was reported by the executing framework. For example,\nwhen first processing a node the `occurred_at` timestamp should be the instant propeller makes progress, so when\nliteral inputs are initially copied. The event however will not be sent until after the copy completes.\nExtracting both of these timestamps facilitates a more accurate portrayal of the evaluation time-series."
+        },
+        "span_uri": {
+          "type": "string",
+          "description": "String location uniquely identifying where the span.pb file is."
         }
       }
     },

@@ -197,6 +197,13 @@ class TestAdminServiceApi(unittest.TestCase):
         """
         pass
 
+    def test_get_task_metrics(self):
+        """Test case for get_task_metrics
+
+        Fetches task runtime metrics for a :ref:`ref_flyteidl.admin.NodeExecution`.  # noqa: E501
+        """
+        pass
+
     def test_get_version(self):
         """Test case for get_version
 

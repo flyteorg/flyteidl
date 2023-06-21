@@ -45,6 +45,7 @@ Class | Method | HTTP request | Description
 *AdminServiceApi* | [**GetTask**](docs/AdminServiceApi.md#gettask) | **Get** /api/v1/tasks/{id.project}/{id.domain}/{id.name}/{id.version} | Fetch a :ref:&#x60;ref_flyteidl.admin.Task&#x60; definition.
 *AdminServiceApi* | [**GetTaskExecution**](docs/AdminServiceApi.md#gettaskexecution) | **Get** /api/v1/task_executions/{id.node_execution_id.execution_id.project}/{id.node_execution_id.execution_id.domain}/{id.node_execution_id.execution_id.name}/{id.node_execution_id.node_id}/{id.task_id.project}/{id.task_id.domain}/{id.task_id.name}/{id.task_id.version}/{id.retry_attempt} | Fetches a :ref:&#x60;ref_flyteidl.admin.TaskExecution&#x60;.
 *AdminServiceApi* | [**GetTaskExecutionData**](docs/AdminServiceApi.md#gettaskexecutiondata) | **Get** /api/v1/data/task_executions/{id.node_execution_id.execution_id.project}/{id.node_execution_id.execution_id.domain}/{id.node_execution_id.execution_id.name}/{id.node_execution_id.node_id}/{id.task_id.project}/{id.task_id.domain}/{id.task_id.name}/{id.task_id.version}/{id.retry_attempt} | Fetches input and output data for a :ref:&#x60;ref_flyteidl.admin.TaskExecution&#x60;.
+*AdminServiceApi* | [**GetTaskMetrics**](docs/AdminServiceApi.md#gettaskmetrics) | **Get** /api/v1/metrics/node_executions/{id.execution_id.project}/{id.execution_id.domain}/{id.execution_id.name}/{id.node_id} | Fetches task runtime metrics for a :ref:&#x60;ref_flyteidl.admin.NodeExecution&#x60;.
 *AdminServiceApi* | [**GetVersion**](docs/AdminServiceApi.md#getversion) | **Get** /api/v1/version | 
 *AdminServiceApi* | [**GetWorkflow**](docs/AdminServiceApi.md#getworkflow) | **Get** /api/v1/workflows/{id.project}/{id.domain}/{id.name}/{id.version} | Fetch a :ref:&#x60;ref_flyteidl.admin.Workflow&#x60; definition.
 *AdminServiceApi* | [**GetWorkflowAttributes**](docs/AdminServiceApi.md#getworkflowattributes) | **Get** /api/v1/workflow_attributes/{project}/{domain}/{workflow} | Fetches custom :ref:&#x60;ref_flyteidl.admin.MatchableAttributesConfiguration&#x60; for a project, domain and workflow.
@@ -116,6 +117,7 @@ Class | Method | HTTP request | Description
  - [AdminFixedRate](docs/AdminFixedRate.md)
  - [AdminFixedRateUnit](docs/AdminFixedRateUnit.md)
  - [AdminFlyteUrLs](docs/AdminFlyteUrLs.md)
+ - [AdminGetTaskMetricsResponse](docs/AdminGetTaskMetricsResponse.md)
  - [AdminGetVersionResponse](docs/AdminGetVersionResponse.md)
  - [AdminLabels](docs/AdminLabels.md)
  - [AdminLaunchPlan](docs/AdminLaunchPlan.md)

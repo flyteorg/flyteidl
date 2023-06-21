@@ -28048,6 +28048,1369 @@ public final class ExecutionOuterClass {
 
   }
 
+  public interface GetTaskMetricsRequestOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:flyteidl.admin.GetTaskMetricsRequest)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <pre>
+     * Uniquely identifies an individual node execution.
+     * </pre>
+     *
+     * <code>.flyteidl.core.NodeExecutionIdentifier id = 1;</code>
+     */
+    boolean hasId();
+    /**
+     * <pre>
+     * Uniquely identifies an individual node execution.
+     * </pre>
+     *
+     * <code>.flyteidl.core.NodeExecutionIdentifier id = 1;</code>
+     */
+    flyteidl.core.IdentifierOuterClass.NodeExecutionIdentifier getId();
+    /**
+     * <pre>
+     * Uniquely identifies an individual node execution.
+     * </pre>
+     *
+     * <code>.flyteidl.core.NodeExecutionIdentifier id = 1;</code>
+     */
+    flyteidl.core.IdentifierOuterClass.NodeExecutionIdentifierOrBuilder getIdOrBuilder();
+  }
+  /**
+   * <pre>
+   * GetTaskMetricsRequest represents a request to retrieve task runtime metrics for the specified node execution.
+   * </pre>
+   *
+   * Protobuf type {@code flyteidl.admin.GetTaskMetricsRequest}
+   */
+  public  static final class GetTaskMetricsRequest extends
+      com.google.protobuf.GeneratedMessageV3 implements
+      // @@protoc_insertion_point(message_implements:flyteidl.admin.GetTaskMetricsRequest)
+      GetTaskMetricsRequestOrBuilder {
+  private static final long serialVersionUID = 0L;
+    // Use GetTaskMetricsRequest.newBuilder() to construct.
+    private GetTaskMetricsRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+    private GetTaskMetricsRequest() {
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+      return this.unknownFields;
+    }
+    private GetTaskMetricsRequest(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10: {
+              flyteidl.core.IdentifierOuterClass.NodeExecutionIdentifier.Builder subBuilder = null;
+              if (id_ != null) {
+                subBuilder = id_.toBuilder();
+              }
+              id_ = input.readMessage(flyteidl.core.IdentifierOuterClass.NodeExecutionIdentifier.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(id_);
+                id_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return flyteidl.admin.ExecutionOuterClass.internal_static_flyteidl_admin_GetTaskMetricsRequest_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return flyteidl.admin.ExecutionOuterClass.internal_static_flyteidl_admin_GetTaskMetricsRequest_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              flyteidl.admin.ExecutionOuterClass.GetTaskMetricsRequest.class, flyteidl.admin.ExecutionOuterClass.GetTaskMetricsRequest.Builder.class);
+    }
+
+    public static final int ID_FIELD_NUMBER = 1;
+    private flyteidl.core.IdentifierOuterClass.NodeExecutionIdentifier id_;
+    /**
+     * <pre>
+     * Uniquely identifies an individual node execution.
+     * </pre>
+     *
+     * <code>.flyteidl.core.NodeExecutionIdentifier id = 1;</code>
+     */
+    public boolean hasId() {
+      return id_ != null;
+    }
+    /**
+     * <pre>
+     * Uniquely identifies an individual node execution.
+     * </pre>
+     *
+     * <code>.flyteidl.core.NodeExecutionIdentifier id = 1;</code>
+     */
+    public flyteidl.core.IdentifierOuterClass.NodeExecutionIdentifier getId() {
+      return id_ == null ? flyteidl.core.IdentifierOuterClass.NodeExecutionIdentifier.getDefaultInstance() : id_;
+    }
+    /**
+     * <pre>
+     * Uniquely identifies an individual node execution.
+     * </pre>
+     *
+     * <code>.flyteidl.core.NodeExecutionIdentifier id = 1;</code>
+     */
+    public flyteidl.core.IdentifierOuterClass.NodeExecutionIdentifierOrBuilder getIdOrBuilder() {
+      return getId();
+    }
+
+    private byte memoizedIsInitialized = -1;
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      if (id_ != null) {
+        output.writeMessage(1, getId());
+      }
+      unknownFields.writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (id_ != null) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(1, getId());
+      }
+      size += unknownFields.getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof flyteidl.admin.ExecutionOuterClass.GetTaskMetricsRequest)) {
+        return super.equals(obj);
+      }
+      flyteidl.admin.ExecutionOuterClass.GetTaskMetricsRequest other = (flyteidl.admin.ExecutionOuterClass.GetTaskMetricsRequest) obj;
+
+      if (hasId() != other.hasId()) return false;
+      if (hasId()) {
+        if (!getId()
+            .equals(other.getId())) return false;
+      }
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      if (hasId()) {
+        hash = (37 * hash) + ID_FIELD_NUMBER;
+        hash = (53 * hash) + getId().hashCode();
+      }
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static flyteidl.admin.ExecutionOuterClass.GetTaskMetricsRequest parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static flyteidl.admin.ExecutionOuterClass.GetTaskMetricsRequest parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static flyteidl.admin.ExecutionOuterClass.GetTaskMetricsRequest parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static flyteidl.admin.ExecutionOuterClass.GetTaskMetricsRequest parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static flyteidl.admin.ExecutionOuterClass.GetTaskMetricsRequest parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static flyteidl.admin.ExecutionOuterClass.GetTaskMetricsRequest parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static flyteidl.admin.ExecutionOuterClass.GetTaskMetricsRequest parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static flyteidl.admin.ExecutionOuterClass.GetTaskMetricsRequest parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static flyteidl.admin.ExecutionOuterClass.GetTaskMetricsRequest parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+    public static flyteidl.admin.ExecutionOuterClass.GetTaskMetricsRequest parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static flyteidl.admin.ExecutionOuterClass.GetTaskMetricsRequest parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static flyteidl.admin.ExecutionOuterClass.GetTaskMetricsRequest parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(flyteidl.admin.ExecutionOuterClass.GetTaskMetricsRequest prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * <pre>
+     * GetTaskMetricsRequest represents a request to retrieve task runtime metrics for the specified node execution.
+     * </pre>
+     *
+     * Protobuf type {@code flyteidl.admin.GetTaskMetricsRequest}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:flyteidl.admin.GetTaskMetricsRequest)
+        flyteidl.admin.ExecutionOuterClass.GetTaskMetricsRequestOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return flyteidl.admin.ExecutionOuterClass.internal_static_flyteidl_admin_GetTaskMetricsRequest_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return flyteidl.admin.ExecutionOuterClass.internal_static_flyteidl_admin_GetTaskMetricsRequest_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                flyteidl.admin.ExecutionOuterClass.GetTaskMetricsRequest.class, flyteidl.admin.ExecutionOuterClass.GetTaskMetricsRequest.Builder.class);
+      }
+
+      // Construct using flyteidl.admin.ExecutionOuterClass.GetTaskMetricsRequest.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
+      }
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        if (idBuilder_ == null) {
+          id_ = null;
+        } else {
+          id_ = null;
+          idBuilder_ = null;
+        }
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return flyteidl.admin.ExecutionOuterClass.internal_static_flyteidl_admin_GetTaskMetricsRequest_descriptor;
+      }
+
+      @java.lang.Override
+      public flyteidl.admin.ExecutionOuterClass.GetTaskMetricsRequest getDefaultInstanceForType() {
+        return flyteidl.admin.ExecutionOuterClass.GetTaskMetricsRequest.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public flyteidl.admin.ExecutionOuterClass.GetTaskMetricsRequest build() {
+        flyteidl.admin.ExecutionOuterClass.GetTaskMetricsRequest result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public flyteidl.admin.ExecutionOuterClass.GetTaskMetricsRequest buildPartial() {
+        flyteidl.admin.ExecutionOuterClass.GetTaskMetricsRequest result = new flyteidl.admin.ExecutionOuterClass.GetTaskMetricsRequest(this);
+        if (idBuilder_ == null) {
+          result.id_ = id_;
+        } else {
+          result.id_ = idBuilder_.build();
+        }
+        onBuilt();
+        return result;
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.setField(field, value);
+      }
+      @java.lang.Override
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+      @java.lang.Override
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof flyteidl.admin.ExecutionOuterClass.GetTaskMetricsRequest) {
+          return mergeFrom((flyteidl.admin.ExecutionOuterClass.GetTaskMetricsRequest)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(flyteidl.admin.ExecutionOuterClass.GetTaskMetricsRequest other) {
+        if (other == flyteidl.admin.ExecutionOuterClass.GetTaskMetricsRequest.getDefaultInstance()) return this;
+        if (other.hasId()) {
+          mergeId(other.getId());
+        }
+        this.mergeUnknownFields(other.unknownFields);
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        flyteidl.admin.ExecutionOuterClass.GetTaskMetricsRequest parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (flyteidl.admin.ExecutionOuterClass.GetTaskMetricsRequest) e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+
+      private flyteidl.core.IdentifierOuterClass.NodeExecutionIdentifier id_;
+      private com.google.protobuf.SingleFieldBuilderV3<
+          flyteidl.core.IdentifierOuterClass.NodeExecutionIdentifier, flyteidl.core.IdentifierOuterClass.NodeExecutionIdentifier.Builder, flyteidl.core.IdentifierOuterClass.NodeExecutionIdentifierOrBuilder> idBuilder_;
+      /**
+       * <pre>
+       * Uniquely identifies an individual node execution.
+       * </pre>
+       *
+       * <code>.flyteidl.core.NodeExecutionIdentifier id = 1;</code>
+       */
+      public boolean hasId() {
+        return idBuilder_ != null || id_ != null;
+      }
+      /**
+       * <pre>
+       * Uniquely identifies an individual node execution.
+       * </pre>
+       *
+       * <code>.flyteidl.core.NodeExecutionIdentifier id = 1;</code>
+       */
+      public flyteidl.core.IdentifierOuterClass.NodeExecutionIdentifier getId() {
+        if (idBuilder_ == null) {
+          return id_ == null ? flyteidl.core.IdentifierOuterClass.NodeExecutionIdentifier.getDefaultInstance() : id_;
+        } else {
+          return idBuilder_.getMessage();
+        }
+      }
+      /**
+       * <pre>
+       * Uniquely identifies an individual node execution.
+       * </pre>
+       *
+       * <code>.flyteidl.core.NodeExecutionIdentifier id = 1;</code>
+       */
+      public Builder setId(flyteidl.core.IdentifierOuterClass.NodeExecutionIdentifier value) {
+        if (idBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          id_ = value;
+          onChanged();
+        } else {
+          idBuilder_.setMessage(value);
+        }
+
+        return this;
+      }
+      /**
+       * <pre>
+       * Uniquely identifies an individual node execution.
+       * </pre>
+       *
+       * <code>.flyteidl.core.NodeExecutionIdentifier id = 1;</code>
+       */
+      public Builder setId(
+          flyteidl.core.IdentifierOuterClass.NodeExecutionIdentifier.Builder builderForValue) {
+        if (idBuilder_ == null) {
+          id_ = builderForValue.build();
+          onChanged();
+        } else {
+          idBuilder_.setMessage(builderForValue.build());
+        }
+
+        return this;
+      }
+      /**
+       * <pre>
+       * Uniquely identifies an individual node execution.
+       * </pre>
+       *
+       * <code>.flyteidl.core.NodeExecutionIdentifier id = 1;</code>
+       */
+      public Builder mergeId(flyteidl.core.IdentifierOuterClass.NodeExecutionIdentifier value) {
+        if (idBuilder_ == null) {
+          if (id_ != null) {
+            id_ =
+              flyteidl.core.IdentifierOuterClass.NodeExecutionIdentifier.newBuilder(id_).mergeFrom(value).buildPartial();
+          } else {
+            id_ = value;
+          }
+          onChanged();
+        } else {
+          idBuilder_.mergeFrom(value);
+        }
+
+        return this;
+      }
+      /**
+       * <pre>
+       * Uniquely identifies an individual node execution.
+       * </pre>
+       *
+       * <code>.flyteidl.core.NodeExecutionIdentifier id = 1;</code>
+       */
+      public Builder clearId() {
+        if (idBuilder_ == null) {
+          id_ = null;
+          onChanged();
+        } else {
+          id_ = null;
+          idBuilder_ = null;
+        }
+
+        return this;
+      }
+      /**
+       * <pre>
+       * Uniquely identifies an individual node execution.
+       * </pre>
+       *
+       * <code>.flyteidl.core.NodeExecutionIdentifier id = 1;</code>
+       */
+      public flyteidl.core.IdentifierOuterClass.NodeExecutionIdentifier.Builder getIdBuilder() {
+        
+        onChanged();
+        return getIdFieldBuilder().getBuilder();
+      }
+      /**
+       * <pre>
+       * Uniquely identifies an individual node execution.
+       * </pre>
+       *
+       * <code>.flyteidl.core.NodeExecutionIdentifier id = 1;</code>
+       */
+      public flyteidl.core.IdentifierOuterClass.NodeExecutionIdentifierOrBuilder getIdOrBuilder() {
+        if (idBuilder_ != null) {
+          return idBuilder_.getMessageOrBuilder();
+        } else {
+          return id_ == null ?
+              flyteidl.core.IdentifierOuterClass.NodeExecutionIdentifier.getDefaultInstance() : id_;
+        }
+      }
+      /**
+       * <pre>
+       * Uniquely identifies an individual node execution.
+       * </pre>
+       *
+       * <code>.flyteidl.core.NodeExecutionIdentifier id = 1;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+          flyteidl.core.IdentifierOuterClass.NodeExecutionIdentifier, flyteidl.core.IdentifierOuterClass.NodeExecutionIdentifier.Builder, flyteidl.core.IdentifierOuterClass.NodeExecutionIdentifierOrBuilder> 
+          getIdFieldBuilder() {
+        if (idBuilder_ == null) {
+          idBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              flyteidl.core.IdentifierOuterClass.NodeExecutionIdentifier, flyteidl.core.IdentifierOuterClass.NodeExecutionIdentifier.Builder, flyteidl.core.IdentifierOuterClass.NodeExecutionIdentifierOrBuilder>(
+                  getId(),
+                  getParentForChildren(),
+                  isClean());
+          id_ = null;
+        }
+        return idBuilder_;
+      }
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+
+      // @@protoc_insertion_point(builder_scope:flyteidl.admin.GetTaskMetricsRequest)
+    }
+
+    // @@protoc_insertion_point(class_scope:flyteidl.admin.GetTaskMetricsRequest)
+    private static final flyteidl.admin.ExecutionOuterClass.GetTaskMetricsRequest DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new flyteidl.admin.ExecutionOuterClass.GetTaskMetricsRequest();
+    }
+
+    public static flyteidl.admin.ExecutionOuterClass.GetTaskMetricsRequest getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<GetTaskMetricsRequest>
+        PARSER = new com.google.protobuf.AbstractParser<GetTaskMetricsRequest>() {
+      @java.lang.Override
+      public GetTaskMetricsRequest parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new GetTaskMetricsRequest(input, extensionRegistry);
+      }
+    };
+
+    public static com.google.protobuf.Parser<GetTaskMetricsRequest> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<GetTaskMetricsRequest> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public flyteidl.admin.ExecutionOuterClass.GetTaskMetricsRequest getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
+  public interface GetTaskMetricsResponseOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:flyteidl.admin.GetTaskMetricsResponse)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <pre>
+     * Span contains a collection of runtime metrics for a particular task.
+     * All specific metrics can be found in span.Spans.
+     * </pre>
+     *
+     * <code>.flyteidl.core.Span span = 1;</code>
+     */
+    boolean hasSpan();
+    /**
+     * <pre>
+     * Span contains a collection of runtime metrics for a particular task.
+     * All specific metrics can be found in span.Spans.
+     * </pre>
+     *
+     * <code>.flyteidl.core.Span span = 1;</code>
+     */
+    flyteidl.core.Metrics.Span getSpan();
+    /**
+     * <pre>
+     * Span contains a collection of runtime metrics for a particular task.
+     * All specific metrics can be found in span.Spans.
+     * </pre>
+     *
+     * <code>.flyteidl.core.Span span = 1;</code>
+     */
+    flyteidl.core.Metrics.SpanOrBuilder getSpanOrBuilder();
+  }
+  /**
+   * <pre>
+   * GetTaskMetricsResponse represents the response containing task runtime metrics for the specified node execution.
+   * </pre>
+   *
+   * Protobuf type {@code flyteidl.admin.GetTaskMetricsResponse}
+   */
+  public  static final class GetTaskMetricsResponse extends
+      com.google.protobuf.GeneratedMessageV3 implements
+      // @@protoc_insertion_point(message_implements:flyteidl.admin.GetTaskMetricsResponse)
+      GetTaskMetricsResponseOrBuilder {
+  private static final long serialVersionUID = 0L;
+    // Use GetTaskMetricsResponse.newBuilder() to construct.
+    private GetTaskMetricsResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+    private GetTaskMetricsResponse() {
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+      return this.unknownFields;
+    }
+    private GetTaskMetricsResponse(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10: {
+              flyteidl.core.Metrics.Span.Builder subBuilder = null;
+              if (span_ != null) {
+                subBuilder = span_.toBuilder();
+              }
+              span_ = input.readMessage(flyteidl.core.Metrics.Span.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(span_);
+                span_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return flyteidl.admin.ExecutionOuterClass.internal_static_flyteidl_admin_GetTaskMetricsResponse_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return flyteidl.admin.ExecutionOuterClass.internal_static_flyteidl_admin_GetTaskMetricsResponse_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              flyteidl.admin.ExecutionOuterClass.GetTaskMetricsResponse.class, flyteidl.admin.ExecutionOuterClass.GetTaskMetricsResponse.Builder.class);
+    }
+
+    public static final int SPAN_FIELD_NUMBER = 1;
+    private flyteidl.core.Metrics.Span span_;
+    /**
+     * <pre>
+     * Span contains a collection of runtime metrics for a particular task.
+     * All specific metrics can be found in span.Spans.
+     * </pre>
+     *
+     * <code>.flyteidl.core.Span span = 1;</code>
+     */
+    public boolean hasSpan() {
+      return span_ != null;
+    }
+    /**
+     * <pre>
+     * Span contains a collection of runtime metrics for a particular task.
+     * All specific metrics can be found in span.Spans.
+     * </pre>
+     *
+     * <code>.flyteidl.core.Span span = 1;</code>
+     */
+    public flyteidl.core.Metrics.Span getSpan() {
+      return span_ == null ? flyteidl.core.Metrics.Span.getDefaultInstance() : span_;
+    }
+    /**
+     * <pre>
+     * Span contains a collection of runtime metrics for a particular task.
+     * All specific metrics can be found in span.Spans.
+     * </pre>
+     *
+     * <code>.flyteidl.core.Span span = 1;</code>
+     */
+    public flyteidl.core.Metrics.SpanOrBuilder getSpanOrBuilder() {
+      return getSpan();
+    }
+
+    private byte memoizedIsInitialized = -1;
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      if (span_ != null) {
+        output.writeMessage(1, getSpan());
+      }
+      unknownFields.writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (span_ != null) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(1, getSpan());
+      }
+      size += unknownFields.getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof flyteidl.admin.ExecutionOuterClass.GetTaskMetricsResponse)) {
+        return super.equals(obj);
+      }
+      flyteidl.admin.ExecutionOuterClass.GetTaskMetricsResponse other = (flyteidl.admin.ExecutionOuterClass.GetTaskMetricsResponse) obj;
+
+      if (hasSpan() != other.hasSpan()) return false;
+      if (hasSpan()) {
+        if (!getSpan()
+            .equals(other.getSpan())) return false;
+      }
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      if (hasSpan()) {
+        hash = (37 * hash) + SPAN_FIELD_NUMBER;
+        hash = (53 * hash) + getSpan().hashCode();
+      }
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static flyteidl.admin.ExecutionOuterClass.GetTaskMetricsResponse parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static flyteidl.admin.ExecutionOuterClass.GetTaskMetricsResponse parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static flyteidl.admin.ExecutionOuterClass.GetTaskMetricsResponse parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static flyteidl.admin.ExecutionOuterClass.GetTaskMetricsResponse parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static flyteidl.admin.ExecutionOuterClass.GetTaskMetricsResponse parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static flyteidl.admin.ExecutionOuterClass.GetTaskMetricsResponse parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static flyteidl.admin.ExecutionOuterClass.GetTaskMetricsResponse parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static flyteidl.admin.ExecutionOuterClass.GetTaskMetricsResponse parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static flyteidl.admin.ExecutionOuterClass.GetTaskMetricsResponse parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+    public static flyteidl.admin.ExecutionOuterClass.GetTaskMetricsResponse parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static flyteidl.admin.ExecutionOuterClass.GetTaskMetricsResponse parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static flyteidl.admin.ExecutionOuterClass.GetTaskMetricsResponse parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(flyteidl.admin.ExecutionOuterClass.GetTaskMetricsResponse prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * <pre>
+     * GetTaskMetricsResponse represents the response containing task runtime metrics for the specified node execution.
+     * </pre>
+     *
+     * Protobuf type {@code flyteidl.admin.GetTaskMetricsResponse}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:flyteidl.admin.GetTaskMetricsResponse)
+        flyteidl.admin.ExecutionOuterClass.GetTaskMetricsResponseOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return flyteidl.admin.ExecutionOuterClass.internal_static_flyteidl_admin_GetTaskMetricsResponse_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return flyteidl.admin.ExecutionOuterClass.internal_static_flyteidl_admin_GetTaskMetricsResponse_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                flyteidl.admin.ExecutionOuterClass.GetTaskMetricsResponse.class, flyteidl.admin.ExecutionOuterClass.GetTaskMetricsResponse.Builder.class);
+      }
+
+      // Construct using flyteidl.admin.ExecutionOuterClass.GetTaskMetricsResponse.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
+      }
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        if (spanBuilder_ == null) {
+          span_ = null;
+        } else {
+          span_ = null;
+          spanBuilder_ = null;
+        }
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return flyteidl.admin.ExecutionOuterClass.internal_static_flyteidl_admin_GetTaskMetricsResponse_descriptor;
+      }
+
+      @java.lang.Override
+      public flyteidl.admin.ExecutionOuterClass.GetTaskMetricsResponse getDefaultInstanceForType() {
+        return flyteidl.admin.ExecutionOuterClass.GetTaskMetricsResponse.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public flyteidl.admin.ExecutionOuterClass.GetTaskMetricsResponse build() {
+        flyteidl.admin.ExecutionOuterClass.GetTaskMetricsResponse result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public flyteidl.admin.ExecutionOuterClass.GetTaskMetricsResponse buildPartial() {
+        flyteidl.admin.ExecutionOuterClass.GetTaskMetricsResponse result = new flyteidl.admin.ExecutionOuterClass.GetTaskMetricsResponse(this);
+        if (spanBuilder_ == null) {
+          result.span_ = span_;
+        } else {
+          result.span_ = spanBuilder_.build();
+        }
+        onBuilt();
+        return result;
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.setField(field, value);
+      }
+      @java.lang.Override
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+      @java.lang.Override
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof flyteidl.admin.ExecutionOuterClass.GetTaskMetricsResponse) {
+          return mergeFrom((flyteidl.admin.ExecutionOuterClass.GetTaskMetricsResponse)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(flyteidl.admin.ExecutionOuterClass.GetTaskMetricsResponse other) {
+        if (other == flyteidl.admin.ExecutionOuterClass.GetTaskMetricsResponse.getDefaultInstance()) return this;
+        if (other.hasSpan()) {
+          mergeSpan(other.getSpan());
+        }
+        this.mergeUnknownFields(other.unknownFields);
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        flyteidl.admin.ExecutionOuterClass.GetTaskMetricsResponse parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (flyteidl.admin.ExecutionOuterClass.GetTaskMetricsResponse) e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+
+      private flyteidl.core.Metrics.Span span_;
+      private com.google.protobuf.SingleFieldBuilderV3<
+          flyteidl.core.Metrics.Span, flyteidl.core.Metrics.Span.Builder, flyteidl.core.Metrics.SpanOrBuilder> spanBuilder_;
+      /**
+       * <pre>
+       * Span contains a collection of runtime metrics for a particular task.
+       * All specific metrics can be found in span.Spans.
+       * </pre>
+       *
+       * <code>.flyteidl.core.Span span = 1;</code>
+       */
+      public boolean hasSpan() {
+        return spanBuilder_ != null || span_ != null;
+      }
+      /**
+       * <pre>
+       * Span contains a collection of runtime metrics for a particular task.
+       * All specific metrics can be found in span.Spans.
+       * </pre>
+       *
+       * <code>.flyteidl.core.Span span = 1;</code>
+       */
+      public flyteidl.core.Metrics.Span getSpan() {
+        if (spanBuilder_ == null) {
+          return span_ == null ? flyteidl.core.Metrics.Span.getDefaultInstance() : span_;
+        } else {
+          return spanBuilder_.getMessage();
+        }
+      }
+      /**
+       * <pre>
+       * Span contains a collection of runtime metrics for a particular task.
+       * All specific metrics can be found in span.Spans.
+       * </pre>
+       *
+       * <code>.flyteidl.core.Span span = 1;</code>
+       */
+      public Builder setSpan(flyteidl.core.Metrics.Span value) {
+        if (spanBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          span_ = value;
+          onChanged();
+        } else {
+          spanBuilder_.setMessage(value);
+        }
+
+        return this;
+      }
+      /**
+       * <pre>
+       * Span contains a collection of runtime metrics for a particular task.
+       * All specific metrics can be found in span.Spans.
+       * </pre>
+       *
+       * <code>.flyteidl.core.Span span = 1;</code>
+       */
+      public Builder setSpan(
+          flyteidl.core.Metrics.Span.Builder builderForValue) {
+        if (spanBuilder_ == null) {
+          span_ = builderForValue.build();
+          onChanged();
+        } else {
+          spanBuilder_.setMessage(builderForValue.build());
+        }
+
+        return this;
+      }
+      /**
+       * <pre>
+       * Span contains a collection of runtime metrics for a particular task.
+       * All specific metrics can be found in span.Spans.
+       * </pre>
+       *
+       * <code>.flyteidl.core.Span span = 1;</code>
+       */
+      public Builder mergeSpan(flyteidl.core.Metrics.Span value) {
+        if (spanBuilder_ == null) {
+          if (span_ != null) {
+            span_ =
+              flyteidl.core.Metrics.Span.newBuilder(span_).mergeFrom(value).buildPartial();
+          } else {
+            span_ = value;
+          }
+          onChanged();
+        } else {
+          spanBuilder_.mergeFrom(value);
+        }
+
+        return this;
+      }
+      /**
+       * <pre>
+       * Span contains a collection of runtime metrics for a particular task.
+       * All specific metrics can be found in span.Spans.
+       * </pre>
+       *
+       * <code>.flyteidl.core.Span span = 1;</code>
+       */
+      public Builder clearSpan() {
+        if (spanBuilder_ == null) {
+          span_ = null;
+          onChanged();
+        } else {
+          span_ = null;
+          spanBuilder_ = null;
+        }
+
+        return this;
+      }
+      /**
+       * <pre>
+       * Span contains a collection of runtime metrics for a particular task.
+       * All specific metrics can be found in span.Spans.
+       * </pre>
+       *
+       * <code>.flyteidl.core.Span span = 1;</code>
+       */
+      public flyteidl.core.Metrics.Span.Builder getSpanBuilder() {
+        
+        onChanged();
+        return getSpanFieldBuilder().getBuilder();
+      }
+      /**
+       * <pre>
+       * Span contains a collection of runtime metrics for a particular task.
+       * All specific metrics can be found in span.Spans.
+       * </pre>
+       *
+       * <code>.flyteidl.core.Span span = 1;</code>
+       */
+      public flyteidl.core.Metrics.SpanOrBuilder getSpanOrBuilder() {
+        if (spanBuilder_ != null) {
+          return spanBuilder_.getMessageOrBuilder();
+        } else {
+          return span_ == null ?
+              flyteidl.core.Metrics.Span.getDefaultInstance() : span_;
+        }
+      }
+      /**
+       * <pre>
+       * Span contains a collection of runtime metrics for a particular task.
+       * All specific metrics can be found in span.Spans.
+       * </pre>
+       *
+       * <code>.flyteidl.core.Span span = 1;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+          flyteidl.core.Metrics.Span, flyteidl.core.Metrics.Span.Builder, flyteidl.core.Metrics.SpanOrBuilder> 
+          getSpanFieldBuilder() {
+        if (spanBuilder_ == null) {
+          spanBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              flyteidl.core.Metrics.Span, flyteidl.core.Metrics.Span.Builder, flyteidl.core.Metrics.SpanOrBuilder>(
+                  getSpan(),
+                  getParentForChildren(),
+                  isClean());
+          span_ = null;
+        }
+        return spanBuilder_;
+      }
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+
+      // @@protoc_insertion_point(builder_scope:flyteidl.admin.GetTaskMetricsResponse)
+    }
+
+    // @@protoc_insertion_point(class_scope:flyteidl.admin.GetTaskMetricsResponse)
+    private static final flyteidl.admin.ExecutionOuterClass.GetTaskMetricsResponse DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new flyteidl.admin.ExecutionOuterClass.GetTaskMetricsResponse();
+    }
+
+    public static flyteidl.admin.ExecutionOuterClass.GetTaskMetricsResponse getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<GetTaskMetricsResponse>
+        PARSER = new com.google.protobuf.AbstractParser<GetTaskMetricsResponse>() {
+      @java.lang.Override
+      public GetTaskMetricsResponse parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new GetTaskMetricsResponse(input, extensionRegistry);
+      }
+    };
+
+    public static com.google.protobuf.Parser<GetTaskMetricsResponse> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<GetTaskMetricsResponse> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public flyteidl.admin.ExecutionOuterClass.GetTaskMetricsResponse getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
   private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_flyteidl_admin_ExecutionCreateRequest_descriptor;
   private static final 
@@ -28163,6 +29526,16 @@ public final class ExecutionOuterClass {
   private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_flyteidl_admin_WorkflowExecutionGetMetricsResponse_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_flyteidl_admin_GetTaskMetricsRequest_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_flyteidl_admin_GetTaskMetricsRequest_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_flyteidl_admin_GetTaskMetricsResponse_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_flyteidl_admin_GetTaskMetricsResponse_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor
       getDescriptor() {
@@ -28283,11 +29656,14 @@ public final class ExecutionOuterClass {
       "sRequest\0226\n\002id\030\001 \001(\0132*.flyteidl.core.Wor" +
       "kflowExecutionIdentifier\022\r\n\005depth\030\002 \001(\005\"" +
       "H\n#WorkflowExecutionGetMetricsResponse\022!" +
-      "\n\004span\030\001 \001(\0132\023.flyteidl.core.Span*>\n\016Exe" +
-      "cutionState\022\024\n\020EXECUTION_ACTIVE\020\000\022\026\n\022EXE" +
-      "CUTION_ARCHIVED\020\001B7Z5github.com/flyteorg" +
-      "/flyteidl/gen/pb-go/flyteidl/adminb\006prot" +
-      "o3"
+      "\n\004span\030\001 \001(\0132\023.flyteidl.core.Span\"K\n\025Get" +
+      "TaskMetricsRequest\0222\n\002id\030\001 \001(\0132&.flyteid" +
+      "l.core.NodeExecutionIdentifier\";\n\026GetTas" +
+      "kMetricsResponse\022!\n\004span\030\001 \001(\0132\023.flyteid" +
+      "l.core.Span*>\n\016ExecutionState\022\024\n\020EXECUTI" +
+      "ON_ACTIVE\020\000\022\026\n\022EXECUTION_ARCHIVED\020\001B7Z5g" +
+      "ithub.com/flyteorg/flyteidl/gen/pb-go/fl" +
+      "yteidl/adminb\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
@@ -28448,6 +29824,18 @@ public final class ExecutionOuterClass {
     internal_static_flyteidl_admin_WorkflowExecutionGetMetricsResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_flyteidl_admin_WorkflowExecutionGetMetricsResponse_descriptor,
+        new java.lang.String[] { "Span", });
+    internal_static_flyteidl_admin_GetTaskMetricsRequest_descriptor =
+      getDescriptor().getMessageTypes().get(23);
+    internal_static_flyteidl_admin_GetTaskMetricsRequest_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_flyteidl_admin_GetTaskMetricsRequest_descriptor,
+        new java.lang.String[] { "Id", });
+    internal_static_flyteidl_admin_GetTaskMetricsResponse_descriptor =
+      getDescriptor().getMessageTypes().get(24);
+    internal_static_flyteidl_admin_GetTaskMetricsResponse_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_flyteidl_admin_GetTaskMetricsResponse_descriptor,
         new java.lang.String[] { "Span", });
     flyteidl.admin.ClusterAssignmentOuterClass.getDescriptor();
     flyteidl.admin.Common.getDescriptor();

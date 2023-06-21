@@ -15998,6 +15998,7 @@
                  * @property {boolean|null} [isDynamic] NodeExecutionEvent isDynamic
                  * @property {string|null} [deckUri] NodeExecutionEvent deckUri
                  * @property {google.protobuf.ITimestamp|null} [reportedAt] NodeExecutionEvent reportedAt
+                 * @property {string|null} [spanUri] NodeExecutionEvent spanUri
                  */
     
                 /**
@@ -16183,6 +16184,14 @@
                  */
                 NodeExecutionEvent.prototype.reportedAt = null;
     
+                /**
+                 * NodeExecutionEvent spanUri.
+                 * @member {string} spanUri
+                 * @memberof flyteidl.event.NodeExecutionEvent
+                 * @instance
+                 */
+                NodeExecutionEvent.prototype.spanUri = "";
+    
                 // OneOf field names bound to virtual getters and setters
                 var $oneOfFields;
     
@@ -16285,6 +16294,8 @@
                         $root.flyteidl.core.LiteralMap.encode(message.inputData, writer.uint32(/* id 20, wireType 2 =*/162).fork()).ldelim();
                     if (message.reportedAt != null && message.hasOwnProperty("reportedAt"))
                         $root.google.protobuf.Timestamp.encode(message.reportedAt, writer.uint32(/* id 21, wireType 2 =*/170).fork()).ldelim();
+                    if (message.spanUri != null && message.hasOwnProperty("spanUri"))
+                        writer.uint32(/* id 22, wireType 2 =*/178).string(message.spanUri);
                     return writer;
                 };
     
@@ -16368,6 +16379,9 @@
                             break;
                         case 21:
                             message.reportedAt = $root.google.protobuf.Timestamp.decode(reader, reader.uint32());
+                            break;
+                        case 22:
+                            message.spanUri = reader.string();
                             break;
                         default:
                             reader.skipType(tag & 7);
@@ -16513,6 +16527,9 @@
                         if (error)
                             return "reportedAt." + error;
                     }
+                    if (message.spanUri != null && message.hasOwnProperty("spanUri"))
+                        if (!$util.isString(message.spanUri))
+                            return "spanUri: string expected";
                     return null;
                 };
     
@@ -28303,6 +28320,230 @@
                 return WorkflowExecutionGetMetricsResponse;
             })();
     
+            admin.GetTaskMetricsRequest = (function() {
+    
+                /**
+                 * Properties of a GetTaskMetricsRequest.
+                 * @memberof flyteidl.admin
+                 * @interface IGetTaskMetricsRequest
+                 * @property {flyteidl.core.INodeExecutionIdentifier|null} [id] GetTaskMetricsRequest id
+                 */
+    
+                /**
+                 * Constructs a new GetTaskMetricsRequest.
+                 * @memberof flyteidl.admin
+                 * @classdesc Represents a GetTaskMetricsRequest.
+                 * @implements IGetTaskMetricsRequest
+                 * @constructor
+                 * @param {flyteidl.admin.IGetTaskMetricsRequest=} [properties] Properties to set
+                 */
+                function GetTaskMetricsRequest(properties) {
+                    if (properties)
+                        for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                            if (properties[keys[i]] != null)
+                                this[keys[i]] = properties[keys[i]];
+                }
+    
+                /**
+                 * GetTaskMetricsRequest id.
+                 * @member {flyteidl.core.INodeExecutionIdentifier|null|undefined} id
+                 * @memberof flyteidl.admin.GetTaskMetricsRequest
+                 * @instance
+                 */
+                GetTaskMetricsRequest.prototype.id = null;
+    
+                /**
+                 * Creates a new GetTaskMetricsRequest instance using the specified properties.
+                 * @function create
+                 * @memberof flyteidl.admin.GetTaskMetricsRequest
+                 * @static
+                 * @param {flyteidl.admin.IGetTaskMetricsRequest=} [properties] Properties to set
+                 * @returns {flyteidl.admin.GetTaskMetricsRequest} GetTaskMetricsRequest instance
+                 */
+                GetTaskMetricsRequest.create = function create(properties) {
+                    return new GetTaskMetricsRequest(properties);
+                };
+    
+                /**
+                 * Encodes the specified GetTaskMetricsRequest message. Does not implicitly {@link flyteidl.admin.GetTaskMetricsRequest.verify|verify} messages.
+                 * @function encode
+                 * @memberof flyteidl.admin.GetTaskMetricsRequest
+                 * @static
+                 * @param {flyteidl.admin.IGetTaskMetricsRequest} message GetTaskMetricsRequest message or plain object to encode
+                 * @param {$protobuf.Writer} [writer] Writer to encode to
+                 * @returns {$protobuf.Writer} Writer
+                 */
+                GetTaskMetricsRequest.encode = function encode(message, writer) {
+                    if (!writer)
+                        writer = $Writer.create();
+                    if (message.id != null && message.hasOwnProperty("id"))
+                        $root.flyteidl.core.NodeExecutionIdentifier.encode(message.id, writer.uint32(/* id 1, wireType 2 =*/10).fork()).ldelim();
+                    return writer;
+                };
+    
+                /**
+                 * Decodes a GetTaskMetricsRequest message from the specified reader or buffer.
+                 * @function decode
+                 * @memberof flyteidl.admin.GetTaskMetricsRequest
+                 * @static
+                 * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+                 * @param {number} [length] Message length if known beforehand
+                 * @returns {flyteidl.admin.GetTaskMetricsRequest} GetTaskMetricsRequest
+                 * @throws {Error} If the payload is not a reader or valid buffer
+                 * @throws {$protobuf.util.ProtocolError} If required fields are missing
+                 */
+                GetTaskMetricsRequest.decode = function decode(reader, length) {
+                    if (!(reader instanceof $Reader))
+                        reader = $Reader.create(reader);
+                    var end = length === undefined ? reader.len : reader.pos + length, message = new $root.flyteidl.admin.GetTaskMetricsRequest();
+                    while (reader.pos < end) {
+                        var tag = reader.uint32();
+                        switch (tag >>> 3) {
+                        case 1:
+                            message.id = $root.flyteidl.core.NodeExecutionIdentifier.decode(reader, reader.uint32());
+                            break;
+                        default:
+                            reader.skipType(tag & 7);
+                            break;
+                        }
+                    }
+                    return message;
+                };
+    
+                /**
+                 * Verifies a GetTaskMetricsRequest message.
+                 * @function verify
+                 * @memberof flyteidl.admin.GetTaskMetricsRequest
+                 * @static
+                 * @param {Object.<string,*>} message Plain object to verify
+                 * @returns {string|null} `null` if valid, otherwise the reason why it is not
+                 */
+                GetTaskMetricsRequest.verify = function verify(message) {
+                    if (typeof message !== "object" || message === null)
+                        return "object expected";
+                    if (message.id != null && message.hasOwnProperty("id")) {
+                        var error = $root.flyteidl.core.NodeExecutionIdentifier.verify(message.id);
+                        if (error)
+                            return "id." + error;
+                    }
+                    return null;
+                };
+    
+                return GetTaskMetricsRequest;
+            })();
+    
+            admin.GetTaskMetricsResponse = (function() {
+    
+                /**
+                 * Properties of a GetTaskMetricsResponse.
+                 * @memberof flyteidl.admin
+                 * @interface IGetTaskMetricsResponse
+                 * @property {flyteidl.core.ISpan|null} [span] GetTaskMetricsResponse span
+                 */
+    
+                /**
+                 * Constructs a new GetTaskMetricsResponse.
+                 * @memberof flyteidl.admin
+                 * @classdesc Represents a GetTaskMetricsResponse.
+                 * @implements IGetTaskMetricsResponse
+                 * @constructor
+                 * @param {flyteidl.admin.IGetTaskMetricsResponse=} [properties] Properties to set
+                 */
+                function GetTaskMetricsResponse(properties) {
+                    if (properties)
+                        for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                            if (properties[keys[i]] != null)
+                                this[keys[i]] = properties[keys[i]];
+                }
+    
+                /**
+                 * GetTaskMetricsResponse span.
+                 * @member {flyteidl.core.ISpan|null|undefined} span
+                 * @memberof flyteidl.admin.GetTaskMetricsResponse
+                 * @instance
+                 */
+                GetTaskMetricsResponse.prototype.span = null;
+    
+                /**
+                 * Creates a new GetTaskMetricsResponse instance using the specified properties.
+                 * @function create
+                 * @memberof flyteidl.admin.GetTaskMetricsResponse
+                 * @static
+                 * @param {flyteidl.admin.IGetTaskMetricsResponse=} [properties] Properties to set
+                 * @returns {flyteidl.admin.GetTaskMetricsResponse} GetTaskMetricsResponse instance
+                 */
+                GetTaskMetricsResponse.create = function create(properties) {
+                    return new GetTaskMetricsResponse(properties);
+                };
+    
+                /**
+                 * Encodes the specified GetTaskMetricsResponse message. Does not implicitly {@link flyteidl.admin.GetTaskMetricsResponse.verify|verify} messages.
+                 * @function encode
+                 * @memberof flyteidl.admin.GetTaskMetricsResponse
+                 * @static
+                 * @param {flyteidl.admin.IGetTaskMetricsResponse} message GetTaskMetricsResponse message or plain object to encode
+                 * @param {$protobuf.Writer} [writer] Writer to encode to
+                 * @returns {$protobuf.Writer} Writer
+                 */
+                GetTaskMetricsResponse.encode = function encode(message, writer) {
+                    if (!writer)
+                        writer = $Writer.create();
+                    if (message.span != null && message.hasOwnProperty("span"))
+                        $root.flyteidl.core.Span.encode(message.span, writer.uint32(/* id 1, wireType 2 =*/10).fork()).ldelim();
+                    return writer;
+                };
+    
+                /**
+                 * Decodes a GetTaskMetricsResponse message from the specified reader or buffer.
+                 * @function decode
+                 * @memberof flyteidl.admin.GetTaskMetricsResponse
+                 * @static
+                 * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+                 * @param {number} [length] Message length if known beforehand
+                 * @returns {flyteidl.admin.GetTaskMetricsResponse} GetTaskMetricsResponse
+                 * @throws {Error} If the payload is not a reader or valid buffer
+                 * @throws {$protobuf.util.ProtocolError} If required fields are missing
+                 */
+                GetTaskMetricsResponse.decode = function decode(reader, length) {
+                    if (!(reader instanceof $Reader))
+                        reader = $Reader.create(reader);
+                    var end = length === undefined ? reader.len : reader.pos + length, message = new $root.flyteidl.admin.GetTaskMetricsResponse();
+                    while (reader.pos < end) {
+                        var tag = reader.uint32();
+                        switch (tag >>> 3) {
+                        case 1:
+                            message.span = $root.flyteidl.core.Span.decode(reader, reader.uint32());
+                            break;
+                        default:
+                            reader.skipType(tag & 7);
+                            break;
+                        }
+                    }
+                    return message;
+                };
+    
+                /**
+                 * Verifies a GetTaskMetricsResponse message.
+                 * @function verify
+                 * @memberof flyteidl.admin.GetTaskMetricsResponse
+                 * @static
+                 * @param {Object.<string,*>} message Plain object to verify
+                 * @returns {string|null} `null` if valid, otherwise the reason why it is not
+                 */
+                GetTaskMetricsResponse.verify = function verify(message) {
+                    if (typeof message !== "object" || message === null)
+                        return "object expected";
+                    if (message.span != null && message.hasOwnProperty("span")) {
+                        var error = $root.flyteidl.core.Span.verify(message.span);
+                        if (error)
+                            return "span." + error;
+                    }
+                    return null;
+                };
+    
+                return GetTaskMetricsResponse;
+            })();
+    
             admin.LaunchPlanCreateRequest = (function() {
     
                 /**
@@ -33575,6 +33816,7 @@
                  * @property {flyteidl.admin.ITaskNodeMetadata|null} [taskNodeMetadata] NodeExecutionClosure taskNodeMetadata
                  * @property {string|null} [deckUri] NodeExecutionClosure deckUri
                  * @property {string|null} [dynamicJobSpecUri] NodeExecutionClosure dynamicJobSpecUri
+                 * @property {string|null} [spanUri] NodeExecutionClosure spanUri
                  */
     
                 /**
@@ -33688,6 +33930,14 @@
                  */
                 NodeExecutionClosure.prototype.dynamicJobSpecUri = "";
     
+                /**
+                 * NodeExecutionClosure spanUri.
+                 * @member {string} spanUri
+                 * @memberof flyteidl.admin.NodeExecutionClosure
+                 * @instance
+                 */
+                NodeExecutionClosure.prototype.spanUri = "";
+    
                 // OneOf field names bound to virtual getters and setters
                 var $oneOfFields;
     
@@ -33761,6 +34011,8 @@
                         writer.uint32(/* id 11, wireType 2 =*/90).string(message.deckUri);
                     if (message.dynamicJobSpecUri != null && message.hasOwnProperty("dynamicJobSpecUri"))
                         writer.uint32(/* id 12, wireType 2 =*/98).string(message.dynamicJobSpecUri);
+                    if (message.spanUri != null && message.hasOwnProperty("spanUri"))
+                        writer.uint32(/* id 13, wireType 2 =*/106).string(message.spanUri);
                     return writer;
                 };
     
@@ -33817,6 +34069,9 @@
                             break;
                         case 12:
                             message.dynamicJobSpecUri = reader.string();
+                            break;
+                        case 13:
+                            message.spanUri = reader.string();
                             break;
                         default:
                             reader.skipType(tag & 7);
@@ -33924,6 +34179,9 @@
                     if (message.dynamicJobSpecUri != null && message.hasOwnProperty("dynamicJobSpecUri"))
                         if (!$util.isString(message.dynamicJobSpecUri))
                             return "dynamicJobSpecUri: string expected";
+                    if (message.spanUri != null && message.hasOwnProperty("spanUri"))
+                        if (!$util.isString(message.spanUri))
+                            return "spanUri: string expected";
                     return null;
                 };
     
@@ -44743,6 +45001,39 @@
                  * @instance
                  * @param {flyteidl.admin.IWorkflowExecutionGetMetricsRequest} request WorkflowExecutionGetMetricsRequest message or plain object
                  * @returns {Promise<flyteidl.admin.WorkflowExecutionGetMetricsResponse>} Promise
+                 * @variation 2
+                 */
+    
+                /**
+                 * Callback as used by {@link flyteidl.service.AdminService#getTaskMetrics}.
+                 * @memberof flyteidl.service.AdminService
+                 * @typedef GetTaskMetricsCallback
+                 * @type {function}
+                 * @param {Error|null} error Error, if any
+                 * @param {flyteidl.admin.GetTaskMetricsResponse} [response] GetTaskMetricsResponse
+                 */
+    
+                /**
+                 * Calls GetTaskMetrics.
+                 * @function getTaskMetrics
+                 * @memberof flyteidl.service.AdminService
+                 * @instance
+                 * @param {flyteidl.admin.IGetTaskMetricsRequest} request GetTaskMetricsRequest message or plain object
+                 * @param {flyteidl.service.AdminService.GetTaskMetricsCallback} callback Node-style callback called with the error, if any, and GetTaskMetricsResponse
+                 * @returns {undefined}
+                 * @variation 1
+                 */
+                Object.defineProperty(AdminService.prototype.getTaskMetrics = function getTaskMetrics(request, callback) {
+                    return this.rpcCall(getTaskMetrics, $root.flyteidl.admin.GetTaskMetricsRequest, $root.flyteidl.admin.GetTaskMetricsResponse, request, callback);
+                }, "name", { value: "GetTaskMetrics" });
+    
+                /**
+                 * Calls GetTaskMetrics.
+                 * @function getTaskMetrics
+                 * @memberof flyteidl.service.AdminService
+                 * @instance
+                 * @param {flyteidl.admin.IGetTaskMetricsRequest} request GetTaskMetricsRequest message or plain object
+                 * @returns {Promise<flyteidl.admin.GetTaskMetricsResponse>} Promise
                  * @variation 2
                  */
     

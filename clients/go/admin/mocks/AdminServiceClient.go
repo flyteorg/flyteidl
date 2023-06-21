@@ -1169,6 +1169,54 @@ func (_m *AdminServiceClient) GetTaskExecutionData(ctx context.Context, in *admi
 	return r0, r1
 }
 
+type AdminServiceClient_GetTaskMetrics struct {
+	*mock.Call
+}
+
+func (_m AdminServiceClient_GetTaskMetrics) Return(_a0 *admin.GetTaskMetricsResponse, _a1 error) *AdminServiceClient_GetTaskMetrics {
+	return &AdminServiceClient_GetTaskMetrics{Call: _m.Call.Return(_a0, _a1)}
+}
+
+func (_m *AdminServiceClient) OnGetTaskMetrics(ctx context.Context, in *admin.GetTaskMetricsRequest, opts ...grpc.CallOption) *AdminServiceClient_GetTaskMetrics {
+	c_call := _m.On("GetTaskMetrics", ctx, in, opts)
+	return &AdminServiceClient_GetTaskMetrics{Call: c_call}
+}
+
+func (_m *AdminServiceClient) OnGetTaskMetricsMatch(matchers ...interface{}) *AdminServiceClient_GetTaskMetrics {
+	c_call := _m.On("GetTaskMetrics", matchers...)
+	return &AdminServiceClient_GetTaskMetrics{Call: c_call}
+}
+
+// GetTaskMetrics provides a mock function with given fields: ctx, in, opts
+func (_m *AdminServiceClient) GetTaskMetrics(ctx context.Context, in *admin.GetTaskMetricsRequest, opts ...grpc.CallOption) (*admin.GetTaskMetricsResponse, error) {
+	_va := make([]interface{}, len(opts))
+	for _i := range opts {
+		_va[_i] = opts[_i]
+	}
+	var _ca []interface{}
+	_ca = append(_ca, ctx, in)
+	_ca = append(_ca, _va...)
+	ret := _m.Called(_ca...)
+
+	var r0 *admin.GetTaskMetricsResponse
+	if rf, ok := ret.Get(0).(func(context.Context, *admin.GetTaskMetricsRequest, ...grpc.CallOption) *admin.GetTaskMetricsResponse); ok {
+		r0 = rf(ctx, in, opts...)
+	} else {
+		if ret.Get(0) != nil {
+			r0 = ret.Get(0).(*admin.GetTaskMetricsResponse)
+		}
+	}
+
+	var r1 error
+	if rf, ok := ret.Get(1).(func(context.Context, *admin.GetTaskMetricsRequest, ...grpc.CallOption) error); ok {
+		r1 = rf(ctx, in, opts...)
+	} else {
+		r1 = ret.Error(1)
+	}
+
+	return r0, r1
+}
+
 type AdminServiceClient_GetVersion struct {
 	*mock.Call
 }

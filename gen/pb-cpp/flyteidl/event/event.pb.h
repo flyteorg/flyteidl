@@ -523,6 +523,20 @@ class NodeExecutionEvent final :
   ::std::string* release_deck_uri();
   void set_allocated_deck_uri(::std::string* deck_uri);
 
+  // string span_uri = 22;
+  void clear_span_uri();
+  static const int kSpanUriFieldNumber = 22;
+  const ::std::string& span_uri() const;
+  void set_span_uri(const ::std::string& value);
+  #if LANG_CXX11
+  void set_span_uri(::std::string&& value);
+  #endif
+  void set_span_uri(const char* value);
+  void set_span_uri(const char* value, size_t size);
+  ::std::string* mutable_span_uri();
+  ::std::string* release_span_uri();
+  void set_allocated_span_uri(::std::string* span_uri);
+
   // .flyteidl.core.NodeExecutionIdentifier id = 1;
   bool has_id() const;
   void clear_id();
@@ -703,6 +717,7 @@ class NodeExecutionEvent final :
   ::google::protobuf::internal::ArenaStringPtr spec_node_id_;
   ::google::protobuf::internal::ArenaStringPtr node_name_;
   ::google::protobuf::internal::ArenaStringPtr deck_uri_;
+  ::google::protobuf::internal::ArenaStringPtr span_uri_;
   ::flyteidl::core::NodeExecutionIdentifier* id_;
   ::google::protobuf::Timestamp* occurred_at_;
   ::flyteidl::event::ParentTaskExecutionMetadata* parent_task_metadata_;
@@ -3493,6 +3508,59 @@ inline void NodeExecutionEvent::set_allocated_reported_at(::google::protobuf::Ti
   }
   reported_at_ = reported_at;
   // @@protoc_insertion_point(field_set_allocated:flyteidl.event.NodeExecutionEvent.reported_at)
+}
+
+// string span_uri = 22;
+inline void NodeExecutionEvent::clear_span_uri() {
+  span_uri_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline const ::std::string& NodeExecutionEvent::span_uri() const {
+  // @@protoc_insertion_point(field_get:flyteidl.event.NodeExecutionEvent.span_uri)
+  return span_uri_.GetNoArena();
+}
+inline void NodeExecutionEvent::set_span_uri(const ::std::string& value) {
+  
+  span_uri_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
+  // @@protoc_insertion_point(field_set:flyteidl.event.NodeExecutionEvent.span_uri)
+}
+#if LANG_CXX11
+inline void NodeExecutionEvent::set_span_uri(::std::string&& value) {
+  
+  span_uri_.SetNoArena(
+    &::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::move(value));
+  // @@protoc_insertion_point(field_set_rvalue:flyteidl.event.NodeExecutionEvent.span_uri)
+}
+#endif
+inline void NodeExecutionEvent::set_span_uri(const char* value) {
+  GOOGLE_DCHECK(value != nullptr);
+  
+  span_uri_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
+  // @@protoc_insertion_point(field_set_char:flyteidl.event.NodeExecutionEvent.span_uri)
+}
+inline void NodeExecutionEvent::set_span_uri(const char* value, size_t size) {
+  
+  span_uri_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
+      ::std::string(reinterpret_cast<const char*>(value), size));
+  // @@protoc_insertion_point(field_set_pointer:flyteidl.event.NodeExecutionEvent.span_uri)
+}
+inline ::std::string* NodeExecutionEvent::mutable_span_uri() {
+  
+  // @@protoc_insertion_point(field_mutable:flyteidl.event.NodeExecutionEvent.span_uri)
+  return span_uri_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline ::std::string* NodeExecutionEvent::release_span_uri() {
+  // @@protoc_insertion_point(field_release:flyteidl.event.NodeExecutionEvent.span_uri)
+  
+  return span_uri_.ReleaseNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline void NodeExecutionEvent::set_allocated_span_uri(::std::string* span_uri) {
+  if (span_uri != nullptr) {
+    
+  } else {
+    
+  }
+  span_uri_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), span_uri);
+  // @@protoc_insertion_point(field_set_allocated:flyteidl.event.NodeExecutionEvent.span_uri)
 }
 
 inline bool NodeExecutionEvent::has_input_value() const {

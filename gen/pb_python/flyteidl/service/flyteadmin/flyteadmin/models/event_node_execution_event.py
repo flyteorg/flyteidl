@@ -60,7 +60,8 @@ class EventNodeExecutionEvent(object):
         'is_parent': 'bool',
         'is_dynamic': 'bool',
         'deck_uri': 'str',
-        'reported_at': 'datetime'
+        'reported_at': 'datetime',
+        'span_uri': 'str'
     }
 
     attribute_map = {
@@ -84,10 +85,11 @@ class EventNodeExecutionEvent(object):
         'is_parent': 'is_parent',
         'is_dynamic': 'is_dynamic',
         'deck_uri': 'deck_uri',
-        'reported_at': 'reported_at'
+        'reported_at': 'reported_at',
+        'span_uri': 'span_uri'
     }
 
-    def __init__(self, id=None, producer_id=None, phase=None, occurred_at=None, input_uri=None, input_data=None, output_uri=None, error=None, output_data=None, workflow_node_metadata=None, task_node_metadata=None, parent_task_metadata=None, parent_node_metadata=None, retry_group=None, spec_node_id=None, node_name=None, event_version=None, is_parent=None, is_dynamic=None, deck_uri=None, reported_at=None):  # noqa: E501
+    def __init__(self, id=None, producer_id=None, phase=None, occurred_at=None, input_uri=None, input_data=None, output_uri=None, error=None, output_data=None, workflow_node_metadata=None, task_node_metadata=None, parent_task_metadata=None, parent_node_metadata=None, retry_group=None, spec_node_id=None, node_name=None, event_version=None, is_parent=None, is_dynamic=None, deck_uri=None, reported_at=None, span_uri=None):  # noqa: E501
         """EventNodeExecutionEvent - a model defined in Swagger"""  # noqa: E501
 
         self._id = None
@@ -111,6 +113,7 @@ class EventNodeExecutionEvent(object):
         self._is_dynamic = None
         self._deck_uri = None
         self._reported_at = None
+        self._span_uri = None
         self.discriminator = None
 
         if id is not None:
@@ -155,6 +158,8 @@ class EventNodeExecutionEvent(object):
             self.deck_uri = deck_uri
         if reported_at is not None:
             self.reported_at = reported_at
+        if span_uri is not None:
+            self.span_uri = span_uri
 
     @property
     def id(self):
@@ -614,6 +619,29 @@ class EventNodeExecutionEvent(object):
         """
 
         self._reported_at = reported_at
+
+    @property
+    def span_uri(self):
+        """Gets the span_uri of this EventNodeExecutionEvent.  # noqa: E501
+
+        String location uniquely identifying where the span.pb file is.  # noqa: E501
+
+        :return: The span_uri of this EventNodeExecutionEvent.  # noqa: E501
+        :rtype: str
+        """
+        return self._span_uri
+
+    @span_uri.setter
+    def span_uri(self, span_uri):
+        """Sets the span_uri of this EventNodeExecutionEvent.
+
+        String location uniquely identifying where the span.pb file is.  # noqa: E501
+
+        :param span_uri: The span_uri of this EventNodeExecutionEvent.  # noqa: E501
+        :type: str
+        """
+
+        self._span_uri = span_uri
 
     def to_dict(self):
         """Returns the model properties as a dict"""

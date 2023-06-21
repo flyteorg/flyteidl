@@ -73,6 +73,7 @@ static const char* AdminService_method_names[] = {
   "/flyteidl.service.AdminService/GetDescriptionEntity",
   "/flyteidl.service.AdminService/ListDescriptionEntities",
   "/flyteidl.service.AdminService/GetExecutionMetrics",
+  "/flyteidl.service.AdminService/GetTaskMetrics",
 };
 
 std::unique_ptr< AdminService::Stub> AdminService::NewStub(const std::shared_ptr< ::grpc::ChannelInterface>& channel, const ::grpc::StubOptions& options) {
@@ -135,6 +136,7 @@ AdminService::Stub::Stub(const std::shared_ptr< ::grpc::ChannelInterface>& chann
   , rpcmethod_GetDescriptionEntity_(AdminService_method_names[50], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
   , rpcmethod_ListDescriptionEntities_(AdminService_method_names[51], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
   , rpcmethod_GetExecutionMetrics_(AdminService_method_names[52], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_GetTaskMetrics_(AdminService_method_names[53], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
   {}
 
 ::grpc::Status AdminService::Stub::CreateTask(::grpc::ClientContext* context, const ::flyteidl::admin::TaskCreateRequest& request, ::flyteidl::admin::TaskCreateResponse* response) {
@@ -1621,6 +1623,34 @@ void AdminService::Stub::experimental_async::GetExecutionMetrics(::grpc::ClientC
   return ::grpc::internal::ClientAsyncResponseReaderFactory< ::flyteidl::admin::WorkflowExecutionGetMetricsResponse>::Create(channel_.get(), cq, rpcmethod_GetExecutionMetrics_, context, request, false);
 }
 
+::grpc::Status AdminService::Stub::GetTaskMetrics(::grpc::ClientContext* context, const ::flyteidl::admin::GetTaskMetricsRequest& request, ::flyteidl::admin::GetTaskMetricsResponse* response) {
+  return ::grpc::internal::BlockingUnaryCall(channel_.get(), rpcmethod_GetTaskMetrics_, context, request, response);
+}
+
+void AdminService::Stub::experimental_async::GetTaskMetrics(::grpc::ClientContext* context, const ::flyteidl::admin::GetTaskMetricsRequest* request, ::flyteidl::admin::GetTaskMetricsResponse* response, std::function<void(::grpc::Status)> f) {
+  ::grpc::internal::CallbackUnaryCall(stub_->channel_.get(), stub_->rpcmethod_GetTaskMetrics_, context, request, response, std::move(f));
+}
+
+void AdminService::Stub::experimental_async::GetTaskMetrics(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::flyteidl::admin::GetTaskMetricsResponse* response, std::function<void(::grpc::Status)> f) {
+  ::grpc::internal::CallbackUnaryCall(stub_->channel_.get(), stub_->rpcmethod_GetTaskMetrics_, context, request, response, std::move(f));
+}
+
+void AdminService::Stub::experimental_async::GetTaskMetrics(::grpc::ClientContext* context, const ::flyteidl::admin::GetTaskMetricsRequest* request, ::flyteidl::admin::GetTaskMetricsResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
+  ::grpc::internal::ClientCallbackUnaryFactory::Create(stub_->channel_.get(), stub_->rpcmethod_GetTaskMetrics_, context, request, response, reactor);
+}
+
+void AdminService::Stub::experimental_async::GetTaskMetrics(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::flyteidl::admin::GetTaskMetricsResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
+  ::grpc::internal::ClientCallbackUnaryFactory::Create(stub_->channel_.get(), stub_->rpcmethod_GetTaskMetrics_, context, request, response, reactor);
+}
+
+::grpc::ClientAsyncResponseReader< ::flyteidl::admin::GetTaskMetricsResponse>* AdminService::Stub::AsyncGetTaskMetricsRaw(::grpc::ClientContext* context, const ::flyteidl::admin::GetTaskMetricsRequest& request, ::grpc::CompletionQueue* cq) {
+  return ::grpc::internal::ClientAsyncResponseReaderFactory< ::flyteidl::admin::GetTaskMetricsResponse>::Create(channel_.get(), cq, rpcmethod_GetTaskMetrics_, context, request, true);
+}
+
+::grpc::ClientAsyncResponseReader< ::flyteidl::admin::GetTaskMetricsResponse>* AdminService::Stub::PrepareAsyncGetTaskMetricsRaw(::grpc::ClientContext* context, const ::flyteidl::admin::GetTaskMetricsRequest& request, ::grpc::CompletionQueue* cq) {
+  return ::grpc::internal::ClientAsyncResponseReaderFactory< ::flyteidl::admin::GetTaskMetricsResponse>::Create(channel_.get(), cq, rpcmethod_GetTaskMetrics_, context, request, false);
+}
+
 AdminService::Service::Service() {
   AddMethod(new ::grpc::internal::RpcServiceMethod(
       AdminService_method_names[0],
@@ -1887,6 +1917,11 @@ AdminService::Service::Service() {
       ::grpc::internal::RpcMethod::NORMAL_RPC,
       new ::grpc::internal::RpcMethodHandler< AdminService::Service, ::flyteidl::admin::WorkflowExecutionGetMetricsRequest, ::flyteidl::admin::WorkflowExecutionGetMetricsResponse>(
           std::mem_fn(&AdminService::Service::GetExecutionMetrics), this)));
+  AddMethod(new ::grpc::internal::RpcServiceMethod(
+      AdminService_method_names[53],
+      ::grpc::internal::RpcMethod::NORMAL_RPC,
+      new ::grpc::internal::RpcMethodHandler< AdminService::Service, ::flyteidl::admin::GetTaskMetricsRequest, ::flyteidl::admin::GetTaskMetricsResponse>(
+          std::mem_fn(&AdminService::Service::GetTaskMetrics), this)));
 }
 
 AdminService::Service::~Service() {
@@ -2257,6 +2292,13 @@ AdminService::Service::~Service() {
 }
 
 ::grpc::Status AdminService::Service::GetExecutionMetrics(::grpc::ServerContext* context, const ::flyteidl::admin::WorkflowExecutionGetMetricsRequest* request, ::flyteidl::admin::WorkflowExecutionGetMetricsResponse* response) {
+  (void) context;
+  (void) request;
+  (void) response;
+  return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+}
+
+::grpc::Status AdminService::Service::GetTaskMetrics(::grpc::ServerContext* context, const ::flyteidl::admin::GetTaskMetricsRequest* request, ::flyteidl::admin::GetTaskMetricsResponse* response) {
   (void) context;
   (void) request;
   (void) response;

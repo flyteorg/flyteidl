@@ -1139,6 +1139,20 @@ class NodeExecutionClosure final :
   ::std::string* release_dynamic_job_spec_uri();
   void set_allocated_dynamic_job_spec_uri(::std::string* dynamic_job_spec_uri);
 
+  // string span_uri = 13;
+  void clear_span_uri();
+  static const int kSpanUriFieldNumber = 13;
+  const ::std::string& span_uri() const;
+  void set_span_uri(const ::std::string& value);
+  #if LANG_CXX11
+  void set_span_uri(::std::string&& value);
+  #endif
+  void set_span_uri(const char* value);
+  void set_span_uri(const char* value, size_t size);
+  ::std::string* mutable_span_uri();
+  ::std::string* release_span_uri();
+  void set_allocated_span_uri(::std::string* span_uri);
+
   // .google.protobuf.Timestamp started_at = 4;
   bool has_started_at() const;
   void clear_started_at();
@@ -1256,6 +1270,7 @@ class NodeExecutionClosure final :
   ::google::protobuf::internal::InternalMetadataWithArena _internal_metadata_;
   ::google::protobuf::internal::ArenaStringPtr deck_uri_;
   ::google::protobuf::internal::ArenaStringPtr dynamic_job_spec_uri_;
+  ::google::protobuf::internal::ArenaStringPtr span_uri_;
   ::google::protobuf::Timestamp* started_at_;
   ::google::protobuf::Duration* duration_;
   ::google::protobuf::Timestamp* created_at_;
@@ -3465,6 +3480,59 @@ inline void NodeExecutionClosure::set_allocated_dynamic_job_spec_uri(::std::stri
   }
   dynamic_job_spec_uri_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), dynamic_job_spec_uri);
   // @@protoc_insertion_point(field_set_allocated:flyteidl.admin.NodeExecutionClosure.dynamic_job_spec_uri)
+}
+
+// string span_uri = 13;
+inline void NodeExecutionClosure::clear_span_uri() {
+  span_uri_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline const ::std::string& NodeExecutionClosure::span_uri() const {
+  // @@protoc_insertion_point(field_get:flyteidl.admin.NodeExecutionClosure.span_uri)
+  return span_uri_.GetNoArena();
+}
+inline void NodeExecutionClosure::set_span_uri(const ::std::string& value) {
+  
+  span_uri_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
+  // @@protoc_insertion_point(field_set:flyteidl.admin.NodeExecutionClosure.span_uri)
+}
+#if LANG_CXX11
+inline void NodeExecutionClosure::set_span_uri(::std::string&& value) {
+  
+  span_uri_.SetNoArena(
+    &::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::move(value));
+  // @@protoc_insertion_point(field_set_rvalue:flyteidl.admin.NodeExecutionClosure.span_uri)
+}
+#endif
+inline void NodeExecutionClosure::set_span_uri(const char* value) {
+  GOOGLE_DCHECK(value != nullptr);
+  
+  span_uri_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
+  // @@protoc_insertion_point(field_set_char:flyteidl.admin.NodeExecutionClosure.span_uri)
+}
+inline void NodeExecutionClosure::set_span_uri(const char* value, size_t size) {
+  
+  span_uri_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
+      ::std::string(reinterpret_cast<const char*>(value), size));
+  // @@protoc_insertion_point(field_set_pointer:flyteidl.admin.NodeExecutionClosure.span_uri)
+}
+inline ::std::string* NodeExecutionClosure::mutable_span_uri() {
+  
+  // @@protoc_insertion_point(field_mutable:flyteidl.admin.NodeExecutionClosure.span_uri)
+  return span_uri_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline ::std::string* NodeExecutionClosure::release_span_uri() {
+  // @@protoc_insertion_point(field_release:flyteidl.admin.NodeExecutionClosure.span_uri)
+  
+  return span_uri_.ReleaseNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline void NodeExecutionClosure::set_allocated_span_uri(::std::string* span_uri) {
+  if (span_uri != nullptr) {
+    
+  } else {
+    
+  }
+  span_uri_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), span_uri);
+  // @@protoc_insertion_point(field_set_allocated:flyteidl.admin.NodeExecutionClosure.span_uri)
 }
 
 inline bool NodeExecutionClosure::has_output_result() const {

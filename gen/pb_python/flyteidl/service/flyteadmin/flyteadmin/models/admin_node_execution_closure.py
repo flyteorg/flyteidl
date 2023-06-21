@@ -48,7 +48,8 @@ class AdminNodeExecutionClosure(object):
         'workflow_node_metadata': 'FlyteidladminWorkflowNodeMetadata',
         'task_node_metadata': 'FlyteidladminTaskNodeMetadata',
         'deck_uri': 'str',
-        'dynamic_job_spec_uri': 'str'
+        'dynamic_job_spec_uri': 'str',
+        'span_uri': 'str'
     }
 
     attribute_map = {
@@ -63,10 +64,11 @@ class AdminNodeExecutionClosure(object):
         'workflow_node_metadata': 'workflow_node_metadata',
         'task_node_metadata': 'task_node_metadata',
         'deck_uri': 'deck_uri',
-        'dynamic_job_spec_uri': 'dynamic_job_spec_uri'
+        'dynamic_job_spec_uri': 'dynamic_job_spec_uri',
+        'span_uri': 'span_uri'
     }
 
-    def __init__(self, output_uri=None, error=None, output_data=None, phase=None, started_at=None, duration=None, created_at=None, updated_at=None, workflow_node_metadata=None, task_node_metadata=None, deck_uri=None, dynamic_job_spec_uri=None):  # noqa: E501
+    def __init__(self, output_uri=None, error=None, output_data=None, phase=None, started_at=None, duration=None, created_at=None, updated_at=None, workflow_node_metadata=None, task_node_metadata=None, deck_uri=None, dynamic_job_spec_uri=None, span_uri=None):  # noqa: E501
         """AdminNodeExecutionClosure - a model defined in Swagger"""  # noqa: E501
 
         self._output_uri = None
@@ -81,6 +83,7 @@ class AdminNodeExecutionClosure(object):
         self._task_node_metadata = None
         self._deck_uri = None
         self._dynamic_job_spec_uri = None
+        self._span_uri = None
         self.discriminator = None
 
         if output_uri is not None:
@@ -107,6 +110,8 @@ class AdminNodeExecutionClosure(object):
             self.deck_uri = deck_uri
         if dynamic_job_spec_uri is not None:
             self.dynamic_job_spec_uri = dynamic_job_spec_uri
+        if span_uri is not None:
+            self.span_uri = span_uri
 
     @property
     def output_uri(self):
@@ -375,6 +380,29 @@ class AdminNodeExecutionClosure(object):
         """
 
         self._dynamic_job_spec_uri = dynamic_job_spec_uri
+
+    @property
+    def span_uri(self):
+        """Gets the span_uri of this AdminNodeExecutionClosure.  # noqa: E501
+
+        String location uniquely identifying where the span.pb file is.  # noqa: E501
+
+        :return: The span_uri of this AdminNodeExecutionClosure.  # noqa: E501
+        :rtype: str
+        """
+        return self._span_uri
+
+    @span_uri.setter
+    def span_uri(self, span_uri):
+        """Sets the span_uri of this AdminNodeExecutionClosure.
+
+        String location uniquely identifying where the span.pb file is.  # noqa: E501
+
+        :param span_uri: The span_uri of this AdminNodeExecutionClosure.  # noqa: E501
+        :type: str
+        """
+
+        self._span_uri = span_uri
 
     def to_dict(self):
         """Returns the model properties as a dict"""

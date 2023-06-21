@@ -999,6 +999,47 @@ func (_m *AdminServiceServer) GetTaskExecutionData(_a0 context.Context, _a1 *adm
 	return r0, r1
 }
 
+type AdminServiceServer_GetTaskMetrics struct {
+	*mock.Call
+}
+
+func (_m AdminServiceServer_GetTaskMetrics) Return(_a0 *admin.GetTaskMetricsResponse, _a1 error) *AdminServiceServer_GetTaskMetrics {
+	return &AdminServiceServer_GetTaskMetrics{Call: _m.Call.Return(_a0, _a1)}
+}
+
+func (_m *AdminServiceServer) OnGetTaskMetrics(_a0 context.Context, _a1 *admin.GetTaskMetricsRequest) *AdminServiceServer_GetTaskMetrics {
+	c_call := _m.On("GetTaskMetrics", _a0, _a1)
+	return &AdminServiceServer_GetTaskMetrics{Call: c_call}
+}
+
+func (_m *AdminServiceServer) OnGetTaskMetricsMatch(matchers ...interface{}) *AdminServiceServer_GetTaskMetrics {
+	c_call := _m.On("GetTaskMetrics", matchers...)
+	return &AdminServiceServer_GetTaskMetrics{Call: c_call}
+}
+
+// GetTaskMetrics provides a mock function with given fields: _a0, _a1
+func (_m *AdminServiceServer) GetTaskMetrics(_a0 context.Context, _a1 *admin.GetTaskMetricsRequest) (*admin.GetTaskMetricsResponse, error) {
+	ret := _m.Called(_a0, _a1)
+
+	var r0 *admin.GetTaskMetricsResponse
+	if rf, ok := ret.Get(0).(func(context.Context, *admin.GetTaskMetricsRequest) *admin.GetTaskMetricsResponse); ok {
+		r0 = rf(_a0, _a1)
+	} else {
+		if ret.Get(0) != nil {
+			r0 = ret.Get(0).(*admin.GetTaskMetricsResponse)
+		}
+	}
+
+	var r1 error
+	if rf, ok := ret.Get(1).(func(context.Context, *admin.GetTaskMetricsRequest) error); ok {
+		r1 = rf(_a0, _a1)
+	} else {
+		r1 = ret.Error(1)
+	}
+
+	return r0, r1
+}
+
 type AdminServiceServer_GetVersion struct {
 	*mock.Call
 }

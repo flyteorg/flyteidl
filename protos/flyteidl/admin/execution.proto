@@ -404,3 +404,17 @@ message WorkflowExecutionGetMetricsResponse {
     // hierarchical structure using Flyte entity references.
     core.Span span = 1;
 }
+
+// GetTaskMetricsRequest represents a request to retrieve task runtime metrics for the specified node execution.
+message GetTaskMetricsRequest {
+    // Uniquely identifies an individual node execution.
+   core.NodeExecutionIdentifier id  = 1;  
+}
+
+// GetTaskMetricsResponse represents the response containing task runtime metrics for the specified node execution.
+message GetTaskMetricsResponse {
+
+    // Span contains a collection of runtime metrics for a particular task.
+    // All specific metrics can be found in span.Spans.
+    core.Span span = 1;
+}

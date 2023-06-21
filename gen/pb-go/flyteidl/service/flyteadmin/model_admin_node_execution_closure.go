@@ -35,4 +35,6 @@ type AdminNodeExecutionClosure struct {
 	DeckUri string `json:"deck_uri,omitempty"`
 	// dynamic_job_spec_uri is the location of the DynamicJobSpec proto message for a DynamicWorkflow. This is required to correctly recover partially completed executions where the subworkflow has already been compiled.
 	DynamicJobSpecUri string `json:"dynamic_job_spec_uri,omitempty"`
+	// String location uniquely identifying where the span.pb file is.
+	SpanUri string `json:"span_uri,omitempty"`
 }
