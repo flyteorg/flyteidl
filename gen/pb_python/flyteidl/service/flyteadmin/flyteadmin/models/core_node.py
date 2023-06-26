@@ -312,6 +312,7 @@ class CoreNode(object):
     def array_node(self):
         """Gets the array_node of this CoreNode.  # noqa: E501
 
+        Information about the sub-node executions for each value in the list of this nodes inputs values.  # noqa: E501
 
         :return: The array_node of this CoreNode.  # noqa: E501
         :rtype: CoreArrayNode
@@ -322,6 +323,7 @@ class CoreNode(object):
     def array_node(self, array_node):
         """Sets the array_node of this CoreNode.
 
+        Information about the sub-node executions for each value in the list of this nodes inputs values.  # noqa: E501
 
         :param array_node: The array_node of this CoreNode.  # noqa: E501
         :type: CoreArrayNode

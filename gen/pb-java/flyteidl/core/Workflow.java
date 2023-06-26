@@ -8955,7 +8955,7 @@ public final class Workflow {
 
     /**
      * <pre>
-     * TODO &#64;hamersaw docs
+     * node is the sub-node that will be executed for each element in the array.
      * </pre>
      *
      * <code>.flyteidl.core.Node node = 1;</code>
@@ -8963,7 +8963,7 @@ public final class Workflow {
     boolean hasNode();
     /**
      * <pre>
-     * TODO &#64;hamersaw docs
+     * node is the sub-node that will be executed for each element in the array.
      * </pre>
      *
      * <code>.flyteidl.core.Node node = 1;</code>
@@ -8971,7 +8971,7 @@ public final class Workflow {
     flyteidl.core.Workflow.Node getNode();
     /**
      * <pre>
-     * TODO &#64;hamersaw docs
+     * node is the sub-node that will be executed for each element in the array.
      * </pre>
      *
      * <code>.flyteidl.core.Node node = 1;</code>
@@ -8980,9 +8980,10 @@ public final class Workflow {
 
     /**
      * <pre>
-     * Defines the minimum number of instances to bring up concurrently at any given point. Note that this is an
-     * optimistic restriction and that, due to network partitioning or other failures, the actual number of currently
-     * running instances might be more. This has to be a positive number if assigned. Default value is size.
+     * parallelism defines the minimum number of instances to bring up concurrently at any given
+     * point. Note that this is an optimistic restriction and that, due to network partitioning or
+     * other failures, the actual number of currently running instances might be more. This has to
+     * be a positive number if assigned. Default value is size.
      * </pre>
      *
      * <code>uint32 parallelism = 2;</code>
@@ -8991,9 +8992,10 @@ public final class Workflow {
 
     /**
      * <pre>
-     * An absolute number of the minimum number of successful completions of subtasks. As soon as this criteria is met,
-     * the array job will be marked as successful and outputs will be computed. This has to be a non-negative number if
-     * assigned. Default value is size (if specified).
+     * min_successes is an absolute number of the minimum number of successful completions of
+     * sub-nodes. As soon as this criteria is met, the ArrayNode will be marked as successful
+     * and outputs will be computed. This has to be a non-negative number if assigned. Default
+     * value is size (if specified).
      * </pre>
      *
      * <code>uint32 min_successes = 3;</code>
@@ -9002,8 +9004,8 @@ public final class Workflow {
 
     /**
      * <pre>
-     * If the array job size is not known beforehand, the min_success_ratio can instead be used to determine when an array
-     * job can be marked successful.
+     * If the array job size is not known beforehand, the min_success_ratio can instead be used
+     * to determine when an ArrayNode can be marked successful.
      * </pre>
      *
      * <code>float min_success_ratio = 4;</code>
@@ -9014,7 +9016,9 @@ public final class Workflow {
   }
   /**
    * <pre>
-   * TODO &#64;hamersaw docs
+   * ArrayNode is a Flyte node type that simplifies the execution of a sub-node over a list of input
+   * values. An ArrayNode can be executed with configurable parallelism (separate from the parent
+   * workflow) and can be configured to succeed when a certain number of sub-nodes succeed.
    * </pre>
    *
    * Protobuf type {@code flyteidl.core.ArrayNode}
@@ -9157,7 +9161,7 @@ public final class Workflow {
     private flyteidl.core.Workflow.Node node_;
     /**
      * <pre>
-     * TODO &#64;hamersaw docs
+     * node is the sub-node that will be executed for each element in the array.
      * </pre>
      *
      * <code>.flyteidl.core.Node node = 1;</code>
@@ -9167,7 +9171,7 @@ public final class Workflow {
     }
     /**
      * <pre>
-     * TODO &#64;hamersaw docs
+     * node is the sub-node that will be executed for each element in the array.
      * </pre>
      *
      * <code>.flyteidl.core.Node node = 1;</code>
@@ -9177,7 +9181,7 @@ public final class Workflow {
     }
     /**
      * <pre>
-     * TODO &#64;hamersaw docs
+     * node is the sub-node that will be executed for each element in the array.
      * </pre>
      *
      * <code>.flyteidl.core.Node node = 1;</code>
@@ -9190,9 +9194,10 @@ public final class Workflow {
     private int parallelism_;
     /**
      * <pre>
-     * Defines the minimum number of instances to bring up concurrently at any given point. Note that this is an
-     * optimistic restriction and that, due to network partitioning or other failures, the actual number of currently
-     * running instances might be more. This has to be a positive number if assigned. Default value is size.
+     * parallelism defines the minimum number of instances to bring up concurrently at any given
+     * point. Note that this is an optimistic restriction and that, due to network partitioning or
+     * other failures, the actual number of currently running instances might be more. This has to
+     * be a positive number if assigned. Default value is size.
      * </pre>
      *
      * <code>uint32 parallelism = 2;</code>
@@ -9204,9 +9209,10 @@ public final class Workflow {
     public static final int MIN_SUCCESSES_FIELD_NUMBER = 3;
     /**
      * <pre>
-     * An absolute number of the minimum number of successful completions of subtasks. As soon as this criteria is met,
-     * the array job will be marked as successful and outputs will be computed. This has to be a non-negative number if
-     * assigned. Default value is size (if specified).
+     * min_successes is an absolute number of the minimum number of successful completions of
+     * sub-nodes. As soon as this criteria is met, the ArrayNode will be marked as successful
+     * and outputs will be computed. This has to be a non-negative number if assigned. Default
+     * value is size (if specified).
      * </pre>
      *
      * <code>uint32 min_successes = 3;</code>
@@ -9221,8 +9227,8 @@ public final class Workflow {
     public static final int MIN_SUCCESS_RATIO_FIELD_NUMBER = 4;
     /**
      * <pre>
-     * If the array job size is not known beforehand, the min_success_ratio can instead be used to determine when an array
-     * job can be marked successful.
+     * If the array job size is not known beforehand, the min_success_ratio can instead be used
+     * to determine when an ArrayNode can be marked successful.
      * </pre>
      *
      * <code>float min_success_ratio = 4;</code>
@@ -9452,7 +9458,9 @@ public final class Workflow {
     }
     /**
      * <pre>
-     * TODO &#64;hamersaw docs
+     * ArrayNode is a Flyte node type that simplifies the execution of a sub-node over a list of input
+     * values. An ArrayNode can be executed with configurable parallelism (separate from the parent
+     * workflow) and can be configured to succeed when a certain number of sub-nodes succeed.
      * </pre>
      *
      * Protobuf type {@code flyteidl.core.ArrayNode}
@@ -9657,7 +9665,7 @@ public final class Workflow {
           flyteidl.core.Workflow.Node, flyteidl.core.Workflow.Node.Builder, flyteidl.core.Workflow.NodeOrBuilder> nodeBuilder_;
       /**
        * <pre>
-       * TODO &#64;hamersaw docs
+       * node is the sub-node that will be executed for each element in the array.
        * </pre>
        *
        * <code>.flyteidl.core.Node node = 1;</code>
@@ -9667,7 +9675,7 @@ public final class Workflow {
       }
       /**
        * <pre>
-       * TODO &#64;hamersaw docs
+       * node is the sub-node that will be executed for each element in the array.
        * </pre>
        *
        * <code>.flyteidl.core.Node node = 1;</code>
@@ -9681,7 +9689,7 @@ public final class Workflow {
       }
       /**
        * <pre>
-       * TODO &#64;hamersaw docs
+       * node is the sub-node that will be executed for each element in the array.
        * </pre>
        *
        * <code>.flyteidl.core.Node node = 1;</code>
@@ -9701,7 +9709,7 @@ public final class Workflow {
       }
       /**
        * <pre>
-       * TODO &#64;hamersaw docs
+       * node is the sub-node that will be executed for each element in the array.
        * </pre>
        *
        * <code>.flyteidl.core.Node node = 1;</code>
@@ -9719,7 +9727,7 @@ public final class Workflow {
       }
       /**
        * <pre>
-       * TODO &#64;hamersaw docs
+       * node is the sub-node that will be executed for each element in the array.
        * </pre>
        *
        * <code>.flyteidl.core.Node node = 1;</code>
@@ -9741,7 +9749,7 @@ public final class Workflow {
       }
       /**
        * <pre>
-       * TODO &#64;hamersaw docs
+       * node is the sub-node that will be executed for each element in the array.
        * </pre>
        *
        * <code>.flyteidl.core.Node node = 1;</code>
@@ -9759,7 +9767,7 @@ public final class Workflow {
       }
       /**
        * <pre>
-       * TODO &#64;hamersaw docs
+       * node is the sub-node that will be executed for each element in the array.
        * </pre>
        *
        * <code>.flyteidl.core.Node node = 1;</code>
@@ -9771,7 +9779,7 @@ public final class Workflow {
       }
       /**
        * <pre>
-       * TODO &#64;hamersaw docs
+       * node is the sub-node that will be executed for each element in the array.
        * </pre>
        *
        * <code>.flyteidl.core.Node node = 1;</code>
@@ -9786,7 +9794,7 @@ public final class Workflow {
       }
       /**
        * <pre>
-       * TODO &#64;hamersaw docs
+       * node is the sub-node that will be executed for each element in the array.
        * </pre>
        *
        * <code>.flyteidl.core.Node node = 1;</code>
@@ -9808,9 +9816,10 @@ public final class Workflow {
       private int parallelism_ ;
       /**
        * <pre>
-       * Defines the minimum number of instances to bring up concurrently at any given point. Note that this is an
-       * optimistic restriction and that, due to network partitioning or other failures, the actual number of currently
-       * running instances might be more. This has to be a positive number if assigned. Default value is size.
+       * parallelism defines the minimum number of instances to bring up concurrently at any given
+       * point. Note that this is an optimistic restriction and that, due to network partitioning or
+       * other failures, the actual number of currently running instances might be more. This has to
+       * be a positive number if assigned. Default value is size.
        * </pre>
        *
        * <code>uint32 parallelism = 2;</code>
@@ -9820,9 +9829,10 @@ public final class Workflow {
       }
       /**
        * <pre>
-       * Defines the minimum number of instances to bring up concurrently at any given point. Note that this is an
-       * optimistic restriction and that, due to network partitioning or other failures, the actual number of currently
-       * running instances might be more. This has to be a positive number if assigned. Default value is size.
+       * parallelism defines the minimum number of instances to bring up concurrently at any given
+       * point. Note that this is an optimistic restriction and that, due to network partitioning or
+       * other failures, the actual number of currently running instances might be more. This has to
+       * be a positive number if assigned. Default value is size.
        * </pre>
        *
        * <code>uint32 parallelism = 2;</code>
@@ -9835,9 +9845,10 @@ public final class Workflow {
       }
       /**
        * <pre>
-       * Defines the minimum number of instances to bring up concurrently at any given point. Note that this is an
-       * optimistic restriction and that, due to network partitioning or other failures, the actual number of currently
-       * running instances might be more. This has to be a positive number if assigned. Default value is size.
+       * parallelism defines the minimum number of instances to bring up concurrently at any given
+       * point. Note that this is an optimistic restriction and that, due to network partitioning or
+       * other failures, the actual number of currently running instances might be more. This has to
+       * be a positive number if assigned. Default value is size.
        * </pre>
        *
        * <code>uint32 parallelism = 2;</code>
@@ -9851,9 +9862,10 @@ public final class Workflow {
 
       /**
        * <pre>
-       * An absolute number of the minimum number of successful completions of subtasks. As soon as this criteria is met,
-       * the array job will be marked as successful and outputs will be computed. This has to be a non-negative number if
-       * assigned. Default value is size (if specified).
+       * min_successes is an absolute number of the minimum number of successful completions of
+       * sub-nodes. As soon as this criteria is met, the ArrayNode will be marked as successful
+       * and outputs will be computed. This has to be a non-negative number if assigned. Default
+       * value is size (if specified).
        * </pre>
        *
        * <code>uint32 min_successes = 3;</code>
@@ -9866,9 +9878,10 @@ public final class Workflow {
       }
       /**
        * <pre>
-       * An absolute number of the minimum number of successful completions of subtasks. As soon as this criteria is met,
-       * the array job will be marked as successful and outputs will be computed. This has to be a non-negative number if
-       * assigned. Default value is size (if specified).
+       * min_successes is an absolute number of the minimum number of successful completions of
+       * sub-nodes. As soon as this criteria is met, the ArrayNode will be marked as successful
+       * and outputs will be computed. This has to be a non-negative number if assigned. Default
+       * value is size (if specified).
        * </pre>
        *
        * <code>uint32 min_successes = 3;</code>
@@ -9881,9 +9894,10 @@ public final class Workflow {
       }
       /**
        * <pre>
-       * An absolute number of the minimum number of successful completions of subtasks. As soon as this criteria is met,
-       * the array job will be marked as successful and outputs will be computed. This has to be a non-negative number if
-       * assigned. Default value is size (if specified).
+       * min_successes is an absolute number of the minimum number of successful completions of
+       * sub-nodes. As soon as this criteria is met, the ArrayNode will be marked as successful
+       * and outputs will be computed. This has to be a non-negative number if assigned. Default
+       * value is size (if specified).
        * </pre>
        *
        * <code>uint32 min_successes = 3;</code>
@@ -9899,8 +9913,8 @@ public final class Workflow {
 
       /**
        * <pre>
-       * If the array job size is not known beforehand, the min_success_ratio can instead be used to determine when an array
-       * job can be marked successful.
+       * If the array job size is not known beforehand, the min_success_ratio can instead be used
+       * to determine when an ArrayNode can be marked successful.
        * </pre>
        *
        * <code>float min_success_ratio = 4;</code>
@@ -9913,8 +9927,8 @@ public final class Workflow {
       }
       /**
        * <pre>
-       * If the array job size is not known beforehand, the min_success_ratio can instead be used to determine when an array
-       * job can be marked successful.
+       * If the array job size is not known beforehand, the min_success_ratio can instead be used
+       * to determine when an ArrayNode can be marked successful.
        * </pre>
        *
        * <code>float min_success_ratio = 4;</code>
@@ -9927,8 +9941,8 @@ public final class Workflow {
       }
       /**
        * <pre>
-       * If the array job size is not known beforehand, the min_success_ratio can instead be used to determine when an array
-       * job can be marked successful.
+       * If the array job size is not known beforehand, the min_success_ratio can instead be used
+       * to determine when an ArrayNode can be marked successful.
        * </pre>
        *
        * <code>float min_success_ratio = 4;</code>
@@ -12304,7 +12318,8 @@ public final class Workflow {
 
     /**
      * <pre>
-     * TODO &#64;hamersaw docs
+     * Information about the sub-node executions for each value in the list of this nodes
+     * inputs values.
      * </pre>
      *
      * <code>.flyteidl.core.ArrayNode array_node = 10;</code>
@@ -12312,7 +12327,8 @@ public final class Workflow {
     boolean hasArrayNode();
     /**
      * <pre>
-     * TODO &#64;hamersaw docs
+     * Information about the sub-node executions for each value in the list of this nodes
+     * inputs values.
      * </pre>
      *
      * <code>.flyteidl.core.ArrayNode array_node = 10;</code>
@@ -12320,7 +12336,8 @@ public final class Workflow {
     flyteidl.core.Workflow.ArrayNode getArrayNode();
     /**
      * <pre>
-     * TODO &#64;hamersaw docs
+     * Information about the sub-node executions for each value in the list of this nodes
+     * inputs values.
      * </pre>
      *
      * <code>.flyteidl.core.ArrayNode array_node = 10;</code>
@@ -12989,7 +13006,8 @@ public final class Workflow {
     public static final int ARRAY_NODE_FIELD_NUMBER = 10;
     /**
      * <pre>
-     * TODO &#64;hamersaw docs
+     * Information about the sub-node executions for each value in the list of this nodes
+     * inputs values.
      * </pre>
      *
      * <code>.flyteidl.core.ArrayNode array_node = 10;</code>
@@ -12999,7 +13017,8 @@ public final class Workflow {
     }
     /**
      * <pre>
-     * TODO &#64;hamersaw docs
+     * Information about the sub-node executions for each value in the list of this nodes
+     * inputs values.
      * </pre>
      *
      * <code>.flyteidl.core.ArrayNode array_node = 10;</code>
@@ -13012,7 +13031,8 @@ public final class Workflow {
     }
     /**
      * <pre>
-     * TODO &#64;hamersaw docs
+     * Information about the sub-node executions for each value in the list of this nodes
+     * inputs values.
      * </pre>
      *
      * <code>.flyteidl.core.ArrayNode array_node = 10;</code>
@@ -15436,7 +15456,8 @@ public final class Workflow {
           flyteidl.core.Workflow.ArrayNode, flyteidl.core.Workflow.ArrayNode.Builder, flyteidl.core.Workflow.ArrayNodeOrBuilder> arrayNodeBuilder_;
       /**
        * <pre>
-       * TODO &#64;hamersaw docs
+       * Information about the sub-node executions for each value in the list of this nodes
+       * inputs values.
        * </pre>
        *
        * <code>.flyteidl.core.ArrayNode array_node = 10;</code>
@@ -15446,7 +15467,8 @@ public final class Workflow {
       }
       /**
        * <pre>
-       * TODO &#64;hamersaw docs
+       * Information about the sub-node executions for each value in the list of this nodes
+       * inputs values.
        * </pre>
        *
        * <code>.flyteidl.core.ArrayNode array_node = 10;</code>
@@ -15466,7 +15488,8 @@ public final class Workflow {
       }
       /**
        * <pre>
-       * TODO &#64;hamersaw docs
+       * Information about the sub-node executions for each value in the list of this nodes
+       * inputs values.
        * </pre>
        *
        * <code>.flyteidl.core.ArrayNode array_node = 10;</code>
@@ -15486,7 +15509,8 @@ public final class Workflow {
       }
       /**
        * <pre>
-       * TODO &#64;hamersaw docs
+       * Information about the sub-node executions for each value in the list of this nodes
+       * inputs values.
        * </pre>
        *
        * <code>.flyteidl.core.ArrayNode array_node = 10;</code>
@@ -15504,7 +15528,8 @@ public final class Workflow {
       }
       /**
        * <pre>
-       * TODO &#64;hamersaw docs
+       * Information about the sub-node executions for each value in the list of this nodes
+       * inputs values.
        * </pre>
        *
        * <code>.flyteidl.core.ArrayNode array_node = 10;</code>
@@ -15530,7 +15555,8 @@ public final class Workflow {
       }
       /**
        * <pre>
-       * TODO &#64;hamersaw docs
+       * Information about the sub-node executions for each value in the list of this nodes
+       * inputs values.
        * </pre>
        *
        * <code>.flyteidl.core.ArrayNode array_node = 10;</code>
@@ -15553,7 +15579,8 @@ public final class Workflow {
       }
       /**
        * <pre>
-       * TODO &#64;hamersaw docs
+       * Information about the sub-node executions for each value in the list of this nodes
+       * inputs values.
        * </pre>
        *
        * <code>.flyteidl.core.ArrayNode array_node = 10;</code>
@@ -15563,7 +15590,8 @@ public final class Workflow {
       }
       /**
        * <pre>
-       * TODO &#64;hamersaw docs
+       * Information about the sub-node executions for each value in the list of this nodes
+       * inputs values.
        * </pre>
        *
        * <code>.flyteidl.core.ArrayNode array_node = 10;</code>
@@ -15580,7 +15608,8 @@ public final class Workflow {
       }
       /**
        * <pre>
-       * TODO &#64;hamersaw docs
+       * Information about the sub-node executions for each value in the list of this nodes
+       * inputs values.
        * </pre>
        *
        * <code>.flyteidl.core.ArrayNode array_node = 10;</code>

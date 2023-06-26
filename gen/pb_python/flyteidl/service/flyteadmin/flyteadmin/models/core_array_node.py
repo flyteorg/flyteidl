@@ -68,6 +68,7 @@ class CoreArrayNode(object):
     def node(self):
         """Gets the node of this CoreArrayNode.  # noqa: E501
 
+        node is the sub-node that will be executed for each element in the array.  # noqa: E501
 
         :return: The node of this CoreArrayNode.  # noqa: E501
         :rtype: CoreNode
@@ -78,6 +79,7 @@ class CoreArrayNode(object):
     def node(self, node):
         """Sets the node of this CoreArrayNode.
 
+        node is the sub-node that will be executed for each element in the array.  # noqa: E501
 
         :param node: The node of this CoreArrayNode.  # noqa: E501
         :type: CoreNode
@@ -89,7 +91,7 @@ class CoreArrayNode(object):
     def parallelism(self):
         """Gets the parallelism of this CoreArrayNode.  # noqa: E501
 
-        Defines the minimum number of instances to bring up concurrently at any given point. Note that this is an optimistic restriction and that, due to network partitioning or other failures, the actual number of currently running instances might be more. This has to be a positive number if assigned. Default value is size.  # noqa: E501
+        parallelism defines the minimum number of instances to bring up concurrently at any given point. Note that this is an optimistic restriction and that, due to network partitioning or other failures, the actual number of currently running instances might be more. This has to be a positive number if assigned. Default value is size.  # noqa: E501
 
         :return: The parallelism of this CoreArrayNode.  # noqa: E501
         :rtype: int
@@ -100,7 +102,7 @@ class CoreArrayNode(object):
     def parallelism(self, parallelism):
         """Sets the parallelism of this CoreArrayNode.
 
-        Defines the minimum number of instances to bring up concurrently at any given point. Note that this is an optimistic restriction and that, due to network partitioning or other failures, the actual number of currently running instances might be more. This has to be a positive number if assigned. Default value is size.  # noqa: E501
+        parallelism defines the minimum number of instances to bring up concurrently at any given point. Note that this is an optimistic restriction and that, due to network partitioning or other failures, the actual number of currently running instances might be more. This has to be a positive number if assigned. Default value is size.  # noqa: E501
 
         :param parallelism: The parallelism of this CoreArrayNode.  # noqa: E501
         :type: int
@@ -112,7 +114,7 @@ class CoreArrayNode(object):
     def min_successes(self):
         """Gets the min_successes of this CoreArrayNode.  # noqa: E501
 
-        An absolute number of the minimum number of successful completions of subtasks. As soon as this criteria is met, the array job will be marked as successful and outputs will be computed. This has to be a non-negative number if assigned. Default value is size (if specified).  # noqa: E501
+        min_successes is an absolute number of the minimum number of successful completions of sub-nodes. As soon as this criteria is met, the ArrayNode will be marked as successful and outputs will be computed. This has to be a non-negative number if assigned. Default value is size (if specified).  # noqa: E501
 
         :return: The min_successes of this CoreArrayNode.  # noqa: E501
         :rtype: int
@@ -123,7 +125,7 @@ class CoreArrayNode(object):
     def min_successes(self, min_successes):
         """Sets the min_successes of this CoreArrayNode.
 
-        An absolute number of the minimum number of successful completions of subtasks. As soon as this criteria is met, the array job will be marked as successful and outputs will be computed. This has to be a non-negative number if assigned. Default value is size (if specified).  # noqa: E501
+        min_successes is an absolute number of the minimum number of successful completions of sub-nodes. As soon as this criteria is met, the ArrayNode will be marked as successful and outputs will be computed. This has to be a non-negative number if assigned. Default value is size (if specified).  # noqa: E501
 
         :param min_successes: The min_successes of this CoreArrayNode.  # noqa: E501
         :type: int
@@ -135,7 +137,7 @@ class CoreArrayNode(object):
     def min_success_ratio(self):
         """Gets the min_success_ratio of this CoreArrayNode.  # noqa: E501
 
-        If the array job size is not known beforehand, the min_success_ratio can instead be used to determine when an array job can be marked successful.  # noqa: E501
+        If the array job size is not known beforehand, the min_success_ratio can instead be used to determine when an ArrayNode can be marked successful.  # noqa: E501
 
         :return: The min_success_ratio of this CoreArrayNode.  # noqa: E501
         :rtype: float
@@ -146,7 +148,7 @@ class CoreArrayNode(object):
     def min_success_ratio(self, min_success_ratio):
         """Sets the min_success_ratio of this CoreArrayNode.
 
-        If the array job size is not known beforehand, the min_success_ratio can instead be used to determine when an array job can be marked successful.  # noqa: E501
+        If the array job size is not known beforehand, the min_success_ratio can instead be used to determine when an ArrayNode can be marked successful.  # noqa: E501
 
         :param min_success_ratio: The min_success_ratio of this CoreArrayNode.  # noqa: E501
         :type: float

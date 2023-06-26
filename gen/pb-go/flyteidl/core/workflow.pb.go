@@ -640,13 +640,16 @@ func (*GateNode) XXX_OneofWrappers() []interface{} {
 	}
 }
 
-// TODO @hamersaw docs
+// ArrayNode is a Flyte node type that simplifies the execution of a sub-node over a list of input
+// values. An ArrayNode can be executed with configurable parallelism (separate from the parent
+// workflow) and can be configured to succeed when a certain number of sub-nodes succeed.
 type ArrayNode struct {
-	// TODO @hamersaw docs
+	// node is the sub-node that will be executed for each element in the array.
 	Node *Node `protobuf:"bytes,1,opt,name=node,proto3" json:"node,omitempty"`
-	// Defines the minimum number of instances to bring up concurrently at any given point. Note that this is an
-	// optimistic restriction and that, due to network partitioning or other failures, the actual number of currently
-	// running instances might be more. This has to be a positive number if assigned. Default value is size.
+	// parallelism defines the minimum number of instances to bring up concurrently at any given
+	// point. Note that this is an optimistic restriction and that, due to network partitioning or
+	// other failures, the actual number of currently running instances might be more. This has to
+	// be a positive number if assigned. Default value is size.
 	Parallelism uint32 `protobuf:"varint,2,opt,name=parallelism,proto3" json:"parallelism,omitempty"`
 	// Types that are valid to be assigned to SuccessCriteria:
 	//	*ArrayNode_MinSuccesses
