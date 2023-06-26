@@ -19765,6 +19765,9 @@ export namespace flyteidl {
 
             /** CreateUploadLocationRequest contentMd5 */
             contentMd5?: (Uint8Array|null);
+
+            /** CreateUploadLocationRequest filenameRoot */
+            filenameRoot?: (string|null);
         }
 
         /** Represents a CreateUploadLocationRequest. */
@@ -19790,6 +19793,9 @@ export namespace flyteidl {
 
             /** CreateUploadLocationRequest contentMd5. */
             public contentMd5: Uint8Array;
+
+            /** CreateUploadLocationRequest filenameRoot. */
+            public filenameRoot: string;
 
             /**
              * Creates a new CreateUploadLocationRequest instance using the specified properties.
