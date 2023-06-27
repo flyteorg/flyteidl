@@ -15,32 +15,55 @@ _sym_db = _symbol_database.Default()
 
 
 
-<<<<<<< HEAD
 DESCRIPTOR = _descriptor.FileDescriptor(
   name='flyteidl/plugins/pytorch.proto',
   package='flyteidl.plugins',
   syntax='proto3',
   serialized_options=_b('Z7github.com/flyteorg/flyteidl/gen/pb-go/flyteidl/plugins'),
-  serialized_pb=_b('\n\x1e\x66lyteidl/plugins/pytorch.proto\x12\x10\x66lyteidl.plugins\"1\n\x1e\x44istributedPyTorchTrainingTask\x12\x0f\n\x07workers\x18\x01 \x01(\x05\x42\x39Z7github.com/flyteorg/flyteidl/gen/pb-go/flyteidl/pluginsb\x06proto3')
+  serialized_pb=_b('\n\x1e\x66lyteidl/plugins/pytorch.proto\x12\x10\x66lyteidl.plugins\"\x7f\n\rElasticConfig\x12\x14\n\x0crdzv_backend\x18\x01 \x01(\t\x12\x14\n\x0cmin_replicas\x18\x02 \x01(\x05\x12\x14\n\x0cmax_replicas\x18\x03 \x01(\x05\x12\x16\n\x0enproc_per_node\x18\x04 \x01(\x05\x12\x14\n\x0cmax_restarts\x18\x05 \x01(\x05\"j\n\x1e\x44istributedPyTorchTrainingTask\x12\x0f\n\x07workers\x18\x01 \x01(\x05\x12\x37\n\x0e\x65lastic_config\x18\x02 \x01(\x0b\x32\x1f.flyteidl.plugins.ElasticConfigB9Z7github.com/flyteorg/flyteidl/gen/pb-go/flyteidl/pluginsb\x06proto3')
 )
-=======
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x1e\x66lyteidl/plugins/pytorch.proto\x12\x10\x66lyteidl.plugins\"\xc1\x01\n\rElasticConfig\x12!\n\x0crdzv_backend\x18\x01 \x01(\tR\x0brdzvBackend\x12!\n\x0cmin_replicas\x18\x02 \x01(\x05R\x0bminReplicas\x12!\n\x0cmax_replicas\x18\x03 \x01(\x05R\x0bmaxReplicas\x12$\n\x0enproc_per_node\x18\x04 \x01(\x05R\x0cnprocPerNode\x12!\n\x0cmax_restarts\x18\x05 \x01(\x05R\x0bmaxRestarts\"\x82\x01\n\x1e\x44istributedPyTorchTrainingTask\x12\x18\n\x07workers\x18\x01 \x01(\x05R\x07workers\x12\x46\n\x0e\x65lastic_config\x18\x02 \x01(\x0b\x32\x1f.flyteidl.plugins.ElasticConfigR\relasticConfigB\xbe\x01\n\x14\x63om.flyteidl.pluginsB\x0cPytorchProtoP\x01Z7github.com/flyteorg/flyteidl/gen/pb-go/flyteidl/plugins\xa2\x02\x03\x46PX\xaa\x02\x10\x46lyteidl.Plugins\xca\x02\x10\x46lyteidl\\Plugins\xe2\x02\x1c\x46lyteidl\\Plugins\\GPBMetadata\xea\x02\x11\x46lyteidl::Pluginsb\x06proto3')
->>>>>>> 6a7b3143 (Feat: Add `ElasticConfig` message type for torch elastic training (#394))
 
 
-<<<<<<< HEAD
 
 
-_DISTRIBUTEDPYTORCHTRAININGTASK = _descriptor.Descriptor(
-  name='DistributedPyTorchTrainingTask',
-  full_name='flyteidl.plugins.DistributedPyTorchTrainingTask',
+_ELASTICCONFIG = _descriptor.Descriptor(
+  name='ElasticConfig',
+  full_name='flyteidl.plugins.ElasticConfig',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   fields=[
     _descriptor.FieldDescriptor(
-      name='workers', full_name='flyteidl.plugins.DistributedPyTorchTrainingTask.workers', index=0,
-      number=1, type=5, cpp_type=1, label=1,
+      name='rdzv_backend', full_name='flyteidl.plugins.ElasticConfig.rdzv_backend', index=0,
+      number=1, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='min_replicas', full_name='flyteidl.plugins.ElasticConfig.min_replicas', index=1,
+      number=2, type=5, cpp_type=1, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='max_replicas', full_name='flyteidl.plugins.ElasticConfig.max_replicas', index=2,
+      number=3, type=5, cpp_type=1, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='nproc_per_node', full_name='flyteidl.plugins.ElasticConfig.nproc_per_node', index=3,
+      number=4, type=5, cpp_type=1, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='max_restarts', full_name='flyteidl.plugins.ElasticConfig.max_restarts', index=4,
+      number=5, type=5, cpp_type=1, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
@@ -58,11 +81,58 @@ _DISTRIBUTEDPYTORCHTRAININGTASK = _descriptor.Descriptor(
   oneofs=[
   ],
   serialized_start=52,
-  serialized_end=101,
+  serialized_end=179,
 )
 
+
+_DISTRIBUTEDPYTORCHTRAININGTASK = _descriptor.Descriptor(
+  name='DistributedPyTorchTrainingTask',
+  full_name='flyteidl.plugins.DistributedPyTorchTrainingTask',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='workers', full_name='flyteidl.plugins.DistributedPyTorchTrainingTask.workers', index=0,
+      number=1, type=5, cpp_type=1, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='elastic_config', full_name='flyteidl.plugins.DistributedPyTorchTrainingTask.elastic_config', index=1,
+      number=2, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=181,
+  serialized_end=287,
+)
+
+_DISTRIBUTEDPYTORCHTRAININGTASK.fields_by_name['elastic_config'].message_type = _ELASTICCONFIG
+DESCRIPTOR.message_types_by_name['ElasticConfig'] = _ELASTICCONFIG
 DESCRIPTOR.message_types_by_name['DistributedPyTorchTrainingTask'] = _DISTRIBUTEDPYTORCHTRAININGTASK
 _sym_db.RegisterFileDescriptor(DESCRIPTOR)
+
+ElasticConfig = _reflection.GeneratedProtocolMessageType('ElasticConfig', (_message.Message,), dict(
+  DESCRIPTOR = _ELASTICCONFIG,
+  __module__ = 'flyteidl.plugins.pytorch_pb2'
+  # @@protoc_insertion_point(class_scope:flyteidl.plugins.ElasticConfig)
+  ))
+_sym_db.RegisterMessage(ElasticConfig)
 
 DistributedPyTorchTrainingTask = _reflection.GeneratedProtocolMessageType('DistributedPyTorchTrainingTask', (_message.Message,), dict(
   DESCRIPTOR = _DISTRIBUTEDPYTORCHTRAININGTASK,
@@ -73,12 +143,4 @@ _sym_db.RegisterMessage(DistributedPyTorchTrainingTask)
 
 
 DESCRIPTOR._options = None
-=======
-  DESCRIPTOR._options = None
-  DESCRIPTOR._serialized_options = b'\n\024com.flyteidl.pluginsB\014PytorchProtoP\001Z7github.com/flyteorg/flyteidl/gen/pb-go/flyteidl/plugins\242\002\003FPX\252\002\020Flyteidl.Plugins\312\002\020Flyteidl\\Plugins\342\002\034Flyteidl\\Plugins\\GPBMetadata\352\002\021Flyteidl::Plugins'
-  _globals['_ELASTICCONFIG']._serialized_start=53
-  _globals['_ELASTICCONFIG']._serialized_end=246
-  _globals['_DISTRIBUTEDPYTORCHTRAININGTASK']._serialized_start=249
-  _globals['_DISTRIBUTEDPYTORCHTRAININGTASK']._serialized_end=379
->>>>>>> 6a7b3143 (Feat: Add `ElasticConfig` message type for torch elastic training (#394))
 # @@protoc_insertion_point(module_scope)
