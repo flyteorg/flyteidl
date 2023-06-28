@@ -24,7 +24,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   package='flyteidl.service',
   syntax='proto3',
   serialized_options=_b('Z7github.com/flyteorg/flyteidl/gen/pb-go/flyteidl/service'),
-  serialized_pb=_b('\n.flyteidl/service/external_plugin_service.proto\x12\x10\x66lyteidl.service\x1a\x1c\x66lyteidl/core/literals.proto\x1a\x19\x66lyteidl/core/tasks.proto\x1a\x1d\x66lyteidl/core/interface.proto\"\x84\x01\n\x11TaskCreateRequest\x12)\n\x06inputs\x18\x01 \x01(\x0b\x32\x19.flyteidl.core.LiteralMap\x12-\n\x08template\x18\x02 \x01(\x0b\x32\x1b.flyteidl.core.TaskTemplate\x12\x15\n\routput_prefix\x18\x03 \x01(\t\"$\n\x12TaskCreateResponse\x12\x0e\n\x06job_id\x18\x01 \x01(\t\"3\n\x0eTaskGetRequest\x12\x11\n\ttask_type\x18\x01 \x01(\t\x12\x0e\n\x06job_id\x18\x02 \x01(\t\"e\n\x0fTaskGetResponse\x12&\n\x05state\x18\x01 \x01(\x0e\x32\x17.flyteidl.service.State\x12*\n\x07outputs\x18\x02 \x01(\x0b\x32\x19.flyteidl.core.LiteralMap\"6\n\x11TaskDeleteRequest\x12\x11\n\ttask_type\x18\x01 \x01(\t\x12\x0e\n\x06job_id\x18\x02 \x01(\t\"\x14\n\x12TaskDeleteResponse*^\n\x05State\x12\x15\n\x11RETRYABLE_FAILURE\x10\x00\x12\x15\n\x11PERMANENT_FAILURE\x10\x01\x12\x0b\n\x07PENDING\x10\x02\x12\x0b\n\x07RUNNING\x10\x03\x12\r\n\tSUCCEEDED\x10\x04\x32\x9f\x02\n\x15\x45xternalPluginService\x12Y\n\nCreateTask\x12#.flyteidl.service.TaskCreateRequest\x1a$.flyteidl.service.TaskCreateResponse\"\x00\x12P\n\x07GetTask\x12 .flyteidl.service.TaskGetRequest\x1a!.flyteidl.service.TaskGetResponse\"\x00\x12Y\n\nDeleteTask\x12#.flyteidl.service.TaskDeleteRequest\x1a$.flyteidl.service.TaskDeleteResponse\"\x00\x42\x39Z7github.com/flyteorg/flyteidl/gen/pb-go/flyteidl/serviceb\x06proto3')
+  serialized_pb=_b('\n.flyteidl/service/external_plugin_service.proto\x12\x10\x66lyteidl.service\x1a\x1c\x66lyteidl/core/literals.proto\x1a\x19\x66lyteidl/core/tasks.proto\x1a\x1d\x66lyteidl/core/interface.proto\"\x88\x01\n\x11TaskCreateRequest\x12)\n\x06inputs\x18\x01 \x01(\x0b\x32\x19.flyteidl.core.LiteralMap\x12-\n\x08template\x18\x02 \x01(\x0b\x32\x1b.flyteidl.core.TaskTemplate\x12\x15\n\routput_prefix\x18\x03 \x01(\t:\x02\x18\x01\"(\n\x12TaskCreateResponse\x12\x0e\n\x06job_id\x18\x01 \x01(\t:\x02\x18\x01\"7\n\x0eTaskGetRequest\x12\x11\n\ttask_type\x18\x01 \x01(\t\x12\x0e\n\x06job_id\x18\x02 \x01(\t:\x02\x18\x01\"i\n\x0fTaskGetResponse\x12&\n\x05state\x18\x01 \x01(\x0e\x32\x17.flyteidl.service.State\x12*\n\x07outputs\x18\x02 \x01(\x0b\x32\x19.flyteidl.core.LiteralMap:\x02\x18\x01\":\n\x11TaskDeleteRequest\x12\x11\n\ttask_type\x18\x01 \x01(\t\x12\x0e\n\x06job_id\x18\x02 \x01(\t:\x02\x18\x01\"\x18\n\x12TaskDeleteResponse:\x02\x18\x01*b\n\x05State\x12\x15\n\x11RETRYABLE_FAILURE\x10\x00\x12\x15\n\x11PERMANENT_FAILURE\x10\x01\x12\x0b\n\x07PENDING\x10\x02\x12\x0b\n\x07RUNNING\x10\x03\x12\r\n\tSUCCEEDED\x10\x04\x1a\x02\x18\x01\x32\xa8\x02\n\x15\x45xternalPluginService\x12\\\n\nCreateTask\x12#.flyteidl.service.TaskCreateRequest\x1a$.flyteidl.service.TaskCreateResponse\"\x03\x88\x02\x01\x12S\n\x07GetTask\x12 .flyteidl.service.TaskGetRequest\x1a!.flyteidl.service.TaskGetResponse\"\x03\x88\x02\x01\x12\\\n\nDeleteTask\x12#.flyteidl.service.TaskDeleteRequest\x1a$.flyteidl.service.TaskDeleteResponse\"\x03\x88\x02\x01\x42\x39Z7github.com/flyteorg/flyteidl/gen/pb-go/flyteidl/serviceb\x06proto3')
   ,
   dependencies=[flyteidl_dot_core_dot_literals__pb2.DESCRIPTOR,flyteidl_dot_core_dot_tasks__pb2.DESCRIPTOR,flyteidl_dot_core_dot_interface__pb2.DESCRIPTOR,])
 
@@ -56,9 +56,9 @@ _STATE = _descriptor.EnumDescriptor(
       type=None),
   ],
   containing_type=None,
-  serialized_options=None,
-  serialized_start=563,
-  serialized_end=657,
+  serialized_options=_b('\030\001'),
+  serialized_start=587,
+  serialized_end=685,
 )
 _sym_db.RegisterEnumDescriptor(_STATE)
 
@@ -105,14 +105,14 @@ _TASKCREATEREQUEST = _descriptor.Descriptor(
   nested_types=[],
   enum_types=[
   ],
-  serialized_options=None,
+  serialized_options=_b('\030\001'),
   is_extendable=False,
   syntax='proto3',
   extension_ranges=[],
   oneofs=[
   ],
   serialized_start=157,
-  serialized_end=289,
+  serialized_end=293,
 )
 
 
@@ -136,14 +136,14 @@ _TASKCREATERESPONSE = _descriptor.Descriptor(
   nested_types=[],
   enum_types=[
   ],
-  serialized_options=None,
+  serialized_options=_b('\030\001'),
   is_extendable=False,
   syntax='proto3',
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=291,
-  serialized_end=327,
+  serialized_start=295,
+  serialized_end=335,
 )
 
 
@@ -174,14 +174,14 @@ _TASKGETREQUEST = _descriptor.Descriptor(
   nested_types=[],
   enum_types=[
   ],
-  serialized_options=None,
+  serialized_options=_b('\030\001'),
   is_extendable=False,
   syntax='proto3',
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=329,
-  serialized_end=380,
+  serialized_start=337,
+  serialized_end=392,
 )
 
 
@@ -212,14 +212,14 @@ _TASKGETRESPONSE = _descriptor.Descriptor(
   nested_types=[],
   enum_types=[
   ],
-  serialized_options=None,
+  serialized_options=_b('\030\001'),
   is_extendable=False,
   syntax='proto3',
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=382,
-  serialized_end=483,
+  serialized_start=394,
+  serialized_end=499,
 )
 
 
@@ -250,14 +250,14 @@ _TASKDELETEREQUEST = _descriptor.Descriptor(
   nested_types=[],
   enum_types=[
   ],
-  serialized_options=None,
+  serialized_options=_b('\030\001'),
   is_extendable=False,
   syntax='proto3',
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=485,
-  serialized_end=539,
+  serialized_start=501,
+  serialized_end=559,
 )
 
 
@@ -274,14 +274,14 @@ _TASKDELETERESPONSE = _descriptor.Descriptor(
   nested_types=[],
   enum_types=[
   ],
-  serialized_options=None,
+  serialized_options=_b('\030\001'),
   is_extendable=False,
   syntax='proto3',
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=541,
-  serialized_end=561,
+  serialized_start=561,
+  serialized_end=585,
 )
 
 _TASKCREATEREQUEST.fields_by_name['inputs'].message_type = flyteidl_dot_core_dot_literals__pb2._LITERALMAP
@@ -341,6 +341,13 @@ _sym_db.RegisterMessage(TaskDeleteResponse)
 
 
 DESCRIPTOR._options = None
+_STATE._options = None
+_TASKCREATEREQUEST._options = None
+_TASKCREATERESPONSE._options = None
+_TASKGETREQUEST._options = None
+_TASKGETRESPONSE._options = None
+_TASKDELETEREQUEST._options = None
+_TASKDELETERESPONSE._options = None
 
 _EXTERNALPLUGINSERVICE = _descriptor.ServiceDescriptor(
   name='ExternalPluginService',
@@ -348,8 +355,8 @@ _EXTERNALPLUGINSERVICE = _descriptor.ServiceDescriptor(
   file=DESCRIPTOR,
   index=0,
   serialized_options=None,
-  serialized_start=660,
-  serialized_end=947,
+  serialized_start=688,
+  serialized_end=984,
   methods=[
   _descriptor.MethodDescriptor(
     name='CreateTask',
@@ -358,7 +365,7 @@ _EXTERNALPLUGINSERVICE = _descriptor.ServiceDescriptor(
     containing_service=None,
     input_type=_TASKCREATEREQUEST,
     output_type=_TASKCREATERESPONSE,
-    serialized_options=None,
+    serialized_options=_b('\210\002\001'),
   ),
   _descriptor.MethodDescriptor(
     name='GetTask',
@@ -367,7 +374,7 @@ _EXTERNALPLUGINSERVICE = _descriptor.ServiceDescriptor(
     containing_service=None,
     input_type=_TASKGETREQUEST,
     output_type=_TASKGETRESPONSE,
-    serialized_options=None,
+    serialized_options=_b('\210\002\001'),
   ),
   _descriptor.MethodDescriptor(
     name='DeleteTask',
@@ -376,7 +383,7 @@ _EXTERNALPLUGINSERVICE = _descriptor.ServiceDescriptor(
     containing_service=None,
     input_type=_TASKDELETEREQUEST,
     output_type=_TASKDELETERESPONSE,
-    serialized_options=None,
+    serialized_options=_b('\210\002\001'),
   ),
 ])
 _sym_db.RegisterServiceDescriptor(_EXTERNALPLUGINSERVICE)
