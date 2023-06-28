@@ -78,3 +78,4 @@ message TaskDeleteRequest {
 message TaskDeleteResponse {
   option deprecated = true;
 }
+
