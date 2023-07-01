@@ -760,6 +760,11 @@ pub struct Secret {
     /// +optional
     #[prost(enumeration="secret::MountType", tag="4")]
     pub mount_requirement: i32,
+    /// The name of the environment variable, if the Secret is injected as environment variable. If ommitted, the default
+    /// FLYTE_SECRETS_ENV_PREFIX prefix will be used.
+    /// +optional
+    #[prost(string, tag="5")]
+    pub env_name: ::prost::alloc::string::String,
 }
 /// Nested message and enum types in `Secret`.
 pub mod secret {

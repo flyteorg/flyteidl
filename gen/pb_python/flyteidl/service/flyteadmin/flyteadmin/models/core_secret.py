@@ -36,23 +36,26 @@ class CoreSecret(object):
         'group': 'str',
         'group_version': 'str',
         'key': 'str',
-        'mount_requirement': 'SecretMountType'
+        'mount_requirement': 'SecretMountType',
+        'env_name': 'str'
     }
 
     attribute_map = {
         'group': 'group',
         'group_version': 'group_version',
         'key': 'key',
-        'mount_requirement': 'mount_requirement'
+        'mount_requirement': 'mount_requirement',
+        'env_name': 'env_name'
     }
 
-    def __init__(self, group=None, group_version=None, key=None, mount_requirement=None):  # noqa: E501
+    def __init__(self, group=None, group_version=None, key=None, mount_requirement=None, env_name=None):  # noqa: E501
         """CoreSecret - a model defined in Swagger"""  # noqa: E501
 
         self._group = None
         self._group_version = None
         self._key = None
         self._mount_requirement = None
+        self._env_name = None
         self.discriminator = None
 
         if group is not None:
@@ -63,6 +66,8 @@ class CoreSecret(object):
             self.key = key
         if mount_requirement is not None:
             self.mount_requirement = mount_requirement
+        if env_name is not None:
+            self.env_name = env_name
 
     @property
     def group(self):
@@ -147,6 +152,27 @@ class CoreSecret(object):
         """
 
         self._mount_requirement = mount_requirement
+
+    @property
+    def env_name(self):
+        """Gets the env_name of this CoreSecret.  # noqa: E501
+
+
+        :return: The env_name of this CoreSecret.  # noqa: E501
+        :rtype: str
+        """
+        return self._env_name
+
+    @env_name.setter
+    def env_name(self, env_name):
+        """Sets the env_name of this CoreSecret.
+
+
+        :param env_name: The env_name of this CoreSecret.  # noqa: E501
+        :type: str
+        """
+
+        self._env_name = env_name
 
     def to_dict(self):
         """Returns the model properties as a dict"""

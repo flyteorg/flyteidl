@@ -110,6 +110,28 @@ public final class Security {
      * <code>.flyteidl.core.Secret.MountType mount_requirement = 4;</code>
      */
     flyteidl.core.Security.Secret.MountType getMountRequirement();
+
+    /**
+     * <pre>
+     * The name of the environment variable, if the Secret is injected as environment variable. If ommitted, the default
+     * FLYTE_SECRETS_ENV_PREFIX prefix will be used.
+     * +optional
+     * </pre>
+     *
+     * <code>string env_name = 5;</code>
+     */
+    java.lang.String getEnvName();
+    /**
+     * <pre>
+     * The name of the environment variable, if the Secret is injected as environment variable. If ommitted, the default
+     * FLYTE_SECRETS_ENV_PREFIX prefix will be used.
+     * +optional
+     * </pre>
+     *
+     * <code>string env_name = 5;</code>
+     */
+    com.google.protobuf.ByteString
+        getEnvNameBytes();
   }
   /**
    * <pre>
@@ -136,6 +158,7 @@ public final class Security {
       groupVersion_ = "";
       key_ = "";
       mountRequirement_ = 0;
+      envName_ = "";
     }
 
     @java.lang.Override
@@ -184,6 +207,12 @@ public final class Security {
               int rawValue = input.readEnum();
 
               mountRequirement_ = rawValue;
+              break;
+            }
+            case 42: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              envName_ = s;
               break;
             }
             default: {
@@ -522,6 +551,52 @@ public final class Security {
       return result == null ? flyteidl.core.Security.Secret.MountType.UNRECOGNIZED : result;
     }
 
+    public static final int ENV_NAME_FIELD_NUMBER = 5;
+    private volatile java.lang.Object envName_;
+    /**
+     * <pre>
+     * The name of the environment variable, if the Secret is injected as environment variable. If ommitted, the default
+     * FLYTE_SECRETS_ENV_PREFIX prefix will be used.
+     * +optional
+     * </pre>
+     *
+     * <code>string env_name = 5;</code>
+     */
+    public java.lang.String getEnvName() {
+      java.lang.Object ref = envName_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        envName_ = s;
+        return s;
+      }
+    }
+    /**
+     * <pre>
+     * The name of the environment variable, if the Secret is injected as environment variable. If ommitted, the default
+     * FLYTE_SECRETS_ENV_PREFIX prefix will be used.
+     * +optional
+     * </pre>
+     *
+     * <code>string env_name = 5;</code>
+     */
+    public com.google.protobuf.ByteString
+        getEnvNameBytes() {
+      java.lang.Object ref = envName_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        envName_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
     private byte memoizedIsInitialized = -1;
     @java.lang.Override
     public final boolean isInitialized() {
@@ -548,6 +623,9 @@ public final class Security {
       if (mountRequirement_ != flyteidl.core.Security.Secret.MountType.ANY.getNumber()) {
         output.writeEnum(4, mountRequirement_);
       }
+      if (!getEnvNameBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 5, envName_);
+      }
       unknownFields.writeTo(output);
     }
 
@@ -569,6 +647,9 @@ public final class Security {
       if (mountRequirement_ != flyteidl.core.Security.Secret.MountType.ANY.getNumber()) {
         size += com.google.protobuf.CodedOutputStream
           .computeEnumSize(4, mountRequirement_);
+      }
+      if (!getEnvNameBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, envName_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -592,6 +673,8 @@ public final class Security {
       if (!getKey()
           .equals(other.getKey())) return false;
       if (mountRequirement_ != other.mountRequirement_) return false;
+      if (!getEnvName()
+          .equals(other.getEnvName())) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -611,6 +694,8 @@ public final class Security {
       hash = (53 * hash) + getKey().hashCode();
       hash = (37 * hash) + MOUNT_REQUIREMENT_FIELD_NUMBER;
       hash = (53 * hash) + mountRequirement_;
+      hash = (37 * hash) + ENV_NAME_FIELD_NUMBER;
+      hash = (53 * hash) + getEnvName().hashCode();
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -760,6 +845,8 @@ public final class Security {
 
         mountRequirement_ = 0;
 
+        envName_ = "";
+
         return this;
       }
 
@@ -790,6 +877,7 @@ public final class Security {
         result.groupVersion_ = groupVersion_;
         result.key_ = key_;
         result.mountRequirement_ = mountRequirement_;
+        result.envName_ = envName_;
         onBuilt();
         return result;
       }
@@ -852,6 +940,10 @@ public final class Security {
         }
         if (other.mountRequirement_ != 0) {
           setMountRequirementValue(other.getMountRequirementValue());
+        }
+        if (!other.getEnvName().isEmpty()) {
+          envName_ = other.envName_;
+          onChanged();
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -1265,6 +1357,105 @@ public final class Security {
       public Builder clearMountRequirement() {
         
         mountRequirement_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object envName_ = "";
+      /**
+       * <pre>
+       * The name of the environment variable, if the Secret is injected as environment variable. If ommitted, the default
+       * FLYTE_SECRETS_ENV_PREFIX prefix will be used.
+       * +optional
+       * </pre>
+       *
+       * <code>string env_name = 5;</code>
+       */
+      public java.lang.String getEnvName() {
+        java.lang.Object ref = envName_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          envName_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <pre>
+       * The name of the environment variable, if the Secret is injected as environment variable. If ommitted, the default
+       * FLYTE_SECRETS_ENV_PREFIX prefix will be used.
+       * +optional
+       * </pre>
+       *
+       * <code>string env_name = 5;</code>
+       */
+      public com.google.protobuf.ByteString
+          getEnvNameBytes() {
+        java.lang.Object ref = envName_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          envName_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <pre>
+       * The name of the environment variable, if the Secret is injected as environment variable. If ommitted, the default
+       * FLYTE_SECRETS_ENV_PREFIX prefix will be used.
+       * +optional
+       * </pre>
+       *
+       * <code>string env_name = 5;</code>
+       */
+      public Builder setEnvName(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        envName_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * The name of the environment variable, if the Secret is injected as environment variable. If ommitted, the default
+       * FLYTE_SECRETS_ENV_PREFIX prefix will be used.
+       * +optional
+       * </pre>
+       *
+       * <code>string env_name = 5;</code>
+       */
+      public Builder clearEnvName() {
+        
+        envName_ = getDefaultInstance().getEnvName();
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * The name of the environment variable, if the Secret is injected as environment variable. If ommitted, the default
+       * FLYTE_SECRETS_ENV_PREFIX prefix will be used.
+       * +optional
+       * </pre>
+       *
+       * <code>string env_name = 5;</code>
+       */
+      public Builder setEnvNameBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        envName_ = value;
         onChanged();
         return this;
       }
@@ -6776,27 +6967,28 @@ public final class Security {
   static {
     java.lang.String[] descriptorData = {
       "\n\034flyteidl/core/security.proto\022\rflyteidl" +
-      ".core\"\244\001\n\006Secret\022\r\n\005group\030\001 \001(\t\022\025\n\rgroup" +
+      ".core\"\266\001\n\006Secret\022\r\n\005group\030\001 \001(\t\022\025\n\rgroup" +
       "_version\030\002 \001(\t\022\013\n\003key\030\003 \001(\t\022:\n\021mount_req" +
       "uirement\030\004 \001(\0162\037.flyteidl.core.Secret.Mo" +
-      "untType\"+\n\tMountType\022\007\n\003ANY\020\000\022\013\n\007ENV_VAR" +
-      "\020\001\022\010\n\004FILE\020\002\"O\n\014OAuth2Client\022\021\n\tclient_i" +
-      "d\030\001 \001(\t\022,\n\rclient_secret\030\002 \001(\0132\025.flyteid" +
-      "l.core.Secret\"\211\001\n\010Identity\022\020\n\010iam_role\030\001" +
-      " \001(\t\022\033\n\023k8s_service_account\030\002 \001(\t\0222\n\roau" +
-      "th2_client\030\003 \001(\0132\033.flyteidl.core.OAuth2C" +
-      "lient\022\032\n\022execution_identity\030\004 \001(\t\"\335\001\n\022OA" +
-      "uth2TokenRequest\022\014\n\004name\030\001 \001(\t\0224\n\004type\030\002" +
-      " \001(\0162&.flyteidl.core.OAuth2TokenRequest." +
-      "Type\022+\n\006client\030\003 \001(\0132\033.flyteidl.core.OAu" +
-      "th2Client\022\036\n\026idp_discovery_endpoint\030\004 \001(" +
-      "\t\022\026\n\016token_endpoint\030\005 \001(\t\"\036\n\004Type\022\026\n\022CLI" +
-      "ENT_CREDENTIALS\020\000\"\225\001\n\017SecurityContext\022\'\n" +
-      "\006run_as\030\001 \001(\0132\027.flyteidl.core.Identity\022&" +
-      "\n\007secrets\030\002 \003(\0132\025.flyteidl.core.Secret\0221" +
-      "\n\006tokens\030\003 \003(\0132!.flyteidl.core.OAuth2Tok" +
-      "enRequestB6Z4github.com/flyteorg/flyteid" +
-      "l/gen/pb-go/flyteidl/coreb\006proto3"
+      "untType\022\020\n\010env_name\030\005 \001(\t\"+\n\tMountType\022\007" +
+      "\n\003ANY\020\000\022\013\n\007ENV_VAR\020\001\022\010\n\004FILE\020\002\"O\n\014OAuth2" +
+      "Client\022\021\n\tclient_id\030\001 \001(\t\022,\n\rclient_secr" +
+      "et\030\002 \001(\0132\025.flyteidl.core.Secret\"\211\001\n\010Iden" +
+      "tity\022\020\n\010iam_role\030\001 \001(\t\022\033\n\023k8s_service_ac" +
+      "count\030\002 \001(\t\0222\n\roauth2_client\030\003 \001(\0132\033.fly" +
+      "teidl.core.OAuth2Client\022\032\n\022execution_ide" +
+      "ntity\030\004 \001(\t\"\335\001\n\022OAuth2TokenRequest\022\014\n\004na" +
+      "me\030\001 \001(\t\0224\n\004type\030\002 \001(\0162&.flyteidl.core.O" +
+      "Auth2TokenRequest.Type\022+\n\006client\030\003 \001(\0132\033" +
+      ".flyteidl.core.OAuth2Client\022\036\n\026idp_disco" +
+      "very_endpoint\030\004 \001(\t\022\026\n\016token_endpoint\030\005 " +
+      "\001(\t\"\036\n\004Type\022\026\n\022CLIENT_CREDENTIALS\020\000\"\225\001\n\017" +
+      "SecurityContext\022\'\n\006run_as\030\001 \001(\0132\027.flytei" +
+      "dl.core.Identity\022&\n\007secrets\030\002 \003(\0132\025.flyt" +
+      "eidl.core.Secret\0221\n\006tokens\030\003 \003(\0132!.flyte" +
+      "idl.core.OAuth2TokenRequestB6Z4github.co" +
+      "m/flyteorg/flyteidl/gen/pb-go/flyteidl/c" +
+      "oreb\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
@@ -6815,7 +7007,7 @@ public final class Security {
     internal_static_flyteidl_core_Secret_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_flyteidl_core_Secret_descriptor,
-        new java.lang.String[] { "Group", "GroupVersion", "Key", "MountRequirement", });
+        new java.lang.String[] { "Group", "GroupVersion", "Key", "MountRequirement", "EnvName", });
     internal_static_flyteidl_core_OAuth2Client_descriptor =
       getDescriptor().getMessageTypes().get(1);
     internal_static_flyteidl_core_OAuth2Client_fieldAccessorTable = new

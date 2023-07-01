@@ -289,6 +289,20 @@ class Secret final :
   ::std::string* release_key();
   void set_allocated_key(::std::string* key);
 
+  // string env_name = 5;
+  void clear_env_name();
+  static const int kEnvNameFieldNumber = 5;
+  const ::std::string& env_name() const;
+  void set_env_name(const ::std::string& value);
+  #if LANG_CXX11
+  void set_env_name(::std::string&& value);
+  #endif
+  void set_env_name(const char* value);
+  void set_env_name(const char* value, size_t size);
+  ::std::string* mutable_env_name();
+  ::std::string* release_env_name();
+  void set_allocated_env_name(::std::string* env_name);
+
   // .flyteidl.core.Secret.MountType mount_requirement = 4;
   void clear_mount_requirement();
   static const int kMountRequirementFieldNumber = 4;
@@ -303,6 +317,7 @@ class Secret final :
   ::google::protobuf::internal::ArenaStringPtr group_;
   ::google::protobuf::internal::ArenaStringPtr group_version_;
   ::google::protobuf::internal::ArenaStringPtr key_;
+  ::google::protobuf::internal::ArenaStringPtr env_name_;
   int mount_requirement_;
   mutable ::google::protobuf::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_flyteidl_2fcore_2fsecurity_2eproto;
@@ -1111,6 +1126,59 @@ inline void Secret::set_mount_requirement(::flyteidl::core::Secret_MountType val
   
   mount_requirement_ = value;
   // @@protoc_insertion_point(field_set:flyteidl.core.Secret.mount_requirement)
+}
+
+// string env_name = 5;
+inline void Secret::clear_env_name() {
+  env_name_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline const ::std::string& Secret::env_name() const {
+  // @@protoc_insertion_point(field_get:flyteidl.core.Secret.env_name)
+  return env_name_.GetNoArena();
+}
+inline void Secret::set_env_name(const ::std::string& value) {
+  
+  env_name_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
+  // @@protoc_insertion_point(field_set:flyteidl.core.Secret.env_name)
+}
+#if LANG_CXX11
+inline void Secret::set_env_name(::std::string&& value) {
+  
+  env_name_.SetNoArena(
+    &::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::move(value));
+  // @@protoc_insertion_point(field_set_rvalue:flyteidl.core.Secret.env_name)
+}
+#endif
+inline void Secret::set_env_name(const char* value) {
+  GOOGLE_DCHECK(value != nullptr);
+  
+  env_name_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
+  // @@protoc_insertion_point(field_set_char:flyteidl.core.Secret.env_name)
+}
+inline void Secret::set_env_name(const char* value, size_t size) {
+  
+  env_name_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
+      ::std::string(reinterpret_cast<const char*>(value), size));
+  // @@protoc_insertion_point(field_set_pointer:flyteidl.core.Secret.env_name)
+}
+inline ::std::string* Secret::mutable_env_name() {
+  
+  // @@protoc_insertion_point(field_mutable:flyteidl.core.Secret.env_name)
+  return env_name_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline ::std::string* Secret::release_env_name() {
+  // @@protoc_insertion_point(field_release:flyteidl.core.Secret.env_name)
+  
+  return env_name_.ReleaseNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline void Secret::set_allocated_env_name(::std::string* env_name) {
+  if (env_name != nullptr) {
+    
+  } else {
+    
+  }
+  env_name_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), env_name);
+  // @@protoc_insertion_point(field_set_allocated:flyteidl.core.Secret.env_name)
 }
 
 // -------------------------------------------------------------------

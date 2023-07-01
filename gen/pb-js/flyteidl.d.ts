@@ -5911,6 +5911,9 @@ export namespace flyteidl {
 
             /** Secret mountRequirement */
             mountRequirement?: (flyteidl.core.Secret.MountType|null);
+
+            /** Secret envName */
+            envName?: (string|null);
         }
 
         /** Represents a Secret. */
@@ -5933,6 +5936,9 @@ export namespace flyteidl {
 
             /** Secret mountRequirement. */
             public mountRequirement: flyteidl.core.Secret.MountType;
+
+            /** Secret envName. */
+            public envName: string;
 
             /**
              * Creates a new Secret instance using the specified properties.

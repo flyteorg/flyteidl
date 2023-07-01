@@ -51,6 +51,8 @@ func (m *Secret) Validate() error {
 
 	// no validation rules for MountRequirement
 
+	// no validation rules for EnvName
+
 	return nil
 }
 

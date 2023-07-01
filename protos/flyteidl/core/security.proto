@@ -43,6 +43,11 @@ message Secret {
     // will depend on the key management system.
     // +optional
     MountType mount_requirement = 4;
+
+    // The name of the environment variable, if the Secret is injected as environment variable. If ommitted, the default
+    // FLYTE_SECRETS_ENV_PREFIX prefix will be used.
+    // +optional
+    string env_name = 5;
 }
 
 // OAuth2Client encapsulates OAuth2 Client Credentials to be used when making calls on behalf of that task.

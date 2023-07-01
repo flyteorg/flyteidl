@@ -3597,6 +3597,7 @@ definitions:
             iam_role: "iam_role"
             oauth2_client:
               client_secret:
+                env_name: "env_name"
                 mount_requirement: {}
                 group_version: "group_version"
                 key: "key"
@@ -3608,6 +3609,7 @@ definitions:
             name: "name"
             client:
               client_secret:
+                env_name: "env_name"
                 mount_requirement: {}
                 group_version: "group_version"
                 key: "key"
@@ -3619,6 +3621,7 @@ definitions:
             name: "name"
             client:
               client_secret:
+                env_name: "env_name"
                 mount_requirement: {}
                 group_version: "group_version"
                 key: "key"
@@ -3627,11 +3630,13 @@ definitions:
             type: {}
             token_endpoint: "token_endpoint"
           secrets:
-          - mount_requirement: {}
+          - env_name: "env_name"
+            mount_requirement: {}
             group_version: "group_version"
             key: "key"
             group: "group"
-          - mount_requirement: {}
+          - env_name: "env_name"
+            mount_requirement: {}
             group_version: "group_version"
             key: "key"
             group: "group"
@@ -3979,6 +3984,7 @@ definitions:
               iam_role: "iam_role"
               oauth2_client:
                 client_secret:
+                  env_name: "env_name"
                   mount_requirement: {}
                   group_version: "group_version"
                   key: "key"
@@ -3990,6 +3996,7 @@ definitions:
               name: "name"
               client:
                 client_secret:
+                  env_name: "env_name"
                   mount_requirement: {}
                   group_version: "group_version"
                   key: "key"
@@ -4001,6 +4008,7 @@ definitions:
               name: "name"
               client:
                 client_secret:
+                  env_name: "env_name"
                   mount_requirement: {}
                   group_version: "group_version"
                   key: "key"
@@ -4009,11 +4017,13 @@ definitions:
               type: {}
               token_endpoint: "token_endpoint"
             secrets:
-            - mount_requirement: {}
+            - env_name: "env_name"
+              mount_requirement: {}
               group_version: "group_version"
               key: "key"
               group: "group"
-            - mount_requirement: {}
+            - env_name: "env_name"
+              mount_requirement: {}
               group_version: "group_version"
               key: "key"
               group: "group"
@@ -4177,6 +4187,7 @@ definitions:
               iam_role: "iam_role"
               oauth2_client:
                 client_secret:
+                  env_name: "env_name"
                   mount_requirement: {}
                   group_version: "group_version"
                   key: "key"
@@ -4188,6 +4199,7 @@ definitions:
               name: "name"
               client:
                 client_secret:
+                  env_name: "env_name"
                   mount_requirement: {}
                   group_version: "group_version"
                   key: "key"
@@ -4199,6 +4211,7 @@ definitions:
               name: "name"
               client:
                 client_secret:
+                  env_name: "env_name"
                   mount_requirement: {}
                   group_version: "group_version"
                   key: "key"
@@ -4207,11 +4220,13 @@ definitions:
               type: {}
               token_endpoint: "token_endpoint"
             secrets:
-            - mount_requirement: {}
+            - env_name: "env_name"
+              mount_requirement: {}
               group_version: "group_version"
               key: "key"
               group: "group"
-            - mount_requirement: {}
+            - env_name: "env_name"
+              mount_requirement: {}
               group_version: "group_version"
               key: "key"
               group: "group"
@@ -4484,6 +4499,7 @@ definitions:
           iam_role: "iam_role"
           oauth2_client:
             client_secret:
+              env_name: "env_name"
               mount_requirement: {}
               group_version: "group_version"
               key: "key"
@@ -4495,6 +4511,7 @@ definitions:
           name: "name"
           client:
             client_secret:
+              env_name: "env_name"
               mount_requirement: {}
               group_version: "group_version"
               key: "key"
@@ -4506,6 +4523,7 @@ definitions:
           name: "name"
           client:
             client_secret:
+              env_name: "env_name"
               mount_requirement: {}
               group_version: "group_version"
               key: "key"
@@ -4514,11 +4532,13 @@ definitions:
           type: {}
           token_endpoint: "token_endpoint"
         secrets:
-        - mount_requirement: {}
+        - env_name: "env_name"
+          mount_requirement: {}
           group_version: "group_version"
           key: "key"
           group: "group"
-        - mount_requirement: {}
+        - env_name: "env_name"
+          mount_requirement: {}
           group_version: "group_version"
           key: "key"
           group: "group"
@@ -5143,6 +5163,7 @@ definitions:
             iam_role: "iam_role"
             oauth2_client:
               client_secret:
+                env_name: "env_name"
                 mount_requirement: {}
                 group_version: "group_version"
                 key: "key"
@@ -5154,6 +5175,7 @@ definitions:
             name: "name"
             client:
               client_secret:
+                env_name: "env_name"
                 mount_requirement: {}
                 group_version: "group_version"
                 key: "key"
@@ -5165,6 +5187,7 @@ definitions:
             name: "name"
             client:
               client_secret:
+                env_name: "env_name"
                 mount_requirement: {}
                 group_version: "group_version"
                 key: "key"
@@ -5173,11 +5196,13 @@ definitions:
             type: {}
             token_endpoint: "token_endpoint"
           secrets:
-          - mount_requirement: {}
+          - env_name: "env_name"
+            mount_requirement: {}
             group_version: "group_version"
             key: "key"
             group: "group"
-          - mount_requirement: {}
+          - env_name: "env_name"
+            mount_requirement: {}
             group_version: "group_version"
             key: "key"
             group: "group"
@@ -5949,6 +5974,7 @@ definitions:
               iam_role: "iam_role"
               oauth2_client:
                 client_secret:
+                  env_name: "env_name"
                   mount_requirement: {}
                   group_version: "group_version"
                   key: "key"
@@ -5960,6 +5986,7 @@ definitions:
               name: "name"
               client:
                 client_secret:
+                  env_name: "env_name"
                   mount_requirement: {}
                   group_version: "group_version"
                   key: "key"
@@ -5971,6 +5998,7 @@ definitions:
               name: "name"
               client:
                 client_secret:
+                  env_name: "env_name"
                   mount_requirement: {}
                   group_version: "group_version"
                   key: "key"
@@ -5979,11 +6007,13 @@ definitions:
               type: {}
               token_endpoint: "token_endpoint"
             secrets:
-            - mount_requirement: {}
+            - env_name: "env_name"
+              mount_requirement: {}
               group_version: "group_version"
               key: "key"
               group: "group"
-            - mount_requirement: {}
+            - env_name: "env_name"
+              mount_requirement: {}
               group_version: "group_version"
               key: "key"
               group: "group"
@@ -6470,6 +6500,7 @@ definitions:
               iam_role: "iam_role"
               oauth2_client:
                 client_secret:
+                  env_name: "env_name"
                   mount_requirement: {}
                   group_version: "group_version"
                   key: "key"
@@ -6481,6 +6512,7 @@ definitions:
               name: "name"
               client:
                 client_secret:
+                  env_name: "env_name"
                   mount_requirement: {}
                   group_version: "group_version"
                   key: "key"
@@ -6492,6 +6524,7 @@ definitions:
               name: "name"
               client:
                 client_secret:
+                  env_name: "env_name"
                   mount_requirement: {}
                   group_version: "group_version"
                   key: "key"
@@ -6500,11 +6533,13 @@ definitions:
               type: {}
               token_endpoint: "token_endpoint"
             secrets:
-            - mount_requirement: {}
+            - env_name: "env_name"
+              mount_requirement: {}
               group_version: "group_version"
               key: "key"
               group: "group"
-            - mount_requirement: {}
+            - env_name: "env_name"
+              mount_requirement: {}
               group_version: "group_version"
               key: "key"
               group: "group"
@@ -6883,6 +6918,7 @@ definitions:
           iam_role: "iam_role"
           oauth2_client:
             client_secret:
+              env_name: "env_name"
               mount_requirement: {}
               group_version: "group_version"
               key: "key"
@@ -6894,6 +6930,7 @@ definitions:
           name: "name"
           client:
             client_secret:
+              env_name: "env_name"
               mount_requirement: {}
               group_version: "group_version"
               key: "key"
@@ -6905,6 +6942,7 @@ definitions:
           name: "name"
           client:
             client_secret:
+              env_name: "env_name"
               mount_requirement: {}
               group_version: "group_version"
               key: "key"
@@ -6913,11 +6951,13 @@ definitions:
           type: {}
           token_endpoint: "token_endpoint"
         secrets:
-        - mount_requirement: {}
+        - env_name: "env_name"
+          mount_requirement: {}
           group_version: "group_version"
           key: "key"
           group: "group"
-        - mount_requirement: {}
+        - env_name: "env_name"
+          mount_requirement: {}
           group_version: "group_version"
           key: "key"
           group: "group"
@@ -6992,6 +7032,7 @@ definitions:
                 iam_role: "iam_role"
                 oauth2_client:
                   client_secret:
+                    env_name: "env_name"
                     mount_requirement: {}
                     group_version: "group_version"
                     key: "key"
@@ -7003,6 +7044,7 @@ definitions:
                 name: "name"
                 client:
                   client_secret:
+                    env_name: "env_name"
                     mount_requirement: {}
                     group_version: "group_version"
                     key: "key"
@@ -7014,6 +7056,7 @@ definitions:
                 name: "name"
                 client:
                   client_secret:
+                    env_name: "env_name"
                     mount_requirement: {}
                     group_version: "group_version"
                     key: "key"
@@ -7022,11 +7065,13 @@ definitions:
                 type: {}
                 token_endpoint: "token_endpoint"
               secrets:
-              - mount_requirement: {}
+              - env_name: "env_name"
+                mount_requirement: {}
                 group_version: "group_version"
                 key: "key"
                 group: "group"
-              - mount_requirement: {}
+              - env_name: "env_name"
+                mount_requirement: {}
                 group_version: "group_version"
                 key: "key"
                 group: "group"
@@ -7099,6 +7144,7 @@ definitions:
                 iam_role: "iam_role"
                 oauth2_client:
                   client_secret:
+                    env_name: "env_name"
                     mount_requirement: {}
                     group_version: "group_version"
                     key: "key"
@@ -7110,6 +7156,7 @@ definitions:
                 name: "name"
                 client:
                   client_secret:
+                    env_name: "env_name"
                     mount_requirement: {}
                     group_version: "group_version"
                     key: "key"
@@ -7121,6 +7168,7 @@ definitions:
                 name: "name"
                 client:
                   client_secret:
+                    env_name: "env_name"
                     mount_requirement: {}
                     group_version: "group_version"
                     key: "key"
@@ -7129,11 +7177,13 @@ definitions:
                 type: {}
                 token_endpoint: "token_endpoint"
               secrets:
-              - mount_requirement: {}
+              - env_name: "env_name"
+                mount_requirement: {}
                 group_version: "group_version"
                 key: "key"
                 group: "group"
-              - mount_requirement: {}
+              - env_name: "env_name"
+                mount_requirement: {}
                 group_version: "group_version"
                 key: "key"
                 group: "group"
@@ -7239,6 +7289,7 @@ definitions:
               iam_role: "iam_role"
               oauth2_client:
                 client_secret:
+                  env_name: "env_name"
                   mount_requirement: {}
                   group_version: "group_version"
                   key: "key"
@@ -7250,6 +7301,7 @@ definitions:
               name: "name"
               client:
                 client_secret:
+                  env_name: "env_name"
                   mount_requirement: {}
                   group_version: "group_version"
                   key: "key"
@@ -7261,6 +7313,7 @@ definitions:
               name: "name"
               client:
                 client_secret:
+                  env_name: "env_name"
                   mount_requirement: {}
                   group_version: "group_version"
                   key: "key"
@@ -7269,11 +7322,13 @@ definitions:
               type: {}
               token_endpoint: "token_endpoint"
             secrets:
-            - mount_requirement: {}
+            - env_name: "env_name"
+              mount_requirement: {}
               group_version: "group_version"
               key: "key"
               group: "group"
-            - mount_requirement: {}
+            - env_name: "env_name"
+              mount_requirement: {}
               group_version: "group_version"
               key: "key"
               group: "group"
@@ -7386,6 +7441,7 @@ definitions:
             iam_role: "iam_role"
             oauth2_client:
               client_secret:
+                env_name: "env_name"
                 mount_requirement: {}
                 group_version: "group_version"
                 key: "key"
@@ -7397,6 +7453,7 @@ definitions:
             name: "name"
             client:
               client_secret:
+                env_name: "env_name"
                 mount_requirement: {}
                 group_version: "group_version"
                 key: "key"
@@ -7408,6 +7465,7 @@ definitions:
             name: "name"
             client:
               client_secret:
+                env_name: "env_name"
                 mount_requirement: {}
                 group_version: "group_version"
                 key: "key"
@@ -7416,11 +7474,13 @@ definitions:
             type: {}
             token_endpoint: "token_endpoint"
           secrets:
-          - mount_requirement: {}
+          - env_name: "env_name"
+            mount_requirement: {}
             group_version: "group_version"
             key: "key"
             group: "group"
-          - mount_requirement: {}
+          - env_name: "env_name"
+            mount_requirement: {}
             group_version: "group_version"
             key: "key"
             group: "group"
@@ -12028,6 +12088,7 @@ definitions:
                   iam_role: "iam_role"
                   oauth2_client:
                     client_secret:
+                      env_name: "env_name"
                       mount_requirement: {}
                       group_version: "group_version"
                       key: "key"
@@ -12039,6 +12100,7 @@ definitions:
                   name: "name"
                   client:
                     client_secret:
+                      env_name: "env_name"
                       mount_requirement: {}
                       group_version: "group_version"
                       key: "key"
@@ -12050,6 +12112,7 @@ definitions:
                   name: "name"
                   client:
                     client_secret:
+                      env_name: "env_name"
                       mount_requirement: {}
                       group_version: "group_version"
                       key: "key"
@@ -12058,11 +12121,13 @@ definitions:
                   type: {}
                   token_endpoint: "token_endpoint"
                 secrets:
-                - mount_requirement: {}
+                - env_name: "env_name"
+                  mount_requirement: {}
                   group_version: "group_version"
                   key: "key"
                   group: "group"
-                - mount_requirement: {}
+                - env_name: "env_name"
+                  mount_requirement: {}
                   group_version: "group_version"
                   key: "key"
                   group: "group"
@@ -12291,6 +12356,7 @@ definitions:
                   iam_role: "iam_role"
                   oauth2_client:
                     client_secret:
+                      env_name: "env_name"
                       mount_requirement: {}
                       group_version: "group_version"
                       key: "key"
@@ -12302,6 +12368,7 @@ definitions:
                   name: "name"
                   client:
                     client_secret:
+                      env_name: "env_name"
                       mount_requirement: {}
                       group_version: "group_version"
                       key: "key"
@@ -12313,6 +12380,7 @@ definitions:
                   name: "name"
                   client:
                     client_secret:
+                      env_name: "env_name"
                       mount_requirement: {}
                       group_version: "group_version"
                       key: "key"
@@ -12321,11 +12389,13 @@ definitions:
                   type: {}
                   token_endpoint: "token_endpoint"
                 secrets:
-                - mount_requirement: {}
+                - env_name: "env_name"
+                  mount_requirement: {}
                   group_version: "group_version"
                   key: "key"
                   group: "group"
-                - mount_requirement: {}
+                - env_name: "env_name"
+                  mount_requirement: {}
                   group_version: "group_version"
                   key: "key"
                   group: "group"
@@ -14741,6 +14811,7 @@ definitions:
               iam_role: "iam_role"
               oauth2_client:
                 client_secret:
+                  env_name: "env_name"
                   mount_requirement: {}
                   group_version: "group_version"
                   key: "key"
@@ -14752,6 +14823,7 @@ definitions:
               name: "name"
               client:
                 client_secret:
+                  env_name: "env_name"
                   mount_requirement: {}
                   group_version: "group_version"
                   key: "key"
@@ -14763,6 +14835,7 @@ definitions:
               name: "name"
               client:
                 client_secret:
+                  env_name: "env_name"
                   mount_requirement: {}
                   group_version: "group_version"
                   key: "key"
@@ -14771,11 +14844,13 @@ definitions:
               type: {}
               token_endpoint: "token_endpoint"
             secrets:
-            - mount_requirement: {}
+            - env_name: "env_name"
+              mount_requirement: {}
               group_version: "group_version"
               key: "key"
               group: "group"
-            - mount_requirement: {}
+            - env_name: "env_name"
+              mount_requirement: {}
               group_version: "group_version"
               key: "key"
               group: "group"
@@ -14868,6 +14943,7 @@ definitions:
                 iam_role: "iam_role"
                 oauth2_client:
                   client_secret:
+                    env_name: "env_name"
                     mount_requirement: {}
                     group_version: "group_version"
                     key: "key"
@@ -14879,6 +14955,7 @@ definitions:
                 name: "name"
                 client:
                   client_secret:
+                    env_name: "env_name"
                     mount_requirement: {}
                     group_version: "group_version"
                     key: "key"
@@ -14890,6 +14967,7 @@ definitions:
                 name: "name"
                 client:
                   client_secret:
+                    env_name: "env_name"
                     mount_requirement: {}
                     group_version: "group_version"
                     key: "key"
@@ -14898,11 +14976,13 @@ definitions:
                 type: {}
                 token_endpoint: "token_endpoint"
               secrets:
-              - mount_requirement: {}
+              - env_name: "env_name"
+                mount_requirement: {}
                 group_version: "group_version"
                 key: "key"
                 group: "group"
-              - mount_requirement: {}
+              - env_name: "env_name"
+                mount_requirement: {}
                 group_version: "group_version"
                 key: "key"
                 group: "group"
@@ -14998,6 +15078,7 @@ definitions:
               iam_role: "iam_role"
               oauth2_client:
                 client_secret:
+                  env_name: "env_name"
                   mount_requirement: {}
                   group_version: "group_version"
                   key: "key"
@@ -15009,6 +15090,7 @@ definitions:
               name: "name"
               client:
                 client_secret:
+                  env_name: "env_name"
                   mount_requirement: {}
                   group_version: "group_version"
                   key: "key"
@@ -15020,6 +15102,7 @@ definitions:
               name: "name"
               client:
                 client_secret:
+                  env_name: "env_name"
                   mount_requirement: {}
                   group_version: "group_version"
                   key: "key"
@@ -15028,11 +15111,13 @@ definitions:
               type: {}
               token_endpoint: "token_endpoint"
             secrets:
-            - mount_requirement: {}
+            - env_name: "env_name"
+              mount_requirement: {}
               group_version: "group_version"
               key: "key"
               group: "group"
-            - mount_requirement: {}
+            - env_name: "env_name"
+              mount_requirement: {}
               group_version: "group_version"
               key: "key"
               group: "group"
@@ -15129,6 +15214,7 @@ definitions:
                 iam_role: "iam_role"
                 oauth2_client:
                   client_secret:
+                    env_name: "env_name"
                     mount_requirement: {}
                     group_version: "group_version"
                     key: "key"
@@ -15140,6 +15226,7 @@ definitions:
                 name: "name"
                 client:
                   client_secret:
+                    env_name: "env_name"
                     mount_requirement: {}
                     group_version: "group_version"
                     key: "key"
@@ -15151,6 +15238,7 @@ definitions:
                 name: "name"
                 client:
                   client_secret:
+                    env_name: "env_name"
                     mount_requirement: {}
                     group_version: "group_version"
                     key: "key"
@@ -15159,11 +15247,13 @@ definitions:
                 type: {}
                 token_endpoint: "token_endpoint"
               secrets:
-              - mount_requirement: {}
+              - env_name: "env_name"
+                mount_requirement: {}
                 group_version: "group_version"
                 key: "key"
                 group: "group"
-              - mount_requirement: {}
+              - env_name: "env_name"
+                mount_requirement: {}
                 group_version: "group_version"
                 key: "key"
                 group: "group"
@@ -15622,6 +15712,7 @@ definitions:
                 iam_role: "iam_role"
                 oauth2_client:
                   client_secret:
+                    env_name: "env_name"
                     mount_requirement: {}
                     group_version: "group_version"
                     key: "key"
@@ -15633,6 +15724,7 @@ definitions:
                 name: "name"
                 client:
                   client_secret:
+                    env_name: "env_name"
                     mount_requirement: {}
                     group_version: "group_version"
                     key: "key"
@@ -15644,6 +15736,7 @@ definitions:
                 name: "name"
                 client:
                   client_secret:
+                    env_name: "env_name"
                     mount_requirement: {}
                     group_version: "group_version"
                     key: "key"
@@ -15652,11 +15745,13 @@ definitions:
                 type: {}
                 token_endpoint: "token_endpoint"
               secrets:
-              - mount_requirement: {}
+              - env_name: "env_name"
+                mount_requirement: {}
                 group_version: "group_version"
                 key: "key"
                 group: "group"
-              - mount_requirement: {}
+              - env_name: "env_name"
+                mount_requirement: {}
                 group_version: "group_version"
                 key: "key"
                 group: "group"
@@ -15901,6 +15996,7 @@ definitions:
               iam_role: "iam_role"
               oauth2_client:
                 client_secret:
+                  env_name: "env_name"
                   mount_requirement: {}
                   group_version: "group_version"
                   key: "key"
@@ -15912,6 +16008,7 @@ definitions:
               name: "name"
               client:
                 client_secret:
+                  env_name: "env_name"
                   mount_requirement: {}
                   group_version: "group_version"
                   key: "key"
@@ -15923,6 +16020,7 @@ definitions:
               name: "name"
               client:
                 client_secret:
+                  env_name: "env_name"
                   mount_requirement: {}
                   group_version: "group_version"
                   key: "key"
@@ -15931,11 +16029,13 @@ definitions:
               type: {}
               token_endpoint: "token_endpoint"
             secrets:
-            - mount_requirement: {}
+            - env_name: "env_name"
+              mount_requirement: {}
               group_version: "group_version"
               key: "key"
               group: "group"
-            - mount_requirement: {}
+            - env_name: "env_name"
+              mount_requirement: {}
               group_version: "group_version"
               key: "key"
               group: "group"
@@ -16593,6 +16693,7 @@ definitions:
                   iam_role: "iam_role"
                   oauth2_client:
                     client_secret:
+                      env_name: "env_name"
                       mount_requirement: {}
                       group_version: "group_version"
                       key: "key"
@@ -16604,6 +16705,7 @@ definitions:
                   name: "name"
                   client:
                     client_secret:
+                      env_name: "env_name"
                       mount_requirement: {}
                       group_version: "group_version"
                       key: "key"
@@ -16615,6 +16717,7 @@ definitions:
                   name: "name"
                   client:
                     client_secret:
+                      env_name: "env_name"
                       mount_requirement: {}
                       group_version: "group_version"
                       key: "key"
@@ -16623,11 +16726,13 @@ definitions:
                   type: {}
                   token_endpoint: "token_endpoint"
                 secrets:
-                - mount_requirement: {}
+                - env_name: "env_name"
+                  mount_requirement: {}
                   group_version: "group_version"
                   key: "key"
                   group: "group"
-                - mount_requirement: {}
+                - env_name: "env_name"
+                  mount_requirement: {}
                   group_version: "group_version"
                   key: "key"
                   group: "group"
@@ -16866,6 +16971,7 @@ definitions:
                   iam_role: "iam_role"
                   oauth2_client:
                     client_secret:
+                      env_name: "env_name"
                       mount_requirement: {}
                       group_version: "group_version"
                       key: "key"
@@ -16877,6 +16983,7 @@ definitions:
                   name: "name"
                   client:
                     client_secret:
+                      env_name: "env_name"
                       mount_requirement: {}
                       group_version: "group_version"
                       key: "key"
@@ -16888,6 +16995,7 @@ definitions:
                   name: "name"
                   client:
                     client_secret:
+                      env_name: "env_name"
                       mount_requirement: {}
                       group_version: "group_version"
                       key: "key"
@@ -16896,11 +17004,13 @@ definitions:
                   type: {}
                   token_endpoint: "token_endpoint"
                 secrets:
-                - mount_requirement: {}
+                - env_name: "env_name"
+                  mount_requirement: {}
                   group_version: "group_version"
                   key: "key"
                   group: "group"
-                - mount_requirement: {}
+                - env_name: "env_name"
+                  mount_requirement: {}
                   group_version: "group_version"
                   key: "key"
                   group: "group"
@@ -21291,6 +21401,7 @@ definitions:
                   iam_role: "iam_role"
                   oauth2_client:
                     client_secret:
+                      env_name: "env_name"
                       mount_requirement: {}
                       group_version: "group_version"
                       key: "key"
@@ -21302,6 +21413,7 @@ definitions:
                   name: "name"
                   client:
                     client_secret:
+                      env_name: "env_name"
                       mount_requirement: {}
                       group_version: "group_version"
                       key: "key"
@@ -21313,6 +21425,7 @@ definitions:
                   name: "name"
                   client:
                     client_secret:
+                      env_name: "env_name"
                       mount_requirement: {}
                       group_version: "group_version"
                       key: "key"
@@ -21321,11 +21434,13 @@ definitions:
                   type: {}
                   token_endpoint: "token_endpoint"
                 secrets:
-                - mount_requirement: {}
+                - env_name: "env_name"
+                  mount_requirement: {}
                   group_version: "group_version"
                   key: "key"
                   group: "group"
-                - mount_requirement: {}
+                - env_name: "env_name"
+                  mount_requirement: {}
                   group_version: "group_version"
                   key: "key"
                   group: "group"
@@ -21554,6 +21669,7 @@ definitions:
                   iam_role: "iam_role"
                   oauth2_client:
                     client_secret:
+                      env_name: "env_name"
                       mount_requirement: {}
                       group_version: "group_version"
                       key: "key"
@@ -21565,6 +21681,7 @@ definitions:
                   name: "name"
                   client:
                     client_secret:
+                      env_name: "env_name"
                       mount_requirement: {}
                       group_version: "group_version"
                       key: "key"
@@ -21576,6 +21693,7 @@ definitions:
                   name: "name"
                   client:
                     client_secret:
+                      env_name: "env_name"
                       mount_requirement: {}
                       group_version: "group_version"
                       key: "key"
@@ -21584,11 +21702,13 @@ definitions:
                   type: {}
                   token_endpoint: "token_endpoint"
                 secrets:
-                - mount_requirement: {}
+                - env_name: "env_name"
+                  mount_requirement: {}
                   group_version: "group_version"
                   key: "key"
                   group: "group"
-                - mount_requirement: {}
+                - env_name: "env_name"
+                  mount_requirement: {}
                   group_version: "group_version"
                   key: "key"
                   group: "group"
@@ -23667,6 +23787,7 @@ definitions:
               iam_role: "iam_role"
               oauth2_client:
                 client_secret:
+                  env_name: "env_name"
                   mount_requirement: {}
                   group_version: "group_version"
                   key: "key"
@@ -23678,6 +23799,7 @@ definitions:
               name: "name"
               client:
                 client_secret:
+                  env_name: "env_name"
                   mount_requirement: {}
                   group_version: "group_version"
                   key: "key"
@@ -23689,6 +23811,7 @@ definitions:
               name: "name"
               client:
                 client_secret:
+                  env_name: "env_name"
                   mount_requirement: {}
                   group_version: "group_version"
                   key: "key"
@@ -23697,11 +23820,13 @@ definitions:
               type: {}
               token_endpoint: "token_endpoint"
             secrets:
-            - mount_requirement: {}
+            - env_name: "env_name"
+              mount_requirement: {}
               group_version: "group_version"
               key: "key"
               group: "group"
-            - mount_requirement: {}
+            - env_name: "env_name"
+              mount_requirement: {}
               group_version: "group_version"
               key: "key"
               group: "group"
@@ -23801,6 +23926,7 @@ definitions:
                 iam_role: "iam_role"
                 oauth2_client:
                   client_secret:
+                    env_name: "env_name"
                     mount_requirement: {}
                     group_version: "group_version"
                     key: "key"
@@ -23812,6 +23938,7 @@ definitions:
                 name: "name"
                 client:
                   client_secret:
+                    env_name: "env_name"
                     mount_requirement: {}
                     group_version: "group_version"
                     key: "key"
@@ -23823,6 +23950,7 @@ definitions:
                 name: "name"
                 client:
                   client_secret:
+                    env_name: "env_name"
                     mount_requirement: {}
                     group_version: "group_version"
                     key: "key"
@@ -23831,11 +23959,13 @@ definitions:
                 type: {}
                 token_endpoint: "token_endpoint"
               secrets:
-              - mount_requirement: {}
+              - env_name: "env_name"
+                mount_requirement: {}
                 group_version: "group_version"
                 key: "key"
                 group: "group"
-              - mount_requirement: {}
+              - env_name: "env_name"
+                mount_requirement: {}
                 group_version: "group_version"
                 key: "key"
                 group: "group"
@@ -28173,6 +28303,7 @@ definitions:
                 iam_role: "iam_role"
                 oauth2_client:
                   client_secret:
+                    env_name: "env_name"
                     mount_requirement: {}
                     group_version: "group_version"
                     key: "key"
@@ -28184,6 +28315,7 @@ definitions:
                 name: "name"
                 client:
                   client_secret:
+                    env_name: "env_name"
                     mount_requirement: {}
                     group_version: "group_version"
                     key: "key"
@@ -28195,6 +28327,7 @@ definitions:
                 name: "name"
                 client:
                   client_secret:
+                    env_name: "env_name"
                     mount_requirement: {}
                     group_version: "group_version"
                     key: "key"
@@ -28203,11 +28336,13 @@ definitions:
                 type: {}
                 token_endpoint: "token_endpoint"
               secrets:
-              - mount_requirement: {}
+              - env_name: "env_name"
+                mount_requirement: {}
                 group_version: "group_version"
                 key: "key"
                 group: "group"
-              - mount_requirement: {}
+              - env_name: "env_name"
+                mount_requirement: {}
                 group_version: "group_version"
                 key: "key"
                 group: "group"
@@ -28436,6 +28571,7 @@ definitions:
                 iam_role: "iam_role"
                 oauth2_client:
                   client_secret:
+                    env_name: "env_name"
                     mount_requirement: {}
                     group_version: "group_version"
                     key: "key"
@@ -28447,6 +28583,7 @@ definitions:
                 name: "name"
                 client:
                   client_secret:
+                    env_name: "env_name"
                     mount_requirement: {}
                     group_version: "group_version"
                     key: "key"
@@ -28458,6 +28595,7 @@ definitions:
                 name: "name"
                 client:
                   client_secret:
+                    env_name: "env_name"
                     mount_requirement: {}
                     group_version: "group_version"
                     key: "key"
@@ -28466,11 +28604,13 @@ definitions:
                 type: {}
                 token_endpoint: "token_endpoint"
               secrets:
-              - mount_requirement: {}
+              - env_name: "env_name"
+                mount_requirement: {}
                 group_version: "group_version"
                 key: "key"
                 group: "group"
-              - mount_requirement: {}
+              - env_name: "env_name"
+                mount_requirement: {}
                 group_version: "group_version"
                 key: "key"
                 group: "group"
@@ -30578,6 +30718,7 @@ definitions:
           iam_role: "iam_role"
           oauth2_client:
             client_secret:
+              env_name: "env_name"
               mount_requirement: {}
               group_version: "group_version"
               key: "key"
@@ -30589,6 +30730,7 @@ definitions:
           name: "name"
           client:
             client_secret:
+              env_name: "env_name"
               mount_requirement: {}
               group_version: "group_version"
               key: "key"
@@ -30600,6 +30742,7 @@ definitions:
           name: "name"
           client:
             client_secret:
+              env_name: "env_name"
               mount_requirement: {}
               group_version: "group_version"
               key: "key"
@@ -30608,11 +30751,13 @@ definitions:
           type: {}
           token_endpoint: "token_endpoint"
         secrets:
-        - mount_requirement: {}
+        - env_name: "env_name"
+          mount_requirement: {}
           group_version: "group_version"
           key: "key"
           group: "group"
-        - mount_requirement: {}
+        - env_name: "env_name"
+          mount_requirement: {}
           group_version: "group_version"
           key: "key"
           group: "group"
@@ -35002,6 +35147,7 @@ definitions:
                     iam_role: "iam_role"
                     oauth2_client:
                       client_secret:
+                        env_name: "env_name"
                         mount_requirement: {}
                         group_version: "group_version"
                         key: "key"
@@ -35013,6 +35159,7 @@ definitions:
                     name: "name"
                     client:
                       client_secret:
+                        env_name: "env_name"
                         mount_requirement: {}
                         group_version: "group_version"
                         key: "key"
@@ -35024,6 +35171,7 @@ definitions:
                     name: "name"
                     client:
                       client_secret:
+                        env_name: "env_name"
                         mount_requirement: {}
                         group_version: "group_version"
                         key: "key"
@@ -35032,11 +35180,13 @@ definitions:
                     type: {}
                     token_endpoint: "token_endpoint"
                   secrets:
-                  - mount_requirement: {}
+                  - env_name: "env_name"
+                    mount_requirement: {}
                     group_version: "group_version"
                     key: "key"
                     group: "group"
-                  - mount_requirement: {}
+                  - env_name: "env_name"
+                    mount_requirement: {}
                     group_version: "group_version"
                     key: "key"
                     group: "group"
@@ -35265,6 +35415,7 @@ definitions:
                     iam_role: "iam_role"
                     oauth2_client:
                       client_secret:
+                        env_name: "env_name"
                         mount_requirement: {}
                         group_version: "group_version"
                         key: "key"
@@ -35276,6 +35427,7 @@ definitions:
                     name: "name"
                     client:
                       client_secret:
+                        env_name: "env_name"
                         mount_requirement: {}
                         group_version: "group_version"
                         key: "key"
@@ -35287,6 +35439,7 @@ definitions:
                     name: "name"
                     client:
                       client_secret:
+                        env_name: "env_name"
                         mount_requirement: {}
                         group_version: "group_version"
                         key: "key"
@@ -35295,11 +35448,13 @@ definitions:
                     type: {}
                     token_endpoint: "token_endpoint"
                   secrets:
-                  - mount_requirement: {}
+                  - env_name: "env_name"
+                    mount_requirement: {}
                     group_version: "group_version"
                     key: "key"
                     group: "group"
-                  - mount_requirement: {}
+                  - env_name: "env_name"
+                    mount_requirement: {}
                     group_version: "group_version"
                     key: "key"
                     group: "group"
@@ -41610,6 +41765,7 @@ definitions:
                     iam_role: "iam_role"
                     oauth2_client:
                       client_secret:
+                        env_name: "env_name"
                         mount_requirement: {}
                         group_version: "group_version"
                         key: "key"
@@ -41621,6 +41777,7 @@ definitions:
                     name: "name"
                     client:
                       client_secret:
+                        env_name: "env_name"
                         mount_requirement: {}
                         group_version: "group_version"
                         key: "key"
@@ -41632,6 +41789,7 @@ definitions:
                     name: "name"
                     client:
                       client_secret:
+                        env_name: "env_name"
                         mount_requirement: {}
                         group_version: "group_version"
                         key: "key"
@@ -41640,11 +41798,13 @@ definitions:
                     type: {}
                     token_endpoint: "token_endpoint"
                   secrets:
-                  - mount_requirement: {}
+                  - env_name: "env_name"
+                    mount_requirement: {}
                     group_version: "group_version"
                     key: "key"
                     group: "group"
-                  - mount_requirement: {}
+                  - env_name: "env_name"
+                    mount_requirement: {}
                     group_version: "group_version"
                     key: "key"
                     group: "group"
@@ -41873,6 +42033,7 @@ definitions:
                     iam_role: "iam_role"
                     oauth2_client:
                       client_secret:
+                        env_name: "env_name"
                         mount_requirement: {}
                         group_version: "group_version"
                         key: "key"
@@ -41884,6 +42045,7 @@ definitions:
                     name: "name"
                     client:
                       client_secret:
+                        env_name: "env_name"
                         mount_requirement: {}
                         group_version: "group_version"
                         key: "key"
@@ -41895,6 +42057,7 @@ definitions:
                     name: "name"
                     client:
                       client_secret:
+                        env_name: "env_name"
                         mount_requirement: {}
                         group_version: "group_version"
                         key: "key"
@@ -41903,11 +42066,13 @@ definitions:
                     type: {}
                     token_endpoint: "token_endpoint"
                   secrets:
-                  - mount_requirement: {}
+                  - env_name: "env_name"
+                    mount_requirement: {}
                     group_version: "group_version"
                     key: "key"
                     group: "group"
-                  - mount_requirement: {}
+                  - env_name: "env_name"
+                    mount_requirement: {}
                     group_version: "group_version"
                     key: "key"
                     group: "group"
@@ -44912,6 +45077,7 @@ definitions:
             iam_role: "iam_role"
             oauth2_client:
               client_secret:
+                env_name: "env_name"
                 mount_requirement: {}
                 group_version: "group_version"
                 key: "key"
@@ -44923,6 +45089,7 @@ definitions:
             name: "name"
             client:
               client_secret:
+                env_name: "env_name"
                 mount_requirement: {}
                 group_version: "group_version"
                 key: "key"
@@ -44934,6 +45101,7 @@ definitions:
             name: "name"
             client:
               client_secret:
+                env_name: "env_name"
                 mount_requirement: {}
                 group_version: "group_version"
                 key: "key"
@@ -44942,11 +45110,13 @@ definitions:
             type: {}
             token_endpoint: "token_endpoint"
           secrets:
-          - mount_requirement: {}
+          - env_name: "env_name"
+            mount_requirement: {}
             group_version: "group_version"
             key: "key"
             group: "group"
-          - mount_requirement: {}
+          - env_name: "env_name"
+            mount_requirement: {}
             group_version: "group_version"
             key: "key"
             group: "group"
@@ -51285,6 +51455,7 @@ definitions:
               iam_role: "iam_role"
               oauth2_client:
                 client_secret:
+                  env_name: "env_name"
                   mount_requirement: {}
                   group_version: "group_version"
                   key: "key"
@@ -51296,6 +51467,7 @@ definitions:
               name: "name"
               client:
                 client_secret:
+                  env_name: "env_name"
                   mount_requirement: {}
                   group_version: "group_version"
                   key: "key"
@@ -51307,6 +51479,7 @@ definitions:
               name: "name"
               client:
                 client_secret:
+                  env_name: "env_name"
                   mount_requirement: {}
                   group_version: "group_version"
                   key: "key"
@@ -51315,11 +51488,13 @@ definitions:
               type: {}
               token_endpoint: "token_endpoint"
             secrets:
-            - mount_requirement: {}
+            - env_name: "env_name"
+              mount_requirement: {}
               group_version: "group_version"
               key: "key"
               group: "group"
-            - mount_requirement: {}
+            - env_name: "env_name"
+              mount_requirement: {}
               group_version: "group_version"
               key: "key"
               group: "group"
@@ -51548,6 +51723,7 @@ definitions:
               iam_role: "iam_role"
               oauth2_client:
                 client_secret:
+                  env_name: "env_name"
                   mount_requirement: {}
                   group_version: "group_version"
                   key: "key"
@@ -51559,6 +51735,7 @@ definitions:
               name: "name"
               client:
                 client_secret:
+                  env_name: "env_name"
                   mount_requirement: {}
                   group_version: "group_version"
                   key: "key"
@@ -51570,6 +51747,7 @@ definitions:
               name: "name"
               client:
                 client_secret:
+                  env_name: "env_name"
                   mount_requirement: {}
                   group_version: "group_version"
                   key: "key"
@@ -51578,11 +51756,13 @@ definitions:
               type: {}
               token_endpoint: "token_endpoint"
             secrets:
-            - mount_requirement: {}
+            - env_name: "env_name"
+              mount_requirement: {}
               group_version: "group_version"
               key: "key"
               group: "group"
-            - mount_requirement: {}
+            - env_name: "env_name"
+              mount_requirement: {}
               group_version: "group_version"
               key: "key"
               group: "group"
@@ -53996,6 +54176,7 @@ definitions:
       iam_role: "iam_role"
       oauth2_client:
         client_secret:
+          env_name: "env_name"
           mount_requirement: {}
           group_version: "group_version"
           key: "key"
@@ -55095,6 +55276,7 @@ definitions:
       \ making calls on behalf of that task."
     example:
       client_secret:
+        env_name: "env_name"
         mount_requirement: {}
         group_version: "group_version"
         key: "key"
@@ -55135,6 +55317,7 @@ definitions:
       name: "name"
       client:
         client_secret:
+          env_name: "env_name"
           mount_requirement: {}
           group_version: "group_version"
           key: "key"
@@ -55846,6 +56029,11 @@ definitions:
           \ system cannot satisfy that requirement. If not provided, the default location\n\
           will depend on the key management system.\n+optional"
         $ref: "#/definitions/SecretMountType"
+      env_name:
+        type: "string"
+        title: "The name of the environment variable, if the Secret is injected as\
+          \ environment variable. If ommitted, the default\nFLYTE_SECRETS_ENV_PREFIX\
+          \ prefix will be used.\n+optional"
     description: "Secret encapsulates information about the secret a task needs to\
       \ proceed. An environment variable\nFLYTE_SECRETS_ENV_PREFIX will be passed\
       \ to indicate the prefix of the environment variables that will be present if\n\
@@ -55853,6 +56041,7 @@ definitions:
       \ will be passed to indicate the prefix of the path where secrets will be mounted\
       \ if secrets\nare passed through file mounts."
     example:
+      env_name: "env_name"
       mount_requirement: {}
       group_version: "group_version"
       key: "key"
@@ -55893,6 +56082,7 @@ definitions:
         iam_role: "iam_role"
         oauth2_client:
           client_secret:
+            env_name: "env_name"
             mount_requirement: {}
             group_version: "group_version"
             key: "key"
@@ -55904,6 +56094,7 @@ definitions:
         name: "name"
         client:
           client_secret:
+            env_name: "env_name"
             mount_requirement: {}
             group_version: "group_version"
             key: "key"
@@ -55915,6 +56106,7 @@ definitions:
         name: "name"
         client:
           client_secret:
+            env_name: "env_name"
             mount_requirement: {}
             group_version: "group_version"
             key: "key"
@@ -55923,11 +56115,13 @@ definitions:
         type: {}
         token_endpoint: "token_endpoint"
       secrets:
-      - mount_requirement: {}
+      - env_name: "env_name"
+        mount_requirement: {}
         group_version: "group_version"
         key: "key"
         group: "group"
-      - mount_requirement: {}
+      - env_name: "env_name"
+        mount_requirement: {}
         group_version: "group_version"
         key: "key"
         group: "group"
@@ -56623,6 +56817,7 @@ definitions:
           iam_role: "iam_role"
           oauth2_client:
             client_secret:
+              env_name: "env_name"
               mount_requirement: {}
               group_version: "group_version"
               key: "key"
@@ -56634,6 +56829,7 @@ definitions:
           name: "name"
           client:
             client_secret:
+              env_name: "env_name"
               mount_requirement: {}
               group_version: "group_version"
               key: "key"
@@ -56645,6 +56841,7 @@ definitions:
           name: "name"
           client:
             client_secret:
+              env_name: "env_name"
               mount_requirement: {}
               group_version: "group_version"
               key: "key"
@@ -56653,11 +56850,13 @@ definitions:
           type: {}
           token_endpoint: "token_endpoint"
         secrets:
-        - mount_requirement: {}
+        - env_name: "env_name"
+          mount_requirement: {}
           group_version: "group_version"
           key: "key"
           group: "group"
-        - mount_requirement: {}
+        - env_name: "env_name"
+          mount_requirement: {}
           group_version: "group_version"
           key: "key"
           group: "group"
@@ -63865,6 +64064,7 @@ definitions:
                 iam_role: "iam_role"
                 oauth2_client:
                   client_secret:
+                    env_name: "env_name"
                     mount_requirement: {}
                     group_version: "group_version"
                     key: "key"
@@ -63876,6 +64076,7 @@ definitions:
                 name: "name"
                 client:
                   client_secret:
+                    env_name: "env_name"
                     mount_requirement: {}
                     group_version: "group_version"
                     key: "key"
@@ -63887,6 +64088,7 @@ definitions:
                 name: "name"
                 client:
                   client_secret:
+                    env_name: "env_name"
                     mount_requirement: {}
                     group_version: "group_version"
                     key: "key"
@@ -63895,11 +64097,13 @@ definitions:
                 type: {}
                 token_endpoint: "token_endpoint"
               secrets:
-              - mount_requirement: {}
+              - env_name: "env_name"
+                mount_requirement: {}
                 group_version: "group_version"
                 key: "key"
                 group: "group"
-              - mount_requirement: {}
+              - env_name: "env_name"
+                mount_requirement: {}
                 group_version: "group_version"
                 key: "key"
                 group: "group"
@@ -64128,6 +64332,7 @@ definitions:
                 iam_role: "iam_role"
                 oauth2_client:
                   client_secret:
+                    env_name: "env_name"
                     mount_requirement: {}
                     group_version: "group_version"
                     key: "key"
@@ -64139,6 +64344,7 @@ definitions:
                 name: "name"
                 client:
                   client_secret:
+                    env_name: "env_name"
                     mount_requirement: {}
                     group_version: "group_version"
                     key: "key"
@@ -64150,6 +64356,7 @@ definitions:
                 name: "name"
                 client:
                   client_secret:
+                    env_name: "env_name"
                     mount_requirement: {}
                     group_version: "group_version"
                     key: "key"
@@ -64158,11 +64365,13 @@ definitions:
                 type: {}
                 token_endpoint: "token_endpoint"
               secrets:
-              - mount_requirement: {}
+              - env_name: "env_name"
+                mount_requirement: {}
                 group_version: "group_version"
                 key: "key"
                 group: "group"
-              - mount_requirement: {}
+              - env_name: "env_name"
+                mount_requirement: {}
                 group_version: "group_version"
                 key: "key"
                 group: "group"
