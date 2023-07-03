@@ -6,6 +6,7 @@ option go_package = "github.com/flyteorg/flyteidl/gen/pb-go/flyteidl/admin";
 import "flyteidl/core/literals.proto";
 import "flyteidl/core/tasks.proto";
 import "flyteidl/core/interface.proto";
+import "flyteidl/core/identifier.proto";
 
 // The state of the execution is used to control its visibility in the UI/CLI.
 enum State {
@@ -14,6 +15,15 @@ enum State {
   PENDING = 2;
   RUNNING = 3;
   SUCCEEDED = 4;
+}
+
+message TaskExecutionMetadata {
+  core.TaskExecutionIdentifier task_execution_id = 1;
+  string namespace = 2;
+  map<string, string> labels = 3;
+  map<string, string> annotations = 4;
+  string k8s_service_account = 5;
+  map<string, string> environment_variables = 6;
 }
 
 // Represents a request structure to create task.
@@ -26,6 +36,8 @@ message CreateTaskRequest {
   core.TaskTemplate template = 2;
   // Prefix for where task output data will be written. (e.g. s3://my-bucket/randomstring)
   string output_prefix = 3;
+  // subset of task execution metadata that are relevant to out-core plugins
+  TaskExecutionMetadata task_execution_metadata = 4;
 }
 
 // Represents a create response structure.
