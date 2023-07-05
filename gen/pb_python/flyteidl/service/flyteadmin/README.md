@@ -264,6 +264,7 @@ Class | Method | HTTP request | Description
  - [ContainerArchitecture](docs/ContainerArchitecture.md)
  - [CoreAlias](docs/CoreAlias.md)
  - [CoreApproveCondition](docs/CoreApproveCondition.md)
+ - [CoreArrayNode](docs/CoreArrayNode.md)
  - [CoreBinary](docs/CoreBinary.md)
  - [CoreBinding](docs/CoreBinding.md)
  - [CoreBindingData](docs/CoreBindingData.md)
