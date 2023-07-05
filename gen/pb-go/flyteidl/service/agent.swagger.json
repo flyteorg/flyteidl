@@ -1148,33 +1148,40 @@
       "type": "object",
       "properties": {
         "task_execution_id": {
-          "$ref": "#/definitions/coreTaskExecutionIdentifier"
+          "$ref": "#/definitions/coreTaskExecutionIdentifier",
+          "title": "ID of the task execution"
         },
         "namespace": {
-          "type": "string"
+          "type": "string",
+          "title": "k8s namespace where the task is executed in"
         },
         "labels": {
           "type": "object",
           "additionalProperties": {
             "type": "string"
-          }
+          },
+          "title": "Labels attached to the task execution"
         },
         "annotations": {
           "type": "object",
           "additionalProperties": {
             "type": "string"
-          }
+          },
+          "title": "Annotations attached to the task execution"
         },
         "k8s_service_account": {
-          "type": "string"
+          "type": "string",
+          "title": "k8s service account associated with the task execution"
         },
         "environment_variables": {
           "type": "object",
           "additionalProperties": {
             "type": "string"
-          }
+          },
+          "title": "Environment variables attached to the task execution"
         }
-      }
+      },
+      "description": "Represents a subset of runtime task execution metadata that are relevant to external plugins."
     },
     "protobufListValue": {
       "type": "object",

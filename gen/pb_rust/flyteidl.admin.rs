@@ -1,17 +1,24 @@
 // @generated
+/// Represents a subset of runtime task execution metadata that are relevant to external plugins.
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(Clone, PartialEq, ::prost::Message)]
 pub struct TaskExecutionMetadata {
+    /// ID of the task execution
     #[prost(message, optional, tag="1")]
     pub task_execution_id: ::core::option::Option<super::core::TaskExecutionIdentifier>,
+    /// k8s namespace where the task is executed in
     #[prost(string, tag="2")]
     pub namespace: ::prost::alloc::string::String,
+    /// Labels attached to the task execution
     #[prost(map="string, string", tag="3")]
     pub labels: ::std::collections::HashMap<::prost::alloc::string::String, ::prost::alloc::string::String>,
+    /// Annotations attached to the task execution
     #[prost(map="string, string", tag="4")]
     pub annotations: ::std::collections::HashMap<::prost::alloc::string::String, ::prost::alloc::string::String>,
+    /// k8s service account associated with the task execution
     #[prost(string, tag="5")]
     pub k8s_service_account: ::prost::alloc::string::String,
+    /// Environment variables attached to the task execution
     #[prost(map="string, string", tag="6")]
     pub environment_variables: ::std::collections::HashMap<::prost::alloc::string::String, ::prost::alloc::string::String>,
 }
@@ -30,7 +37,7 @@ pub struct CreateTaskRequest {
     /// Prefix for where task output data will be written. (e.g. s3://my-bucket/randomstring)
     #[prost(string, tag="3")]
     pub output_prefix: ::prost::alloc::string::String,
-    /// subset of task execution metadata that are relevant to out-core plugins
+    /// subset of runtime task execution metadata that are relevant to external plugins
     #[prost(message, optional, tag="4")]
     pub task_execution_metadata: ::core::option::Option<TaskExecutionMetadata>,
 }

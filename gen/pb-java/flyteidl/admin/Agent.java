@@ -148,33 +148,61 @@ public final class Agent {
       com.google.protobuf.MessageOrBuilder {
 
     /**
+     * <pre>
+     * ID of the task execution
+     * </pre>
+     *
      * <code>.flyteidl.core.TaskExecutionIdentifier task_execution_id = 1;</code>
      */
     boolean hasTaskExecutionId();
     /**
+     * <pre>
+     * ID of the task execution
+     * </pre>
+     *
      * <code>.flyteidl.core.TaskExecutionIdentifier task_execution_id = 1;</code>
      */
     flyteidl.core.IdentifierOuterClass.TaskExecutionIdentifier getTaskExecutionId();
     /**
+     * <pre>
+     * ID of the task execution
+     * </pre>
+     *
      * <code>.flyteidl.core.TaskExecutionIdentifier task_execution_id = 1;</code>
      */
     flyteidl.core.IdentifierOuterClass.TaskExecutionIdentifierOrBuilder getTaskExecutionIdOrBuilder();
 
     /**
+     * <pre>
+     * k8s namespace where the task is executed in
+     * </pre>
+     *
      * <code>string namespace = 2;</code>
      */
     java.lang.String getNamespace();
     /**
+     * <pre>
+     * k8s namespace where the task is executed in
+     * </pre>
+     *
      * <code>string namespace = 2;</code>
      */
     com.google.protobuf.ByteString
         getNamespaceBytes();
 
     /**
+     * <pre>
+     * Labels attached to the task execution
+     * </pre>
+     *
      * <code>map&lt;string, string&gt; labels = 3;</code>
      */
     int getLabelsCount();
     /**
+     * <pre>
+     * Labels attached to the task execution
+     * </pre>
+     *
      * <code>map&lt;string, string&gt; labels = 3;</code>
      */
     boolean containsLabels(
@@ -186,11 +214,19 @@ public final class Agent {
     java.util.Map<java.lang.String, java.lang.String>
     getLabels();
     /**
+     * <pre>
+     * Labels attached to the task execution
+     * </pre>
+     *
      * <code>map&lt;string, string&gt; labels = 3;</code>
      */
     java.util.Map<java.lang.String, java.lang.String>
     getLabelsMap();
     /**
+     * <pre>
+     * Labels attached to the task execution
+     * </pre>
+     *
      * <code>map&lt;string, string&gt; labels = 3;</code>
      */
 
@@ -198,6 +234,10 @@ public final class Agent {
         java.lang.String key,
         java.lang.String defaultValue);
     /**
+     * <pre>
+     * Labels attached to the task execution
+     * </pre>
+     *
      * <code>map&lt;string, string&gt; labels = 3;</code>
      */
 
@@ -205,10 +245,18 @@ public final class Agent {
         java.lang.String key);
 
     /**
+     * <pre>
+     * Annotations attached to the task execution
+     * </pre>
+     *
      * <code>map&lt;string, string&gt; annotations = 4;</code>
      */
     int getAnnotationsCount();
     /**
+     * <pre>
+     * Annotations attached to the task execution
+     * </pre>
+     *
      * <code>map&lt;string, string&gt; annotations = 4;</code>
      */
     boolean containsAnnotations(
@@ -220,11 +268,19 @@ public final class Agent {
     java.util.Map<java.lang.String, java.lang.String>
     getAnnotations();
     /**
+     * <pre>
+     * Annotations attached to the task execution
+     * </pre>
+     *
      * <code>map&lt;string, string&gt; annotations = 4;</code>
      */
     java.util.Map<java.lang.String, java.lang.String>
     getAnnotationsMap();
     /**
+     * <pre>
+     * Annotations attached to the task execution
+     * </pre>
+     *
      * <code>map&lt;string, string&gt; annotations = 4;</code>
      */
 
@@ -232,6 +288,10 @@ public final class Agent {
         java.lang.String key,
         java.lang.String defaultValue);
     /**
+     * <pre>
+     * Annotations attached to the task execution
+     * </pre>
+     *
      * <code>map&lt;string, string&gt; annotations = 4;</code>
      */
 
@@ -239,20 +299,36 @@ public final class Agent {
         java.lang.String key);
 
     /**
+     * <pre>
+     * k8s service account associated with the task execution
+     * </pre>
+     *
      * <code>string k8s_service_account = 5;</code>
      */
     java.lang.String getK8SServiceAccount();
     /**
+     * <pre>
+     * k8s service account associated with the task execution
+     * </pre>
+     *
      * <code>string k8s_service_account = 5;</code>
      */
     com.google.protobuf.ByteString
         getK8SServiceAccountBytes();
 
     /**
+     * <pre>
+     * Environment variables attached to the task execution
+     * </pre>
+     *
      * <code>map&lt;string, string&gt; environment_variables = 6;</code>
      */
     int getEnvironmentVariablesCount();
     /**
+     * <pre>
+     * Environment variables attached to the task execution
+     * </pre>
+     *
      * <code>map&lt;string, string&gt; environment_variables = 6;</code>
      */
     boolean containsEnvironmentVariables(
@@ -264,11 +340,19 @@ public final class Agent {
     java.util.Map<java.lang.String, java.lang.String>
     getEnvironmentVariables();
     /**
+     * <pre>
+     * Environment variables attached to the task execution
+     * </pre>
+     *
      * <code>map&lt;string, string&gt; environment_variables = 6;</code>
      */
     java.util.Map<java.lang.String, java.lang.String>
     getEnvironmentVariablesMap();
     /**
+     * <pre>
+     * Environment variables attached to the task execution
+     * </pre>
+     *
      * <code>map&lt;string, string&gt; environment_variables = 6;</code>
      */
 
@@ -276,6 +360,10 @@ public final class Agent {
         java.lang.String key,
         java.lang.String defaultValue);
     /**
+     * <pre>
+     * Environment variables attached to the task execution
+     * </pre>
+     *
      * <code>map&lt;string, string&gt; environment_variables = 6;</code>
      */
 
@@ -283,6 +371,10 @@ public final class Agent {
         java.lang.String key);
   }
   /**
+   * <pre>
+   * Represents a subset of runtime task execution metadata that are relevant to external plugins.
+   * </pre>
+   *
    * Protobuf type {@code flyteidl.admin.TaskExecutionMetadata}
    */
   public  static final class TaskExecutionMetadata extends
@@ -439,18 +531,30 @@ public final class Agent {
     public static final int TASK_EXECUTION_ID_FIELD_NUMBER = 1;
     private flyteidl.core.IdentifierOuterClass.TaskExecutionIdentifier taskExecutionId_;
     /**
+     * <pre>
+     * ID of the task execution
+     * </pre>
+     *
      * <code>.flyteidl.core.TaskExecutionIdentifier task_execution_id = 1;</code>
      */
     public boolean hasTaskExecutionId() {
       return taskExecutionId_ != null;
     }
     /**
+     * <pre>
+     * ID of the task execution
+     * </pre>
+     *
      * <code>.flyteidl.core.TaskExecutionIdentifier task_execution_id = 1;</code>
      */
     public flyteidl.core.IdentifierOuterClass.TaskExecutionIdentifier getTaskExecutionId() {
       return taskExecutionId_ == null ? flyteidl.core.IdentifierOuterClass.TaskExecutionIdentifier.getDefaultInstance() : taskExecutionId_;
     }
     /**
+     * <pre>
+     * ID of the task execution
+     * </pre>
+     *
      * <code>.flyteidl.core.TaskExecutionIdentifier task_execution_id = 1;</code>
      */
     public flyteidl.core.IdentifierOuterClass.TaskExecutionIdentifierOrBuilder getTaskExecutionIdOrBuilder() {
@@ -460,6 +564,10 @@ public final class Agent {
     public static final int NAMESPACE_FIELD_NUMBER = 2;
     private volatile java.lang.Object namespace_;
     /**
+     * <pre>
+     * k8s namespace where the task is executed in
+     * </pre>
+     *
      * <code>string namespace = 2;</code>
      */
     public java.lang.String getNamespace() {
@@ -475,6 +583,10 @@ public final class Agent {
       }
     }
     /**
+     * <pre>
+     * k8s namespace where the task is executed in
+     * </pre>
+     *
      * <code>string namespace = 2;</code>
      */
     public com.google.protobuf.ByteString
@@ -518,6 +630,10 @@ public final class Agent {
       return internalGetLabels().getMap().size();
     }
     /**
+     * <pre>
+     * Labels attached to the task execution
+     * </pre>
+     *
      * <code>map&lt;string, string&gt; labels = 3;</code>
      */
 
@@ -534,6 +650,10 @@ public final class Agent {
       return getLabelsMap();
     }
     /**
+     * <pre>
+     * Labels attached to the task execution
+     * </pre>
+     *
      * <code>map&lt;string, string&gt; labels = 3;</code>
      */
 
@@ -541,6 +661,10 @@ public final class Agent {
       return internalGetLabels().getMap();
     }
     /**
+     * <pre>
+     * Labels attached to the task execution
+     * </pre>
+     *
      * <code>map&lt;string, string&gt; labels = 3;</code>
      */
 
@@ -553,6 +677,10 @@ public final class Agent {
       return map.containsKey(key) ? map.get(key) : defaultValue;
     }
     /**
+     * <pre>
+     * Labels attached to the task execution
+     * </pre>
+     *
      * <code>map&lt;string, string&gt; labels = 3;</code>
      */
 
@@ -594,6 +722,10 @@ public final class Agent {
       return internalGetAnnotations().getMap().size();
     }
     /**
+     * <pre>
+     * Annotations attached to the task execution
+     * </pre>
+     *
      * <code>map&lt;string, string&gt; annotations = 4;</code>
      */
 
@@ -610,6 +742,10 @@ public final class Agent {
       return getAnnotationsMap();
     }
     /**
+     * <pre>
+     * Annotations attached to the task execution
+     * </pre>
+     *
      * <code>map&lt;string, string&gt; annotations = 4;</code>
      */
 
@@ -617,6 +753,10 @@ public final class Agent {
       return internalGetAnnotations().getMap();
     }
     /**
+     * <pre>
+     * Annotations attached to the task execution
+     * </pre>
+     *
      * <code>map&lt;string, string&gt; annotations = 4;</code>
      */
 
@@ -629,6 +769,10 @@ public final class Agent {
       return map.containsKey(key) ? map.get(key) : defaultValue;
     }
     /**
+     * <pre>
+     * Annotations attached to the task execution
+     * </pre>
+     *
      * <code>map&lt;string, string&gt; annotations = 4;</code>
      */
 
@@ -646,6 +790,10 @@ public final class Agent {
     public static final int K8S_SERVICE_ACCOUNT_FIELD_NUMBER = 5;
     private volatile java.lang.Object k8SServiceAccount_;
     /**
+     * <pre>
+     * k8s service account associated with the task execution
+     * </pre>
+     *
      * <code>string k8s_service_account = 5;</code>
      */
     public java.lang.String getK8SServiceAccount() {
@@ -661,6 +809,10 @@ public final class Agent {
       }
     }
     /**
+     * <pre>
+     * k8s service account associated with the task execution
+     * </pre>
+     *
      * <code>string k8s_service_account = 5;</code>
      */
     public com.google.protobuf.ByteString
@@ -704,6 +856,10 @@ public final class Agent {
       return internalGetEnvironmentVariables().getMap().size();
     }
     /**
+     * <pre>
+     * Environment variables attached to the task execution
+     * </pre>
+     *
      * <code>map&lt;string, string&gt; environment_variables = 6;</code>
      */
 
@@ -720,6 +876,10 @@ public final class Agent {
       return getEnvironmentVariablesMap();
     }
     /**
+     * <pre>
+     * Environment variables attached to the task execution
+     * </pre>
+     *
      * <code>map&lt;string, string&gt; environment_variables = 6;</code>
      */
 
@@ -727,6 +887,10 @@ public final class Agent {
       return internalGetEnvironmentVariables().getMap();
     }
     /**
+     * <pre>
+     * Environment variables attached to the task execution
+     * </pre>
+     *
      * <code>map&lt;string, string&gt; environment_variables = 6;</code>
      */
 
@@ -739,6 +903,10 @@ public final class Agent {
       return map.containsKey(key) ? map.get(key) : defaultValue;
     }
     /**
+     * <pre>
+     * Environment variables attached to the task execution
+     * </pre>
+     *
      * <code>map&lt;string, string&gt; environment_variables = 6;</code>
      */
 
@@ -1000,6 +1168,10 @@ public final class Agent {
       return builder;
     }
     /**
+     * <pre>
+     * Represents a subset of runtime task execution metadata that are relevant to external plugins.
+     * </pre>
+     *
      * Protobuf type {@code flyteidl.admin.TaskExecutionMetadata}
      */
     public static final class Builder extends
@@ -1221,12 +1393,20 @@ public final class Agent {
       private com.google.protobuf.SingleFieldBuilderV3<
           flyteidl.core.IdentifierOuterClass.TaskExecutionIdentifier, flyteidl.core.IdentifierOuterClass.TaskExecutionIdentifier.Builder, flyteidl.core.IdentifierOuterClass.TaskExecutionIdentifierOrBuilder> taskExecutionIdBuilder_;
       /**
+       * <pre>
+       * ID of the task execution
+       * </pre>
+       *
        * <code>.flyteidl.core.TaskExecutionIdentifier task_execution_id = 1;</code>
        */
       public boolean hasTaskExecutionId() {
         return taskExecutionIdBuilder_ != null || taskExecutionId_ != null;
       }
       /**
+       * <pre>
+       * ID of the task execution
+       * </pre>
+       *
        * <code>.flyteidl.core.TaskExecutionIdentifier task_execution_id = 1;</code>
        */
       public flyteidl.core.IdentifierOuterClass.TaskExecutionIdentifier getTaskExecutionId() {
@@ -1237,6 +1417,10 @@ public final class Agent {
         }
       }
       /**
+       * <pre>
+       * ID of the task execution
+       * </pre>
+       *
        * <code>.flyteidl.core.TaskExecutionIdentifier task_execution_id = 1;</code>
        */
       public Builder setTaskExecutionId(flyteidl.core.IdentifierOuterClass.TaskExecutionIdentifier value) {
@@ -1253,6 +1437,10 @@ public final class Agent {
         return this;
       }
       /**
+       * <pre>
+       * ID of the task execution
+       * </pre>
+       *
        * <code>.flyteidl.core.TaskExecutionIdentifier task_execution_id = 1;</code>
        */
       public Builder setTaskExecutionId(
@@ -1267,6 +1455,10 @@ public final class Agent {
         return this;
       }
       /**
+       * <pre>
+       * ID of the task execution
+       * </pre>
+       *
        * <code>.flyteidl.core.TaskExecutionIdentifier task_execution_id = 1;</code>
        */
       public Builder mergeTaskExecutionId(flyteidl.core.IdentifierOuterClass.TaskExecutionIdentifier value) {
@@ -1285,6 +1477,10 @@ public final class Agent {
         return this;
       }
       /**
+       * <pre>
+       * ID of the task execution
+       * </pre>
+       *
        * <code>.flyteidl.core.TaskExecutionIdentifier task_execution_id = 1;</code>
        */
       public Builder clearTaskExecutionId() {
@@ -1299,6 +1495,10 @@ public final class Agent {
         return this;
       }
       /**
+       * <pre>
+       * ID of the task execution
+       * </pre>
+       *
        * <code>.flyteidl.core.TaskExecutionIdentifier task_execution_id = 1;</code>
        */
       public flyteidl.core.IdentifierOuterClass.TaskExecutionIdentifier.Builder getTaskExecutionIdBuilder() {
@@ -1307,6 +1507,10 @@ public final class Agent {
         return getTaskExecutionIdFieldBuilder().getBuilder();
       }
       /**
+       * <pre>
+       * ID of the task execution
+       * </pre>
+       *
        * <code>.flyteidl.core.TaskExecutionIdentifier task_execution_id = 1;</code>
        */
       public flyteidl.core.IdentifierOuterClass.TaskExecutionIdentifierOrBuilder getTaskExecutionIdOrBuilder() {
@@ -1318,6 +1522,10 @@ public final class Agent {
         }
       }
       /**
+       * <pre>
+       * ID of the task execution
+       * </pre>
+       *
        * <code>.flyteidl.core.TaskExecutionIdentifier task_execution_id = 1;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
@@ -1336,6 +1544,10 @@ public final class Agent {
 
       private java.lang.Object namespace_ = "";
       /**
+       * <pre>
+       * k8s namespace where the task is executed in
+       * </pre>
+       *
        * <code>string namespace = 2;</code>
        */
       public java.lang.String getNamespace() {
@@ -1351,6 +1563,10 @@ public final class Agent {
         }
       }
       /**
+       * <pre>
+       * k8s namespace where the task is executed in
+       * </pre>
+       *
        * <code>string namespace = 2;</code>
        */
       public com.google.protobuf.ByteString
@@ -1367,6 +1583,10 @@ public final class Agent {
         }
       }
       /**
+       * <pre>
+       * k8s namespace where the task is executed in
+       * </pre>
+       *
        * <code>string namespace = 2;</code>
        */
       public Builder setNamespace(
@@ -1380,6 +1600,10 @@ public final class Agent {
         return this;
       }
       /**
+       * <pre>
+       * k8s namespace where the task is executed in
+       * </pre>
+       *
        * <code>string namespace = 2;</code>
        */
       public Builder clearNamespace() {
@@ -1389,6 +1613,10 @@ public final class Agent {
         return this;
       }
       /**
+       * <pre>
+       * k8s namespace where the task is executed in
+       * </pre>
+       *
        * <code>string namespace = 2;</code>
        */
       public Builder setNamespaceBytes(
@@ -1430,6 +1658,10 @@ public final class Agent {
         return internalGetLabels().getMap().size();
       }
       /**
+       * <pre>
+       * Labels attached to the task execution
+       * </pre>
+       *
        * <code>map&lt;string, string&gt; labels = 3;</code>
        */
 
@@ -1446,6 +1678,10 @@ public final class Agent {
         return getLabelsMap();
       }
       /**
+       * <pre>
+       * Labels attached to the task execution
+       * </pre>
+       *
        * <code>map&lt;string, string&gt; labels = 3;</code>
        */
 
@@ -1453,6 +1689,10 @@ public final class Agent {
         return internalGetLabels().getMap();
       }
       /**
+       * <pre>
+       * Labels attached to the task execution
+       * </pre>
+       *
        * <code>map&lt;string, string&gt; labels = 3;</code>
        */
 
@@ -1465,6 +1705,10 @@ public final class Agent {
         return map.containsKey(key) ? map.get(key) : defaultValue;
       }
       /**
+       * <pre>
+       * Labels attached to the task execution
+       * </pre>
+       *
        * <code>map&lt;string, string&gt; labels = 3;</code>
        */
 
@@ -1485,6 +1729,10 @@ public final class Agent {
         return this;
       }
       /**
+       * <pre>
+       * Labels attached to the task execution
+       * </pre>
+       *
        * <code>map&lt;string, string&gt; labels = 3;</code>
        */
 
@@ -1504,6 +1752,10 @@ public final class Agent {
         return internalGetMutableLabels().getMutableMap();
       }
       /**
+       * <pre>
+       * Labels attached to the task execution
+       * </pre>
+       *
        * <code>map&lt;string, string&gt; labels = 3;</code>
        */
       public Builder putLabels(
@@ -1516,6 +1768,10 @@ public final class Agent {
         return this;
       }
       /**
+       * <pre>
+       * Labels attached to the task execution
+       * </pre>
+       *
        * <code>map&lt;string, string&gt; labels = 3;</code>
        */
 
@@ -1553,6 +1809,10 @@ public final class Agent {
         return internalGetAnnotations().getMap().size();
       }
       /**
+       * <pre>
+       * Annotations attached to the task execution
+       * </pre>
+       *
        * <code>map&lt;string, string&gt; annotations = 4;</code>
        */
 
@@ -1569,6 +1829,10 @@ public final class Agent {
         return getAnnotationsMap();
       }
       /**
+       * <pre>
+       * Annotations attached to the task execution
+       * </pre>
+       *
        * <code>map&lt;string, string&gt; annotations = 4;</code>
        */
 
@@ -1576,6 +1840,10 @@ public final class Agent {
         return internalGetAnnotations().getMap();
       }
       /**
+       * <pre>
+       * Annotations attached to the task execution
+       * </pre>
+       *
        * <code>map&lt;string, string&gt; annotations = 4;</code>
        */
 
@@ -1588,6 +1856,10 @@ public final class Agent {
         return map.containsKey(key) ? map.get(key) : defaultValue;
       }
       /**
+       * <pre>
+       * Annotations attached to the task execution
+       * </pre>
+       *
        * <code>map&lt;string, string&gt; annotations = 4;</code>
        */
 
@@ -1608,6 +1880,10 @@ public final class Agent {
         return this;
       }
       /**
+       * <pre>
+       * Annotations attached to the task execution
+       * </pre>
+       *
        * <code>map&lt;string, string&gt; annotations = 4;</code>
        */
 
@@ -1627,6 +1903,10 @@ public final class Agent {
         return internalGetMutableAnnotations().getMutableMap();
       }
       /**
+       * <pre>
+       * Annotations attached to the task execution
+       * </pre>
+       *
        * <code>map&lt;string, string&gt; annotations = 4;</code>
        */
       public Builder putAnnotations(
@@ -1639,6 +1919,10 @@ public final class Agent {
         return this;
       }
       /**
+       * <pre>
+       * Annotations attached to the task execution
+       * </pre>
+       *
        * <code>map&lt;string, string&gt; annotations = 4;</code>
        */
 
@@ -1651,6 +1935,10 @@ public final class Agent {
 
       private java.lang.Object k8SServiceAccount_ = "";
       /**
+       * <pre>
+       * k8s service account associated with the task execution
+       * </pre>
+       *
        * <code>string k8s_service_account = 5;</code>
        */
       public java.lang.String getK8SServiceAccount() {
@@ -1666,6 +1954,10 @@ public final class Agent {
         }
       }
       /**
+       * <pre>
+       * k8s service account associated with the task execution
+       * </pre>
+       *
        * <code>string k8s_service_account = 5;</code>
        */
       public com.google.protobuf.ByteString
@@ -1682,6 +1974,10 @@ public final class Agent {
         }
       }
       /**
+       * <pre>
+       * k8s service account associated with the task execution
+       * </pre>
+       *
        * <code>string k8s_service_account = 5;</code>
        */
       public Builder setK8SServiceAccount(
@@ -1695,6 +1991,10 @@ public final class Agent {
         return this;
       }
       /**
+       * <pre>
+       * k8s service account associated with the task execution
+       * </pre>
+       *
        * <code>string k8s_service_account = 5;</code>
        */
       public Builder clearK8SServiceAccount() {
@@ -1704,6 +2004,10 @@ public final class Agent {
         return this;
       }
       /**
+       * <pre>
+       * k8s service account associated with the task execution
+       * </pre>
+       *
        * <code>string k8s_service_account = 5;</code>
        */
       public Builder setK8SServiceAccountBytes(
@@ -1745,6 +2049,10 @@ public final class Agent {
         return internalGetEnvironmentVariables().getMap().size();
       }
       /**
+       * <pre>
+       * Environment variables attached to the task execution
+       * </pre>
+       *
        * <code>map&lt;string, string&gt; environment_variables = 6;</code>
        */
 
@@ -1761,6 +2069,10 @@ public final class Agent {
         return getEnvironmentVariablesMap();
       }
       /**
+       * <pre>
+       * Environment variables attached to the task execution
+       * </pre>
+       *
        * <code>map&lt;string, string&gt; environment_variables = 6;</code>
        */
 
@@ -1768,6 +2080,10 @@ public final class Agent {
         return internalGetEnvironmentVariables().getMap();
       }
       /**
+       * <pre>
+       * Environment variables attached to the task execution
+       * </pre>
+       *
        * <code>map&lt;string, string&gt; environment_variables = 6;</code>
        */
 
@@ -1780,6 +2096,10 @@ public final class Agent {
         return map.containsKey(key) ? map.get(key) : defaultValue;
       }
       /**
+       * <pre>
+       * Environment variables attached to the task execution
+       * </pre>
+       *
        * <code>map&lt;string, string&gt; environment_variables = 6;</code>
        */
 
@@ -1800,6 +2120,10 @@ public final class Agent {
         return this;
       }
       /**
+       * <pre>
+       * Environment variables attached to the task execution
+       * </pre>
+       *
        * <code>map&lt;string, string&gt; environment_variables = 6;</code>
        */
 
@@ -1819,6 +2143,10 @@ public final class Agent {
         return internalGetMutableEnvironmentVariables().getMutableMap();
       }
       /**
+       * <pre>
+       * Environment variables attached to the task execution
+       * </pre>
+       *
        * <code>map&lt;string, string&gt; environment_variables = 6;</code>
        */
       public Builder putEnvironmentVariables(
@@ -1831,6 +2159,10 @@ public final class Agent {
         return this;
       }
       /**
+       * <pre>
+       * Environment variables attached to the task execution
+       * </pre>
+       *
        * <code>map&lt;string, string&gt; environment_variables = 6;</code>
        */
 
@@ -1973,7 +2305,7 @@ public final class Agent {
 
     /**
      * <pre>
-     * subset of task execution metadata that are relevant to out-core plugins
+     * subset of runtime task execution metadata that are relevant to external plugins
      * </pre>
      *
      * <code>.flyteidl.admin.TaskExecutionMetadata task_execution_metadata = 4;</code>
@@ -1981,7 +2313,7 @@ public final class Agent {
     boolean hasTaskExecutionMetadata();
     /**
      * <pre>
-     * subset of task execution metadata that are relevant to out-core plugins
+     * subset of runtime task execution metadata that are relevant to external plugins
      * </pre>
      *
      * <code>.flyteidl.admin.TaskExecutionMetadata task_execution_metadata = 4;</code>
@@ -1989,7 +2321,7 @@ public final class Agent {
     flyteidl.admin.Agent.TaskExecutionMetadata getTaskExecutionMetadata();
     /**
      * <pre>
-     * subset of task execution metadata that are relevant to out-core plugins
+     * subset of runtime task execution metadata that are relevant to external plugins
      * </pre>
      *
      * <code>.flyteidl.admin.TaskExecutionMetadata task_execution_metadata = 4;</code>
@@ -2235,7 +2567,7 @@ public final class Agent {
     private flyteidl.admin.Agent.TaskExecutionMetadata taskExecutionMetadata_;
     /**
      * <pre>
-     * subset of task execution metadata that are relevant to out-core plugins
+     * subset of runtime task execution metadata that are relevant to external plugins
      * </pre>
      *
      * <code>.flyteidl.admin.TaskExecutionMetadata task_execution_metadata = 4;</code>
@@ -2245,7 +2577,7 @@ public final class Agent {
     }
     /**
      * <pre>
-     * subset of task execution metadata that are relevant to out-core plugins
+     * subset of runtime task execution metadata that are relevant to external plugins
      * </pre>
      *
      * <code>.flyteidl.admin.TaskExecutionMetadata task_execution_metadata = 4;</code>
@@ -2255,7 +2587,7 @@ public final class Agent {
     }
     /**
      * <pre>
-     * subset of task execution metadata that are relevant to out-core plugins
+     * subset of runtime task execution metadata that are relevant to external plugins
      * </pre>
      *
      * <code>.flyteidl.admin.TaskExecutionMetadata task_execution_metadata = 4;</code>
@@ -3078,7 +3410,7 @@ public final class Agent {
           flyteidl.admin.Agent.TaskExecutionMetadata, flyteidl.admin.Agent.TaskExecutionMetadata.Builder, flyteidl.admin.Agent.TaskExecutionMetadataOrBuilder> taskExecutionMetadataBuilder_;
       /**
        * <pre>
-       * subset of task execution metadata that are relevant to out-core plugins
+       * subset of runtime task execution metadata that are relevant to external plugins
        * </pre>
        *
        * <code>.flyteidl.admin.TaskExecutionMetadata task_execution_metadata = 4;</code>
@@ -3088,7 +3420,7 @@ public final class Agent {
       }
       /**
        * <pre>
-       * subset of task execution metadata that are relevant to out-core plugins
+       * subset of runtime task execution metadata that are relevant to external plugins
        * </pre>
        *
        * <code>.flyteidl.admin.TaskExecutionMetadata task_execution_metadata = 4;</code>
@@ -3102,7 +3434,7 @@ public final class Agent {
       }
       /**
        * <pre>
-       * subset of task execution metadata that are relevant to out-core plugins
+       * subset of runtime task execution metadata that are relevant to external plugins
        * </pre>
        *
        * <code>.flyteidl.admin.TaskExecutionMetadata task_execution_metadata = 4;</code>
@@ -3122,7 +3454,7 @@ public final class Agent {
       }
       /**
        * <pre>
-       * subset of task execution metadata that are relevant to out-core plugins
+       * subset of runtime task execution metadata that are relevant to external plugins
        * </pre>
        *
        * <code>.flyteidl.admin.TaskExecutionMetadata task_execution_metadata = 4;</code>
@@ -3140,7 +3472,7 @@ public final class Agent {
       }
       /**
        * <pre>
-       * subset of task execution metadata that are relevant to out-core plugins
+       * subset of runtime task execution metadata that are relevant to external plugins
        * </pre>
        *
        * <code>.flyteidl.admin.TaskExecutionMetadata task_execution_metadata = 4;</code>
@@ -3162,7 +3494,7 @@ public final class Agent {
       }
       /**
        * <pre>
-       * subset of task execution metadata that are relevant to out-core plugins
+       * subset of runtime task execution metadata that are relevant to external plugins
        * </pre>
        *
        * <code>.flyteidl.admin.TaskExecutionMetadata task_execution_metadata = 4;</code>
@@ -3180,7 +3512,7 @@ public final class Agent {
       }
       /**
        * <pre>
-       * subset of task execution metadata that are relevant to out-core plugins
+       * subset of runtime task execution metadata that are relevant to external plugins
        * </pre>
        *
        * <code>.flyteidl.admin.TaskExecutionMetadata task_execution_metadata = 4;</code>
@@ -3192,7 +3524,7 @@ public final class Agent {
       }
       /**
        * <pre>
-       * subset of task execution metadata that are relevant to out-core plugins
+       * subset of runtime task execution metadata that are relevant to external plugins
        * </pre>
        *
        * <code>.flyteidl.admin.TaskExecutionMetadata task_execution_metadata = 4;</code>
@@ -3207,7 +3539,7 @@ public final class Agent {
       }
       /**
        * <pre>
-       * subset of task execution metadata that are relevant to out-core plugins
+       * subset of runtime task execution metadata that are relevant to external plugins
        * </pre>
        *
        * <code>.flyteidl.admin.TaskExecutionMetadata task_execution_metadata = 4;</code>
