@@ -16,6 +16,8 @@ import re  # noqa: F401
 
 import six
 
+from flyteadmin.models.secret_mount_env_var import SecretMountEnvVar  # noqa: F401,E501
+from flyteadmin.models.secret_mount_file import SecretMountFile  # noqa: F401,E501
 from flyteadmin.models.secret_mount_type import SecretMountType  # noqa: F401,E501
 
 
@@ -37,7 +39,8 @@ class CoreSecret(object):
         'group_version': 'str',
         'key': 'str',
         'mount_requirement': 'SecretMountType',
-        'env_name': 'str'
+        'env_var': 'SecretMountEnvVar',
+        'file': 'SecretMountFile'
     }
 
     attribute_map = {
@@ -45,17 +48,19 @@ class CoreSecret(object):
         'group_version': 'group_version',
         'key': 'key',
         'mount_requirement': 'mount_requirement',
-        'env_name': 'env_name'
+        'env_var': 'env_var',
+        'file': 'file'
     }
 
-    def __init__(self, group=None, group_version=None, key=None, mount_requirement=None, env_name=None):  # noqa: E501
+    def __init__(self, group=None, group_version=None, key=None, mount_requirement=None, env_var=None, file=None):  # noqa: E501
         """CoreSecret - a model defined in Swagger"""  # noqa: E501
 
         self._group = None
         self._group_version = None
         self._key = None
         self._mount_requirement = None
-        self._env_name = None
+        self._env_var = None
+        self._file = None
         self.discriminator = None
 
         if group is not None:
@@ -66,8 +71,10 @@ class CoreSecret(object):
             self.key = key
         if mount_requirement is not None:
             self.mount_requirement = mount_requirement
-        if env_name is not None:
-            self.env_name = env_name
+        if env_var is not None:
+            self.env_var = env_var
+        if file is not None:
+            self.file = file
 
     @property
     def group(self):
@@ -154,25 +161,46 @@ class CoreSecret(object):
         self._mount_requirement = mount_requirement
 
     @property
-    def env_name(self):
-        """Gets the env_name of this CoreSecret.  # noqa: E501
+    def env_var(self):
+        """Gets the env_var of this CoreSecret.  # noqa: E501
 
 
-        :return: The env_name of this CoreSecret.  # noqa: E501
-        :rtype: str
+        :return: The env_var of this CoreSecret.  # noqa: E501
+        :rtype: SecretMountEnvVar
         """
-        return self._env_name
+        return self._env_var
 
-    @env_name.setter
-    def env_name(self, env_name):
-        """Sets the env_name of this CoreSecret.
+    @env_var.setter
+    def env_var(self, env_var):
+        """Sets the env_var of this CoreSecret.
 
 
-        :param env_name: The env_name of this CoreSecret.  # noqa: E501
-        :type: str
+        :param env_var: The env_var of this CoreSecret.  # noqa: E501
+        :type: SecretMountEnvVar
         """
 
-        self._env_name = env_name
+        self._env_var = env_var
+
+    @property
+    def file(self):
+        """Gets the file of this CoreSecret.  # noqa: E501
+
+
+        :return: The file of this CoreSecret.  # noqa: E501
+        :rtype: SecretMountFile
+        """
+        return self._file
+
+    @file.setter
+    def file(self, file):
+        """Sets the file of this CoreSecret.
+
+
+        :param file: The file of this CoreSecret.  # noqa: E501
+        :type: SecretMountFile
+        """
+
+        self._file = file
 
     def to_dict(self):
         """Returns the model properties as a dict"""

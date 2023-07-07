@@ -129,6 +129,24 @@
         }
       }
     },
+    "SecretMountEnvVar": {
+      "type": "object",
+      "properties": {
+        "name": {
+          "type": "string"
+        }
+      },
+      "description": "The name of the environment variable if the Secret is injected as environment variable. If ommitted, the default\nFLYTE_SECRETS_ENV_PREFIX prefix will be used."
+    },
+    "SecretMountFile": {
+      "type": "object",
+      "properties": {
+        "path": {
+          "type": "string"
+        }
+      },
+      "description": "The path where the Secret will be mounted. The execution will fail if the underlying key management system cannot \nsatisfy that requirement. If not provided, the default location will depend on the key management system."
+    },
     "SecretMountType": {
       "type": "string",
       "enum": [
@@ -751,9 +769,11 @@
           "$ref": "#/definitions/SecretMountType",
           "title": "mount_requirement is optional. Indicates where the secret has to be mounted. If provided, the execution will fail\nif the underlying key management system cannot satisfy that requirement. If not provided, the default location\nwill depend on the key management system.\n+optional"
         },
-        "env_name": {
-          "type": "string",
-          "title": "The name of the environment variable, if the Secret is injected as environment variable. If ommitted, the default\nFLYTE_SECRETS_ENV_PREFIX prefix will be used.\n+optional"
+        "env_var": {
+          "$ref": "#/definitions/SecretMountEnvVar"
+        },
+        "file": {
+          "$ref": "#/definitions/SecretMountFile"
         }
       },
       "description": "Secret encapsulates information about the secret a task needs to proceed. An environment variable\nFLYTE_SECRETS_ENV_PREFIX will be passed to indicate the prefix of the environment variables that will be present if\nsecrets are passed through environment variables.\nFLYTE_SECRETS_DEFAULT_DIR will be passed to indicate the prefix of the path where secrets will be mounted if secrets\nare passed through file mounts."

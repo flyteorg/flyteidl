@@ -341,6 +341,8 @@ Class | Method | HTTP request | Description
  - [RuntimeMetadataRuntimeType](docs/RuntimeMetadataRuntimeType.md)
  - [SchemaColumnSchemaColumnType](docs/SchemaColumnSchemaColumnType.md)
  - [SchemaTypeSchemaColumn](docs/SchemaTypeSchemaColumn.md)
+ - [SecretMountEnvVar](docs/SecretMountEnvVar.md)
+ - [SecretMountFile](docs/SecretMountFile.md)
  - [SecretMountType](docs/SecretMountType.md)
  - [SortDirection](docs/SortDirection.md)
  - [SqlDialect](docs/SqlDialect.md)

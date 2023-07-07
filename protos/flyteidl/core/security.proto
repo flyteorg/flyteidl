@@ -42,12 +42,27 @@ message Secret {
     // if the underlying key management system cannot satisfy that requirement. If not provided, the default location
     // will depend on the key management system.
     // +optional
-    MountType mount_requirement = 4;
+    MountType mount_requirement = 4 [deprecated=true];
 
-    // The name of the environment variable, if the Secret is injected as environment variable. If ommitted, the default
-    // FLYTE_SECRETS_ENV_PREFIX prefix will be used.
+    // mount_target is optional. Indicates how the secret should be mounted. Secrets can be mounted as file, or as 
+    // environment variable. 
     // +optional
-    string env_name = 5;
+    oneof mount_target {
+        MountEnvVar env_var = 5;
+        MountFile file = 6;
+    }
+
+    // The name of the environment variable if the Secret is injected as environment variable. If ommitted, the default
+    // FLYTE_SECRETS_ENV_PREFIX prefix will be used.
+    message MountEnvVar {
+        string name = 1;
+    }
+
+    // The path where the Secret will be mounted. The execution will fail if the underlying key management system cannot 
+    // satisfy that requirement. If not provided, the default location will depend on the key management system.
+    message MountFile {
+        string path = 1;
+    }
 }
 
 // OAuth2Client encapsulates OAuth2 Client Credentials to be used when making calls on behalf of that task.

@@ -5912,8 +5912,11 @@ export namespace flyteidl {
             /** Secret mountRequirement */
             mountRequirement?: (flyteidl.core.Secret.MountType|null);
 
-            /** Secret envName */
-            envName?: (string|null);
+            /** Secret envVar */
+            envVar?: (flyteidl.core.Secret.IMountEnvVar|null);
+
+            /** Secret file */
+            file?: (flyteidl.core.Secret.IMountFile|null);
         }
 
         /** Represents a Secret. */
@@ -5937,8 +5940,14 @@ export namespace flyteidl {
             /** Secret mountRequirement. */
             public mountRequirement: flyteidl.core.Secret.MountType;
 
-            /** Secret envName. */
-            public envName: string;
+            /** Secret envVar. */
+            public envVar?: (flyteidl.core.Secret.IMountEnvVar|null);
+
+            /** Secret file. */
+            public file?: (flyteidl.core.Secret.IMountFile|null);
+
+            /** Secret mountTarget. */
+            public mountTarget?: ("envVar"|"file");
 
             /**
              * Creates a new Secret instance using the specified properties.
@@ -5980,6 +5989,110 @@ export namespace flyteidl {
                 ANY = 0,
                 ENV_VAR = 1,
                 FILE = 2
+            }
+
+            /** Properties of a MountEnvVar. */
+            interface IMountEnvVar {
+
+                /** MountEnvVar name */
+                name?: (string|null);
+            }
+
+            /** Represents a MountEnvVar. */
+            class MountEnvVar implements IMountEnvVar {
+
+                /**
+                 * Constructs a new MountEnvVar.
+                 * @param [properties] Properties to set
+                 */
+                constructor(properties?: flyteidl.core.Secret.IMountEnvVar);
+
+                /** MountEnvVar name. */
+                public name: string;
+
+                /**
+                 * Creates a new MountEnvVar instance using the specified properties.
+                 * @param [properties] Properties to set
+                 * @returns MountEnvVar instance
+                 */
+                public static create(properties?: flyteidl.core.Secret.IMountEnvVar): flyteidl.core.Secret.MountEnvVar;
+
+                /**
+                 * Encodes the specified MountEnvVar message. Does not implicitly {@link flyteidl.core.Secret.MountEnvVar.verify|verify} messages.
+                 * @param message MountEnvVar message or plain object to encode
+                 * @param [writer] Writer to encode to
+                 * @returns Writer
+                 */
+                public static encode(message: flyteidl.core.Secret.IMountEnvVar, writer?: $protobuf.Writer): $protobuf.Writer;
+
+                /**
+                 * Decodes a MountEnvVar message from the specified reader or buffer.
+                 * @param reader Reader or buffer to decode from
+                 * @param [length] Message length if known beforehand
+                 * @returns MountEnvVar
+                 * @throws {Error} If the payload is not a reader or valid buffer
+                 * @throws {$protobuf.util.ProtocolError} If required fields are missing
+                 */
+                public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): flyteidl.core.Secret.MountEnvVar;
+
+                /**
+                 * Verifies a MountEnvVar message.
+                 * @param message Plain object to verify
+                 * @returns `null` if valid, otherwise the reason why it is not
+                 */
+                public static verify(message: { [k: string]: any }): (string|null);
+            }
+
+            /** Properties of a MountFile. */
+            interface IMountFile {
+
+                /** MountFile path */
+                path?: (string|null);
+            }
+
+            /** Represents a MountFile. */
+            class MountFile implements IMountFile {
+
+                /**
+                 * Constructs a new MountFile.
+                 * @param [properties] Properties to set
+                 */
+                constructor(properties?: flyteidl.core.Secret.IMountFile);
+
+                /** MountFile path. */
+                public path: string;
+
+                /**
+                 * Creates a new MountFile instance using the specified properties.
+                 * @param [properties] Properties to set
+                 * @returns MountFile instance
+                 */
+                public static create(properties?: flyteidl.core.Secret.IMountFile): flyteidl.core.Secret.MountFile;
+
+                /**
+                 * Encodes the specified MountFile message. Does not implicitly {@link flyteidl.core.Secret.MountFile.verify|verify} messages.
+                 * @param message MountFile message or plain object to encode
+                 * @param [writer] Writer to encode to
+                 * @returns Writer
+                 */
+                public static encode(message: flyteidl.core.Secret.IMountFile, writer?: $protobuf.Writer): $protobuf.Writer;
+
+                /**
+                 * Decodes a MountFile message from the specified reader or buffer.
+                 * @param reader Reader or buffer to decode from
+                 * @param [length] Message length if known beforehand
+                 * @returns MountFile
+                 * @throws {Error} If the payload is not a reader or valid buffer
+                 * @throws {$protobuf.util.ProtocolError} If required fields are missing
+                 */
+                public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): flyteidl.core.Secret.MountFile;
+
+                /**
+                 * Verifies a MountFile message.
+                 * @param message Plain object to verify
+                 * @returns `null` if valid, otherwise the reason why it is not
+                 */
+                public static verify(message: { [k: string]: any }): (string|null);
             }
         }
 

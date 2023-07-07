@@ -758,16 +758,33 @@ pub struct Secret {
     /// if the underlying key management system cannot satisfy that requirement. If not provided, the default location
     /// will depend on the key management system.
     /// +optional
+    #[deprecated]
     #[prost(enumeration="secret::MountType", tag="4")]
     pub mount_requirement: i32,
-    /// The name of the environment variable, if the Secret is injected as environment variable. If ommitted, the default
-    /// FLYTE_SECRETS_ENV_PREFIX prefix will be used.
+    /// mount_target is optional. Indicates how the secret should be mounted. Secrets can be mounted as file, or as 
+    /// environment variable. 
     /// +optional
-    #[prost(string, tag="5")]
-    pub env_name: ::prost::alloc::string::String,
+    #[prost(oneof="secret::MountTarget", tags="5, 6")]
+    pub mount_target: ::core::option::Option<secret::MountTarget>,
 }
 /// Nested message and enum types in `Secret`.
 pub mod secret {
+    /// The name of the environment variable if the Secret is injected as environment variable. If ommitted, the default
+    /// FLYTE_SECRETS_ENV_PREFIX prefix will be used.
+    #[allow(clippy::derive_partial_eq_without_eq)]
+#[derive(Clone, PartialEq, ::prost::Message)]
+    pub struct MountEnvVar {
+        #[prost(string, tag="1")]
+        pub name: ::prost::alloc::string::String,
+    }
+    /// The path where the Secret will be mounted. The execution will fail if the underlying key management system cannot 
+    /// satisfy that requirement. If not provided, the default location will depend on the key management system.
+    #[allow(clippy::derive_partial_eq_without_eq)]
+#[derive(Clone, PartialEq, ::prost::Message)]
+    pub struct MountFile {
+        #[prost(string, tag="1")]
+        pub path: ::prost::alloc::string::String,
+    }
     #[derive(Clone, Copy, Debug, PartialEq, Eq, Hash, PartialOrd, Ord, ::prost::Enumeration)]
     #[repr(i32)]
     pub enum MountType {
@@ -799,6 +816,17 @@ pub mod secret {
                 _ => None,
             }
         }
+    }
+    /// mount_target is optional. Indicates how the secret should be mounted. Secrets can be mounted as file, or as 
+    /// environment variable. 
+    /// +optional
+    #[allow(clippy::derive_partial_eq_without_eq)]
+#[derive(Clone, PartialEq, ::prost::Oneof)]
+    pub enum MountTarget {
+        #[prost(message, tag="5")]
+        EnvVar(MountEnvVar),
+        #[prost(message, tag="6")]
+        File(MountFile),
     }
 }
 /// OAuth2Client encapsulates OAuth2 Client Credentials to be used when making calls on behalf of that task.

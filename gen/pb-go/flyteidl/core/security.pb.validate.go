@@ -51,7 +51,33 @@ func (m *Secret) Validate() error {
 
 	// no validation rules for MountRequirement
 
-	// no validation rules for EnvName
+	switch m.MountTarget.(type) {
+
+	case *Secret_EnvVar:
+
+		if v, ok := interface{}(m.GetEnvVar()).(interface{ Validate() error }); ok {
+			if err := v.Validate(); err != nil {
+				return SecretValidationError{
+					field:  "EnvVar",
+					reason: "embedded message failed validation",
+					cause:  err,
+				}
+			}
+		}
+
+	case *Secret_File:
+
+		if v, ok := interface{}(m.GetFile()).(interface{ Validate() error }); ok {
+			if err := v.Validate(); err != nil {
+				return SecretValidationError{
+					field:  "File",
+					reason: "embedded message failed validation",
+					cause:  err,
+				}
+			}
+		}
+
+	}
 
 	return nil
 }
@@ -456,3 +482,139 @@ var _ interface {
 	Cause() error
 	ErrorName() string
 } = SecurityContextValidationError{}
+
+// Validate checks the field values on Secret_MountEnvVar with the rules
+// defined in the proto definition for this message. If any rules are
+// violated, an error is returned.
+func (m *Secret_MountEnvVar) Validate() error {
+	if m == nil {
+		return nil
+	}
+
+	// no validation rules for Name
+
+	return nil
+}
+
+// Secret_MountEnvVarValidationError is the validation error returned by
+// Secret_MountEnvVar.Validate if the designated constraints aren't met.
+type Secret_MountEnvVarValidationError struct {
+	field  string
+	reason string
+	cause  error
+	key    bool
+}
+
+// Field function returns field value.
+func (e Secret_MountEnvVarValidationError) Field() string { return e.field }
+
+// Reason function returns reason value.
+func (e Secret_MountEnvVarValidationError) Reason() string { return e.reason }
+
+// Cause function returns cause value.
+func (e Secret_MountEnvVarValidationError) Cause() error { return e.cause }
+
+// Key function returns key value.
+func (e Secret_MountEnvVarValidationError) Key() bool { return e.key }
+
+// ErrorName returns error name.
+func (e Secret_MountEnvVarValidationError) ErrorName() string {
+	return "Secret_MountEnvVarValidationError"
+}
+
+// Error satisfies the builtin error interface
+func (e Secret_MountEnvVarValidationError) Error() string {
+	cause := ""
+	if e.cause != nil {
+		cause = fmt.Sprintf(" | caused by: %v", e.cause)
+	}
+
+	key := ""
+	if e.key {
+		key = "key for "
+	}
+
+	return fmt.Sprintf(
+		"invalid %sSecret_MountEnvVar.%s: %s%s",
+		key,
+		e.field,
+		e.reason,
+		cause)
+}
+
+var _ error = Secret_MountEnvVarValidationError{}
+
+var _ interface {
+	Field() string
+	Reason() string
+	Key() bool
+	Cause() error
+	ErrorName() string
+} = Secret_MountEnvVarValidationError{}
+
+// Validate checks the field values on Secret_MountFile with the rules defined
+// in the proto definition for this message. If any rules are violated, an
+// error is returned.
+func (m *Secret_MountFile) Validate() error {
+	if m == nil {
+		return nil
+	}
+
+	// no validation rules for Path
+
+	return nil
+}
+
+// Secret_MountFileValidationError is the validation error returned by
+// Secret_MountFile.Validate if the designated constraints aren't met.
+type Secret_MountFileValidationError struct {
+	field  string
+	reason string
+	cause  error
+	key    bool
+}
+
+// Field function returns field value.
+func (e Secret_MountFileValidationError) Field() string { return e.field }
+
+// Reason function returns reason value.
+func (e Secret_MountFileValidationError) Reason() string { return e.reason }
+
+// Cause function returns cause value.
+func (e Secret_MountFileValidationError) Cause() error { return e.cause }
+
+// Key function returns key value.
+func (e Secret_MountFileValidationError) Key() bool { return e.key }
+
+// ErrorName returns error name.
+func (e Secret_MountFileValidationError) ErrorName() string { return "Secret_MountFileValidationError" }
+
+// Error satisfies the builtin error interface
+func (e Secret_MountFileValidationError) Error() string {
+	cause := ""
+	if e.cause != nil {
+		cause = fmt.Sprintf(" | caused by: %v", e.cause)
+	}
+
+	key := ""
+	if e.key {
+		key = "key for "
+	}
+
+	return fmt.Sprintf(
+		"invalid %sSecret_MountFile.%s: %s%s",
+		key,
+		e.field,
+		e.reason,
+		cause)
+}
+
+var _ error = Secret_MountFileValidationError{}
+
+var _ interface {
+	Field() string
+	Reason() string
+	Key() bool
+	Cause() error
+	ErrorName() string
+} = Secret_MountFileValidationError{}

@@ -14161,7 +14161,8 @@
                  * @property {string|null} [groupVersion] Secret groupVersion
                  * @property {string|null} [key] Secret key
                  * @property {flyteidl.core.Secret.MountType|null} [mountRequirement] Secret mountRequirement
-                 * @property {string|null} [envName] Secret envName
+                 * @property {flyteidl.core.Secret.IMountEnvVar|null} [envVar] Secret envVar
+                 * @property {flyteidl.core.Secret.IMountFile|null} [file] Secret file
                  */
     
                 /**
@@ -14212,12 +14213,34 @@
                 Secret.prototype.mountRequirement = 0;
     
                 /**
-                 * Secret envName.
-                 * @member {string} envName
+                 * Secret envVar.
+                 * @member {flyteidl.core.Secret.IMountEnvVar|null|undefined} envVar
                  * @memberof flyteidl.core.Secret
                  * @instance
                  */
-                Secret.prototype.envName = "";
+                Secret.prototype.envVar = null;
+    
+                /**
+                 * Secret file.
+                 * @member {flyteidl.core.Secret.IMountFile|null|undefined} file
+                 * @memberof flyteidl.core.Secret
+                 * @instance
+                 */
+                Secret.prototype.file = null;
+    
+                // OneOf field names bound to virtual getters and setters
+                var $oneOfFields;
+    
+                /**
+                 * Secret mountTarget.
+                 * @member {"envVar"|"file"|undefined} mountTarget
+                 * @memberof flyteidl.core.Secret
+                 * @instance
+                 */
+                Object.defineProperty(Secret.prototype, "mountTarget", {
+                    get: $util.oneOfGetter($oneOfFields = ["envVar", "file"]),
+                    set: $util.oneOfSetter($oneOfFields)
+                });
     
                 /**
                  * Creates a new Secret instance using the specified properties.
@@ -14251,8 +14274,10 @@
                         writer.uint32(/* id 3, wireType 2 =*/26).string(message.key);
                     if (message.mountRequirement != null && message.hasOwnProperty("mountRequirement"))
                         writer.uint32(/* id 4, wireType 0 =*/32).int32(message.mountRequirement);
-                    if (message.envName != null && message.hasOwnProperty("envName"))
-                        writer.uint32(/* id 5, wireType 2 =*/42).string(message.envName);
+                    if (message.envVar != null && message.hasOwnProperty("envVar"))
+                        $root.flyteidl.core.Secret.MountEnvVar.encode(message.envVar, writer.uint32(/* id 5, wireType 2 =*/42).fork()).ldelim();
+                    if (message.file != null && message.hasOwnProperty("file"))
+                        $root.flyteidl.core.Secret.MountFile.encode(message.file, writer.uint32(/* id 6, wireType 2 =*/50).fork()).ldelim();
                     return writer;
                 };
     
@@ -14287,7 +14312,10 @@
                             message.mountRequirement = reader.int32();
                             break;
                         case 5:
-                            message.envName = reader.string();
+                            message.envVar = $root.flyteidl.core.Secret.MountEnvVar.decode(reader, reader.uint32());
+                            break;
+                        case 6:
+                            message.file = $root.flyteidl.core.Secret.MountFile.decode(reader, reader.uint32());
                             break;
                         default:
                             reader.skipType(tag & 7);
@@ -14308,6 +14336,7 @@
                 Secret.verify = function verify(message) {
                     if (typeof message !== "object" || message === null)
                         return "object expected";
+                    var properties = {};
                     if (message.group != null && message.hasOwnProperty("group"))
                         if (!$util.isString(message.group))
                             return "group: string expected";
@@ -14326,9 +14355,24 @@
                         case 2:
                             break;
                         }
-                    if (message.envName != null && message.hasOwnProperty("envName"))
-                        if (!$util.isString(message.envName))
-                            return "envName: string expected";
+                    if (message.envVar != null && message.hasOwnProperty("envVar")) {
+                        properties.mountTarget = 1;
+                        {
+                            var error = $root.flyteidl.core.Secret.MountEnvVar.verify(message.envVar);
+                            if (error)
+                                return "envVar." + error;
+                        }
+                    }
+                    if (message.file != null && message.hasOwnProperty("file")) {
+                        if (properties.mountTarget === 1)
+                            return "mountTarget: multiple values";
+                        properties.mountTarget = 1;
+                        {
+                            var error = $root.flyteidl.core.Secret.MountFile.verify(message.file);
+                            if (error)
+                                return "file." + error;
+                        }
+                    }
                     return null;
                 };
     
@@ -14346,6 +14390,226 @@
                     values[valuesById[1] = "ENV_VAR"] = 1;
                     values[valuesById[2] = "FILE"] = 2;
                     return values;
+                })();
+    
+                Secret.MountEnvVar = (function() {
+    
+                    /**
+                     * Properties of a MountEnvVar.
+                     * @memberof flyteidl.core.Secret
+                     * @interface IMountEnvVar
+                     * @property {string|null} [name] MountEnvVar name
+                     */
+    
+                    /**
+                     * Constructs a new MountEnvVar.
+                     * @memberof flyteidl.core.Secret
+                     * @classdesc Represents a MountEnvVar.
+                     * @implements IMountEnvVar
+                     * @constructor
+                     * @param {flyteidl.core.Secret.IMountEnvVar=} [properties] Properties to set
+                     */
+                    function MountEnvVar(properties) {
+                        if (properties)
+                            for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                                if (properties[keys[i]] != null)
+                                    this[keys[i]] = properties[keys[i]];
+                    }
+    
+                    /**
+                     * MountEnvVar name.
+                     * @member {string} name
+                     * @memberof flyteidl.core.Secret.MountEnvVar
+                     * @instance
+                     */
+                    MountEnvVar.prototype.name = "";
+    
+                    /**
+                     * Creates a new MountEnvVar instance using the specified properties.
+                     * @function create
+                     * @memberof flyteidl.core.Secret.MountEnvVar
+                     * @static
+                     * @param {flyteidl.core.Secret.IMountEnvVar=} [properties] Properties to set
+                     * @returns {flyteidl.core.Secret.MountEnvVar} MountEnvVar instance
+                     */
+                    MountEnvVar.create = function create(properties) {
+                        return new MountEnvVar(properties);
+                    };
+    
+                    /**
+                     * Encodes the specified MountEnvVar message. Does not implicitly {@link flyteidl.core.Secret.MountEnvVar.verify|verify} messages.
+                     * @function encode
+                     * @memberof flyteidl.core.Secret.MountEnvVar
+                     * @static
+                     * @param {flyteidl.core.Secret.IMountEnvVar} message MountEnvVar message or plain object to encode
+                     * @param {$protobuf.Writer} [writer] Writer to encode to
+                     * @returns {$protobuf.Writer} Writer
+                     */
+                    MountEnvVar.encode = function encode(message, writer) {
+                        if (!writer)
+                            writer = $Writer.create();
+                        if (message.name != null && message.hasOwnProperty("name"))
+                            writer.uint32(/* id 1, wireType 2 =*/10).string(message.name);
+                        return writer;
+                    };
+    
+                    /**
+                     * Decodes a MountEnvVar message from the specified reader or buffer.
+                     * @function decode
+                     * @memberof flyteidl.core.Secret.MountEnvVar
+                     * @static
+                     * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+                     * @param {number} [length] Message length if known beforehand
+                     * @returns {flyteidl.core.Secret.MountEnvVar} MountEnvVar
+                     * @throws {Error} If the payload is not a reader or valid buffer
+                     * @throws {$protobuf.util.ProtocolError} If required fields are missing
+                     */
+                    MountEnvVar.decode = function decode(reader, length) {
+                        if (!(reader instanceof $Reader))
+                            reader = $Reader.create(reader);
+                        var end = length === undefined ? reader.len : reader.pos + length, message = new $root.flyteidl.core.Secret.MountEnvVar();
+                        while (reader.pos < end) {
+                            var tag = reader.uint32();
+                            switch (tag >>> 3) {
+                            case 1:
+                                message.name = reader.string();
+                                break;
+                            default:
+                                reader.skipType(tag & 7);
+                                break;
+                            }
+                        }
+                        return message;
+                    };
+    
+                    /**
+                     * Verifies a MountEnvVar message.
+                     * @function verify
+                     * @memberof flyteidl.core.Secret.MountEnvVar
+                     * @static
+                     * @param {Object.<string,*>} message Plain object to verify
+                     * @returns {string|null} `null` if valid, otherwise the reason why it is not
+                     */
+                    MountEnvVar.verify = function verify(message) {
+                        if (typeof message !== "object" || message === null)
+                            return "object expected";
+                        if (message.name != null && message.hasOwnProperty("name"))
+                            if (!$util.isString(message.name))
+                                return "name: string expected";
+                        return null;
+                    };
+    
+                    return MountEnvVar;
+                })();
+    
+                Secret.MountFile = (function() {
+    
+                    /**
+                     * Properties of a MountFile.
+                     * @memberof flyteidl.core.Secret
+                     * @interface IMountFile
+                     * @property {string|null} [path] MountFile path
+                     */
+    
+                    /**
+                     * Constructs a new MountFile.
+                     * @memberof flyteidl.core.Secret
+                     * @classdesc Represents a MountFile.
+                     * @implements IMountFile
+                     * @constructor
+                     * @param {flyteidl.core.Secret.IMountFile=} [properties] Properties to set
+                     */
+                    function MountFile(properties) {
+                        if (properties)
+                            for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                                if (properties[keys[i]] != null)
+                                    this[keys[i]] = properties[keys[i]];
+                    }
+    
+                    /**
+                     * MountFile path.
+                     * @member {string} path
+                     * @memberof flyteidl.core.Secret.MountFile
+                     * @instance
+                     */
+                    MountFile.prototype.path = "";
+    
+                    /**
+                     * Creates a new MountFile instance using the specified properties.
+                     * @function create
+                     * @memberof flyteidl.core.Secret.MountFile
+                     * @static
+                     * @param {flyteidl.core.Secret.IMountFile=} [properties] Properties to set
+                     * @returns {flyteidl.core.Secret.MountFile} MountFile instance
+                     */
+                    MountFile.create = function create(properties) {
+                        return new MountFile(properties);
+                    };
+    
+                    /**
+                     * Encodes the specified MountFile message. Does not implicitly {@link flyteidl.core.Secret.MountFile.verify|verify} messages.
+                     * @function encode
+                     * @memberof flyteidl.core.Secret.MountFile
+                     * @static
+                     * @param {flyteidl.core.Secret.IMountFile} message MountFile message or plain object to encode
+                     * @param {$protobuf.Writer} [writer] Writer to encode to
+                     * @returns {$protobuf.Writer} Writer
+                     */
+                    MountFile.encode = function encode(message, writer) {
+                        if (!writer)
+                            writer = $Writer.create();
+                        if (message.path != null && message.hasOwnProperty("path"))
+                            writer.uint32(/* id 1, wireType 2 =*/10).string(message.path);
+                        return writer;
+                    };
+    
+                    /**
+                     * Decodes a MountFile message from the specified reader or buffer.
+                     * @function decode
+                     * @memberof flyteidl.core.Secret.MountFile
+                     * @static
+                     * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+                     * @param {number} [length] Message length if known beforehand
+                     * @returns {flyteidl.core.Secret.MountFile} MountFile
+                     * @throws {Error} If the payload is not a reader or valid buffer
+                     * @throws {$protobuf.util.ProtocolError} If required fields are missing
+                     */
+                    MountFile.decode = function decode(reader, length) {
+                        if (!(reader instanceof $Reader))
+                            reader = $Reader.create(reader);
+                        var end = length === undefined ? reader.len : reader.pos + length, message = new $root.flyteidl.core.Secret.MountFile();
+                        while (reader.pos < end) {
+                            var tag = reader.uint32();
+                            switch (tag >>> 3) {
+                            case 1:
+                                message.path = reader.string();
+                                break;
+                            default:
+                                reader.skipType(tag & 7);
+                                break;
+                            }
+                        }
+                        return message;
+                    };
+    
+                    /**
+                     * Verifies a MountFile message.
+                     * @function verify
+                     * @memberof flyteidl.core.Secret.MountFile
+                     * @static
+                     * @param {Object.<string,*>} message Plain object to verify
+                     * @returns {string|null} `null` if valid, otherwise the reason why it is not
+                     */
+                    MountFile.verify = function verify(message) {
+                        if (typeof message !== "object" || message === null)
+                            return "object expected";
+                        if (message.path != null && message.hasOwnProperty("path"))
+                            if (!$util.isString(message.path))
+                                return "path: string expected";
+                        return null;
+                    };
+    
+                    return MountFile;
                 })();
     
                 return Secret;
