@@ -15,4 +15,6 @@ type CoreSecret struct {
 	GroupVersion string `json:"group_version,omitempty"`
 	Key string `json:"key,omitempty"`
 	MountRequirement *SecretMountType `json:"mount_requirement,omitempty"`
+	EnvVar *SecretMountEnvVar `json:"env_var,omitempty"`
+	File *SecretMountFile `json:"file,omitempty"`
 }

@@ -281,6 +281,8 @@ from flyteadmin.models.resources_resource_name import ResourcesResourceName
 from flyteadmin.models.runtime_metadata_runtime_type import RuntimeMetadataRuntimeType
 from flyteadmin.models.schema_column_schema_column_type import SchemaColumnSchemaColumnType
 from flyteadmin.models.schema_type_schema_column import SchemaTypeSchemaColumn
+from flyteadmin.models.secret_mount_env_var import SecretMountEnvVar
+from flyteadmin.models.secret_mount_file import SecretMountFile
 from flyteadmin.models.secret_mount_type import SecretMountType
 from flyteadmin.models.sort_direction import SortDirection
 from flyteadmin.models.sql_dialect import SqlDialect

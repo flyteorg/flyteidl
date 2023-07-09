@@ -7,7 +7,7 @@ from typing import ClassVar as _ClassVar, Iterable as _Iterable, Mapping as _Map
 DESCRIPTOR: _descriptor.FileDescriptor
 
 class Secret(_message.Message):
-    __slots__ = ["group", "group_version", "key", "mount_requirement"]
+    __slots__ = ["group", "group_version", "key", "mount_requirement", "env_var", "file"]
     class MountType(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
         __slots__ = []
         ANY: _ClassVar[Secret.MountType]
@@ -16,15 +16,29 @@ class Secret(_message.Message):
     ANY: Secret.MountType
     ENV_VAR: Secret.MountType
     FILE: Secret.MountType
+    class MountEnvVar(_message.Message):
+        __slots__ = ["name"]
+        NAME_FIELD_NUMBER: _ClassVar[int]
+        name: str
+        def __init__(self, name: _Optional[str] = ...) -> None: ...
+    class MountFile(_message.Message):
+        __slots__ = ["path"]
+        PATH_FIELD_NUMBER: _ClassVar[int]
+        path: str
+        def __init__(self, path: _Optional[str] = ...) -> None: ...
     GROUP_FIELD_NUMBER: _ClassVar[int]
     GROUP_VERSION_FIELD_NUMBER: _ClassVar[int]
     KEY_FIELD_NUMBER: _ClassVar[int]
     MOUNT_REQUIREMENT_FIELD_NUMBER: _ClassVar[int]
+    ENV_VAR_FIELD_NUMBER: _ClassVar[int]
+    FILE_FIELD_NUMBER: _ClassVar[int]
     group: str
     group_version: str
     key: str
     mount_requirement: Secret.MountType
-    def __init__(self, group: _Optional[str] = ..., group_version: _Optional[str] = ..., key: _Optional[str] = ..., mount_requirement: _Optional[_Union[Secret.MountType, str]] = ...) -> None: ...
+    env_var: Secret.MountEnvVar
+    file: Secret.MountFile
+    def __init__(self, group: _Optional[str] = ..., group_version: _Optional[str] = ..., key: _Optional[str] = ..., mount_requirement: _Optional[_Union[Secret.MountType, str]] = ..., env_var: _Optional[_Union[Secret.MountEnvVar, _Mapping]] = ..., file: _Optional[_Union[Secret.MountFile, _Mapping]] = ...) -> None: ...
 
 class OAuth2Client(_message.Message):
     __slots__ = ["client_id", "client_secret"]

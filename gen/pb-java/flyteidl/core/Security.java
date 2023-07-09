@@ -96,9 +96,9 @@ public final class Security {
      * +optional
      * </pre>
      *
-     * <code>.flyteidl.core.Secret.MountType mount_requirement = 4;</code>
+     * <code>.flyteidl.core.Secret.MountType mount_requirement = 4 [deprecated = true];</code>
      */
-    int getMountRequirementValue();
+    @java.lang.Deprecated int getMountRequirementValue();
     /**
      * <pre>
      * mount_requirement is optional. Indicates where the secret has to be mounted. If provided, the execution will fail
@@ -107,9 +107,37 @@ public final class Security {
      * +optional
      * </pre>
      *
-     * <code>.flyteidl.core.Secret.MountType mount_requirement = 4;</code>
+     * <code>.flyteidl.core.Secret.MountType mount_requirement = 4 [deprecated = true];</code>
      */
-    flyteidl.core.Security.Secret.MountType getMountRequirement();
+    @java.lang.Deprecated flyteidl.core.Security.Secret.MountType getMountRequirement();
+
+    /**
+     * <code>.flyteidl.core.Secret.MountEnvVar env_var = 5;</code>
+     */
+    boolean hasEnvVar();
+    /**
+     * <code>.flyteidl.core.Secret.MountEnvVar env_var = 5;</code>
+     */
+    flyteidl.core.Security.Secret.MountEnvVar getEnvVar();
+    /**
+     * <code>.flyteidl.core.Secret.MountEnvVar env_var = 5;</code>
+     */
+    flyteidl.core.Security.Secret.MountEnvVarOrBuilder getEnvVarOrBuilder();
+
+    /**
+     * <code>.flyteidl.core.Secret.MountFile file = 6;</code>
+     */
+    boolean hasFile();
+    /**
+     * <code>.flyteidl.core.Secret.MountFile file = 6;</code>
+     */
+    flyteidl.core.Security.Secret.MountFile getFile();
+    /**
+     * <code>.flyteidl.core.Secret.MountFile file = 6;</code>
+     */
+    flyteidl.core.Security.Secret.MountFileOrBuilder getFileOrBuilder();
+
+    public flyteidl.core.Security.Secret.MountTargetCase getMountTargetCase();
   }
   /**
    * <pre>
@@ -184,6 +212,34 @@ public final class Security {
               int rawValue = input.readEnum();
 
               mountRequirement_ = rawValue;
+              break;
+            }
+            case 42: {
+              flyteidl.core.Security.Secret.MountEnvVar.Builder subBuilder = null;
+              if (mountTargetCase_ == 5) {
+                subBuilder = ((flyteidl.core.Security.Secret.MountEnvVar) mountTarget_).toBuilder();
+              }
+              mountTarget_ =
+                  input.readMessage(flyteidl.core.Security.Secret.MountEnvVar.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom((flyteidl.core.Security.Secret.MountEnvVar) mountTarget_);
+                mountTarget_ = subBuilder.buildPartial();
+              }
+              mountTargetCase_ = 5;
+              break;
+            }
+            case 50: {
+              flyteidl.core.Security.Secret.MountFile.Builder subBuilder = null;
+              if (mountTargetCase_ == 6) {
+                subBuilder = ((flyteidl.core.Security.Secret.MountFile) mountTarget_).toBuilder();
+              }
+              mountTarget_ =
+                  input.readMessage(flyteidl.core.Security.Secret.MountFile.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom((flyteidl.core.Security.Secret.MountFile) mountTarget_);
+                mountTarget_ = subBuilder.buildPartial();
+              }
+              mountTargetCase_ = 6;
               break;
             }
             default: {
@@ -349,6 +405,1162 @@ public final class Security {
       // @@protoc_insertion_point(enum_scope:flyteidl.core.Secret.MountType)
     }
 
+    public interface MountEnvVarOrBuilder extends
+        // @@protoc_insertion_point(interface_extends:flyteidl.core.Secret.MountEnvVar)
+        com.google.protobuf.MessageOrBuilder {
+
+      /**
+       * <code>string name = 1;</code>
+       */
+      java.lang.String getName();
+      /**
+       * <code>string name = 1;</code>
+       */
+      com.google.protobuf.ByteString
+          getNameBytes();
+    }
+    /**
+     * <pre>
+     * The name of the environment variable if the Secret is injected as environment variable. If ommitted, the default
+     * FLYTE_SECRETS_ENV_PREFIX prefix will be used.
+     * </pre>
+     *
+     * Protobuf type {@code flyteidl.core.Secret.MountEnvVar}
+     */
+    public  static final class MountEnvVar extends
+        com.google.protobuf.GeneratedMessageV3 implements
+        // @@protoc_insertion_point(message_implements:flyteidl.core.Secret.MountEnvVar)
+        MountEnvVarOrBuilder {
+    private static final long serialVersionUID = 0L;
+      // Use MountEnvVar.newBuilder() to construct.
+      private MountEnvVar(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+        super(builder);
+      }
+      private MountEnvVar() {
+        name_ = "";
+      }
+
+      @java.lang.Override
+      public final com.google.protobuf.UnknownFieldSet
+      getUnknownFields() {
+        return this.unknownFields;
+      }
+      private MountEnvVar(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        this();
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
+        int mutable_bitField0_ = 0;
+        com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+            com.google.protobuf.UnknownFieldSet.newBuilder();
+        try {
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 10: {
+                java.lang.String s = input.readStringRequireUtf8();
+
+                name_ = s;
+                break;
+              }
+              default: {
+                if (!parseUnknownField(
+                    input, unknownFields, extensionRegistry, tag)) {
+                  done = true;
+                }
+                break;
+              }
+            }
+          }
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(this);
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(
+              e).setUnfinishedMessage(this);
+        } finally {
+          this.unknownFields = unknownFields.build();
+          makeExtensionsImmutable();
+        }
+      }
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return flyteidl.core.Security.internal_static_flyteidl_core_Secret_MountEnvVar_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return flyteidl.core.Security.internal_static_flyteidl_core_Secret_MountEnvVar_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                flyteidl.core.Security.Secret.MountEnvVar.class, flyteidl.core.Security.Secret.MountEnvVar.Builder.class);
+      }
+
+      public static final int NAME_FIELD_NUMBER = 1;
+      private volatile java.lang.Object name_;
+      /**
+       * <code>string name = 1;</code>
+       */
+      public java.lang.String getName() {
+        java.lang.Object ref = name_;
+        if (ref instanceof java.lang.String) {
+          return (java.lang.String) ref;
+        } else {
+          com.google.protobuf.ByteString bs = 
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          name_ = s;
+          return s;
+        }
+      }
+      /**
+       * <code>string name = 1;</code>
+       */
+      public com.google.protobuf.ByteString
+          getNameBytes() {
+        java.lang.Object ref = name_;
+        if (ref instanceof java.lang.String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          name_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+
+      private byte memoizedIsInitialized = -1;
+      @java.lang.Override
+      public final boolean isInitialized() {
+        byte isInitialized = memoizedIsInitialized;
+        if (isInitialized == 1) return true;
+        if (isInitialized == 0) return false;
+
+        memoizedIsInitialized = 1;
+        return true;
+      }
+
+      @java.lang.Override
+      public void writeTo(com.google.protobuf.CodedOutputStream output)
+                          throws java.io.IOException {
+        if (!getNameBytes().isEmpty()) {
+          com.google.protobuf.GeneratedMessageV3.writeString(output, 1, name_);
+        }
+        unknownFields.writeTo(output);
+      }
+
+      @java.lang.Override
+      public int getSerializedSize() {
+        int size = memoizedSize;
+        if (size != -1) return size;
+
+        size = 0;
+        if (!getNameBytes().isEmpty()) {
+          size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, name_);
+        }
+        size += unknownFields.getSerializedSize();
+        memoizedSize = size;
+        return size;
+      }
+
+      @java.lang.Override
+      public boolean equals(final java.lang.Object obj) {
+        if (obj == this) {
+         return true;
+        }
+        if (!(obj instanceof flyteidl.core.Security.Secret.MountEnvVar)) {
+          return super.equals(obj);
+        }
+        flyteidl.core.Security.Secret.MountEnvVar other = (flyteidl.core.Security.Secret.MountEnvVar) obj;
+
+        if (!getName()
+            .equals(other.getName())) return false;
+        if (!unknownFields.equals(other.unknownFields)) return false;
+        return true;
+      }
+
+      @java.lang.Override
+      public int hashCode() {
+        if (memoizedHashCode != 0) {
+          return memoizedHashCode;
+        }
+        int hash = 41;
+        hash = (19 * hash) + getDescriptor().hashCode();
+        hash = (37 * hash) + NAME_FIELD_NUMBER;
+        hash = (53 * hash) + getName().hashCode();
+        hash = (29 * hash) + unknownFields.hashCode();
+        memoizedHashCode = hash;
+        return hash;
+      }
+
+      public static flyteidl.core.Security.Secret.MountEnvVar parseFrom(
+          java.nio.ByteBuffer data)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data);
+      }
+      public static flyteidl.core.Security.Secret.MountEnvVar parseFrom(
+          java.nio.ByteBuffer data,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data, extensionRegistry);
+      }
+      public static flyteidl.core.Security.Secret.MountEnvVar parseFrom(
+          com.google.protobuf.ByteString data)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data);
+      }
+      public static flyteidl.core.Security.Secret.MountEnvVar parseFrom(
+          com.google.protobuf.ByteString data,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data, extensionRegistry);
+      }
+      public static flyteidl.core.Security.Secret.MountEnvVar parseFrom(byte[] data)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data);
+      }
+      public static flyteidl.core.Security.Secret.MountEnvVar parseFrom(
+          byte[] data,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data, extensionRegistry);
+      }
+      public static flyteidl.core.Security.Secret.MountEnvVar parseFrom(java.io.InputStream input)
+          throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3
+            .parseWithIOException(PARSER, input);
+      }
+      public static flyteidl.core.Security.Secret.MountEnvVar parseFrom(
+          java.io.InputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3
+            .parseWithIOException(PARSER, input, extensionRegistry);
+      }
+      public static flyteidl.core.Security.Secret.MountEnvVar parseDelimitedFrom(java.io.InputStream input)
+          throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3
+            .parseDelimitedWithIOException(PARSER, input);
+      }
+      public static flyteidl.core.Security.Secret.MountEnvVar parseDelimitedFrom(
+          java.io.InputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3
+            .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+      }
+      public static flyteidl.core.Security.Secret.MountEnvVar parseFrom(
+          com.google.protobuf.CodedInputStream input)
+          throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3
+            .parseWithIOException(PARSER, input);
+      }
+      public static flyteidl.core.Security.Secret.MountEnvVar parseFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3
+            .parseWithIOException(PARSER, input, extensionRegistry);
+      }
+
+      @java.lang.Override
+      public Builder newBuilderForType() { return newBuilder(); }
+      public static Builder newBuilder() {
+        return DEFAULT_INSTANCE.toBuilder();
+      }
+      public static Builder newBuilder(flyteidl.core.Security.Secret.MountEnvVar prototype) {
+        return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+      }
+      @java.lang.Override
+      public Builder toBuilder() {
+        return this == DEFAULT_INSTANCE
+            ? new Builder() : new Builder().mergeFrom(this);
+      }
+
+      @java.lang.Override
+      protected Builder newBuilderForType(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        Builder builder = new Builder(parent);
+        return builder;
+      }
+      /**
+       * <pre>
+       * The name of the environment variable if the Secret is injected as environment variable. If ommitted, the default
+       * FLYTE_SECRETS_ENV_PREFIX prefix will be used.
+       * </pre>
+       *
+       * Protobuf type {@code flyteidl.core.Secret.MountEnvVar}
+       */
+      public static final class Builder extends
+          com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+          // @@protoc_insertion_point(builder_implements:flyteidl.core.Secret.MountEnvVar)
+          flyteidl.core.Security.Secret.MountEnvVarOrBuilder {
+        public static final com.google.protobuf.Descriptors.Descriptor
+            getDescriptor() {
+          return flyteidl.core.Security.internal_static_flyteidl_core_Secret_MountEnvVar_descriptor;
+        }
+
+        @java.lang.Override
+        protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+            internalGetFieldAccessorTable() {
+          return flyteidl.core.Security.internal_static_flyteidl_core_Secret_MountEnvVar_fieldAccessorTable
+              .ensureFieldAccessorsInitialized(
+                  flyteidl.core.Security.Secret.MountEnvVar.class, flyteidl.core.Security.Secret.MountEnvVar.Builder.class);
+        }
+
+        // Construct using flyteidl.core.Security.Secret.MountEnvVar.newBuilder()
+        private Builder() {
+          maybeForceBuilderInitialization();
+        }
+
+        private Builder(
+            com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+          super(parent);
+          maybeForceBuilderInitialization();
+        }
+        private void maybeForceBuilderInitialization() {
+          if (com.google.protobuf.GeneratedMessageV3
+                  .alwaysUseFieldBuilders) {
+          }
+        }
+        @java.lang.Override
+        public Builder clear() {
+          super.clear();
+          name_ = "";
+
+          return this;
+        }
+
+        @java.lang.Override
+        public com.google.protobuf.Descriptors.Descriptor
+            getDescriptorForType() {
+          return flyteidl.core.Security.internal_static_flyteidl_core_Secret_MountEnvVar_descriptor;
+        }
+
+        @java.lang.Override
+        public flyteidl.core.Security.Secret.MountEnvVar getDefaultInstanceForType() {
+          return flyteidl.core.Security.Secret.MountEnvVar.getDefaultInstance();
+        }
+
+        @java.lang.Override
+        public flyteidl.core.Security.Secret.MountEnvVar build() {
+          flyteidl.core.Security.Secret.MountEnvVar result = buildPartial();
+          if (!result.isInitialized()) {
+            throw newUninitializedMessageException(result);
+          }
+          return result;
+        }
+
+        @java.lang.Override
+        public flyteidl.core.Security.Secret.MountEnvVar buildPartial() {
+          flyteidl.core.Security.Secret.MountEnvVar result = new flyteidl.core.Security.Secret.MountEnvVar(this);
+          result.name_ = name_;
+          onBuilt();
+          return result;
+        }
+
+        @java.lang.Override
+        public Builder clone() {
+          return super.clone();
+        }
+        @java.lang.Override
+        public Builder setField(
+            com.google.protobuf.Descriptors.FieldDescriptor field,
+            java.lang.Object value) {
+          return super.setField(field, value);
+        }
+        @java.lang.Override
+        public Builder clearField(
+            com.google.protobuf.Descriptors.FieldDescriptor field) {
+          return super.clearField(field);
+        }
+        @java.lang.Override
+        public Builder clearOneof(
+            com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+          return super.clearOneof(oneof);
+        }
+        @java.lang.Override
+        public Builder setRepeatedField(
+            com.google.protobuf.Descriptors.FieldDescriptor field,
+            int index, java.lang.Object value) {
+          return super.setRepeatedField(field, index, value);
+        }
+        @java.lang.Override
+        public Builder addRepeatedField(
+            com.google.protobuf.Descriptors.FieldDescriptor field,
+            java.lang.Object value) {
+          return super.addRepeatedField(field, value);
+        }
+        @java.lang.Override
+        public Builder mergeFrom(com.google.protobuf.Message other) {
+          if (other instanceof flyteidl.core.Security.Secret.MountEnvVar) {
+            return mergeFrom((flyteidl.core.Security.Secret.MountEnvVar)other);
+          } else {
+            super.mergeFrom(other);
+            return this;
+          }
+        }
+
+        public Builder mergeFrom(flyteidl.core.Security.Secret.MountEnvVar other) {
+          if (other == flyteidl.core.Security.Secret.MountEnvVar.getDefaultInstance()) return this;
+          if (!other.getName().isEmpty()) {
+            name_ = other.name_;
+            onChanged();
+          }
+          this.mergeUnknownFields(other.unknownFields);
+          onChanged();
+          return this;
+        }
+
+        @java.lang.Override
+        public final boolean isInitialized() {
+          return true;
+        }
+
+        @java.lang.Override
+        public Builder mergeFrom(
+            com.google.protobuf.CodedInputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+          flyteidl.core.Security.Secret.MountEnvVar parsedMessage = null;
+          try {
+            parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+            parsedMessage = (flyteidl.core.Security.Secret.MountEnvVar) e.getUnfinishedMessage();
+            throw e.unwrapIOException();
+          } finally {
+            if (parsedMessage != null) {
+              mergeFrom(parsedMessage);
+            }
+          }
+          return this;
+        }
+
+        private java.lang.Object name_ = "";
+        /**
+         * <code>string name = 1;</code>
+         */
+        public java.lang.String getName() {
+          java.lang.Object ref = name_;
+          if (!(ref instanceof java.lang.String)) {
+            com.google.protobuf.ByteString bs =
+                (com.google.protobuf.ByteString) ref;
+            java.lang.String s = bs.toStringUtf8();
+            name_ = s;
+            return s;
+          } else {
+            return (java.lang.String) ref;
+          }
+        }
+        /**
+         * <code>string name = 1;</code>
+         */
+        public com.google.protobuf.ByteString
+            getNameBytes() {
+          java.lang.Object ref = name_;
+          if (ref instanceof String) {
+            com.google.protobuf.ByteString b = 
+                com.google.protobuf.ByteString.copyFromUtf8(
+                    (java.lang.String) ref);
+            name_ = b;
+            return b;
+          } else {
+            return (com.google.protobuf.ByteString) ref;
+          }
+        }
+        /**
+         * <code>string name = 1;</code>
+         */
+        public Builder setName(
+            java.lang.String value) {
+          if (value == null) {
+    throw new NullPointerException();
+  }
+  
+          name_ = value;
+          onChanged();
+          return this;
+        }
+        /**
+         * <code>string name = 1;</code>
+         */
+        public Builder clearName() {
+          
+          name_ = getDefaultInstance().getName();
+          onChanged();
+          return this;
+        }
+        /**
+         * <code>string name = 1;</code>
+         */
+        public Builder setNameBytes(
+            com.google.protobuf.ByteString value) {
+          if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+          
+          name_ = value;
+          onChanged();
+          return this;
+        }
+        @java.lang.Override
+        public final Builder setUnknownFields(
+            final com.google.protobuf.UnknownFieldSet unknownFields) {
+          return super.setUnknownFields(unknownFields);
+        }
+
+        @java.lang.Override
+        public final Builder mergeUnknownFields(
+            final com.google.protobuf.UnknownFieldSet unknownFields) {
+          return super.mergeUnknownFields(unknownFields);
+        }
+
+
+        // @@protoc_insertion_point(builder_scope:flyteidl.core.Secret.MountEnvVar)
+      }
+
+      // @@protoc_insertion_point(class_scope:flyteidl.core.Secret.MountEnvVar)
+      private static final flyteidl.core.Security.Secret.MountEnvVar DEFAULT_INSTANCE;
+      static {
+        DEFAULT_INSTANCE = new flyteidl.core.Security.Secret.MountEnvVar();
+      }
+
+      public static flyteidl.core.Security.Secret.MountEnvVar getDefaultInstance() {
+        return DEFAULT_INSTANCE;
+      }
+
+      private static final com.google.protobuf.Parser<MountEnvVar>
+          PARSER = new com.google.protobuf.AbstractParser<MountEnvVar>() {
+        @java.lang.Override
+        public MountEnvVar parsePartialFrom(
+            com.google.protobuf.CodedInputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+          return new MountEnvVar(input, extensionRegistry);
+        }
+      };
+
+      public static com.google.protobuf.Parser<MountEnvVar> parser() {
+        return PARSER;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Parser<MountEnvVar> getParserForType() {
+        return PARSER;
+      }
+
+      @java.lang.Override
+      public flyteidl.core.Security.Secret.MountEnvVar getDefaultInstanceForType() {
+        return DEFAULT_INSTANCE;
+      }
+
+    }
+
+    public interface MountFileOrBuilder extends
+        // @@protoc_insertion_point(interface_extends:flyteidl.core.Secret.MountFile)
+        com.google.protobuf.MessageOrBuilder {
+
+      /**
+       * <code>string path = 1;</code>
+       */
+      java.lang.String getPath();
+      /**
+       * <code>string path = 1;</code>
+       */
+      com.google.protobuf.ByteString
+          getPathBytes();
+    }
+    /**
+     * <pre>
+     * The path where the Secret will be mounted. The execution will fail if the underlying key management system cannot 
+     * satisfy that requirement. If not provided, the default location will depend on the key management system.
+     * </pre>
+     *
+     * Protobuf type {@code flyteidl.core.Secret.MountFile}
+     */
+    public  static final class MountFile extends
+        com.google.protobuf.GeneratedMessageV3 implements
+        // @@protoc_insertion_point(message_implements:flyteidl.core.Secret.MountFile)
+        MountFileOrBuilder {
+    private static final long serialVersionUID = 0L;
+      // Use MountFile.newBuilder() to construct.
+      private MountFile(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+        super(builder);
+      }
+      private MountFile() {
+        path_ = "";
+      }
+
+      @java.lang.Override
+      public final com.google.protobuf.UnknownFieldSet
+      getUnknownFields() {
+        return this.unknownFields;
+      }
+      private MountFile(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        this();
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
+        int mutable_bitField0_ = 0;
+        com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+            com.google.protobuf.UnknownFieldSet.newBuilder();
+        try {
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 10: {
+                java.lang.String s = input.readStringRequireUtf8();
+
+                path_ = s;
+                break;
+              }
+              default: {
+                if (!parseUnknownField(
+                    input, unknownFields, extensionRegistry, tag)) {
+                  done = true;
+                }
+                break;
+              }
+            }
+          }
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(this);
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(
+              e).setUnfinishedMessage(this);
+        } finally {
+          this.unknownFields = unknownFields.build();
+          makeExtensionsImmutable();
+        }
+      }
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return flyteidl.core.Security.internal_static_flyteidl_core_Secret_MountFile_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return flyteidl.core.Security.internal_static_flyteidl_core_Secret_MountFile_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                flyteidl.core.Security.Secret.MountFile.class, flyteidl.core.Security.Secret.MountFile.Builder.class);
+      }
+
+      public static final int PATH_FIELD_NUMBER = 1;
+      private volatile java.lang.Object path_;
+      /**
+       * <code>string path = 1;</code>
+       */
+      public java.lang.String getPath() {
+        java.lang.Object ref = path_;
+        if (ref instanceof java.lang.String) {
+          return (java.lang.String) ref;
+        } else {
+          com.google.protobuf.ByteString bs = 
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          path_ = s;
+          return s;
+        }
+      }
+      /**
+       * <code>string path = 1;</code>
+       */
+      public com.google.protobuf.ByteString
+          getPathBytes() {
+        java.lang.Object ref = path_;
+        if (ref instanceof java.lang.String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          path_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+
+      private byte memoizedIsInitialized = -1;
+      @java.lang.Override
+      public final boolean isInitialized() {
+        byte isInitialized = memoizedIsInitialized;
+        if (isInitialized == 1) return true;
+        if (isInitialized == 0) return false;
+
+        memoizedIsInitialized = 1;
+        return true;
+      }
+
+      @java.lang.Override
+      public void writeTo(com.google.protobuf.CodedOutputStream output)
+                          throws java.io.IOException {
+        if (!getPathBytes().isEmpty()) {
+          com.google.protobuf.GeneratedMessageV3.writeString(output, 1, path_);
+        }
+        unknownFields.writeTo(output);
+      }
+
+      @java.lang.Override
+      public int getSerializedSize() {
+        int size = memoizedSize;
+        if (size != -1) return size;
+
+        size = 0;
+        if (!getPathBytes().isEmpty()) {
+          size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, path_);
+        }
+        size += unknownFields.getSerializedSize();
+        memoizedSize = size;
+        return size;
+      }
+
+      @java.lang.Override
+      public boolean equals(final java.lang.Object obj) {
+        if (obj == this) {
+         return true;
+        }
+        if (!(obj instanceof flyteidl.core.Security.Secret.MountFile)) {
+          return super.equals(obj);
+        }
+        flyteidl.core.Security.Secret.MountFile other = (flyteidl.core.Security.Secret.MountFile) obj;
+
+        if (!getPath()
+            .equals(other.getPath())) return false;
+        if (!unknownFields.equals(other.unknownFields)) return false;
+        return true;
+      }
+
+      @java.lang.Override
+      public int hashCode() {
+        if (memoizedHashCode != 0) {
+          return memoizedHashCode;
+        }
+        int hash = 41;
+        hash = (19 * hash) + getDescriptor().hashCode();
+        hash = (37 * hash) + PATH_FIELD_NUMBER;
+        hash = (53 * hash) + getPath().hashCode();
+        hash = (29 * hash) + unknownFields.hashCode();
+        memoizedHashCode = hash;
+        return hash;
+      }
+
+      public static flyteidl.core.Security.Secret.MountFile parseFrom(
+          java.nio.ByteBuffer data)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data);
+      }
+      public static flyteidl.core.Security.Secret.MountFile parseFrom(
+          java.nio.ByteBuffer data,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data, extensionRegistry);
+      }
+      public static flyteidl.core.Security.Secret.MountFile parseFrom(
+          com.google.protobuf.ByteString data)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data);
+      }
+      public static flyteidl.core.Security.Secret.MountFile parseFrom(
+          com.google.protobuf.ByteString data,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data, extensionRegistry);
+      }
+      public static flyteidl.core.Security.Secret.MountFile parseFrom(byte[] data)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data);
+      }
+      public static flyteidl.core.Security.Secret.MountFile parseFrom(
+          byte[] data,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data, extensionRegistry);
+      }
+      public static flyteidl.core.Security.Secret.MountFile parseFrom(java.io.InputStream input)
+          throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3
+            .parseWithIOException(PARSER, input);
+      }
+      public static flyteidl.core.Security.Secret.MountFile parseFrom(
+          java.io.InputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3
+            .parseWithIOException(PARSER, input, extensionRegistry);
+      }
+      public static flyteidl.core.Security.Secret.MountFile parseDelimitedFrom(java.io.InputStream input)
+          throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3
+            .parseDelimitedWithIOException(PARSER, input);
+      }
+      public static flyteidl.core.Security.Secret.MountFile parseDelimitedFrom(
+          java.io.InputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3
+            .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+      }
+      public static flyteidl.core.Security.Secret.MountFile parseFrom(
+          com.google.protobuf.CodedInputStream input)
+          throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3
+            .parseWithIOException(PARSER, input);
+      }
+      public static flyteidl.core.Security.Secret.MountFile parseFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3
+            .parseWithIOException(PARSER, input, extensionRegistry);
+      }
+
+      @java.lang.Override
+      public Builder newBuilderForType() { return newBuilder(); }
+      public static Builder newBuilder() {
+        return DEFAULT_INSTANCE.toBuilder();
+      }
+      public static Builder newBuilder(flyteidl.core.Security.Secret.MountFile prototype) {
+        return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+      }
+      @java.lang.Override
+      public Builder toBuilder() {
+        return this == DEFAULT_INSTANCE
+            ? new Builder() : new Builder().mergeFrom(this);
+      }
+
+      @java.lang.Override
+      protected Builder newBuilderForType(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        Builder builder = new Builder(parent);
+        return builder;
+      }
+      /**
+       * <pre>
+       * The path where the Secret will be mounted. The execution will fail if the underlying key management system cannot 
+       * satisfy that requirement. If not provided, the default location will depend on the key management system.
+       * </pre>
+       *
+       * Protobuf type {@code flyteidl.core.Secret.MountFile}
+       */
+      public static final class Builder extends
+          com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+          // @@protoc_insertion_point(builder_implements:flyteidl.core.Secret.MountFile)
+          flyteidl.core.Security.Secret.MountFileOrBuilder {
+        public static final com.google.protobuf.Descriptors.Descriptor
+            getDescriptor() {
+          return flyteidl.core.Security.internal_static_flyteidl_core_Secret_MountFile_descriptor;
+        }
+
+        @java.lang.Override
+        protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+            internalGetFieldAccessorTable() {
+          return flyteidl.core.Security.internal_static_flyteidl_core_Secret_MountFile_fieldAccessorTable
+              .ensureFieldAccessorsInitialized(
+                  flyteidl.core.Security.Secret.MountFile.class, flyteidl.core.Security.Secret.MountFile.Builder.class);
+        }
+
+        // Construct using flyteidl.core.Security.Secret.MountFile.newBuilder()
+        private Builder() {
+          maybeForceBuilderInitialization();
+        }
+
+        private Builder(
+            com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+          super(parent);
+          maybeForceBuilderInitialization();
+        }
+        private void maybeForceBuilderInitialization() {
+          if (com.google.protobuf.GeneratedMessageV3
+                  .alwaysUseFieldBuilders) {
+          }
+        }
+        @java.lang.Override
+        public Builder clear() {
+          super.clear();
+          path_ = "";
+
+          return this;
+        }
+
+        @java.lang.Override
+        public com.google.protobuf.Descriptors.Descriptor
+            getDescriptorForType() {
+          return flyteidl.core.Security.internal_static_flyteidl_core_Secret_MountFile_descriptor;
+        }
+
+        @java.lang.Override
+        public flyteidl.core.Security.Secret.MountFile getDefaultInstanceForType() {
+          return flyteidl.core.Security.Secret.MountFile.getDefaultInstance();
+        }
+
+        @java.lang.Override
+        public flyteidl.core.Security.Secret.MountFile build() {
+          flyteidl.core.Security.Secret.MountFile result = buildPartial();
+          if (!result.isInitialized()) {
+            throw newUninitializedMessageException(result);
+          }
+          return result;
+        }
+
+        @java.lang.Override
+        public flyteidl.core.Security.Secret.MountFile buildPartial() {
+          flyteidl.core.Security.Secret.MountFile result = new flyteidl.core.Security.Secret.MountFile(this);
+          result.path_ = path_;
+          onBuilt();
+          return result;
+        }
+
+        @java.lang.Override
+        public Builder clone() {
+          return super.clone();
+        }
+        @java.lang.Override
+        public Builder setField(
+            com.google.protobuf.Descriptors.FieldDescriptor field,
+            java.lang.Object value) {
+          return super.setField(field, value);
+        }
+        @java.lang.Override
+        public Builder clearField(
+            com.google.protobuf.Descriptors.FieldDescriptor field) {
+          return super.clearField(field);
+        }
+        @java.lang.Override
+        public Builder clearOneof(
+            com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+          return super.clearOneof(oneof);
+        }
+        @java.lang.Override
+        public Builder setRepeatedField(
+            com.google.protobuf.Descriptors.FieldDescriptor field,
+            int index, java.lang.Object value) {
+          return super.setRepeatedField(field, index, value);
+        }
+        @java.lang.Override
+        public Builder addRepeatedField(
+            com.google.protobuf.Descriptors.FieldDescriptor field,
+            java.lang.Object value) {
+          return super.addRepeatedField(field, value);
+        }
+        @java.lang.Override
+        public Builder mergeFrom(com.google.protobuf.Message other) {
+          if (other instanceof flyteidl.core.Security.Secret.MountFile) {
+            return mergeFrom((flyteidl.core.Security.Secret.MountFile)other);
+          } else {
+            super.mergeFrom(other);
+            return this;
+          }
+        }
+
+        public Builder mergeFrom(flyteidl.core.Security.Secret.MountFile other) {
+          if (other == flyteidl.core.Security.Secret.MountFile.getDefaultInstance()) return this;
+          if (!other.getPath().isEmpty()) {
+            path_ = other.path_;
+            onChanged();
+          }
+          this.mergeUnknownFields(other.unknownFields);
+          onChanged();
+          return this;
+        }
+
+        @java.lang.Override
+        public final boolean isInitialized() {
+          return true;
+        }
+
+        @java.lang.Override
+        public Builder mergeFrom(
+            com.google.protobuf.CodedInputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+          flyteidl.core.Security.Secret.MountFile parsedMessage = null;
+          try {
+            parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+            parsedMessage = (flyteidl.core.Security.Secret.MountFile) e.getUnfinishedMessage();
+            throw e.unwrapIOException();
+          } finally {
+            if (parsedMessage != null) {
+              mergeFrom(parsedMessage);
+            }
+          }
+          return this;
+        }
+
+        private java.lang.Object path_ = "";
+        /**
+         * <code>string path = 1;</code>
+         */
+        public java.lang.String getPath() {
+          java.lang.Object ref = path_;
+          if (!(ref instanceof java.lang.String)) {
+            com.google.protobuf.ByteString bs =
+                (com.google.protobuf.ByteString) ref;
+            java.lang.String s = bs.toStringUtf8();
+            path_ = s;
+            return s;
+          } else {
+            return (java.lang.String) ref;
+          }
+        }
+        /**
+         * <code>string path = 1;</code>
+         */
+        public com.google.protobuf.ByteString
+            getPathBytes() {
+          java.lang.Object ref = path_;
+          if (ref instanceof String) {
+            com.google.protobuf.ByteString b = 
+                com.google.protobuf.ByteString.copyFromUtf8(
+                    (java.lang.String) ref);
+            path_ = b;
+            return b;
+          } else {
+            return (com.google.protobuf.ByteString) ref;
+          }
+        }
+        /**
+         * <code>string path = 1;</code>
+         */
+        public Builder setPath(
+            java.lang.String value) {
+          if (value == null) {
+    throw new NullPointerException();
+  }
+  
+          path_ = value;
+          onChanged();
+          return this;
+        }
+        /**
+         * <code>string path = 1;</code>
+         */
+        public Builder clearPath() {
+          
+          path_ = getDefaultInstance().getPath();
+          onChanged();
+          return this;
+        }
+        /**
+         * <code>string path = 1;</code>
+         */
+        public Builder setPathBytes(
+            com.google.protobuf.ByteString value) {
+          if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+          
+          path_ = value;
+          onChanged();
+          return this;
+        }
+        @java.lang.Override
+        public final Builder setUnknownFields(
+            final com.google.protobuf.UnknownFieldSet unknownFields) {
+          return super.setUnknownFields(unknownFields);
+        }
+
+        @java.lang.Override
+        public final Builder mergeUnknownFields(
+            final com.google.protobuf.UnknownFieldSet unknownFields) {
+          return super.mergeUnknownFields(unknownFields);
+        }
+
+
+        // @@protoc_insertion_point(builder_scope:flyteidl.core.Secret.MountFile)
+      }
+
+      // @@protoc_insertion_point(class_scope:flyteidl.core.Secret.MountFile)
+      private static final flyteidl.core.Security.Secret.MountFile DEFAULT_INSTANCE;
+      static {
+        DEFAULT_INSTANCE = new flyteidl.core.Security.Secret.MountFile();
+      }
+
+      public static flyteidl.core.Security.Secret.MountFile getDefaultInstance() {
+        return DEFAULT_INSTANCE;
+      }
+
+      private static final com.google.protobuf.Parser<MountFile>
+          PARSER = new com.google.protobuf.AbstractParser<MountFile>() {
+        @java.lang.Override
+        public MountFile parsePartialFrom(
+            com.google.protobuf.CodedInputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+          return new MountFile(input, extensionRegistry);
+        }
+      };
+
+      public static com.google.protobuf.Parser<MountFile> parser() {
+        return PARSER;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Parser<MountFile> getParserForType() {
+        return PARSER;
+      }
+
+      @java.lang.Override
+      public flyteidl.core.Security.Secret.MountFile getDefaultInstanceForType() {
+        return DEFAULT_INSTANCE;
+      }
+
+    }
+
+    private int mountTargetCase_ = 0;
+    private java.lang.Object mountTarget_;
+    public enum MountTargetCase
+        implements com.google.protobuf.Internal.EnumLite {
+      ENV_VAR(5),
+      FILE(6),
+      MOUNTTARGET_NOT_SET(0);
+      private final int value;
+      private MountTargetCase(int value) {
+        this.value = value;
+      }
+      /**
+       * @deprecated Use {@link #forNumber(int)} instead.
+       */
+      @java.lang.Deprecated
+      public static MountTargetCase valueOf(int value) {
+        return forNumber(value);
+      }
+
+      public static MountTargetCase forNumber(int value) {
+        switch (value) {
+          case 5: return ENV_VAR;
+          case 6: return FILE;
+          case 0: return MOUNTTARGET_NOT_SET;
+          default: return null;
+        }
+      }
+      public int getNumber() {
+        return this.value;
+      }
+    };
+
+    public MountTargetCase
+    getMountTargetCase() {
+      return MountTargetCase.forNumber(
+          mountTargetCase_);
+    }
+
     public static final int GROUP_FIELD_NUMBER = 1;
     private volatile java.lang.Object group_;
     /**
@@ -501,9 +1713,9 @@ public final class Security {
      * +optional
      * </pre>
      *
-     * <code>.flyteidl.core.Secret.MountType mount_requirement = 4;</code>
+     * <code>.flyteidl.core.Secret.MountType mount_requirement = 4 [deprecated = true];</code>
      */
-    public int getMountRequirementValue() {
+    @java.lang.Deprecated public int getMountRequirementValue() {
       return mountRequirement_;
     }
     /**
@@ -514,12 +1726,64 @@ public final class Security {
      * +optional
      * </pre>
      *
-     * <code>.flyteidl.core.Secret.MountType mount_requirement = 4;</code>
+     * <code>.flyteidl.core.Secret.MountType mount_requirement = 4 [deprecated = true];</code>
      */
-    public flyteidl.core.Security.Secret.MountType getMountRequirement() {
+    @java.lang.Deprecated public flyteidl.core.Security.Secret.MountType getMountRequirement() {
       @SuppressWarnings("deprecation")
       flyteidl.core.Security.Secret.MountType result = flyteidl.core.Security.Secret.MountType.valueOf(mountRequirement_);
       return result == null ? flyteidl.core.Security.Secret.MountType.UNRECOGNIZED : result;
+    }
+
+    public static final int ENV_VAR_FIELD_NUMBER = 5;
+    /**
+     * <code>.flyteidl.core.Secret.MountEnvVar env_var = 5;</code>
+     */
+    public boolean hasEnvVar() {
+      return mountTargetCase_ == 5;
+    }
+    /**
+     * <code>.flyteidl.core.Secret.MountEnvVar env_var = 5;</code>
+     */
+    public flyteidl.core.Security.Secret.MountEnvVar getEnvVar() {
+      if (mountTargetCase_ == 5) {
+         return (flyteidl.core.Security.Secret.MountEnvVar) mountTarget_;
+      }
+      return flyteidl.core.Security.Secret.MountEnvVar.getDefaultInstance();
+    }
+    /**
+     * <code>.flyteidl.core.Secret.MountEnvVar env_var = 5;</code>
+     */
+    public flyteidl.core.Security.Secret.MountEnvVarOrBuilder getEnvVarOrBuilder() {
+      if (mountTargetCase_ == 5) {
+         return (flyteidl.core.Security.Secret.MountEnvVar) mountTarget_;
+      }
+      return flyteidl.core.Security.Secret.MountEnvVar.getDefaultInstance();
+    }
+
+    public static final int FILE_FIELD_NUMBER = 6;
+    /**
+     * <code>.flyteidl.core.Secret.MountFile file = 6;</code>
+     */
+    public boolean hasFile() {
+      return mountTargetCase_ == 6;
+    }
+    /**
+     * <code>.flyteidl.core.Secret.MountFile file = 6;</code>
+     */
+    public flyteidl.core.Security.Secret.MountFile getFile() {
+      if (mountTargetCase_ == 6) {
+         return (flyteidl.core.Security.Secret.MountFile) mountTarget_;
+      }
+      return flyteidl.core.Security.Secret.MountFile.getDefaultInstance();
+    }
+    /**
+     * <code>.flyteidl.core.Secret.MountFile file = 6;</code>
+     */
+    public flyteidl.core.Security.Secret.MountFileOrBuilder getFileOrBuilder() {
+      if (mountTargetCase_ == 6) {
+         return (flyteidl.core.Security.Secret.MountFile) mountTarget_;
+      }
+      return flyteidl.core.Security.Secret.MountFile.getDefaultInstance();
     }
 
     private byte memoizedIsInitialized = -1;
@@ -548,6 +1812,12 @@ public final class Security {
       if (mountRequirement_ != flyteidl.core.Security.Secret.MountType.ANY.getNumber()) {
         output.writeEnum(4, mountRequirement_);
       }
+      if (mountTargetCase_ == 5) {
+        output.writeMessage(5, (flyteidl.core.Security.Secret.MountEnvVar) mountTarget_);
+      }
+      if (mountTargetCase_ == 6) {
+        output.writeMessage(6, (flyteidl.core.Security.Secret.MountFile) mountTarget_);
+      }
       unknownFields.writeTo(output);
     }
 
@@ -569,6 +1839,14 @@ public final class Security {
       if (mountRequirement_ != flyteidl.core.Security.Secret.MountType.ANY.getNumber()) {
         size += com.google.protobuf.CodedOutputStream
           .computeEnumSize(4, mountRequirement_);
+      }
+      if (mountTargetCase_ == 5) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(5, (flyteidl.core.Security.Secret.MountEnvVar) mountTarget_);
+      }
+      if (mountTargetCase_ == 6) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(6, (flyteidl.core.Security.Secret.MountFile) mountTarget_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -592,6 +1870,19 @@ public final class Security {
       if (!getKey()
           .equals(other.getKey())) return false;
       if (mountRequirement_ != other.mountRequirement_) return false;
+      if (!getMountTargetCase().equals(other.getMountTargetCase())) return false;
+      switch (mountTargetCase_) {
+        case 5:
+          if (!getEnvVar()
+              .equals(other.getEnvVar())) return false;
+          break;
+        case 6:
+          if (!getFile()
+              .equals(other.getFile())) return false;
+          break;
+        case 0:
+        default:
+      }
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -611,6 +1902,18 @@ public final class Security {
       hash = (53 * hash) + getKey().hashCode();
       hash = (37 * hash) + MOUNT_REQUIREMENT_FIELD_NUMBER;
       hash = (53 * hash) + mountRequirement_;
+      switch (mountTargetCase_) {
+        case 5:
+          hash = (37 * hash) + ENV_VAR_FIELD_NUMBER;
+          hash = (53 * hash) + getEnvVar().hashCode();
+          break;
+        case 6:
+          hash = (37 * hash) + FILE_FIELD_NUMBER;
+          hash = (53 * hash) + getFile().hashCode();
+          break;
+        case 0:
+        default:
+      }
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -760,6 +2063,8 @@ public final class Security {
 
         mountRequirement_ = 0;
 
+        mountTargetCase_ = 0;
+        mountTarget_ = null;
         return this;
       }
 
@@ -790,6 +2095,21 @@ public final class Security {
         result.groupVersion_ = groupVersion_;
         result.key_ = key_;
         result.mountRequirement_ = mountRequirement_;
+        if (mountTargetCase_ == 5) {
+          if (envVarBuilder_ == null) {
+            result.mountTarget_ = mountTarget_;
+          } else {
+            result.mountTarget_ = envVarBuilder_.build();
+          }
+        }
+        if (mountTargetCase_ == 6) {
+          if (fileBuilder_ == null) {
+            result.mountTarget_ = mountTarget_;
+          } else {
+            result.mountTarget_ = fileBuilder_.build();
+          }
+        }
+        result.mountTargetCase_ = mountTargetCase_;
         onBuilt();
         return result;
       }
@@ -853,6 +2173,19 @@ public final class Security {
         if (other.mountRequirement_ != 0) {
           setMountRequirementValue(other.getMountRequirementValue());
         }
+        switch (other.getMountTargetCase()) {
+          case ENV_VAR: {
+            mergeEnvVar(other.getEnvVar());
+            break;
+          }
+          case FILE: {
+            mergeFile(other.getFile());
+            break;
+          }
+          case MOUNTTARGET_NOT_SET: {
+            break;
+          }
+        }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
@@ -881,6 +2214,21 @@ public final class Security {
         }
         return this;
       }
+      private int mountTargetCase_ = 0;
+      private java.lang.Object mountTarget_;
+      public MountTargetCase
+          getMountTargetCase() {
+        return MountTargetCase.forNumber(
+            mountTargetCase_);
+      }
+
+      public Builder clearMountTarget() {
+        mountTargetCase_ = 0;
+        mountTarget_ = null;
+        onChanged();
+        return this;
+      }
+
 
       private java.lang.Object group_ = "";
       /**
@@ -1198,9 +2546,9 @@ public final class Security {
        * +optional
        * </pre>
        *
-       * <code>.flyteidl.core.Secret.MountType mount_requirement = 4;</code>
+       * <code>.flyteidl.core.Secret.MountType mount_requirement = 4 [deprecated = true];</code>
        */
-      public int getMountRequirementValue() {
+      @java.lang.Deprecated public int getMountRequirementValue() {
         return mountRequirement_;
       }
       /**
@@ -1211,9 +2559,9 @@ public final class Security {
        * +optional
        * </pre>
        *
-       * <code>.flyteidl.core.Secret.MountType mount_requirement = 4;</code>
+       * <code>.flyteidl.core.Secret.MountType mount_requirement = 4 [deprecated = true];</code>
        */
-      public Builder setMountRequirementValue(int value) {
+      @java.lang.Deprecated public Builder setMountRequirementValue(int value) {
         mountRequirement_ = value;
         onChanged();
         return this;
@@ -1226,9 +2574,9 @@ public final class Security {
        * +optional
        * </pre>
        *
-       * <code>.flyteidl.core.Secret.MountType mount_requirement = 4;</code>
+       * <code>.flyteidl.core.Secret.MountType mount_requirement = 4 [deprecated = true];</code>
        */
-      public flyteidl.core.Security.Secret.MountType getMountRequirement() {
+      @java.lang.Deprecated public flyteidl.core.Security.Secret.MountType getMountRequirement() {
         @SuppressWarnings("deprecation")
         flyteidl.core.Security.Secret.MountType result = flyteidl.core.Security.Secret.MountType.valueOf(mountRequirement_);
         return result == null ? flyteidl.core.Security.Secret.MountType.UNRECOGNIZED : result;
@@ -1241,9 +2589,9 @@ public final class Security {
        * +optional
        * </pre>
        *
-       * <code>.flyteidl.core.Secret.MountType mount_requirement = 4;</code>
+       * <code>.flyteidl.core.Secret.MountType mount_requirement = 4 [deprecated = true];</code>
        */
-      public Builder setMountRequirement(flyteidl.core.Security.Secret.MountType value) {
+      @java.lang.Deprecated public Builder setMountRequirement(flyteidl.core.Security.Secret.MountType value) {
         if (value == null) {
           throw new NullPointerException();
         }
@@ -1260,13 +2608,285 @@ public final class Security {
        * +optional
        * </pre>
        *
-       * <code>.flyteidl.core.Secret.MountType mount_requirement = 4;</code>
+       * <code>.flyteidl.core.Secret.MountType mount_requirement = 4 [deprecated = true];</code>
        */
-      public Builder clearMountRequirement() {
+      @java.lang.Deprecated public Builder clearMountRequirement() {
         
         mountRequirement_ = 0;
         onChanged();
         return this;
+      }
+
+      private com.google.protobuf.SingleFieldBuilderV3<
+          flyteidl.core.Security.Secret.MountEnvVar, flyteidl.core.Security.Secret.MountEnvVar.Builder, flyteidl.core.Security.Secret.MountEnvVarOrBuilder> envVarBuilder_;
+      /**
+       * <code>.flyteidl.core.Secret.MountEnvVar env_var = 5;</code>
+       */
+      public boolean hasEnvVar() {
+        return mountTargetCase_ == 5;
+      }
+      /**
+       * <code>.flyteidl.core.Secret.MountEnvVar env_var = 5;</code>
+       */
+      public flyteidl.core.Security.Secret.MountEnvVar getEnvVar() {
+        if (envVarBuilder_ == null) {
+          if (mountTargetCase_ == 5) {
+            return (flyteidl.core.Security.Secret.MountEnvVar) mountTarget_;
+          }
+          return flyteidl.core.Security.Secret.MountEnvVar.getDefaultInstance();
+        } else {
+          if (mountTargetCase_ == 5) {
+            return envVarBuilder_.getMessage();
+          }
+          return flyteidl.core.Security.Secret.MountEnvVar.getDefaultInstance();
+        }
+      }
+      /**
+       * <code>.flyteidl.core.Secret.MountEnvVar env_var = 5;</code>
+       */
+      public Builder setEnvVar(flyteidl.core.Security.Secret.MountEnvVar value) {
+        if (envVarBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          mountTarget_ = value;
+          onChanged();
+        } else {
+          envVarBuilder_.setMessage(value);
+        }
+        mountTargetCase_ = 5;
+        return this;
+      }
+      /**
+       * <code>.flyteidl.core.Secret.MountEnvVar env_var = 5;</code>
+       */
+      public Builder setEnvVar(
+          flyteidl.core.Security.Secret.MountEnvVar.Builder builderForValue) {
+        if (envVarBuilder_ == null) {
+          mountTarget_ = builderForValue.build();
+          onChanged();
+        } else {
+          envVarBuilder_.setMessage(builderForValue.build());
+        }
+        mountTargetCase_ = 5;
+        return this;
+      }
+      /**
+       * <code>.flyteidl.core.Secret.MountEnvVar env_var = 5;</code>
+       */
+      public Builder mergeEnvVar(flyteidl.core.Security.Secret.MountEnvVar value) {
+        if (envVarBuilder_ == null) {
+          if (mountTargetCase_ == 5 &&
+              mountTarget_ != flyteidl.core.Security.Secret.MountEnvVar.getDefaultInstance()) {
+            mountTarget_ = flyteidl.core.Security.Secret.MountEnvVar.newBuilder((flyteidl.core.Security.Secret.MountEnvVar) mountTarget_)
+                .mergeFrom(value).buildPartial();
+          } else {
+            mountTarget_ = value;
+          }
+          onChanged();
+        } else {
+          if (mountTargetCase_ == 5) {
+            envVarBuilder_.mergeFrom(value);
+          }
+          envVarBuilder_.setMessage(value);
+        }
+        mountTargetCase_ = 5;
+        return this;
+      }
+      /**
+       * <code>.flyteidl.core.Secret.MountEnvVar env_var = 5;</code>
+       */
+      public Builder clearEnvVar() {
+        if (envVarBuilder_ == null) {
+          if (mountTargetCase_ == 5) {
+            mountTargetCase_ = 0;
+            mountTarget_ = null;
+            onChanged();
+          }
+        } else {
+          if (mountTargetCase_ == 5) {
+            mountTargetCase_ = 0;
+            mountTarget_ = null;
+          }
+          envVarBuilder_.clear();
+        }
+        return this;
+      }
+      /**
+       * <code>.flyteidl.core.Secret.MountEnvVar env_var = 5;</code>
+       */
+      public flyteidl.core.Security.Secret.MountEnvVar.Builder getEnvVarBuilder() {
+        return getEnvVarFieldBuilder().getBuilder();
+      }
+      /**
+       * <code>.flyteidl.core.Secret.MountEnvVar env_var = 5;</code>
+       */
+      public flyteidl.core.Security.Secret.MountEnvVarOrBuilder getEnvVarOrBuilder() {
+        if ((mountTargetCase_ == 5) && (envVarBuilder_ != null)) {
+          return envVarBuilder_.getMessageOrBuilder();
+        } else {
+          if (mountTargetCase_ == 5) {
+            return (flyteidl.core.Security.Secret.MountEnvVar) mountTarget_;
+          }
+          return flyteidl.core.Security.Secret.MountEnvVar.getDefaultInstance();
+        }
+      }
+      /**
+       * <code>.flyteidl.core.Secret.MountEnvVar env_var = 5;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+          flyteidl.core.Security.Secret.MountEnvVar, flyteidl.core.Security.Secret.MountEnvVar.Builder, flyteidl.core.Security.Secret.MountEnvVarOrBuilder> 
+          getEnvVarFieldBuilder() {
+        if (envVarBuilder_ == null) {
+          if (!(mountTargetCase_ == 5)) {
+            mountTarget_ = flyteidl.core.Security.Secret.MountEnvVar.getDefaultInstance();
+          }
+          envVarBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              flyteidl.core.Security.Secret.MountEnvVar, flyteidl.core.Security.Secret.MountEnvVar.Builder, flyteidl.core.Security.Secret.MountEnvVarOrBuilder>(
+                  (flyteidl.core.Security.Secret.MountEnvVar) mountTarget_,
+                  getParentForChildren(),
+                  isClean());
+          mountTarget_ = null;
+        }
+        mountTargetCase_ = 5;
+        onChanged();;
+        return envVarBuilder_;
+      }
+
+      private com.google.protobuf.SingleFieldBuilderV3<
+          flyteidl.core.Security.Secret.MountFile, flyteidl.core.Security.Secret.MountFile.Builder, flyteidl.core.Security.Secret.MountFileOrBuilder> fileBuilder_;
+      /**
+       * <code>.flyteidl.core.Secret.MountFile file = 6;</code>
+       */
+      public boolean hasFile() {
+        return mountTargetCase_ == 6;
+      }
+      /**
+       * <code>.flyteidl.core.Secret.MountFile file = 6;</code>
+       */
+      public flyteidl.core.Security.Secret.MountFile getFile() {
+        if (fileBuilder_ == null) {
+          if (mountTargetCase_ == 6) {
+            return (flyteidl.core.Security.Secret.MountFile) mountTarget_;
+          }
+          return flyteidl.core.Security.Secret.MountFile.getDefaultInstance();
+        } else {
+          if (mountTargetCase_ == 6) {
+            return fileBuilder_.getMessage();
+          }
+          return flyteidl.core.Security.Secret.MountFile.getDefaultInstance();
+        }
+      }
+      /**
+       * <code>.flyteidl.core.Secret.MountFile file = 6;</code>
+       */
+      public Builder setFile(flyteidl.core.Security.Secret.MountFile value) {
+        if (fileBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          mountTarget_ = value;
+          onChanged();
+        } else {
+          fileBuilder_.setMessage(value);
+        }
+        mountTargetCase_ = 6;
+        return this;
+      }
+      /**
+       * <code>.flyteidl.core.Secret.MountFile file = 6;</code>
+       */
+      public Builder setFile(
+          flyteidl.core.Security.Secret.MountFile.Builder builderForValue) {
+        if (fileBuilder_ == null) {
+          mountTarget_ = builderForValue.build();
+          onChanged();
+        } else {
+          fileBuilder_.setMessage(builderForValue.build());
+        }
+        mountTargetCase_ = 6;
+        return this;
+      }
+      /**
+       * <code>.flyteidl.core.Secret.MountFile file = 6;</code>
+       */
+      public Builder mergeFile(flyteidl.core.Security.Secret.MountFile value) {
+        if (fileBuilder_ == null) {
+          if (mountTargetCase_ == 6 &&
+              mountTarget_ != flyteidl.core.Security.Secret.MountFile.getDefaultInstance()) {
+            mountTarget_ = flyteidl.core.Security.Secret.MountFile.newBuilder((flyteidl.core.Security.Secret.MountFile) mountTarget_)
+                .mergeFrom(value).buildPartial();
+          } else {
+            mountTarget_ = value;
+          }
+          onChanged();
+        } else {
+          if (mountTargetCase_ == 6) {
+            fileBuilder_.mergeFrom(value);
+          }
+          fileBuilder_.setMessage(value);
+        }
+        mountTargetCase_ = 6;
+        return this;
+      }
+      /**
+       * <code>.flyteidl.core.Secret.MountFile file = 6;</code>
+       */
+      public Builder clearFile() {
+        if (fileBuilder_ == null) {
+          if (mountTargetCase_ == 6) {
+            mountTargetCase_ = 0;
+            mountTarget_ = null;
+            onChanged();
+          }
+        } else {
+          if (mountTargetCase_ == 6) {
+            mountTargetCase_ = 0;
+            mountTarget_ = null;
+          }
+          fileBuilder_.clear();
+        }
+        return this;
+      }
+      /**
+       * <code>.flyteidl.core.Secret.MountFile file = 6;</code>
+       */
+      public flyteidl.core.Security.Secret.MountFile.Builder getFileBuilder() {
+        return getFileFieldBuilder().getBuilder();
+      }
+      /**
+       * <code>.flyteidl.core.Secret.MountFile file = 6;</code>
+       */
+      public flyteidl.core.Security.Secret.MountFileOrBuilder getFileOrBuilder() {
+        if ((mountTargetCase_ == 6) && (fileBuilder_ != null)) {
+          return fileBuilder_.getMessageOrBuilder();
+        } else {
+          if (mountTargetCase_ == 6) {
+            return (flyteidl.core.Security.Secret.MountFile) mountTarget_;
+          }
+          return flyteidl.core.Security.Secret.MountFile.getDefaultInstance();
+        }
+      }
+      /**
+       * <code>.flyteidl.core.Secret.MountFile file = 6;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+          flyteidl.core.Security.Secret.MountFile, flyteidl.core.Security.Secret.MountFile.Builder, flyteidl.core.Security.Secret.MountFileOrBuilder> 
+          getFileFieldBuilder() {
+        if (fileBuilder_ == null) {
+          if (!(mountTargetCase_ == 6)) {
+            mountTarget_ = flyteidl.core.Security.Secret.MountFile.getDefaultInstance();
+          }
+          fileBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              flyteidl.core.Security.Secret.MountFile, flyteidl.core.Security.Secret.MountFile.Builder, flyteidl.core.Security.Secret.MountFileOrBuilder>(
+                  (flyteidl.core.Security.Secret.MountFile) mountTarget_,
+                  getParentForChildren(),
+                  isClean());
+          mountTarget_ = null;
+        }
+        mountTargetCase_ = 6;
+        onChanged();;
+        return fileBuilder_;
       }
       @java.lang.Override
       public final Builder setUnknownFields(
@@ -6747,6 +8367,16 @@ public final class Security {
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_flyteidl_core_Secret_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_flyteidl_core_Secret_MountEnvVar_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_flyteidl_core_Secret_MountEnvVar_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_flyteidl_core_Secret_MountFile_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_flyteidl_core_Secret_MountFile_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_flyteidl_core_OAuth2Client_descriptor;
   private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
@@ -6776,27 +8406,32 @@ public final class Security {
   static {
     java.lang.String[] descriptorData = {
       "\n\034flyteidl/core/security.proto\022\rflyteidl" +
-      ".core\"\244\001\n\006Secret\022\r\n\005group\030\001 \001(\t\022\025\n\rgroup" +
-      "_version\030\002 \001(\t\022\013\n\003key\030\003 \001(\t\022:\n\021mount_req" +
+      ".core\"\327\002\n\006Secret\022\r\n\005group\030\001 \001(\t\022\025\n\rgroup" +
+      "_version\030\002 \001(\t\022\013\n\003key\030\003 \001(\t\022>\n\021mount_req" +
       "uirement\030\004 \001(\0162\037.flyteidl.core.Secret.Mo" +
-      "untType\"+\n\tMountType\022\007\n\003ANY\020\000\022\013\n\007ENV_VAR" +
-      "\020\001\022\010\n\004FILE\020\002\"O\n\014OAuth2Client\022\021\n\tclient_i" +
-      "d\030\001 \001(\t\022,\n\rclient_secret\030\002 \001(\0132\025.flyteid" +
-      "l.core.Secret\"\211\001\n\010Identity\022\020\n\010iam_role\030\001" +
-      " \001(\t\022\033\n\023k8s_service_account\030\002 \001(\t\0222\n\roau" +
-      "th2_client\030\003 \001(\0132\033.flyteidl.core.OAuth2C" +
-      "lient\022\032\n\022execution_identity\030\004 \001(\t\"\335\001\n\022OA" +
-      "uth2TokenRequest\022\014\n\004name\030\001 \001(\t\0224\n\004type\030\002" +
-      " \001(\0162&.flyteidl.core.OAuth2TokenRequest." +
-      "Type\022+\n\006client\030\003 \001(\0132\033.flyteidl.core.OAu" +
-      "th2Client\022\036\n\026idp_discovery_endpoint\030\004 \001(" +
-      "\t\022\026\n\016token_endpoint\030\005 \001(\t\"\036\n\004Type\022\026\n\022CLI" +
-      "ENT_CREDENTIALS\020\000\"\225\001\n\017SecurityContext\022\'\n" +
-      "\006run_as\030\001 \001(\0132\027.flyteidl.core.Identity\022&" +
-      "\n\007secrets\030\002 \003(\0132\025.flyteidl.core.Secret\0221" +
-      "\n\006tokens\030\003 \003(\0132!.flyteidl.core.OAuth2Tok" +
-      "enRequestB6Z4github.com/flyteorg/flyteid" +
-      "l/gen/pb-go/flyteidl/coreb\006proto3"
+      "untTypeB\002\030\001\0224\n\007env_var\030\005 \001(\0132!.flyteidl." +
+      "core.Secret.MountEnvVarH\000\022/\n\004file\030\006 \001(\0132" +
+      "\037.flyteidl.core.Secret.MountFileH\000\032\033\n\013Mo" +
+      "untEnvVar\022\014\n\004name\030\001 \001(\t\032\031\n\tMountFile\022\014\n\004" +
+      "path\030\001 \001(\t\"+\n\tMountType\022\007\n\003ANY\020\000\022\013\n\007ENV_" +
+      "VAR\020\001\022\010\n\004FILE\020\002B\016\n\014mount_target\"O\n\014OAuth" +
+      "2Client\022\021\n\tclient_id\030\001 \001(\t\022,\n\rclient_sec" +
+      "ret\030\002 \001(\0132\025.flyteidl.core.Secret\"\211\001\n\010Ide" +
+      "ntity\022\020\n\010iam_role\030\001 \001(\t\022\033\n\023k8s_service_a" +
+      "ccount\030\002 \001(\t\0222\n\roauth2_client\030\003 \001(\0132\033.fl" +
+      "yteidl.core.OAuth2Client\022\032\n\022execution_id" +
+      "entity\030\004 \001(\t\"\335\001\n\022OAuth2TokenRequest\022\014\n\004n" +
+      "ame\030\001 \001(\t\0224\n\004type\030\002 \001(\0162&.flyteidl.core." +
+      "OAuth2TokenRequest.Type\022+\n\006client\030\003 \001(\0132" +
+      "\033.flyteidl.core.OAuth2Client\022\036\n\026idp_disc" +
+      "overy_endpoint\030\004 \001(\t\022\026\n\016token_endpoint\030\005" +
+      " \001(\t\"\036\n\004Type\022\026\n\022CLIENT_CREDENTIALS\020\000\"\225\001\n" +
+      "\017SecurityContext\022\'\n\006run_as\030\001 \001(\0132\027.flyte" +
+      "idl.core.Identity\022&\n\007secrets\030\002 \003(\0132\025.fly" +
+      "teidl.core.Secret\0221\n\006tokens\030\003 \003(\0132!.flyt" +
+      "eidl.core.OAuth2TokenRequestB6Z4github.c" +
+      "om/flyteorg/flyteidl/gen/pb-go/flyteidl/" +
+      "coreb\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
@@ -6815,7 +8450,19 @@ public final class Security {
     internal_static_flyteidl_core_Secret_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_flyteidl_core_Secret_descriptor,
-        new java.lang.String[] { "Group", "GroupVersion", "Key", "MountRequirement", });
+        new java.lang.String[] { "Group", "GroupVersion", "Key", "MountRequirement", "EnvVar", "File", "MountTarget", });
+    internal_static_flyteidl_core_Secret_MountEnvVar_descriptor =
+      internal_static_flyteidl_core_Secret_descriptor.getNestedTypes().get(0);
+    internal_static_flyteidl_core_Secret_MountEnvVar_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_flyteidl_core_Secret_MountEnvVar_descriptor,
+        new java.lang.String[] { "Name", });
+    internal_static_flyteidl_core_Secret_MountFile_descriptor =
+      internal_static_flyteidl_core_Secret_descriptor.getNestedTypes().get(1);
+    internal_static_flyteidl_core_Secret_MountFile_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_flyteidl_core_Secret_MountFile_descriptor,
+        new java.lang.String[] { "Path", });
     internal_static_flyteidl_core_OAuth2Client_descriptor =
       getDescriptor().getMessageTypes().get(1);
     internal_static_flyteidl_core_OAuth2Client_fieldAccessorTable = new
