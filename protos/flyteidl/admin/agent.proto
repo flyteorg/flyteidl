@@ -43,7 +43,7 @@ message CreateTaskRequest {
   core.TaskTemplate template = 2;
   // Prefix for where task output data will be written. (e.g. s3://my-bucket/randomstring)
   string output_prefix = 3;
-  // subset of runtime task execution metadata that are relevant to external plugins
+  // subset of runtime task execution metadata.
   TaskExecutionMetadata task_execution_metadata = 4;
 }
 
