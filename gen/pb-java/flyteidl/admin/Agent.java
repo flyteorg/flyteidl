@@ -2305,7 +2305,7 @@ public final class Agent {
 
     /**
      * <pre>
-     * subset of runtime task execution metadata that are relevant to external plugins
+     * subset of runtime task execution metadata.
      * </pre>
      *
      * <code>.flyteidl.admin.TaskExecutionMetadata task_execution_metadata = 4;</code>
@@ -2313,7 +2313,7 @@ public final class Agent {
     boolean hasTaskExecutionMetadata();
     /**
      * <pre>
-     * subset of runtime task execution metadata that are relevant to external plugins
+     * subset of runtime task execution metadata.
      * </pre>
      *
      * <code>.flyteidl.admin.TaskExecutionMetadata task_execution_metadata = 4;</code>
@@ -2321,7 +2321,7 @@ public final class Agent {
     flyteidl.admin.Agent.TaskExecutionMetadata getTaskExecutionMetadata();
     /**
      * <pre>
-     * subset of runtime task execution metadata that are relevant to external plugins
+     * subset of runtime task execution metadata.
      * </pre>
      *
      * <code>.flyteidl.admin.TaskExecutionMetadata task_execution_metadata = 4;</code>
@@ -2567,7 +2567,7 @@ public final class Agent {
     private flyteidl.admin.Agent.TaskExecutionMetadata taskExecutionMetadata_;
     /**
      * <pre>
-     * subset of runtime task execution metadata that are relevant to external plugins
+     * subset of runtime task execution metadata.
      * </pre>
      *
      * <code>.flyteidl.admin.TaskExecutionMetadata task_execution_metadata = 4;</code>
@@ -2577,7 +2577,7 @@ public final class Agent {
     }
     /**
      * <pre>
-     * subset of runtime task execution metadata that are relevant to external plugins
+     * subset of runtime task execution metadata.
      * </pre>
      *
      * <code>.flyteidl.admin.TaskExecutionMetadata task_execution_metadata = 4;</code>
@@ -2587,7 +2587,7 @@ public final class Agent {
     }
     /**
      * <pre>
-     * subset of runtime task execution metadata that are relevant to external plugins
+     * subset of runtime task execution metadata.
      * </pre>
      *
      * <code>.flyteidl.admin.TaskExecutionMetadata task_execution_metadata = 4;</code>
@@ -3410,7 +3410,7 @@ public final class Agent {
           flyteidl.admin.Agent.TaskExecutionMetadata, flyteidl.admin.Agent.TaskExecutionMetadata.Builder, flyteidl.admin.Agent.TaskExecutionMetadataOrBuilder> taskExecutionMetadataBuilder_;
       /**
        * <pre>
-       * subset of runtime task execution metadata that are relevant to external plugins
+       * subset of runtime task execution metadata.
        * </pre>
        *
        * <code>.flyteidl.admin.TaskExecutionMetadata task_execution_metadata = 4;</code>
@@ -3420,7 +3420,7 @@ public final class Agent {
       }
       /**
        * <pre>
-       * subset of runtime task execution metadata that are relevant to external plugins
+       * subset of runtime task execution metadata.
        * </pre>
        *
        * <code>.flyteidl.admin.TaskExecutionMetadata task_execution_metadata = 4;</code>
@@ -3434,7 +3434,7 @@ public final class Agent {
       }
       /**
        * <pre>
-       * subset of runtime task execution metadata that are relevant to external plugins
+       * subset of runtime task execution metadata.
        * </pre>
        *
        * <code>.flyteidl.admin.TaskExecutionMetadata task_execution_metadata = 4;</code>
@@ -3454,7 +3454,7 @@ public final class Agent {
       }
       /**
        * <pre>
-       * subset of runtime task execution metadata that are relevant to external plugins
+       * subset of runtime task execution metadata.
        * </pre>
        *
        * <code>.flyteidl.admin.TaskExecutionMetadata task_execution_metadata = 4;</code>
@@ -3472,7 +3472,7 @@ public final class Agent {
       }
       /**
        * <pre>
-       * subset of runtime task execution metadata that are relevant to external plugins
+       * subset of runtime task execution metadata.
        * </pre>
        *
        * <code>.flyteidl.admin.TaskExecutionMetadata task_execution_metadata = 4;</code>
@@ -3494,7 +3494,7 @@ public final class Agent {
       }
       /**
        * <pre>
-       * subset of runtime task execution metadata that are relevant to external plugins
+       * subset of runtime task execution metadata.
        * </pre>
        *
        * <code>.flyteidl.admin.TaskExecutionMetadata task_execution_metadata = 4;</code>
@@ -3512,7 +3512,7 @@ public final class Agent {
       }
       /**
        * <pre>
-       * subset of runtime task execution metadata that are relevant to external plugins
+       * subset of runtime task execution metadata.
        * </pre>
        *
        * <code>.flyteidl.admin.TaskExecutionMetadata task_execution_metadata = 4;</code>
@@ -3524,7 +3524,7 @@ public final class Agent {
       }
       /**
        * <pre>
-       * subset of runtime task execution metadata that are relevant to external plugins
+       * subset of runtime task execution metadata.
        * </pre>
        *
        * <code>.flyteidl.admin.TaskExecutionMetadata task_execution_metadata = 4;</code>
@@ -3539,7 +3539,7 @@ public final class Agent {
       }
       /**
        * <pre>
-       * subset of runtime task execution metadata that are relevant to external plugins
+       * subset of runtime task execution metadata.
        * </pre>
        *
        * <code>.flyteidl.admin.TaskExecutionMetadata task_execution_metadata = 4;</code>

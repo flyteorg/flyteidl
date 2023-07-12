@@ -152,7 +152,7 @@ type CreateTaskRequest struct {
 	Template *core.TaskTemplate `protobuf:"bytes,2,opt,name=template,proto3" json:"template,omitempty"`
 	// Prefix for where task output data will be written. (e.g. s3://my-bucket/randomstring)
 	OutputPrefix string `protobuf:"bytes,3,opt,name=output_prefix,json=outputPrefix,proto3" json:"output_prefix,omitempty"`
-	// subset of runtime task execution metadata that are relevant to external plugins
+	// subset of runtime task execution metadata.
 	TaskExecutionMetadata *TaskExecutionMetadata `protobuf:"bytes,4,opt,name=task_execution_metadata,json=taskExecutionMetadata,proto3" json:"task_execution_metadata,omitempty"`
 	XXX_NoUnkeyedLiteral  struct{}               `json:"-"`
 	XXX_unrecognized      []byte                 `json:"-"`

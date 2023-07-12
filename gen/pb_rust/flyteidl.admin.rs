@@ -37,7 +37,7 @@ pub struct CreateTaskRequest {
     /// Prefix for where task output data will be written. (e.g. s3://my-bucket/randomstring)
     #[prost(string, tag="3")]
     pub output_prefix: ::prost::alloc::string::String,
-    /// subset of runtime task execution metadata that are relevant to external plugins
+    /// subset of runtime task execution metadata.
     #[prost(message, optional, tag="4")]
     pub task_execution_metadata: ::core::option::Option<TaskExecutionMetadata>,
 }
