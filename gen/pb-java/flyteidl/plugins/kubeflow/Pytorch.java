@@ -44,6 +44,24 @@ public final class Pytorch {
     int getNprocPerNode();
 
     /**
+     * <pre>
+     * Not using oneof for backwards compatibility
+     * </pre>
+     *
+     * <code>string nproc_per_node_str = 6;</code>
+     */
+    java.lang.String getNprocPerNodeStr();
+    /**
+     * <pre>
+     * Not using oneof for backwards compatibility
+     * </pre>
+     *
+     * <code>string nproc_per_node_str = 6;</code>
+     */
+    com.google.protobuf.ByteString
+        getNprocPerNodeStrBytes();
+
+    /**
      * <code>int32 max_restarts = 5;</code>
      */
     int getMaxRestarts();
@@ -67,6 +85,7 @@ public final class Pytorch {
     }
     private ElasticConfig() {
       rdzvBackend_ = "";
+      nprocPerNodeStr_ = "";
     }
 
     @java.lang.Override
@@ -117,6 +136,12 @@ public final class Pytorch {
             case 40: {
 
               maxRestarts_ = input.readInt32();
+              break;
+            }
+            case 50: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              nprocPerNodeStr_ = s;
               break;
             }
             default: {
@@ -212,6 +237,48 @@ public final class Pytorch {
       return nprocPerNode_;
     }
 
+    public static final int NPROC_PER_NODE_STR_FIELD_NUMBER = 6;
+    private volatile java.lang.Object nprocPerNodeStr_;
+    /**
+     * <pre>
+     * Not using oneof for backwards compatibility
+     * </pre>
+     *
+     * <code>string nproc_per_node_str = 6;</code>
+     */
+    public java.lang.String getNprocPerNodeStr() {
+      java.lang.Object ref = nprocPerNodeStr_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        nprocPerNodeStr_ = s;
+        return s;
+      }
+    }
+    /**
+     * <pre>
+     * Not using oneof for backwards compatibility
+     * </pre>
+     *
+     * <code>string nproc_per_node_str = 6;</code>
+     */
+    public com.google.protobuf.ByteString
+        getNprocPerNodeStrBytes() {
+      java.lang.Object ref = nprocPerNodeStr_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        nprocPerNodeStr_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
     public static final int MAX_RESTARTS_FIELD_NUMBER = 5;
     private int maxRestarts_;
     /**
@@ -250,6 +317,9 @@ public final class Pytorch {
       if (maxRestarts_ != 0) {
         output.writeInt32(5, maxRestarts_);
       }
+      if (!getNprocPerNodeStrBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 6, nprocPerNodeStr_);
+      }
       unknownFields.writeTo(output);
     }
 
@@ -278,6 +348,9 @@ public final class Pytorch {
         size += com.google.protobuf.CodedOutputStream
           .computeInt32Size(5, maxRestarts_);
       }
+      if (!getNprocPerNodeStrBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(6, nprocPerNodeStr_);
+      }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
@@ -301,6 +374,8 @@ public final class Pytorch {
           != other.getMaxReplicas()) return false;
       if (getNprocPerNode()
           != other.getNprocPerNode()) return false;
+      if (!getNprocPerNodeStr()
+          .equals(other.getNprocPerNodeStr())) return false;
       if (getMaxRestarts()
           != other.getMaxRestarts()) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
@@ -322,6 +397,8 @@ public final class Pytorch {
       hash = (53 * hash) + getMaxReplicas();
       hash = (37 * hash) + NPROC_PER_NODE_FIELD_NUMBER;
       hash = (53 * hash) + getNprocPerNode();
+      hash = (37 * hash) + NPROC_PER_NODE_STR_FIELD_NUMBER;
+      hash = (53 * hash) + getNprocPerNodeStr().hashCode();
       hash = (37 * hash) + MAX_RESTARTS_FIELD_NUMBER;
       hash = (53 * hash) + getMaxRestarts();
       hash = (29 * hash) + unknownFields.hashCode();
@@ -470,6 +547,8 @@ public final class Pytorch {
 
         nprocPerNode_ = 0;
 
+        nprocPerNodeStr_ = "";
+
         maxRestarts_ = 0;
 
         return this;
@@ -502,6 +581,7 @@ public final class Pytorch {
         result.minReplicas_ = minReplicas_;
         result.maxReplicas_ = maxReplicas_;
         result.nprocPerNode_ = nprocPerNode_;
+        result.nprocPerNodeStr_ = nprocPerNodeStr_;
         result.maxRestarts_ = maxRestarts_;
         onBuilt();
         return result;
@@ -563,6 +643,10 @@ public final class Pytorch {
         }
         if (other.getNprocPerNode() != 0) {
           setNprocPerNode(other.getNprocPerNode());
+        }
+        if (!other.getNprocPerNodeStr().isEmpty()) {
+          nprocPerNodeStr_ = other.nprocPerNodeStr_;
+          onChanged();
         }
         if (other.getMaxRestarts() != 0) {
           setMaxRestarts(other.getMaxRestarts());
@@ -739,6 +823,95 @@ public final class Pytorch {
       public Builder clearNprocPerNode() {
         
         nprocPerNode_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object nprocPerNodeStr_ = "";
+      /**
+       * <pre>
+       * Not using oneof for backwards compatibility
+       * </pre>
+       *
+       * <code>string nproc_per_node_str = 6;</code>
+       */
+      public java.lang.String getNprocPerNodeStr() {
+        java.lang.Object ref = nprocPerNodeStr_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          nprocPerNodeStr_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <pre>
+       * Not using oneof for backwards compatibility
+       * </pre>
+       *
+       * <code>string nproc_per_node_str = 6;</code>
+       */
+      public com.google.protobuf.ByteString
+          getNprocPerNodeStrBytes() {
+        java.lang.Object ref = nprocPerNodeStr_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          nprocPerNodeStr_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <pre>
+       * Not using oneof for backwards compatibility
+       * </pre>
+       *
+       * <code>string nproc_per_node_str = 6;</code>
+       */
+      public Builder setNprocPerNodeStr(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        nprocPerNodeStr_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * Not using oneof for backwards compatibility
+       * </pre>
+       *
+       * <code>string nproc_per_node_str = 6;</code>
+       */
+      public Builder clearNprocPerNodeStr() {
+        
+        nprocPerNodeStr_ = getDefaultInstance().getNprocPerNodeStr();
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * Not using oneof for backwards compatibility
+       * </pre>
+       *
+       * <code>string nproc_per_node_str = 6;</code>
+       */
+      public Builder setNprocPerNodeStrBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        nprocPerNodeStr_ = value;
         onChanged();
         return this;
       }
@@ -3365,25 +3538,26 @@ public final class Pytorch {
       "\n\'flyteidl/plugins/kubeflow/pytorch.prot" +
       "o\022\031flyteidl.plugins.kubeflow\032\031flyteidl/c" +
       "ore/tasks.proto\032&flyteidl/plugins/kubefl" +
-      "ow/common.proto\"\177\n\rElasticConfig\022\024\n\014rdzv" +
-      "_backend\030\001 \001(\t\022\024\n\014min_replicas\030\002 \001(\005\022\024\n\014" +
-      "max_replicas\030\003 \001(\005\022\026\n\016nproc_per_node\030\004 \001" +
-      "(\005\022\024\n\014max_restarts\030\005 \001(\005\"\322\002\n\036Distributed" +
-      "PyTorchTrainingTask\022Y\n\017worker_replicas\030\001" +
+      "ow/common.proto\"\233\001\n\rElasticConfig\022\024\n\014rdz" +
+      "v_backend\030\001 \001(\t\022\024\n\014min_replicas\030\002 \001(\005\022\024\n" +
+      "\014max_replicas\030\003 \001(\005\022\026\n\016nproc_per_node\030\004 " +
+      "\001(\005\022\032\n\022nproc_per_node_str\030\006 \001(\t\022\024\n\014max_r" +
+      "estarts\030\005 \001(\005\"\322\002\n\036DistributedPyTorchTrai" +
+      "ningTask\022Y\n\017worker_replicas\030\001 \001(\0132@.flyt" +
+      "eidl.plugins.kubeflow.DistributedPyTorch" +
+      "TrainingReplicaSpec\022Y\n\017master_replicas\030\002" +
       " \001(\0132@.flyteidl.plugins.kubeflow.Distrib" +
-      "utedPyTorchTrainingReplicaSpec\022Y\n\017master" +
-      "_replicas\030\002 \001(\0132@.flyteidl.plugins.kubef" +
-      "low.DistributedPyTorchTrainingReplicaSpe" +
-      "c\0228\n\nrun_policy\030\003 \001(\0132$.flyteidl.plugins" +
-      ".kubeflow.RunPolicy\022@\n\016elastic_config\030\004 " +
-      "\001(\0132(.flyteidl.plugins.kubeflow.ElasticC" +
-      "onfig\"\267\001\n%DistributedPyTorchTrainingRepl" +
-      "icaSpec\022\020\n\010replicas\030\001 \001(\005\022\r\n\005image\030\002 \001(\t" +
-      "\022+\n\tresources\030\003 \001(\0132\030.flyteidl.core.Reso" +
-      "urces\022@\n\016restart_policy\030\004 \001(\0162(.flyteidl" +
-      ".plugins.kubeflow.RestartPolicyB9Z7githu" +
-      "b.com/flyteorg/flyteidl/gen/pb-go/flytei" +
-      "dl/pluginsb\006proto3"
+      "utedPyTorchTrainingReplicaSpec\0228\n\nrun_po" +
+      "licy\030\003 \001(\0132$.flyteidl.plugins.kubeflow.R" +
+      "unPolicy\022@\n\016elastic_config\030\004 \001(\0132(.flyte" +
+      "idl.plugins.kubeflow.ElasticConfig\"\267\001\n%D" +
+      "istributedPyTorchTrainingReplicaSpec\022\020\n\010" +
+      "replicas\030\001 \001(\005\022\r\n\005image\030\002 \001(\t\022+\n\tresourc" +
+      "es\030\003 \001(\0132\030.flyteidl.core.Resources\022@\n\016re" +
+      "start_policy\030\004 \001(\0162(.flyteidl.plugins.ku" +
+      "beflow.RestartPolicyB9Z7github.com/flyte" +
+      "org/flyteidl/gen/pb-go/flyteidl/pluginsb" +
+      "\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
@@ -3404,7 +3578,7 @@ public final class Pytorch {
     internal_static_flyteidl_plugins_kubeflow_ElasticConfig_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_flyteidl_plugins_kubeflow_ElasticConfig_descriptor,
-        new java.lang.String[] { "RdzvBackend", "MinReplicas", "MaxReplicas", "NprocPerNode", "MaxRestarts", });
+        new java.lang.String[] { "RdzvBackend", "MinReplicas", "MaxReplicas", "NprocPerNode", "NprocPerNodeStr", "MaxRestarts", });
     internal_static_flyteidl_plugins_kubeflow_DistributedPyTorchTrainingTask_descriptor =
       getDescriptor().getMessageTypes().get(1);
     internal_static_flyteidl_plugins_kubeflow_DistributedPyTorchTrainingTask_fieldAccessorTable = new

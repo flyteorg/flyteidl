@@ -5,18 +5,20 @@ from typing import ClassVar as _ClassVar, Mapping as _Mapping, Optional as _Opti
 DESCRIPTOR: _descriptor.FileDescriptor
 
 class ElasticConfig(_message.Message):
-    __slots__ = ["rdzv_backend", "min_replicas", "max_replicas", "nproc_per_node", "max_restarts"]
+    __slots__ = ["rdzv_backend", "min_replicas", "max_replicas", "nproc_per_node", "nproc_per_node_str", "max_restarts"]
     RDZV_BACKEND_FIELD_NUMBER: _ClassVar[int]
     MIN_REPLICAS_FIELD_NUMBER: _ClassVar[int]
     MAX_REPLICAS_FIELD_NUMBER: _ClassVar[int]
     NPROC_PER_NODE_FIELD_NUMBER: _ClassVar[int]
+    NPROC_PER_NODE_STR_FIELD_NUMBER: _ClassVar[int]
     MAX_RESTARTS_FIELD_NUMBER: _ClassVar[int]
     rdzv_backend: str
     min_replicas: int
     max_replicas: int
     nproc_per_node: int
+    nproc_per_node_str: str
     max_restarts: int
-    def __init__(self, rdzv_backend: _Optional[str] = ..., min_replicas: _Optional[int] = ..., max_replicas: _Optional[int] = ..., nproc_per_node: _Optional[int] = ..., max_restarts: _Optional[int] = ...) -> None: ...
+    def __init__(self, rdzv_backend: _Optional[str] = ..., min_replicas: _Optional[int] = ..., max_replicas: _Optional[int] = ..., nproc_per_node: _Optional[int] = ..., nproc_per_node_str: _Optional[str] = ..., max_restarts: _Optional[int] = ...) -> None: ...
 
 class DistributedPyTorchTrainingTask(_message.Message):
     __slots__ = ["workers", "elastic_config"]

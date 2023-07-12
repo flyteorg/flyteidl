@@ -116,6 +116,9 @@ pub struct ElasticConfig {
     pub max_replicas: i32,
     #[prost(int32, tag="4")]
     pub nproc_per_node: i32,
+    /// Not using oneof for backwards compatibility
+    #[prost(string, tag="6")]
+    pub nproc_per_node_str: ::prost::alloc::string::String,
     #[prost(int32, tag="5")]
     pub max_restarts: i32,
 }

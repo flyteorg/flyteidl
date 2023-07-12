@@ -77,6 +77,7 @@ const ::google::protobuf::uint32 TableStruct_flyteidl_2fplugins_2fpytorch_2eprot
   PROTOBUF_FIELD_OFFSET(::flyteidl::plugins::ElasticConfig, min_replicas_),
   PROTOBUF_FIELD_OFFSET(::flyteidl::plugins::ElasticConfig, max_replicas_),
   PROTOBUF_FIELD_OFFSET(::flyteidl::plugins::ElasticConfig, nproc_per_node_),
+  PROTOBUF_FIELD_OFFSET(::flyteidl::plugins::ElasticConfig, nproc_per_node_str_),
   PROTOBUF_FIELD_OFFSET(::flyteidl::plugins::ElasticConfig, max_restarts_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::flyteidl::plugins::DistributedPyTorchTrainingTask, _internal_metadata_),
@@ -88,7 +89,7 @@ const ::google::protobuf::uint32 TableStruct_flyteidl_2fplugins_2fpytorch_2eprot
 };
 static const ::google::protobuf::internal::MigrationSchema schemas[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
   { 0, -1, sizeof(::flyteidl::plugins::ElasticConfig)},
-  { 10, -1, sizeof(::flyteidl::plugins::DistributedPyTorchTrainingTask)},
+  { 11, -1, sizeof(::flyteidl::plugins::DistributedPyTorchTrainingTask)},
 };
 
 static ::google::protobuf::Message const * const file_default_instances[] = {
@@ -104,19 +105,20 @@ static ::google::protobuf::Message const * const file_default_instances[] = {
 
 const char descriptor_table_protodef_flyteidl_2fplugins_2fpytorch_2eproto[] =
   "\n\036flyteidl/plugins/pytorch.proto\022\020flytei"
-  "dl.plugins\"\177\n\rElasticConfig\022\024\n\014rdzv_back"
-  "end\030\001 \001(\t\022\024\n\014min_replicas\030\002 \001(\005\022\024\n\014max_r"
-  "eplicas\030\003 \001(\005\022\026\n\016nproc_per_node\030\004 \001(\005\022\024\n"
-  "\014max_restarts\030\005 \001(\005\"j\n\036DistributedPyTorc"
-  "hTrainingTask\022\017\n\007workers\030\001 \001(\005\0227\n\016elasti"
-  "c_config\030\002 \001(\0132\037.flyteidl.plugins.Elasti"
-  "cConfigB9Z7github.com/flyteorg/flyteidl/"
-  "gen/pb-go/flyteidl/pluginsb\006proto3"
+  "dl.plugins\"\233\001\n\rElasticConfig\022\024\n\014rdzv_bac"
+  "kend\030\001 \001(\t\022\024\n\014min_replicas\030\002 \001(\005\022\024\n\014max_"
+  "replicas\030\003 \001(\005\022\026\n\016nproc_per_node\030\004 \001(\005\022\032"
+  "\n\022nproc_per_node_str\030\006 \001(\t\022\024\n\014max_restar"
+  "ts\030\005 \001(\005\"j\n\036DistributedPyTorchTrainingTa"
+  "sk\022\017\n\007workers\030\001 \001(\005\0227\n\016elastic_config\030\002 "
+  "\001(\0132\037.flyteidl.plugins.ElasticConfigB9Z7"
+  "github.com/flyteorg/flyteidl/gen/pb-go/f"
+  "lyteidl/pluginsb\006proto3"
   ;
 ::google::protobuf::internal::DescriptorTable descriptor_table_flyteidl_2fplugins_2fpytorch_2eproto = {
   false, InitDefaults_flyteidl_2fplugins_2fpytorch_2eproto, 
   descriptor_table_protodef_flyteidl_2fplugins_2fpytorch_2eproto,
-  "flyteidl/plugins/pytorch.proto", &assign_descriptors_table_flyteidl_2fplugins_2fpytorch_2eproto, 354,
+  "flyteidl/plugins/pytorch.proto", &assign_descriptors_table_flyteidl_2fplugins_2fpytorch_2eproto, 383,
 };
 
 void AddDescriptors_flyteidl_2fplugins_2fpytorch_2eproto() {
@@ -144,6 +146,7 @@ const int ElasticConfig::kRdzvBackendFieldNumber;
 const int ElasticConfig::kMinReplicasFieldNumber;
 const int ElasticConfig::kMaxReplicasFieldNumber;
 const int ElasticConfig::kNprocPerNodeFieldNumber;
+const int ElasticConfig::kNprocPerNodeStrFieldNumber;
 const int ElasticConfig::kMaxRestartsFieldNumber;
 #endif  // !defined(_MSC_VER) || _MSC_VER >= 1900
 
@@ -160,6 +163,10 @@ ElasticConfig::ElasticConfig(const ElasticConfig& from)
   if (from.rdzv_backend().size() > 0) {
     rdzv_backend_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.rdzv_backend_);
   }
+  nproc_per_node_str_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  if (from.nproc_per_node_str().size() > 0) {
+    nproc_per_node_str_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.nproc_per_node_str_);
+  }
   ::memcpy(&min_replicas_, &from.min_replicas_,
     static_cast<size_t>(reinterpret_cast<char*>(&max_restarts_) -
     reinterpret_cast<char*>(&min_replicas_)) + sizeof(max_restarts_));
@@ -170,6 +177,7 @@ void ElasticConfig::SharedCtor() {
   ::google::protobuf::internal::InitSCC(
       &scc_info_ElasticConfig_flyteidl_2fplugins_2fpytorch_2eproto.base);
   rdzv_backend_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  nproc_per_node_str_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
   ::memset(&min_replicas_, 0, static_cast<size_t>(
       reinterpret_cast<char*>(&max_restarts_) -
       reinterpret_cast<char*>(&min_replicas_)) + sizeof(max_restarts_));
@@ -182,6 +190,7 @@ ElasticConfig::~ElasticConfig() {
 
 void ElasticConfig::SharedDtor() {
   rdzv_backend_.DestroyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  nproc_per_node_str_.DestroyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
 }
 
 void ElasticConfig::SetCachedSize(int size) const {
@@ -200,6 +209,7 @@ void ElasticConfig::Clear() {
   (void) cached_has_bits;
 
   rdzv_backend_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  nproc_per_node_str_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
   ::memset(&min_replicas_, 0, static_cast<size_t>(
       reinterpret_cast<char*>(&max_restarts_) -
       reinterpret_cast<char*>(&min_replicas_)) + sizeof(max_restarts_));
@@ -261,6 +271,22 @@ const char* ElasticConfig::_InternalParse(const char* begin, const char* end, vo
         if (static_cast<::google::protobuf::uint8>(tag) != 40) goto handle_unusual;
         msg->set_max_restarts(::google::protobuf::internal::ReadVarint(&ptr));
         GOOGLE_PROTOBUF_PARSER_ASSERT(ptr);
+        break;
+      }
+      // string nproc_per_node_str = 6;
+      case 6: {
+        if (static_cast<::google::protobuf::uint8>(tag) != 50) goto handle_unusual;
+        ptr = ::google::protobuf::io::ReadSize(ptr, &size);
+        GOOGLE_PROTOBUF_PARSER_ASSERT(ptr);
+        ctx->extra_parse_data().SetFieldName("flyteidl.plugins.ElasticConfig.nproc_per_node_str");
+        object = msg->mutable_nproc_per_node_str();
+        if (size > end - ptr + ::google::protobuf::internal::ParseContext::kSlopBytes) {
+          parser_till_end = ::google::protobuf::internal::GreedyStringParserUTF8;
+          goto string_till_end;
+        }
+        GOOGLE_PROTOBUF_PARSER_ASSERT(::google::protobuf::internal::StringCheckUTF8(ptr, size, ctx));
+        ::google::protobuf::internal::InlineGreedyStringParser(object, ptr, size, ctx);
+        ptr += size;
         break;
       }
       default: {
@@ -364,6 +390,21 @@ bool ElasticConfig::MergePartialFromCodedStream(
         break;
       }
 
+      // string nproc_per_node_str = 6;
+      case 6: {
+        if (static_cast< ::google::protobuf::uint8>(tag) == (50 & 0xFF)) {
+          DO_(::google::protobuf::internal::WireFormatLite::ReadString(
+                input, this->mutable_nproc_per_node_str()));
+          DO_(::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
+            this->nproc_per_node_str().data(), static_cast<int>(this->nproc_per_node_str().length()),
+            ::google::protobuf::internal::WireFormatLite::PARSE,
+            "flyteidl.plugins.ElasticConfig.nproc_per_node_str"));
+        } else {
+          goto handle_unusual;
+        }
+        break;
+      }
+
       default: {
       handle_unusual:
         if (tag == 0) {
@@ -421,6 +462,16 @@ void ElasticConfig::SerializeWithCachedSizes(
     ::google::protobuf::internal::WireFormatLite::WriteInt32(5, this->max_restarts(), output);
   }
 
+  // string nproc_per_node_str = 6;
+  if (this->nproc_per_node_str().size() > 0) {
+    ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
+      this->nproc_per_node_str().data(), static_cast<int>(this->nproc_per_node_str().length()),
+      ::google::protobuf::internal::WireFormatLite::SERIALIZE,
+      "flyteidl.plugins.ElasticConfig.nproc_per_node_str");
+    ::google::protobuf::internal::WireFormatLite::WriteStringMaybeAliased(
+      6, this->nproc_per_node_str(), output);
+  }
+
   if (_internal_metadata_.have_unknown_fields()) {
     ::google::protobuf::internal::WireFormat::SerializeUnknownFields(
         _internal_metadata_.unknown_fields(), output);
@@ -465,6 +516,17 @@ void ElasticConfig::SerializeWithCachedSizes(
     target = ::google::protobuf::internal::WireFormatLite::WriteInt32ToArray(5, this->max_restarts(), target);
   }
 
+  // string nproc_per_node_str = 6;
+  if (this->nproc_per_node_str().size() > 0) {
+    ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
+      this->nproc_per_node_str().data(), static_cast<int>(this->nproc_per_node_str().length()),
+      ::google::protobuf::internal::WireFormatLite::SERIALIZE,
+      "flyteidl.plugins.ElasticConfig.nproc_per_node_str");
+    target =
+      ::google::protobuf::internal::WireFormatLite::WriteStringToArray(
+        6, this->nproc_per_node_str(), target);
+  }
+
   if (_internal_metadata_.have_unknown_fields()) {
     target = ::google::protobuf::internal::WireFormat::SerializeUnknownFieldsToArray(
         _internal_metadata_.unknown_fields(), target);
@@ -491,6 +553,13 @@ size_t ElasticConfig::ByteSizeLong() const {
     total_size += 1 +
       ::google::protobuf::internal::WireFormatLite::StringSize(
         this->rdzv_backend());
+  }
+
+  // string nproc_per_node_str = 6;
+  if (this->nproc_per_node_str().size() > 0) {
+    total_size += 1 +
+      ::google::protobuf::internal::WireFormatLite::StringSize(
+        this->nproc_per_node_str());
   }
 
   // int32 min_replicas = 2;
@@ -552,6 +621,10 @@ void ElasticConfig::MergeFrom(const ElasticConfig& from) {
 
     rdzv_backend_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.rdzv_backend_);
   }
+  if (from.nproc_per_node_str().size() > 0) {
+
+    nproc_per_node_str_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.nproc_per_node_str_);
+  }
   if (from.min_replicas() != 0) {
     set_min_replicas(from.min_replicas());
   }
@@ -592,6 +665,8 @@ void ElasticConfig::InternalSwap(ElasticConfig* other) {
   using std::swap;
   _internal_metadata_.Swap(&other->_internal_metadata_);
   rdzv_backend_.Swap(&other->rdzv_backend_, &::google::protobuf::internal::GetEmptyStringAlreadyInited(),
+    GetArenaNoVirtual());
+  nproc_per_node_str_.Swap(&other->nproc_per_node_str_, &::google::protobuf::internal::GetEmptyStringAlreadyInited(),
     GetArenaNoVirtual());
   swap(min_replicas_, other->min_replicas_);
   swap(max_replicas_, other->max_replicas_);

@@ -52,6 +52,8 @@ func (m *ElasticConfig) Validate() error {
 
 	// no validation rules for NprocPerNode
 
+	// no validation rules for NprocPerNodeStr
+
 	// no validation rules for MaxRestarts
 
 	return nil

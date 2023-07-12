@@ -104,6 +104,7 @@ const ::google::protobuf::uint32 TableStruct_flyteidl_2fplugins_2fkubeflow_2fpyt
   PROTOBUF_FIELD_OFFSET(::flyteidl::plugins::kubeflow::ElasticConfig, min_replicas_),
   PROTOBUF_FIELD_OFFSET(::flyteidl::plugins::kubeflow::ElasticConfig, max_replicas_),
   PROTOBUF_FIELD_OFFSET(::flyteidl::plugins::kubeflow::ElasticConfig, nproc_per_node_),
+  PROTOBUF_FIELD_OFFSET(::flyteidl::plugins::kubeflow::ElasticConfig, nproc_per_node_str_),
   PROTOBUF_FIELD_OFFSET(::flyteidl::plugins::kubeflow::ElasticConfig, max_restarts_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::flyteidl::plugins::kubeflow::DistributedPyTorchTrainingTask, _internal_metadata_),
@@ -126,8 +127,8 @@ const ::google::protobuf::uint32 TableStruct_flyteidl_2fplugins_2fkubeflow_2fpyt
 };
 static const ::google::protobuf::internal::MigrationSchema schemas[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
   { 0, -1, sizeof(::flyteidl::plugins::kubeflow::ElasticConfig)},
-  { 10, -1, sizeof(::flyteidl::plugins::kubeflow::DistributedPyTorchTrainingTask)},
-  { 19, -1, sizeof(::flyteidl::plugins::kubeflow::DistributedPyTorchTrainingReplicaSpec)},
+  { 11, -1, sizeof(::flyteidl::plugins::kubeflow::DistributedPyTorchTrainingTask)},
+  { 20, -1, sizeof(::flyteidl::plugins::kubeflow::DistributedPyTorchTrainingReplicaSpec)},
 };
 
 static ::google::protobuf::Message const * const file_default_instances[] = {
@@ -146,30 +147,31 @@ const char descriptor_table_protodef_flyteidl_2fplugins_2fkubeflow_2fpytorch_2ep
   "\n\'flyteidl/plugins/kubeflow/pytorch.prot"
   "o\022\031flyteidl.plugins.kubeflow\032\031flyteidl/c"
   "ore/tasks.proto\032&flyteidl/plugins/kubefl"
-  "ow/common.proto\"\177\n\rElasticConfig\022\024\n\014rdzv"
-  "_backend\030\001 \001(\t\022\024\n\014min_replicas\030\002 \001(\005\022\024\n\014"
-  "max_replicas\030\003 \001(\005\022\026\n\016nproc_per_node\030\004 \001"
-  "(\005\022\024\n\014max_restarts\030\005 \001(\005\"\322\002\n\036Distributed"
-  "PyTorchTrainingTask\022Y\n\017worker_replicas\030\001"
+  "ow/common.proto\"\233\001\n\rElasticConfig\022\024\n\014rdz"
+  "v_backend\030\001 \001(\t\022\024\n\014min_replicas\030\002 \001(\005\022\024\n"
+  "\014max_replicas\030\003 \001(\005\022\026\n\016nproc_per_node\030\004 "
+  "\001(\005\022\032\n\022nproc_per_node_str\030\006 \001(\t\022\024\n\014max_r"
+  "estarts\030\005 \001(\005\"\322\002\n\036DistributedPyTorchTrai"
+  "ningTask\022Y\n\017worker_replicas\030\001 \001(\0132@.flyt"
+  "eidl.plugins.kubeflow.DistributedPyTorch"
+  "TrainingReplicaSpec\022Y\n\017master_replicas\030\002"
   " \001(\0132@.flyteidl.plugins.kubeflow.Distrib"
-  "utedPyTorchTrainingReplicaSpec\022Y\n\017master"
-  "_replicas\030\002 \001(\0132@.flyteidl.plugins.kubef"
-  "low.DistributedPyTorchTrainingReplicaSpe"
-  "c\0228\n\nrun_policy\030\003 \001(\0132$.flyteidl.plugins"
-  ".kubeflow.RunPolicy\022@\n\016elastic_config\030\004 "
-  "\001(\0132(.flyteidl.plugins.kubeflow.ElasticC"
-  "onfig\"\267\001\n%DistributedPyTorchTrainingRepl"
-  "icaSpec\022\020\n\010replicas\030\001 \001(\005\022\r\n\005image\030\002 \001(\t"
-  "\022+\n\tresources\030\003 \001(\0132\030.flyteidl.core.Reso"
-  "urces\022@\n\016restart_policy\030\004 \001(\0162(.flyteidl"
-  ".plugins.kubeflow.RestartPolicyB9Z7githu"
-  "b.com/flyteorg/flyteidl/gen/pb-go/flytei"
-  "dl/pluginsb\006proto3"
+  "utedPyTorchTrainingReplicaSpec\0228\n\nrun_po"
+  "licy\030\003 \001(\0132$.flyteidl.plugins.kubeflow.R"
+  "unPolicy\022@\n\016elastic_config\030\004 \001(\0132(.flyte"
+  "idl.plugins.kubeflow.ElasticConfig\"\267\001\n%D"
+  "istributedPyTorchTrainingReplicaSpec\022\020\n\010"
+  "replicas\030\001 \001(\005\022\r\n\005image\030\002 \001(\t\022+\n\tresourc"
+  "es\030\003 \001(\0132\030.flyteidl.core.Resources\022@\n\016re"
+  "start_policy\030\004 \001(\0162(.flyteidl.plugins.ku"
+  "beflow.RestartPolicyB9Z7github.com/flyte"
+  "org/flyteidl/gen/pb-go/flyteidl/pluginsb"
+  "\006proto3"
   ;
 ::google::protobuf::internal::DescriptorTable descriptor_table_flyteidl_2fplugins_2fkubeflow_2fpytorch_2eproto = {
   false, InitDefaults_flyteidl_2fplugins_2fkubeflow_2fpytorch_2eproto, 
   descriptor_table_protodef_flyteidl_2fplugins_2fkubeflow_2fpytorch_2eproto,
-  "flyteidl/plugins/kubeflow/pytorch.proto", &assign_descriptors_table_flyteidl_2fplugins_2fkubeflow_2fpytorch_2eproto, 858,
+  "flyteidl/plugins/kubeflow/pytorch.proto", &assign_descriptors_table_flyteidl_2fplugins_2fkubeflow_2fpytorch_2eproto, 887,
 };
 
 void AddDescriptors_flyteidl_2fplugins_2fkubeflow_2fpytorch_2eproto() {
@@ -200,6 +202,7 @@ const int ElasticConfig::kRdzvBackendFieldNumber;
 const int ElasticConfig::kMinReplicasFieldNumber;
 const int ElasticConfig::kMaxReplicasFieldNumber;
 const int ElasticConfig::kNprocPerNodeFieldNumber;
+const int ElasticConfig::kNprocPerNodeStrFieldNumber;
 const int ElasticConfig::kMaxRestartsFieldNumber;
 #endif  // !defined(_MSC_VER) || _MSC_VER >= 1900
 
@@ -216,6 +219,10 @@ ElasticConfig::ElasticConfig(const ElasticConfig& from)
   if (from.rdzv_backend().size() > 0) {
     rdzv_backend_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.rdzv_backend_);
   }
+  nproc_per_node_str_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  if (from.nproc_per_node_str().size() > 0) {
+    nproc_per_node_str_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.nproc_per_node_str_);
+  }
   ::memcpy(&min_replicas_, &from.min_replicas_,
     static_cast<size_t>(reinterpret_cast<char*>(&max_restarts_) -
     reinterpret_cast<char*>(&min_replicas_)) + sizeof(max_restarts_));
@@ -226,6 +233,7 @@ void ElasticConfig::SharedCtor() {
   ::google::protobuf::internal::InitSCC(
       &scc_info_ElasticConfig_flyteidl_2fplugins_2fkubeflow_2fpytorch_2eproto.base);
   rdzv_backend_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  nproc_per_node_str_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
   ::memset(&min_replicas_, 0, static_cast<size_t>(
       reinterpret_cast<char*>(&max_restarts_) -
       reinterpret_cast<char*>(&min_replicas_)) + sizeof(max_restarts_));
@@ -238,6 +246,7 @@ ElasticConfig::~ElasticConfig() {
 
 void ElasticConfig::SharedDtor() {
   rdzv_backend_.DestroyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  nproc_per_node_str_.DestroyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
 }
 
 void ElasticConfig::SetCachedSize(int size) const {
@@ -256,6 +265,7 @@ void ElasticConfig::Clear() {
   (void) cached_has_bits;
 
   rdzv_backend_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  nproc_per_node_str_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
   ::memset(&min_replicas_, 0, static_cast<size_t>(
       reinterpret_cast<char*>(&max_restarts_) -
       reinterpret_cast<char*>(&min_replicas_)) + sizeof(max_restarts_));
@@ -317,6 +327,22 @@ const char* ElasticConfig::_InternalParse(const char* begin, const char* end, vo
         if (static_cast<::google::protobuf::uint8>(tag) != 40) goto handle_unusual;
         msg->set_max_restarts(::google::protobuf::internal::ReadVarint(&ptr));
         GOOGLE_PROTOBUF_PARSER_ASSERT(ptr);
+        break;
+      }
+      // string nproc_per_node_str = 6;
+      case 6: {
+        if (static_cast<::google::protobuf::uint8>(tag) != 50) goto handle_unusual;
+        ptr = ::google::protobuf::io::ReadSize(ptr, &size);
+        GOOGLE_PROTOBUF_PARSER_ASSERT(ptr);
+        ctx->extra_parse_data().SetFieldName("flyteidl.plugins.kubeflow.ElasticConfig.nproc_per_node_str");
+        object = msg->mutable_nproc_per_node_str();
+        if (size > end - ptr + ::google::protobuf::internal::ParseContext::kSlopBytes) {
+          parser_till_end = ::google::protobuf::internal::GreedyStringParserUTF8;
+          goto string_till_end;
+        }
+        GOOGLE_PROTOBUF_PARSER_ASSERT(::google::protobuf::internal::StringCheckUTF8(ptr, size, ctx));
+        ::google::protobuf::internal::InlineGreedyStringParser(object, ptr, size, ctx);
+        ptr += size;
         break;
       }
       default: {
@@ -420,6 +446,21 @@ bool ElasticConfig::MergePartialFromCodedStream(
         break;
       }
 
+      // string nproc_per_node_str = 6;
+      case 6: {
+        if (static_cast< ::google::protobuf::uint8>(tag) == (50 & 0xFF)) {
+          DO_(::google::protobuf::internal::WireFormatLite::ReadString(
+                input, this->mutable_nproc_per_node_str()));
+          DO_(::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
+            this->nproc_per_node_str().data(), static_cast<int>(this->nproc_per_node_str().length()),
+            ::google::protobuf::internal::WireFormatLite::PARSE,
+            "flyteidl.plugins.kubeflow.ElasticConfig.nproc_per_node_str"));
+        } else {
+          goto handle_unusual;
+        }
+        break;
+      }
+
       default: {
       handle_unusual:
         if (tag == 0) {
@@ -477,6 +518,16 @@ void ElasticConfig::SerializeWithCachedSizes(
     ::google::protobuf::internal::WireFormatLite::WriteInt32(5, this->max_restarts(), output);
   }
 
+  // string nproc_per_node_str = 6;
+  if (this->nproc_per_node_str().size() > 0) {
+    ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
+      this->nproc_per_node_str().data(), static_cast<int>(this->nproc_per_node_str().length()),
+      ::google::protobuf::internal::WireFormatLite::SERIALIZE,
+      "flyteidl.plugins.kubeflow.ElasticConfig.nproc_per_node_str");
+    ::google::protobuf::internal::WireFormatLite::WriteStringMaybeAliased(
+      6, this->nproc_per_node_str(), output);
+  }
+
   if (_internal_metadata_.have_unknown_fields()) {
     ::google::protobuf::internal::WireFormat::SerializeUnknownFields(
         _internal_metadata_.unknown_fields(), output);
@@ -521,6 +572,17 @@ void ElasticConfig::SerializeWithCachedSizes(
     target = ::google::protobuf::internal::WireFormatLite::WriteInt32ToArray(5, this->max_restarts(), target);
   }
 
+  // string nproc_per_node_str = 6;
+  if (this->nproc_per_node_str().size() > 0) {
+    ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
+      this->nproc_per_node_str().data(), static_cast<int>(this->nproc_per_node_str().length()),
+      ::google::protobuf::internal::WireFormatLite::SERIALIZE,
+      "flyteidl.plugins.kubeflow.ElasticConfig.nproc_per_node_str");
+    target =
+      ::google::protobuf::internal::WireFormatLite::WriteStringToArray(
+        6, this->nproc_per_node_str(), target);
+  }
+
   if (_internal_metadata_.have_unknown_fields()) {
     target = ::google::protobuf::internal::WireFormat::SerializeUnknownFieldsToArray(
         _internal_metadata_.unknown_fields(), target);
@@ -547,6 +609,13 @@ size_t ElasticConfig::ByteSizeLong() const {
     total_size += 1 +
       ::google::protobuf::internal::WireFormatLite::StringSize(
         this->rdzv_backend());
+  }
+
+  // string nproc_per_node_str = 6;
+  if (this->nproc_per_node_str().size() > 0) {
+    total_size += 1 +
+      ::google::protobuf::internal::WireFormatLite::StringSize(
+        this->nproc_per_node_str());
   }
 
   // int32 min_replicas = 2;
@@ -608,6 +677,10 @@ void ElasticConfig::MergeFrom(const ElasticConfig& from) {
 
     rdzv_backend_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.rdzv_backend_);
   }
+  if (from.nproc_per_node_str().size() > 0) {
+
+    nproc_per_node_str_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.nproc_per_node_str_);
+  }
   if (from.min_replicas() != 0) {
     set_min_replicas(from.min_replicas());
   }
@@ -648,6 +721,8 @@ void ElasticConfig::InternalSwap(ElasticConfig* other) {
   using std::swap;
   _internal_metadata_.Swap(&other->_internal_metadata_);
   rdzv_backend_.Swap(&other->rdzv_backend_, &::google::protobuf::internal::GetEmptyStringAlreadyInited(),
+    GetArenaNoVirtual());
+  nproc_per_node_str_.Swap(&other->nproc_per_node_str_, &::google::protobuf::internal::GetEmptyStringAlreadyInited(),
     GetArenaNoVirtual());
   swap(min_replicas_, other->min_replicas_);
   swap(max_replicas_, other->max_replicas_);

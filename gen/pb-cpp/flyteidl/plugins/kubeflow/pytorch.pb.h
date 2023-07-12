@@ -187,6 +187,20 @@ class ElasticConfig final :
   ::std::string* release_rdzv_backend();
   void set_allocated_rdzv_backend(::std::string* rdzv_backend);
 
+  // string nproc_per_node_str = 6;
+  void clear_nproc_per_node_str();
+  static const int kNprocPerNodeStrFieldNumber = 6;
+  const ::std::string& nproc_per_node_str() const;
+  void set_nproc_per_node_str(const ::std::string& value);
+  #if LANG_CXX11
+  void set_nproc_per_node_str(::std::string&& value);
+  #endif
+  void set_nproc_per_node_str(const char* value);
+  void set_nproc_per_node_str(const char* value, size_t size);
+  ::std::string* mutable_nproc_per_node_str();
+  ::std::string* release_nproc_per_node_str();
+  void set_allocated_nproc_per_node_str(::std::string* nproc_per_node_str);
+
   // int32 min_replicas = 2;
   void clear_min_replicas();
   static const int kMinReplicasFieldNumber = 2;
@@ -217,6 +231,7 @@ class ElasticConfig final :
 
   ::google::protobuf::internal::InternalMetadataWithArena _internal_metadata_;
   ::google::protobuf::internal::ArenaStringPtr rdzv_backend_;
+  ::google::protobuf::internal::ArenaStringPtr nproc_per_node_str_;
   ::google::protobuf::int32 min_replicas_;
   ::google::protobuf::int32 max_replicas_;
   ::google::protobuf::int32 nproc_per_node_;
@@ -617,6 +632,59 @@ inline void ElasticConfig::set_nproc_per_node(::google::protobuf::int32 value) {
   
   nproc_per_node_ = value;
   // @@protoc_insertion_point(field_set:flyteidl.plugins.kubeflow.ElasticConfig.nproc_per_node)
+}
+
+// string nproc_per_node_str = 6;
+inline void ElasticConfig::clear_nproc_per_node_str() {
+  nproc_per_node_str_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline const ::std::string& ElasticConfig::nproc_per_node_str() const {
+  // @@protoc_insertion_point(field_get:flyteidl.plugins.kubeflow.ElasticConfig.nproc_per_node_str)
+  return nproc_per_node_str_.GetNoArena();
+}
+inline void ElasticConfig::set_nproc_per_node_str(const ::std::string& value) {
+  
+  nproc_per_node_str_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
+  // @@protoc_insertion_point(field_set:flyteidl.plugins.kubeflow.ElasticConfig.nproc_per_node_str)
+}
+#if LANG_CXX11
+inline void ElasticConfig::set_nproc_per_node_str(::std::string&& value) {
+  
+  nproc_per_node_str_.SetNoArena(
+    &::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::move(value));
+  // @@protoc_insertion_point(field_set_rvalue:flyteidl.plugins.kubeflow.ElasticConfig.nproc_per_node_str)
+}
+#endif
+inline void ElasticConfig::set_nproc_per_node_str(const char* value) {
+  GOOGLE_DCHECK(value != nullptr);
+  
+  nproc_per_node_str_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
+  // @@protoc_insertion_point(field_set_char:flyteidl.plugins.kubeflow.ElasticConfig.nproc_per_node_str)
+}
+inline void ElasticConfig::set_nproc_per_node_str(const char* value, size_t size) {
+  
+  nproc_per_node_str_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
+      ::std::string(reinterpret_cast<const char*>(value), size));
+  // @@protoc_insertion_point(field_set_pointer:flyteidl.plugins.kubeflow.ElasticConfig.nproc_per_node_str)
+}
+inline ::std::string* ElasticConfig::mutable_nproc_per_node_str() {
+  
+  // @@protoc_insertion_point(field_mutable:flyteidl.plugins.kubeflow.ElasticConfig.nproc_per_node_str)
+  return nproc_per_node_str_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline ::std::string* ElasticConfig::release_nproc_per_node_str() {
+  // @@protoc_insertion_point(field_release:flyteidl.plugins.kubeflow.ElasticConfig.nproc_per_node_str)
+  
+  return nproc_per_node_str_.ReleaseNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline void ElasticConfig::set_allocated_nproc_per_node_str(::std::string* nproc_per_node_str) {
+  if (nproc_per_node_str != nullptr) {
+    
+  } else {
+    
+  }
+  nproc_per_node_str_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), nproc_per_node_str);
+  // @@protoc_insertion_point(field_set_allocated:flyteidl.plugins.kubeflow.ElasticConfig.nproc_per_node_str)
 }
 
 // int32 max_restarts = 5;

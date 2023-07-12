@@ -11,6 +11,7 @@ message ElasticConfig {
   int32 min_replicas = 2;
   int32 max_replicas = 3;
   int32 nproc_per_node = 4;
+  string nproc_per_node_str = 6;  // Not using oneof for backwards compatibility
   int32 max_restarts = 5;
 }
 
