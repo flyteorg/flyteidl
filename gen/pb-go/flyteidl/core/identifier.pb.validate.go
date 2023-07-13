@@ -441,8 +441,6 @@ func (m *ArtifactKey) Validate() error {
 
 	// no validation rules for Domain
 
-	// no validation rules for Name
-
 	return nil
 }
 
@@ -517,7 +515,7 @@ func (m *ArtifactID) Validate() error {
 		}
 	}
 
-	// no validation rules for Version
+	// no validation rules for Uuid
 
 	return nil
 }

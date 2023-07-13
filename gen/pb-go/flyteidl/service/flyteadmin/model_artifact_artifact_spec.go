@@ -15,6 +15,7 @@ type ArtifactArtifactSpec struct {
 	Type_ *CoreLiteralType `json:"type,omitempty"`
 	// When you want to set tags on creation.
 	Tags []ArtifactTag `json:"tags,omitempty"`
+	// Set here when you want to set an alias on creation. Aliases created will have the same project/domain as the artifact.
 	Aliases []FlyteidlartifactAlias `json:"aliases,omitempty"`
 	// Outputs of tasks will have this.
 	TaskExecution *CoreTaskExecutionIdentifier `json:"task_execution,omitempty"`

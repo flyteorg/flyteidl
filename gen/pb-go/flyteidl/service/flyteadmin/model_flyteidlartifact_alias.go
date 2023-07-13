@@ -10,7 +10,9 @@
 package flyteadmin
 
 type FlyteidlartifactAlias struct {
-	// Should this be an enum? I think it should be. version is the canonical example. If we leave this as a string, we could merge this with Tag, like use a Tag in this message instead.
-	Key string `json:"key,omitempty"`
+	// ties this directly to the artifact. do we worry about exposing this to the user? this is likely just the db ID. we can add a uuid field in key (turning it into an ID) for a user facing id.
+	ArtifactId string `json:"artifact_id,omitempty"`
+	// should we add artifactkey (aka project/domain) here? If not adding - this implies that we will always have the same project/domain. You can have a projA/domainD alias pointing to a projB/domainB artifact Also aliases need to be unique on project/domain/alias name/alias value. This is effectively a primary key.
+	Name string `json:"name,omitempty"`
 	Value string `json:"value,omitempty"`
 }

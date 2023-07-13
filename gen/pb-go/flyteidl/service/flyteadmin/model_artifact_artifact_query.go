@@ -11,7 +11,5 @@ package flyteadmin
 
 type ArtifactArtifactQuery struct {
 	ArtifactKey *CoreArtifactKey `json:"artifact_key,omitempty"`
-	Version string `json:"version,omitempty"`
 	Alias *FlyteidlartifactAlias `json:"alias,omitempty"`
-	Tags []ArtifactTag `json:"tags,omitempty"`
 }

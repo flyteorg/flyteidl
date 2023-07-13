@@ -217,14 +217,13 @@ const ::google::protobuf::uint32 TableStruct_flyteidl_2fcore_2fidentifier_2eprot
   ~0u,  // no _weak_field_map_
   PROTOBUF_FIELD_OFFSET(::flyteidl::core::ArtifactKey, project_),
   PROTOBUF_FIELD_OFFSET(::flyteidl::core::ArtifactKey, domain_),
-  PROTOBUF_FIELD_OFFSET(::flyteidl::core::ArtifactKey, name_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::flyteidl::core::ArtifactID, _internal_metadata_),
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
   PROTOBUF_FIELD_OFFSET(::flyteidl::core::ArtifactID, artifact_key_),
-  PROTOBUF_FIELD_OFFSET(::flyteidl::core::ArtifactID, version_),
+  PROTOBUF_FIELD_OFFSET(::flyteidl::core::ArtifactID, uuid_),
 };
 static const ::google::protobuf::internal::MigrationSchema schemas[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
   { 0, -1, sizeof(::flyteidl::core::Identifier)},
@@ -233,7 +232,7 @@ static const ::google::protobuf::internal::MigrationSchema schemas[] PROTOBUF_SE
   { 25, -1, sizeof(::flyteidl::core::TaskExecutionIdentifier)},
   { 33, -1, sizeof(::flyteidl::core::SignalIdentifier)},
   { 40, -1, sizeof(::flyteidl::core::ArtifactKey)},
-  { 48, -1, sizeof(::flyteidl::core::ArtifactID)},
+  { 47, -1, sizeof(::flyteidl::core::ArtifactID)},
 };
 
 static ::google::protobuf::Message const * const file_default_instances[] = {
@@ -268,20 +267,19 @@ const char descriptor_table_protodef_flyteidl_2fcore_2fidentifier_2eproto[] =
   "e.NodeExecutionIdentifier\022\025\n\rretry_attem"
   "pt\030\003 \001(\r\"g\n\020SignalIdentifier\022\021\n\tsignal_i"
   "d\030\001 \001(\t\022@\n\014execution_id\030\002 \001(\0132*.flyteidl"
-  ".core.WorkflowExecutionIdentifier\"<\n\013Art"
+  ".core.WorkflowExecutionIdentifier\".\n\013Art"
   "ifactKey\022\017\n\007project\030\001 \001(\t\022\016\n\006domain\030\002 \001("
-  "\t\022\014\n\004name\030\003 \001(\t\"O\n\nArtifactID\0220\n\014artifac"
-  "t_key\030\001 \001(\0132\032.flyteidl.core.ArtifactKey\022"
-  "\017\n\007version\030\004 \001(\t*U\n\014ResourceType\022\017\n\013UNSP"
-  "ECIFIED\020\000\022\010\n\004TASK\020\001\022\014\n\010WORKFLOW\020\002\022\017\n\013LAU"
-  "NCH_PLAN\020\003\022\013\n\007DATASET\020\004B6Z4github.com/fl"
-  "yteorg/flyteidl/gen/pb-go/flyteidl/coreb"
-  "\006proto3"
+  "\t\"L\n\nArtifactID\0220\n\014artifact_key\030\001 \001(\0132\032."
+  "flyteidl.core.ArtifactKey\022\014\n\004uuid\030\002 \001(\t*"
+  "U\n\014ResourceType\022\017\n\013UNSPECIFIED\020\000\022\010\n\004TASK"
+  "\020\001\022\014\n\010WORKFLOW\020\002\022\017\n\013LAUNCH_PLAN\020\003\022\013\n\007DAT"
+  "ASET\020\004B6Z4github.com/flyteorg/flyteidl/g"
+  "en/pb-go/flyteidl/coreb\006proto3"
   ;
 ::google::protobuf::internal::DescriptorTable descriptor_table_flyteidl_2fcore_2fidentifier_2eproto = {
   false, InitDefaults_flyteidl_2fcore_2fidentifier_2eproto, 
   descriptor_table_protodef_flyteidl_2fcore_2fidentifier_2eproto,
-  "flyteidl/core/identifier.proto", &assign_descriptors_table_flyteidl_2fcore_2fidentifier_2eproto, 927,
+  "flyteidl/core/identifier.proto", &assign_descriptors_table_flyteidl_2fcore_2fidentifier_2eproto, 910,
 };
 
 void AddDescriptors_flyteidl_2fcore_2fidentifier_2eproto() {
@@ -2458,7 +2456,6 @@ class ArtifactKey::HasBitSetters {
 #if !defined(_MSC_VER) || _MSC_VER >= 1900
 const int ArtifactKey::kProjectFieldNumber;
 const int ArtifactKey::kDomainFieldNumber;
-const int ArtifactKey::kNameFieldNumber;
 #endif  // !defined(_MSC_VER) || _MSC_VER >= 1900
 
 ArtifactKey::ArtifactKey()
@@ -2478,10 +2475,6 @@ ArtifactKey::ArtifactKey(const ArtifactKey& from)
   if (from.domain().size() > 0) {
     domain_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.domain_);
   }
-  name_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-  if (from.name().size() > 0) {
-    name_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.name_);
-  }
   // @@protoc_insertion_point(copy_constructor:flyteidl.core.ArtifactKey)
 }
 
@@ -2490,7 +2483,6 @@ void ArtifactKey::SharedCtor() {
       &scc_info_ArtifactKey_flyteidl_2fcore_2fidentifier_2eproto.base);
   project_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
   domain_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-  name_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
 }
 
 ArtifactKey::~ArtifactKey() {
@@ -2501,7 +2493,6 @@ ArtifactKey::~ArtifactKey() {
 void ArtifactKey::SharedDtor() {
   project_.DestroyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
   domain_.DestroyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-  name_.DestroyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
 }
 
 void ArtifactKey::SetCachedSize(int size) const {
@@ -2521,7 +2512,6 @@ void ArtifactKey::Clear() {
 
   project_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
   domain_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-  name_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
   _internal_metadata_.Clear();
 }
 
@@ -2561,22 +2551,6 @@ const char* ArtifactKey::_InternalParse(const char* begin, const char* end, void
         GOOGLE_PROTOBUF_PARSER_ASSERT(ptr);
         ctx->extra_parse_data().SetFieldName("flyteidl.core.ArtifactKey.domain");
         object = msg->mutable_domain();
-        if (size > end - ptr + ::google::protobuf::internal::ParseContext::kSlopBytes) {
-          parser_till_end = ::google::protobuf::internal::GreedyStringParserUTF8;
-          goto string_till_end;
-        }
-        GOOGLE_PROTOBUF_PARSER_ASSERT(::google::protobuf::internal::StringCheckUTF8(ptr, size, ctx));
-        ::google::protobuf::internal::InlineGreedyStringParser(object, ptr, size, ctx);
-        ptr += size;
-        break;
-      }
-      // string name = 3;
-      case 3: {
-        if (static_cast<::google::protobuf::uint8>(tag) != 26) goto handle_unusual;
-        ptr = ::google::protobuf::io::ReadSize(ptr, &size);
-        GOOGLE_PROTOBUF_PARSER_ASSERT(ptr);
-        ctx->extra_parse_data().SetFieldName("flyteidl.core.ArtifactKey.name");
-        object = msg->mutable_name();
         if (size > end - ptr + ::google::protobuf::internal::ParseContext::kSlopBytes) {
           parser_till_end = ::google::protobuf::internal::GreedyStringParserUTF8;
           goto string_till_end;
@@ -2650,21 +2624,6 @@ bool ArtifactKey::MergePartialFromCodedStream(
         break;
       }
 
-      // string name = 3;
-      case 3: {
-        if (static_cast< ::google::protobuf::uint8>(tag) == (26 & 0xFF)) {
-          DO_(::google::protobuf::internal::WireFormatLite::ReadString(
-                input, this->mutable_name()));
-          DO_(::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
-            this->name().data(), static_cast<int>(this->name().length()),
-            ::google::protobuf::internal::WireFormatLite::PARSE,
-            "flyteidl.core.ArtifactKey.name"));
-        } else {
-          goto handle_unusual;
-        }
-        break;
-      }
-
       default: {
       handle_unusual:
         if (tag == 0) {
@@ -2712,16 +2671,6 @@ void ArtifactKey::SerializeWithCachedSizes(
       2, this->domain(), output);
   }
 
-  // string name = 3;
-  if (this->name().size() > 0) {
-    ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
-      this->name().data(), static_cast<int>(this->name().length()),
-      ::google::protobuf::internal::WireFormatLite::SERIALIZE,
-      "flyteidl.core.ArtifactKey.name");
-    ::google::protobuf::internal::WireFormatLite::WriteStringMaybeAliased(
-      3, this->name(), output);
-  }
-
   if (_internal_metadata_.have_unknown_fields()) {
     ::google::protobuf::internal::WireFormat::SerializeUnknownFields(
         _internal_metadata_.unknown_fields(), output);
@@ -2755,17 +2704,6 @@ void ArtifactKey::SerializeWithCachedSizes(
     target =
       ::google::protobuf::internal::WireFormatLite::WriteStringToArray(
         2, this->domain(), target);
-  }
-
-  // string name = 3;
-  if (this->name().size() > 0) {
-    ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
-      this->name().data(), static_cast<int>(this->name().length()),
-      ::google::protobuf::internal::WireFormatLite::SERIALIZE,
-      "flyteidl.core.ArtifactKey.name");
-    target =
-      ::google::protobuf::internal::WireFormatLite::WriteStringToArray(
-        3, this->name(), target);
   }
 
   if (_internal_metadata_.have_unknown_fields()) {
@@ -2803,13 +2741,6 @@ size_t ArtifactKey::ByteSizeLong() const {
         this->domain());
   }
 
-  // string name = 3;
-  if (this->name().size() > 0) {
-    total_size += 1 +
-      ::google::protobuf::internal::WireFormatLite::StringSize(
-        this->name());
-  }
-
   int cached_size = ::google::protobuf::internal::ToCachedSize(total_size);
   SetCachedSize(cached_size);
   return total_size;
@@ -2845,10 +2776,6 @@ void ArtifactKey::MergeFrom(const ArtifactKey& from) {
 
     domain_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.domain_);
   }
-  if (from.name().size() > 0) {
-
-    name_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.name_);
-  }
 }
 
 void ArtifactKey::CopyFrom(const ::google::protobuf::Message& from) {
@@ -2880,8 +2807,6 @@ void ArtifactKey::InternalSwap(ArtifactKey* other) {
     GetArenaNoVirtual());
   domain_.Swap(&other->domain_, &::google::protobuf::internal::GetEmptyStringAlreadyInited(),
     GetArenaNoVirtual());
-  name_.Swap(&other->name_, &::google::protobuf::internal::GetEmptyStringAlreadyInited(),
-    GetArenaNoVirtual());
 }
 
 ::google::protobuf::Metadata ArtifactKey::GetMetadata() const {
@@ -2907,7 +2832,7 @@ ArtifactID::HasBitSetters::artifact_key(const ArtifactID* msg) {
 }
 #if !defined(_MSC_VER) || _MSC_VER >= 1900
 const int ArtifactID::kArtifactKeyFieldNumber;
-const int ArtifactID::kVersionFieldNumber;
+const int ArtifactID::kUuidFieldNumber;
 #endif  // !defined(_MSC_VER) || _MSC_VER >= 1900
 
 ArtifactID::ArtifactID()
@@ -2919,9 +2844,9 @@ ArtifactID::ArtifactID(const ArtifactID& from)
   : ::google::protobuf::Message(),
       _internal_metadata_(nullptr) {
   _internal_metadata_.MergeFrom(from._internal_metadata_);
-  version_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-  if (from.version().size() > 0) {
-    version_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.version_);
+  uuid_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  if (from.uuid().size() > 0) {
+    uuid_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.uuid_);
   }
   if (from.has_artifact_key()) {
     artifact_key_ = new ::flyteidl::core::ArtifactKey(*from.artifact_key_);
@@ -2934,7 +2859,7 @@ ArtifactID::ArtifactID(const ArtifactID& from)
 void ArtifactID::SharedCtor() {
   ::google::protobuf::internal::InitSCC(
       &scc_info_ArtifactID_flyteidl_2fcore_2fidentifier_2eproto.base);
-  version_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  uuid_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
   artifact_key_ = nullptr;
 }
 
@@ -2944,7 +2869,7 @@ ArtifactID::~ArtifactID() {
 }
 
 void ArtifactID::SharedDtor() {
-  version_.DestroyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  uuid_.DestroyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
   if (this != internal_default_instance()) delete artifact_key_;
 }
 
@@ -2963,7 +2888,7 @@ void ArtifactID::Clear() {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  version_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  uuid_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
   if (GetArenaNoVirtual() == nullptr && artifact_key_ != nullptr) {
     delete artifact_key_;
   }
@@ -2997,13 +2922,13 @@ const char* ArtifactID::_InternalParse(const char* begin, const char* end, void*
             {parser_till_end, object}, ptr - size, ptr));
         break;
       }
-      // string version = 4;
-      case 4: {
-        if (static_cast<::google::protobuf::uint8>(tag) != 34) goto handle_unusual;
+      // string uuid = 2;
+      case 2: {
+        if (static_cast<::google::protobuf::uint8>(tag) != 18) goto handle_unusual;
         ptr = ::google::protobuf::io::ReadSize(ptr, &size);
         GOOGLE_PROTOBUF_PARSER_ASSERT(ptr);
-        ctx->extra_parse_data().SetFieldName("flyteidl.core.ArtifactID.version");
-        object = msg->mutable_version();
+        ctx->extra_parse_data().SetFieldName("flyteidl.core.ArtifactID.uuid");
+        object = msg->mutable_uuid();
         if (size > end - ptr + ::google::protobuf::internal::ParseContext::kSlopBytes) {
           parser_till_end = ::google::protobuf::internal::GreedyStringParserUTF8;
           goto string_till_end;
@@ -3058,15 +2983,15 @@ bool ArtifactID::MergePartialFromCodedStream(
         break;
       }
 
-      // string version = 4;
-      case 4: {
-        if (static_cast< ::google::protobuf::uint8>(tag) == (34 & 0xFF)) {
+      // string uuid = 2;
+      case 2: {
+        if (static_cast< ::google::protobuf::uint8>(tag) == (18 & 0xFF)) {
           DO_(::google::protobuf::internal::WireFormatLite::ReadString(
-                input, this->mutable_version()));
+                input, this->mutable_uuid()));
           DO_(::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
-            this->version().data(), static_cast<int>(this->version().length()),
+            this->uuid().data(), static_cast<int>(this->uuid().length()),
             ::google::protobuf::internal::WireFormatLite::PARSE,
-            "flyteidl.core.ArtifactID.version"));
+            "flyteidl.core.ArtifactID.uuid"));
         } else {
           goto handle_unusual;
         }
@@ -3106,14 +3031,14 @@ void ArtifactID::SerializeWithCachedSizes(
       1, HasBitSetters::artifact_key(this), output);
   }
 
-  // string version = 4;
-  if (this->version().size() > 0) {
+  // string uuid = 2;
+  if (this->uuid().size() > 0) {
     ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
-      this->version().data(), static_cast<int>(this->version().length()),
+      this->uuid().data(), static_cast<int>(this->uuid().length()),
       ::google::protobuf::internal::WireFormatLite::SERIALIZE,
-      "flyteidl.core.ArtifactID.version");
+      "flyteidl.core.ArtifactID.uuid");
     ::google::protobuf::internal::WireFormatLite::WriteStringMaybeAliased(
-      4, this->version(), output);
+      2, this->uuid(), output);
   }
 
   if (_internal_metadata_.have_unknown_fields()) {
@@ -3136,15 +3061,15 @@ void ArtifactID::SerializeWithCachedSizes(
         1, HasBitSetters::artifact_key(this), target);
   }
 
-  // string version = 4;
-  if (this->version().size() > 0) {
+  // string uuid = 2;
+  if (this->uuid().size() > 0) {
     ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
-      this->version().data(), static_cast<int>(this->version().length()),
+      this->uuid().data(), static_cast<int>(this->uuid().length()),
       ::google::protobuf::internal::WireFormatLite::SERIALIZE,
-      "flyteidl.core.ArtifactID.version");
+      "flyteidl.core.ArtifactID.uuid");
     target =
       ::google::protobuf::internal::WireFormatLite::WriteStringToArray(
-        4, this->version(), target);
+        2, this->uuid(), target);
   }
 
   if (_internal_metadata_.have_unknown_fields()) {
@@ -3168,11 +3093,11 @@ size_t ArtifactID::ByteSizeLong() const {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  // string version = 4;
-  if (this->version().size() > 0) {
+  // string uuid = 2;
+  if (this->uuid().size() > 0) {
     total_size += 1 +
       ::google::protobuf::internal::WireFormatLite::StringSize(
-        this->version());
+        this->uuid());
   }
 
   // .flyteidl.core.ArtifactKey artifact_key = 1;
@@ -3209,9 +3134,9 @@ void ArtifactID::MergeFrom(const ArtifactID& from) {
   ::google::protobuf::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  if (from.version().size() > 0) {
+  if (from.uuid().size() > 0) {
 
-    version_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.version_);
+    uuid_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.uuid_);
   }
   if (from.has_artifact_key()) {
     mutable_artifact_key()->::flyteidl::core::ArtifactKey::MergeFrom(from.artifact_key());
@@ -3243,7 +3168,7 @@ void ArtifactID::Swap(ArtifactID* other) {
 void ArtifactID::InternalSwap(ArtifactID* other) {
   using std::swap;
   _internal_metadata_.Swap(&other->_internal_metadata_);
-  version_.Swap(&other->version_, &::google::protobuf::internal::GetEmptyStringAlreadyInited(),
+  uuid_.Swap(&other->uuid_, &::google::protobuf::internal::GetEmptyStringAlreadyInited(),
     GetArenaNoVirtual());
   swap(artifact_key_, other->artifact_key_);
 }

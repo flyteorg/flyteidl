@@ -165,6 +165,7 @@ class ArtifactArtifactSpec(object):
     def aliases(self):
         """Gets the aliases of this ArtifactArtifactSpec.  # noqa: E501
 
+        Set here when you want to set an alias on creation. Aliases created will have the same project/domain as the artifact.  # noqa: E501
 
         :return: The aliases of this ArtifactArtifactSpec.  # noqa: E501
         :rtype: list[FlyteidlartifactAlias]
@@ -175,6 +176,7 @@ class ArtifactArtifactSpec(object):
     def aliases(self, aliases):
         """Sets the aliases of this ArtifactArtifactSpec.
 
+        Set here when you want to set an alias on creation. Aliases created will have the same project/domain as the artifact.  # noqa: E501
 
         :param aliases: The aliases of this ArtifactArtifactSpec.  # noqa: E501
         :type: list[FlyteidlartifactAlias]

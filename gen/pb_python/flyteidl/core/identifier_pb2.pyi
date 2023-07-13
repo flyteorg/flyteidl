@@ -69,19 +69,17 @@ class SignalIdentifier(_message.Message):
     def __init__(self, signal_id: _Optional[str] = ..., execution_id: _Optional[_Union[WorkflowExecutionIdentifier, _Mapping]] = ...) -> None: ...
 
 class ArtifactKey(_message.Message):
-    __slots__ = ["project", "domain", "name"]
+    __slots__ = ["project", "domain"]
     PROJECT_FIELD_NUMBER: _ClassVar[int]
     DOMAIN_FIELD_NUMBER: _ClassVar[int]
-    NAME_FIELD_NUMBER: _ClassVar[int]
     project: str
     domain: str
-    name: str
-    def __init__(self, project: _Optional[str] = ..., domain: _Optional[str] = ..., name: _Optional[str] = ...) -> None: ...
+    def __init__(self, project: _Optional[str] = ..., domain: _Optional[str] = ...) -> None: ...
 
 class ArtifactID(_message.Message):
-    __slots__ = ["artifact_key", "version"]
+    __slots__ = ["artifact_key", "uuid"]
     ARTIFACT_KEY_FIELD_NUMBER: _ClassVar[int]
-    VERSION_FIELD_NUMBER: _ClassVar[int]
+    UUID_FIELD_NUMBER: _ClassVar[int]
     artifact_key: ArtifactKey
-    version: str
-    def __init__(self, artifact_key: _Optional[_Union[ArtifactKey, _Mapping]] = ..., version: _Optional[str] = ...) -> None: ...
+    uuid: str
+    def __init__(self, artifact_key: _Optional[_Union[ArtifactKey, _Mapping]] = ..., uuid: _Optional[str] = ...) -> None: ...

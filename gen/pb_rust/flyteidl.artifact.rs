@@ -12,6 +12,19 @@ pub struct Artifact {
 }
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(Clone, PartialEq, ::prost::Message)]
+pub struct CreateArtifactRequest {
+    /// Specify just project/domain on creation
+    #[prost(message, optional, tag="1")]
+    pub artifact_key: ::core::option::Option<super::core::ArtifactKey>,
+    /// If given, and conflicting, the request will be rejected.
+    /// Has to conform to some format, can't collide with the alias format.
+    #[prost(string, tag="2")]
+    pub uri: ::prost::alloc::string::String,
+    #[prost(message, optional, tag="3")]
+    pub spec: ::core::option::Option<ArtifactSpec>,
+}
+#[allow(clippy::derive_partial_eq_without_eq)]
+#[derive(Clone, PartialEq, ::prost::Message)]
 pub struct ArtifactSpec {
     #[prost(message, optional, tag="1")]
     pub value: ::core::option::Option<super::core::Literal>,
@@ -23,7 +36,8 @@ pub struct ArtifactSpec {
     /// When you want to set tags on creation.
     #[prost(message, repeated, tag="3")]
     pub tags: ::prost::alloc::vec::Vec<Tag>,
-    /// When you want to set an alias on creation. should this also be repeated?
+    /// Set here when you want to set an alias on creation.
+    /// Aliases created will have the same project/domain as the artifact.
     #[prost(message, repeated, tag="4")]
     pub aliases: ::prost::alloc::vec::Vec<Alias>,
     #[prost(string, tag="8")]
@@ -49,30 +63,32 @@ pub mod artifact_spec {
         Principal(::prost::alloc::string::String),
     }
 }
+/// have a bunch of artifacts. they have a project and domain
+/// This message is something that when coupled with the project and domain, uniquely identifies an artifact.
+/// so here, project, domain, name, value have to be unique
+#[allow(clippy::derive_partial_eq_without_eq)]
+#[derive(Clone, PartialEq, ::prost::Message)]
+pub struct Alias {
+    /// ties this directly to the artifact. do we worry about exposing this to the user? this is likely just the db ID.
+    /// we can add a uuid field in key (turning it into an ID) for a user facing id.
+    #[prost(string, tag="1")]
+    pub artifact_id: ::prost::alloc::string::String,
+    /// should we add artifactkey (aka project/domain) here?
+    /// If not adding - this implies that we will always have the same project/domain. You can have a projA/domainD
+    /// alias pointing to a projB/domainB artifact
+    /// Also aliases need to be unique on project/domain/alias name/alias value. This is effectively a primary key.
+    #[prost(string, tag="2")]
+    pub name: ::prost::alloc::string::String,
+    #[prost(string, tag="3")]
+    pub value: ::prost::alloc::string::String,
+}
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(Clone, PartialEq, ::prost::Message)]
 pub struct ArtifactQuery {
     #[prost(message, optional, tag="1")]
     pub artifact_key: ::core::option::Option<super::core::ArtifactKey>,
-    #[prost(string, tag="2")]
-    pub version: ::prost::alloc::string::String,
-    #[prost(message, optional, tag="3")]
+    #[prost(message, optional, tag="2")]
     pub alias: ::core::option::Option<Alias>,
-    #[prost(message, repeated, tag="4")]
-    pub tags: ::prost::alloc::vec::Vec<Tag>,
-}
-#[allow(clippy::derive_partial_eq_without_eq)]
-#[derive(Clone, PartialEq, ::prost::Message)]
-pub struct CreateArtifactRequest {
-    #[prost(message, optional, tag="1")]
-    pub artifact_key: ::core::option::Option<super::core::ArtifactKey>,
-    /// optional
-    #[prost(string, tag="2")]
-    pub version: ::prost::alloc::string::String,
-    #[prost(string, tag="3")]
-    pub uri: ::prost::alloc::string::String,
-    #[prost(message, optional, tag="4")]
-    pub spec: ::core::option::Option<ArtifactSpec>,
 }
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(Clone, PartialEq, ::prost::Message)]
@@ -192,23 +208,12 @@ pub struct CreateAliasResponse {
 #[derive(Clone, PartialEq, ::prost::Message)]
 pub struct RemoveAliasRequest {
     #[prost(message, optional, tag="1")]
-    pub artifact_id: ::core::option::Option<super::core::ArtifactId>,
+    pub artifact_key: ::core::option::Option<super::core::ArtifactKey>,
     #[prost(message, optional, tag="2")]
     pub alias: ::core::option::Option<Alias>,
 }
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(Clone, PartialEq, ::prost::Message)]
 pub struct RemoveAliasResponse {
-}
-/// This is the key/value pair. For example an alias kind might be user facing version like a semver
-#[allow(clippy::derive_partial_eq_without_eq)]
-#[derive(Clone, PartialEq, ::prost::Message)]
-pub struct Alias {
-    /// Should this be an enum? I think it should be. version is the canonical example.
-    /// If we leave this as a string, we could merge this with Tag, like use a Tag in this message instead.
-    #[prost(string, tag="1")]
-    pub key: ::prost::alloc::string::String,
-    #[prost(string, tag="2")]
-    pub value: ::prost::alloc::string::String,
 }
 // @@protoc_insertion_point(module)

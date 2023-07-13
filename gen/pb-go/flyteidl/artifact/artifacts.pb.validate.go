@@ -122,6 +122,95 @@ var _ interface {
 	ErrorName() string
 } = ArtifactValidationError{}
 
+// Validate checks the field values on CreateArtifactRequest with the rules
+// defined in the proto definition for this message. If any rules are
+// violated, an error is returned.
+func (m *CreateArtifactRequest) Validate() error {
+	if m == nil {
+		return nil
+	}
+
+	if v, ok := interface{}(m.GetArtifactKey()).(interface{ Validate() error }); ok {
+		if err := v.Validate(); err != nil {
+			return CreateArtifactRequestValidationError{
+				field:  "ArtifactKey",
+				reason: "embedded message failed validation",
+				cause:  err,
+			}
+		}
+	}
+
+	// no validation rules for Uri
+
+	if v, ok := interface{}(m.GetSpec()).(interface{ Validate() error }); ok {
+		if err := v.Validate(); err != nil {
+			return CreateArtifactRequestValidationError{
+				field:  "Spec",
+				reason: "embedded message failed validation",
+				cause:  err,
+			}
+		}
+	}
+
+	return nil
+}
+
+// CreateArtifactRequestValidationError is the validation error returned by
+// CreateArtifactRequest.Validate if the designated constraints aren't met.
+type CreateArtifactRequestValidationError struct {
+	field  string
+	reason string
+	cause  error
+	key    bool
+}
+
+// Field function returns field value.
+func (e CreateArtifactRequestValidationError) Field() string { return e.field }
+
+// Reason function returns reason value.
+func (e CreateArtifactRequestValidationError) Reason() string { return e.reason }
+
+// Cause function returns cause value.
+func (e CreateArtifactRequestValidationError) Cause() error { return e.cause }
+
+// Key function returns key value.
+func (e CreateArtifactRequestValidationError) Key() bool { return e.key }
+
+// ErrorName returns error name.
+func (e CreateArtifactRequestValidationError) ErrorName() string {
+	return "CreateArtifactRequestValidationError"
+}
+
+// Error satisfies the builtin error interface
+func (e CreateArtifactRequestValidationError) Error() string {
+	cause := ""
+	if e.cause != nil {
+		cause = fmt.Sprintf(" | caused by: %v", e.cause)
+	}
+
+	key := ""
+	if e.key {
+		key = "key for "
+	}
+
+	return fmt.Sprintf(
+		"invalid %sCreateArtifactRequest.%s: %s%s",
+		key,
+		e.field,
+		e.reason,
+		cause)
+}
+
+var _ error = CreateArtifactRequestValidationError{}
+
+var _ interface {
+	Field() string
+	Reason() string
+	Key() bool
+	Cause() error
+	ErrorName() string
+} = CreateArtifactRequestValidationError{}
+
 // Validate checks the field values on ArtifactSpec with the rules defined in
 // the proto definition for this message. If any rules are violated, an error
 // is returned.
@@ -272,6 +361,76 @@ var _ interface {
 	ErrorName() string
 } = ArtifactSpecValidationError{}
 
+// Validate checks the field values on Alias with the rules defined in the
+// proto definition for this message. If any rules are violated, an error is returned.
+func (m *Alias) Validate() error {
+	if m == nil {
+		return nil
+	}
+
+	// no validation rules for ArtifactId
+
+	// no validation rules for Name
+
+	// no validation rules for Value
+
+	return nil
+}
+
+// AliasValidationError is the validation error returned by Alias.Validate if
+// the designated constraints aren't met.
+type AliasValidationError struct {
+	field  string
+	reason string
+	cause  error
+	key    bool
+}
+
+// Field function returns field value.
+func (e AliasValidationError) Field() string { return e.field }
+
+// Reason function returns reason value.
+func (e AliasValidationError) Reason() string { return e.reason }
+
+// Cause function returns cause value.
+func (e AliasValidationError) Cause() error { return e.cause }
+
+// Key function returns key value.
+func (e AliasValidationError) Key() bool { return e.key }
+
+// ErrorName returns error name.
+func (e AliasValidationError) ErrorName() string { return "AliasValidationError" }
+
+// Error satisfies the builtin error interface
+func (e AliasValidationError) Error() string {
+	cause := ""
+	if e.cause != nil {
+		cause = fmt.Sprintf(" | caused by: %v", e.cause)
+	}
+
+	key := ""
+	if e.key {
+		key = "key for "
+	}
+
+	return fmt.Sprintf(
+		"invalid %sAlias.%s: %s%s",
+		key,
+		e.field,
+		e.reason,
+		cause)
+}
+
+var _ error = AliasValidationError{}
+
+var _ interface {
+	Field() string
+	Reason() string
+	Key() bool
+	Cause() error
+	ErrorName() string
+} = AliasValidationError{}
+
 // Validate checks the field values on ArtifactQuery with the rules defined in
 // the proto definition for this message. If any rules are violated, an error
 // is returned.
@@ -290,8 +449,6 @@ func (m *ArtifactQuery) Validate() error {
 		}
 	}
 
-	// no validation rules for Version
-
 	if v, ok := interface{}(m.GetAlias()).(interface{ Validate() error }); ok {
 		if err := v.Validate(); err != nil {
 			return ArtifactQueryValidationError{
@@ -300,21 +457,6 @@ func (m *ArtifactQuery) Validate() error {
 				cause:  err,
 			}
 		}
-	}
-
-	for idx, item := range m.GetTags() {
-		_, _ = idx, item
-
-		if v, ok := interface{}(item).(interface{ Validate() error }); ok {
-			if err := v.Validate(); err != nil {
-				return ArtifactQueryValidationError{
-					field:  fmt.Sprintf("Tags[%v]", idx),
-					reason: "embedded message failed validation",
-					cause:  err,
-				}
-			}
-		}
-
 	}
 
 	return nil
@@ -373,97 +515,6 @@ var _ interface {
 	Cause() error
 	ErrorName() string
 } = ArtifactQueryValidationError{}
-
-// Validate checks the field values on CreateArtifactRequest with the rules
-// defined in the proto definition for this message. If any rules are
-// violated, an error is returned.
-func (m *CreateArtifactRequest) Validate() error {
-	if m == nil {
-		return nil
-	}
-
-	if v, ok := interface{}(m.GetArtifactKey()).(interface{ Validate() error }); ok {
-		if err := v.Validate(); err != nil {
-			return CreateArtifactRequestValidationError{
-				field:  "ArtifactKey",
-				reason: "embedded message failed validation",
-				cause:  err,
-			}
-		}
-	}
-
-	// no validation rules for Version
-
-	// no validation rules for Uri
-
-	if v, ok := interface{}(m.GetSpec()).(interface{ Validate() error }); ok {
-		if err := v.Validate(); err != nil {
-			return CreateArtifactRequestValidationError{
-				field:  "Spec",
-				reason: "embedded message failed validation",
-				cause:  err,
-			}
-		}
-	}
-
-	return nil
-}
-
-// CreateArtifactRequestValidationError is the validation error returned by
-// CreateArtifactRequest.Validate if the designated constraints aren't met.
-type CreateArtifactRequestValidationError struct {
-	field  string
-	reason string
-	cause  error
-	key    bool
-}
-
-// Field function returns field value.
-func (e CreateArtifactRequestValidationError) Field() string { return e.field }
-
-// Reason function returns reason value.
-func (e CreateArtifactRequestValidationError) Reason() string { return e.reason }
-
-// Cause function returns cause value.
-func (e CreateArtifactRequestValidationError) Cause() error { return e.cause }
-
-// Key function returns key value.
-func (e CreateArtifactRequestValidationError) Key() bool { return e.key }
-
-// ErrorName returns error name.
-func (e CreateArtifactRequestValidationError) ErrorName() string {
-	return "CreateArtifactRequestValidationError"
-}
-
-// Error satisfies the builtin error interface
-func (e CreateArtifactRequestValidationError) Error() string {
-	cause := ""
-	if e.cause != nil {
-		cause = fmt.Sprintf(" | caused by: %v", e.cause)
-	}
-
-	key := ""
-	if e.key {
-		key = "key for "
-	}
-
-	return fmt.Sprintf(
-		"invalid %sCreateArtifactRequest.%s: %s%s",
-		key,
-		e.field,
-		e.reason,
-		cause)
-}
-
-var _ error = CreateArtifactRequestValidationError{}
-
-var _ interface {
-	Field() string
-	Reason() string
-	Key() bool
-	Cause() error
-	ErrorName() string
-} = CreateArtifactRequestValidationError{}
 
 // Validate checks the field values on CreateArtifactResponse with the rules
 // defined in the proto definition for this message. If any rules are
@@ -1488,10 +1539,10 @@ func (m *RemoveAliasRequest) Validate() error {
 		return nil
 	}
 
-	if v, ok := interface{}(m.GetArtifactId()).(interface{ Validate() error }); ok {
+	if v, ok := interface{}(m.GetArtifactKey()).(interface{ Validate() error }); ok {
 		if err := v.Validate(); err != nil {
 			return RemoveAliasRequestValidationError{
-				field:  "ArtifactId",
+				field:  "ArtifactKey",
 				reason: "embedded message failed validation",
 				cause:  err,
 			}
@@ -1633,71 +1684,3 @@ var _ interface {
 	Cause() error
 	ErrorName() string
 } = RemoveAliasResponseValidationError{}
-
-// Validate checks the field values on Alias with the rules defined in the
-// proto definition for this message. If any rules are violated, an error is returned.
-func (m *Alias) Validate() error {
-	if m == nil {
-		return nil
-	}
-
-	// no validation rules for Key
-
-	// no validation rules for Value
-
-	return nil
-}
-
-// AliasValidationError is the validation error returned by Alias.Validate if
-// the designated constraints aren't met.
-type AliasValidationError struct {
-	field  string
-	reason string
-	cause  error
-	key    bool
-}
-
-// Field function returns field value.
-func (e AliasValidationError) Field() string { return e.field }
-
-// Reason function returns reason value.
-func (e AliasValidationError) Reason() string { return e.reason }
-
-// Cause function returns cause value.
-func (e AliasValidationError) Cause() error { return e.cause }
-
-// Key function returns key value.
-func (e AliasValidationError) Key() bool { return e.key }
-
-// ErrorName returns error name.
-func (e AliasValidationError) ErrorName() string { return "AliasValidationError" }
-
-// Error satisfies the builtin error interface
-func (e AliasValidationError) Error() string {
-	cause := ""
-	if e.cause != nil {
-		cause = fmt.Sprintf(" | caused by: %v", e.cause)
-	}
-
-	key := ""
-	if e.key {
-		key = "key for "
-	}
-
-	return fmt.Sprintf(
-		"invalid %sAlias.%s: %s%s",
-		key,
-		e.field,
-		e.reason,
-		cause)
-}
-
-var _ error = AliasValidationError{}
-
-var _ interface {
-	Field() string
-	Reason() string
-	Key() bool
-	Cause() error
-	ErrorName() string
-} = AliasValidationError{}

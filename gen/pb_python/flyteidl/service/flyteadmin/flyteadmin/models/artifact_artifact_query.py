@@ -16,7 +16,6 @@ import re  # noqa: F401
 
 import six
 
-from flyteadmin.models.artifact_tag import ArtifactTag  # noqa: F401,E501
 from flyteadmin.models.core_artifact_key import CoreArtifactKey  # noqa: F401,E501
 from flyteadmin.models.flyteidlartifact_alias import FlyteidlartifactAlias  # noqa: F401,E501
 
@@ -36,35 +35,25 @@ class ArtifactArtifactQuery(object):
     """
     swagger_types = {
         'artifact_key': 'CoreArtifactKey',
-        'version': 'str',
-        'alias': 'FlyteidlartifactAlias',
-        'tags': 'list[ArtifactTag]'
+        'alias': 'FlyteidlartifactAlias'
     }
 
     attribute_map = {
         'artifact_key': 'artifact_key',
-        'version': 'version',
-        'alias': 'alias',
-        'tags': 'tags'
+        'alias': 'alias'
     }
 
-    def __init__(self, artifact_key=None, version=None, alias=None, tags=None):  # noqa: E501
+    def __init__(self, artifact_key=None, alias=None):  # noqa: E501
         """ArtifactArtifactQuery - a model defined in Swagger"""  # noqa: E501
 
         self._artifact_key = None
-        self._version = None
         self._alias = None
-        self._tags = None
         self.discriminator = None
 
         if artifact_key is not None:
             self.artifact_key = artifact_key
-        if version is not None:
-            self.version = version
         if alias is not None:
             self.alias = alias
-        if tags is not None:
-            self.tags = tags
 
     @property
     def artifact_key(self):
@@ -88,27 +77,6 @@ class ArtifactArtifactQuery(object):
         self._artifact_key = artifact_key
 
     @property
-    def version(self):
-        """Gets the version of this ArtifactArtifactQuery.  # noqa: E501
-
-
-        :return: The version of this ArtifactArtifactQuery.  # noqa: E501
-        :rtype: str
-        """
-        return self._version
-
-    @version.setter
-    def version(self, version):
-        """Sets the version of this ArtifactArtifactQuery.
-
-
-        :param version: The version of this ArtifactArtifactQuery.  # noqa: E501
-        :type: str
-        """
-
-        self._version = version
-
-    @property
     def alias(self):
         """Gets the alias of this ArtifactArtifactQuery.  # noqa: E501
 
@@ -128,27 +96,6 @@ class ArtifactArtifactQuery(object):
         """
 
         self._alias = alias
-
-    @property
-    def tags(self):
-        """Gets the tags of this ArtifactArtifactQuery.  # noqa: E501
-
-
-        :return: The tags of this ArtifactArtifactQuery.  # noqa: E501
-        :rtype: list[ArtifactTag]
-        """
-        return self._tags
-
-    @tags.setter
-    def tags(self, tags):
-        """Sets the tags of this ArtifactArtifactQuery.
-
-
-        :param tags: The tags of this ArtifactArtifactQuery.  # noqa: E501
-        :type: list[ArtifactTag]
-        """
-
-        self._tags = tags
 
     def to_dict(self):
         """Returns the model properties as a dict"""
