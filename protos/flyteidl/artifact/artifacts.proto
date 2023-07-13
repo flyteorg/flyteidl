@@ -12,9 +12,9 @@ message Artifact {
   core.ArtifactID artifact_id = 1;
 
   // This has to be unique across the entire installation. For OSS, we will write the flyte url here for now.
-  string uri = 4;
+  string uri = 2;
 
-  ArtifactSpec spec = 5;
+  ArtifactSpec spec = 3;
 }
 
 message CreateArtifactRequest {
@@ -25,7 +25,7 @@ message CreateArtifactRequest {
   // Has to conform to some format, can't collide with the alias format.
   string uri = 2;
 
-  ArtifactSpec spec = 4;
+  ArtifactSpec spec = 3;
 }
 
 message ArtifactSpec {
