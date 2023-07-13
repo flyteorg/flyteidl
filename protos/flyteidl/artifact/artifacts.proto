@@ -12,9 +12,20 @@ message Artifact {
   core.ArtifactID artifact_id = 1;
 
   // This has to be unique across the entire installation. For OSS, we will write the flyte url here for now.
+  string uri = 4;
+
+  ArtifactSpec spec = 5;
+}
+
+message CreateArtifactRequest {
+  // Specify just project/domain on creation
+  core.ArtifactKey artifact_key = 1;
+
+  // If given, and conflicting, the request will be rejected.
+  // Has to conform to some format, can't collide with the alias format.
   string uri = 2;
 
-  ArtifactSpec spec = 3;
+  ArtifactSpec spec = 4;
 }
 
 message ArtifactSpec {
@@ -28,7 +39,8 @@ message ArtifactSpec {
   // When you want to set tags on creation.
   repeated Tag tags = 3;
 
-  // When you want to set an alias on creation. should this also be repeated?
+  // Set here when you want to set an alias on creation.
+  // Aliases created will have the same project/domain as the artifact.
   repeated Alias aliases = 4;
 
   oneof source {
@@ -46,22 +58,27 @@ message ArtifactSpec {
   string long_description = 9;
 }
 
+// have a bunch of artifacts. they have a project and domain
+// This message is something that when coupled with the project and domain, uniquely identifies an artifact.
+// so here, project, domain, name, value have to be unique
+message Alias {
+  // ties this directly to the artifact. do we worry about exposing this to the user? this is likely just the db ID.
+  // we can add a uuid field in key (turning it into an ID) for a user facing id.
+  string artifact_id = 1;
+  // should we add artifactkey (aka project/domain) here?
+  // If not adding - this implies that we will always have the same project/domain. You can have a projA/domainD
+  // alias pointing to a projB/domainB artifact
+  // Also aliases need to be unique on project/domain/alias name/alias value. This is effectively a primary key.
+  string name = 2;
+  string value = 3;
+}
+
 message ArtifactQuery {
   core.ArtifactKey artifact_key = 1;
-  string version = 2;
-  Alias alias = 3;
-  repeated Tag tags = 4;
+
+  Alias alias = 2;
 }
 
-message CreateArtifactRequest {
-  core.ArtifactKey artifact_key = 1;
-
-  string version = 2; // optional
-
-  string uri = 3;
-
-  ArtifactSpec spec = 4;
-}
 
 message CreateArtifactResponse {
   Artifact artifact = 1;
@@ -142,21 +159,11 @@ message CreateAliasResponse {}
 // This removes an exact match only. That is, the kind/value in the Alias have to be set on the version for the
 // given core.ArtifactKey.
 message RemoveAliasRequest {
-  core.ArtifactID artifact_id = 1;
-
+  core.ArtifactKey artifact_key = 1;
   Alias alias = 2;
 }
 
 message RemoveAliasResponse {}
-
-// This is the key/value pair. For example an alias kind might be user facing version like a semver
-message Alias {
-  // Should this be an enum? I think it should be. version is the canonical example.
-  // If we leave this as a string, we could merge this with Tag, like use a Tag in this message instead.
-  string key = 1;
-
-  string value = 2;
-}
 
 service ArtifactRegistry {
   rpc CreateArtifact (CreateArtifactRequest) returns (CreateArtifactResponse) {}
