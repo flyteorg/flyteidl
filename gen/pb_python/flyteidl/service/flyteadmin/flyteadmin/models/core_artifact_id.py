@@ -79,6 +79,7 @@ class CoreArtifactID(object):
     def uuid(self):
         """Gets the uuid of this CoreArtifactID.  # noqa: E501
 
+        consider hiding - this is a storage layer ID. Might even change for the same object.  # noqa: E501
 
         :return: The uuid of this CoreArtifactID.  # noqa: E501
         :rtype: str
@@ -89,6 +90,7 @@ class CoreArtifactID(object):
     def uuid(self, uuid):
         """Sets the uuid of this CoreArtifactID.
 
+        consider hiding - this is a storage layer ID. Might even change for the same object.  # noqa: E501
 
         :param uuid: The uuid of this CoreArtifactID.  # noqa: E501
         :type: str

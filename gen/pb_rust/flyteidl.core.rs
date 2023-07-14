@@ -398,17 +398,20 @@ pub struct SignalIdentifier {
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(Clone, PartialEq, ::prost::Message)]
 pub struct ArtifactKey {
-    /// Project and domain as we're all used to. Just to align with existing uniqueness constructs.
+    /// Project and domain and suffix needs to be unique across a given artifact store.
     #[prost(string, tag="1")]
     pub project: ::prost::alloc::string::String,
     #[prost(string, tag="2")]
     pub domain: ::prost::alloc::string::String,
+    #[prost(string, tag="3")]
+    pub suffix: ::prost::alloc::string::String,
 }
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(Clone, PartialEq, ::prost::Message)]
 pub struct ArtifactId {
     #[prost(message, optional, tag="1")]
     pub artifact_key: ::core::option::Option<ArtifactKey>,
+    /// consider hiding - this is a storage layer ID. Might even change for the same object.
     #[prost(string, tag="2")]
     pub uuid: ::prost::alloc::string::String,
 }

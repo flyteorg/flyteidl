@@ -19,14 +19,12 @@ class Artifact(_message.Message):
     def __init__(self, artifact_id: _Optional[_Union[_identifier_pb2.ArtifactID, _Mapping]] = ..., uri: _Optional[str] = ..., spec: _Optional[_Union[ArtifactSpec, _Mapping]] = ...) -> None: ...
 
 class CreateArtifactRequest(_message.Message):
-    __slots__ = ["artifact_key", "uri", "spec"]
+    __slots__ = ["artifact_key", "spec"]
     ARTIFACT_KEY_FIELD_NUMBER: _ClassVar[int]
-    URI_FIELD_NUMBER: _ClassVar[int]
     SPEC_FIELD_NUMBER: _ClassVar[int]
     artifact_key: _identifier_pb2.ArtifactKey
-    uri: str
     spec: ArtifactSpec
-    def __init__(self, artifact_key: _Optional[_Union[_identifier_pb2.ArtifactKey, _Mapping]] = ..., uri: _Optional[str] = ..., spec: _Optional[_Union[ArtifactSpec, _Mapping]] = ...) -> None: ...
+    def __init__(self, artifact_key: _Optional[_Union[_identifier_pb2.ArtifactKey, _Mapping]] = ..., spec: _Optional[_Union[ArtifactSpec, _Mapping]] = ...) -> None: ...
 
 class ArtifactSpec(_message.Message):
     __slots__ = ["value", "type", "tags", "aliases", "task_execution", "execution", "principal", "short_description", "long_description"]
@@ -55,18 +53,20 @@ class Alias(_message.Message):
     ARTIFACT_ID_FIELD_NUMBER: _ClassVar[int]
     NAME_FIELD_NUMBER: _ClassVar[int]
     VALUE_FIELD_NUMBER: _ClassVar[int]
-    artifact_id: str
+    artifact_id: _identifier_pb2.ArtifactID
     name: str
     value: str
-    def __init__(self, artifact_id: _Optional[str] = ..., name: _Optional[str] = ..., value: _Optional[str] = ...) -> None: ...
+    def __init__(self, artifact_id: _Optional[_Union[_identifier_pb2.ArtifactID, _Mapping]] = ..., name: _Optional[str] = ..., value: _Optional[str] = ...) -> None: ...
 
 class ArtifactQuery(_message.Message):
-    __slots__ = ["artifact_key", "alias"]
-    ARTIFACT_KEY_FIELD_NUMBER: _ClassVar[int]
+    __slots__ = ["project", "domain", "alias"]
+    PROJECT_FIELD_NUMBER: _ClassVar[int]
+    DOMAIN_FIELD_NUMBER: _ClassVar[int]
     ALIAS_FIELD_NUMBER: _ClassVar[int]
-    artifact_key: _identifier_pb2.ArtifactKey
+    project: str
+    domain: str
     alias: Alias
-    def __init__(self, artifact_key: _Optional[_Union[_identifier_pb2.ArtifactKey, _Mapping]] = ..., alias: _Optional[_Union[Alias, _Mapping]] = ...) -> None: ...
+    def __init__(self, project: _Optional[str] = ..., domain: _Optional[str] = ..., alias: _Optional[_Union[Alias, _Mapping]] = ...) -> None: ...
 
 class CreateArtifactResponse(_message.Message):
     __slots__ = ["artifact"]
@@ -75,14 +75,16 @@ class CreateArtifactResponse(_message.Message):
     def __init__(self, artifact: _Optional[_Union[Artifact, _Mapping]] = ...) -> None: ...
 
 class GetArtifactRequest(_message.Message):
-    __slots__ = ["artifact_id", "uri", "details"]
+    __slots__ = ["artifact_key", "artifact_id", "uri", "details"]
+    ARTIFACT_KEY_FIELD_NUMBER: _ClassVar[int]
     ARTIFACT_ID_FIELD_NUMBER: _ClassVar[int]
     URI_FIELD_NUMBER: _ClassVar[int]
     DETAILS_FIELD_NUMBER: _ClassVar[int]
+    artifact_key: _identifier_pb2.ArtifactKey
     artifact_id: _identifier_pb2.ArtifactID
     uri: str
     details: bool
-    def __init__(self, artifact_id: _Optional[_Union[_identifier_pb2.ArtifactID, _Mapping]] = ..., uri: _Optional[str] = ..., details: bool = ...) -> None: ...
+    def __init__(self, artifact_key: _Optional[_Union[_identifier_pb2.ArtifactKey, _Mapping]] = ..., artifact_id: _Optional[_Union[_identifier_pb2.ArtifactID, _Mapping]] = ..., uri: _Optional[str] = ..., details: bool = ...) -> None: ...
 
 class Tag(_message.Message):
     __slots__ = ["key", "value"]

@@ -1230,6 +1230,7 @@
                  * @interface IArtifactKey
                  * @property {string|null} [project] ArtifactKey project
                  * @property {string|null} [domain] ArtifactKey domain
+                 * @property {string|null} [suffix] ArtifactKey suffix
                  */
     
                 /**
@@ -1264,6 +1265,14 @@
                 ArtifactKey.prototype.domain = "";
     
                 /**
+                 * ArtifactKey suffix.
+                 * @member {string} suffix
+                 * @memberof flyteidl.core.ArtifactKey
+                 * @instance
+                 */
+                ArtifactKey.prototype.suffix = "";
+    
+                /**
                  * Creates a new ArtifactKey instance using the specified properties.
                  * @function create
                  * @memberof flyteidl.core.ArtifactKey
@@ -1291,6 +1300,8 @@
                         writer.uint32(/* id 1, wireType 2 =*/10).string(message.project);
                     if (message.domain != null && message.hasOwnProperty("domain"))
                         writer.uint32(/* id 2, wireType 2 =*/18).string(message.domain);
+                    if (message.suffix != null && message.hasOwnProperty("suffix"))
+                        writer.uint32(/* id 3, wireType 2 =*/26).string(message.suffix);
                     return writer;
                 };
     
@@ -1318,6 +1329,9 @@
                         case 2:
                             message.domain = reader.string();
                             break;
+                        case 3:
+                            message.suffix = reader.string();
+                            break;
                         default:
                             reader.skipType(tag & 7);
                             break;
@@ -1343,6 +1357,9 @@
                     if (message.domain != null && message.hasOwnProperty("domain"))
                         if (!$util.isString(message.domain))
                             return "domain: string expected";
+                    if (message.suffix != null && message.hasOwnProperty("suffix"))
+                        if (!$util.isString(message.suffix))
+                            return "suffix: string expected";
                     return null;
                 };
     
@@ -16237,7 +16254,6 @@
                  * @memberof flyteidl.artifact
                  * @interface ICreateArtifactRequest
                  * @property {flyteidl.core.IArtifactKey|null} [artifactKey] CreateArtifactRequest artifactKey
-                 * @property {string|null} [uri] CreateArtifactRequest uri
                  * @property {flyteidl.artifact.IArtifactSpec|null} [spec] CreateArtifactRequest spec
                  */
     
@@ -16263,14 +16279,6 @@
                  * @instance
                  */
                 CreateArtifactRequest.prototype.artifactKey = null;
-    
-                /**
-                 * CreateArtifactRequest uri.
-                 * @member {string} uri
-                 * @memberof flyteidl.artifact.CreateArtifactRequest
-                 * @instance
-                 */
-                CreateArtifactRequest.prototype.uri = "";
     
                 /**
                  * CreateArtifactRequest spec.
@@ -16306,10 +16314,8 @@
                         writer = $Writer.create();
                     if (message.artifactKey != null && message.hasOwnProperty("artifactKey"))
                         $root.flyteidl.core.ArtifactKey.encode(message.artifactKey, writer.uint32(/* id 1, wireType 2 =*/10).fork()).ldelim();
-                    if (message.uri != null && message.hasOwnProperty("uri"))
-                        writer.uint32(/* id 2, wireType 2 =*/18).string(message.uri);
                     if (message.spec != null && message.hasOwnProperty("spec"))
-                        $root.flyteidl.artifact.ArtifactSpec.encode(message.spec, writer.uint32(/* id 3, wireType 2 =*/26).fork()).ldelim();
+                        $root.flyteidl.artifact.ArtifactSpec.encode(message.spec, writer.uint32(/* id 2, wireType 2 =*/18).fork()).ldelim();
                     return writer;
                 };
     
@@ -16335,9 +16341,6 @@
                             message.artifactKey = $root.flyteidl.core.ArtifactKey.decode(reader, reader.uint32());
                             break;
                         case 2:
-                            message.uri = reader.string();
-                            break;
-                        case 3:
                             message.spec = $root.flyteidl.artifact.ArtifactSpec.decode(reader, reader.uint32());
                             break;
                         default:
@@ -16364,9 +16367,6 @@
                         if (error)
                             return "artifactKey." + error;
                     }
-                    if (message.uri != null && message.hasOwnProperty("uri"))
-                        if (!$util.isString(message.uri))
-                            return "uri: string expected";
                     if (message.spec != null && message.hasOwnProperty("spec")) {
                         var error = $root.flyteidl.artifact.ArtifactSpec.verify(message.spec);
                         if (error)
@@ -16685,7 +16685,7 @@
                  * Properties of an Alias.
                  * @memberof flyteidl.artifact
                  * @interface IAlias
-                 * @property {string|null} [artifactId] Alias artifactId
+                 * @property {flyteidl.core.IArtifactID|null} [artifactId] Alias artifactId
                  * @property {string|null} [name] Alias name
                  * @property {string|null} [value] Alias value
                  */
@@ -16707,11 +16707,11 @@
     
                 /**
                  * Alias artifactId.
-                 * @member {string} artifactId
+                 * @member {flyteidl.core.IArtifactID|null|undefined} artifactId
                  * @memberof flyteidl.artifact.Alias
                  * @instance
                  */
-                Alias.prototype.artifactId = "";
+                Alias.prototype.artifactId = null;
     
                 /**
                  * Alias name.
@@ -16754,7 +16754,7 @@
                     if (!writer)
                         writer = $Writer.create();
                     if (message.artifactId != null && message.hasOwnProperty("artifactId"))
-                        writer.uint32(/* id 1, wireType 2 =*/10).string(message.artifactId);
+                        $root.flyteidl.core.ArtifactID.encode(message.artifactId, writer.uint32(/* id 1, wireType 2 =*/10).fork()).ldelim();
                     if (message.name != null && message.hasOwnProperty("name"))
                         writer.uint32(/* id 2, wireType 2 =*/18).string(message.name);
                     if (message.value != null && message.hasOwnProperty("value"))
@@ -16781,7 +16781,7 @@
                         var tag = reader.uint32();
                         switch (tag >>> 3) {
                         case 1:
-                            message.artifactId = reader.string();
+                            message.artifactId = $root.flyteidl.core.ArtifactID.decode(reader, reader.uint32());
                             break;
                         case 2:
                             message.name = reader.string();
@@ -16808,9 +16808,11 @@
                 Alias.verify = function verify(message) {
                     if (typeof message !== "object" || message === null)
                         return "object expected";
-                    if (message.artifactId != null && message.hasOwnProperty("artifactId"))
-                        if (!$util.isString(message.artifactId))
-                            return "artifactId: string expected";
+                    if (message.artifactId != null && message.hasOwnProperty("artifactId")) {
+                        var error = $root.flyteidl.core.ArtifactID.verify(message.artifactId);
+                        if (error)
+                            return "artifactId." + error;
+                    }
                     if (message.name != null && message.hasOwnProperty("name"))
                         if (!$util.isString(message.name))
                             return "name: string expected";
@@ -16829,7 +16831,8 @@
                  * Properties of an ArtifactQuery.
                  * @memberof flyteidl.artifact
                  * @interface IArtifactQuery
-                 * @property {flyteidl.core.IArtifactKey|null} [artifactKey] ArtifactQuery artifactKey
+                 * @property {string|null} [project] ArtifactQuery project
+                 * @property {string|null} [domain] ArtifactQuery domain
                  * @property {flyteidl.artifact.IAlias|null} [alias] ArtifactQuery alias
                  */
     
@@ -16849,12 +16852,20 @@
                 }
     
                 /**
-                 * ArtifactQuery artifactKey.
-                 * @member {flyteidl.core.IArtifactKey|null|undefined} artifactKey
+                 * ArtifactQuery project.
+                 * @member {string} project
                  * @memberof flyteidl.artifact.ArtifactQuery
                  * @instance
                  */
-                ArtifactQuery.prototype.artifactKey = null;
+                ArtifactQuery.prototype.project = "";
+    
+                /**
+                 * ArtifactQuery domain.
+                 * @member {string} domain
+                 * @memberof flyteidl.artifact.ArtifactQuery
+                 * @instance
+                 */
+                ArtifactQuery.prototype.domain = "";
     
                 /**
                  * ArtifactQuery alias.
@@ -16888,10 +16899,12 @@
                 ArtifactQuery.encode = function encode(message, writer) {
                     if (!writer)
                         writer = $Writer.create();
-                    if (message.artifactKey != null && message.hasOwnProperty("artifactKey"))
-                        $root.flyteidl.core.ArtifactKey.encode(message.artifactKey, writer.uint32(/* id 1, wireType 2 =*/10).fork()).ldelim();
+                    if (message.project != null && message.hasOwnProperty("project"))
+                        writer.uint32(/* id 1, wireType 2 =*/10).string(message.project);
+                    if (message.domain != null && message.hasOwnProperty("domain"))
+                        writer.uint32(/* id 2, wireType 2 =*/18).string(message.domain);
                     if (message.alias != null && message.hasOwnProperty("alias"))
-                        $root.flyteidl.artifact.Alias.encode(message.alias, writer.uint32(/* id 2, wireType 2 =*/18).fork()).ldelim();
+                        $root.flyteidl.artifact.Alias.encode(message.alias, writer.uint32(/* id 3, wireType 2 =*/26).fork()).ldelim();
                     return writer;
                 };
     
@@ -16914,9 +16927,12 @@
                         var tag = reader.uint32();
                         switch (tag >>> 3) {
                         case 1:
-                            message.artifactKey = $root.flyteidl.core.ArtifactKey.decode(reader, reader.uint32());
+                            message.project = reader.string();
                             break;
                         case 2:
+                            message.domain = reader.string();
+                            break;
+                        case 3:
                             message.alias = $root.flyteidl.artifact.Alias.decode(reader, reader.uint32());
                             break;
                         default:
@@ -16938,11 +16954,12 @@
                 ArtifactQuery.verify = function verify(message) {
                     if (typeof message !== "object" || message === null)
                         return "object expected";
-                    if (message.artifactKey != null && message.hasOwnProperty("artifactKey")) {
-                        var error = $root.flyteidl.core.ArtifactKey.verify(message.artifactKey);
-                        if (error)
-                            return "artifactKey." + error;
-                    }
+                    if (message.project != null && message.hasOwnProperty("project"))
+                        if (!$util.isString(message.project))
+                            return "project: string expected";
+                    if (message.domain != null && message.hasOwnProperty("domain"))
+                        if (!$util.isString(message.domain))
+                            return "domain: string expected";
                     if (message.alias != null && message.hasOwnProperty("alias")) {
                         var error = $root.flyteidl.artifact.Alias.verify(message.alias);
                         if (error)
@@ -17072,6 +17089,7 @@
                  * Properties of a GetArtifactRequest.
                  * @memberof flyteidl.artifact
                  * @interface IGetArtifactRequest
+                 * @property {flyteidl.core.IArtifactKey|null} [artifactKey] GetArtifactRequest artifactKey
                  * @property {flyteidl.core.IArtifactID|null} [artifactId] GetArtifactRequest artifactId
                  * @property {string|null} [uri] GetArtifactRequest uri
                  * @property {boolean|null} [details] GetArtifactRequest details
@@ -17091,6 +17109,14 @@
                             if (properties[keys[i]] != null)
                                 this[keys[i]] = properties[keys[i]];
                 }
+    
+                /**
+                 * GetArtifactRequest artifactKey.
+                 * @member {flyteidl.core.IArtifactKey|null|undefined} artifactKey
+                 * @memberof flyteidl.artifact.GetArtifactRequest
+                 * @instance
+                 */
+                GetArtifactRequest.prototype.artifactKey = null;
     
                 /**
                  * GetArtifactRequest artifactId.
@@ -17121,12 +17147,12 @@
     
                 /**
                  * GetArtifactRequest identifier.
-                 * @member {"artifactId"|"uri"|undefined} identifier
+                 * @member {"artifactKey"|"artifactId"|"uri"|undefined} identifier
                  * @memberof flyteidl.artifact.GetArtifactRequest
                  * @instance
                  */
                 Object.defineProperty(GetArtifactRequest.prototype, "identifier", {
-                    get: $util.oneOfGetter($oneOfFields = ["artifactId", "uri"]),
+                    get: $util.oneOfGetter($oneOfFields = ["artifactKey", "artifactId", "uri"]),
                     set: $util.oneOfSetter($oneOfFields)
                 });
     
@@ -17154,12 +17180,14 @@
                 GetArtifactRequest.encode = function encode(message, writer) {
                     if (!writer)
                         writer = $Writer.create();
+                    if (message.artifactKey != null && message.hasOwnProperty("artifactKey"))
+                        $root.flyteidl.core.ArtifactKey.encode(message.artifactKey, writer.uint32(/* id 1, wireType 2 =*/10).fork()).ldelim();
                     if (message.artifactId != null && message.hasOwnProperty("artifactId"))
-                        $root.flyteidl.core.ArtifactID.encode(message.artifactId, writer.uint32(/* id 1, wireType 2 =*/10).fork()).ldelim();
+                        $root.flyteidl.core.ArtifactID.encode(message.artifactId, writer.uint32(/* id 2, wireType 2 =*/18).fork()).ldelim();
                     if (message.uri != null && message.hasOwnProperty("uri"))
-                        writer.uint32(/* id 2, wireType 2 =*/18).string(message.uri);
+                        writer.uint32(/* id 3, wireType 2 =*/26).string(message.uri);
                     if (message.details != null && message.hasOwnProperty("details"))
-                        writer.uint32(/* id 3, wireType 0 =*/24).bool(message.details);
+                        writer.uint32(/* id 4, wireType 0 =*/32).bool(message.details);
                     return writer;
                 };
     
@@ -17182,12 +17210,15 @@
                         var tag = reader.uint32();
                         switch (tag >>> 3) {
                         case 1:
-                            message.artifactId = $root.flyteidl.core.ArtifactID.decode(reader, reader.uint32());
+                            message.artifactKey = $root.flyteidl.core.ArtifactKey.decode(reader, reader.uint32());
                             break;
                         case 2:
-                            message.uri = reader.string();
+                            message.artifactId = $root.flyteidl.core.ArtifactID.decode(reader, reader.uint32());
                             break;
                         case 3:
+                            message.uri = reader.string();
+                            break;
+                        case 4:
                             message.details = reader.bool();
                             break;
                         default:
@@ -17210,7 +17241,17 @@
                     if (typeof message !== "object" || message === null)
                         return "object expected";
                     var properties = {};
+                    if (message.artifactKey != null && message.hasOwnProperty("artifactKey")) {
+                        properties.identifier = 1;
+                        {
+                            var error = $root.flyteidl.core.ArtifactKey.verify(message.artifactKey);
+                            if (error)
+                                return "artifactKey." + error;
+                        }
+                    }
                     if (message.artifactId != null && message.hasOwnProperty("artifactId")) {
+                        if (properties.identifier === 1)
+                            return "identifier: multiple values";
                         properties.identifier = 1;
                         {
                             var error = $root.flyteidl.core.ArtifactID.verify(message.artifactId);

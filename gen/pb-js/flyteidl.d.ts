@@ -536,6 +536,9 @@ export namespace flyteidl {
 
             /** ArtifactKey domain */
             domain?: (string|null);
+
+            /** ArtifactKey suffix */
+            suffix?: (string|null);
         }
 
         /** Represents an ArtifactKey. */
@@ -552,6 +555,9 @@ export namespace flyteidl {
 
             /** ArtifactKey domain. */
             public domain: string;
+
+            /** ArtifactKey suffix. */
+            public suffix: string;
 
             /**
              * Creates a new ArtifactKey instance using the specified properties.
@@ -6750,9 +6756,6 @@ export namespace flyteidl {
             /** CreateArtifactRequest artifactKey */
             artifactKey?: (flyteidl.core.IArtifactKey|null);
 
-            /** CreateArtifactRequest uri */
-            uri?: (string|null);
-
             /** CreateArtifactRequest spec */
             spec?: (flyteidl.artifact.IArtifactSpec|null);
         }
@@ -6768,9 +6771,6 @@ export namespace flyteidl {
 
             /** CreateArtifactRequest artifactKey. */
             public artifactKey?: (flyteidl.core.IArtifactKey|null);
-
-            /** CreateArtifactRequest uri. */
-            public uri: string;
 
             /** CreateArtifactRequest spec. */
             public spec?: (flyteidl.artifact.IArtifactSpec|null);
@@ -6915,7 +6915,7 @@ export namespace flyteidl {
         interface IAlias {
 
             /** Alias artifactId */
-            artifactId?: (string|null);
+            artifactId?: (flyteidl.core.IArtifactID|null);
 
             /** Alias name */
             name?: (string|null);
@@ -6934,7 +6934,7 @@ export namespace flyteidl {
             constructor(properties?: flyteidl.artifact.IAlias);
 
             /** Alias artifactId. */
-            public artifactId: string;
+            public artifactId?: (flyteidl.core.IArtifactID|null);
 
             /** Alias name. */
             public name: string;
@@ -6978,8 +6978,11 @@ export namespace flyteidl {
         /** Properties of an ArtifactQuery. */
         interface IArtifactQuery {
 
-            /** ArtifactQuery artifactKey */
-            artifactKey?: (flyteidl.core.IArtifactKey|null);
+            /** ArtifactQuery project */
+            project?: (string|null);
+
+            /** ArtifactQuery domain */
+            domain?: (string|null);
 
             /** ArtifactQuery alias */
             alias?: (flyteidl.artifact.IAlias|null);
@@ -6994,8 +6997,11 @@ export namespace flyteidl {
              */
             constructor(properties?: flyteidl.artifact.IArtifactQuery);
 
-            /** ArtifactQuery artifactKey. */
-            public artifactKey?: (flyteidl.core.IArtifactKey|null);
+            /** ArtifactQuery project. */
+            public project: string;
+
+            /** ArtifactQuery domain. */
+            public domain: string;
 
             /** ArtifactQuery alias. */
             public alias?: (flyteidl.artifact.IAlias|null);
@@ -7088,6 +7094,9 @@ export namespace flyteidl {
         /** Properties of a GetArtifactRequest. */
         interface IGetArtifactRequest {
 
+            /** GetArtifactRequest artifactKey */
+            artifactKey?: (flyteidl.core.IArtifactKey|null);
+
             /** GetArtifactRequest artifactId */
             artifactId?: (flyteidl.core.IArtifactID|null);
 
@@ -7107,6 +7116,9 @@ export namespace flyteidl {
              */
             constructor(properties?: flyteidl.artifact.IGetArtifactRequest);
 
+            /** GetArtifactRequest artifactKey. */
+            public artifactKey?: (flyteidl.core.IArtifactKey|null);
+
             /** GetArtifactRequest artifactId. */
             public artifactId?: (flyteidl.core.IArtifactID|null);
 
@@ -7117,7 +7129,7 @@ export namespace flyteidl {
             public details: boolean;
 
             /** GetArtifactRequest identifier. */
-            public identifier?: ("artifactId"|"uri");
+            public identifier?: ("artifactKey"|"artifactId"|"uri");
 
             /**
              * Creates a new GetArtifactRequest instance using the specified properties.

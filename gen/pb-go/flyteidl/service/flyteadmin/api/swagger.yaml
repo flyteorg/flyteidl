@@ -3527,6 +3527,7 @@ definitions:
               artifact_key:
                 domain: "domain"
                 project: "project"
+                suffix: "suffix"
               uuid: "uuid"
           scheduled_at: "2000-01-23T04:56:07.000+00:00"
           nesting: 0
@@ -3915,6 +3916,7 @@ definitions:
                 artifact_key:
                   domain: "domain"
                   project: "project"
+                  suffix: "suffix"
                 uuid: "uuid"
             scheduled_at: "2000-01-23T04:56:07.000+00:00"
             nesting: 0
@@ -4119,6 +4121,7 @@ definitions:
                 artifact_key:
                   domain: "domain"
                   project: "project"
+                  suffix: "suffix"
                 uuid: "uuid"
             scheduled_at: "2000-01-23T04:56:07.000+00:00"
             nesting: 0
@@ -4296,6 +4299,7 @@ definitions:
           artifact_key:
             domain: "domain"
             project: "project"
+            suffix: "suffix"
           uuid: "uuid"
       scheduled_at: "2000-01-23T04:56:07.000+00:00"
       nesting: 0
@@ -4442,6 +4446,7 @@ definitions:
             artifact_key:
               domain: "domain"
               project: "project"
+              suffix: "suffix"
             uuid: "uuid"
         scheduled_at: "2000-01-23T04:56:07.000+00:00"
         nesting: 0
@@ -4712,6 +4717,7 @@ definitions:
                   artifact_key:
                     domain: "domain"
                     project: "project"
+                    suffix: "suffix"
                   uuid: "uuid"
                 uri: "uri"
                 spec:
@@ -4723,10 +4729,20 @@ definitions:
                   short_description: "short_description"
                   aliases:
                   - name: "name"
-                    artifact_id: "artifact_id"
+                    artifact_id:
+                      artifact_key:
+                        domain: "domain"
+                        project: "project"
+                        suffix: "suffix"
+                      uuid: "uuid"
                     value: "value"
                   - name: "name"
-                    artifact_id: "artifact_id"
+                    artifact_id:
+                      artifact_key:
+                        domain: "domain"
+                        project: "project"
+                        suffix: "suffix"
+                      uuid: "uuid"
                     value: "value"
                   long_description: "long_description"
                   type:
@@ -4907,6 +4923,7 @@ definitions:
                       artifact_key:
                         domain: "domain"
                         project: "project"
+                        suffix: "suffix"
                       uuid: "uuid"
                     map:
                       literals: {}
@@ -5138,6 +5155,7 @@ definitions:
                   artifact_key:
                     domain: "domain"
                     project: "project"
+                    suffix: "suffix"
                   uuid: "uuid"
                 map:
                   literals: {}
@@ -5199,6 +5217,7 @@ definitions:
                     artifact_key:
                       domain: "domain"
                       project: "project"
+                      suffix: "suffix"
                     uuid: "uuid"
                   uri: "uri"
                   spec:
@@ -5210,10 +5229,20 @@ definitions:
                     short_description: "short_description"
                     aliases:
                     - name: "name"
-                      artifact_id: "artifact_id"
+                      artifact_id:
+                        artifact_key:
+                          domain: "domain"
+                          project: "project"
+                          suffix: "suffix"
+                        uuid: "uuid"
                       value: "value"
                     - name: "name"
-                      artifact_id: "artifact_id"
+                      artifact_id:
+                        artifact_key:
+                          domain: "domain"
+                          project: "project"
+                          suffix: "suffix"
+                        uuid: "uuid"
                       value: "value"
                     long_description: "long_description"
                     type:
@@ -5394,6 +5423,7 @@ definitions:
                         artifact_key:
                           domain: "domain"
                           project: "project"
+                          suffix: "suffix"
                         uuid: "uuid"
                       map:
                         literals: {}
@@ -5507,12 +5537,16 @@ definitions:
                   structure:
                     tag: "tag"
               artifact_query:
-                artifact_key:
-                  domain: "domain"
-                  project: "project"
+                domain: "domain"
+                project: "project"
                 alias:
                   name: "name"
-                  artifact_id: "artifact_id"
+                  artifact_id:
+                    artifact_key:
+                      domain: "domain"
+                      project: "project"
+                      suffix: "suffix"
+                    uuid: "uuid"
                   value: "value"
               required: true
       spec:
@@ -5706,6 +5740,7 @@ definitions:
                   artifact_key:
                     domain: "domain"
                     project: "project"
+                    suffix: "suffix"
                   uuid: "uuid"
                 map:
                   literals: {}
@@ -5767,6 +5802,7 @@ definitions:
                     artifact_key:
                       domain: "domain"
                       project: "project"
+                      suffix: "suffix"
                     uuid: "uuid"
                   uri: "uri"
                   spec:
@@ -5778,10 +5814,20 @@ definitions:
                     short_description: "short_description"
                     aliases:
                     - name: "name"
-                      artifact_id: "artifact_id"
+                      artifact_id:
+                        artifact_key:
+                          domain: "domain"
+                          project: "project"
+                          suffix: "suffix"
+                        uuid: "uuid"
                       value: "value"
                     - name: "name"
-                      artifact_id: "artifact_id"
+                      artifact_id:
+                        artifact_key:
+                          domain: "domain"
+                          project: "project"
+                          suffix: "suffix"
+                        uuid: "uuid"
                       value: "value"
                     long_description: "long_description"
                     type:
@@ -5962,6 +6008,7 @@ definitions:
                         artifact_key:
                           domain: "domain"
                           project: "project"
+                          suffix: "suffix"
                         uuid: "uuid"
                       map:
                         literals: {}
@@ -6075,12 +6122,16 @@ definitions:
                   structure:
                     tag: "tag"
               artifact_query:
-                artifact_key:
-                  domain: "domain"
-                  project: "project"
+                domain: "domain"
+                project: "project"
                 alias:
                   name: "name"
-                  artifact_id: "artifact_id"
+                  artifact_id:
+                    artifact_key:
+                      domain: "domain"
+                      project: "project"
+                      suffix: "suffix"
+                    uuid: "uuid"
                   value: "value"
               required: true
         security_context:
@@ -6165,6 +6216,7 @@ definitions:
                 artifact_key:
                   domain: "domain"
                   project: "project"
+                  suffix: "suffix"
                 uuid: "uuid"
               uri: "uri"
               spec:
@@ -6176,10 +6228,20 @@ definitions:
                 short_description: "short_description"
                 aliases:
                 - name: "name"
-                  artifact_id: "artifact_id"
+                  artifact_id:
+                    artifact_key:
+                      domain: "domain"
+                      project: "project"
+                      suffix: "suffix"
+                    uuid: "uuid"
                   value: "value"
                 - name: "name"
-                  artifact_id: "artifact_id"
+                  artifact_id:
+                    artifact_key:
+                      domain: "domain"
+                      project: "project"
+                      suffix: "suffix"
+                    uuid: "uuid"
                   value: "value"
                 long_description: "long_description"
                 type:
@@ -6360,6 +6422,7 @@ definitions:
                     artifact_key:
                       domain: "domain"
                       project: "project"
+                      suffix: "suffix"
                     uuid: "uuid"
                   map:
                     literals: {}
@@ -6591,6 +6654,7 @@ definitions:
                 artifact_key:
                   domain: "domain"
                   project: "project"
+                  suffix: "suffix"
                 uuid: "uuid"
               map:
                 literals: {}
@@ -6652,6 +6716,7 @@ definitions:
                   artifact_key:
                     domain: "domain"
                     project: "project"
+                    suffix: "suffix"
                   uuid: "uuid"
                 uri: "uri"
                 spec:
@@ -6663,10 +6728,20 @@ definitions:
                   short_description: "short_description"
                   aliases:
                   - name: "name"
-                    artifact_id: "artifact_id"
+                    artifact_id:
+                      artifact_key:
+                        domain: "domain"
+                        project: "project"
+                        suffix: "suffix"
+                      uuid: "uuid"
                     value: "value"
                   - name: "name"
-                    artifact_id: "artifact_id"
+                    artifact_id:
+                      artifact_key:
+                        domain: "domain"
+                        project: "project"
+                        suffix: "suffix"
+                      uuid: "uuid"
                     value: "value"
                   long_description: "long_description"
                   type:
@@ -6847,6 +6922,7 @@ definitions:
                       artifact_key:
                         domain: "domain"
                         project: "project"
+                        suffix: "suffix"
                       uuid: "uuid"
                     map:
                       literals: {}
@@ -6960,12 +7036,16 @@ definitions:
                 structure:
                   tag: "tag"
             artifact_query:
-              artifact_key:
-                domain: "domain"
-                project: "project"
+              domain: "domain"
+              project: "project"
               alias:
                 name: "name"
-                artifact_id: "artifact_id"
+                artifact_id:
+                  artifact_key:
+                    domain: "domain"
+                    project: "project"
+                    suffix: "suffix"
+                  uuid: "uuid"
                 value: "value"
             required: true
   adminLaunchPlanCreateRequest:
@@ -7016,6 +7096,7 @@ definitions:
                     artifact_key:
                       domain: "domain"
                       project: "project"
+                      suffix: "suffix"
                     uuid: "uuid"
                   uri: "uri"
                   spec:
@@ -7027,10 +7108,20 @@ definitions:
                     short_description: "short_description"
                     aliases:
                     - name: "name"
-                      artifact_id: "artifact_id"
+                      artifact_id:
+                        artifact_key:
+                          domain: "domain"
+                          project: "project"
+                          suffix: "suffix"
+                        uuid: "uuid"
                       value: "value"
                     - name: "name"
-                      artifact_id: "artifact_id"
+                      artifact_id:
+                        artifact_key:
+                          domain: "domain"
+                          project: "project"
+                          suffix: "suffix"
+                        uuid: "uuid"
                       value: "value"
                     long_description: "long_description"
                     type:
@@ -7211,6 +7302,7 @@ definitions:
                         artifact_key:
                           domain: "domain"
                           project: "project"
+                          suffix: "suffix"
                         uuid: "uuid"
                       map:
                         literals: {}
@@ -7442,6 +7534,7 @@ definitions:
                     artifact_key:
                       domain: "domain"
                       project: "project"
+                      suffix: "suffix"
                     uuid: "uuid"
                   map:
                     literals: {}
@@ -7503,6 +7596,7 @@ definitions:
                       artifact_key:
                         domain: "domain"
                         project: "project"
+                        suffix: "suffix"
                       uuid: "uuid"
                     uri: "uri"
                     spec:
@@ -7514,10 +7608,20 @@ definitions:
                       short_description: "short_description"
                       aliases:
                       - name: "name"
-                        artifact_id: "artifact_id"
+                        artifact_id:
+                          artifact_key:
+                            domain: "domain"
+                            project: "project"
+                            suffix: "suffix"
+                          uuid: "uuid"
                         value: "value"
                       - name: "name"
-                        artifact_id: "artifact_id"
+                        artifact_id:
+                          artifact_key:
+                            domain: "domain"
+                            project: "project"
+                            suffix: "suffix"
+                          uuid: "uuid"
                         value: "value"
                       long_description: "long_description"
                       type:
@@ -7698,6 +7802,7 @@ definitions:
                           artifact_key:
                             domain: "domain"
                             project: "project"
+                            suffix: "suffix"
                           uuid: "uuid"
                         map:
                           literals: {}
@@ -7811,12 +7916,16 @@ definitions:
                     structure:
                       tag: "tag"
                 artifact_query:
-                  artifact_key:
-                    domain: "domain"
-                    project: "project"
+                  domain: "domain"
+                  project: "project"
                   alias:
                     name: "name"
-                    artifact_id: "artifact_id"
+                    artifact_id:
+                      artifact_key:
+                        domain: "domain"
+                        project: "project"
+                        suffix: "suffix"
+                      uuid: "uuid"
                     value: "value"
                 required: true
         spec:
@@ -8010,6 +8119,7 @@ definitions:
                     artifact_key:
                       domain: "domain"
                       project: "project"
+                      suffix: "suffix"
                     uuid: "uuid"
                   map:
                     literals: {}
@@ -8071,6 +8181,7 @@ definitions:
                       artifact_key:
                         domain: "domain"
                         project: "project"
+                        suffix: "suffix"
                       uuid: "uuid"
                     uri: "uri"
                     spec:
@@ -8082,10 +8193,20 @@ definitions:
                       short_description: "short_description"
                       aliases:
                       - name: "name"
-                        artifact_id: "artifact_id"
+                        artifact_id:
+                          artifact_key:
+                            domain: "domain"
+                            project: "project"
+                            suffix: "suffix"
+                          uuid: "uuid"
                         value: "value"
                       - name: "name"
-                        artifact_id: "artifact_id"
+                        artifact_id:
+                          artifact_key:
+                            domain: "domain"
+                            project: "project"
+                            suffix: "suffix"
+                          uuid: "uuid"
                         value: "value"
                       long_description: "long_description"
                       type:
@@ -8266,6 +8387,7 @@ definitions:
                           artifact_key:
                             domain: "domain"
                             project: "project"
+                            suffix: "suffix"
                           uuid: "uuid"
                         map:
                           literals: {}
@@ -8379,12 +8501,16 @@ definitions:
                     structure:
                       tag: "tag"
                 artifact_query:
-                  artifact_key:
-                    domain: "domain"
-                    project: "project"
+                  domain: "domain"
+                  project: "project"
                   alias:
                     name: "name"
-                    artifact_id: "artifact_id"
+                    artifact_id:
+                      artifact_key:
+                        domain: "domain"
+                        project: "project"
+                        suffix: "suffix"
+                      uuid: "uuid"
                     value: "value"
                 required: true
           security_context:
@@ -8449,6 +8575,7 @@ definitions:
                     artifact_key:
                       domain: "domain"
                       project: "project"
+                      suffix: "suffix"
                     uuid: "uuid"
                   uri: "uri"
                   spec:
@@ -8460,10 +8587,20 @@ definitions:
                     short_description: "short_description"
                     aliases:
                     - name: "name"
-                      artifact_id: "artifact_id"
+                      artifact_id:
+                        artifact_key:
+                          domain: "domain"
+                          project: "project"
+                          suffix: "suffix"
+                        uuid: "uuid"
                       value: "value"
                     - name: "name"
-                      artifact_id: "artifact_id"
+                      artifact_id:
+                        artifact_key:
+                          domain: "domain"
+                          project: "project"
+                          suffix: "suffix"
+                        uuid: "uuid"
                       value: "value"
                     long_description: "long_description"
                     type:
@@ -8644,6 +8781,7 @@ definitions:
                         artifact_key:
                           domain: "domain"
                           project: "project"
+                          suffix: "suffix"
                         uuid: "uuid"
                       map:
                         literals: {}
@@ -8875,6 +9013,7 @@ definitions:
                     artifact_key:
                       domain: "domain"
                       project: "project"
+                      suffix: "suffix"
                     uuid: "uuid"
                   map:
                     literals: {}
@@ -8936,6 +9075,7 @@ definitions:
                       artifact_key:
                         domain: "domain"
                         project: "project"
+                        suffix: "suffix"
                       uuid: "uuid"
                     uri: "uri"
                     spec:
@@ -8947,10 +9087,20 @@ definitions:
                       short_description: "short_description"
                       aliases:
                       - name: "name"
-                        artifact_id: "artifact_id"
+                        artifact_id:
+                          artifact_key:
+                            domain: "domain"
+                            project: "project"
+                            suffix: "suffix"
+                          uuid: "uuid"
                         value: "value"
                       - name: "name"
-                        artifact_id: "artifact_id"
+                        artifact_id:
+                          artifact_key:
+                            domain: "domain"
+                            project: "project"
+                            suffix: "suffix"
+                          uuid: "uuid"
                         value: "value"
                       long_description: "long_description"
                       type:
@@ -9131,6 +9281,7 @@ definitions:
                           artifact_key:
                             domain: "domain"
                             project: "project"
+                            suffix: "suffix"
                           uuid: "uuid"
                         map:
                           literals: {}
@@ -9244,12 +9395,16 @@ definitions:
                     structure:
                       tag: "tag"
                 artifact_query:
-                  artifact_key:
-                    domain: "domain"
-                    project: "project"
+                  domain: "domain"
+                  project: "project"
                   alias:
                     name: "name"
-                    artifact_id: "artifact_id"
+                    artifact_id:
+                      artifact_key:
+                        domain: "domain"
+                        project: "project"
+                        suffix: "suffix"
+                      uuid: "uuid"
                     value: "value"
                 required: true
         spec:
@@ -9443,6 +9598,7 @@ definitions:
                     artifact_key:
                       domain: "domain"
                       project: "project"
+                      suffix: "suffix"
                     uuid: "uuid"
                   map:
                     literals: {}
@@ -9504,6 +9660,7 @@ definitions:
                       artifact_key:
                         domain: "domain"
                         project: "project"
+                        suffix: "suffix"
                       uuid: "uuid"
                     uri: "uri"
                     spec:
@@ -9515,10 +9672,20 @@ definitions:
                       short_description: "short_description"
                       aliases:
                       - name: "name"
-                        artifact_id: "artifact_id"
+                        artifact_id:
+                          artifact_key:
+                            domain: "domain"
+                            project: "project"
+                            suffix: "suffix"
+                          uuid: "uuid"
                         value: "value"
                       - name: "name"
-                        artifact_id: "artifact_id"
+                        artifact_id:
+                          artifact_key:
+                            domain: "domain"
+                            project: "project"
+                            suffix: "suffix"
+                          uuid: "uuid"
                         value: "value"
                       long_description: "long_description"
                       type:
@@ -9699,6 +9866,7 @@ definitions:
                           artifact_key:
                             domain: "domain"
                             project: "project"
+                            suffix: "suffix"
                           uuid: "uuid"
                         map:
                           literals: {}
@@ -9812,12 +9980,16 @@ definitions:
                     structure:
                       tag: "tag"
                 artifact_query:
-                  artifact_key:
-                    domain: "domain"
-                    project: "project"
+                  domain: "domain"
+                  project: "project"
                   alias:
                     name: "name"
-                    artifact_id: "artifact_id"
+                    artifact_id:
+                      artifact_key:
+                        domain: "domain"
+                        project: "project"
+                        suffix: "suffix"
+                      uuid: "uuid"
                     value: "value"
                 required: true
           security_context:
@@ -10182,6 +10354,7 @@ definitions:
                 artifact_key:
                   domain: "domain"
                   project: "project"
+                  suffix: "suffix"
                 uuid: "uuid"
               map:
                 literals: {}
@@ -10243,6 +10416,7 @@ definitions:
                   artifact_key:
                     domain: "domain"
                     project: "project"
+                    suffix: "suffix"
                   uuid: "uuid"
                 uri: "uri"
                 spec:
@@ -10254,10 +10428,20 @@ definitions:
                   short_description: "short_description"
                   aliases:
                   - name: "name"
-                    artifact_id: "artifact_id"
+                    artifact_id:
+                      artifact_key:
+                        domain: "domain"
+                        project: "project"
+                        suffix: "suffix"
+                      uuid: "uuid"
                     value: "value"
                   - name: "name"
-                    artifact_id: "artifact_id"
+                    artifact_id:
+                      artifact_key:
+                        domain: "domain"
+                        project: "project"
+                        suffix: "suffix"
+                      uuid: "uuid"
                     value: "value"
                   long_description: "long_description"
                   type:
@@ -10438,6 +10622,7 @@ definitions:
                       artifact_key:
                         domain: "domain"
                         project: "project"
+                        suffix: "suffix"
                       uuid: "uuid"
                     map:
                       literals: {}
@@ -10551,12 +10736,16 @@ definitions:
                 structure:
                   tag: "tag"
             artifact_query:
-              artifact_key:
-                domain: "domain"
-                project: "project"
+              domain: "domain"
+              project: "project"
               alias:
                 name: "name"
-                artifact_id: "artifact_id"
+                artifact_id:
+                  artifact_key:
+                    domain: "domain"
+                    project: "project"
+                    suffix: "suffix"
+                  uuid: "uuid"
                 value: "value"
             required: true
       security_context:
@@ -13339,6 +13528,7 @@ definitions:
                           artifact_key:
                             domain: "domain"
                             project: "project"
+                            suffix: "suffix"
                           uuid: "uuid"
                         uri: "uri"
                         spec:
@@ -13350,10 +13540,20 @@ definitions:
                           short_description: "short_description"
                           aliases:
                           - name: "name"
-                            artifact_id: "artifact_id"
+                            artifact_id:
+                              artifact_key:
+                                domain: "domain"
+                                project: "project"
+                                suffix: "suffix"
+                              uuid: "uuid"
                             value: "value"
                           - name: "name"
-                            artifact_id: "artifact_id"
+                            artifact_id:
+                              artifact_key:
+                                domain: "domain"
+                                project: "project"
+                                suffix: "suffix"
+                              uuid: "uuid"
                             value: "value"
                           long_description: "long_description"
                           type:
@@ -13534,6 +13734,7 @@ definitions:
                               artifact_key:
                                 domain: "domain"
                                 project: "project"
+                                suffix: "suffix"
                               uuid: "uuid"
                             map:
                               literals: {}
@@ -13654,6 +13855,7 @@ definitions:
                           artifact_key:
                             domain: "domain"
                             project: "project"
+                            suffix: "suffix"
                           uuid: "uuid"
                         uri: "uri"
                         spec:
@@ -13665,10 +13867,20 @@ definitions:
                           short_description: "short_description"
                           aliases:
                           - name: "name"
-                            artifact_id: "artifact_id"
+                            artifact_id:
+                              artifact_key:
+                                domain: "domain"
+                                project: "project"
+                                suffix: "suffix"
+                              uuid: "uuid"
                             value: "value"
                           - name: "name"
-                            artifact_id: "artifact_id"
+                            artifact_id:
+                              artifact_key:
+                                domain: "domain"
+                                project: "project"
+                                suffix: "suffix"
+                              uuid: "uuid"
                             value: "value"
                           long_description: "long_description"
                           type:
@@ -13849,6 +14061,7 @@ definitions:
                               artifact_key:
                                 domain: "domain"
                                 project: "project"
+                                suffix: "suffix"
                               uuid: "uuid"
                             map:
                               literals: {}
@@ -15870,6 +16083,7 @@ definitions:
                           artifact_key:
                             domain: "domain"
                             project: "project"
+                            suffix: "suffix"
                           uuid: "uuid"
                         uri: "uri"
                         spec:
@@ -15881,10 +16095,20 @@ definitions:
                           short_description: "short_description"
                           aliases:
                           - name: "name"
-                            artifact_id: "artifact_id"
+                            artifact_id:
+                              artifact_key:
+                                domain: "domain"
+                                project: "project"
+                                suffix: "suffix"
+                              uuid: "uuid"
                             value: "value"
                           - name: "name"
-                            artifact_id: "artifact_id"
+                            artifact_id:
+                              artifact_key:
+                                domain: "domain"
+                                project: "project"
+                                suffix: "suffix"
+                              uuid: "uuid"
                             value: "value"
                           long_description: "long_description"
                           type:
@@ -16065,6 +16289,7 @@ definitions:
                               artifact_key:
                                 domain: "domain"
                                 project: "project"
+                                suffix: "suffix"
                               uuid: "uuid"
                             map:
                               literals: {}
@@ -16185,6 +16410,7 @@ definitions:
                           artifact_key:
                             domain: "domain"
                             project: "project"
+                            suffix: "suffix"
                           uuid: "uuid"
                         uri: "uri"
                         spec:
@@ -16196,10 +16422,20 @@ definitions:
                           short_description: "short_description"
                           aliases:
                           - name: "name"
-                            artifact_id: "artifact_id"
+                            artifact_id:
+                              artifact_key:
+                                domain: "domain"
+                                project: "project"
+                                suffix: "suffix"
+                              uuid: "uuid"
                             value: "value"
                           - name: "name"
-                            artifact_id: "artifact_id"
+                            artifact_id:
+                              artifact_key:
+                                domain: "domain"
+                                project: "project"
+                                suffix: "suffix"
+                              uuid: "uuid"
                             value: "value"
                           long_description: "long_description"
                           type:
@@ -16380,6 +16616,7 @@ definitions:
                               artifact_key:
                                 domain: "domain"
                                 project: "project"
+                                suffix: "suffix"
                               uuid: "uuid"
                             map:
                               literals: {}
@@ -16616,6 +16853,7 @@ definitions:
                           artifact_key:
                             domain: "domain"
                             project: "project"
+                            suffix: "suffix"
                           uuid: "uuid"
                         uri: "uri"
                         spec:
@@ -16627,10 +16865,20 @@ definitions:
                           short_description: "short_description"
                           aliases:
                           - name: "name"
-                            artifact_id: "artifact_id"
+                            artifact_id:
+                              artifact_key:
+                                domain: "domain"
+                                project: "project"
+                                suffix: "suffix"
+                              uuid: "uuid"
                             value: "value"
                           - name: "name"
-                            artifact_id: "artifact_id"
+                            artifact_id:
+                              artifact_key:
+                                domain: "domain"
+                                project: "project"
+                                suffix: "suffix"
+                              uuid: "uuid"
                             value: "value"
                           long_description: "long_description"
                           type:
@@ -16811,6 +17059,7 @@ definitions:
                               artifact_key:
                                 domain: "domain"
                                 project: "project"
+                                suffix: "suffix"
                               uuid: "uuid"
                             map:
                               literals: {}
@@ -16931,6 +17180,7 @@ definitions:
                           artifact_key:
                             domain: "domain"
                             project: "project"
+                            suffix: "suffix"
                           uuid: "uuid"
                         uri: "uri"
                         spec:
@@ -16942,10 +17192,20 @@ definitions:
                           short_description: "short_description"
                           aliases:
                           - name: "name"
-                            artifact_id: "artifact_id"
+                            artifact_id:
+                              artifact_key:
+                                domain: "domain"
+                                project: "project"
+                                suffix: "suffix"
+                              uuid: "uuid"
                             value: "value"
                           - name: "name"
-                            artifact_id: "artifact_id"
+                            artifact_id:
+                              artifact_key:
+                                domain: "domain"
+                                project: "project"
+                                suffix: "suffix"
+                              uuid: "uuid"
                             value: "value"
                           long_description: "long_description"
                           type:
@@ -17126,6 +17386,7 @@ definitions:
                               artifact_key:
                                 domain: "domain"
                                 project: "project"
+                                suffix: "suffix"
                               uuid: "uuid"
                             map:
                               literals: {}
@@ -17399,6 +17660,7 @@ definitions:
                           artifact_key:
                             domain: "domain"
                             project: "project"
+                            suffix: "suffix"
                           uuid: "uuid"
                         uri: "uri"
                         spec:
@@ -17410,10 +17672,20 @@ definitions:
                           short_description: "short_description"
                           aliases:
                           - name: "name"
-                            artifact_id: "artifact_id"
+                            artifact_id:
+                              artifact_key:
+                                domain: "domain"
+                                project: "project"
+                                suffix: "suffix"
+                              uuid: "uuid"
                             value: "value"
                           - name: "name"
-                            artifact_id: "artifact_id"
+                            artifact_id:
+                              artifact_key:
+                                domain: "domain"
+                                project: "project"
+                                suffix: "suffix"
+                              uuid: "uuid"
                             value: "value"
                           long_description: "long_description"
                           type:
@@ -17594,6 +17866,7 @@ definitions:
                               artifact_key:
                                 domain: "domain"
                                 project: "project"
+                                suffix: "suffix"
                               uuid: "uuid"
                             map:
                               literals: {}
@@ -17714,6 +17987,7 @@ definitions:
                           artifact_key:
                             domain: "domain"
                             project: "project"
+                            suffix: "suffix"
                           uuid: "uuid"
                         uri: "uri"
                         spec:
@@ -17725,10 +17999,20 @@ definitions:
                           short_description: "short_description"
                           aliases:
                           - name: "name"
-                            artifact_id: "artifact_id"
+                            artifact_id:
+                              artifact_key:
+                                domain: "domain"
+                                project: "project"
+                                suffix: "suffix"
+                              uuid: "uuid"
                             value: "value"
                           - name: "name"
-                            artifact_id: "artifact_id"
+                            artifact_id:
+                              artifact_key:
+                                domain: "domain"
+                                project: "project"
+                                suffix: "suffix"
+                              uuid: "uuid"
                             value: "value"
                           long_description: "long_description"
                           type:
@@ -17909,6 +18193,7 @@ definitions:
                               artifact_key:
                                 domain: "domain"
                                 project: "project"
+                                suffix: "suffix"
                               uuid: "uuid"
                             map:
                               literals: {}
@@ -19969,6 +20254,7 @@ definitions:
                           artifact_key:
                             domain: "domain"
                             project: "project"
+                            suffix: "suffix"
                           uuid: "uuid"
                         uri: "uri"
                         spec:
@@ -19980,10 +20266,20 @@ definitions:
                           short_description: "short_description"
                           aliases:
                           - name: "name"
-                            artifact_id: "artifact_id"
+                            artifact_id:
+                              artifact_key:
+                                domain: "domain"
+                                project: "project"
+                                suffix: "suffix"
+                              uuid: "uuid"
                             value: "value"
                           - name: "name"
-                            artifact_id: "artifact_id"
+                            artifact_id:
+                              artifact_key:
+                                domain: "domain"
+                                project: "project"
+                                suffix: "suffix"
+                              uuid: "uuid"
                             value: "value"
                           long_description: "long_description"
                           type:
@@ -20164,6 +20460,7 @@ definitions:
                               artifact_key:
                                 domain: "domain"
                                 project: "project"
+                                suffix: "suffix"
                               uuid: "uuid"
                             map:
                               literals: {}
@@ -20284,6 +20581,7 @@ definitions:
                           artifact_key:
                             domain: "domain"
                             project: "project"
+                            suffix: "suffix"
                           uuid: "uuid"
                         uri: "uri"
                         spec:
@@ -20295,10 +20593,20 @@ definitions:
                           short_description: "short_description"
                           aliases:
                           - name: "name"
-                            artifact_id: "artifact_id"
+                            artifact_id:
+                              artifact_key:
+                                domain: "domain"
+                                project: "project"
+                                suffix: "suffix"
+                              uuid: "uuid"
                             value: "value"
                           - name: "name"
-                            artifact_id: "artifact_id"
+                            artifact_id:
+                              artifact_key:
+                                domain: "domain"
+                                project: "project"
+                                suffix: "suffix"
+                              uuid: "uuid"
                             value: "value"
                           long_description: "long_description"
                           type:
@@ -20479,6 +20787,7 @@ definitions:
                               artifact_key:
                                 domain: "domain"
                                 project: "project"
+                                suffix: "suffix"
                               uuid: "uuid"
                             map:
                               literals: {}
@@ -21758,6 +22067,7 @@ definitions:
                         artifact_key:
                           domain: "domain"
                           project: "project"
+                          suffix: "suffix"
                         uuid: "uuid"
                       uri: "uri"
                       spec:
@@ -21769,10 +22079,20 @@ definitions:
                         short_description: "short_description"
                         aliases:
                         - name: "name"
-                          artifact_id: "artifact_id"
+                          artifact_id:
+                            artifact_key:
+                              domain: "domain"
+                              project: "project"
+                              suffix: "suffix"
+                            uuid: "uuid"
                           value: "value"
                         - name: "name"
-                          artifact_id: "artifact_id"
+                          artifact_id:
+                            artifact_key:
+                              domain: "domain"
+                              project: "project"
+                              suffix: "suffix"
+                            uuid: "uuid"
                           value: "value"
                         long_description: "long_description"
                         type:
@@ -21953,6 +22273,7 @@ definitions:
                             artifact_key:
                               domain: "domain"
                               project: "project"
+                              suffix: "suffix"
                             uuid: "uuid"
                           map:
                             literals: {}
@@ -22073,6 +22394,7 @@ definitions:
                         artifact_key:
                           domain: "domain"
                           project: "project"
+                          suffix: "suffix"
                         uuid: "uuid"
                       uri: "uri"
                       spec:
@@ -22084,10 +22406,20 @@ definitions:
                         short_description: "short_description"
                         aliases:
                         - name: "name"
-                          artifact_id: "artifact_id"
+                          artifact_id:
+                            artifact_key:
+                              domain: "domain"
+                              project: "project"
+                              suffix: "suffix"
+                            uuid: "uuid"
                           value: "value"
                         - name: "name"
-                          artifact_id: "artifact_id"
+                          artifact_id:
+                            artifact_key:
+                              domain: "domain"
+                              project: "project"
+                              suffix: "suffix"
+                            uuid: "uuid"
                           value: "value"
                         long_description: "long_description"
                         type:
@@ -22268,6 +22600,7 @@ definitions:
                             artifact_key:
                               domain: "domain"
                               project: "project"
+                              suffix: "suffix"
                             uuid: "uuid"
                           map:
                             literals: {}
@@ -22557,6 +22890,7 @@ definitions:
                       artifact_key:
                         domain: "domain"
                         project: "project"
+                        suffix: "suffix"
                       uuid: "uuid"
                     uri: "uri"
                     spec:
@@ -22568,10 +22902,20 @@ definitions:
                       short_description: "short_description"
                       aliases:
                       - name: "name"
-                        artifact_id: "artifact_id"
+                        artifact_id:
+                          artifact_key:
+                            domain: "domain"
+                            project: "project"
+                            suffix: "suffix"
+                          uuid: "uuid"
                         value: "value"
                       - name: "name"
-                        artifact_id: "artifact_id"
+                        artifact_id:
+                          artifact_key:
+                            domain: "domain"
+                            project: "project"
+                            suffix: "suffix"
+                          uuid: "uuid"
                         value: "value"
                       long_description: "long_description"
                       type:
@@ -22752,6 +23096,7 @@ definitions:
                           artifact_key:
                             domain: "domain"
                             project: "project"
+                            suffix: "suffix"
                           uuid: "uuid"
                         map:
                           literals: {}
@@ -22872,6 +23217,7 @@ definitions:
                       artifact_key:
                         domain: "domain"
                         project: "project"
+                        suffix: "suffix"
                       uuid: "uuid"
                     uri: "uri"
                     spec:
@@ -22883,10 +23229,20 @@ definitions:
                       short_description: "short_description"
                       aliases:
                       - name: "name"
-                        artifact_id: "artifact_id"
+                        artifact_id:
+                          artifact_key:
+                            domain: "domain"
+                            project: "project"
+                            suffix: "suffix"
+                          uuid: "uuid"
                         value: "value"
                       - name: "name"
-                        artifact_id: "artifact_id"
+                        artifact_id:
+                          artifact_key:
+                            domain: "domain"
+                            project: "project"
+                            suffix: "suffix"
+                          uuid: "uuid"
                         value: "value"
                       long_description: "long_description"
                       type:
@@ -23067,6 +23423,7 @@ definitions:
                           artifact_key:
                             domain: "domain"
                             project: "project"
+                            suffix: "suffix"
                           uuid: "uuid"
                         map:
                           literals: {}
@@ -23769,6 +24126,7 @@ definitions:
                           artifact_key:
                             domain: "domain"
                             project: "project"
+                            suffix: "suffix"
                           uuid: "uuid"
                         uri: "uri"
                         spec:
@@ -23780,10 +24138,20 @@ definitions:
                           short_description: "short_description"
                           aliases:
                           - name: "name"
-                            artifact_id: "artifact_id"
+                            artifact_id:
+                              artifact_key:
+                                domain: "domain"
+                                project: "project"
+                                suffix: "suffix"
+                              uuid: "uuid"
                             value: "value"
                           - name: "name"
-                            artifact_id: "artifact_id"
+                            artifact_id:
+                              artifact_key:
+                                domain: "domain"
+                                project: "project"
+                                suffix: "suffix"
+                              uuid: "uuid"
                             value: "value"
                           long_description: "long_description"
                           type:
@@ -23964,6 +24332,7 @@ definitions:
                               artifact_key:
                                 domain: "domain"
                                 project: "project"
+                                suffix: "suffix"
                               uuid: "uuid"
                             map:
                               literals: {}
@@ -24084,6 +24453,7 @@ definitions:
                           artifact_key:
                             domain: "domain"
                             project: "project"
+                            suffix: "suffix"
                           uuid: "uuid"
                         uri: "uri"
                         spec:
@@ -24095,10 +24465,20 @@ definitions:
                           short_description: "short_description"
                           aliases:
                           - name: "name"
-                            artifact_id: "artifact_id"
+                            artifact_id:
+                              artifact_key:
+                                domain: "domain"
+                                project: "project"
+                                suffix: "suffix"
+                              uuid: "uuid"
                             value: "value"
                           - name: "name"
-                            artifact_id: "artifact_id"
+                            artifact_id:
+                              artifact_key:
+                                domain: "domain"
+                                project: "project"
+                                suffix: "suffix"
+                              uuid: "uuid"
                             value: "value"
                           long_description: "long_description"
                           type:
@@ -24279,6 +24659,7 @@ definitions:
                               artifact_key:
                                 domain: "domain"
                                 project: "project"
+                                suffix: "suffix"
                               uuid: "uuid"
                             map:
                               literals: {}
@@ -24562,6 +24943,7 @@ definitions:
                           artifact_key:
                             domain: "domain"
                             project: "project"
+                            suffix: "suffix"
                           uuid: "uuid"
                         uri: "uri"
                         spec:
@@ -24573,10 +24955,20 @@ definitions:
                           short_description: "short_description"
                           aliases:
                           - name: "name"
-                            artifact_id: "artifact_id"
+                            artifact_id:
+                              artifact_key:
+                                domain: "domain"
+                                project: "project"
+                                suffix: "suffix"
+                              uuid: "uuid"
                             value: "value"
                           - name: "name"
-                            artifact_id: "artifact_id"
+                            artifact_id:
+                              artifact_key:
+                                domain: "domain"
+                                project: "project"
+                                suffix: "suffix"
+                              uuid: "uuid"
                             value: "value"
                           long_description: "long_description"
                           type:
@@ -24757,6 +25149,7 @@ definitions:
                               artifact_key:
                                 domain: "domain"
                                 project: "project"
+                                suffix: "suffix"
                               uuid: "uuid"
                             map:
                               literals: {}
@@ -24877,6 +25270,7 @@ definitions:
                           artifact_key:
                             domain: "domain"
                             project: "project"
+                            suffix: "suffix"
                           uuid: "uuid"
                         uri: "uri"
                         spec:
@@ -24888,10 +25282,20 @@ definitions:
                           short_description: "short_description"
                           aliases:
                           - name: "name"
-                            artifact_id: "artifact_id"
+                            artifact_id:
+                              artifact_key:
+                                domain: "domain"
+                                project: "project"
+                                suffix: "suffix"
+                              uuid: "uuid"
                             value: "value"
                           - name: "name"
-                            artifact_id: "artifact_id"
+                            artifact_id:
+                              artifact_key:
+                                domain: "domain"
+                                project: "project"
+                                suffix: "suffix"
+                              uuid: "uuid"
                             value: "value"
                           long_description: "long_description"
                           type:
@@ -25072,6 +25476,7 @@ definitions:
                               artifact_key:
                                 domain: "domain"
                                 project: "project"
+                                suffix: "suffix"
                               uuid: "uuid"
                             map:
                               literals: {}
@@ -27246,6 +27651,7 @@ definitions:
                           artifact_key:
                             domain: "domain"
                             project: "project"
+                            suffix: "suffix"
                           uuid: "uuid"
                         uri: "uri"
                         spec:
@@ -27257,10 +27663,20 @@ definitions:
                           short_description: "short_description"
                           aliases:
                           - name: "name"
-                            artifact_id: "artifact_id"
+                            artifact_id:
+                              artifact_key:
+                                domain: "domain"
+                                project: "project"
+                                suffix: "suffix"
+                              uuid: "uuid"
                             value: "value"
                           - name: "name"
-                            artifact_id: "artifact_id"
+                            artifact_id:
+                              artifact_key:
+                                domain: "domain"
+                                project: "project"
+                                suffix: "suffix"
+                              uuid: "uuid"
                             value: "value"
                           long_description: "long_description"
                           type:
@@ -27441,6 +27857,7 @@ definitions:
                               artifact_key:
                                 domain: "domain"
                                 project: "project"
+                                suffix: "suffix"
                               uuid: "uuid"
                             map:
                               literals: {}
@@ -27561,6 +27978,7 @@ definitions:
                           artifact_key:
                             domain: "domain"
                             project: "project"
+                            suffix: "suffix"
                           uuid: "uuid"
                         uri: "uri"
                         spec:
@@ -27572,10 +27990,20 @@ definitions:
                           short_description: "short_description"
                           aliases:
                           - name: "name"
-                            artifact_id: "artifact_id"
+                            artifact_id:
+                              artifact_key:
+                                domain: "domain"
+                                project: "project"
+                                suffix: "suffix"
+                              uuid: "uuid"
                             value: "value"
                           - name: "name"
-                            artifact_id: "artifact_id"
+                            artifact_id:
+                              artifact_key:
+                                domain: "domain"
+                                project: "project"
+                                suffix: "suffix"
+                              uuid: "uuid"
                             value: "value"
                           long_description: "long_description"
                           type:
@@ -27756,6 +28184,7 @@ definitions:
                               artifact_key:
                                 domain: "domain"
                                 project: "project"
+                                suffix: "suffix"
                               uuid: "uuid"
                             map:
                               literals: {}
@@ -29777,6 +30206,7 @@ definitions:
                           artifact_key:
                             domain: "domain"
                             project: "project"
+                            suffix: "suffix"
                           uuid: "uuid"
                         uri: "uri"
                         spec:
@@ -29788,10 +30218,20 @@ definitions:
                           short_description: "short_description"
                           aliases:
                           - name: "name"
-                            artifact_id: "artifact_id"
+                            artifact_id:
+                              artifact_key:
+                                domain: "domain"
+                                project: "project"
+                                suffix: "suffix"
+                              uuid: "uuid"
                             value: "value"
                           - name: "name"
-                            artifact_id: "artifact_id"
+                            artifact_id:
+                              artifact_key:
+                                domain: "domain"
+                                project: "project"
+                                suffix: "suffix"
+                              uuid: "uuid"
                             value: "value"
                           long_description: "long_description"
                           type:
@@ -29972,6 +30412,7 @@ definitions:
                               artifact_key:
                                 domain: "domain"
                                 project: "project"
+                                suffix: "suffix"
                               uuid: "uuid"
                             map:
                               literals: {}
@@ -30092,6 +30533,7 @@ definitions:
                           artifact_key:
                             domain: "domain"
                             project: "project"
+                            suffix: "suffix"
                           uuid: "uuid"
                         uri: "uri"
                         spec:
@@ -30103,10 +30545,20 @@ definitions:
                           short_description: "short_description"
                           aliases:
                           - name: "name"
-                            artifact_id: "artifact_id"
+                            artifact_id:
+                              artifact_key:
+                                domain: "domain"
+                                project: "project"
+                                suffix: "suffix"
+                              uuid: "uuid"
                             value: "value"
                           - name: "name"
-                            artifact_id: "artifact_id"
+                            artifact_id:
+                              artifact_key:
+                                domain: "domain"
+                                project: "project"
+                                suffix: "suffix"
+                              uuid: "uuid"
                             value: "value"
                           long_description: "long_description"
                           type:
@@ -30287,6 +30739,7 @@ definitions:
                               artifact_key:
                                 domain: "domain"
                                 project: "project"
+                                suffix: "suffix"
                               uuid: "uuid"
                             map:
                               literals: {}
@@ -30523,6 +30976,7 @@ definitions:
                           artifact_key:
                             domain: "domain"
                             project: "project"
+                            suffix: "suffix"
                           uuid: "uuid"
                         uri: "uri"
                         spec:
@@ -30534,10 +30988,20 @@ definitions:
                           short_description: "short_description"
                           aliases:
                           - name: "name"
-                            artifact_id: "artifact_id"
+                            artifact_id:
+                              artifact_key:
+                                domain: "domain"
+                                project: "project"
+                                suffix: "suffix"
+                              uuid: "uuid"
                             value: "value"
                           - name: "name"
-                            artifact_id: "artifact_id"
+                            artifact_id:
+                              artifact_key:
+                                domain: "domain"
+                                project: "project"
+                                suffix: "suffix"
+                              uuid: "uuid"
                             value: "value"
                           long_description: "long_description"
                           type:
@@ -30718,6 +31182,7 @@ definitions:
                               artifact_key:
                                 domain: "domain"
                                 project: "project"
+                                suffix: "suffix"
                               uuid: "uuid"
                             map:
                               literals: {}
@@ -30838,6 +31303,7 @@ definitions:
                           artifact_key:
                             domain: "domain"
                             project: "project"
+                            suffix: "suffix"
                           uuid: "uuid"
                         uri: "uri"
                         spec:
@@ -30849,10 +31315,20 @@ definitions:
                           short_description: "short_description"
                           aliases:
                           - name: "name"
-                            artifact_id: "artifact_id"
+                            artifact_id:
+                              artifact_key:
+                                domain: "domain"
+                                project: "project"
+                                suffix: "suffix"
+                              uuid: "uuid"
                             value: "value"
                           - name: "name"
-                            artifact_id: "artifact_id"
+                            artifact_id:
+                              artifact_key:
+                                domain: "domain"
+                                project: "project"
+                                suffix: "suffix"
+                              uuid: "uuid"
                             value: "value"
                           long_description: "long_description"
                           type:
@@ -31033,6 +31509,7 @@ definitions:
                               artifact_key:
                                 domain: "domain"
                                 project: "project"
+                                suffix: "suffix"
                               uuid: "uuid"
                             map:
                               literals: {}
@@ -31306,6 +31783,7 @@ definitions:
                           artifact_key:
                             domain: "domain"
                             project: "project"
+                            suffix: "suffix"
                           uuid: "uuid"
                         uri: "uri"
                         spec:
@@ -31317,10 +31795,20 @@ definitions:
                           short_description: "short_description"
                           aliases:
                           - name: "name"
-                            artifact_id: "artifact_id"
+                            artifact_id:
+                              artifact_key:
+                                domain: "domain"
+                                project: "project"
+                                suffix: "suffix"
+                              uuid: "uuid"
                             value: "value"
                           - name: "name"
-                            artifact_id: "artifact_id"
+                            artifact_id:
+                              artifact_key:
+                                domain: "domain"
+                                project: "project"
+                                suffix: "suffix"
+                              uuid: "uuid"
                             value: "value"
                           long_description: "long_description"
                           type:
@@ -31501,6 +31989,7 @@ definitions:
                               artifact_key:
                                 domain: "domain"
                                 project: "project"
+                                suffix: "suffix"
                               uuid: "uuid"
                             map:
                               literals: {}
@@ -31621,6 +32110,7 @@ definitions:
                           artifact_key:
                             domain: "domain"
                             project: "project"
+                            suffix: "suffix"
                           uuid: "uuid"
                         uri: "uri"
                         spec:
@@ -31632,10 +32122,20 @@ definitions:
                           short_description: "short_description"
                           aliases:
                           - name: "name"
-                            artifact_id: "artifact_id"
+                            artifact_id:
+                              artifact_key:
+                                domain: "domain"
+                                project: "project"
+                                suffix: "suffix"
+                              uuid: "uuid"
                             value: "value"
                           - name: "name"
-                            artifact_id: "artifact_id"
+                            artifact_id:
+                              artifact_key:
+                                domain: "domain"
+                                project: "project"
+                                suffix: "suffix"
+                              uuid: "uuid"
                             value: "value"
                           long_description: "long_description"
                           type:
@@ -31816,6 +32316,7 @@ definitions:
                               artifact_key:
                                 domain: "domain"
                                 project: "project"
+                                suffix: "suffix"
                               uuid: "uuid"
                             map:
                               literals: {}
@@ -33876,6 +34377,7 @@ definitions:
                           artifact_key:
                             domain: "domain"
                             project: "project"
+                            suffix: "suffix"
                           uuid: "uuid"
                         uri: "uri"
                         spec:
@@ -33887,10 +34389,20 @@ definitions:
                           short_description: "short_description"
                           aliases:
                           - name: "name"
-                            artifact_id: "artifact_id"
+                            artifact_id:
+                              artifact_key:
+                                domain: "domain"
+                                project: "project"
+                                suffix: "suffix"
+                              uuid: "uuid"
                             value: "value"
                           - name: "name"
-                            artifact_id: "artifact_id"
+                            artifact_id:
+                              artifact_key:
+                                domain: "domain"
+                                project: "project"
+                                suffix: "suffix"
+                              uuid: "uuid"
                             value: "value"
                           long_description: "long_description"
                           type:
@@ -34071,6 +34583,7 @@ definitions:
                               artifact_key:
                                 domain: "domain"
                                 project: "project"
+                                suffix: "suffix"
                               uuid: "uuid"
                             map:
                               literals: {}
@@ -34191,6 +34704,7 @@ definitions:
                           artifact_key:
                             domain: "domain"
                             project: "project"
+                            suffix: "suffix"
                           uuid: "uuid"
                         uri: "uri"
                         spec:
@@ -34202,10 +34716,20 @@ definitions:
                           short_description: "short_description"
                           aliases:
                           - name: "name"
-                            artifact_id: "artifact_id"
+                            artifact_id:
+                              artifact_key:
+                                domain: "domain"
+                                project: "project"
+                                suffix: "suffix"
+                              uuid: "uuid"
                             value: "value"
                           - name: "name"
-                            artifact_id: "artifact_id"
+                            artifact_id:
+                              artifact_key:
+                                domain: "domain"
+                                project: "project"
+                                suffix: "suffix"
+                              uuid: "uuid"
                             value: "value"
                           long_description: "long_description"
                           type:
@@ -34386,6 +34910,7 @@ definitions:
                               artifact_key:
                                 domain: "domain"
                                 project: "project"
+                                suffix: "suffix"
                               uuid: "uuid"
                             map:
                               literals: {}
@@ -36692,6 +37217,7 @@ definitions:
                         artifact_key:
                           domain: "domain"
                           project: "project"
+                          suffix: "suffix"
                         uuid: "uuid"
                       uri: "uri"
                       spec:
@@ -36703,10 +37229,20 @@ definitions:
                         short_description: "short_description"
                         aliases:
                         - name: "name"
-                          artifact_id: "artifact_id"
+                          artifact_id:
+                            artifact_key:
+                              domain: "domain"
+                              project: "project"
+                              suffix: "suffix"
+                            uuid: "uuid"
                           value: "value"
                         - name: "name"
-                          artifact_id: "artifact_id"
+                          artifact_id:
+                            artifact_key:
+                              domain: "domain"
+                              project: "project"
+                              suffix: "suffix"
+                            uuid: "uuid"
                           value: "value"
                         long_description: "long_description"
                         type:
@@ -36887,6 +37423,7 @@ definitions:
                             artifact_key:
                               domain: "domain"
                               project: "project"
+                              suffix: "suffix"
                             uuid: "uuid"
                           map:
                             literals: {}
@@ -37007,6 +37544,7 @@ definitions:
                         artifact_key:
                           domain: "domain"
                           project: "project"
+                          suffix: "suffix"
                         uuid: "uuid"
                       uri: "uri"
                       spec:
@@ -37018,10 +37556,20 @@ definitions:
                         short_description: "short_description"
                         aliases:
                         - name: "name"
-                          artifact_id: "artifact_id"
+                          artifact_id:
+                            artifact_key:
+                              domain: "domain"
+                              project: "project"
+                              suffix: "suffix"
+                            uuid: "uuid"
                           value: "value"
                         - name: "name"
-                          artifact_id: "artifact_id"
+                          artifact_id:
+                            artifact_key:
+                              domain: "domain"
+                              project: "project"
+                              suffix: "suffix"
+                            uuid: "uuid"
                           value: "value"
                         long_description: "long_description"
                         type:
@@ -37202,6 +37750,7 @@ definitions:
                             artifact_key:
                               domain: "domain"
                               project: "project"
+                              suffix: "suffix"
                             uuid: "uuid"
                           map:
                             literals: {}
@@ -39223,6 +39772,7 @@ definitions:
                         artifact_key:
                           domain: "domain"
                           project: "project"
+                          suffix: "suffix"
                         uuid: "uuid"
                       uri: "uri"
                       spec:
@@ -39234,10 +39784,20 @@ definitions:
                         short_description: "short_description"
                         aliases:
                         - name: "name"
-                          artifact_id: "artifact_id"
+                          artifact_id:
+                            artifact_key:
+                              domain: "domain"
+                              project: "project"
+                              suffix: "suffix"
+                            uuid: "uuid"
                           value: "value"
                         - name: "name"
-                          artifact_id: "artifact_id"
+                          artifact_id:
+                            artifact_key:
+                              domain: "domain"
+                              project: "project"
+                              suffix: "suffix"
+                            uuid: "uuid"
                           value: "value"
                         long_description: "long_description"
                         type:
@@ -39418,6 +39978,7 @@ definitions:
                             artifact_key:
                               domain: "domain"
                               project: "project"
+                              suffix: "suffix"
                             uuid: "uuid"
                           map:
                             literals: {}
@@ -39538,6 +40099,7 @@ definitions:
                         artifact_key:
                           domain: "domain"
                           project: "project"
+                          suffix: "suffix"
                         uuid: "uuid"
                       uri: "uri"
                       spec:
@@ -39549,10 +40111,20 @@ definitions:
                         short_description: "short_description"
                         aliases:
                         - name: "name"
-                          artifact_id: "artifact_id"
+                          artifact_id:
+                            artifact_key:
+                              domain: "domain"
+                              project: "project"
+                              suffix: "suffix"
+                            uuid: "uuid"
                           value: "value"
                         - name: "name"
-                          artifact_id: "artifact_id"
+                          artifact_id:
+                            artifact_key:
+                              domain: "domain"
+                              project: "project"
+                              suffix: "suffix"
+                            uuid: "uuid"
                           value: "value"
                         long_description: "long_description"
                         type:
@@ -39733,6 +40305,7 @@ definitions:
                             artifact_key:
                               domain: "domain"
                               project: "project"
+                              suffix: "suffix"
                             uuid: "uuid"
                           map:
                             literals: {}
@@ -39969,6 +40542,7 @@ definitions:
                         artifact_key:
                           domain: "domain"
                           project: "project"
+                          suffix: "suffix"
                         uuid: "uuid"
                       uri: "uri"
                       spec:
@@ -39980,10 +40554,20 @@ definitions:
                         short_description: "short_description"
                         aliases:
                         - name: "name"
-                          artifact_id: "artifact_id"
+                          artifact_id:
+                            artifact_key:
+                              domain: "domain"
+                              project: "project"
+                              suffix: "suffix"
+                            uuid: "uuid"
                           value: "value"
                         - name: "name"
-                          artifact_id: "artifact_id"
+                          artifact_id:
+                            artifact_key:
+                              domain: "domain"
+                              project: "project"
+                              suffix: "suffix"
+                            uuid: "uuid"
                           value: "value"
                         long_description: "long_description"
                         type:
@@ -40164,6 +40748,7 @@ definitions:
                             artifact_key:
                               domain: "domain"
                               project: "project"
+                              suffix: "suffix"
                             uuid: "uuid"
                           map:
                             literals: {}
@@ -40284,6 +40869,7 @@ definitions:
                         artifact_key:
                           domain: "domain"
                           project: "project"
+                          suffix: "suffix"
                         uuid: "uuid"
                       uri: "uri"
                       spec:
@@ -40295,10 +40881,20 @@ definitions:
                         short_description: "short_description"
                         aliases:
                         - name: "name"
-                          artifact_id: "artifact_id"
+                          artifact_id:
+                            artifact_key:
+                              domain: "domain"
+                              project: "project"
+                              suffix: "suffix"
+                            uuid: "uuid"
                           value: "value"
                         - name: "name"
-                          artifact_id: "artifact_id"
+                          artifact_id:
+                            artifact_key:
+                              domain: "domain"
+                              project: "project"
+                              suffix: "suffix"
+                            uuid: "uuid"
                           value: "value"
                         long_description: "long_description"
                         type:
@@ -40479,6 +41075,7 @@ definitions:
                             artifact_key:
                               domain: "domain"
                               project: "project"
+                              suffix: "suffix"
                             uuid: "uuid"
                           map:
                             literals: {}
@@ -40752,6 +41349,7 @@ definitions:
                         artifact_key:
                           domain: "domain"
                           project: "project"
+                          suffix: "suffix"
                         uuid: "uuid"
                       uri: "uri"
                       spec:
@@ -40763,10 +41361,20 @@ definitions:
                         short_description: "short_description"
                         aliases:
                         - name: "name"
-                          artifact_id: "artifact_id"
+                          artifact_id:
+                            artifact_key:
+                              domain: "domain"
+                              project: "project"
+                              suffix: "suffix"
+                            uuid: "uuid"
                           value: "value"
                         - name: "name"
-                          artifact_id: "artifact_id"
+                          artifact_id:
+                            artifact_key:
+                              domain: "domain"
+                              project: "project"
+                              suffix: "suffix"
+                            uuid: "uuid"
                           value: "value"
                         long_description: "long_description"
                         type:
@@ -40947,6 +41555,7 @@ definitions:
                             artifact_key:
                               domain: "domain"
                               project: "project"
+                              suffix: "suffix"
                             uuid: "uuid"
                           map:
                             literals: {}
@@ -41067,6 +41676,7 @@ definitions:
                         artifact_key:
                           domain: "domain"
                           project: "project"
+                          suffix: "suffix"
                         uuid: "uuid"
                       uri: "uri"
                       spec:
@@ -41078,10 +41688,20 @@ definitions:
                         short_description: "short_description"
                         aliases:
                         - name: "name"
-                          artifact_id: "artifact_id"
+                          artifact_id:
+                            artifact_key:
+                              domain: "domain"
+                              project: "project"
+                              suffix: "suffix"
+                            uuid: "uuid"
                           value: "value"
                         - name: "name"
-                          artifact_id: "artifact_id"
+                          artifact_id:
+                            artifact_key:
+                              domain: "domain"
+                              project: "project"
+                              suffix: "suffix"
+                            uuid: "uuid"
                           value: "value"
                         long_description: "long_description"
                         type:
@@ -41262,6 +41882,7 @@ definitions:
                             artifact_key:
                               domain: "domain"
                               project: "project"
+                              suffix: "suffix"
                             uuid: "uuid"
                           map:
                             literals: {}
@@ -43322,6 +43943,7 @@ definitions:
                         artifact_key:
                           domain: "domain"
                           project: "project"
+                          suffix: "suffix"
                         uuid: "uuid"
                       uri: "uri"
                       spec:
@@ -43333,10 +43955,20 @@ definitions:
                         short_description: "short_description"
                         aliases:
                         - name: "name"
-                          artifact_id: "artifact_id"
+                          artifact_id:
+                            artifact_key:
+                              domain: "domain"
+                              project: "project"
+                              suffix: "suffix"
+                            uuid: "uuid"
                           value: "value"
                         - name: "name"
-                          artifact_id: "artifact_id"
+                          artifact_id:
+                            artifact_key:
+                              domain: "domain"
+                              project: "project"
+                              suffix: "suffix"
+                            uuid: "uuid"
                           value: "value"
                         long_description: "long_description"
                         type:
@@ -43517,6 +44149,7 @@ definitions:
                             artifact_key:
                               domain: "domain"
                               project: "project"
+                              suffix: "suffix"
                             uuid: "uuid"
                           map:
                             literals: {}
@@ -43637,6 +44270,7 @@ definitions:
                         artifact_key:
                           domain: "domain"
                           project: "project"
+                          suffix: "suffix"
                         uuid: "uuid"
                       uri: "uri"
                       spec:
@@ -43648,10 +44282,20 @@ definitions:
                         short_description: "short_description"
                         aliases:
                         - name: "name"
-                          artifact_id: "artifact_id"
+                          artifact_id:
+                            artifact_key:
+                              domain: "domain"
+                              project: "project"
+                              suffix: "suffix"
+                            uuid: "uuid"
                           value: "value"
                         - name: "name"
-                          artifact_id: "artifact_id"
+                          artifact_id:
+                            artifact_key:
+                              domain: "domain"
+                              project: "project"
+                              suffix: "suffix"
+                            uuid: "uuid"
                           value: "value"
                         long_description: "long_description"
                         type:
@@ -43832,6 +44476,7 @@ definitions:
                             artifact_key:
                               domain: "domain"
                               project: "project"
+                              suffix: "suffix"
                             uuid: "uuid"
                           map:
                             literals: {}
@@ -46085,6 +46730,7 @@ definitions:
                             artifact_key:
                               domain: "domain"
                               project: "project"
+                              suffix: "suffix"
                             uuid: "uuid"
                           uri: "uri"
                           spec:
@@ -46096,10 +46742,20 @@ definitions:
                             short_description: "short_description"
                             aliases:
                             - name: "name"
-                              artifact_id: "artifact_id"
+                              artifact_id:
+                                artifact_key:
+                                  domain: "domain"
+                                  project: "project"
+                                  suffix: "suffix"
+                                uuid: "uuid"
                               value: "value"
                             - name: "name"
-                              artifact_id: "artifact_id"
+                              artifact_id:
+                                artifact_key:
+                                  domain: "domain"
+                                  project: "project"
+                                  suffix: "suffix"
+                                uuid: "uuid"
                               value: "value"
                             long_description: "long_description"
                             type:
@@ -46280,6 +46936,7 @@ definitions:
                                 artifact_key:
                                   domain: "domain"
                                   project: "project"
+                                  suffix: "suffix"
                                 uuid: "uuid"
                               map:
                                 literals: {}
@@ -46400,6 +47057,7 @@ definitions:
                             artifact_key:
                               domain: "domain"
                               project: "project"
+                              suffix: "suffix"
                             uuid: "uuid"
                           uri: "uri"
                           spec:
@@ -46411,10 +47069,20 @@ definitions:
                             short_description: "short_description"
                             aliases:
                             - name: "name"
-                              artifact_id: "artifact_id"
+                              artifact_id:
+                                artifact_key:
+                                  domain: "domain"
+                                  project: "project"
+                                  suffix: "suffix"
+                                uuid: "uuid"
                               value: "value"
                             - name: "name"
-                              artifact_id: "artifact_id"
+                              artifact_id:
+                                artifact_key:
+                                  domain: "domain"
+                                  project: "project"
+                                  suffix: "suffix"
+                                uuid: "uuid"
                               value: "value"
                             long_description: "long_description"
                             type:
@@ -46595,6 +47263,7 @@ definitions:
                                 artifact_key:
                                   domain: "domain"
                                   project: "project"
+                                  suffix: "suffix"
                                 uuid: "uuid"
                               map:
                                 literals: {}
@@ -48616,6 +49285,7 @@ definitions:
                             artifact_key:
                               domain: "domain"
                               project: "project"
+                              suffix: "suffix"
                             uuid: "uuid"
                           uri: "uri"
                           spec:
@@ -48627,10 +49297,20 @@ definitions:
                             short_description: "short_description"
                             aliases:
                             - name: "name"
-                              artifact_id: "artifact_id"
+                              artifact_id:
+                                artifact_key:
+                                  domain: "domain"
+                                  project: "project"
+                                  suffix: "suffix"
+                                uuid: "uuid"
                               value: "value"
                             - name: "name"
-                              artifact_id: "artifact_id"
+                              artifact_id:
+                                artifact_key:
+                                  domain: "domain"
+                                  project: "project"
+                                  suffix: "suffix"
+                                uuid: "uuid"
                               value: "value"
                             long_description: "long_description"
                             type:
@@ -48811,6 +49491,7 @@ definitions:
                                 artifact_key:
                                   domain: "domain"
                                   project: "project"
+                                  suffix: "suffix"
                                 uuid: "uuid"
                               map:
                                 literals: {}
@@ -48931,6 +49612,7 @@ definitions:
                             artifact_key:
                               domain: "domain"
                               project: "project"
+                              suffix: "suffix"
                             uuid: "uuid"
                           uri: "uri"
                           spec:
@@ -48942,10 +49624,20 @@ definitions:
                             short_description: "short_description"
                             aliases:
                             - name: "name"
-                              artifact_id: "artifact_id"
+                              artifact_id:
+                                artifact_key:
+                                  domain: "domain"
+                                  project: "project"
+                                  suffix: "suffix"
+                                uuid: "uuid"
                               value: "value"
                             - name: "name"
-                              artifact_id: "artifact_id"
+                              artifact_id:
+                                artifact_key:
+                                  domain: "domain"
+                                  project: "project"
+                                  suffix: "suffix"
+                                uuid: "uuid"
                               value: "value"
                             long_description: "long_description"
                             type:
@@ -49126,6 +49818,7 @@ definitions:
                                 artifact_key:
                                   domain: "domain"
                                   project: "project"
+                                  suffix: "suffix"
                                 uuid: "uuid"
                               map:
                                 literals: {}
@@ -49362,6 +50055,7 @@ definitions:
                             artifact_key:
                               domain: "domain"
                               project: "project"
+                              suffix: "suffix"
                             uuid: "uuid"
                           uri: "uri"
                           spec:
@@ -49373,10 +50067,20 @@ definitions:
                             short_description: "short_description"
                             aliases:
                             - name: "name"
-                              artifact_id: "artifact_id"
+                              artifact_id:
+                                artifact_key:
+                                  domain: "domain"
+                                  project: "project"
+                                  suffix: "suffix"
+                                uuid: "uuid"
                               value: "value"
                             - name: "name"
-                              artifact_id: "artifact_id"
+                              artifact_id:
+                                artifact_key:
+                                  domain: "domain"
+                                  project: "project"
+                                  suffix: "suffix"
+                                uuid: "uuid"
                               value: "value"
                             long_description: "long_description"
                             type:
@@ -49557,6 +50261,7 @@ definitions:
                                 artifact_key:
                                   domain: "domain"
                                   project: "project"
+                                  suffix: "suffix"
                                 uuid: "uuid"
                               map:
                                 literals: {}
@@ -49677,6 +50382,7 @@ definitions:
                             artifact_key:
                               domain: "domain"
                               project: "project"
+                              suffix: "suffix"
                             uuid: "uuid"
                           uri: "uri"
                           spec:
@@ -49688,10 +50394,20 @@ definitions:
                             short_description: "short_description"
                             aliases:
                             - name: "name"
-                              artifact_id: "artifact_id"
+                              artifact_id:
+                                artifact_key:
+                                  domain: "domain"
+                                  project: "project"
+                                  suffix: "suffix"
+                                uuid: "uuid"
                               value: "value"
                             - name: "name"
-                              artifact_id: "artifact_id"
+                              artifact_id:
+                                artifact_key:
+                                  domain: "domain"
+                                  project: "project"
+                                  suffix: "suffix"
+                                uuid: "uuid"
                               value: "value"
                             long_description: "long_description"
                             type:
@@ -49872,6 +50588,7 @@ definitions:
                                 artifact_key:
                                   domain: "domain"
                                   project: "project"
+                                  suffix: "suffix"
                                 uuid: "uuid"
                               map:
                                 literals: {}
@@ -50145,6 +50862,7 @@ definitions:
                             artifact_key:
                               domain: "domain"
                               project: "project"
+                              suffix: "suffix"
                             uuid: "uuid"
                           uri: "uri"
                           spec:
@@ -50156,10 +50874,20 @@ definitions:
                             short_description: "short_description"
                             aliases:
                             - name: "name"
-                              artifact_id: "artifact_id"
+                              artifact_id:
+                                artifact_key:
+                                  domain: "domain"
+                                  project: "project"
+                                  suffix: "suffix"
+                                uuid: "uuid"
                               value: "value"
                             - name: "name"
-                              artifact_id: "artifact_id"
+                              artifact_id:
+                                artifact_key:
+                                  domain: "domain"
+                                  project: "project"
+                                  suffix: "suffix"
+                                uuid: "uuid"
                               value: "value"
                             long_description: "long_description"
                             type:
@@ -50340,6 +51068,7 @@ definitions:
                                 artifact_key:
                                   domain: "domain"
                                   project: "project"
+                                  suffix: "suffix"
                                 uuid: "uuid"
                               map:
                                 literals: {}
@@ -50460,6 +51189,7 @@ definitions:
                             artifact_key:
                               domain: "domain"
                               project: "project"
+                              suffix: "suffix"
                             uuid: "uuid"
                           uri: "uri"
                           spec:
@@ -50471,10 +51201,20 @@ definitions:
                             short_description: "short_description"
                             aliases:
                             - name: "name"
-                              artifact_id: "artifact_id"
+                              artifact_id:
+                                artifact_key:
+                                  domain: "domain"
+                                  project: "project"
+                                  suffix: "suffix"
+                                uuid: "uuid"
                               value: "value"
                             - name: "name"
-                              artifact_id: "artifact_id"
+                              artifact_id:
+                                artifact_key:
+                                  domain: "domain"
+                                  project: "project"
+                                  suffix: "suffix"
+                                uuid: "uuid"
                               value: "value"
                             long_description: "long_description"
                             type:
@@ -50655,6 +51395,7 @@ definitions:
                                 artifact_key:
                                   domain: "domain"
                                   project: "project"
+                                  suffix: "suffix"
                                 uuid: "uuid"
                               map:
                                 literals: {}
@@ -52715,6 +53456,7 @@ definitions:
                             artifact_key:
                               domain: "domain"
                               project: "project"
+                              suffix: "suffix"
                             uuid: "uuid"
                           uri: "uri"
                           spec:
@@ -52726,10 +53468,20 @@ definitions:
                             short_description: "short_description"
                             aliases:
                             - name: "name"
-                              artifact_id: "artifact_id"
+                              artifact_id:
+                                artifact_key:
+                                  domain: "domain"
+                                  project: "project"
+                                  suffix: "suffix"
+                                uuid: "uuid"
                               value: "value"
                             - name: "name"
-                              artifact_id: "artifact_id"
+                              artifact_id:
+                                artifact_key:
+                                  domain: "domain"
+                                  project: "project"
+                                  suffix: "suffix"
+                                uuid: "uuid"
                               value: "value"
                             long_description: "long_description"
                             type:
@@ -52910,6 +53662,7 @@ definitions:
                                 artifact_key:
                                   domain: "domain"
                                   project: "project"
+                                  suffix: "suffix"
                                 uuid: "uuid"
                               map:
                                 literals: {}
@@ -53030,6 +53783,7 @@ definitions:
                             artifact_key:
                               domain: "domain"
                               project: "project"
+                              suffix: "suffix"
                             uuid: "uuid"
                           uri: "uri"
                           spec:
@@ -53041,10 +53795,20 @@ definitions:
                             short_description: "short_description"
                             aliases:
                             - name: "name"
-                              artifact_id: "artifact_id"
+                              artifact_id:
+                                artifact_key:
+                                  domain: "domain"
+                                  project: "project"
+                                  suffix: "suffix"
+                                uuid: "uuid"
                               value: "value"
                             - name: "name"
-                              artifact_id: "artifact_id"
+                              artifact_id:
+                                artifact_key:
+                                  domain: "domain"
+                                  project: "project"
+                                  suffix: "suffix"
+                                uuid: "uuid"
                               value: "value"
                             long_description: "long_description"
                             type:
@@ -53225,6 +53989,7 @@ definitions:
                                 artifact_key:
                                   domain: "domain"
                                   project: "project"
+                                  suffix: "suffix"
                                 uuid: "uuid"
                               map:
                                 literals: {}
@@ -55257,6 +56022,7 @@ definitions:
                             artifact_key:
                               domain: "domain"
                               project: "project"
+                              suffix: "suffix"
                             uuid: "uuid"
                           uri: "uri"
                           spec:
@@ -55268,10 +56034,20 @@ definitions:
                             short_description: "short_description"
                             aliases:
                             - name: "name"
-                              artifact_id: "artifact_id"
+                              artifact_id:
+                                artifact_key:
+                                  domain: "domain"
+                                  project: "project"
+                                  suffix: "suffix"
+                                uuid: "uuid"
                               value: "value"
                             - name: "name"
-                              artifact_id: "artifact_id"
+                              artifact_id:
+                                artifact_key:
+                                  domain: "domain"
+                                  project: "project"
+                                  suffix: "suffix"
+                                uuid: "uuid"
                               value: "value"
                             long_description: "long_description"
                             type:
@@ -55452,6 +56228,7 @@ definitions:
                                 artifact_key:
                                   domain: "domain"
                                   project: "project"
+                                  suffix: "suffix"
                                 uuid: "uuid"
                               map:
                                 literals: {}
@@ -55572,6 +56349,7 @@ definitions:
                             artifact_key:
                               domain: "domain"
                               project: "project"
+                              suffix: "suffix"
                             uuid: "uuid"
                           uri: "uri"
                           spec:
@@ -55583,10 +56361,20 @@ definitions:
                             short_description: "short_description"
                             aliases:
                             - name: "name"
-                              artifact_id: "artifact_id"
+                              artifact_id:
+                                artifact_key:
+                                  domain: "domain"
+                                  project: "project"
+                                  suffix: "suffix"
+                                uuid: "uuid"
                               value: "value"
                             - name: "name"
-                              artifact_id: "artifact_id"
+                              artifact_id:
+                                artifact_key:
+                                  domain: "domain"
+                                  project: "project"
+                                  suffix: "suffix"
+                                uuid: "uuid"
                               value: "value"
                             long_description: "long_description"
                             type:
@@ -55767,6 +56555,7 @@ definitions:
                                 artifact_key:
                                   domain: "domain"
                                   project: "project"
+                                  suffix: "suffix"
                                 uuid: "uuid"
                               map:
                                 literals: {}
@@ -57788,6 +58577,7 @@ definitions:
                             artifact_key:
                               domain: "domain"
                               project: "project"
+                              suffix: "suffix"
                             uuid: "uuid"
                           uri: "uri"
                           spec:
@@ -57799,10 +58589,20 @@ definitions:
                             short_description: "short_description"
                             aliases:
                             - name: "name"
-                              artifact_id: "artifact_id"
+                              artifact_id:
+                                artifact_key:
+                                  domain: "domain"
+                                  project: "project"
+                                  suffix: "suffix"
+                                uuid: "uuid"
                               value: "value"
                             - name: "name"
-                              artifact_id: "artifact_id"
+                              artifact_id:
+                                artifact_key:
+                                  domain: "domain"
+                                  project: "project"
+                                  suffix: "suffix"
+                                uuid: "uuid"
                               value: "value"
                             long_description: "long_description"
                             type:
@@ -57983,6 +58783,7 @@ definitions:
                                 artifact_key:
                                   domain: "domain"
                                   project: "project"
+                                  suffix: "suffix"
                                 uuid: "uuid"
                               map:
                                 literals: {}
@@ -58103,6 +58904,7 @@ definitions:
                             artifact_key:
                               domain: "domain"
                               project: "project"
+                              suffix: "suffix"
                             uuid: "uuid"
                           uri: "uri"
                           spec:
@@ -58114,10 +58916,20 @@ definitions:
                             short_description: "short_description"
                             aliases:
                             - name: "name"
-                              artifact_id: "artifact_id"
+                              artifact_id:
+                                artifact_key:
+                                  domain: "domain"
+                                  project: "project"
+                                  suffix: "suffix"
+                                uuid: "uuid"
                               value: "value"
                             - name: "name"
-                              artifact_id: "artifact_id"
+                              artifact_id:
+                                artifact_key:
+                                  domain: "domain"
+                                  project: "project"
+                                  suffix: "suffix"
+                                uuid: "uuid"
                               value: "value"
                             long_description: "long_description"
                             type:
@@ -58298,6 +59110,7 @@ definitions:
                                 artifact_key:
                                   domain: "domain"
                                   project: "project"
+                                  suffix: "suffix"
                                 uuid: "uuid"
                               map:
                                 literals: {}
@@ -58534,6 +59347,7 @@ definitions:
                             artifact_key:
                               domain: "domain"
                               project: "project"
+                              suffix: "suffix"
                             uuid: "uuid"
                           uri: "uri"
                           spec:
@@ -58545,10 +59359,20 @@ definitions:
                             short_description: "short_description"
                             aliases:
                             - name: "name"
-                              artifact_id: "artifact_id"
+                              artifact_id:
+                                artifact_key:
+                                  domain: "domain"
+                                  project: "project"
+                                  suffix: "suffix"
+                                uuid: "uuid"
                               value: "value"
                             - name: "name"
-                              artifact_id: "artifact_id"
+                              artifact_id:
+                                artifact_key:
+                                  domain: "domain"
+                                  project: "project"
+                                  suffix: "suffix"
+                                uuid: "uuid"
                               value: "value"
                             long_description: "long_description"
                             type:
@@ -58729,6 +59553,7 @@ definitions:
                                 artifact_key:
                                   domain: "domain"
                                   project: "project"
+                                  suffix: "suffix"
                                 uuid: "uuid"
                               map:
                                 literals: {}
@@ -58849,6 +59674,7 @@ definitions:
                             artifact_key:
                               domain: "domain"
                               project: "project"
+                              suffix: "suffix"
                             uuid: "uuid"
                           uri: "uri"
                           spec:
@@ -58860,10 +59686,20 @@ definitions:
                             short_description: "short_description"
                             aliases:
                             - name: "name"
-                              artifact_id: "artifact_id"
+                              artifact_id:
+                                artifact_key:
+                                  domain: "domain"
+                                  project: "project"
+                                  suffix: "suffix"
+                                uuid: "uuid"
                               value: "value"
                             - name: "name"
-                              artifact_id: "artifact_id"
+                              artifact_id:
+                                artifact_key:
+                                  domain: "domain"
+                                  project: "project"
+                                  suffix: "suffix"
+                                uuid: "uuid"
                               value: "value"
                             long_description: "long_description"
                             type:
@@ -59044,6 +59880,7 @@ definitions:
                                 artifact_key:
                                   domain: "domain"
                                   project: "project"
+                                  suffix: "suffix"
                                 uuid: "uuid"
                               map:
                                 literals: {}
@@ -59317,6 +60154,7 @@ definitions:
                             artifact_key:
                               domain: "domain"
                               project: "project"
+                              suffix: "suffix"
                             uuid: "uuid"
                           uri: "uri"
                           spec:
@@ -59328,10 +60166,20 @@ definitions:
                             short_description: "short_description"
                             aliases:
                             - name: "name"
-                              artifact_id: "artifact_id"
+                              artifact_id:
+                                artifact_key:
+                                  domain: "domain"
+                                  project: "project"
+                                  suffix: "suffix"
+                                uuid: "uuid"
                               value: "value"
                             - name: "name"
-                              artifact_id: "artifact_id"
+                              artifact_id:
+                                artifact_key:
+                                  domain: "domain"
+                                  project: "project"
+                                  suffix: "suffix"
+                                uuid: "uuid"
                               value: "value"
                             long_description: "long_description"
                             type:
@@ -59512,6 +60360,7 @@ definitions:
                                 artifact_key:
                                   domain: "domain"
                                   project: "project"
+                                  suffix: "suffix"
                                 uuid: "uuid"
                               map:
                                 literals: {}
@@ -59632,6 +60481,7 @@ definitions:
                             artifact_key:
                               domain: "domain"
                               project: "project"
+                              suffix: "suffix"
                             uuid: "uuid"
                           uri: "uri"
                           spec:
@@ -59643,10 +60493,20 @@ definitions:
                             short_description: "short_description"
                             aliases:
                             - name: "name"
-                              artifact_id: "artifact_id"
+                              artifact_id:
+                                artifact_key:
+                                  domain: "domain"
+                                  project: "project"
+                                  suffix: "suffix"
+                                uuid: "uuid"
                               value: "value"
                             - name: "name"
-                              artifact_id: "artifact_id"
+                              artifact_id:
+                                artifact_key:
+                                  domain: "domain"
+                                  project: "project"
+                                  suffix: "suffix"
+                                uuid: "uuid"
                               value: "value"
                             long_description: "long_description"
                             type:
@@ -59827,6 +60687,7 @@ definitions:
                                 artifact_key:
                                   domain: "domain"
                                   project: "project"
+                                  suffix: "suffix"
                                 uuid: "uuid"
                               map:
                                 literals: {}
@@ -61887,6 +62748,7 @@ definitions:
                             artifact_key:
                               domain: "domain"
                               project: "project"
+                              suffix: "suffix"
                             uuid: "uuid"
                           uri: "uri"
                           spec:
@@ -61898,10 +62760,20 @@ definitions:
                             short_description: "short_description"
                             aliases:
                             - name: "name"
-                              artifact_id: "artifact_id"
+                              artifact_id:
+                                artifact_key:
+                                  domain: "domain"
+                                  project: "project"
+                                  suffix: "suffix"
+                                uuid: "uuid"
                               value: "value"
                             - name: "name"
-                              artifact_id: "artifact_id"
+                              artifact_id:
+                                artifact_key:
+                                  domain: "domain"
+                                  project: "project"
+                                  suffix: "suffix"
+                                uuid: "uuid"
                               value: "value"
                             long_description: "long_description"
                             type:
@@ -62082,6 +62954,7 @@ definitions:
                                 artifact_key:
                                   domain: "domain"
                                   project: "project"
+                                  suffix: "suffix"
                                 uuid: "uuid"
                               map:
                                 literals: {}
@@ -62202,6 +63075,7 @@ definitions:
                             artifact_key:
                               domain: "domain"
                               project: "project"
+                              suffix: "suffix"
                             uuid: "uuid"
                           uri: "uri"
                           spec:
@@ -62213,10 +63087,20 @@ definitions:
                             short_description: "short_description"
                             aliases:
                             - name: "name"
-                              artifact_id: "artifact_id"
+                              artifact_id:
+                                artifact_key:
+                                  domain: "domain"
+                                  project: "project"
+                                  suffix: "suffix"
+                                uuid: "uuid"
                               value: "value"
                             - name: "name"
-                              artifact_id: "artifact_id"
+                              artifact_id:
+                                artifact_key:
+                                  domain: "domain"
+                                  project: "project"
+                                  suffix: "suffix"
+                                uuid: "uuid"
                               value: "value"
                             long_description: "long_description"
                             type:
@@ -62397,6 +63281,7 @@ definitions:
                                 artifact_key:
                                   domain: "domain"
                                   project: "project"
+                                  suffix: "suffix"
                                 uuid: "uuid"
                               map:
                                 literals: {}
@@ -62550,8 +63435,8 @@ definitions:
         $ref: "#/definitions/coreArtifactID"
       uri:
         type: "string"
-        description: "This has to be unique across the entire installation. For OSS,\
-          \ we will write the flyte url here for now."
+        description: "This is unique access url generated by the service based on\
+          \ the ArtifactKey."
       spec:
         $ref: "#/definitions/artifactArtifactSpec"
     example:
@@ -62559,6 +63444,7 @@ definitions:
         artifact_key:
           domain: "domain"
           project: "project"
+          suffix: "suffix"
         uuid: "uuid"
       uri: "uri"
       spec:
@@ -62570,10 +63456,20 @@ definitions:
         short_description: "short_description"
         aliases:
         - name: "name"
-          artifact_id: "artifact_id"
+          artifact_id:
+            artifact_key:
+              domain: "domain"
+              project: "project"
+              suffix: "suffix"
+            uuid: "uuid"
           value: "value"
         - name: "name"
-          artifact_id: "artifact_id"
+          artifact_id:
+            artifact_key:
+              domain: "domain"
+              project: "project"
+              suffix: "suffix"
+            uuid: "uuid"
           value: "value"
         long_description: "long_description"
         type:
@@ -62754,6 +63650,7 @@ definitions:
             artifact_key:
               domain: "domain"
               project: "project"
+              suffix: "suffix"
             uuid: "uuid"
           map:
             literals: {}
@@ -62817,17 +63714,23 @@ definitions:
   artifactArtifactQuery:
     type: "object"
     properties:
-      artifact_key:
-        $ref: "#/definitions/coreArtifactKey"
+      project:
+        type: "string"
+      domain:
+        type: "string"
       alias:
         $ref: "#/definitions/flyteidlartifactAlias"
     example:
-      artifact_key:
-        domain: "domain"
-        project: "project"
+      domain: "domain"
+      project: "project"
       alias:
         name: "name"
-        artifact_id: "artifact_id"
+        artifact_id:
+          artifact_key:
+            domain: "domain"
+            project: "project"
+            suffix: "suffix"
+          uuid: "uuid"
         value: "value"
   artifactArtifactSpec:
     type: "object"
@@ -62874,10 +63777,20 @@ definitions:
       short_description: "short_description"
       aliases:
       - name: "name"
-        artifact_id: "artifact_id"
+        artifact_id:
+          artifact_key:
+            domain: "domain"
+            project: "project"
+            suffix: "suffix"
+          uuid: "uuid"
         value: "value"
       - name: "name"
-        artifact_id: "artifact_id"
+        artifact_id:
+          artifact_key:
+            domain: "domain"
+            project: "project"
+            suffix: "suffix"
+          uuid: "uuid"
         value: "value"
       long_description: "long_description"
       type:
@@ -63058,6 +63971,7 @@ definitions:
           artifact_key:
             domain: "domain"
             project: "project"
+            suffix: "suffix"
           uuid: "uuid"
         map:
           literals: {}
@@ -63152,23 +64066,29 @@ definitions:
         $ref: "#/definitions/coreArtifactKey"
       uuid:
         type: "string"
+        description: "consider hiding - this is a storage layer ID. Might even change\
+          \ for the same object."
     example:
       artifact_key:
         domain: "domain"
         project: "project"
+        suffix: "suffix"
       uuid: "uuid"
   coreArtifactKey:
     type: "object"
     properties:
       project:
         type: "string"
-        description: "Project and domain as we're all used to. Just to align with\
-          \ existing uniqueness constructs."
+        description: "Project and domain and suffix needs to be unique across a given\
+          \ artifact store."
       domain:
+        type: "string"
+      suffix:
         type: "string"
     example:
       domain: "domain"
       project: "project"
+      suffix: "suffix"
   coreBinary:
     type: "object"
     properties:
@@ -63949,6 +64869,7 @@ definitions:
                     artifact_key:
                       domain: "domain"
                       project: "project"
+                      suffix: "suffix"
                     uuid: "uuid"
                   uri: "uri"
                   spec:
@@ -63960,10 +64881,20 @@ definitions:
                     short_description: "short_description"
                     aliases:
                     - name: "name"
-                      artifact_id: "artifact_id"
+                      artifact_id:
+                        artifact_key:
+                          domain: "domain"
+                          project: "project"
+                          suffix: "suffix"
+                        uuid: "uuid"
                       value: "value"
                     - name: "name"
-                      artifact_id: "artifact_id"
+                      artifact_id:
+                        artifact_key:
+                          domain: "domain"
+                          project: "project"
+                          suffix: "suffix"
+                        uuid: "uuid"
                       value: "value"
                     long_description: "long_description"
                     type:
@@ -64144,6 +65075,7 @@ definitions:
                         artifact_key:
                           domain: "domain"
                           project: "project"
+                          suffix: "suffix"
                         uuid: "uuid"
                       map:
                         literals: {}
@@ -64264,6 +65196,7 @@ definitions:
                     artifact_key:
                       domain: "domain"
                       project: "project"
+                      suffix: "suffix"
                     uuid: "uuid"
                   uri: "uri"
                   spec:
@@ -64275,10 +65208,20 @@ definitions:
                     short_description: "short_description"
                     aliases:
                     - name: "name"
-                      artifact_id: "artifact_id"
+                      artifact_id:
+                        artifact_key:
+                          domain: "domain"
+                          project: "project"
+                          suffix: "suffix"
+                        uuid: "uuid"
                       value: "value"
                     - name: "name"
-                      artifact_id: "artifact_id"
+                      artifact_id:
+                        artifact_key:
+                          domain: "domain"
+                          project: "project"
+                          suffix: "suffix"
+                        uuid: "uuid"
                       value: "value"
                     long_description: "long_description"
                     type:
@@ -64459,6 +65402,7 @@ definitions:
                         artifact_key:
                           domain: "domain"
                           project: "project"
+                          suffix: "suffix"
                         uuid: "uuid"
                       map:
                         literals: {}
@@ -66531,6 +67475,7 @@ definitions:
                     artifact_key:
                       domain: "domain"
                       project: "project"
+                      suffix: "suffix"
                     uuid: "uuid"
                   uri: "uri"
                   spec:
@@ -66542,10 +67487,20 @@ definitions:
                     short_description: "short_description"
                     aliases:
                     - name: "name"
-                      artifact_id: "artifact_id"
+                      artifact_id:
+                        artifact_key:
+                          domain: "domain"
+                          project: "project"
+                          suffix: "suffix"
+                        uuid: "uuid"
                       value: "value"
                     - name: "name"
-                      artifact_id: "artifact_id"
+                      artifact_id:
+                        artifact_key:
+                          domain: "domain"
+                          project: "project"
+                          suffix: "suffix"
+                        uuid: "uuid"
                       value: "value"
                     long_description: "long_description"
                     type:
@@ -66726,6 +67681,7 @@ definitions:
                         artifact_key:
                           domain: "domain"
                           project: "project"
+                          suffix: "suffix"
                         uuid: "uuid"
                       map:
                         literals: {}
@@ -66846,6 +67802,7 @@ definitions:
                     artifact_key:
                       domain: "domain"
                       project: "project"
+                      suffix: "suffix"
                     uuid: "uuid"
                   uri: "uri"
                   spec:
@@ -66857,10 +67814,20 @@ definitions:
                     short_description: "short_description"
                     aliases:
                     - name: "name"
-                      artifact_id: "artifact_id"
+                      artifact_id:
+                        artifact_key:
+                          domain: "domain"
+                          project: "project"
+                          suffix: "suffix"
+                        uuid: "uuid"
                       value: "value"
                     - name: "name"
-                      artifact_id: "artifact_id"
+                      artifact_id:
+                        artifact_key:
+                          domain: "domain"
+                          project: "project"
+                          suffix: "suffix"
+                        uuid: "uuid"
                       value: "value"
                     long_description: "long_description"
                     type:
@@ -67041,6 +68008,7 @@ definitions:
                         artifact_key:
                           domain: "domain"
                           project: "project"
+                          suffix: "suffix"
                         uuid: "uuid"
                       map:
                         literals: {}
@@ -69089,6 +70057,7 @@ definitions:
                       artifact_key:
                         domain: "domain"
                         project: "project"
+                        suffix: "suffix"
                       uuid: "uuid"
                     uri: "uri"
                     spec:
@@ -69100,10 +70069,20 @@ definitions:
                       short_description: "short_description"
                       aliases:
                       - name: "name"
-                        artifact_id: "artifact_id"
+                        artifact_id:
+                          artifact_key:
+                            domain: "domain"
+                            project: "project"
+                            suffix: "suffix"
+                          uuid: "uuid"
                         value: "value"
                       - name: "name"
-                        artifact_id: "artifact_id"
+                        artifact_id:
+                          artifact_key:
+                            domain: "domain"
+                            project: "project"
+                            suffix: "suffix"
+                          uuid: "uuid"
                         value: "value"
                       long_description: "long_description"
                       type:
@@ -69284,6 +70263,7 @@ definitions:
                           artifact_key:
                             domain: "domain"
                             project: "project"
+                            suffix: "suffix"
                           uuid: "uuid"
                         map:
                           literals: {}
@@ -69404,6 +70384,7 @@ definitions:
                       artifact_key:
                         domain: "domain"
                         project: "project"
+                        suffix: "suffix"
                       uuid: "uuid"
                     uri: "uri"
                     spec:
@@ -69415,10 +70396,20 @@ definitions:
                       short_description: "short_description"
                       aliases:
                       - name: "name"
-                        artifact_id: "artifact_id"
+                        artifact_id:
+                          artifact_key:
+                            domain: "domain"
+                            project: "project"
+                            suffix: "suffix"
+                          uuid: "uuid"
                         value: "value"
                       - name: "name"
-                        artifact_id: "artifact_id"
+                        artifact_id:
+                          artifact_key:
+                            domain: "domain"
+                            project: "project"
+                            suffix: "suffix"
+                          uuid: "uuid"
                         value: "value"
                       long_description: "long_description"
                       type:
@@ -69599,6 +70590,7 @@ definitions:
                           artifact_key:
                             domain: "domain"
                             project: "project"
+                            suffix: "suffix"
                           uuid: "uuid"
                         map:
                           literals: {}
@@ -71620,6 +72612,7 @@ definitions:
                       artifact_key:
                         domain: "domain"
                         project: "project"
+                        suffix: "suffix"
                       uuid: "uuid"
                     uri: "uri"
                     spec:
@@ -71631,10 +72624,20 @@ definitions:
                       short_description: "short_description"
                       aliases:
                       - name: "name"
-                        artifact_id: "artifact_id"
+                        artifact_id:
+                          artifact_key:
+                            domain: "domain"
+                            project: "project"
+                            suffix: "suffix"
+                          uuid: "uuid"
                         value: "value"
                       - name: "name"
-                        artifact_id: "artifact_id"
+                        artifact_id:
+                          artifact_key:
+                            domain: "domain"
+                            project: "project"
+                            suffix: "suffix"
+                          uuid: "uuid"
                         value: "value"
                       long_description: "long_description"
                       type:
@@ -71815,6 +72818,7 @@ definitions:
                           artifact_key:
                             domain: "domain"
                             project: "project"
+                            suffix: "suffix"
                           uuid: "uuid"
                         map:
                           literals: {}
@@ -71935,6 +72939,7 @@ definitions:
                       artifact_key:
                         domain: "domain"
                         project: "project"
+                        suffix: "suffix"
                       uuid: "uuid"
                     uri: "uri"
                     spec:
@@ -71946,10 +72951,20 @@ definitions:
                       short_description: "short_description"
                       aliases:
                       - name: "name"
-                        artifact_id: "artifact_id"
+                        artifact_id:
+                          artifact_key:
+                            domain: "domain"
+                            project: "project"
+                            suffix: "suffix"
+                          uuid: "uuid"
                         value: "value"
                       - name: "name"
-                        artifact_id: "artifact_id"
+                        artifact_id:
+                          artifact_key:
+                            domain: "domain"
+                            project: "project"
+                            suffix: "suffix"
+                          uuid: "uuid"
                         value: "value"
                       long_description: "long_description"
                       type:
@@ -72130,6 +73145,7 @@ definitions:
                           artifact_key:
                             domain: "domain"
                             project: "project"
+                            suffix: "suffix"
                           uuid: "uuid"
                         map:
                           literals: {}
@@ -72366,6 +73382,7 @@ definitions:
                       artifact_key:
                         domain: "domain"
                         project: "project"
+                        suffix: "suffix"
                       uuid: "uuid"
                     uri: "uri"
                     spec:
@@ -72377,10 +73394,20 @@ definitions:
                       short_description: "short_description"
                       aliases:
                       - name: "name"
-                        artifact_id: "artifact_id"
+                        artifact_id:
+                          artifact_key:
+                            domain: "domain"
+                            project: "project"
+                            suffix: "suffix"
+                          uuid: "uuid"
                         value: "value"
                       - name: "name"
-                        artifact_id: "artifact_id"
+                        artifact_id:
+                          artifact_key:
+                            domain: "domain"
+                            project: "project"
+                            suffix: "suffix"
+                          uuid: "uuid"
                         value: "value"
                       long_description: "long_description"
                       type:
@@ -72561,6 +73588,7 @@ definitions:
                           artifact_key:
                             domain: "domain"
                             project: "project"
+                            suffix: "suffix"
                           uuid: "uuid"
                         map:
                           literals: {}
@@ -72681,6 +73709,7 @@ definitions:
                       artifact_key:
                         domain: "domain"
                         project: "project"
+                        suffix: "suffix"
                       uuid: "uuid"
                     uri: "uri"
                     spec:
@@ -72692,10 +73721,20 @@ definitions:
                       short_description: "short_description"
                       aliases:
                       - name: "name"
-                        artifact_id: "artifact_id"
+                        artifact_id:
+                          artifact_key:
+                            domain: "domain"
+                            project: "project"
+                            suffix: "suffix"
+                          uuid: "uuid"
                         value: "value"
                       - name: "name"
-                        artifact_id: "artifact_id"
+                        artifact_id:
+                          artifact_key:
+                            domain: "domain"
+                            project: "project"
+                            suffix: "suffix"
+                          uuid: "uuid"
                         value: "value"
                       long_description: "long_description"
                       type:
@@ -72876,6 +73915,7 @@ definitions:
                           artifact_key:
                             domain: "domain"
                             project: "project"
+                            suffix: "suffix"
                           uuid: "uuid"
                         map:
                           literals: {}
@@ -73149,6 +74189,7 @@ definitions:
                       artifact_key:
                         domain: "domain"
                         project: "project"
+                        suffix: "suffix"
                       uuid: "uuid"
                     uri: "uri"
                     spec:
@@ -73160,10 +74201,20 @@ definitions:
                       short_description: "short_description"
                       aliases:
                       - name: "name"
-                        artifact_id: "artifact_id"
+                        artifact_id:
+                          artifact_key:
+                            domain: "domain"
+                            project: "project"
+                            suffix: "suffix"
+                          uuid: "uuid"
                         value: "value"
                       - name: "name"
-                        artifact_id: "artifact_id"
+                        artifact_id:
+                          artifact_key:
+                            domain: "domain"
+                            project: "project"
+                            suffix: "suffix"
+                          uuid: "uuid"
                         value: "value"
                       long_description: "long_description"
                       type:
@@ -73344,6 +74395,7 @@ definitions:
                           artifact_key:
                             domain: "domain"
                             project: "project"
+                            suffix: "suffix"
                           uuid: "uuid"
                         map:
                           literals: {}
@@ -73464,6 +74516,7 @@ definitions:
                       artifact_key:
                         domain: "domain"
                         project: "project"
+                        suffix: "suffix"
                       uuid: "uuid"
                     uri: "uri"
                     spec:
@@ -73475,10 +74528,20 @@ definitions:
                       short_description: "short_description"
                       aliases:
                       - name: "name"
-                        artifact_id: "artifact_id"
+                        artifact_id:
+                          artifact_key:
+                            domain: "domain"
+                            project: "project"
+                            suffix: "suffix"
+                          uuid: "uuid"
                         value: "value"
                       - name: "name"
-                        artifact_id: "artifact_id"
+                        artifact_id:
+                          artifact_key:
+                            domain: "domain"
+                            project: "project"
+                            suffix: "suffix"
+                          uuid: "uuid"
                         value: "value"
                       long_description: "long_description"
                       type:
@@ -73659,6 +74722,7 @@ definitions:
                           artifact_key:
                             domain: "domain"
                             project: "project"
+                            suffix: "suffix"
                           uuid: "uuid"
                         map:
                           literals: {}
@@ -75719,6 +76783,7 @@ definitions:
                       artifact_key:
                         domain: "domain"
                         project: "project"
+                        suffix: "suffix"
                       uuid: "uuid"
                     uri: "uri"
                     spec:
@@ -75730,10 +76795,20 @@ definitions:
                       short_description: "short_description"
                       aliases:
                       - name: "name"
-                        artifact_id: "artifact_id"
+                        artifact_id:
+                          artifact_key:
+                            domain: "domain"
+                            project: "project"
+                            suffix: "suffix"
+                          uuid: "uuid"
                         value: "value"
                       - name: "name"
-                        artifact_id: "artifact_id"
+                        artifact_id:
+                          artifact_key:
+                            domain: "domain"
+                            project: "project"
+                            suffix: "suffix"
+                          uuid: "uuid"
                         value: "value"
                       long_description: "long_description"
                       type:
@@ -75914,6 +76989,7 @@ definitions:
                           artifact_key:
                             domain: "domain"
                             project: "project"
+                            suffix: "suffix"
                           uuid: "uuid"
                         map:
                           literals: {}
@@ -76034,6 +77110,7 @@ definitions:
                       artifact_key:
                         domain: "domain"
                         project: "project"
+                        suffix: "suffix"
                       uuid: "uuid"
                     uri: "uri"
                     spec:
@@ -76045,10 +77122,20 @@ definitions:
                       short_description: "short_description"
                       aliases:
                       - name: "name"
-                        artifact_id: "artifact_id"
+                        artifact_id:
+                          artifact_key:
+                            domain: "domain"
+                            project: "project"
+                            suffix: "suffix"
+                          uuid: "uuid"
                         value: "value"
                       - name: "name"
-                        artifact_id: "artifact_id"
+                        artifact_id:
+                          artifact_key:
+                            domain: "domain"
+                            project: "project"
+                            suffix: "suffix"
+                          uuid: "uuid"
                         value: "value"
                       long_description: "long_description"
                       type:
@@ -76229,6 +77316,7 @@ definitions:
                           artifact_key:
                             domain: "domain"
                             project: "project"
+                            suffix: "suffix"
                           uuid: "uuid"
                         map:
                           literals: {}
@@ -77096,6 +78184,7 @@ definitions:
         artifact_key:
           domain: "domain"
           project: "project"
+          suffix: "suffix"
         uuid: "uuid"
       map:
         literals: {}
@@ -78120,6 +79209,7 @@ definitions:
           artifact_key:
             domain: "domain"
             project: "project"
+            suffix: "suffix"
           uuid: "uuid"
         map:
           literals: {}
@@ -78181,6 +79271,7 @@ definitions:
             artifact_key:
               domain: "domain"
               project: "project"
+              suffix: "suffix"
             uuid: "uuid"
           uri: "uri"
           spec:
@@ -78192,10 +79283,20 @@ definitions:
             short_description: "short_description"
             aliases:
             - name: "name"
-              artifact_id: "artifact_id"
+              artifact_id:
+                artifact_key:
+                  domain: "domain"
+                  project: "project"
+                  suffix: "suffix"
+                uuid: "uuid"
               value: "value"
             - name: "name"
-              artifact_id: "artifact_id"
+              artifact_id:
+                artifact_key:
+                  domain: "domain"
+                  project: "project"
+                  suffix: "suffix"
+                uuid: "uuid"
               value: "value"
             long_description: "long_description"
             type:
@@ -78376,6 +79477,7 @@ definitions:
                 artifact_key:
                   domain: "domain"
                   project: "project"
+                  suffix: "suffix"
                 uuid: "uuid"
               map:
                 literals: {}
@@ -78489,12 +79591,16 @@ definitions:
           structure:
             tag: "tag"
       artifact_query:
-        artifact_key:
-          domain: "domain"
-          project: "project"
+        domain: "domain"
+        project: "project"
         alias:
           name: "name"
-          artifact_id: "artifact_id"
+          artifact_id:
+            artifact_key:
+              domain: "domain"
+              project: "project"
+              suffix: "suffix"
+            uuid: "uuid"
           value: "value"
       required: true
   coreParameterMap:
@@ -78622,6 +79728,7 @@ definitions:
               artifact_key:
                 domain: "domain"
                 project: "project"
+                suffix: "suffix"
               uuid: "uuid"
             map:
               literals: {}
@@ -78683,6 +79790,7 @@ definitions:
                 artifact_key:
                   domain: "domain"
                   project: "project"
+                  suffix: "suffix"
                 uuid: "uuid"
               uri: "uri"
               spec:
@@ -78694,10 +79802,20 @@ definitions:
                 short_description: "short_description"
                 aliases:
                 - name: "name"
-                  artifact_id: "artifact_id"
+                  artifact_id:
+                    artifact_key:
+                      domain: "domain"
+                      project: "project"
+                      suffix: "suffix"
+                    uuid: "uuid"
                   value: "value"
                 - name: "name"
-                  artifact_id: "artifact_id"
+                  artifact_id:
+                    artifact_key:
+                      domain: "domain"
+                      project: "project"
+                      suffix: "suffix"
+                    uuid: "uuid"
                   value: "value"
                 long_description: "long_description"
                 type:
@@ -78878,6 +79996,7 @@ definitions:
                     artifact_key:
                       domain: "domain"
                       project: "project"
+                      suffix: "suffix"
                     uuid: "uuid"
                   map:
                     literals: {}
@@ -78991,12 +80110,16 @@ definitions:
               structure:
                 tag: "tag"
           artifact_query:
-            artifact_key:
-              domain: "domain"
-              project: "project"
+            domain: "domain"
+            project: "project"
             alias:
               name: "name"
-              artifact_id: "artifact_id"
+              artifact_id:
+                artifact_key:
+                  domain: "domain"
+                  project: "project"
+                  suffix: "suffix"
+                uuid: "uuid"
               value: "value"
           required: true
   corePrimitive:
@@ -79972,6 +81095,7 @@ definitions:
                   artifact_key:
                     domain: "domain"
                     project: "project"
+                    suffix: "suffix"
                   uuid: "uuid"
                 uri: "uri"
                 spec:
@@ -79983,10 +81107,20 @@ definitions:
                   short_description: "short_description"
                   aliases:
                   - name: "name"
-                    artifact_id: "artifact_id"
+                    artifact_id:
+                      artifact_key:
+                        domain: "domain"
+                        project: "project"
+                        suffix: "suffix"
+                      uuid: "uuid"
                     value: "value"
                   - name: "name"
-                    artifact_id: "artifact_id"
+                    artifact_id:
+                      artifact_key:
+                        domain: "domain"
+                        project: "project"
+                        suffix: "suffix"
+                      uuid: "uuid"
                     value: "value"
                   long_description: "long_description"
                   type:
@@ -80167,6 +81301,7 @@ definitions:
                       artifact_key:
                         domain: "domain"
                         project: "project"
+                        suffix: "suffix"
                       uuid: "uuid"
                     map:
                       literals: {}
@@ -80287,6 +81422,7 @@ definitions:
                   artifact_key:
                     domain: "domain"
                     project: "project"
+                    suffix: "suffix"
                   uuid: "uuid"
                 uri: "uri"
                 spec:
@@ -80298,10 +81434,20 @@ definitions:
                   short_description: "short_description"
                   aliases:
                   - name: "name"
-                    artifact_id: "artifact_id"
+                    artifact_id:
+                      artifact_key:
+                        domain: "domain"
+                        project: "project"
+                        suffix: "suffix"
+                      uuid: "uuid"
                     value: "value"
                   - name: "name"
-                    artifact_id: "artifact_id"
+                    artifact_id:
+                      artifact_key:
+                        domain: "domain"
+                        project: "project"
+                        suffix: "suffix"
+                      uuid: "uuid"
                     value: "value"
                   long_description: "long_description"
                   type:
@@ -80482,6 +81628,7 @@ definitions:
                       artifact_key:
                         domain: "domain"
                         project: "project"
+                        suffix: "suffix"
                       uuid: "uuid"
                     map:
                       literals: {}
@@ -80691,6 +81838,7 @@ definitions:
                 artifact_key:
                   domain: "domain"
                   project: "project"
+                  suffix: "suffix"
                 uuid: "uuid"
               uri: "uri"
               spec:
@@ -80702,10 +81850,20 @@ definitions:
                 short_description: "short_description"
                 aliases:
                 - name: "name"
-                  artifact_id: "artifact_id"
+                  artifact_id:
+                    artifact_key:
+                      domain: "domain"
+                      project: "project"
+                      suffix: "suffix"
+                    uuid: "uuid"
                   value: "value"
                 - name: "name"
-                  artifact_id: "artifact_id"
+                  artifact_id:
+                    artifact_key:
+                      domain: "domain"
+                      project: "project"
+                      suffix: "suffix"
+                    uuid: "uuid"
                   value: "value"
                 long_description: "long_description"
                 type:
@@ -80886,6 +82044,7 @@ definitions:
                     artifact_key:
                       domain: "domain"
                       project: "project"
+                      suffix: "suffix"
                     uuid: "uuid"
                   map:
                     literals: {}
@@ -81006,6 +82165,7 @@ definitions:
                 artifact_key:
                   domain: "domain"
                   project: "project"
+                  suffix: "suffix"
                 uuid: "uuid"
               uri: "uri"
               spec:
@@ -81017,10 +82177,20 @@ definitions:
                 short_description: "short_description"
                 aliases:
                 - name: "name"
-                  artifact_id: "artifact_id"
+                  artifact_id:
+                    artifact_key:
+                      domain: "domain"
+                      project: "project"
+                      suffix: "suffix"
+                    uuid: "uuid"
                   value: "value"
                 - name: "name"
-                  artifact_id: "artifact_id"
+                  artifact_id:
+                    artifact_key:
+                      domain: "domain"
+                      project: "project"
+                      suffix: "suffix"
+                    uuid: "uuid"
                   value: "value"
                 long_description: "long_description"
                 type:
@@ -81201,6 +82371,7 @@ definitions:
                     artifact_key:
                       domain: "domain"
                       project: "project"
+                      suffix: "suffix"
                     uuid: "uuid"
                   map:
                     literals: {}
@@ -81473,6 +82644,7 @@ definitions:
           artifact_key:
             domain: "domain"
             project: "project"
+            suffix: "suffix"
           uuid: "uuid"
         uri: "uri"
         spec:
@@ -81484,10 +82656,20 @@ definitions:
           short_description: "short_description"
           aliases:
           - name: "name"
-            artifact_id: "artifact_id"
+            artifact_id:
+              artifact_key:
+                domain: "domain"
+                project: "project"
+                suffix: "suffix"
+              uuid: "uuid"
             value: "value"
           - name: "name"
-            artifact_id: "artifact_id"
+            artifact_id:
+              artifact_key:
+                domain: "domain"
+                project: "project"
+                suffix: "suffix"
+              uuid: "uuid"
             value: "value"
           long_description: "long_description"
           type:
@@ -81668,6 +82850,7 @@ definitions:
               artifact_key:
                 domain: "domain"
                 project: "project"
+                suffix: "suffix"
               uuid: "uuid"
             map:
               literals: {}
@@ -81797,6 +82980,7 @@ definitions:
               artifact_key:
                 domain: "domain"
                 project: "project"
+                suffix: "suffix"
               uuid: "uuid"
             uri: "uri"
             spec:
@@ -81808,10 +82992,20 @@ definitions:
               short_description: "short_description"
               aliases:
               - name: "name"
-                artifact_id: "artifact_id"
+                artifact_id:
+                  artifact_key:
+                    domain: "domain"
+                    project: "project"
+                    suffix: "suffix"
+                  uuid: "uuid"
                 value: "value"
               - name: "name"
-                artifact_id: "artifact_id"
+                artifact_id:
+                  artifact_key:
+                    domain: "domain"
+                    project: "project"
+                    suffix: "suffix"
+                  uuid: "uuid"
                 value: "value"
               long_description: "long_description"
               type:
@@ -81992,6 +83186,7 @@ definitions:
                   artifact_key:
                     domain: "domain"
                     project: "project"
+                    suffix: "suffix"
                   uuid: "uuid"
                 map:
                   literals: {}
@@ -84150,6 +85345,7 @@ definitions:
                   artifact_key:
                     domain: "domain"
                     project: "project"
+                    suffix: "suffix"
                   uuid: "uuid"
                 uri: "uri"
                 spec:
@@ -84161,10 +85357,20 @@ definitions:
                   short_description: "short_description"
                   aliases:
                   - name: "name"
-                    artifact_id: "artifact_id"
+                    artifact_id:
+                      artifact_key:
+                        domain: "domain"
+                        project: "project"
+                        suffix: "suffix"
+                      uuid: "uuid"
                     value: "value"
                   - name: "name"
-                    artifact_id: "artifact_id"
+                    artifact_id:
+                      artifact_key:
+                        domain: "domain"
+                        project: "project"
+                        suffix: "suffix"
+                      uuid: "uuid"
                     value: "value"
                   long_description: "long_description"
                   type:
@@ -84345,6 +85551,7 @@ definitions:
                       artifact_key:
                         domain: "domain"
                         project: "project"
+                        suffix: "suffix"
                       uuid: "uuid"
                     map:
                       literals: {}
@@ -84465,6 +85672,7 @@ definitions:
                   artifact_key:
                     domain: "domain"
                     project: "project"
+                    suffix: "suffix"
                   uuid: "uuid"
                 uri: "uri"
                 spec:
@@ -84476,10 +85684,20 @@ definitions:
                   short_description: "short_description"
                   aliases:
                   - name: "name"
-                    artifact_id: "artifact_id"
+                    artifact_id:
+                      artifact_key:
+                        domain: "domain"
+                        project: "project"
+                        suffix: "suffix"
+                      uuid: "uuid"
                     value: "value"
                   - name: "name"
-                    artifact_id: "artifact_id"
+                    artifact_id:
+                      artifact_key:
+                        domain: "domain"
+                        project: "project"
+                        suffix: "suffix"
+                      uuid: "uuid"
                     value: "value"
                   long_description: "long_description"
                   type:
@@ -84660,6 +85878,7 @@ definitions:
                       artifact_key:
                         domain: "domain"
                         project: "project"
+                        suffix: "suffix"
                       uuid: "uuid"
                     map:
                       literals: {}
@@ -87026,6 +88245,7 @@ definitions:
                         artifact_key:
                           domain: "domain"
                           project: "project"
+                          suffix: "suffix"
                         uuid: "uuid"
                       uri: "uri"
                       spec:
@@ -87037,10 +88257,20 @@ definitions:
                         short_description: "short_description"
                         aliases:
                         - name: "name"
-                          artifact_id: "artifact_id"
+                          artifact_id:
+                            artifact_key:
+                              domain: "domain"
+                              project: "project"
+                              suffix: "suffix"
+                            uuid: "uuid"
                           value: "value"
                         - name: "name"
-                          artifact_id: "artifact_id"
+                          artifact_id:
+                            artifact_key:
+                              domain: "domain"
+                              project: "project"
+                              suffix: "suffix"
+                            uuid: "uuid"
                           value: "value"
                         long_description: "long_description"
                         type:
@@ -87221,6 +88451,7 @@ definitions:
                             artifact_key:
                               domain: "domain"
                               project: "project"
+                              suffix: "suffix"
                             uuid: "uuid"
                           map:
                             literals: {}
@@ -87341,6 +88572,7 @@ definitions:
                         artifact_key:
                           domain: "domain"
                           project: "project"
+                          suffix: "suffix"
                         uuid: "uuid"
                       uri: "uri"
                       spec:
@@ -87352,10 +88584,20 @@ definitions:
                         short_description: "short_description"
                         aliases:
                         - name: "name"
-                          artifact_id: "artifact_id"
+                          artifact_id:
+                            artifact_key:
+                              domain: "domain"
+                              project: "project"
+                              suffix: "suffix"
+                            uuid: "uuid"
                           value: "value"
                         - name: "name"
-                          artifact_id: "artifact_id"
+                          artifact_id:
+                            artifact_key:
+                              domain: "domain"
+                              project: "project"
+                              suffix: "suffix"
+                            uuid: "uuid"
                           value: "value"
                         long_description: "long_description"
                         type:
@@ -87536,6 +88778,7 @@ definitions:
                             artifact_key:
                               domain: "domain"
                               project: "project"
+                              suffix: "suffix"
                             uuid: "uuid"
                           map:
                             literals: {}
@@ -89557,6 +90800,7 @@ definitions:
                         artifact_key:
                           domain: "domain"
                           project: "project"
+                          suffix: "suffix"
                         uuid: "uuid"
                       uri: "uri"
                       spec:
@@ -89568,10 +90812,20 @@ definitions:
                         short_description: "short_description"
                         aliases:
                         - name: "name"
-                          artifact_id: "artifact_id"
+                          artifact_id:
+                            artifact_key:
+                              domain: "domain"
+                              project: "project"
+                              suffix: "suffix"
+                            uuid: "uuid"
                           value: "value"
                         - name: "name"
-                          artifact_id: "artifact_id"
+                          artifact_id:
+                            artifact_key:
+                              domain: "domain"
+                              project: "project"
+                              suffix: "suffix"
+                            uuid: "uuid"
                           value: "value"
                         long_description: "long_description"
                         type:
@@ -89752,6 +91006,7 @@ definitions:
                             artifact_key:
                               domain: "domain"
                               project: "project"
+                              suffix: "suffix"
                             uuid: "uuid"
                           map:
                             literals: {}
@@ -89872,6 +91127,7 @@ definitions:
                         artifact_key:
                           domain: "domain"
                           project: "project"
+                          suffix: "suffix"
                         uuid: "uuid"
                       uri: "uri"
                       spec:
@@ -89883,10 +91139,20 @@ definitions:
                         short_description: "short_description"
                         aliases:
                         - name: "name"
-                          artifact_id: "artifact_id"
+                          artifact_id:
+                            artifact_key:
+                              domain: "domain"
+                              project: "project"
+                              suffix: "suffix"
+                            uuid: "uuid"
                           value: "value"
                         - name: "name"
-                          artifact_id: "artifact_id"
+                          artifact_id:
+                            artifact_key:
+                              domain: "domain"
+                              project: "project"
+                              suffix: "suffix"
+                            uuid: "uuid"
                           value: "value"
                         long_description: "long_description"
                         type:
@@ -90067,6 +91333,7 @@ definitions:
                             artifact_key:
                               domain: "domain"
                               project: "project"
+                              suffix: "suffix"
                             uuid: "uuid"
                           map:
                             literals: {}
@@ -90303,6 +91570,7 @@ definitions:
                         artifact_key:
                           domain: "domain"
                           project: "project"
+                          suffix: "suffix"
                         uuid: "uuid"
                       uri: "uri"
                       spec:
@@ -90314,10 +91582,20 @@ definitions:
                         short_description: "short_description"
                         aliases:
                         - name: "name"
-                          artifact_id: "artifact_id"
+                          artifact_id:
+                            artifact_key:
+                              domain: "domain"
+                              project: "project"
+                              suffix: "suffix"
+                            uuid: "uuid"
                           value: "value"
                         - name: "name"
-                          artifact_id: "artifact_id"
+                          artifact_id:
+                            artifact_key:
+                              domain: "domain"
+                              project: "project"
+                              suffix: "suffix"
+                            uuid: "uuid"
                           value: "value"
                         long_description: "long_description"
                         type:
@@ -90498,6 +91776,7 @@ definitions:
                             artifact_key:
                               domain: "domain"
                               project: "project"
+                              suffix: "suffix"
                             uuid: "uuid"
                           map:
                             literals: {}
@@ -90618,6 +91897,7 @@ definitions:
                         artifact_key:
                           domain: "domain"
                           project: "project"
+                          suffix: "suffix"
                         uuid: "uuid"
                       uri: "uri"
                       spec:
@@ -90629,10 +91909,20 @@ definitions:
                         short_description: "short_description"
                         aliases:
                         - name: "name"
-                          artifact_id: "artifact_id"
+                          artifact_id:
+                            artifact_key:
+                              domain: "domain"
+                              project: "project"
+                              suffix: "suffix"
+                            uuid: "uuid"
                           value: "value"
                         - name: "name"
-                          artifact_id: "artifact_id"
+                          artifact_id:
+                            artifact_key:
+                              domain: "domain"
+                              project: "project"
+                              suffix: "suffix"
+                            uuid: "uuid"
                           value: "value"
                         long_description: "long_description"
                         type:
@@ -90813,6 +92103,7 @@ definitions:
                             artifact_key:
                               domain: "domain"
                               project: "project"
+                              suffix: "suffix"
                             uuid: "uuid"
                           map:
                             literals: {}
@@ -91086,6 +92377,7 @@ definitions:
                         artifact_key:
                           domain: "domain"
                           project: "project"
+                          suffix: "suffix"
                         uuid: "uuid"
                       uri: "uri"
                       spec:
@@ -91097,10 +92389,20 @@ definitions:
                         short_description: "short_description"
                         aliases:
                         - name: "name"
-                          artifact_id: "artifact_id"
+                          artifact_id:
+                            artifact_key:
+                              domain: "domain"
+                              project: "project"
+                              suffix: "suffix"
+                            uuid: "uuid"
                           value: "value"
                         - name: "name"
-                          artifact_id: "artifact_id"
+                          artifact_id:
+                            artifact_key:
+                              domain: "domain"
+                              project: "project"
+                              suffix: "suffix"
+                            uuid: "uuid"
                           value: "value"
                         long_description: "long_description"
                         type:
@@ -91281,6 +92583,7 @@ definitions:
                             artifact_key:
                               domain: "domain"
                               project: "project"
+                              suffix: "suffix"
                             uuid: "uuid"
                           map:
                             literals: {}
@@ -91401,6 +92704,7 @@ definitions:
                         artifact_key:
                           domain: "domain"
                           project: "project"
+                          suffix: "suffix"
                         uuid: "uuid"
                       uri: "uri"
                       spec:
@@ -91412,10 +92716,20 @@ definitions:
                         short_description: "short_description"
                         aliases:
                         - name: "name"
-                          artifact_id: "artifact_id"
+                          artifact_id:
+                            artifact_key:
+                              domain: "domain"
+                              project: "project"
+                              suffix: "suffix"
+                            uuid: "uuid"
                           value: "value"
                         - name: "name"
-                          artifact_id: "artifact_id"
+                          artifact_id:
+                            artifact_key:
+                              domain: "domain"
+                              project: "project"
+                              suffix: "suffix"
+                            uuid: "uuid"
                           value: "value"
                         long_description: "long_description"
                         type:
@@ -91596,6 +92910,7 @@ definitions:
                             artifact_key:
                               domain: "domain"
                               project: "project"
+                              suffix: "suffix"
                             uuid: "uuid"
                           map:
                             literals: {}
@@ -93656,6 +94971,7 @@ definitions:
                         artifact_key:
                           domain: "domain"
                           project: "project"
+                          suffix: "suffix"
                         uuid: "uuid"
                       uri: "uri"
                       spec:
@@ -93667,10 +94983,20 @@ definitions:
                         short_description: "short_description"
                         aliases:
                         - name: "name"
-                          artifact_id: "artifact_id"
+                          artifact_id:
+                            artifact_key:
+                              domain: "domain"
+                              project: "project"
+                              suffix: "suffix"
+                            uuid: "uuid"
                           value: "value"
                         - name: "name"
-                          artifact_id: "artifact_id"
+                          artifact_id:
+                            artifact_key:
+                              domain: "domain"
+                              project: "project"
+                              suffix: "suffix"
+                            uuid: "uuid"
                           value: "value"
                         long_description: "long_description"
                         type:
@@ -93851,6 +95177,7 @@ definitions:
                             artifact_key:
                               domain: "domain"
                               project: "project"
+                              suffix: "suffix"
                             uuid: "uuid"
                           map:
                             literals: {}
@@ -93971,6 +95298,7 @@ definitions:
                         artifact_key:
                           domain: "domain"
                           project: "project"
+                          suffix: "suffix"
                         uuid: "uuid"
                       uri: "uri"
                       spec:
@@ -93982,10 +95310,20 @@ definitions:
                         short_description: "short_description"
                         aliases:
                         - name: "name"
-                          artifact_id: "artifact_id"
+                          artifact_id:
+                            artifact_key:
+                              domain: "domain"
+                              project: "project"
+                              suffix: "suffix"
+                            uuid: "uuid"
                           value: "value"
                         - name: "name"
-                          artifact_id: "artifact_id"
+                          artifact_id:
+                            artifact_key:
+                              domain: "domain"
+                              project: "project"
+                              suffix: "suffix"
+                            uuid: "uuid"
                           value: "value"
                         long_description: "long_description"
                         type:
@@ -94166,6 +95504,7 @@ definitions:
                             artifact_key:
                               domain: "domain"
                               project: "project"
+                              suffix: "suffix"
                             uuid: "uuid"
                           map:
                             literals: {}
@@ -94562,17 +95901,10 @@ definitions:
     type: "object"
     properties:
       artifact_id:
-        type: "string"
-        description: "ties this directly to the artifact. do we worry about exposing\
-          \ this to the user? this is likely just the db ID.\nwe can add a uuid field\
-          \ in key (turning it into an ID) for a user facing id."
+        title: "ties this directly to the artifact"
+        $ref: "#/definitions/coreArtifactID"
       name:
         type: "string"
-        description: "should we add artifactkey (aka project/domain) here?\nIf not\
-          \ adding - this implies that we will always have the same project/domain.\
-          \ You can have a projA/domainD\nalias pointing to a projB/domainB artifact\n\
-          Also aliases need to be unique on project/domain/alias name/alias value.\
-          \ This is effectively a primary key."
       value:
         type: "string"
     title: "have a bunch of artifacts. they have a project and domain\nThis message\
@@ -94580,7 +95912,12 @@ definitions:
       \ an artifact.\nso here, project, domain, name, value have to be unique"
     example:
       name: "name"
-      artifact_id: "artifact_id"
+      artifact_id:
+        artifact_key:
+          domain: "domain"
+          project: "project"
+          suffix: "suffix"
+        uuid: "uuid"
       value: "value"
   flyteidlcoreAlias:
     type: "object"

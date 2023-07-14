@@ -441,6 +441,8 @@ func (m *ArtifactKey) Validate() error {
 
 	// no validation rules for Domain
 
+	// no validation rules for Suffix
+
 	return nil
 }
 

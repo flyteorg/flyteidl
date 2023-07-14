@@ -951,6 +951,20 @@ class ArtifactKey final :
   ::std::string* release_domain();
   void set_allocated_domain(::std::string* domain);
 
+  // string suffix = 3;
+  void clear_suffix();
+  static const int kSuffixFieldNumber = 3;
+  const ::std::string& suffix() const;
+  void set_suffix(const ::std::string& value);
+  #if LANG_CXX11
+  void set_suffix(::std::string&& value);
+  #endif
+  void set_suffix(const char* value);
+  void set_suffix(const char* value, size_t size);
+  ::std::string* mutable_suffix();
+  ::std::string* release_suffix();
+  void set_allocated_suffix(::std::string* suffix);
+
   // @@protoc_insertion_point(class_scope:flyteidl.core.ArtifactKey)
  private:
   class HasBitSetters;
@@ -958,6 +972,7 @@ class ArtifactKey final :
   ::google::protobuf::internal::InternalMetadataWithArena _internal_metadata_;
   ::google::protobuf::internal::ArenaStringPtr project_;
   ::google::protobuf::internal::ArenaStringPtr domain_;
+  ::google::protobuf::internal::ArenaStringPtr suffix_;
   mutable ::google::protobuf::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_flyteidl_2fcore_2fidentifier_2eproto;
 };
@@ -1935,6 +1950,59 @@ inline void ArtifactKey::set_allocated_domain(::std::string* domain) {
   }
   domain_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), domain);
   // @@protoc_insertion_point(field_set_allocated:flyteidl.core.ArtifactKey.domain)
+}
+
+// string suffix = 3;
+inline void ArtifactKey::clear_suffix() {
+  suffix_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline const ::std::string& ArtifactKey::suffix() const {
+  // @@protoc_insertion_point(field_get:flyteidl.core.ArtifactKey.suffix)
+  return suffix_.GetNoArena();
+}
+inline void ArtifactKey::set_suffix(const ::std::string& value) {
+  
+  suffix_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
+  // @@protoc_insertion_point(field_set:flyteidl.core.ArtifactKey.suffix)
+}
+#if LANG_CXX11
+inline void ArtifactKey::set_suffix(::std::string&& value) {
+  
+  suffix_.SetNoArena(
+    &::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::move(value));
+  // @@protoc_insertion_point(field_set_rvalue:flyteidl.core.ArtifactKey.suffix)
+}
+#endif
+inline void ArtifactKey::set_suffix(const char* value) {
+  GOOGLE_DCHECK(value != nullptr);
+  
+  suffix_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
+  // @@protoc_insertion_point(field_set_char:flyteidl.core.ArtifactKey.suffix)
+}
+inline void ArtifactKey::set_suffix(const char* value, size_t size) {
+  
+  suffix_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
+      ::std::string(reinterpret_cast<const char*>(value), size));
+  // @@protoc_insertion_point(field_set_pointer:flyteidl.core.ArtifactKey.suffix)
+}
+inline ::std::string* ArtifactKey::mutable_suffix() {
+  
+  // @@protoc_insertion_point(field_mutable:flyteidl.core.ArtifactKey.suffix)
+  return suffix_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline ::std::string* ArtifactKey::release_suffix() {
+  // @@protoc_insertion_point(field_release:flyteidl.core.ArtifactKey.suffix)
+  
+  return suffix_.ReleaseNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline void ArtifactKey::set_allocated_suffix(::std::string* suffix) {
+  if (suffix != nullptr) {
+    
+  } else {
+    
+  }
+  suffix_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), suffix);
+  // @@protoc_insertion_point(field_set_allocated:flyteidl.core.ArtifactKey.suffix)
 }
 
 // -------------------------------------------------------------------

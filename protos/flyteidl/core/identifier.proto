@@ -74,12 +74,15 @@ message SignalIdentifier {
 }
 
 message ArtifactKey {
-  // Project and domain as we're all used to. Just to align with existing uniqueness constructs.
+  // Project and domain and suffix needs to be unique across a given artifact store.
   string project = 1;
   string domain = 2;
+  string suffix = 3;
 }
 
 message ArtifactID {
   ArtifactKey artifact_key = 1;
+
+  // consider hiding - this is a storage layer ID. Might even change for the same object.
   string uuid = 2;
 }

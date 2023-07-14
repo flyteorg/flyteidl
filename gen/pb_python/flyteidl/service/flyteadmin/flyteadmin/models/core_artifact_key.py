@@ -32,31 +32,36 @@ class CoreArtifactKey(object):
     """
     swagger_types = {
         'project': 'str',
-        'domain': 'str'
+        'domain': 'str',
+        'suffix': 'str'
     }
 
     attribute_map = {
         'project': 'project',
-        'domain': 'domain'
+        'domain': 'domain',
+        'suffix': 'suffix'
     }
 
-    def __init__(self, project=None, domain=None):  # noqa: E501
+    def __init__(self, project=None, domain=None, suffix=None):  # noqa: E501
         """CoreArtifactKey - a model defined in Swagger"""  # noqa: E501
 
         self._project = None
         self._domain = None
+        self._suffix = None
         self.discriminator = None
 
         if project is not None:
             self.project = project
         if domain is not None:
             self.domain = domain
+        if suffix is not None:
+            self.suffix = suffix
 
     @property
     def project(self):
         """Gets the project of this CoreArtifactKey.  # noqa: E501
 
-        Project and domain as we're all used to. Just to align with existing uniqueness constructs.  # noqa: E501
+        Project and domain and suffix needs to be unique across a given artifact store.  # noqa: E501
 
         :return: The project of this CoreArtifactKey.  # noqa: E501
         :rtype: str
@@ -67,7 +72,7 @@ class CoreArtifactKey(object):
     def project(self, project):
         """Sets the project of this CoreArtifactKey.
 
-        Project and domain as we're all used to. Just to align with existing uniqueness constructs.  # noqa: E501
+        Project and domain and suffix needs to be unique across a given artifact store.  # noqa: E501
 
         :param project: The project of this CoreArtifactKey.  # noqa: E501
         :type: str
@@ -95,6 +100,27 @@ class CoreArtifactKey(object):
         """
 
         self._domain = domain
+
+    @property
+    def suffix(self):
+        """Gets the suffix of this CoreArtifactKey.  # noqa: E501
+
+
+        :return: The suffix of this CoreArtifactKey.  # noqa: E501
+        :rtype: str
+        """
+        return self._suffix
+
+    @suffix.setter
+    def suffix(self, suffix):
+        """Sets the suffix of this CoreArtifactKey.
+
+
+        :param suffix: The suffix of this CoreArtifactKey.  # noqa: E501
+        :type: str
+        """
+
+        self._suffix = suffix
 
     def to_dict(self):
         """Returns the model properties as a dict"""

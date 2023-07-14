@@ -10,7 +10,8 @@
 package flyteadmin
 
 type CoreArtifactKey struct {
-	// Project and domain as we're all used to. Just to align with existing uniqueness constructs.
+	// Project and domain and suffix needs to be unique across a given artifact store.
 	Project string `json:"project,omitempty"`
 	Domain string `json:"domain,omitempty"`
+	Suffix string `json:"suffix,omitempty"`
 }

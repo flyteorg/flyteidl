@@ -16,7 +16,6 @@ import re  # noqa: F401
 
 import six
 
-from flyteadmin.models.core_artifact_key import CoreArtifactKey  # noqa: F401,E501
 from flyteadmin.models.flyteidlartifact_alias import FlyteidlartifactAlias  # noqa: F401,E501
 
 
@@ -34,47 +33,73 @@ class ArtifactArtifactQuery(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'artifact_key': 'CoreArtifactKey',
+        'project': 'str',
+        'domain': 'str',
         'alias': 'FlyteidlartifactAlias'
     }
 
     attribute_map = {
-        'artifact_key': 'artifact_key',
+        'project': 'project',
+        'domain': 'domain',
         'alias': 'alias'
     }
 
-    def __init__(self, artifact_key=None, alias=None):  # noqa: E501
+    def __init__(self, project=None, domain=None, alias=None):  # noqa: E501
         """ArtifactArtifactQuery - a model defined in Swagger"""  # noqa: E501
 
-        self._artifact_key = None
+        self._project = None
+        self._domain = None
         self._alias = None
         self.discriminator = None
 
-        if artifact_key is not None:
-            self.artifact_key = artifact_key
+        if project is not None:
+            self.project = project
+        if domain is not None:
+            self.domain = domain
         if alias is not None:
             self.alias = alias
 
     @property
-    def artifact_key(self):
-        """Gets the artifact_key of this ArtifactArtifactQuery.  # noqa: E501
+    def project(self):
+        """Gets the project of this ArtifactArtifactQuery.  # noqa: E501
 
 
-        :return: The artifact_key of this ArtifactArtifactQuery.  # noqa: E501
-        :rtype: CoreArtifactKey
+        :return: The project of this ArtifactArtifactQuery.  # noqa: E501
+        :rtype: str
         """
-        return self._artifact_key
+        return self._project
 
-    @artifact_key.setter
-    def artifact_key(self, artifact_key):
-        """Sets the artifact_key of this ArtifactArtifactQuery.
+    @project.setter
+    def project(self, project):
+        """Sets the project of this ArtifactArtifactQuery.
 
 
-        :param artifact_key: The artifact_key of this ArtifactArtifactQuery.  # noqa: E501
-        :type: CoreArtifactKey
+        :param project: The project of this ArtifactArtifactQuery.  # noqa: E501
+        :type: str
         """
 
-        self._artifact_key = artifact_key
+        self._project = project
+
+    @property
+    def domain(self):
+        """Gets the domain of this ArtifactArtifactQuery.  # noqa: E501
+
+
+        :return: The domain of this ArtifactArtifactQuery.  # noqa: E501
+        :rtype: str
+        """
+        return self._domain
+
+    @domain.setter
+    def domain(self, domain):
+        """Sets the domain of this ArtifactArtifactQuery.
+
+
+        :param domain: The domain of this ArtifactArtifactQuery.  # noqa: E501
+        :type: str
+        """
+
+        self._domain = domain
 
     @property
     def alias(self):

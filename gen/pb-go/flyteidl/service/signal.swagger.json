@@ -254,7 +254,8 @@
           "$ref": "#/definitions/coreArtifactKey"
         },
         "uuid": {
-          "type": "string"
+          "type": "string",
+          "description": "consider hiding - this is a storage layer ID. Might even change for the same object."
         }
       }
     },
@@ -263,9 +264,12 @@
       "properties": {
         "project": {
           "type": "string",
-          "description": "Project and domain as we're all used to. Just to align with existing uniqueness constructs."
+          "description": "Project and domain and suffix needs to be unique across a given artifact store."
         },
         "domain": {
+          "type": "string"
+        },
+        "suffix": {
           "type": "string"
         }
       }

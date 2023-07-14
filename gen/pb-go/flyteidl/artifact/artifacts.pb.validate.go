@@ -140,8 +140,6 @@ func (m *CreateArtifactRequest) Validate() error {
 		}
 	}
 
-	// no validation rules for Uri
-
 	if v, ok := interface{}(m.GetSpec()).(interface{ Validate() error }); ok {
 		if err := v.Validate(); err != nil {
 			return CreateArtifactRequestValidationError{
@@ -368,7 +366,15 @@ func (m *Alias) Validate() error {
 		return nil
 	}
 
-	// no validation rules for ArtifactId
+	if v, ok := interface{}(m.GetArtifactId()).(interface{ Validate() error }); ok {
+		if err := v.Validate(); err != nil {
+			return AliasValidationError{
+				field:  "ArtifactId",
+				reason: "embedded message failed validation",
+				cause:  err,
+			}
+		}
+	}
 
 	// no validation rules for Name
 
@@ -439,15 +445,9 @@ func (m *ArtifactQuery) Validate() error {
 		return nil
 	}
 
-	if v, ok := interface{}(m.GetArtifactKey()).(interface{ Validate() error }); ok {
-		if err := v.Validate(); err != nil {
-			return ArtifactQueryValidationError{
-				field:  "ArtifactKey",
-				reason: "embedded message failed validation",
-				cause:  err,
-			}
-		}
-	}
+	// no validation rules for Project
+
+	// no validation rules for Domain
 
 	if v, ok := interface{}(m.GetAlias()).(interface{ Validate() error }); ok {
 		if err := v.Validate(); err != nil {
@@ -604,6 +604,18 @@ func (m *GetArtifactRequest) Validate() error {
 	// no validation rules for Details
 
 	switch m.Identifier.(type) {
+
+	case *GetArtifactRequest_ArtifactKey:
+
+		if v, ok := interface{}(m.GetArtifactKey()).(interface{ Validate() error }); ok {
+			if err := v.Validate(); err != nil {
+				return GetArtifactRequestValidationError{
+					field:  "ArtifactKey",
+					reason: "embedded message failed validation",
+					cause:  err,
+				}
+			}
+		}
 
 	case *GetArtifactRequest_ArtifactId:
 

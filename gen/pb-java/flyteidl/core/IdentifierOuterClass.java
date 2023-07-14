@@ -4828,7 +4828,7 @@ public final class IdentifierOuterClass {
 
     /**
      * <pre>
-     * Project and domain as we're all used to. Just to align with existing uniqueness constructs.
+     * Project and domain and suffix needs to be unique across a given artifact store.
      * </pre>
      *
      * <code>string project = 1;</code>
@@ -4836,7 +4836,7 @@ public final class IdentifierOuterClass {
     java.lang.String getProject();
     /**
      * <pre>
-     * Project and domain as we're all used to. Just to align with existing uniqueness constructs.
+     * Project and domain and suffix needs to be unique across a given artifact store.
      * </pre>
      *
      * <code>string project = 1;</code>
@@ -4853,6 +4853,16 @@ public final class IdentifierOuterClass {
      */
     com.google.protobuf.ByteString
         getDomainBytes();
+
+    /**
+     * <code>string suffix = 3;</code>
+     */
+    java.lang.String getSuffix();
+    /**
+     * <code>string suffix = 3;</code>
+     */
+    com.google.protobuf.ByteString
+        getSuffixBytes();
   }
   /**
    * Protobuf type {@code flyteidl.core.ArtifactKey}
@@ -4869,6 +4879,7 @@ public final class IdentifierOuterClass {
     private ArtifactKey() {
       project_ = "";
       domain_ = "";
+      suffix_ = "";
     }
 
     @java.lang.Override
@@ -4907,6 +4918,12 @@ public final class IdentifierOuterClass {
               domain_ = s;
               break;
             }
+            case 26: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              suffix_ = s;
+              break;
+            }
             default: {
               if (!parseUnknownField(
                   input, unknownFields, extensionRegistry, tag)) {
@@ -4943,7 +4960,7 @@ public final class IdentifierOuterClass {
     private volatile java.lang.Object project_;
     /**
      * <pre>
-     * Project and domain as we're all used to. Just to align with existing uniqueness constructs.
+     * Project and domain and suffix needs to be unique across a given artifact store.
      * </pre>
      *
      * <code>string project = 1;</code>
@@ -4962,7 +4979,7 @@ public final class IdentifierOuterClass {
     }
     /**
      * <pre>
-     * Project and domain as we're all used to. Just to align with existing uniqueness constructs.
+     * Project and domain and suffix needs to be unique across a given artifact store.
      * </pre>
      *
      * <code>string project = 1;</code>
@@ -5015,6 +5032,40 @@ public final class IdentifierOuterClass {
       }
     }
 
+    public static final int SUFFIX_FIELD_NUMBER = 3;
+    private volatile java.lang.Object suffix_;
+    /**
+     * <code>string suffix = 3;</code>
+     */
+    public java.lang.String getSuffix() {
+      java.lang.Object ref = suffix_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        suffix_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string suffix = 3;</code>
+     */
+    public com.google.protobuf.ByteString
+        getSuffixBytes() {
+      java.lang.Object ref = suffix_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        suffix_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
     private byte memoizedIsInitialized = -1;
     @java.lang.Override
     public final boolean isInitialized() {
@@ -5035,6 +5086,9 @@ public final class IdentifierOuterClass {
       if (!getDomainBytes().isEmpty()) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 2, domain_);
       }
+      if (!getSuffixBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 3, suffix_);
+      }
       unknownFields.writeTo(output);
     }
 
@@ -5049,6 +5103,9 @@ public final class IdentifierOuterClass {
       }
       if (!getDomainBytes().isEmpty()) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, domain_);
+      }
+      if (!getSuffixBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, suffix_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -5069,6 +5126,8 @@ public final class IdentifierOuterClass {
           .equals(other.getProject())) return false;
       if (!getDomain()
           .equals(other.getDomain())) return false;
+      if (!getSuffix()
+          .equals(other.getSuffix())) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -5084,6 +5143,8 @@ public final class IdentifierOuterClass {
       hash = (53 * hash) + getProject().hashCode();
       hash = (37 * hash) + DOMAIN_FIELD_NUMBER;
       hash = (53 * hash) + getDomain().hashCode();
+      hash = (37 * hash) + SUFFIX_FIELD_NUMBER;
+      hash = (53 * hash) + getSuffix().hashCode();
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -5221,6 +5282,8 @@ public final class IdentifierOuterClass {
 
         domain_ = "";
 
+        suffix_ = "";
+
         return this;
       }
 
@@ -5249,6 +5312,7 @@ public final class IdentifierOuterClass {
         flyteidl.core.IdentifierOuterClass.ArtifactKey result = new flyteidl.core.IdentifierOuterClass.ArtifactKey(this);
         result.project_ = project_;
         result.domain_ = domain_;
+        result.suffix_ = suffix_;
         onBuilt();
         return result;
       }
@@ -5305,6 +5369,10 @@ public final class IdentifierOuterClass {
           domain_ = other.domain_;
           onChanged();
         }
+        if (!other.getSuffix().isEmpty()) {
+          suffix_ = other.suffix_;
+          onChanged();
+        }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
@@ -5337,7 +5405,7 @@ public final class IdentifierOuterClass {
       private java.lang.Object project_ = "";
       /**
        * <pre>
-       * Project and domain as we're all used to. Just to align with existing uniqueness constructs.
+       * Project and domain and suffix needs to be unique across a given artifact store.
        * </pre>
        *
        * <code>string project = 1;</code>
@@ -5356,7 +5424,7 @@ public final class IdentifierOuterClass {
       }
       /**
        * <pre>
-       * Project and domain as we're all used to. Just to align with existing uniqueness constructs.
+       * Project and domain and suffix needs to be unique across a given artifact store.
        * </pre>
        *
        * <code>string project = 1;</code>
@@ -5376,7 +5444,7 @@ public final class IdentifierOuterClass {
       }
       /**
        * <pre>
-       * Project and domain as we're all used to. Just to align with existing uniqueness constructs.
+       * Project and domain and suffix needs to be unique across a given artifact store.
        * </pre>
        *
        * <code>string project = 1;</code>
@@ -5393,7 +5461,7 @@ public final class IdentifierOuterClass {
       }
       /**
        * <pre>
-       * Project and domain as we're all used to. Just to align with existing uniqueness constructs.
+       * Project and domain and suffix needs to be unique across a given artifact store.
        * </pre>
        *
        * <code>string project = 1;</code>
@@ -5406,7 +5474,7 @@ public final class IdentifierOuterClass {
       }
       /**
        * <pre>
-       * Project and domain as we're all used to. Just to align with existing uniqueness constructs.
+       * Project and domain and suffix needs to be unique across a given artifact store.
        * </pre>
        *
        * <code>string project = 1;</code>
@@ -5491,6 +5559,75 @@ public final class IdentifierOuterClass {
         onChanged();
         return this;
       }
+
+      private java.lang.Object suffix_ = "";
+      /**
+       * <code>string suffix = 3;</code>
+       */
+      public java.lang.String getSuffix() {
+        java.lang.Object ref = suffix_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          suffix_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>string suffix = 3;</code>
+       */
+      public com.google.protobuf.ByteString
+          getSuffixBytes() {
+        java.lang.Object ref = suffix_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          suffix_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string suffix = 3;</code>
+       */
+      public Builder setSuffix(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        suffix_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string suffix = 3;</code>
+       */
+      public Builder clearSuffix() {
+        
+        suffix_ = getDefaultInstance().getSuffix();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string suffix = 3;</code>
+       */
+      public Builder setSuffixBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        suffix_ = value;
+        onChanged();
+        return this;
+      }
       @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
@@ -5562,10 +5699,18 @@ public final class IdentifierOuterClass {
     flyteidl.core.IdentifierOuterClass.ArtifactKeyOrBuilder getArtifactKeyOrBuilder();
 
     /**
+     * <pre>
+     * consider hiding - this is a storage layer ID. Might even change for the same object.
+     * </pre>
+     *
      * <code>string uuid = 2;</code>
      */
     java.lang.String getUuid();
     /**
+     * <pre>
+     * consider hiding - this is a storage layer ID. Might even change for the same object.
+     * </pre>
+     *
      * <code>string uuid = 2;</code>
      */
     com.google.protobuf.ByteString
@@ -5686,6 +5831,10 @@ public final class IdentifierOuterClass {
     public static final int UUID_FIELD_NUMBER = 2;
     private volatile java.lang.Object uuid_;
     /**
+     * <pre>
+     * consider hiding - this is a storage layer ID. Might even change for the same object.
+     * </pre>
+     *
      * <code>string uuid = 2;</code>
      */
     public java.lang.String getUuid() {
@@ -5701,6 +5850,10 @@ public final class IdentifierOuterClass {
       }
     }
     /**
+     * <pre>
+     * consider hiding - this is a storage layer ID. Might even change for the same object.
+     * </pre>
+     *
      * <code>string uuid = 2;</code>
      */
     public com.google.protobuf.ByteString
@@ -6168,6 +6321,10 @@ public final class IdentifierOuterClass {
 
       private java.lang.Object uuid_ = "";
       /**
+       * <pre>
+       * consider hiding - this is a storage layer ID. Might even change for the same object.
+       * </pre>
+       *
        * <code>string uuid = 2;</code>
        */
       public java.lang.String getUuid() {
@@ -6183,6 +6340,10 @@ public final class IdentifierOuterClass {
         }
       }
       /**
+       * <pre>
+       * consider hiding - this is a storage layer ID. Might even change for the same object.
+       * </pre>
+       *
        * <code>string uuid = 2;</code>
        */
       public com.google.protobuf.ByteString
@@ -6199,6 +6360,10 @@ public final class IdentifierOuterClass {
         }
       }
       /**
+       * <pre>
+       * consider hiding - this is a storage layer ID. Might even change for the same object.
+       * </pre>
+       *
        * <code>string uuid = 2;</code>
        */
       public Builder setUuid(
@@ -6212,6 +6377,10 @@ public final class IdentifierOuterClass {
         return this;
       }
       /**
+       * <pre>
+       * consider hiding - this is a storage layer ID. Might even change for the same object.
+       * </pre>
+       *
        * <code>string uuid = 2;</code>
        */
       public Builder clearUuid() {
@@ -6221,6 +6390,10 @@ public final class IdentifierOuterClass {
         return this;
       }
       /**
+       * <pre>
+       * consider hiding - this is a storage layer ID. Might even change for the same object.
+       * </pre>
+       *
        * <code>string uuid = 2;</code>
        */
       public Builder setUuidBytes(
@@ -6346,14 +6519,15 @@ public final class IdentifierOuterClass {
       "e.NodeExecutionIdentifier\022\025\n\rretry_attem" +
       "pt\030\003 \001(\r\"g\n\020SignalIdentifier\022\021\n\tsignal_i" +
       "d\030\001 \001(\t\022@\n\014execution_id\030\002 \001(\0132*.flyteidl" +
-      ".core.WorkflowExecutionIdentifier\".\n\013Art" +
+      ".core.WorkflowExecutionIdentifier\">\n\013Art" +
       "ifactKey\022\017\n\007project\030\001 \001(\t\022\016\n\006domain\030\002 \001(" +
-      "\t\"L\n\nArtifactID\0220\n\014artifact_key\030\001 \001(\0132\032." +
-      "flyteidl.core.ArtifactKey\022\014\n\004uuid\030\002 \001(\t*" +
-      "U\n\014ResourceType\022\017\n\013UNSPECIFIED\020\000\022\010\n\004TASK" +
-      "\020\001\022\014\n\010WORKFLOW\020\002\022\017\n\013LAUNCH_PLAN\020\003\022\013\n\007DAT" +
-      "ASET\020\004B6Z4github.com/flyteorg/flyteidl/g" +
-      "en/pb-go/flyteidl/coreb\006proto3"
+      "\t\022\016\n\006suffix\030\003 \001(\t\"L\n\nArtifactID\0220\n\014artif" +
+      "act_key\030\001 \001(\0132\032.flyteidl.core.ArtifactKe" +
+      "y\022\014\n\004uuid\030\002 \001(\t*U\n\014ResourceType\022\017\n\013UNSPE" +
+      "CIFIED\020\000\022\010\n\004TASK\020\001\022\014\n\010WORKFLOW\020\002\022\017\n\013LAUN" +
+      "CH_PLAN\020\003\022\013\n\007DATASET\020\004B6Z4github.com/fly" +
+      "teorg/flyteidl/gen/pb-go/flyteidl/coreb\006" +
+      "proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
@@ -6402,7 +6576,7 @@ public final class IdentifierOuterClass {
     internal_static_flyteidl_core_ArtifactKey_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_flyteidl_core_ArtifactKey_descriptor,
-        new java.lang.String[] { "Project", "Domain", });
+        new java.lang.String[] { "Project", "Domain", "Suffix", });
     internal_static_flyteidl_core_ArtifactID_descriptor =
       getDescriptor().getMessageTypes().get(6);
     internal_static_flyteidl_core_ArtifactID_fieldAccessorTable = new
