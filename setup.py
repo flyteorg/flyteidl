@@ -39,4 +39,5 @@ setup(
     extras_require={
         ':python_version=="2.7"': ['typing>=3.6'],  # allow typehinting PY2
     },
+    license="apache2",
 )
