@@ -19121,6 +19121,418 @@
              */
             var event = {};
     
+            event.CloudEventWorkflowExecution = (function() {
+    
+                /**
+                 * Properties of a CloudEventWorkflowExecution.
+                 * @memberof flyteidl.event
+                 * @interface ICloudEventWorkflowExecution
+                 * @property {flyteidl.event.IWorkflowExecutionEvent|null} [rawEvent] CloudEventWorkflowExecution rawEvent
+                 * @property {flyteidl.core.ILiteralMap|null} [outputData] CloudEventWorkflowExecution outputData
+                 * @property {flyteidl.core.ITypedInterface|null} [outputInterface] CloudEventWorkflowExecution outputInterface
+                 */
+    
+                /**
+                 * Constructs a new CloudEventWorkflowExecution.
+                 * @memberof flyteidl.event
+                 * @classdesc Represents a CloudEventWorkflowExecution.
+                 * @implements ICloudEventWorkflowExecution
+                 * @constructor
+                 * @param {flyteidl.event.ICloudEventWorkflowExecution=} [properties] Properties to set
+                 */
+                function CloudEventWorkflowExecution(properties) {
+                    if (properties)
+                        for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                            if (properties[keys[i]] != null)
+                                this[keys[i]] = properties[keys[i]];
+                }
+    
+                /**
+                 * CloudEventWorkflowExecution rawEvent.
+                 * @member {flyteidl.event.IWorkflowExecutionEvent|null|undefined} rawEvent
+                 * @memberof flyteidl.event.CloudEventWorkflowExecution
+                 * @instance
+                 */
+                CloudEventWorkflowExecution.prototype.rawEvent = null;
+    
+                /**
+                 * CloudEventWorkflowExecution outputData.
+                 * @member {flyteidl.core.ILiteralMap|null|undefined} outputData
+                 * @memberof flyteidl.event.CloudEventWorkflowExecution
+                 * @instance
+                 */
+                CloudEventWorkflowExecution.prototype.outputData = null;
+    
+                /**
+                 * CloudEventWorkflowExecution outputInterface.
+                 * @member {flyteidl.core.ITypedInterface|null|undefined} outputInterface
+                 * @memberof flyteidl.event.CloudEventWorkflowExecution
+                 * @instance
+                 */
+                CloudEventWorkflowExecution.prototype.outputInterface = null;
+    
+                /**
+                 * Creates a new CloudEventWorkflowExecution instance using the specified properties.
+                 * @function create
+                 * @memberof flyteidl.event.CloudEventWorkflowExecution
+                 * @static
+                 * @param {flyteidl.event.ICloudEventWorkflowExecution=} [properties] Properties to set
+                 * @returns {flyteidl.event.CloudEventWorkflowExecution} CloudEventWorkflowExecution instance
+                 */
+                CloudEventWorkflowExecution.create = function create(properties) {
+                    return new CloudEventWorkflowExecution(properties);
+                };
+    
+                /**
+                 * Encodes the specified CloudEventWorkflowExecution message. Does not implicitly {@link flyteidl.event.CloudEventWorkflowExecution.verify|verify} messages.
+                 * @function encode
+                 * @memberof flyteidl.event.CloudEventWorkflowExecution
+                 * @static
+                 * @param {flyteidl.event.ICloudEventWorkflowExecution} message CloudEventWorkflowExecution message or plain object to encode
+                 * @param {$protobuf.Writer} [writer] Writer to encode to
+                 * @returns {$protobuf.Writer} Writer
+                 */
+                CloudEventWorkflowExecution.encode = function encode(message, writer) {
+                    if (!writer)
+                        writer = $Writer.create();
+                    if (message.rawEvent != null && message.hasOwnProperty("rawEvent"))
+                        $root.flyteidl.event.WorkflowExecutionEvent.encode(message.rawEvent, writer.uint32(/* id 1, wireType 2 =*/10).fork()).ldelim();
+                    if (message.outputData != null && message.hasOwnProperty("outputData"))
+                        $root.flyteidl.core.LiteralMap.encode(message.outputData, writer.uint32(/* id 2, wireType 2 =*/18).fork()).ldelim();
+                    if (message.outputInterface != null && message.hasOwnProperty("outputInterface"))
+                        $root.flyteidl.core.TypedInterface.encode(message.outputInterface, writer.uint32(/* id 3, wireType 2 =*/26).fork()).ldelim();
+                    return writer;
+                };
+    
+                /**
+                 * Decodes a CloudEventWorkflowExecution message from the specified reader or buffer.
+                 * @function decode
+                 * @memberof flyteidl.event.CloudEventWorkflowExecution
+                 * @static
+                 * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+                 * @param {number} [length] Message length if known beforehand
+                 * @returns {flyteidl.event.CloudEventWorkflowExecution} CloudEventWorkflowExecution
+                 * @throws {Error} If the payload is not a reader or valid buffer
+                 * @throws {$protobuf.util.ProtocolError} If required fields are missing
+                 */
+                CloudEventWorkflowExecution.decode = function decode(reader, length) {
+                    if (!(reader instanceof $Reader))
+                        reader = $Reader.create(reader);
+                    var end = length === undefined ? reader.len : reader.pos + length, message = new $root.flyteidl.event.CloudEventWorkflowExecution();
+                    while (reader.pos < end) {
+                        var tag = reader.uint32();
+                        switch (tag >>> 3) {
+                        case 1:
+                            message.rawEvent = $root.flyteidl.event.WorkflowExecutionEvent.decode(reader, reader.uint32());
+                            break;
+                        case 2:
+                            message.outputData = $root.flyteidl.core.LiteralMap.decode(reader, reader.uint32());
+                            break;
+                        case 3:
+                            message.outputInterface = $root.flyteidl.core.TypedInterface.decode(reader, reader.uint32());
+                            break;
+                        default:
+                            reader.skipType(tag & 7);
+                            break;
+                        }
+                    }
+                    return message;
+                };
+    
+                /**
+                 * Verifies a CloudEventWorkflowExecution message.
+                 * @function verify
+                 * @memberof flyteidl.event.CloudEventWorkflowExecution
+                 * @static
+                 * @param {Object.<string,*>} message Plain object to verify
+                 * @returns {string|null} `null` if valid, otherwise the reason why it is not
+                 */
+                CloudEventWorkflowExecution.verify = function verify(message) {
+                    if (typeof message !== "object" || message === null)
+                        return "object expected";
+                    if (message.rawEvent != null && message.hasOwnProperty("rawEvent")) {
+                        var error = $root.flyteidl.event.WorkflowExecutionEvent.verify(message.rawEvent);
+                        if (error)
+                            return "rawEvent." + error;
+                    }
+                    if (message.outputData != null && message.hasOwnProperty("outputData")) {
+                        var error = $root.flyteidl.core.LiteralMap.verify(message.outputData);
+                        if (error)
+                            return "outputData." + error;
+                    }
+                    if (message.outputInterface != null && message.hasOwnProperty("outputInterface")) {
+                        var error = $root.flyteidl.core.TypedInterface.verify(message.outputInterface);
+                        if (error)
+                            return "outputInterface." + error;
+                    }
+                    return null;
+                };
+    
+                return CloudEventWorkflowExecution;
+            })();
+    
+            event.CloudEventNodeExecution = (function() {
+    
+                /**
+                 * Properties of a CloudEventNodeExecution.
+                 * @memberof flyteidl.event
+                 * @interface ICloudEventNodeExecution
+                 * @property {flyteidl.event.INodeExecutionEvent|null} [rawEvent] CloudEventNodeExecution rawEvent
+                 */
+    
+                /**
+                 * Constructs a new CloudEventNodeExecution.
+                 * @memberof flyteidl.event
+                 * @classdesc Represents a CloudEventNodeExecution.
+                 * @implements ICloudEventNodeExecution
+                 * @constructor
+                 * @param {flyteidl.event.ICloudEventNodeExecution=} [properties] Properties to set
+                 */
+                function CloudEventNodeExecution(properties) {
+                    if (properties)
+                        for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                            if (properties[keys[i]] != null)
+                                this[keys[i]] = properties[keys[i]];
+                }
+    
+                /**
+                 * CloudEventNodeExecution rawEvent.
+                 * @member {flyteidl.event.INodeExecutionEvent|null|undefined} rawEvent
+                 * @memberof flyteidl.event.CloudEventNodeExecution
+                 * @instance
+                 */
+                CloudEventNodeExecution.prototype.rawEvent = null;
+    
+                /**
+                 * Creates a new CloudEventNodeExecution instance using the specified properties.
+                 * @function create
+                 * @memberof flyteidl.event.CloudEventNodeExecution
+                 * @static
+                 * @param {flyteidl.event.ICloudEventNodeExecution=} [properties] Properties to set
+                 * @returns {flyteidl.event.CloudEventNodeExecution} CloudEventNodeExecution instance
+                 */
+                CloudEventNodeExecution.create = function create(properties) {
+                    return new CloudEventNodeExecution(properties);
+                };
+    
+                /**
+                 * Encodes the specified CloudEventNodeExecution message. Does not implicitly {@link flyteidl.event.CloudEventNodeExecution.verify|verify} messages.
+                 * @function encode
+                 * @memberof flyteidl.event.CloudEventNodeExecution
+                 * @static
+                 * @param {flyteidl.event.ICloudEventNodeExecution} message CloudEventNodeExecution message or plain object to encode
+                 * @param {$protobuf.Writer} [writer] Writer to encode to
+                 * @returns {$protobuf.Writer} Writer
+                 */
+                CloudEventNodeExecution.encode = function encode(message, writer) {
+                    if (!writer)
+                        writer = $Writer.create();
+                    if (message.rawEvent != null && message.hasOwnProperty("rawEvent"))
+                        $root.flyteidl.event.NodeExecutionEvent.encode(message.rawEvent, writer.uint32(/* id 1, wireType 2 =*/10).fork()).ldelim();
+                    return writer;
+                };
+    
+                /**
+                 * Decodes a CloudEventNodeExecution message from the specified reader or buffer.
+                 * @function decode
+                 * @memberof flyteidl.event.CloudEventNodeExecution
+                 * @static
+                 * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+                 * @param {number} [length] Message length if known beforehand
+                 * @returns {flyteidl.event.CloudEventNodeExecution} CloudEventNodeExecution
+                 * @throws {Error} If the payload is not a reader or valid buffer
+                 * @throws {$protobuf.util.ProtocolError} If required fields are missing
+                 */
+                CloudEventNodeExecution.decode = function decode(reader, length) {
+                    if (!(reader instanceof $Reader))
+                        reader = $Reader.create(reader);
+                    var end = length === undefined ? reader.len : reader.pos + length, message = new $root.flyteidl.event.CloudEventNodeExecution();
+                    while (reader.pos < end) {
+                        var tag = reader.uint32();
+                        switch (tag >>> 3) {
+                        case 1:
+                            message.rawEvent = $root.flyteidl.event.NodeExecutionEvent.decode(reader, reader.uint32());
+                            break;
+                        default:
+                            reader.skipType(tag & 7);
+                            break;
+                        }
+                    }
+                    return message;
+                };
+    
+                /**
+                 * Verifies a CloudEventNodeExecution message.
+                 * @function verify
+                 * @memberof flyteidl.event.CloudEventNodeExecution
+                 * @static
+                 * @param {Object.<string,*>} message Plain object to verify
+                 * @returns {string|null} `null` if valid, otherwise the reason why it is not
+                 */
+                CloudEventNodeExecution.verify = function verify(message) {
+                    if (typeof message !== "object" || message === null)
+                        return "object expected";
+                    if (message.rawEvent != null && message.hasOwnProperty("rawEvent")) {
+                        var error = $root.flyteidl.event.NodeExecutionEvent.verify(message.rawEvent);
+                        if (error)
+                            return "rawEvent." + error;
+                    }
+                    return null;
+                };
+    
+                return CloudEventNodeExecution;
+            })();
+    
+            event.CloudEventTaskExecution = (function() {
+    
+                /**
+                 * Properties of a CloudEventTaskExecution.
+                 * @memberof flyteidl.event
+                 * @interface ICloudEventTaskExecution
+                 * @property {flyteidl.event.ITaskExecutionEvent|null} [rawEvent] CloudEventTaskExecution rawEvent
+                 * @property {flyteidl.core.ILiteralMap|null} [outputData] CloudEventTaskExecution outputData
+                 * @property {flyteidl.core.ITypedInterface|null} [outputInterface] CloudEventTaskExecution outputInterface
+                 */
+    
+                /**
+                 * Constructs a new CloudEventTaskExecution.
+                 * @memberof flyteidl.event
+                 * @classdesc Represents a CloudEventTaskExecution.
+                 * @implements ICloudEventTaskExecution
+                 * @constructor
+                 * @param {flyteidl.event.ICloudEventTaskExecution=} [properties] Properties to set
+                 */
+                function CloudEventTaskExecution(properties) {
+                    if (properties)
+                        for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                            if (properties[keys[i]] != null)
+                                this[keys[i]] = properties[keys[i]];
+                }
+    
+                /**
+                 * CloudEventTaskExecution rawEvent.
+                 * @member {flyteidl.event.ITaskExecutionEvent|null|undefined} rawEvent
+                 * @memberof flyteidl.event.CloudEventTaskExecution
+                 * @instance
+                 */
+                CloudEventTaskExecution.prototype.rawEvent = null;
+    
+                /**
+                 * CloudEventTaskExecution outputData.
+                 * @member {flyteidl.core.ILiteralMap|null|undefined} outputData
+                 * @memberof flyteidl.event.CloudEventTaskExecution
+                 * @instance
+                 */
+                CloudEventTaskExecution.prototype.outputData = null;
+    
+                /**
+                 * CloudEventTaskExecution outputInterface.
+                 * @member {flyteidl.core.ITypedInterface|null|undefined} outputInterface
+                 * @memberof flyteidl.event.CloudEventTaskExecution
+                 * @instance
+                 */
+                CloudEventTaskExecution.prototype.outputInterface = null;
+    
+                /**
+                 * Creates a new CloudEventTaskExecution instance using the specified properties.
+                 * @function create
+                 * @memberof flyteidl.event.CloudEventTaskExecution
+                 * @static
+                 * @param {flyteidl.event.ICloudEventTaskExecution=} [properties] Properties to set
+                 * @returns {flyteidl.event.CloudEventTaskExecution} CloudEventTaskExecution instance
+                 */
+                CloudEventTaskExecution.create = function create(properties) {
+                    return new CloudEventTaskExecution(properties);
+                };
+    
+                /**
+                 * Encodes the specified CloudEventTaskExecution message. Does not implicitly {@link flyteidl.event.CloudEventTaskExecution.verify|verify} messages.
+                 * @function encode
+                 * @memberof flyteidl.event.CloudEventTaskExecution
+                 * @static
+                 * @param {flyteidl.event.ICloudEventTaskExecution} message CloudEventTaskExecution message or plain object to encode
+                 * @param {$protobuf.Writer} [writer] Writer to encode to
+                 * @returns {$protobuf.Writer} Writer
+                 */
+                CloudEventTaskExecution.encode = function encode(message, writer) {
+                    if (!writer)
+                        writer = $Writer.create();
+                    if (message.rawEvent != null && message.hasOwnProperty("rawEvent"))
+                        $root.flyteidl.event.TaskExecutionEvent.encode(message.rawEvent, writer.uint32(/* id 1, wireType 2 =*/10).fork()).ldelim();
+                    if (message.outputData != null && message.hasOwnProperty("outputData"))
+                        $root.flyteidl.core.LiteralMap.encode(message.outputData, writer.uint32(/* id 2, wireType 2 =*/18).fork()).ldelim();
+                    if (message.outputInterface != null && message.hasOwnProperty("outputInterface"))
+                        $root.flyteidl.core.TypedInterface.encode(message.outputInterface, writer.uint32(/* id 3, wireType 2 =*/26).fork()).ldelim();
+                    return writer;
+                };
+    
+                /**
+                 * Decodes a CloudEventTaskExecution message from the specified reader or buffer.
+                 * @function decode
+                 * @memberof flyteidl.event.CloudEventTaskExecution
+                 * @static
+                 * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+                 * @param {number} [length] Message length if known beforehand
+                 * @returns {flyteidl.event.CloudEventTaskExecution} CloudEventTaskExecution
+                 * @throws {Error} If the payload is not a reader or valid buffer
+                 * @throws {$protobuf.util.ProtocolError} If required fields are missing
+                 */
+                CloudEventTaskExecution.decode = function decode(reader, length) {
+                    if (!(reader instanceof $Reader))
+                        reader = $Reader.create(reader);
+                    var end = length === undefined ? reader.len : reader.pos + length, message = new $root.flyteidl.event.CloudEventTaskExecution();
+                    while (reader.pos < end) {
+                        var tag = reader.uint32();
+                        switch (tag >>> 3) {
+                        case 1:
+                            message.rawEvent = $root.flyteidl.event.TaskExecutionEvent.decode(reader, reader.uint32());
+                            break;
+                        case 2:
+                            message.outputData = $root.flyteidl.core.LiteralMap.decode(reader, reader.uint32());
+                            break;
+                        case 3:
+                            message.outputInterface = $root.flyteidl.core.TypedInterface.decode(reader, reader.uint32());
+                            break;
+                        default:
+                            reader.skipType(tag & 7);
+                            break;
+                        }
+                    }
+                    return message;
+                };
+    
+                /**
+                 * Verifies a CloudEventTaskExecution message.
+                 * @function verify
+                 * @memberof flyteidl.event.CloudEventTaskExecution
+                 * @static
+                 * @param {Object.<string,*>} message Plain object to verify
+                 * @returns {string|null} `null` if valid, otherwise the reason why it is not
+                 */
+                CloudEventTaskExecution.verify = function verify(message) {
+                    if (typeof message !== "object" || message === null)
+                        return "object expected";
+                    if (message.rawEvent != null && message.hasOwnProperty("rawEvent")) {
+                        var error = $root.flyteidl.event.TaskExecutionEvent.verify(message.rawEvent);
+                        if (error)
+                            return "rawEvent." + error;
+                    }
+                    if (message.outputData != null && message.hasOwnProperty("outputData")) {
+                        var error = $root.flyteidl.core.LiteralMap.verify(message.outputData);
+                        if (error)
+                            return "outputData." + error;
+                    }
+                    if (message.outputInterface != null && message.hasOwnProperty("outputInterface")) {
+                        var error = $root.flyteidl.core.TypedInterface.verify(message.outputInterface);
+                        if (error)
+                            return "outputInterface." + error;
+                    }
+                    return null;
+                };
+    
+                return CloudEventTaskExecution;
+            })();
+    
             event.ArtifactCreateEvent = (function() {
     
                 /**

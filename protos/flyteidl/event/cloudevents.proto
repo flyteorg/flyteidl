@@ -1,0 +1,36 @@
+syntax = "proto3";
+
+package flyteidl.event;
+
+option go_package = "github.com/flyteorg/flyteidl/gen/pb-go/flyteidl/event";
+
+import "flyteidl/event/event.proto";
+import "flyteidl/core/literals.proto";
+import "flyteidl/core/interface.proto";
+
+
+// This is the cloud event parallel to the raw WorkflowExecutionEvent message. It's filled in with additional
+// information that downstream consumers may find useful.
+message CloudEventWorkflowExecution {
+  event.WorkflowExecutionEvent raw_event = 1;
+
+  core.LiteralMap output_data = 2;
+
+  core.TypedInterface output_interface = 3;
+}
+
+
+message CloudEventNodeExecution {
+  event.NodeExecutionEvent raw_event = 1;
+}
+
+message CloudEventTaskExecution {
+  event.TaskExecutionEvent raw_event = 1;
+
+  // Hydrated output
+  core.LiteralMap output_data = 2;
+
+  // The typed interface for the task that produced the event.
+  core.TypedInterface output_interface = 3;
+
+}

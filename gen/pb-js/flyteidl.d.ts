@@ -8054,6 +8054,186 @@ export namespace flyteidl {
     /** Namespace event. */
     namespace event {
 
+        /** Properties of a CloudEventWorkflowExecution. */
+        interface ICloudEventWorkflowExecution {
+
+            /** CloudEventWorkflowExecution rawEvent */
+            rawEvent?: (flyteidl.event.IWorkflowExecutionEvent|null);
+
+            /** CloudEventWorkflowExecution outputData */
+            outputData?: (flyteidl.core.ILiteralMap|null);
+
+            /** CloudEventWorkflowExecution outputInterface */
+            outputInterface?: (flyteidl.core.ITypedInterface|null);
+        }
+
+        /** Represents a CloudEventWorkflowExecution. */
+        class CloudEventWorkflowExecution implements ICloudEventWorkflowExecution {
+
+            /**
+             * Constructs a new CloudEventWorkflowExecution.
+             * @param [properties] Properties to set
+             */
+            constructor(properties?: flyteidl.event.ICloudEventWorkflowExecution);
+
+            /** CloudEventWorkflowExecution rawEvent. */
+            public rawEvent?: (flyteidl.event.IWorkflowExecutionEvent|null);
+
+            /** CloudEventWorkflowExecution outputData. */
+            public outputData?: (flyteidl.core.ILiteralMap|null);
+
+            /** CloudEventWorkflowExecution outputInterface. */
+            public outputInterface?: (flyteidl.core.ITypedInterface|null);
+
+            /**
+             * Creates a new CloudEventWorkflowExecution instance using the specified properties.
+             * @param [properties] Properties to set
+             * @returns CloudEventWorkflowExecution instance
+             */
+            public static create(properties?: flyteidl.event.ICloudEventWorkflowExecution): flyteidl.event.CloudEventWorkflowExecution;
+
+            /**
+             * Encodes the specified CloudEventWorkflowExecution message. Does not implicitly {@link flyteidl.event.CloudEventWorkflowExecution.verify|verify} messages.
+             * @param message CloudEventWorkflowExecution message or plain object to encode
+             * @param [writer] Writer to encode to
+             * @returns Writer
+             */
+            public static encode(message: flyteidl.event.ICloudEventWorkflowExecution, writer?: $protobuf.Writer): $protobuf.Writer;
+
+            /**
+             * Decodes a CloudEventWorkflowExecution message from the specified reader or buffer.
+             * @param reader Reader or buffer to decode from
+             * @param [length] Message length if known beforehand
+             * @returns CloudEventWorkflowExecution
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): flyteidl.event.CloudEventWorkflowExecution;
+
+            /**
+             * Verifies a CloudEventWorkflowExecution message.
+             * @param message Plain object to verify
+             * @returns `null` if valid, otherwise the reason why it is not
+             */
+            public static verify(message: { [k: string]: any }): (string|null);
+        }
+
+        /** Properties of a CloudEventNodeExecution. */
+        interface ICloudEventNodeExecution {
+
+            /** CloudEventNodeExecution rawEvent */
+            rawEvent?: (flyteidl.event.INodeExecutionEvent|null);
+        }
+
+        /** Represents a CloudEventNodeExecution. */
+        class CloudEventNodeExecution implements ICloudEventNodeExecution {
+
+            /**
+             * Constructs a new CloudEventNodeExecution.
+             * @param [properties] Properties to set
+             */
+            constructor(properties?: flyteidl.event.ICloudEventNodeExecution);
+
+            /** CloudEventNodeExecution rawEvent. */
+            public rawEvent?: (flyteidl.event.INodeExecutionEvent|null);
+
+            /**
+             * Creates a new CloudEventNodeExecution instance using the specified properties.
+             * @param [properties] Properties to set
+             * @returns CloudEventNodeExecution instance
+             */
+            public static create(properties?: flyteidl.event.ICloudEventNodeExecution): flyteidl.event.CloudEventNodeExecution;
+
+            /**
+             * Encodes the specified CloudEventNodeExecution message. Does not implicitly {@link flyteidl.event.CloudEventNodeExecution.verify|verify} messages.
+             * @param message CloudEventNodeExecution message or plain object to encode
+             * @param [writer] Writer to encode to
+             * @returns Writer
+             */
+            public static encode(message: flyteidl.event.ICloudEventNodeExecution, writer?: $protobuf.Writer): $protobuf.Writer;
+
+            /**
+             * Decodes a CloudEventNodeExecution message from the specified reader or buffer.
+             * @param reader Reader or buffer to decode from
+             * @param [length] Message length if known beforehand
+             * @returns CloudEventNodeExecution
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): flyteidl.event.CloudEventNodeExecution;
+
+            /**
+             * Verifies a CloudEventNodeExecution message.
+             * @param message Plain object to verify
+             * @returns `null` if valid, otherwise the reason why it is not
+             */
+            public static verify(message: { [k: string]: any }): (string|null);
+        }
+
+        /** Properties of a CloudEventTaskExecution. */
+        interface ICloudEventTaskExecution {
+
+            /** CloudEventTaskExecution rawEvent */
+            rawEvent?: (flyteidl.event.ITaskExecutionEvent|null);
+
+            /** CloudEventTaskExecution outputData */
+            outputData?: (flyteidl.core.ILiteralMap|null);
+
+            /** CloudEventTaskExecution outputInterface */
+            outputInterface?: (flyteidl.core.ITypedInterface|null);
+        }
+
+        /** Represents a CloudEventTaskExecution. */
+        class CloudEventTaskExecution implements ICloudEventTaskExecution {
+
+            /**
+             * Constructs a new CloudEventTaskExecution.
+             * @param [properties] Properties to set
+             */
+            constructor(properties?: flyteidl.event.ICloudEventTaskExecution);
+
+            /** CloudEventTaskExecution rawEvent. */
+            public rawEvent?: (flyteidl.event.ITaskExecutionEvent|null);
+
+            /** CloudEventTaskExecution outputData. */
+            public outputData?: (flyteidl.core.ILiteralMap|null);
+
+            /** CloudEventTaskExecution outputInterface. */
+            public outputInterface?: (flyteidl.core.ITypedInterface|null);
+
+            /**
+             * Creates a new CloudEventTaskExecution instance using the specified properties.
+             * @param [properties] Properties to set
+             * @returns CloudEventTaskExecution instance
+             */
+            public static create(properties?: flyteidl.event.ICloudEventTaskExecution): flyteidl.event.CloudEventTaskExecution;
+
+            /**
+             * Encodes the specified CloudEventTaskExecution message. Does not implicitly {@link flyteidl.event.CloudEventTaskExecution.verify|verify} messages.
+             * @param message CloudEventTaskExecution message or plain object to encode
+             * @param [writer] Writer to encode to
+             * @returns Writer
+             */
+            public static encode(message: flyteidl.event.ICloudEventTaskExecution, writer?: $protobuf.Writer): $protobuf.Writer;
+
+            /**
+             * Decodes a CloudEventTaskExecution message from the specified reader or buffer.
+             * @param reader Reader or buffer to decode from
+             * @param [length] Message length if known beforehand
+             * @returns CloudEventTaskExecution
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): flyteidl.event.CloudEventTaskExecution;
+
+            /**
+             * Verifies a CloudEventTaskExecution message.
+             * @param message Plain object to verify
+             * @returns `null` if valid, otherwise the reason why it is not
+             */
+            public static verify(message: { [k: string]: any }): (string|null);
+        }
+
         /** Properties of an ArtifactCreateEvent. */
         interface IArtifactCreateEvent {
 
