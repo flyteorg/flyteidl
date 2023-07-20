@@ -16,7 +16,7 @@ import re  # noqa: F401
 
 import six
 
-from flyteadmin.models.artifact_artifact import ArtifactArtifact  # noqa: F401,E501
+from flyteadmin.models.core_artifact_alias import CoreArtifactAlias  # noqa: F401,E501
 from flyteadmin.models.core_literal_type import CoreLiteralType  # noqa: F401,E501
 
 
@@ -36,29 +36,29 @@ class CoreVariable(object):
     swagger_types = {
         'type': 'CoreLiteralType',
         'description': 'str',
-        'artifact': 'ArtifactArtifact'
+        'aliases': 'list[CoreArtifactAlias]'
     }
 
     attribute_map = {
         'type': 'type',
         'description': 'description',
-        'artifact': 'artifact'
+        'aliases': 'aliases'
     }
 
-    def __init__(self, type=None, description=None, artifact=None):  # noqa: E501
+    def __init__(self, type=None, description=None, aliases=None):  # noqa: E501
         """CoreVariable - a model defined in Swagger"""  # noqa: E501
 
         self._type = None
         self._description = None
-        self._artifact = None
+        self._aliases = None
         self.discriminator = None
 
         if type is not None:
             self.type = type
         if description is not None:
             self.description = description
-        if artifact is not None:
-            self.artifact = artifact
+        if aliases is not None:
+            self.aliases = aliases
 
     @property
     def type(self):
@@ -105,27 +105,27 @@ class CoreVariable(object):
         self._description = description
 
     @property
-    def artifact(self):
-        """Gets the artifact of this CoreVariable.  # noqa: E501
+    def aliases(self):
+        """Gets the aliases of this CoreVariable.  # noqa: E501
 
         +optional If specified by user, this is still just a partial artifact. It's here so the user can control the name, tags, aliases, of the artifact creation.  # noqa: E501
 
-        :return: The artifact of this CoreVariable.  # noqa: E501
-        :rtype: ArtifactArtifact
+        :return: The aliases of this CoreVariable.  # noqa: E501
+        :rtype: list[CoreArtifactAlias]
         """
-        return self._artifact
+        return self._aliases
 
-    @artifact.setter
-    def artifact(self, artifact):
-        """Sets the artifact of this CoreVariable.
+    @aliases.setter
+    def aliases(self, aliases):
+        """Sets the aliases of this CoreVariable.
 
         +optional If specified by user, this is still just a partial artifact. It's here so the user can control the name, tags, aliases, of the artifact creation.  # noqa: E501
 
-        :param artifact: The artifact of this CoreVariable.  # noqa: E501
-        :type: ArtifactArtifact
+        :param aliases: The aliases of this CoreVariable.  # noqa: E501
+        :type: list[CoreArtifactAlias]
         """
 
-        self._artifact = artifact
+        self._aliases = aliases
 
     def to_dict(self):
         """Returns the model properties as a dict"""

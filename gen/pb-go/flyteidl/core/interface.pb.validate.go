@@ -55,14 +55,19 @@ func (m *Variable) Validate() error {
 
 	// no validation rules for Description
 
-	if v, ok := interface{}(m.GetArtifact()).(interface{ Validate() error }); ok {
-		if err := v.Validate(); err != nil {
-			return VariableValidationError{
-				field:  "Artifact",
-				reason: "embedded message failed validation",
-				cause:  err,
+	for idx, item := range m.GetAliases() {
+		_, _ = idx, item
+
+		if v, ok := interface{}(item).(interface{ Validate() error }); ok {
+			if err := v.Validate(); err != nil {
+				return VariableValidationError{
+					field:  fmt.Sprintf("Aliases[%v]", idx),
+					reason: "embedded message failed validation",
+					cause:  err,
+				}
 			}
 		}
+
 	}
 
 	return nil

@@ -575,3 +575,161 @@ var _ interface {
 	Cause() error
 	ErrorName() string
 } = ArtifactIDValidationError{}
+
+// Validate checks the field values on ArtifactAlias with the rules defined in
+// the proto definition for this message. If any rules are violated, an error
+// is returned.
+func (m *ArtifactAlias) Validate() error {
+	if m == nil {
+		return nil
+	}
+
+	if v, ok := interface{}(m.GetArtifactId()).(interface{ Validate() error }); ok {
+		if err := v.Validate(); err != nil {
+			return ArtifactAliasValidationError{
+				field:  "ArtifactId",
+				reason: "embedded message failed validation",
+				cause:  err,
+			}
+		}
+	}
+
+	// no validation rules for Name
+
+	// no validation rules for Value
+
+	return nil
+}
+
+// ArtifactAliasValidationError is the validation error returned by
+// ArtifactAlias.Validate if the designated constraints aren't met.
+type ArtifactAliasValidationError struct {
+	field  string
+	reason string
+	cause  error
+	key    bool
+}
+
+// Field function returns field value.
+func (e ArtifactAliasValidationError) Field() string { return e.field }
+
+// Reason function returns reason value.
+func (e ArtifactAliasValidationError) Reason() string { return e.reason }
+
+// Cause function returns cause value.
+func (e ArtifactAliasValidationError) Cause() error { return e.cause }
+
+// Key function returns key value.
+func (e ArtifactAliasValidationError) Key() bool { return e.key }
+
+// ErrorName returns error name.
+func (e ArtifactAliasValidationError) ErrorName() string { return "ArtifactAliasValidationError" }
+
+// Error satisfies the builtin error interface
+func (e ArtifactAliasValidationError) Error() string {
+	cause := ""
+	if e.cause != nil {
+		cause = fmt.Sprintf(" | caused by: %v", e.cause)
+	}
+
+	key := ""
+	if e.key {
+		key = "key for "
+	}
+
+	return fmt.Sprintf(
+		"invalid %sArtifactAlias.%s: %s%s",
+		key,
+		e.field,
+		e.reason,
+		cause)
+}
+
+var _ error = ArtifactAliasValidationError{}
+
+var _ interface {
+	Field() string
+	Reason() string
+	Key() bool
+	Cause() error
+	ErrorName() string
+} = ArtifactAliasValidationError{}
+
+// Validate checks the field values on ArtifactQuery with the rules defined in
+// the proto definition for this message. If any rules are violated, an error
+// is returned.
+func (m *ArtifactQuery) Validate() error {
+	if m == nil {
+		return nil
+	}
+
+	// no validation rules for Project
+
+	// no validation rules for Domain
+
+	if v, ok := interface{}(m.GetAlias()).(interface{ Validate() error }); ok {
+		if err := v.Validate(); err != nil {
+			return ArtifactQueryValidationError{
+				field:  "Alias",
+				reason: "embedded message failed validation",
+				cause:  err,
+			}
+		}
+	}
+
+	return nil
+}
+
+// ArtifactQueryValidationError is the validation error returned by
+// ArtifactQuery.Validate if the designated constraints aren't met.
+type ArtifactQueryValidationError struct {
+	field  string
+	reason string
+	cause  error
+	key    bool
+}
+
+// Field function returns field value.
+func (e ArtifactQueryValidationError) Field() string { return e.field }
+
+// Reason function returns reason value.
+func (e ArtifactQueryValidationError) Reason() string { return e.reason }
+
+// Cause function returns cause value.
+func (e ArtifactQueryValidationError) Cause() error { return e.cause }
+
+// Key function returns key value.
+func (e ArtifactQueryValidationError) Key() bool { return e.key }
+
+// ErrorName returns error name.
+func (e ArtifactQueryValidationError) ErrorName() string { return "ArtifactQueryValidationError" }
+
+// Error satisfies the builtin error interface
+func (e ArtifactQueryValidationError) Error() string {
+	cause := ""
+	if e.cause != nil {
+		cause = fmt.Sprintf(" | caused by: %v", e.cause)
+	}
+
+	key := ""
+	if e.key {
+		key = "key for "
+	}
+
+	return fmt.Sprintf(
+		"invalid %sArtifactQuery.%s: %s%s",
+		key,
+		e.field,
+		e.reason,
+		cause)
+}
+
+var _ error = ArtifactQueryValidationError{}
+
+var _ interface {
+	Field() string
+	Reason() string
+	Key() bool
+	Cause() error
+	ErrorName() string
+} = ArtifactQueryValidationError{}

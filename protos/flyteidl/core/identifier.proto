@@ -86,3 +86,17 @@ message ArtifactID {
   // consider hiding - this is a storage layer ID. Might even change for the same object.
   string uuid = 2;
 }
+
+message ArtifactAlias {
+  // ties this directly to the artifact
+  core.ArtifactID artifact_id = 1;
+
+  string name = 2;
+  string value = 3;
+}
+
+message ArtifactQuery {
+  string project = 1;
+  string domain = 2;
+  core.ArtifactAlias alias = 3;
+}

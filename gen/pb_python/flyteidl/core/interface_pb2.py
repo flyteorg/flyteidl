@@ -13,10 +13,10 @@ _sym_db = _symbol_database.Default()
 
 from flyteidl.core import types_pb2 as flyteidl_dot_core_dot_types__pb2
 from flyteidl.core import literals_pb2 as flyteidl_dot_core_dot_literals__pb2
-from flyteidl.artifact import artifacts_pb2 as flyteidl_dot_artifact_dot_artifacts__pb2
+from flyteidl.core import identifier_pb2 as flyteidl_dot_core_dot_identifier__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x1d\x66lyteidl/core/interface.proto\x12\rflyteidl.core\x1a\x19\x66lyteidl/core/types.proto\x1a\x1c\x66lyteidl/core/literals.proto\x1a!flyteidl/artifact/artifacts.proto\"\x95\x01\n\x08Variable\x12.\n\x04type\x18\x01 \x01(\x0b\x32\x1a.flyteidl.core.LiteralTypeR\x04type\x12 \n\x0b\x64\x65scription\x18\x02 \x01(\tR\x0b\x64\x65scription\x12\x37\n\x08\x61rtifact\x18\x03 \x01(\x0b\x32\x1b.flyteidl.artifact.ArtifactR\x08\x61rtifact\"\xad\x01\n\x0bVariableMap\x12G\n\tvariables\x18\x01 \x03(\x0b\x32).flyteidl.core.VariableMap.VariablesEntryR\tvariables\x1aU\n\x0eVariablesEntry\x12\x10\n\x03key\x18\x01 \x01(\tR\x03key\x12-\n\x05value\x18\x02 \x01(\x0b\x32\x17.flyteidl.core.VariableR\x05value:\x02\x38\x01\"z\n\x0eTypedInterface\x12\x32\n\x06inputs\x18\x01 \x01(\x0b\x32\x1a.flyteidl.core.VariableMapR\x06inputs\x12\x34\n\x07outputs\x18\x02 \x01(\x0b\x32\x1a.flyteidl.core.VariableMapR\x07outputs\"\xdf\x01\n\tParameter\x12)\n\x03var\x18\x01 \x01(\x0b\x32\x17.flyteidl.core.VariableR\x03var\x12\x32\n\x07\x64\x65\x66\x61ult\x18\x02 \x01(\x0b\x32\x16.flyteidl.core.LiteralH\x00R\x07\x64\x65\x66\x61ult\x12\x1c\n\x08required\x18\x03 \x01(\x08H\x00R\x08required\x12I\n\x0e\x61rtifact_query\x18\x04 \x01(\x0b\x32 .flyteidl.artifact.ArtifactQueryH\x00R\rartifactQueryB\n\n\x08\x62\x65havior\"\xb4\x01\n\x0cParameterMap\x12K\n\nparameters\x18\x01 \x03(\x0b\x32+.flyteidl.core.ParameterMap.ParametersEntryR\nparameters\x1aW\n\x0fParametersEntry\x12\x10\n\x03key\x18\x01 \x01(\tR\x03key\x12.\n\x05value\x18\x02 \x01(\x0b\x32\x18.flyteidl.core.ParameterR\x05value:\x02\x38\x01\x42\xae\x01\n\x11\x63om.flyteidl.coreB\x0eInterfaceProtoP\x01Z4github.com/flyteorg/flyteidl/gen/pb-go/flyteidl/core\xa2\x02\x03\x46\x43X\xaa\x02\rFlyteidl.Core\xca\x02\rFlyteidl\\Core\xe2\x02\x19\x46lyteidl\\Core\\GPBMetadata\xea\x02\x0e\x46lyteidl::Coreb\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x1d\x66lyteidl/core/interface.proto\x12\rflyteidl.core\x1a\x19\x66lyteidl/core/types.proto\x1a\x1c\x66lyteidl/core/literals.proto\x1a\x1e\x66lyteidl/core/identifier.proto\"\x94\x01\n\x08Variable\x12.\n\x04type\x18\x01 \x01(\x0b\x32\x1a.flyteidl.core.LiteralTypeR\x04type\x12 \n\x0b\x64\x65scription\x18\x02 \x01(\tR\x0b\x64\x65scription\x12\x36\n\x07\x61liases\x18\x03 \x03(\x0b\x32\x1c.flyteidl.core.ArtifactAliasR\x07\x61liases\"\xad\x01\n\x0bVariableMap\x12G\n\tvariables\x18\x01 \x03(\x0b\x32).flyteidl.core.VariableMap.VariablesEntryR\tvariables\x1aU\n\x0eVariablesEntry\x12\x10\n\x03key\x18\x01 \x01(\tR\x03key\x12-\n\x05value\x18\x02 \x01(\x0b\x32\x17.flyteidl.core.VariableR\x05value:\x02\x38\x01\"z\n\x0eTypedInterface\x12\x32\n\x06inputs\x18\x01 \x01(\x0b\x32\x1a.flyteidl.core.VariableMapR\x06inputs\x12\x34\n\x07outputs\x18\x02 \x01(\x0b\x32\x1a.flyteidl.core.VariableMapR\x07outputs\"\xdb\x01\n\tParameter\x12)\n\x03var\x18\x01 \x01(\x0b\x32\x17.flyteidl.core.VariableR\x03var\x12\x32\n\x07\x64\x65\x66\x61ult\x18\x02 \x01(\x0b\x32\x16.flyteidl.core.LiteralH\x00R\x07\x64\x65\x66\x61ult\x12\x1c\n\x08required\x18\x03 \x01(\x08H\x00R\x08required\x12\x45\n\x0e\x61rtifact_query\x18\x04 \x01(\x0b\x32\x1c.flyteidl.core.ArtifactQueryH\x00R\rartifactQueryB\n\n\x08\x62\x65havior\"\xb4\x01\n\x0cParameterMap\x12K\n\nparameters\x18\x01 \x03(\x0b\x32+.flyteidl.core.ParameterMap.ParametersEntryR\nparameters\x1aW\n\x0fParametersEntry\x12\x10\n\x03key\x18\x01 \x01(\tR\x03key\x12.\n\x05value\x18\x02 \x01(\x0b\x32\x18.flyteidl.core.ParameterR\x05value:\x02\x38\x01\x42\xae\x01\n\x11\x63om.flyteidl.coreB\x0eInterfaceProtoP\x01Z4github.com/flyteorg/flyteidl/gen/pb-go/flyteidl/core\xa2\x02\x03\x46\x43X\xaa\x02\rFlyteidl.Core\xca\x02\rFlyteidl\\Core\xe2\x02\x19\x46lyteidl\\Core\\GPBMetadata\xea\x02\x0e\x46lyteidl::Coreb\x06proto3')
 
 _globals = globals()
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, _globals)
@@ -29,18 +29,18 @@ if _descriptor._USE_C_DESCRIPTORS == False:
   _VARIABLEMAP_VARIABLESENTRY._serialized_options = b'8\001'
   _PARAMETERMAP_PARAMETERSENTRY._options = None
   _PARAMETERMAP_PARAMETERSENTRY._serialized_options = b'8\001'
-  _globals['_VARIABLE']._serialized_start=141
-  _globals['_VARIABLE']._serialized_end=290
-  _globals['_VARIABLEMAP']._serialized_start=293
-  _globals['_VARIABLEMAP']._serialized_end=466
-  _globals['_VARIABLEMAP_VARIABLESENTRY']._serialized_start=381
-  _globals['_VARIABLEMAP_VARIABLESENTRY']._serialized_end=466
-  _globals['_TYPEDINTERFACE']._serialized_start=468
-  _globals['_TYPEDINTERFACE']._serialized_end=590
-  _globals['_PARAMETER']._serialized_start=593
-  _globals['_PARAMETER']._serialized_end=816
-  _globals['_PARAMETERMAP']._serialized_start=819
-  _globals['_PARAMETERMAP']._serialized_end=999
-  _globals['_PARAMETERMAP_PARAMETERSENTRY']._serialized_start=912
-  _globals['_PARAMETERMAP_PARAMETERSENTRY']._serialized_end=999
+  _globals['_VARIABLE']._serialized_start=138
+  _globals['_VARIABLE']._serialized_end=286
+  _globals['_VARIABLEMAP']._serialized_start=289
+  _globals['_VARIABLEMAP']._serialized_end=462
+  _globals['_VARIABLEMAP_VARIABLESENTRY']._serialized_start=377
+  _globals['_VARIABLEMAP_VARIABLESENTRY']._serialized_end=462
+  _globals['_TYPEDINTERFACE']._serialized_start=464
+  _globals['_TYPEDINTERFACE']._serialized_end=586
+  _globals['_PARAMETER']._serialized_start=589
+  _globals['_PARAMETER']._serialized_end=808
+  _globals['_PARAMETERMAP']._serialized_start=811
+  _globals['_PARAMETERMAP']._serialized_end=991
+  _globals['_PARAMETERMAP_PARAMETERSENTRY']._serialized_start=904
+  _globals['_PARAMETERMAP_PARAMETERSENTRY']._serialized_end=991
 # @@protoc_insertion_point(module_scope)

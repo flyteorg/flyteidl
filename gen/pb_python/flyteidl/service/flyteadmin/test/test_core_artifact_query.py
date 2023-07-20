@@ -16,12 +16,12 @@ from __future__ import absolute_import
 import unittest
 
 import flyteadmin
-from flyteadmin.models.flyteidlartifact_alias import FlyteidlartifactAlias  # noqa: E501
+from flyteadmin.models.core_artifact_query import CoreArtifactQuery  # noqa: E501
 from flyteadmin.rest import ApiException
 
 
-class TestFlyteidlartifactAlias(unittest.TestCase):
-    """FlyteidlartifactAlias unit test stubs"""
+class TestCoreArtifactQuery(unittest.TestCase):
+    """CoreArtifactQuery unit test stubs"""
 
     def setUp(self):
         pass
@@ -29,10 +29,10 @@ class TestFlyteidlartifactAlias(unittest.TestCase):
     def tearDown(self):
         pass
 
-    def testFlyteidlartifactAlias(self):
-        """Test FlyteidlartifactAlias"""
+    def testCoreArtifactQuery(self):
+        """Test CoreArtifactQuery"""
         # FIXME: construct object with mandatory attributes with example values
-        # model = flyteadmin.models.flyteidlartifact_alias.FlyteidlartifactAlias()  # noqa: E501
+        # model = flyteadmin.models.core_artifact_query.CoreArtifactQuery()  # noqa: E501
         pass
 
 

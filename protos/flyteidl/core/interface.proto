@@ -6,7 +6,7 @@ option go_package = "github.com/flyteorg/flyteidl/gen/pb-go/flyteidl/core";
 
 import "flyteidl/core/types.proto";
 import "flyteidl/core/literals.proto";
-import "flyteidl/artifact/artifacts.proto";
+import "flyteidl/core/identifier.proto";
 
 // Defines a strongly typed variable.
 message Variable {
@@ -18,7 +18,7 @@ message Variable {
 
     //+optional If specified by user, this is still just a partial artifact. It's here so the user can control the
     // name, tags, aliases, of the artifact creation.
-    artifact.Artifact artifact = 3;
+    repeated core.ArtifactAlias aliases = 3;
 }
 
 // A map of Variables
@@ -49,7 +49,7 @@ message Parameter {
 
         // This is an execution time search basically that should result in exactly one Artifact with a Type that
         // matches the type of the variable.
-        artifact.ArtifactQuery artifact_query = 4;
+        core.ArtifactQuery artifact_query = 4;
     }
 }
 

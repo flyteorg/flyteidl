@@ -35,7 +35,7 @@ pub struct ArtifactSpec {
     /// Set here when you want to set an alias on creation.
     /// Aliases created will have the same project/domain as the artifact.
     #[prost(message, repeated, tag="4")]
-    pub aliases: ::prost::alloc::vec::Vec<Alias>,
+    pub aliases: ::prost::alloc::vec::Vec<super::core::ArtifactAlias>,
     #[prost(string, tag="8")]
     pub short_description: ::prost::alloc::string::String,
     #[prost(string, tag="9")]
@@ -58,30 +58,6 @@ pub mod artifact_spec {
         #[prost(string, tag="7")]
         Principal(::prost::alloc::string::String),
     }
-}
-/// have a bunch of artifacts. they have a project and domain
-/// This message is something that when coupled with the project and domain, uniquely identifies an artifact.
-/// so here, project, domain, name, value have to be unique
-#[allow(clippy::derive_partial_eq_without_eq)]
-#[derive(Clone, PartialEq, ::prost::Message)]
-pub struct Alias {
-    /// ties this directly to the artifact
-    #[prost(message, optional, tag="1")]
-    pub artifact_id: ::core::option::Option<super::core::ArtifactId>,
-    #[prost(string, tag="2")]
-    pub name: ::prost::alloc::string::String,
-    #[prost(string, tag="3")]
-    pub value: ::prost::alloc::string::String,
-}
-#[allow(clippy::derive_partial_eq_without_eq)]
-#[derive(Clone, PartialEq, ::prost::Message)]
-pub struct ArtifactQuery {
-    #[prost(string, tag="1")]
-    pub project: ::prost::alloc::string::String,
-    #[prost(string, tag="2")]
-    pub domain: ::prost::alloc::string::String,
-    #[prost(message, optional, tag="3")]
-    pub alias: ::core::option::Option<Alias>,
 }
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(Clone, PartialEq, ::prost::Message)]
@@ -188,7 +164,7 @@ pub struct CreateAliasRequest {
     #[prost(message, optional, tag="1")]
     pub artifact_key: ::core::option::Option<super::core::ArtifactKey>,
     #[prost(message, optional, tag="2")]
-    pub alias: ::core::option::Option<Alias>,
+    pub alias: ::core::option::Option<super::core::ArtifactAlias>,
     /// If true, and another version already has the specified kind/value, set this version instead.
     #[prost(bool, tag="3")]
     pub overwrite: bool,
@@ -205,7 +181,7 @@ pub struct RemoveAliasRequest {
     #[prost(message, optional, tag="1")]
     pub artifact_key: ::core::option::Option<super::core::ArtifactKey>,
     #[prost(message, optional, tag="2")]
-    pub alias: ::core::option::Option<Alias>,
+    pub alias: ::core::option::Option<super::core::ArtifactAlias>,
 }
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(Clone, PartialEq, ::prost::Message)]

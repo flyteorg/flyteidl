@@ -15,5 +15,5 @@ type CoreVariable struct {
 	Type_ *CoreLiteralType `json:"type,omitempty"`
 	Description string `json:"description,omitempty"`
 	// +optional If specified by user, this is still just a partial artifact. It's here so the user can control the name, tags, aliases, of the artifact creation.
-	Artifact *ArtifactArtifact `json:"artifact,omitempty"`
+	Aliases []CoreArtifactAlias `json:"aliases,omitempty"`
 }

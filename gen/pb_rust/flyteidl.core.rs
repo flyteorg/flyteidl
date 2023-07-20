@@ -415,6 +415,27 @@ pub struct ArtifactId {
     #[prost(string, tag="2")]
     pub uuid: ::prost::alloc::string::String,
 }
+#[allow(clippy::derive_partial_eq_without_eq)]
+#[derive(Clone, PartialEq, ::prost::Message)]
+pub struct ArtifactAlias {
+    /// ties this directly to the artifact
+    #[prost(message, optional, tag="1")]
+    pub artifact_id: ::core::option::Option<ArtifactId>,
+    #[prost(string, tag="2")]
+    pub name: ::prost::alloc::string::String,
+    #[prost(string, tag="3")]
+    pub value: ::prost::alloc::string::String,
+}
+#[allow(clippy::derive_partial_eq_without_eq)]
+#[derive(Clone, PartialEq, ::prost::Message)]
+pub struct ArtifactQuery {
+    #[prost(string, tag="1")]
+    pub project: ::prost::alloc::string::String,
+    #[prost(string, tag="2")]
+    pub domain: ::prost::alloc::string::String,
+    #[prost(message, optional, tag="3")]
+    pub alias: ::core::option::Option<ArtifactAlias>,
+}
 /// Indicates a resource type within Flyte.
 #[derive(Clone, Copy, Debug, PartialEq, Eq, Hash, PartialOrd, Ord, ::prost::Enumeration)]
 #[repr(i32)]
@@ -1177,8 +1198,8 @@ pub struct Variable {
     pub description: ::prost::alloc::string::String,
     /// +optional If specified by user, this is still just a partial artifact. It's here so the user can control the
     /// name, tags, aliases, of the artifact creation.
-    #[prost(message, optional, tag="3")]
-    pub artifact: ::core::option::Option<super::artifact::Artifact>,
+    #[prost(message, repeated, tag="3")]
+    pub aliases: ::prost::alloc::vec::Vec<ArtifactAlias>,
 }
 /// A map of Variables
 #[allow(clippy::derive_partial_eq_without_eq)]
@@ -1224,7 +1245,7 @@ pub mod parameter {
         /// This is an execution time search basically that should result in exactly one Artifact with a Type that
         /// matches the type of the variable.
         #[prost(message, tag="4")]
-        ArtifactQuery(super::super::artifact::ArtifactQuery),
+        ArtifactQuery(super::ArtifactQuery),
     }
 }
 /// A map of Parameters.

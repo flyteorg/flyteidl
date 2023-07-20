@@ -37,7 +37,7 @@ message ArtifactSpec {
 
   // Set here when you want to set an alias on creation.
   // Aliases created will have the same project/domain as the artifact.
-  repeated Alias aliases = 4;
+  repeated core.ArtifactAlias aliases = 4;
 
   oneof source {
     // Outputs of tasks will have this.
@@ -52,23 +52,6 @@ message ArtifactSpec {
 
   string short_description = 8;
   string long_description = 9;
-}
-
-// have a bunch of artifacts. they have a project and domain
-// This message is something that when coupled with the project and domain, uniquely identifies an artifact.
-// so here, project, domain, name, value have to be unique
-message Alias {
-  // ties this directly to the artifact
-  core.ArtifactID artifact_id = 1;
-
-  string name = 2;
-  string value = 3;
-}
-
-message ArtifactQuery {
-  string project = 1;
-  string domain = 2;
-  Alias alias = 3;
 }
 
 
@@ -140,7 +123,7 @@ message ListArtifactsResponse {
 message CreateAliasRequest {
   core.ArtifactKey artifact_key = 1;
 
-  Alias alias = 2;
+  core.ArtifactAlias alias = 2;
 
   // If true, and another version already has the specified kind/value, set this version instead.
   bool overwrite = 3;
@@ -152,7 +135,7 @@ message CreateAliasResponse {}
 // given core.ArtifactKey.
 message RemoveAliasRequest {
   core.ArtifactKey artifact_key = 1;
-  Alias alias = 2;
+  core.ArtifactAlias alias = 2;
 }
 
 message RemoveAliasResponse {}

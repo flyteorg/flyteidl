@@ -65,22 +65,6 @@
     "artifactAddTagsResponse": {
       "type": "object"
     },
-    "artifactAlias": {
-      "type": "object",
-      "properties": {
-        "artifact_id": {
-          "$ref": "#/definitions/coreArtifactID",
-          "title": "ties this directly to the artifact"
-        },
-        "name": {
-          "type": "string"
-        },
-        "value": {
-          "type": "string"
-        }
-      },
-      "title": "have a bunch of artifacts. they have a project and domain\nThis message is something that when coupled with the project and domain, uniquely identifies an artifact.\nso here, project, domain, name, value have to be unique"
-    },
     "artifactArtifact": {
       "type": "object",
       "properties": {
@@ -116,7 +100,7 @@
         "aliases": {
           "type": "array",
           "items": {
-            "$ref": "#/definitions/artifactAlias"
+            "$ref": "#/definitions/coreArtifactAlias"
           },
           "description": "Set here when you want to set an alias on creation.\nAliases created will have the same project/domain as the artifact."
         },
@@ -191,6 +175,21 @@
         }
       },
       "description": "Tags are general key/value pairs associated with an Artifact. They can be used to search and filter things.\nTags have to be unique by key for a given artifact. That is, for a given project/domain/name/version/key, there\ncan only be one value, obviously."
+    },
+    "coreArtifactAlias": {
+      "type": "object",
+      "properties": {
+        "artifact_id": {
+          "$ref": "#/definitions/coreArtifactID",
+          "title": "ties this directly to the artifact"
+        },
+        "name": {
+          "type": "string"
+        },
+        "value": {
+          "type": "string"
+        }
+      }
     },
     "coreArtifactID": {
       "type": "object",

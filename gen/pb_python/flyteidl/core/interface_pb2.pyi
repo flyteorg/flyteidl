@@ -1,22 +1,22 @@
 from flyteidl.core import types_pb2 as _types_pb2
 from flyteidl.core import literals_pb2 as _literals_pb2
-from flyteidl.artifact import artifacts_pb2 as _artifacts_pb2
+from flyteidl.core import identifier_pb2 as _identifier_pb2
 from google.protobuf.internal import containers as _containers
 from google.protobuf import descriptor as _descriptor
 from google.protobuf import message as _message
-from typing import ClassVar as _ClassVar, Mapping as _Mapping, Optional as _Optional, Union as _Union
+from typing import ClassVar as _ClassVar, Iterable as _Iterable, Mapping as _Mapping, Optional as _Optional, Union as _Union
 
 DESCRIPTOR: _descriptor.FileDescriptor
 
 class Variable(_message.Message):
-    __slots__ = ["type", "description", "artifact"]
+    __slots__ = ["type", "description", "aliases"]
     TYPE_FIELD_NUMBER: _ClassVar[int]
     DESCRIPTION_FIELD_NUMBER: _ClassVar[int]
-    ARTIFACT_FIELD_NUMBER: _ClassVar[int]
+    ALIASES_FIELD_NUMBER: _ClassVar[int]
     type: _types_pb2.LiteralType
     description: str
-    artifact: _artifacts_pb2.Artifact
-    def __init__(self, type: _Optional[_Union[_types_pb2.LiteralType, _Mapping]] = ..., description: _Optional[str] = ..., artifact: _Optional[_Union[_artifacts_pb2.Artifact, _Mapping]] = ...) -> None: ...
+    aliases: _containers.RepeatedCompositeFieldContainer[_identifier_pb2.ArtifactAlias]
+    def __init__(self, type: _Optional[_Union[_types_pb2.LiteralType, _Mapping]] = ..., description: _Optional[str] = ..., aliases: _Optional[_Iterable[_Union[_identifier_pb2.ArtifactAlias, _Mapping]]] = ...) -> None: ...
 
 class VariableMap(_message.Message):
     __slots__ = ["variables"]
@@ -48,8 +48,8 @@ class Parameter(_message.Message):
     var: Variable
     default: _literals_pb2.Literal
     required: bool
-    artifact_query: _artifacts_pb2.ArtifactQuery
-    def __init__(self, var: _Optional[_Union[Variable, _Mapping]] = ..., default: _Optional[_Union[_literals_pb2.Literal, _Mapping]] = ..., required: bool = ..., artifact_query: _Optional[_Union[_artifacts_pb2.ArtifactQuery, _Mapping]] = ...) -> None: ...
+    artifact_query: _identifier_pb2.ArtifactQuery
+    def __init__(self, var: _Optional[_Union[Variable, _Mapping]] = ..., default: _Optional[_Union[_literals_pb2.Literal, _Mapping]] = ..., required: bool = ..., artifact_query: _Optional[_Union[_identifier_pb2.ArtifactQuery, _Mapping]] = ...) -> None: ...
 
 class ParameterMap(_message.Message):
     __slots__ = ["parameters"]

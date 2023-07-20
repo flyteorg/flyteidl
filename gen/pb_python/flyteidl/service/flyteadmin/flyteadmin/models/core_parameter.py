@@ -16,7 +16,7 @@ import re  # noqa: F401
 
 import six
 
-from flyteadmin.models.artifact_artifact_query import ArtifactArtifactQuery  # noqa: F401,E501
+from flyteadmin.models.core_artifact_query import CoreArtifactQuery  # noqa: F401,E501
 from flyteadmin.models.core_literal import CoreLiteral  # noqa: F401,E501
 from flyteadmin.models.core_variable import CoreVariable  # noqa: F401,E501
 
@@ -38,7 +38,7 @@ class CoreParameter(object):
         'var': 'CoreVariable',
         'default': 'CoreLiteral',
         'required': 'bool',
-        'artifact_query': 'ArtifactArtifactQuery'
+        'artifact_query': 'CoreArtifactQuery'
     }
 
     attribute_map = {
@@ -142,7 +142,7 @@ class CoreParameter(object):
         This is an execution time search basically that should result in exactly one Artifact with a Type that matches the type of the variable.  # noqa: E501
 
         :return: The artifact_query of this CoreParameter.  # noqa: E501
-        :rtype: ArtifactArtifactQuery
+        :rtype: CoreArtifactQuery
         """
         return self._artifact_query
 
@@ -153,7 +153,7 @@ class CoreParameter(object):
         This is an execution time search basically that should result in exactly one Artifact with a Type that matches the type of the variable.  # noqa: E501
 
         :param artifact_query: The artifact_query of this CoreParameter.  # noqa: E501
-        :type: ArtifactArtifactQuery
+        :type: CoreArtifactQuery
         """
 
         self._artifact_query = artifact_query

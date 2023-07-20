@@ -85,3 +85,23 @@ class ArtifactID(_message.Message):
     artifact_key: ArtifactKey
     uuid: str
     def __init__(self, artifact_key: _Optional[_Union[ArtifactKey, _Mapping]] = ..., uuid: _Optional[str] = ...) -> None: ...
+
+class ArtifactAlias(_message.Message):
+    __slots__ = ["artifact_id", "name", "value"]
+    ARTIFACT_ID_FIELD_NUMBER: _ClassVar[int]
+    NAME_FIELD_NUMBER: _ClassVar[int]
+    VALUE_FIELD_NUMBER: _ClassVar[int]
+    artifact_id: ArtifactID
+    name: str
+    value: str
+    def __init__(self, artifact_id: _Optional[_Union[ArtifactID, _Mapping]] = ..., name: _Optional[str] = ..., value: _Optional[str] = ...) -> None: ...
+
+class ArtifactQuery(_message.Message):
+    __slots__ = ["project", "domain", "alias"]
+    PROJECT_FIELD_NUMBER: _ClassVar[int]
+    DOMAIN_FIELD_NUMBER: _ClassVar[int]
+    ALIAS_FIELD_NUMBER: _ClassVar[int]
+    project: str
+    domain: str
+    alias: ArtifactAlias
+    def __init__(self, project: _Optional[str] = ..., domain: _Optional[str] = ..., alias: _Optional[_Union[ArtifactAlias, _Mapping]] = ...) -> None: ...
