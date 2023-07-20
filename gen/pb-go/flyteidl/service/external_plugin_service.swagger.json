@@ -1113,6 +1113,18 @@
       "type": "object",
       "description": "Used to denote a nil/null/None assignment to a scalar value. The underlying LiteralType for Void is intentionally\nundefined since it can be assigned to a scalar of any LiteralType."
     },
+    "flyteidlserviceState": {
+      "type": "string",
+      "enum": [
+        "RETRYABLE_FAILURE",
+        "PERMANENT_FAILURE",
+        "PENDING",
+        "RUNNING",
+        "SUCCEEDED"
+      ],
+      "default": "RETRYABLE_FAILURE",
+      "description": "The state of the execution is used to control its visibility in the UI/CLI."
+    },
     "flyteidlserviceTaskCreateResponse": {
       "type": "object",
       "properties": {
@@ -1188,18 +1200,6 @@
       },
       "description": "`Value` represents a dynamically typed value which can be either\nnull, a number, a string, a boolean, a recursive struct value, or a\nlist of values. A producer of value is expected to set one of that\nvariants, absence of any variant indicates an error.\n\nThe JSON representation for `Value` is JSON value."
     },
-    "serviceState": {
-      "type": "string",
-      "enum": [
-        "RETRYABLE_FAILURE",
-        "PERMANENT_FAILURE",
-        "PENDING",
-        "RUNNING",
-        "SUCCEEDED"
-      ],
-      "default": "RETRYABLE_FAILURE",
-      "description": "The state of the execution is used to control its visibility in the UI/CLI."
-    },
     "serviceTaskDeleteResponse": {
       "type": "object",
       "description": "Response to delete a task."
@@ -1208,7 +1208,7 @@
       "type": "object",
       "properties": {
         "state": {
-          "$ref": "#/definitions/serviceState",
+          "$ref": "#/definitions/flyteidlserviceState",
           "description": "The state of the execution is used to control its visibility in the UI/CLI."
         },
         "outputs": {

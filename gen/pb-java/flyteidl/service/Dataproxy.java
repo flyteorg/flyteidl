@@ -1448,10 +1448,34 @@ public final class Dataproxy {
 
     /**
      * <pre>
+     * If present, data proxy will use this string in lieu of the md5 hash in the path. When the filename is also included
+     * this makes the upload location deterministic. The native url will still be prefixed by the upload location prefix
+     * in data proxy config. This option is useful when uploading multiple files.
+     * +optional
+     * </pre>
+     *
+     * <code>string filename_root = 6;</code>
+     */
+    java.lang.String getFilenameRoot();
+    /**
+     * <pre>
+     * If present, data proxy will use this string in lieu of the md5 hash in the path. When the filename is also included
+     * this makes the upload location deterministic. The native url will still be prefixed by the upload location prefix
+     * in data proxy config. This option is useful when uploading multiple files.
+     * +optional
+     * </pre>
+     *
+     * <code>string filename_root = 6;</code>
+     */
+    com.google.protobuf.ByteString
+        getFilenameRootBytes();
+
+    /**
+     * <pre>
      * If provided, the Artifact that the upload creates will contain the information specified here.
      * </pre>
      *
-     * <code>.flyteidl.artifact.ArtifactSpec artifact_spec = 6;</code>
+     * <code>.flyteidl.artifact.ArtifactSpec artifact_spec = 7;</code>
      */
     boolean hasArtifactSpec();
     /**
@@ -1459,7 +1483,7 @@ public final class Dataproxy {
      * If provided, the Artifact that the upload creates will contain the information specified here.
      * </pre>
      *
-     * <code>.flyteidl.artifact.ArtifactSpec artifact_spec = 6;</code>
+     * <code>.flyteidl.artifact.ArtifactSpec artifact_spec = 7;</code>
      */
     flyteidl.artifact.Artifacts.ArtifactSpec getArtifactSpec();
     /**
@@ -1467,13 +1491,17 @@ public final class Dataproxy {
      * If provided, the Artifact that the upload creates will contain the information specified here.
      * </pre>
      *
-     * <code>.flyteidl.artifact.ArtifactSpec artifact_spec = 6;</code>
+     * <code>.flyteidl.artifact.ArtifactSpec artifact_spec = 7;</code>
      */
     flyteidl.artifact.Artifacts.ArtifactSpecOrBuilder getArtifactSpecOrBuilder();
   }
   /**
    * <pre>
    * CreateUploadLocationRequest specified request for the CreateUploadLocation API.
+   * The implementation in data proxy service will create the s3 location with some server side configured prefixes,
+   * and then:
+   *   - project/domain/(a deterministic str representation of the content_md5)/filename (if present); OR
+   *   - project/domain/filename_root (if present)/filename (if present).
    * </pre>
    *
    * Protobuf type {@code flyteidl.service.CreateUploadLocationRequest}
@@ -1492,6 +1520,7 @@ public final class Dataproxy {
       domain_ = "";
       filename_ = "";
       contentMd5_ = com.google.protobuf.ByteString.EMPTY;
+      filenameRoot_ = "";
     }
 
     @java.lang.Override
@@ -1555,6 +1584,12 @@ public final class Dataproxy {
               break;
             }
             case 50: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              filenameRoot_ = s;
+              break;
+            }
+            case 58: {
               flyteidl.artifact.Artifacts.ArtifactSpec.Builder subBuilder = null;
               if (artifactSpec_ != null) {
                 subBuilder = artifactSpec_.toBuilder();
@@ -1785,14 +1820,62 @@ public final class Dataproxy {
       return contentMd5_;
     }
 
-    public static final int ARTIFACT_SPEC_FIELD_NUMBER = 6;
+    public static final int FILENAME_ROOT_FIELD_NUMBER = 6;
+    private volatile java.lang.Object filenameRoot_;
+    /**
+     * <pre>
+     * If present, data proxy will use this string in lieu of the md5 hash in the path. When the filename is also included
+     * this makes the upload location deterministic. The native url will still be prefixed by the upload location prefix
+     * in data proxy config. This option is useful when uploading multiple files.
+     * +optional
+     * </pre>
+     *
+     * <code>string filename_root = 6;</code>
+     */
+    public java.lang.String getFilenameRoot() {
+      java.lang.Object ref = filenameRoot_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        filenameRoot_ = s;
+        return s;
+      }
+    }
+    /**
+     * <pre>
+     * If present, data proxy will use this string in lieu of the md5 hash in the path. When the filename is also included
+     * this makes the upload location deterministic. The native url will still be prefixed by the upload location prefix
+     * in data proxy config. This option is useful when uploading multiple files.
+     * +optional
+     * </pre>
+     *
+     * <code>string filename_root = 6;</code>
+     */
+    public com.google.protobuf.ByteString
+        getFilenameRootBytes() {
+      java.lang.Object ref = filenameRoot_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        filenameRoot_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int ARTIFACT_SPEC_FIELD_NUMBER = 7;
     private flyteidl.artifact.Artifacts.ArtifactSpec artifactSpec_;
     /**
      * <pre>
      * If provided, the Artifact that the upload creates will contain the information specified here.
      * </pre>
      *
-     * <code>.flyteidl.artifact.ArtifactSpec artifact_spec = 6;</code>
+     * <code>.flyteidl.artifact.ArtifactSpec artifact_spec = 7;</code>
      */
     public boolean hasArtifactSpec() {
       return artifactSpec_ != null;
@@ -1802,7 +1885,7 @@ public final class Dataproxy {
      * If provided, the Artifact that the upload creates will contain the information specified here.
      * </pre>
      *
-     * <code>.flyteidl.artifact.ArtifactSpec artifact_spec = 6;</code>
+     * <code>.flyteidl.artifact.ArtifactSpec artifact_spec = 7;</code>
      */
     public flyteidl.artifact.Artifacts.ArtifactSpec getArtifactSpec() {
       return artifactSpec_ == null ? flyteidl.artifact.Artifacts.ArtifactSpec.getDefaultInstance() : artifactSpec_;
@@ -1812,7 +1895,7 @@ public final class Dataproxy {
      * If provided, the Artifact that the upload creates will contain the information specified here.
      * </pre>
      *
-     * <code>.flyteidl.artifact.ArtifactSpec artifact_spec = 6;</code>
+     * <code>.flyteidl.artifact.ArtifactSpec artifact_spec = 7;</code>
      */
     public flyteidl.artifact.Artifacts.ArtifactSpecOrBuilder getArtifactSpecOrBuilder() {
       return getArtifactSpec();
@@ -1847,8 +1930,11 @@ public final class Dataproxy {
       if (!contentMd5_.isEmpty()) {
         output.writeBytes(5, contentMd5_);
       }
+      if (!getFilenameRootBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 6, filenameRoot_);
+      }
       if (artifactSpec_ != null) {
-        output.writeMessage(6, getArtifactSpec());
+        output.writeMessage(7, getArtifactSpec());
       }
       unknownFields.writeTo(output);
     }
@@ -1876,9 +1962,12 @@ public final class Dataproxy {
         size += com.google.protobuf.CodedOutputStream
           .computeBytesSize(5, contentMd5_);
       }
+      if (!getFilenameRootBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(6, filenameRoot_);
+      }
       if (artifactSpec_ != null) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(6, getArtifactSpec());
+          .computeMessageSize(7, getArtifactSpec());
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -1908,6 +1997,8 @@ public final class Dataproxy {
       }
       if (!getContentMd5()
           .equals(other.getContentMd5())) return false;
+      if (!getFilenameRoot()
+          .equals(other.getFilenameRoot())) return false;
       if (hasArtifactSpec() != other.hasArtifactSpec()) return false;
       if (hasArtifactSpec()) {
         if (!getArtifactSpec()
@@ -1936,6 +2027,8 @@ public final class Dataproxy {
       }
       hash = (37 * hash) + CONTENT_MD5_FIELD_NUMBER;
       hash = (53 * hash) + getContentMd5().hashCode();
+      hash = (37 * hash) + FILENAME_ROOT_FIELD_NUMBER;
+      hash = (53 * hash) + getFilenameRoot().hashCode();
       if (hasArtifactSpec()) {
         hash = (37 * hash) + ARTIFACT_SPEC_FIELD_NUMBER;
         hash = (53 * hash) + getArtifactSpec().hashCode();
@@ -2038,6 +2131,10 @@ public final class Dataproxy {
     /**
      * <pre>
      * CreateUploadLocationRequest specified request for the CreateUploadLocation API.
+     * The implementation in data proxy service will create the s3 location with some server side configured prefixes,
+     * and then:
+     *   - project/domain/(a deterministic str representation of the content_md5)/filename (if present); OR
+     *   - project/domain/filename_root (if present)/filename (if present).
      * </pre>
      *
      * Protobuf type {@code flyteidl.service.CreateUploadLocationRequest}
@@ -2091,6 +2188,8 @@ public final class Dataproxy {
         }
         contentMd5_ = com.google.protobuf.ByteString.EMPTY;
 
+        filenameRoot_ = "";
+
         if (artifactSpecBuilder_ == null) {
           artifactSpec_ = null;
         } else {
@@ -2132,6 +2231,7 @@ public final class Dataproxy {
           result.expiresIn_ = expiresInBuilder_.build();
         }
         result.contentMd5_ = contentMd5_;
+        result.filenameRoot_ = filenameRoot_;
         if (artifactSpecBuilder_ == null) {
           result.artifactSpec_ = artifactSpec_;
         } else {
@@ -2202,6 +2302,10 @@ public final class Dataproxy {
         }
         if (other.getContentMd5() != com.google.protobuf.ByteString.EMPTY) {
           setContentMd5(other.getContentMd5());
+        }
+        if (!other.getFilenameRoot().isEmpty()) {
+          filenameRoot_ = other.filenameRoot_;
+          onChanged();
         }
         if (other.hasArtifactSpec()) {
           mergeArtifactSpec(other.getArtifactSpec());
@@ -2735,6 +2839,110 @@ public final class Dataproxy {
         return this;
       }
 
+      private java.lang.Object filenameRoot_ = "";
+      /**
+       * <pre>
+       * If present, data proxy will use this string in lieu of the md5 hash in the path. When the filename is also included
+       * this makes the upload location deterministic. The native url will still be prefixed by the upload location prefix
+       * in data proxy config. This option is useful when uploading multiple files.
+       * +optional
+       * </pre>
+       *
+       * <code>string filename_root = 6;</code>
+       */
+      public java.lang.String getFilenameRoot() {
+        java.lang.Object ref = filenameRoot_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          filenameRoot_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <pre>
+       * If present, data proxy will use this string in lieu of the md5 hash in the path. When the filename is also included
+       * this makes the upload location deterministic. The native url will still be prefixed by the upload location prefix
+       * in data proxy config. This option is useful when uploading multiple files.
+       * +optional
+       * </pre>
+       *
+       * <code>string filename_root = 6;</code>
+       */
+      public com.google.protobuf.ByteString
+          getFilenameRootBytes() {
+        java.lang.Object ref = filenameRoot_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          filenameRoot_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <pre>
+       * If present, data proxy will use this string in lieu of the md5 hash in the path. When the filename is also included
+       * this makes the upload location deterministic. The native url will still be prefixed by the upload location prefix
+       * in data proxy config. This option is useful when uploading multiple files.
+       * +optional
+       * </pre>
+       *
+       * <code>string filename_root = 6;</code>
+       */
+      public Builder setFilenameRoot(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        filenameRoot_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * If present, data proxy will use this string in lieu of the md5 hash in the path. When the filename is also included
+       * this makes the upload location deterministic. The native url will still be prefixed by the upload location prefix
+       * in data proxy config. This option is useful when uploading multiple files.
+       * +optional
+       * </pre>
+       *
+       * <code>string filename_root = 6;</code>
+       */
+      public Builder clearFilenameRoot() {
+        
+        filenameRoot_ = getDefaultInstance().getFilenameRoot();
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * If present, data proxy will use this string in lieu of the md5 hash in the path. When the filename is also included
+       * this makes the upload location deterministic. The native url will still be prefixed by the upload location prefix
+       * in data proxy config. This option is useful when uploading multiple files.
+       * +optional
+       * </pre>
+       *
+       * <code>string filename_root = 6;</code>
+       */
+      public Builder setFilenameRootBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        filenameRoot_ = value;
+        onChanged();
+        return this;
+      }
+
       private flyteidl.artifact.Artifacts.ArtifactSpec artifactSpec_;
       private com.google.protobuf.SingleFieldBuilderV3<
           flyteidl.artifact.Artifacts.ArtifactSpec, flyteidl.artifact.Artifacts.ArtifactSpec.Builder, flyteidl.artifact.Artifacts.ArtifactSpecOrBuilder> artifactSpecBuilder_;
@@ -2743,7 +2951,7 @@ public final class Dataproxy {
        * If provided, the Artifact that the upload creates will contain the information specified here.
        * </pre>
        *
-       * <code>.flyteidl.artifact.ArtifactSpec artifact_spec = 6;</code>
+       * <code>.flyteidl.artifact.ArtifactSpec artifact_spec = 7;</code>
        */
       public boolean hasArtifactSpec() {
         return artifactSpecBuilder_ != null || artifactSpec_ != null;
@@ -2753,7 +2961,7 @@ public final class Dataproxy {
        * If provided, the Artifact that the upload creates will contain the information specified here.
        * </pre>
        *
-       * <code>.flyteidl.artifact.ArtifactSpec artifact_spec = 6;</code>
+       * <code>.flyteidl.artifact.ArtifactSpec artifact_spec = 7;</code>
        */
       public flyteidl.artifact.Artifacts.ArtifactSpec getArtifactSpec() {
         if (artifactSpecBuilder_ == null) {
@@ -2767,7 +2975,7 @@ public final class Dataproxy {
        * If provided, the Artifact that the upload creates will contain the information specified here.
        * </pre>
        *
-       * <code>.flyteidl.artifact.ArtifactSpec artifact_spec = 6;</code>
+       * <code>.flyteidl.artifact.ArtifactSpec artifact_spec = 7;</code>
        */
       public Builder setArtifactSpec(flyteidl.artifact.Artifacts.ArtifactSpec value) {
         if (artifactSpecBuilder_ == null) {
@@ -2787,7 +2995,7 @@ public final class Dataproxy {
        * If provided, the Artifact that the upload creates will contain the information specified here.
        * </pre>
        *
-       * <code>.flyteidl.artifact.ArtifactSpec artifact_spec = 6;</code>
+       * <code>.flyteidl.artifact.ArtifactSpec artifact_spec = 7;</code>
        */
       public Builder setArtifactSpec(
           flyteidl.artifact.Artifacts.ArtifactSpec.Builder builderForValue) {
@@ -2805,7 +3013,7 @@ public final class Dataproxy {
        * If provided, the Artifact that the upload creates will contain the information specified here.
        * </pre>
        *
-       * <code>.flyteidl.artifact.ArtifactSpec artifact_spec = 6;</code>
+       * <code>.flyteidl.artifact.ArtifactSpec artifact_spec = 7;</code>
        */
       public Builder mergeArtifactSpec(flyteidl.artifact.Artifacts.ArtifactSpec value) {
         if (artifactSpecBuilder_ == null) {
@@ -2827,7 +3035,7 @@ public final class Dataproxy {
        * If provided, the Artifact that the upload creates will contain the information specified here.
        * </pre>
        *
-       * <code>.flyteidl.artifact.ArtifactSpec artifact_spec = 6;</code>
+       * <code>.flyteidl.artifact.ArtifactSpec artifact_spec = 7;</code>
        */
       public Builder clearArtifactSpec() {
         if (artifactSpecBuilder_ == null) {
@@ -2845,7 +3053,7 @@ public final class Dataproxy {
        * If provided, the Artifact that the upload creates will contain the information specified here.
        * </pre>
        *
-       * <code>.flyteidl.artifact.ArtifactSpec artifact_spec = 6;</code>
+       * <code>.flyteidl.artifact.ArtifactSpec artifact_spec = 7;</code>
        */
       public flyteidl.artifact.Artifacts.ArtifactSpec.Builder getArtifactSpecBuilder() {
         
@@ -2857,7 +3065,7 @@ public final class Dataproxy {
        * If provided, the Artifact that the upload creates will contain the information specified here.
        * </pre>
        *
-       * <code>.flyteidl.artifact.ArtifactSpec artifact_spec = 6;</code>
+       * <code>.flyteidl.artifact.ArtifactSpec artifact_spec = 7;</code>
        */
       public flyteidl.artifact.Artifacts.ArtifactSpecOrBuilder getArtifactSpecOrBuilder() {
         if (artifactSpecBuilder_ != null) {
@@ -2872,7 +3080,7 @@ public final class Dataproxy {
        * If provided, the Artifact that the upload creates will contain the information specified here.
        * </pre>
        *
-       * <code>.flyteidl.artifact.ArtifactSpec artifact_spec = 6;</code>
+       * <code>.flyteidl.artifact.ArtifactSpec artifact_spec = 7;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
           flyteidl.artifact.Artifacts.ArtifactSpec, flyteidl.artifact.Artifacts.ArtifactSpec.Builder, flyteidl.artifact.Artifacts.ArtifactSpecOrBuilder> 
@@ -10452,56 +10660,56 @@ public final class Dataproxy {
       "\nsigned_url\030\001 \001(\t\022\022\n\nnative_url\030\002 \001(\t\022.\n" +
       "\nexpires_at\030\003 \001(\0132\032.google.protobuf.Time" +
       "stamp\022-\n\010artifact\030\004 \001(\0132\033.flyteidl.artif" +
-      "act.Artifact\"\314\001\n\033CreateUploadLocationReq" +
+      "act.Artifact\"\343\001\n\033CreateUploadLocationReq" +
       "uest\022\017\n\007project\030\001 \001(\t\022\016\n\006domain\030\002 \001(\t\022\020\n" +
       "\010filename\030\003 \001(\t\022-\n\nexpires_in\030\004 \001(\0132\031.go" +
       "ogle.protobuf.Duration\022\023\n\013content_md5\030\005 " +
-      "\001(\014\0226\n\rartifact_spec\030\006 \001(\0132\037.flyteidl.ar" +
-      "tifact.ArtifactSpec\"f\n\035CreateDownloadLoc" +
-      "ationRequest\022\022\n\nnative_url\030\001 \001(\t\022-\n\nexpi" +
-      "res_in\030\002 \001(\0132\031.google.protobuf.Duration:" +
-      "\002\030\001\"h\n\036CreateDownloadLocationResponse\022\022\n" +
-      "\nsigned_url\030\001 \001(\t\022.\n\nexpires_at\030\002 \001(\0132\032." +
-      "google.protobuf.Timestamp:\002\030\001\"\320\001\n\031Create" +
-      "DownloadLinkRequest\0225\n\rartifact_type\030\001 \001" +
-      "(\0162\036.flyteidl.service.ArtifactType\022-\n\nex" +
-      "pires_in\030\002 \001(\0132\031.google.protobuf.Duratio" +
-      "n\022C\n\021node_execution_id\030\003 \001(\0132&.flyteidl." +
-      "core.NodeExecutionIdentifierH\000B\010\n\006source" +
-      "\"\242\001\n\032CreateDownloadLinkResponse\022\026\n\nsigne" +
-      "d_url\030\001 \003(\tB\002\030\001\0222\n\nexpires_at\030\002 \001(\0132\032.go" +
-      "ogle.protobuf.TimestampB\002\030\001\0228\n\017pre_signe" +
-      "d_urls\030\003 \001(\0132\037.flyteidl.service.PreSigne" +
-      "dURLs\"S\n\rPreSignedURLs\022\022\n\nsigned_url\030\001 \003" +
-      "(\t\022.\n\nexpires_at\030\002 \001(\0132\032.google.protobuf" +
-      ".Timestamp\"`\n\016GetDataRequest\022\023\n\tflyte_ur" +
-      "l\030\001 \001(\tH\000\0220\n\013artifact_id\030\002 \001(\0132\031.flyteid" +
-      "l.core.ArtifactIDH\000B\007\n\005query\"\343\001\n\017GetData" +
-      "Response\0220\n\013literal_map\030\001 \001(\0132\031.flyteidl" +
-      ".core.LiteralMapH\000\022:\n\017pre_signed_urls\030\002 " +
-      "\001(\0132\037.flyteidl.service.PreSignedURLsH\000\022)" +
-      "\n\007literal\030\003 \001(\0132\026.flyteidl.core.LiteralH" +
-      "\000\022/\n\010artifact\030\004 \001(\0132\033.flyteidl.artifact." +
-      "ArtifactH\000B\006\n\004data*C\n\014ArtifactType\022\033\n\027AR" +
-      "TIFACT_TYPE_UNDEFINED\020\000\022\026\n\022ARTIFACT_TYPE" +
-      "_DECK\020\0012\342\004\n\020DataProxyService\022\240\001\n\024CreateU" +
-      "ploadLocation\022-.flyteidl.service.CreateU" +
-      "ploadLocationRequest\032..flyteidl.service." +
-      "CreateUploadLocationResponse\")\202\323\344\223\002#\"\036/a" +
-      "pi/v1/dataproxy/artifact_urn:\001*\022\246\001\n\026Crea" +
-      "teDownloadLocation\022/.flyteidl.service.Cr" +
-      "eateDownloadLocationRequest\0320.flyteidl.s" +
-      "ervice.CreateDownloadLocationResponse\")\210" +
-      "\002\001\202\323\344\223\002 \022\036/api/v1/dataproxy/artifact_urn" +
-      "\022\233\001\n\022CreateDownloadLink\022+.flyteidl.servi" +
-      "ce.CreateDownloadLinkRequest\032,.flyteidl." +
-      "service.CreateDownloadLinkResponse\"*\202\323\344\223" +
-      "\002$\"\037/api/v1/dataproxy/artifact_link:\001*\022d" +
-      "\n\007GetData\022 .flyteidl.service.GetDataRequ" +
-      "est\032!.flyteidl.service.GetDataResponse\"\024" +
-      "\202\323\344\223\002\016\022\014/api/v1/dataB9Z7github.com/flyte" +
-      "org/flyteidl/gen/pb-go/flyteidl/serviceb" +
-      "\006proto3"
+      "\001(\014\022\025\n\rfilename_root\030\006 \001(\t\0226\n\rartifact_s" +
+      "pec\030\007 \001(\0132\037.flyteidl.artifact.ArtifactSp" +
+      "ec\"f\n\035CreateDownloadLocationRequest\022\022\n\nn" +
+      "ative_url\030\001 \001(\t\022-\n\nexpires_in\030\002 \001(\0132\031.go" +
+      "ogle.protobuf.Duration:\002\030\001\"h\n\036CreateDown" +
+      "loadLocationResponse\022\022\n\nsigned_url\030\001 \001(\t" +
+      "\022.\n\nexpires_at\030\002 \001(\0132\032.google.protobuf.T" +
+      "imestamp:\002\030\001\"\320\001\n\031CreateDownloadLinkReque" +
+      "st\0225\n\rartifact_type\030\001 \001(\0162\036.flyteidl.ser" +
+      "vice.ArtifactType\022-\n\nexpires_in\030\002 \001(\0132\031." +
+      "google.protobuf.Duration\022C\n\021node_executi" +
+      "on_id\030\003 \001(\0132&.flyteidl.core.NodeExecutio" +
+      "nIdentifierH\000B\010\n\006source\"\242\001\n\032CreateDownlo" +
+      "adLinkResponse\022\026\n\nsigned_url\030\001 \003(\tB\002\030\001\0222" +
+      "\n\nexpires_at\030\002 \001(\0132\032.google.protobuf.Tim" +
+      "estampB\002\030\001\0228\n\017pre_signed_urls\030\003 \001(\0132\037.fl" +
+      "yteidl.service.PreSignedURLs\"S\n\rPreSigne" +
+      "dURLs\022\022\n\nsigned_url\030\001 \003(\t\022.\n\nexpires_at\030" +
+      "\002 \001(\0132\032.google.protobuf.Timestamp\"`\n\016Get" +
+      "DataRequest\022\023\n\tflyte_url\030\001 \001(\tH\000\0220\n\013arti" +
+      "fact_id\030\002 \001(\0132\031.flyteidl.core.ArtifactID" +
+      "H\000B\007\n\005query\"\343\001\n\017GetDataResponse\0220\n\013liter" +
+      "al_map\030\001 \001(\0132\031.flyteidl.core.LiteralMapH" +
+      "\000\022:\n\017pre_signed_urls\030\002 \001(\0132\037.flyteidl.se" +
+      "rvice.PreSignedURLsH\000\022)\n\007literal\030\003 \001(\0132\026" +
+      ".flyteidl.core.LiteralH\000\022/\n\010artifact\030\004 \001" +
+      "(\0132\033.flyteidl.artifact.ArtifactH\000B\006\n\004dat" +
+      "a*C\n\014ArtifactType\022\033\n\027ARTIFACT_TYPE_UNDEF" +
+      "INED\020\000\022\026\n\022ARTIFACT_TYPE_DECK\020\0012\342\004\n\020DataP" +
+      "roxyService\022\240\001\n\024CreateUploadLocation\022-.f" +
+      "lyteidl.service.CreateUploadLocationRequ" +
+      "est\032..flyteidl.service.CreateUploadLocat" +
+      "ionResponse\")\202\323\344\223\002#\"\036/api/v1/dataproxy/a" +
+      "rtifact_urn:\001*\022\246\001\n\026CreateDownloadLocatio" +
+      "n\022/.flyteidl.service.CreateDownloadLocat" +
+      "ionRequest\0320.flyteidl.service.CreateDown" +
+      "loadLocationResponse\")\210\002\001\202\323\344\223\002 \022\036/api/v1" +
+      "/dataproxy/artifact_urn\022\233\001\n\022CreateDownlo" +
+      "adLink\022+.flyteidl.service.CreateDownload" +
+      "LinkRequest\032,.flyteidl.service.CreateDow" +
+      "nloadLinkResponse\"*\202\323\344\223\002$\"\037/api/v1/datap" +
+      "roxy/artifact_link:\001*\022d\n\007GetData\022 .flyte" +
+      "idl.service.GetDataRequest\032!.flyteidl.se" +
+      "rvice.GetDataResponse\"\024\202\323\344\223\002\016\022\014/api/v1/d" +
+      "ataB9Z7github.com/flyteorg/flyteidl/gen/" +
+      "pb-go/flyteidl/serviceb\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
@@ -10532,7 +10740,7 @@ public final class Dataproxy {
     internal_static_flyteidl_service_CreateUploadLocationRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_flyteidl_service_CreateUploadLocationRequest_descriptor,
-        new java.lang.String[] { "Project", "Domain", "Filename", "ExpiresIn", "ContentMd5", "ArtifactSpec", });
+        new java.lang.String[] { "Project", "Domain", "Filename", "ExpiresIn", "ContentMd5", "FilenameRoot", "ArtifactSpec", });
     internal_static_flyteidl_service_CreateDownloadLocationRequest_descriptor =
       getDescriptor().getMessageTypes().get(2);
     internal_static_flyteidl_service_CreateDownloadLocationRequest_fieldAccessorTable = new

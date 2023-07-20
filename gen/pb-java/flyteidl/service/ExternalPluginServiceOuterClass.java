@@ -143,7 +143,7 @@ public final class ExternalPluginServiceOuterClass {
     // @@protoc_insertion_point(enum_scope:flyteidl.service.State)
   }
 
-  public interface TaskCreateRequestOrBuilder extends
+  @java.lang.Deprecated public interface TaskCreateRequestOrBuilder extends
       // @@protoc_insertion_point(interface_extends:flyteidl.service.TaskCreateRequest)
       com.google.protobuf.MessageOrBuilder {
 
@@ -228,7 +228,7 @@ public final class ExternalPluginServiceOuterClass {
    *
    * Protobuf type {@code flyteidl.service.TaskCreateRequest}
    */
-  public  static final class TaskCreateRequest extends
+  @java.lang.Deprecated public  static final class TaskCreateRequest extends
       com.google.protobuf.GeneratedMessageV3 implements
       // @@protoc_insertion_point(message_implements:flyteidl.service.TaskCreateRequest)
       TaskCreateRequestOrBuilder {
@@ -1274,7 +1274,7 @@ public final class ExternalPluginServiceOuterClass {
 
   }
 
-  public interface TaskCreateResponseOrBuilder extends
+  @java.lang.Deprecated public interface TaskCreateResponseOrBuilder extends
       // @@protoc_insertion_point(interface_extends:flyteidl.service.TaskCreateResponse)
       com.google.protobuf.MessageOrBuilder {
 
@@ -1295,7 +1295,7 @@ public final class ExternalPluginServiceOuterClass {
    *
    * Protobuf type {@code flyteidl.service.TaskCreateResponse}
    */
-  public  static final class TaskCreateResponse extends
+  @java.lang.Deprecated public  static final class TaskCreateResponse extends
       com.google.protobuf.GeneratedMessageV3 implements
       // @@protoc_insertion_point(message_implements:flyteidl.service.TaskCreateResponse)
       TaskCreateResponseOrBuilder {
@@ -1831,7 +1831,7 @@ public final class ExternalPluginServiceOuterClass {
 
   }
 
-  public interface TaskGetRequestOrBuilder extends
+  @java.lang.Deprecated public interface TaskGetRequestOrBuilder extends
       // @@protoc_insertion_point(interface_extends:flyteidl.service.TaskGetRequest)
       com.google.protobuf.MessageOrBuilder {
 
@@ -1878,7 +1878,7 @@ public final class ExternalPluginServiceOuterClass {
    *
    * Protobuf type {@code flyteidl.service.TaskGetRequest}
    */
-  public  static final class TaskGetRequest extends
+  @java.lang.Deprecated public  static final class TaskGetRequest extends
       com.google.protobuf.GeneratedMessageV3 implements
       // @@protoc_insertion_point(message_implements:flyteidl.service.TaskGetRequest)
       TaskGetRequestOrBuilder {
@@ -2597,7 +2597,7 @@ public final class ExternalPluginServiceOuterClass {
 
   }
 
-  public interface TaskGetResponseOrBuilder extends
+  @java.lang.Deprecated public interface TaskGetResponseOrBuilder extends
       // @@protoc_insertion_point(interface_extends:flyteidl.service.TaskGetResponse)
       com.google.protobuf.MessageOrBuilder {
 
@@ -2656,7 +2656,7 @@ public final class ExternalPluginServiceOuterClass {
    *
    * Protobuf type {@code flyteidl.service.TaskGetResponse}
    */
-  public  static final class TaskGetResponse extends
+  @java.lang.Deprecated public  static final class TaskGetResponse extends
       com.google.protobuf.GeneratedMessageV3 implements
       // @@protoc_insertion_point(message_implements:flyteidl.service.TaskGetResponse)
       TaskGetResponseOrBuilder {
@@ -3431,7 +3431,7 @@ public final class ExternalPluginServiceOuterClass {
 
   }
 
-  public interface TaskDeleteRequestOrBuilder extends
+  @java.lang.Deprecated public interface TaskDeleteRequestOrBuilder extends
       // @@protoc_insertion_point(interface_extends:flyteidl.service.TaskDeleteRequest)
       com.google.protobuf.MessageOrBuilder {
 
@@ -3478,7 +3478,7 @@ public final class ExternalPluginServiceOuterClass {
    *
    * Protobuf type {@code flyteidl.service.TaskDeleteRequest}
    */
-  public  static final class TaskDeleteRequest extends
+  @java.lang.Deprecated public  static final class TaskDeleteRequest extends
       com.google.protobuf.GeneratedMessageV3 implements
       // @@protoc_insertion_point(message_implements:flyteidl.service.TaskDeleteRequest)
       TaskDeleteRequestOrBuilder {
@@ -4197,7 +4197,7 @@ public final class ExternalPluginServiceOuterClass {
 
   }
 
-  public interface TaskDeleteResponseOrBuilder extends
+  @java.lang.Deprecated public interface TaskDeleteResponseOrBuilder extends
       // @@protoc_insertion_point(interface_extends:flyteidl.service.TaskDeleteResponse)
       com.google.protobuf.MessageOrBuilder {
   }
@@ -4208,7 +4208,7 @@ public final class ExternalPluginServiceOuterClass {
    *
    * Protobuf type {@code flyteidl.service.TaskDeleteResponse}
    */
-  public  static final class TaskDeleteResponse extends
+  @java.lang.Deprecated public  static final class TaskDeleteResponse extends
       com.google.protobuf.GeneratedMessageV3 implements
       // @@protoc_insertion_point(message_implements:flyteidl.service.TaskDeleteResponse)
       TaskDeleteResponseOrBuilder {
@@ -4658,29 +4658,30 @@ public final class ExternalPluginServiceOuterClass {
       "\n.flyteidl/service/external_plugin_servi" +
       "ce.proto\022\020flyteidl.service\032\034flyteidl/cor" +
       "e/literals.proto\032\031flyteidl/core/tasks.pr" +
-      "oto\032\035flyteidl/core/interface.proto\"\204\001\n\021T" +
+      "oto\032\035flyteidl/core/interface.proto\"\210\001\n\021T" +
       "askCreateRequest\022)\n\006inputs\030\001 \001(\0132\031.flyte" +
       "idl.core.LiteralMap\022-\n\010template\030\002 \001(\0132\033." +
       "flyteidl.core.TaskTemplate\022\025\n\routput_pre" +
-      "fix\030\003 \001(\t\"$\n\022TaskCreateResponse\022\016\n\006job_i" +
-      "d\030\001 \001(\t\"3\n\016TaskGetRequest\022\021\n\ttask_type\030\001" +
-      " \001(\t\022\016\n\006job_id\030\002 \001(\t\"e\n\017TaskGetResponse\022" +
-      "&\n\005state\030\001 \001(\0162\027.flyteidl.service.State\022" +
-      "*\n\007outputs\030\002 \001(\0132\031.flyteidl.core.Literal" +
-      "Map\"6\n\021TaskDeleteRequest\022\021\n\ttask_type\030\001 " +
-      "\001(\t\022\016\n\006job_id\030\002 \001(\t\"\024\n\022TaskDeleteRespons" +
-      "e*^\n\005State\022\025\n\021RETRYABLE_FAILURE\020\000\022\025\n\021PER" +
-      "MANENT_FAILURE\020\001\022\013\n\007PENDING\020\002\022\013\n\007RUNNING" +
-      "\020\003\022\r\n\tSUCCEEDED\020\0042\237\002\n\025ExternalPluginServ" +
-      "ice\022Y\n\nCreateTask\022#.flyteidl.service.Tas" +
-      "kCreateRequest\032$.flyteidl.service.TaskCr" +
-      "eateResponse\"\000\022P\n\007GetTask\022 .flyteidl.ser" +
-      "vice.TaskGetRequest\032!.flyteidl.service.T" +
-      "askGetResponse\"\000\022Y\n\nDeleteTask\022#.flyteid" +
-      "l.service.TaskDeleteRequest\032$.flyteidl.s" +
-      "ervice.TaskDeleteResponse\"\000B9Z7github.co" +
-      "m/flyteorg/flyteidl/gen/pb-go/flyteidl/s" +
-      "erviceb\006proto3"
+      "fix\030\003 \001(\t:\002\030\001\"(\n\022TaskCreateResponse\022\016\n\006j" +
+      "ob_id\030\001 \001(\t:\002\030\001\"7\n\016TaskGetRequest\022\021\n\ttas" +
+      "k_type\030\001 \001(\t\022\016\n\006job_id\030\002 \001(\t:\002\030\001\"i\n\017Task" +
+      "GetResponse\022&\n\005state\030\001 \001(\0162\027.flyteidl.se" +
+      "rvice.State\022*\n\007outputs\030\002 \001(\0132\031.flyteidl." +
+      "core.LiteralMap:\002\030\001\":\n\021TaskDeleteRequest" +
+      "\022\021\n\ttask_type\030\001 \001(\t\022\016\n\006job_id\030\002 \001(\t:\002\030\001\"" +
+      "\030\n\022TaskDeleteResponse:\002\030\001*b\n\005State\022\025\n\021RE" +
+      "TRYABLE_FAILURE\020\000\022\025\n\021PERMANENT_FAILURE\020\001" +
+      "\022\013\n\007PENDING\020\002\022\013\n\007RUNNING\020\003\022\r\n\tSUCCEEDED\020" +
+      "\004\032\002\030\0012\250\002\n\025ExternalPluginService\022\\\n\nCreat" +
+      "eTask\022#.flyteidl.service.TaskCreateReque" +
+      "st\032$.flyteidl.service.TaskCreateResponse" +
+      "\"\003\210\002\001\022S\n\007GetTask\022 .flyteidl.service.Task" +
+      "GetRequest\032!.flyteidl.service.TaskGetRes" +
+      "ponse\"\003\210\002\001\022\\\n\nDeleteTask\022#.flyteidl.serv" +
+      "ice.TaskDeleteRequest\032$.flyteidl.service" +
+      ".TaskDeleteResponse\"\003\210\002\001B9Z7github.com/f" +
+      "lyteorg/flyteidl/gen/pb-go/flyteidl/serv" +
+      "iceb\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {

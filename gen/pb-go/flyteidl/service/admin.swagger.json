@@ -5140,7 +5140,7 @@
           "description": "A predefined yet extensible Task type identifier."
         },
         "metadata": {
-          "$ref": "#/definitions/eventTaskExecutionMetadata",
+          "$ref": "#/definitions/flyteidleventTaskExecutionMetadata",
           "description": "Metadata around how a task was executed."
         },
         "event_version": {
@@ -5584,6 +5584,31 @@
         }
       },
       "description": "ApproveCondition represents a dependency on an external approval. During execution, this will manifest as a boolean\nsignal with the provided signal_id."
+    },
+    "coreArrayNode": {
+      "type": "object",
+      "properties": {
+        "node": {
+          "$ref": "#/definitions/coreNode",
+          "description": "node is the sub-node that will be executed for each element in the array."
+        },
+        "parallelism": {
+          "type": "integer",
+          "format": "int64",
+          "description": "parallelism defines the minimum number of instances to bring up concurrently at any given\npoint. Note that this is an optimistic restriction and that, due to network partitioning or\nother failures, the actual number of currently running instances might be more. This has to\nbe a positive number if assigned. Default value is size."
+        },
+        "min_successes": {
+          "type": "integer",
+          "format": "int64",
+          "description": "min_successes is an absolute number of the minimum number of successful completions of\nsub-nodes. As soon as this criteria is met, the ArrayNode will be marked as successful\nand outputs will be computed. This has to be a non-negative number if assigned. Default\nvalue is size (if specified)."
+        },
+        "min_success_ratio": {
+          "type": "number",
+          "format": "float",
+          "description": "If the array job size is not known beforehand, the min_success_ratio can instead be used\nto determine when an ArrayNode can be marked successful."
+        }
+      },
+      "description": "ArrayNode is a Flyte node type that simplifies the execution of a sub-node over a list of input\nvalues. An ArrayNode can be executed with configurable parallelism (separate from the parent\nworkflow) and can be configured to succeed when a certain number of sub-nodes succeed."
     },
     "coreArtifactAlias": {
       "type": "object",
@@ -6383,6 +6408,10 @@
         "gate_node": {
           "$ref": "#/definitions/coreGateNode",
           "description": "Information about the condition to evaluate in this node."
+        },
+        "array_node": {
+          "$ref": "#/definitions/coreArrayNode",
+          "description": "Information about the sub-node executions for each value in the list of this nodes\ninputs values."
         }
       },
       "description": "A Workflow graph Node. One unit of execution in the graph. Each node can be linked to a Task, a Workflow or a branch\nnode."
@@ -7539,7 +7568,7 @@
           "description": "A predefined yet extensible Task type identifier. If the task definition is already registered in flyte admin\nthis type will be identical, but not all task executions necessarily use pre-registered definitions and this\ntype is useful to render the task in the UI, filter task executions, etc."
         },
         "metadata": {
-          "$ref": "#/definitions/eventTaskExecutionMetadata",
+          "$ref": "#/definitions/flyteidleventTaskExecutionMetadata",
           "description": "Metadata around how a task was executed."
         },
         "event_version": {
@@ -7554,37 +7583,6 @@
         }
       },
       "description": "Plugin specific execution event information. For tasks like Python, Hive, Spark, DynamicJob."
-    },
-    "eventTaskExecutionMetadata": {
-      "type": "object",
-      "properties": {
-        "generated_name": {
-          "type": "string",
-          "description": "Unique, generated name for this task execution used by the backend."
-        },
-        "external_resources": {
-          "type": "array",
-          "items": {
-            "$ref": "#/definitions/eventExternalResourceInfo"
-          },
-          "description": "Additional data on external resources on other back-ends or platforms (e.g. Hive, Qubole, etc) launched by this task execution."
-        },
-        "resource_pool_info": {
-          "type": "array",
-          "items": {
-            "$ref": "#/definitions/eventResourcePoolInfo"
-          },
-          "description": "Includes additional data on concurrent resource management used during execution..\nThis is a repeated field because a plugin can request multiple resource allocations during execution."
-        },
-        "plugin_identifier": {
-          "type": "string",
-          "description": "The identifier of the plugin used to execute this task."
-        },
-        "instance_class": {
-          "$ref": "#/definitions/TaskExecutionMetadataInstanceClass"
-        }
-      },
-      "description": "Holds metadata around how a task was executed.\nAs a task transitions across event phases during execution some attributes, such its generated name, generated external resources,\nand more may grow in size but not change necessarily based on the phase transition that sparked the event update.\nMetadata is a container for these attributes across the task execution lifecycle."
     },
     "eventWorkflowExecutionEvent": {
       "type": "object",
@@ -7745,6 +7743,37 @@
         }
       },
       "description": "For dynamic workflow nodes we send information about the dynamic workflow definition that gets generated."
+    },
+    "flyteidleventTaskExecutionMetadata": {
+      "type": "object",
+      "properties": {
+        "generated_name": {
+          "type": "string",
+          "description": "Unique, generated name for this task execution used by the backend."
+        },
+        "external_resources": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/eventExternalResourceInfo"
+          },
+          "description": "Additional data on external resources on other back-ends or platforms (e.g. Hive, Qubole, etc) launched by this task execution."
+        },
+        "resource_pool_info": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/eventResourcePoolInfo"
+          },
+          "description": "Includes additional data on concurrent resource management used during execution..\nThis is a repeated field because a plugin can request multiple resource allocations during execution."
+        },
+        "plugin_identifier": {
+          "type": "string",
+          "description": "The identifier of the plugin used to execute this task."
+        },
+        "instance_class": {
+          "$ref": "#/definitions/TaskExecutionMetadataInstanceClass"
+        }
+      },
+      "description": "Holds metadata around how a task was executed.\nAs a task transitions across event phases during execution some attributes, such its generated name, generated external resources,\nand more may grow in size but not change necessarily based on the phase transition that sparked the event update.\nMetadata is a container for these attributes across the task execution lifecycle."
     },
     "flyteidleventTaskNodeMetadata": {
       "type": "object",
