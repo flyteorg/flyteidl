@@ -3200,6 +3200,190 @@
                 return GateNode;
             })();
     
+            core.ArrayNode = (function() {
+    
+                /**
+                 * Properties of an ArrayNode.
+                 * @memberof flyteidl.core
+                 * @interface IArrayNode
+                 * @property {flyteidl.core.INode|null} [node] ArrayNode node
+                 * @property {number|null} [parallelism] ArrayNode parallelism
+                 * @property {number|null} [minSuccesses] ArrayNode minSuccesses
+                 * @property {number|null} [minSuccessRatio] ArrayNode minSuccessRatio
+                 */
+    
+                /**
+                 * Constructs a new ArrayNode.
+                 * @memberof flyteidl.core
+                 * @classdesc Represents an ArrayNode.
+                 * @implements IArrayNode
+                 * @constructor
+                 * @param {flyteidl.core.IArrayNode=} [properties] Properties to set
+                 */
+                function ArrayNode(properties) {
+                    if (properties)
+                        for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                            if (properties[keys[i]] != null)
+                                this[keys[i]] = properties[keys[i]];
+                }
+    
+                /**
+                 * ArrayNode node.
+                 * @member {flyteidl.core.INode|null|undefined} node
+                 * @memberof flyteidl.core.ArrayNode
+                 * @instance
+                 */
+                ArrayNode.prototype.node = null;
+    
+                /**
+                 * ArrayNode parallelism.
+                 * @member {number} parallelism
+                 * @memberof flyteidl.core.ArrayNode
+                 * @instance
+                 */
+                ArrayNode.prototype.parallelism = 0;
+    
+                /**
+                 * ArrayNode minSuccesses.
+                 * @member {number} minSuccesses
+                 * @memberof flyteidl.core.ArrayNode
+                 * @instance
+                 */
+                ArrayNode.prototype.minSuccesses = 0;
+    
+                /**
+                 * ArrayNode minSuccessRatio.
+                 * @member {number} minSuccessRatio
+                 * @memberof flyteidl.core.ArrayNode
+                 * @instance
+                 */
+                ArrayNode.prototype.minSuccessRatio = 0;
+    
+                // OneOf field names bound to virtual getters and setters
+                var $oneOfFields;
+    
+                /**
+                 * ArrayNode successCriteria.
+                 * @member {"minSuccesses"|"minSuccessRatio"|undefined} successCriteria
+                 * @memberof flyteidl.core.ArrayNode
+                 * @instance
+                 */
+                Object.defineProperty(ArrayNode.prototype, "successCriteria", {
+                    get: $util.oneOfGetter($oneOfFields = ["minSuccesses", "minSuccessRatio"]),
+                    set: $util.oneOfSetter($oneOfFields)
+                });
+    
+                /**
+                 * Creates a new ArrayNode instance using the specified properties.
+                 * @function create
+                 * @memberof flyteidl.core.ArrayNode
+                 * @static
+                 * @param {flyteidl.core.IArrayNode=} [properties] Properties to set
+                 * @returns {flyteidl.core.ArrayNode} ArrayNode instance
+                 */
+                ArrayNode.create = function create(properties) {
+                    return new ArrayNode(properties);
+                };
+    
+                /**
+                 * Encodes the specified ArrayNode message. Does not implicitly {@link flyteidl.core.ArrayNode.verify|verify} messages.
+                 * @function encode
+                 * @memberof flyteidl.core.ArrayNode
+                 * @static
+                 * @param {flyteidl.core.IArrayNode} message ArrayNode message or plain object to encode
+                 * @param {$protobuf.Writer} [writer] Writer to encode to
+                 * @returns {$protobuf.Writer} Writer
+                 */
+                ArrayNode.encode = function encode(message, writer) {
+                    if (!writer)
+                        writer = $Writer.create();
+                    if (message.node != null && message.hasOwnProperty("node"))
+                        $root.flyteidl.core.Node.encode(message.node, writer.uint32(/* id 1, wireType 2 =*/10).fork()).ldelim();
+                    if (message.parallelism != null && message.hasOwnProperty("parallelism"))
+                        writer.uint32(/* id 2, wireType 0 =*/16).uint32(message.parallelism);
+                    if (message.minSuccesses != null && message.hasOwnProperty("minSuccesses"))
+                        writer.uint32(/* id 3, wireType 0 =*/24).uint32(message.minSuccesses);
+                    if (message.minSuccessRatio != null && message.hasOwnProperty("minSuccessRatio"))
+                        writer.uint32(/* id 4, wireType 5 =*/37).float(message.minSuccessRatio);
+                    return writer;
+                };
+    
+                /**
+                 * Decodes an ArrayNode message from the specified reader or buffer.
+                 * @function decode
+                 * @memberof flyteidl.core.ArrayNode
+                 * @static
+                 * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+                 * @param {number} [length] Message length if known beforehand
+                 * @returns {flyteidl.core.ArrayNode} ArrayNode
+                 * @throws {Error} If the payload is not a reader or valid buffer
+                 * @throws {$protobuf.util.ProtocolError} If required fields are missing
+                 */
+                ArrayNode.decode = function decode(reader, length) {
+                    if (!(reader instanceof $Reader))
+                        reader = $Reader.create(reader);
+                    var end = length === undefined ? reader.len : reader.pos + length, message = new $root.flyteidl.core.ArrayNode();
+                    while (reader.pos < end) {
+                        var tag = reader.uint32();
+                        switch (tag >>> 3) {
+                        case 1:
+                            message.node = $root.flyteidl.core.Node.decode(reader, reader.uint32());
+                            break;
+                        case 2:
+                            message.parallelism = reader.uint32();
+                            break;
+                        case 3:
+                            message.minSuccesses = reader.uint32();
+                            break;
+                        case 4:
+                            message.minSuccessRatio = reader.float();
+                            break;
+                        default:
+                            reader.skipType(tag & 7);
+                            break;
+                        }
+                    }
+                    return message;
+                };
+    
+                /**
+                 * Verifies an ArrayNode message.
+                 * @function verify
+                 * @memberof flyteidl.core.ArrayNode
+                 * @static
+                 * @param {Object.<string,*>} message Plain object to verify
+                 * @returns {string|null} `null` if valid, otherwise the reason why it is not
+                 */
+                ArrayNode.verify = function verify(message) {
+                    if (typeof message !== "object" || message === null)
+                        return "object expected";
+                    var properties = {};
+                    if (message.node != null && message.hasOwnProperty("node")) {
+                        var error = $root.flyteidl.core.Node.verify(message.node);
+                        if (error)
+                            return "node." + error;
+                    }
+                    if (message.parallelism != null && message.hasOwnProperty("parallelism"))
+                        if (!$util.isInteger(message.parallelism))
+                            return "parallelism: integer expected";
+                    if (message.minSuccesses != null && message.hasOwnProperty("minSuccesses")) {
+                        properties.successCriteria = 1;
+                        if (!$util.isInteger(message.minSuccesses))
+                            return "minSuccesses: integer expected";
+                    }
+                    if (message.minSuccessRatio != null && message.hasOwnProperty("minSuccessRatio")) {
+                        if (properties.successCriteria === 1)
+                            return "successCriteria: multiple values";
+                        properties.successCriteria = 1;
+                        if (typeof message.minSuccessRatio !== "number")
+                            return "minSuccessRatio: number expected";
+                    }
+                    return null;
+                };
+    
+                return ArrayNode;
+            })();
+    
             core.NodeMetadata = (function() {
     
                 /**
@@ -3524,6 +3708,7 @@
                  * @property {flyteidl.core.IWorkflowNode|null} [workflowNode] Node workflowNode
                  * @property {flyteidl.core.IBranchNode|null} [branchNode] Node branchNode
                  * @property {flyteidl.core.IGateNode|null} [gateNode] Node gateNode
+                 * @property {flyteidl.core.IArrayNode|null} [arrayNode] Node arrayNode
                  */
     
                 /**
@@ -3616,17 +3801,25 @@
                  */
                 Node.prototype.gateNode = null;
     
+                /**
+                 * Node arrayNode.
+                 * @member {flyteidl.core.IArrayNode|null|undefined} arrayNode
+                 * @memberof flyteidl.core.Node
+                 * @instance
+                 */
+                Node.prototype.arrayNode = null;
+    
                 // OneOf field names bound to virtual getters and setters
                 var $oneOfFields;
     
                 /**
                  * Node target.
-                 * @member {"taskNode"|"workflowNode"|"branchNode"|"gateNode"|undefined} target
+                 * @member {"taskNode"|"workflowNode"|"branchNode"|"gateNode"|"arrayNode"|undefined} target
                  * @memberof flyteidl.core.Node
                  * @instance
                  */
                 Object.defineProperty(Node.prototype, "target", {
-                    get: $util.oneOfGetter($oneOfFields = ["taskNode", "workflowNode", "branchNode", "gateNode"]),
+                    get: $util.oneOfGetter($oneOfFields = ["taskNode", "workflowNode", "branchNode", "gateNode", "arrayNode"]),
                     set: $util.oneOfSetter($oneOfFields)
                 });
     
@@ -3675,6 +3868,8 @@
                         $root.flyteidl.core.BranchNode.encode(message.branchNode, writer.uint32(/* id 8, wireType 2 =*/66).fork()).ldelim();
                     if (message.gateNode != null && message.hasOwnProperty("gateNode"))
                         $root.flyteidl.core.GateNode.encode(message.gateNode, writer.uint32(/* id 9, wireType 2 =*/74).fork()).ldelim();
+                    if (message.arrayNode != null && message.hasOwnProperty("arrayNode"))
+                        $root.flyteidl.core.ArrayNode.encode(message.arrayNode, writer.uint32(/* id 10, wireType 2 =*/82).fork()).ldelim();
                     return writer;
                 };
     
@@ -3728,6 +3923,9 @@
                             break;
                         case 9:
                             message.gateNode = $root.flyteidl.core.GateNode.decode(reader, reader.uint32());
+                            break;
+                        case 10:
+                            message.arrayNode = $root.flyteidl.core.ArrayNode.decode(reader, reader.uint32());
                             break;
                         default:
                             reader.skipType(tag & 7);
@@ -3818,6 +4016,16 @@
                             var error = $root.flyteidl.core.GateNode.verify(message.gateNode);
                             if (error)
                                 return "gateNode." + error;
+                        }
+                    }
+                    if (message.arrayNode != null && message.hasOwnProperty("arrayNode")) {
+                        if (properties.target === 1)
+                            return "target: multiple values";
+                        properties.target = 1;
+                        {
+                            var error = $root.flyteidl.core.ArrayNode.verify(message.arrayNode);
+                            if (error)
+                                return "arrayNode." + error;
                         }
                     }
                     return null;
@@ -18327,6 +18535,239 @@
                 return values;
             })();
     
+            admin.TaskExecutionMetadata = (function() {
+    
+                /**
+                 * Properties of a TaskExecutionMetadata.
+                 * @memberof flyteidl.admin
+                 * @interface ITaskExecutionMetadata
+                 * @property {flyteidl.core.ITaskExecutionIdentifier|null} [taskExecutionId] TaskExecutionMetadata taskExecutionId
+                 * @property {string|null} [namespace] TaskExecutionMetadata namespace
+                 * @property {Object.<string,string>|null} [labels] TaskExecutionMetadata labels
+                 * @property {Object.<string,string>|null} [annotations] TaskExecutionMetadata annotations
+                 * @property {string|null} [k8sServiceAccount] TaskExecutionMetadata k8sServiceAccount
+                 * @property {Object.<string,string>|null} [environmentVariables] TaskExecutionMetadata environmentVariables
+                 */
+    
+                /**
+                 * Constructs a new TaskExecutionMetadata.
+                 * @memberof flyteidl.admin
+                 * @classdesc Represents a TaskExecutionMetadata.
+                 * @implements ITaskExecutionMetadata
+                 * @constructor
+                 * @param {flyteidl.admin.ITaskExecutionMetadata=} [properties] Properties to set
+                 */
+                function TaskExecutionMetadata(properties) {
+                    this.labels = {};
+                    this.annotations = {};
+                    this.environmentVariables = {};
+                    if (properties)
+                        for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                            if (properties[keys[i]] != null)
+                                this[keys[i]] = properties[keys[i]];
+                }
+    
+                /**
+                 * TaskExecutionMetadata taskExecutionId.
+                 * @member {flyteidl.core.ITaskExecutionIdentifier|null|undefined} taskExecutionId
+                 * @memberof flyteidl.admin.TaskExecutionMetadata
+                 * @instance
+                 */
+                TaskExecutionMetadata.prototype.taskExecutionId = null;
+    
+                /**
+                 * TaskExecutionMetadata namespace.
+                 * @member {string} namespace
+                 * @memberof flyteidl.admin.TaskExecutionMetadata
+                 * @instance
+                 */
+                TaskExecutionMetadata.prototype.namespace = "";
+    
+                /**
+                 * TaskExecutionMetadata labels.
+                 * @member {Object.<string,string>} labels
+                 * @memberof flyteidl.admin.TaskExecutionMetadata
+                 * @instance
+                 */
+                TaskExecutionMetadata.prototype.labels = $util.emptyObject;
+    
+                /**
+                 * TaskExecutionMetadata annotations.
+                 * @member {Object.<string,string>} annotations
+                 * @memberof flyteidl.admin.TaskExecutionMetadata
+                 * @instance
+                 */
+                TaskExecutionMetadata.prototype.annotations = $util.emptyObject;
+    
+                /**
+                 * TaskExecutionMetadata k8sServiceAccount.
+                 * @member {string} k8sServiceAccount
+                 * @memberof flyteidl.admin.TaskExecutionMetadata
+                 * @instance
+                 */
+                TaskExecutionMetadata.prototype.k8sServiceAccount = "";
+    
+                /**
+                 * TaskExecutionMetadata environmentVariables.
+                 * @member {Object.<string,string>} environmentVariables
+                 * @memberof flyteidl.admin.TaskExecutionMetadata
+                 * @instance
+                 */
+                TaskExecutionMetadata.prototype.environmentVariables = $util.emptyObject;
+    
+                /**
+                 * Creates a new TaskExecutionMetadata instance using the specified properties.
+                 * @function create
+                 * @memberof flyteidl.admin.TaskExecutionMetadata
+                 * @static
+                 * @param {flyteidl.admin.ITaskExecutionMetadata=} [properties] Properties to set
+                 * @returns {flyteidl.admin.TaskExecutionMetadata} TaskExecutionMetadata instance
+                 */
+                TaskExecutionMetadata.create = function create(properties) {
+                    return new TaskExecutionMetadata(properties);
+                };
+    
+                /**
+                 * Encodes the specified TaskExecutionMetadata message. Does not implicitly {@link flyteidl.admin.TaskExecutionMetadata.verify|verify} messages.
+                 * @function encode
+                 * @memberof flyteidl.admin.TaskExecutionMetadata
+                 * @static
+                 * @param {flyteidl.admin.ITaskExecutionMetadata} message TaskExecutionMetadata message or plain object to encode
+                 * @param {$protobuf.Writer} [writer] Writer to encode to
+                 * @returns {$protobuf.Writer} Writer
+                 */
+                TaskExecutionMetadata.encode = function encode(message, writer) {
+                    if (!writer)
+                        writer = $Writer.create();
+                    if (message.taskExecutionId != null && message.hasOwnProperty("taskExecutionId"))
+                        $root.flyteidl.core.TaskExecutionIdentifier.encode(message.taskExecutionId, writer.uint32(/* id 1, wireType 2 =*/10).fork()).ldelim();
+                    if (message.namespace != null && message.hasOwnProperty("namespace"))
+                        writer.uint32(/* id 2, wireType 2 =*/18).string(message.namespace);
+                    if (message.labels != null && message.hasOwnProperty("labels"))
+                        for (var keys = Object.keys(message.labels), i = 0; i < keys.length; ++i)
+                            writer.uint32(/* id 3, wireType 2 =*/26).fork().uint32(/* id 1, wireType 2 =*/10).string(keys[i]).uint32(/* id 2, wireType 2 =*/18).string(message.labels[keys[i]]).ldelim();
+                    if (message.annotations != null && message.hasOwnProperty("annotations"))
+                        for (var keys = Object.keys(message.annotations), i = 0; i < keys.length; ++i)
+                            writer.uint32(/* id 4, wireType 2 =*/34).fork().uint32(/* id 1, wireType 2 =*/10).string(keys[i]).uint32(/* id 2, wireType 2 =*/18).string(message.annotations[keys[i]]).ldelim();
+                    if (message.k8sServiceAccount != null && message.hasOwnProperty("k8sServiceAccount"))
+                        writer.uint32(/* id 5, wireType 2 =*/42).string(message.k8sServiceAccount);
+                    if (message.environmentVariables != null && message.hasOwnProperty("environmentVariables"))
+                        for (var keys = Object.keys(message.environmentVariables), i = 0; i < keys.length; ++i)
+                            writer.uint32(/* id 6, wireType 2 =*/50).fork().uint32(/* id 1, wireType 2 =*/10).string(keys[i]).uint32(/* id 2, wireType 2 =*/18).string(message.environmentVariables[keys[i]]).ldelim();
+                    return writer;
+                };
+    
+                /**
+                 * Decodes a TaskExecutionMetadata message from the specified reader or buffer.
+                 * @function decode
+                 * @memberof flyteidl.admin.TaskExecutionMetadata
+                 * @static
+                 * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+                 * @param {number} [length] Message length if known beforehand
+                 * @returns {flyteidl.admin.TaskExecutionMetadata} TaskExecutionMetadata
+                 * @throws {Error} If the payload is not a reader or valid buffer
+                 * @throws {$protobuf.util.ProtocolError} If required fields are missing
+                 */
+                TaskExecutionMetadata.decode = function decode(reader, length) {
+                    if (!(reader instanceof $Reader))
+                        reader = $Reader.create(reader);
+                    var end = length === undefined ? reader.len : reader.pos + length, message = new $root.flyteidl.admin.TaskExecutionMetadata(), key;
+                    while (reader.pos < end) {
+                        var tag = reader.uint32();
+                        switch (tag >>> 3) {
+                        case 1:
+                            message.taskExecutionId = $root.flyteidl.core.TaskExecutionIdentifier.decode(reader, reader.uint32());
+                            break;
+                        case 2:
+                            message.namespace = reader.string();
+                            break;
+                        case 3:
+                            reader.skip().pos++;
+                            if (message.labels === $util.emptyObject)
+                                message.labels = {};
+                            key = reader.string();
+                            reader.pos++;
+                            message.labels[key] = reader.string();
+                            break;
+                        case 4:
+                            reader.skip().pos++;
+                            if (message.annotations === $util.emptyObject)
+                                message.annotations = {};
+                            key = reader.string();
+                            reader.pos++;
+                            message.annotations[key] = reader.string();
+                            break;
+                        case 5:
+                            message.k8sServiceAccount = reader.string();
+                            break;
+                        case 6:
+                            reader.skip().pos++;
+                            if (message.environmentVariables === $util.emptyObject)
+                                message.environmentVariables = {};
+                            key = reader.string();
+                            reader.pos++;
+                            message.environmentVariables[key] = reader.string();
+                            break;
+                        default:
+                            reader.skipType(tag & 7);
+                            break;
+                        }
+                    }
+                    return message;
+                };
+    
+                /**
+                 * Verifies a TaskExecutionMetadata message.
+                 * @function verify
+                 * @memberof flyteidl.admin.TaskExecutionMetadata
+                 * @static
+                 * @param {Object.<string,*>} message Plain object to verify
+                 * @returns {string|null} `null` if valid, otherwise the reason why it is not
+                 */
+                TaskExecutionMetadata.verify = function verify(message) {
+                    if (typeof message !== "object" || message === null)
+                        return "object expected";
+                    if (message.taskExecutionId != null && message.hasOwnProperty("taskExecutionId")) {
+                        var error = $root.flyteidl.core.TaskExecutionIdentifier.verify(message.taskExecutionId);
+                        if (error)
+                            return "taskExecutionId." + error;
+                    }
+                    if (message.namespace != null && message.hasOwnProperty("namespace"))
+                        if (!$util.isString(message.namespace))
+                            return "namespace: string expected";
+                    if (message.labels != null && message.hasOwnProperty("labels")) {
+                        if (!$util.isObject(message.labels))
+                            return "labels: object expected";
+                        var key = Object.keys(message.labels);
+                        for (var i = 0; i < key.length; ++i)
+                            if (!$util.isString(message.labels[key[i]]))
+                                return "labels: string{k:string} expected";
+                    }
+                    if (message.annotations != null && message.hasOwnProperty("annotations")) {
+                        if (!$util.isObject(message.annotations))
+                            return "annotations: object expected";
+                        var key = Object.keys(message.annotations);
+                        for (var i = 0; i < key.length; ++i)
+                            if (!$util.isString(message.annotations[key[i]]))
+                                return "annotations: string{k:string} expected";
+                    }
+                    if (message.k8sServiceAccount != null && message.hasOwnProperty("k8sServiceAccount"))
+                        if (!$util.isString(message.k8sServiceAccount))
+                            return "k8sServiceAccount: string expected";
+                    if (message.environmentVariables != null && message.hasOwnProperty("environmentVariables")) {
+                        if (!$util.isObject(message.environmentVariables))
+                            return "environmentVariables: object expected";
+                        var key = Object.keys(message.environmentVariables);
+                        for (var i = 0; i < key.length; ++i)
+                            if (!$util.isString(message.environmentVariables[key[i]]))
+                                return "environmentVariables: string{k:string} expected";
+                    }
+                    return null;
+                };
+    
+                return TaskExecutionMetadata;
+            })();
+    
             admin.CreateTaskRequest = (function() {
     
                 /**
@@ -18336,6 +18777,7 @@
                  * @property {flyteidl.core.ILiteralMap|null} [inputs] CreateTaskRequest inputs
                  * @property {flyteidl.core.ITaskTemplate|null} [template] CreateTaskRequest template
                  * @property {string|null} [outputPrefix] CreateTaskRequest outputPrefix
+                 * @property {flyteidl.admin.ITaskExecutionMetadata|null} [taskExecutionMetadata] CreateTaskRequest taskExecutionMetadata
                  */
     
                 /**
@@ -18378,6 +18820,14 @@
                 CreateTaskRequest.prototype.outputPrefix = "";
     
                 /**
+                 * CreateTaskRequest taskExecutionMetadata.
+                 * @member {flyteidl.admin.ITaskExecutionMetadata|null|undefined} taskExecutionMetadata
+                 * @memberof flyteidl.admin.CreateTaskRequest
+                 * @instance
+                 */
+                CreateTaskRequest.prototype.taskExecutionMetadata = null;
+    
+                /**
                  * Creates a new CreateTaskRequest instance using the specified properties.
                  * @function create
                  * @memberof flyteidl.admin.CreateTaskRequest
@@ -18407,6 +18857,8 @@
                         $root.flyteidl.core.TaskTemplate.encode(message.template, writer.uint32(/* id 2, wireType 2 =*/18).fork()).ldelim();
                     if (message.outputPrefix != null && message.hasOwnProperty("outputPrefix"))
                         writer.uint32(/* id 3, wireType 2 =*/26).string(message.outputPrefix);
+                    if (message.taskExecutionMetadata != null && message.hasOwnProperty("taskExecutionMetadata"))
+                        $root.flyteidl.admin.TaskExecutionMetadata.encode(message.taskExecutionMetadata, writer.uint32(/* id 4, wireType 2 =*/34).fork()).ldelim();
                     return writer;
                 };
     
@@ -18436,6 +18888,9 @@
                             break;
                         case 3:
                             message.outputPrefix = reader.string();
+                            break;
+                        case 4:
+                            message.taskExecutionMetadata = $root.flyteidl.admin.TaskExecutionMetadata.decode(reader, reader.uint32());
                             break;
                         default:
                             reader.skipType(tag & 7);
@@ -18469,6 +18924,11 @@
                     if (message.outputPrefix != null && message.hasOwnProperty("outputPrefix"))
                         if (!$util.isString(message.outputPrefix))
                             return "outputPrefix: string expected";
+                    if (message.taskExecutionMetadata != null && message.hasOwnProperty("taskExecutionMetadata")) {
+                        var error = $root.flyteidl.admin.TaskExecutionMetadata.verify(message.taskExecutionMetadata);
+                        if (error)
+                            return "taskExecutionMetadata." + error;
+                    }
                     return null;
                 };
     
@@ -45857,6 +46317,7 @@
                  * @property {string|null} [filename] CreateUploadLocationRequest filename
                  * @property {google.protobuf.IDuration|null} [expiresIn] CreateUploadLocationRequest expiresIn
                  * @property {Uint8Array|null} [contentMd5] CreateUploadLocationRequest contentMd5
+                 * @property {string|null} [filenameRoot] CreateUploadLocationRequest filenameRoot
                  */
     
                 /**
@@ -45915,6 +46376,14 @@
                 CreateUploadLocationRequest.prototype.contentMd5 = $util.newBuffer([]);
     
                 /**
+                 * CreateUploadLocationRequest filenameRoot.
+                 * @member {string} filenameRoot
+                 * @memberof flyteidl.service.CreateUploadLocationRequest
+                 * @instance
+                 */
+                CreateUploadLocationRequest.prototype.filenameRoot = "";
+    
+                /**
                  * Creates a new CreateUploadLocationRequest instance using the specified properties.
                  * @function create
                  * @memberof flyteidl.service.CreateUploadLocationRequest
@@ -45948,6 +46417,8 @@
                         $root.google.protobuf.Duration.encode(message.expiresIn, writer.uint32(/* id 4, wireType 2 =*/34).fork()).ldelim();
                     if (message.contentMd5 != null && message.hasOwnProperty("contentMd5"))
                         writer.uint32(/* id 5, wireType 2 =*/42).bytes(message.contentMd5);
+                    if (message.filenameRoot != null && message.hasOwnProperty("filenameRoot"))
+                        writer.uint32(/* id 6, wireType 2 =*/50).string(message.filenameRoot);
                     return writer;
                 };
     
@@ -45983,6 +46454,9 @@
                             break;
                         case 5:
                             message.contentMd5 = reader.bytes();
+                            break;
+                        case 6:
+                            message.filenameRoot = reader.string();
                             break;
                         default:
                             reader.skipType(tag & 7);
@@ -46020,6 +46494,9 @@
                     if (message.contentMd5 != null && message.hasOwnProperty("contentMd5"))
                         if (!(message.contentMd5 && typeof message.contentMd5.length === "number" || $util.isString(message.contentMd5)))
                             return "contentMd5: buffer expected";
+                    if (message.filenameRoot != null && message.hasOwnProperty("filenameRoot"))
+                        if (!$util.isString(message.filenameRoot))
+                            return "filenameRoot: string expected";
                     return null;
                 };
     

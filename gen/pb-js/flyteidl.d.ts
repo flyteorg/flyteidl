@@ -1355,6 +1355,79 @@ export namespace flyteidl {
             public static verify(message: { [k: string]: any }): (string|null);
         }
 
+        /** Properties of an ArrayNode. */
+        interface IArrayNode {
+
+            /** ArrayNode node */
+            node?: (flyteidl.core.INode|null);
+
+            /** ArrayNode parallelism */
+            parallelism?: (number|null);
+
+            /** ArrayNode minSuccesses */
+            minSuccesses?: (number|null);
+
+            /** ArrayNode minSuccessRatio */
+            minSuccessRatio?: (number|null);
+        }
+
+        /** Represents an ArrayNode. */
+        class ArrayNode implements IArrayNode {
+
+            /**
+             * Constructs a new ArrayNode.
+             * @param [properties] Properties to set
+             */
+            constructor(properties?: flyteidl.core.IArrayNode);
+
+            /** ArrayNode node. */
+            public node?: (flyteidl.core.INode|null);
+
+            /** ArrayNode parallelism. */
+            public parallelism: number;
+
+            /** ArrayNode minSuccesses. */
+            public minSuccesses: number;
+
+            /** ArrayNode minSuccessRatio. */
+            public minSuccessRatio: number;
+
+            /** ArrayNode successCriteria. */
+            public successCriteria?: ("minSuccesses"|"minSuccessRatio");
+
+            /**
+             * Creates a new ArrayNode instance using the specified properties.
+             * @param [properties] Properties to set
+             * @returns ArrayNode instance
+             */
+            public static create(properties?: flyteidl.core.IArrayNode): flyteidl.core.ArrayNode;
+
+            /**
+             * Encodes the specified ArrayNode message. Does not implicitly {@link flyteidl.core.ArrayNode.verify|verify} messages.
+             * @param message ArrayNode message or plain object to encode
+             * @param [writer] Writer to encode to
+             * @returns Writer
+             */
+            public static encode(message: flyteidl.core.IArrayNode, writer?: $protobuf.Writer): $protobuf.Writer;
+
+            /**
+             * Decodes an ArrayNode message from the specified reader or buffer.
+             * @param reader Reader or buffer to decode from
+             * @param [length] Message length if known beforehand
+             * @returns ArrayNode
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): flyteidl.core.ArrayNode;
+
+            /**
+             * Verifies an ArrayNode message.
+             * @param message Plain object to verify
+             * @returns `null` if valid, otherwise the reason why it is not
+             */
+            public static verify(message: { [k: string]: any }): (string|null);
+        }
+
         /** Properties of a NodeMetadata. */
         interface INodeMetadata {
 
@@ -1515,6 +1588,9 @@ export namespace flyteidl {
 
             /** Node gateNode */
             gateNode?: (flyteidl.core.IGateNode|null);
+
+            /** Node arrayNode */
+            arrayNode?: (flyteidl.core.IArrayNode|null);
         }
 
         /** Represents a Node. */
@@ -1553,8 +1629,11 @@ export namespace flyteidl {
             /** Node gateNode. */
             public gateNode?: (flyteidl.core.IGateNode|null);
 
+            /** Node arrayNode. */
+            public arrayNode?: (flyteidl.core.IArrayNode|null);
+
             /** Node target. */
-            public target?: ("taskNode"|"workflowNode"|"branchNode"|"gateNode");
+            public target?: ("taskNode"|"workflowNode"|"branchNode"|"gateNode"|"arrayNode");
 
             /**
              * Creates a new Node instance using the specified properties.
@@ -7512,6 +7591,88 @@ export namespace flyteidl {
             SUCCEEDED = 4
         }
 
+        /** Properties of a TaskExecutionMetadata. */
+        interface ITaskExecutionMetadata {
+
+            /** TaskExecutionMetadata taskExecutionId */
+            taskExecutionId?: (flyteidl.core.ITaskExecutionIdentifier|null);
+
+            /** TaskExecutionMetadata namespace */
+            namespace?: (string|null);
+
+            /** TaskExecutionMetadata labels */
+            labels?: ({ [k: string]: string }|null);
+
+            /** TaskExecutionMetadata annotations */
+            annotations?: ({ [k: string]: string }|null);
+
+            /** TaskExecutionMetadata k8sServiceAccount */
+            k8sServiceAccount?: (string|null);
+
+            /** TaskExecutionMetadata environmentVariables */
+            environmentVariables?: ({ [k: string]: string }|null);
+        }
+
+        /** Represents a TaskExecutionMetadata. */
+        class TaskExecutionMetadata implements ITaskExecutionMetadata {
+
+            /**
+             * Constructs a new TaskExecutionMetadata.
+             * @param [properties] Properties to set
+             */
+            constructor(properties?: flyteidl.admin.ITaskExecutionMetadata);
+
+            /** TaskExecutionMetadata taskExecutionId. */
+            public taskExecutionId?: (flyteidl.core.ITaskExecutionIdentifier|null);
+
+            /** TaskExecutionMetadata namespace. */
+            public namespace: string;
+
+            /** TaskExecutionMetadata labels. */
+            public labels: { [k: string]: string };
+
+            /** TaskExecutionMetadata annotations. */
+            public annotations: { [k: string]: string };
+
+            /** TaskExecutionMetadata k8sServiceAccount. */
+            public k8sServiceAccount: string;
+
+            /** TaskExecutionMetadata environmentVariables. */
+            public environmentVariables: { [k: string]: string };
+
+            /**
+             * Creates a new TaskExecutionMetadata instance using the specified properties.
+             * @param [properties] Properties to set
+             * @returns TaskExecutionMetadata instance
+             */
+            public static create(properties?: flyteidl.admin.ITaskExecutionMetadata): flyteidl.admin.TaskExecutionMetadata;
+
+            /**
+             * Encodes the specified TaskExecutionMetadata message. Does not implicitly {@link flyteidl.admin.TaskExecutionMetadata.verify|verify} messages.
+             * @param message TaskExecutionMetadata message or plain object to encode
+             * @param [writer] Writer to encode to
+             * @returns Writer
+             */
+            public static encode(message: flyteidl.admin.ITaskExecutionMetadata, writer?: $protobuf.Writer): $protobuf.Writer;
+
+            /**
+             * Decodes a TaskExecutionMetadata message from the specified reader or buffer.
+             * @param reader Reader or buffer to decode from
+             * @param [length] Message length if known beforehand
+             * @returns TaskExecutionMetadata
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): flyteidl.admin.TaskExecutionMetadata;
+
+            /**
+             * Verifies a TaskExecutionMetadata message.
+             * @param message Plain object to verify
+             * @returns `null` if valid, otherwise the reason why it is not
+             */
+            public static verify(message: { [k: string]: any }): (string|null);
+        }
+
         /** Properties of a CreateTaskRequest. */
         interface ICreateTaskRequest {
 
@@ -7523,6 +7684,9 @@ export namespace flyteidl {
 
             /** CreateTaskRequest outputPrefix */
             outputPrefix?: (string|null);
+
+            /** CreateTaskRequest taskExecutionMetadata */
+            taskExecutionMetadata?: (flyteidl.admin.ITaskExecutionMetadata|null);
         }
 
         /** Represents a CreateTaskRequest. */
@@ -7542,6 +7706,9 @@ export namespace flyteidl {
 
             /** CreateTaskRequest outputPrefix. */
             public outputPrefix: string;
+
+            /** CreateTaskRequest taskExecutionMetadata. */
+            public taskExecutionMetadata?: (flyteidl.admin.ITaskExecutionMetadata|null);
 
             /**
              * Creates a new CreateTaskRequest instance using the specified properties.
@@ -19692,6 +19859,9 @@ export namespace flyteidl {
 
             /** CreateUploadLocationRequest contentMd5 */
             contentMd5?: (Uint8Array|null);
+
+            /** CreateUploadLocationRequest filenameRoot */
+            filenameRoot?: (string|null);
         }
 
         /** Represents a CreateUploadLocationRequest. */
@@ -19717,6 +19887,9 @@ export namespace flyteidl {
 
             /** CreateUploadLocationRequest contentMd5. */
             public contentMd5: Uint8Array;
+
+            /** CreateUploadLocationRequest filenameRoot. */
+            public filenameRoot: string;
 
             /**
              * Creates a new CreateUploadLocationRequest instance using the specified properties.
