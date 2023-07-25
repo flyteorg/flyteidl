@@ -3403,7 +3403,8 @@
         "GPU",
         "MEMORY",
         "STORAGE",
-        "EPHEMERAL_STORAGE"
+        "EPHEMERAL_STORAGE",
+        "GPU_MEMORY"
       ],
       "default": "UNKNOWN",
       "description": "Known resource names.\n\n - EPHEMERAL_STORAGE: For Kubernetes-based deployments, pods use ephemeral local storage for scratch space, caching, and for logs."

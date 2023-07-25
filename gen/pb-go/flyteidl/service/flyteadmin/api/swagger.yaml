@@ -3046,6 +3046,7 @@ definitions:
     - "MEMORY"
     - "STORAGE"
     - "EPHEMERAL_STORAGE"
+    - "GPU_MEMORY"
     default: "UNKNOWN"
   RuntimeMetadataRuntimeType:
     type: "string"
