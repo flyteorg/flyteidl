@@ -8377,6 +8377,9 @@ export namespace flyteidl {
             /** GetArtifactRequest uri */
             uri?: (string|null);
 
+            /** GetArtifactRequest query */
+            query?: (flyteidl.core.IArtifactQuery|null);
+
             /** GetArtifactRequest details */
             details?: (boolean|null);
         }
@@ -8399,11 +8402,14 @@ export namespace flyteidl {
             /** GetArtifactRequest uri. */
             public uri: string;
 
+            /** GetArtifactRequest query. */
+            public query?: (flyteidl.core.IArtifactQuery|null);
+
             /** GetArtifactRequest details. */
             public details: boolean;
 
             /** GetArtifactRequest identifier. */
-            public identifier?: ("artifactKey"|"artifactId"|"uri");
+            public identifier?: ("artifactKey"|"artifactId"|"uri"|"query");
 
             /**
              * Creates a new GetArtifactRequest instance using the specified properties.

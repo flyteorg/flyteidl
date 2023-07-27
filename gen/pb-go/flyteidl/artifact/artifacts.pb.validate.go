@@ -475,6 +475,18 @@ func (m *GetArtifactRequest) Validate() error {
 	case *GetArtifactRequest_Uri:
 		// no validation rules for Uri
 
+	case *GetArtifactRequest_Query:
+
+		if v, ok := interface{}(m.GetQuery()).(interface{ Validate() error }); ok {
+			if err := v.Validate(); err != nil {
+				return GetArtifactRequestValidationError{
+					field:  "Query",
+					reason: "embedded message failed validation",
+					cause:  err,
+				}
+			}
+		}
+
 	}
 
 	return nil

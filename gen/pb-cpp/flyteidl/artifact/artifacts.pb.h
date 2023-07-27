@@ -791,6 +791,7 @@ class GetArtifactRequest final :
     kArtifactKey = 1,
     kArtifactId = 2,
     kUri = 3,
+    kQuery = 4,
     IDENTIFIER_NOT_SET = 0,
   };
 
@@ -857,9 +858,9 @@ class GetArtifactRequest final :
 
   // accessors -------------------------------------------------------
 
-  // bool details = 4;
+  // bool details = 5;
   void clear_details();
-  static const int kDetailsFieldNumber = 4;
+  static const int kDetailsFieldNumber = 5;
   bool details() const;
   void set_details(bool value);
 
@@ -898,6 +899,15 @@ class GetArtifactRequest final :
   ::std::string* release_uri();
   void set_allocated_uri(::std::string* uri);
 
+  // .flyteidl.core.ArtifactQuery query = 4;
+  bool has_query() const;
+  void clear_query();
+  static const int kQueryFieldNumber = 4;
+  const ::flyteidl::core::ArtifactQuery& query() const;
+  ::flyteidl::core::ArtifactQuery* release_query();
+  ::flyteidl::core::ArtifactQuery* mutable_query();
+  void set_allocated_query(::flyteidl::core::ArtifactQuery* query);
+
   void clear_identifier();
   IdentifierCase identifier_case() const;
   // @@protoc_insertion_point(class_scope:flyteidl.artifact.GetArtifactRequest)
@@ -906,6 +916,7 @@ class GetArtifactRequest final :
   void set_has_artifact_key();
   void set_has_artifact_id();
   void set_has_uri();
+  void set_has_query();
 
   inline bool has_identifier() const;
   inline void clear_has_identifier();
@@ -917,6 +928,7 @@ class GetArtifactRequest final :
     ::flyteidl::core::ArtifactKey* artifact_key_;
     ::flyteidl::core::ArtifactID* artifact_id_;
     ::google::protobuf::internal::ArenaStringPtr uri_;
+    ::flyteidl::core::ArtifactQuery* query_;
   } identifier_;
   mutable ::google::protobuf::internal::CachedSize _cached_size_;
   ::google::protobuf::uint32 _oneof_case_[1];
@@ -3386,7 +3398,42 @@ inline void GetArtifactRequest::set_allocated_uri(::std::string* uri) {
   // @@protoc_insertion_point(field_set_allocated:flyteidl.artifact.GetArtifactRequest.uri)
 }
 
-// bool details = 4;
+// .flyteidl.core.ArtifactQuery query = 4;
+inline bool GetArtifactRequest::has_query() const {
+  return identifier_case() == kQuery;
+}
+inline void GetArtifactRequest::set_has_query() {
+  _oneof_case_[0] = kQuery;
+}
+inline ::flyteidl::core::ArtifactQuery* GetArtifactRequest::release_query() {
+  // @@protoc_insertion_point(field_release:flyteidl.artifact.GetArtifactRequest.query)
+  if (has_query()) {
+    clear_has_identifier();
+      ::flyteidl::core::ArtifactQuery* temp = identifier_.query_;
+    identifier_.query_ = nullptr;
+    return temp;
+  } else {
+    return nullptr;
+  }
+}
+inline const ::flyteidl::core::ArtifactQuery& GetArtifactRequest::query() const {
+  // @@protoc_insertion_point(field_get:flyteidl.artifact.GetArtifactRequest.query)
+  return has_query()
+      ? *identifier_.query_
+      : *reinterpret_cast< ::flyteidl::core::ArtifactQuery*>(&::flyteidl::core::_ArtifactQuery_default_instance_);
+}
+inline ::flyteidl::core::ArtifactQuery* GetArtifactRequest::mutable_query() {
+  if (!has_query()) {
+    clear_identifier();
+    set_has_query();
+    identifier_.query_ = CreateMaybeMessage< ::flyteidl::core::ArtifactQuery >(
+        GetArenaNoVirtual());
+  }
+  // @@protoc_insertion_point(field_mutable:flyteidl.artifact.GetArtifactRequest.query)
+  return identifier_.query_;
+}
+
+// bool details = 5;
 inline void GetArtifactRequest::clear_details() {
   details_ = false;
 }

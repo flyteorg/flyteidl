@@ -70,9 +70,9 @@ pub struct CreateArtifactResponse {
 #[derive(Clone, PartialEq, ::prost::Message)]
 pub struct GetArtifactRequest {
     /// If false, then long_description is not returned.
-    #[prost(bool, tag="4")]
+    #[prost(bool, tag="5")]
     pub details: bool,
-    #[prost(oneof="get_artifact_request::Identifier", tags="1, 2, 3")]
+    #[prost(oneof="get_artifact_request::Identifier", tags="1, 2, 3, 4")]
     pub identifier: ::core::option::Option<get_artifact_request::Identifier>,
 }
 /// Nested message and enum types in `GetArtifactRequest`.
@@ -86,6 +86,8 @@ pub mod get_artifact_request {
         ArtifactId(super::super::core::ArtifactId),
         #[prost(string, tag="3")]
         Uri(::prost::alloc::string::String),
+        #[prost(message, tag="4")]
+        Query(super::super::core::ArtifactQuery),
     }
 }
 /// Tags are general key/value pairs associated with an Artifact. They can be used to search and filter things.

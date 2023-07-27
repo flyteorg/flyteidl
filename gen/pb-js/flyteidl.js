@@ -20404,6 +20404,7 @@
                  * @property {flyteidl.core.IArtifactKey|null} [artifactKey] GetArtifactRequest artifactKey
                  * @property {flyteidl.core.IArtifactID|null} [artifactId] GetArtifactRequest artifactId
                  * @property {string|null} [uri] GetArtifactRequest uri
+                 * @property {flyteidl.core.IArtifactQuery|null} [query] GetArtifactRequest query
                  * @property {boolean|null} [details] GetArtifactRequest details
                  */
     
@@ -20447,6 +20448,14 @@
                 GetArtifactRequest.prototype.uri = "";
     
                 /**
+                 * GetArtifactRequest query.
+                 * @member {flyteidl.core.IArtifactQuery|null|undefined} query
+                 * @memberof flyteidl.artifact.GetArtifactRequest
+                 * @instance
+                 */
+                GetArtifactRequest.prototype.query = null;
+    
+                /**
                  * GetArtifactRequest details.
                  * @member {boolean} details
                  * @memberof flyteidl.artifact.GetArtifactRequest
@@ -20459,12 +20468,12 @@
     
                 /**
                  * GetArtifactRequest identifier.
-                 * @member {"artifactKey"|"artifactId"|"uri"|undefined} identifier
+                 * @member {"artifactKey"|"artifactId"|"uri"|"query"|undefined} identifier
                  * @memberof flyteidl.artifact.GetArtifactRequest
                  * @instance
                  */
                 Object.defineProperty(GetArtifactRequest.prototype, "identifier", {
-                    get: $util.oneOfGetter($oneOfFields = ["artifactKey", "artifactId", "uri"]),
+                    get: $util.oneOfGetter($oneOfFields = ["artifactKey", "artifactId", "uri", "query"]),
                     set: $util.oneOfSetter($oneOfFields)
                 });
     
@@ -20498,8 +20507,10 @@
                         $root.flyteidl.core.ArtifactID.encode(message.artifactId, writer.uint32(/* id 2, wireType 2 =*/18).fork()).ldelim();
                     if (message.uri != null && message.hasOwnProperty("uri"))
                         writer.uint32(/* id 3, wireType 2 =*/26).string(message.uri);
+                    if (message.query != null && message.hasOwnProperty("query"))
+                        $root.flyteidl.core.ArtifactQuery.encode(message.query, writer.uint32(/* id 4, wireType 2 =*/34).fork()).ldelim();
                     if (message.details != null && message.hasOwnProperty("details"))
-                        writer.uint32(/* id 4, wireType 0 =*/32).bool(message.details);
+                        writer.uint32(/* id 5, wireType 0 =*/40).bool(message.details);
                     return writer;
                 };
     
@@ -20531,6 +20542,9 @@
                             message.uri = reader.string();
                             break;
                         case 4:
+                            message.query = $root.flyteidl.core.ArtifactQuery.decode(reader, reader.uint32());
+                            break;
+                        case 5:
                             message.details = reader.bool();
                             break;
                         default:
@@ -20577,6 +20591,16 @@
                         properties.identifier = 1;
                         if (!$util.isString(message.uri))
                             return "uri: string expected";
+                    }
+                    if (message.query != null && message.hasOwnProperty("query")) {
+                        if (properties.identifier === 1)
+                            return "identifier: multiple values";
+                        properties.identifier = 1;
+                        {
+                            var error = $root.flyteidl.core.ArtifactQuery.verify(message.query);
+                            if (error)
+                                return "query." + error;
+                        }
                     }
                     if (message.details != null && message.hasOwnProperty("details"))
                         if (typeof message.details !== "boolean")

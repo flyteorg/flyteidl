@@ -65,10 +65,11 @@ message GetArtifactRequest {
     core.ArtifactKey artifact_key = 1;
     core.ArtifactID artifact_id = 2;
     string uri = 3;
+    core.ArtifactQuery query = 4;
   }
 
   // If false, then long_description is not returned.
-  bool details = 4;
+  bool details = 5;
 }
 
 // Tags are general key/value pairs associated with an Artifact. They can be used to search and filter things.

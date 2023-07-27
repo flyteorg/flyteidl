@@ -218,6 +218,20 @@
         }
       }
     },
+    "coreArtifactQuery": {
+      "type": "object",
+      "properties": {
+        "project": {
+          "type": "string"
+        },
+        "domain": {
+          "type": "string"
+        },
+        "alias": {
+          "$ref": "#/definitions/coreArtifactAlias"
+        }
+      }
+    },
     "coreBinary": {
       "type": "object",
       "properties": {
