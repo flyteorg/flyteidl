@@ -1898,6 +1898,7 @@ public final class Artifacts {
     /**
      * <pre>
      * When you want to set tags on creation.
+     * TODO: should we just remove tags and add a type for now
      * </pre>
      *
      * <code>repeated .flyteidl.artifact.Tag tags = 3;</code>
@@ -1907,6 +1908,7 @@ public final class Artifacts {
     /**
      * <pre>
      * When you want to set tags on creation.
+     * TODO: should we just remove tags and add a type for now
      * </pre>
      *
      * <code>repeated .flyteidl.artifact.Tag tags = 3;</code>
@@ -1915,6 +1917,7 @@ public final class Artifacts {
     /**
      * <pre>
      * When you want to set tags on creation.
+     * TODO: should we just remove tags and add a type for now
      * </pre>
      *
      * <code>repeated .flyteidl.artifact.Tag tags = 3;</code>
@@ -1923,6 +1926,7 @@ public final class Artifacts {
     /**
      * <pre>
      * When you want to set tags on creation.
+     * TODO: should we just remove tags and add a type for now
      * </pre>
      *
      * <code>repeated .flyteidl.artifact.Tag tags = 3;</code>
@@ -1932,6 +1936,7 @@ public final class Artifacts {
     /**
      * <pre>
      * When you want to set tags on creation.
+     * TODO: should we just remove tags and add a type for now
      * </pre>
      *
      * <code>repeated .flyteidl.artifact.Tag tags = 3;</code>
@@ -2355,6 +2360,7 @@ public final class Artifacts {
     /**
      * <pre>
      * When you want to set tags on creation.
+     * TODO: should we just remove tags and add a type for now
      * </pre>
      *
      * <code>repeated .flyteidl.artifact.Tag tags = 3;</code>
@@ -2365,6 +2371,7 @@ public final class Artifacts {
     /**
      * <pre>
      * When you want to set tags on creation.
+     * TODO: should we just remove tags and add a type for now
      * </pre>
      *
      * <code>repeated .flyteidl.artifact.Tag tags = 3;</code>
@@ -2376,6 +2383,7 @@ public final class Artifacts {
     /**
      * <pre>
      * When you want to set tags on creation.
+     * TODO: should we just remove tags and add a type for now
      * </pre>
      *
      * <code>repeated .flyteidl.artifact.Tag tags = 3;</code>
@@ -2386,6 +2394,7 @@ public final class Artifacts {
     /**
      * <pre>
      * When you want to set tags on creation.
+     * TODO: should we just remove tags and add a type for now
      * </pre>
      *
      * <code>repeated .flyteidl.artifact.Tag tags = 3;</code>
@@ -2396,6 +2405,7 @@ public final class Artifacts {
     /**
      * <pre>
      * When you want to set tags on creation.
+     * TODO: should we just remove tags and add a type for now
      * </pre>
      *
      * <code>repeated .flyteidl.artifact.Tag tags = 3;</code>
@@ -3563,6 +3573,7 @@ public final class Artifacts {
       /**
        * <pre>
        * When you want to set tags on creation.
+       * TODO: should we just remove tags and add a type for now
        * </pre>
        *
        * <code>repeated .flyteidl.artifact.Tag tags = 3;</code>
@@ -3577,6 +3588,7 @@ public final class Artifacts {
       /**
        * <pre>
        * When you want to set tags on creation.
+       * TODO: should we just remove tags and add a type for now
        * </pre>
        *
        * <code>repeated .flyteidl.artifact.Tag tags = 3;</code>
@@ -3591,6 +3603,7 @@ public final class Artifacts {
       /**
        * <pre>
        * When you want to set tags on creation.
+       * TODO: should we just remove tags and add a type for now
        * </pre>
        *
        * <code>repeated .flyteidl.artifact.Tag tags = 3;</code>
@@ -3605,6 +3618,7 @@ public final class Artifacts {
       /**
        * <pre>
        * When you want to set tags on creation.
+       * TODO: should we just remove tags and add a type for now
        * </pre>
        *
        * <code>repeated .flyteidl.artifact.Tag tags = 3;</code>
@@ -3626,6 +3640,7 @@ public final class Artifacts {
       /**
        * <pre>
        * When you want to set tags on creation.
+       * TODO: should we just remove tags and add a type for now
        * </pre>
        *
        * <code>repeated .flyteidl.artifact.Tag tags = 3;</code>
@@ -3644,6 +3659,7 @@ public final class Artifacts {
       /**
        * <pre>
        * When you want to set tags on creation.
+       * TODO: should we just remove tags and add a type for now
        * </pre>
        *
        * <code>repeated .flyteidl.artifact.Tag tags = 3;</code>
@@ -3664,6 +3680,7 @@ public final class Artifacts {
       /**
        * <pre>
        * When you want to set tags on creation.
+       * TODO: should we just remove tags and add a type for now
        * </pre>
        *
        * <code>repeated .flyteidl.artifact.Tag tags = 3;</code>
@@ -3685,6 +3702,7 @@ public final class Artifacts {
       /**
        * <pre>
        * When you want to set tags on creation.
+       * TODO: should we just remove tags and add a type for now
        * </pre>
        *
        * <code>repeated .flyteidl.artifact.Tag tags = 3;</code>
@@ -3703,6 +3721,7 @@ public final class Artifacts {
       /**
        * <pre>
        * When you want to set tags on creation.
+       * TODO: should we just remove tags and add a type for now
        * </pre>
        *
        * <code>repeated .flyteidl.artifact.Tag tags = 3;</code>
@@ -3721,6 +3740,7 @@ public final class Artifacts {
       /**
        * <pre>
        * When you want to set tags on creation.
+       * TODO: should we just remove tags and add a type for now
        * </pre>
        *
        * <code>repeated .flyteidl.artifact.Tag tags = 3;</code>
@@ -3740,6 +3760,7 @@ public final class Artifacts {
       /**
        * <pre>
        * When you want to set tags on creation.
+       * TODO: should we just remove tags and add a type for now
        * </pre>
        *
        * <code>repeated .flyteidl.artifact.Tag tags = 3;</code>
@@ -3757,6 +3778,7 @@ public final class Artifacts {
       /**
        * <pre>
        * When you want to set tags on creation.
+       * TODO: should we just remove tags and add a type for now
        * </pre>
        *
        * <code>repeated .flyteidl.artifact.Tag tags = 3;</code>
@@ -3774,6 +3796,7 @@ public final class Artifacts {
       /**
        * <pre>
        * When you want to set tags on creation.
+       * TODO: should we just remove tags and add a type for now
        * </pre>
        *
        * <code>repeated .flyteidl.artifact.Tag tags = 3;</code>
@@ -3785,6 +3808,7 @@ public final class Artifacts {
       /**
        * <pre>
        * When you want to set tags on creation.
+       * TODO: should we just remove tags and add a type for now
        * </pre>
        *
        * <code>repeated .flyteidl.artifact.Tag tags = 3;</code>
@@ -3799,6 +3823,7 @@ public final class Artifacts {
       /**
        * <pre>
        * When you want to set tags on creation.
+       * TODO: should we just remove tags and add a type for now
        * </pre>
        *
        * <code>repeated .flyteidl.artifact.Tag tags = 3;</code>
@@ -3814,6 +3839,7 @@ public final class Artifacts {
       /**
        * <pre>
        * When you want to set tags on creation.
+       * TODO: should we just remove tags and add a type for now
        * </pre>
        *
        * <code>repeated .flyteidl.artifact.Tag tags = 3;</code>
@@ -3825,6 +3851,7 @@ public final class Artifacts {
       /**
        * <pre>
        * When you want to set tags on creation.
+       * TODO: should we just remove tags and add a type for now
        * </pre>
        *
        * <code>repeated .flyteidl.artifact.Tag tags = 3;</code>
@@ -3837,6 +3864,7 @@ public final class Artifacts {
       /**
        * <pre>
        * When you want to set tags on creation.
+       * TODO: should we just remove tags and add a type for now
        * </pre>
        *
        * <code>repeated .flyteidl.artifact.Tag tags = 3;</code>

@@ -228,7 +228,7 @@
           "items": {
             "$ref": "#/definitions/artifactTag"
           },
-          "description": "When you want to set tags on creation."
+          "title": "When you want to set tags on creation.\nTODO: should we just remove tags and add a type for now"
         },
         "aliases": {
           "type": "array",

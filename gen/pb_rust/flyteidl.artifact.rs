@@ -30,6 +30,7 @@ pub struct ArtifactSpec {
     #[prost(message, optional, tag="2")]
     pub r#type: ::core::option::Option<super::core::LiteralType>,
     /// When you want to set tags on creation.
+    /// TODO: should we just remove tags and add a type for now
     #[prost(message, repeated, tag="3")]
     pub tags: ::prost::alloc::vec::Vec<Tag>,
     /// Set here when you want to set an alias on creation.

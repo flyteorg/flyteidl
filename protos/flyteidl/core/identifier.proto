@@ -89,7 +89,7 @@ message ArtifactID {
 
 message ArtifactAlias {
   // ties this directly to the artifact
-  core.ArtifactID artifact_id = 1;
+  ArtifactID artifact_id = 1;
 
   string name = 2;
   string value = 3;
@@ -98,5 +98,5 @@ message ArtifactAlias {
 message ArtifactQuery {
   string project = 1;
   string domain = 2;
-  core.ArtifactAlias alias = 3;
+  ArtifactAlias alias = 3;
 }

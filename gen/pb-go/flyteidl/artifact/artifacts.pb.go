@@ -136,6 +136,7 @@ type ArtifactSpec struct {
 	// type to all Literals is a lot of work.
 	Type *core.LiteralType `protobuf:"bytes,2,opt,name=type,proto3" json:"type,omitempty"`
 	// When you want to set tags on creation.
+	// TODO: should we just remove tags and add a type for now
 	Tags []*Tag `protobuf:"bytes,3,rep,name=tags,proto3" json:"tags,omitempty"`
 	// Set here when you want to set an alias on creation.
 	// Aliases created will have the same project/domain as the artifact.

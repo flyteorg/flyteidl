@@ -33,6 +33,7 @@ message ArtifactSpec {
   core.LiteralType type = 2;
 
   // When you want to set tags on creation.
+  // TODO: should we just remove tags and add a type for now
   repeated Tag tags = 3;
 
   // Set here when you want to set an alias on creation.
