@@ -22,7 +22,7 @@ class ArtifactRegistryStub(object):
         self.GetArtifact = channel.unary_unary(
                 '/flyteidl.artifact.ArtifactRegistry/GetArtifact',
                 request_serializer=flyteidl_dot_artifact_dot_artifacts__pb2.GetArtifactRequest.SerializeToString,
-                response_deserializer=flyteidl_dot_artifact_dot_artifacts__pb2.Artifact.FromString,
+                response_deserializer=flyteidl_dot_artifact_dot_artifacts__pb2.GetArtifactResponse.FromString,
                 )
         self.ListArtifactNames = channel.unary_unary(
                 '/flyteidl.artifact.ArtifactRegistry/ListArtifactNames',
@@ -118,7 +118,7 @@ def add_ArtifactRegistryServicer_to_server(servicer, server):
             'GetArtifact': grpc.unary_unary_rpc_method_handler(
                     servicer.GetArtifact,
                     request_deserializer=flyteidl_dot_artifact_dot_artifacts__pb2.GetArtifactRequest.FromString,
-                    response_serializer=flyteidl_dot_artifact_dot_artifacts__pb2.Artifact.SerializeToString,
+                    response_serializer=flyteidl_dot_artifact_dot_artifacts__pb2.GetArtifactResponse.SerializeToString,
             ),
             'ListArtifactNames': grpc.unary_unary_rpc_method_handler(
                     servicer.ListArtifactNames,
@@ -190,7 +190,7 @@ class ArtifactRegistry(object):
             metadata=None):
         return grpc.experimental.unary_unary(request, target, '/flyteidl.artifact.ArtifactRegistry/GetArtifact',
             flyteidl_dot_artifact_dot_artifacts__pb2.GetArtifactRequest.SerializeToString,
-            flyteidl_dot_artifact_dot_artifacts__pb2.Artifact.FromString,
+            flyteidl_dot_artifact_dot_artifacts__pb2.GetArtifactResponse.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 

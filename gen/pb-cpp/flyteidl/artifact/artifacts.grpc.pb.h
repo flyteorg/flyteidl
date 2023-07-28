@@ -55,12 +55,12 @@ class ArtifactRegistry final {
     std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::flyteidl::artifact::CreateArtifactResponse>> PrepareAsyncCreateArtifact(::grpc::ClientContext* context, const ::flyteidl::artifact::CreateArtifactRequest& request, ::grpc::CompletionQueue* cq) {
       return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::flyteidl::artifact::CreateArtifactResponse>>(PrepareAsyncCreateArtifactRaw(context, request, cq));
     }
-    virtual ::grpc::Status GetArtifact(::grpc::ClientContext* context, const ::flyteidl::artifact::GetArtifactRequest& request, ::flyteidl::artifact::Artifact* response) = 0;
-    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::flyteidl::artifact::Artifact>> AsyncGetArtifact(::grpc::ClientContext* context, const ::flyteidl::artifact::GetArtifactRequest& request, ::grpc::CompletionQueue* cq) {
-      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::flyteidl::artifact::Artifact>>(AsyncGetArtifactRaw(context, request, cq));
+    virtual ::grpc::Status GetArtifact(::grpc::ClientContext* context, const ::flyteidl::artifact::GetArtifactRequest& request, ::flyteidl::artifact::GetArtifactResponse* response) = 0;
+    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::flyteidl::artifact::GetArtifactResponse>> AsyncGetArtifact(::grpc::ClientContext* context, const ::flyteidl::artifact::GetArtifactRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::flyteidl::artifact::GetArtifactResponse>>(AsyncGetArtifactRaw(context, request, cq));
     }
-    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::flyteidl::artifact::Artifact>> PrepareAsyncGetArtifact(::grpc::ClientContext* context, const ::flyteidl::artifact::GetArtifactRequest& request, ::grpc::CompletionQueue* cq) {
-      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::flyteidl::artifact::Artifact>>(PrepareAsyncGetArtifactRaw(context, request, cq));
+    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::flyteidl::artifact::GetArtifactResponse>> PrepareAsyncGetArtifact(::grpc::ClientContext* context, const ::flyteidl::artifact::GetArtifactRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::flyteidl::artifact::GetArtifactResponse>>(PrepareAsyncGetArtifactRaw(context, request, cq));
     }
     virtual ::grpc::Status ListArtifactNames(::grpc::ClientContext* context, const ::flyteidl::artifact::ListArtifactNamesRequest& request, ::flyteidl::artifact::ListArtifactNamesResponse* response) = 0;
     std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::flyteidl::artifact::ListArtifactNamesResponse>> AsyncListArtifactNames(::grpc::ClientContext* context, const ::flyteidl::artifact::ListArtifactNamesRequest& request, ::grpc::CompletionQueue* cq) {
@@ -111,10 +111,10 @@ class ArtifactRegistry final {
       virtual void CreateArtifact(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::flyteidl::artifact::CreateArtifactResponse* response, std::function<void(::grpc::Status)>) = 0;
       virtual void CreateArtifact(::grpc::ClientContext* context, const ::flyteidl::artifact::CreateArtifactRequest* request, ::flyteidl::artifact::CreateArtifactResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
       virtual void CreateArtifact(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::flyteidl::artifact::CreateArtifactResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
-      virtual void GetArtifact(::grpc::ClientContext* context, const ::flyteidl::artifact::GetArtifactRequest* request, ::flyteidl::artifact::Artifact* response, std::function<void(::grpc::Status)>) = 0;
-      virtual void GetArtifact(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::flyteidl::artifact::Artifact* response, std::function<void(::grpc::Status)>) = 0;
-      virtual void GetArtifact(::grpc::ClientContext* context, const ::flyteidl::artifact::GetArtifactRequest* request, ::flyteidl::artifact::Artifact* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
-      virtual void GetArtifact(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::flyteidl::artifact::Artifact* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
+      virtual void GetArtifact(::grpc::ClientContext* context, const ::flyteidl::artifact::GetArtifactRequest* request, ::flyteidl::artifact::GetArtifactResponse* response, std::function<void(::grpc::Status)>) = 0;
+      virtual void GetArtifact(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::flyteidl::artifact::GetArtifactResponse* response, std::function<void(::grpc::Status)>) = 0;
+      virtual void GetArtifact(::grpc::ClientContext* context, const ::flyteidl::artifact::GetArtifactRequest* request, ::flyteidl::artifact::GetArtifactResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
+      virtual void GetArtifact(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::flyteidl::artifact::GetArtifactResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
       virtual void ListArtifactNames(::grpc::ClientContext* context, const ::flyteidl::artifact::ListArtifactNamesRequest* request, ::flyteidl::artifact::ListArtifactNamesResponse* response, std::function<void(::grpc::Status)>) = 0;
       virtual void ListArtifactNames(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::flyteidl::artifact::ListArtifactNamesResponse* response, std::function<void(::grpc::Status)>) = 0;
       virtual void ListArtifactNames(::grpc::ClientContext* context, const ::flyteidl::artifact::ListArtifactNamesRequest* request, ::flyteidl::artifact::ListArtifactNamesResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
@@ -144,8 +144,8 @@ class ArtifactRegistry final {
   private:
     virtual ::grpc::ClientAsyncResponseReaderInterface< ::flyteidl::artifact::CreateArtifactResponse>* AsyncCreateArtifactRaw(::grpc::ClientContext* context, const ::flyteidl::artifact::CreateArtifactRequest& request, ::grpc::CompletionQueue* cq) = 0;
     virtual ::grpc::ClientAsyncResponseReaderInterface< ::flyteidl::artifact::CreateArtifactResponse>* PrepareAsyncCreateArtifactRaw(::grpc::ClientContext* context, const ::flyteidl::artifact::CreateArtifactRequest& request, ::grpc::CompletionQueue* cq) = 0;
-    virtual ::grpc::ClientAsyncResponseReaderInterface< ::flyteidl::artifact::Artifact>* AsyncGetArtifactRaw(::grpc::ClientContext* context, const ::flyteidl::artifact::GetArtifactRequest& request, ::grpc::CompletionQueue* cq) = 0;
-    virtual ::grpc::ClientAsyncResponseReaderInterface< ::flyteidl::artifact::Artifact>* PrepareAsyncGetArtifactRaw(::grpc::ClientContext* context, const ::flyteidl::artifact::GetArtifactRequest& request, ::grpc::CompletionQueue* cq) = 0;
+    virtual ::grpc::ClientAsyncResponseReaderInterface< ::flyteidl::artifact::GetArtifactResponse>* AsyncGetArtifactRaw(::grpc::ClientContext* context, const ::flyteidl::artifact::GetArtifactRequest& request, ::grpc::CompletionQueue* cq) = 0;
+    virtual ::grpc::ClientAsyncResponseReaderInterface< ::flyteidl::artifact::GetArtifactResponse>* PrepareAsyncGetArtifactRaw(::grpc::ClientContext* context, const ::flyteidl::artifact::GetArtifactRequest& request, ::grpc::CompletionQueue* cq) = 0;
     virtual ::grpc::ClientAsyncResponseReaderInterface< ::flyteidl::artifact::ListArtifactNamesResponse>* AsyncListArtifactNamesRaw(::grpc::ClientContext* context, const ::flyteidl::artifact::ListArtifactNamesRequest& request, ::grpc::CompletionQueue* cq) = 0;
     virtual ::grpc::ClientAsyncResponseReaderInterface< ::flyteidl::artifact::ListArtifactNamesResponse>* PrepareAsyncListArtifactNamesRaw(::grpc::ClientContext* context, const ::flyteidl::artifact::ListArtifactNamesRequest& request, ::grpc::CompletionQueue* cq) = 0;
     virtual ::grpc::ClientAsyncResponseReaderInterface< ::flyteidl::artifact::ListArtifactsResponse>* AsyncListArtifactsRaw(::grpc::ClientContext* context, const ::flyteidl::artifact::ListArtifactsRequest& request, ::grpc::CompletionQueue* cq) = 0;
@@ -169,12 +169,12 @@ class ArtifactRegistry final {
     std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::flyteidl::artifact::CreateArtifactResponse>> PrepareAsyncCreateArtifact(::grpc::ClientContext* context, const ::flyteidl::artifact::CreateArtifactRequest& request, ::grpc::CompletionQueue* cq) {
       return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::flyteidl::artifact::CreateArtifactResponse>>(PrepareAsyncCreateArtifactRaw(context, request, cq));
     }
-    ::grpc::Status GetArtifact(::grpc::ClientContext* context, const ::flyteidl::artifact::GetArtifactRequest& request, ::flyteidl::artifact::Artifact* response) override;
-    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::flyteidl::artifact::Artifact>> AsyncGetArtifact(::grpc::ClientContext* context, const ::flyteidl::artifact::GetArtifactRequest& request, ::grpc::CompletionQueue* cq) {
-      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::flyteidl::artifact::Artifact>>(AsyncGetArtifactRaw(context, request, cq));
+    ::grpc::Status GetArtifact(::grpc::ClientContext* context, const ::flyteidl::artifact::GetArtifactRequest& request, ::flyteidl::artifact::GetArtifactResponse* response) override;
+    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::flyteidl::artifact::GetArtifactResponse>> AsyncGetArtifact(::grpc::ClientContext* context, const ::flyteidl::artifact::GetArtifactRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::flyteidl::artifact::GetArtifactResponse>>(AsyncGetArtifactRaw(context, request, cq));
     }
-    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::flyteidl::artifact::Artifact>> PrepareAsyncGetArtifact(::grpc::ClientContext* context, const ::flyteidl::artifact::GetArtifactRequest& request, ::grpc::CompletionQueue* cq) {
-      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::flyteidl::artifact::Artifact>>(PrepareAsyncGetArtifactRaw(context, request, cq));
+    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::flyteidl::artifact::GetArtifactResponse>> PrepareAsyncGetArtifact(::grpc::ClientContext* context, const ::flyteidl::artifact::GetArtifactRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::flyteidl::artifact::GetArtifactResponse>>(PrepareAsyncGetArtifactRaw(context, request, cq));
     }
     ::grpc::Status ListArtifactNames(::grpc::ClientContext* context, const ::flyteidl::artifact::ListArtifactNamesRequest& request, ::flyteidl::artifact::ListArtifactNamesResponse* response) override;
     std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::flyteidl::artifact::ListArtifactNamesResponse>> AsyncListArtifactNames(::grpc::ClientContext* context, const ::flyteidl::artifact::ListArtifactNamesRequest& request, ::grpc::CompletionQueue* cq) {
@@ -225,10 +225,10 @@ class ArtifactRegistry final {
       void CreateArtifact(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::flyteidl::artifact::CreateArtifactResponse* response, std::function<void(::grpc::Status)>) override;
       void CreateArtifact(::grpc::ClientContext* context, const ::flyteidl::artifact::CreateArtifactRequest* request, ::flyteidl::artifact::CreateArtifactResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
       void CreateArtifact(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::flyteidl::artifact::CreateArtifactResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
-      void GetArtifact(::grpc::ClientContext* context, const ::flyteidl::artifact::GetArtifactRequest* request, ::flyteidl::artifact::Artifact* response, std::function<void(::grpc::Status)>) override;
-      void GetArtifact(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::flyteidl::artifact::Artifact* response, std::function<void(::grpc::Status)>) override;
-      void GetArtifact(::grpc::ClientContext* context, const ::flyteidl::artifact::GetArtifactRequest* request, ::flyteidl::artifact::Artifact* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
-      void GetArtifact(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::flyteidl::artifact::Artifact* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
+      void GetArtifact(::grpc::ClientContext* context, const ::flyteidl::artifact::GetArtifactRequest* request, ::flyteidl::artifact::GetArtifactResponse* response, std::function<void(::grpc::Status)>) override;
+      void GetArtifact(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::flyteidl::artifact::GetArtifactResponse* response, std::function<void(::grpc::Status)>) override;
+      void GetArtifact(::grpc::ClientContext* context, const ::flyteidl::artifact::GetArtifactRequest* request, ::flyteidl::artifact::GetArtifactResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
+      void GetArtifact(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::flyteidl::artifact::GetArtifactResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
       void ListArtifactNames(::grpc::ClientContext* context, const ::flyteidl::artifact::ListArtifactNamesRequest* request, ::flyteidl::artifact::ListArtifactNamesResponse* response, std::function<void(::grpc::Status)>) override;
       void ListArtifactNames(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::flyteidl::artifact::ListArtifactNamesResponse* response, std::function<void(::grpc::Status)>) override;
       void ListArtifactNames(::grpc::ClientContext* context, const ::flyteidl::artifact::ListArtifactNamesRequest* request, ::flyteidl::artifact::ListArtifactNamesResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
@@ -266,8 +266,8 @@ class ArtifactRegistry final {
     class experimental_async async_stub_{this};
     ::grpc::ClientAsyncResponseReader< ::flyteidl::artifact::CreateArtifactResponse>* AsyncCreateArtifactRaw(::grpc::ClientContext* context, const ::flyteidl::artifact::CreateArtifactRequest& request, ::grpc::CompletionQueue* cq) override;
     ::grpc::ClientAsyncResponseReader< ::flyteidl::artifact::CreateArtifactResponse>* PrepareAsyncCreateArtifactRaw(::grpc::ClientContext* context, const ::flyteidl::artifact::CreateArtifactRequest& request, ::grpc::CompletionQueue* cq) override;
-    ::grpc::ClientAsyncResponseReader< ::flyteidl::artifact::Artifact>* AsyncGetArtifactRaw(::grpc::ClientContext* context, const ::flyteidl::artifact::GetArtifactRequest& request, ::grpc::CompletionQueue* cq) override;
-    ::grpc::ClientAsyncResponseReader< ::flyteidl::artifact::Artifact>* PrepareAsyncGetArtifactRaw(::grpc::ClientContext* context, const ::flyteidl::artifact::GetArtifactRequest& request, ::grpc::CompletionQueue* cq) override;
+    ::grpc::ClientAsyncResponseReader< ::flyteidl::artifact::GetArtifactResponse>* AsyncGetArtifactRaw(::grpc::ClientContext* context, const ::flyteidl::artifact::GetArtifactRequest& request, ::grpc::CompletionQueue* cq) override;
+    ::grpc::ClientAsyncResponseReader< ::flyteidl::artifact::GetArtifactResponse>* PrepareAsyncGetArtifactRaw(::grpc::ClientContext* context, const ::flyteidl::artifact::GetArtifactRequest& request, ::grpc::CompletionQueue* cq) override;
     ::grpc::ClientAsyncResponseReader< ::flyteidl::artifact::ListArtifactNamesResponse>* AsyncListArtifactNamesRaw(::grpc::ClientContext* context, const ::flyteidl::artifact::ListArtifactNamesRequest& request, ::grpc::CompletionQueue* cq) override;
     ::grpc::ClientAsyncResponseReader< ::flyteidl::artifact::ListArtifactNamesResponse>* PrepareAsyncListArtifactNamesRaw(::grpc::ClientContext* context, const ::flyteidl::artifact::ListArtifactNamesRequest& request, ::grpc::CompletionQueue* cq) override;
     ::grpc::ClientAsyncResponseReader< ::flyteidl::artifact::ListArtifactsResponse>* AsyncListArtifactsRaw(::grpc::ClientContext* context, const ::flyteidl::artifact::ListArtifactsRequest& request, ::grpc::CompletionQueue* cq) override;
@@ -296,7 +296,7 @@ class ArtifactRegistry final {
     Service();
     virtual ~Service();
     virtual ::grpc::Status CreateArtifact(::grpc::ServerContext* context, const ::flyteidl::artifact::CreateArtifactRequest* request, ::flyteidl::artifact::CreateArtifactResponse* response);
-    virtual ::grpc::Status GetArtifact(::grpc::ServerContext* context, const ::flyteidl::artifact::GetArtifactRequest* request, ::flyteidl::artifact::Artifact* response);
+    virtual ::grpc::Status GetArtifact(::grpc::ServerContext* context, const ::flyteidl::artifact::GetArtifactRequest* request, ::flyteidl::artifact::GetArtifactResponse* response);
     virtual ::grpc::Status ListArtifactNames(::grpc::ServerContext* context, const ::flyteidl::artifact::ListArtifactNamesRequest* request, ::flyteidl::artifact::ListArtifactNamesResponse* response);
     virtual ::grpc::Status ListArtifacts(::grpc::ServerContext* context, const ::flyteidl::artifact::ListArtifactsRequest* request, ::flyteidl::artifact::ListArtifactsResponse* response);
     virtual ::grpc::Status TagArtifact(::grpc::ServerContext* context, const ::flyteidl::artifact::AddTagsRequest* request, ::flyteidl::artifact::AddTagsResponse* response);
@@ -336,11 +336,11 @@ class ArtifactRegistry final {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
-    ::grpc::Status GetArtifact(::grpc::ServerContext* context, const ::flyteidl::artifact::GetArtifactRequest* request, ::flyteidl::artifact::Artifact* response) override {
+    ::grpc::Status GetArtifact(::grpc::ServerContext* context, const ::flyteidl::artifact::GetArtifactRequest* request, ::flyteidl::artifact::GetArtifactResponse* response) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
-    void RequestGetArtifact(::grpc::ServerContext* context, ::flyteidl::artifact::GetArtifactRequest* request, ::grpc::ServerAsyncResponseWriter< ::flyteidl::artifact::Artifact>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
+    void RequestGetArtifact(::grpc::ServerContext* context, ::flyteidl::artifact::GetArtifactRequest* request, ::grpc::ServerAsyncResponseWriter< ::flyteidl::artifact::GetArtifactResponse>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
       ::grpc::Service::RequestAsyncUnary(1, context, request, response, new_call_cq, notification_cq, tag);
     }
   };
@@ -503,17 +503,17 @@ class ArtifactRegistry final {
    public:
     ExperimentalWithCallbackMethod_GetArtifact() {
       ::grpc::Service::experimental().MarkMethodCallback(1,
-        new ::grpc::internal::CallbackUnaryHandler< ::flyteidl::artifact::GetArtifactRequest, ::flyteidl::artifact::Artifact>(
+        new ::grpc::internal::CallbackUnaryHandler< ::flyteidl::artifact::GetArtifactRequest, ::flyteidl::artifact::GetArtifactResponse>(
           [this](::grpc::ServerContext* context,
                  const ::flyteidl::artifact::GetArtifactRequest* request,
-                 ::flyteidl::artifact::Artifact* response,
+                 ::flyteidl::artifact::GetArtifactResponse* response,
                  ::grpc::experimental::ServerCallbackRpcController* controller) {
                    return this->GetArtifact(context, request, response, controller);
                  }));
     }
     void SetMessageAllocatorFor_GetArtifact(
-        ::grpc::experimental::MessageAllocator< ::flyteidl::artifact::GetArtifactRequest, ::flyteidl::artifact::Artifact>* allocator) {
-      static_cast<::grpc::internal::CallbackUnaryHandler< ::flyteidl::artifact::GetArtifactRequest, ::flyteidl::artifact::Artifact>*>(
+        ::grpc::experimental::MessageAllocator< ::flyteidl::artifact::GetArtifactRequest, ::flyteidl::artifact::GetArtifactResponse>* allocator) {
+      static_cast<::grpc::internal::CallbackUnaryHandler< ::flyteidl::artifact::GetArtifactRequest, ::flyteidl::artifact::GetArtifactResponse>*>(
           ::grpc::Service::experimental().GetHandler(1))
               ->SetMessageAllocator(allocator);
     }
@@ -521,11 +521,11 @@ class ArtifactRegistry final {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
-    ::grpc::Status GetArtifact(::grpc::ServerContext* context, const ::flyteidl::artifact::GetArtifactRequest* request, ::flyteidl::artifact::Artifact* response) override {
+    ::grpc::Status GetArtifact(::grpc::ServerContext* context, const ::flyteidl::artifact::GetArtifactRequest* request, ::flyteidl::artifact::GetArtifactResponse* response) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
-    virtual void GetArtifact(::grpc::ServerContext* context, const ::flyteidl::artifact::GetArtifactRequest* request, ::flyteidl::artifact::Artifact* response, ::grpc::experimental::ServerCallbackRpcController* controller) { controller->Finish(::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "")); }
+    virtual void GetArtifact(::grpc::ServerContext* context, const ::flyteidl::artifact::GetArtifactRequest* request, ::flyteidl::artifact::GetArtifactResponse* response, ::grpc::experimental::ServerCallbackRpcController* controller) { controller->Finish(::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "")); }
   };
   template <class BaseClass>
   class ExperimentalWithCallbackMethod_ListArtifactNames : public BaseClass {
@@ -743,7 +743,7 @@ class ArtifactRegistry final {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
-    ::grpc::Status GetArtifact(::grpc::ServerContext* context, const ::flyteidl::artifact::GetArtifactRequest* request, ::flyteidl::artifact::Artifact* response) override {
+    ::grpc::Status GetArtifact(::grpc::ServerContext* context, const ::flyteidl::artifact::GetArtifactRequest* request, ::flyteidl::artifact::GetArtifactResponse* response) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
@@ -882,7 +882,7 @@ class ArtifactRegistry final {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
-    ::grpc::Status GetArtifact(::grpc::ServerContext* context, const ::flyteidl::artifact::GetArtifactRequest* request, ::flyteidl::artifact::Artifact* response) override {
+    ::grpc::Status GetArtifact(::grpc::ServerContext* context, const ::flyteidl::artifact::GetArtifactRequest* request, ::flyteidl::artifact::GetArtifactResponse* response) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
@@ -1054,7 +1054,7 @@ class ArtifactRegistry final {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
-    ::grpc::Status GetArtifact(::grpc::ServerContext* context, const ::flyteidl::artifact::GetArtifactRequest* request, ::flyteidl::artifact::Artifact* response) override {
+    ::grpc::Status GetArtifact(::grpc::ServerContext* context, const ::flyteidl::artifact::GetArtifactRequest* request, ::flyteidl::artifact::GetArtifactResponse* response) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
@@ -1237,18 +1237,18 @@ class ArtifactRegistry final {
    public:
     WithStreamedUnaryMethod_GetArtifact() {
       ::grpc::Service::MarkMethodStreamed(1,
-        new ::grpc::internal::StreamedUnaryHandler< ::flyteidl::artifact::GetArtifactRequest, ::flyteidl::artifact::Artifact>(std::bind(&WithStreamedUnaryMethod_GetArtifact<BaseClass>::StreamedGetArtifact, this, std::placeholders::_1, std::placeholders::_2)));
+        new ::grpc::internal::StreamedUnaryHandler< ::flyteidl::artifact::GetArtifactRequest, ::flyteidl::artifact::GetArtifactResponse>(std::bind(&WithStreamedUnaryMethod_GetArtifact<BaseClass>::StreamedGetArtifact, this, std::placeholders::_1, std::placeholders::_2)));
     }
     ~WithStreamedUnaryMethod_GetArtifact() override {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable regular version of this method
-    ::grpc::Status GetArtifact(::grpc::ServerContext* context, const ::flyteidl::artifact::GetArtifactRequest* request, ::flyteidl::artifact::Artifact* response) override {
+    ::grpc::Status GetArtifact(::grpc::ServerContext* context, const ::flyteidl::artifact::GetArtifactRequest* request, ::flyteidl::artifact::GetArtifactResponse* response) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     // replace default version of method with streamed unary
-    virtual ::grpc::Status StreamedGetArtifact(::grpc::ServerContext* context, ::grpc::ServerUnaryStreamer< ::flyteidl::artifact::GetArtifactRequest,::flyteidl::artifact::Artifact>* server_unary_streamer) = 0;
+    virtual ::grpc::Status StreamedGetArtifact(::grpc::ServerContext* context, ::grpc::ServerUnaryStreamer< ::flyteidl::artifact::GetArtifactRequest,::flyteidl::artifact::GetArtifactResponse>* server_unary_streamer) = 0;
   };
   template <class BaseClass>
   class WithStreamedUnaryMethod_ListArtifactNames : public BaseClass {

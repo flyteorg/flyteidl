@@ -90,6 +90,12 @@ pub mod get_artifact_request {
         Query(super::super::core::ArtifactQuery),
     }
 }
+#[allow(clippy::derive_partial_eq_without_eq)]
+#[derive(Clone, PartialEq, ::prost::Message)]
+pub struct GetArtifactResponse {
+    #[prost(message, optional, tag="1")]
+    pub artifact: ::core::option::Option<Artifact>,
+}
 /// Tags are general key/value pairs associated with an Artifact. They can be used to search and filter things.
 /// Tags have to be unique by key for a given artifact. That is, for a given project/domain/name/version/key, there
 /// can only be one value, obviously.

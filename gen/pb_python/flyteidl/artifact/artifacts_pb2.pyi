@@ -68,6 +68,12 @@ class GetArtifactRequest(_message.Message):
     details: bool
     def __init__(self, artifact_key: _Optional[_Union[_identifier_pb2.ArtifactKey, _Mapping]] = ..., artifact_id: _Optional[_Union[_identifier_pb2.ArtifactID, _Mapping]] = ..., uri: _Optional[str] = ..., query: _Optional[_Union[_identifier_pb2.ArtifactQuery, _Mapping]] = ..., details: bool = ...) -> None: ...
 
+class GetArtifactResponse(_message.Message):
+    __slots__ = ["artifact"]
+    ARTIFACT_FIELD_NUMBER: _ClassVar[int]
+    artifact: Artifact
+    def __init__(self, artifact: _Optional[_Union[Artifact, _Mapping]] = ...) -> None: ...
+
 class Tag(_message.Message):
     __slots__ = ["key", "value"]
     KEY_FIELD_NUMBER: _ClassVar[int]

@@ -6836,6 +6836,612 @@ public final class Artifacts {
 
   }
 
+  public interface GetArtifactResponseOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:flyteidl.artifact.GetArtifactResponse)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <code>.flyteidl.artifact.Artifact artifact = 1;</code>
+     */
+    boolean hasArtifact();
+    /**
+     * <code>.flyteidl.artifact.Artifact artifact = 1;</code>
+     */
+    flyteidl.artifact.Artifacts.Artifact getArtifact();
+    /**
+     * <code>.flyteidl.artifact.Artifact artifact = 1;</code>
+     */
+    flyteidl.artifact.Artifacts.ArtifactOrBuilder getArtifactOrBuilder();
+  }
+  /**
+   * Protobuf type {@code flyteidl.artifact.GetArtifactResponse}
+   */
+  public  static final class GetArtifactResponse extends
+      com.google.protobuf.GeneratedMessageV3 implements
+      // @@protoc_insertion_point(message_implements:flyteidl.artifact.GetArtifactResponse)
+      GetArtifactResponseOrBuilder {
+  private static final long serialVersionUID = 0L;
+    // Use GetArtifactResponse.newBuilder() to construct.
+    private GetArtifactResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+    private GetArtifactResponse() {
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+      return this.unknownFields;
+    }
+    private GetArtifactResponse(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10: {
+              flyteidl.artifact.Artifacts.Artifact.Builder subBuilder = null;
+              if (artifact_ != null) {
+                subBuilder = artifact_.toBuilder();
+              }
+              artifact_ = input.readMessage(flyteidl.artifact.Artifacts.Artifact.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(artifact_);
+                artifact_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return flyteidl.artifact.Artifacts.internal_static_flyteidl_artifact_GetArtifactResponse_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return flyteidl.artifact.Artifacts.internal_static_flyteidl_artifact_GetArtifactResponse_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              flyteidl.artifact.Artifacts.GetArtifactResponse.class, flyteidl.artifact.Artifacts.GetArtifactResponse.Builder.class);
+    }
+
+    public static final int ARTIFACT_FIELD_NUMBER = 1;
+    private flyteidl.artifact.Artifacts.Artifact artifact_;
+    /**
+     * <code>.flyteidl.artifact.Artifact artifact = 1;</code>
+     */
+    public boolean hasArtifact() {
+      return artifact_ != null;
+    }
+    /**
+     * <code>.flyteidl.artifact.Artifact artifact = 1;</code>
+     */
+    public flyteidl.artifact.Artifacts.Artifact getArtifact() {
+      return artifact_ == null ? flyteidl.artifact.Artifacts.Artifact.getDefaultInstance() : artifact_;
+    }
+    /**
+     * <code>.flyteidl.artifact.Artifact artifact = 1;</code>
+     */
+    public flyteidl.artifact.Artifacts.ArtifactOrBuilder getArtifactOrBuilder() {
+      return getArtifact();
+    }
+
+    private byte memoizedIsInitialized = -1;
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      if (artifact_ != null) {
+        output.writeMessage(1, getArtifact());
+      }
+      unknownFields.writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (artifact_ != null) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(1, getArtifact());
+      }
+      size += unknownFields.getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof flyteidl.artifact.Artifacts.GetArtifactResponse)) {
+        return super.equals(obj);
+      }
+      flyteidl.artifact.Artifacts.GetArtifactResponse other = (flyteidl.artifact.Artifacts.GetArtifactResponse) obj;
+
+      if (hasArtifact() != other.hasArtifact()) return false;
+      if (hasArtifact()) {
+        if (!getArtifact()
+            .equals(other.getArtifact())) return false;
+      }
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      if (hasArtifact()) {
+        hash = (37 * hash) + ARTIFACT_FIELD_NUMBER;
+        hash = (53 * hash) + getArtifact().hashCode();
+      }
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static flyteidl.artifact.Artifacts.GetArtifactResponse parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static flyteidl.artifact.Artifacts.GetArtifactResponse parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static flyteidl.artifact.Artifacts.GetArtifactResponse parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static flyteidl.artifact.Artifacts.GetArtifactResponse parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static flyteidl.artifact.Artifacts.GetArtifactResponse parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static flyteidl.artifact.Artifacts.GetArtifactResponse parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static flyteidl.artifact.Artifacts.GetArtifactResponse parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static flyteidl.artifact.Artifacts.GetArtifactResponse parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static flyteidl.artifact.Artifacts.GetArtifactResponse parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+    public static flyteidl.artifact.Artifacts.GetArtifactResponse parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static flyteidl.artifact.Artifacts.GetArtifactResponse parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static flyteidl.artifact.Artifacts.GetArtifactResponse parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(flyteidl.artifact.Artifacts.GetArtifactResponse prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * Protobuf type {@code flyteidl.artifact.GetArtifactResponse}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:flyteidl.artifact.GetArtifactResponse)
+        flyteidl.artifact.Artifacts.GetArtifactResponseOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return flyteidl.artifact.Artifacts.internal_static_flyteidl_artifact_GetArtifactResponse_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return flyteidl.artifact.Artifacts.internal_static_flyteidl_artifact_GetArtifactResponse_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                flyteidl.artifact.Artifacts.GetArtifactResponse.class, flyteidl.artifact.Artifacts.GetArtifactResponse.Builder.class);
+      }
+
+      // Construct using flyteidl.artifact.Artifacts.GetArtifactResponse.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
+      }
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        if (artifactBuilder_ == null) {
+          artifact_ = null;
+        } else {
+          artifact_ = null;
+          artifactBuilder_ = null;
+        }
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return flyteidl.artifact.Artifacts.internal_static_flyteidl_artifact_GetArtifactResponse_descriptor;
+      }
+
+      @java.lang.Override
+      public flyteidl.artifact.Artifacts.GetArtifactResponse getDefaultInstanceForType() {
+        return flyteidl.artifact.Artifacts.GetArtifactResponse.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public flyteidl.artifact.Artifacts.GetArtifactResponse build() {
+        flyteidl.artifact.Artifacts.GetArtifactResponse result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public flyteidl.artifact.Artifacts.GetArtifactResponse buildPartial() {
+        flyteidl.artifact.Artifacts.GetArtifactResponse result = new flyteidl.artifact.Artifacts.GetArtifactResponse(this);
+        if (artifactBuilder_ == null) {
+          result.artifact_ = artifact_;
+        } else {
+          result.artifact_ = artifactBuilder_.build();
+        }
+        onBuilt();
+        return result;
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.setField(field, value);
+      }
+      @java.lang.Override
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+      @java.lang.Override
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof flyteidl.artifact.Artifacts.GetArtifactResponse) {
+          return mergeFrom((flyteidl.artifact.Artifacts.GetArtifactResponse)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(flyteidl.artifact.Artifacts.GetArtifactResponse other) {
+        if (other == flyteidl.artifact.Artifacts.GetArtifactResponse.getDefaultInstance()) return this;
+        if (other.hasArtifact()) {
+          mergeArtifact(other.getArtifact());
+        }
+        this.mergeUnknownFields(other.unknownFields);
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        flyteidl.artifact.Artifacts.GetArtifactResponse parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (flyteidl.artifact.Artifacts.GetArtifactResponse) e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+
+      private flyteidl.artifact.Artifacts.Artifact artifact_;
+      private com.google.protobuf.SingleFieldBuilderV3<
+          flyteidl.artifact.Artifacts.Artifact, flyteidl.artifact.Artifacts.Artifact.Builder, flyteidl.artifact.Artifacts.ArtifactOrBuilder> artifactBuilder_;
+      /**
+       * <code>.flyteidl.artifact.Artifact artifact = 1;</code>
+       */
+      public boolean hasArtifact() {
+        return artifactBuilder_ != null || artifact_ != null;
+      }
+      /**
+       * <code>.flyteidl.artifact.Artifact artifact = 1;</code>
+       */
+      public flyteidl.artifact.Artifacts.Artifact getArtifact() {
+        if (artifactBuilder_ == null) {
+          return artifact_ == null ? flyteidl.artifact.Artifacts.Artifact.getDefaultInstance() : artifact_;
+        } else {
+          return artifactBuilder_.getMessage();
+        }
+      }
+      /**
+       * <code>.flyteidl.artifact.Artifact artifact = 1;</code>
+       */
+      public Builder setArtifact(flyteidl.artifact.Artifacts.Artifact value) {
+        if (artifactBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          artifact_ = value;
+          onChanged();
+        } else {
+          artifactBuilder_.setMessage(value);
+        }
+
+        return this;
+      }
+      /**
+       * <code>.flyteidl.artifact.Artifact artifact = 1;</code>
+       */
+      public Builder setArtifact(
+          flyteidl.artifact.Artifacts.Artifact.Builder builderForValue) {
+        if (artifactBuilder_ == null) {
+          artifact_ = builderForValue.build();
+          onChanged();
+        } else {
+          artifactBuilder_.setMessage(builderForValue.build());
+        }
+
+        return this;
+      }
+      /**
+       * <code>.flyteidl.artifact.Artifact artifact = 1;</code>
+       */
+      public Builder mergeArtifact(flyteidl.artifact.Artifacts.Artifact value) {
+        if (artifactBuilder_ == null) {
+          if (artifact_ != null) {
+            artifact_ =
+              flyteidl.artifact.Artifacts.Artifact.newBuilder(artifact_).mergeFrom(value).buildPartial();
+          } else {
+            artifact_ = value;
+          }
+          onChanged();
+        } else {
+          artifactBuilder_.mergeFrom(value);
+        }
+
+        return this;
+      }
+      /**
+       * <code>.flyteidl.artifact.Artifact artifact = 1;</code>
+       */
+      public Builder clearArtifact() {
+        if (artifactBuilder_ == null) {
+          artifact_ = null;
+          onChanged();
+        } else {
+          artifact_ = null;
+          artifactBuilder_ = null;
+        }
+
+        return this;
+      }
+      /**
+       * <code>.flyteidl.artifact.Artifact artifact = 1;</code>
+       */
+      public flyteidl.artifact.Artifacts.Artifact.Builder getArtifactBuilder() {
+        
+        onChanged();
+        return getArtifactFieldBuilder().getBuilder();
+      }
+      /**
+       * <code>.flyteidl.artifact.Artifact artifact = 1;</code>
+       */
+      public flyteidl.artifact.Artifacts.ArtifactOrBuilder getArtifactOrBuilder() {
+        if (artifactBuilder_ != null) {
+          return artifactBuilder_.getMessageOrBuilder();
+        } else {
+          return artifact_ == null ?
+              flyteidl.artifact.Artifacts.Artifact.getDefaultInstance() : artifact_;
+        }
+      }
+      /**
+       * <code>.flyteidl.artifact.Artifact artifact = 1;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+          flyteidl.artifact.Artifacts.Artifact, flyteidl.artifact.Artifacts.Artifact.Builder, flyteidl.artifact.Artifacts.ArtifactOrBuilder> 
+          getArtifactFieldBuilder() {
+        if (artifactBuilder_ == null) {
+          artifactBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              flyteidl.artifact.Artifacts.Artifact, flyteidl.artifact.Artifacts.Artifact.Builder, flyteidl.artifact.Artifacts.ArtifactOrBuilder>(
+                  getArtifact(),
+                  getParentForChildren(),
+                  isClean());
+          artifact_ = null;
+        }
+        return artifactBuilder_;
+      }
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+
+      // @@protoc_insertion_point(builder_scope:flyteidl.artifact.GetArtifactResponse)
+    }
+
+    // @@protoc_insertion_point(class_scope:flyteidl.artifact.GetArtifactResponse)
+    private static final flyteidl.artifact.Artifacts.GetArtifactResponse DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new flyteidl.artifact.Artifacts.GetArtifactResponse();
+    }
+
+    public static flyteidl.artifact.Artifacts.GetArtifactResponse getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<GetArtifactResponse>
+        PARSER = new com.google.protobuf.AbstractParser<GetArtifactResponse>() {
+      @java.lang.Override
+      public GetArtifactResponse parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new GetArtifactResponse(input, extensionRegistry);
+      }
+    };
+
+    public static com.google.protobuf.Parser<GetArtifactResponse> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<GetArtifactResponse> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public flyteidl.artifact.Artifacts.GetArtifactResponse getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
   public interface TagOrBuilder extends
       // @@protoc_insertion_point(interface_extends:flyteidl.artifact.Tag)
       com.google.protobuf.MessageOrBuilder {
@@ -16032,6 +16638,11 @@ public final class Artifacts {
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_flyteidl_artifact_GetArtifactRequest_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_flyteidl_artifact_GetArtifactResponse_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_flyteidl_artifact_GetArtifactResponse_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_flyteidl_artifact_Tag_descriptor;
   private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
@@ -16131,51 +16742,53 @@ public final class Artifacts {
       "tifactKeyH\000\0220\n\013artifact_id\030\002 \001(\0132\031.flyte" +
       "idl.core.ArtifactIDH\000\022\r\n\003uri\030\003 \001(\tH\000\022-\n\005" +
       "query\030\004 \001(\0132\034.flyteidl.core.ArtifactQuer" +
-      "yH\000\022\017\n\007details\030\005 \001(\010B\014\n\nidentifier\"!\n\003Ta" +
-      "g\022\013\n\003key\030\001 \001(\t\022\r\n\005value\030\002 \001(\t\"f\n\016AddTags" +
-      "Request\022.\n\013artifact_id\030\001 \001(\0132\031.flyteidl." +
-      "core.ArtifactID\022$\n\004tags\030\002 \003(\0132\026.flyteidl" +
-      ".artifact.Tag\"\021\n\017AddTagsResponse\"i\n\021Remo" +
-      "veTagsRequest\022.\n\013artifact_id\030\001 \001(\0132\031.fly" +
-      "teidl.core.ArtifactID\022$\n\004tags\030\002 \003(\0132\026.fl" +
-      "yteidl.artifact.Tag\"\024\n\022RemoveTagsRespons" +
-      "e\";\n\030ListArtifactNamesRequest\022\017\n\007project" +
-      "\030\001 \001(\t\022\016\n\006domain\030\002 \001(\t\"N\n\031ListArtifactNa" +
-      "mesResponse\0221\n\rartifact_keys\030\001 \003(\0132\032.fly" +
-      "teidl.core.ArtifactKey\"H\n\024ListArtifactsR" +
-      "equest\0220\n\014artifact_key\030\001 \001(\0132\032.flyteidl." +
-      "core.ArtifactKey\"G\n\025ListArtifactsRespons" +
-      "e\022.\n\tartifacts\030\001 \003(\0132\033.flyteidl.artifact" +
-      ".Artifact\"\206\001\n\022CreateAliasRequest\0220\n\014arti" +
-      "fact_key\030\001 \001(\0132\032.flyteidl.core.ArtifactK" +
-      "ey\022+\n\005alias\030\002 \001(\0132\034.flyteidl.core.Artifa" +
-      "ctAlias\022\021\n\toverwrite\030\003 \001(\010\"\025\n\023CreateAlia" +
-      "sResponse\"s\n\022RemoveAliasRequest\0220\n\014artif" +
-      "act_key\030\001 \001(\0132\032.flyteidl.core.ArtifactKe" +
-      "y\022+\n\005alias\030\002 \001(\0132\034.flyteidl.core.Artifac" +
-      "tAlias\"\025\n\023RemoveAliasResponse2\235\006\n\020Artifa" +
-      "ctRegistry\022g\n\016CreateArtifact\022(.flyteidl." +
-      "artifact.CreateArtifactRequest\032).flyteid" +
-      "l.artifact.CreateArtifactResponse\"\000\022S\n\013G" +
-      "etArtifact\022%.flyteidl.artifact.GetArtifa" +
-      "ctRequest\032\033.flyteidl.artifact.Artifact\"\000" +
-      "\022p\n\021ListArtifactNames\022+.flyteidl.artifac" +
-      "t.ListArtifactNamesRequest\032,.flyteidl.ar" +
-      "tifact.ListArtifactNamesResponse\"\000\022d\n\rLi" +
-      "stArtifacts\022\'.flyteidl.artifact.ListArti" +
-      "factsRequest\032(.flyteidl.artifact.ListArt" +
-      "ifactsResponse\"\000\022V\n\013TagArtifact\022!.flytei" +
-      "dl.artifact.AddTagsRequest\032\".flyteidl.ar" +
-      "tifact.AddTagsResponse\"\000\022[\n\nRemoveTags\022$" +
-      ".flyteidl.artifact.RemoveTagsRequest\032%.f" +
-      "lyteidl.artifact.RemoveTagsResponse\"\000\022^\n" +
-      "\013CreateAlias\022%.flyteidl.artifact.CreateA" +
-      "liasRequest\032&.flyteidl.artifact.CreateAl" +
-      "iasResponse\"\000\022^\n\013RemoveAlias\022%.flyteidl." +
-      "artifact.RemoveAliasRequest\032&.flyteidl.a" +
-      "rtifact.RemoveAliasResponse\"\000B:Z8github." +
-      "com/flyteorg/flyteidl/gen/pb-go/flyteidl" +
-      "/artifactb\006proto3"
+      "yH\000\022\017\n\007details\030\005 \001(\010B\014\n\nidentifier\"D\n\023Ge" +
+      "tArtifactResponse\022-\n\010artifact\030\001 \001(\0132\033.fl" +
+      "yteidl.artifact.Artifact\"!\n\003Tag\022\013\n\003key\030\001" +
+      " \001(\t\022\r\n\005value\030\002 \001(\t\"f\n\016AddTagsRequest\022.\n" +
+      "\013artifact_id\030\001 \001(\0132\031.flyteidl.core.Artif" +
+      "actID\022$\n\004tags\030\002 \003(\0132\026.flyteidl.artifact." +
+      "Tag\"\021\n\017AddTagsResponse\"i\n\021RemoveTagsRequ" +
+      "est\022.\n\013artifact_id\030\001 \001(\0132\031.flyteidl.core" +
+      ".ArtifactID\022$\n\004tags\030\002 \003(\0132\026.flyteidl.art" +
+      "ifact.Tag\"\024\n\022RemoveTagsResponse\";\n\030ListA" +
+      "rtifactNamesRequest\022\017\n\007project\030\001 \001(\t\022\016\n\006" +
+      "domain\030\002 \001(\t\"N\n\031ListArtifactNamesRespons" +
+      "e\0221\n\rartifact_keys\030\001 \003(\0132\032.flyteidl.core" +
+      ".ArtifactKey\"H\n\024ListArtifactsRequest\0220\n\014" +
+      "artifact_key\030\001 \001(\0132\032.flyteidl.core.Artif" +
+      "actKey\"G\n\025ListArtifactsResponse\022.\n\tartif" +
+      "acts\030\001 \003(\0132\033.flyteidl.artifact.Artifact\"" +
+      "\206\001\n\022CreateAliasRequest\0220\n\014artifact_key\030\001" +
+      " \001(\0132\032.flyteidl.core.ArtifactKey\022+\n\005alia" +
+      "s\030\002 \001(\0132\034.flyteidl.core.ArtifactAlias\022\021\n" +
+      "\toverwrite\030\003 \001(\010\"\025\n\023CreateAliasResponse\"" +
+      "s\n\022RemoveAliasRequest\0220\n\014artifact_key\030\001 " +
+      "\001(\0132\032.flyteidl.core.ArtifactKey\022+\n\005alias" +
+      "\030\002 \001(\0132\034.flyteidl.core.ArtifactAlias\"\025\n\023" +
+      "RemoveAliasResponse2\250\006\n\020ArtifactRegistry" +
+      "\022g\n\016CreateArtifact\022(.flyteidl.artifact.C" +
+      "reateArtifactRequest\032).flyteidl.artifact" +
+      ".CreateArtifactResponse\"\000\022^\n\013GetArtifact" +
+      "\022%.flyteidl.artifact.GetArtifactRequest\032" +
+      "&.flyteidl.artifact.GetArtifactResponse\"" +
+      "\000\022p\n\021ListArtifactNames\022+.flyteidl.artifa" +
+      "ct.ListArtifactNamesRequest\032,.flyteidl.a" +
+      "rtifact.ListArtifactNamesResponse\"\000\022d\n\rL" +
+      "istArtifacts\022\'.flyteidl.artifact.ListArt" +
+      "ifactsRequest\032(.flyteidl.artifact.ListAr" +
+      "tifactsResponse\"\000\022V\n\013TagArtifact\022!.flyte" +
+      "idl.artifact.AddTagsRequest\032\".flyteidl.a" +
+      "rtifact.AddTagsResponse\"\000\022[\n\nRemoveTags\022" +
+      "$.flyteidl.artifact.RemoveTagsRequest\032%." +
+      "flyteidl.artifact.RemoveTagsResponse\"\000\022^" +
+      "\n\013CreateAlias\022%.flyteidl.artifact.Create" +
+      "AliasRequest\032&.flyteidl.artifact.CreateA" +
+      "liasResponse\"\000\022^\n\013RemoveAlias\022%.flyteidl" +
+      ".artifact.RemoveAliasRequest\032&.flyteidl." +
+      "artifact.RemoveAliasResponse\"\000B:Z8github" +
+      ".com/flyteorg/flyteidl/gen/pb-go/flyteid" +
+      "l/artifactb\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
@@ -16222,80 +16835,86 @@ public final class Artifacts {
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_flyteidl_artifact_GetArtifactRequest_descriptor,
         new java.lang.String[] { "ArtifactKey", "ArtifactId", "Uri", "Query", "Details", "Identifier", });
-    internal_static_flyteidl_artifact_Tag_descriptor =
+    internal_static_flyteidl_artifact_GetArtifactResponse_descriptor =
       getDescriptor().getMessageTypes().get(5);
+    internal_static_flyteidl_artifact_GetArtifactResponse_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_flyteidl_artifact_GetArtifactResponse_descriptor,
+        new java.lang.String[] { "Artifact", });
+    internal_static_flyteidl_artifact_Tag_descriptor =
+      getDescriptor().getMessageTypes().get(6);
     internal_static_flyteidl_artifact_Tag_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_flyteidl_artifact_Tag_descriptor,
         new java.lang.String[] { "Key", "Value", });
     internal_static_flyteidl_artifact_AddTagsRequest_descriptor =
-      getDescriptor().getMessageTypes().get(6);
+      getDescriptor().getMessageTypes().get(7);
     internal_static_flyteidl_artifact_AddTagsRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_flyteidl_artifact_AddTagsRequest_descriptor,
         new java.lang.String[] { "ArtifactId", "Tags", });
     internal_static_flyteidl_artifact_AddTagsResponse_descriptor =
-      getDescriptor().getMessageTypes().get(7);
+      getDescriptor().getMessageTypes().get(8);
     internal_static_flyteidl_artifact_AddTagsResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_flyteidl_artifact_AddTagsResponse_descriptor,
         new java.lang.String[] { });
     internal_static_flyteidl_artifact_RemoveTagsRequest_descriptor =
-      getDescriptor().getMessageTypes().get(8);
+      getDescriptor().getMessageTypes().get(9);
     internal_static_flyteidl_artifact_RemoveTagsRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_flyteidl_artifact_RemoveTagsRequest_descriptor,
         new java.lang.String[] { "ArtifactId", "Tags", });
     internal_static_flyteidl_artifact_RemoveTagsResponse_descriptor =
-      getDescriptor().getMessageTypes().get(9);
+      getDescriptor().getMessageTypes().get(10);
     internal_static_flyteidl_artifact_RemoveTagsResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_flyteidl_artifact_RemoveTagsResponse_descriptor,
         new java.lang.String[] { });
     internal_static_flyteidl_artifact_ListArtifactNamesRequest_descriptor =
-      getDescriptor().getMessageTypes().get(10);
+      getDescriptor().getMessageTypes().get(11);
     internal_static_flyteidl_artifact_ListArtifactNamesRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_flyteidl_artifact_ListArtifactNamesRequest_descriptor,
         new java.lang.String[] { "Project", "Domain", });
     internal_static_flyteidl_artifact_ListArtifactNamesResponse_descriptor =
-      getDescriptor().getMessageTypes().get(11);
+      getDescriptor().getMessageTypes().get(12);
     internal_static_flyteidl_artifact_ListArtifactNamesResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_flyteidl_artifact_ListArtifactNamesResponse_descriptor,
         new java.lang.String[] { "ArtifactKeys", });
     internal_static_flyteidl_artifact_ListArtifactsRequest_descriptor =
-      getDescriptor().getMessageTypes().get(12);
+      getDescriptor().getMessageTypes().get(13);
     internal_static_flyteidl_artifact_ListArtifactsRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_flyteidl_artifact_ListArtifactsRequest_descriptor,
         new java.lang.String[] { "ArtifactKey", });
     internal_static_flyteidl_artifact_ListArtifactsResponse_descriptor =
-      getDescriptor().getMessageTypes().get(13);
+      getDescriptor().getMessageTypes().get(14);
     internal_static_flyteidl_artifact_ListArtifactsResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_flyteidl_artifact_ListArtifactsResponse_descriptor,
         new java.lang.String[] { "Artifacts", });
     internal_static_flyteidl_artifact_CreateAliasRequest_descriptor =
-      getDescriptor().getMessageTypes().get(14);
+      getDescriptor().getMessageTypes().get(15);
     internal_static_flyteidl_artifact_CreateAliasRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_flyteidl_artifact_CreateAliasRequest_descriptor,
         new java.lang.String[] { "ArtifactKey", "Alias", "Overwrite", });
     internal_static_flyteidl_artifact_CreateAliasResponse_descriptor =
-      getDescriptor().getMessageTypes().get(15);
+      getDescriptor().getMessageTypes().get(16);
     internal_static_flyteidl_artifact_CreateAliasResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_flyteidl_artifact_CreateAliasResponse_descriptor,
         new java.lang.String[] { });
     internal_static_flyteidl_artifact_RemoveAliasRequest_descriptor =
-      getDescriptor().getMessageTypes().get(16);
+      getDescriptor().getMessageTypes().get(17);
     internal_static_flyteidl_artifact_RemoveAliasRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_flyteidl_artifact_RemoveAliasRequest_descriptor,
         new java.lang.String[] { "ArtifactKey", "Alias", });
     internal_static_flyteidl_artifact_RemoveAliasResponse_descriptor =
-      getDescriptor().getMessageTypes().get(17);
+      getDescriptor().getMessageTypes().get(18);
     internal_static_flyteidl_artifact_RemoveAliasResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_flyteidl_artifact_RemoveAliasResponse_descriptor,

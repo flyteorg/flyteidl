@@ -20611,6 +20611,118 @@
                 return GetArtifactRequest;
             })();
     
+            artifact.GetArtifactResponse = (function() {
+    
+                /**
+                 * Properties of a GetArtifactResponse.
+                 * @memberof flyteidl.artifact
+                 * @interface IGetArtifactResponse
+                 * @property {flyteidl.artifact.IArtifact|null} [artifact] GetArtifactResponse artifact
+                 */
+    
+                /**
+                 * Constructs a new GetArtifactResponse.
+                 * @memberof flyteidl.artifact
+                 * @classdesc Represents a GetArtifactResponse.
+                 * @implements IGetArtifactResponse
+                 * @constructor
+                 * @param {flyteidl.artifact.IGetArtifactResponse=} [properties] Properties to set
+                 */
+                function GetArtifactResponse(properties) {
+                    if (properties)
+                        for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                            if (properties[keys[i]] != null)
+                                this[keys[i]] = properties[keys[i]];
+                }
+    
+                /**
+                 * GetArtifactResponse artifact.
+                 * @member {flyteidl.artifact.IArtifact|null|undefined} artifact
+                 * @memberof flyteidl.artifact.GetArtifactResponse
+                 * @instance
+                 */
+                GetArtifactResponse.prototype.artifact = null;
+    
+                /**
+                 * Creates a new GetArtifactResponse instance using the specified properties.
+                 * @function create
+                 * @memberof flyteidl.artifact.GetArtifactResponse
+                 * @static
+                 * @param {flyteidl.artifact.IGetArtifactResponse=} [properties] Properties to set
+                 * @returns {flyteidl.artifact.GetArtifactResponse} GetArtifactResponse instance
+                 */
+                GetArtifactResponse.create = function create(properties) {
+                    return new GetArtifactResponse(properties);
+                };
+    
+                /**
+                 * Encodes the specified GetArtifactResponse message. Does not implicitly {@link flyteidl.artifact.GetArtifactResponse.verify|verify} messages.
+                 * @function encode
+                 * @memberof flyteidl.artifact.GetArtifactResponse
+                 * @static
+                 * @param {flyteidl.artifact.IGetArtifactResponse} message GetArtifactResponse message or plain object to encode
+                 * @param {$protobuf.Writer} [writer] Writer to encode to
+                 * @returns {$protobuf.Writer} Writer
+                 */
+                GetArtifactResponse.encode = function encode(message, writer) {
+                    if (!writer)
+                        writer = $Writer.create();
+                    if (message.artifact != null && message.hasOwnProperty("artifact"))
+                        $root.flyteidl.artifact.Artifact.encode(message.artifact, writer.uint32(/* id 1, wireType 2 =*/10).fork()).ldelim();
+                    return writer;
+                };
+    
+                /**
+                 * Decodes a GetArtifactResponse message from the specified reader or buffer.
+                 * @function decode
+                 * @memberof flyteidl.artifact.GetArtifactResponse
+                 * @static
+                 * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+                 * @param {number} [length] Message length if known beforehand
+                 * @returns {flyteidl.artifact.GetArtifactResponse} GetArtifactResponse
+                 * @throws {Error} If the payload is not a reader or valid buffer
+                 * @throws {$protobuf.util.ProtocolError} If required fields are missing
+                 */
+                GetArtifactResponse.decode = function decode(reader, length) {
+                    if (!(reader instanceof $Reader))
+                        reader = $Reader.create(reader);
+                    var end = length === undefined ? reader.len : reader.pos + length, message = new $root.flyteidl.artifact.GetArtifactResponse();
+                    while (reader.pos < end) {
+                        var tag = reader.uint32();
+                        switch (tag >>> 3) {
+                        case 1:
+                            message.artifact = $root.flyteidl.artifact.Artifact.decode(reader, reader.uint32());
+                            break;
+                        default:
+                            reader.skipType(tag & 7);
+                            break;
+                        }
+                    }
+                    return message;
+                };
+    
+                /**
+                 * Verifies a GetArtifactResponse message.
+                 * @function verify
+                 * @memberof flyteidl.artifact.GetArtifactResponse
+                 * @static
+                 * @param {Object.<string,*>} message Plain object to verify
+                 * @returns {string|null} `null` if valid, otherwise the reason why it is not
+                 */
+                GetArtifactResponse.verify = function verify(message) {
+                    if (typeof message !== "object" || message === null)
+                        return "object expected";
+                    if (message.artifact != null && message.hasOwnProperty("artifact")) {
+                        var error = $root.flyteidl.artifact.Artifact.verify(message.artifact);
+                        if (error)
+                            return "artifact." + error;
+                    }
+                    return null;
+                };
+    
+                return GetArtifactResponse;
+            })();
+    
             artifact.Tag = (function() {
     
                 /**
@@ -22217,7 +22329,7 @@
                  * @typedef GetArtifactCallback
                  * @type {function}
                  * @param {Error|null} error Error, if any
-                 * @param {flyteidl.artifact.Artifact} [response] Artifact
+                 * @param {flyteidl.artifact.GetArtifactResponse} [response] GetArtifactResponse
                  */
     
                 /**
@@ -22226,12 +22338,12 @@
                  * @memberof flyteidl.artifact.ArtifactRegistry
                  * @instance
                  * @param {flyteidl.artifact.IGetArtifactRequest} request GetArtifactRequest message or plain object
-                 * @param {flyteidl.artifact.ArtifactRegistry.GetArtifactCallback} callback Node-style callback called with the error, if any, and Artifact
+                 * @param {flyteidl.artifact.ArtifactRegistry.GetArtifactCallback} callback Node-style callback called with the error, if any, and GetArtifactResponse
                  * @returns {undefined}
                  * @variation 1
                  */
                 Object.defineProperty(ArtifactRegistry.prototype.getArtifact = function getArtifact(request, callback) {
-                    return this.rpcCall(getArtifact, $root.flyteidl.artifact.GetArtifactRequest, $root.flyteidl.artifact.Artifact, request, callback);
+                    return this.rpcCall(getArtifact, $root.flyteidl.artifact.GetArtifactRequest, $root.flyteidl.artifact.GetArtifactResponse, request, callback);
                 }, "name", { value: "GetArtifact" });
     
                 /**
@@ -22240,7 +22352,7 @@
                  * @memberof flyteidl.artifact.ArtifactRegistry
                  * @instance
                  * @param {flyteidl.artifact.IGetArtifactRequest} request GetArtifactRequest message or plain object
-                 * @returns {Promise<flyteidl.artifact.Artifact>} Promise
+                 * @returns {Promise<flyteidl.artifact.GetArtifactResponse>} Promise
                  * @variation 2
                  */
     

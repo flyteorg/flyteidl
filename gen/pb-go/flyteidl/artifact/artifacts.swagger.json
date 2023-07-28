@@ -135,6 +135,14 @@
         }
       }
     },
+    "artifactGetArtifactResponse": {
+      "type": "object",
+      "properties": {
+        "artifact": {
+          "$ref": "#/definitions/artifactArtifact"
+        }
+      }
+    },
     "artifactListArtifactNamesResponse": {
       "type": "object",
       "properties": {

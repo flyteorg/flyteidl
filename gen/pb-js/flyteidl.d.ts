@@ -8444,6 +8444,58 @@ export namespace flyteidl {
             public static verify(message: { [k: string]: any }): (string|null);
         }
 
+        /** Properties of a GetArtifactResponse. */
+        interface IGetArtifactResponse {
+
+            /** GetArtifactResponse artifact */
+            artifact?: (flyteidl.artifact.IArtifact|null);
+        }
+
+        /** Represents a GetArtifactResponse. */
+        class GetArtifactResponse implements IGetArtifactResponse {
+
+            /**
+             * Constructs a new GetArtifactResponse.
+             * @param [properties] Properties to set
+             */
+            constructor(properties?: flyteidl.artifact.IGetArtifactResponse);
+
+            /** GetArtifactResponse artifact. */
+            public artifact?: (flyteidl.artifact.IArtifact|null);
+
+            /**
+             * Creates a new GetArtifactResponse instance using the specified properties.
+             * @param [properties] Properties to set
+             * @returns GetArtifactResponse instance
+             */
+            public static create(properties?: flyteidl.artifact.IGetArtifactResponse): flyteidl.artifact.GetArtifactResponse;
+
+            /**
+             * Encodes the specified GetArtifactResponse message. Does not implicitly {@link flyteidl.artifact.GetArtifactResponse.verify|verify} messages.
+             * @param message GetArtifactResponse message or plain object to encode
+             * @param [writer] Writer to encode to
+             * @returns Writer
+             */
+            public static encode(message: flyteidl.artifact.IGetArtifactResponse, writer?: $protobuf.Writer): $protobuf.Writer;
+
+            /**
+             * Decodes a GetArtifactResponse message from the specified reader or buffer.
+             * @param reader Reader or buffer to decode from
+             * @param [length] Message length if known beforehand
+             * @returns GetArtifactResponse
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): flyteidl.artifact.GetArtifactResponse;
+
+            /**
+             * Verifies a GetArtifactResponse message.
+             * @param message Plain object to verify
+             * @returns `null` if valid, otherwise the reason why it is not
+             */
+            public static verify(message: { [k: string]: any }): (string|null);
+        }
+
         /** Properties of a Tag. */
         interface ITag {
 
@@ -9175,7 +9227,7 @@ export namespace flyteidl {
             /**
              * Calls GetArtifact.
              * @param request GetArtifactRequest message or plain object
-             * @param callback Node-style callback called with the error, if any, and Artifact
+             * @param callback Node-style callback called with the error, if any, and GetArtifactResponse
              */
             public getArtifact(request: flyteidl.artifact.IGetArtifactRequest, callback: flyteidl.artifact.ArtifactRegistry.GetArtifactCallback): void;
 
@@ -9184,7 +9236,7 @@ export namespace flyteidl {
              * @param request GetArtifactRequest message or plain object
              * @returns Promise
              */
-            public getArtifact(request: flyteidl.artifact.IGetArtifactRequest): Promise<flyteidl.artifact.Artifact>;
+            public getArtifact(request: flyteidl.artifact.IGetArtifactRequest): Promise<flyteidl.artifact.GetArtifactResponse>;
 
             /**
              * Calls ListArtifactNames.
@@ -9283,9 +9335,9 @@ export namespace flyteidl {
             /**
              * Callback as used by {@link flyteidl.artifact.ArtifactRegistry#getArtifact}.
              * @param error Error, if any
-             * @param [response] Artifact
+             * @param [response] GetArtifactResponse
              */
-            type GetArtifactCallback = (error: (Error|null), response?: flyteidl.artifact.Artifact) => void;
+            type GetArtifactCallback = (error: (Error|null), response?: flyteidl.artifact.GetArtifactResponse) => void;
 
             /**
              * Callback as used by {@link flyteidl.artifact.ArtifactRegistry#listArtifactNames}.
