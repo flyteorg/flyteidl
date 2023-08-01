@@ -44,7 +44,7 @@ class AdminExecutionMetadata(object):
         'parent_node_execution': 'CoreNodeExecutionIdentifier',
         'reference_execution': 'CoreWorkflowExecutionIdentifier',
         'system_metadata': 'AdminSystemMetadata',
-        'artifact_ids': 'dict(str, CoreArtifactID)'
+        'artifact_ids': 'list[CoreArtifactID]'
     }
 
     attribute_map = {
@@ -249,9 +249,10 @@ class AdminExecutionMetadata(object):
     def artifact_ids(self):
         """Gets the artifact_ids of this AdminExecutionMetadata.  # noqa: E501
 
+        Save a list of the artifacts used in this execution for now. This is a list only rather than a mapping since we don't have a structure to handle nested ones anyways.  # noqa: E501
 
         :return: The artifact_ids of this AdminExecutionMetadata.  # noqa: E501
-        :rtype: dict(str, CoreArtifactID)
+        :rtype: list[CoreArtifactID]
         """
         return self._artifact_ids
 
@@ -259,9 +260,10 @@ class AdminExecutionMetadata(object):
     def artifact_ids(self, artifact_ids):
         """Sets the artifact_ids of this AdminExecutionMetadata.
 
+        Save a list of the artifacts used in this execution for now. This is a list only rather than a mapping since we don't have a structure to handle nested ones anyways.  # noqa: E501
 
         :param artifact_ids: The artifact_ids of this AdminExecutionMetadata.  # noqa: E501
-        :type: dict(str, CoreArtifactID)
+        :type: list[CoreArtifactID]
         """
 
         self._artifact_ids = artifact_ids

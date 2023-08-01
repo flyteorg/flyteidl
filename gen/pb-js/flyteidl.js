@@ -30934,7 +30934,7 @@
                  * @property {flyteidl.core.INodeExecutionIdentifier|null} [parentNodeExecution] ExecutionMetadata parentNodeExecution
                  * @property {flyteidl.core.IWorkflowExecutionIdentifier|null} [referenceExecution] ExecutionMetadata referenceExecution
                  * @property {flyteidl.admin.ISystemMetadata|null} [systemMetadata] ExecutionMetadata systemMetadata
-                 * @property {Object.<string,flyteidl.core.IArtifactID>|null} [artifactIds] ExecutionMetadata artifactIds
+                 * @property {Array.<flyteidl.core.IArtifactID>|null} [artifactIds] ExecutionMetadata artifactIds
                  */
     
                 /**
@@ -30946,7 +30946,7 @@
                  * @param {flyteidl.admin.IExecutionMetadata=} [properties] Properties to set
                  */
                 function ExecutionMetadata(properties) {
-                    this.artifactIds = {};
+                    this.artifactIds = [];
                     if (properties)
                         for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
                             if (properties[keys[i]] != null)
@@ -31011,11 +31011,11 @@
     
                 /**
                  * ExecutionMetadata artifactIds.
-                 * @member {Object.<string,flyteidl.core.IArtifactID>} artifactIds
+                 * @member {Array.<flyteidl.core.IArtifactID>} artifactIds
                  * @memberof flyteidl.admin.ExecutionMetadata
                  * @instance
                  */
-                ExecutionMetadata.prototype.artifactIds = $util.emptyObject;
+                ExecutionMetadata.prototype.artifactIds = $util.emptyArray;
     
                 /**
                  * Creates a new ExecutionMetadata instance using the specified properties.
@@ -31055,11 +31055,9 @@
                         $root.flyteidl.core.WorkflowExecutionIdentifier.encode(message.referenceExecution, writer.uint32(/* id 16, wireType 2 =*/130).fork()).ldelim();
                     if (message.systemMetadata != null && message.hasOwnProperty("systemMetadata"))
                         $root.flyteidl.admin.SystemMetadata.encode(message.systemMetadata, writer.uint32(/* id 17, wireType 2 =*/138).fork()).ldelim();
-                    if (message.artifactIds != null && message.hasOwnProperty("artifactIds"))
-                        for (var keys = Object.keys(message.artifactIds), i = 0; i < keys.length; ++i) {
-                            writer.uint32(/* id 18, wireType 2 =*/146).fork().uint32(/* id 1, wireType 2 =*/10).string(keys[i]);
-                            $root.flyteidl.core.ArtifactID.encode(message.artifactIds[keys[i]], writer.uint32(/* id 2, wireType 2 =*/18).fork()).ldelim().ldelim();
-                        }
+                    if (message.artifactIds != null && message.artifactIds.length)
+                        for (var i = 0; i < message.artifactIds.length; ++i)
+                            $root.flyteidl.core.ArtifactID.encode(message.artifactIds[i], writer.uint32(/* id 18, wireType 2 =*/146).fork()).ldelim();
                     return writer;
                 };
     
@@ -31077,7 +31075,7 @@
                 ExecutionMetadata.decode = function decode(reader, length) {
                     if (!(reader instanceof $Reader))
                         reader = $Reader.create(reader);
-                    var end = length === undefined ? reader.len : reader.pos + length, message = new $root.flyteidl.admin.ExecutionMetadata(), key;
+                    var end = length === undefined ? reader.len : reader.pos + length, message = new $root.flyteidl.admin.ExecutionMetadata();
                     while (reader.pos < end) {
                         var tag = reader.uint32();
                         switch (tag >>> 3) {
@@ -31103,12 +31101,9 @@
                             message.systemMetadata = $root.flyteidl.admin.SystemMetadata.decode(reader, reader.uint32());
                             break;
                         case 18:
-                            reader.skip().pos++;
-                            if (message.artifactIds === $util.emptyObject)
-                                message.artifactIds = {};
-                            key = reader.string();
-                            reader.pos++;
-                            message.artifactIds[key] = $root.flyteidl.core.ArtifactID.decode(reader, reader.uint32());
+                            if (!(message.artifactIds && message.artifactIds.length))
+                                message.artifactIds = [];
+                            message.artifactIds.push($root.flyteidl.core.ArtifactID.decode(reader, reader.uint32()));
                             break;
                         default:
                             reader.skipType(tag & 7);
@@ -31168,11 +31163,10 @@
                             return "systemMetadata." + error;
                     }
                     if (message.artifactIds != null && message.hasOwnProperty("artifactIds")) {
-                        if (!$util.isObject(message.artifactIds))
-                            return "artifactIds: object expected";
-                        var key = Object.keys(message.artifactIds);
-                        for (var i = 0; i < key.length; ++i) {
-                            var error = $root.flyteidl.core.ArtifactID.verify(message.artifactIds[key[i]]);
+                        if (!Array.isArray(message.artifactIds))
+                            return "artifactIds: array expected";
+                        for (var i = 0; i < message.artifactIds.length; ++i) {
+                            var error = $root.flyteidl.core.ArtifactID.verify(message.artifactIds[i]);
                             if (error)
                                 return "artifactIds." + error;
                         }

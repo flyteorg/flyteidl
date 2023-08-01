@@ -159,13 +159,6 @@ class ExecutionMetadata(_message.Message):
     RELAUNCH: ExecutionMetadata.ExecutionMode
     CHILD_WORKFLOW: ExecutionMetadata.ExecutionMode
     RECOVERED: ExecutionMetadata.ExecutionMode
-    class ArtifactIdsEntry(_message.Message):
-        __slots__ = ["key", "value"]
-        KEY_FIELD_NUMBER: _ClassVar[int]
-        VALUE_FIELD_NUMBER: _ClassVar[int]
-        key: str
-        value: _identifier_pb2.ArtifactID
-        def __init__(self, key: _Optional[str] = ..., value: _Optional[_Union[_identifier_pb2.ArtifactID, _Mapping]] = ...) -> None: ...
     MODE_FIELD_NUMBER: _ClassVar[int]
     PRINCIPAL_FIELD_NUMBER: _ClassVar[int]
     NESTING_FIELD_NUMBER: _ClassVar[int]
@@ -181,8 +174,8 @@ class ExecutionMetadata(_message.Message):
     parent_node_execution: _identifier_pb2.NodeExecutionIdentifier
     reference_execution: _identifier_pb2.WorkflowExecutionIdentifier
     system_metadata: SystemMetadata
-    artifact_ids: _containers.MessageMap[str, _identifier_pb2.ArtifactID]
-    def __init__(self, mode: _Optional[_Union[ExecutionMetadata.ExecutionMode, str]] = ..., principal: _Optional[str] = ..., nesting: _Optional[int] = ..., scheduled_at: _Optional[_Union[_timestamp_pb2.Timestamp, _Mapping]] = ..., parent_node_execution: _Optional[_Union[_identifier_pb2.NodeExecutionIdentifier, _Mapping]] = ..., reference_execution: _Optional[_Union[_identifier_pb2.WorkflowExecutionIdentifier, _Mapping]] = ..., system_metadata: _Optional[_Union[SystemMetadata, _Mapping]] = ..., artifact_ids: _Optional[_Mapping[str, _identifier_pb2.ArtifactID]] = ...) -> None: ...
+    artifact_ids: _containers.RepeatedCompositeFieldContainer[_identifier_pb2.ArtifactID]
+    def __init__(self, mode: _Optional[_Union[ExecutionMetadata.ExecutionMode, str]] = ..., principal: _Optional[str] = ..., nesting: _Optional[int] = ..., scheduled_at: _Optional[_Union[_timestamp_pb2.Timestamp, _Mapping]] = ..., parent_node_execution: _Optional[_Union[_identifier_pb2.NodeExecutionIdentifier, _Mapping]] = ..., reference_execution: _Optional[_Union[_identifier_pb2.WorkflowExecutionIdentifier, _Mapping]] = ..., system_metadata: _Optional[_Union[SystemMetadata, _Mapping]] = ..., artifact_ids: _Optional[_Iterable[_Union[_identifier_pb2.ArtifactID, _Mapping]]] = ...) -> None: ...
 
 class NotificationList(_message.Message):
     __slots__ = ["notifications"]

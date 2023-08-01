@@ -1026,8 +1026,10 @@ pub struct ExecutionMetadata {
     /// In this the future this may be gated behind an ACL or some sort of authorization.
     #[prost(message, optional, tag="17")]
     pub system_metadata: ::core::option::Option<SystemMetadata>,
-    #[prost(map="string, message", tag="18")]
-    pub artifact_ids: ::std::collections::HashMap<::prost::alloc::string::String, super::core::ArtifactId>,
+    /// Save a list of the artifacts used in this execution for now. This is a list only rather than a mapping
+    /// since we don't have a structure to handle nested ones anyways.
+    #[prost(message, repeated, tag="18")]
+    pub artifact_ids: ::prost::alloc::vec::Vec<super::core::ArtifactId>,
 }
 /// Nested message and enum types in `ExecutionMetadata`.
 pub mod execution_metadata {

@@ -246,7 +246,9 @@ message ExecutionMetadata {
     // In this the future this may be gated behind an ACL or some sort of authorization.
     SystemMetadata system_metadata = 17;
 
-    map<string, core.ArtifactID> artifact_ids = 18;
+    // Save a list of the artifacts used in this execution for now. This is a list only rather than a mapping
+    // since we don't have a structure to handle nested ones anyways.
+    repeated core.ArtifactID artifact_ids = 18;
 }
 
 message NotificationList {

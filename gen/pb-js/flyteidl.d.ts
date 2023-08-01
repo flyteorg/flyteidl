@@ -12973,7 +12973,7 @@ export namespace flyteidl {
             systemMetadata?: (flyteidl.admin.ISystemMetadata|null);
 
             /** ExecutionMetadata artifactIds */
-            artifactIds?: ({ [k: string]: flyteidl.core.IArtifactID }|null);
+            artifactIds?: (flyteidl.core.IArtifactID[]|null);
         }
 
         /** Represents an ExecutionMetadata. */
@@ -13007,7 +13007,7 @@ export namespace flyteidl {
             public systemMetadata?: (flyteidl.admin.ISystemMetadata|null);
 
             /** ExecutionMetadata artifactIds. */
-            public artifactIds: { [k: string]: flyteidl.core.IArtifactID };
+            public artifactIds: flyteidl.core.IArtifactID[];
 
             /**
              * Creates a new ExecutionMetadata instance using the specified properties.

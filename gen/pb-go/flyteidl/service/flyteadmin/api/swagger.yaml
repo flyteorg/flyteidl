@@ -3523,12 +3523,16 @@ definitions:
             name: "name"
             project: "project"
           artifact_ids:
-            key:
-              artifact_key:
-                domain: "domain"
-                project: "project"
-                suffix: "suffix"
-              uuid: "uuid"
+          - artifact_key:
+              domain: "domain"
+              project: "project"
+              suffix: "suffix"
+            uuid: "uuid"
+          - artifact_key:
+              domain: "domain"
+              project: "project"
+              suffix: "suffix"
+            uuid: "uuid"
           scheduled_at: "2000-01-23T04:56:07.000+00:00"
           nesting: 0
           system_metadata:
@@ -3912,12 +3916,16 @@ definitions:
               name: "name"
               project: "project"
             artifact_ids:
-              key:
-                artifact_key:
-                  domain: "domain"
-                  project: "project"
-                  suffix: "suffix"
-                uuid: "uuid"
+            - artifact_key:
+                domain: "domain"
+                project: "project"
+                suffix: "suffix"
+              uuid: "uuid"
+            - artifact_key:
+                domain: "domain"
+                project: "project"
+                suffix: "suffix"
+              uuid: "uuid"
             scheduled_at: "2000-01-23T04:56:07.000+00:00"
             nesting: 0
             system_metadata:
@@ -4117,12 +4125,16 @@ definitions:
               name: "name"
               project: "project"
             artifact_ids:
-              key:
-                artifact_key:
-                  domain: "domain"
-                  project: "project"
-                  suffix: "suffix"
-                uuid: "uuid"
+            - artifact_key:
+                domain: "domain"
+                project: "project"
+                suffix: "suffix"
+              uuid: "uuid"
+            - artifact_key:
+                domain: "domain"
+                project: "project"
+                suffix: "suffix"
+              uuid: "uuid"
             scheduled_at: "2000-01-23T04:56:07.000+00:00"
             nesting: 0
             system_metadata:
@@ -4275,8 +4287,11 @@ definitions:
           In this the future this may be gated behind an ACL or some sort of authorization."
         $ref: "#/definitions/adminSystemMetadata"
       artifact_ids:
-        type: "object"
-        additionalProperties:
+        type: "array"
+        description: "Save a list of the artifacts used in this execution for now.\
+          \ This is a list only rather than a mapping\nsince we don't have a structure\
+          \ to handle nested ones anyways."
+        items:
           $ref: "#/definitions/coreArtifactID"
     description: "Represents attributes about an execution which are not required\
       \ to launch the execution but are useful to record.\nThese attributes are assigned\
@@ -4295,12 +4310,16 @@ definitions:
         name: "name"
         project: "project"
       artifact_ids:
-        key:
-          artifact_key:
-            domain: "domain"
-            project: "project"
-            suffix: "suffix"
-          uuid: "uuid"
+      - artifact_key:
+          domain: "domain"
+          project: "project"
+          suffix: "suffix"
+        uuid: "uuid"
+      - artifact_key:
+          domain: "domain"
+          project: "project"
+          suffix: "suffix"
+        uuid: "uuid"
       scheduled_at: "2000-01-23T04:56:07.000+00:00"
       nesting: 0
       system_metadata:
@@ -4442,12 +4461,16 @@ definitions:
           name: "name"
           project: "project"
         artifact_ids:
-          key:
-            artifact_key:
-              domain: "domain"
-              project: "project"
-              suffix: "suffix"
-            uuid: "uuid"
+        - artifact_key:
+            domain: "domain"
+            project: "project"
+            suffix: "suffix"
+          uuid: "uuid"
+        - artifact_key:
+            domain: "domain"
+            project: "project"
+            suffix: "suffix"
+          uuid: "uuid"
         scheduled_at: "2000-01-23T04:56:07.000+00:00"
         nesting: 0
         system_metadata:

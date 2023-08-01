@@ -99,6 +99,4 @@ message ArtifactQuery {
   string project = 1;
   string domain = 2;
   ArtifactAlias alias = 3;
-
-  // todo: add artifact by ID
 }
