@@ -11347,6 +11347,9 @@ export namespace flyteidl {
 
             /** ExecutionSpec envs */
             envs?: (flyteidl.admin.IEnvs|null);
+
+            /** ExecutionSpec tags */
+            tags?: (string[]|null);
         }
 
         /** Represents an ExecutionSpec. */
@@ -11405,6 +11408,9 @@ export namespace flyteidl {
 
             /** ExecutionSpec envs. */
             public envs?: (flyteidl.admin.IEnvs|null);
+
+            /** ExecutionSpec tags. */
+            public tags: string[];
 
             /** ExecutionSpec notificationOverrides. */
             public notificationOverrides?: ("notifications"|"disableAll");
