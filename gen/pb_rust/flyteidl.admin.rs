@@ -1112,6 +1112,7 @@ pub struct ExecutionSpec {
     /// Environment variables to be set for the execution.
     #[prost(message, optional, tag="23")]
     pub envs: ::core::option::Option<Envs>,
+    /// Tags to be set for the execution.
     #[prost(string, repeated, tag="24")]
     pub tags: ::prost::alloc::vec::Vec<::prost::alloc::string::String>,
     #[prost(oneof="execution_spec::NotificationOverrides", tags="5, 6")]

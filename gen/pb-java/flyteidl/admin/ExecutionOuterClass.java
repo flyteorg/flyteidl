@@ -17202,19 +17202,35 @@ public final class ExecutionOuterClass {
     flyteidl.admin.Common.EnvsOrBuilder getEnvsOrBuilder();
 
     /**
+     * <pre>
+     * Tags to be set for the execution.
+     * </pre>
+     *
      * <code>repeated string tags = 24;</code>
      */
     java.util.List<java.lang.String>
         getTagsList();
     /**
+     * <pre>
+     * Tags to be set for the execution.
+     * </pre>
+     *
      * <code>repeated string tags = 24;</code>
      */
     int getTagsCount();
     /**
+     * <pre>
+     * Tags to be set for the execution.
+     * </pre>
+     *
      * <code>repeated string tags = 24;</code>
      */
     java.lang.String getTags(int index);
     /**
+     * <pre>
+     * Tags to be set for the execution.
+     * </pre>
+     *
      * <code>repeated string tags = 24;</code>
      */
     com.google.protobuf.ByteString
@@ -18035,6 +18051,10 @@ public final class ExecutionOuterClass {
     public static final int TAGS_FIELD_NUMBER = 24;
     private com.google.protobuf.LazyStringList tags_;
     /**
+     * <pre>
+     * Tags to be set for the execution.
+     * </pre>
+     *
      * <code>repeated string tags = 24;</code>
      */
     public com.google.protobuf.ProtocolStringList
@@ -18042,18 +18062,30 @@ public final class ExecutionOuterClass {
       return tags_;
     }
     /**
+     * <pre>
+     * Tags to be set for the execution.
+     * </pre>
+     *
      * <code>repeated string tags = 24;</code>
      */
     public int getTagsCount() {
       return tags_.size();
     }
     /**
+     * <pre>
+     * Tags to be set for the execution.
+     * </pre>
+     *
      * <code>repeated string tags = 24;</code>
      */
     public java.lang.String getTags(int index) {
       return tags_.get(index);
     }
     /**
+     * <pre>
+     * Tags to be set for the execution.
+     * </pre>
+     *
      * <code>repeated string tags = 24;</code>
      */
     public com.google.protobuf.ByteString
@@ -21067,6 +21099,10 @@ public final class ExecutionOuterClass {
          }
       }
       /**
+       * <pre>
+       * Tags to be set for the execution.
+       * </pre>
+       *
        * <code>repeated string tags = 24;</code>
        */
       public com.google.protobuf.ProtocolStringList
@@ -21074,18 +21110,30 @@ public final class ExecutionOuterClass {
         return tags_.getUnmodifiableView();
       }
       /**
+       * <pre>
+       * Tags to be set for the execution.
+       * </pre>
+       *
        * <code>repeated string tags = 24;</code>
        */
       public int getTagsCount() {
         return tags_.size();
       }
       /**
+       * <pre>
+       * Tags to be set for the execution.
+       * </pre>
+       *
        * <code>repeated string tags = 24;</code>
        */
       public java.lang.String getTags(int index) {
         return tags_.get(index);
       }
       /**
+       * <pre>
+       * Tags to be set for the execution.
+       * </pre>
+       *
        * <code>repeated string tags = 24;</code>
        */
       public com.google.protobuf.ByteString
@@ -21093,6 +21141,10 @@ public final class ExecutionOuterClass {
         return tags_.getByteString(index);
       }
       /**
+       * <pre>
+       * Tags to be set for the execution.
+       * </pre>
+       *
        * <code>repeated string tags = 24;</code>
        */
       public Builder setTags(
@@ -21106,6 +21158,10 @@ public final class ExecutionOuterClass {
         return this;
       }
       /**
+       * <pre>
+       * Tags to be set for the execution.
+       * </pre>
+       *
        * <code>repeated string tags = 24;</code>
        */
       public Builder addTags(
@@ -21119,6 +21175,10 @@ public final class ExecutionOuterClass {
         return this;
       }
       /**
+       * <pre>
+       * Tags to be set for the execution.
+       * </pre>
+       *
        * <code>repeated string tags = 24;</code>
        */
       public Builder addAllTags(
@@ -21130,6 +21190,10 @@ public final class ExecutionOuterClass {
         return this;
       }
       /**
+       * <pre>
+       * Tags to be set for the execution.
+       * </pre>
+       *
        * <code>repeated string tags = 24;</code>
        */
       public Builder clearTags() {
@@ -21139,6 +21203,10 @@ public final class ExecutionOuterClass {
         return this;
       }
       /**
+       * <pre>
+       * Tags to be set for the execution.
+       * </pre>
+       *
        * <code>repeated string tags = 24;</code>
        */
       public Builder addTagsBytes(

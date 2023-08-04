@@ -1084,7 +1084,8 @@ type ExecutionSpec struct {
 	// data once execution finishes successfully.
 	OverwriteCache bool `protobuf:"varint,22,opt,name=overwrite_cache,json=overwriteCache,proto3" json:"overwrite_cache,omitempty"`
 	// Environment variables to be set for the execution.
-	Envs                 *Envs    `protobuf:"bytes,23,opt,name=envs,proto3" json:"envs,omitempty"`
+	Envs *Envs `protobuf:"bytes,23,opt,name=envs,proto3" json:"envs,omitempty"`
+	// Tags to be set for the execution.
 	Tags                 []string `protobuf:"bytes,24,rep,name=tags,proto3" json:"tags,omitempty"`
 	XXX_NoUnkeyedLiteral struct{} `json:"-"`
 	XXX_unrecognized     []byte   `json:"-"`

@@ -4403,6 +4403,7 @@ definitions:
         $ref: "#/definitions/adminEnvs"
       tags:
         type: "array"
+        description: "Tags to be set for the execution."
         items:
           type: "string"
     description: "An ExecutionSpec encompasses all data used to launch this execution.\

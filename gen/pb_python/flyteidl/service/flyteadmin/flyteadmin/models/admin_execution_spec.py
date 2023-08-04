@@ -504,6 +504,7 @@ class AdminExecutionSpec(object):
     def tags(self):
         """Gets the tags of this AdminExecutionSpec.  # noqa: E501
 
+        Tags to be set for the execution.  # noqa: E501
 
         :return: The tags of this AdminExecutionSpec.  # noqa: E501
         :rtype: list[str]
@@ -514,6 +515,7 @@ class AdminExecutionSpec(object):
     def tags(self, tags):
         """Sets the tags of this AdminExecutionSpec.
 
+        Tags to be set for the execution.  # noqa: E501
 
         :param tags: The tags of this AdminExecutionSpec.  # noqa: E501
         :type: list[str]
