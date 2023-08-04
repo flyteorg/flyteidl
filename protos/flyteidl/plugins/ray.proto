@@ -21,8 +21,8 @@ message RayCluster {
   HeadGroupSpec head_group_spec = 1;
   // WorkerGroupSpecs are the specs for the worker pods
   repeated WorkerGroupSpec worker_group_spec = 2;
-  // Namespace under which to create the RayCluster
-  string namespace = 3;
+  // Additional parameter overrides for ray cluster config
+  map<string, string> ray_cluster_params = 3;
 }
 
 // HeadGroupSpec are the spec for the head pod
