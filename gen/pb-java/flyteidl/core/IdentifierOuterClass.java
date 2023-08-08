@@ -6818,14 +6818,14 @@ public final class IdentifierOuterClass {
     flyteidl.core.IdentifierOuterClass.ArtifactKeyOrBuilder getArtifactKeyOrBuilder();
 
     /**
-     * <code>string tag = 2;</code>
+     * <code>string value = 2;</code>
      */
-    java.lang.String getTag();
+    java.lang.String getValue();
     /**
-     * <code>string tag = 2;</code>
+     * <code>string value = 2;</code>
      */
     com.google.protobuf.ByteString
-        getTagBytes();
+        getValueBytes();
   }
   /**
    * Protobuf type {@code flyteidl.core.ArtifactTag}
@@ -6840,7 +6840,7 @@ public final class IdentifierOuterClass {
       super(builder);
     }
     private ArtifactTag() {
-      tag_ = "";
+      value_ = "";
     }
 
     @java.lang.Override
@@ -6883,7 +6883,7 @@ public final class IdentifierOuterClass {
             case 18: {
               java.lang.String s = input.readStringRequireUtf8();
 
-              tag_ = s;
+              value_ = s;
               break;
             }
             default: {
@@ -6939,34 +6939,34 @@ public final class IdentifierOuterClass {
       return getArtifactKey();
     }
 
-    public static final int TAG_FIELD_NUMBER = 2;
-    private volatile java.lang.Object tag_;
+    public static final int VALUE_FIELD_NUMBER = 2;
+    private volatile java.lang.Object value_;
     /**
-     * <code>string tag = 2;</code>
+     * <code>string value = 2;</code>
      */
-    public java.lang.String getTag() {
-      java.lang.Object ref = tag_;
+    public java.lang.String getValue() {
+      java.lang.Object ref = value_;
       if (ref instanceof java.lang.String) {
         return (java.lang.String) ref;
       } else {
         com.google.protobuf.ByteString bs = 
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
-        tag_ = s;
+        value_ = s;
         return s;
       }
     }
     /**
-     * <code>string tag = 2;</code>
+     * <code>string value = 2;</code>
      */
     public com.google.protobuf.ByteString
-        getTagBytes() {
-      java.lang.Object ref = tag_;
+        getValueBytes() {
+      java.lang.Object ref = value_;
       if (ref instanceof java.lang.String) {
         com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
-        tag_ = b;
+        value_ = b;
         return b;
       } else {
         return (com.google.protobuf.ByteString) ref;
@@ -6990,8 +6990,8 @@ public final class IdentifierOuterClass {
       if (artifactKey_ != null) {
         output.writeMessage(1, getArtifactKey());
       }
-      if (!getTagBytes().isEmpty()) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 2, tag_);
+      if (!getValueBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 2, value_);
       }
       unknownFields.writeTo(output);
     }
@@ -7006,8 +7006,8 @@ public final class IdentifierOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(1, getArtifactKey());
       }
-      if (!getTagBytes().isEmpty()) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, tag_);
+      if (!getValueBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, value_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -7029,8 +7029,8 @@ public final class IdentifierOuterClass {
         if (!getArtifactKey()
             .equals(other.getArtifactKey())) return false;
       }
-      if (!getTag()
-          .equals(other.getTag())) return false;
+      if (!getValue()
+          .equals(other.getValue())) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -7046,8 +7046,8 @@ public final class IdentifierOuterClass {
         hash = (37 * hash) + ARTIFACT_KEY_FIELD_NUMBER;
         hash = (53 * hash) + getArtifactKey().hashCode();
       }
-      hash = (37 * hash) + TAG_FIELD_NUMBER;
-      hash = (53 * hash) + getTag().hashCode();
+      hash = (37 * hash) + VALUE_FIELD_NUMBER;
+      hash = (53 * hash) + getValue().hashCode();
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -7187,7 +7187,7 @@ public final class IdentifierOuterClass {
           artifactKey_ = null;
           artifactKeyBuilder_ = null;
         }
-        tag_ = "";
+        value_ = "";
 
         return this;
       }
@@ -7220,7 +7220,7 @@ public final class IdentifierOuterClass {
         } else {
           result.artifactKey_ = artifactKeyBuilder_.build();
         }
-        result.tag_ = tag_;
+        result.value_ = value_;
         onBuilt();
         return result;
       }
@@ -7272,8 +7272,8 @@ public final class IdentifierOuterClass {
         if (other.hasArtifactKey()) {
           mergeArtifactKey(other.getArtifactKey());
         }
-        if (!other.getTag().isEmpty()) {
-          tag_ = other.tag_;
+        if (!other.getValue().isEmpty()) {
+          value_ = other.value_;
           onChanged();
         }
         this.mergeUnknownFields(other.unknownFields);
@@ -7422,71 +7422,71 @@ public final class IdentifierOuterClass {
         return artifactKeyBuilder_;
       }
 
-      private java.lang.Object tag_ = "";
+      private java.lang.Object value_ = "";
       /**
-       * <code>string tag = 2;</code>
+       * <code>string value = 2;</code>
        */
-      public java.lang.String getTag() {
-        java.lang.Object ref = tag_;
+      public java.lang.String getValue() {
+        java.lang.Object ref = value_;
         if (!(ref instanceof java.lang.String)) {
           com.google.protobuf.ByteString bs =
               (com.google.protobuf.ByteString) ref;
           java.lang.String s = bs.toStringUtf8();
-          tag_ = s;
+          value_ = s;
           return s;
         } else {
           return (java.lang.String) ref;
         }
       }
       /**
-       * <code>string tag = 2;</code>
+       * <code>string value = 2;</code>
        */
       public com.google.protobuf.ByteString
-          getTagBytes() {
-        java.lang.Object ref = tag_;
+          getValueBytes() {
+        java.lang.Object ref = value_;
         if (ref instanceof String) {
           com.google.protobuf.ByteString b = 
               com.google.protobuf.ByteString.copyFromUtf8(
                   (java.lang.String) ref);
-          tag_ = b;
+          value_ = b;
           return b;
         } else {
           return (com.google.protobuf.ByteString) ref;
         }
       }
       /**
-       * <code>string tag = 2;</code>
+       * <code>string value = 2;</code>
        */
-      public Builder setTag(
+      public Builder setValue(
           java.lang.String value) {
         if (value == null) {
     throw new NullPointerException();
   }
   
-        tag_ = value;
+        value_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>string tag = 2;</code>
+       * <code>string value = 2;</code>
        */
-      public Builder clearTag() {
+      public Builder clearValue() {
         
-        tag_ = getDefaultInstance().getTag();
+        value_ = getDefaultInstance().getValue();
         onChanged();
         return this;
       }
       /**
-       * <code>string tag = 2;</code>
+       * <code>string value = 2;</code>
        */
-      public Builder setTagBytes(
+      public Builder setValueBytes(
           com.google.protobuf.ByteString value) {
         if (value == null) {
     throw new NullPointerException();
   }
   checkByteStringIsUtf8(value);
         
-        tag_ = value;
+        value_ = value;
         onChanged();
         return this;
       }
@@ -8718,16 +8718,16 @@ public final class IdentifierOuterClass {
       "\022\017\n\007version\030\002 \001(\t\022=\n\npartitions\030\003 \003(\0132)." +
       "flyteidl.core.ArtifactID.PartitionsEntry" +
       "\0321\n\017PartitionsEntry\022\013\n\003key\030\001 \001(\t\022\r\n\005valu" +
-      "e\030\002 \001(\t:\0028\001\"L\n\013ArtifactTag\0220\n\014artifact_k" +
-      "ey\030\001 \001(\0132\032.flyteidl.core.ArtifactKey\022\013\n\003" +
-      "tag\030\002 \001(\t\"\222\001\n\rArtifactQuery\0220\n\013artifact_" +
-      "id\030\001 \001(\0132\031.flyteidl.core.ArtifactIDH\000\0222\n" +
-      "\014artifact_tag\030\002 \001(\0132\032.flyteidl.core.Arti" +
-      "factTagH\000\022\r\n\003uri\030\003 \001(\tH\000B\014\n\nidentifier*U" +
-      "\n\014ResourceType\022\017\n\013UNSPECIFIED\020\000\022\010\n\004TASK\020" +
-      "\001\022\014\n\010WORKFLOW\020\002\022\017\n\013LAUNCH_PLAN\020\003\022\013\n\007DATA" +
-      "SET\020\004B6Z4github.com/flyteorg/flyteidl/ge" +
-      "n/pb-go/flyteidl/coreb\006proto3"
+      "e\030\002 \001(\t:\0028\001\"N\n\013ArtifactTag\0220\n\014artifact_k" +
+      "ey\030\001 \001(\0132\032.flyteidl.core.ArtifactKey\022\r\n\005" +
+      "value\030\002 \001(\t\"\222\001\n\rArtifactQuery\0220\n\013artifac" +
+      "t_id\030\001 \001(\0132\031.flyteidl.core.ArtifactIDH\000\022" +
+      "2\n\014artifact_tag\030\002 \001(\0132\032.flyteidl.core.Ar" +
+      "tifactTagH\000\022\r\n\003uri\030\003 \001(\tH\000B\014\n\nidentifier" +
+      "*U\n\014ResourceType\022\017\n\013UNSPECIFIED\020\000\022\010\n\004TAS" +
+      "K\020\001\022\014\n\010WORKFLOW\020\002\022\017\n\013LAUNCH_PLAN\020\003\022\013\n\007DA" +
+      "TASET\020\004B6Z4github.com/flyteorg/flyteidl/" +
+      "gen/pb-go/flyteidl/coreb\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
@@ -8794,7 +8794,7 @@ public final class IdentifierOuterClass {
     internal_static_flyteidl_core_ArtifactTag_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_flyteidl_core_ArtifactTag_descriptor,
-        new java.lang.String[] { "ArtifactKey", "Tag", });
+        new java.lang.String[] { "ArtifactKey", "Value", });
     internal_static_flyteidl_core_ArtifactQuery_descriptor =
       getDescriptor().getMessageTypes().get(8);
     internal_static_flyteidl_core_ArtifactQuery_fieldAccessorTable = new

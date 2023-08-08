@@ -5082,7 +5082,7 @@ definitions:
                     domain: "domain"
                     name: "name"
                     project: "project"
-                  tag: "tag"
+                  value: "value"
               required: true
       spec:
         workflow_id:
@@ -5416,7 +5416,7 @@ definitions:
                     domain: "domain"
                     name: "name"
                     project: "project"
-                  tag: "tag"
+                  value: "value"
               required: true
         security_context:
           run_as:
@@ -5822,7 +5822,7 @@ definitions:
                   domain: "domain"
                   name: "name"
                   project: "project"
-                tag: "tag"
+                value: "value"
             required: true
   adminLaunchPlanCreateRequest:
     type: "object"
@@ -6194,7 +6194,7 @@ definitions:
                       domain: "domain"
                       name: "name"
                       project: "project"
-                    tag: "tag"
+                    value: "value"
                 required: true
         spec:
           workflow_id:
@@ -6528,7 +6528,7 @@ definitions:
                       domain: "domain"
                       name: "name"
                       project: "project"
-                    tag: "tag"
+                    value: "value"
                 required: true
           security_context:
             run_as:
@@ -6914,7 +6914,7 @@ definitions:
                       domain: "domain"
                       name: "name"
                       project: "project"
-                    tag: "tag"
+                    value: "value"
                 required: true
         spec:
           workflow_id:
@@ -7248,7 +7248,7 @@ definitions:
                       domain: "domain"
                       name: "name"
                       project: "project"
-                    tag: "tag"
+                    value: "value"
                 required: true
           security_context:
             run_as:
@@ -7753,7 +7753,7 @@ definitions:
                   domain: "domain"
                   name: "name"
                   project: "project"
-                tag: "tag"
+                value: "value"
             required: true
       security_context:
         run_as:
@@ -45833,20 +45833,20 @@ definitions:
           domain: "domain"
           name: "name"
           project: "project"
-        tag: "tag"
+        value: "value"
   coreArtifactTag:
     type: "object"
     properties:
       artifact_key:
         $ref: "#/definitions/coreArtifactKey"
-      tag:
+      value:
         type: "string"
     example:
       artifact_key:
         domain: "domain"
         name: "name"
         project: "project"
-      tag: "tag"
+      value: "value"
   coreBinary:
     type: "object"
     properties:
@@ -57568,7 +57568,7 @@ definitions:
             domain: "domain"
             name: "name"
             project: "project"
-          tag: "tag"
+          value: "value"
       required: true
   coreParameterMap:
     type: "object"
@@ -57836,7 +57836,7 @@ definitions:
                 domain: "domain"
                 name: "name"
                 project: "project"
-              tag: "tag"
+              value: "value"
           required: true
   corePrimitive:
     type: "object"

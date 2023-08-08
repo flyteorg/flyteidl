@@ -1258,19 +1258,19 @@ class ArtifactTag final :
 
   // accessors -------------------------------------------------------
 
-  // string tag = 2;
-  void clear_tag();
-  static const int kTagFieldNumber = 2;
-  const ::std::string& tag() const;
-  void set_tag(const ::std::string& value);
+  // string value = 2;
+  void clear_value();
+  static const int kValueFieldNumber = 2;
+  const ::std::string& value() const;
+  void set_value(const ::std::string& value);
   #if LANG_CXX11
-  void set_tag(::std::string&& value);
+  void set_value(::std::string&& value);
   #endif
-  void set_tag(const char* value);
-  void set_tag(const char* value, size_t size);
-  ::std::string* mutable_tag();
-  ::std::string* release_tag();
-  void set_allocated_tag(::std::string* tag);
+  void set_value(const char* value);
+  void set_value(const char* value, size_t size);
+  ::std::string* mutable_value();
+  ::std::string* release_value();
+  void set_allocated_value(::std::string* value);
 
   // .flyteidl.core.ArtifactKey artifact_key = 1;
   bool has_artifact_key() const;
@@ -1286,7 +1286,7 @@ class ArtifactTag final :
   class HasBitSetters;
 
   ::google::protobuf::internal::InternalMetadataWithArena _internal_metadata_;
-  ::google::protobuf::internal::ArenaStringPtr tag_;
+  ::google::protobuf::internal::ArenaStringPtr value_;
   ::flyteidl::core::ArtifactKey* artifact_key_;
   mutable ::google::protobuf::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_flyteidl_2fcore_2fidentifier_2eproto;
@@ -2536,57 +2536,57 @@ inline void ArtifactTag::set_allocated_artifact_key(::flyteidl::core::ArtifactKe
   // @@protoc_insertion_point(field_set_allocated:flyteidl.core.ArtifactTag.artifact_key)
 }
 
-// string tag = 2;
-inline void ArtifactTag::clear_tag() {
-  tag_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+// string value = 2;
+inline void ArtifactTag::clear_value() {
+  value_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
 }
-inline const ::std::string& ArtifactTag::tag() const {
-  // @@protoc_insertion_point(field_get:flyteidl.core.ArtifactTag.tag)
-  return tag_.GetNoArena();
+inline const ::std::string& ArtifactTag::value() const {
+  // @@protoc_insertion_point(field_get:flyteidl.core.ArtifactTag.value)
+  return value_.GetNoArena();
 }
-inline void ArtifactTag::set_tag(const ::std::string& value) {
+inline void ArtifactTag::set_value(const ::std::string& value) {
   
-  tag_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
-  // @@protoc_insertion_point(field_set:flyteidl.core.ArtifactTag.tag)
+  value_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
+  // @@protoc_insertion_point(field_set:flyteidl.core.ArtifactTag.value)
 }
 #if LANG_CXX11
-inline void ArtifactTag::set_tag(::std::string&& value) {
+inline void ArtifactTag::set_value(::std::string&& value) {
   
-  tag_.SetNoArena(
+  value_.SetNoArena(
     &::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::move(value));
-  // @@protoc_insertion_point(field_set_rvalue:flyteidl.core.ArtifactTag.tag)
+  // @@protoc_insertion_point(field_set_rvalue:flyteidl.core.ArtifactTag.value)
 }
 #endif
-inline void ArtifactTag::set_tag(const char* value) {
+inline void ArtifactTag::set_value(const char* value) {
   GOOGLE_DCHECK(value != nullptr);
   
-  tag_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
-  // @@protoc_insertion_point(field_set_char:flyteidl.core.ArtifactTag.tag)
+  value_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
+  // @@protoc_insertion_point(field_set_char:flyteidl.core.ArtifactTag.value)
 }
-inline void ArtifactTag::set_tag(const char* value, size_t size) {
+inline void ArtifactTag::set_value(const char* value, size_t size) {
   
-  tag_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
+  value_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
       ::std::string(reinterpret_cast<const char*>(value), size));
-  // @@protoc_insertion_point(field_set_pointer:flyteidl.core.ArtifactTag.tag)
+  // @@protoc_insertion_point(field_set_pointer:flyteidl.core.ArtifactTag.value)
 }
-inline ::std::string* ArtifactTag::mutable_tag() {
+inline ::std::string* ArtifactTag::mutable_value() {
   
-  // @@protoc_insertion_point(field_mutable:flyteidl.core.ArtifactTag.tag)
-  return tag_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  // @@protoc_insertion_point(field_mutable:flyteidl.core.ArtifactTag.value)
+  return value_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
 }
-inline ::std::string* ArtifactTag::release_tag() {
-  // @@protoc_insertion_point(field_release:flyteidl.core.ArtifactTag.tag)
+inline ::std::string* ArtifactTag::release_value() {
+  // @@protoc_insertion_point(field_release:flyteidl.core.ArtifactTag.value)
   
-  return tag_.ReleaseNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  return value_.ReleaseNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
 }
-inline void ArtifactTag::set_allocated_tag(::std::string* tag) {
-  if (tag != nullptr) {
+inline void ArtifactTag::set_allocated_value(::std::string* value) {
+  if (value != nullptr) {
     
   } else {
     
   }
-  tag_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), tag);
-  // @@protoc_insertion_point(field_set_allocated:flyteidl.core.ArtifactTag.tag)
+  value_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
+  // @@protoc_insertion_point(field_set_allocated:flyteidl.core.ArtifactTag.value)
 }
 
 // -------------------------------------------------------------------

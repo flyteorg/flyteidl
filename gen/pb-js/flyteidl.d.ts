@@ -662,8 +662,8 @@ export namespace flyteidl {
             /** ArtifactTag artifactKey */
             artifactKey?: (flyteidl.core.IArtifactKey|null);
 
-            /** ArtifactTag tag */
-            tag?: (string|null);
+            /** ArtifactTag value */
+            value?: (string|null);
         }
 
         /** Represents an ArtifactTag. */
@@ -678,8 +678,8 @@ export namespace flyteidl {
             /** ArtifactTag artifactKey. */
             public artifactKey?: (flyteidl.core.IArtifactKey|null);
 
-            /** ArtifactTag tag. */
-            public tag: string;
+            /** ArtifactTag value. */
+            public value: string;
 
             /**
              * Creates a new ArtifactTag instance using the specified properties.

@@ -34,25 +34,25 @@ class CoreArtifactTag(object):
     """
     swagger_types = {
         'artifact_key': 'CoreArtifactKey',
-        'tag': 'str'
+        'value': 'str'
     }
 
     attribute_map = {
         'artifact_key': 'artifact_key',
-        'tag': 'tag'
+        'value': 'value'
     }
 
-    def __init__(self, artifact_key=None, tag=None):  # noqa: E501
+    def __init__(self, artifact_key=None, value=None):  # noqa: E501
         """CoreArtifactTag - a model defined in Swagger"""  # noqa: E501
 
         self._artifact_key = None
-        self._tag = None
+        self._value = None
         self.discriminator = None
 
         if artifact_key is not None:
             self.artifact_key = artifact_key
-        if tag is not None:
-            self.tag = tag
+        if value is not None:
+            self.value = value
 
     @property
     def artifact_key(self):
@@ -76,25 +76,25 @@ class CoreArtifactTag(object):
         self._artifact_key = artifact_key
 
     @property
-    def tag(self):
-        """Gets the tag of this CoreArtifactTag.  # noqa: E501
+    def value(self):
+        """Gets the value of this CoreArtifactTag.  # noqa: E501
 
 
-        :return: The tag of this CoreArtifactTag.  # noqa: E501
+        :return: The value of this CoreArtifactTag.  # noqa: E501
         :rtype: str
         """
-        return self._tag
+        return self._value
 
-    @tag.setter
-    def tag(self, tag):
-        """Sets the tag of this CoreArtifactTag.
+    @value.setter
+    def value(self, value):
+        """Sets the value of this CoreArtifactTag.
 
 
-        :param tag: The tag of this CoreArtifactTag.  # noqa: E501
+        :param value: The value of this CoreArtifactTag.  # noqa: E501
         :type: str
         """
 
-        self._tag = tag
+        self._value = value
 
     def to_dict(self):
         """Returns the model properties as a dict"""

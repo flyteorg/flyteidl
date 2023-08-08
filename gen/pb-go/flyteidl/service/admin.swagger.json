@@ -5665,7 +5665,7 @@
         "artifact_key": {
           "$ref": "#/definitions/coreArtifactKey"
         },
-        "tag": {
+        "value": {
           "type": "string"
         }
       }

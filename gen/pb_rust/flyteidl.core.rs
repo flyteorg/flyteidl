@@ -400,7 +400,7 @@ pub struct ArtifactTag {
     #[prost(message, optional, tag="1")]
     pub artifact_key: ::core::option::Option<ArtifactKey>,
     #[prost(string, tag="2")]
-    pub tag: ::prost::alloc::string::String,
+    pub value: ::prost::alloc::string::String,
 }
 /// Uniqueness constraints for Artifacts
 ///   - project, domain, name, version, partitions

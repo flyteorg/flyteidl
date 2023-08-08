@@ -596,7 +596,7 @@ func (m *ArtifactTag) Validate() error {
 		}
 	}
 
-	// no validation rules for Tag
+	// no validation rules for Value
 
 	return nil
 }

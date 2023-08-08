@@ -1531,7 +1531,7 @@
                  * @memberof flyteidl.core
                  * @interface IArtifactTag
                  * @property {flyteidl.core.IArtifactKey|null} [artifactKey] ArtifactTag artifactKey
-                 * @property {string|null} [tag] ArtifactTag tag
+                 * @property {string|null} [value] ArtifactTag value
                  */
     
                 /**
@@ -1558,12 +1558,12 @@
                 ArtifactTag.prototype.artifactKey = null;
     
                 /**
-                 * ArtifactTag tag.
-                 * @member {string} tag
+                 * ArtifactTag value.
+                 * @member {string} value
                  * @memberof flyteidl.core.ArtifactTag
                  * @instance
                  */
-                ArtifactTag.prototype.tag = "";
+                ArtifactTag.prototype.value = "";
     
                 /**
                  * Creates a new ArtifactTag instance using the specified properties.
@@ -1591,8 +1591,8 @@
                         writer = $Writer.create();
                     if (message.artifactKey != null && message.hasOwnProperty("artifactKey"))
                         $root.flyteidl.core.ArtifactKey.encode(message.artifactKey, writer.uint32(/* id 1, wireType 2 =*/10).fork()).ldelim();
-                    if (message.tag != null && message.hasOwnProperty("tag"))
-                        writer.uint32(/* id 2, wireType 2 =*/18).string(message.tag);
+                    if (message.value != null && message.hasOwnProperty("value"))
+                        writer.uint32(/* id 2, wireType 2 =*/18).string(message.value);
                     return writer;
                 };
     
@@ -1618,7 +1618,7 @@
                             message.artifactKey = $root.flyteidl.core.ArtifactKey.decode(reader, reader.uint32());
                             break;
                         case 2:
-                            message.tag = reader.string();
+                            message.value = reader.string();
                             break;
                         default:
                             reader.skipType(tag & 7);
@@ -1644,9 +1644,9 @@
                         if (error)
                             return "artifactKey." + error;
                     }
-                    if (message.tag != null && message.hasOwnProperty("tag"))
-                        if (!$util.isString(message.tag))
-                            return "tag: string expected";
+                    if (message.value != null && message.hasOwnProperty("value"))
+                        if (!$util.isString(message.value))
+                            return "value: string expected";
                     return null;
                 };
     

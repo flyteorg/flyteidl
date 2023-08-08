@@ -97,12 +97,12 @@ class ArtifactID(_message.Message):
     def __init__(self, artifact_key: _Optional[_Union[ArtifactKey, _Mapping]] = ..., version: _Optional[str] = ..., partitions: _Optional[_Mapping[str, str]] = ...) -> None: ...
 
 class ArtifactTag(_message.Message):
-    __slots__ = ["artifact_key", "tag"]
+    __slots__ = ["artifact_key", "value"]
     ARTIFACT_KEY_FIELD_NUMBER: _ClassVar[int]
-    TAG_FIELD_NUMBER: _ClassVar[int]
+    VALUE_FIELD_NUMBER: _ClassVar[int]
     artifact_key: ArtifactKey
-    tag: str
-    def __init__(self, artifact_key: _Optional[_Union[ArtifactKey, _Mapping]] = ..., tag: _Optional[str] = ...) -> None: ...
+    value: str
+    def __init__(self, artifact_key: _Optional[_Union[ArtifactKey, _Mapping]] = ..., value: _Optional[str] = ...) -> None: ...
 
 class ArtifactQuery(_message.Message):
     __slots__ = ["artifact_id", "artifact_tag", "uri"]

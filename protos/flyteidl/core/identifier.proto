@@ -92,7 +92,7 @@ message ArtifactID {
 message ArtifactTag {
   ArtifactKey artifact_key = 1;
 
-  string tag = 2;
+  string value = 2;
 }
 
 // Uniqueness constraints for Artifacts
