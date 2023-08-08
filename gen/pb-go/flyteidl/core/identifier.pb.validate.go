@@ -663,11 +663,15 @@ func (m *ArtifactQuery) Validate() error {
 		return nil
 	}
 
-	// no validation rules for Project
-
-	// no validation rules for Domain
-
-	// no validation rules for Name
+	if v, ok := interface{}(m.GetArtifactKey()).(interface{ Validate() error }); ok {
+		if err := v.Validate(); err != nil {
+			return ArtifactQueryValidationError{
+				field:  "ArtifactKey",
+				reason: "embedded message failed validation",
+				cause:  err,
+			}
+		}
+	}
 
 	// no validation rules for Tag
 

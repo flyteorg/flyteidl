@@ -717,14 +717,8 @@ export namespace flyteidl {
         /** Properties of an ArtifactQuery. */
         interface IArtifactQuery {
 
-            /** ArtifactQuery project */
-            project?: (string|null);
-
-            /** ArtifactQuery domain */
-            domain?: (string|null);
-
-            /** ArtifactQuery name */
-            name?: (string|null);
+            /** ArtifactQuery artifactKey */
+            artifactKey?: (flyteidl.core.IArtifactKey|null);
 
             /** ArtifactQuery tag */
             tag?: (string|null);
@@ -745,14 +739,8 @@ export namespace flyteidl {
              */
             constructor(properties?: flyteidl.core.IArtifactQuery);
 
-            /** ArtifactQuery project. */
-            public project: string;
-
-            /** ArtifactQuery domain. */
-            public domain: string;
-
-            /** ArtifactQuery name. */
-            public name: string;
+            /** ArtifactQuery artifactKey. */
+            public artifactKey?: (flyteidl.core.IArtifactKey|null);
 
             /** ArtifactQuery tag. */
             public tag: string;

@@ -5647,14 +5647,8 @@
     "coreArtifactQuery": {
       "type": "object",
       "properties": {
-        "project": {
-          "type": "string"
-        },
-        "domain": {
-          "type": "string"
-        },
-        "name": {
-          "type": "string"
+        "artifact_key": {
+          "$ref": "#/definitions/coreArtifactKey"
         },
         "tag": {
           "type": "string"

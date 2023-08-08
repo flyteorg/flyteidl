@@ -1659,9 +1659,7 @@
                  * Properties of an ArtifactQuery.
                  * @memberof flyteidl.core
                  * @interface IArtifactQuery
-                 * @property {string|null} [project] ArtifactQuery project
-                 * @property {string|null} [domain] ArtifactQuery domain
-                 * @property {string|null} [name] ArtifactQuery name
+                 * @property {flyteidl.core.IArtifactKey|null} [artifactKey] ArtifactQuery artifactKey
                  * @property {string|null} [tag] ArtifactQuery tag
                  * @property {Object.<string,string>|null} [partitions] ArtifactQuery partitions
                  * @property {string|null} [version] ArtifactQuery version
@@ -1684,28 +1682,12 @@
                 }
     
                 /**
-                 * ArtifactQuery project.
-                 * @member {string} project
+                 * ArtifactQuery artifactKey.
+                 * @member {flyteidl.core.IArtifactKey|null|undefined} artifactKey
                  * @memberof flyteidl.core.ArtifactQuery
                  * @instance
                  */
-                ArtifactQuery.prototype.project = "";
-    
-                /**
-                 * ArtifactQuery domain.
-                 * @member {string} domain
-                 * @memberof flyteidl.core.ArtifactQuery
-                 * @instance
-                 */
-                ArtifactQuery.prototype.domain = "";
-    
-                /**
-                 * ArtifactQuery name.
-                 * @member {string} name
-                 * @memberof flyteidl.core.ArtifactQuery
-                 * @instance
-                 */
-                ArtifactQuery.prototype.name = "";
+                ArtifactQuery.prototype.artifactKey = null;
     
                 /**
                  * ArtifactQuery tag.
@@ -1755,19 +1737,15 @@
                 ArtifactQuery.encode = function encode(message, writer) {
                     if (!writer)
                         writer = $Writer.create();
-                    if (message.project != null && message.hasOwnProperty("project"))
-                        writer.uint32(/* id 1, wireType 2 =*/10).string(message.project);
-                    if (message.domain != null && message.hasOwnProperty("domain"))
-                        writer.uint32(/* id 2, wireType 2 =*/18).string(message.domain);
-                    if (message.name != null && message.hasOwnProperty("name"))
-                        writer.uint32(/* id 3, wireType 2 =*/26).string(message.name);
+                    if (message.artifactKey != null && message.hasOwnProperty("artifactKey"))
+                        $root.flyteidl.core.ArtifactKey.encode(message.artifactKey, writer.uint32(/* id 1, wireType 2 =*/10).fork()).ldelim();
                     if (message.tag != null && message.hasOwnProperty("tag"))
-                        writer.uint32(/* id 4, wireType 2 =*/34).string(message.tag);
+                        writer.uint32(/* id 2, wireType 2 =*/18).string(message.tag);
                     if (message.partitions != null && message.hasOwnProperty("partitions"))
                         for (var keys = Object.keys(message.partitions), i = 0; i < keys.length; ++i)
-                            writer.uint32(/* id 5, wireType 2 =*/42).fork().uint32(/* id 1, wireType 2 =*/10).string(keys[i]).uint32(/* id 2, wireType 2 =*/18).string(message.partitions[keys[i]]).ldelim();
+                            writer.uint32(/* id 3, wireType 2 =*/26).fork().uint32(/* id 1, wireType 2 =*/10).string(keys[i]).uint32(/* id 2, wireType 2 =*/18).string(message.partitions[keys[i]]).ldelim();
                     if (message.version != null && message.hasOwnProperty("version"))
-                        writer.uint32(/* id 6, wireType 2 =*/50).string(message.version);
+                        writer.uint32(/* id 4, wireType 2 =*/34).string(message.version);
                     return writer;
                 };
     
@@ -1790,18 +1768,12 @@
                         var tag = reader.uint32();
                         switch (tag >>> 3) {
                         case 1:
-                            message.project = reader.string();
+                            message.artifactKey = $root.flyteidl.core.ArtifactKey.decode(reader, reader.uint32());
                             break;
                         case 2:
-                            message.domain = reader.string();
-                            break;
-                        case 3:
-                            message.name = reader.string();
-                            break;
-                        case 4:
                             message.tag = reader.string();
                             break;
-                        case 5:
+                        case 3:
                             reader.skip().pos++;
                             if (message.partitions === $util.emptyObject)
                                 message.partitions = {};
@@ -1809,7 +1781,7 @@
                             reader.pos++;
                             message.partitions[key] = reader.string();
                             break;
-                        case 6:
+                        case 4:
                             message.version = reader.string();
                             break;
                         default:
@@ -1831,15 +1803,11 @@
                 ArtifactQuery.verify = function verify(message) {
                     if (typeof message !== "object" || message === null)
                         return "object expected";
-                    if (message.project != null && message.hasOwnProperty("project"))
-                        if (!$util.isString(message.project))
-                            return "project: string expected";
-                    if (message.domain != null && message.hasOwnProperty("domain"))
-                        if (!$util.isString(message.domain))
-                            return "domain: string expected";
-                    if (message.name != null && message.hasOwnProperty("name"))
-                        if (!$util.isString(message.name))
-                            return "name: string expected";
+                    if (message.artifactKey != null && message.hasOwnProperty("artifactKey")) {
+                        var error = $root.flyteidl.core.ArtifactKey.verify(message.artifactKey);
+                        if (error)
+                            return "artifactKey." + error;
+                    }
                     if (message.tag != null && message.hasOwnProperty("tag"))
                         if (!$util.isString(message.tag))
                             return "tag: string expected";

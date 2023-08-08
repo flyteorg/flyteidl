@@ -5070,9 +5070,10 @@ definitions:
               artifact_query:
                 partitions:
                   key: "partitions"
-                domain: "domain"
-                name: "name"
-                project: "project"
+                artifact_key:
+                  domain: "domain"
+                  name: "name"
+                  project: "project"
                 tag: "tag"
                 version: "version"
               required: true
@@ -5396,9 +5397,10 @@ definitions:
               artifact_query:
                 partitions:
                   key: "partitions"
-                domain: "domain"
-                name: "name"
-                project: "project"
+                artifact_key:
+                  domain: "domain"
+                  name: "name"
+                  project: "project"
                 tag: "tag"
                 version: "version"
               required: true
@@ -5794,9 +5796,10 @@ definitions:
             artifact_query:
               partitions:
                 key: "partitions"
-              domain: "domain"
-              name: "name"
-              project: "project"
+              artifact_key:
+                domain: "domain"
+                name: "name"
+                project: "project"
               tag: "tag"
               version: "version"
             required: true
@@ -6158,9 +6161,10 @@ definitions:
                 artifact_query:
                   partitions:
                     key: "partitions"
-                  domain: "domain"
-                  name: "name"
-                  project: "project"
+                  artifact_key:
+                    domain: "domain"
+                    name: "name"
+                    project: "project"
                   tag: "tag"
                   version: "version"
                 required: true
@@ -6484,9 +6488,10 @@ definitions:
                 artifact_query:
                   partitions:
                     key: "partitions"
-                  domain: "domain"
-                  name: "name"
-                  project: "project"
+                  artifact_key:
+                    domain: "domain"
+                    name: "name"
+                    project: "project"
                   tag: "tag"
                   version: "version"
                 required: true
@@ -6862,9 +6867,10 @@ definitions:
                 artifact_query:
                   partitions:
                     key: "partitions"
-                  domain: "domain"
-                  name: "name"
-                  project: "project"
+                  artifact_key:
+                    domain: "domain"
+                    name: "name"
+                    project: "project"
                   tag: "tag"
                   version: "version"
                 required: true
@@ -7188,9 +7194,10 @@ definitions:
                 artifact_query:
                   partitions:
                     key: "partitions"
-                  domain: "domain"
-                  name: "name"
-                  project: "project"
+                  artifact_key:
+                    domain: "domain"
+                    name: "name"
+                    project: "project"
                   tag: "tag"
                   version: "version"
                 required: true
@@ -7685,9 +7692,10 @@ definitions:
             artifact_query:
               partitions:
                 key: "partitions"
-              domain: "domain"
-              name: "name"
-              project: "project"
+              artifact_key:
+                domain: "domain"
+                name: "name"
+                project: "project"
               tag: "tag"
               version: "version"
             required: true
@@ -45744,12 +45752,8 @@ definitions:
   coreArtifactQuery:
     type: "object"
     properties:
-      project:
-        type: "string"
-      domain:
-        type: "string"
-      name:
-        type: "string"
+      artifact_key:
+        $ref: "#/definitions/coreArtifactKey"
       tag:
         type: "string"
       partitions:
@@ -45765,9 +45769,10 @@ definitions:
     example:
       partitions:
         key: "partitions"
-      domain: "domain"
-      name: "name"
-      project: "project"
+      artifact_key:
+        domain: "domain"
+        name: "name"
+        project: "project"
       tag: "tag"
       version: "version"
   coreBinary:
@@ -57479,9 +57484,10 @@ definitions:
       artifact_query:
         partitions:
           key: "partitions"
-        domain: "domain"
-        name: "name"
-        project: "project"
+        artifact_key:
+          domain: "domain"
+          name: "name"
+          project: "project"
         tag: "tag"
         version: "version"
       required: true
@@ -57739,9 +57745,10 @@ definitions:
           artifact_query:
             partitions:
               key: "partitions"
-            domain: "domain"
-            name: "name"
-            project: "project"
+            artifact_key:
+              domain: "domain"
+              name: "name"
+              project: "project"
             tag: "tag"
             version: "version"
           required: true

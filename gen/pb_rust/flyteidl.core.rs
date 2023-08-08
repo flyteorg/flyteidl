@@ -411,17 +411,13 @@ pub struct ArtifactTag {
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(Clone, PartialEq, ::prost::Message)]
 pub struct ArtifactQuery {
-    #[prost(string, tag="1")]
-    pub project: ::prost::alloc::string::String,
+    #[prost(message, optional, tag="1")]
+    pub artifact_key: ::core::option::Option<ArtifactKey>,
     #[prost(string, tag="2")]
-    pub domain: ::prost::alloc::string::String,
-    #[prost(string, tag="3")]
-    pub name: ::prost::alloc::string::String,
-    #[prost(string, tag="4")]
     pub tag: ::prost::alloc::string::String,
-    #[prost(map="string, string", tag="5")]
+    #[prost(map="string, string", tag="3")]
     pub partitions: ::std::collections::HashMap<::prost::alloc::string::String, ::prost::alloc::string::String>,
-    #[prost(string, tag="6")]
+    #[prost(string, tag="4")]
     pub version: ::prost::alloc::string::String,
 }
 /// Indicates a resource type within Flyte.
