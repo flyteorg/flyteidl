@@ -1,3 +1,4 @@
+from flyteidl.core import tasks_pb2 as _tasks_pb2
 from google.protobuf.internal import containers as _containers
 from google.protobuf import descriptor as _descriptor
 from google.protobuf import message as _message
@@ -14,15 +15,24 @@ class RayJob(_message.Message):
     def __init__(self, ray_cluster: _Optional[_Union[RayCluster, _Mapping]] = ..., runtime_env: _Optional[str] = ...) -> None: ...
 
 class RayCluster(_message.Message):
-    __slots__ = ["head_group_spec", "worker_group_spec"]
+    __slots__ = ["head_group_spec", "worker_group_spec", "ray_cluster_params"]
+    class RayClusterParamsEntry(_message.Message):
+        __slots__ = ["key", "value"]
+        KEY_FIELD_NUMBER: _ClassVar[int]
+        VALUE_FIELD_NUMBER: _ClassVar[int]
+        key: str
+        value: str
+        def __init__(self, key: _Optional[str] = ..., value: _Optional[str] = ...) -> None: ...
     HEAD_GROUP_SPEC_FIELD_NUMBER: _ClassVar[int]
     WORKER_GROUP_SPEC_FIELD_NUMBER: _ClassVar[int]
+    RAY_CLUSTER_PARAMS_FIELD_NUMBER: _ClassVar[int]
     head_group_spec: HeadGroupSpec
     worker_group_spec: _containers.RepeatedCompositeFieldContainer[WorkerGroupSpec]
-    def __init__(self, head_group_spec: _Optional[_Union[HeadGroupSpec, _Mapping]] = ..., worker_group_spec: _Optional[_Iterable[_Union[WorkerGroupSpec, _Mapping]]] = ...) -> None: ...
+    ray_cluster_params: _containers.ScalarMap[str, str]
+    def __init__(self, head_group_spec: _Optional[_Union[HeadGroupSpec, _Mapping]] = ..., worker_group_spec: _Optional[_Iterable[_Union[WorkerGroupSpec, _Mapping]]] = ..., ray_cluster_params: _Optional[_Mapping[str, str]] = ...) -> None: ...
 
 class HeadGroupSpec(_message.Message):
-    __slots__ = ["ray_start_params"]
+    __slots__ = ["ray_start_params", "resources"]
     class RayStartParamsEntry(_message.Message):
         __slots__ = ["key", "value"]
         KEY_FIELD_NUMBER: _ClassVar[int]
@@ -31,11 +41,13 @@ class HeadGroupSpec(_message.Message):
         value: str
         def __init__(self, key: _Optional[str] = ..., value: _Optional[str] = ...) -> None: ...
     RAY_START_PARAMS_FIELD_NUMBER: _ClassVar[int]
+    RESOURCES_FIELD_NUMBER: _ClassVar[int]
     ray_start_params: _containers.ScalarMap[str, str]
-    def __init__(self, ray_start_params: _Optional[_Mapping[str, str]] = ...) -> None: ...
+    resources: _tasks_pb2.Resources
+    def __init__(self, ray_start_params: _Optional[_Mapping[str, str]] = ..., resources: _Optional[_Union[_tasks_pb2.Resources, _Mapping]] = ...) -> None: ...
 
 class WorkerGroupSpec(_message.Message):
-    __slots__ = ["group_name", "replicas", "min_replicas", "max_replicas", "ray_start_params"]
+    __slots__ = ["group_name", "replicas", "min_replicas", "max_replicas", "ray_start_params", "resources"]
     class RayStartParamsEntry(_message.Message):
         __slots__ = ["key", "value"]
         KEY_FIELD_NUMBER: _ClassVar[int]
@@ -48,9 +60,11 @@ class WorkerGroupSpec(_message.Message):
     MIN_REPLICAS_FIELD_NUMBER: _ClassVar[int]
     MAX_REPLICAS_FIELD_NUMBER: _ClassVar[int]
     RAY_START_PARAMS_FIELD_NUMBER: _ClassVar[int]
+    RESOURCES_FIELD_NUMBER: _ClassVar[int]
     group_name: str
     replicas: int
     min_replicas: int
     max_replicas: int
     ray_start_params: _containers.ScalarMap[str, str]
-    def __init__(self, group_name: _Optional[str] = ..., replicas: _Optional[int] = ..., min_replicas: _Optional[int] = ..., max_replicas: _Optional[int] = ..., ray_start_params: _Optional[_Mapping[str, str]] = ...) -> None: ...
+    resources: _tasks_pb2.Resources
+    def __init__(self, group_name: _Optional[str] = ..., replicas: _Optional[int] = ..., min_replicas: _Optional[int] = ..., max_replicas: _Optional[int] = ..., ray_start_params: _Optional[_Mapping[str, str]] = ..., resources: _Optional[_Union[_tasks_pb2.Resources, _Mapping]] = ...) -> None: ...

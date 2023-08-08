@@ -144,6 +144,8 @@ func (m *RayCluster) Validate() error {
 
 	}
 
+	// no validation rules for RayClusterParams
+
 	return nil
 }
 
@@ -210,6 +212,16 @@ func (m *HeadGroupSpec) Validate() error {
 	}
 
 	// no validation rules for RayStartParams
+
+	if v, ok := interface{}(m.GetResources()).(interface{ Validate() error }); ok {
+		if err := v.Validate(); err != nil {
+			return HeadGroupSpecValidationError{
+				field:  "Resources",
+				reason: "embedded message failed validation",
+				cause:  err,
+			}
+		}
+	}
 
 	return nil
 }
@@ -285,6 +297,16 @@ func (m *WorkerGroupSpec) Validate() error {
 	// no validation rules for MaxReplicas
 
 	// no validation rules for RayStartParams
+
+	if v, ok := interface{}(m.GetResources()).(interface{ Validate() error }); ok {
+		if err := v.Validate(); err != nil {
+			return WorkerGroupSpecValidationError{
+				field:  "Resources",
+				reason: "embedded message failed validation",
+				cause:  err,
+			}
+		}
+	}
 
 	return nil
 }

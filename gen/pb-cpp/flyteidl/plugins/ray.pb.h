@@ -34,6 +34,7 @@
 #include <google/protobuf/map_entry.h>
 #include <google/protobuf/map_field_inl.h>
 #include <google/protobuf/unknown_field_set.h>
+#include "flyteidl/core/tasks.pb.h"
 // @@protoc_insertion_point(includes)
 #include <google/protobuf/port_def.inc>
 #define PROTOBUF_INTERNAL_EXPORT_flyteidl_2fplugins_2fray_2eproto
@@ -44,7 +45,7 @@ struct TableStruct_flyteidl_2fplugins_2fray_2eproto {
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
   static const ::google::protobuf::internal::AuxillaryParseTableField aux[]
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
-  static const ::google::protobuf::internal::ParseTable schema[6]
+  static const ::google::protobuf::internal::ParseTable schema[7]
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
   static const ::google::protobuf::internal::FieldMetadata field_metadata[];
   static const ::google::protobuf::internal::SerializationTable serialization_table[];
@@ -62,6 +63,9 @@ extern HeadGroupSpec_RayStartParamsEntry_DoNotUseDefaultTypeInternal _HeadGroupS
 class RayCluster;
 class RayClusterDefaultTypeInternal;
 extern RayClusterDefaultTypeInternal _RayCluster_default_instance_;
+class RayCluster_RayClusterParamsEntry_DoNotUse;
+class RayCluster_RayClusterParamsEntry_DoNotUseDefaultTypeInternal;
+extern RayCluster_RayClusterParamsEntry_DoNotUseDefaultTypeInternal _RayCluster_RayClusterParamsEntry_DoNotUse_default_instance_;
 class RayJob;
 class RayJobDefaultTypeInternal;
 extern RayJobDefaultTypeInternal _RayJob_default_instance_;
@@ -78,6 +82,7 @@ namespace protobuf {
 template<> ::flyteidl::plugins::HeadGroupSpec* Arena::CreateMaybeMessage<::flyteidl::plugins::HeadGroupSpec>(Arena*);
 template<> ::flyteidl::plugins::HeadGroupSpec_RayStartParamsEntry_DoNotUse* Arena::CreateMaybeMessage<::flyteidl::plugins::HeadGroupSpec_RayStartParamsEntry_DoNotUse>(Arena*);
 template<> ::flyteidl::plugins::RayCluster* Arena::CreateMaybeMessage<::flyteidl::plugins::RayCluster>(Arena*);
+template<> ::flyteidl::plugins::RayCluster_RayClusterParamsEntry_DoNotUse* Arena::CreateMaybeMessage<::flyteidl::plugins::RayCluster_RayClusterParamsEntry_DoNotUse>(Arena*);
 template<> ::flyteidl::plugins::RayJob* Arena::CreateMaybeMessage<::flyteidl::plugins::RayJob>(Arena*);
 template<> ::flyteidl::plugins::WorkerGroupSpec* Arena::CreateMaybeMessage<::flyteidl::plugins::WorkerGroupSpec>(Arena*);
 template<> ::flyteidl::plugins::WorkerGroupSpec_RayStartParamsEntry_DoNotUse* Arena::CreateMaybeMessage<::flyteidl::plugins::WorkerGroupSpec_RayStartParamsEntry_DoNotUse>(Arena*);
@@ -218,6 +223,30 @@ class RayJob final :
 };
 // -------------------------------------------------------------------
 
+class RayCluster_RayClusterParamsEntry_DoNotUse : public ::google::protobuf::internal::MapEntry<RayCluster_RayClusterParamsEntry_DoNotUse, 
+    ::std::string, ::std::string,
+    ::google::protobuf::internal::WireFormatLite::TYPE_STRING,
+    ::google::protobuf::internal::WireFormatLite::TYPE_STRING,
+    0 > {
+public:
+#if GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
+static bool _ParseMap(const char* begin, const char* end, void* object, ::google::protobuf::internal::ParseContext* ctx);
+#endif  // GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
+  typedef ::google::protobuf::internal::MapEntry<RayCluster_RayClusterParamsEntry_DoNotUse, 
+    ::std::string, ::std::string,
+    ::google::protobuf::internal::WireFormatLite::TYPE_STRING,
+    ::google::protobuf::internal::WireFormatLite::TYPE_STRING,
+    0 > SuperType;
+  RayCluster_RayClusterParamsEntry_DoNotUse();
+  RayCluster_RayClusterParamsEntry_DoNotUse(::google::protobuf::Arena* arena);
+  void MergeFrom(const RayCluster_RayClusterParamsEntry_DoNotUse& other);
+  static const RayCluster_RayClusterParamsEntry_DoNotUse* internal_default_instance() { return reinterpret_cast<const RayCluster_RayClusterParamsEntry_DoNotUse*>(&_RayCluster_RayClusterParamsEntry_DoNotUse_default_instance_); }
+  void MergeFrom(const ::google::protobuf::Message& other) final;
+  ::google::protobuf::Metadata GetMetadata() const;
+};
+
+// -------------------------------------------------------------------
+
 class RayCluster final :
     public ::google::protobuf::Message /* @@protoc_insertion_point(class_definition:flyteidl.plugins.RayCluster) */ {
  public:
@@ -256,7 +285,7 @@ class RayCluster final :
                &_RayCluster_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    1;
+    2;
 
   void Swap(RayCluster* other);
   friend void swap(RayCluster& a, RayCluster& b) {
@@ -311,6 +340,7 @@ class RayCluster final :
 
   // nested types ----------------------------------------------------
 
+
   // accessors -------------------------------------------------------
 
   // repeated .flyteidl.plugins.WorkerGroupSpec worker_group_spec = 2;
@@ -324,6 +354,15 @@ class RayCluster final :
   ::flyteidl::plugins::WorkerGroupSpec* add_worker_group_spec();
   const ::google::protobuf::RepeatedPtrField< ::flyteidl::plugins::WorkerGroupSpec >&
       worker_group_spec() const;
+
+  // map<string, string> ray_cluster_params = 3;
+  int ray_cluster_params_size() const;
+  void clear_ray_cluster_params();
+  static const int kRayClusterParamsFieldNumber = 3;
+  const ::google::protobuf::Map< ::std::string, ::std::string >&
+      ray_cluster_params() const;
+  ::google::protobuf::Map< ::std::string, ::std::string >*
+      mutable_ray_cluster_params();
 
   // .flyteidl.plugins.HeadGroupSpec head_group_spec = 1;
   bool has_head_group_spec() const;
@@ -340,6 +379,12 @@ class RayCluster final :
 
   ::google::protobuf::internal::InternalMetadataWithArena _internal_metadata_;
   ::google::protobuf::RepeatedPtrField< ::flyteidl::plugins::WorkerGroupSpec > worker_group_spec_;
+  ::google::protobuf::internal::MapField<
+      RayCluster_RayClusterParamsEntry_DoNotUse,
+      ::std::string, ::std::string,
+      ::google::protobuf::internal::WireFormatLite::TYPE_STRING,
+      ::google::protobuf::internal::WireFormatLite::TYPE_STRING,
+      0 > ray_cluster_params_;
   ::flyteidl::plugins::HeadGroupSpec* head_group_spec_;
   mutable ::google::protobuf::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_flyteidl_2fplugins_2fray_2eproto;
@@ -408,7 +453,7 @@ class HeadGroupSpec final :
                &_HeadGroupSpec_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    3;
+    4;
 
   void Swap(HeadGroupSpec* other);
   friend void swap(HeadGroupSpec& a, HeadGroupSpec& b) {
@@ -475,6 +520,15 @@ class HeadGroupSpec final :
   ::google::protobuf::Map< ::std::string, ::std::string >*
       mutable_ray_start_params();
 
+  // .flyteidl.core.Resources resources = 6;
+  bool has_resources() const;
+  void clear_resources();
+  static const int kResourcesFieldNumber = 6;
+  const ::flyteidl::core::Resources& resources() const;
+  ::flyteidl::core::Resources* release_resources();
+  ::flyteidl::core::Resources* mutable_resources();
+  void set_allocated_resources(::flyteidl::core::Resources* resources);
+
   // @@protoc_insertion_point(class_scope:flyteidl.plugins.HeadGroupSpec)
  private:
   class HasBitSetters;
@@ -486,6 +540,7 @@ class HeadGroupSpec final :
       ::google::protobuf::internal::WireFormatLite::TYPE_STRING,
       ::google::protobuf::internal::WireFormatLite::TYPE_STRING,
       0 > ray_start_params_;
+  ::flyteidl::core::Resources* resources_;
   mutable ::google::protobuf::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_flyteidl_2fplugins_2fray_2eproto;
 };
@@ -553,7 +608,7 @@ class WorkerGroupSpec final :
                &_WorkerGroupSpec_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    5;
+    6;
 
   void Swap(WorkerGroupSpec* other);
   friend void swap(WorkerGroupSpec& a, WorkerGroupSpec& b) {
@@ -634,6 +689,15 @@ class WorkerGroupSpec final :
   ::std::string* release_group_name();
   void set_allocated_group_name(::std::string* group_name);
 
+  // .flyteidl.core.Resources resources = 6;
+  bool has_resources() const;
+  void clear_resources();
+  static const int kResourcesFieldNumber = 6;
+  const ::flyteidl::core::Resources& resources() const;
+  ::flyteidl::core::Resources* release_resources();
+  ::flyteidl::core::Resources* mutable_resources();
+  void set_allocated_resources(::flyteidl::core::Resources* resources);
+
   // int32 replicas = 2;
   void clear_replicas();
   static const int kReplicasFieldNumber = 2;
@@ -664,6 +728,7 @@ class WorkerGroupSpec final :
       ::google::protobuf::internal::WireFormatLite::TYPE_STRING,
       0 > ray_start_params_;
   ::google::protobuf::internal::ArenaStringPtr group_name_;
+  ::flyteidl::core::Resources* resources_;
   ::google::protobuf::int32 replicas_;
   ::google::protobuf::int32 min_replicas_;
   ::google::protobuf::int32 max_replicas_;
@@ -787,6 +852,8 @@ inline void RayJob::set_allocated_runtime_env(::std::string* runtime_env) {
 
 // -------------------------------------------------------------------
 
+// -------------------------------------------------------------------
+
 // RayCluster
 
 // .flyteidl.plugins.HeadGroupSpec head_group_spec = 1;
@@ -870,6 +937,24 @@ RayCluster::worker_group_spec() const {
   return worker_group_spec_;
 }
 
+// map<string, string> ray_cluster_params = 3;
+inline int RayCluster::ray_cluster_params_size() const {
+  return ray_cluster_params_.size();
+}
+inline void RayCluster::clear_ray_cluster_params() {
+  ray_cluster_params_.Clear();
+}
+inline const ::google::protobuf::Map< ::std::string, ::std::string >&
+RayCluster::ray_cluster_params() const {
+  // @@protoc_insertion_point(field_map:flyteidl.plugins.RayCluster.ray_cluster_params)
+  return ray_cluster_params_.GetMap();
+}
+inline ::google::protobuf::Map< ::std::string, ::std::string >*
+RayCluster::mutable_ray_cluster_params() {
+  // @@protoc_insertion_point(field_mutable_map:flyteidl.plugins.RayCluster.ray_cluster_params)
+  return ray_cluster_params_.MutableMap();
+}
+
 // -------------------------------------------------------------------
 
 // -------------------------------------------------------------------
@@ -892,6 +977,51 @@ inline ::google::protobuf::Map< ::std::string, ::std::string >*
 HeadGroupSpec::mutable_ray_start_params() {
   // @@protoc_insertion_point(field_mutable_map:flyteidl.plugins.HeadGroupSpec.ray_start_params)
   return ray_start_params_.MutableMap();
+}
+
+// .flyteidl.core.Resources resources = 6;
+inline bool HeadGroupSpec::has_resources() const {
+  return this != internal_default_instance() && resources_ != nullptr;
+}
+inline const ::flyteidl::core::Resources& HeadGroupSpec::resources() const {
+  const ::flyteidl::core::Resources* p = resources_;
+  // @@protoc_insertion_point(field_get:flyteidl.plugins.HeadGroupSpec.resources)
+  return p != nullptr ? *p : *reinterpret_cast<const ::flyteidl::core::Resources*>(
+      &::flyteidl::core::_Resources_default_instance_);
+}
+inline ::flyteidl::core::Resources* HeadGroupSpec::release_resources() {
+  // @@protoc_insertion_point(field_release:flyteidl.plugins.HeadGroupSpec.resources)
+  
+  ::flyteidl::core::Resources* temp = resources_;
+  resources_ = nullptr;
+  return temp;
+}
+inline ::flyteidl::core::Resources* HeadGroupSpec::mutable_resources() {
+  
+  if (resources_ == nullptr) {
+    auto* p = CreateMaybeMessage<::flyteidl::core::Resources>(GetArenaNoVirtual());
+    resources_ = p;
+  }
+  // @@protoc_insertion_point(field_mutable:flyteidl.plugins.HeadGroupSpec.resources)
+  return resources_;
+}
+inline void HeadGroupSpec::set_allocated_resources(::flyteidl::core::Resources* resources) {
+  ::google::protobuf::Arena* message_arena = GetArenaNoVirtual();
+  if (message_arena == nullptr) {
+    delete reinterpret_cast< ::google::protobuf::MessageLite*>(resources_);
+  }
+  if (resources) {
+    ::google::protobuf::Arena* submessage_arena = nullptr;
+    if (message_arena != submessage_arena) {
+      resources = ::google::protobuf::internal::GetOwnedMessage(
+          message_arena, resources, submessage_arena);
+    }
+    
+  } else {
+    
+  }
+  resources_ = resources;
+  // @@protoc_insertion_point(field_set_allocated:flyteidl.plugins.HeadGroupSpec.resources)
 }
 
 // -------------------------------------------------------------------
@@ -1013,9 +1143,56 @@ WorkerGroupSpec::mutable_ray_start_params() {
   return ray_start_params_.MutableMap();
 }
 
+// .flyteidl.core.Resources resources = 6;
+inline bool WorkerGroupSpec::has_resources() const {
+  return this != internal_default_instance() && resources_ != nullptr;
+}
+inline const ::flyteidl::core::Resources& WorkerGroupSpec::resources() const {
+  const ::flyteidl::core::Resources* p = resources_;
+  // @@protoc_insertion_point(field_get:flyteidl.plugins.WorkerGroupSpec.resources)
+  return p != nullptr ? *p : *reinterpret_cast<const ::flyteidl::core::Resources*>(
+      &::flyteidl::core::_Resources_default_instance_);
+}
+inline ::flyteidl::core::Resources* WorkerGroupSpec::release_resources() {
+  // @@protoc_insertion_point(field_release:flyteidl.plugins.WorkerGroupSpec.resources)
+  
+  ::flyteidl::core::Resources* temp = resources_;
+  resources_ = nullptr;
+  return temp;
+}
+inline ::flyteidl::core::Resources* WorkerGroupSpec::mutable_resources() {
+  
+  if (resources_ == nullptr) {
+    auto* p = CreateMaybeMessage<::flyteidl::core::Resources>(GetArenaNoVirtual());
+    resources_ = p;
+  }
+  // @@protoc_insertion_point(field_mutable:flyteidl.plugins.WorkerGroupSpec.resources)
+  return resources_;
+}
+inline void WorkerGroupSpec::set_allocated_resources(::flyteidl::core::Resources* resources) {
+  ::google::protobuf::Arena* message_arena = GetArenaNoVirtual();
+  if (message_arena == nullptr) {
+    delete reinterpret_cast< ::google::protobuf::MessageLite*>(resources_);
+  }
+  if (resources) {
+    ::google::protobuf::Arena* submessage_arena = nullptr;
+    if (message_arena != submessage_arena) {
+      resources = ::google::protobuf::internal::GetOwnedMessage(
+          message_arena, resources, submessage_arena);
+    }
+    
+  } else {
+    
+  }
+  resources_ = resources;
+  // @@protoc_insertion_point(field_set_allocated:flyteidl.plugins.WorkerGroupSpec.resources)
+}
+
 #ifdef __GNUC__
   #pragma GCC diagnostic pop
 #endif  // __GNUC__
+// -------------------------------------------------------------------
+
 // -------------------------------------------------------------------
 
 // -------------------------------------------------------------------
