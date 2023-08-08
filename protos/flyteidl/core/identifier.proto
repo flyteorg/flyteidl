@@ -77,26 +77,38 @@ message ArtifactKey {
   // Project and domain and suffix needs to be unique across a given artifact store.
   string project = 1;
   string domain = 2;
-  string suffix = 3;
+  string name = 3;
 }
 
 message ArtifactID {
   ArtifactKey artifact_key = 1;
 
-  // consider hiding - this is a storage layer ID. Might even change for the same object.
-  string uuid = 2;
+  string version = 2;
+
+  // here for ds popularity
+  map<string, string> partitions = 3;
 }
 
-message ArtifactAlias {
+message ArtifactTag {
   // ties this directly to the artifact
   ArtifactID artifact_id = 1;
 
-  string name = 2;
-  string value = 3;
+  string tag = 2;
 }
 
+// Uniqueness constraints for Artifacts
+//  - project, domain, name, version, partitions
+// Option 2 (tags are standalone, point to an individual artifact id):
+//  - project, domain, name, alias (points to one partition if partitioned)
+//  - project, domain, name, partition key, partition value
 message ArtifactQuery {
   string project = 1;
   string domain = 2;
-  ArtifactAlias alias = 3;
+  string name = 3;
+
+  string tag = 4;
+
+  map<string, string> partitions = 5;
+  string version = 6;
 }
+
