@@ -12,5 +12,8 @@ package flyteadmin
 type CoreArtifactQuery struct {
 	Project string `json:"project,omitempty"`
 	Domain string `json:"domain,omitempty"`
-	Alias *CoreArtifactAlias `json:"alias,omitempty"`
+	Name string `json:"name,omitempty"`
+	Tag string `json:"tag,omitempty"`
+	Partitions map[string]string `json:"partitions,omitempty"`
+	Version string `json:"version,omitempty"`
 }

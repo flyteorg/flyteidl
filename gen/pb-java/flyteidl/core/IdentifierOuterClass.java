@@ -4855,14 +4855,14 @@ public final class IdentifierOuterClass {
         getDomainBytes();
 
     /**
-     * <code>string suffix = 3;</code>
+     * <code>string name = 3;</code>
      */
-    java.lang.String getSuffix();
+    java.lang.String getName();
     /**
-     * <code>string suffix = 3;</code>
+     * <code>string name = 3;</code>
      */
     com.google.protobuf.ByteString
-        getSuffixBytes();
+        getNameBytes();
   }
   /**
    * Protobuf type {@code flyteidl.core.ArtifactKey}
@@ -4879,7 +4879,7 @@ public final class IdentifierOuterClass {
     private ArtifactKey() {
       project_ = "";
       domain_ = "";
-      suffix_ = "";
+      name_ = "";
     }
 
     @java.lang.Override
@@ -4921,7 +4921,7 @@ public final class IdentifierOuterClass {
             case 26: {
               java.lang.String s = input.readStringRequireUtf8();
 
-              suffix_ = s;
+              name_ = s;
               break;
             }
             default: {
@@ -5032,34 +5032,34 @@ public final class IdentifierOuterClass {
       }
     }
 
-    public static final int SUFFIX_FIELD_NUMBER = 3;
-    private volatile java.lang.Object suffix_;
+    public static final int NAME_FIELD_NUMBER = 3;
+    private volatile java.lang.Object name_;
     /**
-     * <code>string suffix = 3;</code>
+     * <code>string name = 3;</code>
      */
-    public java.lang.String getSuffix() {
-      java.lang.Object ref = suffix_;
+    public java.lang.String getName() {
+      java.lang.Object ref = name_;
       if (ref instanceof java.lang.String) {
         return (java.lang.String) ref;
       } else {
         com.google.protobuf.ByteString bs = 
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
-        suffix_ = s;
+        name_ = s;
         return s;
       }
     }
     /**
-     * <code>string suffix = 3;</code>
+     * <code>string name = 3;</code>
      */
     public com.google.protobuf.ByteString
-        getSuffixBytes() {
-      java.lang.Object ref = suffix_;
+        getNameBytes() {
+      java.lang.Object ref = name_;
       if (ref instanceof java.lang.String) {
         com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
-        suffix_ = b;
+        name_ = b;
         return b;
       } else {
         return (com.google.protobuf.ByteString) ref;
@@ -5086,8 +5086,8 @@ public final class IdentifierOuterClass {
       if (!getDomainBytes().isEmpty()) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 2, domain_);
       }
-      if (!getSuffixBytes().isEmpty()) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 3, suffix_);
+      if (!getNameBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 3, name_);
       }
       unknownFields.writeTo(output);
     }
@@ -5104,8 +5104,8 @@ public final class IdentifierOuterClass {
       if (!getDomainBytes().isEmpty()) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, domain_);
       }
-      if (!getSuffixBytes().isEmpty()) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, suffix_);
+      if (!getNameBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, name_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -5126,8 +5126,8 @@ public final class IdentifierOuterClass {
           .equals(other.getProject())) return false;
       if (!getDomain()
           .equals(other.getDomain())) return false;
-      if (!getSuffix()
-          .equals(other.getSuffix())) return false;
+      if (!getName()
+          .equals(other.getName())) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -5143,8 +5143,8 @@ public final class IdentifierOuterClass {
       hash = (53 * hash) + getProject().hashCode();
       hash = (37 * hash) + DOMAIN_FIELD_NUMBER;
       hash = (53 * hash) + getDomain().hashCode();
-      hash = (37 * hash) + SUFFIX_FIELD_NUMBER;
-      hash = (53 * hash) + getSuffix().hashCode();
+      hash = (37 * hash) + NAME_FIELD_NUMBER;
+      hash = (53 * hash) + getName().hashCode();
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -5282,7 +5282,7 @@ public final class IdentifierOuterClass {
 
         domain_ = "";
 
-        suffix_ = "";
+        name_ = "";
 
         return this;
       }
@@ -5312,7 +5312,7 @@ public final class IdentifierOuterClass {
         flyteidl.core.IdentifierOuterClass.ArtifactKey result = new flyteidl.core.IdentifierOuterClass.ArtifactKey(this);
         result.project_ = project_;
         result.domain_ = domain_;
-        result.suffix_ = suffix_;
+        result.name_ = name_;
         onBuilt();
         return result;
       }
@@ -5369,8 +5369,8 @@ public final class IdentifierOuterClass {
           domain_ = other.domain_;
           onChanged();
         }
-        if (!other.getSuffix().isEmpty()) {
-          suffix_ = other.suffix_;
+        if (!other.getName().isEmpty()) {
+          name_ = other.name_;
           onChanged();
         }
         this.mergeUnknownFields(other.unknownFields);
@@ -5560,71 +5560,71 @@ public final class IdentifierOuterClass {
         return this;
       }
 
-      private java.lang.Object suffix_ = "";
+      private java.lang.Object name_ = "";
       /**
-       * <code>string suffix = 3;</code>
+       * <code>string name = 3;</code>
        */
-      public java.lang.String getSuffix() {
-        java.lang.Object ref = suffix_;
+      public java.lang.String getName() {
+        java.lang.Object ref = name_;
         if (!(ref instanceof java.lang.String)) {
           com.google.protobuf.ByteString bs =
               (com.google.protobuf.ByteString) ref;
           java.lang.String s = bs.toStringUtf8();
-          suffix_ = s;
+          name_ = s;
           return s;
         } else {
           return (java.lang.String) ref;
         }
       }
       /**
-       * <code>string suffix = 3;</code>
+       * <code>string name = 3;</code>
        */
       public com.google.protobuf.ByteString
-          getSuffixBytes() {
-        java.lang.Object ref = suffix_;
+          getNameBytes() {
+        java.lang.Object ref = name_;
         if (ref instanceof String) {
           com.google.protobuf.ByteString b = 
               com.google.protobuf.ByteString.copyFromUtf8(
                   (java.lang.String) ref);
-          suffix_ = b;
+          name_ = b;
           return b;
         } else {
           return (com.google.protobuf.ByteString) ref;
         }
       }
       /**
-       * <code>string suffix = 3;</code>
+       * <code>string name = 3;</code>
        */
-      public Builder setSuffix(
+      public Builder setName(
           java.lang.String value) {
         if (value == null) {
     throw new NullPointerException();
   }
   
-        suffix_ = value;
+        name_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>string suffix = 3;</code>
+       * <code>string name = 3;</code>
        */
-      public Builder clearSuffix() {
+      public Builder clearName() {
         
-        suffix_ = getDefaultInstance().getSuffix();
+        name_ = getDefaultInstance().getName();
         onChanged();
         return this;
       }
       /**
-       * <code>string suffix = 3;</code>
+       * <code>string name = 3;</code>
        */
-      public Builder setSuffixBytes(
+      public Builder setNameBytes(
           com.google.protobuf.ByteString value) {
         if (value == null) {
     throw new NullPointerException();
   }
   checkByteStringIsUtf8(value);
         
-        suffix_ = value;
+        name_ = value;
         onChanged();
         return this;
       }
@@ -5699,22 +5699,68 @@ public final class IdentifierOuterClass {
     flyteidl.core.IdentifierOuterClass.ArtifactKeyOrBuilder getArtifactKeyOrBuilder();
 
     /**
-     * <pre>
-     * consider hiding - this is a storage layer ID. Might even change for the same object.
-     * </pre>
-     *
-     * <code>string uuid = 2;</code>
+     * <code>string version = 2;</code>
      */
-    java.lang.String getUuid();
+    java.lang.String getVersion();
     /**
-     * <pre>
-     * consider hiding - this is a storage layer ID. Might even change for the same object.
-     * </pre>
-     *
-     * <code>string uuid = 2;</code>
+     * <code>string version = 2;</code>
      */
     com.google.protobuf.ByteString
-        getUuidBytes();
+        getVersionBytes();
+
+    /**
+     * <pre>
+     * here for ds popularity
+     * </pre>
+     *
+     * <code>map&lt;string, string&gt; partitions = 3;</code>
+     */
+    int getPartitionsCount();
+    /**
+     * <pre>
+     * here for ds popularity
+     * </pre>
+     *
+     * <code>map&lt;string, string&gt; partitions = 3;</code>
+     */
+    boolean containsPartitions(
+        java.lang.String key);
+    /**
+     * Use {@link #getPartitionsMap()} instead.
+     */
+    @java.lang.Deprecated
+    java.util.Map<java.lang.String, java.lang.String>
+    getPartitions();
+    /**
+     * <pre>
+     * here for ds popularity
+     * </pre>
+     *
+     * <code>map&lt;string, string&gt; partitions = 3;</code>
+     */
+    java.util.Map<java.lang.String, java.lang.String>
+    getPartitionsMap();
+    /**
+     * <pre>
+     * here for ds popularity
+     * </pre>
+     *
+     * <code>map&lt;string, string&gt; partitions = 3;</code>
+     */
+
+    java.lang.String getPartitionsOrDefault(
+        java.lang.String key,
+        java.lang.String defaultValue);
+    /**
+     * <pre>
+     * here for ds popularity
+     * </pre>
+     *
+     * <code>map&lt;string, string&gt; partitions = 3;</code>
+     */
+
+    java.lang.String getPartitionsOrThrow(
+        java.lang.String key);
   }
   /**
    * Protobuf type {@code flyteidl.core.ArtifactID}
@@ -5729,7 +5775,7 @@ public final class IdentifierOuterClass {
       super(builder);
     }
     private ArtifactID() {
-      uuid_ = "";
+      version_ = "";
     }
 
     @java.lang.Override
@@ -5772,7 +5818,20 @@ public final class IdentifierOuterClass {
             case 18: {
               java.lang.String s = input.readStringRequireUtf8();
 
-              uuid_ = s;
+              version_ = s;
+              break;
+            }
+            case 26: {
+              if (!((mutable_bitField0_ & 0x00000004) != 0)) {
+                partitions_ = com.google.protobuf.MapField.newMapField(
+                    PartitionsDefaultEntryHolder.defaultEntry);
+                mutable_bitField0_ |= 0x00000004;
+              }
+              com.google.protobuf.MapEntry<java.lang.String, java.lang.String>
+              partitions__ = input.readMessage(
+                  PartitionsDefaultEntryHolder.defaultEntry.getParserForType(), extensionRegistry);
+              partitions_.getMutableMap().put(
+                  partitions__.getKey(), partitions__.getValue());
               break;
             }
             default: {
@@ -5799,6 +5858,18 @@ public final class IdentifierOuterClass {
       return flyteidl.core.IdentifierOuterClass.internal_static_flyteidl_core_ArtifactID_descriptor;
     }
 
+    @SuppressWarnings({"rawtypes"})
+    @java.lang.Override
+    protected com.google.protobuf.MapField internalGetMapField(
+        int number) {
+      switch (number) {
+        case 3:
+          return internalGetPartitions();
+        default:
+          throw new RuntimeException(
+              "Invalid map field number: " + number);
+      }
+    }
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
@@ -5807,6 +5878,7 @@ public final class IdentifierOuterClass {
               flyteidl.core.IdentifierOuterClass.ArtifactID.class, flyteidl.core.IdentifierOuterClass.ArtifactID.Builder.class);
     }
 
+    private int bitField0_;
     public static final int ARTIFACT_KEY_FIELD_NUMBER = 1;
     private flyteidl.core.IdentifierOuterClass.ArtifactKey artifactKey_;
     /**
@@ -5828,46 +5900,130 @@ public final class IdentifierOuterClass {
       return getArtifactKey();
     }
 
-    public static final int UUID_FIELD_NUMBER = 2;
-    private volatile java.lang.Object uuid_;
+    public static final int VERSION_FIELD_NUMBER = 2;
+    private volatile java.lang.Object version_;
     /**
-     * <pre>
-     * consider hiding - this is a storage layer ID. Might even change for the same object.
-     * </pre>
-     *
-     * <code>string uuid = 2;</code>
+     * <code>string version = 2;</code>
      */
-    public java.lang.String getUuid() {
-      java.lang.Object ref = uuid_;
+    public java.lang.String getVersion() {
+      java.lang.Object ref = version_;
       if (ref instanceof java.lang.String) {
         return (java.lang.String) ref;
       } else {
         com.google.protobuf.ByteString bs = 
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
-        uuid_ = s;
+        version_ = s;
         return s;
       }
     }
     /**
-     * <pre>
-     * consider hiding - this is a storage layer ID. Might even change for the same object.
-     * </pre>
-     *
-     * <code>string uuid = 2;</code>
+     * <code>string version = 2;</code>
      */
     public com.google.protobuf.ByteString
-        getUuidBytes() {
-      java.lang.Object ref = uuid_;
+        getVersionBytes() {
+      java.lang.Object ref = version_;
       if (ref instanceof java.lang.String) {
         com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
-        uuid_ = b;
+        version_ = b;
         return b;
       } else {
         return (com.google.protobuf.ByteString) ref;
       }
+    }
+
+    public static final int PARTITIONS_FIELD_NUMBER = 3;
+    private static final class PartitionsDefaultEntryHolder {
+      static final com.google.protobuf.MapEntry<
+          java.lang.String, java.lang.String> defaultEntry =
+              com.google.protobuf.MapEntry
+              .<java.lang.String, java.lang.String>newDefaultInstance(
+                  flyteidl.core.IdentifierOuterClass.internal_static_flyteidl_core_ArtifactID_PartitionsEntry_descriptor, 
+                  com.google.protobuf.WireFormat.FieldType.STRING,
+                  "",
+                  com.google.protobuf.WireFormat.FieldType.STRING,
+                  "");
+    }
+    private com.google.protobuf.MapField<
+        java.lang.String, java.lang.String> partitions_;
+    private com.google.protobuf.MapField<java.lang.String, java.lang.String>
+    internalGetPartitions() {
+      if (partitions_ == null) {
+        return com.google.protobuf.MapField.emptyMapField(
+            PartitionsDefaultEntryHolder.defaultEntry);
+      }
+      return partitions_;
+    }
+
+    public int getPartitionsCount() {
+      return internalGetPartitions().getMap().size();
+    }
+    /**
+     * <pre>
+     * here for ds popularity
+     * </pre>
+     *
+     * <code>map&lt;string, string&gt; partitions = 3;</code>
+     */
+
+    public boolean containsPartitions(
+        java.lang.String key) {
+      if (key == null) { throw new java.lang.NullPointerException(); }
+      return internalGetPartitions().getMap().containsKey(key);
+    }
+    /**
+     * Use {@link #getPartitionsMap()} instead.
+     */
+    @java.lang.Deprecated
+    public java.util.Map<java.lang.String, java.lang.String> getPartitions() {
+      return getPartitionsMap();
+    }
+    /**
+     * <pre>
+     * here for ds popularity
+     * </pre>
+     *
+     * <code>map&lt;string, string&gt; partitions = 3;</code>
+     */
+
+    public java.util.Map<java.lang.String, java.lang.String> getPartitionsMap() {
+      return internalGetPartitions().getMap();
+    }
+    /**
+     * <pre>
+     * here for ds popularity
+     * </pre>
+     *
+     * <code>map&lt;string, string&gt; partitions = 3;</code>
+     */
+
+    public java.lang.String getPartitionsOrDefault(
+        java.lang.String key,
+        java.lang.String defaultValue) {
+      if (key == null) { throw new java.lang.NullPointerException(); }
+      java.util.Map<java.lang.String, java.lang.String> map =
+          internalGetPartitions().getMap();
+      return map.containsKey(key) ? map.get(key) : defaultValue;
+    }
+    /**
+     * <pre>
+     * here for ds popularity
+     * </pre>
+     *
+     * <code>map&lt;string, string&gt; partitions = 3;</code>
+     */
+
+    public java.lang.String getPartitionsOrThrow(
+        java.lang.String key) {
+      if (key == null) { throw new java.lang.NullPointerException(); }
+      java.util.Map<java.lang.String, java.lang.String> map =
+          internalGetPartitions().getMap();
+      if (!map.containsKey(key)) {
+        throw new java.lang.IllegalArgumentException();
+      }
+      return map.get(key);
     }
 
     private byte memoizedIsInitialized = -1;
@@ -5887,9 +6043,15 @@ public final class IdentifierOuterClass {
       if (artifactKey_ != null) {
         output.writeMessage(1, getArtifactKey());
       }
-      if (!getUuidBytes().isEmpty()) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 2, uuid_);
+      if (!getVersionBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 2, version_);
       }
+      com.google.protobuf.GeneratedMessageV3
+        .serializeStringMapTo(
+          output,
+          internalGetPartitions(),
+          PartitionsDefaultEntryHolder.defaultEntry,
+          3);
       unknownFields.writeTo(output);
     }
 
@@ -5903,8 +6065,18 @@ public final class IdentifierOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(1, getArtifactKey());
       }
-      if (!getUuidBytes().isEmpty()) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, uuid_);
+      if (!getVersionBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, version_);
+      }
+      for (java.util.Map.Entry<java.lang.String, java.lang.String> entry
+           : internalGetPartitions().getMap().entrySet()) {
+        com.google.protobuf.MapEntry<java.lang.String, java.lang.String>
+        partitions__ = PartitionsDefaultEntryHolder.defaultEntry.newBuilderForType()
+            .setKey(entry.getKey())
+            .setValue(entry.getValue())
+            .build();
+        size += com.google.protobuf.CodedOutputStream
+            .computeMessageSize(3, partitions__);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -5926,8 +6098,10 @@ public final class IdentifierOuterClass {
         if (!getArtifactKey()
             .equals(other.getArtifactKey())) return false;
       }
-      if (!getUuid()
-          .equals(other.getUuid())) return false;
+      if (!getVersion()
+          .equals(other.getVersion())) return false;
+      if (!internalGetPartitions().equals(
+          other.internalGetPartitions())) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -5943,8 +6117,12 @@ public final class IdentifierOuterClass {
         hash = (37 * hash) + ARTIFACT_KEY_FIELD_NUMBER;
         hash = (53 * hash) + getArtifactKey().hashCode();
       }
-      hash = (37 * hash) + UUID_FIELD_NUMBER;
-      hash = (53 * hash) + getUuid().hashCode();
+      hash = (37 * hash) + VERSION_FIELD_NUMBER;
+      hash = (53 * hash) + getVersion().hashCode();
+      if (!internalGetPartitions().getMap().isEmpty()) {
+        hash = (37 * hash) + PARTITIONS_FIELD_NUMBER;
+        hash = (53 * hash) + internalGetPartitions().hashCode();
+      }
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -6052,6 +6230,28 @@ public final class IdentifierOuterClass {
         return flyteidl.core.IdentifierOuterClass.internal_static_flyteidl_core_ArtifactID_descriptor;
       }
 
+      @SuppressWarnings({"rawtypes"})
+      protected com.google.protobuf.MapField internalGetMapField(
+          int number) {
+        switch (number) {
+          case 3:
+            return internalGetPartitions();
+          default:
+            throw new RuntimeException(
+                "Invalid map field number: " + number);
+        }
+      }
+      @SuppressWarnings({"rawtypes"})
+      protected com.google.protobuf.MapField internalGetMutableMapField(
+          int number) {
+        switch (number) {
+          case 3:
+            return internalGetMutablePartitions();
+          default:
+            throw new RuntimeException(
+                "Invalid map field number: " + number);
+        }
+      }
       @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
@@ -6084,8 +6284,9 @@ public final class IdentifierOuterClass {
           artifactKey_ = null;
           artifactKeyBuilder_ = null;
         }
-        uuid_ = "";
+        version_ = "";
 
+        internalGetMutablePartitions().clear();
         return this;
       }
 
@@ -6112,12 +6313,17 @@ public final class IdentifierOuterClass {
       @java.lang.Override
       public flyteidl.core.IdentifierOuterClass.ArtifactID buildPartial() {
         flyteidl.core.IdentifierOuterClass.ArtifactID result = new flyteidl.core.IdentifierOuterClass.ArtifactID(this);
+        int from_bitField0_ = bitField0_;
+        int to_bitField0_ = 0;
         if (artifactKeyBuilder_ == null) {
           result.artifactKey_ = artifactKey_;
         } else {
           result.artifactKey_ = artifactKeyBuilder_.build();
         }
-        result.uuid_ = uuid_;
+        result.version_ = version_;
+        result.partitions_ = internalGetPartitions();
+        result.partitions_.makeImmutable();
+        result.bitField0_ = to_bitField0_;
         onBuilt();
         return result;
       }
@@ -6169,10 +6375,12 @@ public final class IdentifierOuterClass {
         if (other.hasArtifactKey()) {
           mergeArtifactKey(other.getArtifactKey());
         }
-        if (!other.getUuid().isEmpty()) {
-          uuid_ = other.uuid_;
+        if (!other.getVersion().isEmpty()) {
+          version_ = other.version_;
           onChanged();
         }
+        internalGetMutablePartitions().mergeFrom(
+            other.internalGetPartitions());
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
@@ -6201,6 +6409,7 @@ public final class IdentifierOuterClass {
         }
         return this;
       }
+      private int bitField0_;
 
       private flyteidl.core.IdentifierOuterClass.ArtifactKey artifactKey_;
       private com.google.protobuf.SingleFieldBuilderV3<
@@ -6319,92 +6528,223 @@ public final class IdentifierOuterClass {
         return artifactKeyBuilder_;
       }
 
-      private java.lang.Object uuid_ = "";
+      private java.lang.Object version_ = "";
       /**
-       * <pre>
-       * consider hiding - this is a storage layer ID. Might even change for the same object.
-       * </pre>
-       *
-       * <code>string uuid = 2;</code>
+       * <code>string version = 2;</code>
        */
-      public java.lang.String getUuid() {
-        java.lang.Object ref = uuid_;
+      public java.lang.String getVersion() {
+        java.lang.Object ref = version_;
         if (!(ref instanceof java.lang.String)) {
           com.google.protobuf.ByteString bs =
               (com.google.protobuf.ByteString) ref;
           java.lang.String s = bs.toStringUtf8();
-          uuid_ = s;
+          version_ = s;
           return s;
         } else {
           return (java.lang.String) ref;
         }
       }
       /**
-       * <pre>
-       * consider hiding - this is a storage layer ID. Might even change for the same object.
-       * </pre>
-       *
-       * <code>string uuid = 2;</code>
+       * <code>string version = 2;</code>
        */
       public com.google.protobuf.ByteString
-          getUuidBytes() {
-        java.lang.Object ref = uuid_;
+          getVersionBytes() {
+        java.lang.Object ref = version_;
         if (ref instanceof String) {
           com.google.protobuf.ByteString b = 
               com.google.protobuf.ByteString.copyFromUtf8(
                   (java.lang.String) ref);
-          uuid_ = b;
+          version_ = b;
           return b;
         } else {
           return (com.google.protobuf.ByteString) ref;
         }
       }
       /**
-       * <pre>
-       * consider hiding - this is a storage layer ID. Might even change for the same object.
-       * </pre>
-       *
-       * <code>string uuid = 2;</code>
+       * <code>string version = 2;</code>
        */
-      public Builder setUuid(
+      public Builder setVersion(
           java.lang.String value) {
         if (value == null) {
     throw new NullPointerException();
   }
   
-        uuid_ = value;
+        version_ = value;
         onChanged();
         return this;
       }
       /**
-       * <pre>
-       * consider hiding - this is a storage layer ID. Might even change for the same object.
-       * </pre>
-       *
-       * <code>string uuid = 2;</code>
+       * <code>string version = 2;</code>
        */
-      public Builder clearUuid() {
+      public Builder clearVersion() {
         
-        uuid_ = getDefaultInstance().getUuid();
+        version_ = getDefaultInstance().getVersion();
         onChanged();
         return this;
       }
       /**
-       * <pre>
-       * consider hiding - this is a storage layer ID. Might even change for the same object.
-       * </pre>
-       *
-       * <code>string uuid = 2;</code>
+       * <code>string version = 2;</code>
        */
-      public Builder setUuidBytes(
+      public Builder setVersionBytes(
           com.google.protobuf.ByteString value) {
         if (value == null) {
     throw new NullPointerException();
   }
   checkByteStringIsUtf8(value);
         
-        uuid_ = value;
+        version_ = value;
         onChanged();
+        return this;
+      }
+
+      private com.google.protobuf.MapField<
+          java.lang.String, java.lang.String> partitions_;
+      private com.google.protobuf.MapField<java.lang.String, java.lang.String>
+      internalGetPartitions() {
+        if (partitions_ == null) {
+          return com.google.protobuf.MapField.emptyMapField(
+              PartitionsDefaultEntryHolder.defaultEntry);
+        }
+        return partitions_;
+      }
+      private com.google.protobuf.MapField<java.lang.String, java.lang.String>
+      internalGetMutablePartitions() {
+        onChanged();;
+        if (partitions_ == null) {
+          partitions_ = com.google.protobuf.MapField.newMapField(
+              PartitionsDefaultEntryHolder.defaultEntry);
+        }
+        if (!partitions_.isMutable()) {
+          partitions_ = partitions_.copy();
+        }
+        return partitions_;
+      }
+
+      public int getPartitionsCount() {
+        return internalGetPartitions().getMap().size();
+      }
+      /**
+       * <pre>
+       * here for ds popularity
+       * </pre>
+       *
+       * <code>map&lt;string, string&gt; partitions = 3;</code>
+       */
+
+      public boolean containsPartitions(
+          java.lang.String key) {
+        if (key == null) { throw new java.lang.NullPointerException(); }
+        return internalGetPartitions().getMap().containsKey(key);
+      }
+      /**
+       * Use {@link #getPartitionsMap()} instead.
+       */
+      @java.lang.Deprecated
+      public java.util.Map<java.lang.String, java.lang.String> getPartitions() {
+        return getPartitionsMap();
+      }
+      /**
+       * <pre>
+       * here for ds popularity
+       * </pre>
+       *
+       * <code>map&lt;string, string&gt; partitions = 3;</code>
+       */
+
+      public java.util.Map<java.lang.String, java.lang.String> getPartitionsMap() {
+        return internalGetPartitions().getMap();
+      }
+      /**
+       * <pre>
+       * here for ds popularity
+       * </pre>
+       *
+       * <code>map&lt;string, string&gt; partitions = 3;</code>
+       */
+
+      public java.lang.String getPartitionsOrDefault(
+          java.lang.String key,
+          java.lang.String defaultValue) {
+        if (key == null) { throw new java.lang.NullPointerException(); }
+        java.util.Map<java.lang.String, java.lang.String> map =
+            internalGetPartitions().getMap();
+        return map.containsKey(key) ? map.get(key) : defaultValue;
+      }
+      /**
+       * <pre>
+       * here for ds popularity
+       * </pre>
+       *
+       * <code>map&lt;string, string&gt; partitions = 3;</code>
+       */
+
+      public java.lang.String getPartitionsOrThrow(
+          java.lang.String key) {
+        if (key == null) { throw new java.lang.NullPointerException(); }
+        java.util.Map<java.lang.String, java.lang.String> map =
+            internalGetPartitions().getMap();
+        if (!map.containsKey(key)) {
+          throw new java.lang.IllegalArgumentException();
+        }
+        return map.get(key);
+      }
+
+      public Builder clearPartitions() {
+        internalGetMutablePartitions().getMutableMap()
+            .clear();
+        return this;
+      }
+      /**
+       * <pre>
+       * here for ds popularity
+       * </pre>
+       *
+       * <code>map&lt;string, string&gt; partitions = 3;</code>
+       */
+
+      public Builder removePartitions(
+          java.lang.String key) {
+        if (key == null) { throw new java.lang.NullPointerException(); }
+        internalGetMutablePartitions().getMutableMap()
+            .remove(key);
+        return this;
+      }
+      /**
+       * Use alternate mutation accessors instead.
+       */
+      @java.lang.Deprecated
+      public java.util.Map<java.lang.String, java.lang.String>
+      getMutablePartitions() {
+        return internalGetMutablePartitions().getMutableMap();
+      }
+      /**
+       * <pre>
+       * here for ds popularity
+       * </pre>
+       *
+       * <code>map&lt;string, string&gt; partitions = 3;</code>
+       */
+      public Builder putPartitions(
+          java.lang.String key,
+          java.lang.String value) {
+        if (key == null) { throw new java.lang.NullPointerException(); }
+        if (value == null) { throw new java.lang.NullPointerException(); }
+        internalGetMutablePartitions().getMutableMap()
+            .put(key, value);
+        return this;
+      }
+      /**
+       * <pre>
+       * here for ds popularity
+       * </pre>
+       *
+       * <code>map&lt;string, string&gt; partitions = 3;</code>
+       */
+
+      public Builder putAllPartitions(
+          java.util.Map<java.lang.String, java.lang.String> values) {
+        internalGetMutablePartitions().getMutableMap()
+            .putAll(values);
         return this;
       }
       @java.lang.Override
@@ -6460,8 +6800,8 @@ public final class IdentifierOuterClass {
 
   }
 
-  public interface ArtifactAliasOrBuilder extends
-      // @@protoc_insertion_point(interface_extends:flyteidl.core.ArtifactAlias)
+  public interface ArtifactTagOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:flyteidl.core.ArtifactTag)
       com.google.protobuf.MessageOrBuilder {
 
     /**
@@ -6490,40 +6830,29 @@ public final class IdentifierOuterClass {
     flyteidl.core.IdentifierOuterClass.ArtifactIDOrBuilder getArtifactIdOrBuilder();
 
     /**
-     * <code>string name = 2;</code>
+     * <code>string tag = 2;</code>
      */
-    java.lang.String getName();
+    java.lang.String getTag();
     /**
-     * <code>string name = 2;</code>
+     * <code>string tag = 2;</code>
      */
     com.google.protobuf.ByteString
-        getNameBytes();
-
-    /**
-     * <code>string value = 3;</code>
-     */
-    java.lang.String getValue();
-    /**
-     * <code>string value = 3;</code>
-     */
-    com.google.protobuf.ByteString
-        getValueBytes();
+        getTagBytes();
   }
   /**
-   * Protobuf type {@code flyteidl.core.ArtifactAlias}
+   * Protobuf type {@code flyteidl.core.ArtifactTag}
    */
-  public  static final class ArtifactAlias extends
+  public  static final class ArtifactTag extends
       com.google.protobuf.GeneratedMessageV3 implements
-      // @@protoc_insertion_point(message_implements:flyteidl.core.ArtifactAlias)
-      ArtifactAliasOrBuilder {
+      // @@protoc_insertion_point(message_implements:flyteidl.core.ArtifactTag)
+      ArtifactTagOrBuilder {
   private static final long serialVersionUID = 0L;
-    // Use ArtifactAlias.newBuilder() to construct.
-    private ArtifactAlias(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+    // Use ArtifactTag.newBuilder() to construct.
+    private ArtifactTag(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
     }
-    private ArtifactAlias() {
-      name_ = "";
-      value_ = "";
+    private ArtifactTag() {
+      tag_ = "";
     }
 
     @java.lang.Override
@@ -6531,7 +6860,7 @@ public final class IdentifierOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
-    private ArtifactAlias(
+    private ArtifactTag(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
@@ -6566,13 +6895,7 @@ public final class IdentifierOuterClass {
             case 18: {
               java.lang.String s = input.readStringRequireUtf8();
 
-              name_ = s;
-              break;
-            }
-            case 26: {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              value_ = s;
+              tag_ = s;
               break;
             }
             default: {
@@ -6596,15 +6919,15 @@ public final class IdentifierOuterClass {
     }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return flyteidl.core.IdentifierOuterClass.internal_static_flyteidl_core_ArtifactAlias_descriptor;
+      return flyteidl.core.IdentifierOuterClass.internal_static_flyteidl_core_ArtifactTag_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return flyteidl.core.IdentifierOuterClass.internal_static_flyteidl_core_ArtifactAlias_fieldAccessorTable
+      return flyteidl.core.IdentifierOuterClass.internal_static_flyteidl_core_ArtifactTag_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              flyteidl.core.IdentifierOuterClass.ArtifactAlias.class, flyteidl.core.IdentifierOuterClass.ArtifactAlias.Builder.class);
+              flyteidl.core.IdentifierOuterClass.ArtifactTag.class, flyteidl.core.IdentifierOuterClass.ArtifactTag.Builder.class);
     }
 
     public static final int ARTIFACT_ID_FIELD_NUMBER = 1;
@@ -6640,68 +6963,34 @@ public final class IdentifierOuterClass {
       return getArtifactId();
     }
 
-    public static final int NAME_FIELD_NUMBER = 2;
-    private volatile java.lang.Object name_;
+    public static final int TAG_FIELD_NUMBER = 2;
+    private volatile java.lang.Object tag_;
     /**
-     * <code>string name = 2;</code>
+     * <code>string tag = 2;</code>
      */
-    public java.lang.String getName() {
-      java.lang.Object ref = name_;
+    public java.lang.String getTag() {
+      java.lang.Object ref = tag_;
       if (ref instanceof java.lang.String) {
         return (java.lang.String) ref;
       } else {
         com.google.protobuf.ByteString bs = 
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
-        name_ = s;
+        tag_ = s;
         return s;
       }
     }
     /**
-     * <code>string name = 2;</code>
+     * <code>string tag = 2;</code>
      */
     public com.google.protobuf.ByteString
-        getNameBytes() {
-      java.lang.Object ref = name_;
+        getTagBytes() {
+      java.lang.Object ref = tag_;
       if (ref instanceof java.lang.String) {
         com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
-        name_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-
-    public static final int VALUE_FIELD_NUMBER = 3;
-    private volatile java.lang.Object value_;
-    /**
-     * <code>string value = 3;</code>
-     */
-    public java.lang.String getValue() {
-      java.lang.Object ref = value_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
-      } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        value_ = s;
-        return s;
-      }
-    }
-    /**
-     * <code>string value = 3;</code>
-     */
-    public com.google.protobuf.ByteString
-        getValueBytes() {
-      java.lang.Object ref = value_;
-      if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        value_ = b;
+        tag_ = b;
         return b;
       } else {
         return (com.google.protobuf.ByteString) ref;
@@ -6725,11 +7014,8 @@ public final class IdentifierOuterClass {
       if (artifactId_ != null) {
         output.writeMessage(1, getArtifactId());
       }
-      if (!getNameBytes().isEmpty()) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 2, name_);
-      }
-      if (!getValueBytes().isEmpty()) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 3, value_);
+      if (!getTagBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 2, tag_);
       }
       unknownFields.writeTo(output);
     }
@@ -6744,11 +7030,8 @@ public final class IdentifierOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(1, getArtifactId());
       }
-      if (!getNameBytes().isEmpty()) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, name_);
-      }
-      if (!getValueBytes().isEmpty()) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, value_);
+      if (!getTagBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, tag_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -6760,20 +7043,18 @@ public final class IdentifierOuterClass {
       if (obj == this) {
        return true;
       }
-      if (!(obj instanceof flyteidl.core.IdentifierOuterClass.ArtifactAlias)) {
+      if (!(obj instanceof flyteidl.core.IdentifierOuterClass.ArtifactTag)) {
         return super.equals(obj);
       }
-      flyteidl.core.IdentifierOuterClass.ArtifactAlias other = (flyteidl.core.IdentifierOuterClass.ArtifactAlias) obj;
+      flyteidl.core.IdentifierOuterClass.ArtifactTag other = (flyteidl.core.IdentifierOuterClass.ArtifactTag) obj;
 
       if (hasArtifactId() != other.hasArtifactId()) return false;
       if (hasArtifactId()) {
         if (!getArtifactId()
             .equals(other.getArtifactId())) return false;
       }
-      if (!getName()
-          .equals(other.getName())) return false;
-      if (!getValue()
-          .equals(other.getValue())) return false;
+      if (!getTag()
+          .equals(other.getTag())) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -6789,78 +7070,76 @@ public final class IdentifierOuterClass {
         hash = (37 * hash) + ARTIFACT_ID_FIELD_NUMBER;
         hash = (53 * hash) + getArtifactId().hashCode();
       }
-      hash = (37 * hash) + NAME_FIELD_NUMBER;
-      hash = (53 * hash) + getName().hashCode();
-      hash = (37 * hash) + VALUE_FIELD_NUMBER;
-      hash = (53 * hash) + getValue().hashCode();
+      hash = (37 * hash) + TAG_FIELD_NUMBER;
+      hash = (53 * hash) + getTag().hashCode();
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
     }
 
-    public static flyteidl.core.IdentifierOuterClass.ArtifactAlias parseFrom(
+    public static flyteidl.core.IdentifierOuterClass.ArtifactTag parseFrom(
         java.nio.ByteBuffer data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static flyteidl.core.IdentifierOuterClass.ArtifactAlias parseFrom(
+    public static flyteidl.core.IdentifierOuterClass.ArtifactTag parseFrom(
         java.nio.ByteBuffer data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static flyteidl.core.IdentifierOuterClass.ArtifactAlias parseFrom(
+    public static flyteidl.core.IdentifierOuterClass.ArtifactTag parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static flyteidl.core.IdentifierOuterClass.ArtifactAlias parseFrom(
+    public static flyteidl.core.IdentifierOuterClass.ArtifactTag parseFrom(
         com.google.protobuf.ByteString data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static flyteidl.core.IdentifierOuterClass.ArtifactAlias parseFrom(byte[] data)
+    public static flyteidl.core.IdentifierOuterClass.ArtifactTag parseFrom(byte[] data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static flyteidl.core.IdentifierOuterClass.ArtifactAlias parseFrom(
+    public static flyteidl.core.IdentifierOuterClass.ArtifactTag parseFrom(
         byte[] data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static flyteidl.core.IdentifierOuterClass.ArtifactAlias parseFrom(java.io.InputStream input)
+    public static flyteidl.core.IdentifierOuterClass.ArtifactTag parseFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
-    public static flyteidl.core.IdentifierOuterClass.ArtifactAlias parseFrom(
+    public static flyteidl.core.IdentifierOuterClass.ArtifactTag parseFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
-    public static flyteidl.core.IdentifierOuterClass.ArtifactAlias parseDelimitedFrom(java.io.InputStream input)
+    public static flyteidl.core.IdentifierOuterClass.ArtifactTag parseDelimitedFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input);
     }
-    public static flyteidl.core.IdentifierOuterClass.ArtifactAlias parseDelimitedFrom(
+    public static flyteidl.core.IdentifierOuterClass.ArtifactTag parseDelimitedFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
     }
-    public static flyteidl.core.IdentifierOuterClass.ArtifactAlias parseFrom(
+    public static flyteidl.core.IdentifierOuterClass.ArtifactTag parseFrom(
         com.google.protobuf.CodedInputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
-    public static flyteidl.core.IdentifierOuterClass.ArtifactAlias parseFrom(
+    public static flyteidl.core.IdentifierOuterClass.ArtifactTag parseFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
@@ -6873,7 +7152,7 @@ public final class IdentifierOuterClass {
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
     }
-    public static Builder newBuilder(flyteidl.core.IdentifierOuterClass.ArtifactAlias prototype) {
+    public static Builder newBuilder(flyteidl.core.IdentifierOuterClass.ArtifactTag prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
     @java.lang.Override
@@ -6889,26 +7168,26 @@ public final class IdentifierOuterClass {
       return builder;
     }
     /**
-     * Protobuf type {@code flyteidl.core.ArtifactAlias}
+     * Protobuf type {@code flyteidl.core.ArtifactTag}
      */
     public static final class Builder extends
         com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-        // @@protoc_insertion_point(builder_implements:flyteidl.core.ArtifactAlias)
-        flyteidl.core.IdentifierOuterClass.ArtifactAliasOrBuilder {
+        // @@protoc_insertion_point(builder_implements:flyteidl.core.ArtifactTag)
+        flyteidl.core.IdentifierOuterClass.ArtifactTagOrBuilder {
       public static final com.google.protobuf.Descriptors.Descriptor
           getDescriptor() {
-        return flyteidl.core.IdentifierOuterClass.internal_static_flyteidl_core_ArtifactAlias_descriptor;
+        return flyteidl.core.IdentifierOuterClass.internal_static_flyteidl_core_ArtifactTag_descriptor;
       }
 
       @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
-        return flyteidl.core.IdentifierOuterClass.internal_static_flyteidl_core_ArtifactAlias_fieldAccessorTable
+        return flyteidl.core.IdentifierOuterClass.internal_static_flyteidl_core_ArtifactTag_fieldAccessorTable
             .ensureFieldAccessorsInitialized(
-                flyteidl.core.IdentifierOuterClass.ArtifactAlias.class, flyteidl.core.IdentifierOuterClass.ArtifactAlias.Builder.class);
+                flyteidl.core.IdentifierOuterClass.ArtifactTag.class, flyteidl.core.IdentifierOuterClass.ArtifactTag.Builder.class);
       }
 
-      // Construct using flyteidl.core.IdentifierOuterClass.ArtifactAlias.newBuilder()
+      // Construct using flyteidl.core.IdentifierOuterClass.ArtifactTag.newBuilder()
       private Builder() {
         maybeForceBuilderInitialization();
       }
@@ -6932,9 +7211,7 @@ public final class IdentifierOuterClass {
           artifactId_ = null;
           artifactIdBuilder_ = null;
         }
-        name_ = "";
-
-        value_ = "";
+        tag_ = "";
 
         return this;
       }
@@ -6942,17 +7219,17 @@ public final class IdentifierOuterClass {
       @java.lang.Override
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
-        return flyteidl.core.IdentifierOuterClass.internal_static_flyteidl_core_ArtifactAlias_descriptor;
+        return flyteidl.core.IdentifierOuterClass.internal_static_flyteidl_core_ArtifactTag_descriptor;
       }
 
       @java.lang.Override
-      public flyteidl.core.IdentifierOuterClass.ArtifactAlias getDefaultInstanceForType() {
-        return flyteidl.core.IdentifierOuterClass.ArtifactAlias.getDefaultInstance();
+      public flyteidl.core.IdentifierOuterClass.ArtifactTag getDefaultInstanceForType() {
+        return flyteidl.core.IdentifierOuterClass.ArtifactTag.getDefaultInstance();
       }
 
       @java.lang.Override
-      public flyteidl.core.IdentifierOuterClass.ArtifactAlias build() {
-        flyteidl.core.IdentifierOuterClass.ArtifactAlias result = buildPartial();
+      public flyteidl.core.IdentifierOuterClass.ArtifactTag build() {
+        flyteidl.core.IdentifierOuterClass.ArtifactTag result = buildPartial();
         if (!result.isInitialized()) {
           throw newUninitializedMessageException(result);
         }
@@ -6960,15 +7237,14 @@ public final class IdentifierOuterClass {
       }
 
       @java.lang.Override
-      public flyteidl.core.IdentifierOuterClass.ArtifactAlias buildPartial() {
-        flyteidl.core.IdentifierOuterClass.ArtifactAlias result = new flyteidl.core.IdentifierOuterClass.ArtifactAlias(this);
+      public flyteidl.core.IdentifierOuterClass.ArtifactTag buildPartial() {
+        flyteidl.core.IdentifierOuterClass.ArtifactTag result = new flyteidl.core.IdentifierOuterClass.ArtifactTag(this);
         if (artifactIdBuilder_ == null) {
           result.artifactId_ = artifactId_;
         } else {
           result.artifactId_ = artifactIdBuilder_.build();
         }
-        result.name_ = name_;
-        result.value_ = value_;
+        result.tag_ = tag_;
         onBuilt();
         return result;
       }
@@ -7007,25 +7283,21 @@ public final class IdentifierOuterClass {
       }
       @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof flyteidl.core.IdentifierOuterClass.ArtifactAlias) {
-          return mergeFrom((flyteidl.core.IdentifierOuterClass.ArtifactAlias)other);
+        if (other instanceof flyteidl.core.IdentifierOuterClass.ArtifactTag) {
+          return mergeFrom((flyteidl.core.IdentifierOuterClass.ArtifactTag)other);
         } else {
           super.mergeFrom(other);
           return this;
         }
       }
 
-      public Builder mergeFrom(flyteidl.core.IdentifierOuterClass.ArtifactAlias other) {
-        if (other == flyteidl.core.IdentifierOuterClass.ArtifactAlias.getDefaultInstance()) return this;
+      public Builder mergeFrom(flyteidl.core.IdentifierOuterClass.ArtifactTag other) {
+        if (other == flyteidl.core.IdentifierOuterClass.ArtifactTag.getDefaultInstance()) return this;
         if (other.hasArtifactId()) {
           mergeArtifactId(other.getArtifactId());
         }
-        if (!other.getName().isEmpty()) {
-          name_ = other.name_;
-          onChanged();
-        }
-        if (!other.getValue().isEmpty()) {
-          value_ = other.value_;
+        if (!other.getTag().isEmpty()) {
+          tag_ = other.tag_;
           onChanged();
         }
         this.mergeUnknownFields(other.unknownFields);
@@ -7043,11 +7315,11 @@ public final class IdentifierOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        flyteidl.core.IdentifierOuterClass.ArtifactAlias parsedMessage = null;
+        flyteidl.core.IdentifierOuterClass.ArtifactTag parsedMessage = null;
         try {
           parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (flyteidl.core.IdentifierOuterClass.ArtifactAlias) e.getUnfinishedMessage();
+          parsedMessage = (flyteidl.core.IdentifierOuterClass.ArtifactTag) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
           if (parsedMessage != null) {
@@ -7210,140 +7482,71 @@ public final class IdentifierOuterClass {
         return artifactIdBuilder_;
       }
 
-      private java.lang.Object name_ = "";
+      private java.lang.Object tag_ = "";
       /**
-       * <code>string name = 2;</code>
+       * <code>string tag = 2;</code>
        */
-      public java.lang.String getName() {
-        java.lang.Object ref = name_;
+      public java.lang.String getTag() {
+        java.lang.Object ref = tag_;
         if (!(ref instanceof java.lang.String)) {
           com.google.protobuf.ByteString bs =
               (com.google.protobuf.ByteString) ref;
           java.lang.String s = bs.toStringUtf8();
-          name_ = s;
+          tag_ = s;
           return s;
         } else {
           return (java.lang.String) ref;
         }
       }
       /**
-       * <code>string name = 2;</code>
+       * <code>string tag = 2;</code>
        */
       public com.google.protobuf.ByteString
-          getNameBytes() {
-        java.lang.Object ref = name_;
+          getTagBytes() {
+        java.lang.Object ref = tag_;
         if (ref instanceof String) {
           com.google.protobuf.ByteString b = 
               com.google.protobuf.ByteString.copyFromUtf8(
                   (java.lang.String) ref);
-          name_ = b;
+          tag_ = b;
           return b;
         } else {
           return (com.google.protobuf.ByteString) ref;
         }
       }
       /**
-       * <code>string name = 2;</code>
+       * <code>string tag = 2;</code>
        */
-      public Builder setName(
+      public Builder setTag(
           java.lang.String value) {
         if (value == null) {
     throw new NullPointerException();
   }
   
-        name_ = value;
+        tag_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>string name = 2;</code>
+       * <code>string tag = 2;</code>
        */
-      public Builder clearName() {
+      public Builder clearTag() {
         
-        name_ = getDefaultInstance().getName();
+        tag_ = getDefaultInstance().getTag();
         onChanged();
         return this;
       }
       /**
-       * <code>string name = 2;</code>
+       * <code>string tag = 2;</code>
        */
-      public Builder setNameBytes(
+      public Builder setTagBytes(
           com.google.protobuf.ByteString value) {
         if (value == null) {
     throw new NullPointerException();
   }
   checkByteStringIsUtf8(value);
         
-        name_ = value;
-        onChanged();
-        return this;
-      }
-
-      private java.lang.Object value_ = "";
-      /**
-       * <code>string value = 3;</code>
-       */
-      public java.lang.String getValue() {
-        java.lang.Object ref = value_;
-        if (!(ref instanceof java.lang.String)) {
-          com.google.protobuf.ByteString bs =
-              (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
-          value_ = s;
-          return s;
-        } else {
-          return (java.lang.String) ref;
-        }
-      }
-      /**
-       * <code>string value = 3;</code>
-       */
-      public com.google.protobuf.ByteString
-          getValueBytes() {
-        java.lang.Object ref = value_;
-        if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
-          value_ = b;
-          return b;
-        } else {
-          return (com.google.protobuf.ByteString) ref;
-        }
-      }
-      /**
-       * <code>string value = 3;</code>
-       */
-      public Builder setValue(
-          java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  
-        value_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>string value = 3;</code>
-       */
-      public Builder clearValue() {
-        
-        value_ = getDefaultInstance().getValue();
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>string value = 3;</code>
-       */
-      public Builder setValueBytes(
-          com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-        
-        value_ = value;
+        tag_ = value;
         onChanged();
         return this;
       }
@@ -7360,41 +7563,41 @@ public final class IdentifierOuterClass {
       }
 
 
-      // @@protoc_insertion_point(builder_scope:flyteidl.core.ArtifactAlias)
+      // @@protoc_insertion_point(builder_scope:flyteidl.core.ArtifactTag)
     }
 
-    // @@protoc_insertion_point(class_scope:flyteidl.core.ArtifactAlias)
-    private static final flyteidl.core.IdentifierOuterClass.ArtifactAlias DEFAULT_INSTANCE;
+    // @@protoc_insertion_point(class_scope:flyteidl.core.ArtifactTag)
+    private static final flyteidl.core.IdentifierOuterClass.ArtifactTag DEFAULT_INSTANCE;
     static {
-      DEFAULT_INSTANCE = new flyteidl.core.IdentifierOuterClass.ArtifactAlias();
+      DEFAULT_INSTANCE = new flyteidl.core.IdentifierOuterClass.ArtifactTag();
     }
 
-    public static flyteidl.core.IdentifierOuterClass.ArtifactAlias getDefaultInstance() {
+    public static flyteidl.core.IdentifierOuterClass.ArtifactTag getDefaultInstance() {
       return DEFAULT_INSTANCE;
     }
 
-    private static final com.google.protobuf.Parser<ArtifactAlias>
-        PARSER = new com.google.protobuf.AbstractParser<ArtifactAlias>() {
+    private static final com.google.protobuf.Parser<ArtifactTag>
+        PARSER = new com.google.protobuf.AbstractParser<ArtifactTag>() {
       @java.lang.Override
-      public ArtifactAlias parsePartialFrom(
+      public ArtifactTag parsePartialFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new ArtifactAlias(input, extensionRegistry);
+        return new ArtifactTag(input, extensionRegistry);
       }
     };
 
-    public static com.google.protobuf.Parser<ArtifactAlias> parser() {
+    public static com.google.protobuf.Parser<ArtifactTag> parser() {
       return PARSER;
     }
 
     @java.lang.Override
-    public com.google.protobuf.Parser<ArtifactAlias> getParserForType() {
+    public com.google.protobuf.Parser<ArtifactTag> getParserForType() {
       return PARSER;
     }
 
     @java.lang.Override
-    public flyteidl.core.IdentifierOuterClass.ArtifactAlias getDefaultInstanceForType() {
+    public flyteidl.core.IdentifierOuterClass.ArtifactTag getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
 
@@ -7425,19 +7628,78 @@ public final class IdentifierOuterClass {
         getDomainBytes();
 
     /**
-     * <code>.flyteidl.core.ArtifactAlias alias = 3;</code>
+     * <code>string name = 3;</code>
      */
-    boolean hasAlias();
+    java.lang.String getName();
     /**
-     * <code>.flyteidl.core.ArtifactAlias alias = 3;</code>
+     * <code>string name = 3;</code>
      */
-    flyteidl.core.IdentifierOuterClass.ArtifactAlias getAlias();
+    com.google.protobuf.ByteString
+        getNameBytes();
+
     /**
-     * <code>.flyteidl.core.ArtifactAlias alias = 3;</code>
+     * <code>string tag = 4;</code>
      */
-    flyteidl.core.IdentifierOuterClass.ArtifactAliasOrBuilder getAliasOrBuilder();
+    java.lang.String getTag();
+    /**
+     * <code>string tag = 4;</code>
+     */
+    com.google.protobuf.ByteString
+        getTagBytes();
+
+    /**
+     * <code>map&lt;string, string&gt; partitions = 5;</code>
+     */
+    int getPartitionsCount();
+    /**
+     * <code>map&lt;string, string&gt; partitions = 5;</code>
+     */
+    boolean containsPartitions(
+        java.lang.String key);
+    /**
+     * Use {@link #getPartitionsMap()} instead.
+     */
+    @java.lang.Deprecated
+    java.util.Map<java.lang.String, java.lang.String>
+    getPartitions();
+    /**
+     * <code>map&lt;string, string&gt; partitions = 5;</code>
+     */
+    java.util.Map<java.lang.String, java.lang.String>
+    getPartitionsMap();
+    /**
+     * <code>map&lt;string, string&gt; partitions = 5;</code>
+     */
+
+    java.lang.String getPartitionsOrDefault(
+        java.lang.String key,
+        java.lang.String defaultValue);
+    /**
+     * <code>map&lt;string, string&gt; partitions = 5;</code>
+     */
+
+    java.lang.String getPartitionsOrThrow(
+        java.lang.String key);
+
+    /**
+     * <code>string version = 6;</code>
+     */
+    java.lang.String getVersion();
+    /**
+     * <code>string version = 6;</code>
+     */
+    com.google.protobuf.ByteString
+        getVersionBytes();
   }
   /**
+   * <pre>
+   * Uniqueness constraints for Artifacts
+   *  - project, domain, name, version, partitions
+   * Option 2 (tags are standalone, point to an individual artifact id):
+   *  - project, domain, name, alias (points to one partition if partitioned)
+   *  - project, domain, name, partition key, partition value
+   * </pre>
+   *
    * Protobuf type {@code flyteidl.core.ArtifactQuery}
    */
   public  static final class ArtifactQuery extends
@@ -7452,6 +7714,9 @@ public final class IdentifierOuterClass {
     private ArtifactQuery() {
       project_ = "";
       domain_ = "";
+      name_ = "";
+      tag_ = "";
+      version_ = "";
     }
 
     @java.lang.Override
@@ -7491,16 +7756,34 @@ public final class IdentifierOuterClass {
               break;
             }
             case 26: {
-              flyteidl.core.IdentifierOuterClass.ArtifactAlias.Builder subBuilder = null;
-              if (alias_ != null) {
-                subBuilder = alias_.toBuilder();
-              }
-              alias_ = input.readMessage(flyteidl.core.IdentifierOuterClass.ArtifactAlias.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(alias_);
-                alias_ = subBuilder.buildPartial();
-              }
+              java.lang.String s = input.readStringRequireUtf8();
 
+              name_ = s;
+              break;
+            }
+            case 34: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              tag_ = s;
+              break;
+            }
+            case 42: {
+              if (!((mutable_bitField0_ & 0x00000010) != 0)) {
+                partitions_ = com.google.protobuf.MapField.newMapField(
+                    PartitionsDefaultEntryHolder.defaultEntry);
+                mutable_bitField0_ |= 0x00000010;
+              }
+              com.google.protobuf.MapEntry<java.lang.String, java.lang.String>
+              partitions__ = input.readMessage(
+                  PartitionsDefaultEntryHolder.defaultEntry.getParserForType(), extensionRegistry);
+              partitions_.getMutableMap().put(
+                  partitions__.getKey(), partitions__.getValue());
+              break;
+            }
+            case 50: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              version_ = s;
               break;
             }
             default: {
@@ -7527,6 +7810,18 @@ public final class IdentifierOuterClass {
       return flyteidl.core.IdentifierOuterClass.internal_static_flyteidl_core_ArtifactQuery_descriptor;
     }
 
+    @SuppressWarnings({"rawtypes"})
+    @java.lang.Override
+    protected com.google.protobuf.MapField internalGetMapField(
+        int number) {
+      switch (number) {
+        case 5:
+          return internalGetPartitions();
+        default:
+          throw new RuntimeException(
+              "Invalid map field number: " + number);
+      }
+    }
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
@@ -7535,6 +7830,7 @@ public final class IdentifierOuterClass {
               flyteidl.core.IdentifierOuterClass.ArtifactQuery.class, flyteidl.core.IdentifierOuterClass.ArtifactQuery.Builder.class);
     }
 
+    private int bitField0_;
     public static final int PROJECT_FIELD_NUMBER = 1;
     private volatile java.lang.Object project_;
     /**
@@ -7603,25 +7899,182 @@ public final class IdentifierOuterClass {
       }
     }
 
-    public static final int ALIAS_FIELD_NUMBER = 3;
-    private flyteidl.core.IdentifierOuterClass.ArtifactAlias alias_;
+    public static final int NAME_FIELD_NUMBER = 3;
+    private volatile java.lang.Object name_;
     /**
-     * <code>.flyteidl.core.ArtifactAlias alias = 3;</code>
+     * <code>string name = 3;</code>
      */
-    public boolean hasAlias() {
-      return alias_ != null;
+    public java.lang.String getName() {
+      java.lang.Object ref = name_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        name_ = s;
+        return s;
+      }
     }
     /**
-     * <code>.flyteidl.core.ArtifactAlias alias = 3;</code>
+     * <code>string name = 3;</code>
      */
-    public flyteidl.core.IdentifierOuterClass.ArtifactAlias getAlias() {
-      return alias_ == null ? flyteidl.core.IdentifierOuterClass.ArtifactAlias.getDefaultInstance() : alias_;
+    public com.google.protobuf.ByteString
+        getNameBytes() {
+      java.lang.Object ref = name_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        name_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int TAG_FIELD_NUMBER = 4;
+    private volatile java.lang.Object tag_;
+    /**
+     * <code>string tag = 4;</code>
+     */
+    public java.lang.String getTag() {
+      java.lang.Object ref = tag_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        tag_ = s;
+        return s;
+      }
     }
     /**
-     * <code>.flyteidl.core.ArtifactAlias alias = 3;</code>
+     * <code>string tag = 4;</code>
      */
-    public flyteidl.core.IdentifierOuterClass.ArtifactAliasOrBuilder getAliasOrBuilder() {
-      return getAlias();
+    public com.google.protobuf.ByteString
+        getTagBytes() {
+      java.lang.Object ref = tag_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        tag_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int PARTITIONS_FIELD_NUMBER = 5;
+    private static final class PartitionsDefaultEntryHolder {
+      static final com.google.protobuf.MapEntry<
+          java.lang.String, java.lang.String> defaultEntry =
+              com.google.protobuf.MapEntry
+              .<java.lang.String, java.lang.String>newDefaultInstance(
+                  flyteidl.core.IdentifierOuterClass.internal_static_flyteidl_core_ArtifactQuery_PartitionsEntry_descriptor, 
+                  com.google.protobuf.WireFormat.FieldType.STRING,
+                  "",
+                  com.google.protobuf.WireFormat.FieldType.STRING,
+                  "");
+    }
+    private com.google.protobuf.MapField<
+        java.lang.String, java.lang.String> partitions_;
+    private com.google.protobuf.MapField<java.lang.String, java.lang.String>
+    internalGetPartitions() {
+      if (partitions_ == null) {
+        return com.google.protobuf.MapField.emptyMapField(
+            PartitionsDefaultEntryHolder.defaultEntry);
+      }
+      return partitions_;
+    }
+
+    public int getPartitionsCount() {
+      return internalGetPartitions().getMap().size();
+    }
+    /**
+     * <code>map&lt;string, string&gt; partitions = 5;</code>
+     */
+
+    public boolean containsPartitions(
+        java.lang.String key) {
+      if (key == null) { throw new java.lang.NullPointerException(); }
+      return internalGetPartitions().getMap().containsKey(key);
+    }
+    /**
+     * Use {@link #getPartitionsMap()} instead.
+     */
+    @java.lang.Deprecated
+    public java.util.Map<java.lang.String, java.lang.String> getPartitions() {
+      return getPartitionsMap();
+    }
+    /**
+     * <code>map&lt;string, string&gt; partitions = 5;</code>
+     */
+
+    public java.util.Map<java.lang.String, java.lang.String> getPartitionsMap() {
+      return internalGetPartitions().getMap();
+    }
+    /**
+     * <code>map&lt;string, string&gt; partitions = 5;</code>
+     */
+
+    public java.lang.String getPartitionsOrDefault(
+        java.lang.String key,
+        java.lang.String defaultValue) {
+      if (key == null) { throw new java.lang.NullPointerException(); }
+      java.util.Map<java.lang.String, java.lang.String> map =
+          internalGetPartitions().getMap();
+      return map.containsKey(key) ? map.get(key) : defaultValue;
+    }
+    /**
+     * <code>map&lt;string, string&gt; partitions = 5;</code>
+     */
+
+    public java.lang.String getPartitionsOrThrow(
+        java.lang.String key) {
+      if (key == null) { throw new java.lang.NullPointerException(); }
+      java.util.Map<java.lang.String, java.lang.String> map =
+          internalGetPartitions().getMap();
+      if (!map.containsKey(key)) {
+        throw new java.lang.IllegalArgumentException();
+      }
+      return map.get(key);
+    }
+
+    public static final int VERSION_FIELD_NUMBER = 6;
+    private volatile java.lang.Object version_;
+    /**
+     * <code>string version = 6;</code>
+     */
+    public java.lang.String getVersion() {
+      java.lang.Object ref = version_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        version_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string version = 6;</code>
+     */
+    public com.google.protobuf.ByteString
+        getVersionBytes() {
+      java.lang.Object ref = version_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        version_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
     }
 
     private byte memoizedIsInitialized = -1;
@@ -7644,8 +8097,20 @@ public final class IdentifierOuterClass {
       if (!getDomainBytes().isEmpty()) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 2, domain_);
       }
-      if (alias_ != null) {
-        output.writeMessage(3, getAlias());
+      if (!getNameBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 3, name_);
+      }
+      if (!getTagBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 4, tag_);
+      }
+      com.google.protobuf.GeneratedMessageV3
+        .serializeStringMapTo(
+          output,
+          internalGetPartitions(),
+          PartitionsDefaultEntryHolder.defaultEntry,
+          5);
+      if (!getVersionBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 6, version_);
       }
       unknownFields.writeTo(output);
     }
@@ -7662,9 +8127,24 @@ public final class IdentifierOuterClass {
       if (!getDomainBytes().isEmpty()) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, domain_);
       }
-      if (alias_ != null) {
+      if (!getNameBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, name_);
+      }
+      if (!getTagBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, tag_);
+      }
+      for (java.util.Map.Entry<java.lang.String, java.lang.String> entry
+           : internalGetPartitions().getMap().entrySet()) {
+        com.google.protobuf.MapEntry<java.lang.String, java.lang.String>
+        partitions__ = PartitionsDefaultEntryHolder.defaultEntry.newBuilderForType()
+            .setKey(entry.getKey())
+            .setValue(entry.getValue())
+            .build();
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(3, getAlias());
+            .computeMessageSize(5, partitions__);
+      }
+      if (!getVersionBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(6, version_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -7685,11 +8165,14 @@ public final class IdentifierOuterClass {
           .equals(other.getProject())) return false;
       if (!getDomain()
           .equals(other.getDomain())) return false;
-      if (hasAlias() != other.hasAlias()) return false;
-      if (hasAlias()) {
-        if (!getAlias()
-            .equals(other.getAlias())) return false;
-      }
+      if (!getName()
+          .equals(other.getName())) return false;
+      if (!getTag()
+          .equals(other.getTag())) return false;
+      if (!internalGetPartitions().equals(
+          other.internalGetPartitions())) return false;
+      if (!getVersion()
+          .equals(other.getVersion())) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -7705,10 +8188,16 @@ public final class IdentifierOuterClass {
       hash = (53 * hash) + getProject().hashCode();
       hash = (37 * hash) + DOMAIN_FIELD_NUMBER;
       hash = (53 * hash) + getDomain().hashCode();
-      if (hasAlias()) {
-        hash = (37 * hash) + ALIAS_FIELD_NUMBER;
-        hash = (53 * hash) + getAlias().hashCode();
+      hash = (37 * hash) + NAME_FIELD_NUMBER;
+      hash = (53 * hash) + getName().hashCode();
+      hash = (37 * hash) + TAG_FIELD_NUMBER;
+      hash = (53 * hash) + getTag().hashCode();
+      if (!internalGetPartitions().getMap().isEmpty()) {
+        hash = (37 * hash) + PARTITIONS_FIELD_NUMBER;
+        hash = (53 * hash) + internalGetPartitions().hashCode();
       }
+      hash = (37 * hash) + VERSION_FIELD_NUMBER;
+      hash = (53 * hash) + getVersion().hashCode();
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -7805,6 +8294,14 @@ public final class IdentifierOuterClass {
       return builder;
     }
     /**
+     * <pre>
+     * Uniqueness constraints for Artifacts
+     *  - project, domain, name, version, partitions
+     * Option 2 (tags are standalone, point to an individual artifact id):
+     *  - project, domain, name, alias (points to one partition if partitioned)
+     *  - project, domain, name, partition key, partition value
+     * </pre>
+     *
      * Protobuf type {@code flyteidl.core.ArtifactQuery}
      */
     public static final class Builder extends
@@ -7816,6 +8313,28 @@ public final class IdentifierOuterClass {
         return flyteidl.core.IdentifierOuterClass.internal_static_flyteidl_core_ArtifactQuery_descriptor;
       }
 
+      @SuppressWarnings({"rawtypes"})
+      protected com.google.protobuf.MapField internalGetMapField(
+          int number) {
+        switch (number) {
+          case 5:
+            return internalGetPartitions();
+          default:
+            throw new RuntimeException(
+                "Invalid map field number: " + number);
+        }
+      }
+      @SuppressWarnings({"rawtypes"})
+      protected com.google.protobuf.MapField internalGetMutableMapField(
+          int number) {
+        switch (number) {
+          case 5:
+            return internalGetMutablePartitions();
+          default:
+            throw new RuntimeException(
+                "Invalid map field number: " + number);
+        }
+      }
       @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
@@ -7846,12 +8365,13 @@ public final class IdentifierOuterClass {
 
         domain_ = "";
 
-        if (aliasBuilder_ == null) {
-          alias_ = null;
-        } else {
-          alias_ = null;
-          aliasBuilder_ = null;
-        }
+        name_ = "";
+
+        tag_ = "";
+
+        internalGetMutablePartitions().clear();
+        version_ = "";
+
         return this;
       }
 
@@ -7878,13 +8398,16 @@ public final class IdentifierOuterClass {
       @java.lang.Override
       public flyteidl.core.IdentifierOuterClass.ArtifactQuery buildPartial() {
         flyteidl.core.IdentifierOuterClass.ArtifactQuery result = new flyteidl.core.IdentifierOuterClass.ArtifactQuery(this);
+        int from_bitField0_ = bitField0_;
+        int to_bitField0_ = 0;
         result.project_ = project_;
         result.domain_ = domain_;
-        if (aliasBuilder_ == null) {
-          result.alias_ = alias_;
-        } else {
-          result.alias_ = aliasBuilder_.build();
-        }
+        result.name_ = name_;
+        result.tag_ = tag_;
+        result.partitions_ = internalGetPartitions();
+        result.partitions_.makeImmutable();
+        result.version_ = version_;
+        result.bitField0_ = to_bitField0_;
         onBuilt();
         return result;
       }
@@ -7941,8 +8464,19 @@ public final class IdentifierOuterClass {
           domain_ = other.domain_;
           onChanged();
         }
-        if (other.hasAlias()) {
-          mergeAlias(other.getAlias());
+        if (!other.getName().isEmpty()) {
+          name_ = other.name_;
+          onChanged();
+        }
+        if (!other.getTag().isEmpty()) {
+          tag_ = other.tag_;
+          onChanged();
+        }
+        internalGetMutablePartitions().mergeFrom(
+            other.internalGetPartitions());
+        if (!other.getVersion().isEmpty()) {
+          version_ = other.version_;
+          onChanged();
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -7972,6 +8506,7 @@ public final class IdentifierOuterClass {
         }
         return this;
       }
+      private int bitField0_;
 
       private java.lang.Object project_ = "";
       /**
@@ -8111,121 +8646,334 @@ public final class IdentifierOuterClass {
         return this;
       }
 
-      private flyteidl.core.IdentifierOuterClass.ArtifactAlias alias_;
-      private com.google.protobuf.SingleFieldBuilderV3<
-          flyteidl.core.IdentifierOuterClass.ArtifactAlias, flyteidl.core.IdentifierOuterClass.ArtifactAlias.Builder, flyteidl.core.IdentifierOuterClass.ArtifactAliasOrBuilder> aliasBuilder_;
+      private java.lang.Object name_ = "";
       /**
-       * <code>.flyteidl.core.ArtifactAlias alias = 3;</code>
+       * <code>string name = 3;</code>
        */
-      public boolean hasAlias() {
-        return aliasBuilder_ != null || alias_ != null;
-      }
-      /**
-       * <code>.flyteidl.core.ArtifactAlias alias = 3;</code>
-       */
-      public flyteidl.core.IdentifierOuterClass.ArtifactAlias getAlias() {
-        if (aliasBuilder_ == null) {
-          return alias_ == null ? flyteidl.core.IdentifierOuterClass.ArtifactAlias.getDefaultInstance() : alias_;
+      public java.lang.String getName() {
+        java.lang.Object ref = name_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          name_ = s;
+          return s;
         } else {
-          return aliasBuilder_.getMessage();
+          return (java.lang.String) ref;
         }
       }
       /**
-       * <code>.flyteidl.core.ArtifactAlias alias = 3;</code>
+       * <code>string name = 3;</code>
        */
-      public Builder setAlias(flyteidl.core.IdentifierOuterClass.ArtifactAlias value) {
-        if (aliasBuilder_ == null) {
-          if (value == null) {
-            throw new NullPointerException();
-          }
-          alias_ = value;
-          onChanged();
+      public com.google.protobuf.ByteString
+          getNameBytes() {
+        java.lang.Object ref = name_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          name_ = b;
+          return b;
         } else {
-          aliasBuilder_.setMessage(value);
+          return (com.google.protobuf.ByteString) ref;
         }
-
-        return this;
       }
       /**
-       * <code>.flyteidl.core.ArtifactAlias alias = 3;</code>
+       * <code>string name = 3;</code>
        */
-      public Builder setAlias(
-          flyteidl.core.IdentifierOuterClass.ArtifactAlias.Builder builderForValue) {
-        if (aliasBuilder_ == null) {
-          alias_ = builderForValue.build();
-          onChanged();
-        } else {
-          aliasBuilder_.setMessage(builderForValue.build());
-        }
-
-        return this;
-      }
-      /**
-       * <code>.flyteidl.core.ArtifactAlias alias = 3;</code>
-       */
-      public Builder mergeAlias(flyteidl.core.IdentifierOuterClass.ArtifactAlias value) {
-        if (aliasBuilder_ == null) {
-          if (alias_ != null) {
-            alias_ =
-              flyteidl.core.IdentifierOuterClass.ArtifactAlias.newBuilder(alias_).mergeFrom(value).buildPartial();
-          } else {
-            alias_ = value;
-          }
-          onChanged();
-        } else {
-          aliasBuilder_.mergeFrom(value);
-        }
-
-        return this;
-      }
-      /**
-       * <code>.flyteidl.core.ArtifactAlias alias = 3;</code>
-       */
-      public Builder clearAlias() {
-        if (aliasBuilder_ == null) {
-          alias_ = null;
-          onChanged();
-        } else {
-          alias_ = null;
-          aliasBuilder_ = null;
-        }
-
-        return this;
-      }
-      /**
-       * <code>.flyteidl.core.ArtifactAlias alias = 3;</code>
-       */
-      public flyteidl.core.IdentifierOuterClass.ArtifactAlias.Builder getAliasBuilder() {
-        
+      public Builder setName(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        name_ = value;
         onChanged();
-        return getAliasFieldBuilder().getBuilder();
+        return this;
       }
       /**
-       * <code>.flyteidl.core.ArtifactAlias alias = 3;</code>
+       * <code>string name = 3;</code>
        */
-      public flyteidl.core.IdentifierOuterClass.ArtifactAliasOrBuilder getAliasOrBuilder() {
-        if (aliasBuilder_ != null) {
-          return aliasBuilder_.getMessageOrBuilder();
+      public Builder clearName() {
+        
+        name_ = getDefaultInstance().getName();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string name = 3;</code>
+       */
+      public Builder setNameBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        name_ = value;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object tag_ = "";
+      /**
+       * <code>string tag = 4;</code>
+       */
+      public java.lang.String getTag() {
+        java.lang.Object ref = tag_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          tag_ = s;
+          return s;
         } else {
-          return alias_ == null ?
-              flyteidl.core.IdentifierOuterClass.ArtifactAlias.getDefaultInstance() : alias_;
+          return (java.lang.String) ref;
         }
       }
       /**
-       * <code>.flyteidl.core.ArtifactAlias alias = 3;</code>
+       * <code>string tag = 4;</code>
        */
-      private com.google.protobuf.SingleFieldBuilderV3<
-          flyteidl.core.IdentifierOuterClass.ArtifactAlias, flyteidl.core.IdentifierOuterClass.ArtifactAlias.Builder, flyteidl.core.IdentifierOuterClass.ArtifactAliasOrBuilder> 
-          getAliasFieldBuilder() {
-        if (aliasBuilder_ == null) {
-          aliasBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-              flyteidl.core.IdentifierOuterClass.ArtifactAlias, flyteidl.core.IdentifierOuterClass.ArtifactAlias.Builder, flyteidl.core.IdentifierOuterClass.ArtifactAliasOrBuilder>(
-                  getAlias(),
-                  getParentForChildren(),
-                  isClean());
-          alias_ = null;
+      public com.google.protobuf.ByteString
+          getTagBytes() {
+        java.lang.Object ref = tag_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          tag_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
         }
-        return aliasBuilder_;
+      }
+      /**
+       * <code>string tag = 4;</code>
+       */
+      public Builder setTag(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        tag_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string tag = 4;</code>
+       */
+      public Builder clearTag() {
+        
+        tag_ = getDefaultInstance().getTag();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string tag = 4;</code>
+       */
+      public Builder setTagBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        tag_ = value;
+        onChanged();
+        return this;
+      }
+
+      private com.google.protobuf.MapField<
+          java.lang.String, java.lang.String> partitions_;
+      private com.google.protobuf.MapField<java.lang.String, java.lang.String>
+      internalGetPartitions() {
+        if (partitions_ == null) {
+          return com.google.protobuf.MapField.emptyMapField(
+              PartitionsDefaultEntryHolder.defaultEntry);
+        }
+        return partitions_;
+      }
+      private com.google.protobuf.MapField<java.lang.String, java.lang.String>
+      internalGetMutablePartitions() {
+        onChanged();;
+        if (partitions_ == null) {
+          partitions_ = com.google.protobuf.MapField.newMapField(
+              PartitionsDefaultEntryHolder.defaultEntry);
+        }
+        if (!partitions_.isMutable()) {
+          partitions_ = partitions_.copy();
+        }
+        return partitions_;
+      }
+
+      public int getPartitionsCount() {
+        return internalGetPartitions().getMap().size();
+      }
+      /**
+       * <code>map&lt;string, string&gt; partitions = 5;</code>
+       */
+
+      public boolean containsPartitions(
+          java.lang.String key) {
+        if (key == null) { throw new java.lang.NullPointerException(); }
+        return internalGetPartitions().getMap().containsKey(key);
+      }
+      /**
+       * Use {@link #getPartitionsMap()} instead.
+       */
+      @java.lang.Deprecated
+      public java.util.Map<java.lang.String, java.lang.String> getPartitions() {
+        return getPartitionsMap();
+      }
+      /**
+       * <code>map&lt;string, string&gt; partitions = 5;</code>
+       */
+
+      public java.util.Map<java.lang.String, java.lang.String> getPartitionsMap() {
+        return internalGetPartitions().getMap();
+      }
+      /**
+       * <code>map&lt;string, string&gt; partitions = 5;</code>
+       */
+
+      public java.lang.String getPartitionsOrDefault(
+          java.lang.String key,
+          java.lang.String defaultValue) {
+        if (key == null) { throw new java.lang.NullPointerException(); }
+        java.util.Map<java.lang.String, java.lang.String> map =
+            internalGetPartitions().getMap();
+        return map.containsKey(key) ? map.get(key) : defaultValue;
+      }
+      /**
+       * <code>map&lt;string, string&gt; partitions = 5;</code>
+       */
+
+      public java.lang.String getPartitionsOrThrow(
+          java.lang.String key) {
+        if (key == null) { throw new java.lang.NullPointerException(); }
+        java.util.Map<java.lang.String, java.lang.String> map =
+            internalGetPartitions().getMap();
+        if (!map.containsKey(key)) {
+          throw new java.lang.IllegalArgumentException();
+        }
+        return map.get(key);
+      }
+
+      public Builder clearPartitions() {
+        internalGetMutablePartitions().getMutableMap()
+            .clear();
+        return this;
+      }
+      /**
+       * <code>map&lt;string, string&gt; partitions = 5;</code>
+       */
+
+      public Builder removePartitions(
+          java.lang.String key) {
+        if (key == null) { throw new java.lang.NullPointerException(); }
+        internalGetMutablePartitions().getMutableMap()
+            .remove(key);
+        return this;
+      }
+      /**
+       * Use alternate mutation accessors instead.
+       */
+      @java.lang.Deprecated
+      public java.util.Map<java.lang.String, java.lang.String>
+      getMutablePartitions() {
+        return internalGetMutablePartitions().getMutableMap();
+      }
+      /**
+       * <code>map&lt;string, string&gt; partitions = 5;</code>
+       */
+      public Builder putPartitions(
+          java.lang.String key,
+          java.lang.String value) {
+        if (key == null) { throw new java.lang.NullPointerException(); }
+        if (value == null) { throw new java.lang.NullPointerException(); }
+        internalGetMutablePartitions().getMutableMap()
+            .put(key, value);
+        return this;
+      }
+      /**
+       * <code>map&lt;string, string&gt; partitions = 5;</code>
+       */
+
+      public Builder putAllPartitions(
+          java.util.Map<java.lang.String, java.lang.String> values) {
+        internalGetMutablePartitions().getMutableMap()
+            .putAll(values);
+        return this;
+      }
+
+      private java.lang.Object version_ = "";
+      /**
+       * <code>string version = 6;</code>
+       */
+      public java.lang.String getVersion() {
+        java.lang.Object ref = version_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          version_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>string version = 6;</code>
+       */
+      public com.google.protobuf.ByteString
+          getVersionBytes() {
+        java.lang.Object ref = version_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          version_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string version = 6;</code>
+       */
+      public Builder setVersion(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        version_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string version = 6;</code>
+       */
+      public Builder clearVersion() {
+        
+        version_ = getDefaultInstance().getVersion();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string version = 6;</code>
+       */
+      public Builder setVersionBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        version_ = value;
+        onChanged();
+        return this;
       }
       @java.lang.Override
       public final Builder setUnknownFields(
@@ -8316,15 +9064,25 @@ public final class IdentifierOuterClass {
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_flyteidl_core_ArtifactID_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_flyteidl_core_ArtifactAlias_descriptor;
+    internal_static_flyteidl_core_ArtifactID_PartitionsEntry_descriptor;
   private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_flyteidl_core_ArtifactAlias_fieldAccessorTable;
+      internal_static_flyteidl_core_ArtifactID_PartitionsEntry_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_flyteidl_core_ArtifactTag_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_flyteidl_core_ArtifactTag_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_flyteidl_core_ArtifactQuery_descriptor;
   private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_flyteidl_core_ArtifactQuery_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_flyteidl_core_ArtifactQuery_PartitionsEntry_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_flyteidl_core_ArtifactQuery_PartitionsEntry_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor
       getDescriptor() {
@@ -8349,19 +9107,25 @@ public final class IdentifierOuterClass {
       "e.NodeExecutionIdentifier\022\025\n\rretry_attem" +
       "pt\030\003 \001(\r\"g\n\020SignalIdentifier\022\021\n\tsignal_i" +
       "d\030\001 \001(\t\022@\n\014execution_id\030\002 \001(\0132*.flyteidl" +
-      ".core.WorkflowExecutionIdentifier\">\n\013Art" +
+      ".core.WorkflowExecutionIdentifier\"<\n\013Art" +
       "ifactKey\022\017\n\007project\030\001 \001(\t\022\016\n\006domain\030\002 \001(" +
-      "\t\022\016\n\006suffix\030\003 \001(\t\"L\n\nArtifactID\0220\n\014artif" +
-      "act_key\030\001 \001(\0132\032.flyteidl.core.ArtifactKe" +
-      "y\022\014\n\004uuid\030\002 \001(\t\"\\\n\rArtifactAlias\022.\n\013arti" +
-      "fact_id\030\001 \001(\0132\031.flyteidl.core.ArtifactID" +
-      "\022\014\n\004name\030\002 \001(\t\022\r\n\005value\030\003 \001(\t\"]\n\rArtifac" +
-      "tQuery\022\017\n\007project\030\001 \001(\t\022\016\n\006domain\030\002 \001(\t\022" +
-      "+\n\005alias\030\003 \001(\0132\034.flyteidl.core.ArtifactA" +
-      "lias*U\n\014ResourceType\022\017\n\013UNSPECIFIED\020\000\022\010\n" +
-      "\004TASK\020\001\022\014\n\010WORKFLOW\020\002\022\017\n\013LAUNCH_PLAN\020\003\022\013" +
-      "\n\007DATASET\020\004B6Z4github.com/flyteorg/flyte" +
-      "idl/gen/pb-go/flyteidl/coreb\006proto3"
+      "\t\022\014\n\004name\030\003 \001(\t\"\301\001\n\nArtifactID\0220\n\014artifa" +
+      "ct_key\030\001 \001(\0132\032.flyteidl.core.ArtifactKey" +
+      "\022\017\n\007version\030\002 \001(\t\022=\n\npartitions\030\003 \003(\0132)." +
+      "flyteidl.core.ArtifactID.PartitionsEntry" +
+      "\0321\n\017PartitionsEntry\022\013\n\003key\030\001 \001(\t\022\r\n\005valu" +
+      "e\030\002 \001(\t:\0028\001\"J\n\013ArtifactTag\022.\n\013artifact_i" +
+      "d\030\001 \001(\0132\031.flyteidl.core.ArtifactID\022\013\n\003ta" +
+      "g\030\002 \001(\t\"\321\001\n\rArtifactQuery\022\017\n\007project\030\001 \001" +
+      "(\t\022\016\n\006domain\030\002 \001(\t\022\014\n\004name\030\003 \001(\t\022\013\n\003tag\030" +
+      "\004 \001(\t\022@\n\npartitions\030\005 \003(\0132,.flyteidl.cor" +
+      "e.ArtifactQuery.PartitionsEntry\022\017\n\007versi" +
+      "on\030\006 \001(\t\0321\n\017PartitionsEntry\022\013\n\003key\030\001 \001(\t" +
+      "\022\r\n\005value\030\002 \001(\t:\0028\001*U\n\014ResourceType\022\017\n\013U" +
+      "NSPECIFIED\020\000\022\010\n\004TASK\020\001\022\014\n\010WORKFLOW\020\002\022\017\n\013" +
+      "LAUNCH_PLAN\020\003\022\013\n\007DATASET\020\004B6Z4github.com" +
+      "/flyteorg/flyteidl/gen/pb-go/flyteidl/co" +
+      "reb\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
@@ -8410,25 +9174,37 @@ public final class IdentifierOuterClass {
     internal_static_flyteidl_core_ArtifactKey_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_flyteidl_core_ArtifactKey_descriptor,
-        new java.lang.String[] { "Project", "Domain", "Suffix", });
+        new java.lang.String[] { "Project", "Domain", "Name", });
     internal_static_flyteidl_core_ArtifactID_descriptor =
       getDescriptor().getMessageTypes().get(6);
     internal_static_flyteidl_core_ArtifactID_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_flyteidl_core_ArtifactID_descriptor,
-        new java.lang.String[] { "ArtifactKey", "Uuid", });
-    internal_static_flyteidl_core_ArtifactAlias_descriptor =
-      getDescriptor().getMessageTypes().get(7);
-    internal_static_flyteidl_core_ArtifactAlias_fieldAccessorTable = new
+        new java.lang.String[] { "ArtifactKey", "Version", "Partitions", });
+    internal_static_flyteidl_core_ArtifactID_PartitionsEntry_descriptor =
+      internal_static_flyteidl_core_ArtifactID_descriptor.getNestedTypes().get(0);
+    internal_static_flyteidl_core_ArtifactID_PartitionsEntry_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_flyteidl_core_ArtifactAlias_descriptor,
-        new java.lang.String[] { "ArtifactId", "Name", "Value", });
+        internal_static_flyteidl_core_ArtifactID_PartitionsEntry_descriptor,
+        new java.lang.String[] { "Key", "Value", });
+    internal_static_flyteidl_core_ArtifactTag_descriptor =
+      getDescriptor().getMessageTypes().get(7);
+    internal_static_flyteidl_core_ArtifactTag_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_flyteidl_core_ArtifactTag_descriptor,
+        new java.lang.String[] { "ArtifactId", "Tag", });
     internal_static_flyteidl_core_ArtifactQuery_descriptor =
       getDescriptor().getMessageTypes().get(8);
     internal_static_flyteidl_core_ArtifactQuery_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_flyteidl_core_ArtifactQuery_descriptor,
-        new java.lang.String[] { "Project", "Domain", "Alias", });
+        new java.lang.String[] { "Project", "Domain", "Name", "Tag", "Partitions", "Version", });
+    internal_static_flyteidl_core_ArtifactQuery_PartitionsEntry_descriptor =
+      internal_static_flyteidl_core_ArtifactQuery_descriptor.getNestedTypes().get(0);
+    internal_static_flyteidl_core_ArtifactQuery_PartitionsEntry_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_flyteidl_core_ArtifactQuery_PartitionsEntry_descriptor,
+        new java.lang.String[] { "Key", "Value", });
   }
 
   // @@protoc_insertion_point(outer_class_scope)

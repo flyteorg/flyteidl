@@ -537,8 +537,8 @@ export namespace flyteidl {
             /** ArtifactKey domain */
             domain?: (string|null);
 
-            /** ArtifactKey suffix */
-            suffix?: (string|null);
+            /** ArtifactKey name */
+            name?: (string|null);
         }
 
         /** Represents an ArtifactKey. */
@@ -556,8 +556,8 @@ export namespace flyteidl {
             /** ArtifactKey domain. */
             public domain: string;
 
-            /** ArtifactKey suffix. */
-            public suffix: string;
+            /** ArtifactKey name. */
+            public name: string;
 
             /**
              * Creates a new ArtifactKey instance using the specified properties.
@@ -598,8 +598,11 @@ export namespace flyteidl {
             /** ArtifactID artifactKey */
             artifactKey?: (flyteidl.core.IArtifactKey|null);
 
-            /** ArtifactID uuid */
-            uuid?: (string|null);
+            /** ArtifactID version */
+            version?: (string|null);
+
+            /** ArtifactID partitions */
+            partitions?: ({ [k: string]: string }|null);
         }
 
         /** Represents an ArtifactID. */
@@ -614,8 +617,11 @@ export namespace flyteidl {
             /** ArtifactID artifactKey. */
             public artifactKey?: (flyteidl.core.IArtifactKey|null);
 
-            /** ArtifactID uuid. */
-            public uuid: string;
+            /** ArtifactID version. */
+            public version: string;
+
+            /** ArtifactID partitions. */
+            public partitions: { [k: string]: string };
 
             /**
              * Creates a new ArtifactID instance using the specified properties.
@@ -650,64 +656,58 @@ export namespace flyteidl {
             public static verify(message: { [k: string]: any }): (string|null);
         }
 
-        /** Properties of an ArtifactAlias. */
-        interface IArtifactAlias {
+        /** Properties of an ArtifactTag. */
+        interface IArtifactTag {
 
-            /** ArtifactAlias artifactId */
+            /** ArtifactTag artifactId */
             artifactId?: (flyteidl.core.IArtifactID|null);
 
-            /** ArtifactAlias name */
-            name?: (string|null);
-
-            /** ArtifactAlias value */
-            value?: (string|null);
+            /** ArtifactTag tag */
+            tag?: (string|null);
         }
 
-        /** Represents an ArtifactAlias. */
-        class ArtifactAlias implements IArtifactAlias {
+        /** Represents an ArtifactTag. */
+        class ArtifactTag implements IArtifactTag {
 
             /**
-             * Constructs a new ArtifactAlias.
+             * Constructs a new ArtifactTag.
              * @param [properties] Properties to set
              */
-            constructor(properties?: flyteidl.core.IArtifactAlias);
+            constructor(properties?: flyteidl.core.IArtifactTag);
 
-            /** ArtifactAlias artifactId. */
+            /** ArtifactTag artifactId. */
             public artifactId?: (flyteidl.core.IArtifactID|null);
 
-            /** ArtifactAlias name. */
-            public name: string;
-
-            /** ArtifactAlias value. */
-            public value: string;
+            /** ArtifactTag tag. */
+            public tag: string;
 
             /**
-             * Creates a new ArtifactAlias instance using the specified properties.
+             * Creates a new ArtifactTag instance using the specified properties.
              * @param [properties] Properties to set
-             * @returns ArtifactAlias instance
+             * @returns ArtifactTag instance
              */
-            public static create(properties?: flyteidl.core.IArtifactAlias): flyteidl.core.ArtifactAlias;
+            public static create(properties?: flyteidl.core.IArtifactTag): flyteidl.core.ArtifactTag;
 
             /**
-             * Encodes the specified ArtifactAlias message. Does not implicitly {@link flyteidl.core.ArtifactAlias.verify|verify} messages.
-             * @param message ArtifactAlias message or plain object to encode
+             * Encodes the specified ArtifactTag message. Does not implicitly {@link flyteidl.core.ArtifactTag.verify|verify} messages.
+             * @param message ArtifactTag message or plain object to encode
              * @param [writer] Writer to encode to
              * @returns Writer
              */
-            public static encode(message: flyteidl.core.IArtifactAlias, writer?: $protobuf.Writer): $protobuf.Writer;
+            public static encode(message: flyteidl.core.IArtifactTag, writer?: $protobuf.Writer): $protobuf.Writer;
 
             /**
-             * Decodes an ArtifactAlias message from the specified reader or buffer.
+             * Decodes an ArtifactTag message from the specified reader or buffer.
              * @param reader Reader or buffer to decode from
              * @param [length] Message length if known beforehand
-             * @returns ArtifactAlias
+             * @returns ArtifactTag
              * @throws {Error} If the payload is not a reader or valid buffer
              * @throws {$protobuf.util.ProtocolError} If required fields are missing
              */
-            public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): flyteidl.core.ArtifactAlias;
+            public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): flyteidl.core.ArtifactTag;
 
             /**
-             * Verifies an ArtifactAlias message.
+             * Verifies an ArtifactTag message.
              * @param message Plain object to verify
              * @returns `null` if valid, otherwise the reason why it is not
              */
@@ -723,8 +723,17 @@ export namespace flyteidl {
             /** ArtifactQuery domain */
             domain?: (string|null);
 
-            /** ArtifactQuery alias */
-            alias?: (flyteidl.core.IArtifactAlias|null);
+            /** ArtifactQuery name */
+            name?: (string|null);
+
+            /** ArtifactQuery tag */
+            tag?: (string|null);
+
+            /** ArtifactQuery partitions */
+            partitions?: ({ [k: string]: string }|null);
+
+            /** ArtifactQuery version */
+            version?: (string|null);
         }
 
         /** Represents an ArtifactQuery. */
@@ -742,8 +751,17 @@ export namespace flyteidl {
             /** ArtifactQuery domain. */
             public domain: string;
 
-            /** ArtifactQuery alias. */
-            public alias?: (flyteidl.core.IArtifactAlias|null);
+            /** ArtifactQuery name. */
+            public name: string;
+
+            /** ArtifactQuery tag. */
+            public tag: string;
+
+            /** ArtifactQuery partitions. */
+            public partitions: { [k: string]: string };
+
+            /** ArtifactQuery version. */
+            public version: string;
 
             /**
              * Creates a new ArtifactQuery instance using the specified properties.
@@ -4939,8 +4957,8 @@ export namespace flyteidl {
             /** Variable description */
             description?: (string|null);
 
-            /** Variable aliases */
-            aliases?: (flyteidl.core.IArtifactAlias[]|null);
+            /** Variable artifactPartialId */
+            artifactPartialId?: (flyteidl.core.IArtifactID[]|null);
         }
 
         /** Represents a Variable. */
@@ -4958,8 +4976,8 @@ export namespace flyteidl {
             /** Variable description. */
             public description: string;
 
-            /** Variable aliases. */
-            public aliases: flyteidl.core.IArtifactAlias[];
+            /** Variable artifactPartialId. */
+            public artifactPartialId: flyteidl.core.IArtifactID[];
 
             /**
              * Creates a new Variable instance using the specified properties.
@@ -8094,11 +8112,11 @@ export namespace flyteidl {
             /** Artifact artifactId */
             artifactId?: (flyteidl.core.IArtifactID|null);
 
-            /** Artifact uri */
-            uri?: (string|null);
-
             /** Artifact spec */
             spec?: (flyteidl.artifact.IArtifactSpec|null);
+
+            /** Artifact tags */
+            tags?: (string[]|null);
         }
 
         /** Represents an Artifact. */
@@ -8113,11 +8131,11 @@ export namespace flyteidl {
             /** Artifact artifactId. */
             public artifactId?: (flyteidl.core.IArtifactID|null);
 
-            /** Artifact uri. */
-            public uri: string;
-
             /** Artifact spec. */
             public spec?: (flyteidl.artifact.IArtifactSpec|null);
+
+            /** Artifact tags. */
+            public tags: string[];
 
             /**
              * Creates a new Artifact instance using the specified properties.
@@ -8158,8 +8176,17 @@ export namespace flyteidl {
             /** CreateArtifactRequest artifactKey */
             artifactKey?: (flyteidl.core.IArtifactKey|null);
 
+            /** CreateArtifactRequest version */
+            version?: (string|null);
+
             /** CreateArtifactRequest spec */
             spec?: (flyteidl.artifact.IArtifactSpec|null);
+
+            /** CreateArtifactRequest partitions */
+            partitions?: ({ [k: string]: string }|null);
+
+            /** CreateArtifactRequest tag */
+            tag?: (string|null);
         }
 
         /** Represents a CreateArtifactRequest. */
@@ -8174,8 +8201,17 @@ export namespace flyteidl {
             /** CreateArtifactRequest artifactKey. */
             public artifactKey?: (flyteidl.core.IArtifactKey|null);
 
+            /** CreateArtifactRequest version. */
+            public version: string;
+
             /** CreateArtifactRequest spec. */
             public spec?: (flyteidl.artifact.IArtifactSpec|null);
+
+            /** CreateArtifactRequest partitions. */
+            public partitions: { [k: string]: string };
+
+            /** CreateArtifactRequest tag. */
+            public tag: string;
 
             /**
              * Creates a new CreateArtifactRequest instance using the specified properties.
@@ -8219,12 +8255,6 @@ export namespace flyteidl {
             /** ArtifactSpec type */
             type?: (flyteidl.core.ILiteralType|null);
 
-            /** ArtifactSpec tags */
-            tags?: (flyteidl.artifact.ITag[]|null);
-
-            /** ArtifactSpec aliases */
-            aliases?: (flyteidl.core.IArtifactAlias[]|null);
-
             /** ArtifactSpec taskExecution */
             taskExecution?: (flyteidl.core.ITaskExecutionIdentifier|null);
 
@@ -8255,12 +8285,6 @@ export namespace flyteidl {
 
             /** ArtifactSpec type. */
             public type?: (flyteidl.core.ILiteralType|null);
-
-            /** ArtifactSpec tags. */
-            public tags: flyteidl.artifact.ITag[];
-
-            /** ArtifactSpec aliases. */
-            public aliases: flyteidl.core.IArtifactAlias[];
 
             /** ArtifactSpec taskExecution. */
             public taskExecution?: (flyteidl.core.ITaskExecutionIdentifier|null);
@@ -8368,9 +8392,6 @@ export namespace flyteidl {
         /** Properties of a GetArtifactRequest. */
         interface IGetArtifactRequest {
 
-            /** GetArtifactRequest artifactKey */
-            artifactKey?: (flyteidl.core.IArtifactKey|null);
-
             /** GetArtifactRequest artifactId */
             artifactId?: (flyteidl.core.IArtifactID|null);
 
@@ -8393,9 +8414,6 @@ export namespace flyteidl {
              */
             constructor(properties?: flyteidl.artifact.IGetArtifactRequest);
 
-            /** GetArtifactRequest artifactKey. */
-            public artifactKey?: (flyteidl.core.IArtifactKey|null);
-
             /** GetArtifactRequest artifactId. */
             public artifactId?: (flyteidl.core.IArtifactID|null);
 
@@ -8409,7 +8427,7 @@ export namespace flyteidl {
             public details: boolean;
 
             /** GetArtifactRequest identifier. */
-            public identifier?: ("artifactKey"|"artifactId"|"uri"|"query");
+            public identifier?: ("artifactId"|"uri"|"query");
 
             /**
              * Creates a new GetArtifactRequest instance using the specified properties.
@@ -8490,272 +8508,6 @@ export namespace flyteidl {
 
             /**
              * Verifies a GetArtifactResponse message.
-             * @param message Plain object to verify
-             * @returns `null` if valid, otherwise the reason why it is not
-             */
-            public static verify(message: { [k: string]: any }): (string|null);
-        }
-
-        /** Properties of a Tag. */
-        interface ITag {
-
-            /** Tag key */
-            key?: (string|null);
-
-            /** Tag value */
-            value?: (string|null);
-        }
-
-        /** Represents a Tag. */
-        class Tag implements ITag {
-
-            /**
-             * Constructs a new Tag.
-             * @param [properties] Properties to set
-             */
-            constructor(properties?: flyteidl.artifact.ITag);
-
-            /** Tag key. */
-            public key: string;
-
-            /** Tag value. */
-            public value: string;
-
-            /**
-             * Creates a new Tag instance using the specified properties.
-             * @param [properties] Properties to set
-             * @returns Tag instance
-             */
-            public static create(properties?: flyteidl.artifact.ITag): flyteidl.artifact.Tag;
-
-            /**
-             * Encodes the specified Tag message. Does not implicitly {@link flyteidl.artifact.Tag.verify|verify} messages.
-             * @param message Tag message or plain object to encode
-             * @param [writer] Writer to encode to
-             * @returns Writer
-             */
-            public static encode(message: flyteidl.artifact.ITag, writer?: $protobuf.Writer): $protobuf.Writer;
-
-            /**
-             * Decodes a Tag message from the specified reader or buffer.
-             * @param reader Reader or buffer to decode from
-             * @param [length] Message length if known beforehand
-             * @returns Tag
-             * @throws {Error} If the payload is not a reader or valid buffer
-             * @throws {$protobuf.util.ProtocolError} If required fields are missing
-             */
-            public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): flyteidl.artifact.Tag;
-
-            /**
-             * Verifies a Tag message.
-             * @param message Plain object to verify
-             * @returns `null` if valid, otherwise the reason why it is not
-             */
-            public static verify(message: { [k: string]: any }): (string|null);
-        }
-
-        /** Properties of an AddTagsRequest. */
-        interface IAddTagsRequest {
-
-            /** AddTagsRequest artifactId */
-            artifactId?: (flyteidl.core.IArtifactID|null);
-
-            /** AddTagsRequest tags */
-            tags?: (flyteidl.artifact.ITag[]|null);
-        }
-
-        /** Represents an AddTagsRequest. */
-        class AddTagsRequest implements IAddTagsRequest {
-
-            /**
-             * Constructs a new AddTagsRequest.
-             * @param [properties] Properties to set
-             */
-            constructor(properties?: flyteidl.artifact.IAddTagsRequest);
-
-            /** AddTagsRequest artifactId. */
-            public artifactId?: (flyteidl.core.IArtifactID|null);
-
-            /** AddTagsRequest tags. */
-            public tags: flyteidl.artifact.ITag[];
-
-            /**
-             * Creates a new AddTagsRequest instance using the specified properties.
-             * @param [properties] Properties to set
-             * @returns AddTagsRequest instance
-             */
-            public static create(properties?: flyteidl.artifact.IAddTagsRequest): flyteidl.artifact.AddTagsRequest;
-
-            /**
-             * Encodes the specified AddTagsRequest message. Does not implicitly {@link flyteidl.artifact.AddTagsRequest.verify|verify} messages.
-             * @param message AddTagsRequest message or plain object to encode
-             * @param [writer] Writer to encode to
-             * @returns Writer
-             */
-            public static encode(message: flyteidl.artifact.IAddTagsRequest, writer?: $protobuf.Writer): $protobuf.Writer;
-
-            /**
-             * Decodes an AddTagsRequest message from the specified reader or buffer.
-             * @param reader Reader or buffer to decode from
-             * @param [length] Message length if known beforehand
-             * @returns AddTagsRequest
-             * @throws {Error} If the payload is not a reader or valid buffer
-             * @throws {$protobuf.util.ProtocolError} If required fields are missing
-             */
-            public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): flyteidl.artifact.AddTagsRequest;
-
-            /**
-             * Verifies an AddTagsRequest message.
-             * @param message Plain object to verify
-             * @returns `null` if valid, otherwise the reason why it is not
-             */
-            public static verify(message: { [k: string]: any }): (string|null);
-        }
-
-        /** Properties of an AddTagsResponse. */
-        interface IAddTagsResponse {
-        }
-
-        /** Represents an AddTagsResponse. */
-        class AddTagsResponse implements IAddTagsResponse {
-
-            /**
-             * Constructs a new AddTagsResponse.
-             * @param [properties] Properties to set
-             */
-            constructor(properties?: flyteidl.artifact.IAddTagsResponse);
-
-            /**
-             * Creates a new AddTagsResponse instance using the specified properties.
-             * @param [properties] Properties to set
-             * @returns AddTagsResponse instance
-             */
-            public static create(properties?: flyteidl.artifact.IAddTagsResponse): flyteidl.artifact.AddTagsResponse;
-
-            /**
-             * Encodes the specified AddTagsResponse message. Does not implicitly {@link flyteidl.artifact.AddTagsResponse.verify|verify} messages.
-             * @param message AddTagsResponse message or plain object to encode
-             * @param [writer] Writer to encode to
-             * @returns Writer
-             */
-            public static encode(message: flyteidl.artifact.IAddTagsResponse, writer?: $protobuf.Writer): $protobuf.Writer;
-
-            /**
-             * Decodes an AddTagsResponse message from the specified reader or buffer.
-             * @param reader Reader or buffer to decode from
-             * @param [length] Message length if known beforehand
-             * @returns AddTagsResponse
-             * @throws {Error} If the payload is not a reader or valid buffer
-             * @throws {$protobuf.util.ProtocolError} If required fields are missing
-             */
-            public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): flyteidl.artifact.AddTagsResponse;
-
-            /**
-             * Verifies an AddTagsResponse message.
-             * @param message Plain object to verify
-             * @returns `null` if valid, otherwise the reason why it is not
-             */
-            public static verify(message: { [k: string]: any }): (string|null);
-        }
-
-        /** Properties of a RemoveTagsRequest. */
-        interface IRemoveTagsRequest {
-
-            /** RemoveTagsRequest artifactId */
-            artifactId?: (flyteidl.core.IArtifactID|null);
-
-            /** RemoveTagsRequest tags */
-            tags?: (flyteidl.artifact.ITag[]|null);
-        }
-
-        /** Represents a RemoveTagsRequest. */
-        class RemoveTagsRequest implements IRemoveTagsRequest {
-
-            /**
-             * Constructs a new RemoveTagsRequest.
-             * @param [properties] Properties to set
-             */
-            constructor(properties?: flyteidl.artifact.IRemoveTagsRequest);
-
-            /** RemoveTagsRequest artifactId. */
-            public artifactId?: (flyteidl.core.IArtifactID|null);
-
-            /** RemoveTagsRequest tags. */
-            public tags: flyteidl.artifact.ITag[];
-
-            /**
-             * Creates a new RemoveTagsRequest instance using the specified properties.
-             * @param [properties] Properties to set
-             * @returns RemoveTagsRequest instance
-             */
-            public static create(properties?: flyteidl.artifact.IRemoveTagsRequest): flyteidl.artifact.RemoveTagsRequest;
-
-            /**
-             * Encodes the specified RemoveTagsRequest message. Does not implicitly {@link flyteidl.artifact.RemoveTagsRequest.verify|verify} messages.
-             * @param message RemoveTagsRequest message or plain object to encode
-             * @param [writer] Writer to encode to
-             * @returns Writer
-             */
-            public static encode(message: flyteidl.artifact.IRemoveTagsRequest, writer?: $protobuf.Writer): $protobuf.Writer;
-
-            /**
-             * Decodes a RemoveTagsRequest message from the specified reader or buffer.
-             * @param reader Reader or buffer to decode from
-             * @param [length] Message length if known beforehand
-             * @returns RemoveTagsRequest
-             * @throws {Error} If the payload is not a reader or valid buffer
-             * @throws {$protobuf.util.ProtocolError} If required fields are missing
-             */
-            public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): flyteidl.artifact.RemoveTagsRequest;
-
-            /**
-             * Verifies a RemoveTagsRequest message.
-             * @param message Plain object to verify
-             * @returns `null` if valid, otherwise the reason why it is not
-             */
-            public static verify(message: { [k: string]: any }): (string|null);
-        }
-
-        /** Properties of a RemoveTagsResponse. */
-        interface IRemoveTagsResponse {
-        }
-
-        /** Represents a RemoveTagsResponse. */
-        class RemoveTagsResponse implements IRemoveTagsResponse {
-
-            /**
-             * Constructs a new RemoveTagsResponse.
-             * @param [properties] Properties to set
-             */
-            constructor(properties?: flyteidl.artifact.IRemoveTagsResponse);
-
-            /**
-             * Creates a new RemoveTagsResponse instance using the specified properties.
-             * @param [properties] Properties to set
-             * @returns RemoveTagsResponse instance
-             */
-            public static create(properties?: flyteidl.artifact.IRemoveTagsResponse): flyteidl.artifact.RemoveTagsResponse;
-
-            /**
-             * Encodes the specified RemoveTagsResponse message. Does not implicitly {@link flyteidl.artifact.RemoveTagsResponse.verify|verify} messages.
-             * @param message RemoveTagsResponse message or plain object to encode
-             * @param [writer] Writer to encode to
-             * @returns Writer
-             */
-            public static encode(message: flyteidl.artifact.IRemoveTagsResponse, writer?: $protobuf.Writer): $protobuf.Writer;
-
-            /**
-             * Decodes a RemoveTagsResponse message from the specified reader or buffer.
-             * @param reader Reader or buffer to decode from
-             * @param [length] Message length if known beforehand
-             * @returns RemoveTagsResponse
-             * @throws {Error} If the payload is not a reader or valid buffer
-             * @throws {$protobuf.util.ProtocolError} If required fields are missing
-             */
-            public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): flyteidl.artifact.RemoveTagsResponse;
-
-            /**
-             * Verifies a RemoveTagsResponse message.
              * @param message Plain object to verify
              * @returns `null` if valid, otherwise the reason why it is not
              */
@@ -8976,214 +8728,110 @@ export namespace flyteidl {
             public static verify(message: { [k: string]: any }): (string|null);
         }
 
-        /** Properties of a CreateAliasRequest. */
-        interface ICreateAliasRequest {
+        /** Properties of an AddTagRequest. */
+        interface IAddTagRequest {
 
-            /** CreateAliasRequest artifactKey */
-            artifactKey?: (flyteidl.core.IArtifactKey|null);
+            /** AddTagRequest artifactId */
+            artifactId?: (flyteidl.core.IArtifactID|null);
 
-            /** CreateAliasRequest alias */
-            alias?: (flyteidl.core.IArtifactAlias|null);
+            /** AddTagRequest value */
+            value?: (string|null);
 
-            /** CreateAliasRequest overwrite */
+            /** AddTagRequest overwrite */
             overwrite?: (boolean|null);
         }
 
-        /** Represents a CreateAliasRequest. */
-        class CreateAliasRequest implements ICreateAliasRequest {
+        /** Represents an AddTagRequest. */
+        class AddTagRequest implements IAddTagRequest {
 
             /**
-             * Constructs a new CreateAliasRequest.
+             * Constructs a new AddTagRequest.
              * @param [properties] Properties to set
              */
-            constructor(properties?: flyteidl.artifact.ICreateAliasRequest);
+            constructor(properties?: flyteidl.artifact.IAddTagRequest);
 
-            /** CreateAliasRequest artifactKey. */
-            public artifactKey?: (flyteidl.core.IArtifactKey|null);
+            /** AddTagRequest artifactId. */
+            public artifactId?: (flyteidl.core.IArtifactID|null);
 
-            /** CreateAliasRequest alias. */
-            public alias?: (flyteidl.core.IArtifactAlias|null);
+            /** AddTagRequest value. */
+            public value: string;
 
-            /** CreateAliasRequest overwrite. */
+            /** AddTagRequest overwrite. */
             public overwrite: boolean;
 
             /**
-             * Creates a new CreateAliasRequest instance using the specified properties.
+             * Creates a new AddTagRequest instance using the specified properties.
              * @param [properties] Properties to set
-             * @returns CreateAliasRequest instance
+             * @returns AddTagRequest instance
              */
-            public static create(properties?: flyteidl.artifact.ICreateAliasRequest): flyteidl.artifact.CreateAliasRequest;
+            public static create(properties?: flyteidl.artifact.IAddTagRequest): flyteidl.artifact.AddTagRequest;
 
             /**
-             * Encodes the specified CreateAliasRequest message. Does not implicitly {@link flyteidl.artifact.CreateAliasRequest.verify|verify} messages.
-             * @param message CreateAliasRequest message or plain object to encode
+             * Encodes the specified AddTagRequest message. Does not implicitly {@link flyteidl.artifact.AddTagRequest.verify|verify} messages.
+             * @param message AddTagRequest message or plain object to encode
              * @param [writer] Writer to encode to
              * @returns Writer
              */
-            public static encode(message: flyteidl.artifact.ICreateAliasRequest, writer?: $protobuf.Writer): $protobuf.Writer;
+            public static encode(message: flyteidl.artifact.IAddTagRequest, writer?: $protobuf.Writer): $protobuf.Writer;
 
             /**
-             * Decodes a CreateAliasRequest message from the specified reader or buffer.
+             * Decodes an AddTagRequest message from the specified reader or buffer.
              * @param reader Reader or buffer to decode from
              * @param [length] Message length if known beforehand
-             * @returns CreateAliasRequest
+             * @returns AddTagRequest
              * @throws {Error} If the payload is not a reader or valid buffer
              * @throws {$protobuf.util.ProtocolError} If required fields are missing
              */
-            public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): flyteidl.artifact.CreateAliasRequest;
+            public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): flyteidl.artifact.AddTagRequest;
 
             /**
-             * Verifies a CreateAliasRequest message.
+             * Verifies an AddTagRequest message.
              * @param message Plain object to verify
              * @returns `null` if valid, otherwise the reason why it is not
              */
             public static verify(message: { [k: string]: any }): (string|null);
         }
 
-        /** Properties of a CreateAliasResponse. */
-        interface ICreateAliasResponse {
+        /** Properties of an AddTagResponse. */
+        interface IAddTagResponse {
         }
 
-        /** Represents a CreateAliasResponse. */
-        class CreateAliasResponse implements ICreateAliasResponse {
+        /** Represents an AddTagResponse. */
+        class AddTagResponse implements IAddTagResponse {
 
             /**
-             * Constructs a new CreateAliasResponse.
+             * Constructs a new AddTagResponse.
              * @param [properties] Properties to set
              */
-            constructor(properties?: flyteidl.artifact.ICreateAliasResponse);
+            constructor(properties?: flyteidl.artifact.IAddTagResponse);
 
             /**
-             * Creates a new CreateAliasResponse instance using the specified properties.
+             * Creates a new AddTagResponse instance using the specified properties.
              * @param [properties] Properties to set
-             * @returns CreateAliasResponse instance
+             * @returns AddTagResponse instance
              */
-            public static create(properties?: flyteidl.artifact.ICreateAliasResponse): flyteidl.artifact.CreateAliasResponse;
+            public static create(properties?: flyteidl.artifact.IAddTagResponse): flyteidl.artifact.AddTagResponse;
 
             /**
-             * Encodes the specified CreateAliasResponse message. Does not implicitly {@link flyteidl.artifact.CreateAliasResponse.verify|verify} messages.
-             * @param message CreateAliasResponse message or plain object to encode
+             * Encodes the specified AddTagResponse message. Does not implicitly {@link flyteidl.artifact.AddTagResponse.verify|verify} messages.
+             * @param message AddTagResponse message or plain object to encode
              * @param [writer] Writer to encode to
              * @returns Writer
              */
-            public static encode(message: flyteidl.artifact.ICreateAliasResponse, writer?: $protobuf.Writer): $protobuf.Writer;
+            public static encode(message: flyteidl.artifact.IAddTagResponse, writer?: $protobuf.Writer): $protobuf.Writer;
 
             /**
-             * Decodes a CreateAliasResponse message from the specified reader or buffer.
+             * Decodes an AddTagResponse message from the specified reader or buffer.
              * @param reader Reader or buffer to decode from
              * @param [length] Message length if known beforehand
-             * @returns CreateAliasResponse
+             * @returns AddTagResponse
              * @throws {Error} If the payload is not a reader or valid buffer
              * @throws {$protobuf.util.ProtocolError} If required fields are missing
              */
-            public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): flyteidl.artifact.CreateAliasResponse;
+            public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): flyteidl.artifact.AddTagResponse;
 
             /**
-             * Verifies a CreateAliasResponse message.
-             * @param message Plain object to verify
-             * @returns `null` if valid, otherwise the reason why it is not
-             */
-            public static verify(message: { [k: string]: any }): (string|null);
-        }
-
-        /** Properties of a RemoveAliasRequest. */
-        interface IRemoveAliasRequest {
-
-            /** RemoveAliasRequest artifactKey */
-            artifactKey?: (flyteidl.core.IArtifactKey|null);
-
-            /** RemoveAliasRequest alias */
-            alias?: (flyteidl.core.IArtifactAlias|null);
-        }
-
-        /** Represents a RemoveAliasRequest. */
-        class RemoveAliasRequest implements IRemoveAliasRequest {
-
-            /**
-             * Constructs a new RemoveAliasRequest.
-             * @param [properties] Properties to set
-             */
-            constructor(properties?: flyteidl.artifact.IRemoveAliasRequest);
-
-            /** RemoveAliasRequest artifactKey. */
-            public artifactKey?: (flyteidl.core.IArtifactKey|null);
-
-            /** RemoveAliasRequest alias. */
-            public alias?: (flyteidl.core.IArtifactAlias|null);
-
-            /**
-             * Creates a new RemoveAliasRequest instance using the specified properties.
-             * @param [properties] Properties to set
-             * @returns RemoveAliasRequest instance
-             */
-            public static create(properties?: flyteidl.artifact.IRemoveAliasRequest): flyteidl.artifact.RemoveAliasRequest;
-
-            /**
-             * Encodes the specified RemoveAliasRequest message. Does not implicitly {@link flyteidl.artifact.RemoveAliasRequest.verify|verify} messages.
-             * @param message RemoveAliasRequest message or plain object to encode
-             * @param [writer] Writer to encode to
-             * @returns Writer
-             */
-            public static encode(message: flyteidl.artifact.IRemoveAliasRequest, writer?: $protobuf.Writer): $protobuf.Writer;
-
-            /**
-             * Decodes a RemoveAliasRequest message from the specified reader or buffer.
-             * @param reader Reader or buffer to decode from
-             * @param [length] Message length if known beforehand
-             * @returns RemoveAliasRequest
-             * @throws {Error} If the payload is not a reader or valid buffer
-             * @throws {$protobuf.util.ProtocolError} If required fields are missing
-             */
-            public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): flyteidl.artifact.RemoveAliasRequest;
-
-            /**
-             * Verifies a RemoveAliasRequest message.
-             * @param message Plain object to verify
-             * @returns `null` if valid, otherwise the reason why it is not
-             */
-            public static verify(message: { [k: string]: any }): (string|null);
-        }
-
-        /** Properties of a RemoveAliasResponse. */
-        interface IRemoveAliasResponse {
-        }
-
-        /** Represents a RemoveAliasResponse. */
-        class RemoveAliasResponse implements IRemoveAliasResponse {
-
-            /**
-             * Constructs a new RemoveAliasResponse.
-             * @param [properties] Properties to set
-             */
-            constructor(properties?: flyteidl.artifact.IRemoveAliasResponse);
-
-            /**
-             * Creates a new RemoveAliasResponse instance using the specified properties.
-             * @param [properties] Properties to set
-             * @returns RemoveAliasResponse instance
-             */
-            public static create(properties?: flyteidl.artifact.IRemoveAliasResponse): flyteidl.artifact.RemoveAliasResponse;
-
-            /**
-             * Encodes the specified RemoveAliasResponse message. Does not implicitly {@link flyteidl.artifact.RemoveAliasResponse.verify|verify} messages.
-             * @param message RemoveAliasResponse message or plain object to encode
-             * @param [writer] Writer to encode to
-             * @returns Writer
-             */
-            public static encode(message: flyteidl.artifact.IRemoveAliasResponse, writer?: $protobuf.Writer): $protobuf.Writer;
-
-            /**
-             * Decodes a RemoveAliasResponse message from the specified reader or buffer.
-             * @param reader Reader or buffer to decode from
-             * @param [length] Message length if known beforehand
-             * @returns RemoveAliasResponse
-             * @throws {Error} If the payload is not a reader or valid buffer
-             * @throws {$protobuf.util.ProtocolError} If required fields are missing
-             */
-            public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): flyteidl.artifact.RemoveAliasResponse;
-
-            /**
-             * Verifies a RemoveAliasResponse message.
+             * Verifies an AddTagResponse message.
              * @param message Plain object to verify
              * @returns `null` if valid, otherwise the reason why it is not
              */
@@ -9239,88 +8887,18 @@ export namespace flyteidl {
             public getArtifact(request: flyteidl.artifact.IGetArtifactRequest): Promise<flyteidl.artifact.GetArtifactResponse>;
 
             /**
-             * Calls ListArtifactNames.
-             * @param request ListArtifactNamesRequest message or plain object
-             * @param callback Node-style callback called with the error, if any, and ListArtifactNamesResponse
+             * Calls AddTag.
+             * @param request AddTagRequest message or plain object
+             * @param callback Node-style callback called with the error, if any, and AddTagResponse
              */
-            public listArtifactNames(request: flyteidl.artifact.IListArtifactNamesRequest, callback: flyteidl.artifact.ArtifactRegistry.ListArtifactNamesCallback): void;
+            public addTag(request: flyteidl.artifact.IAddTagRequest, callback: flyteidl.artifact.ArtifactRegistry.AddTagCallback): void;
 
             /**
-             * Calls ListArtifactNames.
-             * @param request ListArtifactNamesRequest message or plain object
+             * Calls AddTag.
+             * @param request AddTagRequest message or plain object
              * @returns Promise
              */
-            public listArtifactNames(request: flyteidl.artifact.IListArtifactNamesRequest): Promise<flyteidl.artifact.ListArtifactNamesResponse>;
-
-            /**
-             * Calls ListArtifacts.
-             * @param request ListArtifactsRequest message or plain object
-             * @param callback Node-style callback called with the error, if any, and ListArtifactsResponse
-             */
-            public listArtifacts(request: flyteidl.artifact.IListArtifactsRequest, callback: flyteidl.artifact.ArtifactRegistry.ListArtifactsCallback): void;
-
-            /**
-             * Calls ListArtifacts.
-             * @param request ListArtifactsRequest message or plain object
-             * @returns Promise
-             */
-            public listArtifacts(request: flyteidl.artifact.IListArtifactsRequest): Promise<flyteidl.artifact.ListArtifactsResponse>;
-
-            /**
-             * Calls TagArtifact.
-             * @param request AddTagsRequest message or plain object
-             * @param callback Node-style callback called with the error, if any, and AddTagsResponse
-             */
-            public tagArtifact(request: flyteidl.artifact.IAddTagsRequest, callback: flyteidl.artifact.ArtifactRegistry.TagArtifactCallback): void;
-
-            /**
-             * Calls TagArtifact.
-             * @param request AddTagsRequest message or plain object
-             * @returns Promise
-             */
-            public tagArtifact(request: flyteidl.artifact.IAddTagsRequest): Promise<flyteidl.artifact.AddTagsResponse>;
-
-            /**
-             * Calls RemoveTags.
-             * @param request RemoveTagsRequest message or plain object
-             * @param callback Node-style callback called with the error, if any, and RemoveTagsResponse
-             */
-            public removeTags(request: flyteidl.artifact.IRemoveTagsRequest, callback: flyteidl.artifact.ArtifactRegistry.RemoveTagsCallback): void;
-
-            /**
-             * Calls RemoveTags.
-             * @param request RemoveTagsRequest message or plain object
-             * @returns Promise
-             */
-            public removeTags(request: flyteidl.artifact.IRemoveTagsRequest): Promise<flyteidl.artifact.RemoveTagsResponse>;
-
-            /**
-             * Calls CreateAlias.
-             * @param request CreateAliasRequest message or plain object
-             * @param callback Node-style callback called with the error, if any, and CreateAliasResponse
-             */
-            public createAlias(request: flyteidl.artifact.ICreateAliasRequest, callback: flyteidl.artifact.ArtifactRegistry.CreateAliasCallback): void;
-
-            /**
-             * Calls CreateAlias.
-             * @param request CreateAliasRequest message or plain object
-             * @returns Promise
-             */
-            public createAlias(request: flyteidl.artifact.ICreateAliasRequest): Promise<flyteidl.artifact.CreateAliasResponse>;
-
-            /**
-             * Calls RemoveAlias.
-             * @param request RemoveAliasRequest message or plain object
-             * @param callback Node-style callback called with the error, if any, and RemoveAliasResponse
-             */
-            public removeAlias(request: flyteidl.artifact.IRemoveAliasRequest, callback: flyteidl.artifact.ArtifactRegistry.RemoveAliasCallback): void;
-
-            /**
-             * Calls RemoveAlias.
-             * @param request RemoveAliasRequest message or plain object
-             * @returns Promise
-             */
-            public removeAlias(request: flyteidl.artifact.IRemoveAliasRequest): Promise<flyteidl.artifact.RemoveAliasResponse>;
+            public addTag(request: flyteidl.artifact.IAddTagRequest): Promise<flyteidl.artifact.AddTagResponse>;
         }
 
         namespace ArtifactRegistry {
@@ -9340,46 +8918,11 @@ export namespace flyteidl {
             type GetArtifactCallback = (error: (Error|null), response?: flyteidl.artifact.GetArtifactResponse) => void;
 
             /**
-             * Callback as used by {@link flyteidl.artifact.ArtifactRegistry#listArtifactNames}.
+             * Callback as used by {@link flyteidl.artifact.ArtifactRegistry#addTag}.
              * @param error Error, if any
-             * @param [response] ListArtifactNamesResponse
+             * @param [response] AddTagResponse
              */
-            type ListArtifactNamesCallback = (error: (Error|null), response?: flyteidl.artifact.ListArtifactNamesResponse) => void;
-
-            /**
-             * Callback as used by {@link flyteidl.artifact.ArtifactRegistry#listArtifacts}.
-             * @param error Error, if any
-             * @param [response] ListArtifactsResponse
-             */
-            type ListArtifactsCallback = (error: (Error|null), response?: flyteidl.artifact.ListArtifactsResponse) => void;
-
-            /**
-             * Callback as used by {@link flyteidl.artifact.ArtifactRegistry#tagArtifact}.
-             * @param error Error, if any
-             * @param [response] AddTagsResponse
-             */
-            type TagArtifactCallback = (error: (Error|null), response?: flyteidl.artifact.AddTagsResponse) => void;
-
-            /**
-             * Callback as used by {@link flyteidl.artifact.ArtifactRegistry#removeTags}.
-             * @param error Error, if any
-             * @param [response] RemoveTagsResponse
-             */
-            type RemoveTagsCallback = (error: (Error|null), response?: flyteidl.artifact.RemoveTagsResponse) => void;
-
-            /**
-             * Callback as used by {@link flyteidl.artifact.ArtifactRegistry#createAlias}.
-             * @param error Error, if any
-             * @param [response] CreateAliasResponse
-             */
-            type CreateAliasCallback = (error: (Error|null), response?: flyteidl.artifact.CreateAliasResponse) => void;
-
-            /**
-             * Callback as used by {@link flyteidl.artifact.ArtifactRegistry#removeAlias}.
-             * @param error Error, if any
-             * @param [response] RemoveAliasResponse
-             */
-            type RemoveAliasCallback = (error: (Error|null), response?: flyteidl.artifact.RemoveAliasResponse) => void;
+            type AddTagCallback = (error: (Error|null), response?: flyteidl.artifact.AddTagResponse) => void;
         }
     }
 

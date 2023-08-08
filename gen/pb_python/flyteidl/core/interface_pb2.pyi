@@ -9,14 +9,14 @@ from typing import ClassVar as _ClassVar, Iterable as _Iterable, Mapping as _Map
 DESCRIPTOR: _descriptor.FileDescriptor
 
 class Variable(_message.Message):
-    __slots__ = ["type", "description", "aliases"]
+    __slots__ = ["type", "description", "artifact_partial_id"]
     TYPE_FIELD_NUMBER: _ClassVar[int]
     DESCRIPTION_FIELD_NUMBER: _ClassVar[int]
-    ALIASES_FIELD_NUMBER: _ClassVar[int]
+    ARTIFACT_PARTIAL_ID_FIELD_NUMBER: _ClassVar[int]
     type: _types_pb2.LiteralType
     description: str
-    aliases: _containers.RepeatedCompositeFieldContainer[_identifier_pb2.ArtifactAlias]
-    def __init__(self, type: _Optional[_Union[_types_pb2.LiteralType, _Mapping]] = ..., description: _Optional[str] = ..., aliases: _Optional[_Iterable[_Union[_identifier_pb2.ArtifactAlias, _Mapping]]] = ...) -> None: ...
+    artifact_partial_id: _containers.RepeatedCompositeFieldContainer[_identifier_pb2.ArtifactID]
+    def __init__(self, type: _Optional[_Union[_types_pb2.LiteralType, _Mapping]] = ..., description: _Optional[str] = ..., artifact_partial_id: _Optional[_Iterable[_Union[_identifier_pb2.ArtifactID, _Mapping]]] = ...) -> None: ...
 
 class VariableMap(_message.Message):
     __slots__ = ["variables"]

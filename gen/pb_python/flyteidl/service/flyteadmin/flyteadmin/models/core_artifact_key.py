@@ -33,29 +33,29 @@ class CoreArtifactKey(object):
     swagger_types = {
         'project': 'str',
         'domain': 'str',
-        'suffix': 'str'
+        'name': 'str'
     }
 
     attribute_map = {
         'project': 'project',
         'domain': 'domain',
-        'suffix': 'suffix'
+        'name': 'name'
     }
 
-    def __init__(self, project=None, domain=None, suffix=None):  # noqa: E501
+    def __init__(self, project=None, domain=None, name=None):  # noqa: E501
         """CoreArtifactKey - a model defined in Swagger"""  # noqa: E501
 
         self._project = None
         self._domain = None
-        self._suffix = None
+        self._name = None
         self.discriminator = None
 
         if project is not None:
             self.project = project
         if domain is not None:
             self.domain = domain
-        if suffix is not None:
-            self.suffix = suffix
+        if name is not None:
+            self.name = name
 
     @property
     def project(self):
@@ -102,25 +102,25 @@ class CoreArtifactKey(object):
         self._domain = domain
 
     @property
-    def suffix(self):
-        """Gets the suffix of this CoreArtifactKey.  # noqa: E501
+    def name(self):
+        """Gets the name of this CoreArtifactKey.  # noqa: E501
 
 
-        :return: The suffix of this CoreArtifactKey.  # noqa: E501
+        :return: The name of this CoreArtifactKey.  # noqa: E501
         :rtype: str
         """
-        return self._suffix
+        return self._name
 
-    @suffix.setter
-    def suffix(self, suffix):
-        """Sets the suffix of this CoreArtifactKey.
+    @name.setter
+    def name(self, name):
+        """Sets the name of this CoreArtifactKey.
 
 
-        :param suffix: The suffix of this CoreArtifactKey.  # noqa: E501
+        :param name: The name of this CoreArtifactKey.  # noqa: E501
         :type: str
         """
 
-        self._suffix = suffix
+        self._name = name
 
     def to_dict(self):
         """Returns the model properties as a dict"""

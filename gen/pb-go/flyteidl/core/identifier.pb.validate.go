@@ -441,7 +441,7 @@ func (m *ArtifactKey) Validate() error {
 
 	// no validation rules for Domain
 
-	// no validation rules for Suffix
+	// no validation rules for Name
 
 	return nil
 }
@@ -517,7 +517,9 @@ func (m *ArtifactID) Validate() error {
 		}
 	}
 
-	// no validation rules for Uuid
+	// no validation rules for Version
+
+	// no validation rules for Partitions
 
 	return nil
 }
@@ -576,17 +578,17 @@ var _ interface {
 	ErrorName() string
 } = ArtifactIDValidationError{}
 
-// Validate checks the field values on ArtifactAlias with the rules defined in
+// Validate checks the field values on ArtifactTag with the rules defined in
 // the proto definition for this message. If any rules are violated, an error
 // is returned.
-func (m *ArtifactAlias) Validate() error {
+func (m *ArtifactTag) Validate() error {
 	if m == nil {
 		return nil
 	}
 
 	if v, ok := interface{}(m.GetArtifactId()).(interface{ Validate() error }); ok {
 		if err := v.Validate(); err != nil {
-			return ArtifactAliasValidationError{
+			return ArtifactTagValidationError{
 				field:  "ArtifactId",
 				reason: "embedded message failed validation",
 				cause:  err,
@@ -594,16 +596,14 @@ func (m *ArtifactAlias) Validate() error {
 		}
 	}
 
-	// no validation rules for Name
-
-	// no validation rules for Value
+	// no validation rules for Tag
 
 	return nil
 }
 
-// ArtifactAliasValidationError is the validation error returned by
-// ArtifactAlias.Validate if the designated constraints aren't met.
-type ArtifactAliasValidationError struct {
+// ArtifactTagValidationError is the validation error returned by
+// ArtifactTag.Validate if the designated constraints aren't met.
+type ArtifactTagValidationError struct {
 	field  string
 	reason string
 	cause  error
@@ -611,22 +611,22 @@ type ArtifactAliasValidationError struct {
 }
 
 // Field function returns field value.
-func (e ArtifactAliasValidationError) Field() string { return e.field }
+func (e ArtifactTagValidationError) Field() string { return e.field }
 
 // Reason function returns reason value.
-func (e ArtifactAliasValidationError) Reason() string { return e.reason }
+func (e ArtifactTagValidationError) Reason() string { return e.reason }
 
 // Cause function returns cause value.
-func (e ArtifactAliasValidationError) Cause() error { return e.cause }
+func (e ArtifactTagValidationError) Cause() error { return e.cause }
 
 // Key function returns key value.
-func (e ArtifactAliasValidationError) Key() bool { return e.key }
+func (e ArtifactTagValidationError) Key() bool { return e.key }
 
 // ErrorName returns error name.
-func (e ArtifactAliasValidationError) ErrorName() string { return "ArtifactAliasValidationError" }
+func (e ArtifactTagValidationError) ErrorName() string { return "ArtifactTagValidationError" }
 
 // Error satisfies the builtin error interface
-func (e ArtifactAliasValidationError) Error() string {
+func (e ArtifactTagValidationError) Error() string {
 	cause := ""
 	if e.cause != nil {
 		cause = fmt.Sprintf(" | caused by: %v", e.cause)
@@ -638,14 +638,14 @@ func (e ArtifactAliasValidationError) Error() string {
 	}
 
 	return fmt.Sprintf(
-		"invalid %sArtifactAlias.%s: %s%s",
+		"invalid %sArtifactTag.%s: %s%s",
 		key,
 		e.field,
 		e.reason,
 		cause)
 }
 
-var _ error = ArtifactAliasValidationError{}
+var _ error = ArtifactTagValidationError{}
 
 var _ interface {
 	Field() string
@@ -653,7 +653,7 @@ var _ interface {
 	Key() bool
 	Cause() error
 	ErrorName() string
-} = ArtifactAliasValidationError{}
+} = ArtifactTagValidationError{}
 
 // Validate checks the field values on ArtifactQuery with the rules defined in
 // the proto definition for this message. If any rules are violated, an error
@@ -667,15 +667,13 @@ func (m *ArtifactQuery) Validate() error {
 
 	// no validation rules for Domain
 
-	if v, ok := interface{}(m.GetAlias()).(interface{ Validate() error }); ok {
-		if err := v.Validate(); err != nil {
-			return ArtifactQueryValidationError{
-				field:  "Alias",
-				reason: "embedded message failed validation",
-				cause:  err,
-			}
-		}
-	}
+	// no validation rules for Name
+
+	// no validation rules for Tag
+
+	// no validation rules for Partitions
+
+	// no validation rules for Version
 
 	return nil
 }

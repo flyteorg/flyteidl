@@ -200,30 +200,21 @@
         }
       }
     },
-    "coreArtifactAlias": {
-      "type": "object",
-      "properties": {
-        "artifact_id": {
-          "$ref": "#/definitions/coreArtifactID",
-          "title": "ties this directly to the artifact"
-        },
-        "name": {
-          "type": "string"
-        },
-        "value": {
-          "type": "string"
-        }
-      }
-    },
     "coreArtifactID": {
       "type": "object",
       "properties": {
         "artifact_key": {
           "$ref": "#/definitions/coreArtifactKey"
         },
-        "uuid": {
-          "type": "string",
-          "description": "consider hiding - this is a storage layer ID. Might even change for the same object."
+        "version": {
+          "type": "string"
+        },
+        "partitions": {
+          "type": "object",
+          "additionalProperties": {
+            "type": "string"
+          },
+          "title": "here for ds popularity"
         }
       }
     },
@@ -237,7 +228,7 @@
         "domain": {
           "type": "string"
         },
-        "suffix": {
+        "name": {
           "type": "string"
         }
       }
@@ -1151,12 +1142,12 @@
           "type": "string",
           "title": "+optional string describing input variable"
         },
-        "aliases": {
+        "artifact_partial_id": {
           "type": "array",
           "items": {
-            "$ref": "#/definitions/coreArtifactAlias"
+            "$ref": "#/definitions/coreArtifactID"
           },
-          "description": "+optional If specified by user, this is still just a partial artifact. It's here so the user can control the\nname, tags, aliases, of the artifact creation."
+          "description": "+optional This object allows the user to specify how Artifacts are created.\nname, tag, partitions can be specified. The other fields (version and project/domain) are ignored."
         }
       },
       "description": "Defines a strongly typed variable."

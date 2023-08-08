@@ -109,9 +109,9 @@ service ArtifactRegistry {
 
   rpc GetArtifact (GetArtifactRequest) returns (GetArtifactResponse) {}
 
-  rpc ListArtifactNames (ListArtifactNamesRequest) returns (ListArtifactNamesResponse) {}
-
-  rpc ListArtifacts (ListArtifactsRequest) returns (ListArtifactsResponse) {}
+//  rpc ListArtifactNames (ListArtifactNamesRequest) returns (ListArtifactNamesResponse) {}
+//
+//  rpc ListArtifacts (ListArtifactsRequest) returns (ListArtifactsResponse) {}
 
   rpc AddTag(AddTagRequest) returns (AddTagResponse) {}
 }

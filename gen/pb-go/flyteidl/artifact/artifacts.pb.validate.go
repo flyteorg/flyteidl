@@ -53,8 +53,6 @@ func (m *Artifact) Validate() error {
 		}
 	}
 
-	// no validation rules for Uri
-
 	if v, ok := interface{}(m.GetSpec()).(interface{ Validate() error }); ok {
 		if err := v.Validate(); err != nil {
 			return ArtifactValidationError{
@@ -140,6 +138,8 @@ func (m *CreateArtifactRequest) Validate() error {
 		}
 	}
 
+	// no validation rules for Version
+
 	if v, ok := interface{}(m.GetSpec()).(interface{ Validate() error }); ok {
 		if err := v.Validate(); err != nil {
 			return CreateArtifactRequestValidationError{
@@ -149,6 +149,10 @@ func (m *CreateArtifactRequest) Validate() error {
 			}
 		}
 	}
+
+	// no validation rules for Partitions
+
+	// no validation rules for Tag
 
 	return nil
 }
@@ -235,36 +239,6 @@ func (m *ArtifactSpec) Validate() error {
 				cause:  err,
 			}
 		}
-	}
-
-	for idx, item := range m.GetTags() {
-		_, _ = idx, item
-
-		if v, ok := interface{}(item).(interface{ Validate() error }); ok {
-			if err := v.Validate(); err != nil {
-				return ArtifactSpecValidationError{
-					field:  fmt.Sprintf("Tags[%v]", idx),
-					reason: "embedded message failed validation",
-					cause:  err,
-				}
-			}
-		}
-
-	}
-
-	for idx, item := range m.GetAliases() {
-		_, _ = idx, item
-
-		if v, ok := interface{}(item).(interface{ Validate() error }); ok {
-			if err := v.Validate(); err != nil {
-				return ArtifactSpecValidationError{
-					field:  fmt.Sprintf("Aliases[%v]", idx),
-					reason: "embedded message failed validation",
-					cause:  err,
-				}
-			}
-		}
-
 	}
 
 	// no validation rules for ShortDescription
@@ -448,18 +422,6 @@ func (m *GetArtifactRequest) Validate() error {
 
 	switch m.Identifier.(type) {
 
-	case *GetArtifactRequest_ArtifactKey:
-
-		if v, ok := interface{}(m.GetArtifactKey()).(interface{ Validate() error }); ok {
-			if err := v.Validate(); err != nil {
-				return GetArtifactRequestValidationError{
-					field:  "ArtifactKey",
-					reason: "embedded message failed validation",
-					cause:  err,
-				}
-			}
-		}
-
 	case *GetArtifactRequest_ArtifactId:
 
 		if v, ok := interface{}(m.GetArtifactId()).(interface{ Validate() error }); ok {
@@ -624,388 +586,6 @@ var _ interface {
 	Cause() error
 	ErrorName() string
 } = GetArtifactResponseValidationError{}
-
-// Validate checks the field values on Tag with the rules defined in the proto
-// definition for this message. If any rules are violated, an error is returned.
-func (m *Tag) Validate() error {
-	if m == nil {
-		return nil
-	}
-
-	// no validation rules for Key
-
-	// no validation rules for Value
-
-	return nil
-}
-
-// TagValidationError is the validation error returned by Tag.Validate if the
-// designated constraints aren't met.
-type TagValidationError struct {
-	field  string
-	reason string
-	cause  error
-	key    bool
-}
-
-// Field function returns field value.
-func (e TagValidationError) Field() string { return e.field }
-
-// Reason function returns reason value.
-func (e TagValidationError) Reason() string { return e.reason }
-
-// Cause function returns cause value.
-func (e TagValidationError) Cause() error { return e.cause }
-
-// Key function returns key value.
-func (e TagValidationError) Key() bool { return e.key }
-
-// ErrorName returns error name.
-func (e TagValidationError) ErrorName() string { return "TagValidationError" }
-
-// Error satisfies the builtin error interface
-func (e TagValidationError) Error() string {
-	cause := ""
-	if e.cause != nil {
-		cause = fmt.Sprintf(" | caused by: %v", e.cause)
-	}
-
-	key := ""
-	if e.key {
-		key = "key for "
-	}
-
-	return fmt.Sprintf(
-		"invalid %sTag.%s: %s%s",
-		key,
-		e.field,
-		e.reason,
-		cause)
-}
-
-var _ error = TagValidationError{}
-
-var _ interface {
-	Field() string
-	Reason() string
-	Key() bool
-	Cause() error
-	ErrorName() string
-} = TagValidationError{}
-
-// Validate checks the field values on AddTagsRequest with the rules defined in
-// the proto definition for this message. If any rules are violated, an error
-// is returned.
-func (m *AddTagsRequest) Validate() error {
-	if m == nil {
-		return nil
-	}
-
-	if v, ok := interface{}(m.GetArtifactId()).(interface{ Validate() error }); ok {
-		if err := v.Validate(); err != nil {
-			return AddTagsRequestValidationError{
-				field:  "ArtifactId",
-				reason: "embedded message failed validation",
-				cause:  err,
-			}
-		}
-	}
-
-	for idx, item := range m.GetTags() {
-		_, _ = idx, item
-
-		if v, ok := interface{}(item).(interface{ Validate() error }); ok {
-			if err := v.Validate(); err != nil {
-				return AddTagsRequestValidationError{
-					field:  fmt.Sprintf("Tags[%v]", idx),
-					reason: "embedded message failed validation",
-					cause:  err,
-				}
-			}
-		}
-
-	}
-
-	return nil
-}
-
-// AddTagsRequestValidationError is the validation error returned by
-// AddTagsRequest.Validate if the designated constraints aren't met.
-type AddTagsRequestValidationError struct {
-	field  string
-	reason string
-	cause  error
-	key    bool
-}
-
-// Field function returns field value.
-func (e AddTagsRequestValidationError) Field() string { return e.field }
-
-// Reason function returns reason value.
-func (e AddTagsRequestValidationError) Reason() string { return e.reason }
-
-// Cause function returns cause value.
-func (e AddTagsRequestValidationError) Cause() error { return e.cause }
-
-// Key function returns key value.
-func (e AddTagsRequestValidationError) Key() bool { return e.key }
-
-// ErrorName returns error name.
-func (e AddTagsRequestValidationError) ErrorName() string { return "AddTagsRequestValidationError" }
-
-// Error satisfies the builtin error interface
-func (e AddTagsRequestValidationError) Error() string {
-	cause := ""
-	if e.cause != nil {
-		cause = fmt.Sprintf(" | caused by: %v", e.cause)
-	}
-
-	key := ""
-	if e.key {
-		key = "key for "
-	}
-
-	return fmt.Sprintf(
-		"invalid %sAddTagsRequest.%s: %s%s",
-		key,
-		e.field,
-		e.reason,
-		cause)
-}
-
-var _ error = AddTagsRequestValidationError{}
-
-var _ interface {
-	Field() string
-	Reason() string
-	Key() bool
-	Cause() error
-	ErrorName() string
-} = AddTagsRequestValidationError{}
-
-// Validate checks the field values on AddTagsResponse with the rules defined
-// in the proto definition for this message. If any rules are violated, an
-// error is returned.
-func (m *AddTagsResponse) Validate() error {
-	if m == nil {
-		return nil
-	}
-
-	return nil
-}
-
-// AddTagsResponseValidationError is the validation error returned by
-// AddTagsResponse.Validate if the designated constraints aren't met.
-type AddTagsResponseValidationError struct {
-	field  string
-	reason string
-	cause  error
-	key    bool
-}
-
-// Field function returns field value.
-func (e AddTagsResponseValidationError) Field() string { return e.field }
-
-// Reason function returns reason value.
-func (e AddTagsResponseValidationError) Reason() string { return e.reason }
-
-// Cause function returns cause value.
-func (e AddTagsResponseValidationError) Cause() error { return e.cause }
-
-// Key function returns key value.
-func (e AddTagsResponseValidationError) Key() bool { return e.key }
-
-// ErrorName returns error name.
-func (e AddTagsResponseValidationError) ErrorName() string { return "AddTagsResponseValidationError" }
-
-// Error satisfies the builtin error interface
-func (e AddTagsResponseValidationError) Error() string {
-	cause := ""
-	if e.cause != nil {
-		cause = fmt.Sprintf(" | caused by: %v", e.cause)
-	}
-
-	key := ""
-	if e.key {
-		key = "key for "
-	}
-
-	return fmt.Sprintf(
-		"invalid %sAddTagsResponse.%s: %s%s",
-		key,
-		e.field,
-		e.reason,
-		cause)
-}
-
-var _ error = AddTagsResponseValidationError{}
-
-var _ interface {
-	Field() string
-	Reason() string
-	Key() bool
-	Cause() error
-	ErrorName() string
-} = AddTagsResponseValidationError{}
-
-// Validate checks the field values on RemoveTagsRequest with the rules defined
-// in the proto definition for this message. If any rules are violated, an
-// error is returned.
-func (m *RemoveTagsRequest) Validate() error {
-	if m == nil {
-		return nil
-	}
-
-	if v, ok := interface{}(m.GetArtifactId()).(interface{ Validate() error }); ok {
-		if err := v.Validate(); err != nil {
-			return RemoveTagsRequestValidationError{
-				field:  "ArtifactId",
-				reason: "embedded message failed validation",
-				cause:  err,
-			}
-		}
-	}
-
-	for idx, item := range m.GetTags() {
-		_, _ = idx, item
-
-		if v, ok := interface{}(item).(interface{ Validate() error }); ok {
-			if err := v.Validate(); err != nil {
-				return RemoveTagsRequestValidationError{
-					field:  fmt.Sprintf("Tags[%v]", idx),
-					reason: "embedded message failed validation",
-					cause:  err,
-				}
-			}
-		}
-
-	}
-
-	return nil
-}
-
-// RemoveTagsRequestValidationError is the validation error returned by
-// RemoveTagsRequest.Validate if the designated constraints aren't met.
-type RemoveTagsRequestValidationError struct {
-	field  string
-	reason string
-	cause  error
-	key    bool
-}
-
-// Field function returns field value.
-func (e RemoveTagsRequestValidationError) Field() string { return e.field }
-
-// Reason function returns reason value.
-func (e RemoveTagsRequestValidationError) Reason() string { return e.reason }
-
-// Cause function returns cause value.
-func (e RemoveTagsRequestValidationError) Cause() error { return e.cause }
-
-// Key function returns key value.
-func (e RemoveTagsRequestValidationError) Key() bool { return e.key }
-
-// ErrorName returns error name.
-func (e RemoveTagsRequestValidationError) ErrorName() string {
-	return "RemoveTagsRequestValidationError"
-}
-
-// Error satisfies the builtin error interface
-func (e RemoveTagsRequestValidationError) Error() string {
-	cause := ""
-	if e.cause != nil {
-		cause = fmt.Sprintf(" | caused by: %v", e.cause)
-	}
-
-	key := ""
-	if e.key {
-		key = "key for "
-	}
-
-	return fmt.Sprintf(
-		"invalid %sRemoveTagsRequest.%s: %s%s",
-		key,
-		e.field,
-		e.reason,
-		cause)
-}
-
-var _ error = RemoveTagsRequestValidationError{}
-
-var _ interface {
-	Field() string
-	Reason() string
-	Key() bool
-	Cause() error
-	ErrorName() string
-} = RemoveTagsRequestValidationError{}
-
-// Validate checks the field values on RemoveTagsResponse with the rules
-// defined in the proto definition for this message. If any rules are
-// violated, an error is returned.
-func (m *RemoveTagsResponse) Validate() error {
-	if m == nil {
-		return nil
-	}
-
-	return nil
-}
-
-// RemoveTagsResponseValidationError is the validation error returned by
-// RemoveTagsResponse.Validate if the designated constraints aren't met.
-type RemoveTagsResponseValidationError struct {
-	field  string
-	reason string
-	cause  error
-	key    bool
-}
-
-// Field function returns field value.
-func (e RemoveTagsResponseValidationError) Field() string { return e.field }
-
-// Reason function returns reason value.
-func (e RemoveTagsResponseValidationError) Reason() string { return e.reason }
-
-// Cause function returns cause value.
-func (e RemoveTagsResponseValidationError) Cause() error { return e.cause }
-
-// Key function returns key value.
-func (e RemoveTagsResponseValidationError) Key() bool { return e.key }
-
-// ErrorName returns error name.
-func (e RemoveTagsResponseValidationError) ErrorName() string {
-	return "RemoveTagsResponseValidationError"
-}
-
-// Error satisfies the builtin error interface
-func (e RemoveTagsResponseValidationError) Error() string {
-	cause := ""
-	if e.cause != nil {
-		cause = fmt.Sprintf(" | caused by: %v", e.cause)
-	}
-
-	key := ""
-	if e.key {
-		key = "key for "
-	}
-
-	return fmt.Sprintf(
-		"invalid %sRemoveTagsResponse.%s: %s%s",
-		key,
-		e.field,
-		e.reason,
-		cause)
-}
-
-var _ error = RemoveTagsResponseValidationError{}
-
-var _ interface {
-	Field() string
-	Reason() string
-	Key() bool
-	Cause() error
-	ErrorName() string
-} = RemoveTagsResponseValidationError{}
 
 // Validate checks the field values on ListArtifactNamesRequest with the rules
 // defined in the proto definition for this message. If any rules are
@@ -1319,42 +899,34 @@ var _ interface {
 	ErrorName() string
 } = ListArtifactsResponseValidationError{}
 
-// Validate checks the field values on CreateAliasRequest with the rules
-// defined in the proto definition for this message. If any rules are
-// violated, an error is returned.
-func (m *CreateAliasRequest) Validate() error {
+// Validate checks the field values on AddTagRequest with the rules defined in
+// the proto definition for this message. If any rules are violated, an error
+// is returned.
+func (m *AddTagRequest) Validate() error {
 	if m == nil {
 		return nil
 	}
 
-	if v, ok := interface{}(m.GetArtifactKey()).(interface{ Validate() error }); ok {
+	if v, ok := interface{}(m.GetArtifactId()).(interface{ Validate() error }); ok {
 		if err := v.Validate(); err != nil {
-			return CreateAliasRequestValidationError{
-				field:  "ArtifactKey",
+			return AddTagRequestValidationError{
+				field:  "ArtifactId",
 				reason: "embedded message failed validation",
 				cause:  err,
 			}
 		}
 	}
 
-	if v, ok := interface{}(m.GetAlias()).(interface{ Validate() error }); ok {
-		if err := v.Validate(); err != nil {
-			return CreateAliasRequestValidationError{
-				field:  "Alias",
-				reason: "embedded message failed validation",
-				cause:  err,
-			}
-		}
-	}
+	// no validation rules for Value
 
 	// no validation rules for Overwrite
 
 	return nil
 }
 
-// CreateAliasRequestValidationError is the validation error returned by
-// CreateAliasRequest.Validate if the designated constraints aren't met.
-type CreateAliasRequestValidationError struct {
+// AddTagRequestValidationError is the validation error returned by
+// AddTagRequest.Validate if the designated constraints aren't met.
+type AddTagRequestValidationError struct {
 	field  string
 	reason string
 	cause  error
@@ -1362,24 +934,22 @@ type CreateAliasRequestValidationError struct {
 }
 
 // Field function returns field value.
-func (e CreateAliasRequestValidationError) Field() string { return e.field }
+func (e AddTagRequestValidationError) Field() string { return e.field }
 
 // Reason function returns reason value.
-func (e CreateAliasRequestValidationError) Reason() string { return e.reason }
+func (e AddTagRequestValidationError) Reason() string { return e.reason }
 
 // Cause function returns cause value.
-func (e CreateAliasRequestValidationError) Cause() error { return e.cause }
+func (e AddTagRequestValidationError) Cause() error { return e.cause }
 
 // Key function returns key value.
-func (e CreateAliasRequestValidationError) Key() bool { return e.key }
+func (e AddTagRequestValidationError) Key() bool { return e.key }
 
 // ErrorName returns error name.
-func (e CreateAliasRequestValidationError) ErrorName() string {
-	return "CreateAliasRequestValidationError"
-}
+func (e AddTagRequestValidationError) ErrorName() string { return "AddTagRequestValidationError" }
 
 // Error satisfies the builtin error interface
-func (e CreateAliasRequestValidationError) Error() string {
+func (e AddTagRequestValidationError) Error() string {
 	cause := ""
 	if e.cause != nil {
 		cause = fmt.Sprintf(" | caused by: %v", e.cause)
@@ -1391,14 +961,14 @@ func (e CreateAliasRequestValidationError) Error() string {
 	}
 
 	return fmt.Sprintf(
-		"invalid %sCreateAliasRequest.%s: %s%s",
+		"invalid %sAddTagRequest.%s: %s%s",
 		key,
 		e.field,
 		e.reason,
 		cause)
 }
 
-var _ error = CreateAliasRequestValidationError{}
+var _ error = AddTagRequestValidationError{}
 
 var _ interface {
 	Field() string
@@ -1406,12 +976,12 @@ var _ interface {
 	Key() bool
 	Cause() error
 	ErrorName() string
-} = CreateAliasRequestValidationError{}
+} = AddTagRequestValidationError{}
 
-// Validate checks the field values on CreateAliasResponse with the rules
-// defined in the proto definition for this message. If any rules are
-// violated, an error is returned.
-func (m *CreateAliasResponse) Validate() error {
+// Validate checks the field values on AddTagResponse with the rules defined in
+// the proto definition for this message. If any rules are violated, an error
+// is returned.
+func (m *AddTagResponse) Validate() error {
 	if m == nil {
 		return nil
 	}
@@ -1419,9 +989,9 @@ func (m *CreateAliasResponse) Validate() error {
 	return nil
 }
 
-// CreateAliasResponseValidationError is the validation error returned by
-// CreateAliasResponse.Validate if the designated constraints aren't met.
-type CreateAliasResponseValidationError struct {
+// AddTagResponseValidationError is the validation error returned by
+// AddTagResponse.Validate if the designated constraints aren't met.
+type AddTagResponseValidationError struct {
 	field  string
 	reason string
 	cause  error
@@ -1429,24 +999,22 @@ type CreateAliasResponseValidationError struct {
 }
 
 // Field function returns field value.
-func (e CreateAliasResponseValidationError) Field() string { return e.field }
+func (e AddTagResponseValidationError) Field() string { return e.field }
 
 // Reason function returns reason value.
-func (e CreateAliasResponseValidationError) Reason() string { return e.reason }
+func (e AddTagResponseValidationError) Reason() string { return e.reason }
 
 // Cause function returns cause value.
-func (e CreateAliasResponseValidationError) Cause() error { return e.cause }
+func (e AddTagResponseValidationError) Cause() error { return e.cause }
 
 // Key function returns key value.
-func (e CreateAliasResponseValidationError) Key() bool { return e.key }
+func (e AddTagResponseValidationError) Key() bool { return e.key }
 
 // ErrorName returns error name.
-func (e CreateAliasResponseValidationError) ErrorName() string {
-	return "CreateAliasResponseValidationError"
-}
+func (e AddTagResponseValidationError) ErrorName() string { return "AddTagResponseValidationError" }
 
 // Error satisfies the builtin error interface
-func (e CreateAliasResponseValidationError) Error() string {
+func (e AddTagResponseValidationError) Error() string {
 	cause := ""
 	if e.cause != nil {
 		cause = fmt.Sprintf(" | caused by: %v", e.cause)
@@ -1458,14 +1026,14 @@ func (e CreateAliasResponseValidationError) Error() string {
 	}
 
 	return fmt.Sprintf(
-		"invalid %sCreateAliasResponse.%s: %s%s",
+		"invalid %sAddTagResponse.%s: %s%s",
 		key,
 		e.field,
 		e.reason,
 		cause)
 }
 
-var _ error = CreateAliasResponseValidationError{}
+var _ error = AddTagResponseValidationError{}
 
 var _ interface {
 	Field() string
@@ -1473,158 +1041,4 @@ var _ interface {
 	Key() bool
 	Cause() error
 	ErrorName() string
-} = CreateAliasResponseValidationError{}
-
-// Validate checks the field values on RemoveAliasRequest with the rules
-// defined in the proto definition for this message. If any rules are
-// violated, an error is returned.
-func (m *RemoveAliasRequest) Validate() error {
-	if m == nil {
-		return nil
-	}
-
-	if v, ok := interface{}(m.GetArtifactKey()).(interface{ Validate() error }); ok {
-		if err := v.Validate(); err != nil {
-			return RemoveAliasRequestValidationError{
-				field:  "ArtifactKey",
-				reason: "embedded message failed validation",
-				cause:  err,
-			}
-		}
-	}
-
-	if v, ok := interface{}(m.GetAlias()).(interface{ Validate() error }); ok {
-		if err := v.Validate(); err != nil {
-			return RemoveAliasRequestValidationError{
-				field:  "Alias",
-				reason: "embedded message failed validation",
-				cause:  err,
-			}
-		}
-	}
-
-	return nil
-}
-
-// RemoveAliasRequestValidationError is the validation error returned by
-// RemoveAliasRequest.Validate if the designated constraints aren't met.
-type RemoveAliasRequestValidationError struct {
-	field  string
-	reason string
-	cause  error
-	key    bool
-}
-
-// Field function returns field value.
-func (e RemoveAliasRequestValidationError) Field() string { return e.field }
-
-// Reason function returns reason value.
-func (e RemoveAliasRequestValidationError) Reason() string { return e.reason }
-
-// Cause function returns cause value.
-func (e RemoveAliasRequestValidationError) Cause() error { return e.cause }
-
-// Key function returns key value.
-func (e RemoveAliasRequestValidationError) Key() bool { return e.key }
-
-// ErrorName returns error name.
-func (e RemoveAliasRequestValidationError) ErrorName() string {
-	return "RemoveAliasRequestValidationError"
-}
-
-// Error satisfies the builtin error interface
-func (e RemoveAliasRequestValidationError) Error() string {
-	cause := ""
-	if e.cause != nil {
-		cause = fmt.Sprintf(" | caused by: %v", e.cause)
-	}
-
-	key := ""
-	if e.key {
-		key = "key for "
-	}
-
-	return fmt.Sprintf(
-		"invalid %sRemoveAliasRequest.%s: %s%s",
-		key,
-		e.field,
-		e.reason,
-		cause)
-}
-
-var _ error = RemoveAliasRequestValidationError{}
-
-var _ interface {
-	Field() string
-	Reason() string
-	Key() bool
-	Cause() error
-	ErrorName() string
-} = RemoveAliasRequestValidationError{}
-
-// Validate checks the field values on RemoveAliasResponse with the rules
-// defined in the proto definition for this message. If any rules are
-// violated, an error is returned.
-func (m *RemoveAliasResponse) Validate() error {
-	if m == nil {
-		return nil
-	}
-
-	return nil
-}
-
-// RemoveAliasResponseValidationError is the validation error returned by
-// RemoveAliasResponse.Validate if the designated constraints aren't met.
-type RemoveAliasResponseValidationError struct {
-	field  string
-	reason string
-	cause  error
-	key    bool
-}
-
-// Field function returns field value.
-func (e RemoveAliasResponseValidationError) Field() string { return e.field }
-
-// Reason function returns reason value.
-func (e RemoveAliasResponseValidationError) Reason() string { return e.reason }
-
-// Cause function returns cause value.
-func (e RemoveAliasResponseValidationError) Cause() error { return e.cause }
-
-// Key function returns key value.
-func (e RemoveAliasResponseValidationError) Key() bool { return e.key }
-
-// ErrorName returns error name.
-func (e RemoveAliasResponseValidationError) ErrorName() string {
-	return "RemoveAliasResponseValidationError"
-}
-
-// Error satisfies the builtin error interface
-func (e RemoveAliasResponseValidationError) Error() string {
-	cause := ""
-	if e.cause != nil {
-		cause = fmt.Sprintf(" | caused by: %v", e.cause)
-	}
-
-	key := ""
-	if e.key {
-		key = "key for "
-	}
-
-	return fmt.Sprintf(
-		"invalid %sRemoveAliasResponse.%s: %s%s",
-		key,
-		e.field,
-		e.reason,
-		cause)
-}
-
-var _ error = RemoveAliasResponseValidationError{}
-
-var _ interface {
-	Field() string
-	Reason() string
-	Key() bool
-	Cause() error
-	ErrorName() string
-} = RemoveAliasResponseValidationError{}
+} = AddTagResponseValidationError{}

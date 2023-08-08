@@ -155,7 +155,6 @@ from flyteadmin.models.container_architecture import ContainerArchitecture
 from flyteadmin.models.core_alias import CoreAlias
 from flyteadmin.models.core_approve_condition import CoreApproveCondition
 from flyteadmin.models.core_array_node import CoreArrayNode
-from flyteadmin.models.core_artifact_alias import CoreArtifactAlias
 from flyteadmin.models.core_artifact_id import CoreArtifactID
 from flyteadmin.models.core_artifact_key import CoreArtifactKey
 from flyteadmin.models.core_artifact_query import CoreArtifactQuery

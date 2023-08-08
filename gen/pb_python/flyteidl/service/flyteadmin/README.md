@@ -264,7 +264,6 @@ Class | Method | HTTP request | Description
  - [CoreAlias](docs/CoreAlias.md)
  - [CoreApproveCondition](docs/CoreApproveCondition.md)
  - [CoreArrayNode](docs/CoreArrayNode.md)
- - [CoreArtifactAlias](docs/CoreArtifactAlias.md)
  - [CoreArtifactID](docs/CoreArtifactID.md)
  - [CoreArtifactKey](docs/CoreArtifactKey.md)
  - [CoreArtifactQuery](docs/CoreArtifactQuery.md)

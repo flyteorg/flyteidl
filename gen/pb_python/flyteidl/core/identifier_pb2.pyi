@@ -1,3 +1,4 @@
+from google.protobuf.internal import containers as _containers
 from google.protobuf.internal import enum_type_wrapper as _enum_type_wrapper
 from google.protobuf import descriptor as _descriptor
 from google.protobuf import message as _message
@@ -69,39 +70,59 @@ class SignalIdentifier(_message.Message):
     def __init__(self, signal_id: _Optional[str] = ..., execution_id: _Optional[_Union[WorkflowExecutionIdentifier, _Mapping]] = ...) -> None: ...
 
 class ArtifactKey(_message.Message):
-    __slots__ = ["project", "domain", "suffix"]
+    __slots__ = ["project", "domain", "name"]
     PROJECT_FIELD_NUMBER: _ClassVar[int]
     DOMAIN_FIELD_NUMBER: _ClassVar[int]
-    SUFFIX_FIELD_NUMBER: _ClassVar[int]
+    NAME_FIELD_NUMBER: _ClassVar[int]
     project: str
     domain: str
-    suffix: str
-    def __init__(self, project: _Optional[str] = ..., domain: _Optional[str] = ..., suffix: _Optional[str] = ...) -> None: ...
+    name: str
+    def __init__(self, project: _Optional[str] = ..., domain: _Optional[str] = ..., name: _Optional[str] = ...) -> None: ...
 
 class ArtifactID(_message.Message):
-    __slots__ = ["artifact_key", "uuid"]
+    __slots__ = ["artifact_key", "version", "partitions"]
+    class PartitionsEntry(_message.Message):
+        __slots__ = ["key", "value"]
+        KEY_FIELD_NUMBER: _ClassVar[int]
+        VALUE_FIELD_NUMBER: _ClassVar[int]
+        key: str
+        value: str
+        def __init__(self, key: _Optional[str] = ..., value: _Optional[str] = ...) -> None: ...
     ARTIFACT_KEY_FIELD_NUMBER: _ClassVar[int]
-    UUID_FIELD_NUMBER: _ClassVar[int]
+    VERSION_FIELD_NUMBER: _ClassVar[int]
+    PARTITIONS_FIELD_NUMBER: _ClassVar[int]
     artifact_key: ArtifactKey
-    uuid: str
-    def __init__(self, artifact_key: _Optional[_Union[ArtifactKey, _Mapping]] = ..., uuid: _Optional[str] = ...) -> None: ...
+    version: str
+    partitions: _containers.ScalarMap[str, str]
+    def __init__(self, artifact_key: _Optional[_Union[ArtifactKey, _Mapping]] = ..., version: _Optional[str] = ..., partitions: _Optional[_Mapping[str, str]] = ...) -> None: ...
 
-class ArtifactAlias(_message.Message):
-    __slots__ = ["artifact_id", "name", "value"]
+class ArtifactTag(_message.Message):
+    __slots__ = ["artifact_id", "tag"]
     ARTIFACT_ID_FIELD_NUMBER: _ClassVar[int]
-    NAME_FIELD_NUMBER: _ClassVar[int]
-    VALUE_FIELD_NUMBER: _ClassVar[int]
+    TAG_FIELD_NUMBER: _ClassVar[int]
     artifact_id: ArtifactID
-    name: str
-    value: str
-    def __init__(self, artifact_id: _Optional[_Union[ArtifactID, _Mapping]] = ..., name: _Optional[str] = ..., value: _Optional[str] = ...) -> None: ...
+    tag: str
+    def __init__(self, artifact_id: _Optional[_Union[ArtifactID, _Mapping]] = ..., tag: _Optional[str] = ...) -> None: ...
 
 class ArtifactQuery(_message.Message):
-    __slots__ = ["project", "domain", "alias"]
+    __slots__ = ["project", "domain", "name", "tag", "partitions", "version"]
+    class PartitionsEntry(_message.Message):
+        __slots__ = ["key", "value"]
+        KEY_FIELD_NUMBER: _ClassVar[int]
+        VALUE_FIELD_NUMBER: _ClassVar[int]
+        key: str
+        value: str
+        def __init__(self, key: _Optional[str] = ..., value: _Optional[str] = ...) -> None: ...
     PROJECT_FIELD_NUMBER: _ClassVar[int]
     DOMAIN_FIELD_NUMBER: _ClassVar[int]
-    ALIAS_FIELD_NUMBER: _ClassVar[int]
+    NAME_FIELD_NUMBER: _ClassVar[int]
+    TAG_FIELD_NUMBER: _ClassVar[int]
+    PARTITIONS_FIELD_NUMBER: _ClassVar[int]
+    VERSION_FIELD_NUMBER: _ClassVar[int]
     project: str
     domain: str
-    alias: ArtifactAlias
-    def __init__(self, project: _Optional[str] = ..., domain: _Optional[str] = ..., alias: _Optional[_Union[ArtifactAlias, _Mapping]] = ...) -> None: ...
+    name: str
+    tag: str
+    partitions: _containers.ScalarMap[str, str]
+    version: str
+    def __init__(self, project: _Optional[str] = ..., domain: _Optional[str] = ..., name: _Optional[str] = ..., tag: _Optional[str] = ..., partitions: _Optional[_Mapping[str, str]] = ..., version: _Optional[str] = ...) -> None: ...

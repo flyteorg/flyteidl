@@ -190,17 +190,17 @@ class Variable final :
 
   // accessors -------------------------------------------------------
 
-  // repeated .flyteidl.core.ArtifactAlias aliases = 3;
-  int aliases_size() const;
-  void clear_aliases();
-  static const int kAliasesFieldNumber = 3;
-  ::flyteidl::core::ArtifactAlias* mutable_aliases(int index);
-  ::google::protobuf::RepeatedPtrField< ::flyteidl::core::ArtifactAlias >*
-      mutable_aliases();
-  const ::flyteidl::core::ArtifactAlias& aliases(int index) const;
-  ::flyteidl::core::ArtifactAlias* add_aliases();
-  const ::google::protobuf::RepeatedPtrField< ::flyteidl::core::ArtifactAlias >&
-      aliases() const;
+  // repeated .flyteidl.core.ArtifactID artifact_partial_id = 3;
+  int artifact_partial_id_size() const;
+  void clear_artifact_partial_id();
+  static const int kArtifactPartialIdFieldNumber = 3;
+  ::flyteidl::core::ArtifactID* mutable_artifact_partial_id(int index);
+  ::google::protobuf::RepeatedPtrField< ::flyteidl::core::ArtifactID >*
+      mutable_artifact_partial_id();
+  const ::flyteidl::core::ArtifactID& artifact_partial_id(int index) const;
+  ::flyteidl::core::ArtifactID* add_artifact_partial_id();
+  const ::google::protobuf::RepeatedPtrField< ::flyteidl::core::ArtifactID >&
+      artifact_partial_id() const;
 
   // string description = 2;
   void clear_description();
@@ -230,7 +230,7 @@ class Variable final :
   class HasBitSetters;
 
   ::google::protobuf::internal::InternalMetadataWithArena _internal_metadata_;
-  ::google::protobuf::RepeatedPtrField< ::flyteidl::core::ArtifactAlias > aliases_;
+  ::google::protobuf::RepeatedPtrField< ::flyteidl::core::ArtifactID > artifact_partial_id_;
   ::google::protobuf::internal::ArenaStringPtr description_;
   ::flyteidl::core::LiteralType* type_;
   mutable ::google::protobuf::internal::CachedSize _cached_size_;
@@ -925,31 +925,31 @@ inline void Variable::set_allocated_description(::std::string* description) {
   // @@protoc_insertion_point(field_set_allocated:flyteidl.core.Variable.description)
 }
 
-// repeated .flyteidl.core.ArtifactAlias aliases = 3;
-inline int Variable::aliases_size() const {
-  return aliases_.size();
+// repeated .flyteidl.core.ArtifactID artifact_partial_id = 3;
+inline int Variable::artifact_partial_id_size() const {
+  return artifact_partial_id_.size();
 }
-inline ::flyteidl::core::ArtifactAlias* Variable::mutable_aliases(int index) {
-  // @@protoc_insertion_point(field_mutable:flyteidl.core.Variable.aliases)
-  return aliases_.Mutable(index);
+inline ::flyteidl::core::ArtifactID* Variable::mutable_artifact_partial_id(int index) {
+  // @@protoc_insertion_point(field_mutable:flyteidl.core.Variable.artifact_partial_id)
+  return artifact_partial_id_.Mutable(index);
 }
-inline ::google::protobuf::RepeatedPtrField< ::flyteidl::core::ArtifactAlias >*
-Variable::mutable_aliases() {
-  // @@protoc_insertion_point(field_mutable_list:flyteidl.core.Variable.aliases)
-  return &aliases_;
+inline ::google::protobuf::RepeatedPtrField< ::flyteidl::core::ArtifactID >*
+Variable::mutable_artifact_partial_id() {
+  // @@protoc_insertion_point(field_mutable_list:flyteidl.core.Variable.artifact_partial_id)
+  return &artifact_partial_id_;
 }
-inline const ::flyteidl::core::ArtifactAlias& Variable::aliases(int index) const {
-  // @@protoc_insertion_point(field_get:flyteidl.core.Variable.aliases)
-  return aliases_.Get(index);
+inline const ::flyteidl::core::ArtifactID& Variable::artifact_partial_id(int index) const {
+  // @@protoc_insertion_point(field_get:flyteidl.core.Variable.artifact_partial_id)
+  return artifact_partial_id_.Get(index);
 }
-inline ::flyteidl::core::ArtifactAlias* Variable::add_aliases() {
-  // @@protoc_insertion_point(field_add:flyteidl.core.Variable.aliases)
-  return aliases_.Add();
+inline ::flyteidl::core::ArtifactID* Variable::add_artifact_partial_id() {
+  // @@protoc_insertion_point(field_add:flyteidl.core.Variable.artifact_partial_id)
+  return artifact_partial_id_.Add();
 }
-inline const ::google::protobuf::RepeatedPtrField< ::flyteidl::core::ArtifactAlias >&
-Variable::aliases() const {
-  // @@protoc_insertion_point(field_list:flyteidl.core.Variable.aliases)
-  return aliases_;
+inline const ::google::protobuf::RepeatedPtrField< ::flyteidl::core::ArtifactID >&
+Variable::artifact_partial_id() const {
+  // @@protoc_insertion_point(field_list:flyteidl.core.Variable.artifact_partial_id)
+  return artifact_partial_id_;
 }
 
 // -------------------------------------------------------------------

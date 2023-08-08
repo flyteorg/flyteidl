@@ -16,9 +16,9 @@ message Variable {
     //+optional string describing input variable
     string description = 2;
 
-    //+optional If specified by user, this is still just a partial artifact. It's here so the user can control the
-    // name, tags, aliases, of the artifact creation.
-    repeated core.ArtifactAlias aliases = 3;
+    //+optional This object allows the user to specify how Artifacts are created.
+    // name, tag, partitions can be specified. The other fields (version and project/domain) are ignored.
+    repeated core.ArtifactID artifact_partial_id = 3;
 }
 
 // A map of Variables

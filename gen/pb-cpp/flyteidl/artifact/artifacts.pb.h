@@ -30,6 +30,9 @@
 #include <google/protobuf/message.h>
 #include <google/protobuf/repeated_field.h>  // IWYU pragma: export
 #include <google/protobuf/extension_set.h>  // IWYU pragma: export
+#include <google/protobuf/map.h>  // IWYU pragma: export
+#include <google/protobuf/map_entry.h>
+#include <google/protobuf/map_field_inl.h>
 #include <google/protobuf/unknown_field_set.h>
 #include "flyteidl/core/literals.pb.h"
 #include "flyteidl/core/types.pb.h"
@@ -44,7 +47,7 @@ struct TableStruct_flyteidl_2fartifact_2fartifacts_2eproto {
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
   static const ::google::protobuf::internal::AuxillaryParseTableField aux[]
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
-  static const ::google::protobuf::internal::ParseTable schema[19]
+  static const ::google::protobuf::internal::ParseTable schema[13]
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
   static const ::google::protobuf::internal::FieldMetadata field_metadata[];
   static const ::google::protobuf::internal::SerializationTable serialization_table[];
@@ -53,27 +56,24 @@ struct TableStruct_flyteidl_2fartifact_2fartifacts_2eproto {
 void AddDescriptors_flyteidl_2fartifact_2fartifacts_2eproto();
 namespace flyteidl {
 namespace artifact {
-class AddTagsRequest;
-class AddTagsRequestDefaultTypeInternal;
-extern AddTagsRequestDefaultTypeInternal _AddTagsRequest_default_instance_;
-class AddTagsResponse;
-class AddTagsResponseDefaultTypeInternal;
-extern AddTagsResponseDefaultTypeInternal _AddTagsResponse_default_instance_;
+class AddTagRequest;
+class AddTagRequestDefaultTypeInternal;
+extern AddTagRequestDefaultTypeInternal _AddTagRequest_default_instance_;
+class AddTagResponse;
+class AddTagResponseDefaultTypeInternal;
+extern AddTagResponseDefaultTypeInternal _AddTagResponse_default_instance_;
 class Artifact;
 class ArtifactDefaultTypeInternal;
 extern ArtifactDefaultTypeInternal _Artifact_default_instance_;
 class ArtifactSpec;
 class ArtifactSpecDefaultTypeInternal;
 extern ArtifactSpecDefaultTypeInternal _ArtifactSpec_default_instance_;
-class CreateAliasRequest;
-class CreateAliasRequestDefaultTypeInternal;
-extern CreateAliasRequestDefaultTypeInternal _CreateAliasRequest_default_instance_;
-class CreateAliasResponse;
-class CreateAliasResponseDefaultTypeInternal;
-extern CreateAliasResponseDefaultTypeInternal _CreateAliasResponse_default_instance_;
 class CreateArtifactRequest;
 class CreateArtifactRequestDefaultTypeInternal;
 extern CreateArtifactRequestDefaultTypeInternal _CreateArtifactRequest_default_instance_;
+class CreateArtifactRequest_PartitionsEntry_DoNotUse;
+class CreateArtifactRequest_PartitionsEntry_DoNotUseDefaultTypeInternal;
+extern CreateArtifactRequest_PartitionsEntry_DoNotUseDefaultTypeInternal _CreateArtifactRequest_PartitionsEntry_DoNotUse_default_instance_;
 class CreateArtifactResponse;
 class CreateArtifactResponseDefaultTypeInternal;
 extern CreateArtifactResponseDefaultTypeInternal _CreateArtifactResponse_default_instance_;
@@ -95,32 +95,16 @@ extern ListArtifactsRequestDefaultTypeInternal _ListArtifactsRequest_default_ins
 class ListArtifactsResponse;
 class ListArtifactsResponseDefaultTypeInternal;
 extern ListArtifactsResponseDefaultTypeInternal _ListArtifactsResponse_default_instance_;
-class RemoveAliasRequest;
-class RemoveAliasRequestDefaultTypeInternal;
-extern RemoveAliasRequestDefaultTypeInternal _RemoveAliasRequest_default_instance_;
-class RemoveAliasResponse;
-class RemoveAliasResponseDefaultTypeInternal;
-extern RemoveAliasResponseDefaultTypeInternal _RemoveAliasResponse_default_instance_;
-class RemoveTagsRequest;
-class RemoveTagsRequestDefaultTypeInternal;
-extern RemoveTagsRequestDefaultTypeInternal _RemoveTagsRequest_default_instance_;
-class RemoveTagsResponse;
-class RemoveTagsResponseDefaultTypeInternal;
-extern RemoveTagsResponseDefaultTypeInternal _RemoveTagsResponse_default_instance_;
-class Tag;
-class TagDefaultTypeInternal;
-extern TagDefaultTypeInternal _Tag_default_instance_;
 }  // namespace artifact
 }  // namespace flyteidl
 namespace google {
 namespace protobuf {
-template<> ::flyteidl::artifact::AddTagsRequest* Arena::CreateMaybeMessage<::flyteidl::artifact::AddTagsRequest>(Arena*);
-template<> ::flyteidl::artifact::AddTagsResponse* Arena::CreateMaybeMessage<::flyteidl::artifact::AddTagsResponse>(Arena*);
+template<> ::flyteidl::artifact::AddTagRequest* Arena::CreateMaybeMessage<::flyteidl::artifact::AddTagRequest>(Arena*);
+template<> ::flyteidl::artifact::AddTagResponse* Arena::CreateMaybeMessage<::flyteidl::artifact::AddTagResponse>(Arena*);
 template<> ::flyteidl::artifact::Artifact* Arena::CreateMaybeMessage<::flyteidl::artifact::Artifact>(Arena*);
 template<> ::flyteidl::artifact::ArtifactSpec* Arena::CreateMaybeMessage<::flyteidl::artifact::ArtifactSpec>(Arena*);
-template<> ::flyteidl::artifact::CreateAliasRequest* Arena::CreateMaybeMessage<::flyteidl::artifact::CreateAliasRequest>(Arena*);
-template<> ::flyteidl::artifact::CreateAliasResponse* Arena::CreateMaybeMessage<::flyteidl::artifact::CreateAliasResponse>(Arena*);
 template<> ::flyteidl::artifact::CreateArtifactRequest* Arena::CreateMaybeMessage<::flyteidl::artifact::CreateArtifactRequest>(Arena*);
+template<> ::flyteidl::artifact::CreateArtifactRequest_PartitionsEntry_DoNotUse* Arena::CreateMaybeMessage<::flyteidl::artifact::CreateArtifactRequest_PartitionsEntry_DoNotUse>(Arena*);
 template<> ::flyteidl::artifact::CreateArtifactResponse* Arena::CreateMaybeMessage<::flyteidl::artifact::CreateArtifactResponse>(Arena*);
 template<> ::flyteidl::artifact::GetArtifactRequest* Arena::CreateMaybeMessage<::flyteidl::artifact::GetArtifactRequest>(Arena*);
 template<> ::flyteidl::artifact::GetArtifactResponse* Arena::CreateMaybeMessage<::flyteidl::artifact::GetArtifactResponse>(Arena*);
@@ -128,11 +112,6 @@ template<> ::flyteidl::artifact::ListArtifactNamesRequest* Arena::CreateMaybeMes
 template<> ::flyteidl::artifact::ListArtifactNamesResponse* Arena::CreateMaybeMessage<::flyteidl::artifact::ListArtifactNamesResponse>(Arena*);
 template<> ::flyteidl::artifact::ListArtifactsRequest* Arena::CreateMaybeMessage<::flyteidl::artifact::ListArtifactsRequest>(Arena*);
 template<> ::flyteidl::artifact::ListArtifactsResponse* Arena::CreateMaybeMessage<::flyteidl::artifact::ListArtifactsResponse>(Arena*);
-template<> ::flyteidl::artifact::RemoveAliasRequest* Arena::CreateMaybeMessage<::flyteidl::artifact::RemoveAliasRequest>(Arena*);
-template<> ::flyteidl::artifact::RemoveAliasResponse* Arena::CreateMaybeMessage<::flyteidl::artifact::RemoveAliasResponse>(Arena*);
-template<> ::flyteidl::artifact::RemoveTagsRequest* Arena::CreateMaybeMessage<::flyteidl::artifact::RemoveTagsRequest>(Arena*);
-template<> ::flyteidl::artifact::RemoveTagsResponse* Arena::CreateMaybeMessage<::flyteidl::artifact::RemoveTagsResponse>(Arena*);
-template<> ::flyteidl::artifact::Tag* Arena::CreateMaybeMessage<::flyteidl::artifact::Tag>(Arena*);
 }  // namespace protobuf
 }  // namespace google
 namespace flyteidl {
@@ -235,19 +214,27 @@ class Artifact final :
 
   // accessors -------------------------------------------------------
 
-  // string uri = 2;
-  void clear_uri();
-  static const int kUriFieldNumber = 2;
-  const ::std::string& uri() const;
-  void set_uri(const ::std::string& value);
+  // repeated string tags = 3;
+  int tags_size() const;
+  void clear_tags();
+  static const int kTagsFieldNumber = 3;
+  const ::std::string& tags(int index) const;
+  ::std::string* mutable_tags(int index);
+  void set_tags(int index, const ::std::string& value);
   #if LANG_CXX11
-  void set_uri(::std::string&& value);
+  void set_tags(int index, ::std::string&& value);
   #endif
-  void set_uri(const char* value);
-  void set_uri(const char* value, size_t size);
-  ::std::string* mutable_uri();
-  ::std::string* release_uri();
-  void set_allocated_uri(::std::string* uri);
+  void set_tags(int index, const char* value);
+  void set_tags(int index, const char* value, size_t size);
+  ::std::string* add_tags();
+  void add_tags(const ::std::string& value);
+  #if LANG_CXX11
+  void add_tags(::std::string&& value);
+  #endif
+  void add_tags(const char* value);
+  void add_tags(const char* value, size_t size);
+  const ::google::protobuf::RepeatedPtrField<::std::string>& tags() const;
+  ::google::protobuf::RepeatedPtrField<::std::string>* mutable_tags();
 
   // .flyteidl.core.ArtifactID artifact_id = 1;
   bool has_artifact_id() const;
@@ -258,10 +245,10 @@ class Artifact final :
   ::flyteidl::core::ArtifactID* mutable_artifact_id();
   void set_allocated_artifact_id(::flyteidl::core::ArtifactID* artifact_id);
 
-  // .flyteidl.artifact.ArtifactSpec spec = 3;
+  // .flyteidl.artifact.ArtifactSpec spec = 2;
   bool has_spec() const;
   void clear_spec();
-  static const int kSpecFieldNumber = 3;
+  static const int kSpecFieldNumber = 2;
   const ::flyteidl::artifact::ArtifactSpec& spec() const;
   ::flyteidl::artifact::ArtifactSpec* release_spec();
   ::flyteidl::artifact::ArtifactSpec* mutable_spec();
@@ -272,12 +259,36 @@ class Artifact final :
   class HasBitSetters;
 
   ::google::protobuf::internal::InternalMetadataWithArena _internal_metadata_;
-  ::google::protobuf::internal::ArenaStringPtr uri_;
+  ::google::protobuf::RepeatedPtrField<::std::string> tags_;
   ::flyteidl::core::ArtifactID* artifact_id_;
   ::flyteidl::artifact::ArtifactSpec* spec_;
   mutable ::google::protobuf::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_flyteidl_2fartifact_2fartifacts_2eproto;
 };
+// -------------------------------------------------------------------
+
+class CreateArtifactRequest_PartitionsEntry_DoNotUse : public ::google::protobuf::internal::MapEntry<CreateArtifactRequest_PartitionsEntry_DoNotUse, 
+    ::std::string, ::std::string,
+    ::google::protobuf::internal::WireFormatLite::TYPE_STRING,
+    ::google::protobuf::internal::WireFormatLite::TYPE_STRING,
+    0 > {
+public:
+#if GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
+static bool _ParseMap(const char* begin, const char* end, void* object, ::google::protobuf::internal::ParseContext* ctx);
+#endif  // GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
+  typedef ::google::protobuf::internal::MapEntry<CreateArtifactRequest_PartitionsEntry_DoNotUse, 
+    ::std::string, ::std::string,
+    ::google::protobuf::internal::WireFormatLite::TYPE_STRING,
+    ::google::protobuf::internal::WireFormatLite::TYPE_STRING,
+    0 > SuperType;
+  CreateArtifactRequest_PartitionsEntry_DoNotUse();
+  CreateArtifactRequest_PartitionsEntry_DoNotUse(::google::protobuf::Arena* arena);
+  void MergeFrom(const CreateArtifactRequest_PartitionsEntry_DoNotUse& other);
+  static const CreateArtifactRequest_PartitionsEntry_DoNotUse* internal_default_instance() { return reinterpret_cast<const CreateArtifactRequest_PartitionsEntry_DoNotUse*>(&_CreateArtifactRequest_PartitionsEntry_DoNotUse_default_instance_); }
+  void MergeFrom(const ::google::protobuf::Message& other) final;
+  ::google::protobuf::Metadata GetMetadata() const;
+};
+
 // -------------------------------------------------------------------
 
 class CreateArtifactRequest final :
@@ -318,7 +329,7 @@ class CreateArtifactRequest final :
                &_CreateArtifactRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    1;
+    2;
 
   void Swap(CreateArtifactRequest* other);
   friend void swap(CreateArtifactRequest& a, CreateArtifactRequest& b) {
@@ -373,7 +384,45 @@ class CreateArtifactRequest final :
 
   // nested types ----------------------------------------------------
 
+
   // accessors -------------------------------------------------------
+
+  // map<string, string> partitions = 4;
+  int partitions_size() const;
+  void clear_partitions();
+  static const int kPartitionsFieldNumber = 4;
+  const ::google::protobuf::Map< ::std::string, ::std::string >&
+      partitions() const;
+  ::google::protobuf::Map< ::std::string, ::std::string >*
+      mutable_partitions();
+
+  // string version = 3;
+  void clear_version();
+  static const int kVersionFieldNumber = 3;
+  const ::std::string& version() const;
+  void set_version(const ::std::string& value);
+  #if LANG_CXX11
+  void set_version(::std::string&& value);
+  #endif
+  void set_version(const char* value);
+  void set_version(const char* value, size_t size);
+  ::std::string* mutable_version();
+  ::std::string* release_version();
+  void set_allocated_version(::std::string* version);
+
+  // string tag = 5;
+  void clear_tag();
+  static const int kTagFieldNumber = 5;
+  const ::std::string& tag() const;
+  void set_tag(const ::std::string& value);
+  #if LANG_CXX11
+  void set_tag(::std::string&& value);
+  #endif
+  void set_tag(const char* value);
+  void set_tag(const char* value, size_t size);
+  ::std::string* mutable_tag();
+  ::std::string* release_tag();
+  void set_allocated_tag(::std::string* tag);
 
   // .flyteidl.core.ArtifactKey artifact_key = 1;
   bool has_artifact_key() const;
@@ -398,6 +447,14 @@ class CreateArtifactRequest final :
   class HasBitSetters;
 
   ::google::protobuf::internal::InternalMetadataWithArena _internal_metadata_;
+  ::google::protobuf::internal::MapField<
+      CreateArtifactRequest_PartitionsEntry_DoNotUse,
+      ::std::string, ::std::string,
+      ::google::protobuf::internal::WireFormatLite::TYPE_STRING,
+      ::google::protobuf::internal::WireFormatLite::TYPE_STRING,
+      0 > partitions_;
+  ::google::protobuf::internal::ArenaStringPtr version_;
+  ::google::protobuf::internal::ArenaStringPtr tag_;
   ::flyteidl::core::ArtifactKey* artifact_key_;
   ::flyteidl::artifact::ArtifactSpec* spec_;
   mutable ::google::protobuf::internal::CachedSize _cached_size_;
@@ -450,7 +507,7 @@ class ArtifactSpec final :
                &_ArtifactSpec_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    2;
+    3;
 
   void Swap(ArtifactSpec* other);
   friend void swap(ArtifactSpec& a, ArtifactSpec& b) {
@@ -506,30 +563,6 @@ class ArtifactSpec final :
   // nested types ----------------------------------------------------
 
   // accessors -------------------------------------------------------
-
-  // repeated .flyteidl.artifact.Tag tags = 3;
-  int tags_size() const;
-  void clear_tags();
-  static const int kTagsFieldNumber = 3;
-  ::flyteidl::artifact::Tag* mutable_tags(int index);
-  ::google::protobuf::RepeatedPtrField< ::flyteidl::artifact::Tag >*
-      mutable_tags();
-  const ::flyteidl::artifact::Tag& tags(int index) const;
-  ::flyteidl::artifact::Tag* add_tags();
-  const ::google::protobuf::RepeatedPtrField< ::flyteidl::artifact::Tag >&
-      tags() const;
-
-  // repeated .flyteidl.core.ArtifactAlias aliases = 4;
-  int aliases_size() const;
-  void clear_aliases();
-  static const int kAliasesFieldNumber = 4;
-  ::flyteidl::core::ArtifactAlias* mutable_aliases(int index);
-  ::google::protobuf::RepeatedPtrField< ::flyteidl::core::ArtifactAlias >*
-      mutable_aliases();
-  const ::flyteidl::core::ArtifactAlias& aliases(int index) const;
-  ::flyteidl::core::ArtifactAlias* add_aliases();
-  const ::google::protobuf::RepeatedPtrField< ::flyteidl::core::ArtifactAlias >&
-      aliases() const;
 
   // string short_description = 8;
   void clear_short_description();
@@ -625,8 +658,6 @@ class ArtifactSpec final :
   inline void clear_has_source();
 
   ::google::protobuf::internal::InternalMetadataWithArena _internal_metadata_;
-  ::google::protobuf::RepeatedPtrField< ::flyteidl::artifact::Tag > tags_;
-  ::google::protobuf::RepeatedPtrField< ::flyteidl::core::ArtifactAlias > aliases_;
   ::google::protobuf::internal::ArenaStringPtr short_description_;
   ::google::protobuf::internal::ArenaStringPtr long_description_;
   ::flyteidl::core::Literal* value_;
@@ -682,7 +713,7 @@ class CreateArtifactResponse final :
                &_CreateArtifactResponse_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    3;
+    4;
 
   void Swap(CreateArtifactResponse* other);
   friend void swap(CreateArtifactResponse& a, CreateArtifactResponse& b) {
@@ -792,8 +823,7 @@ class GetArtifactRequest final :
   static const GetArtifactRequest& default_instance();
 
   enum IdentifierCase {
-    kArtifactKey = 1,
-    kArtifactId = 2,
+    kArtifactId = 1,
     kUri = 3,
     kQuery = 4,
     IDENTIFIER_NOT_SET = 0,
@@ -805,7 +835,7 @@ class GetArtifactRequest final :
                &_GetArtifactRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    4;
+    5;
 
   void Swap(GetArtifactRequest* other);
   friend void swap(GetArtifactRequest& a, GetArtifactRequest& b) {
@@ -868,19 +898,10 @@ class GetArtifactRequest final :
   bool details() const;
   void set_details(bool value);
 
-  // .flyteidl.core.ArtifactKey artifact_key = 1;
-  bool has_artifact_key() const;
-  void clear_artifact_key();
-  static const int kArtifactKeyFieldNumber = 1;
-  const ::flyteidl::core::ArtifactKey& artifact_key() const;
-  ::flyteidl::core::ArtifactKey* release_artifact_key();
-  ::flyteidl::core::ArtifactKey* mutable_artifact_key();
-  void set_allocated_artifact_key(::flyteidl::core::ArtifactKey* artifact_key);
-
-  // .flyteidl.core.ArtifactID artifact_id = 2;
+  // .flyteidl.core.ArtifactID artifact_id = 1;
   bool has_artifact_id() const;
   void clear_artifact_id();
-  static const int kArtifactIdFieldNumber = 2;
+  static const int kArtifactIdFieldNumber = 1;
   const ::flyteidl::core::ArtifactID& artifact_id() const;
   ::flyteidl::core::ArtifactID* release_artifact_id();
   ::flyteidl::core::ArtifactID* mutable_artifact_id();
@@ -917,7 +938,6 @@ class GetArtifactRequest final :
   // @@protoc_insertion_point(class_scope:flyteidl.artifact.GetArtifactRequest)
  private:
   class HasBitSetters;
-  void set_has_artifact_key();
   void set_has_artifact_id();
   void set_has_uri();
   void set_has_query();
@@ -929,7 +949,6 @@ class GetArtifactRequest final :
   bool details_;
   union IdentifierUnion {
     IdentifierUnion() {}
-    ::flyteidl::core::ArtifactKey* artifact_key_;
     ::flyteidl::core::ArtifactID* artifact_id_;
     ::google::protobuf::internal::ArenaStringPtr uri_;
     ::flyteidl::core::ArtifactQuery* query_;
@@ -979,7 +998,7 @@ class GetArtifactResponse final :
                &_GetArtifactResponse_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    5;
+    6;
 
   void Swap(GetArtifactResponse* other);
   friend void swap(GetArtifactResponse& a, GetArtifactResponse& b) {
@@ -1056,607 +1075,6 @@ class GetArtifactResponse final :
 };
 // -------------------------------------------------------------------
 
-class Tag final :
-    public ::google::protobuf::Message /* @@protoc_insertion_point(class_definition:flyteidl.artifact.Tag) */ {
- public:
-  Tag();
-  virtual ~Tag();
-
-  Tag(const Tag& from);
-
-  inline Tag& operator=(const Tag& from) {
-    CopyFrom(from);
-    return *this;
-  }
-  #if LANG_CXX11
-  Tag(Tag&& from) noexcept
-    : Tag() {
-    *this = ::std::move(from);
-  }
-
-  inline Tag& operator=(Tag&& from) noexcept {
-    if (GetArenaNoVirtual() == from.GetArenaNoVirtual()) {
-      if (this != &from) InternalSwap(&from);
-    } else {
-      CopyFrom(from);
-    }
-    return *this;
-  }
-  #endif
-  static const ::google::protobuf::Descriptor* descriptor() {
-    return default_instance().GetDescriptor();
-  }
-  static const Tag& default_instance();
-
-  static void InitAsDefaultInstance();  // FOR INTERNAL USE ONLY
-  static inline const Tag* internal_default_instance() {
-    return reinterpret_cast<const Tag*>(
-               &_Tag_default_instance_);
-  }
-  static constexpr int kIndexInFileMessages =
-    6;
-
-  void Swap(Tag* other);
-  friend void swap(Tag& a, Tag& b) {
-    a.Swap(&b);
-  }
-
-  // implements Message ----------------------------------------------
-
-  inline Tag* New() const final {
-    return CreateMaybeMessage<Tag>(nullptr);
-  }
-
-  Tag* New(::google::protobuf::Arena* arena) const final {
-    return CreateMaybeMessage<Tag>(arena);
-  }
-  void CopyFrom(const ::google::protobuf::Message& from) final;
-  void MergeFrom(const ::google::protobuf::Message& from) final;
-  void CopyFrom(const Tag& from);
-  void MergeFrom(const Tag& from);
-  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
-  bool IsInitialized() const final;
-
-  size_t ByteSizeLong() const final;
-  #if GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
-  static const char* _InternalParse(const char* begin, const char* end, void* object, ::google::protobuf::internal::ParseContext* ctx);
-  ::google::protobuf::internal::ParseFunc _ParseFunc() const final { return _InternalParse; }
-  #else
-  bool MergePartialFromCodedStream(
-      ::google::protobuf::io::CodedInputStream* input) final;
-  #endif  // GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
-  void SerializeWithCachedSizes(
-      ::google::protobuf::io::CodedOutputStream* output) const final;
-  ::google::protobuf::uint8* InternalSerializeWithCachedSizesToArray(
-      ::google::protobuf::uint8* target) const final;
-  int GetCachedSize() const final { return _cached_size_.Get(); }
-
-  private:
-  void SharedCtor();
-  void SharedDtor();
-  void SetCachedSize(int size) const final;
-  void InternalSwap(Tag* other);
-  private:
-  inline ::google::protobuf::Arena* GetArenaNoVirtual() const {
-    return nullptr;
-  }
-  inline void* MaybeArenaPtr() const {
-    return nullptr;
-  }
-  public:
-
-  ::google::protobuf::Metadata GetMetadata() const final;
-
-  // nested types ----------------------------------------------------
-
-  // accessors -------------------------------------------------------
-
-  // string key = 1;
-  void clear_key();
-  static const int kKeyFieldNumber = 1;
-  const ::std::string& key() const;
-  void set_key(const ::std::string& value);
-  #if LANG_CXX11
-  void set_key(::std::string&& value);
-  #endif
-  void set_key(const char* value);
-  void set_key(const char* value, size_t size);
-  ::std::string* mutable_key();
-  ::std::string* release_key();
-  void set_allocated_key(::std::string* key);
-
-  // string value = 2;
-  void clear_value();
-  static const int kValueFieldNumber = 2;
-  const ::std::string& value() const;
-  void set_value(const ::std::string& value);
-  #if LANG_CXX11
-  void set_value(::std::string&& value);
-  #endif
-  void set_value(const char* value);
-  void set_value(const char* value, size_t size);
-  ::std::string* mutable_value();
-  ::std::string* release_value();
-  void set_allocated_value(::std::string* value);
-
-  // @@protoc_insertion_point(class_scope:flyteidl.artifact.Tag)
- private:
-  class HasBitSetters;
-
-  ::google::protobuf::internal::InternalMetadataWithArena _internal_metadata_;
-  ::google::protobuf::internal::ArenaStringPtr key_;
-  ::google::protobuf::internal::ArenaStringPtr value_;
-  mutable ::google::protobuf::internal::CachedSize _cached_size_;
-  friend struct ::TableStruct_flyteidl_2fartifact_2fartifacts_2eproto;
-};
-// -------------------------------------------------------------------
-
-class AddTagsRequest final :
-    public ::google::protobuf::Message /* @@protoc_insertion_point(class_definition:flyteidl.artifact.AddTagsRequest) */ {
- public:
-  AddTagsRequest();
-  virtual ~AddTagsRequest();
-
-  AddTagsRequest(const AddTagsRequest& from);
-
-  inline AddTagsRequest& operator=(const AddTagsRequest& from) {
-    CopyFrom(from);
-    return *this;
-  }
-  #if LANG_CXX11
-  AddTagsRequest(AddTagsRequest&& from) noexcept
-    : AddTagsRequest() {
-    *this = ::std::move(from);
-  }
-
-  inline AddTagsRequest& operator=(AddTagsRequest&& from) noexcept {
-    if (GetArenaNoVirtual() == from.GetArenaNoVirtual()) {
-      if (this != &from) InternalSwap(&from);
-    } else {
-      CopyFrom(from);
-    }
-    return *this;
-  }
-  #endif
-  static const ::google::protobuf::Descriptor* descriptor() {
-    return default_instance().GetDescriptor();
-  }
-  static const AddTagsRequest& default_instance();
-
-  static void InitAsDefaultInstance();  // FOR INTERNAL USE ONLY
-  static inline const AddTagsRequest* internal_default_instance() {
-    return reinterpret_cast<const AddTagsRequest*>(
-               &_AddTagsRequest_default_instance_);
-  }
-  static constexpr int kIndexInFileMessages =
-    7;
-
-  void Swap(AddTagsRequest* other);
-  friend void swap(AddTagsRequest& a, AddTagsRequest& b) {
-    a.Swap(&b);
-  }
-
-  // implements Message ----------------------------------------------
-
-  inline AddTagsRequest* New() const final {
-    return CreateMaybeMessage<AddTagsRequest>(nullptr);
-  }
-
-  AddTagsRequest* New(::google::protobuf::Arena* arena) const final {
-    return CreateMaybeMessage<AddTagsRequest>(arena);
-  }
-  void CopyFrom(const ::google::protobuf::Message& from) final;
-  void MergeFrom(const ::google::protobuf::Message& from) final;
-  void CopyFrom(const AddTagsRequest& from);
-  void MergeFrom(const AddTagsRequest& from);
-  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
-  bool IsInitialized() const final;
-
-  size_t ByteSizeLong() const final;
-  #if GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
-  static const char* _InternalParse(const char* begin, const char* end, void* object, ::google::protobuf::internal::ParseContext* ctx);
-  ::google::protobuf::internal::ParseFunc _ParseFunc() const final { return _InternalParse; }
-  #else
-  bool MergePartialFromCodedStream(
-      ::google::protobuf::io::CodedInputStream* input) final;
-  #endif  // GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
-  void SerializeWithCachedSizes(
-      ::google::protobuf::io::CodedOutputStream* output) const final;
-  ::google::protobuf::uint8* InternalSerializeWithCachedSizesToArray(
-      ::google::protobuf::uint8* target) const final;
-  int GetCachedSize() const final { return _cached_size_.Get(); }
-
-  private:
-  void SharedCtor();
-  void SharedDtor();
-  void SetCachedSize(int size) const final;
-  void InternalSwap(AddTagsRequest* other);
-  private:
-  inline ::google::protobuf::Arena* GetArenaNoVirtual() const {
-    return nullptr;
-  }
-  inline void* MaybeArenaPtr() const {
-    return nullptr;
-  }
-  public:
-
-  ::google::protobuf::Metadata GetMetadata() const final;
-
-  // nested types ----------------------------------------------------
-
-  // accessors -------------------------------------------------------
-
-  // repeated .flyteidl.artifact.Tag tags = 2;
-  int tags_size() const;
-  void clear_tags();
-  static const int kTagsFieldNumber = 2;
-  ::flyteidl::artifact::Tag* mutable_tags(int index);
-  ::google::protobuf::RepeatedPtrField< ::flyteidl::artifact::Tag >*
-      mutable_tags();
-  const ::flyteidl::artifact::Tag& tags(int index) const;
-  ::flyteidl::artifact::Tag* add_tags();
-  const ::google::protobuf::RepeatedPtrField< ::flyteidl::artifact::Tag >&
-      tags() const;
-
-  // .flyteidl.core.ArtifactID artifact_id = 1;
-  bool has_artifact_id() const;
-  void clear_artifact_id();
-  static const int kArtifactIdFieldNumber = 1;
-  const ::flyteidl::core::ArtifactID& artifact_id() const;
-  ::flyteidl::core::ArtifactID* release_artifact_id();
-  ::flyteidl::core::ArtifactID* mutable_artifact_id();
-  void set_allocated_artifact_id(::flyteidl::core::ArtifactID* artifact_id);
-
-  // @@protoc_insertion_point(class_scope:flyteidl.artifact.AddTagsRequest)
- private:
-  class HasBitSetters;
-
-  ::google::protobuf::internal::InternalMetadataWithArena _internal_metadata_;
-  ::google::protobuf::RepeatedPtrField< ::flyteidl::artifact::Tag > tags_;
-  ::flyteidl::core::ArtifactID* artifact_id_;
-  mutable ::google::protobuf::internal::CachedSize _cached_size_;
-  friend struct ::TableStruct_flyteidl_2fartifact_2fartifacts_2eproto;
-};
-// -------------------------------------------------------------------
-
-class AddTagsResponse final :
-    public ::google::protobuf::Message /* @@protoc_insertion_point(class_definition:flyteidl.artifact.AddTagsResponse) */ {
- public:
-  AddTagsResponse();
-  virtual ~AddTagsResponse();
-
-  AddTagsResponse(const AddTagsResponse& from);
-
-  inline AddTagsResponse& operator=(const AddTagsResponse& from) {
-    CopyFrom(from);
-    return *this;
-  }
-  #if LANG_CXX11
-  AddTagsResponse(AddTagsResponse&& from) noexcept
-    : AddTagsResponse() {
-    *this = ::std::move(from);
-  }
-
-  inline AddTagsResponse& operator=(AddTagsResponse&& from) noexcept {
-    if (GetArenaNoVirtual() == from.GetArenaNoVirtual()) {
-      if (this != &from) InternalSwap(&from);
-    } else {
-      CopyFrom(from);
-    }
-    return *this;
-  }
-  #endif
-  static const ::google::protobuf::Descriptor* descriptor() {
-    return default_instance().GetDescriptor();
-  }
-  static const AddTagsResponse& default_instance();
-
-  static void InitAsDefaultInstance();  // FOR INTERNAL USE ONLY
-  static inline const AddTagsResponse* internal_default_instance() {
-    return reinterpret_cast<const AddTagsResponse*>(
-               &_AddTagsResponse_default_instance_);
-  }
-  static constexpr int kIndexInFileMessages =
-    8;
-
-  void Swap(AddTagsResponse* other);
-  friend void swap(AddTagsResponse& a, AddTagsResponse& b) {
-    a.Swap(&b);
-  }
-
-  // implements Message ----------------------------------------------
-
-  inline AddTagsResponse* New() const final {
-    return CreateMaybeMessage<AddTagsResponse>(nullptr);
-  }
-
-  AddTagsResponse* New(::google::protobuf::Arena* arena) const final {
-    return CreateMaybeMessage<AddTagsResponse>(arena);
-  }
-  void CopyFrom(const ::google::protobuf::Message& from) final;
-  void MergeFrom(const ::google::protobuf::Message& from) final;
-  void CopyFrom(const AddTagsResponse& from);
-  void MergeFrom(const AddTagsResponse& from);
-  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
-  bool IsInitialized() const final;
-
-  size_t ByteSizeLong() const final;
-  #if GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
-  static const char* _InternalParse(const char* begin, const char* end, void* object, ::google::protobuf::internal::ParseContext* ctx);
-  ::google::protobuf::internal::ParseFunc _ParseFunc() const final { return _InternalParse; }
-  #else
-  bool MergePartialFromCodedStream(
-      ::google::protobuf::io::CodedInputStream* input) final;
-  #endif  // GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
-  void SerializeWithCachedSizes(
-      ::google::protobuf::io::CodedOutputStream* output) const final;
-  ::google::protobuf::uint8* InternalSerializeWithCachedSizesToArray(
-      ::google::protobuf::uint8* target) const final;
-  int GetCachedSize() const final { return _cached_size_.Get(); }
-
-  private:
-  void SharedCtor();
-  void SharedDtor();
-  void SetCachedSize(int size) const final;
-  void InternalSwap(AddTagsResponse* other);
-  private:
-  inline ::google::protobuf::Arena* GetArenaNoVirtual() const {
-    return nullptr;
-  }
-  inline void* MaybeArenaPtr() const {
-    return nullptr;
-  }
-  public:
-
-  ::google::protobuf::Metadata GetMetadata() const final;
-
-  // nested types ----------------------------------------------------
-
-  // accessors -------------------------------------------------------
-
-  // @@protoc_insertion_point(class_scope:flyteidl.artifact.AddTagsResponse)
- private:
-  class HasBitSetters;
-
-  ::google::protobuf::internal::InternalMetadataWithArena _internal_metadata_;
-  mutable ::google::protobuf::internal::CachedSize _cached_size_;
-  friend struct ::TableStruct_flyteidl_2fartifact_2fartifacts_2eproto;
-};
-// -------------------------------------------------------------------
-
-class RemoveTagsRequest final :
-    public ::google::protobuf::Message /* @@protoc_insertion_point(class_definition:flyteidl.artifact.RemoveTagsRequest) */ {
- public:
-  RemoveTagsRequest();
-  virtual ~RemoveTagsRequest();
-
-  RemoveTagsRequest(const RemoveTagsRequest& from);
-
-  inline RemoveTagsRequest& operator=(const RemoveTagsRequest& from) {
-    CopyFrom(from);
-    return *this;
-  }
-  #if LANG_CXX11
-  RemoveTagsRequest(RemoveTagsRequest&& from) noexcept
-    : RemoveTagsRequest() {
-    *this = ::std::move(from);
-  }
-
-  inline RemoveTagsRequest& operator=(RemoveTagsRequest&& from) noexcept {
-    if (GetArenaNoVirtual() == from.GetArenaNoVirtual()) {
-      if (this != &from) InternalSwap(&from);
-    } else {
-      CopyFrom(from);
-    }
-    return *this;
-  }
-  #endif
-  static const ::google::protobuf::Descriptor* descriptor() {
-    return default_instance().GetDescriptor();
-  }
-  static const RemoveTagsRequest& default_instance();
-
-  static void InitAsDefaultInstance();  // FOR INTERNAL USE ONLY
-  static inline const RemoveTagsRequest* internal_default_instance() {
-    return reinterpret_cast<const RemoveTagsRequest*>(
-               &_RemoveTagsRequest_default_instance_);
-  }
-  static constexpr int kIndexInFileMessages =
-    9;
-
-  void Swap(RemoveTagsRequest* other);
-  friend void swap(RemoveTagsRequest& a, RemoveTagsRequest& b) {
-    a.Swap(&b);
-  }
-
-  // implements Message ----------------------------------------------
-
-  inline RemoveTagsRequest* New() const final {
-    return CreateMaybeMessage<RemoveTagsRequest>(nullptr);
-  }
-
-  RemoveTagsRequest* New(::google::protobuf::Arena* arena) const final {
-    return CreateMaybeMessage<RemoveTagsRequest>(arena);
-  }
-  void CopyFrom(const ::google::protobuf::Message& from) final;
-  void MergeFrom(const ::google::protobuf::Message& from) final;
-  void CopyFrom(const RemoveTagsRequest& from);
-  void MergeFrom(const RemoveTagsRequest& from);
-  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
-  bool IsInitialized() const final;
-
-  size_t ByteSizeLong() const final;
-  #if GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
-  static const char* _InternalParse(const char* begin, const char* end, void* object, ::google::protobuf::internal::ParseContext* ctx);
-  ::google::protobuf::internal::ParseFunc _ParseFunc() const final { return _InternalParse; }
-  #else
-  bool MergePartialFromCodedStream(
-      ::google::protobuf::io::CodedInputStream* input) final;
-  #endif  // GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
-  void SerializeWithCachedSizes(
-      ::google::protobuf::io::CodedOutputStream* output) const final;
-  ::google::protobuf::uint8* InternalSerializeWithCachedSizesToArray(
-      ::google::protobuf::uint8* target) const final;
-  int GetCachedSize() const final { return _cached_size_.Get(); }
-
-  private:
-  void SharedCtor();
-  void SharedDtor();
-  void SetCachedSize(int size) const final;
-  void InternalSwap(RemoveTagsRequest* other);
-  private:
-  inline ::google::protobuf::Arena* GetArenaNoVirtual() const {
-    return nullptr;
-  }
-  inline void* MaybeArenaPtr() const {
-    return nullptr;
-  }
-  public:
-
-  ::google::protobuf::Metadata GetMetadata() const final;
-
-  // nested types ----------------------------------------------------
-
-  // accessors -------------------------------------------------------
-
-  // repeated .flyteidl.artifact.Tag tags = 2;
-  int tags_size() const;
-  void clear_tags();
-  static const int kTagsFieldNumber = 2;
-  ::flyteidl::artifact::Tag* mutable_tags(int index);
-  ::google::protobuf::RepeatedPtrField< ::flyteidl::artifact::Tag >*
-      mutable_tags();
-  const ::flyteidl::artifact::Tag& tags(int index) const;
-  ::flyteidl::artifact::Tag* add_tags();
-  const ::google::protobuf::RepeatedPtrField< ::flyteidl::artifact::Tag >&
-      tags() const;
-
-  // .flyteidl.core.ArtifactID artifact_id = 1;
-  bool has_artifact_id() const;
-  void clear_artifact_id();
-  static const int kArtifactIdFieldNumber = 1;
-  const ::flyteidl::core::ArtifactID& artifact_id() const;
-  ::flyteidl::core::ArtifactID* release_artifact_id();
-  ::flyteidl::core::ArtifactID* mutable_artifact_id();
-  void set_allocated_artifact_id(::flyteidl::core::ArtifactID* artifact_id);
-
-  // @@protoc_insertion_point(class_scope:flyteidl.artifact.RemoveTagsRequest)
- private:
-  class HasBitSetters;
-
-  ::google::protobuf::internal::InternalMetadataWithArena _internal_metadata_;
-  ::google::protobuf::RepeatedPtrField< ::flyteidl::artifact::Tag > tags_;
-  ::flyteidl::core::ArtifactID* artifact_id_;
-  mutable ::google::protobuf::internal::CachedSize _cached_size_;
-  friend struct ::TableStruct_flyteidl_2fartifact_2fartifacts_2eproto;
-};
-// -------------------------------------------------------------------
-
-class RemoveTagsResponse final :
-    public ::google::protobuf::Message /* @@protoc_insertion_point(class_definition:flyteidl.artifact.RemoveTagsResponse) */ {
- public:
-  RemoveTagsResponse();
-  virtual ~RemoveTagsResponse();
-
-  RemoveTagsResponse(const RemoveTagsResponse& from);
-
-  inline RemoveTagsResponse& operator=(const RemoveTagsResponse& from) {
-    CopyFrom(from);
-    return *this;
-  }
-  #if LANG_CXX11
-  RemoveTagsResponse(RemoveTagsResponse&& from) noexcept
-    : RemoveTagsResponse() {
-    *this = ::std::move(from);
-  }
-
-  inline RemoveTagsResponse& operator=(RemoveTagsResponse&& from) noexcept {
-    if (GetArenaNoVirtual() == from.GetArenaNoVirtual()) {
-      if (this != &from) InternalSwap(&from);
-    } else {
-      CopyFrom(from);
-    }
-    return *this;
-  }
-  #endif
-  static const ::google::protobuf::Descriptor* descriptor() {
-    return default_instance().GetDescriptor();
-  }
-  static const RemoveTagsResponse& default_instance();
-
-  static void InitAsDefaultInstance();  // FOR INTERNAL USE ONLY
-  static inline const RemoveTagsResponse* internal_default_instance() {
-    return reinterpret_cast<const RemoveTagsResponse*>(
-               &_RemoveTagsResponse_default_instance_);
-  }
-  static constexpr int kIndexInFileMessages =
-    10;
-
-  void Swap(RemoveTagsResponse* other);
-  friend void swap(RemoveTagsResponse& a, RemoveTagsResponse& b) {
-    a.Swap(&b);
-  }
-
-  // implements Message ----------------------------------------------
-
-  inline RemoveTagsResponse* New() const final {
-    return CreateMaybeMessage<RemoveTagsResponse>(nullptr);
-  }
-
-  RemoveTagsResponse* New(::google::protobuf::Arena* arena) const final {
-    return CreateMaybeMessage<RemoveTagsResponse>(arena);
-  }
-  void CopyFrom(const ::google::protobuf::Message& from) final;
-  void MergeFrom(const ::google::protobuf::Message& from) final;
-  void CopyFrom(const RemoveTagsResponse& from);
-  void MergeFrom(const RemoveTagsResponse& from);
-  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
-  bool IsInitialized() const final;
-
-  size_t ByteSizeLong() const final;
-  #if GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
-  static const char* _InternalParse(const char* begin, const char* end, void* object, ::google::protobuf::internal::ParseContext* ctx);
-  ::google::protobuf::internal::ParseFunc _ParseFunc() const final { return _InternalParse; }
-  #else
-  bool MergePartialFromCodedStream(
-      ::google::protobuf::io::CodedInputStream* input) final;
-  #endif  // GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
-  void SerializeWithCachedSizes(
-      ::google::protobuf::io::CodedOutputStream* output) const final;
-  ::google::protobuf::uint8* InternalSerializeWithCachedSizesToArray(
-      ::google::protobuf::uint8* target) const final;
-  int GetCachedSize() const final { return _cached_size_.Get(); }
-
-  private:
-  void SharedCtor();
-  void SharedDtor();
-  void SetCachedSize(int size) const final;
-  void InternalSwap(RemoveTagsResponse* other);
-  private:
-  inline ::google::protobuf::Arena* GetArenaNoVirtual() const {
-    return nullptr;
-  }
-  inline void* MaybeArenaPtr() const {
-    return nullptr;
-  }
-  public:
-
-  ::google::protobuf::Metadata GetMetadata() const final;
-
-  // nested types ----------------------------------------------------
-
-  // accessors -------------------------------------------------------
-
-  // @@protoc_insertion_point(class_scope:flyteidl.artifact.RemoveTagsResponse)
- private:
-  class HasBitSetters;
-
-  ::google::protobuf::internal::InternalMetadataWithArena _internal_metadata_;
-  mutable ::google::protobuf::internal::CachedSize _cached_size_;
-  friend struct ::TableStruct_flyteidl_2fartifact_2fartifacts_2eproto;
-};
-// -------------------------------------------------------------------
-
 class ListArtifactNamesRequest final :
     public ::google::protobuf::Message /* @@protoc_insertion_point(class_definition:flyteidl.artifact.ListArtifactNamesRequest) */ {
  public:
@@ -1695,7 +1113,7 @@ class ListArtifactNamesRequest final :
                &_ListArtifactNamesRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    11;
+    7;
 
   void Swap(ListArtifactNamesRequest* other);
   friend void swap(ListArtifactNamesRequest& a, ListArtifactNamesRequest& b) {
@@ -1830,7 +1248,7 @@ class ListArtifactNamesResponse final :
                &_ListArtifactNamesResponse_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    12;
+    8;
 
   void Swap(ListArtifactNamesResponse* other);
   friend void swap(ListArtifactNamesResponse& a, ListArtifactNamesResponse& b) {
@@ -1948,7 +1366,7 @@ class ListArtifactsRequest final :
                &_ListArtifactsRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    13;
+    9;
 
   void Swap(ListArtifactsRequest* other);
   friend void swap(ListArtifactsRequest& a, ListArtifactsRequest& b) {
@@ -2063,7 +1481,7 @@ class ListArtifactsResponse final :
                &_ListArtifactsResponse_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    14;
+    10;
 
   void Swap(ListArtifactsResponse* other);
   friend void swap(ListArtifactsResponse& a, ListArtifactsResponse& b) {
@@ -2143,25 +1561,25 @@ class ListArtifactsResponse final :
 };
 // -------------------------------------------------------------------
 
-class CreateAliasRequest final :
-    public ::google::protobuf::Message /* @@protoc_insertion_point(class_definition:flyteidl.artifact.CreateAliasRequest) */ {
+class AddTagRequest final :
+    public ::google::protobuf::Message /* @@protoc_insertion_point(class_definition:flyteidl.artifact.AddTagRequest) */ {
  public:
-  CreateAliasRequest();
-  virtual ~CreateAliasRequest();
+  AddTagRequest();
+  virtual ~AddTagRequest();
 
-  CreateAliasRequest(const CreateAliasRequest& from);
+  AddTagRequest(const AddTagRequest& from);
 
-  inline CreateAliasRequest& operator=(const CreateAliasRequest& from) {
+  inline AddTagRequest& operator=(const AddTagRequest& from) {
     CopyFrom(from);
     return *this;
   }
   #if LANG_CXX11
-  CreateAliasRequest(CreateAliasRequest&& from) noexcept
-    : CreateAliasRequest() {
+  AddTagRequest(AddTagRequest&& from) noexcept
+    : AddTagRequest() {
     *this = ::std::move(from);
   }
 
-  inline CreateAliasRequest& operator=(CreateAliasRequest&& from) noexcept {
+  inline AddTagRequest& operator=(AddTagRequest&& from) noexcept {
     if (GetArenaNoVirtual() == from.GetArenaNoVirtual()) {
       if (this != &from) InternalSwap(&from);
     } else {
@@ -2173,34 +1591,34 @@ class CreateAliasRequest final :
   static const ::google::protobuf::Descriptor* descriptor() {
     return default_instance().GetDescriptor();
   }
-  static const CreateAliasRequest& default_instance();
+  static const AddTagRequest& default_instance();
 
   static void InitAsDefaultInstance();  // FOR INTERNAL USE ONLY
-  static inline const CreateAliasRequest* internal_default_instance() {
-    return reinterpret_cast<const CreateAliasRequest*>(
-               &_CreateAliasRequest_default_instance_);
+  static inline const AddTagRequest* internal_default_instance() {
+    return reinterpret_cast<const AddTagRequest*>(
+               &_AddTagRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    15;
+    11;
 
-  void Swap(CreateAliasRequest* other);
-  friend void swap(CreateAliasRequest& a, CreateAliasRequest& b) {
+  void Swap(AddTagRequest* other);
+  friend void swap(AddTagRequest& a, AddTagRequest& b) {
     a.Swap(&b);
   }
 
   // implements Message ----------------------------------------------
 
-  inline CreateAliasRequest* New() const final {
-    return CreateMaybeMessage<CreateAliasRequest>(nullptr);
+  inline AddTagRequest* New() const final {
+    return CreateMaybeMessage<AddTagRequest>(nullptr);
   }
 
-  CreateAliasRequest* New(::google::protobuf::Arena* arena) const final {
-    return CreateMaybeMessage<CreateAliasRequest>(arena);
+  AddTagRequest* New(::google::protobuf::Arena* arena) const final {
+    return CreateMaybeMessage<AddTagRequest>(arena);
   }
   void CopyFrom(const ::google::protobuf::Message& from) final;
   void MergeFrom(const ::google::protobuf::Message& from) final;
-  void CopyFrom(const CreateAliasRequest& from);
-  void MergeFrom(const CreateAliasRequest& from);
+  void CopyFrom(const AddTagRequest& from);
+  void MergeFrom(const AddTagRequest& from);
   PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
   bool IsInitialized() const final;
 
@@ -2222,7 +1640,7 @@ class CreateAliasRequest final :
   void SharedCtor();
   void SharedDtor();
   void SetCachedSize(int size) const final;
-  void InternalSwap(CreateAliasRequest* other);
+  void InternalSwap(AddTagRequest* other);
   private:
   inline ::google::protobuf::Arena* GetArenaNoVirtual() const {
     return nullptr;
@@ -2238,23 +1656,28 @@ class CreateAliasRequest final :
 
   // accessors -------------------------------------------------------
 
-  // .flyteidl.core.ArtifactKey artifact_key = 1;
-  bool has_artifact_key() const;
-  void clear_artifact_key();
-  static const int kArtifactKeyFieldNumber = 1;
-  const ::flyteidl::core::ArtifactKey& artifact_key() const;
-  ::flyteidl::core::ArtifactKey* release_artifact_key();
-  ::flyteidl::core::ArtifactKey* mutable_artifact_key();
-  void set_allocated_artifact_key(::flyteidl::core::ArtifactKey* artifact_key);
+  // string value = 2;
+  void clear_value();
+  static const int kValueFieldNumber = 2;
+  const ::std::string& value() const;
+  void set_value(const ::std::string& value);
+  #if LANG_CXX11
+  void set_value(::std::string&& value);
+  #endif
+  void set_value(const char* value);
+  void set_value(const char* value, size_t size);
+  ::std::string* mutable_value();
+  ::std::string* release_value();
+  void set_allocated_value(::std::string* value);
 
-  // .flyteidl.core.ArtifactAlias alias = 2;
-  bool has_alias() const;
-  void clear_alias();
-  static const int kAliasFieldNumber = 2;
-  const ::flyteidl::core::ArtifactAlias& alias() const;
-  ::flyteidl::core::ArtifactAlias* release_alias();
-  ::flyteidl::core::ArtifactAlias* mutable_alias();
-  void set_allocated_alias(::flyteidl::core::ArtifactAlias* alias);
+  // .flyteidl.core.ArtifactID artifact_id = 1;
+  bool has_artifact_id() const;
+  void clear_artifact_id();
+  static const int kArtifactIdFieldNumber = 1;
+  const ::flyteidl::core::ArtifactID& artifact_id() const;
+  ::flyteidl::core::ArtifactID* release_artifact_id();
+  ::flyteidl::core::ArtifactID* mutable_artifact_id();
+  void set_allocated_artifact_id(::flyteidl::core::ArtifactID* artifact_id);
 
   // bool overwrite = 3;
   void clear_overwrite();
@@ -2262,38 +1685,38 @@ class CreateAliasRequest final :
   bool overwrite() const;
   void set_overwrite(bool value);
 
-  // @@protoc_insertion_point(class_scope:flyteidl.artifact.CreateAliasRequest)
+  // @@protoc_insertion_point(class_scope:flyteidl.artifact.AddTagRequest)
  private:
   class HasBitSetters;
 
   ::google::protobuf::internal::InternalMetadataWithArena _internal_metadata_;
-  ::flyteidl::core::ArtifactKey* artifact_key_;
-  ::flyteidl::core::ArtifactAlias* alias_;
+  ::google::protobuf::internal::ArenaStringPtr value_;
+  ::flyteidl::core::ArtifactID* artifact_id_;
   bool overwrite_;
   mutable ::google::protobuf::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_flyteidl_2fartifact_2fartifacts_2eproto;
 };
 // -------------------------------------------------------------------
 
-class CreateAliasResponse final :
-    public ::google::protobuf::Message /* @@protoc_insertion_point(class_definition:flyteidl.artifact.CreateAliasResponse) */ {
+class AddTagResponse final :
+    public ::google::protobuf::Message /* @@protoc_insertion_point(class_definition:flyteidl.artifact.AddTagResponse) */ {
  public:
-  CreateAliasResponse();
-  virtual ~CreateAliasResponse();
+  AddTagResponse();
+  virtual ~AddTagResponse();
 
-  CreateAliasResponse(const CreateAliasResponse& from);
+  AddTagResponse(const AddTagResponse& from);
 
-  inline CreateAliasResponse& operator=(const CreateAliasResponse& from) {
+  inline AddTagResponse& operator=(const AddTagResponse& from) {
     CopyFrom(from);
     return *this;
   }
   #if LANG_CXX11
-  CreateAliasResponse(CreateAliasResponse&& from) noexcept
-    : CreateAliasResponse() {
+  AddTagResponse(AddTagResponse&& from) noexcept
+    : AddTagResponse() {
     *this = ::std::move(from);
   }
 
-  inline CreateAliasResponse& operator=(CreateAliasResponse&& from) noexcept {
+  inline AddTagResponse& operator=(AddTagResponse&& from) noexcept {
     if (GetArenaNoVirtual() == from.GetArenaNoVirtual()) {
       if (this != &from) InternalSwap(&from);
     } else {
@@ -2305,34 +1728,34 @@ class CreateAliasResponse final :
   static const ::google::protobuf::Descriptor* descriptor() {
     return default_instance().GetDescriptor();
   }
-  static const CreateAliasResponse& default_instance();
+  static const AddTagResponse& default_instance();
 
   static void InitAsDefaultInstance();  // FOR INTERNAL USE ONLY
-  static inline const CreateAliasResponse* internal_default_instance() {
-    return reinterpret_cast<const CreateAliasResponse*>(
-               &_CreateAliasResponse_default_instance_);
+  static inline const AddTagResponse* internal_default_instance() {
+    return reinterpret_cast<const AddTagResponse*>(
+               &_AddTagResponse_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    16;
+    12;
 
-  void Swap(CreateAliasResponse* other);
-  friend void swap(CreateAliasResponse& a, CreateAliasResponse& b) {
+  void Swap(AddTagResponse* other);
+  friend void swap(AddTagResponse& a, AddTagResponse& b) {
     a.Swap(&b);
   }
 
   // implements Message ----------------------------------------------
 
-  inline CreateAliasResponse* New() const final {
-    return CreateMaybeMessage<CreateAliasResponse>(nullptr);
+  inline AddTagResponse* New() const final {
+    return CreateMaybeMessage<AddTagResponse>(nullptr);
   }
 
-  CreateAliasResponse* New(::google::protobuf::Arena* arena) const final {
-    return CreateMaybeMessage<CreateAliasResponse>(arena);
+  AddTagResponse* New(::google::protobuf::Arena* arena) const final {
+    return CreateMaybeMessage<AddTagResponse>(arena);
   }
   void CopyFrom(const ::google::protobuf::Message& from) final;
   void MergeFrom(const ::google::protobuf::Message& from) final;
-  void CopyFrom(const CreateAliasResponse& from);
-  void MergeFrom(const CreateAliasResponse& from);
+  void CopyFrom(const AddTagResponse& from);
+  void MergeFrom(const AddTagResponse& from);
   PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
   bool IsInitialized() const final;
 
@@ -2354,7 +1777,7 @@ class CreateAliasResponse final :
   void SharedCtor();
   void SharedDtor();
   void SetCachedSize(int size) const final;
-  void InternalSwap(CreateAliasResponse* other);
+  void InternalSwap(AddTagResponse* other);
   private:
   inline ::google::protobuf::Arena* GetArenaNoVirtual() const {
     return nullptr;
@@ -2370,237 +1793,7 @@ class CreateAliasResponse final :
 
   // accessors -------------------------------------------------------
 
-  // @@protoc_insertion_point(class_scope:flyteidl.artifact.CreateAliasResponse)
- private:
-  class HasBitSetters;
-
-  ::google::protobuf::internal::InternalMetadataWithArena _internal_metadata_;
-  mutable ::google::protobuf::internal::CachedSize _cached_size_;
-  friend struct ::TableStruct_flyteidl_2fartifact_2fartifacts_2eproto;
-};
-// -------------------------------------------------------------------
-
-class RemoveAliasRequest final :
-    public ::google::protobuf::Message /* @@protoc_insertion_point(class_definition:flyteidl.artifact.RemoveAliasRequest) */ {
- public:
-  RemoveAliasRequest();
-  virtual ~RemoveAliasRequest();
-
-  RemoveAliasRequest(const RemoveAliasRequest& from);
-
-  inline RemoveAliasRequest& operator=(const RemoveAliasRequest& from) {
-    CopyFrom(from);
-    return *this;
-  }
-  #if LANG_CXX11
-  RemoveAliasRequest(RemoveAliasRequest&& from) noexcept
-    : RemoveAliasRequest() {
-    *this = ::std::move(from);
-  }
-
-  inline RemoveAliasRequest& operator=(RemoveAliasRequest&& from) noexcept {
-    if (GetArenaNoVirtual() == from.GetArenaNoVirtual()) {
-      if (this != &from) InternalSwap(&from);
-    } else {
-      CopyFrom(from);
-    }
-    return *this;
-  }
-  #endif
-  static const ::google::protobuf::Descriptor* descriptor() {
-    return default_instance().GetDescriptor();
-  }
-  static const RemoveAliasRequest& default_instance();
-
-  static void InitAsDefaultInstance();  // FOR INTERNAL USE ONLY
-  static inline const RemoveAliasRequest* internal_default_instance() {
-    return reinterpret_cast<const RemoveAliasRequest*>(
-               &_RemoveAliasRequest_default_instance_);
-  }
-  static constexpr int kIndexInFileMessages =
-    17;
-
-  void Swap(RemoveAliasRequest* other);
-  friend void swap(RemoveAliasRequest& a, RemoveAliasRequest& b) {
-    a.Swap(&b);
-  }
-
-  // implements Message ----------------------------------------------
-
-  inline RemoveAliasRequest* New() const final {
-    return CreateMaybeMessage<RemoveAliasRequest>(nullptr);
-  }
-
-  RemoveAliasRequest* New(::google::protobuf::Arena* arena) const final {
-    return CreateMaybeMessage<RemoveAliasRequest>(arena);
-  }
-  void CopyFrom(const ::google::protobuf::Message& from) final;
-  void MergeFrom(const ::google::protobuf::Message& from) final;
-  void CopyFrom(const RemoveAliasRequest& from);
-  void MergeFrom(const RemoveAliasRequest& from);
-  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
-  bool IsInitialized() const final;
-
-  size_t ByteSizeLong() const final;
-  #if GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
-  static const char* _InternalParse(const char* begin, const char* end, void* object, ::google::protobuf::internal::ParseContext* ctx);
-  ::google::protobuf::internal::ParseFunc _ParseFunc() const final { return _InternalParse; }
-  #else
-  bool MergePartialFromCodedStream(
-      ::google::protobuf::io::CodedInputStream* input) final;
-  #endif  // GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
-  void SerializeWithCachedSizes(
-      ::google::protobuf::io::CodedOutputStream* output) const final;
-  ::google::protobuf::uint8* InternalSerializeWithCachedSizesToArray(
-      ::google::protobuf::uint8* target) const final;
-  int GetCachedSize() const final { return _cached_size_.Get(); }
-
-  private:
-  void SharedCtor();
-  void SharedDtor();
-  void SetCachedSize(int size) const final;
-  void InternalSwap(RemoveAliasRequest* other);
-  private:
-  inline ::google::protobuf::Arena* GetArenaNoVirtual() const {
-    return nullptr;
-  }
-  inline void* MaybeArenaPtr() const {
-    return nullptr;
-  }
-  public:
-
-  ::google::protobuf::Metadata GetMetadata() const final;
-
-  // nested types ----------------------------------------------------
-
-  // accessors -------------------------------------------------------
-
-  // .flyteidl.core.ArtifactKey artifact_key = 1;
-  bool has_artifact_key() const;
-  void clear_artifact_key();
-  static const int kArtifactKeyFieldNumber = 1;
-  const ::flyteidl::core::ArtifactKey& artifact_key() const;
-  ::flyteidl::core::ArtifactKey* release_artifact_key();
-  ::flyteidl::core::ArtifactKey* mutable_artifact_key();
-  void set_allocated_artifact_key(::flyteidl::core::ArtifactKey* artifact_key);
-
-  // .flyteidl.core.ArtifactAlias alias = 2;
-  bool has_alias() const;
-  void clear_alias();
-  static const int kAliasFieldNumber = 2;
-  const ::flyteidl::core::ArtifactAlias& alias() const;
-  ::flyteidl::core::ArtifactAlias* release_alias();
-  ::flyteidl::core::ArtifactAlias* mutable_alias();
-  void set_allocated_alias(::flyteidl::core::ArtifactAlias* alias);
-
-  // @@protoc_insertion_point(class_scope:flyteidl.artifact.RemoveAliasRequest)
- private:
-  class HasBitSetters;
-
-  ::google::protobuf::internal::InternalMetadataWithArena _internal_metadata_;
-  ::flyteidl::core::ArtifactKey* artifact_key_;
-  ::flyteidl::core::ArtifactAlias* alias_;
-  mutable ::google::protobuf::internal::CachedSize _cached_size_;
-  friend struct ::TableStruct_flyteidl_2fartifact_2fartifacts_2eproto;
-};
-// -------------------------------------------------------------------
-
-class RemoveAliasResponse final :
-    public ::google::protobuf::Message /* @@protoc_insertion_point(class_definition:flyteidl.artifact.RemoveAliasResponse) */ {
- public:
-  RemoveAliasResponse();
-  virtual ~RemoveAliasResponse();
-
-  RemoveAliasResponse(const RemoveAliasResponse& from);
-
-  inline RemoveAliasResponse& operator=(const RemoveAliasResponse& from) {
-    CopyFrom(from);
-    return *this;
-  }
-  #if LANG_CXX11
-  RemoveAliasResponse(RemoveAliasResponse&& from) noexcept
-    : RemoveAliasResponse() {
-    *this = ::std::move(from);
-  }
-
-  inline RemoveAliasResponse& operator=(RemoveAliasResponse&& from) noexcept {
-    if (GetArenaNoVirtual() == from.GetArenaNoVirtual()) {
-      if (this != &from) InternalSwap(&from);
-    } else {
-      CopyFrom(from);
-    }
-    return *this;
-  }
-  #endif
-  static const ::google::protobuf::Descriptor* descriptor() {
-    return default_instance().GetDescriptor();
-  }
-  static const RemoveAliasResponse& default_instance();
-
-  static void InitAsDefaultInstance();  // FOR INTERNAL USE ONLY
-  static inline const RemoveAliasResponse* internal_default_instance() {
-    return reinterpret_cast<const RemoveAliasResponse*>(
-               &_RemoveAliasResponse_default_instance_);
-  }
-  static constexpr int kIndexInFileMessages =
-    18;
-
-  void Swap(RemoveAliasResponse* other);
-  friend void swap(RemoveAliasResponse& a, RemoveAliasResponse& b) {
-    a.Swap(&b);
-  }
-
-  // implements Message ----------------------------------------------
-
-  inline RemoveAliasResponse* New() const final {
-    return CreateMaybeMessage<RemoveAliasResponse>(nullptr);
-  }
-
-  RemoveAliasResponse* New(::google::protobuf::Arena* arena) const final {
-    return CreateMaybeMessage<RemoveAliasResponse>(arena);
-  }
-  void CopyFrom(const ::google::protobuf::Message& from) final;
-  void MergeFrom(const ::google::protobuf::Message& from) final;
-  void CopyFrom(const RemoveAliasResponse& from);
-  void MergeFrom(const RemoveAliasResponse& from);
-  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
-  bool IsInitialized() const final;
-
-  size_t ByteSizeLong() const final;
-  #if GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
-  static const char* _InternalParse(const char* begin, const char* end, void* object, ::google::protobuf::internal::ParseContext* ctx);
-  ::google::protobuf::internal::ParseFunc _ParseFunc() const final { return _InternalParse; }
-  #else
-  bool MergePartialFromCodedStream(
-      ::google::protobuf::io::CodedInputStream* input) final;
-  #endif  // GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
-  void SerializeWithCachedSizes(
-      ::google::protobuf::io::CodedOutputStream* output) const final;
-  ::google::protobuf::uint8* InternalSerializeWithCachedSizesToArray(
-      ::google::protobuf::uint8* target) const final;
-  int GetCachedSize() const final { return _cached_size_.Get(); }
-
-  private:
-  void SharedCtor();
-  void SharedDtor();
-  void SetCachedSize(int size) const final;
-  void InternalSwap(RemoveAliasResponse* other);
-  private:
-  inline ::google::protobuf::Arena* GetArenaNoVirtual() const {
-    return nullptr;
-  }
-  inline void* MaybeArenaPtr() const {
-    return nullptr;
-  }
-  public:
-
-  ::google::protobuf::Metadata GetMetadata() const final;
-
-  // nested types ----------------------------------------------------
-
-  // accessors -------------------------------------------------------
-
-  // @@protoc_insertion_point(class_scope:flyteidl.artifact.RemoveAliasResponse)
+  // @@protoc_insertion_point(class_scope:flyteidl.artifact.AddTagResponse)
  private:
   class HasBitSetters;
 
@@ -2664,60 +1857,7 @@ inline void Artifact::set_allocated_artifact_id(::flyteidl::core::ArtifactID* ar
   // @@protoc_insertion_point(field_set_allocated:flyteidl.artifact.Artifact.artifact_id)
 }
 
-// string uri = 2;
-inline void Artifact::clear_uri() {
-  uri_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-}
-inline const ::std::string& Artifact::uri() const {
-  // @@protoc_insertion_point(field_get:flyteidl.artifact.Artifact.uri)
-  return uri_.GetNoArena();
-}
-inline void Artifact::set_uri(const ::std::string& value) {
-  
-  uri_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
-  // @@protoc_insertion_point(field_set:flyteidl.artifact.Artifact.uri)
-}
-#if LANG_CXX11
-inline void Artifact::set_uri(::std::string&& value) {
-  
-  uri_.SetNoArena(
-    &::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::move(value));
-  // @@protoc_insertion_point(field_set_rvalue:flyteidl.artifact.Artifact.uri)
-}
-#endif
-inline void Artifact::set_uri(const char* value) {
-  GOOGLE_DCHECK(value != nullptr);
-  
-  uri_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
-  // @@protoc_insertion_point(field_set_char:flyteidl.artifact.Artifact.uri)
-}
-inline void Artifact::set_uri(const char* value, size_t size) {
-  
-  uri_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
-      ::std::string(reinterpret_cast<const char*>(value), size));
-  // @@protoc_insertion_point(field_set_pointer:flyteidl.artifact.Artifact.uri)
-}
-inline ::std::string* Artifact::mutable_uri() {
-  
-  // @@protoc_insertion_point(field_mutable:flyteidl.artifact.Artifact.uri)
-  return uri_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-}
-inline ::std::string* Artifact::release_uri() {
-  // @@protoc_insertion_point(field_release:flyteidl.artifact.Artifact.uri)
-  
-  return uri_.ReleaseNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-}
-inline void Artifact::set_allocated_uri(::std::string* uri) {
-  if (uri != nullptr) {
-    
-  } else {
-    
-  }
-  uri_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), uri);
-  // @@protoc_insertion_point(field_set_allocated:flyteidl.artifact.Artifact.uri)
-}
-
-// .flyteidl.artifact.ArtifactSpec spec = 3;
+// .flyteidl.artifact.ArtifactSpec spec = 2;
 inline bool Artifact::has_spec() const {
   return this != internal_default_instance() && spec_ != nullptr;
 }
@@ -2768,6 +1908,77 @@ inline void Artifact::set_allocated_spec(::flyteidl::artifact::ArtifactSpec* spe
   // @@protoc_insertion_point(field_set_allocated:flyteidl.artifact.Artifact.spec)
 }
 
+// repeated string tags = 3;
+inline int Artifact::tags_size() const {
+  return tags_.size();
+}
+inline void Artifact::clear_tags() {
+  tags_.Clear();
+}
+inline const ::std::string& Artifact::tags(int index) const {
+  // @@protoc_insertion_point(field_get:flyteidl.artifact.Artifact.tags)
+  return tags_.Get(index);
+}
+inline ::std::string* Artifact::mutable_tags(int index) {
+  // @@protoc_insertion_point(field_mutable:flyteidl.artifact.Artifact.tags)
+  return tags_.Mutable(index);
+}
+inline void Artifact::set_tags(int index, const ::std::string& value) {
+  // @@protoc_insertion_point(field_set:flyteidl.artifact.Artifact.tags)
+  tags_.Mutable(index)->assign(value);
+}
+#if LANG_CXX11
+inline void Artifact::set_tags(int index, ::std::string&& value) {
+  // @@protoc_insertion_point(field_set:flyteidl.artifact.Artifact.tags)
+  tags_.Mutable(index)->assign(std::move(value));
+}
+#endif
+inline void Artifact::set_tags(int index, const char* value) {
+  GOOGLE_DCHECK(value != nullptr);
+  tags_.Mutable(index)->assign(value);
+  // @@protoc_insertion_point(field_set_char:flyteidl.artifact.Artifact.tags)
+}
+inline void Artifact::set_tags(int index, const char* value, size_t size) {
+  tags_.Mutable(index)->assign(
+    reinterpret_cast<const char*>(value), size);
+  // @@protoc_insertion_point(field_set_pointer:flyteidl.artifact.Artifact.tags)
+}
+inline ::std::string* Artifact::add_tags() {
+  // @@protoc_insertion_point(field_add_mutable:flyteidl.artifact.Artifact.tags)
+  return tags_.Add();
+}
+inline void Artifact::add_tags(const ::std::string& value) {
+  tags_.Add()->assign(value);
+  // @@protoc_insertion_point(field_add:flyteidl.artifact.Artifact.tags)
+}
+#if LANG_CXX11
+inline void Artifact::add_tags(::std::string&& value) {
+  tags_.Add(std::move(value));
+  // @@protoc_insertion_point(field_add:flyteidl.artifact.Artifact.tags)
+}
+#endif
+inline void Artifact::add_tags(const char* value) {
+  GOOGLE_DCHECK(value != nullptr);
+  tags_.Add()->assign(value);
+  // @@protoc_insertion_point(field_add_char:flyteidl.artifact.Artifact.tags)
+}
+inline void Artifact::add_tags(const char* value, size_t size) {
+  tags_.Add()->assign(reinterpret_cast<const char*>(value), size);
+  // @@protoc_insertion_point(field_add_pointer:flyteidl.artifact.Artifact.tags)
+}
+inline const ::google::protobuf::RepeatedPtrField<::std::string>&
+Artifact::tags() const {
+  // @@protoc_insertion_point(field_list:flyteidl.artifact.Artifact.tags)
+  return tags_;
+}
+inline ::google::protobuf::RepeatedPtrField<::std::string>*
+Artifact::mutable_tags() {
+  // @@protoc_insertion_point(field_mutable_list:flyteidl.artifact.Artifact.tags)
+  return &tags_;
+}
+
+// -------------------------------------------------------------------
+
 // -------------------------------------------------------------------
 
 // CreateArtifactRequest
@@ -2815,6 +2026,59 @@ inline void CreateArtifactRequest::set_allocated_artifact_key(::flyteidl::core::
   }
   artifact_key_ = artifact_key;
   // @@protoc_insertion_point(field_set_allocated:flyteidl.artifact.CreateArtifactRequest.artifact_key)
+}
+
+// string version = 3;
+inline void CreateArtifactRequest::clear_version() {
+  version_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline const ::std::string& CreateArtifactRequest::version() const {
+  // @@protoc_insertion_point(field_get:flyteidl.artifact.CreateArtifactRequest.version)
+  return version_.GetNoArena();
+}
+inline void CreateArtifactRequest::set_version(const ::std::string& value) {
+  
+  version_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
+  // @@protoc_insertion_point(field_set:flyteidl.artifact.CreateArtifactRequest.version)
+}
+#if LANG_CXX11
+inline void CreateArtifactRequest::set_version(::std::string&& value) {
+  
+  version_.SetNoArena(
+    &::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::move(value));
+  // @@protoc_insertion_point(field_set_rvalue:flyteidl.artifact.CreateArtifactRequest.version)
+}
+#endif
+inline void CreateArtifactRequest::set_version(const char* value) {
+  GOOGLE_DCHECK(value != nullptr);
+  
+  version_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
+  // @@protoc_insertion_point(field_set_char:flyteidl.artifact.CreateArtifactRequest.version)
+}
+inline void CreateArtifactRequest::set_version(const char* value, size_t size) {
+  
+  version_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
+      ::std::string(reinterpret_cast<const char*>(value), size));
+  // @@protoc_insertion_point(field_set_pointer:flyteidl.artifact.CreateArtifactRequest.version)
+}
+inline ::std::string* CreateArtifactRequest::mutable_version() {
+  
+  // @@protoc_insertion_point(field_mutable:flyteidl.artifact.CreateArtifactRequest.version)
+  return version_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline ::std::string* CreateArtifactRequest::release_version() {
+  // @@protoc_insertion_point(field_release:flyteidl.artifact.CreateArtifactRequest.version)
+  
+  return version_.ReleaseNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline void CreateArtifactRequest::set_allocated_version(::std::string* version) {
+  if (version != nullptr) {
+    
+  } else {
+    
+  }
+  version_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), version);
+  // @@protoc_insertion_point(field_set_allocated:flyteidl.artifact.CreateArtifactRequest.version)
 }
 
 // .flyteidl.artifact.ArtifactSpec spec = 2;
@@ -2866,6 +2130,77 @@ inline void CreateArtifactRequest::set_allocated_spec(::flyteidl::artifact::Arti
   }
   spec_ = spec;
   // @@protoc_insertion_point(field_set_allocated:flyteidl.artifact.CreateArtifactRequest.spec)
+}
+
+// map<string, string> partitions = 4;
+inline int CreateArtifactRequest::partitions_size() const {
+  return partitions_.size();
+}
+inline void CreateArtifactRequest::clear_partitions() {
+  partitions_.Clear();
+}
+inline const ::google::protobuf::Map< ::std::string, ::std::string >&
+CreateArtifactRequest::partitions() const {
+  // @@protoc_insertion_point(field_map:flyteidl.artifact.CreateArtifactRequest.partitions)
+  return partitions_.GetMap();
+}
+inline ::google::protobuf::Map< ::std::string, ::std::string >*
+CreateArtifactRequest::mutable_partitions() {
+  // @@protoc_insertion_point(field_mutable_map:flyteidl.artifact.CreateArtifactRequest.partitions)
+  return partitions_.MutableMap();
+}
+
+// string tag = 5;
+inline void CreateArtifactRequest::clear_tag() {
+  tag_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline const ::std::string& CreateArtifactRequest::tag() const {
+  // @@protoc_insertion_point(field_get:flyteidl.artifact.CreateArtifactRequest.tag)
+  return tag_.GetNoArena();
+}
+inline void CreateArtifactRequest::set_tag(const ::std::string& value) {
+  
+  tag_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
+  // @@protoc_insertion_point(field_set:flyteidl.artifact.CreateArtifactRequest.tag)
+}
+#if LANG_CXX11
+inline void CreateArtifactRequest::set_tag(::std::string&& value) {
+  
+  tag_.SetNoArena(
+    &::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::move(value));
+  // @@protoc_insertion_point(field_set_rvalue:flyteidl.artifact.CreateArtifactRequest.tag)
+}
+#endif
+inline void CreateArtifactRequest::set_tag(const char* value) {
+  GOOGLE_DCHECK(value != nullptr);
+  
+  tag_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
+  // @@protoc_insertion_point(field_set_char:flyteidl.artifact.CreateArtifactRequest.tag)
+}
+inline void CreateArtifactRequest::set_tag(const char* value, size_t size) {
+  
+  tag_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
+      ::std::string(reinterpret_cast<const char*>(value), size));
+  // @@protoc_insertion_point(field_set_pointer:flyteidl.artifact.CreateArtifactRequest.tag)
+}
+inline ::std::string* CreateArtifactRequest::mutable_tag() {
+  
+  // @@protoc_insertion_point(field_mutable:flyteidl.artifact.CreateArtifactRequest.tag)
+  return tag_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline ::std::string* CreateArtifactRequest::release_tag() {
+  // @@protoc_insertion_point(field_release:flyteidl.artifact.CreateArtifactRequest.tag)
+  
+  return tag_.ReleaseNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline void CreateArtifactRequest::set_allocated_tag(::std::string* tag) {
+  if (tag != nullptr) {
+    
+  } else {
+    
+  }
+  tag_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), tag);
+  // @@protoc_insertion_point(field_set_allocated:flyteidl.artifact.CreateArtifactRequest.tag)
 }
 
 // -------------------------------------------------------------------
@@ -2960,63 +2295,6 @@ inline void ArtifactSpec::set_allocated_type(::flyteidl::core::LiteralType* type
   }
   type_ = type;
   // @@protoc_insertion_point(field_set_allocated:flyteidl.artifact.ArtifactSpec.type)
-}
-
-// repeated .flyteidl.artifact.Tag tags = 3;
-inline int ArtifactSpec::tags_size() const {
-  return tags_.size();
-}
-inline void ArtifactSpec::clear_tags() {
-  tags_.Clear();
-}
-inline ::flyteidl::artifact::Tag* ArtifactSpec::mutable_tags(int index) {
-  // @@protoc_insertion_point(field_mutable:flyteidl.artifact.ArtifactSpec.tags)
-  return tags_.Mutable(index);
-}
-inline ::google::protobuf::RepeatedPtrField< ::flyteidl::artifact::Tag >*
-ArtifactSpec::mutable_tags() {
-  // @@protoc_insertion_point(field_mutable_list:flyteidl.artifact.ArtifactSpec.tags)
-  return &tags_;
-}
-inline const ::flyteidl::artifact::Tag& ArtifactSpec::tags(int index) const {
-  // @@protoc_insertion_point(field_get:flyteidl.artifact.ArtifactSpec.tags)
-  return tags_.Get(index);
-}
-inline ::flyteidl::artifact::Tag* ArtifactSpec::add_tags() {
-  // @@protoc_insertion_point(field_add:flyteidl.artifact.ArtifactSpec.tags)
-  return tags_.Add();
-}
-inline const ::google::protobuf::RepeatedPtrField< ::flyteidl::artifact::Tag >&
-ArtifactSpec::tags() const {
-  // @@protoc_insertion_point(field_list:flyteidl.artifact.ArtifactSpec.tags)
-  return tags_;
-}
-
-// repeated .flyteidl.core.ArtifactAlias aliases = 4;
-inline int ArtifactSpec::aliases_size() const {
-  return aliases_.size();
-}
-inline ::flyteidl::core::ArtifactAlias* ArtifactSpec::mutable_aliases(int index) {
-  // @@protoc_insertion_point(field_mutable:flyteidl.artifact.ArtifactSpec.aliases)
-  return aliases_.Mutable(index);
-}
-inline ::google::protobuf::RepeatedPtrField< ::flyteidl::core::ArtifactAlias >*
-ArtifactSpec::mutable_aliases() {
-  // @@protoc_insertion_point(field_mutable_list:flyteidl.artifact.ArtifactSpec.aliases)
-  return &aliases_;
-}
-inline const ::flyteidl::core::ArtifactAlias& ArtifactSpec::aliases(int index) const {
-  // @@protoc_insertion_point(field_get:flyteidl.artifact.ArtifactSpec.aliases)
-  return aliases_.Get(index);
-}
-inline ::flyteidl::core::ArtifactAlias* ArtifactSpec::add_aliases() {
-  // @@protoc_insertion_point(field_add:flyteidl.artifact.ArtifactSpec.aliases)
-  return aliases_.Add();
-}
-inline const ::google::protobuf::RepeatedPtrField< ::flyteidl::core::ArtifactAlias >&
-ArtifactSpec::aliases() const {
-  // @@protoc_insertion_point(field_list:flyteidl.artifact.ArtifactSpec.aliases)
-  return aliases_;
 }
 
 // .flyteidl.core.TaskExecutionIdentifier task_execution = 5;
@@ -3355,42 +2633,7 @@ inline void CreateArtifactResponse::set_allocated_artifact(::flyteidl::artifact:
 
 // GetArtifactRequest
 
-// .flyteidl.core.ArtifactKey artifact_key = 1;
-inline bool GetArtifactRequest::has_artifact_key() const {
-  return identifier_case() == kArtifactKey;
-}
-inline void GetArtifactRequest::set_has_artifact_key() {
-  _oneof_case_[0] = kArtifactKey;
-}
-inline ::flyteidl::core::ArtifactKey* GetArtifactRequest::release_artifact_key() {
-  // @@protoc_insertion_point(field_release:flyteidl.artifact.GetArtifactRequest.artifact_key)
-  if (has_artifact_key()) {
-    clear_has_identifier();
-      ::flyteidl::core::ArtifactKey* temp = identifier_.artifact_key_;
-    identifier_.artifact_key_ = nullptr;
-    return temp;
-  } else {
-    return nullptr;
-  }
-}
-inline const ::flyteidl::core::ArtifactKey& GetArtifactRequest::artifact_key() const {
-  // @@protoc_insertion_point(field_get:flyteidl.artifact.GetArtifactRequest.artifact_key)
-  return has_artifact_key()
-      ? *identifier_.artifact_key_
-      : *reinterpret_cast< ::flyteidl::core::ArtifactKey*>(&::flyteidl::core::_ArtifactKey_default_instance_);
-}
-inline ::flyteidl::core::ArtifactKey* GetArtifactRequest::mutable_artifact_key() {
-  if (!has_artifact_key()) {
-    clear_identifier();
-    set_has_artifact_key();
-    identifier_.artifact_key_ = CreateMaybeMessage< ::flyteidl::core::ArtifactKey >(
-        GetArenaNoVirtual());
-  }
-  // @@protoc_insertion_point(field_mutable:flyteidl.artifact.GetArtifactRequest.artifact_key)
-  return identifier_.artifact_key_;
-}
-
-// .flyteidl.core.ArtifactID artifact_id = 2;
+// .flyteidl.core.ArtifactID artifact_id = 1;
 inline bool GetArtifactRequest::has_artifact_id() const {
   return identifier_case() == kArtifactId;
 }
@@ -3632,282 +2875,6 @@ inline void GetArtifactResponse::set_allocated_artifact(::flyteidl::artifact::Ar
 
 // -------------------------------------------------------------------
 
-// Tag
-
-// string key = 1;
-inline void Tag::clear_key() {
-  key_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-}
-inline const ::std::string& Tag::key() const {
-  // @@protoc_insertion_point(field_get:flyteidl.artifact.Tag.key)
-  return key_.GetNoArena();
-}
-inline void Tag::set_key(const ::std::string& value) {
-  
-  key_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
-  // @@protoc_insertion_point(field_set:flyteidl.artifact.Tag.key)
-}
-#if LANG_CXX11
-inline void Tag::set_key(::std::string&& value) {
-  
-  key_.SetNoArena(
-    &::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::move(value));
-  // @@protoc_insertion_point(field_set_rvalue:flyteidl.artifact.Tag.key)
-}
-#endif
-inline void Tag::set_key(const char* value) {
-  GOOGLE_DCHECK(value != nullptr);
-  
-  key_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
-  // @@protoc_insertion_point(field_set_char:flyteidl.artifact.Tag.key)
-}
-inline void Tag::set_key(const char* value, size_t size) {
-  
-  key_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
-      ::std::string(reinterpret_cast<const char*>(value), size));
-  // @@protoc_insertion_point(field_set_pointer:flyteidl.artifact.Tag.key)
-}
-inline ::std::string* Tag::mutable_key() {
-  
-  // @@protoc_insertion_point(field_mutable:flyteidl.artifact.Tag.key)
-  return key_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-}
-inline ::std::string* Tag::release_key() {
-  // @@protoc_insertion_point(field_release:flyteidl.artifact.Tag.key)
-  
-  return key_.ReleaseNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-}
-inline void Tag::set_allocated_key(::std::string* key) {
-  if (key != nullptr) {
-    
-  } else {
-    
-  }
-  key_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), key);
-  // @@protoc_insertion_point(field_set_allocated:flyteidl.artifact.Tag.key)
-}
-
-// string value = 2;
-inline void Tag::clear_value() {
-  value_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-}
-inline const ::std::string& Tag::value() const {
-  // @@protoc_insertion_point(field_get:flyteidl.artifact.Tag.value)
-  return value_.GetNoArena();
-}
-inline void Tag::set_value(const ::std::string& value) {
-  
-  value_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
-  // @@protoc_insertion_point(field_set:flyteidl.artifact.Tag.value)
-}
-#if LANG_CXX11
-inline void Tag::set_value(::std::string&& value) {
-  
-  value_.SetNoArena(
-    &::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::move(value));
-  // @@protoc_insertion_point(field_set_rvalue:flyteidl.artifact.Tag.value)
-}
-#endif
-inline void Tag::set_value(const char* value) {
-  GOOGLE_DCHECK(value != nullptr);
-  
-  value_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
-  // @@protoc_insertion_point(field_set_char:flyteidl.artifact.Tag.value)
-}
-inline void Tag::set_value(const char* value, size_t size) {
-  
-  value_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
-      ::std::string(reinterpret_cast<const char*>(value), size));
-  // @@protoc_insertion_point(field_set_pointer:flyteidl.artifact.Tag.value)
-}
-inline ::std::string* Tag::mutable_value() {
-  
-  // @@protoc_insertion_point(field_mutable:flyteidl.artifact.Tag.value)
-  return value_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-}
-inline ::std::string* Tag::release_value() {
-  // @@protoc_insertion_point(field_release:flyteidl.artifact.Tag.value)
-  
-  return value_.ReleaseNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-}
-inline void Tag::set_allocated_value(::std::string* value) {
-  if (value != nullptr) {
-    
-  } else {
-    
-  }
-  value_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
-  // @@protoc_insertion_point(field_set_allocated:flyteidl.artifact.Tag.value)
-}
-
-// -------------------------------------------------------------------
-
-// AddTagsRequest
-
-// .flyteidl.core.ArtifactID artifact_id = 1;
-inline bool AddTagsRequest::has_artifact_id() const {
-  return this != internal_default_instance() && artifact_id_ != nullptr;
-}
-inline const ::flyteidl::core::ArtifactID& AddTagsRequest::artifact_id() const {
-  const ::flyteidl::core::ArtifactID* p = artifact_id_;
-  // @@protoc_insertion_point(field_get:flyteidl.artifact.AddTagsRequest.artifact_id)
-  return p != nullptr ? *p : *reinterpret_cast<const ::flyteidl::core::ArtifactID*>(
-      &::flyteidl::core::_ArtifactID_default_instance_);
-}
-inline ::flyteidl::core::ArtifactID* AddTagsRequest::release_artifact_id() {
-  // @@protoc_insertion_point(field_release:flyteidl.artifact.AddTagsRequest.artifact_id)
-  
-  ::flyteidl::core::ArtifactID* temp = artifact_id_;
-  artifact_id_ = nullptr;
-  return temp;
-}
-inline ::flyteidl::core::ArtifactID* AddTagsRequest::mutable_artifact_id() {
-  
-  if (artifact_id_ == nullptr) {
-    auto* p = CreateMaybeMessage<::flyteidl::core::ArtifactID>(GetArenaNoVirtual());
-    artifact_id_ = p;
-  }
-  // @@protoc_insertion_point(field_mutable:flyteidl.artifact.AddTagsRequest.artifact_id)
-  return artifact_id_;
-}
-inline void AddTagsRequest::set_allocated_artifact_id(::flyteidl::core::ArtifactID* artifact_id) {
-  ::google::protobuf::Arena* message_arena = GetArenaNoVirtual();
-  if (message_arena == nullptr) {
-    delete reinterpret_cast< ::google::protobuf::MessageLite*>(artifact_id_);
-  }
-  if (artifact_id) {
-    ::google::protobuf::Arena* submessage_arena = nullptr;
-    if (message_arena != submessage_arena) {
-      artifact_id = ::google::protobuf::internal::GetOwnedMessage(
-          message_arena, artifact_id, submessage_arena);
-    }
-    
-  } else {
-    
-  }
-  artifact_id_ = artifact_id;
-  // @@protoc_insertion_point(field_set_allocated:flyteidl.artifact.AddTagsRequest.artifact_id)
-}
-
-// repeated .flyteidl.artifact.Tag tags = 2;
-inline int AddTagsRequest::tags_size() const {
-  return tags_.size();
-}
-inline void AddTagsRequest::clear_tags() {
-  tags_.Clear();
-}
-inline ::flyteidl::artifact::Tag* AddTagsRequest::mutable_tags(int index) {
-  // @@protoc_insertion_point(field_mutable:flyteidl.artifact.AddTagsRequest.tags)
-  return tags_.Mutable(index);
-}
-inline ::google::protobuf::RepeatedPtrField< ::flyteidl::artifact::Tag >*
-AddTagsRequest::mutable_tags() {
-  // @@protoc_insertion_point(field_mutable_list:flyteidl.artifact.AddTagsRequest.tags)
-  return &tags_;
-}
-inline const ::flyteidl::artifact::Tag& AddTagsRequest::tags(int index) const {
-  // @@protoc_insertion_point(field_get:flyteidl.artifact.AddTagsRequest.tags)
-  return tags_.Get(index);
-}
-inline ::flyteidl::artifact::Tag* AddTagsRequest::add_tags() {
-  // @@protoc_insertion_point(field_add:flyteidl.artifact.AddTagsRequest.tags)
-  return tags_.Add();
-}
-inline const ::google::protobuf::RepeatedPtrField< ::flyteidl::artifact::Tag >&
-AddTagsRequest::tags() const {
-  // @@protoc_insertion_point(field_list:flyteidl.artifact.AddTagsRequest.tags)
-  return tags_;
-}
-
-// -------------------------------------------------------------------
-
-// AddTagsResponse
-
-// -------------------------------------------------------------------
-
-// RemoveTagsRequest
-
-// .flyteidl.core.ArtifactID artifact_id = 1;
-inline bool RemoveTagsRequest::has_artifact_id() const {
-  return this != internal_default_instance() && artifact_id_ != nullptr;
-}
-inline const ::flyteidl::core::ArtifactID& RemoveTagsRequest::artifact_id() const {
-  const ::flyteidl::core::ArtifactID* p = artifact_id_;
-  // @@protoc_insertion_point(field_get:flyteidl.artifact.RemoveTagsRequest.artifact_id)
-  return p != nullptr ? *p : *reinterpret_cast<const ::flyteidl::core::ArtifactID*>(
-      &::flyteidl::core::_ArtifactID_default_instance_);
-}
-inline ::flyteidl::core::ArtifactID* RemoveTagsRequest::release_artifact_id() {
-  // @@protoc_insertion_point(field_release:flyteidl.artifact.RemoveTagsRequest.artifact_id)
-  
-  ::flyteidl::core::ArtifactID* temp = artifact_id_;
-  artifact_id_ = nullptr;
-  return temp;
-}
-inline ::flyteidl::core::ArtifactID* RemoveTagsRequest::mutable_artifact_id() {
-  
-  if (artifact_id_ == nullptr) {
-    auto* p = CreateMaybeMessage<::flyteidl::core::ArtifactID>(GetArenaNoVirtual());
-    artifact_id_ = p;
-  }
-  // @@protoc_insertion_point(field_mutable:flyteidl.artifact.RemoveTagsRequest.artifact_id)
-  return artifact_id_;
-}
-inline void RemoveTagsRequest::set_allocated_artifact_id(::flyteidl::core::ArtifactID* artifact_id) {
-  ::google::protobuf::Arena* message_arena = GetArenaNoVirtual();
-  if (message_arena == nullptr) {
-    delete reinterpret_cast< ::google::protobuf::MessageLite*>(artifact_id_);
-  }
-  if (artifact_id) {
-    ::google::protobuf::Arena* submessage_arena = nullptr;
-    if (message_arena != submessage_arena) {
-      artifact_id = ::google::protobuf::internal::GetOwnedMessage(
-          message_arena, artifact_id, submessage_arena);
-    }
-    
-  } else {
-    
-  }
-  artifact_id_ = artifact_id;
-  // @@protoc_insertion_point(field_set_allocated:flyteidl.artifact.RemoveTagsRequest.artifact_id)
-}
-
-// repeated .flyteidl.artifact.Tag tags = 2;
-inline int RemoveTagsRequest::tags_size() const {
-  return tags_.size();
-}
-inline void RemoveTagsRequest::clear_tags() {
-  tags_.Clear();
-}
-inline ::flyteidl::artifact::Tag* RemoveTagsRequest::mutable_tags(int index) {
-  // @@protoc_insertion_point(field_mutable:flyteidl.artifact.RemoveTagsRequest.tags)
-  return tags_.Mutable(index);
-}
-inline ::google::protobuf::RepeatedPtrField< ::flyteidl::artifact::Tag >*
-RemoveTagsRequest::mutable_tags() {
-  // @@protoc_insertion_point(field_mutable_list:flyteidl.artifact.RemoveTagsRequest.tags)
-  return &tags_;
-}
-inline const ::flyteidl::artifact::Tag& RemoveTagsRequest::tags(int index) const {
-  // @@protoc_insertion_point(field_get:flyteidl.artifact.RemoveTagsRequest.tags)
-  return tags_.Get(index);
-}
-inline ::flyteidl::artifact::Tag* RemoveTagsRequest::add_tags() {
-  // @@protoc_insertion_point(field_add:flyteidl.artifact.RemoveTagsRequest.tags)
-  return tags_.Add();
-}
-inline const ::google::protobuf::RepeatedPtrField< ::flyteidl::artifact::Tag >&
-RemoveTagsRequest::tags() const {
-  // @@protoc_insertion_point(field_list:flyteidl.artifact.RemoveTagsRequest.tags)
-  return tags_;
-}
-
-// -------------------------------------------------------------------
-
-// RemoveTagsResponse
-
-// -------------------------------------------------------------------
-
 // ListArtifactNamesRequest
 
 // string project = 1;
@@ -4132,229 +3099,127 @@ ListArtifactsResponse::artifacts() const {
 
 // -------------------------------------------------------------------
 
-// CreateAliasRequest
+// AddTagRequest
 
-// .flyteidl.core.ArtifactKey artifact_key = 1;
-inline bool CreateAliasRequest::has_artifact_key() const {
-  return this != internal_default_instance() && artifact_key_ != nullptr;
+// .flyteidl.core.ArtifactID artifact_id = 1;
+inline bool AddTagRequest::has_artifact_id() const {
+  return this != internal_default_instance() && artifact_id_ != nullptr;
 }
-inline const ::flyteidl::core::ArtifactKey& CreateAliasRequest::artifact_key() const {
-  const ::flyteidl::core::ArtifactKey* p = artifact_key_;
-  // @@protoc_insertion_point(field_get:flyteidl.artifact.CreateAliasRequest.artifact_key)
-  return p != nullptr ? *p : *reinterpret_cast<const ::flyteidl::core::ArtifactKey*>(
-      &::flyteidl::core::_ArtifactKey_default_instance_);
+inline const ::flyteidl::core::ArtifactID& AddTagRequest::artifact_id() const {
+  const ::flyteidl::core::ArtifactID* p = artifact_id_;
+  // @@protoc_insertion_point(field_get:flyteidl.artifact.AddTagRequest.artifact_id)
+  return p != nullptr ? *p : *reinterpret_cast<const ::flyteidl::core::ArtifactID*>(
+      &::flyteidl::core::_ArtifactID_default_instance_);
 }
-inline ::flyteidl::core::ArtifactKey* CreateAliasRequest::release_artifact_key() {
-  // @@protoc_insertion_point(field_release:flyteidl.artifact.CreateAliasRequest.artifact_key)
+inline ::flyteidl::core::ArtifactID* AddTagRequest::release_artifact_id() {
+  // @@protoc_insertion_point(field_release:flyteidl.artifact.AddTagRequest.artifact_id)
   
-  ::flyteidl::core::ArtifactKey* temp = artifact_key_;
-  artifact_key_ = nullptr;
+  ::flyteidl::core::ArtifactID* temp = artifact_id_;
+  artifact_id_ = nullptr;
   return temp;
 }
-inline ::flyteidl::core::ArtifactKey* CreateAliasRequest::mutable_artifact_key() {
+inline ::flyteidl::core::ArtifactID* AddTagRequest::mutable_artifact_id() {
   
-  if (artifact_key_ == nullptr) {
-    auto* p = CreateMaybeMessage<::flyteidl::core::ArtifactKey>(GetArenaNoVirtual());
-    artifact_key_ = p;
+  if (artifact_id_ == nullptr) {
+    auto* p = CreateMaybeMessage<::flyteidl::core::ArtifactID>(GetArenaNoVirtual());
+    artifact_id_ = p;
   }
-  // @@protoc_insertion_point(field_mutable:flyteidl.artifact.CreateAliasRequest.artifact_key)
-  return artifact_key_;
+  // @@protoc_insertion_point(field_mutable:flyteidl.artifact.AddTagRequest.artifact_id)
+  return artifact_id_;
 }
-inline void CreateAliasRequest::set_allocated_artifact_key(::flyteidl::core::ArtifactKey* artifact_key) {
+inline void AddTagRequest::set_allocated_artifact_id(::flyteidl::core::ArtifactID* artifact_id) {
   ::google::protobuf::Arena* message_arena = GetArenaNoVirtual();
   if (message_arena == nullptr) {
-    delete reinterpret_cast< ::google::protobuf::MessageLite*>(artifact_key_);
+    delete reinterpret_cast< ::google::protobuf::MessageLite*>(artifact_id_);
   }
-  if (artifact_key) {
+  if (artifact_id) {
     ::google::protobuf::Arena* submessage_arena = nullptr;
     if (message_arena != submessage_arena) {
-      artifact_key = ::google::protobuf::internal::GetOwnedMessage(
-          message_arena, artifact_key, submessage_arena);
+      artifact_id = ::google::protobuf::internal::GetOwnedMessage(
+          message_arena, artifact_id, submessage_arena);
     }
     
   } else {
     
   }
-  artifact_key_ = artifact_key;
-  // @@protoc_insertion_point(field_set_allocated:flyteidl.artifact.CreateAliasRequest.artifact_key)
+  artifact_id_ = artifact_id;
+  // @@protoc_insertion_point(field_set_allocated:flyteidl.artifact.AddTagRequest.artifact_id)
 }
 
-// .flyteidl.core.ArtifactAlias alias = 2;
-inline bool CreateAliasRequest::has_alias() const {
-  return this != internal_default_instance() && alias_ != nullptr;
+// string value = 2;
+inline void AddTagRequest::clear_value() {
+  value_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
 }
-inline const ::flyteidl::core::ArtifactAlias& CreateAliasRequest::alias() const {
-  const ::flyteidl::core::ArtifactAlias* p = alias_;
-  // @@protoc_insertion_point(field_get:flyteidl.artifact.CreateAliasRequest.alias)
-  return p != nullptr ? *p : *reinterpret_cast<const ::flyteidl::core::ArtifactAlias*>(
-      &::flyteidl::core::_ArtifactAlias_default_instance_);
+inline const ::std::string& AddTagRequest::value() const {
+  // @@protoc_insertion_point(field_get:flyteidl.artifact.AddTagRequest.value)
+  return value_.GetNoArena();
 }
-inline ::flyteidl::core::ArtifactAlias* CreateAliasRequest::release_alias() {
-  // @@protoc_insertion_point(field_release:flyteidl.artifact.CreateAliasRequest.alias)
+inline void AddTagRequest::set_value(const ::std::string& value) {
   
-  ::flyteidl::core::ArtifactAlias* temp = alias_;
-  alias_ = nullptr;
-  return temp;
+  value_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
+  // @@protoc_insertion_point(field_set:flyteidl.artifact.AddTagRequest.value)
 }
-inline ::flyteidl::core::ArtifactAlias* CreateAliasRequest::mutable_alias() {
+#if LANG_CXX11
+inline void AddTagRequest::set_value(::std::string&& value) {
   
-  if (alias_ == nullptr) {
-    auto* p = CreateMaybeMessage<::flyteidl::core::ArtifactAlias>(GetArenaNoVirtual());
-    alias_ = p;
-  }
-  // @@protoc_insertion_point(field_mutable:flyteidl.artifact.CreateAliasRequest.alias)
-  return alias_;
+  value_.SetNoArena(
+    &::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::move(value));
+  // @@protoc_insertion_point(field_set_rvalue:flyteidl.artifact.AddTagRequest.value)
 }
-inline void CreateAliasRequest::set_allocated_alias(::flyteidl::core::ArtifactAlias* alias) {
-  ::google::protobuf::Arena* message_arena = GetArenaNoVirtual();
-  if (message_arena == nullptr) {
-    delete reinterpret_cast< ::google::protobuf::MessageLite*>(alias_);
-  }
-  if (alias) {
-    ::google::protobuf::Arena* submessage_arena = nullptr;
-    if (message_arena != submessage_arena) {
-      alias = ::google::protobuf::internal::GetOwnedMessage(
-          message_arena, alias, submessage_arena);
-    }
+#endif
+inline void AddTagRequest::set_value(const char* value) {
+  GOOGLE_DCHECK(value != nullptr);
+  
+  value_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
+  // @@protoc_insertion_point(field_set_char:flyteidl.artifact.AddTagRequest.value)
+}
+inline void AddTagRequest::set_value(const char* value, size_t size) {
+  
+  value_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
+      ::std::string(reinterpret_cast<const char*>(value), size));
+  // @@protoc_insertion_point(field_set_pointer:flyteidl.artifact.AddTagRequest.value)
+}
+inline ::std::string* AddTagRequest::mutable_value() {
+  
+  // @@protoc_insertion_point(field_mutable:flyteidl.artifact.AddTagRequest.value)
+  return value_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline ::std::string* AddTagRequest::release_value() {
+  // @@protoc_insertion_point(field_release:flyteidl.artifact.AddTagRequest.value)
+  
+  return value_.ReleaseNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline void AddTagRequest::set_allocated_value(::std::string* value) {
+  if (value != nullptr) {
     
   } else {
     
   }
-  alias_ = alias;
-  // @@protoc_insertion_point(field_set_allocated:flyteidl.artifact.CreateAliasRequest.alias)
+  value_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
+  // @@protoc_insertion_point(field_set_allocated:flyteidl.artifact.AddTagRequest.value)
 }
 
 // bool overwrite = 3;
-inline void CreateAliasRequest::clear_overwrite() {
+inline void AddTagRequest::clear_overwrite() {
   overwrite_ = false;
 }
-inline bool CreateAliasRequest::overwrite() const {
-  // @@protoc_insertion_point(field_get:flyteidl.artifact.CreateAliasRequest.overwrite)
+inline bool AddTagRequest::overwrite() const {
+  // @@protoc_insertion_point(field_get:flyteidl.artifact.AddTagRequest.overwrite)
   return overwrite_;
 }
-inline void CreateAliasRequest::set_overwrite(bool value) {
+inline void AddTagRequest::set_overwrite(bool value) {
   
   overwrite_ = value;
-  // @@protoc_insertion_point(field_set:flyteidl.artifact.CreateAliasRequest.overwrite)
+  // @@protoc_insertion_point(field_set:flyteidl.artifact.AddTagRequest.overwrite)
 }
 
 // -------------------------------------------------------------------
 
-// CreateAliasResponse
-
-// -------------------------------------------------------------------
-
-// RemoveAliasRequest
-
-// .flyteidl.core.ArtifactKey artifact_key = 1;
-inline bool RemoveAliasRequest::has_artifact_key() const {
-  return this != internal_default_instance() && artifact_key_ != nullptr;
-}
-inline const ::flyteidl::core::ArtifactKey& RemoveAliasRequest::artifact_key() const {
-  const ::flyteidl::core::ArtifactKey* p = artifact_key_;
-  // @@protoc_insertion_point(field_get:flyteidl.artifact.RemoveAliasRequest.artifact_key)
-  return p != nullptr ? *p : *reinterpret_cast<const ::flyteidl::core::ArtifactKey*>(
-      &::flyteidl::core::_ArtifactKey_default_instance_);
-}
-inline ::flyteidl::core::ArtifactKey* RemoveAliasRequest::release_artifact_key() {
-  // @@protoc_insertion_point(field_release:flyteidl.artifact.RemoveAliasRequest.artifact_key)
-  
-  ::flyteidl::core::ArtifactKey* temp = artifact_key_;
-  artifact_key_ = nullptr;
-  return temp;
-}
-inline ::flyteidl::core::ArtifactKey* RemoveAliasRequest::mutable_artifact_key() {
-  
-  if (artifact_key_ == nullptr) {
-    auto* p = CreateMaybeMessage<::flyteidl::core::ArtifactKey>(GetArenaNoVirtual());
-    artifact_key_ = p;
-  }
-  // @@protoc_insertion_point(field_mutable:flyteidl.artifact.RemoveAliasRequest.artifact_key)
-  return artifact_key_;
-}
-inline void RemoveAliasRequest::set_allocated_artifact_key(::flyteidl::core::ArtifactKey* artifact_key) {
-  ::google::protobuf::Arena* message_arena = GetArenaNoVirtual();
-  if (message_arena == nullptr) {
-    delete reinterpret_cast< ::google::protobuf::MessageLite*>(artifact_key_);
-  }
-  if (artifact_key) {
-    ::google::protobuf::Arena* submessage_arena = nullptr;
-    if (message_arena != submessage_arena) {
-      artifact_key = ::google::protobuf::internal::GetOwnedMessage(
-          message_arena, artifact_key, submessage_arena);
-    }
-    
-  } else {
-    
-  }
-  artifact_key_ = artifact_key;
-  // @@protoc_insertion_point(field_set_allocated:flyteidl.artifact.RemoveAliasRequest.artifact_key)
-}
-
-// .flyteidl.core.ArtifactAlias alias = 2;
-inline bool RemoveAliasRequest::has_alias() const {
-  return this != internal_default_instance() && alias_ != nullptr;
-}
-inline const ::flyteidl::core::ArtifactAlias& RemoveAliasRequest::alias() const {
-  const ::flyteidl::core::ArtifactAlias* p = alias_;
-  // @@protoc_insertion_point(field_get:flyteidl.artifact.RemoveAliasRequest.alias)
-  return p != nullptr ? *p : *reinterpret_cast<const ::flyteidl::core::ArtifactAlias*>(
-      &::flyteidl::core::_ArtifactAlias_default_instance_);
-}
-inline ::flyteidl::core::ArtifactAlias* RemoveAliasRequest::release_alias() {
-  // @@protoc_insertion_point(field_release:flyteidl.artifact.RemoveAliasRequest.alias)
-  
-  ::flyteidl::core::ArtifactAlias* temp = alias_;
-  alias_ = nullptr;
-  return temp;
-}
-inline ::flyteidl::core::ArtifactAlias* RemoveAliasRequest::mutable_alias() {
-  
-  if (alias_ == nullptr) {
-    auto* p = CreateMaybeMessage<::flyteidl::core::ArtifactAlias>(GetArenaNoVirtual());
-    alias_ = p;
-  }
-  // @@protoc_insertion_point(field_mutable:flyteidl.artifact.RemoveAliasRequest.alias)
-  return alias_;
-}
-inline void RemoveAliasRequest::set_allocated_alias(::flyteidl::core::ArtifactAlias* alias) {
-  ::google::protobuf::Arena* message_arena = GetArenaNoVirtual();
-  if (message_arena == nullptr) {
-    delete reinterpret_cast< ::google::protobuf::MessageLite*>(alias_);
-  }
-  if (alias) {
-    ::google::protobuf::Arena* submessage_arena = nullptr;
-    if (message_arena != submessage_arena) {
-      alias = ::google::protobuf::internal::GetOwnedMessage(
-          message_arena, alias, submessage_arena);
-    }
-    
-  } else {
-    
-  }
-  alias_ = alias;
-  // @@protoc_insertion_point(field_set_allocated:flyteidl.artifact.RemoveAliasRequest.alias)
-}
-
-// -------------------------------------------------------------------
-
-// RemoveAliasResponse
+// AddTagResponse
 
 #ifdef __GNUC__
   #pragma GCC diagnostic pop
 #endif  // __GNUC__
-// -------------------------------------------------------------------
-
-// -------------------------------------------------------------------
-
-// -------------------------------------------------------------------
-
-// -------------------------------------------------------------------
-
-// -------------------------------------------------------------------
-
-// -------------------------------------------------------------------
-
 // -------------------------------------------------------------------
 
 // -------------------------------------------------------------------

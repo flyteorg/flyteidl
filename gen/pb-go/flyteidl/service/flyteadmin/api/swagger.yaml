@@ -3523,16 +3523,20 @@ definitions:
             name: "name"
             project: "project"
           artifact_ids:
-          - artifact_key:
+          - partitions:
+              key: "partitions"
+            artifact_key:
               domain: "domain"
+              name: "name"
               project: "project"
-              suffix: "suffix"
-            uuid: "uuid"
-          - artifact_key:
+            version: "version"
+          - partitions:
+              key: "partitions"
+            artifact_key:
               domain: "domain"
+              name: "name"
               project: "project"
-              suffix: "suffix"
-            uuid: "uuid"
+            version: "version"
           scheduled_at: "2000-01-23T04:56:07.000+00:00"
           nesting: 0
           system_metadata:
@@ -3916,16 +3920,20 @@ definitions:
               name: "name"
               project: "project"
             artifact_ids:
-            - artifact_key:
+            - partitions:
+                key: "partitions"
+              artifact_key:
                 domain: "domain"
+                name: "name"
                 project: "project"
-                suffix: "suffix"
-              uuid: "uuid"
-            - artifact_key:
+              version: "version"
+            - partitions:
+                key: "partitions"
+              artifact_key:
                 domain: "domain"
+                name: "name"
                 project: "project"
-                suffix: "suffix"
-              uuid: "uuid"
+              version: "version"
             scheduled_at: "2000-01-23T04:56:07.000+00:00"
             nesting: 0
             system_metadata:
@@ -4125,16 +4133,20 @@ definitions:
               name: "name"
               project: "project"
             artifact_ids:
-            - artifact_key:
+            - partitions:
+                key: "partitions"
+              artifact_key:
                 domain: "domain"
+                name: "name"
                 project: "project"
-                suffix: "suffix"
-              uuid: "uuid"
-            - artifact_key:
+              version: "version"
+            - partitions:
+                key: "partitions"
+              artifact_key:
                 domain: "domain"
+                name: "name"
                 project: "project"
-                suffix: "suffix"
-              uuid: "uuid"
+              version: "version"
             scheduled_at: "2000-01-23T04:56:07.000+00:00"
             nesting: 0
             system_metadata:
@@ -4310,16 +4322,20 @@ definitions:
         name: "name"
         project: "project"
       artifact_ids:
-      - artifact_key:
+      - partitions:
+          key: "partitions"
+        artifact_key:
           domain: "domain"
+          name: "name"
           project: "project"
-          suffix: "suffix"
-        uuid: "uuid"
-      - artifact_key:
+        version: "version"
+      - partitions:
+          key: "partitions"
+        artifact_key:
           domain: "domain"
+          name: "name"
           project: "project"
-          suffix: "suffix"
-        uuid: "uuid"
+        version: "version"
       scheduled_at: "2000-01-23T04:56:07.000+00:00"
       nesting: 0
       system_metadata:
@@ -4461,16 +4477,20 @@ definitions:
           name: "name"
           project: "project"
         artifact_ids:
-        - artifact_key:
+        - partitions:
+            key: "partitions"
+          artifact_key:
             domain: "domain"
+            name: "name"
             project: "project"
-            suffix: "suffix"
-          uuid: "uuid"
-        - artifact_key:
+          version: "version"
+        - partitions:
+            key: "partitions"
+          artifact_key:
             domain: "domain"
+            name: "name"
             project: "project"
-            suffix: "suffix"
-          uuid: "uuid"
+          version: "version"
         scheduled_at: "2000-01-23T04:56:07.000+00:00"
         nesting: 0
         system_metadata:
@@ -4735,24 +4755,22 @@ definitions:
         expected_outputs:
           variables:
             key:
-              aliases:
-              - name: "name"
-                artifact_id:
-                  artifact_key:
-                    domain: "domain"
-                    project: "project"
-                    suffix: "suffix"
-                  uuid: "uuid"
-                value: "value"
-              - name: "name"
-                artifact_id:
-                  artifact_key:
-                    domain: "domain"
-                    project: "project"
-                    suffix: "suffix"
-                  uuid: "uuid"
-                value: "value"
               description: "description"
+              artifact_partial_id:
+              - partitions:
+                  key: "partitions"
+                artifact_key:
+                  domain: "domain"
+                  name: "name"
+                  project: "project"
+                version: "version"
+              - partitions:
+                  key: "partitions"
+                artifact_key:
+                  domain: "domain"
+                  name: "name"
+                  project: "project"
+                version: "version"
               type:
                 schema:
                   columns:
@@ -4920,11 +4938,13 @@ definitions:
                   - null
                   - null
                 artifact_id:
+                  partitions:
+                    key: "partitions"
                   artifact_key:
                     domain: "domain"
+                    name: "name"
                     project: "project"
-                    suffix: "suffix"
-                  uuid: "uuid"
+                  version: "version"
                 map:
                   literals: {}
                 hash: "hash"
@@ -4980,24 +5000,22 @@ definitions:
                   structure:
                     tag: "tag"
               var:
-                aliases:
-                - name: "name"
-                  artifact_id:
-                    artifact_key:
-                      domain: "domain"
-                      project: "project"
-                      suffix: "suffix"
-                    uuid: "uuid"
-                  value: "value"
-                - name: "name"
-                  artifact_id:
-                    artifact_key:
-                      domain: "domain"
-                      project: "project"
-                      suffix: "suffix"
-                    uuid: "uuid"
-                  value: "value"
                 description: "description"
+                artifact_partial_id:
+                - partitions:
+                    key: "partitions"
+                  artifact_key:
+                    domain: "domain"
+                    name: "name"
+                    project: "project"
+                  version: "version"
+                - partitions:
+                    key: "partitions"
+                  artifact_key:
+                    domain: "domain"
+                    name: "name"
+                    project: "project"
+                  version: "version"
                 type:
                   schema:
                     columns:
@@ -5050,17 +5068,13 @@ definitions:
                   structure:
                     tag: "tag"
               artifact_query:
+                partitions:
+                  key: "partitions"
                 domain: "domain"
+                name: "name"
                 project: "project"
-                alias:
-                  name: "name"
-                  artifact_id:
-                    artifact_key:
-                      domain: "domain"
-                      project: "project"
-                      suffix: "suffix"
-                    uuid: "uuid"
-                  value: "value"
+                tag: "tag"
+                version: "version"
               required: true
       spec:
         workflow_id:
@@ -5250,11 +5264,13 @@ definitions:
                   - null
                   - null
                 artifact_id:
+                  partitions:
+                    key: "partitions"
                   artifact_key:
                     domain: "domain"
+                    name: "name"
                     project: "project"
-                    suffix: "suffix"
-                  uuid: "uuid"
+                  version: "version"
                 map:
                   literals: {}
                 hash: "hash"
@@ -5310,24 +5326,22 @@ definitions:
                   structure:
                     tag: "tag"
               var:
-                aliases:
-                - name: "name"
-                  artifact_id:
-                    artifact_key:
-                      domain: "domain"
-                      project: "project"
-                      suffix: "suffix"
-                    uuid: "uuid"
-                  value: "value"
-                - name: "name"
-                  artifact_id:
-                    artifact_key:
-                      domain: "domain"
-                      project: "project"
-                      suffix: "suffix"
-                    uuid: "uuid"
-                  value: "value"
                 description: "description"
+                artifact_partial_id:
+                - partitions:
+                    key: "partitions"
+                  artifact_key:
+                    domain: "domain"
+                    name: "name"
+                    project: "project"
+                  version: "version"
+                - partitions:
+                    key: "partitions"
+                  artifact_key:
+                    domain: "domain"
+                    name: "name"
+                    project: "project"
+                  version: "version"
                 type:
                   schema:
                     columns:
@@ -5380,17 +5394,13 @@ definitions:
                   structure:
                     tag: "tag"
               artifact_query:
+                partitions:
+                  key: "partitions"
                 domain: "domain"
+                name: "name"
                 project: "project"
-                alias:
-                  name: "name"
-                  artifact_id:
-                    artifact_key:
-                      domain: "domain"
-                      project: "project"
-                      suffix: "suffix"
-                    uuid: "uuid"
-                  value: "value"
+                tag: "tag"
+                version: "version"
               required: true
         security_context:
           run_as:
@@ -5469,24 +5479,22 @@ definitions:
       expected_outputs:
         variables:
           key:
-            aliases:
-            - name: "name"
-              artifact_id:
-                artifact_key:
-                  domain: "domain"
-                  project: "project"
-                  suffix: "suffix"
-                uuid: "uuid"
-              value: "value"
-            - name: "name"
-              artifact_id:
-                artifact_key:
-                  domain: "domain"
-                  project: "project"
-                  suffix: "suffix"
-                uuid: "uuid"
-              value: "value"
             description: "description"
+            artifact_partial_id:
+            - partitions:
+                key: "partitions"
+              artifact_key:
+                domain: "domain"
+                name: "name"
+                project: "project"
+              version: "version"
+            - partitions:
+                key: "partitions"
+              artifact_key:
+                domain: "domain"
+                name: "name"
+                project: "project"
+              version: "version"
             type:
               schema:
                 columns:
@@ -5654,11 +5662,13 @@ definitions:
                 - null
                 - null
               artifact_id:
+                partitions:
+                  key: "partitions"
                 artifact_key:
                   domain: "domain"
+                  name: "name"
                   project: "project"
-                  suffix: "suffix"
-                uuid: "uuid"
+                version: "version"
               map:
                 literals: {}
               hash: "hash"
@@ -5714,24 +5724,22 @@ definitions:
                 structure:
                   tag: "tag"
             var:
-              aliases:
-              - name: "name"
-                artifact_id:
-                  artifact_key:
-                    domain: "domain"
-                    project: "project"
-                    suffix: "suffix"
-                  uuid: "uuid"
-                value: "value"
-              - name: "name"
-                artifact_id:
-                  artifact_key:
-                    domain: "domain"
-                    project: "project"
-                    suffix: "suffix"
-                  uuid: "uuid"
-                value: "value"
               description: "description"
+              artifact_partial_id:
+              - partitions:
+                  key: "partitions"
+                artifact_key:
+                  domain: "domain"
+                  name: "name"
+                  project: "project"
+                version: "version"
+              - partitions:
+                  key: "partitions"
+                artifact_key:
+                  domain: "domain"
+                  name: "name"
+                  project: "project"
+                version: "version"
               type:
                 schema:
                   columns:
@@ -5784,17 +5792,13 @@ definitions:
                 structure:
                   tag: "tag"
             artifact_query:
+              partitions:
+                key: "partitions"
               domain: "domain"
+              name: "name"
               project: "project"
-              alias:
-                name: "name"
-                artifact_id:
-                  artifact_key:
-                    domain: "domain"
-                    project: "project"
-                    suffix: "suffix"
-                  uuid: "uuid"
-                value: "value"
+              tag: "tag"
+              version: "version"
             required: true
   adminLaunchPlanCreateRequest:
     type: "object"
@@ -5839,24 +5843,22 @@ definitions:
           expected_outputs:
             variables:
               key:
-                aliases:
-                - name: "name"
-                  artifact_id:
-                    artifact_key:
-                      domain: "domain"
-                      project: "project"
-                      suffix: "suffix"
-                    uuid: "uuid"
-                  value: "value"
-                - name: "name"
-                  artifact_id:
-                    artifact_key:
-                      domain: "domain"
-                      project: "project"
-                      suffix: "suffix"
-                    uuid: "uuid"
-                  value: "value"
                 description: "description"
+                artifact_partial_id:
+                - partitions:
+                    key: "partitions"
+                  artifact_key:
+                    domain: "domain"
+                    name: "name"
+                    project: "project"
+                  version: "version"
+                - partitions:
+                    key: "partitions"
+                  artifact_key:
+                    domain: "domain"
+                    name: "name"
+                    project: "project"
+                  version: "version"
                 type:
                   schema:
                     columns:
@@ -6024,11 +6026,13 @@ definitions:
                     - null
                     - null
                   artifact_id:
+                    partitions:
+                      key: "partitions"
                     artifact_key:
                       domain: "domain"
+                      name: "name"
                       project: "project"
-                      suffix: "suffix"
-                    uuid: "uuid"
+                    version: "version"
                   map:
                     literals: {}
                   hash: "hash"
@@ -6084,24 +6088,22 @@ definitions:
                     structure:
                       tag: "tag"
                 var:
-                  aliases:
-                  - name: "name"
-                    artifact_id:
-                      artifact_key:
-                        domain: "domain"
-                        project: "project"
-                        suffix: "suffix"
-                      uuid: "uuid"
-                    value: "value"
-                  - name: "name"
-                    artifact_id:
-                      artifact_key:
-                        domain: "domain"
-                        project: "project"
-                        suffix: "suffix"
-                      uuid: "uuid"
-                    value: "value"
                   description: "description"
+                  artifact_partial_id:
+                  - partitions:
+                      key: "partitions"
+                    artifact_key:
+                      domain: "domain"
+                      name: "name"
+                      project: "project"
+                    version: "version"
+                  - partitions:
+                      key: "partitions"
+                    artifact_key:
+                      domain: "domain"
+                      name: "name"
+                      project: "project"
+                    version: "version"
                   type:
                     schema:
                       columns:
@@ -6154,17 +6156,13 @@ definitions:
                     structure:
                       tag: "tag"
                 artifact_query:
+                  partitions:
+                    key: "partitions"
                   domain: "domain"
+                  name: "name"
                   project: "project"
-                  alias:
-                    name: "name"
-                    artifact_id:
-                      artifact_key:
-                        domain: "domain"
-                        project: "project"
-                        suffix: "suffix"
-                      uuid: "uuid"
-                    value: "value"
+                  tag: "tag"
+                  version: "version"
                 required: true
         spec:
           workflow_id:
@@ -6354,11 +6352,13 @@ definitions:
                     - null
                     - null
                   artifact_id:
+                    partitions:
+                      key: "partitions"
                     artifact_key:
                       domain: "domain"
+                      name: "name"
                       project: "project"
-                      suffix: "suffix"
-                    uuid: "uuid"
+                    version: "version"
                   map:
                     literals: {}
                   hash: "hash"
@@ -6414,24 +6414,22 @@ definitions:
                     structure:
                       tag: "tag"
                 var:
-                  aliases:
-                  - name: "name"
-                    artifact_id:
-                      artifact_key:
-                        domain: "domain"
-                        project: "project"
-                        suffix: "suffix"
-                      uuid: "uuid"
-                    value: "value"
-                  - name: "name"
-                    artifact_id:
-                      artifact_key:
-                        domain: "domain"
-                        project: "project"
-                        suffix: "suffix"
-                      uuid: "uuid"
-                    value: "value"
                   description: "description"
+                  artifact_partial_id:
+                  - partitions:
+                      key: "partitions"
+                    artifact_key:
+                      domain: "domain"
+                      name: "name"
+                      project: "project"
+                    version: "version"
+                  - partitions:
+                      key: "partitions"
+                    artifact_key:
+                      domain: "domain"
+                      name: "name"
+                      project: "project"
+                    version: "version"
                   type:
                     schema:
                       columns:
@@ -6484,17 +6482,13 @@ definitions:
                     structure:
                       tag: "tag"
                 artifact_query:
+                  partitions:
+                    key: "partitions"
                   domain: "domain"
+                  name: "name"
                   project: "project"
-                  alias:
-                    name: "name"
-                    artifact_id:
-                      artifact_key:
-                        domain: "domain"
-                        project: "project"
-                        suffix: "suffix"
-                      uuid: "uuid"
-                    value: "value"
+                  tag: "tag"
+                  version: "version"
                 required: true
           security_context:
             run_as:
@@ -6553,24 +6547,22 @@ definitions:
           expected_outputs:
             variables:
               key:
-                aliases:
-                - name: "name"
-                  artifact_id:
-                    artifact_key:
-                      domain: "domain"
-                      project: "project"
-                      suffix: "suffix"
-                    uuid: "uuid"
-                  value: "value"
-                - name: "name"
-                  artifact_id:
-                    artifact_key:
-                      domain: "domain"
-                      project: "project"
-                      suffix: "suffix"
-                    uuid: "uuid"
-                  value: "value"
                 description: "description"
+                artifact_partial_id:
+                - partitions:
+                    key: "partitions"
+                  artifact_key:
+                    domain: "domain"
+                    name: "name"
+                    project: "project"
+                  version: "version"
+                - partitions:
+                    key: "partitions"
+                  artifact_key:
+                    domain: "domain"
+                    name: "name"
+                    project: "project"
+                  version: "version"
                 type:
                   schema:
                     columns:
@@ -6738,11 +6730,13 @@ definitions:
                     - null
                     - null
                   artifact_id:
+                    partitions:
+                      key: "partitions"
                     artifact_key:
                       domain: "domain"
+                      name: "name"
                       project: "project"
-                      suffix: "suffix"
-                    uuid: "uuid"
+                    version: "version"
                   map:
                     literals: {}
                   hash: "hash"
@@ -6798,24 +6792,22 @@ definitions:
                     structure:
                       tag: "tag"
                 var:
-                  aliases:
-                  - name: "name"
-                    artifact_id:
-                      artifact_key:
-                        domain: "domain"
-                        project: "project"
-                        suffix: "suffix"
-                      uuid: "uuid"
-                    value: "value"
-                  - name: "name"
-                    artifact_id:
-                      artifact_key:
-                        domain: "domain"
-                        project: "project"
-                        suffix: "suffix"
-                      uuid: "uuid"
-                    value: "value"
                   description: "description"
+                  artifact_partial_id:
+                  - partitions:
+                      key: "partitions"
+                    artifact_key:
+                      domain: "domain"
+                      name: "name"
+                      project: "project"
+                    version: "version"
+                  - partitions:
+                      key: "partitions"
+                    artifact_key:
+                      domain: "domain"
+                      name: "name"
+                      project: "project"
+                    version: "version"
                   type:
                     schema:
                       columns:
@@ -6868,17 +6860,13 @@ definitions:
                     structure:
                       tag: "tag"
                 artifact_query:
+                  partitions:
+                    key: "partitions"
                   domain: "domain"
+                  name: "name"
                   project: "project"
-                  alias:
-                    name: "name"
-                    artifact_id:
-                      artifact_key:
-                        domain: "domain"
-                        project: "project"
-                        suffix: "suffix"
-                      uuid: "uuid"
-                    value: "value"
+                  tag: "tag"
+                  version: "version"
                 required: true
         spec:
           workflow_id:
@@ -7068,11 +7056,13 @@ definitions:
                     - null
                     - null
                   artifact_id:
+                    partitions:
+                      key: "partitions"
                     artifact_key:
                       domain: "domain"
+                      name: "name"
                       project: "project"
-                      suffix: "suffix"
-                    uuid: "uuid"
+                    version: "version"
                   map:
                     literals: {}
                   hash: "hash"
@@ -7128,24 +7118,22 @@ definitions:
                     structure:
                       tag: "tag"
                 var:
-                  aliases:
-                  - name: "name"
-                    artifact_id:
-                      artifact_key:
-                        domain: "domain"
-                        project: "project"
-                        suffix: "suffix"
-                      uuid: "uuid"
-                    value: "value"
-                  - name: "name"
-                    artifact_id:
-                      artifact_key:
-                        domain: "domain"
-                        project: "project"
-                        suffix: "suffix"
-                      uuid: "uuid"
-                    value: "value"
                   description: "description"
+                  artifact_partial_id:
+                  - partitions:
+                      key: "partitions"
+                    artifact_key:
+                      domain: "domain"
+                      name: "name"
+                      project: "project"
+                    version: "version"
+                  - partitions:
+                      key: "partitions"
+                    artifact_key:
+                      domain: "domain"
+                      name: "name"
+                      project: "project"
+                    version: "version"
                   type:
                     schema:
                       columns:
@@ -7198,17 +7186,13 @@ definitions:
                     structure:
                       tag: "tag"
                 artifact_query:
+                  partitions:
+                    key: "partitions"
                   domain: "domain"
+                  name: "name"
                   project: "project"
-                  alias:
-                    name: "name"
-                    artifact_id:
-                      artifact_key:
-                        domain: "domain"
-                        project: "project"
-                        suffix: "suffix"
-                      uuid: "uuid"
-                    value: "value"
+                  tag: "tag"
+                  version: "version"
                 required: true
           security_context:
             run_as:
@@ -7569,11 +7553,13 @@ definitions:
                 - null
                 - null
               artifact_id:
+                partitions:
+                  key: "partitions"
                 artifact_key:
                   domain: "domain"
+                  name: "name"
                   project: "project"
-                  suffix: "suffix"
-                uuid: "uuid"
+                version: "version"
               map:
                 literals: {}
               hash: "hash"
@@ -7629,24 +7615,22 @@ definitions:
                 structure:
                   tag: "tag"
             var:
-              aliases:
-              - name: "name"
-                artifact_id:
-                  artifact_key:
-                    domain: "domain"
-                    project: "project"
-                    suffix: "suffix"
-                  uuid: "uuid"
-                value: "value"
-              - name: "name"
-                artifact_id:
-                  artifact_key:
-                    domain: "domain"
-                    project: "project"
-                    suffix: "suffix"
-                  uuid: "uuid"
-                value: "value"
               description: "description"
+              artifact_partial_id:
+              - partitions:
+                  key: "partitions"
+                artifact_key:
+                  domain: "domain"
+                  name: "name"
+                  project: "project"
+                version: "version"
+              - partitions:
+                  key: "partitions"
+                artifact_key:
+                  domain: "domain"
+                  name: "name"
+                  project: "project"
+                version: "version"
               type:
                 schema:
                   columns:
@@ -7699,17 +7683,13 @@ definitions:
                 structure:
                   tag: "tag"
             artifact_query:
+              partitions:
+                key: "partitions"
               domain: "domain"
+              name: "name"
               project: "project"
-              alias:
-                name: "name"
-                artifact_id:
-                  artifact_key:
-                    domain: "domain"
-                    project: "project"
-                    suffix: "suffix"
-                  uuid: "uuid"
-                value: "value"
+              tag: "tag"
+              version: "version"
             required: true
       security_context:
         run_as:
@@ -10498,24 +10478,22 @@ definitions:
                 outputs:
                   variables:
                     key:
-                      aliases:
-                      - name: "name"
-                        artifact_id:
-                          artifact_key:
-                            domain: "domain"
-                            project: "project"
-                            suffix: "suffix"
-                          uuid: "uuid"
-                        value: "value"
-                      - name: "name"
-                        artifact_id:
-                          artifact_key:
-                            domain: "domain"
-                            project: "project"
-                            suffix: "suffix"
-                          uuid: "uuid"
-                        value: "value"
                       description: "description"
+                      artifact_partial_id:
+                      - partitions:
+                          key: "partitions"
+                        artifact_key:
+                          domain: "domain"
+                          name: "name"
+                          project: "project"
+                        version: "version"
+                      - partitions:
+                          key: "partitions"
+                        artifact_key:
+                          domain: "domain"
+                          name: "name"
+                          project: "project"
+                        version: "version"
                       type:
                         schema:
                           columns:
@@ -10570,24 +10548,22 @@ definitions:
                 inputs:
                   variables:
                     key:
-                      aliases:
-                      - name: "name"
-                        artifact_id:
-                          artifact_key:
-                            domain: "domain"
-                            project: "project"
-                            suffix: "suffix"
-                          uuid: "uuid"
-                        value: "value"
-                      - name: "name"
-                        artifact_id:
-                          artifact_key:
-                            domain: "domain"
-                            project: "project"
-                            suffix: "suffix"
-                          uuid: "uuid"
-                        value: "value"
                       description: "description"
+                      artifact_partial_id:
+                      - partitions:
+                          key: "partitions"
+                        artifact_key:
+                          domain: "domain"
+                          name: "name"
+                          project: "project"
+                        version: "version"
+                      - partitions:
+                          key: "partitions"
+                        artifact_key:
+                          domain: "domain"
+                          name: "name"
+                          project: "project"
+                        version: "version"
                       type:
                         schema:
                           columns:
@@ -12555,24 +12531,22 @@ definitions:
                 outputs:
                   variables:
                     key:
-                      aliases:
-                      - name: "name"
-                        artifact_id:
-                          artifact_key:
-                            domain: "domain"
-                            project: "project"
-                            suffix: "suffix"
-                          uuid: "uuid"
-                        value: "value"
-                      - name: "name"
-                        artifact_id:
-                          artifact_key:
-                            domain: "domain"
-                            project: "project"
-                            suffix: "suffix"
-                          uuid: "uuid"
-                        value: "value"
                       description: "description"
+                      artifact_partial_id:
+                      - partitions:
+                          key: "partitions"
+                        artifact_key:
+                          domain: "domain"
+                          name: "name"
+                          project: "project"
+                        version: "version"
+                      - partitions:
+                          key: "partitions"
+                        artifact_key:
+                          domain: "domain"
+                          name: "name"
+                          project: "project"
+                        version: "version"
                       type:
                         schema:
                           columns:
@@ -12627,24 +12601,22 @@ definitions:
                 inputs:
                   variables:
                     key:
-                      aliases:
-                      - name: "name"
-                        artifact_id:
-                          artifact_key:
-                            domain: "domain"
-                            project: "project"
-                            suffix: "suffix"
-                          uuid: "uuid"
-                        value: "value"
-                      - name: "name"
-                        artifact_id:
-                          artifact_key:
-                            domain: "domain"
-                            project: "project"
-                            suffix: "suffix"
-                          uuid: "uuid"
-                        value: "value"
                       description: "description"
+                      artifact_partial_id:
+                      - partitions:
+                          key: "partitions"
+                        artifact_key:
+                          domain: "domain"
+                          name: "name"
+                          project: "project"
+                        version: "version"
+                      - partitions:
+                          key: "partitions"
+                        artifact_key:
+                          domain: "domain"
+                          name: "name"
+                          project: "project"
+                        version: "version"
                       type:
                         schema:
                           columns:
@@ -12815,24 +12787,22 @@ definitions:
                 outputs:
                   variables:
                     key:
-                      aliases:
-                      - name: "name"
-                        artifact_id:
-                          artifact_key:
-                            domain: "domain"
-                            project: "project"
-                            suffix: "suffix"
-                          uuid: "uuid"
-                        value: "value"
-                      - name: "name"
-                        artifact_id:
-                          artifact_key:
-                            domain: "domain"
-                            project: "project"
-                            suffix: "suffix"
-                          uuid: "uuid"
-                        value: "value"
                       description: "description"
+                      artifact_partial_id:
+                      - partitions:
+                          key: "partitions"
+                        artifact_key:
+                          domain: "domain"
+                          name: "name"
+                          project: "project"
+                        version: "version"
+                      - partitions:
+                          key: "partitions"
+                        artifact_key:
+                          domain: "domain"
+                          name: "name"
+                          project: "project"
+                        version: "version"
                       type:
                         schema:
                           columns:
@@ -12887,24 +12857,22 @@ definitions:
                 inputs:
                   variables:
                     key:
-                      aliases:
-                      - name: "name"
-                        artifact_id:
-                          artifact_key:
-                            domain: "domain"
-                            project: "project"
-                            suffix: "suffix"
-                          uuid: "uuid"
-                        value: "value"
-                      - name: "name"
-                        artifact_id:
-                          artifact_key:
-                            domain: "domain"
-                            project: "project"
-                            suffix: "suffix"
-                          uuid: "uuid"
-                        value: "value"
                       description: "description"
+                      artifact_partial_id:
+                      - partitions:
+                          key: "partitions"
+                        artifact_key:
+                          domain: "domain"
+                          name: "name"
+                          project: "project"
+                        version: "version"
+                      - partitions:
+                          key: "partitions"
+                        artifact_key:
+                          domain: "domain"
+                          name: "name"
+                          project: "project"
+                        version: "version"
                       type:
                         schema:
                           columns:
@@ -13112,24 +13080,22 @@ definitions:
                 outputs:
                   variables:
                     key:
-                      aliases:
-                      - name: "name"
-                        artifact_id:
-                          artifact_key:
-                            domain: "domain"
-                            project: "project"
-                            suffix: "suffix"
-                          uuid: "uuid"
-                        value: "value"
-                      - name: "name"
-                        artifact_id:
-                          artifact_key:
-                            domain: "domain"
-                            project: "project"
-                            suffix: "suffix"
-                          uuid: "uuid"
-                        value: "value"
                       description: "description"
+                      artifact_partial_id:
+                      - partitions:
+                          key: "partitions"
+                        artifact_key:
+                          domain: "domain"
+                          name: "name"
+                          project: "project"
+                        version: "version"
+                      - partitions:
+                          key: "partitions"
+                        artifact_key:
+                          domain: "domain"
+                          name: "name"
+                          project: "project"
+                        version: "version"
                       type:
                         schema:
                           columns:
@@ -13184,24 +13150,22 @@ definitions:
                 inputs:
                   variables:
                     key:
-                      aliases:
-                      - name: "name"
-                        artifact_id:
-                          artifact_key:
-                            domain: "domain"
-                            project: "project"
-                            suffix: "suffix"
-                          uuid: "uuid"
-                        value: "value"
-                      - name: "name"
-                        artifact_id:
-                          artifact_key:
-                            domain: "domain"
-                            project: "project"
-                            suffix: "suffix"
-                          uuid: "uuid"
-                        value: "value"
                       description: "description"
+                      artifact_partial_id:
+                      - partitions:
+                          key: "partitions"
+                        artifact_key:
+                          domain: "domain"
+                          name: "name"
+                          project: "project"
+                        version: "version"
+                      - partitions:
+                          key: "partitions"
+                        artifact_key:
+                          domain: "domain"
+                          name: "name"
+                          project: "project"
+                        version: "version"
                       type:
                         schema:
                           columns:
@@ -15208,24 +15172,22 @@ definitions:
                 outputs:
                   variables:
                     key:
-                      aliases:
-                      - name: "name"
-                        artifact_id:
-                          artifact_key:
-                            domain: "domain"
-                            project: "project"
-                            suffix: "suffix"
-                          uuid: "uuid"
-                        value: "value"
-                      - name: "name"
-                        artifact_id:
-                          artifact_key:
-                            domain: "domain"
-                            project: "project"
-                            suffix: "suffix"
-                          uuid: "uuid"
-                        value: "value"
                       description: "description"
+                      artifact_partial_id:
+                      - partitions:
+                          key: "partitions"
+                        artifact_key:
+                          domain: "domain"
+                          name: "name"
+                          project: "project"
+                        version: "version"
+                      - partitions:
+                          key: "partitions"
+                        artifact_key:
+                          domain: "domain"
+                          name: "name"
+                          project: "project"
+                        version: "version"
                       type:
                         schema:
                           columns:
@@ -15280,24 +15242,22 @@ definitions:
                 inputs:
                   variables:
                     key:
-                      aliases:
-                      - name: "name"
-                        artifact_id:
-                          artifact_key:
-                            domain: "domain"
-                            project: "project"
-                            suffix: "suffix"
-                          uuid: "uuid"
-                        value: "value"
-                      - name: "name"
-                        artifact_id:
-                          artifact_key:
-                            domain: "domain"
-                            project: "project"
-                            suffix: "suffix"
-                          uuid: "uuid"
-                        value: "value"
                       description: "description"
+                      artifact_partial_id:
+                      - partitions:
+                          key: "partitions"
+                        artifact_key:
+                          domain: "domain"
+                          name: "name"
+                          project: "project"
+                        version: "version"
+                      - partitions:
+                          key: "partitions"
+                        artifact_key:
+                          domain: "domain"
+                          name: "name"
+                          project: "project"
+                        version: "version"
                       type:
                         schema:
                           columns:
@@ -16511,24 +16471,22 @@ definitions:
               outputs:
                 variables:
                   key:
-                    aliases:
-                    - name: "name"
-                      artifact_id:
-                        artifact_key:
-                          domain: "domain"
-                          project: "project"
-                          suffix: "suffix"
-                        uuid: "uuid"
-                      value: "value"
-                    - name: "name"
-                      artifact_id:
-                        artifact_key:
-                          domain: "domain"
-                          project: "project"
-                          suffix: "suffix"
-                        uuid: "uuid"
-                      value: "value"
                     description: "description"
+                    artifact_partial_id:
+                    - partitions:
+                        key: "partitions"
+                      artifact_key:
+                        domain: "domain"
+                        name: "name"
+                        project: "project"
+                      version: "version"
+                    - partitions:
+                        key: "partitions"
+                      artifact_key:
+                        domain: "domain"
+                        name: "name"
+                        project: "project"
+                      version: "version"
                     type:
                       schema:
                         columns:
@@ -16583,24 +16541,22 @@ definitions:
               inputs:
                 variables:
                   key:
-                    aliases:
-                    - name: "name"
-                      artifact_id:
-                        artifact_key:
-                          domain: "domain"
-                          project: "project"
-                          suffix: "suffix"
-                        uuid: "uuid"
-                      value: "value"
-                    - name: "name"
-                      artifact_id:
-                        artifact_key:
-                          domain: "domain"
-                          project: "project"
-                          suffix: "suffix"
-                        uuid: "uuid"
-                      value: "value"
                     description: "description"
+                    artifact_partial_id:
+                    - partitions:
+                        key: "partitions"
+                      artifact_key:
+                        domain: "domain"
+                        name: "name"
+                        project: "project"
+                      version: "version"
+                    - partitions:
+                        key: "partitions"
+                      artifact_key:
+                        domain: "domain"
+                        name: "name"
+                        project: "project"
+                      version: "version"
                     type:
                       schema:
                         columns:
@@ -16824,24 +16780,22 @@ definitions:
             outputs:
               variables:
                 key:
-                  aliases:
-                  - name: "name"
-                    artifact_id:
-                      artifact_key:
-                        domain: "domain"
-                        project: "project"
-                        suffix: "suffix"
-                      uuid: "uuid"
-                    value: "value"
-                  - name: "name"
-                    artifact_id:
-                      artifact_key:
-                        domain: "domain"
-                        project: "project"
-                        suffix: "suffix"
-                      uuid: "uuid"
-                    value: "value"
                   description: "description"
+                  artifact_partial_id:
+                  - partitions:
+                      key: "partitions"
+                    artifact_key:
+                      domain: "domain"
+                      name: "name"
+                      project: "project"
+                    version: "version"
+                  - partitions:
+                      key: "partitions"
+                    artifact_key:
+                      domain: "domain"
+                      name: "name"
+                      project: "project"
+                    version: "version"
                   type:
                     schema:
                       columns:
@@ -16896,24 +16850,22 @@ definitions:
             inputs:
               variables:
                 key:
-                  aliases:
-                  - name: "name"
-                    artifact_id:
-                      artifact_key:
-                        domain: "domain"
-                        project: "project"
-                        suffix: "suffix"
-                      uuid: "uuid"
-                    value: "value"
-                  - name: "name"
-                    artifact_id:
-                      artifact_key:
-                        domain: "domain"
-                        project: "project"
-                        suffix: "suffix"
-                      uuid: "uuid"
-                    value: "value"
                   description: "description"
+                  artifact_partial_id:
+                  - partitions:
+                      key: "partitions"
+                    artifact_key:
+                      domain: "domain"
+                      name: "name"
+                      project: "project"
+                    version: "version"
+                  - partitions:
+                      key: "partitions"
+                    artifact_key:
+                      domain: "domain"
+                      name: "name"
+                      project: "project"
+                    version: "version"
                   type:
                     schema:
                       columns:
@@ -17550,24 +17502,22 @@ definitions:
                 outputs:
                   variables:
                     key:
-                      aliases:
-                      - name: "name"
-                        artifact_id:
-                          artifact_key:
-                            domain: "domain"
-                            project: "project"
-                            suffix: "suffix"
-                          uuid: "uuid"
-                        value: "value"
-                      - name: "name"
-                        artifact_id:
-                          artifact_key:
-                            domain: "domain"
-                            project: "project"
-                            suffix: "suffix"
-                          uuid: "uuid"
-                        value: "value"
                       description: "description"
+                      artifact_partial_id:
+                      - partitions:
+                          key: "partitions"
+                        artifact_key:
+                          domain: "domain"
+                          name: "name"
+                          project: "project"
+                        version: "version"
+                      - partitions:
+                          key: "partitions"
+                        artifact_key:
+                          domain: "domain"
+                          name: "name"
+                          project: "project"
+                        version: "version"
                       type:
                         schema:
                           columns:
@@ -17622,24 +17572,22 @@ definitions:
                 inputs:
                   variables:
                     key:
-                      aliases:
-                      - name: "name"
-                        artifact_id:
-                          artifact_key:
-                            domain: "domain"
-                            project: "project"
-                            suffix: "suffix"
-                          uuid: "uuid"
-                        value: "value"
-                      - name: "name"
-                        artifact_id:
-                          artifact_key:
-                            domain: "domain"
-                            project: "project"
-                            suffix: "suffix"
-                          uuid: "uuid"
-                        value: "value"
                       description: "description"
+                      artifact_partial_id:
+                      - partitions:
+                          key: "partitions"
+                        artifact_key:
+                          domain: "domain"
+                          name: "name"
+                          project: "project"
+                        version: "version"
+                      - partitions:
+                          key: "partitions"
+                        artifact_key:
+                          domain: "domain"
+                          name: "name"
+                          project: "project"
+                        version: "version"
                       type:
                         schema:
                           columns:
@@ -17857,24 +17805,22 @@ definitions:
                 outputs:
                   variables:
                     key:
-                      aliases:
-                      - name: "name"
-                        artifact_id:
-                          artifact_key:
-                            domain: "domain"
-                            project: "project"
-                            suffix: "suffix"
-                          uuid: "uuid"
-                        value: "value"
-                      - name: "name"
-                        artifact_id:
-                          artifact_key:
-                            domain: "domain"
-                            project: "project"
-                            suffix: "suffix"
-                          uuid: "uuid"
-                        value: "value"
                       description: "description"
+                      artifact_partial_id:
+                      - partitions:
+                          key: "partitions"
+                        artifact_key:
+                          domain: "domain"
+                          name: "name"
+                          project: "project"
+                        version: "version"
+                      - partitions:
+                          key: "partitions"
+                        artifact_key:
+                          domain: "domain"
+                          name: "name"
+                          project: "project"
+                        version: "version"
                       type:
                         schema:
                           columns:
@@ -17929,24 +17875,22 @@ definitions:
                 inputs:
                   variables:
                     key:
-                      aliases:
-                      - name: "name"
-                        artifact_id:
-                          artifact_key:
-                            domain: "domain"
-                            project: "project"
-                            suffix: "suffix"
-                          uuid: "uuid"
-                        value: "value"
-                      - name: "name"
-                        artifact_id:
-                          artifact_key:
-                            domain: "domain"
-                            project: "project"
-                            suffix: "suffix"
-                          uuid: "uuid"
-                        value: "value"
                       description: "description"
+                      artifact_partial_id:
+                      - partitions:
+                          key: "partitions"
+                        artifact_key:
+                          domain: "domain"
+                          name: "name"
+                          project: "project"
+                        version: "version"
+                      - partitions:
+                          key: "partitions"
+                        artifact_key:
+                          domain: "domain"
+                          name: "name"
+                          project: "project"
+                        version: "version"
                       type:
                         schema:
                           columns:
@@ -20067,24 +20011,22 @@ definitions:
                 outputs:
                   variables:
                     key:
-                      aliases:
-                      - name: "name"
-                        artifact_id:
-                          artifact_key:
-                            domain: "domain"
-                            project: "project"
-                            suffix: "suffix"
-                          uuid: "uuid"
-                        value: "value"
-                      - name: "name"
-                        artifact_id:
-                          artifact_key:
-                            domain: "domain"
-                            project: "project"
-                            suffix: "suffix"
-                          uuid: "uuid"
-                        value: "value"
                       description: "description"
+                      artifact_partial_id:
+                      - partitions:
+                          key: "partitions"
+                        artifact_key:
+                          domain: "domain"
+                          name: "name"
+                          project: "project"
+                        version: "version"
+                      - partitions:
+                          key: "partitions"
+                        artifact_key:
+                          domain: "domain"
+                          name: "name"
+                          project: "project"
+                        version: "version"
                       type:
                         schema:
                           columns:
@@ -20139,24 +20081,22 @@ definitions:
                 inputs:
                   variables:
                     key:
-                      aliases:
-                      - name: "name"
-                        artifact_id:
-                          artifact_key:
-                            domain: "domain"
-                            project: "project"
-                            suffix: "suffix"
-                          uuid: "uuid"
-                        value: "value"
-                      - name: "name"
-                        artifact_id:
-                          artifact_key:
-                            domain: "domain"
-                            project: "project"
-                            suffix: "suffix"
-                          uuid: "uuid"
-                        value: "value"
                       description: "description"
+                      artifact_partial_id:
+                      - partitions:
+                          key: "partitions"
+                        artifact_key:
+                          domain: "domain"
+                          name: "name"
+                          project: "project"
+                        version: "version"
+                      - partitions:
+                          key: "partitions"
+                        artifact_key:
+                          domain: "domain"
+                          name: "name"
+                          project: "project"
+                        version: "version"
                       type:
                         schema:
                           columns:
@@ -22124,24 +22064,22 @@ definitions:
                 outputs:
                   variables:
                     key:
-                      aliases:
-                      - name: "name"
-                        artifact_id:
-                          artifact_key:
-                            domain: "domain"
-                            project: "project"
-                            suffix: "suffix"
-                          uuid: "uuid"
-                        value: "value"
-                      - name: "name"
-                        artifact_id:
-                          artifact_key:
-                            domain: "domain"
-                            project: "project"
-                            suffix: "suffix"
-                          uuid: "uuid"
-                        value: "value"
                       description: "description"
+                      artifact_partial_id:
+                      - partitions:
+                          key: "partitions"
+                        artifact_key:
+                          domain: "domain"
+                          name: "name"
+                          project: "project"
+                        version: "version"
+                      - partitions:
+                          key: "partitions"
+                        artifact_key:
+                          domain: "domain"
+                          name: "name"
+                          project: "project"
+                        version: "version"
                       type:
                         schema:
                           columns:
@@ -22196,24 +22134,22 @@ definitions:
                 inputs:
                   variables:
                     key:
-                      aliases:
-                      - name: "name"
-                        artifact_id:
-                          artifact_key:
-                            domain: "domain"
-                            project: "project"
-                            suffix: "suffix"
-                          uuid: "uuid"
-                        value: "value"
-                      - name: "name"
-                        artifact_id:
-                          artifact_key:
-                            domain: "domain"
-                            project: "project"
-                            suffix: "suffix"
-                          uuid: "uuid"
-                        value: "value"
                       description: "description"
+                      artifact_partial_id:
+                      - partitions:
+                          key: "partitions"
+                        artifact_key:
+                          domain: "domain"
+                          name: "name"
+                          project: "project"
+                        version: "version"
+                      - partitions:
+                          key: "partitions"
+                        artifact_key:
+                          domain: "domain"
+                          name: "name"
+                          project: "project"
+                        version: "version"
                       type:
                         schema:
                           columns:
@@ -22384,24 +22320,22 @@ definitions:
                 outputs:
                   variables:
                     key:
-                      aliases:
-                      - name: "name"
-                        artifact_id:
-                          artifact_key:
-                            domain: "domain"
-                            project: "project"
-                            suffix: "suffix"
-                          uuid: "uuid"
-                        value: "value"
-                      - name: "name"
-                        artifact_id:
-                          artifact_key:
-                            domain: "domain"
-                            project: "project"
-                            suffix: "suffix"
-                          uuid: "uuid"
-                        value: "value"
                       description: "description"
+                      artifact_partial_id:
+                      - partitions:
+                          key: "partitions"
+                        artifact_key:
+                          domain: "domain"
+                          name: "name"
+                          project: "project"
+                        version: "version"
+                      - partitions:
+                          key: "partitions"
+                        artifact_key:
+                          domain: "domain"
+                          name: "name"
+                          project: "project"
+                        version: "version"
                       type:
                         schema:
                           columns:
@@ -22456,24 +22390,22 @@ definitions:
                 inputs:
                   variables:
                     key:
-                      aliases:
-                      - name: "name"
-                        artifact_id:
-                          artifact_key:
-                            domain: "domain"
-                            project: "project"
-                            suffix: "suffix"
-                          uuid: "uuid"
-                        value: "value"
-                      - name: "name"
-                        artifact_id:
-                          artifact_key:
-                            domain: "domain"
-                            project: "project"
-                            suffix: "suffix"
-                          uuid: "uuid"
-                        value: "value"
                       description: "description"
+                      artifact_partial_id:
+                      - partitions:
+                          key: "partitions"
+                        artifact_key:
+                          domain: "domain"
+                          name: "name"
+                          project: "project"
+                        version: "version"
+                      - partitions:
+                          key: "partitions"
+                        artifact_key:
+                          domain: "domain"
+                          name: "name"
+                          project: "project"
+                        version: "version"
                       type:
                         schema:
                           columns:
@@ -22681,24 +22613,22 @@ definitions:
                 outputs:
                   variables:
                     key:
-                      aliases:
-                      - name: "name"
-                        artifact_id:
-                          artifact_key:
-                            domain: "domain"
-                            project: "project"
-                            suffix: "suffix"
-                          uuid: "uuid"
-                        value: "value"
-                      - name: "name"
-                        artifact_id:
-                          artifact_key:
-                            domain: "domain"
-                            project: "project"
-                            suffix: "suffix"
-                          uuid: "uuid"
-                        value: "value"
                       description: "description"
+                      artifact_partial_id:
+                      - partitions:
+                          key: "partitions"
+                        artifact_key:
+                          domain: "domain"
+                          name: "name"
+                          project: "project"
+                        version: "version"
+                      - partitions:
+                          key: "partitions"
+                        artifact_key:
+                          domain: "domain"
+                          name: "name"
+                          project: "project"
+                        version: "version"
                       type:
                         schema:
                           columns:
@@ -22753,24 +22683,22 @@ definitions:
                 inputs:
                   variables:
                     key:
-                      aliases:
-                      - name: "name"
-                        artifact_id:
-                          artifact_key:
-                            domain: "domain"
-                            project: "project"
-                            suffix: "suffix"
-                          uuid: "uuid"
-                        value: "value"
-                      - name: "name"
-                        artifact_id:
-                          artifact_key:
-                            domain: "domain"
-                            project: "project"
-                            suffix: "suffix"
-                          uuid: "uuid"
-                        value: "value"
                       description: "description"
+                      artifact_partial_id:
+                      - partitions:
+                          key: "partitions"
+                        artifact_key:
+                          domain: "domain"
+                          name: "name"
+                          project: "project"
+                        version: "version"
+                      - partitions:
+                          key: "partitions"
+                        artifact_key:
+                          domain: "domain"
+                          name: "name"
+                          project: "project"
+                        version: "version"
                       type:
                         schema:
                           columns:
@@ -24777,24 +24705,22 @@ definitions:
                 outputs:
                   variables:
                     key:
-                      aliases:
-                      - name: "name"
-                        artifact_id:
-                          artifact_key:
-                            domain: "domain"
-                            project: "project"
-                            suffix: "suffix"
-                          uuid: "uuid"
-                        value: "value"
-                      - name: "name"
-                        artifact_id:
-                          artifact_key:
-                            domain: "domain"
-                            project: "project"
-                            suffix: "suffix"
-                          uuid: "uuid"
-                        value: "value"
                       description: "description"
+                      artifact_partial_id:
+                      - partitions:
+                          key: "partitions"
+                        artifact_key:
+                          domain: "domain"
+                          name: "name"
+                          project: "project"
+                        version: "version"
+                      - partitions:
+                          key: "partitions"
+                        artifact_key:
+                          domain: "domain"
+                          name: "name"
+                          project: "project"
+                        version: "version"
                       type:
                         schema:
                           columns:
@@ -24849,24 +24775,22 @@ definitions:
                 inputs:
                   variables:
                     key:
-                      aliases:
-                      - name: "name"
-                        artifact_id:
-                          artifact_key:
-                            domain: "domain"
-                            project: "project"
-                            suffix: "suffix"
-                          uuid: "uuid"
-                        value: "value"
-                      - name: "name"
-                        artifact_id:
-                          artifact_key:
-                            domain: "domain"
-                            project: "project"
-                            suffix: "suffix"
-                          uuid: "uuid"
-                        value: "value"
                       description: "description"
+                      artifact_partial_id:
+                      - partitions:
+                          key: "partitions"
+                        artifact_key:
+                          domain: "domain"
+                          name: "name"
+                          project: "project"
+                        version: "version"
+                      - partitions:
+                          key: "partitions"
+                        artifact_key:
+                          domain: "domain"
+                          name: "name"
+                          project: "project"
+                        version: "version"
                       type:
                         schema:
                           columns:
@@ -27119,24 +27043,22 @@ definitions:
               outputs:
                 variables:
                   key:
-                    aliases:
-                    - name: "name"
-                      artifact_id:
-                        artifact_key:
-                          domain: "domain"
-                          project: "project"
-                          suffix: "suffix"
-                        uuid: "uuid"
-                      value: "value"
-                    - name: "name"
-                      artifact_id:
-                        artifact_key:
-                          domain: "domain"
-                          project: "project"
-                          suffix: "suffix"
-                        uuid: "uuid"
-                      value: "value"
                     description: "description"
+                    artifact_partial_id:
+                    - partitions:
+                        key: "partitions"
+                      artifact_key:
+                        domain: "domain"
+                        name: "name"
+                        project: "project"
+                      version: "version"
+                    - partitions:
+                        key: "partitions"
+                      artifact_key:
+                        domain: "domain"
+                        name: "name"
+                        project: "project"
+                      version: "version"
                     type:
                       schema:
                         columns:
@@ -27191,24 +27113,22 @@ definitions:
               inputs:
                 variables:
                   key:
-                    aliases:
-                    - name: "name"
-                      artifact_id:
-                        artifact_key:
-                          domain: "domain"
-                          project: "project"
-                          suffix: "suffix"
-                        uuid: "uuid"
-                      value: "value"
-                    - name: "name"
-                      artifact_id:
-                        artifact_key:
-                          domain: "domain"
-                          project: "project"
-                          suffix: "suffix"
-                        uuid: "uuid"
-                      value: "value"
                     description: "description"
+                    artifact_partial_id:
+                    - partitions:
+                        key: "partitions"
+                      artifact_key:
+                        domain: "domain"
+                        name: "name"
+                        project: "project"
+                      version: "version"
+                    - partitions:
+                        key: "partitions"
+                      artifact_key:
+                        domain: "domain"
+                        name: "name"
+                        project: "project"
+                      version: "version"
                     type:
                       schema:
                         columns:
@@ -29176,24 +29096,22 @@ definitions:
               outputs:
                 variables:
                   key:
-                    aliases:
-                    - name: "name"
-                      artifact_id:
-                        artifact_key:
-                          domain: "domain"
-                          project: "project"
-                          suffix: "suffix"
-                        uuid: "uuid"
-                      value: "value"
-                    - name: "name"
-                      artifact_id:
-                        artifact_key:
-                          domain: "domain"
-                          project: "project"
-                          suffix: "suffix"
-                        uuid: "uuid"
-                      value: "value"
                     description: "description"
+                    artifact_partial_id:
+                    - partitions:
+                        key: "partitions"
+                      artifact_key:
+                        domain: "domain"
+                        name: "name"
+                        project: "project"
+                      version: "version"
+                    - partitions:
+                        key: "partitions"
+                      artifact_key:
+                        domain: "domain"
+                        name: "name"
+                        project: "project"
+                      version: "version"
                     type:
                       schema:
                         columns:
@@ -29248,24 +29166,22 @@ definitions:
               inputs:
                 variables:
                   key:
-                    aliases:
-                    - name: "name"
-                      artifact_id:
-                        artifact_key:
-                          domain: "domain"
-                          project: "project"
-                          suffix: "suffix"
-                        uuid: "uuid"
-                      value: "value"
-                    - name: "name"
-                      artifact_id:
-                        artifact_key:
-                          domain: "domain"
-                          project: "project"
-                          suffix: "suffix"
-                        uuid: "uuid"
-                      value: "value"
                     description: "description"
+                    artifact_partial_id:
+                    - partitions:
+                        key: "partitions"
+                      artifact_key:
+                        domain: "domain"
+                        name: "name"
+                        project: "project"
+                      version: "version"
+                    - partitions:
+                        key: "partitions"
+                      artifact_key:
+                        domain: "domain"
+                        name: "name"
+                        project: "project"
+                      version: "version"
                     type:
                       schema:
                         columns:
@@ -29436,24 +29352,22 @@ definitions:
               outputs:
                 variables:
                   key:
-                    aliases:
-                    - name: "name"
-                      artifact_id:
-                        artifact_key:
-                          domain: "domain"
-                          project: "project"
-                          suffix: "suffix"
-                        uuid: "uuid"
-                      value: "value"
-                    - name: "name"
-                      artifact_id:
-                        artifact_key:
-                          domain: "domain"
-                          project: "project"
-                          suffix: "suffix"
-                        uuid: "uuid"
-                      value: "value"
                     description: "description"
+                    artifact_partial_id:
+                    - partitions:
+                        key: "partitions"
+                      artifact_key:
+                        domain: "domain"
+                        name: "name"
+                        project: "project"
+                      version: "version"
+                    - partitions:
+                        key: "partitions"
+                      artifact_key:
+                        domain: "domain"
+                        name: "name"
+                        project: "project"
+                      version: "version"
                     type:
                       schema:
                         columns:
@@ -29508,24 +29422,22 @@ definitions:
               inputs:
                 variables:
                   key:
-                    aliases:
-                    - name: "name"
-                      artifact_id:
-                        artifact_key:
-                          domain: "domain"
-                          project: "project"
-                          suffix: "suffix"
-                        uuid: "uuid"
-                      value: "value"
-                    - name: "name"
-                      artifact_id:
-                        artifact_key:
-                          domain: "domain"
-                          project: "project"
-                          suffix: "suffix"
-                        uuid: "uuid"
-                      value: "value"
                     description: "description"
+                    artifact_partial_id:
+                    - partitions:
+                        key: "partitions"
+                      artifact_key:
+                        domain: "domain"
+                        name: "name"
+                        project: "project"
+                      version: "version"
+                    - partitions:
+                        key: "partitions"
+                      artifact_key:
+                        domain: "domain"
+                        name: "name"
+                        project: "project"
+                      version: "version"
                     type:
                       schema:
                         columns:
@@ -29733,24 +29645,22 @@ definitions:
               outputs:
                 variables:
                   key:
-                    aliases:
-                    - name: "name"
-                      artifact_id:
-                        artifact_key:
-                          domain: "domain"
-                          project: "project"
-                          suffix: "suffix"
-                        uuid: "uuid"
-                      value: "value"
-                    - name: "name"
-                      artifact_id:
-                        artifact_key:
-                          domain: "domain"
-                          project: "project"
-                          suffix: "suffix"
-                        uuid: "uuid"
-                      value: "value"
                     description: "description"
+                    artifact_partial_id:
+                    - partitions:
+                        key: "partitions"
+                      artifact_key:
+                        domain: "domain"
+                        name: "name"
+                        project: "project"
+                      version: "version"
+                    - partitions:
+                        key: "partitions"
+                      artifact_key:
+                        domain: "domain"
+                        name: "name"
+                        project: "project"
+                      version: "version"
                     type:
                       schema:
                         columns:
@@ -29805,24 +29715,22 @@ definitions:
               inputs:
                 variables:
                   key:
-                    aliases:
-                    - name: "name"
-                      artifact_id:
-                        artifact_key:
-                          domain: "domain"
-                          project: "project"
-                          suffix: "suffix"
-                        uuid: "uuid"
-                      value: "value"
-                    - name: "name"
-                      artifact_id:
-                        artifact_key:
-                          domain: "domain"
-                          project: "project"
-                          suffix: "suffix"
-                        uuid: "uuid"
-                      value: "value"
                     description: "description"
+                    artifact_partial_id:
+                    - partitions:
+                        key: "partitions"
+                      artifact_key:
+                        domain: "domain"
+                        name: "name"
+                        project: "project"
+                      version: "version"
+                    - partitions:
+                        key: "partitions"
+                      artifact_key:
+                        domain: "domain"
+                        name: "name"
+                        project: "project"
+                      version: "version"
                     type:
                       schema:
                         columns:
@@ -31829,24 +31737,22 @@ definitions:
               outputs:
                 variables:
                   key:
-                    aliases:
-                    - name: "name"
-                      artifact_id:
-                        artifact_key:
-                          domain: "domain"
-                          project: "project"
-                          suffix: "suffix"
-                        uuid: "uuid"
-                      value: "value"
-                    - name: "name"
-                      artifact_id:
-                        artifact_key:
-                          domain: "domain"
-                          project: "project"
-                          suffix: "suffix"
-                        uuid: "uuid"
-                      value: "value"
                     description: "description"
+                    artifact_partial_id:
+                    - partitions:
+                        key: "partitions"
+                      artifact_key:
+                        domain: "domain"
+                        name: "name"
+                        project: "project"
+                      version: "version"
+                    - partitions:
+                        key: "partitions"
+                      artifact_key:
+                        domain: "domain"
+                        name: "name"
+                        project: "project"
+                      version: "version"
                     type:
                       schema:
                         columns:
@@ -31901,24 +31807,22 @@ definitions:
               inputs:
                 variables:
                   key:
-                    aliases:
-                    - name: "name"
-                      artifact_id:
-                        artifact_key:
-                          domain: "domain"
-                          project: "project"
-                          suffix: "suffix"
-                        uuid: "uuid"
-                      value: "value"
-                    - name: "name"
-                      artifact_id:
-                        artifact_key:
-                          domain: "domain"
-                          project: "project"
-                          suffix: "suffix"
-                        uuid: "uuid"
-                      value: "value"
                     description: "description"
+                    artifact_partial_id:
+                    - partitions:
+                        key: "partitions"
+                      artifact_key:
+                        domain: "domain"
+                        name: "name"
+                        project: "project"
+                      version: "version"
+                    - partitions:
+                        key: "partitions"
+                      artifact_key:
+                        domain: "domain"
+                        name: "name"
+                        project: "project"
+                      version: "version"
                     type:
                       schema:
                         columns:
@@ -34118,24 +34022,22 @@ definitions:
                   outputs:
                     variables:
                       key:
-                        aliases:
-                        - name: "name"
-                          artifact_id:
-                            artifact_key:
-                              domain: "domain"
-                              project: "project"
-                              suffix: "suffix"
-                            uuid: "uuid"
-                          value: "value"
-                        - name: "name"
-                          artifact_id:
-                            artifact_key:
-                              domain: "domain"
-                              project: "project"
-                              suffix: "suffix"
-                            uuid: "uuid"
-                          value: "value"
                         description: "description"
+                        artifact_partial_id:
+                        - partitions:
+                            key: "partitions"
+                          artifact_key:
+                            domain: "domain"
+                            name: "name"
+                            project: "project"
+                          version: "version"
+                        - partitions:
+                            key: "partitions"
+                          artifact_key:
+                            domain: "domain"
+                            name: "name"
+                            project: "project"
+                          version: "version"
                         type:
                           schema:
                             columns:
@@ -34190,24 +34092,22 @@ definitions:
                   inputs:
                     variables:
                       key:
-                        aliases:
-                        - name: "name"
-                          artifact_id:
-                            artifact_key:
-                              domain: "domain"
-                              project: "project"
-                              suffix: "suffix"
-                            uuid: "uuid"
-                          value: "value"
-                        - name: "name"
-                          artifact_id:
-                            artifact_key:
-                              domain: "domain"
-                              project: "project"
-                              suffix: "suffix"
-                            uuid: "uuid"
-                          value: "value"
                         description: "description"
+                        artifact_partial_id:
+                        - partitions:
+                            key: "partitions"
+                          artifact_key:
+                            domain: "domain"
+                            name: "name"
+                            project: "project"
+                          version: "version"
+                        - partitions:
+                            key: "partitions"
+                          artifact_key:
+                            domain: "domain"
+                            name: "name"
+                            project: "project"
+                          version: "version"
                         type:
                           schema:
                             columns:
@@ -36175,24 +36075,22 @@ definitions:
                   outputs:
                     variables:
                       key:
-                        aliases:
-                        - name: "name"
-                          artifact_id:
-                            artifact_key:
-                              domain: "domain"
-                              project: "project"
-                              suffix: "suffix"
-                            uuid: "uuid"
-                          value: "value"
-                        - name: "name"
-                          artifact_id:
-                            artifact_key:
-                              domain: "domain"
-                              project: "project"
-                              suffix: "suffix"
-                            uuid: "uuid"
-                          value: "value"
                         description: "description"
+                        artifact_partial_id:
+                        - partitions:
+                            key: "partitions"
+                          artifact_key:
+                            domain: "domain"
+                            name: "name"
+                            project: "project"
+                          version: "version"
+                        - partitions:
+                            key: "partitions"
+                          artifact_key:
+                            domain: "domain"
+                            name: "name"
+                            project: "project"
+                          version: "version"
                         type:
                           schema:
                             columns:
@@ -36247,24 +36145,22 @@ definitions:
                   inputs:
                     variables:
                       key:
-                        aliases:
-                        - name: "name"
-                          artifact_id:
-                            artifact_key:
-                              domain: "domain"
-                              project: "project"
-                              suffix: "suffix"
-                            uuid: "uuid"
-                          value: "value"
-                        - name: "name"
-                          artifact_id:
-                            artifact_key:
-                              domain: "domain"
-                              project: "project"
-                              suffix: "suffix"
-                            uuid: "uuid"
-                          value: "value"
                         description: "description"
+                        artifact_partial_id:
+                        - partitions:
+                            key: "partitions"
+                          artifact_key:
+                            domain: "domain"
+                            name: "name"
+                            project: "project"
+                          version: "version"
+                        - partitions:
+                            key: "partitions"
+                          artifact_key:
+                            domain: "domain"
+                            name: "name"
+                            project: "project"
+                          version: "version"
                         type:
                           schema:
                             columns:
@@ -36435,24 +36331,22 @@ definitions:
                   outputs:
                     variables:
                       key:
-                        aliases:
-                        - name: "name"
-                          artifact_id:
-                            artifact_key:
-                              domain: "domain"
-                              project: "project"
-                              suffix: "suffix"
-                            uuid: "uuid"
-                          value: "value"
-                        - name: "name"
-                          artifact_id:
-                            artifact_key:
-                              domain: "domain"
-                              project: "project"
-                              suffix: "suffix"
-                            uuid: "uuid"
-                          value: "value"
                         description: "description"
+                        artifact_partial_id:
+                        - partitions:
+                            key: "partitions"
+                          artifact_key:
+                            domain: "domain"
+                            name: "name"
+                            project: "project"
+                          version: "version"
+                        - partitions:
+                            key: "partitions"
+                          artifact_key:
+                            domain: "domain"
+                            name: "name"
+                            project: "project"
+                          version: "version"
                         type:
                           schema:
                             columns:
@@ -36507,24 +36401,22 @@ definitions:
                   inputs:
                     variables:
                       key:
-                        aliases:
-                        - name: "name"
-                          artifact_id:
-                            artifact_key:
-                              domain: "domain"
-                              project: "project"
-                              suffix: "suffix"
-                            uuid: "uuid"
-                          value: "value"
-                        - name: "name"
-                          artifact_id:
-                            artifact_key:
-                              domain: "domain"
-                              project: "project"
-                              suffix: "suffix"
-                            uuid: "uuid"
-                          value: "value"
                         description: "description"
+                        artifact_partial_id:
+                        - partitions:
+                            key: "partitions"
+                          artifact_key:
+                            domain: "domain"
+                            name: "name"
+                            project: "project"
+                          version: "version"
+                        - partitions:
+                            key: "partitions"
+                          artifact_key:
+                            domain: "domain"
+                            name: "name"
+                            project: "project"
+                          version: "version"
                         type:
                           schema:
                             columns:
@@ -36732,24 +36624,22 @@ definitions:
                   outputs:
                     variables:
                       key:
-                        aliases:
-                        - name: "name"
-                          artifact_id:
-                            artifact_key:
-                              domain: "domain"
-                              project: "project"
-                              suffix: "suffix"
-                            uuid: "uuid"
-                          value: "value"
-                        - name: "name"
-                          artifact_id:
-                            artifact_key:
-                              domain: "domain"
-                              project: "project"
-                              suffix: "suffix"
-                            uuid: "uuid"
-                          value: "value"
                         description: "description"
+                        artifact_partial_id:
+                        - partitions:
+                            key: "partitions"
+                          artifact_key:
+                            domain: "domain"
+                            name: "name"
+                            project: "project"
+                          version: "version"
+                        - partitions:
+                            key: "partitions"
+                          artifact_key:
+                            domain: "domain"
+                            name: "name"
+                            project: "project"
+                          version: "version"
                         type:
                           schema:
                             columns:
@@ -36804,24 +36694,22 @@ definitions:
                   inputs:
                     variables:
                       key:
-                        aliases:
-                        - name: "name"
-                          artifact_id:
-                            artifact_key:
-                              domain: "domain"
-                              project: "project"
-                              suffix: "suffix"
-                            uuid: "uuid"
-                          value: "value"
-                        - name: "name"
-                          artifact_id:
-                            artifact_key:
-                              domain: "domain"
-                              project: "project"
-                              suffix: "suffix"
-                            uuid: "uuid"
-                          value: "value"
                         description: "description"
+                        artifact_partial_id:
+                        - partitions:
+                            key: "partitions"
+                          artifact_key:
+                            domain: "domain"
+                            name: "name"
+                            project: "project"
+                          version: "version"
+                        - partitions:
+                            key: "partitions"
+                          artifact_key:
+                            domain: "domain"
+                            name: "name"
+                            project: "project"
+                          version: "version"
                         type:
                           schema:
                             columns:
@@ -38828,24 +38716,22 @@ definitions:
                   outputs:
                     variables:
                       key:
-                        aliases:
-                        - name: "name"
-                          artifact_id:
-                            artifact_key:
-                              domain: "domain"
-                              project: "project"
-                              suffix: "suffix"
-                            uuid: "uuid"
-                          value: "value"
-                        - name: "name"
-                          artifact_id:
-                            artifact_key:
-                              domain: "domain"
-                              project: "project"
-                              suffix: "suffix"
-                            uuid: "uuid"
-                          value: "value"
                         description: "description"
+                        artifact_partial_id:
+                        - partitions:
+                            key: "partitions"
+                          artifact_key:
+                            domain: "domain"
+                            name: "name"
+                            project: "project"
+                          version: "version"
+                        - partitions:
+                            key: "partitions"
+                          artifact_key:
+                            domain: "domain"
+                            name: "name"
+                            project: "project"
+                          version: "version"
                         type:
                           schema:
                             columns:
@@ -38900,24 +38786,22 @@ definitions:
                   inputs:
                     variables:
                       key:
-                        aliases:
-                        - name: "name"
-                          artifact_id:
-                            artifact_key:
-                              domain: "domain"
-                              project: "project"
-                              suffix: "suffix"
-                            uuid: "uuid"
-                          value: "value"
-                        - name: "name"
-                          artifact_id:
-                            artifact_key:
-                              domain: "domain"
-                              project: "project"
-                              suffix: "suffix"
-                            uuid: "uuid"
-                          value: "value"
                         description: "description"
+                        artifact_partial_id:
+                        - partitions:
+                            key: "partitions"
+                          artifact_key:
+                            domain: "domain"
+                            name: "name"
+                            project: "project"
+                          version: "version"
+                        - partitions:
+                            key: "partitions"
+                          artifact_key:
+                            domain: "domain"
+                            name: "name"
+                            project: "project"
+                          version: "version"
                         type:
                           schema:
                             columns:
@@ -40896,24 +40780,22 @@ definitions:
                   outputs:
                     variables:
                       key:
-                        aliases:
-                        - name: "name"
-                          artifact_id:
-                            artifact_key:
-                              domain: "domain"
-                              project: "project"
-                              suffix: "suffix"
-                            uuid: "uuid"
-                          value: "value"
-                        - name: "name"
-                          artifact_id:
-                            artifact_key:
-                              domain: "domain"
-                              project: "project"
-                              suffix: "suffix"
-                            uuid: "uuid"
-                          value: "value"
                         description: "description"
+                        artifact_partial_id:
+                        - partitions:
+                            key: "partitions"
+                          artifact_key:
+                            domain: "domain"
+                            name: "name"
+                            project: "project"
+                          version: "version"
+                        - partitions:
+                            key: "partitions"
+                          artifact_key:
+                            domain: "domain"
+                            name: "name"
+                            project: "project"
+                          version: "version"
                         type:
                           schema:
                             columns:
@@ -40968,24 +40850,22 @@ definitions:
                   inputs:
                     variables:
                       key:
-                        aliases:
-                        - name: "name"
-                          artifact_id:
-                            artifact_key:
-                              domain: "domain"
-                              project: "project"
-                              suffix: "suffix"
-                            uuid: "uuid"
-                          value: "value"
-                        - name: "name"
-                          artifact_id:
-                            artifact_key:
-                              domain: "domain"
-                              project: "project"
-                              suffix: "suffix"
-                            uuid: "uuid"
-                          value: "value"
                         description: "description"
+                        artifact_partial_id:
+                        - partitions:
+                            key: "partitions"
+                          artifact_key:
+                            domain: "domain"
+                            name: "name"
+                            project: "project"
+                          version: "version"
+                        - partitions:
+                            key: "partitions"
+                          artifact_key:
+                            domain: "domain"
+                            name: "name"
+                            project: "project"
+                          version: "version"
                         type:
                           schema:
                             columns:
@@ -42953,24 +42833,22 @@ definitions:
                   outputs:
                     variables:
                       key:
-                        aliases:
-                        - name: "name"
-                          artifact_id:
-                            artifact_key:
-                              domain: "domain"
-                              project: "project"
-                              suffix: "suffix"
-                            uuid: "uuid"
-                          value: "value"
-                        - name: "name"
-                          artifact_id:
-                            artifact_key:
-                              domain: "domain"
-                              project: "project"
-                              suffix: "suffix"
-                            uuid: "uuid"
-                          value: "value"
                         description: "description"
+                        artifact_partial_id:
+                        - partitions:
+                            key: "partitions"
+                          artifact_key:
+                            domain: "domain"
+                            name: "name"
+                            project: "project"
+                          version: "version"
+                        - partitions:
+                            key: "partitions"
+                          artifact_key:
+                            domain: "domain"
+                            name: "name"
+                            project: "project"
+                          version: "version"
                         type:
                           schema:
                             columns:
@@ -43025,24 +42903,22 @@ definitions:
                   inputs:
                     variables:
                       key:
-                        aliases:
-                        - name: "name"
-                          artifact_id:
-                            artifact_key:
-                              domain: "domain"
-                              project: "project"
-                              suffix: "suffix"
-                            uuid: "uuid"
-                          value: "value"
-                        - name: "name"
-                          artifact_id:
-                            artifact_key:
-                              domain: "domain"
-                              project: "project"
-                              suffix: "suffix"
-                            uuid: "uuid"
-                          value: "value"
                         description: "description"
+                        artifact_partial_id:
+                        - partitions:
+                            key: "partitions"
+                          artifact_key:
+                            domain: "domain"
+                            name: "name"
+                            project: "project"
+                          version: "version"
+                        - partitions:
+                            key: "partitions"
+                          artifact_key:
+                            domain: "domain"
+                            name: "name"
+                            project: "project"
+                          version: "version"
                         type:
                           schema:
                             columns:
@@ -43213,24 +43089,22 @@ definitions:
                   outputs:
                     variables:
                       key:
-                        aliases:
-                        - name: "name"
-                          artifact_id:
-                            artifact_key:
-                              domain: "domain"
-                              project: "project"
-                              suffix: "suffix"
-                            uuid: "uuid"
-                          value: "value"
-                        - name: "name"
-                          artifact_id:
-                            artifact_key:
-                              domain: "domain"
-                              project: "project"
-                              suffix: "suffix"
-                            uuid: "uuid"
-                          value: "value"
                         description: "description"
+                        artifact_partial_id:
+                        - partitions:
+                            key: "partitions"
+                          artifact_key:
+                            domain: "domain"
+                            name: "name"
+                            project: "project"
+                          version: "version"
+                        - partitions:
+                            key: "partitions"
+                          artifact_key:
+                            domain: "domain"
+                            name: "name"
+                            project: "project"
+                          version: "version"
                         type:
                           schema:
                             columns:
@@ -43285,24 +43159,22 @@ definitions:
                   inputs:
                     variables:
                       key:
-                        aliases:
-                        - name: "name"
-                          artifact_id:
-                            artifact_key:
-                              domain: "domain"
-                              project: "project"
-                              suffix: "suffix"
-                            uuid: "uuid"
-                          value: "value"
-                        - name: "name"
-                          artifact_id:
-                            artifact_key:
-                              domain: "domain"
-                              project: "project"
-                              suffix: "suffix"
-                            uuid: "uuid"
-                          value: "value"
                         description: "description"
+                        artifact_partial_id:
+                        - partitions:
+                            key: "partitions"
+                          artifact_key:
+                            domain: "domain"
+                            name: "name"
+                            project: "project"
+                          version: "version"
+                        - partitions:
+                            key: "partitions"
+                          artifact_key:
+                            domain: "domain"
+                            name: "name"
+                            project: "project"
+                          version: "version"
                         type:
                           schema:
                             columns:
@@ -43510,24 +43382,22 @@ definitions:
                   outputs:
                     variables:
                       key:
-                        aliases:
-                        - name: "name"
-                          artifact_id:
-                            artifact_key:
-                              domain: "domain"
-                              project: "project"
-                              suffix: "suffix"
-                            uuid: "uuid"
-                          value: "value"
-                        - name: "name"
-                          artifact_id:
-                            artifact_key:
-                              domain: "domain"
-                              project: "project"
-                              suffix: "suffix"
-                            uuid: "uuid"
-                          value: "value"
                         description: "description"
+                        artifact_partial_id:
+                        - partitions:
+                            key: "partitions"
+                          artifact_key:
+                            domain: "domain"
+                            name: "name"
+                            project: "project"
+                          version: "version"
+                        - partitions:
+                            key: "partitions"
+                          artifact_key:
+                            domain: "domain"
+                            name: "name"
+                            project: "project"
+                          version: "version"
                         type:
                           schema:
                             columns:
@@ -43582,24 +43452,22 @@ definitions:
                   inputs:
                     variables:
                       key:
-                        aliases:
-                        - name: "name"
-                          artifact_id:
-                            artifact_key:
-                              domain: "domain"
-                              project: "project"
-                              suffix: "suffix"
-                            uuid: "uuid"
-                          value: "value"
-                        - name: "name"
-                          artifact_id:
-                            artifact_key:
-                              domain: "domain"
-                              project: "project"
-                              suffix: "suffix"
-                            uuid: "uuid"
-                          value: "value"
                         description: "description"
+                        artifact_partial_id:
+                        - partitions:
+                            key: "partitions"
+                          artifact_key:
+                            domain: "domain"
+                            name: "name"
+                            project: "project"
+                          version: "version"
+                        - partitions:
+                            key: "partitions"
+                          artifact_key:
+                            domain: "domain"
+                            name: "name"
+                            project: "project"
+                          version: "version"
                         type:
                           schema:
                             columns:
@@ -45606,24 +45474,22 @@ definitions:
                   outputs:
                     variables:
                       key:
-                        aliases:
-                        - name: "name"
-                          artifact_id:
-                            artifact_key:
-                              domain: "domain"
-                              project: "project"
-                              suffix: "suffix"
-                            uuid: "uuid"
-                          value: "value"
-                        - name: "name"
-                          artifact_id:
-                            artifact_key:
-                              domain: "domain"
-                              project: "project"
-                              suffix: "suffix"
-                            uuid: "uuid"
-                          value: "value"
                         description: "description"
+                        artifact_partial_id:
+                        - partitions:
+                            key: "partitions"
+                          artifact_key:
+                            domain: "domain"
+                            name: "name"
+                            project: "project"
+                          version: "version"
+                        - partitions:
+                            key: "partitions"
+                          artifact_key:
+                            domain: "domain"
+                            name: "name"
+                            project: "project"
+                          version: "version"
                         type:
                           schema:
                             columns:
@@ -45678,24 +45544,22 @@ definitions:
                   inputs:
                     variables:
                       key:
-                        aliases:
-                        - name: "name"
-                          artifact_id:
-                            artifact_key:
-                              domain: "domain"
-                              project: "project"
-                              suffix: "suffix"
-                            uuid: "uuid"
-                          value: "value"
-                        - name: "name"
-                          artifact_id:
-                            artifact_key:
-                              domain: "domain"
-                              project: "project"
-                              suffix: "suffix"
-                            uuid: "uuid"
-                          value: "value"
                         description: "description"
+                        artifact_partial_id:
+                        - partitions:
+                            key: "partitions"
+                          artifact_key:
+                            domain: "domain"
+                            name: "name"
+                            project: "project"
+                          version: "version"
+                        - partitions:
+                            key: "partitions"
+                          artifact_key:
+                            domain: "domain"
+                            name: "name"
+                            project: "project"
+                          version: "version"
                         type:
                           schema:
                             columns:
@@ -45842,40 +45706,26 @@ definitions:
       min_successes: 1
       parallelism: 6
       min_success_ratio: 5.962134
-  coreArtifactAlias:
-    type: "object"
-    properties:
-      artifact_id:
-        title: "ties this directly to the artifact"
-        $ref: "#/definitions/coreArtifactID"
-      name:
-        type: "string"
-      value:
-        type: "string"
-    example:
-      name: "name"
-      artifact_id:
-        artifact_key:
-          domain: "domain"
-          project: "project"
-          suffix: "suffix"
-        uuid: "uuid"
-      value: "value"
   coreArtifactID:
     type: "object"
     properties:
       artifact_key:
         $ref: "#/definitions/coreArtifactKey"
-      uuid:
+      version:
         type: "string"
-        description: "consider hiding - this is a storage layer ID. Might even change\
-          \ for the same object."
+      partitions:
+        type: "object"
+        title: "here for ds popularity"
+        additionalProperties:
+          type: "string"
     example:
+      partitions:
+        key: "partitions"
       artifact_key:
         domain: "domain"
+        name: "name"
         project: "project"
-        suffix: "suffix"
-      uuid: "uuid"
+      version: "version"
   coreArtifactKey:
     type: "object"
     properties:
@@ -45885,12 +45735,12 @@ definitions:
           \ artifact store."
       domain:
         type: "string"
-      suffix:
+      name:
         type: "string"
     example:
       domain: "domain"
+      name: "name"
       project: "project"
-      suffix: "suffix"
   coreArtifactQuery:
     type: "object"
     properties:
@@ -45898,20 +45748,28 @@ definitions:
         type: "string"
       domain:
         type: "string"
-      alias:
-        $ref: "#/definitions/coreArtifactAlias"
+      name:
+        type: "string"
+      tag:
+        type: "string"
+      partitions:
+        type: "object"
+        additionalProperties:
+          type: "string"
+      version:
+        type: "string"
+    title: "Uniqueness constraints for Artifacts\n - project, domain, name, version,\
+      \ partitions\nOption 2 (tags are standalone, point to an individual artifact\
+      \ id):\n - project, domain, name, alias (points to one partition if partitioned)\n\
+      \ - project, domain, name, partition key, partition value"
     example:
+      partitions:
+        key: "partitions"
       domain: "domain"
+      name: "name"
       project: "project"
-      alias:
-        name: "name"
-        artifact_id:
-          artifact_key:
-            domain: "domain"
-            project: "project"
-            suffix: "suffix"
-          uuid: "uuid"
-        value: "value"
+      tag: "tag"
+      version: "version"
   coreBinary:
     type: "object"
     properties:
@@ -46687,24 +46545,22 @@ definitions:
           outputs:
             variables:
               key:
-                aliases:
-                - name: "name"
-                  artifact_id:
-                    artifact_key:
-                      domain: "domain"
-                      project: "project"
-                      suffix: "suffix"
-                    uuid: "uuid"
-                  value: "value"
-                - name: "name"
-                  artifact_id:
-                    artifact_key:
-                      domain: "domain"
-                      project: "project"
-                      suffix: "suffix"
-                    uuid: "uuid"
-                  value: "value"
                 description: "description"
+                artifact_partial_id:
+                - partitions:
+                    key: "partitions"
+                  artifact_key:
+                    domain: "domain"
+                    name: "name"
+                    project: "project"
+                  version: "version"
+                - partitions:
+                    key: "partitions"
+                  artifact_key:
+                    domain: "domain"
+                    name: "name"
+                    project: "project"
+                  version: "version"
                 type:
                   schema:
                     columns:
@@ -46759,24 +46615,22 @@ definitions:
           inputs:
             variables:
               key:
-                aliases:
-                - name: "name"
-                  artifact_id:
-                    artifact_key:
-                      domain: "domain"
-                      project: "project"
-                      suffix: "suffix"
-                    uuid: "uuid"
-                  value: "value"
-                - name: "name"
-                  artifact_id:
-                    artifact_key:
-                      domain: "domain"
-                      project: "project"
-                      suffix: "suffix"
-                    uuid: "uuid"
-                  value: "value"
                 description: "description"
+                artifact_partial_id:
+                - partitions:
+                    key: "partitions"
+                  artifact_key:
+                    domain: "domain"
+                    name: "name"
+                    project: "project"
+                  version: "version"
+                - partitions:
+                    key: "partitions"
+                  artifact_key:
+                    domain: "domain"
+                    name: "name"
+                    project: "project"
+                  version: "version"
                 type:
                   schema:
                     columns:
@@ -48795,24 +48649,22 @@ definitions:
           outputs:
             variables:
               key:
-                aliases:
-                - name: "name"
-                  artifact_id:
-                    artifact_key:
-                      domain: "domain"
-                      project: "project"
-                      suffix: "suffix"
-                    uuid: "uuid"
-                  value: "value"
-                - name: "name"
-                  artifact_id:
-                    artifact_key:
-                      domain: "domain"
-                      project: "project"
-                      suffix: "suffix"
-                    uuid: "uuid"
-                  value: "value"
                 description: "description"
+                artifact_partial_id:
+                - partitions:
+                    key: "partitions"
+                  artifact_key:
+                    domain: "domain"
+                    name: "name"
+                    project: "project"
+                  version: "version"
+                - partitions:
+                    key: "partitions"
+                  artifact_key:
+                    domain: "domain"
+                    name: "name"
+                    project: "project"
+                  version: "version"
                 type:
                   schema:
                     columns:
@@ -48867,24 +48719,22 @@ definitions:
           inputs:
             variables:
               key:
-                aliases:
-                - name: "name"
-                  artifact_id:
-                    artifact_key:
-                      domain: "domain"
-                      project: "project"
-                      suffix: "suffix"
-                    uuid: "uuid"
-                  value: "value"
-                - name: "name"
-                  artifact_id:
-                    artifact_key:
-                      domain: "domain"
-                      project: "project"
-                      suffix: "suffix"
-                    uuid: "uuid"
-                  value: "value"
                 description: "description"
+                artifact_partial_id:
+                - partitions:
+                    key: "partitions"
+                  artifact_key:
+                    domain: "domain"
+                    name: "name"
+                    project: "project"
+                  version: "version"
+                - partitions:
+                    key: "partitions"
+                  artifact_key:
+                    domain: "domain"
+                    name: "name"
+                    project: "project"
+                  version: "version"
                 type:
                   schema:
                     columns:
@@ -50879,24 +50729,22 @@ definitions:
             outputs:
               variables:
                 key:
-                  aliases:
-                  - name: "name"
-                    artifact_id:
-                      artifact_key:
-                        domain: "domain"
-                        project: "project"
-                        suffix: "suffix"
-                      uuid: "uuid"
-                    value: "value"
-                  - name: "name"
-                    artifact_id:
-                      artifact_key:
-                        domain: "domain"
-                        project: "project"
-                        suffix: "suffix"
-                      uuid: "uuid"
-                    value: "value"
                   description: "description"
+                  artifact_partial_id:
+                  - partitions:
+                      key: "partitions"
+                    artifact_key:
+                      domain: "domain"
+                      name: "name"
+                      project: "project"
+                    version: "version"
+                  - partitions:
+                      key: "partitions"
+                    artifact_key:
+                      domain: "domain"
+                      name: "name"
+                      project: "project"
+                    version: "version"
                   type:
                     schema:
                       columns:
@@ -50951,24 +50799,22 @@ definitions:
             inputs:
               variables:
                 key:
-                  aliases:
-                  - name: "name"
-                    artifact_id:
-                      artifact_key:
-                        domain: "domain"
-                        project: "project"
-                        suffix: "suffix"
-                      uuid: "uuid"
-                    value: "value"
-                  - name: "name"
-                    artifact_id:
-                      artifact_key:
-                        domain: "domain"
-                        project: "project"
-                        suffix: "suffix"
-                      uuid: "uuid"
-                    value: "value"
                   description: "description"
+                  artifact_partial_id:
+                  - partitions:
+                      key: "partitions"
+                    artifact_key:
+                      domain: "domain"
+                      name: "name"
+                      project: "project"
+                    version: "version"
+                  - partitions:
+                      key: "partitions"
+                    artifact_key:
+                      domain: "domain"
+                      name: "name"
+                      project: "project"
+                    version: "version"
                   type:
                     schema:
                       columns:
@@ -52936,24 +52782,22 @@ definitions:
             outputs:
               variables:
                 key:
-                  aliases:
-                  - name: "name"
-                    artifact_id:
-                      artifact_key:
-                        domain: "domain"
-                        project: "project"
-                        suffix: "suffix"
-                      uuid: "uuid"
-                    value: "value"
-                  - name: "name"
-                    artifact_id:
-                      artifact_key:
-                        domain: "domain"
-                        project: "project"
-                        suffix: "suffix"
-                      uuid: "uuid"
-                    value: "value"
                   description: "description"
+                  artifact_partial_id:
+                  - partitions:
+                      key: "partitions"
+                    artifact_key:
+                      domain: "domain"
+                      name: "name"
+                      project: "project"
+                    version: "version"
+                  - partitions:
+                      key: "partitions"
+                    artifact_key:
+                      domain: "domain"
+                      name: "name"
+                      project: "project"
+                    version: "version"
                   type:
                     schema:
                       columns:
@@ -53008,24 +52852,22 @@ definitions:
             inputs:
               variables:
                 key:
-                  aliases:
-                  - name: "name"
-                    artifact_id:
-                      artifact_key:
-                        domain: "domain"
-                        project: "project"
-                        suffix: "suffix"
-                      uuid: "uuid"
-                    value: "value"
-                  - name: "name"
-                    artifact_id:
-                      artifact_key:
-                        domain: "domain"
-                        project: "project"
-                        suffix: "suffix"
-                      uuid: "uuid"
-                    value: "value"
                   description: "description"
+                  artifact_partial_id:
+                  - partitions:
+                      key: "partitions"
+                    artifact_key:
+                      domain: "domain"
+                      name: "name"
+                      project: "project"
+                    version: "version"
+                  - partitions:
+                      key: "partitions"
+                    artifact_key:
+                      domain: "domain"
+                      name: "name"
+                      project: "project"
+                    version: "version"
                   type:
                     schema:
                       columns:
@@ -53196,24 +53038,22 @@ definitions:
             outputs:
               variables:
                 key:
-                  aliases:
-                  - name: "name"
-                    artifact_id:
-                      artifact_key:
-                        domain: "domain"
-                        project: "project"
-                        suffix: "suffix"
-                      uuid: "uuid"
-                    value: "value"
-                  - name: "name"
-                    artifact_id:
-                      artifact_key:
-                        domain: "domain"
-                        project: "project"
-                        suffix: "suffix"
-                      uuid: "uuid"
-                    value: "value"
                   description: "description"
+                  artifact_partial_id:
+                  - partitions:
+                      key: "partitions"
+                    artifact_key:
+                      domain: "domain"
+                      name: "name"
+                      project: "project"
+                    version: "version"
+                  - partitions:
+                      key: "partitions"
+                    artifact_key:
+                      domain: "domain"
+                      name: "name"
+                      project: "project"
+                    version: "version"
                   type:
                     schema:
                       columns:
@@ -53268,24 +53108,22 @@ definitions:
             inputs:
               variables:
                 key:
-                  aliases:
-                  - name: "name"
-                    artifact_id:
-                      artifact_key:
-                        domain: "domain"
-                        project: "project"
-                        suffix: "suffix"
-                      uuid: "uuid"
-                    value: "value"
-                  - name: "name"
-                    artifact_id:
-                      artifact_key:
-                        domain: "domain"
-                        project: "project"
-                        suffix: "suffix"
-                      uuid: "uuid"
-                    value: "value"
                   description: "description"
+                  artifact_partial_id:
+                  - partitions:
+                      key: "partitions"
+                    artifact_key:
+                      domain: "domain"
+                      name: "name"
+                      project: "project"
+                    version: "version"
+                  - partitions:
+                      key: "partitions"
+                    artifact_key:
+                      domain: "domain"
+                      name: "name"
+                      project: "project"
+                    version: "version"
                   type:
                     schema:
                       columns:
@@ -53493,24 +53331,22 @@ definitions:
             outputs:
               variables:
                 key:
-                  aliases:
-                  - name: "name"
-                    artifact_id:
-                      artifact_key:
-                        domain: "domain"
-                        project: "project"
-                        suffix: "suffix"
-                      uuid: "uuid"
-                    value: "value"
-                  - name: "name"
-                    artifact_id:
-                      artifact_key:
-                        domain: "domain"
-                        project: "project"
-                        suffix: "suffix"
-                      uuid: "uuid"
-                    value: "value"
                   description: "description"
+                  artifact_partial_id:
+                  - partitions:
+                      key: "partitions"
+                    artifact_key:
+                      domain: "domain"
+                      name: "name"
+                      project: "project"
+                    version: "version"
+                  - partitions:
+                      key: "partitions"
+                    artifact_key:
+                      domain: "domain"
+                      name: "name"
+                      project: "project"
+                    version: "version"
                   type:
                     schema:
                       columns:
@@ -53565,24 +53401,22 @@ definitions:
             inputs:
               variables:
                 key:
-                  aliases:
-                  - name: "name"
-                    artifact_id:
-                      artifact_key:
-                        domain: "domain"
-                        project: "project"
-                        suffix: "suffix"
-                      uuid: "uuid"
-                    value: "value"
-                  - name: "name"
-                    artifact_id:
-                      artifact_key:
-                        domain: "domain"
-                        project: "project"
-                        suffix: "suffix"
-                      uuid: "uuid"
-                    value: "value"
                   description: "description"
+                  artifact_partial_id:
+                  - partitions:
+                      key: "partitions"
+                    artifact_key:
+                      domain: "domain"
+                      name: "name"
+                      project: "project"
+                    version: "version"
+                  - partitions:
+                      key: "partitions"
+                    artifact_key:
+                      domain: "domain"
+                      name: "name"
+                      project: "project"
+                    version: "version"
                   type:
                     schema:
                       columns:
@@ -55589,24 +55423,22 @@ definitions:
             outputs:
               variables:
                 key:
-                  aliases:
-                  - name: "name"
-                    artifact_id:
-                      artifact_key:
-                        domain: "domain"
-                        project: "project"
-                        suffix: "suffix"
-                      uuid: "uuid"
-                    value: "value"
-                  - name: "name"
-                    artifact_id:
-                      artifact_key:
-                        domain: "domain"
-                        project: "project"
-                        suffix: "suffix"
-                      uuid: "uuid"
-                    value: "value"
                   description: "description"
+                  artifact_partial_id:
+                  - partitions:
+                      key: "partitions"
+                    artifact_key:
+                      domain: "domain"
+                      name: "name"
+                      project: "project"
+                    version: "version"
+                  - partitions:
+                      key: "partitions"
+                    artifact_key:
+                      domain: "domain"
+                      name: "name"
+                      project: "project"
+                    version: "version"
                   type:
                     schema:
                       columns:
@@ -55661,24 +55493,22 @@ definitions:
             inputs:
               variables:
                 key:
-                  aliases:
-                  - name: "name"
-                    artifact_id:
-                      artifact_key:
-                        domain: "domain"
-                        project: "project"
-                        suffix: "suffix"
-                      uuid: "uuid"
-                    value: "value"
-                  - name: "name"
-                    artifact_id:
-                      artifact_key:
-                        domain: "domain"
-                        project: "project"
-                        suffix: "suffix"
-                      uuid: "uuid"
-                    value: "value"
                   description: "description"
+                  artifact_partial_id:
+                  - partitions:
+                      key: "partitions"
+                    artifact_key:
+                      domain: "domain"
+                      name: "name"
+                      project: "project"
+                    version: "version"
+                  - partitions:
+                      key: "partitions"
+                    artifact_key:
+                      domain: "domain"
+                      name: "name"
+                      project: "project"
+                    version: "version"
                   type:
                     schema:
                       columns:
@@ -56482,11 +56312,13 @@ definitions:
         - null
         - null
       artifact_id:
+        partitions:
+          key: "partitions"
         artifact_key:
           domain: "domain"
+          name: "name"
           project: "project"
-          suffix: "suffix"
-        uuid: "uuid"
+        version: "version"
       map:
         literals: {}
       hash: "hash"
@@ -57515,11 +57347,13 @@ definitions:
           - null
           - null
         artifact_id:
+          partitions:
+            key: "partitions"
           artifact_key:
             domain: "domain"
+            name: "name"
             project: "project"
-            suffix: "suffix"
-          uuid: "uuid"
+          version: "version"
         map:
           literals: {}
         hash: "hash"
@@ -57575,24 +57409,22 @@ definitions:
           structure:
             tag: "tag"
       var:
-        aliases:
-        - name: "name"
-          artifact_id:
-            artifact_key:
-              domain: "domain"
-              project: "project"
-              suffix: "suffix"
-            uuid: "uuid"
-          value: "value"
-        - name: "name"
-          artifact_id:
-            artifact_key:
-              domain: "domain"
-              project: "project"
-              suffix: "suffix"
-            uuid: "uuid"
-          value: "value"
         description: "description"
+        artifact_partial_id:
+        - partitions:
+            key: "partitions"
+          artifact_key:
+            domain: "domain"
+            name: "name"
+            project: "project"
+          version: "version"
+        - partitions:
+            key: "partitions"
+          artifact_key:
+            domain: "domain"
+            name: "name"
+            project: "project"
+          version: "version"
         type:
           schema:
             columns:
@@ -57645,17 +57477,13 @@ definitions:
           structure:
             tag: "tag"
       artifact_query:
+        partitions:
+          key: "partitions"
         domain: "domain"
+        name: "name"
         project: "project"
-        alias:
-          name: "name"
-          artifact_id:
-            artifact_key:
-              domain: "domain"
-              project: "project"
-              suffix: "suffix"
-            uuid: "uuid"
-          value: "value"
+        tag: "tag"
+        version: "version"
       required: true
   coreParameterMap:
     type: "object"
@@ -57779,11 +57607,13 @@ definitions:
               - null
               - null
             artifact_id:
+              partitions:
+                key: "partitions"
               artifact_key:
                 domain: "domain"
+                name: "name"
                 project: "project"
-                suffix: "suffix"
-              uuid: "uuid"
+              version: "version"
             map:
               literals: {}
             hash: "hash"
@@ -57839,24 +57669,22 @@ definitions:
               structure:
                 tag: "tag"
           var:
-            aliases:
-            - name: "name"
-              artifact_id:
-                artifact_key:
-                  domain: "domain"
-                  project: "project"
-                  suffix: "suffix"
-                uuid: "uuid"
-              value: "value"
-            - name: "name"
-              artifact_id:
-                artifact_key:
-                  domain: "domain"
-                  project: "project"
-                  suffix: "suffix"
-                uuid: "uuid"
-              value: "value"
             description: "description"
+            artifact_partial_id:
+            - partitions:
+                key: "partitions"
+              artifact_key:
+                domain: "domain"
+                name: "name"
+                project: "project"
+              version: "version"
+            - partitions:
+                key: "partitions"
+              artifact_key:
+                domain: "domain"
+                name: "name"
+                project: "project"
+              version: "version"
             type:
               schema:
                 columns:
@@ -57909,17 +57737,13 @@ definitions:
               structure:
                 tag: "tag"
           artifact_query:
+            partitions:
+              key: "partitions"
             domain: "domain"
+            name: "name"
             project: "project"
-            alias:
-              name: "name"
-              artifact_id:
-                artifact_key:
-                  domain: "domain"
-                  project: "project"
-                  suffix: "suffix"
-                uuid: "uuid"
-              value: "value"
+            tag: "tag"
+            version: "version"
           required: true
   corePrimitive:
     type: "object"
@@ -58889,24 +58713,22 @@ definitions:
         outputs:
           variables:
             key:
-              aliases:
-              - name: "name"
-                artifact_id:
-                  artifact_key:
-                    domain: "domain"
-                    project: "project"
-                    suffix: "suffix"
-                  uuid: "uuid"
-                value: "value"
-              - name: "name"
-                artifact_id:
-                  artifact_key:
-                    domain: "domain"
-                    project: "project"
-                    suffix: "suffix"
-                  uuid: "uuid"
-                value: "value"
               description: "description"
+              artifact_partial_id:
+              - partitions:
+                  key: "partitions"
+                artifact_key:
+                  domain: "domain"
+                  name: "name"
+                  project: "project"
+                version: "version"
+              - partitions:
+                  key: "partitions"
+                artifact_key:
+                  domain: "domain"
+                  name: "name"
+                  project: "project"
+                version: "version"
               type:
                 schema:
                   columns:
@@ -58961,24 +58783,22 @@ definitions:
         inputs:
           variables:
             key:
-              aliases:
-              - name: "name"
-                artifact_id:
-                  artifact_key:
-                    domain: "domain"
-                    project: "project"
-                    suffix: "suffix"
-                  uuid: "uuid"
-                value: "value"
-              - name: "name"
-                artifact_id:
-                  artifact_key:
-                    domain: "domain"
-                    project: "project"
-                    suffix: "suffix"
-                  uuid: "uuid"
-                value: "value"
               description: "description"
+              artifact_partial_id:
+              - partitions:
+                  key: "partitions"
+                artifact_key:
+                  domain: "domain"
+                  name: "name"
+                  project: "project"
+                version: "version"
+              - partitions:
+                  key: "partitions"
+                artifact_key:
+                  domain: "domain"
+                  name: "name"
+                  project: "project"
+                version: "version"
               type:
                 schema:
                   columns:
@@ -59122,24 +58942,22 @@ definitions:
       outputs:
         variables:
           key:
-            aliases:
-            - name: "name"
-              artifact_id:
-                artifact_key:
-                  domain: "domain"
-                  project: "project"
-                  suffix: "suffix"
-                uuid: "uuid"
-              value: "value"
-            - name: "name"
-              artifact_id:
-                artifact_key:
-                  domain: "domain"
-                  project: "project"
-                  suffix: "suffix"
-                uuid: "uuid"
-              value: "value"
             description: "description"
+            artifact_partial_id:
+            - partitions:
+                key: "partitions"
+              artifact_key:
+                domain: "domain"
+                name: "name"
+                project: "project"
+              version: "version"
+            - partitions:
+                key: "partitions"
+              artifact_key:
+                domain: "domain"
+                name: "name"
+                project: "project"
+              version: "version"
             type:
               schema:
                 columns:
@@ -59194,24 +59012,22 @@ definitions:
       inputs:
         variables:
           key:
-            aliases:
-            - name: "name"
-              artifact_id:
-                artifact_key:
-                  domain: "domain"
-                  project: "project"
-                  suffix: "suffix"
-                uuid: "uuid"
-              value: "value"
-            - name: "name"
-              artifact_id:
-                artifact_key:
-                  domain: "domain"
-                  project: "project"
-                  suffix: "suffix"
-                uuid: "uuid"
-              value: "value"
             description: "description"
+            artifact_partial_id:
+            - partitions:
+                key: "partitions"
+              artifact_key:
+                domain: "domain"
+                name: "name"
+                project: "project"
+              version: "version"
+            - partitions:
+                key: "partitions"
+              artifact_key:
+                domain: "domain"
+                name: "name"
+                project: "project"
+              version: "version"
             type:
               schema:
                 columns:
@@ -59411,33 +59227,31 @@ definitions:
       description:
         type: "string"
         title: "+optional string describing input variable"
-      aliases:
+      artifact_partial_id:
         type: "array"
-        description: "+optional If specified by user, this is still just a partial\
-          \ artifact. It's here so the user can control the\nname, tags, aliases,\
-          \ of the artifact creation."
+        description: "+optional This object allows the user to specify how Artifacts\
+          \ are created.\nname, tag, partitions can be specified. The other fields\
+          \ (version and project/domain) are ignored."
         items:
-          $ref: "#/definitions/coreArtifactAlias"
+          $ref: "#/definitions/coreArtifactID"
     description: "Defines a strongly typed variable."
     example:
-      aliases:
-      - name: "name"
-        artifact_id:
-          artifact_key:
-            domain: "domain"
-            project: "project"
-            suffix: "suffix"
-          uuid: "uuid"
-        value: "value"
-      - name: "name"
-        artifact_id:
-          artifact_key:
-            domain: "domain"
-            project: "project"
-            suffix: "suffix"
-          uuid: "uuid"
-        value: "value"
       description: "description"
+      artifact_partial_id:
+      - partitions:
+          key: "partitions"
+        artifact_key:
+          domain: "domain"
+          name: "name"
+          project: "project"
+        version: "version"
+      - partitions:
+          key: "partitions"
+        artifact_key:
+          domain: "domain"
+          name: "name"
+          project: "project"
+        version: "version"
       type:
         schema:
           columns:
@@ -59501,24 +59315,22 @@ definitions:
     example:
       variables:
         key:
-          aliases:
-          - name: "name"
-            artifact_id:
-              artifact_key:
-                domain: "domain"
-                project: "project"
-                suffix: "suffix"
-              uuid: "uuid"
-            value: "value"
-          - name: "name"
-            artifact_id:
-              artifact_key:
-                domain: "domain"
-                project: "project"
-                suffix: "suffix"
-              uuid: "uuid"
-            value: "value"
           description: "description"
+          artifact_partial_id:
+          - partitions:
+              key: "partitions"
+            artifact_key:
+              domain: "domain"
+              name: "name"
+              project: "project"
+            version: "version"
+          - partitions:
+              key: "partitions"
+            artifact_key:
+              domain: "domain"
+              name: "name"
+              project: "project"
+            version: "version"
           type:
             schema:
               columns:
@@ -61623,24 +61435,22 @@ definitions:
         outputs:
           variables:
             key:
-              aliases:
-              - name: "name"
-                artifact_id:
-                  artifact_key:
-                    domain: "domain"
-                    project: "project"
-                    suffix: "suffix"
-                  uuid: "uuid"
-                value: "value"
-              - name: "name"
-                artifact_id:
-                  artifact_key:
-                    domain: "domain"
-                    project: "project"
-                    suffix: "suffix"
-                  uuid: "uuid"
-                value: "value"
               description: "description"
+              artifact_partial_id:
+              - partitions:
+                  key: "partitions"
+                artifact_key:
+                  domain: "domain"
+                  name: "name"
+                  project: "project"
+                version: "version"
+              - partitions:
+                  key: "partitions"
+                artifact_key:
+                  domain: "domain"
+                  name: "name"
+                  project: "project"
+                version: "version"
               type:
                 schema:
                   columns:
@@ -61695,24 +61505,22 @@ definitions:
         inputs:
           variables:
             key:
-              aliases:
-              - name: "name"
-                artifact_id:
-                  artifact_key:
-                    domain: "domain"
-                    project: "project"
-                    suffix: "suffix"
-                  uuid: "uuid"
-                value: "value"
-              - name: "name"
-                artifact_id:
-                  artifact_key:
-                    domain: "domain"
-                    project: "project"
-                    suffix: "suffix"
-                  uuid: "uuid"
-                value: "value"
               description: "description"
+              artifact_partial_id:
+              - partitions:
+                  key: "partitions"
+                artifact_key:
+                  domain: "domain"
+                  name: "name"
+                  project: "project"
+                version: "version"
+              - partitions:
+                  key: "partitions"
+                artifact_key:
+                  domain: "domain"
+                  name: "name"
+                  project: "project"
+                version: "version"
               type:
                 schema:
                   columns:
@@ -63960,24 +63768,22 @@ definitions:
               outputs:
                 variables:
                   key:
-                    aliases:
-                    - name: "name"
-                      artifact_id:
-                        artifact_key:
-                          domain: "domain"
-                          project: "project"
-                          suffix: "suffix"
-                        uuid: "uuid"
-                      value: "value"
-                    - name: "name"
-                      artifact_id:
-                        artifact_key:
-                          domain: "domain"
-                          project: "project"
-                          suffix: "suffix"
-                        uuid: "uuid"
-                      value: "value"
                     description: "description"
+                    artifact_partial_id:
+                    - partitions:
+                        key: "partitions"
+                      artifact_key:
+                        domain: "domain"
+                        name: "name"
+                        project: "project"
+                      version: "version"
+                    - partitions:
+                        key: "partitions"
+                      artifact_key:
+                        domain: "domain"
+                        name: "name"
+                        project: "project"
+                      version: "version"
                     type:
                       schema:
                         columns:
@@ -64032,24 +63838,22 @@ definitions:
               inputs:
                 variables:
                   key:
-                    aliases:
-                    - name: "name"
-                      artifact_id:
-                        artifact_key:
-                          domain: "domain"
-                          project: "project"
-                          suffix: "suffix"
-                        uuid: "uuid"
-                      value: "value"
-                    - name: "name"
-                      artifact_id:
-                        artifact_key:
-                          domain: "domain"
-                          project: "project"
-                          suffix: "suffix"
-                        uuid: "uuid"
-                      value: "value"
                     description: "description"
+                    artifact_partial_id:
+                    - partitions:
+                        key: "partitions"
+                      artifact_key:
+                        domain: "domain"
+                        name: "name"
+                        project: "project"
+                      version: "version"
+                    - partitions:
+                        key: "partitions"
+                      artifact_key:
+                        domain: "domain"
+                        name: "name"
+                        project: "project"
+                      version: "version"
                     type:
                       schema:
                         columns:
@@ -66017,24 +65821,22 @@ definitions:
               outputs:
                 variables:
                   key:
-                    aliases:
-                    - name: "name"
-                      artifact_id:
-                        artifact_key:
-                          domain: "domain"
-                          project: "project"
-                          suffix: "suffix"
-                        uuid: "uuid"
-                      value: "value"
-                    - name: "name"
-                      artifact_id:
-                        artifact_key:
-                          domain: "domain"
-                          project: "project"
-                          suffix: "suffix"
-                        uuid: "uuid"
-                      value: "value"
                     description: "description"
+                    artifact_partial_id:
+                    - partitions:
+                        key: "partitions"
+                      artifact_key:
+                        domain: "domain"
+                        name: "name"
+                        project: "project"
+                      version: "version"
+                    - partitions:
+                        key: "partitions"
+                      artifact_key:
+                        domain: "domain"
+                        name: "name"
+                        project: "project"
+                      version: "version"
                     type:
                       schema:
                         columns:
@@ -66089,24 +65891,22 @@ definitions:
               inputs:
                 variables:
                   key:
-                    aliases:
-                    - name: "name"
-                      artifact_id:
-                        artifact_key:
-                          domain: "domain"
-                          project: "project"
-                          suffix: "suffix"
-                        uuid: "uuid"
-                      value: "value"
-                    - name: "name"
-                      artifact_id:
-                        artifact_key:
-                          domain: "domain"
-                          project: "project"
-                          suffix: "suffix"
-                        uuid: "uuid"
-                      value: "value"
                     description: "description"
+                    artifact_partial_id:
+                    - partitions:
+                        key: "partitions"
+                      artifact_key:
+                        domain: "domain"
+                        name: "name"
+                        project: "project"
+                      version: "version"
+                    - partitions:
+                        key: "partitions"
+                      artifact_key:
+                        domain: "domain"
+                        name: "name"
+                        project: "project"
+                      version: "version"
                     type:
                       schema:
                         columns:
@@ -66277,24 +66077,22 @@ definitions:
               outputs:
                 variables:
                   key:
-                    aliases:
-                    - name: "name"
-                      artifact_id:
-                        artifact_key:
-                          domain: "domain"
-                          project: "project"
-                          suffix: "suffix"
-                        uuid: "uuid"
-                      value: "value"
-                    - name: "name"
-                      artifact_id:
-                        artifact_key:
-                          domain: "domain"
-                          project: "project"
-                          suffix: "suffix"
-                        uuid: "uuid"
-                      value: "value"
                     description: "description"
+                    artifact_partial_id:
+                    - partitions:
+                        key: "partitions"
+                      artifact_key:
+                        domain: "domain"
+                        name: "name"
+                        project: "project"
+                      version: "version"
+                    - partitions:
+                        key: "partitions"
+                      artifact_key:
+                        domain: "domain"
+                        name: "name"
+                        project: "project"
+                      version: "version"
                     type:
                       schema:
                         columns:
@@ -66349,24 +66147,22 @@ definitions:
               inputs:
                 variables:
                   key:
-                    aliases:
-                    - name: "name"
-                      artifact_id:
-                        artifact_key:
-                          domain: "domain"
-                          project: "project"
-                          suffix: "suffix"
-                        uuid: "uuid"
-                      value: "value"
-                    - name: "name"
-                      artifact_id:
-                        artifact_key:
-                          domain: "domain"
-                          project: "project"
-                          suffix: "suffix"
-                        uuid: "uuid"
-                      value: "value"
                     description: "description"
+                    artifact_partial_id:
+                    - partitions:
+                        key: "partitions"
+                      artifact_key:
+                        domain: "domain"
+                        name: "name"
+                        project: "project"
+                      version: "version"
+                    - partitions:
+                        key: "partitions"
+                      artifact_key:
+                        domain: "domain"
+                        name: "name"
+                        project: "project"
+                      version: "version"
                     type:
                       schema:
                         columns:
@@ -66574,24 +66370,22 @@ definitions:
               outputs:
                 variables:
                   key:
-                    aliases:
-                    - name: "name"
-                      artifact_id:
-                        artifact_key:
-                          domain: "domain"
-                          project: "project"
-                          suffix: "suffix"
-                        uuid: "uuid"
-                      value: "value"
-                    - name: "name"
-                      artifact_id:
-                        artifact_key:
-                          domain: "domain"
-                          project: "project"
-                          suffix: "suffix"
-                        uuid: "uuid"
-                      value: "value"
                     description: "description"
+                    artifact_partial_id:
+                    - partitions:
+                        key: "partitions"
+                      artifact_key:
+                        domain: "domain"
+                        name: "name"
+                        project: "project"
+                      version: "version"
+                    - partitions:
+                        key: "partitions"
+                      artifact_key:
+                        domain: "domain"
+                        name: "name"
+                        project: "project"
+                      version: "version"
                     type:
                       schema:
                         columns:
@@ -66646,24 +66440,22 @@ definitions:
               inputs:
                 variables:
                   key:
-                    aliases:
-                    - name: "name"
-                      artifact_id:
-                        artifact_key:
-                          domain: "domain"
-                          project: "project"
-                          suffix: "suffix"
-                        uuid: "uuid"
-                      value: "value"
-                    - name: "name"
-                      artifact_id:
-                        artifact_key:
-                          domain: "domain"
-                          project: "project"
-                          suffix: "suffix"
-                        uuid: "uuid"
-                      value: "value"
                     description: "description"
+                    artifact_partial_id:
+                    - partitions:
+                        key: "partitions"
+                      artifact_key:
+                        domain: "domain"
+                        name: "name"
+                        project: "project"
+                      version: "version"
+                    - partitions:
+                        key: "partitions"
+                      artifact_key:
+                        domain: "domain"
+                        name: "name"
+                        project: "project"
+                      version: "version"
                     type:
                       schema:
                         columns:
@@ -68670,24 +68462,22 @@ definitions:
               outputs:
                 variables:
                   key:
-                    aliases:
-                    - name: "name"
-                      artifact_id:
-                        artifact_key:
-                          domain: "domain"
-                          project: "project"
-                          suffix: "suffix"
-                        uuid: "uuid"
-                      value: "value"
-                    - name: "name"
-                      artifact_id:
-                        artifact_key:
-                          domain: "domain"
-                          project: "project"
-                          suffix: "suffix"
-                        uuid: "uuid"
-                      value: "value"
                     description: "description"
+                    artifact_partial_id:
+                    - partitions:
+                        key: "partitions"
+                      artifact_key:
+                        domain: "domain"
+                        name: "name"
+                        project: "project"
+                      version: "version"
+                    - partitions:
+                        key: "partitions"
+                      artifact_key:
+                        domain: "domain"
+                        name: "name"
+                        project: "project"
+                      version: "version"
                     type:
                       schema:
                         columns:
@@ -68742,24 +68532,22 @@ definitions:
               inputs:
                 variables:
                   key:
-                    aliases:
-                    - name: "name"
-                      artifact_id:
-                        artifact_key:
-                          domain: "domain"
-                          project: "project"
-                          suffix: "suffix"
-                        uuid: "uuid"
-                      value: "value"
-                    - name: "name"
-                      artifact_id:
-                        artifact_key:
-                          domain: "domain"
-                          project: "project"
-                          suffix: "suffix"
-                        uuid: "uuid"
-                      value: "value"
                     description: "description"
+                    artifact_partial_id:
+                    - partitions:
+                        key: "partitions"
+                      artifact_key:
+                        domain: "domain"
+                        name: "name"
+                        project: "project"
+                      version: "version"
+                    - partitions:
+                        key: "partitions"
+                      artifact_key:
+                        domain: "domain"
+                        name: "name"
+                        project: "project"
+                      version: "version"
                     type:
                       schema:
                         columns:

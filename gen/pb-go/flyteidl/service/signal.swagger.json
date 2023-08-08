@@ -253,9 +253,15 @@
         "artifact_key": {
           "$ref": "#/definitions/coreArtifactKey"
         },
-        "uuid": {
-          "type": "string",
-          "description": "consider hiding - this is a storage layer ID. Might even change for the same object."
+        "version": {
+          "type": "string"
+        },
+        "partitions": {
+          "type": "object",
+          "additionalProperties": {
+            "type": "string"
+          },
+          "title": "here for ds popularity"
         }
       }
     },
@@ -269,7 +275,7 @@
         "domain": {
           "type": "string"
         },
-        "suffix": {
+        "name": {
           "type": "string"
         }
       }

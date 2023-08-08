@@ -55,13 +55,13 @@ func (m *Variable) Validate() error {
 
 	// no validation rules for Description
 
-	for idx, item := range m.GetAliases() {
+	for idx, item := range m.GetArtifactPartialId() {
 		_, _ = idx, item
 
 		if v, ok := interface{}(item).(interface{ Validate() error }); ok {
 			if err := v.Validate(); err != nil {
 				return VariableValidationError{
-					field:  fmt.Sprintf("Aliases[%v]", idx),
+					field:  fmt.Sprintf("ArtifactPartialId[%v]", idx),
 					reason: "embedded message failed validation",
 					cause:  err,
 				}

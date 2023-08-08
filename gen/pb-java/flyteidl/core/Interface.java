@@ -63,51 +63,51 @@ public final class Interface {
 
     /**
      * <pre>
-     *+optional If specified by user, this is still just a partial artifact. It's here so the user can control the
-     * name, tags, aliases, of the artifact creation.
+     *+optional This object allows the user to specify how Artifacts are created.
+     * name, tag, partitions can be specified. The other fields (version and project/domain) are ignored.
      * </pre>
      *
-     * <code>repeated .flyteidl.core.ArtifactAlias aliases = 3;</code>
+     * <code>repeated .flyteidl.core.ArtifactID artifact_partial_id = 3;</code>
      */
-    java.util.List<flyteidl.core.IdentifierOuterClass.ArtifactAlias> 
-        getAliasesList();
+    java.util.List<flyteidl.core.IdentifierOuterClass.ArtifactID> 
+        getArtifactPartialIdList();
     /**
      * <pre>
-     *+optional If specified by user, this is still just a partial artifact. It's here so the user can control the
-     * name, tags, aliases, of the artifact creation.
+     *+optional This object allows the user to specify how Artifacts are created.
+     * name, tag, partitions can be specified. The other fields (version and project/domain) are ignored.
      * </pre>
      *
-     * <code>repeated .flyteidl.core.ArtifactAlias aliases = 3;</code>
+     * <code>repeated .flyteidl.core.ArtifactID artifact_partial_id = 3;</code>
      */
-    flyteidl.core.IdentifierOuterClass.ArtifactAlias getAliases(int index);
+    flyteidl.core.IdentifierOuterClass.ArtifactID getArtifactPartialId(int index);
     /**
      * <pre>
-     *+optional If specified by user, this is still just a partial artifact. It's here so the user can control the
-     * name, tags, aliases, of the artifact creation.
+     *+optional This object allows the user to specify how Artifacts are created.
+     * name, tag, partitions can be specified. The other fields (version and project/domain) are ignored.
      * </pre>
      *
-     * <code>repeated .flyteidl.core.ArtifactAlias aliases = 3;</code>
+     * <code>repeated .flyteidl.core.ArtifactID artifact_partial_id = 3;</code>
      */
-    int getAliasesCount();
+    int getArtifactPartialIdCount();
     /**
      * <pre>
-     *+optional If specified by user, this is still just a partial artifact. It's here so the user can control the
-     * name, tags, aliases, of the artifact creation.
+     *+optional This object allows the user to specify how Artifacts are created.
+     * name, tag, partitions can be specified. The other fields (version and project/domain) are ignored.
      * </pre>
      *
-     * <code>repeated .flyteidl.core.ArtifactAlias aliases = 3;</code>
+     * <code>repeated .flyteidl.core.ArtifactID artifact_partial_id = 3;</code>
      */
-    java.util.List<? extends flyteidl.core.IdentifierOuterClass.ArtifactAliasOrBuilder> 
-        getAliasesOrBuilderList();
+    java.util.List<? extends flyteidl.core.IdentifierOuterClass.ArtifactIDOrBuilder> 
+        getArtifactPartialIdOrBuilderList();
     /**
      * <pre>
-     *+optional If specified by user, this is still just a partial artifact. It's here so the user can control the
-     * name, tags, aliases, of the artifact creation.
+     *+optional This object allows the user to specify how Artifacts are created.
+     * name, tag, partitions can be specified. The other fields (version and project/domain) are ignored.
      * </pre>
      *
-     * <code>repeated .flyteidl.core.ArtifactAlias aliases = 3;</code>
+     * <code>repeated .flyteidl.core.ArtifactID artifact_partial_id = 3;</code>
      */
-    flyteidl.core.IdentifierOuterClass.ArtifactAliasOrBuilder getAliasesOrBuilder(
+    flyteidl.core.IdentifierOuterClass.ArtifactIDOrBuilder getArtifactPartialIdOrBuilder(
         int index);
   }
   /**
@@ -128,7 +128,7 @@ public final class Interface {
     }
     private Variable() {
       description_ = "";
-      aliases_ = java.util.Collections.emptyList();
+      artifactPartialId_ = java.util.Collections.emptyList();
     }
 
     @java.lang.Override
@@ -176,11 +176,11 @@ public final class Interface {
             }
             case 26: {
               if (!((mutable_bitField0_ & 0x00000004) != 0)) {
-                aliases_ = new java.util.ArrayList<flyteidl.core.IdentifierOuterClass.ArtifactAlias>();
+                artifactPartialId_ = new java.util.ArrayList<flyteidl.core.IdentifierOuterClass.ArtifactID>();
                 mutable_bitField0_ |= 0x00000004;
               }
-              aliases_.add(
-                  input.readMessage(flyteidl.core.IdentifierOuterClass.ArtifactAlias.parser(), extensionRegistry));
+              artifactPartialId_.add(
+                  input.readMessage(flyteidl.core.IdentifierOuterClass.ArtifactID.parser(), extensionRegistry));
               break;
             }
             default: {
@@ -199,7 +199,7 @@ public final class Interface {
             e).setUnfinishedMessage(this);
       } finally {
         if (((mutable_bitField0_ & 0x00000004) != 0)) {
-          aliases_ = java.util.Collections.unmodifiableList(aliases_);
+          artifactPartialId_ = java.util.Collections.unmodifiableList(artifactPartialId_);
         }
         this.unknownFields = unknownFields.build();
         makeExtensionsImmutable();
@@ -294,64 +294,64 @@ public final class Interface {
       }
     }
 
-    public static final int ALIASES_FIELD_NUMBER = 3;
-    private java.util.List<flyteidl.core.IdentifierOuterClass.ArtifactAlias> aliases_;
+    public static final int ARTIFACT_PARTIAL_ID_FIELD_NUMBER = 3;
+    private java.util.List<flyteidl.core.IdentifierOuterClass.ArtifactID> artifactPartialId_;
     /**
      * <pre>
-     *+optional If specified by user, this is still just a partial artifact. It's here so the user can control the
-     * name, tags, aliases, of the artifact creation.
+     *+optional This object allows the user to specify how Artifacts are created.
+     * name, tag, partitions can be specified. The other fields (version and project/domain) are ignored.
      * </pre>
      *
-     * <code>repeated .flyteidl.core.ArtifactAlias aliases = 3;</code>
+     * <code>repeated .flyteidl.core.ArtifactID artifact_partial_id = 3;</code>
      */
-    public java.util.List<flyteidl.core.IdentifierOuterClass.ArtifactAlias> getAliasesList() {
-      return aliases_;
+    public java.util.List<flyteidl.core.IdentifierOuterClass.ArtifactID> getArtifactPartialIdList() {
+      return artifactPartialId_;
     }
     /**
      * <pre>
-     *+optional If specified by user, this is still just a partial artifact. It's here so the user can control the
-     * name, tags, aliases, of the artifact creation.
+     *+optional This object allows the user to specify how Artifacts are created.
+     * name, tag, partitions can be specified. The other fields (version and project/domain) are ignored.
      * </pre>
      *
-     * <code>repeated .flyteidl.core.ArtifactAlias aliases = 3;</code>
+     * <code>repeated .flyteidl.core.ArtifactID artifact_partial_id = 3;</code>
      */
-    public java.util.List<? extends flyteidl.core.IdentifierOuterClass.ArtifactAliasOrBuilder> 
-        getAliasesOrBuilderList() {
-      return aliases_;
+    public java.util.List<? extends flyteidl.core.IdentifierOuterClass.ArtifactIDOrBuilder> 
+        getArtifactPartialIdOrBuilderList() {
+      return artifactPartialId_;
     }
     /**
      * <pre>
-     *+optional If specified by user, this is still just a partial artifact. It's here so the user can control the
-     * name, tags, aliases, of the artifact creation.
+     *+optional This object allows the user to specify how Artifacts are created.
+     * name, tag, partitions can be specified. The other fields (version and project/domain) are ignored.
      * </pre>
      *
-     * <code>repeated .flyteidl.core.ArtifactAlias aliases = 3;</code>
+     * <code>repeated .flyteidl.core.ArtifactID artifact_partial_id = 3;</code>
      */
-    public int getAliasesCount() {
-      return aliases_.size();
+    public int getArtifactPartialIdCount() {
+      return artifactPartialId_.size();
     }
     /**
      * <pre>
-     *+optional If specified by user, this is still just a partial artifact. It's here so the user can control the
-     * name, tags, aliases, of the artifact creation.
+     *+optional This object allows the user to specify how Artifacts are created.
+     * name, tag, partitions can be specified. The other fields (version and project/domain) are ignored.
      * </pre>
      *
-     * <code>repeated .flyteidl.core.ArtifactAlias aliases = 3;</code>
+     * <code>repeated .flyteidl.core.ArtifactID artifact_partial_id = 3;</code>
      */
-    public flyteidl.core.IdentifierOuterClass.ArtifactAlias getAliases(int index) {
-      return aliases_.get(index);
+    public flyteidl.core.IdentifierOuterClass.ArtifactID getArtifactPartialId(int index) {
+      return artifactPartialId_.get(index);
     }
     /**
      * <pre>
-     *+optional If specified by user, this is still just a partial artifact. It's here so the user can control the
-     * name, tags, aliases, of the artifact creation.
+     *+optional This object allows the user to specify how Artifacts are created.
+     * name, tag, partitions can be specified. The other fields (version and project/domain) are ignored.
      * </pre>
      *
-     * <code>repeated .flyteidl.core.ArtifactAlias aliases = 3;</code>
+     * <code>repeated .flyteidl.core.ArtifactID artifact_partial_id = 3;</code>
      */
-    public flyteidl.core.IdentifierOuterClass.ArtifactAliasOrBuilder getAliasesOrBuilder(
+    public flyteidl.core.IdentifierOuterClass.ArtifactIDOrBuilder getArtifactPartialIdOrBuilder(
         int index) {
-      return aliases_.get(index);
+      return artifactPartialId_.get(index);
     }
 
     private byte memoizedIsInitialized = -1;
@@ -374,8 +374,8 @@ public final class Interface {
       if (!getDescriptionBytes().isEmpty()) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 2, description_);
       }
-      for (int i = 0; i < aliases_.size(); i++) {
-        output.writeMessage(3, aliases_.get(i));
+      for (int i = 0; i < artifactPartialId_.size(); i++) {
+        output.writeMessage(3, artifactPartialId_.get(i));
       }
       unknownFields.writeTo(output);
     }
@@ -393,9 +393,9 @@ public final class Interface {
       if (!getDescriptionBytes().isEmpty()) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, description_);
       }
-      for (int i = 0; i < aliases_.size(); i++) {
+      for (int i = 0; i < artifactPartialId_.size(); i++) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(3, aliases_.get(i));
+          .computeMessageSize(3, artifactPartialId_.get(i));
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -419,8 +419,8 @@ public final class Interface {
       }
       if (!getDescription()
           .equals(other.getDescription())) return false;
-      if (!getAliasesList()
-          .equals(other.getAliasesList())) return false;
+      if (!getArtifactPartialIdList()
+          .equals(other.getArtifactPartialIdList())) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -438,9 +438,9 @@ public final class Interface {
       }
       hash = (37 * hash) + DESCRIPTION_FIELD_NUMBER;
       hash = (53 * hash) + getDescription().hashCode();
-      if (getAliasesCount() > 0) {
-        hash = (37 * hash) + ALIASES_FIELD_NUMBER;
-        hash = (53 * hash) + getAliasesList().hashCode();
+      if (getArtifactPartialIdCount() > 0) {
+        hash = (37 * hash) + ARTIFACT_PARTIAL_ID_FIELD_NUMBER;
+        hash = (53 * hash) + getArtifactPartialIdList().hashCode();
       }
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
@@ -574,7 +574,7 @@ public final class Interface {
       private void maybeForceBuilderInitialization() {
         if (com.google.protobuf.GeneratedMessageV3
                 .alwaysUseFieldBuilders) {
-          getAliasesFieldBuilder();
+          getArtifactPartialIdFieldBuilder();
         }
       }
       @java.lang.Override
@@ -588,11 +588,11 @@ public final class Interface {
         }
         description_ = "";
 
-        if (aliasesBuilder_ == null) {
-          aliases_ = java.util.Collections.emptyList();
+        if (artifactPartialIdBuilder_ == null) {
+          artifactPartialId_ = java.util.Collections.emptyList();
           bitField0_ = (bitField0_ & ~0x00000004);
         } else {
-          aliasesBuilder_.clear();
+          artifactPartialIdBuilder_.clear();
         }
         return this;
       }
@@ -628,14 +628,14 @@ public final class Interface {
           result.type_ = typeBuilder_.build();
         }
         result.description_ = description_;
-        if (aliasesBuilder_ == null) {
+        if (artifactPartialIdBuilder_ == null) {
           if (((bitField0_ & 0x00000004) != 0)) {
-            aliases_ = java.util.Collections.unmodifiableList(aliases_);
+            artifactPartialId_ = java.util.Collections.unmodifiableList(artifactPartialId_);
             bitField0_ = (bitField0_ & ~0x00000004);
           }
-          result.aliases_ = aliases_;
+          result.artifactPartialId_ = artifactPartialId_;
         } else {
-          result.aliases_ = aliasesBuilder_.build();
+          result.artifactPartialId_ = artifactPartialIdBuilder_.build();
         }
         result.bitField0_ = to_bitField0_;
         onBuilt();
@@ -693,29 +693,29 @@ public final class Interface {
           description_ = other.description_;
           onChanged();
         }
-        if (aliasesBuilder_ == null) {
-          if (!other.aliases_.isEmpty()) {
-            if (aliases_.isEmpty()) {
-              aliases_ = other.aliases_;
+        if (artifactPartialIdBuilder_ == null) {
+          if (!other.artifactPartialId_.isEmpty()) {
+            if (artifactPartialId_.isEmpty()) {
+              artifactPartialId_ = other.artifactPartialId_;
               bitField0_ = (bitField0_ & ~0x00000004);
             } else {
-              ensureAliasesIsMutable();
-              aliases_.addAll(other.aliases_);
+              ensureArtifactPartialIdIsMutable();
+              artifactPartialId_.addAll(other.artifactPartialId_);
             }
             onChanged();
           }
         } else {
-          if (!other.aliases_.isEmpty()) {
-            if (aliasesBuilder_.isEmpty()) {
-              aliasesBuilder_.dispose();
-              aliasesBuilder_ = null;
-              aliases_ = other.aliases_;
+          if (!other.artifactPartialId_.isEmpty()) {
+            if (artifactPartialIdBuilder_.isEmpty()) {
+              artifactPartialIdBuilder_.dispose();
+              artifactPartialIdBuilder_ = null;
+              artifactPartialId_ = other.artifactPartialId_;
               bitField0_ = (bitField0_ & ~0x00000004);
-              aliasesBuilder_ = 
+              artifactPartialIdBuilder_ = 
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
-                   getAliasesFieldBuilder() : null;
+                   getArtifactPartialIdFieldBuilder() : null;
             } else {
-              aliasesBuilder_.addAllMessages(other.aliases_);
+              artifactPartialIdBuilder_.addAllMessages(other.artifactPartialId_);
             }
           }
         }
@@ -991,334 +991,334 @@ public final class Interface {
         return this;
       }
 
-      private java.util.List<flyteidl.core.IdentifierOuterClass.ArtifactAlias> aliases_ =
+      private java.util.List<flyteidl.core.IdentifierOuterClass.ArtifactID> artifactPartialId_ =
         java.util.Collections.emptyList();
-      private void ensureAliasesIsMutable() {
+      private void ensureArtifactPartialIdIsMutable() {
         if (!((bitField0_ & 0x00000004) != 0)) {
-          aliases_ = new java.util.ArrayList<flyteidl.core.IdentifierOuterClass.ArtifactAlias>(aliases_);
+          artifactPartialId_ = new java.util.ArrayList<flyteidl.core.IdentifierOuterClass.ArtifactID>(artifactPartialId_);
           bitField0_ |= 0x00000004;
          }
       }
 
       private com.google.protobuf.RepeatedFieldBuilderV3<
-          flyteidl.core.IdentifierOuterClass.ArtifactAlias, flyteidl.core.IdentifierOuterClass.ArtifactAlias.Builder, flyteidl.core.IdentifierOuterClass.ArtifactAliasOrBuilder> aliasesBuilder_;
+          flyteidl.core.IdentifierOuterClass.ArtifactID, flyteidl.core.IdentifierOuterClass.ArtifactID.Builder, flyteidl.core.IdentifierOuterClass.ArtifactIDOrBuilder> artifactPartialIdBuilder_;
 
       /**
        * <pre>
-       *+optional If specified by user, this is still just a partial artifact. It's here so the user can control the
-       * name, tags, aliases, of the artifact creation.
+       *+optional This object allows the user to specify how Artifacts are created.
+       * name, tag, partitions can be specified. The other fields (version and project/domain) are ignored.
        * </pre>
        *
-       * <code>repeated .flyteidl.core.ArtifactAlias aliases = 3;</code>
+       * <code>repeated .flyteidl.core.ArtifactID artifact_partial_id = 3;</code>
        */
-      public java.util.List<flyteidl.core.IdentifierOuterClass.ArtifactAlias> getAliasesList() {
-        if (aliasesBuilder_ == null) {
-          return java.util.Collections.unmodifiableList(aliases_);
+      public java.util.List<flyteidl.core.IdentifierOuterClass.ArtifactID> getArtifactPartialIdList() {
+        if (artifactPartialIdBuilder_ == null) {
+          return java.util.Collections.unmodifiableList(artifactPartialId_);
         } else {
-          return aliasesBuilder_.getMessageList();
+          return artifactPartialIdBuilder_.getMessageList();
         }
       }
       /**
        * <pre>
-       *+optional If specified by user, this is still just a partial artifact. It's here so the user can control the
-       * name, tags, aliases, of the artifact creation.
+       *+optional This object allows the user to specify how Artifacts are created.
+       * name, tag, partitions can be specified. The other fields (version and project/domain) are ignored.
        * </pre>
        *
-       * <code>repeated .flyteidl.core.ArtifactAlias aliases = 3;</code>
+       * <code>repeated .flyteidl.core.ArtifactID artifact_partial_id = 3;</code>
        */
-      public int getAliasesCount() {
-        if (aliasesBuilder_ == null) {
-          return aliases_.size();
+      public int getArtifactPartialIdCount() {
+        if (artifactPartialIdBuilder_ == null) {
+          return artifactPartialId_.size();
         } else {
-          return aliasesBuilder_.getCount();
+          return artifactPartialIdBuilder_.getCount();
         }
       }
       /**
        * <pre>
-       *+optional If specified by user, this is still just a partial artifact. It's here so the user can control the
-       * name, tags, aliases, of the artifact creation.
+       *+optional This object allows the user to specify how Artifacts are created.
+       * name, tag, partitions can be specified. The other fields (version and project/domain) are ignored.
        * </pre>
        *
-       * <code>repeated .flyteidl.core.ArtifactAlias aliases = 3;</code>
+       * <code>repeated .flyteidl.core.ArtifactID artifact_partial_id = 3;</code>
        */
-      public flyteidl.core.IdentifierOuterClass.ArtifactAlias getAliases(int index) {
-        if (aliasesBuilder_ == null) {
-          return aliases_.get(index);
+      public flyteidl.core.IdentifierOuterClass.ArtifactID getArtifactPartialId(int index) {
+        if (artifactPartialIdBuilder_ == null) {
+          return artifactPartialId_.get(index);
         } else {
-          return aliasesBuilder_.getMessage(index);
+          return artifactPartialIdBuilder_.getMessage(index);
         }
       }
       /**
        * <pre>
-       *+optional If specified by user, this is still just a partial artifact. It's here so the user can control the
-       * name, tags, aliases, of the artifact creation.
+       *+optional This object allows the user to specify how Artifacts are created.
+       * name, tag, partitions can be specified. The other fields (version and project/domain) are ignored.
        * </pre>
        *
-       * <code>repeated .flyteidl.core.ArtifactAlias aliases = 3;</code>
+       * <code>repeated .flyteidl.core.ArtifactID artifact_partial_id = 3;</code>
        */
-      public Builder setAliases(
-          int index, flyteidl.core.IdentifierOuterClass.ArtifactAlias value) {
-        if (aliasesBuilder_ == null) {
+      public Builder setArtifactPartialId(
+          int index, flyteidl.core.IdentifierOuterClass.ArtifactID value) {
+        if (artifactPartialIdBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
           }
-          ensureAliasesIsMutable();
-          aliases_.set(index, value);
+          ensureArtifactPartialIdIsMutable();
+          artifactPartialId_.set(index, value);
           onChanged();
         } else {
-          aliasesBuilder_.setMessage(index, value);
+          artifactPartialIdBuilder_.setMessage(index, value);
         }
         return this;
       }
       /**
        * <pre>
-       *+optional If specified by user, this is still just a partial artifact. It's here so the user can control the
-       * name, tags, aliases, of the artifact creation.
+       *+optional This object allows the user to specify how Artifacts are created.
+       * name, tag, partitions can be specified. The other fields (version and project/domain) are ignored.
        * </pre>
        *
-       * <code>repeated .flyteidl.core.ArtifactAlias aliases = 3;</code>
+       * <code>repeated .flyteidl.core.ArtifactID artifact_partial_id = 3;</code>
        */
-      public Builder setAliases(
-          int index, flyteidl.core.IdentifierOuterClass.ArtifactAlias.Builder builderForValue) {
-        if (aliasesBuilder_ == null) {
-          ensureAliasesIsMutable();
-          aliases_.set(index, builderForValue.build());
+      public Builder setArtifactPartialId(
+          int index, flyteidl.core.IdentifierOuterClass.ArtifactID.Builder builderForValue) {
+        if (artifactPartialIdBuilder_ == null) {
+          ensureArtifactPartialIdIsMutable();
+          artifactPartialId_.set(index, builderForValue.build());
           onChanged();
         } else {
-          aliasesBuilder_.setMessage(index, builderForValue.build());
+          artifactPartialIdBuilder_.setMessage(index, builderForValue.build());
         }
         return this;
       }
       /**
        * <pre>
-       *+optional If specified by user, this is still just a partial artifact. It's here so the user can control the
-       * name, tags, aliases, of the artifact creation.
+       *+optional This object allows the user to specify how Artifacts are created.
+       * name, tag, partitions can be specified. The other fields (version and project/domain) are ignored.
        * </pre>
        *
-       * <code>repeated .flyteidl.core.ArtifactAlias aliases = 3;</code>
+       * <code>repeated .flyteidl.core.ArtifactID artifact_partial_id = 3;</code>
        */
-      public Builder addAliases(flyteidl.core.IdentifierOuterClass.ArtifactAlias value) {
-        if (aliasesBuilder_ == null) {
+      public Builder addArtifactPartialId(flyteidl.core.IdentifierOuterClass.ArtifactID value) {
+        if (artifactPartialIdBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
           }
-          ensureAliasesIsMutable();
-          aliases_.add(value);
+          ensureArtifactPartialIdIsMutable();
+          artifactPartialId_.add(value);
           onChanged();
         } else {
-          aliasesBuilder_.addMessage(value);
+          artifactPartialIdBuilder_.addMessage(value);
         }
         return this;
       }
       /**
        * <pre>
-       *+optional If specified by user, this is still just a partial artifact. It's here so the user can control the
-       * name, tags, aliases, of the artifact creation.
+       *+optional This object allows the user to specify how Artifacts are created.
+       * name, tag, partitions can be specified. The other fields (version and project/domain) are ignored.
        * </pre>
        *
-       * <code>repeated .flyteidl.core.ArtifactAlias aliases = 3;</code>
+       * <code>repeated .flyteidl.core.ArtifactID artifact_partial_id = 3;</code>
        */
-      public Builder addAliases(
-          int index, flyteidl.core.IdentifierOuterClass.ArtifactAlias value) {
-        if (aliasesBuilder_ == null) {
+      public Builder addArtifactPartialId(
+          int index, flyteidl.core.IdentifierOuterClass.ArtifactID value) {
+        if (artifactPartialIdBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
           }
-          ensureAliasesIsMutable();
-          aliases_.add(index, value);
+          ensureArtifactPartialIdIsMutable();
+          artifactPartialId_.add(index, value);
           onChanged();
         } else {
-          aliasesBuilder_.addMessage(index, value);
+          artifactPartialIdBuilder_.addMessage(index, value);
         }
         return this;
       }
       /**
        * <pre>
-       *+optional If specified by user, this is still just a partial artifact. It's here so the user can control the
-       * name, tags, aliases, of the artifact creation.
+       *+optional This object allows the user to specify how Artifacts are created.
+       * name, tag, partitions can be specified. The other fields (version and project/domain) are ignored.
        * </pre>
        *
-       * <code>repeated .flyteidl.core.ArtifactAlias aliases = 3;</code>
+       * <code>repeated .flyteidl.core.ArtifactID artifact_partial_id = 3;</code>
        */
-      public Builder addAliases(
-          flyteidl.core.IdentifierOuterClass.ArtifactAlias.Builder builderForValue) {
-        if (aliasesBuilder_ == null) {
-          ensureAliasesIsMutable();
-          aliases_.add(builderForValue.build());
+      public Builder addArtifactPartialId(
+          flyteidl.core.IdentifierOuterClass.ArtifactID.Builder builderForValue) {
+        if (artifactPartialIdBuilder_ == null) {
+          ensureArtifactPartialIdIsMutable();
+          artifactPartialId_.add(builderForValue.build());
           onChanged();
         } else {
-          aliasesBuilder_.addMessage(builderForValue.build());
+          artifactPartialIdBuilder_.addMessage(builderForValue.build());
         }
         return this;
       }
       /**
        * <pre>
-       *+optional If specified by user, this is still just a partial artifact. It's here so the user can control the
-       * name, tags, aliases, of the artifact creation.
+       *+optional This object allows the user to specify how Artifacts are created.
+       * name, tag, partitions can be specified. The other fields (version and project/domain) are ignored.
        * </pre>
        *
-       * <code>repeated .flyteidl.core.ArtifactAlias aliases = 3;</code>
+       * <code>repeated .flyteidl.core.ArtifactID artifact_partial_id = 3;</code>
        */
-      public Builder addAliases(
-          int index, flyteidl.core.IdentifierOuterClass.ArtifactAlias.Builder builderForValue) {
-        if (aliasesBuilder_ == null) {
-          ensureAliasesIsMutable();
-          aliases_.add(index, builderForValue.build());
+      public Builder addArtifactPartialId(
+          int index, flyteidl.core.IdentifierOuterClass.ArtifactID.Builder builderForValue) {
+        if (artifactPartialIdBuilder_ == null) {
+          ensureArtifactPartialIdIsMutable();
+          artifactPartialId_.add(index, builderForValue.build());
           onChanged();
         } else {
-          aliasesBuilder_.addMessage(index, builderForValue.build());
+          artifactPartialIdBuilder_.addMessage(index, builderForValue.build());
         }
         return this;
       }
       /**
        * <pre>
-       *+optional If specified by user, this is still just a partial artifact. It's here so the user can control the
-       * name, tags, aliases, of the artifact creation.
+       *+optional This object allows the user to specify how Artifacts are created.
+       * name, tag, partitions can be specified. The other fields (version and project/domain) are ignored.
        * </pre>
        *
-       * <code>repeated .flyteidl.core.ArtifactAlias aliases = 3;</code>
+       * <code>repeated .flyteidl.core.ArtifactID artifact_partial_id = 3;</code>
        */
-      public Builder addAllAliases(
-          java.lang.Iterable<? extends flyteidl.core.IdentifierOuterClass.ArtifactAlias> values) {
-        if (aliasesBuilder_ == null) {
-          ensureAliasesIsMutable();
+      public Builder addAllArtifactPartialId(
+          java.lang.Iterable<? extends flyteidl.core.IdentifierOuterClass.ArtifactID> values) {
+        if (artifactPartialIdBuilder_ == null) {
+          ensureArtifactPartialIdIsMutable();
           com.google.protobuf.AbstractMessageLite.Builder.addAll(
-              values, aliases_);
+              values, artifactPartialId_);
           onChanged();
         } else {
-          aliasesBuilder_.addAllMessages(values);
+          artifactPartialIdBuilder_.addAllMessages(values);
         }
         return this;
       }
       /**
        * <pre>
-       *+optional If specified by user, this is still just a partial artifact. It's here so the user can control the
-       * name, tags, aliases, of the artifact creation.
+       *+optional This object allows the user to specify how Artifacts are created.
+       * name, tag, partitions can be specified. The other fields (version and project/domain) are ignored.
        * </pre>
        *
-       * <code>repeated .flyteidl.core.ArtifactAlias aliases = 3;</code>
+       * <code>repeated .flyteidl.core.ArtifactID artifact_partial_id = 3;</code>
        */
-      public Builder clearAliases() {
-        if (aliasesBuilder_ == null) {
-          aliases_ = java.util.Collections.emptyList();
+      public Builder clearArtifactPartialId() {
+        if (artifactPartialIdBuilder_ == null) {
+          artifactPartialId_ = java.util.Collections.emptyList();
           bitField0_ = (bitField0_ & ~0x00000004);
           onChanged();
         } else {
-          aliasesBuilder_.clear();
+          artifactPartialIdBuilder_.clear();
         }
         return this;
       }
       /**
        * <pre>
-       *+optional If specified by user, this is still just a partial artifact. It's here so the user can control the
-       * name, tags, aliases, of the artifact creation.
+       *+optional This object allows the user to specify how Artifacts are created.
+       * name, tag, partitions can be specified. The other fields (version and project/domain) are ignored.
        * </pre>
        *
-       * <code>repeated .flyteidl.core.ArtifactAlias aliases = 3;</code>
+       * <code>repeated .flyteidl.core.ArtifactID artifact_partial_id = 3;</code>
        */
-      public Builder removeAliases(int index) {
-        if (aliasesBuilder_ == null) {
-          ensureAliasesIsMutable();
-          aliases_.remove(index);
+      public Builder removeArtifactPartialId(int index) {
+        if (artifactPartialIdBuilder_ == null) {
+          ensureArtifactPartialIdIsMutable();
+          artifactPartialId_.remove(index);
           onChanged();
         } else {
-          aliasesBuilder_.remove(index);
+          artifactPartialIdBuilder_.remove(index);
         }
         return this;
       }
       /**
        * <pre>
-       *+optional If specified by user, this is still just a partial artifact. It's here so the user can control the
-       * name, tags, aliases, of the artifact creation.
+       *+optional This object allows the user to specify how Artifacts are created.
+       * name, tag, partitions can be specified. The other fields (version and project/domain) are ignored.
        * </pre>
        *
-       * <code>repeated .flyteidl.core.ArtifactAlias aliases = 3;</code>
+       * <code>repeated .flyteidl.core.ArtifactID artifact_partial_id = 3;</code>
        */
-      public flyteidl.core.IdentifierOuterClass.ArtifactAlias.Builder getAliasesBuilder(
+      public flyteidl.core.IdentifierOuterClass.ArtifactID.Builder getArtifactPartialIdBuilder(
           int index) {
-        return getAliasesFieldBuilder().getBuilder(index);
+        return getArtifactPartialIdFieldBuilder().getBuilder(index);
       }
       /**
        * <pre>
-       *+optional If specified by user, this is still just a partial artifact. It's here so the user can control the
-       * name, tags, aliases, of the artifact creation.
+       *+optional This object allows the user to specify how Artifacts are created.
+       * name, tag, partitions can be specified. The other fields (version and project/domain) are ignored.
        * </pre>
        *
-       * <code>repeated .flyteidl.core.ArtifactAlias aliases = 3;</code>
+       * <code>repeated .flyteidl.core.ArtifactID artifact_partial_id = 3;</code>
        */
-      public flyteidl.core.IdentifierOuterClass.ArtifactAliasOrBuilder getAliasesOrBuilder(
+      public flyteidl.core.IdentifierOuterClass.ArtifactIDOrBuilder getArtifactPartialIdOrBuilder(
           int index) {
-        if (aliasesBuilder_ == null) {
-          return aliases_.get(index);  } else {
-          return aliasesBuilder_.getMessageOrBuilder(index);
+        if (artifactPartialIdBuilder_ == null) {
+          return artifactPartialId_.get(index);  } else {
+          return artifactPartialIdBuilder_.getMessageOrBuilder(index);
         }
       }
       /**
        * <pre>
-       *+optional If specified by user, this is still just a partial artifact. It's here so the user can control the
-       * name, tags, aliases, of the artifact creation.
+       *+optional This object allows the user to specify how Artifacts are created.
+       * name, tag, partitions can be specified. The other fields (version and project/domain) are ignored.
        * </pre>
        *
-       * <code>repeated .flyteidl.core.ArtifactAlias aliases = 3;</code>
+       * <code>repeated .flyteidl.core.ArtifactID artifact_partial_id = 3;</code>
        */
-      public java.util.List<? extends flyteidl.core.IdentifierOuterClass.ArtifactAliasOrBuilder> 
-           getAliasesOrBuilderList() {
-        if (aliasesBuilder_ != null) {
-          return aliasesBuilder_.getMessageOrBuilderList();
+      public java.util.List<? extends flyteidl.core.IdentifierOuterClass.ArtifactIDOrBuilder> 
+           getArtifactPartialIdOrBuilderList() {
+        if (artifactPartialIdBuilder_ != null) {
+          return artifactPartialIdBuilder_.getMessageOrBuilderList();
         } else {
-          return java.util.Collections.unmodifiableList(aliases_);
+          return java.util.Collections.unmodifiableList(artifactPartialId_);
         }
       }
       /**
        * <pre>
-       *+optional If specified by user, this is still just a partial artifact. It's here so the user can control the
-       * name, tags, aliases, of the artifact creation.
+       *+optional This object allows the user to specify how Artifacts are created.
+       * name, tag, partitions can be specified. The other fields (version and project/domain) are ignored.
        * </pre>
        *
-       * <code>repeated .flyteidl.core.ArtifactAlias aliases = 3;</code>
+       * <code>repeated .flyteidl.core.ArtifactID artifact_partial_id = 3;</code>
        */
-      public flyteidl.core.IdentifierOuterClass.ArtifactAlias.Builder addAliasesBuilder() {
-        return getAliasesFieldBuilder().addBuilder(
-            flyteidl.core.IdentifierOuterClass.ArtifactAlias.getDefaultInstance());
+      public flyteidl.core.IdentifierOuterClass.ArtifactID.Builder addArtifactPartialIdBuilder() {
+        return getArtifactPartialIdFieldBuilder().addBuilder(
+            flyteidl.core.IdentifierOuterClass.ArtifactID.getDefaultInstance());
       }
       /**
        * <pre>
-       *+optional If specified by user, this is still just a partial artifact. It's here so the user can control the
-       * name, tags, aliases, of the artifact creation.
+       *+optional This object allows the user to specify how Artifacts are created.
+       * name, tag, partitions can be specified. The other fields (version and project/domain) are ignored.
        * </pre>
        *
-       * <code>repeated .flyteidl.core.ArtifactAlias aliases = 3;</code>
+       * <code>repeated .flyteidl.core.ArtifactID artifact_partial_id = 3;</code>
        */
-      public flyteidl.core.IdentifierOuterClass.ArtifactAlias.Builder addAliasesBuilder(
+      public flyteidl.core.IdentifierOuterClass.ArtifactID.Builder addArtifactPartialIdBuilder(
           int index) {
-        return getAliasesFieldBuilder().addBuilder(
-            index, flyteidl.core.IdentifierOuterClass.ArtifactAlias.getDefaultInstance());
+        return getArtifactPartialIdFieldBuilder().addBuilder(
+            index, flyteidl.core.IdentifierOuterClass.ArtifactID.getDefaultInstance());
       }
       /**
        * <pre>
-       *+optional If specified by user, this is still just a partial artifact. It's here so the user can control the
-       * name, tags, aliases, of the artifact creation.
+       *+optional This object allows the user to specify how Artifacts are created.
+       * name, tag, partitions can be specified. The other fields (version and project/domain) are ignored.
        * </pre>
        *
-       * <code>repeated .flyteidl.core.ArtifactAlias aliases = 3;</code>
+       * <code>repeated .flyteidl.core.ArtifactID artifact_partial_id = 3;</code>
        */
-      public java.util.List<flyteidl.core.IdentifierOuterClass.ArtifactAlias.Builder> 
-           getAliasesBuilderList() {
-        return getAliasesFieldBuilder().getBuilderList();
+      public java.util.List<flyteidl.core.IdentifierOuterClass.ArtifactID.Builder> 
+           getArtifactPartialIdBuilderList() {
+        return getArtifactPartialIdFieldBuilder().getBuilderList();
       }
       private com.google.protobuf.RepeatedFieldBuilderV3<
-          flyteidl.core.IdentifierOuterClass.ArtifactAlias, flyteidl.core.IdentifierOuterClass.ArtifactAlias.Builder, flyteidl.core.IdentifierOuterClass.ArtifactAliasOrBuilder> 
-          getAliasesFieldBuilder() {
-        if (aliasesBuilder_ == null) {
-          aliasesBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
-              flyteidl.core.IdentifierOuterClass.ArtifactAlias, flyteidl.core.IdentifierOuterClass.ArtifactAlias.Builder, flyteidl.core.IdentifierOuterClass.ArtifactAliasOrBuilder>(
-                  aliases_,
+          flyteidl.core.IdentifierOuterClass.ArtifactID, flyteidl.core.IdentifierOuterClass.ArtifactID.Builder, flyteidl.core.IdentifierOuterClass.ArtifactIDOrBuilder> 
+          getArtifactPartialIdFieldBuilder() {
+        if (artifactPartialIdBuilder_ == null) {
+          artifactPartialIdBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
+              flyteidl.core.IdentifierOuterClass.ArtifactID, flyteidl.core.IdentifierOuterClass.ArtifactID.Builder, flyteidl.core.IdentifierOuterClass.ArtifactIDOrBuilder>(
+                  artifactPartialId_,
                   ((bitField0_ & 0x00000004) != 0),
                   getParentForChildren(),
                   isClean());
-          aliases_ = null;
+          artifactPartialId_ = null;
         }
-        return aliasesBuilder_;
+        return artifactPartialIdBuilder_;
       }
       @java.lang.Override
       public final Builder setUnknownFields(
@@ -5225,27 +5225,27 @@ public final class Interface {
       "\n\035flyteidl/core/interface.proto\022\rflyteid" +
       "l.core\032\031flyteidl/core/types.proto\032\034flyte" +
       "idl/core/literals.proto\032\036flyteidl/core/i" +
-      "dentifier.proto\"x\n\010Variable\022(\n\004type\030\001 \001(" +
-      "\0132\032.flyteidl.core.LiteralType\022\023\n\013descrip" +
-      "tion\030\002 \001(\t\022-\n\007aliases\030\003 \003(\0132\034.flyteidl.c" +
-      "ore.ArtifactAlias\"\226\001\n\013VariableMap\022<\n\tvar" +
-      "iables\030\001 \003(\0132).flyteidl.core.VariableMap" +
-      ".VariablesEntry\032I\n\016VariablesEntry\022\013\n\003key" +
-      "\030\001 \001(\t\022&\n\005value\030\002 \001(\0132\027.flyteidl.core.Va" +
-      "riable:\0028\001\"i\n\016TypedInterface\022*\n\006inputs\030\001" +
-      " \001(\0132\032.flyteidl.core.VariableMap\022+\n\007outp" +
-      "uts\030\002 \001(\0132\032.flyteidl.core.VariableMap\"\264\001" +
-      "\n\tParameter\022$\n\003var\030\001 \001(\0132\027.flyteidl.core" +
-      ".Variable\022)\n\007default\030\002 \001(\0132\026.flyteidl.co" +
-      "re.LiteralH\000\022\022\n\010required\030\003 \001(\010H\000\0226\n\016arti" +
-      "fact_query\030\004 \001(\0132\034.flyteidl.core.Artifac" +
-      "tQueryH\000B\n\n\010behavior\"\234\001\n\014ParameterMap\022?\n" +
-      "\nparameters\030\001 \003(\0132+.flyteidl.core.Parame" +
-      "terMap.ParametersEntry\032K\n\017ParametersEntr" +
-      "y\022\013\n\003key\030\001 \001(\t\022\'\n\005value\030\002 \001(\0132\030.flyteidl" +
-      ".core.Parameter:\0028\001B6Z4github.com/flyteo" +
-      "rg/flyteidl/gen/pb-go/flyteidl/coreb\006pro" +
-      "to3"
+      "dentifier.proto\"\201\001\n\010Variable\022(\n\004type\030\001 \001" +
+      "(\0132\032.flyteidl.core.LiteralType\022\023\n\013descri" +
+      "ption\030\002 \001(\t\0226\n\023artifact_partial_id\030\003 \003(\013" +
+      "2\031.flyteidl.core.ArtifactID\"\226\001\n\013Variable" +
+      "Map\022<\n\tvariables\030\001 \003(\0132).flyteidl.core.V" +
+      "ariableMap.VariablesEntry\032I\n\016VariablesEn" +
+      "try\022\013\n\003key\030\001 \001(\t\022&\n\005value\030\002 \001(\0132\027.flytei" +
+      "dl.core.Variable:\0028\001\"i\n\016TypedInterface\022*" +
+      "\n\006inputs\030\001 \001(\0132\032.flyteidl.core.VariableM" +
+      "ap\022+\n\007outputs\030\002 \001(\0132\032.flyteidl.core.Vari" +
+      "ableMap\"\264\001\n\tParameter\022$\n\003var\030\001 \001(\0132\027.fly" +
+      "teidl.core.Variable\022)\n\007default\030\002 \001(\0132\026.f" +
+      "lyteidl.core.LiteralH\000\022\022\n\010required\030\003 \001(\010" +
+      "H\000\0226\n\016artifact_query\030\004 \001(\0132\034.flyteidl.co" +
+      "re.ArtifactQueryH\000B\n\n\010behavior\"\234\001\n\014Param" +
+      "eterMap\022?\n\nparameters\030\001 \003(\0132+.flyteidl.c" +
+      "ore.ParameterMap.ParametersEntry\032K\n\017Para" +
+      "metersEntry\022\013\n\003key\030\001 \001(\t\022\'\n\005value\030\002 \001(\0132" +
+      "\030.flyteidl.core.Parameter:\0028\001B6Z4github." +
+      "com/flyteorg/flyteidl/gen/pb-go/flyteidl" +
+      "/coreb\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
@@ -5267,7 +5267,7 @@ public final class Interface {
     internal_static_flyteidl_core_Variable_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_flyteidl_core_Variable_descriptor,
-        new java.lang.String[] { "Type", "Description", "Aliases", });
+        new java.lang.String[] { "Type", "Description", "ArtifactPartialId", });
     internal_static_flyteidl_core_VariableMap_descriptor =
       getDescriptor().getMessageTypes().get(1);
     internal_static_flyteidl_core_VariableMap_fieldAccessorTable = new

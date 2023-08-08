@@ -381,28 +381,33 @@ pub struct ArtifactKey {
     #[prost(string, tag="2")]
     pub domain: ::prost::alloc::string::String,
     #[prost(string, tag="3")]
-    pub suffix: ::prost::alloc::string::String,
+    pub name: ::prost::alloc::string::String,
 }
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(Clone, PartialEq, ::prost::Message)]
 pub struct ArtifactId {
     #[prost(message, optional, tag="1")]
     pub artifact_key: ::core::option::Option<ArtifactKey>,
-    /// consider hiding - this is a storage layer ID. Might even change for the same object.
     #[prost(string, tag="2")]
-    pub uuid: ::prost::alloc::string::String,
+    pub version: ::prost::alloc::string::String,
+    /// here for ds popularity
+    #[prost(map="string, string", tag="3")]
+    pub partitions: ::std::collections::HashMap<::prost::alloc::string::String, ::prost::alloc::string::String>,
 }
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(Clone, PartialEq, ::prost::Message)]
-pub struct ArtifactAlias {
+pub struct ArtifactTag {
     /// ties this directly to the artifact
     #[prost(message, optional, tag="1")]
     pub artifact_id: ::core::option::Option<ArtifactId>,
     #[prost(string, tag="2")]
-    pub name: ::prost::alloc::string::String,
-    #[prost(string, tag="3")]
-    pub value: ::prost::alloc::string::String,
+    pub tag: ::prost::alloc::string::String,
 }
+/// Uniqueness constraints for Artifacts
+///   - project, domain, name, version, partitions
+/// Option 2 (tags are standalone, point to an individual artifact id):
+///   - project, domain, name, alias (points to one partition if partitioned)
+///   - project, domain, name, partition key, partition value
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(Clone, PartialEq, ::prost::Message)]
 pub struct ArtifactQuery {
@@ -410,8 +415,14 @@ pub struct ArtifactQuery {
     pub project: ::prost::alloc::string::String,
     #[prost(string, tag="2")]
     pub domain: ::prost::alloc::string::String,
-    #[prost(message, optional, tag="3")]
-    pub alias: ::core::option::Option<ArtifactAlias>,
+    #[prost(string, tag="3")]
+    pub name: ::prost::alloc::string::String,
+    #[prost(string, tag="4")]
+    pub tag: ::prost::alloc::string::String,
+    #[prost(map="string, string", tag="5")]
+    pub partitions: ::std::collections::HashMap<::prost::alloc::string::String, ::prost::alloc::string::String>,
+    #[prost(string, tag="6")]
+    pub version: ::prost::alloc::string::String,
 }
 /// Indicates a resource type within Flyte.
 #[derive(Clone, Copy, Debug, PartialEq, Eq, Hash, PartialOrd, Ord, ::prost::Enumeration)]
@@ -729,10 +740,10 @@ pub struct Variable {
     /// +optional string describing input variable
     #[prost(string, tag="2")]
     pub description: ::prost::alloc::string::String,
-    /// +optional If specified by user, this is still just a partial artifact. It's here so the user can control the
-    /// name, tags, aliases, of the artifact creation.
+    /// +optional This object allows the user to specify how Artifacts are created.
+    /// name, tag, partitions can be specified. The other fields (version and project/domain) are ignored.
     #[prost(message, repeated, tag="3")]
-    pub aliases: ::prost::alloc::vec::Vec<ArtifactAlias>,
+    pub artifact_partial_id: ::prost::alloc::vec::Vec<ArtifactId>,
 }
 /// A map of Variables
 #[allow(clippy::derive_partial_eq_without_eq)]
