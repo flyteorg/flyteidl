@@ -16,7 +16,8 @@ import re  # noqa: F401
 
 import six
 
-from flyteadmin.models.core_artifact_key import CoreArtifactKey  # noqa: F401,E501
+from flyteadmin.models.core_artifact_id import CoreArtifactID  # noqa: F401,E501
+from flyteadmin.models.core_artifact_tag import CoreArtifactTag  # noqa: F401,E501
 
 
 class CoreArtifactQuery(object):
@@ -33,120 +34,94 @@ class CoreArtifactQuery(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'artifact_key': 'CoreArtifactKey',
-        'tag': 'str',
-        'partitions': 'dict(str, str)',
-        'version': 'str'
+        'artifact_id': 'CoreArtifactID',
+        'artifact_tag': 'CoreArtifactTag',
+        'uri': 'str'
     }
 
     attribute_map = {
-        'artifact_key': 'artifact_key',
-        'tag': 'tag',
-        'partitions': 'partitions',
-        'version': 'version'
+        'artifact_id': 'artifact_id',
+        'artifact_tag': 'artifact_tag',
+        'uri': 'uri'
     }
 
-    def __init__(self, artifact_key=None, tag=None, partitions=None, version=None):  # noqa: E501
+    def __init__(self, artifact_id=None, artifact_tag=None, uri=None):  # noqa: E501
         """CoreArtifactQuery - a model defined in Swagger"""  # noqa: E501
 
-        self._artifact_key = None
-        self._tag = None
-        self._partitions = None
-        self._version = None
+        self._artifact_id = None
+        self._artifact_tag = None
+        self._uri = None
         self.discriminator = None
 
-        if artifact_key is not None:
-            self.artifact_key = artifact_key
-        if tag is not None:
-            self.tag = tag
-        if partitions is not None:
-            self.partitions = partitions
-        if version is not None:
-            self.version = version
+        if artifact_id is not None:
+            self.artifact_id = artifact_id
+        if artifact_tag is not None:
+            self.artifact_tag = artifact_tag
+        if uri is not None:
+            self.uri = uri
 
     @property
-    def artifact_key(self):
-        """Gets the artifact_key of this CoreArtifactQuery.  # noqa: E501
+    def artifact_id(self):
+        """Gets the artifact_id of this CoreArtifactQuery.  # noqa: E501
 
 
-        :return: The artifact_key of this CoreArtifactQuery.  # noqa: E501
-        :rtype: CoreArtifactKey
+        :return: The artifact_id of this CoreArtifactQuery.  # noqa: E501
+        :rtype: CoreArtifactID
         """
-        return self._artifact_key
+        return self._artifact_id
 
-    @artifact_key.setter
-    def artifact_key(self, artifact_key):
-        """Sets the artifact_key of this CoreArtifactQuery.
+    @artifact_id.setter
+    def artifact_id(self, artifact_id):
+        """Sets the artifact_id of this CoreArtifactQuery.
 
 
-        :param artifact_key: The artifact_key of this CoreArtifactQuery.  # noqa: E501
-        :type: CoreArtifactKey
+        :param artifact_id: The artifact_id of this CoreArtifactQuery.  # noqa: E501
+        :type: CoreArtifactID
         """
 
-        self._artifact_key = artifact_key
+        self._artifact_id = artifact_id
 
     @property
-    def tag(self):
-        """Gets the tag of this CoreArtifactQuery.  # noqa: E501
+    def artifact_tag(self):
+        """Gets the artifact_tag of this CoreArtifactQuery.  # noqa: E501
 
 
-        :return: The tag of this CoreArtifactQuery.  # noqa: E501
+        :return: The artifact_tag of this CoreArtifactQuery.  # noqa: E501
+        :rtype: CoreArtifactTag
+        """
+        return self._artifact_tag
+
+    @artifact_tag.setter
+    def artifact_tag(self, artifact_tag):
+        """Sets the artifact_tag of this CoreArtifactQuery.
+
+
+        :param artifact_tag: The artifact_tag of this CoreArtifactQuery.  # noqa: E501
+        :type: CoreArtifactTag
+        """
+
+        self._artifact_tag = artifact_tag
+
+    @property
+    def uri(self):
+        """Gets the uri of this CoreArtifactQuery.  # noqa: E501
+
+
+        :return: The uri of this CoreArtifactQuery.  # noqa: E501
         :rtype: str
         """
-        return self._tag
+        return self._uri
 
-    @tag.setter
-    def tag(self, tag):
-        """Sets the tag of this CoreArtifactQuery.
+    @uri.setter
+    def uri(self, uri):
+        """Sets the uri of this CoreArtifactQuery.
 
 
-        :param tag: The tag of this CoreArtifactQuery.  # noqa: E501
+        :param uri: The uri of this CoreArtifactQuery.  # noqa: E501
         :type: str
         """
 
-        self._tag = tag
-
-    @property
-    def partitions(self):
-        """Gets the partitions of this CoreArtifactQuery.  # noqa: E501
-
-
-        :return: The partitions of this CoreArtifactQuery.  # noqa: E501
-        :rtype: dict(str, str)
-        """
-        return self._partitions
-
-    @partitions.setter
-    def partitions(self, partitions):
-        """Sets the partitions of this CoreArtifactQuery.
-
-
-        :param partitions: The partitions of this CoreArtifactQuery.  # noqa: E501
-        :type: dict(str, str)
-        """
-
-        self._partitions = partitions
-
-    @property
-    def version(self):
-        """Gets the version of this CoreArtifactQuery.  # noqa: E501
-
-
-        :return: The version of this CoreArtifactQuery.  # noqa: E501
-        :rtype: str
-        """
-        return self._version
-
-    @version.setter
-    def version(self, version):
-        """Sets the version of this CoreArtifactQuery.
-
-
-        :param version: The version of this CoreArtifactQuery.  # noqa: E501
-        :type: str
-        """
-
-        self._version = version
+        self._uri = uri
 
     def to_dict(self):
         """Returns the model properties as a dict"""

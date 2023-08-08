@@ -659,8 +659,8 @@ export namespace flyteidl {
         /** Properties of an ArtifactTag. */
         interface IArtifactTag {
 
-            /** ArtifactTag artifactId */
-            artifactId?: (flyteidl.core.IArtifactID|null);
+            /** ArtifactTag artifactKey */
+            artifactKey?: (flyteidl.core.IArtifactKey|null);
 
             /** ArtifactTag tag */
             tag?: (string|null);
@@ -675,8 +675,8 @@ export namespace flyteidl {
              */
             constructor(properties?: flyteidl.core.IArtifactTag);
 
-            /** ArtifactTag artifactId. */
-            public artifactId?: (flyteidl.core.IArtifactID|null);
+            /** ArtifactTag artifactKey. */
+            public artifactKey?: (flyteidl.core.IArtifactKey|null);
 
             /** ArtifactTag tag. */
             public tag: string;
@@ -717,17 +717,14 @@ export namespace flyteidl {
         /** Properties of an ArtifactQuery. */
         interface IArtifactQuery {
 
-            /** ArtifactQuery artifactKey */
-            artifactKey?: (flyteidl.core.IArtifactKey|null);
+            /** ArtifactQuery artifactId */
+            artifactId?: (flyteidl.core.IArtifactID|null);
 
-            /** ArtifactQuery tag */
-            tag?: (string|null);
+            /** ArtifactQuery artifactTag */
+            artifactTag?: (flyteidl.core.IArtifactTag|null);
 
-            /** ArtifactQuery partitions */
-            partitions?: ({ [k: string]: string }|null);
-
-            /** ArtifactQuery version */
-            version?: (string|null);
+            /** ArtifactQuery uri */
+            uri?: (string|null);
         }
 
         /** Represents an ArtifactQuery. */
@@ -739,17 +736,17 @@ export namespace flyteidl {
              */
             constructor(properties?: flyteidl.core.IArtifactQuery);
 
-            /** ArtifactQuery artifactKey. */
-            public artifactKey?: (flyteidl.core.IArtifactKey|null);
+            /** ArtifactQuery artifactId. */
+            public artifactId?: (flyteidl.core.IArtifactID|null);
 
-            /** ArtifactQuery tag. */
-            public tag: string;
+            /** ArtifactQuery artifactTag. */
+            public artifactTag?: (flyteidl.core.IArtifactTag|null);
 
-            /** ArtifactQuery partitions. */
-            public partitions: { [k: string]: string };
+            /** ArtifactQuery uri. */
+            public uri: string;
 
-            /** ArtifactQuery version. */
-            public version: string;
+            /** ArtifactQuery identifier. */
+            public identifier?: ("artifactId"|"artifactTag"|"uri");
 
             /**
              * Creates a new ArtifactQuery instance using the specified properties.
@@ -8380,12 +8377,6 @@ export namespace flyteidl {
         /** Properties of a GetArtifactRequest. */
         interface IGetArtifactRequest {
 
-            /** GetArtifactRequest artifactId */
-            artifactId?: (flyteidl.core.IArtifactID|null);
-
-            /** GetArtifactRequest uri */
-            uri?: (string|null);
-
             /** GetArtifactRequest query */
             query?: (flyteidl.core.IArtifactQuery|null);
 
@@ -8402,20 +8393,11 @@ export namespace flyteidl {
              */
             constructor(properties?: flyteidl.artifact.IGetArtifactRequest);
 
-            /** GetArtifactRequest artifactId. */
-            public artifactId?: (flyteidl.core.IArtifactID|null);
-
-            /** GetArtifactRequest uri. */
-            public uri: string;
-
             /** GetArtifactRequest query. */
             public query?: (flyteidl.core.IArtifactQuery|null);
 
             /** GetArtifactRequest details. */
             public details: boolean;
-
-            /** GetArtifactRequest identifier. */
-            public identifier?: ("artifactId"|"uri"|"query");
 
             /**
              * Creates a new GetArtifactRequest instance using the specified properties.

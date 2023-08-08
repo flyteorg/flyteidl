@@ -64,16 +64,12 @@ class CreateArtifactResponse(_message.Message):
     def __init__(self, artifact: _Optional[_Union[Artifact, _Mapping]] = ...) -> None: ...
 
 class GetArtifactRequest(_message.Message):
-    __slots__ = ["artifact_id", "uri", "query", "details"]
-    ARTIFACT_ID_FIELD_NUMBER: _ClassVar[int]
-    URI_FIELD_NUMBER: _ClassVar[int]
+    __slots__ = ["query", "details"]
     QUERY_FIELD_NUMBER: _ClassVar[int]
     DETAILS_FIELD_NUMBER: _ClassVar[int]
-    artifact_id: _identifier_pb2.ArtifactID
-    uri: str
     query: _identifier_pb2.ArtifactQuery
     details: bool
-    def __init__(self, artifact_id: _Optional[_Union[_identifier_pb2.ArtifactID, _Mapping]] = ..., uri: _Optional[str] = ..., query: _Optional[_Union[_identifier_pb2.ArtifactQuery, _Mapping]] = ..., details: bool = ...) -> None: ...
+    def __init__(self, query: _Optional[_Union[_identifier_pb2.ArtifactQuery, _Mapping]] = ..., details: bool = ...) -> None: ...
 
 class GetArtifactResponse(_message.Message):
     __slots__ = ["artifact"]

@@ -59,14 +59,10 @@ message CreateArtifactResponse {
 }
 
 message GetArtifactRequest {
-  oneof identifier {
-    core.ArtifactID artifact_id = 1;
-    string uri = 3;
-    core.ArtifactQuery query = 4;
-  }
+  core.ArtifactQuery query = 1;
 
   // If false, then long_description is not returned.
-  bool details = 5;
+  bool details = 2;
 }
 
 message GetArtifactResponse {

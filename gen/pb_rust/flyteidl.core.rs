@@ -397,9 +397,8 @@ pub struct ArtifactId {
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(Clone, PartialEq, ::prost::Message)]
 pub struct ArtifactTag {
-    /// ties this directly to the artifact
     #[prost(message, optional, tag="1")]
-    pub artifact_id: ::core::option::Option<ArtifactId>,
+    pub artifact_key: ::core::option::Option<ArtifactKey>,
     #[prost(string, tag="2")]
     pub tag: ::prost::alloc::string::String,
 }
@@ -411,14 +410,21 @@ pub struct ArtifactTag {
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(Clone, PartialEq, ::prost::Message)]
 pub struct ArtifactQuery {
-    #[prost(message, optional, tag="1")]
-    pub artifact_key: ::core::option::Option<ArtifactKey>,
-    #[prost(string, tag="2")]
-    pub tag: ::prost::alloc::string::String,
-    #[prost(map="string, string", tag="3")]
-    pub partitions: ::std::collections::HashMap<::prost::alloc::string::String, ::prost::alloc::string::String>,
-    #[prost(string, tag="4")]
-    pub version: ::prost::alloc::string::String,
+    #[prost(oneof="artifact_query::Identifier", tags="1, 2, 3")]
+    pub identifier: ::core::option::Option<artifact_query::Identifier>,
+}
+/// Nested message and enum types in `ArtifactQuery`.
+pub mod artifact_query {
+    #[allow(clippy::derive_partial_eq_without_eq)]
+#[derive(Clone, PartialEq, ::prost::Oneof)]
+    pub enum Identifier {
+        #[prost(message, tag="1")]
+        ArtifactId(super::ArtifactId),
+        #[prost(message, tag="2")]
+        ArtifactTag(super::ArtifactTag),
+        #[prost(string, tag="3")]
+        Uri(::prost::alloc::string::String),
+    }
 }
 /// Indicates a resource type within Flyte.
 #[derive(Clone, Copy, Debug, PartialEq, Eq, Hash, PartialOrd, Ord, ::prost::Enumeration)]

@@ -165,23 +165,28 @@
     "coreArtifactQuery": {
       "type": "object",
       "properties": {
+        "artifact_id": {
+          "$ref": "#/definitions/coreArtifactID"
+        },
+        "artifact_tag": {
+          "$ref": "#/definitions/coreArtifactTag"
+        },
+        "uri": {
+          "type": "string"
+        }
+      },
+      "title": "Uniqueness constraints for Artifacts\n - project, domain, name, version, partitions\nOption 2 (tags are standalone, point to an individual artifact id):\n - project, domain, name, alias (points to one partition if partitioned)\n - project, domain, name, partition key, partition value"
+    },
+    "coreArtifactTag": {
+      "type": "object",
+      "properties": {
         "artifact_key": {
           "$ref": "#/definitions/coreArtifactKey"
         },
         "tag": {
           "type": "string"
-        },
-        "partitions": {
-          "type": "object",
-          "additionalProperties": {
-            "type": "string"
-          }
-        },
-        "version": {
-          "type": "string"
         }
-      },
-      "title": "Uniqueness constraints for Artifacts\n - project, domain, name, version, partitions\nOption 2 (tags are standalone, point to an individual artifact id):\n - project, domain, name, alias (points to one partition if partitioned)\n - project, domain, name, partition key, partition value"
+      }
     },
     "coreBinary": {
       "type": "object",

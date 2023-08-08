@@ -586,10 +586,10 @@ func (m *ArtifactTag) Validate() error {
 		return nil
 	}
 
-	if v, ok := interface{}(m.GetArtifactId()).(interface{ Validate() error }); ok {
+	if v, ok := interface{}(m.GetArtifactKey()).(interface{ Validate() error }); ok {
 		if err := v.Validate(); err != nil {
 			return ArtifactTagValidationError{
-				field:  "ArtifactId",
+				field:  "ArtifactKey",
 				reason: "embedded message failed validation",
 				cause:  err,
 			}
@@ -663,21 +663,36 @@ func (m *ArtifactQuery) Validate() error {
 		return nil
 	}
 
-	if v, ok := interface{}(m.GetArtifactKey()).(interface{ Validate() error }); ok {
-		if err := v.Validate(); err != nil {
-			return ArtifactQueryValidationError{
-				field:  "ArtifactKey",
-				reason: "embedded message failed validation",
-				cause:  err,
+	switch m.Identifier.(type) {
+
+	case *ArtifactQuery_ArtifactId:
+
+		if v, ok := interface{}(m.GetArtifactId()).(interface{ Validate() error }); ok {
+			if err := v.Validate(); err != nil {
+				return ArtifactQueryValidationError{
+					field:  "ArtifactId",
+					reason: "embedded message failed validation",
+					cause:  err,
+				}
 			}
 		}
+
+	case *ArtifactQuery_ArtifactTag:
+
+		if v, ok := interface{}(m.GetArtifactTag()).(interface{ Validate() error }); ok {
+			if err := v.Validate(); err != nil {
+				return ArtifactQueryValidationError{
+					field:  "ArtifactTag",
+					reason: "embedded message failed validation",
+					cause:  err,
+				}
+			}
+		}
+
+	case *ArtifactQuery_Uri:
+		// no validation rules for Uri
+
 	}
-
-	// no validation rules for Tag
-
-	// no validation rules for Partitions
-
-	// no validation rules for Version
 
 	return nil
 }

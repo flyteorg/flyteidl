@@ -418,38 +418,17 @@ func (m *GetArtifactRequest) Validate() error {
 		return nil
 	}
 
-	// no validation rules for Details
-
-	switch m.Identifier.(type) {
-
-	case *GetArtifactRequest_ArtifactId:
-
-		if v, ok := interface{}(m.GetArtifactId()).(interface{ Validate() error }); ok {
-			if err := v.Validate(); err != nil {
-				return GetArtifactRequestValidationError{
-					field:  "ArtifactId",
-					reason: "embedded message failed validation",
-					cause:  err,
-				}
+	if v, ok := interface{}(m.GetQuery()).(interface{ Validate() error }); ok {
+		if err := v.Validate(); err != nil {
+			return GetArtifactRequestValidationError{
+				field:  "Query",
+				reason: "embedded message failed validation",
+				cause:  err,
 			}
 		}
-
-	case *GetArtifactRequest_Uri:
-		// no validation rules for Uri
-
-	case *GetArtifactRequest_Query:
-
-		if v, ok := interface{}(m.GetQuery()).(interface{ Validate() error }); ok {
-			if err := v.Validate(); err != nil {
-				return GetArtifactRequestValidationError{
-					field:  "Query",
-					reason: "embedded message failed validation",
-					cause:  err,
-				}
-			}
-		}
-
 	}
+
+	// no validation rules for Details
 
 	return nil
 }

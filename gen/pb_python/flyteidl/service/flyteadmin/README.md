@@ -267,6 +267,7 @@ Class | Method | HTTP request | Description
  - [CoreArtifactID](docs/CoreArtifactID.md)
  - [CoreArtifactKey](docs/CoreArtifactKey.md)
  - [CoreArtifactQuery](docs/CoreArtifactQuery.md)
+ - [CoreArtifactTag](docs/CoreArtifactTag.md)
  - [CoreBinary](docs/CoreBinary.md)
  - [CoreBinding](docs/CoreBinding.md)
  - [CoreBindingData](docs/CoreBindingData.md)

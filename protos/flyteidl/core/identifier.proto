@@ -90,8 +90,7 @@ message ArtifactID {
 }
 
 message ArtifactTag {
-  // ties this directly to the artifact
-  ArtifactID artifact_id = 1;
+  ArtifactKey artifact_key = 1;
 
   string tag = 2;
 }
@@ -102,11 +101,10 @@ message ArtifactTag {
 //  - project, domain, name, alias (points to one partition if partitioned)
 //  - project, domain, name, partition key, partition value
 message ArtifactQuery {
-  ArtifactKey artifact_key = 1;
-
-  string tag = 2;
-
-  map<string, string> partitions = 3;
-  string version = 4;
+  oneof identifier {
+    ArtifactID artifact_id = 1;
+    ArtifactTag artifact_tag = 2;
+    string uri = 3;
+  }
 }
 

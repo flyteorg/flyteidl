@@ -5068,14 +5068,21 @@ definitions:
                   structure:
                     tag: "tag"
               artifact_query:
-                partitions:
-                  key: "partitions"
-                artifact_key:
-                  domain: "domain"
-                  name: "name"
-                  project: "project"
-                tag: "tag"
-                version: "version"
+                artifact_id:
+                  partitions:
+                    key: "partitions"
+                  artifact_key:
+                    domain: "domain"
+                    name: "name"
+                    project: "project"
+                  version: "version"
+                uri: "uri"
+                artifact_tag:
+                  artifact_key:
+                    domain: "domain"
+                    name: "name"
+                    project: "project"
+                  tag: "tag"
               required: true
       spec:
         workflow_id:
@@ -5395,14 +5402,21 @@ definitions:
                   structure:
                     tag: "tag"
               artifact_query:
-                partitions:
-                  key: "partitions"
-                artifact_key:
-                  domain: "domain"
-                  name: "name"
-                  project: "project"
-                tag: "tag"
-                version: "version"
+                artifact_id:
+                  partitions:
+                    key: "partitions"
+                  artifact_key:
+                    domain: "domain"
+                    name: "name"
+                    project: "project"
+                  version: "version"
+                uri: "uri"
+                artifact_tag:
+                  artifact_key:
+                    domain: "domain"
+                    name: "name"
+                    project: "project"
+                  tag: "tag"
               required: true
         security_context:
           run_as:
@@ -5794,14 +5808,21 @@ definitions:
                 structure:
                   tag: "tag"
             artifact_query:
-              partitions:
-                key: "partitions"
-              artifact_key:
-                domain: "domain"
-                name: "name"
-                project: "project"
-              tag: "tag"
-              version: "version"
+              artifact_id:
+                partitions:
+                  key: "partitions"
+                artifact_key:
+                  domain: "domain"
+                  name: "name"
+                  project: "project"
+                version: "version"
+              uri: "uri"
+              artifact_tag:
+                artifact_key:
+                  domain: "domain"
+                  name: "name"
+                  project: "project"
+                tag: "tag"
             required: true
   adminLaunchPlanCreateRequest:
     type: "object"
@@ -6159,14 +6180,21 @@ definitions:
                     structure:
                       tag: "tag"
                 artifact_query:
-                  partitions:
-                    key: "partitions"
-                  artifact_key:
-                    domain: "domain"
-                    name: "name"
-                    project: "project"
-                  tag: "tag"
-                  version: "version"
+                  artifact_id:
+                    partitions:
+                      key: "partitions"
+                    artifact_key:
+                      domain: "domain"
+                      name: "name"
+                      project: "project"
+                    version: "version"
+                  uri: "uri"
+                  artifact_tag:
+                    artifact_key:
+                      domain: "domain"
+                      name: "name"
+                      project: "project"
+                    tag: "tag"
                 required: true
         spec:
           workflow_id:
@@ -6486,14 +6514,21 @@ definitions:
                     structure:
                       tag: "tag"
                 artifact_query:
-                  partitions:
-                    key: "partitions"
-                  artifact_key:
-                    domain: "domain"
-                    name: "name"
-                    project: "project"
-                  tag: "tag"
-                  version: "version"
+                  artifact_id:
+                    partitions:
+                      key: "partitions"
+                    artifact_key:
+                      domain: "domain"
+                      name: "name"
+                      project: "project"
+                    version: "version"
+                  uri: "uri"
+                  artifact_tag:
+                    artifact_key:
+                      domain: "domain"
+                      name: "name"
+                      project: "project"
+                    tag: "tag"
                 required: true
           security_context:
             run_as:
@@ -6865,14 +6900,21 @@ definitions:
                     structure:
                       tag: "tag"
                 artifact_query:
-                  partitions:
-                    key: "partitions"
-                  artifact_key:
-                    domain: "domain"
-                    name: "name"
-                    project: "project"
-                  tag: "tag"
-                  version: "version"
+                  artifact_id:
+                    partitions:
+                      key: "partitions"
+                    artifact_key:
+                      domain: "domain"
+                      name: "name"
+                      project: "project"
+                    version: "version"
+                  uri: "uri"
+                  artifact_tag:
+                    artifact_key:
+                      domain: "domain"
+                      name: "name"
+                      project: "project"
+                    tag: "tag"
                 required: true
         spec:
           workflow_id:
@@ -7192,14 +7234,21 @@ definitions:
                     structure:
                       tag: "tag"
                 artifact_query:
-                  partitions:
-                    key: "partitions"
-                  artifact_key:
-                    domain: "domain"
-                    name: "name"
-                    project: "project"
-                  tag: "tag"
-                  version: "version"
+                  artifact_id:
+                    partitions:
+                      key: "partitions"
+                    artifact_key:
+                      domain: "domain"
+                      name: "name"
+                      project: "project"
+                    version: "version"
+                  uri: "uri"
+                  artifact_tag:
+                    artifact_key:
+                      domain: "domain"
+                      name: "name"
+                      project: "project"
+                    tag: "tag"
                 required: true
           security_context:
             run_as:
@@ -7690,14 +7739,21 @@ definitions:
                 structure:
                   tag: "tag"
             artifact_query:
-              partitions:
-                key: "partitions"
-              artifact_key:
-                domain: "domain"
-                name: "name"
-                project: "project"
-              tag: "tag"
-              version: "version"
+              artifact_id:
+                partitions:
+                  key: "partitions"
+                artifact_key:
+                  domain: "domain"
+                  name: "name"
+                  project: "project"
+                version: "version"
+              uri: "uri"
+              artifact_tag:
+                artifact_key:
+                  domain: "domain"
+                  name: "name"
+                  project: "project"
+                tag: "tag"
             required: true
       security_context:
         run_as:
@@ -45752,29 +45808,45 @@ definitions:
   coreArtifactQuery:
     type: "object"
     properties:
-      artifact_key:
-        $ref: "#/definitions/coreArtifactKey"
-      tag:
-        type: "string"
-      partitions:
-        type: "object"
-        additionalProperties:
-          type: "string"
-      version:
+      artifact_id:
+        $ref: "#/definitions/coreArtifactID"
+      artifact_tag:
+        $ref: "#/definitions/coreArtifactTag"
+      uri:
         type: "string"
     title: "Uniqueness constraints for Artifacts\n - project, domain, name, version,\
       \ partitions\nOption 2 (tags are standalone, point to an individual artifact\
       \ id):\n - project, domain, name, alias (points to one partition if partitioned)\n\
       \ - project, domain, name, partition key, partition value"
     example:
-      partitions:
-        key: "partitions"
+      artifact_id:
+        partitions:
+          key: "partitions"
+        artifact_key:
+          domain: "domain"
+          name: "name"
+          project: "project"
+        version: "version"
+      uri: "uri"
+      artifact_tag:
+        artifact_key:
+          domain: "domain"
+          name: "name"
+          project: "project"
+        tag: "tag"
+  coreArtifactTag:
+    type: "object"
+    properties:
+      artifact_key:
+        $ref: "#/definitions/coreArtifactKey"
+      tag:
+        type: "string"
+    example:
       artifact_key:
         domain: "domain"
         name: "name"
         project: "project"
       tag: "tag"
-      version: "version"
   coreBinary:
     type: "object"
     properties:
@@ -57482,14 +57554,21 @@ definitions:
           structure:
             tag: "tag"
       artifact_query:
-        partitions:
-          key: "partitions"
-        artifact_key:
-          domain: "domain"
-          name: "name"
-          project: "project"
-        tag: "tag"
-        version: "version"
+        artifact_id:
+          partitions:
+            key: "partitions"
+          artifact_key:
+            domain: "domain"
+            name: "name"
+            project: "project"
+          version: "version"
+        uri: "uri"
+        artifact_tag:
+          artifact_key:
+            domain: "domain"
+            name: "name"
+            project: "project"
+          tag: "tag"
       required: true
   coreParameterMap:
     type: "object"
@@ -57743,14 +57822,21 @@ definitions:
               structure:
                 tag: "tag"
           artifact_query:
-            partitions:
-              key: "partitions"
-            artifact_key:
-              domain: "domain"
-              name: "name"
-              project: "project"
-            tag: "tag"
-            version: "version"
+            artifact_id:
+              partitions:
+                key: "partitions"
+              artifact_key:
+                domain: "domain"
+                name: "name"
+                project: "project"
+              version: "version"
+            uri: "uri"
+            artifact_tag:
+              artifact_key:
+                domain: "domain"
+                name: "name"
+                project: "project"
+              tag: "tag"
           required: true
   corePrimitive:
     type: "object"

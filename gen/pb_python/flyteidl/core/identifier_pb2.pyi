@@ -97,28 +97,19 @@ class ArtifactID(_message.Message):
     def __init__(self, artifact_key: _Optional[_Union[ArtifactKey, _Mapping]] = ..., version: _Optional[str] = ..., partitions: _Optional[_Mapping[str, str]] = ...) -> None: ...
 
 class ArtifactTag(_message.Message):
-    __slots__ = ["artifact_id", "tag"]
-    ARTIFACT_ID_FIELD_NUMBER: _ClassVar[int]
-    TAG_FIELD_NUMBER: _ClassVar[int]
-    artifact_id: ArtifactID
-    tag: str
-    def __init__(self, artifact_id: _Optional[_Union[ArtifactID, _Mapping]] = ..., tag: _Optional[str] = ...) -> None: ...
-
-class ArtifactQuery(_message.Message):
-    __slots__ = ["artifact_key", "tag", "partitions", "version"]
-    class PartitionsEntry(_message.Message):
-        __slots__ = ["key", "value"]
-        KEY_FIELD_NUMBER: _ClassVar[int]
-        VALUE_FIELD_NUMBER: _ClassVar[int]
-        key: str
-        value: str
-        def __init__(self, key: _Optional[str] = ..., value: _Optional[str] = ...) -> None: ...
+    __slots__ = ["artifact_key", "tag"]
     ARTIFACT_KEY_FIELD_NUMBER: _ClassVar[int]
     TAG_FIELD_NUMBER: _ClassVar[int]
-    PARTITIONS_FIELD_NUMBER: _ClassVar[int]
-    VERSION_FIELD_NUMBER: _ClassVar[int]
     artifact_key: ArtifactKey
     tag: str
-    partitions: _containers.ScalarMap[str, str]
-    version: str
-    def __init__(self, artifact_key: _Optional[_Union[ArtifactKey, _Mapping]] = ..., tag: _Optional[str] = ..., partitions: _Optional[_Mapping[str, str]] = ..., version: _Optional[str] = ...) -> None: ...
+    def __init__(self, artifact_key: _Optional[_Union[ArtifactKey, _Mapping]] = ..., tag: _Optional[str] = ...) -> None: ...
+
+class ArtifactQuery(_message.Message):
+    __slots__ = ["artifact_id", "artifact_tag", "uri"]
+    ARTIFACT_ID_FIELD_NUMBER: _ClassVar[int]
+    ARTIFACT_TAG_FIELD_NUMBER: _ClassVar[int]
+    URI_FIELD_NUMBER: _ClassVar[int]
+    artifact_id: ArtifactID
+    artifact_tag: ArtifactTag
+    uri: str
+    def __init__(self, artifact_id: _Optional[_Union[ArtifactID, _Mapping]] = ..., artifact_tag: _Optional[_Union[ArtifactTag, _Mapping]] = ..., uri: _Optional[str] = ...) -> None: ...

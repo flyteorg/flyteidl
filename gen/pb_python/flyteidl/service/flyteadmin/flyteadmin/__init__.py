@@ -158,6 +158,7 @@ from flyteadmin.models.core_array_node import CoreArrayNode
 from flyteadmin.models.core_artifact_id import CoreArtifactID
 from flyteadmin.models.core_artifact_key import CoreArtifactKey
 from flyteadmin.models.core_artifact_query import CoreArtifactQuery
+from flyteadmin.models.core_artifact_tag import CoreArtifactTag
 from flyteadmin.models.core_binary import CoreBinary
 from flyteadmin.models.core_binding import CoreBinding
 from flyteadmin.models.core_binding_data import CoreBindingData

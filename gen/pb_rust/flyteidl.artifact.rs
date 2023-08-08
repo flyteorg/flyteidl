@@ -67,24 +67,11 @@ pub struct CreateArtifactResponse {
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(Clone, PartialEq, ::prost::Message)]
 pub struct GetArtifactRequest {
+    #[prost(message, optional, tag="1")]
+    pub query: ::core::option::Option<super::core::ArtifactQuery>,
     /// If false, then long_description is not returned.
-    #[prost(bool, tag="5")]
+    #[prost(bool, tag="2")]
     pub details: bool,
-    #[prost(oneof="get_artifact_request::Identifier", tags="1, 3, 4")]
-    pub identifier: ::core::option::Option<get_artifact_request::Identifier>,
-}
-/// Nested message and enum types in `GetArtifactRequest`.
-pub mod get_artifact_request {
-    #[allow(clippy::derive_partial_eq_without_eq)]
-#[derive(Clone, PartialEq, ::prost::Oneof)]
-    pub enum Identifier {
-        #[prost(message, tag="1")]
-        ArtifactId(super::super::core::ArtifactId),
-        #[prost(string, tag="3")]
-        Uri(::prost::alloc::string::String),
-        #[prost(message, tag="4")]
-        Query(super::super::core::ArtifactQuery),
-    }
 }
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(Clone, PartialEq, ::prost::Message)]
