@@ -22,7 +22,11 @@ message RayCluster {
   // WorkerGroupSpecs are the specs for the worker pods
   repeated WorkerGroupSpec worker_group_spec = 2;
   // Additional parameter overrides for ray cluster config
-  map<string, string> ray_cluster_params = 3;
+  map<string, string> config_override = 3;
+  // Namespace used to create the ray cluster
+  string namespace = 4;
+  // Kubernetes service account used by the ray cluster
+  string k8s_service_account = 5;
 }
 
 // HeadGroupSpec are the spec for the head pod

@@ -144,7 +144,11 @@ func (m *RayCluster) Validate() error {
 
 	}
 
-	// no validation rules for RayClusterParams
+	// no validation rules for ConfigOverride
+
+	// no validation rules for Namespace
+
+	// no validation rules for K8SServiceAccount
 
 	return nil
 }

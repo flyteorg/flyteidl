@@ -948,42 +948,42 @@ public final class Ray {
      * Additional parameter overrides for ray cluster config
      * </pre>
      *
-     * <code>map&lt;string, string&gt; ray_cluster_params = 3;</code>
+     * <code>map&lt;string, string&gt; config_override = 3;</code>
      */
-    int getRayClusterParamsCount();
+    int getConfigOverrideCount();
     /**
      * <pre>
      * Additional parameter overrides for ray cluster config
      * </pre>
      *
-     * <code>map&lt;string, string&gt; ray_cluster_params = 3;</code>
+     * <code>map&lt;string, string&gt; config_override = 3;</code>
      */
-    boolean containsRayClusterParams(
+    boolean containsConfigOverride(
         java.lang.String key);
     /**
-     * Use {@link #getRayClusterParamsMap()} instead.
+     * Use {@link #getConfigOverrideMap()} instead.
      */
     @java.lang.Deprecated
     java.util.Map<java.lang.String, java.lang.String>
-    getRayClusterParams();
+    getConfigOverride();
     /**
      * <pre>
      * Additional parameter overrides for ray cluster config
      * </pre>
      *
-     * <code>map&lt;string, string&gt; ray_cluster_params = 3;</code>
+     * <code>map&lt;string, string&gt; config_override = 3;</code>
      */
     java.util.Map<java.lang.String, java.lang.String>
-    getRayClusterParamsMap();
+    getConfigOverrideMap();
     /**
      * <pre>
      * Additional parameter overrides for ray cluster config
      * </pre>
      *
-     * <code>map&lt;string, string&gt; ray_cluster_params = 3;</code>
+     * <code>map&lt;string, string&gt; config_override = 3;</code>
      */
 
-    java.lang.String getRayClusterParamsOrDefault(
+    java.lang.String getConfigOverrideOrDefault(
         java.lang.String key,
         java.lang.String defaultValue);
     /**
@@ -991,11 +991,47 @@ public final class Ray {
      * Additional parameter overrides for ray cluster config
      * </pre>
      *
-     * <code>map&lt;string, string&gt; ray_cluster_params = 3;</code>
+     * <code>map&lt;string, string&gt; config_override = 3;</code>
      */
 
-    java.lang.String getRayClusterParamsOrThrow(
+    java.lang.String getConfigOverrideOrThrow(
         java.lang.String key);
+
+    /**
+     * <pre>
+     * Namespace used to create the ray cluster
+     * </pre>
+     *
+     * <code>string namespace = 4;</code>
+     */
+    java.lang.String getNamespace();
+    /**
+     * <pre>
+     * Namespace used to create the ray cluster
+     * </pre>
+     *
+     * <code>string namespace = 4;</code>
+     */
+    com.google.protobuf.ByteString
+        getNamespaceBytes();
+
+    /**
+     * <pre>
+     * Kubernetes service account used by the ray cluster
+     * </pre>
+     *
+     * <code>string k8s_service_account = 5;</code>
+     */
+    java.lang.String getK8SServiceAccount();
+    /**
+     * <pre>
+     * Kubernetes service account used by the ray cluster
+     * </pre>
+     *
+     * <code>string k8s_service_account = 5;</code>
+     */
+    com.google.protobuf.ByteString
+        getK8SServiceAccountBytes();
   }
   /**
    * <pre>
@@ -1015,6 +1051,8 @@ public final class Ray {
     }
     private RayCluster() {
       workerGroupSpec_ = java.util.Collections.emptyList();
+      namespace_ = "";
+      k8SServiceAccount_ = "";
     }
 
     @java.lang.Override
@@ -1065,15 +1103,27 @@ public final class Ray {
             }
             case 26: {
               if (!((mutable_bitField0_ & 0x00000004) != 0)) {
-                rayClusterParams_ = com.google.protobuf.MapField.newMapField(
-                    RayClusterParamsDefaultEntryHolder.defaultEntry);
+                configOverride_ = com.google.protobuf.MapField.newMapField(
+                    ConfigOverrideDefaultEntryHolder.defaultEntry);
                 mutable_bitField0_ |= 0x00000004;
               }
               com.google.protobuf.MapEntry<java.lang.String, java.lang.String>
-              rayClusterParams__ = input.readMessage(
-                  RayClusterParamsDefaultEntryHolder.defaultEntry.getParserForType(), extensionRegistry);
-              rayClusterParams_.getMutableMap().put(
-                  rayClusterParams__.getKey(), rayClusterParams__.getValue());
+              configOverride__ = input.readMessage(
+                  ConfigOverrideDefaultEntryHolder.defaultEntry.getParserForType(), extensionRegistry);
+              configOverride_.getMutableMap().put(
+                  configOverride__.getKey(), configOverride__.getValue());
+              break;
+            }
+            case 34: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              namespace_ = s;
+              break;
+            }
+            case 42: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              k8SServiceAccount_ = s;
               break;
             }
             default: {
@@ -1109,7 +1159,7 @@ public final class Ray {
         int number) {
       switch (number) {
         case 3:
-          return internalGetRayClusterParams();
+          return internalGetConfigOverride();
         default:
           throw new RuntimeException(
               "Invalid map field number: " + number);
@@ -1212,77 +1262,77 @@ public final class Ray {
       return workerGroupSpec_.get(index);
     }
 
-    public static final int RAY_CLUSTER_PARAMS_FIELD_NUMBER = 3;
-    private static final class RayClusterParamsDefaultEntryHolder {
+    public static final int CONFIG_OVERRIDE_FIELD_NUMBER = 3;
+    private static final class ConfigOverrideDefaultEntryHolder {
       static final com.google.protobuf.MapEntry<
           java.lang.String, java.lang.String> defaultEntry =
               com.google.protobuf.MapEntry
               .<java.lang.String, java.lang.String>newDefaultInstance(
-                  flyteidl.plugins.Ray.internal_static_flyteidl_plugins_RayCluster_RayClusterParamsEntry_descriptor, 
+                  flyteidl.plugins.Ray.internal_static_flyteidl_plugins_RayCluster_ConfigOverrideEntry_descriptor, 
                   com.google.protobuf.WireFormat.FieldType.STRING,
                   "",
                   com.google.protobuf.WireFormat.FieldType.STRING,
                   "");
     }
     private com.google.protobuf.MapField<
-        java.lang.String, java.lang.String> rayClusterParams_;
+        java.lang.String, java.lang.String> configOverride_;
     private com.google.protobuf.MapField<java.lang.String, java.lang.String>
-    internalGetRayClusterParams() {
-      if (rayClusterParams_ == null) {
+    internalGetConfigOverride() {
+      if (configOverride_ == null) {
         return com.google.protobuf.MapField.emptyMapField(
-            RayClusterParamsDefaultEntryHolder.defaultEntry);
+            ConfigOverrideDefaultEntryHolder.defaultEntry);
       }
-      return rayClusterParams_;
+      return configOverride_;
     }
 
-    public int getRayClusterParamsCount() {
-      return internalGetRayClusterParams().getMap().size();
+    public int getConfigOverrideCount() {
+      return internalGetConfigOverride().getMap().size();
     }
     /**
      * <pre>
      * Additional parameter overrides for ray cluster config
      * </pre>
      *
-     * <code>map&lt;string, string&gt; ray_cluster_params = 3;</code>
+     * <code>map&lt;string, string&gt; config_override = 3;</code>
      */
 
-    public boolean containsRayClusterParams(
+    public boolean containsConfigOverride(
         java.lang.String key) {
       if (key == null) { throw new java.lang.NullPointerException(); }
-      return internalGetRayClusterParams().getMap().containsKey(key);
+      return internalGetConfigOverride().getMap().containsKey(key);
     }
     /**
-     * Use {@link #getRayClusterParamsMap()} instead.
+     * Use {@link #getConfigOverrideMap()} instead.
      */
     @java.lang.Deprecated
-    public java.util.Map<java.lang.String, java.lang.String> getRayClusterParams() {
-      return getRayClusterParamsMap();
+    public java.util.Map<java.lang.String, java.lang.String> getConfigOverride() {
+      return getConfigOverrideMap();
     }
     /**
      * <pre>
      * Additional parameter overrides for ray cluster config
      * </pre>
      *
-     * <code>map&lt;string, string&gt; ray_cluster_params = 3;</code>
+     * <code>map&lt;string, string&gt; config_override = 3;</code>
      */
 
-    public java.util.Map<java.lang.String, java.lang.String> getRayClusterParamsMap() {
-      return internalGetRayClusterParams().getMap();
+    public java.util.Map<java.lang.String, java.lang.String> getConfigOverrideMap() {
+      return internalGetConfigOverride().getMap();
     }
     /**
      * <pre>
      * Additional parameter overrides for ray cluster config
      * </pre>
      *
-     * <code>map&lt;string, string&gt; ray_cluster_params = 3;</code>
+     * <code>map&lt;string, string&gt; config_override = 3;</code>
      */
 
-    public java.lang.String getRayClusterParamsOrDefault(
+    public java.lang.String getConfigOverrideOrDefault(
         java.lang.String key,
         java.lang.String defaultValue) {
       if (key == null) { throw new java.lang.NullPointerException(); }
       java.util.Map<java.lang.String, java.lang.String> map =
-          internalGetRayClusterParams().getMap();
+          internalGetConfigOverride().getMap();
       return map.containsKey(key) ? map.get(key) : defaultValue;
     }
     /**
@@ -1290,18 +1340,102 @@ public final class Ray {
      * Additional parameter overrides for ray cluster config
      * </pre>
      *
-     * <code>map&lt;string, string&gt; ray_cluster_params = 3;</code>
+     * <code>map&lt;string, string&gt; config_override = 3;</code>
      */
 
-    public java.lang.String getRayClusterParamsOrThrow(
+    public java.lang.String getConfigOverrideOrThrow(
         java.lang.String key) {
       if (key == null) { throw new java.lang.NullPointerException(); }
       java.util.Map<java.lang.String, java.lang.String> map =
-          internalGetRayClusterParams().getMap();
+          internalGetConfigOverride().getMap();
       if (!map.containsKey(key)) {
         throw new java.lang.IllegalArgumentException();
       }
       return map.get(key);
+    }
+
+    public static final int NAMESPACE_FIELD_NUMBER = 4;
+    private volatile java.lang.Object namespace_;
+    /**
+     * <pre>
+     * Namespace used to create the ray cluster
+     * </pre>
+     *
+     * <code>string namespace = 4;</code>
+     */
+    public java.lang.String getNamespace() {
+      java.lang.Object ref = namespace_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        namespace_ = s;
+        return s;
+      }
+    }
+    /**
+     * <pre>
+     * Namespace used to create the ray cluster
+     * </pre>
+     *
+     * <code>string namespace = 4;</code>
+     */
+    public com.google.protobuf.ByteString
+        getNamespaceBytes() {
+      java.lang.Object ref = namespace_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        namespace_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int K8S_SERVICE_ACCOUNT_FIELD_NUMBER = 5;
+    private volatile java.lang.Object k8SServiceAccount_;
+    /**
+     * <pre>
+     * Kubernetes service account used by the ray cluster
+     * </pre>
+     *
+     * <code>string k8s_service_account = 5;</code>
+     */
+    public java.lang.String getK8SServiceAccount() {
+      java.lang.Object ref = k8SServiceAccount_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        k8SServiceAccount_ = s;
+        return s;
+      }
+    }
+    /**
+     * <pre>
+     * Kubernetes service account used by the ray cluster
+     * </pre>
+     *
+     * <code>string k8s_service_account = 5;</code>
+     */
+    public com.google.protobuf.ByteString
+        getK8SServiceAccountBytes() {
+      java.lang.Object ref = k8SServiceAccount_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        k8SServiceAccount_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
     }
 
     private byte memoizedIsInitialized = -1;
@@ -1327,9 +1461,15 @@ public final class Ray {
       com.google.protobuf.GeneratedMessageV3
         .serializeStringMapTo(
           output,
-          internalGetRayClusterParams(),
-          RayClusterParamsDefaultEntryHolder.defaultEntry,
+          internalGetConfigOverride(),
+          ConfigOverrideDefaultEntryHolder.defaultEntry,
           3);
+      if (!getNamespaceBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 4, namespace_);
+      }
+      if (!getK8SServiceAccountBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 5, k8SServiceAccount_);
+      }
       unknownFields.writeTo(output);
     }
 
@@ -1348,14 +1488,20 @@ public final class Ray {
           .computeMessageSize(2, workerGroupSpec_.get(i));
       }
       for (java.util.Map.Entry<java.lang.String, java.lang.String> entry
-           : internalGetRayClusterParams().getMap().entrySet()) {
+           : internalGetConfigOverride().getMap().entrySet()) {
         com.google.protobuf.MapEntry<java.lang.String, java.lang.String>
-        rayClusterParams__ = RayClusterParamsDefaultEntryHolder.defaultEntry.newBuilderForType()
+        configOverride__ = ConfigOverrideDefaultEntryHolder.defaultEntry.newBuilderForType()
             .setKey(entry.getKey())
             .setValue(entry.getValue())
             .build();
         size += com.google.protobuf.CodedOutputStream
-            .computeMessageSize(3, rayClusterParams__);
+            .computeMessageSize(3, configOverride__);
+      }
+      if (!getNamespaceBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, namespace_);
+      }
+      if (!getK8SServiceAccountBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, k8SServiceAccount_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -1379,8 +1525,12 @@ public final class Ray {
       }
       if (!getWorkerGroupSpecList()
           .equals(other.getWorkerGroupSpecList())) return false;
-      if (!internalGetRayClusterParams().equals(
-          other.internalGetRayClusterParams())) return false;
+      if (!internalGetConfigOverride().equals(
+          other.internalGetConfigOverride())) return false;
+      if (!getNamespace()
+          .equals(other.getNamespace())) return false;
+      if (!getK8SServiceAccount()
+          .equals(other.getK8SServiceAccount())) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -1400,10 +1550,14 @@ public final class Ray {
         hash = (37 * hash) + WORKER_GROUP_SPEC_FIELD_NUMBER;
         hash = (53 * hash) + getWorkerGroupSpecList().hashCode();
       }
-      if (!internalGetRayClusterParams().getMap().isEmpty()) {
-        hash = (37 * hash) + RAY_CLUSTER_PARAMS_FIELD_NUMBER;
-        hash = (53 * hash) + internalGetRayClusterParams().hashCode();
+      if (!internalGetConfigOverride().getMap().isEmpty()) {
+        hash = (37 * hash) + CONFIG_OVERRIDE_FIELD_NUMBER;
+        hash = (53 * hash) + internalGetConfigOverride().hashCode();
       }
+      hash = (37 * hash) + NAMESPACE_FIELD_NUMBER;
+      hash = (53 * hash) + getNamespace().hashCode();
+      hash = (37 * hash) + K8S_SERVICE_ACCOUNT_FIELD_NUMBER;
+      hash = (53 * hash) + getK8SServiceAccount().hashCode();
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -1520,7 +1674,7 @@ public final class Ray {
           int number) {
         switch (number) {
           case 3:
-            return internalGetRayClusterParams();
+            return internalGetConfigOverride();
           default:
             throw new RuntimeException(
                 "Invalid map field number: " + number);
@@ -1531,7 +1685,7 @@ public final class Ray {
           int number) {
         switch (number) {
           case 3:
-            return internalGetMutableRayClusterParams();
+            return internalGetMutableConfigOverride();
           default:
             throw new RuntimeException(
                 "Invalid map field number: " + number);
@@ -1576,7 +1730,11 @@ public final class Ray {
         } else {
           workerGroupSpecBuilder_.clear();
         }
-        internalGetMutableRayClusterParams().clear();
+        internalGetMutableConfigOverride().clear();
+        namespace_ = "";
+
+        k8SServiceAccount_ = "";
+
         return this;
       }
 
@@ -1619,8 +1777,10 @@ public final class Ray {
         } else {
           result.workerGroupSpec_ = workerGroupSpecBuilder_.build();
         }
-        result.rayClusterParams_ = internalGetRayClusterParams();
-        result.rayClusterParams_.makeImmutable();
+        result.configOverride_ = internalGetConfigOverride();
+        result.configOverride_.makeImmutable();
+        result.namespace_ = namespace_;
+        result.k8SServiceAccount_ = k8SServiceAccount_;
         result.bitField0_ = to_bitField0_;
         onBuilt();
         return result;
@@ -1699,8 +1859,16 @@ public final class Ray {
             }
           }
         }
-        internalGetMutableRayClusterParams().mergeFrom(
-            other.internalGetRayClusterParams());
+        internalGetMutableConfigOverride().mergeFrom(
+            other.internalGetConfigOverride());
+        if (!other.getNamespace().isEmpty()) {
+          namespace_ = other.namespace_;
+          onChanged();
+        }
+        if (!other.getK8SServiceAccount().isEmpty()) {
+          k8SServiceAccount_ = other.k8SServiceAccount_;
+          onChanged();
+        }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
@@ -2197,76 +2365,76 @@ public final class Ray {
       }
 
       private com.google.protobuf.MapField<
-          java.lang.String, java.lang.String> rayClusterParams_;
+          java.lang.String, java.lang.String> configOverride_;
       private com.google.protobuf.MapField<java.lang.String, java.lang.String>
-      internalGetRayClusterParams() {
-        if (rayClusterParams_ == null) {
+      internalGetConfigOverride() {
+        if (configOverride_ == null) {
           return com.google.protobuf.MapField.emptyMapField(
-              RayClusterParamsDefaultEntryHolder.defaultEntry);
+              ConfigOverrideDefaultEntryHolder.defaultEntry);
         }
-        return rayClusterParams_;
+        return configOverride_;
       }
       private com.google.protobuf.MapField<java.lang.String, java.lang.String>
-      internalGetMutableRayClusterParams() {
+      internalGetMutableConfigOverride() {
         onChanged();;
-        if (rayClusterParams_ == null) {
-          rayClusterParams_ = com.google.protobuf.MapField.newMapField(
-              RayClusterParamsDefaultEntryHolder.defaultEntry);
+        if (configOverride_ == null) {
+          configOverride_ = com.google.protobuf.MapField.newMapField(
+              ConfigOverrideDefaultEntryHolder.defaultEntry);
         }
-        if (!rayClusterParams_.isMutable()) {
-          rayClusterParams_ = rayClusterParams_.copy();
+        if (!configOverride_.isMutable()) {
+          configOverride_ = configOverride_.copy();
         }
-        return rayClusterParams_;
+        return configOverride_;
       }
 
-      public int getRayClusterParamsCount() {
-        return internalGetRayClusterParams().getMap().size();
+      public int getConfigOverrideCount() {
+        return internalGetConfigOverride().getMap().size();
       }
       /**
        * <pre>
        * Additional parameter overrides for ray cluster config
        * </pre>
        *
-       * <code>map&lt;string, string&gt; ray_cluster_params = 3;</code>
+       * <code>map&lt;string, string&gt; config_override = 3;</code>
        */
 
-      public boolean containsRayClusterParams(
+      public boolean containsConfigOverride(
           java.lang.String key) {
         if (key == null) { throw new java.lang.NullPointerException(); }
-        return internalGetRayClusterParams().getMap().containsKey(key);
+        return internalGetConfigOverride().getMap().containsKey(key);
       }
       /**
-       * Use {@link #getRayClusterParamsMap()} instead.
+       * Use {@link #getConfigOverrideMap()} instead.
        */
       @java.lang.Deprecated
-      public java.util.Map<java.lang.String, java.lang.String> getRayClusterParams() {
-        return getRayClusterParamsMap();
+      public java.util.Map<java.lang.String, java.lang.String> getConfigOverride() {
+        return getConfigOverrideMap();
       }
       /**
        * <pre>
        * Additional parameter overrides for ray cluster config
        * </pre>
        *
-       * <code>map&lt;string, string&gt; ray_cluster_params = 3;</code>
+       * <code>map&lt;string, string&gt; config_override = 3;</code>
        */
 
-      public java.util.Map<java.lang.String, java.lang.String> getRayClusterParamsMap() {
-        return internalGetRayClusterParams().getMap();
+      public java.util.Map<java.lang.String, java.lang.String> getConfigOverrideMap() {
+        return internalGetConfigOverride().getMap();
       }
       /**
        * <pre>
        * Additional parameter overrides for ray cluster config
        * </pre>
        *
-       * <code>map&lt;string, string&gt; ray_cluster_params = 3;</code>
+       * <code>map&lt;string, string&gt; config_override = 3;</code>
        */
 
-      public java.lang.String getRayClusterParamsOrDefault(
+      public java.lang.String getConfigOverrideOrDefault(
           java.lang.String key,
           java.lang.String defaultValue) {
         if (key == null) { throw new java.lang.NullPointerException(); }
         java.util.Map<java.lang.String, java.lang.String> map =
-            internalGetRayClusterParams().getMap();
+            internalGetConfigOverride().getMap();
         return map.containsKey(key) ? map.get(key) : defaultValue;
       }
       /**
@@ -2274,22 +2442,22 @@ public final class Ray {
        * Additional parameter overrides for ray cluster config
        * </pre>
        *
-       * <code>map&lt;string, string&gt; ray_cluster_params = 3;</code>
+       * <code>map&lt;string, string&gt; config_override = 3;</code>
        */
 
-      public java.lang.String getRayClusterParamsOrThrow(
+      public java.lang.String getConfigOverrideOrThrow(
           java.lang.String key) {
         if (key == null) { throw new java.lang.NullPointerException(); }
         java.util.Map<java.lang.String, java.lang.String> map =
-            internalGetRayClusterParams().getMap();
+            internalGetConfigOverride().getMap();
         if (!map.containsKey(key)) {
           throw new java.lang.IllegalArgumentException();
         }
         return map.get(key);
       }
 
-      public Builder clearRayClusterParams() {
-        internalGetMutableRayClusterParams().getMutableMap()
+      public Builder clearConfigOverride() {
+        internalGetMutableConfigOverride().getMutableMap()
             .clear();
         return this;
       }
@@ -2298,13 +2466,13 @@ public final class Ray {
        * Additional parameter overrides for ray cluster config
        * </pre>
        *
-       * <code>map&lt;string, string&gt; ray_cluster_params = 3;</code>
+       * <code>map&lt;string, string&gt; config_override = 3;</code>
        */
 
-      public Builder removeRayClusterParams(
+      public Builder removeConfigOverride(
           java.lang.String key) {
         if (key == null) { throw new java.lang.NullPointerException(); }
-        internalGetMutableRayClusterParams().getMutableMap()
+        internalGetMutableConfigOverride().getMutableMap()
             .remove(key);
         return this;
       }
@@ -2313,22 +2481,22 @@ public final class Ray {
        */
       @java.lang.Deprecated
       public java.util.Map<java.lang.String, java.lang.String>
-      getMutableRayClusterParams() {
-        return internalGetMutableRayClusterParams().getMutableMap();
+      getMutableConfigOverride() {
+        return internalGetMutableConfigOverride().getMutableMap();
       }
       /**
        * <pre>
        * Additional parameter overrides for ray cluster config
        * </pre>
        *
-       * <code>map&lt;string, string&gt; ray_cluster_params = 3;</code>
+       * <code>map&lt;string, string&gt; config_override = 3;</code>
        */
-      public Builder putRayClusterParams(
+      public Builder putConfigOverride(
           java.lang.String key,
           java.lang.String value) {
         if (key == null) { throw new java.lang.NullPointerException(); }
         if (value == null) { throw new java.lang.NullPointerException(); }
-        internalGetMutableRayClusterParams().getMutableMap()
+        internalGetMutableConfigOverride().getMutableMap()
             .put(key, value);
         return this;
       }
@@ -2337,13 +2505,191 @@ public final class Ray {
        * Additional parameter overrides for ray cluster config
        * </pre>
        *
-       * <code>map&lt;string, string&gt; ray_cluster_params = 3;</code>
+       * <code>map&lt;string, string&gt; config_override = 3;</code>
        */
 
-      public Builder putAllRayClusterParams(
+      public Builder putAllConfigOverride(
           java.util.Map<java.lang.String, java.lang.String> values) {
-        internalGetMutableRayClusterParams().getMutableMap()
+        internalGetMutableConfigOverride().getMutableMap()
             .putAll(values);
+        return this;
+      }
+
+      private java.lang.Object namespace_ = "";
+      /**
+       * <pre>
+       * Namespace used to create the ray cluster
+       * </pre>
+       *
+       * <code>string namespace = 4;</code>
+       */
+      public java.lang.String getNamespace() {
+        java.lang.Object ref = namespace_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          namespace_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <pre>
+       * Namespace used to create the ray cluster
+       * </pre>
+       *
+       * <code>string namespace = 4;</code>
+       */
+      public com.google.protobuf.ByteString
+          getNamespaceBytes() {
+        java.lang.Object ref = namespace_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          namespace_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <pre>
+       * Namespace used to create the ray cluster
+       * </pre>
+       *
+       * <code>string namespace = 4;</code>
+       */
+      public Builder setNamespace(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        namespace_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * Namespace used to create the ray cluster
+       * </pre>
+       *
+       * <code>string namespace = 4;</code>
+       */
+      public Builder clearNamespace() {
+        
+        namespace_ = getDefaultInstance().getNamespace();
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * Namespace used to create the ray cluster
+       * </pre>
+       *
+       * <code>string namespace = 4;</code>
+       */
+      public Builder setNamespaceBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        namespace_ = value;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object k8SServiceAccount_ = "";
+      /**
+       * <pre>
+       * Kubernetes service account used by the ray cluster
+       * </pre>
+       *
+       * <code>string k8s_service_account = 5;</code>
+       */
+      public java.lang.String getK8SServiceAccount() {
+        java.lang.Object ref = k8SServiceAccount_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          k8SServiceAccount_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <pre>
+       * Kubernetes service account used by the ray cluster
+       * </pre>
+       *
+       * <code>string k8s_service_account = 5;</code>
+       */
+      public com.google.protobuf.ByteString
+          getK8SServiceAccountBytes() {
+        java.lang.Object ref = k8SServiceAccount_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          k8SServiceAccount_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <pre>
+       * Kubernetes service account used by the ray cluster
+       * </pre>
+       *
+       * <code>string k8s_service_account = 5;</code>
+       */
+      public Builder setK8SServiceAccount(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        k8SServiceAccount_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * Kubernetes service account used by the ray cluster
+       * </pre>
+       *
+       * <code>string k8s_service_account = 5;</code>
+       */
+      public Builder clearK8SServiceAccount() {
+        
+        k8SServiceAccount_ = getDefaultInstance().getK8SServiceAccount();
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * Kubernetes service account used by the ray cluster
+       * </pre>
+       *
+       * <code>string k8s_service_account = 5;</code>
+       */
+      public Builder setK8SServiceAccountBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        k8SServiceAccount_ = value;
+        onChanged();
         return this;
       }
       @java.lang.Override
@@ -4961,10 +5307,10 @@ public final class Ray {
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_flyteidl_plugins_RayCluster_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_flyteidl_plugins_RayCluster_RayClusterParamsEntry_descriptor;
+    internal_static_flyteidl_plugins_RayCluster_ConfigOverrideEntry_descriptor;
   private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_flyteidl_plugins_RayCluster_RayClusterParamsEntry_fieldAccessorTable;
+      internal_static_flyteidl_plugins_RayCluster_ConfigOverrideEntry_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_flyteidl_plugins_HeadGroupSpec_descriptor;
   private static final 
@@ -4997,28 +5343,29 @@ public final class Ray {
       "\n\032flyteidl/plugins/ray.proto\022\020flyteidl.p" +
       "lugins\032\031flyteidl/core/tasks.proto\"P\n\006Ray" +
       "Job\0221\n\013ray_cluster\030\001 \001(\0132\034.flyteidl.plug" +
-      "ins.RayCluster\022\023\n\013runtime_env\030\002 \001(\t\"\215\002\n\n" +
+      "ins.RayCluster\022\023\n\013runtime_env\030\002 \001(\t\"\266\002\n\n" +
       "RayCluster\0228\n\017head_group_spec\030\001 \001(\0132\037.fl" +
       "yteidl.plugins.HeadGroupSpec\022<\n\021worker_g" +
       "roup_spec\030\002 \003(\0132!.flyteidl.plugins.Worke" +
-      "rGroupSpec\022N\n\022ray_cluster_params\030\003 \003(\01322" +
-      ".flyteidl.plugins.RayCluster.RayClusterP" +
-      "aramsEntry\0327\n\025RayClusterParamsEntry\022\013\n\003k" +
-      "ey\030\001 \001(\t\022\r\n\005value\030\002 \001(\t:\0028\001\"\302\001\n\rHeadGrou" +
-      "pSpec\022M\n\020ray_start_params\030\001 \003(\01323.flytei" +
-      "dl.plugins.HeadGroupSpec.RayStartParamsE" +
-      "ntry\022+\n\tresources\030\006 \001(\0132\030.flyteidl.core." +
-      "Resources\0325\n\023RayStartParamsEntry\022\013\n\003key\030" +
-      "\001 \001(\t\022\r\n\005value\030\002 \001(\t:\0028\001\"\230\002\n\017WorkerGroup" +
-      "Spec\022\022\n\ngroup_name\030\001 \001(\t\022\020\n\010replicas\030\002 \001" +
-      "(\005\022\024\n\014min_replicas\030\003 \001(\005\022\024\n\014max_replicas" +
-      "\030\004 \001(\005\022O\n\020ray_start_params\030\005 \003(\01325.flyte" +
-      "idl.plugins.WorkerGroupSpec.RayStartPara" +
-      "msEntry\022+\n\tresources\030\006 \001(\0132\030.flyteidl.co" +
-      "re.Resources\0325\n\023RayStartParamsEntry\022\013\n\003k" +
-      "ey\030\001 \001(\t\022\r\n\005value\030\002 \001(\t:\0028\001B9Z7github.co" +
-      "m/flyteorg/flyteidl/gen/pb-go/flyteidl/p" +
-      "luginsb\006proto3"
+      "rGroupSpec\022I\n\017config_override\030\003 \003(\01320.fl" +
+      "yteidl.plugins.RayCluster.ConfigOverride" +
+      "Entry\022\021\n\tnamespace\030\004 \001(\t\022\033\n\023k8s_service_" +
+      "account\030\005 \001(\t\0325\n\023ConfigOverrideEntry\022\013\n\003" +
+      "key\030\001 \001(\t\022\r\n\005value\030\002 \001(\t:\0028\001\"\302\001\n\rHeadGro" +
+      "upSpec\022M\n\020ray_start_params\030\001 \003(\01323.flyte" +
+      "idl.plugins.HeadGroupSpec.RayStartParams" +
+      "Entry\022+\n\tresources\030\006 \001(\0132\030.flyteidl.core" +
+      ".Resources\0325\n\023RayStartParamsEntry\022\013\n\003key" +
+      "\030\001 \001(\t\022\r\n\005value\030\002 \001(\t:\0028\001\"\230\002\n\017WorkerGrou" +
+      "pSpec\022\022\n\ngroup_name\030\001 \001(\t\022\020\n\010replicas\030\002 " +
+      "\001(\005\022\024\n\014min_replicas\030\003 \001(\005\022\024\n\014max_replica" +
+      "s\030\004 \001(\005\022O\n\020ray_start_params\030\005 \003(\01325.flyt" +
+      "eidl.plugins.WorkerGroupSpec.RayStartPar" +
+      "amsEntry\022+\n\tresources\030\006 \001(\0132\030.flyteidl.c" +
+      "ore.Resources\0325\n\023RayStartParamsEntry\022\013\n\003" +
+      "key\030\001 \001(\t\022\r\n\005value\030\002 \001(\t:\0028\001B9Z7github.c" +
+      "om/flyteorg/flyteidl/gen/pb-go/flyteidl/" +
+      "pluginsb\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
@@ -5044,12 +5391,12 @@ public final class Ray {
     internal_static_flyteidl_plugins_RayCluster_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_flyteidl_plugins_RayCluster_descriptor,
-        new java.lang.String[] { "HeadGroupSpec", "WorkerGroupSpec", "RayClusterParams", });
-    internal_static_flyteidl_plugins_RayCluster_RayClusterParamsEntry_descriptor =
+        new java.lang.String[] { "HeadGroupSpec", "WorkerGroupSpec", "ConfigOverride", "Namespace", "K8SServiceAccount", });
+    internal_static_flyteidl_plugins_RayCluster_ConfigOverrideEntry_descriptor =
       internal_static_flyteidl_plugins_RayCluster_descriptor.getNestedTypes().get(0);
-    internal_static_flyteidl_plugins_RayCluster_RayClusterParamsEntry_fieldAccessorTable = new
+    internal_static_flyteidl_plugins_RayCluster_ConfigOverrideEntry_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_flyteidl_plugins_RayCluster_RayClusterParamsEntry_descriptor,
+        internal_static_flyteidl_plugins_RayCluster_ConfigOverrideEntry_descriptor,
         new java.lang.String[] { "Key", "Value", });
     internal_static_flyteidl_plugins_HeadGroupSpec_descriptor =
       getDescriptor().getMessageTypes().get(2);
