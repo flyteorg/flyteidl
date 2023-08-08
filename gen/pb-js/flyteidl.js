@@ -11776,7 +11776,8 @@
                  * @interface IVariable
                  * @property {flyteidl.core.ILiteralType|null} [type] Variable type
                  * @property {string|null} [description] Variable description
-                 * @property {Array.<flyteidl.core.IArtifactID>|null} [artifactPartialId] Variable artifactPartialId
+                 * @property {flyteidl.core.IArtifactID|null} [artifactPartialId] Variable artifactPartialId
+                 * @property {flyteidl.core.IArtifactTag|null} [artifactTag] Variable artifactTag
                  */
     
                 /**
@@ -11788,7 +11789,6 @@
                  * @param {flyteidl.core.IVariable=} [properties] Properties to set
                  */
                 function Variable(properties) {
-                    this.artifactPartialId = [];
                     if (properties)
                         for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
                             if (properties[keys[i]] != null)
@@ -11813,11 +11813,19 @@
     
                 /**
                  * Variable artifactPartialId.
-                 * @member {Array.<flyteidl.core.IArtifactID>} artifactPartialId
+                 * @member {flyteidl.core.IArtifactID|null|undefined} artifactPartialId
                  * @memberof flyteidl.core.Variable
                  * @instance
                  */
-                Variable.prototype.artifactPartialId = $util.emptyArray;
+                Variable.prototype.artifactPartialId = null;
+    
+                /**
+                 * Variable artifactTag.
+                 * @member {flyteidl.core.IArtifactTag|null|undefined} artifactTag
+                 * @memberof flyteidl.core.Variable
+                 * @instance
+                 */
+                Variable.prototype.artifactTag = null;
     
                 /**
                  * Creates a new Variable instance using the specified properties.
@@ -11847,9 +11855,10 @@
                         $root.flyteidl.core.LiteralType.encode(message.type, writer.uint32(/* id 1, wireType 2 =*/10).fork()).ldelim();
                     if (message.description != null && message.hasOwnProperty("description"))
                         writer.uint32(/* id 2, wireType 2 =*/18).string(message.description);
-                    if (message.artifactPartialId != null && message.artifactPartialId.length)
-                        for (var i = 0; i < message.artifactPartialId.length; ++i)
-                            $root.flyteidl.core.ArtifactID.encode(message.artifactPartialId[i], writer.uint32(/* id 3, wireType 2 =*/26).fork()).ldelim();
+                    if (message.artifactPartialId != null && message.hasOwnProperty("artifactPartialId"))
+                        $root.flyteidl.core.ArtifactID.encode(message.artifactPartialId, writer.uint32(/* id 3, wireType 2 =*/26).fork()).ldelim();
+                    if (message.artifactTag != null && message.hasOwnProperty("artifactTag"))
+                        $root.flyteidl.core.ArtifactTag.encode(message.artifactTag, writer.uint32(/* id 4, wireType 2 =*/34).fork()).ldelim();
                     return writer;
                 };
     
@@ -11878,9 +11887,10 @@
                             message.description = reader.string();
                             break;
                         case 3:
-                            if (!(message.artifactPartialId && message.artifactPartialId.length))
-                                message.artifactPartialId = [];
-                            message.artifactPartialId.push($root.flyteidl.core.ArtifactID.decode(reader, reader.uint32()));
+                            message.artifactPartialId = $root.flyteidl.core.ArtifactID.decode(reader, reader.uint32());
+                            break;
+                        case 4:
+                            message.artifactTag = $root.flyteidl.core.ArtifactTag.decode(reader, reader.uint32());
                             break;
                         default:
                             reader.skipType(tag & 7);
@@ -11910,13 +11920,14 @@
                         if (!$util.isString(message.description))
                             return "description: string expected";
                     if (message.artifactPartialId != null && message.hasOwnProperty("artifactPartialId")) {
-                        if (!Array.isArray(message.artifactPartialId))
-                            return "artifactPartialId: array expected";
-                        for (var i = 0; i < message.artifactPartialId.length; ++i) {
-                            var error = $root.flyteidl.core.ArtifactID.verify(message.artifactPartialId[i]);
-                            if (error)
-                                return "artifactPartialId." + error;
-                        }
+                        var error = $root.flyteidl.core.ArtifactID.verify(message.artifactPartialId);
+                        if (error)
+                            return "artifactPartialId." + error;
+                    }
+                    if (message.artifactTag != null && message.hasOwnProperty("artifactTag")) {
+                        var error = $root.flyteidl.core.ArtifactTag.verify(message.artifactTag);
+                        if (error)
+                            return "artifactTag." + error;
                     }
                     return null;
                 };

@@ -4943,7 +4943,10 @@ export namespace flyteidl {
             description?: (string|null);
 
             /** Variable artifactPartialId */
-            artifactPartialId?: (flyteidl.core.IArtifactID[]|null);
+            artifactPartialId?: (flyteidl.core.IArtifactID|null);
+
+            /** Variable artifactTag */
+            artifactTag?: (flyteidl.core.IArtifactTag|null);
         }
 
         /** Represents a Variable. */
@@ -4962,7 +4965,10 @@ export namespace flyteidl {
             public description: string;
 
             /** Variable artifactPartialId. */
-            public artifactPartialId: flyteidl.core.IArtifactID[];
+            public artifactPartialId?: (flyteidl.core.IArtifactID|null);
+
+            /** Variable artifactTag. */
+            public artifactTag?: (flyteidl.core.IArtifactTag|null);
 
             /**
              * Creates a new Variable instance using the specified properties.

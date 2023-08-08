@@ -4757,14 +4757,7 @@ definitions:
             key:
               description: "description"
               artifact_partial_id:
-              - partitions:
-                  key: "partitions"
-                artifact_key:
-                  domain: "domain"
-                  name: "name"
-                  project: "project"
-                version: "version"
-              - partitions:
+                partitions:
                   key: "partitions"
                 artifact_key:
                   domain: "domain"
@@ -4822,6 +4815,12 @@ definitions:
                 simple: {}
                 structure:
                   tag: "tag"
+              artifact_tag:
+                artifact_key:
+                  domain: "domain"
+                  name: "name"
+                  project: "project"
+                value: "value"
         updated_at: "2000-01-23T04:56:07.000+00:00"
         created_at: "2000-01-23T04:56:07.000+00:00"
         state: {}
@@ -5002,14 +5001,7 @@ definitions:
               var:
                 description: "description"
                 artifact_partial_id:
-                - partitions:
-                    key: "partitions"
-                  artifact_key:
-                    domain: "domain"
-                    name: "name"
-                    project: "project"
-                  version: "version"
-                - partitions:
+                  partitions:
                     key: "partitions"
                   artifact_key:
                     domain: "domain"
@@ -5067,6 +5059,12 @@ definitions:
                   simple: {}
                   structure:
                     tag: "tag"
+                artifact_tag:
+                  artifact_key:
+                    domain: "domain"
+                    name: "name"
+                    project: "project"
+                  value: "value"
               artifact_query:
                 artifact_id:
                   partitions:
@@ -5336,14 +5334,7 @@ definitions:
               var:
                 description: "description"
                 artifact_partial_id:
-                - partitions:
-                    key: "partitions"
-                  artifact_key:
-                    domain: "domain"
-                    name: "name"
-                    project: "project"
-                  version: "version"
-                - partitions:
+                  partitions:
                     key: "partitions"
                   artifact_key:
                     domain: "domain"
@@ -5401,6 +5392,12 @@ definitions:
                   simple: {}
                   structure:
                     tag: "tag"
+                artifact_tag:
+                  artifact_key:
+                    domain: "domain"
+                    name: "name"
+                    project: "project"
+                  value: "value"
               artifact_query:
                 artifact_id:
                   partitions:
@@ -5497,14 +5494,7 @@ definitions:
           key:
             description: "description"
             artifact_partial_id:
-            - partitions:
-                key: "partitions"
-              artifact_key:
-                domain: "domain"
-                name: "name"
-                project: "project"
-              version: "version"
-            - partitions:
+              partitions:
                 key: "partitions"
               artifact_key:
                 domain: "domain"
@@ -5562,6 +5552,12 @@ definitions:
               simple: {}
               structure:
                 tag: "tag"
+            artifact_tag:
+              artifact_key:
+                domain: "domain"
+                name: "name"
+                project: "project"
+              value: "value"
       updated_at: "2000-01-23T04:56:07.000+00:00"
       created_at: "2000-01-23T04:56:07.000+00:00"
       state: {}
@@ -5742,14 +5738,7 @@ definitions:
             var:
               description: "description"
               artifact_partial_id:
-              - partitions:
-                  key: "partitions"
-                artifact_key:
-                  domain: "domain"
-                  name: "name"
-                  project: "project"
-                version: "version"
-              - partitions:
+                partitions:
                   key: "partitions"
                 artifact_key:
                   domain: "domain"
@@ -5807,6 +5796,12 @@ definitions:
                 simple: {}
                 structure:
                   tag: "tag"
+              artifact_tag:
+                artifact_key:
+                  domain: "domain"
+                  name: "name"
+                  project: "project"
+                value: "value"
             artifact_query:
               artifact_id:
                 partitions:
@@ -5869,14 +5864,7 @@ definitions:
               key:
                 description: "description"
                 artifact_partial_id:
-                - partitions:
-                    key: "partitions"
-                  artifact_key:
-                    domain: "domain"
-                    name: "name"
-                    project: "project"
-                  version: "version"
-                - partitions:
+                  partitions:
                     key: "partitions"
                   artifact_key:
                     domain: "domain"
@@ -5934,6 +5922,12 @@ definitions:
                   simple: {}
                   structure:
                     tag: "tag"
+                artifact_tag:
+                  artifact_key:
+                    domain: "domain"
+                    name: "name"
+                    project: "project"
+                  value: "value"
           updated_at: "2000-01-23T04:56:07.000+00:00"
           created_at: "2000-01-23T04:56:07.000+00:00"
           state: {}
@@ -6114,14 +6108,7 @@ definitions:
                 var:
                   description: "description"
                   artifact_partial_id:
-                  - partitions:
-                      key: "partitions"
-                    artifact_key:
-                      domain: "domain"
-                      name: "name"
-                      project: "project"
-                    version: "version"
-                  - partitions:
+                    partitions:
                       key: "partitions"
                     artifact_key:
                       domain: "domain"
@@ -6179,6 +6166,12 @@ definitions:
                     simple: {}
                     structure:
                       tag: "tag"
+                  artifact_tag:
+                    artifact_key:
+                      domain: "domain"
+                      name: "name"
+                      project: "project"
+                    value: "value"
                 artifact_query:
                   artifact_id:
                     partitions:
@@ -6448,14 +6441,7 @@ definitions:
                 var:
                   description: "description"
                   artifact_partial_id:
-                  - partitions:
-                      key: "partitions"
-                    artifact_key:
-                      domain: "domain"
-                      name: "name"
-                      project: "project"
-                    version: "version"
-                  - partitions:
+                    partitions:
                       key: "partitions"
                     artifact_key:
                       domain: "domain"
@@ -6513,6 +6499,12 @@ definitions:
                     simple: {}
                     structure:
                       tag: "tag"
+                  artifact_tag:
+                    artifact_key:
+                      domain: "domain"
+                      name: "name"
+                      project: "project"
+                    value: "value"
                 artifact_query:
                   artifact_id:
                     partitions:
@@ -6589,14 +6581,7 @@ definitions:
               key:
                 description: "description"
                 artifact_partial_id:
-                - partitions:
-                    key: "partitions"
-                  artifact_key:
-                    domain: "domain"
-                    name: "name"
-                    project: "project"
-                  version: "version"
-                - partitions:
+                  partitions:
                     key: "partitions"
                   artifact_key:
                     domain: "domain"
@@ -6654,6 +6639,12 @@ definitions:
                   simple: {}
                   structure:
                     tag: "tag"
+                artifact_tag:
+                  artifact_key:
+                    domain: "domain"
+                    name: "name"
+                    project: "project"
+                  value: "value"
           updated_at: "2000-01-23T04:56:07.000+00:00"
           created_at: "2000-01-23T04:56:07.000+00:00"
           state: {}
@@ -6834,14 +6825,7 @@ definitions:
                 var:
                   description: "description"
                   artifact_partial_id:
-                  - partitions:
-                      key: "partitions"
-                    artifact_key:
-                      domain: "domain"
-                      name: "name"
-                      project: "project"
-                    version: "version"
-                  - partitions:
+                    partitions:
                       key: "partitions"
                     artifact_key:
                       domain: "domain"
@@ -6899,6 +6883,12 @@ definitions:
                     simple: {}
                     structure:
                       tag: "tag"
+                  artifact_tag:
+                    artifact_key:
+                      domain: "domain"
+                      name: "name"
+                      project: "project"
+                    value: "value"
                 artifact_query:
                   artifact_id:
                     partitions:
@@ -7168,14 +7158,7 @@ definitions:
                 var:
                   description: "description"
                   artifact_partial_id:
-                  - partitions:
-                      key: "partitions"
-                    artifact_key:
-                      domain: "domain"
-                      name: "name"
-                      project: "project"
-                    version: "version"
-                  - partitions:
+                    partitions:
                       key: "partitions"
                     artifact_key:
                       domain: "domain"
@@ -7233,6 +7216,12 @@ definitions:
                     simple: {}
                     structure:
                       tag: "tag"
+                  artifact_tag:
+                    artifact_key:
+                      domain: "domain"
+                      name: "name"
+                      project: "project"
+                    value: "value"
                 artifact_query:
                   artifact_id:
                     partitions:
@@ -7673,14 +7662,7 @@ definitions:
             var:
               description: "description"
               artifact_partial_id:
-              - partitions:
-                  key: "partitions"
-                artifact_key:
-                  domain: "domain"
-                  name: "name"
-                  project: "project"
-                version: "version"
-              - partitions:
+                partitions:
                   key: "partitions"
                 artifact_key:
                   domain: "domain"
@@ -7738,6 +7720,12 @@ definitions:
                 simple: {}
                 structure:
                   tag: "tag"
+              artifact_tag:
+                artifact_key:
+                  domain: "domain"
+                  name: "name"
+                  project: "project"
+                value: "value"
             artifact_query:
               artifact_id:
                 partitions:
@@ -10544,14 +10532,7 @@ definitions:
                     key:
                       description: "description"
                       artifact_partial_id:
-                      - partitions:
-                          key: "partitions"
-                        artifact_key:
-                          domain: "domain"
-                          name: "name"
-                          project: "project"
-                        version: "version"
-                      - partitions:
+                        partitions:
                           key: "partitions"
                         artifact_key:
                           domain: "domain"
@@ -10609,19 +10590,18 @@ definitions:
                         simple: {}
                         structure:
                           tag: "tag"
+                      artifact_tag:
+                        artifact_key:
+                          domain: "domain"
+                          name: "name"
+                          project: "project"
+                        value: "value"
                 inputs:
                   variables:
                     key:
                       description: "description"
                       artifact_partial_id:
-                      - partitions:
-                          key: "partitions"
-                        artifact_key:
-                          domain: "domain"
-                          name: "name"
-                          project: "project"
-                        version: "version"
-                      - partitions:
+                        partitions:
                           key: "partitions"
                         artifact_key:
                           domain: "domain"
@@ -10679,6 +10659,12 @@ definitions:
                         simple: {}
                         structure:
                           tag: "tag"
+                      artifact_tag:
+                        artifact_key:
+                          domain: "domain"
+                          name: "name"
+                          project: "project"
+                        value: "value"
             connections:
               upstream:
                 key:
@@ -12597,14 +12583,7 @@ definitions:
                     key:
                       description: "description"
                       artifact_partial_id:
-                      - partitions:
-                          key: "partitions"
-                        artifact_key:
-                          domain: "domain"
-                          name: "name"
-                          project: "project"
-                        version: "version"
-                      - partitions:
+                        partitions:
                           key: "partitions"
                         artifact_key:
                           domain: "domain"
@@ -12662,19 +12641,18 @@ definitions:
                         simple: {}
                         structure:
                           tag: "tag"
+                      artifact_tag:
+                        artifact_key:
+                          domain: "domain"
+                          name: "name"
+                          project: "project"
+                        value: "value"
                 inputs:
                   variables:
                     key:
                       description: "description"
                       artifact_partial_id:
-                      - partitions:
-                          key: "partitions"
-                        artifact_key:
-                          domain: "domain"
-                          name: "name"
-                          project: "project"
-                        version: "version"
-                      - partitions:
+                        partitions:
                           key: "partitions"
                         artifact_key:
                           domain: "domain"
@@ -12732,6 +12710,12 @@ definitions:
                         simple: {}
                         structure:
                           tag: "tag"
+                      artifact_tag:
+                        artifact_key:
+                          domain: "domain"
+                          name: "name"
+                          project: "project"
+                        value: "value"
             connections:
               upstream:
                 key:
@@ -12853,14 +12837,7 @@ definitions:
                     key:
                       description: "description"
                       artifact_partial_id:
-                      - partitions:
-                          key: "partitions"
-                        artifact_key:
-                          domain: "domain"
-                          name: "name"
-                          project: "project"
-                        version: "version"
-                      - partitions:
+                        partitions:
                           key: "partitions"
                         artifact_key:
                           domain: "domain"
@@ -12918,19 +12895,18 @@ definitions:
                         simple: {}
                         structure:
                           tag: "tag"
+                      artifact_tag:
+                        artifact_key:
+                          domain: "domain"
+                          name: "name"
+                          project: "project"
+                        value: "value"
                 inputs:
                   variables:
                     key:
                       description: "description"
                       artifact_partial_id:
-                      - partitions:
-                          key: "partitions"
-                        artifact_key:
-                          domain: "domain"
-                          name: "name"
-                          project: "project"
-                        version: "version"
-                      - partitions:
+                        partitions:
                           key: "partitions"
                         artifact_key:
                           domain: "domain"
@@ -12988,6 +12964,12 @@ definitions:
                         simple: {}
                         structure:
                           tag: "tag"
+                      artifact_tag:
+                        artifact_key:
+                          domain: "domain"
+                          name: "name"
+                          project: "project"
+                        value: "value"
               config:
                 key: "config"
               security_context:
@@ -13146,14 +13128,7 @@ definitions:
                     key:
                       description: "description"
                       artifact_partial_id:
-                      - partitions:
-                          key: "partitions"
-                        artifact_key:
-                          domain: "domain"
-                          name: "name"
-                          project: "project"
-                        version: "version"
-                      - partitions:
+                        partitions:
                           key: "partitions"
                         artifact_key:
                           domain: "domain"
@@ -13211,19 +13186,18 @@ definitions:
                         simple: {}
                         structure:
                           tag: "tag"
+                      artifact_tag:
+                        artifact_key:
+                          domain: "domain"
+                          name: "name"
+                          project: "project"
+                        value: "value"
                 inputs:
                   variables:
                     key:
                       description: "description"
                       artifact_partial_id:
-                      - partitions:
-                          key: "partitions"
-                        artifact_key:
-                          domain: "domain"
-                          name: "name"
-                          project: "project"
-                        version: "version"
-                      - partitions:
+                        partitions:
                           key: "partitions"
                         artifact_key:
                           domain: "domain"
@@ -13281,6 +13255,12 @@ definitions:
                         simple: {}
                         structure:
                           tag: "tag"
+                      artifact_tag:
+                        artifact_key:
+                          domain: "domain"
+                          name: "name"
+                          project: "project"
+                        value: "value"
               config:
                 key: "config"
               security_context:
@@ -15238,14 +15218,7 @@ definitions:
                     key:
                       description: "description"
                       artifact_partial_id:
-                      - partitions:
-                          key: "partitions"
-                        artifact_key:
-                          domain: "domain"
-                          name: "name"
-                          project: "project"
-                        version: "version"
-                      - partitions:
+                        partitions:
                           key: "partitions"
                         artifact_key:
                           domain: "domain"
@@ -15303,19 +15276,18 @@ definitions:
                         simple: {}
                         structure:
                           tag: "tag"
+                      artifact_tag:
+                        artifact_key:
+                          domain: "domain"
+                          name: "name"
+                          project: "project"
+                        value: "value"
                 inputs:
                   variables:
                     key:
                       description: "description"
                       artifact_partial_id:
-                      - partitions:
-                          key: "partitions"
-                        artifact_key:
-                          domain: "domain"
-                          name: "name"
-                          project: "project"
-                        version: "version"
-                      - partitions:
+                        partitions:
                           key: "partitions"
                         artifact_key:
                           domain: "domain"
@@ -15373,6 +15345,12 @@ definitions:
                         simple: {}
                         structure:
                           tag: "tag"
+                      artifact_tag:
+                        artifact_key:
+                          domain: "domain"
+                          name: "name"
+                          project: "project"
+                        value: "value"
             connections:
               upstream:
                 key:
@@ -16537,14 +16515,7 @@ definitions:
                   key:
                     description: "description"
                     artifact_partial_id:
-                    - partitions:
-                        key: "partitions"
-                      artifact_key:
-                        domain: "domain"
-                        name: "name"
-                        project: "project"
-                      version: "version"
-                    - partitions:
+                      partitions:
                         key: "partitions"
                       artifact_key:
                         domain: "domain"
@@ -16602,19 +16573,18 @@ definitions:
                       simple: {}
                       structure:
                         tag: "tag"
+                    artifact_tag:
+                      artifact_key:
+                        domain: "domain"
+                        name: "name"
+                        project: "project"
+                      value: "value"
               inputs:
                 variables:
                   key:
                     description: "description"
                     artifact_partial_id:
-                    - partitions:
-                        key: "partitions"
-                      artifact_key:
-                        domain: "domain"
-                        name: "name"
-                        project: "project"
-                      version: "version"
-                    - partitions:
+                      partitions:
                         key: "partitions"
                       artifact_key:
                         domain: "domain"
@@ -16672,6 +16642,12 @@ definitions:
                       simple: {}
                       structure:
                         tag: "tag"
+                    artifact_tag:
+                      artifact_key:
+                        domain: "domain"
+                        name: "name"
+                        project: "project"
+                      value: "value"
             config:
               key: "config"
             security_context:
@@ -16846,14 +16822,7 @@ definitions:
                 key:
                   description: "description"
                   artifact_partial_id:
-                  - partitions:
-                      key: "partitions"
-                    artifact_key:
-                      domain: "domain"
-                      name: "name"
-                      project: "project"
-                    version: "version"
-                  - partitions:
+                    partitions:
                       key: "partitions"
                     artifact_key:
                       domain: "domain"
@@ -16911,19 +16880,18 @@ definitions:
                     simple: {}
                     structure:
                       tag: "tag"
+                  artifact_tag:
+                    artifact_key:
+                      domain: "domain"
+                      name: "name"
+                      project: "project"
+                    value: "value"
             inputs:
               variables:
                 key:
                   description: "description"
                   artifact_partial_id:
-                  - partitions:
-                      key: "partitions"
-                    artifact_key:
-                      domain: "domain"
-                      name: "name"
-                      project: "project"
-                    version: "version"
-                  - partitions:
+                    partitions:
                       key: "partitions"
                     artifact_key:
                       domain: "domain"
@@ -16981,6 +16949,12 @@ definitions:
                     simple: {}
                     structure:
                       tag: "tag"
+                  artifact_tag:
+                    artifact_key:
+                      domain: "domain"
+                      name: "name"
+                      project: "project"
+                    value: "value"
           config:
             key: "config"
           security_context:
@@ -17568,14 +17542,7 @@ definitions:
                     key:
                       description: "description"
                       artifact_partial_id:
-                      - partitions:
-                          key: "partitions"
-                        artifact_key:
-                          domain: "domain"
-                          name: "name"
-                          project: "project"
-                        version: "version"
-                      - partitions:
+                        partitions:
                           key: "partitions"
                         artifact_key:
                           domain: "domain"
@@ -17633,19 +17600,18 @@ definitions:
                         simple: {}
                         structure:
                           tag: "tag"
+                      artifact_tag:
+                        artifact_key:
+                          domain: "domain"
+                          name: "name"
+                          project: "project"
+                        value: "value"
                 inputs:
                   variables:
                     key:
                       description: "description"
                       artifact_partial_id:
-                      - partitions:
-                          key: "partitions"
-                        artifact_key:
-                          domain: "domain"
-                          name: "name"
-                          project: "project"
-                        version: "version"
-                      - partitions:
+                        partitions:
                           key: "partitions"
                         artifact_key:
                           domain: "domain"
@@ -17703,6 +17669,12 @@ definitions:
                         simple: {}
                         structure:
                           tag: "tag"
+                      artifact_tag:
+                        artifact_key:
+                          domain: "domain"
+                          name: "name"
+                          project: "project"
+                        value: "value"
               config:
                 key: "config"
               security_context:
@@ -17871,14 +17843,7 @@ definitions:
                     key:
                       description: "description"
                       artifact_partial_id:
-                      - partitions:
-                          key: "partitions"
-                        artifact_key:
-                          domain: "domain"
-                          name: "name"
-                          project: "project"
-                        version: "version"
-                      - partitions:
+                        partitions:
                           key: "partitions"
                         artifact_key:
                           domain: "domain"
@@ -17936,19 +17901,18 @@ definitions:
                         simple: {}
                         structure:
                           tag: "tag"
+                      artifact_tag:
+                        artifact_key:
+                          domain: "domain"
+                          name: "name"
+                          project: "project"
+                        value: "value"
                 inputs:
                   variables:
                     key:
                       description: "description"
                       artifact_partial_id:
-                      - partitions:
-                          key: "partitions"
-                        artifact_key:
-                          domain: "domain"
-                          name: "name"
-                          project: "project"
-                        version: "version"
-                      - partitions:
+                        partitions:
                           key: "partitions"
                         artifact_key:
                           domain: "domain"
@@ -18006,6 +17970,12 @@ definitions:
                         simple: {}
                         structure:
                           tag: "tag"
+                      artifact_tag:
+                        artifact_key:
+                          domain: "domain"
+                          name: "name"
+                          project: "project"
+                        value: "value"
               config:
                 key: "config"
               security_context:
@@ -20077,14 +20047,7 @@ definitions:
                     key:
                       description: "description"
                       artifact_partial_id:
-                      - partitions:
-                          key: "partitions"
-                        artifact_key:
-                          domain: "domain"
-                          name: "name"
-                          project: "project"
-                        version: "version"
-                      - partitions:
+                        partitions:
                           key: "partitions"
                         artifact_key:
                           domain: "domain"
@@ -20142,19 +20105,18 @@ definitions:
                         simple: {}
                         structure:
                           tag: "tag"
+                      artifact_tag:
+                        artifact_key:
+                          domain: "domain"
+                          name: "name"
+                          project: "project"
+                        value: "value"
                 inputs:
                   variables:
                     key:
                       description: "description"
                       artifact_partial_id:
-                      - partitions:
-                          key: "partitions"
-                        artifact_key:
-                          domain: "domain"
-                          name: "name"
-                          project: "project"
-                        version: "version"
-                      - partitions:
+                        partitions:
                           key: "partitions"
                         artifact_key:
                           domain: "domain"
@@ -20212,6 +20174,12 @@ definitions:
                         simple: {}
                         structure:
                           tag: "tag"
+                      artifact_tag:
+                        artifact_key:
+                          domain: "domain"
+                          name: "name"
+                          project: "project"
+                        value: "value"
             connections:
               upstream:
                 key:
@@ -22130,14 +22098,7 @@ definitions:
                     key:
                       description: "description"
                       artifact_partial_id:
-                      - partitions:
-                          key: "partitions"
-                        artifact_key:
-                          domain: "domain"
-                          name: "name"
-                          project: "project"
-                        version: "version"
-                      - partitions:
+                        partitions:
                           key: "partitions"
                         artifact_key:
                           domain: "domain"
@@ -22195,19 +22156,18 @@ definitions:
                         simple: {}
                         structure:
                           tag: "tag"
+                      artifact_tag:
+                        artifact_key:
+                          domain: "domain"
+                          name: "name"
+                          project: "project"
+                        value: "value"
                 inputs:
                   variables:
                     key:
                       description: "description"
                       artifact_partial_id:
-                      - partitions:
-                          key: "partitions"
-                        artifact_key:
-                          domain: "domain"
-                          name: "name"
-                          project: "project"
-                        version: "version"
-                      - partitions:
+                        partitions:
                           key: "partitions"
                         artifact_key:
                           domain: "domain"
@@ -22265,6 +22225,12 @@ definitions:
                         simple: {}
                         structure:
                           tag: "tag"
+                      artifact_tag:
+                        artifact_key:
+                          domain: "domain"
+                          name: "name"
+                          project: "project"
+                        value: "value"
             connections:
               upstream:
                 key:
@@ -22386,14 +22352,7 @@ definitions:
                     key:
                       description: "description"
                       artifact_partial_id:
-                      - partitions:
-                          key: "partitions"
-                        artifact_key:
-                          domain: "domain"
-                          name: "name"
-                          project: "project"
-                        version: "version"
-                      - partitions:
+                        partitions:
                           key: "partitions"
                         artifact_key:
                           domain: "domain"
@@ -22451,19 +22410,18 @@ definitions:
                         simple: {}
                         structure:
                           tag: "tag"
+                      artifact_tag:
+                        artifact_key:
+                          domain: "domain"
+                          name: "name"
+                          project: "project"
+                        value: "value"
                 inputs:
                   variables:
                     key:
                       description: "description"
                       artifact_partial_id:
-                      - partitions:
-                          key: "partitions"
-                        artifact_key:
-                          domain: "domain"
-                          name: "name"
-                          project: "project"
-                        version: "version"
-                      - partitions:
+                        partitions:
                           key: "partitions"
                         artifact_key:
                           domain: "domain"
@@ -22521,6 +22479,12 @@ definitions:
                         simple: {}
                         structure:
                           tag: "tag"
+                      artifact_tag:
+                        artifact_key:
+                          domain: "domain"
+                          name: "name"
+                          project: "project"
+                        value: "value"
               config:
                 key: "config"
               security_context:
@@ -22679,14 +22643,7 @@ definitions:
                     key:
                       description: "description"
                       artifact_partial_id:
-                      - partitions:
-                          key: "partitions"
-                        artifact_key:
-                          domain: "domain"
-                          name: "name"
-                          project: "project"
-                        version: "version"
-                      - partitions:
+                        partitions:
                           key: "partitions"
                         artifact_key:
                           domain: "domain"
@@ -22744,19 +22701,18 @@ definitions:
                         simple: {}
                         structure:
                           tag: "tag"
+                      artifact_tag:
+                        artifact_key:
+                          domain: "domain"
+                          name: "name"
+                          project: "project"
+                        value: "value"
                 inputs:
                   variables:
                     key:
                       description: "description"
                       artifact_partial_id:
-                      - partitions:
-                          key: "partitions"
-                        artifact_key:
-                          domain: "domain"
-                          name: "name"
-                          project: "project"
-                        version: "version"
-                      - partitions:
+                        partitions:
                           key: "partitions"
                         artifact_key:
                           domain: "domain"
@@ -22814,6 +22770,12 @@ definitions:
                         simple: {}
                         structure:
                           tag: "tag"
+                      artifact_tag:
+                        artifact_key:
+                          domain: "domain"
+                          name: "name"
+                          project: "project"
+                        value: "value"
               config:
                 key: "config"
               security_context:
@@ -24771,14 +24733,7 @@ definitions:
                     key:
                       description: "description"
                       artifact_partial_id:
-                      - partitions:
-                          key: "partitions"
-                        artifact_key:
-                          domain: "domain"
-                          name: "name"
-                          project: "project"
-                        version: "version"
-                      - partitions:
+                        partitions:
                           key: "partitions"
                         artifact_key:
                           domain: "domain"
@@ -24836,19 +24791,18 @@ definitions:
                         simple: {}
                         structure:
                           tag: "tag"
+                      artifact_tag:
+                        artifact_key:
+                          domain: "domain"
+                          name: "name"
+                          project: "project"
+                        value: "value"
                 inputs:
                   variables:
                     key:
                       description: "description"
                       artifact_partial_id:
-                      - partitions:
-                          key: "partitions"
-                        artifact_key:
-                          domain: "domain"
-                          name: "name"
-                          project: "project"
-                        version: "version"
-                      - partitions:
+                        partitions:
                           key: "partitions"
                         artifact_key:
                           domain: "domain"
@@ -24906,6 +24860,12 @@ definitions:
                         simple: {}
                         structure:
                           tag: "tag"
+                      artifact_tag:
+                        artifact_key:
+                          domain: "domain"
+                          name: "name"
+                          project: "project"
+                        value: "value"
             connections:
               upstream:
                 key:
@@ -27109,14 +27069,7 @@ definitions:
                   key:
                     description: "description"
                     artifact_partial_id:
-                    - partitions:
-                        key: "partitions"
-                      artifact_key:
-                        domain: "domain"
-                        name: "name"
-                        project: "project"
-                      version: "version"
-                    - partitions:
+                      partitions:
                         key: "partitions"
                       artifact_key:
                         domain: "domain"
@@ -27174,19 +27127,18 @@ definitions:
                       simple: {}
                       structure:
                         tag: "tag"
+                    artifact_tag:
+                      artifact_key:
+                        domain: "domain"
+                        name: "name"
+                        project: "project"
+                      value: "value"
               inputs:
                 variables:
                   key:
                     description: "description"
                     artifact_partial_id:
-                    - partitions:
-                        key: "partitions"
-                      artifact_key:
-                        domain: "domain"
-                        name: "name"
-                        project: "project"
-                      version: "version"
-                    - partitions:
+                      partitions:
                         key: "partitions"
                       artifact_key:
                         domain: "domain"
@@ -27244,6 +27196,12 @@ definitions:
                       simple: {}
                       structure:
                         tag: "tag"
+                    artifact_tag:
+                      artifact_key:
+                        domain: "domain"
+                        name: "name"
+                        project: "project"
+                      value: "value"
           connections:
             upstream:
               key:
@@ -29162,14 +29120,7 @@ definitions:
                   key:
                     description: "description"
                     artifact_partial_id:
-                    - partitions:
-                        key: "partitions"
-                      artifact_key:
-                        domain: "domain"
-                        name: "name"
-                        project: "project"
-                      version: "version"
-                    - partitions:
+                      partitions:
                         key: "partitions"
                       artifact_key:
                         domain: "domain"
@@ -29227,19 +29178,18 @@ definitions:
                       simple: {}
                       structure:
                         tag: "tag"
+                    artifact_tag:
+                      artifact_key:
+                        domain: "domain"
+                        name: "name"
+                        project: "project"
+                      value: "value"
               inputs:
                 variables:
                   key:
                     description: "description"
                     artifact_partial_id:
-                    - partitions:
-                        key: "partitions"
-                      artifact_key:
-                        domain: "domain"
-                        name: "name"
-                        project: "project"
-                      version: "version"
-                    - partitions:
+                      partitions:
                         key: "partitions"
                       artifact_key:
                         domain: "domain"
@@ -29297,6 +29247,12 @@ definitions:
                       simple: {}
                       structure:
                         tag: "tag"
+                    artifact_tag:
+                      artifact_key:
+                        domain: "domain"
+                        name: "name"
+                        project: "project"
+                      value: "value"
           connections:
             upstream:
               key:
@@ -29418,14 +29374,7 @@ definitions:
                   key:
                     description: "description"
                     artifact_partial_id:
-                    - partitions:
-                        key: "partitions"
-                      artifact_key:
-                        domain: "domain"
-                        name: "name"
-                        project: "project"
-                      version: "version"
-                    - partitions:
+                      partitions:
                         key: "partitions"
                       artifact_key:
                         domain: "domain"
@@ -29483,19 +29432,18 @@ definitions:
                       simple: {}
                       structure:
                         tag: "tag"
+                    artifact_tag:
+                      artifact_key:
+                        domain: "domain"
+                        name: "name"
+                        project: "project"
+                      value: "value"
               inputs:
                 variables:
                   key:
                     description: "description"
                     artifact_partial_id:
-                    - partitions:
-                        key: "partitions"
-                      artifact_key:
-                        domain: "domain"
-                        name: "name"
-                        project: "project"
-                      version: "version"
-                    - partitions:
+                      partitions:
                         key: "partitions"
                       artifact_key:
                         domain: "domain"
@@ -29553,6 +29501,12 @@ definitions:
                       simple: {}
                       structure:
                         tag: "tag"
+                    artifact_tag:
+                      artifact_key:
+                        domain: "domain"
+                        name: "name"
+                        project: "project"
+                      value: "value"
             config:
               key: "config"
             security_context:
@@ -29711,14 +29665,7 @@ definitions:
                   key:
                     description: "description"
                     artifact_partial_id:
-                    - partitions:
-                        key: "partitions"
-                      artifact_key:
-                        domain: "domain"
-                        name: "name"
-                        project: "project"
-                      version: "version"
-                    - partitions:
+                      partitions:
                         key: "partitions"
                       artifact_key:
                         domain: "domain"
@@ -29776,19 +29723,18 @@ definitions:
                       simple: {}
                       structure:
                         tag: "tag"
+                    artifact_tag:
+                      artifact_key:
+                        domain: "domain"
+                        name: "name"
+                        project: "project"
+                      value: "value"
               inputs:
                 variables:
                   key:
                     description: "description"
                     artifact_partial_id:
-                    - partitions:
-                        key: "partitions"
-                      artifact_key:
-                        domain: "domain"
-                        name: "name"
-                        project: "project"
-                      version: "version"
-                    - partitions:
+                      partitions:
                         key: "partitions"
                       artifact_key:
                         domain: "domain"
@@ -29846,6 +29792,12 @@ definitions:
                       simple: {}
                       structure:
                         tag: "tag"
+                    artifact_tag:
+                      artifact_key:
+                        domain: "domain"
+                        name: "name"
+                        project: "project"
+                      value: "value"
             config:
               key: "config"
             security_context:
@@ -31803,14 +31755,7 @@ definitions:
                   key:
                     description: "description"
                     artifact_partial_id:
-                    - partitions:
-                        key: "partitions"
-                      artifact_key:
-                        domain: "domain"
-                        name: "name"
-                        project: "project"
-                      version: "version"
-                    - partitions:
+                      partitions:
                         key: "partitions"
                       artifact_key:
                         domain: "domain"
@@ -31868,19 +31813,18 @@ definitions:
                       simple: {}
                       structure:
                         tag: "tag"
+                    artifact_tag:
+                      artifact_key:
+                        domain: "domain"
+                        name: "name"
+                        project: "project"
+                      value: "value"
               inputs:
                 variables:
                   key:
                     description: "description"
                     artifact_partial_id:
-                    - partitions:
-                        key: "partitions"
-                      artifact_key:
-                        domain: "domain"
-                        name: "name"
-                        project: "project"
-                      version: "version"
-                    - partitions:
+                      partitions:
                         key: "partitions"
                       artifact_key:
                         domain: "domain"
@@ -31938,6 +31882,12 @@ definitions:
                       simple: {}
                       structure:
                         tag: "tag"
+                    artifact_tag:
+                      artifact_key:
+                        domain: "domain"
+                        name: "name"
+                        project: "project"
+                      value: "value"
           connections:
             upstream:
               key:
@@ -34088,14 +34038,7 @@ definitions:
                       key:
                         description: "description"
                         artifact_partial_id:
-                        - partitions:
-                            key: "partitions"
-                          artifact_key:
-                            domain: "domain"
-                            name: "name"
-                            project: "project"
-                          version: "version"
-                        - partitions:
+                          partitions:
                             key: "partitions"
                           artifact_key:
                             domain: "domain"
@@ -34153,19 +34096,18 @@ definitions:
                           simple: {}
                           structure:
                             tag: "tag"
+                        artifact_tag:
+                          artifact_key:
+                            domain: "domain"
+                            name: "name"
+                            project: "project"
+                          value: "value"
                   inputs:
                     variables:
                       key:
                         description: "description"
                         artifact_partial_id:
-                        - partitions:
-                            key: "partitions"
-                          artifact_key:
-                            domain: "domain"
-                            name: "name"
-                            project: "project"
-                          version: "version"
-                        - partitions:
+                          partitions:
                             key: "partitions"
                           artifact_key:
                             domain: "domain"
@@ -34223,6 +34165,12 @@ definitions:
                           simple: {}
                           structure:
                             tag: "tag"
+                        artifact_tag:
+                          artifact_key:
+                            domain: "domain"
+                            name: "name"
+                            project: "project"
+                          value: "value"
               connections:
                 upstream:
                   key:
@@ -36141,14 +36089,7 @@ definitions:
                       key:
                         description: "description"
                         artifact_partial_id:
-                        - partitions:
-                            key: "partitions"
-                          artifact_key:
-                            domain: "domain"
-                            name: "name"
-                            project: "project"
-                          version: "version"
-                        - partitions:
+                          partitions:
                             key: "partitions"
                           artifact_key:
                             domain: "domain"
@@ -36206,19 +36147,18 @@ definitions:
                           simple: {}
                           structure:
                             tag: "tag"
+                        artifact_tag:
+                          artifact_key:
+                            domain: "domain"
+                            name: "name"
+                            project: "project"
+                          value: "value"
                   inputs:
                     variables:
                       key:
                         description: "description"
                         artifact_partial_id:
-                        - partitions:
-                            key: "partitions"
-                          artifact_key:
-                            domain: "domain"
-                            name: "name"
-                            project: "project"
-                          version: "version"
-                        - partitions:
+                          partitions:
                             key: "partitions"
                           artifact_key:
                             domain: "domain"
@@ -36276,6 +36216,12 @@ definitions:
                           simple: {}
                           structure:
                             tag: "tag"
+                        artifact_tag:
+                          artifact_key:
+                            domain: "domain"
+                            name: "name"
+                            project: "project"
+                          value: "value"
               connections:
                 upstream:
                   key:
@@ -36397,14 +36343,7 @@ definitions:
                       key:
                         description: "description"
                         artifact_partial_id:
-                        - partitions:
-                            key: "partitions"
-                          artifact_key:
-                            domain: "domain"
-                            name: "name"
-                            project: "project"
-                          version: "version"
-                        - partitions:
+                          partitions:
                             key: "partitions"
                           artifact_key:
                             domain: "domain"
@@ -36462,19 +36401,18 @@ definitions:
                           simple: {}
                           structure:
                             tag: "tag"
+                        artifact_tag:
+                          artifact_key:
+                            domain: "domain"
+                            name: "name"
+                            project: "project"
+                          value: "value"
                   inputs:
                     variables:
                       key:
                         description: "description"
                         artifact_partial_id:
-                        - partitions:
-                            key: "partitions"
-                          artifact_key:
-                            domain: "domain"
-                            name: "name"
-                            project: "project"
-                          version: "version"
-                        - partitions:
+                          partitions:
                             key: "partitions"
                           artifact_key:
                             domain: "domain"
@@ -36532,6 +36470,12 @@ definitions:
                           simple: {}
                           structure:
                             tag: "tag"
+                        artifact_tag:
+                          artifact_key:
+                            domain: "domain"
+                            name: "name"
+                            project: "project"
+                          value: "value"
                 config:
                   key: "config"
                 security_context:
@@ -36690,14 +36634,7 @@ definitions:
                       key:
                         description: "description"
                         artifact_partial_id:
-                        - partitions:
-                            key: "partitions"
-                          artifact_key:
-                            domain: "domain"
-                            name: "name"
-                            project: "project"
-                          version: "version"
-                        - partitions:
+                          partitions:
                             key: "partitions"
                           artifact_key:
                             domain: "domain"
@@ -36755,19 +36692,18 @@ definitions:
                           simple: {}
                           structure:
                             tag: "tag"
+                        artifact_tag:
+                          artifact_key:
+                            domain: "domain"
+                            name: "name"
+                            project: "project"
+                          value: "value"
                   inputs:
                     variables:
                       key:
                         description: "description"
                         artifact_partial_id:
-                        - partitions:
-                            key: "partitions"
-                          artifact_key:
-                            domain: "domain"
-                            name: "name"
-                            project: "project"
-                          version: "version"
-                        - partitions:
+                          partitions:
                             key: "partitions"
                           artifact_key:
                             domain: "domain"
@@ -36825,6 +36761,12 @@ definitions:
                           simple: {}
                           structure:
                             tag: "tag"
+                        artifact_tag:
+                          artifact_key:
+                            domain: "domain"
+                            name: "name"
+                            project: "project"
+                          value: "value"
                 config:
                   key: "config"
                 security_context:
@@ -38782,14 +38724,7 @@ definitions:
                       key:
                         description: "description"
                         artifact_partial_id:
-                        - partitions:
-                            key: "partitions"
-                          artifact_key:
-                            domain: "domain"
-                            name: "name"
-                            project: "project"
-                          version: "version"
-                        - partitions:
+                          partitions:
                             key: "partitions"
                           artifact_key:
                             domain: "domain"
@@ -38847,19 +38782,18 @@ definitions:
                           simple: {}
                           structure:
                             tag: "tag"
+                        artifact_tag:
+                          artifact_key:
+                            domain: "domain"
+                            name: "name"
+                            project: "project"
+                          value: "value"
                   inputs:
                     variables:
                       key:
                         description: "description"
                         artifact_partial_id:
-                        - partitions:
-                            key: "partitions"
-                          artifact_key:
-                            domain: "domain"
-                            name: "name"
-                            project: "project"
-                          version: "version"
-                        - partitions:
+                          partitions:
                             key: "partitions"
                           artifact_key:
                             domain: "domain"
@@ -38917,6 +38851,12 @@ definitions:
                           simple: {}
                           structure:
                             tag: "tag"
+                        artifact_tag:
+                          artifact_key:
+                            domain: "domain"
+                            name: "name"
+                            project: "project"
+                          value: "value"
               connections:
                 upstream:
                   key:
@@ -40846,14 +40786,7 @@ definitions:
                       key:
                         description: "description"
                         artifact_partial_id:
-                        - partitions:
-                            key: "partitions"
-                          artifact_key:
-                            domain: "domain"
-                            name: "name"
-                            project: "project"
-                          version: "version"
-                        - partitions:
+                          partitions:
                             key: "partitions"
                           artifact_key:
                             domain: "domain"
@@ -40911,19 +40844,18 @@ definitions:
                           simple: {}
                           structure:
                             tag: "tag"
+                        artifact_tag:
+                          artifact_key:
+                            domain: "domain"
+                            name: "name"
+                            project: "project"
+                          value: "value"
                   inputs:
                     variables:
                       key:
                         description: "description"
                         artifact_partial_id:
-                        - partitions:
-                            key: "partitions"
-                          artifact_key:
-                            domain: "domain"
-                            name: "name"
-                            project: "project"
-                          version: "version"
-                        - partitions:
+                          partitions:
                             key: "partitions"
                           artifact_key:
                             domain: "domain"
@@ -40981,6 +40913,12 @@ definitions:
                           simple: {}
                           structure:
                             tag: "tag"
+                        artifact_tag:
+                          artifact_key:
+                            domain: "domain"
+                            name: "name"
+                            project: "project"
+                          value: "value"
               connections:
                 upstream:
                   key:
@@ -42899,14 +42837,7 @@ definitions:
                       key:
                         description: "description"
                         artifact_partial_id:
-                        - partitions:
-                            key: "partitions"
-                          artifact_key:
-                            domain: "domain"
-                            name: "name"
-                            project: "project"
-                          version: "version"
-                        - partitions:
+                          partitions:
                             key: "partitions"
                           artifact_key:
                             domain: "domain"
@@ -42964,19 +42895,18 @@ definitions:
                           simple: {}
                           structure:
                             tag: "tag"
+                        artifact_tag:
+                          artifact_key:
+                            domain: "domain"
+                            name: "name"
+                            project: "project"
+                          value: "value"
                   inputs:
                     variables:
                       key:
                         description: "description"
                         artifact_partial_id:
-                        - partitions:
-                            key: "partitions"
-                          artifact_key:
-                            domain: "domain"
-                            name: "name"
-                            project: "project"
-                          version: "version"
-                        - partitions:
+                          partitions:
                             key: "partitions"
                           artifact_key:
                             domain: "domain"
@@ -43034,6 +42964,12 @@ definitions:
                           simple: {}
                           structure:
                             tag: "tag"
+                        artifact_tag:
+                          artifact_key:
+                            domain: "domain"
+                            name: "name"
+                            project: "project"
+                          value: "value"
               connections:
                 upstream:
                   key:
@@ -43155,14 +43091,7 @@ definitions:
                       key:
                         description: "description"
                         artifact_partial_id:
-                        - partitions:
-                            key: "partitions"
-                          artifact_key:
-                            domain: "domain"
-                            name: "name"
-                            project: "project"
-                          version: "version"
-                        - partitions:
+                          partitions:
                             key: "partitions"
                           artifact_key:
                             domain: "domain"
@@ -43220,19 +43149,18 @@ definitions:
                           simple: {}
                           structure:
                             tag: "tag"
+                        artifact_tag:
+                          artifact_key:
+                            domain: "domain"
+                            name: "name"
+                            project: "project"
+                          value: "value"
                   inputs:
                     variables:
                       key:
                         description: "description"
                         artifact_partial_id:
-                        - partitions:
-                            key: "partitions"
-                          artifact_key:
-                            domain: "domain"
-                            name: "name"
-                            project: "project"
-                          version: "version"
-                        - partitions:
+                          partitions:
                             key: "partitions"
                           artifact_key:
                             domain: "domain"
@@ -43290,6 +43218,12 @@ definitions:
                           simple: {}
                           structure:
                             tag: "tag"
+                        artifact_tag:
+                          artifact_key:
+                            domain: "domain"
+                            name: "name"
+                            project: "project"
+                          value: "value"
                 config:
                   key: "config"
                 security_context:
@@ -43448,14 +43382,7 @@ definitions:
                       key:
                         description: "description"
                         artifact_partial_id:
-                        - partitions:
-                            key: "partitions"
-                          artifact_key:
-                            domain: "domain"
-                            name: "name"
-                            project: "project"
-                          version: "version"
-                        - partitions:
+                          partitions:
                             key: "partitions"
                           artifact_key:
                             domain: "domain"
@@ -43513,19 +43440,18 @@ definitions:
                           simple: {}
                           structure:
                             tag: "tag"
+                        artifact_tag:
+                          artifact_key:
+                            domain: "domain"
+                            name: "name"
+                            project: "project"
+                          value: "value"
                   inputs:
                     variables:
                       key:
                         description: "description"
                         artifact_partial_id:
-                        - partitions:
-                            key: "partitions"
-                          artifact_key:
-                            domain: "domain"
-                            name: "name"
-                            project: "project"
-                          version: "version"
-                        - partitions:
+                          partitions:
                             key: "partitions"
                           artifact_key:
                             domain: "domain"
@@ -43583,6 +43509,12 @@ definitions:
                           simple: {}
                           structure:
                             tag: "tag"
+                        artifact_tag:
+                          artifact_key:
+                            domain: "domain"
+                            name: "name"
+                            project: "project"
+                          value: "value"
                 config:
                   key: "config"
                 security_context:
@@ -45540,14 +45472,7 @@ definitions:
                       key:
                         description: "description"
                         artifact_partial_id:
-                        - partitions:
-                            key: "partitions"
-                          artifact_key:
-                            domain: "domain"
-                            name: "name"
-                            project: "project"
-                          version: "version"
-                        - partitions:
+                          partitions:
                             key: "partitions"
                           artifact_key:
                             domain: "domain"
@@ -45605,19 +45530,18 @@ definitions:
                           simple: {}
                           structure:
                             tag: "tag"
+                        artifact_tag:
+                          artifact_key:
+                            domain: "domain"
+                            name: "name"
+                            project: "project"
+                          value: "value"
                   inputs:
                     variables:
                       key:
                         description: "description"
                         artifact_partial_id:
-                        - partitions:
-                            key: "partitions"
-                          artifact_key:
-                            domain: "domain"
-                            name: "name"
-                            project: "project"
-                          version: "version"
-                        - partitions:
+                          partitions:
                             key: "partitions"
                           artifact_key:
                             domain: "domain"
@@ -45675,6 +45599,12 @@ definitions:
                           simple: {}
                           structure:
                             tag: "tag"
+                        artifact_tag:
+                          artifact_key:
+                            domain: "domain"
+                            name: "name"
+                            project: "project"
+                          value: "value"
               connections:
                 upstream:
                   key:
@@ -46624,14 +46554,7 @@ definitions:
               key:
                 description: "description"
                 artifact_partial_id:
-                - partitions:
-                    key: "partitions"
-                  artifact_key:
-                    domain: "domain"
-                    name: "name"
-                    project: "project"
-                  version: "version"
-                - partitions:
+                  partitions:
                     key: "partitions"
                   artifact_key:
                     domain: "domain"
@@ -46689,19 +46612,18 @@ definitions:
                   simple: {}
                   structure:
                     tag: "tag"
+                artifact_tag:
+                  artifact_key:
+                    domain: "domain"
+                    name: "name"
+                    project: "project"
+                  value: "value"
           inputs:
             variables:
               key:
                 description: "description"
                 artifact_partial_id:
-                - partitions:
-                    key: "partitions"
-                  artifact_key:
-                    domain: "domain"
-                    name: "name"
-                    project: "project"
-                  version: "version"
-                - partitions:
+                  partitions:
                     key: "partitions"
                   artifact_key:
                     domain: "domain"
@@ -46759,6 +46681,12 @@ definitions:
                   simple: {}
                   structure:
                     tag: "tag"
+                artifact_tag:
+                  artifact_key:
+                    domain: "domain"
+                    name: "name"
+                    project: "project"
+                  value: "value"
         config:
           key: "config"
         security_context:
@@ -48728,14 +48656,7 @@ definitions:
               key:
                 description: "description"
                 artifact_partial_id:
-                - partitions:
-                    key: "partitions"
-                  artifact_key:
-                    domain: "domain"
-                    name: "name"
-                    project: "project"
-                  version: "version"
-                - partitions:
+                  partitions:
                     key: "partitions"
                   artifact_key:
                     domain: "domain"
@@ -48793,19 +48714,18 @@ definitions:
                   simple: {}
                   structure:
                     tag: "tag"
+                artifact_tag:
+                  artifact_key:
+                    domain: "domain"
+                    name: "name"
+                    project: "project"
+                  value: "value"
           inputs:
             variables:
               key:
                 description: "description"
                 artifact_partial_id:
-                - partitions:
-                    key: "partitions"
-                  artifact_key:
-                    domain: "domain"
-                    name: "name"
-                    project: "project"
-                  version: "version"
-                - partitions:
+                  partitions:
                     key: "partitions"
                   artifact_key:
                     domain: "domain"
@@ -48863,6 +48783,12 @@ definitions:
                   simple: {}
                   structure:
                     tag: "tag"
+                artifact_tag:
+                  artifact_key:
+                    domain: "domain"
+                    name: "name"
+                    project: "project"
+                  value: "value"
       connections:
         upstream:
           key:
@@ -50808,14 +50734,7 @@ definitions:
                 key:
                   description: "description"
                   artifact_partial_id:
-                  - partitions:
-                      key: "partitions"
-                    artifact_key:
-                      domain: "domain"
-                      name: "name"
-                      project: "project"
-                    version: "version"
-                  - partitions:
+                    partitions:
                       key: "partitions"
                     artifact_key:
                       domain: "domain"
@@ -50873,19 +50792,18 @@ definitions:
                     simple: {}
                     structure:
                       tag: "tag"
+                  artifact_tag:
+                    artifact_key:
+                      domain: "domain"
+                      name: "name"
+                      project: "project"
+                    value: "value"
             inputs:
               variables:
                 key:
                   description: "description"
                   artifact_partial_id:
-                  - partitions:
-                      key: "partitions"
-                    artifact_key:
-                      domain: "domain"
-                      name: "name"
-                      project: "project"
-                    version: "version"
-                  - partitions:
+                    partitions:
                       key: "partitions"
                     artifact_key:
                       domain: "domain"
@@ -50943,6 +50861,12 @@ definitions:
                     simple: {}
                     structure:
                       tag: "tag"
+                  artifact_tag:
+                    artifact_key:
+                      domain: "domain"
+                      name: "name"
+                      project: "project"
+                    value: "value"
         connections:
           upstream:
             key:
@@ -52861,14 +52785,7 @@ definitions:
                 key:
                   description: "description"
                   artifact_partial_id:
-                  - partitions:
-                      key: "partitions"
-                    artifact_key:
-                      domain: "domain"
-                      name: "name"
-                      project: "project"
-                    version: "version"
-                  - partitions:
+                    partitions:
                       key: "partitions"
                     artifact_key:
                       domain: "domain"
@@ -52926,19 +52843,18 @@ definitions:
                     simple: {}
                     structure:
                       tag: "tag"
+                  artifact_tag:
+                    artifact_key:
+                      domain: "domain"
+                      name: "name"
+                      project: "project"
+                    value: "value"
             inputs:
               variables:
                 key:
                   description: "description"
                   artifact_partial_id:
-                  - partitions:
-                      key: "partitions"
-                    artifact_key:
-                      domain: "domain"
-                      name: "name"
-                      project: "project"
-                    version: "version"
-                  - partitions:
+                    partitions:
                       key: "partitions"
                     artifact_key:
                       domain: "domain"
@@ -52996,6 +52912,12 @@ definitions:
                     simple: {}
                     structure:
                       tag: "tag"
+                  artifact_tag:
+                    artifact_key:
+                      domain: "domain"
+                      name: "name"
+                      project: "project"
+                    value: "value"
         connections:
           upstream:
             key:
@@ -53117,14 +53039,7 @@ definitions:
                 key:
                   description: "description"
                   artifact_partial_id:
-                  - partitions:
-                      key: "partitions"
-                    artifact_key:
-                      domain: "domain"
-                      name: "name"
-                      project: "project"
-                    version: "version"
-                  - partitions:
+                    partitions:
                       key: "partitions"
                     artifact_key:
                       domain: "domain"
@@ -53182,19 +53097,18 @@ definitions:
                     simple: {}
                     structure:
                       tag: "tag"
+                  artifact_tag:
+                    artifact_key:
+                      domain: "domain"
+                      name: "name"
+                      project: "project"
+                    value: "value"
             inputs:
               variables:
                 key:
                   description: "description"
                   artifact_partial_id:
-                  - partitions:
-                      key: "partitions"
-                    artifact_key:
-                      domain: "domain"
-                      name: "name"
-                      project: "project"
-                    version: "version"
-                  - partitions:
+                    partitions:
                       key: "partitions"
                     artifact_key:
                       domain: "domain"
@@ -53252,6 +53166,12 @@ definitions:
                     simple: {}
                     structure:
                       tag: "tag"
+                  artifact_tag:
+                    artifact_key:
+                      domain: "domain"
+                      name: "name"
+                      project: "project"
+                    value: "value"
           config:
             key: "config"
           security_context:
@@ -53410,14 +53330,7 @@ definitions:
                 key:
                   description: "description"
                   artifact_partial_id:
-                  - partitions:
-                      key: "partitions"
-                    artifact_key:
-                      domain: "domain"
-                      name: "name"
-                      project: "project"
-                    version: "version"
-                  - partitions:
+                    partitions:
                       key: "partitions"
                     artifact_key:
                       domain: "domain"
@@ -53475,19 +53388,18 @@ definitions:
                     simple: {}
                     structure:
                       tag: "tag"
+                  artifact_tag:
+                    artifact_key:
+                      domain: "domain"
+                      name: "name"
+                      project: "project"
+                    value: "value"
             inputs:
               variables:
                 key:
                   description: "description"
                   artifact_partial_id:
-                  - partitions:
-                      key: "partitions"
-                    artifact_key:
-                      domain: "domain"
-                      name: "name"
-                      project: "project"
-                    version: "version"
-                  - partitions:
+                    partitions:
                       key: "partitions"
                     artifact_key:
                       domain: "domain"
@@ -53545,6 +53457,12 @@ definitions:
                     simple: {}
                     structure:
                       tag: "tag"
+                  artifact_tag:
+                    artifact_key:
+                      domain: "domain"
+                      name: "name"
+                      project: "project"
+                    value: "value"
           config:
             key: "config"
           security_context:
@@ -55502,14 +55420,7 @@ definitions:
                 key:
                   description: "description"
                   artifact_partial_id:
-                  - partitions:
-                      key: "partitions"
-                    artifact_key:
-                      domain: "domain"
-                      name: "name"
-                      project: "project"
-                    version: "version"
-                  - partitions:
+                    partitions:
                       key: "partitions"
                     artifact_key:
                       domain: "domain"
@@ -55567,19 +55478,18 @@ definitions:
                     simple: {}
                     structure:
                       tag: "tag"
+                  artifact_tag:
+                    artifact_key:
+                      domain: "domain"
+                      name: "name"
+                      project: "project"
+                    value: "value"
             inputs:
               variables:
                 key:
                   description: "description"
                   artifact_partial_id:
-                  - partitions:
-                      key: "partitions"
-                    artifact_key:
-                      domain: "domain"
-                      name: "name"
-                      project: "project"
-                    version: "version"
-                  - partitions:
+                    partitions:
                       key: "partitions"
                     artifact_key:
                       domain: "domain"
@@ -55637,6 +55547,12 @@ definitions:
                     simple: {}
                     structure:
                       tag: "tag"
+                  artifact_tag:
+                    artifact_key:
+                      domain: "domain"
+                      name: "name"
+                      project: "project"
+                    value: "value"
         connections:
           upstream:
             key:
@@ -57488,14 +57404,7 @@ definitions:
       var:
         description: "description"
         artifact_partial_id:
-        - partitions:
-            key: "partitions"
-          artifact_key:
-            domain: "domain"
-            name: "name"
-            project: "project"
-          version: "version"
-        - partitions:
+          partitions:
             key: "partitions"
           artifact_key:
             domain: "domain"
@@ -57553,6 +57462,12 @@ definitions:
           simple: {}
           structure:
             tag: "tag"
+        artifact_tag:
+          artifact_key:
+            domain: "domain"
+            name: "name"
+            project: "project"
+          value: "value"
       artifact_query:
         artifact_id:
           partitions:
@@ -57756,14 +57671,7 @@ definitions:
           var:
             description: "description"
             artifact_partial_id:
-            - partitions:
-                key: "partitions"
-              artifact_key:
-                domain: "domain"
-                name: "name"
-                project: "project"
-              version: "version"
-            - partitions:
+              partitions:
                 key: "partitions"
               artifact_key:
                 domain: "domain"
@@ -57821,6 +57729,12 @@ definitions:
               simple: {}
               structure:
                 tag: "tag"
+            artifact_tag:
+              artifact_key:
+                domain: "domain"
+                name: "name"
+                project: "project"
+              value: "value"
           artifact_query:
             artifact_id:
               partitions:
@@ -58808,14 +58722,7 @@ definitions:
             key:
               description: "description"
               artifact_partial_id:
-              - partitions:
-                  key: "partitions"
-                artifact_key:
-                  domain: "domain"
-                  name: "name"
-                  project: "project"
-                version: "version"
-              - partitions:
+                partitions:
                   key: "partitions"
                 artifact_key:
                   domain: "domain"
@@ -58873,19 +58780,18 @@ definitions:
                 simple: {}
                 structure:
                   tag: "tag"
+              artifact_tag:
+                artifact_key:
+                  domain: "domain"
+                  name: "name"
+                  project: "project"
+                value: "value"
         inputs:
           variables:
             key:
               description: "description"
               artifact_partial_id:
-              - partitions:
-                  key: "partitions"
-                artifact_key:
-                  domain: "domain"
-                  name: "name"
-                  project: "project"
-                version: "version"
-              - partitions:
+                partitions:
                   key: "partitions"
                 artifact_key:
                   domain: "domain"
@@ -58943,6 +58849,12 @@ definitions:
                 simple: {}
                 structure:
                   tag: "tag"
+              artifact_tag:
+                artifact_key:
+                  domain: "domain"
+                  name: "name"
+                  project: "project"
+                value: "value"
       config:
         key: "config"
       security_context:
@@ -59037,14 +58949,7 @@ definitions:
           key:
             description: "description"
             artifact_partial_id:
-            - partitions:
-                key: "partitions"
-              artifact_key:
-                domain: "domain"
-                name: "name"
-                project: "project"
-              version: "version"
-            - partitions:
+              partitions:
                 key: "partitions"
               artifact_key:
                 domain: "domain"
@@ -59102,19 +59007,18 @@ definitions:
               simple: {}
               structure:
                 tag: "tag"
+            artifact_tag:
+              artifact_key:
+                domain: "domain"
+                name: "name"
+                project: "project"
+              value: "value"
       inputs:
         variables:
           key:
             description: "description"
             artifact_partial_id:
-            - partitions:
-                key: "partitions"
-              artifact_key:
-                domain: "domain"
-                name: "name"
-                project: "project"
-              version: "version"
-            - partitions:
+              partitions:
                 key: "partitions"
               artifact_key:
                 domain: "domain"
@@ -59172,6 +59076,12 @@ definitions:
               simple: {}
               structure:
                 tag: "tag"
+            artifact_tag:
+              artifact_key:
+                domain: "domain"
+                name: "name"
+                project: "project"
+              value: "value"
   coreUnion:
     type: "object"
     properties:
@@ -59321,24 +59231,17 @@ definitions:
         type: "string"
         title: "+optional string describing input variable"
       artifact_partial_id:
-        type: "array"
         description: "+optional This object allows the user to specify how Artifacts\
           \ are created.\nname, tag, partitions can be specified. The other fields\
           \ (version and project/domain) are ignored."
-        items:
-          $ref: "#/definitions/coreArtifactID"
+        $ref: "#/definitions/coreArtifactID"
+      artifact_tag:
+        $ref: "#/definitions/coreArtifactTag"
     description: "Defines a strongly typed variable."
     example:
       description: "description"
       artifact_partial_id:
-      - partitions:
-          key: "partitions"
-        artifact_key:
-          domain: "domain"
-          name: "name"
-          project: "project"
-        version: "version"
-      - partitions:
+        partitions:
           key: "partitions"
         artifact_key:
           domain: "domain"
@@ -59396,6 +59299,12 @@ definitions:
         simple: {}
         structure:
           tag: "tag"
+      artifact_tag:
+        artifact_key:
+          domain: "domain"
+          name: "name"
+          project: "project"
+        value: "value"
   coreVariableMap:
     type: "object"
     properties:
@@ -59410,14 +59319,7 @@ definitions:
         key:
           description: "description"
           artifact_partial_id:
-          - partitions:
-              key: "partitions"
-            artifact_key:
-              domain: "domain"
-              name: "name"
-              project: "project"
-            version: "version"
-          - partitions:
+            partitions:
               key: "partitions"
             artifact_key:
               domain: "domain"
@@ -59475,6 +59377,12 @@ definitions:
             simple: {}
             structure:
               tag: "tag"
+          artifact_tag:
+            artifact_key:
+              domain: "domain"
+              name: "name"
+              project: "project"
+            value: "value"
   coreVoid:
     type: "object"
     description: "Used to denote a nil/null/None assignment to a scalar value. The\
@@ -61530,14 +61438,7 @@ definitions:
             key:
               description: "description"
               artifact_partial_id:
-              - partitions:
-                  key: "partitions"
-                artifact_key:
-                  domain: "domain"
-                  name: "name"
-                  project: "project"
-                version: "version"
-              - partitions:
+                partitions:
                   key: "partitions"
                 artifact_key:
                   domain: "domain"
@@ -61595,19 +61496,18 @@ definitions:
                 simple: {}
                 structure:
                   tag: "tag"
+              artifact_tag:
+                artifact_key:
+                  domain: "domain"
+                  name: "name"
+                  project: "project"
+                value: "value"
         inputs:
           variables:
             key:
               description: "description"
               artifact_partial_id:
-              - partitions:
-                  key: "partitions"
-                artifact_key:
-                  domain: "domain"
-                  name: "name"
-                  project: "project"
-                version: "version"
-              - partitions:
+                partitions:
                   key: "partitions"
                 artifact_key:
                   domain: "domain"
@@ -61665,6 +61565,12 @@ definitions:
                 simple: {}
                 structure:
                   tag: "tag"
+              artifact_tag:
+                artifact_key:
+                  domain: "domain"
+                  name: "name"
+                  project: "project"
+                value: "value"
   eventExternalResourceInfo:
     type: "object"
     properties:
@@ -63863,14 +63769,7 @@ definitions:
                   key:
                     description: "description"
                     artifact_partial_id:
-                    - partitions:
-                        key: "partitions"
-                      artifact_key:
-                        domain: "domain"
-                        name: "name"
-                        project: "project"
-                      version: "version"
-                    - partitions:
+                      partitions:
                         key: "partitions"
                       artifact_key:
                         domain: "domain"
@@ -63928,19 +63827,18 @@ definitions:
                       simple: {}
                       structure:
                         tag: "tag"
+                    artifact_tag:
+                      artifact_key:
+                        domain: "domain"
+                        name: "name"
+                        project: "project"
+                      value: "value"
               inputs:
                 variables:
                   key:
                     description: "description"
                     artifact_partial_id:
-                    - partitions:
-                        key: "partitions"
-                      artifact_key:
-                        domain: "domain"
-                        name: "name"
-                        project: "project"
-                      version: "version"
-                    - partitions:
+                      partitions:
                         key: "partitions"
                       artifact_key:
                         domain: "domain"
@@ -63998,6 +63896,12 @@ definitions:
                       simple: {}
                       structure:
                         tag: "tag"
+                    artifact_tag:
+                      artifact_key:
+                        domain: "domain"
+                        name: "name"
+                        project: "project"
+                      value: "value"
           connections:
             upstream:
               key:
@@ -65916,14 +65820,7 @@ definitions:
                   key:
                     description: "description"
                     artifact_partial_id:
-                    - partitions:
-                        key: "partitions"
-                      artifact_key:
-                        domain: "domain"
-                        name: "name"
-                        project: "project"
-                      version: "version"
-                    - partitions:
+                      partitions:
                         key: "partitions"
                       artifact_key:
                         domain: "domain"
@@ -65981,19 +65878,18 @@ definitions:
                       simple: {}
                       structure:
                         tag: "tag"
+                    artifact_tag:
+                      artifact_key:
+                        domain: "domain"
+                        name: "name"
+                        project: "project"
+                      value: "value"
               inputs:
                 variables:
                   key:
                     description: "description"
                     artifact_partial_id:
-                    - partitions:
-                        key: "partitions"
-                      artifact_key:
-                        domain: "domain"
-                        name: "name"
-                        project: "project"
-                      version: "version"
-                    - partitions:
+                      partitions:
                         key: "partitions"
                       artifact_key:
                         domain: "domain"
@@ -66051,6 +65947,12 @@ definitions:
                       simple: {}
                       structure:
                         tag: "tag"
+                    artifact_tag:
+                      artifact_key:
+                        domain: "domain"
+                        name: "name"
+                        project: "project"
+                      value: "value"
           connections:
             upstream:
               key:
@@ -66172,14 +66074,7 @@ definitions:
                   key:
                     description: "description"
                     artifact_partial_id:
-                    - partitions:
-                        key: "partitions"
-                      artifact_key:
-                        domain: "domain"
-                        name: "name"
-                        project: "project"
-                      version: "version"
-                    - partitions:
+                      partitions:
                         key: "partitions"
                       artifact_key:
                         domain: "domain"
@@ -66237,19 +66132,18 @@ definitions:
                       simple: {}
                       structure:
                         tag: "tag"
+                    artifact_tag:
+                      artifact_key:
+                        domain: "domain"
+                        name: "name"
+                        project: "project"
+                      value: "value"
               inputs:
                 variables:
                   key:
                     description: "description"
                     artifact_partial_id:
-                    - partitions:
-                        key: "partitions"
-                      artifact_key:
-                        domain: "domain"
-                        name: "name"
-                        project: "project"
-                      version: "version"
-                    - partitions:
+                      partitions:
                         key: "partitions"
                       artifact_key:
                         domain: "domain"
@@ -66307,6 +66201,12 @@ definitions:
                       simple: {}
                       structure:
                         tag: "tag"
+                    artifact_tag:
+                      artifact_key:
+                        domain: "domain"
+                        name: "name"
+                        project: "project"
+                      value: "value"
             config:
               key: "config"
             security_context:
@@ -66465,14 +66365,7 @@ definitions:
                   key:
                     description: "description"
                     artifact_partial_id:
-                    - partitions:
-                        key: "partitions"
-                      artifact_key:
-                        domain: "domain"
-                        name: "name"
-                        project: "project"
-                      version: "version"
-                    - partitions:
+                      partitions:
                         key: "partitions"
                       artifact_key:
                         domain: "domain"
@@ -66530,19 +66423,18 @@ definitions:
                       simple: {}
                       structure:
                         tag: "tag"
+                    artifact_tag:
+                      artifact_key:
+                        domain: "domain"
+                        name: "name"
+                        project: "project"
+                      value: "value"
               inputs:
                 variables:
                   key:
                     description: "description"
                     artifact_partial_id:
-                    - partitions:
-                        key: "partitions"
-                      artifact_key:
-                        domain: "domain"
-                        name: "name"
-                        project: "project"
-                      version: "version"
-                    - partitions:
+                      partitions:
                         key: "partitions"
                       artifact_key:
                         domain: "domain"
@@ -66600,6 +66492,12 @@ definitions:
                       simple: {}
                       structure:
                         tag: "tag"
+                    artifact_tag:
+                      artifact_key:
+                        domain: "domain"
+                        name: "name"
+                        project: "project"
+                      value: "value"
             config:
               key: "config"
             security_context:
@@ -68557,14 +68455,7 @@ definitions:
                   key:
                     description: "description"
                     artifact_partial_id:
-                    - partitions:
-                        key: "partitions"
-                      artifact_key:
-                        domain: "domain"
-                        name: "name"
-                        project: "project"
-                      version: "version"
-                    - partitions:
+                      partitions:
                         key: "partitions"
                       artifact_key:
                         domain: "domain"
@@ -68622,19 +68513,18 @@ definitions:
                       simple: {}
                       structure:
                         tag: "tag"
+                    artifact_tag:
+                      artifact_key:
+                        domain: "domain"
+                        name: "name"
+                        project: "project"
+                      value: "value"
               inputs:
                 variables:
                   key:
                     description: "description"
                     artifact_partial_id:
-                    - partitions:
-                        key: "partitions"
-                      artifact_key:
-                        domain: "domain"
-                        name: "name"
-                        project: "project"
-                      version: "version"
-                    - partitions:
+                      partitions:
                         key: "partitions"
                       artifact_key:
                         domain: "domain"
@@ -68692,6 +68582,12 @@ definitions:
                       simple: {}
                       structure:
                         tag: "tag"
+                    artifact_tag:
+                      artifact_key:
+                        domain: "domain"
+                        name: "name"
+                        project: "project"
+                      value: "value"
           connections:
             upstream:
               key:

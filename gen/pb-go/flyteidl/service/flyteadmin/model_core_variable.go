@@ -15,5 +15,6 @@ type CoreVariable struct {
 	Type_ *CoreLiteralType `json:"type,omitempty"`
 	Description string `json:"description,omitempty"`
 	// +optional This object allows the user to specify how Artifacts are created. name, tag, partitions can be specified. The other fields (version and project/domain) are ignored.
-	ArtifactPartialId []CoreArtifactId `json:"artifact_partial_id,omitempty"`
+	ArtifactPartialId *CoreArtifactId `json:"artifact_partial_id,omitempty"`
+	ArtifactTag *CoreArtifactTag `json:"artifact_tag,omitempty"`
 }

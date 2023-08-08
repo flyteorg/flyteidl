@@ -190,18 +190,6 @@ class Variable final :
 
   // accessors -------------------------------------------------------
 
-  // repeated .flyteidl.core.ArtifactID artifact_partial_id = 3;
-  int artifact_partial_id_size() const;
-  void clear_artifact_partial_id();
-  static const int kArtifactPartialIdFieldNumber = 3;
-  ::flyteidl::core::ArtifactID* mutable_artifact_partial_id(int index);
-  ::google::protobuf::RepeatedPtrField< ::flyteidl::core::ArtifactID >*
-      mutable_artifact_partial_id();
-  const ::flyteidl::core::ArtifactID& artifact_partial_id(int index) const;
-  ::flyteidl::core::ArtifactID* add_artifact_partial_id();
-  const ::google::protobuf::RepeatedPtrField< ::flyteidl::core::ArtifactID >&
-      artifact_partial_id() const;
-
   // string description = 2;
   void clear_description();
   static const int kDescriptionFieldNumber = 2;
@@ -225,14 +213,33 @@ class Variable final :
   ::flyteidl::core::LiteralType* mutable_type();
   void set_allocated_type(::flyteidl::core::LiteralType* type);
 
+  // .flyteidl.core.ArtifactID artifact_partial_id = 3;
+  bool has_artifact_partial_id() const;
+  void clear_artifact_partial_id();
+  static const int kArtifactPartialIdFieldNumber = 3;
+  const ::flyteidl::core::ArtifactID& artifact_partial_id() const;
+  ::flyteidl::core::ArtifactID* release_artifact_partial_id();
+  ::flyteidl::core::ArtifactID* mutable_artifact_partial_id();
+  void set_allocated_artifact_partial_id(::flyteidl::core::ArtifactID* artifact_partial_id);
+
+  // .flyteidl.core.ArtifactTag artifact_tag = 4;
+  bool has_artifact_tag() const;
+  void clear_artifact_tag();
+  static const int kArtifactTagFieldNumber = 4;
+  const ::flyteidl::core::ArtifactTag& artifact_tag() const;
+  ::flyteidl::core::ArtifactTag* release_artifact_tag();
+  ::flyteidl::core::ArtifactTag* mutable_artifact_tag();
+  void set_allocated_artifact_tag(::flyteidl::core::ArtifactTag* artifact_tag);
+
   // @@protoc_insertion_point(class_scope:flyteidl.core.Variable)
  private:
   class HasBitSetters;
 
   ::google::protobuf::internal::InternalMetadataWithArena _internal_metadata_;
-  ::google::protobuf::RepeatedPtrField< ::flyteidl::core::ArtifactID > artifact_partial_id_;
   ::google::protobuf::internal::ArenaStringPtr description_;
   ::flyteidl::core::LiteralType* type_;
+  ::flyteidl::core::ArtifactID* artifact_partial_id_;
+  ::flyteidl::core::ArtifactTag* artifact_tag_;
   mutable ::google::protobuf::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_flyteidl_2fcore_2finterface_2eproto;
 };
@@ -925,31 +932,94 @@ inline void Variable::set_allocated_description(::std::string* description) {
   // @@protoc_insertion_point(field_set_allocated:flyteidl.core.Variable.description)
 }
 
-// repeated .flyteidl.core.ArtifactID artifact_partial_id = 3;
-inline int Variable::artifact_partial_id_size() const {
-  return artifact_partial_id_.size();
+// .flyteidl.core.ArtifactID artifact_partial_id = 3;
+inline bool Variable::has_artifact_partial_id() const {
+  return this != internal_default_instance() && artifact_partial_id_ != nullptr;
 }
-inline ::flyteidl::core::ArtifactID* Variable::mutable_artifact_partial_id(int index) {
-  // @@protoc_insertion_point(field_mutable:flyteidl.core.Variable.artifact_partial_id)
-  return artifact_partial_id_.Mutable(index);
-}
-inline ::google::protobuf::RepeatedPtrField< ::flyteidl::core::ArtifactID >*
-Variable::mutable_artifact_partial_id() {
-  // @@protoc_insertion_point(field_mutable_list:flyteidl.core.Variable.artifact_partial_id)
-  return &artifact_partial_id_;
-}
-inline const ::flyteidl::core::ArtifactID& Variable::artifact_partial_id(int index) const {
+inline const ::flyteidl::core::ArtifactID& Variable::artifact_partial_id() const {
+  const ::flyteidl::core::ArtifactID* p = artifact_partial_id_;
   // @@protoc_insertion_point(field_get:flyteidl.core.Variable.artifact_partial_id)
-  return artifact_partial_id_.Get(index);
+  return p != nullptr ? *p : *reinterpret_cast<const ::flyteidl::core::ArtifactID*>(
+      &::flyteidl::core::_ArtifactID_default_instance_);
 }
-inline ::flyteidl::core::ArtifactID* Variable::add_artifact_partial_id() {
-  // @@protoc_insertion_point(field_add:flyteidl.core.Variable.artifact_partial_id)
-  return artifact_partial_id_.Add();
+inline ::flyteidl::core::ArtifactID* Variable::release_artifact_partial_id() {
+  // @@protoc_insertion_point(field_release:flyteidl.core.Variable.artifact_partial_id)
+  
+  ::flyteidl::core::ArtifactID* temp = artifact_partial_id_;
+  artifact_partial_id_ = nullptr;
+  return temp;
 }
-inline const ::google::protobuf::RepeatedPtrField< ::flyteidl::core::ArtifactID >&
-Variable::artifact_partial_id() const {
-  // @@protoc_insertion_point(field_list:flyteidl.core.Variable.artifact_partial_id)
+inline ::flyteidl::core::ArtifactID* Variable::mutable_artifact_partial_id() {
+  
+  if (artifact_partial_id_ == nullptr) {
+    auto* p = CreateMaybeMessage<::flyteidl::core::ArtifactID>(GetArenaNoVirtual());
+    artifact_partial_id_ = p;
+  }
+  // @@protoc_insertion_point(field_mutable:flyteidl.core.Variable.artifact_partial_id)
   return artifact_partial_id_;
+}
+inline void Variable::set_allocated_artifact_partial_id(::flyteidl::core::ArtifactID* artifact_partial_id) {
+  ::google::protobuf::Arena* message_arena = GetArenaNoVirtual();
+  if (message_arena == nullptr) {
+    delete reinterpret_cast< ::google::protobuf::MessageLite*>(artifact_partial_id_);
+  }
+  if (artifact_partial_id) {
+    ::google::protobuf::Arena* submessage_arena = nullptr;
+    if (message_arena != submessage_arena) {
+      artifact_partial_id = ::google::protobuf::internal::GetOwnedMessage(
+          message_arena, artifact_partial_id, submessage_arena);
+    }
+    
+  } else {
+    
+  }
+  artifact_partial_id_ = artifact_partial_id;
+  // @@protoc_insertion_point(field_set_allocated:flyteidl.core.Variable.artifact_partial_id)
+}
+
+// .flyteidl.core.ArtifactTag artifact_tag = 4;
+inline bool Variable::has_artifact_tag() const {
+  return this != internal_default_instance() && artifact_tag_ != nullptr;
+}
+inline const ::flyteidl::core::ArtifactTag& Variable::artifact_tag() const {
+  const ::flyteidl::core::ArtifactTag* p = artifact_tag_;
+  // @@protoc_insertion_point(field_get:flyteidl.core.Variable.artifact_tag)
+  return p != nullptr ? *p : *reinterpret_cast<const ::flyteidl::core::ArtifactTag*>(
+      &::flyteidl::core::_ArtifactTag_default_instance_);
+}
+inline ::flyteidl::core::ArtifactTag* Variable::release_artifact_tag() {
+  // @@protoc_insertion_point(field_release:flyteidl.core.Variable.artifact_tag)
+  
+  ::flyteidl::core::ArtifactTag* temp = artifact_tag_;
+  artifact_tag_ = nullptr;
+  return temp;
+}
+inline ::flyteidl::core::ArtifactTag* Variable::mutable_artifact_tag() {
+  
+  if (artifact_tag_ == nullptr) {
+    auto* p = CreateMaybeMessage<::flyteidl::core::ArtifactTag>(GetArenaNoVirtual());
+    artifact_tag_ = p;
+  }
+  // @@protoc_insertion_point(field_mutable:flyteidl.core.Variable.artifact_tag)
+  return artifact_tag_;
+}
+inline void Variable::set_allocated_artifact_tag(::flyteidl::core::ArtifactTag* artifact_tag) {
+  ::google::protobuf::Arena* message_arena = GetArenaNoVirtual();
+  if (message_arena == nullptr) {
+    delete reinterpret_cast< ::google::protobuf::MessageLite*>(artifact_tag_);
+  }
+  if (artifact_tag) {
+    ::google::protobuf::Arena* submessage_arena = nullptr;
+    if (message_arena != submessage_arena) {
+      artifact_tag = ::google::protobuf::internal::GetOwnedMessage(
+          message_arena, artifact_tag, submessage_arena);
+    }
+    
+  } else {
+    
+  }
+  artifact_tag_ = artifact_tag;
+  // @@protoc_insertion_point(field_set_allocated:flyteidl.core.Variable.artifact_tag)
 }
 
 // -------------------------------------------------------------------

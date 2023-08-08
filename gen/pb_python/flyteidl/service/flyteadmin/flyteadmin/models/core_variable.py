@@ -17,6 +17,7 @@ import re  # noqa: F401
 import six
 
 from flyteadmin.models.core_artifact_id import CoreArtifactID  # noqa: F401,E501
+from flyteadmin.models.core_artifact_tag import CoreArtifactTag  # noqa: F401,E501
 from flyteadmin.models.core_literal_type import CoreLiteralType  # noqa: F401,E501
 
 
@@ -36,21 +37,24 @@ class CoreVariable(object):
     swagger_types = {
         'type': 'CoreLiteralType',
         'description': 'str',
-        'artifact_partial_id': 'list[CoreArtifactID]'
+        'artifact_partial_id': 'CoreArtifactID',
+        'artifact_tag': 'CoreArtifactTag'
     }
 
     attribute_map = {
         'type': 'type',
         'description': 'description',
-        'artifact_partial_id': 'artifact_partial_id'
+        'artifact_partial_id': 'artifact_partial_id',
+        'artifact_tag': 'artifact_tag'
     }
 
-    def __init__(self, type=None, description=None, artifact_partial_id=None):  # noqa: E501
+    def __init__(self, type=None, description=None, artifact_partial_id=None, artifact_tag=None):  # noqa: E501
         """CoreVariable - a model defined in Swagger"""  # noqa: E501
 
         self._type = None
         self._description = None
         self._artifact_partial_id = None
+        self._artifact_tag = None
         self.discriminator = None
 
         if type is not None:
@@ -59,6 +63,8 @@ class CoreVariable(object):
             self.description = description
         if artifact_partial_id is not None:
             self.artifact_partial_id = artifact_partial_id
+        if artifact_tag is not None:
+            self.artifact_tag = artifact_tag
 
     @property
     def type(self):
@@ -111,7 +117,7 @@ class CoreVariable(object):
         +optional This object allows the user to specify how Artifacts are created. name, tag, partitions can be specified. The other fields (version and project/domain) are ignored.  # noqa: E501
 
         :return: The artifact_partial_id of this CoreVariable.  # noqa: E501
-        :rtype: list[CoreArtifactID]
+        :rtype: CoreArtifactID
         """
         return self._artifact_partial_id
 
@@ -122,10 +128,31 @@ class CoreVariable(object):
         +optional This object allows the user to specify how Artifacts are created. name, tag, partitions can be specified. The other fields (version and project/domain) are ignored.  # noqa: E501
 
         :param artifact_partial_id: The artifact_partial_id of this CoreVariable.  # noqa: E501
-        :type: list[CoreArtifactID]
+        :type: CoreArtifactID
         """
 
         self._artifact_partial_id = artifact_partial_id
+
+    @property
+    def artifact_tag(self):
+        """Gets the artifact_tag of this CoreVariable.  # noqa: E501
+
+
+        :return: The artifact_tag of this CoreVariable.  # noqa: E501
+        :rtype: CoreArtifactTag
+        """
+        return self._artifact_tag
+
+    @artifact_tag.setter
+    def artifact_tag(self, artifact_tag):
+        """Sets the artifact_tag of this CoreVariable.
+
+
+        :param artifact_tag: The artifact_tag of this CoreVariable.  # noqa: E501
+        :type: CoreArtifactTag
+        """
+
+        self._artifact_tag = artifact_tag
 
     def to_dict(self):
         """Returns the model properties as a dict"""

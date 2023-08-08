@@ -744,8 +744,10 @@ pub struct Variable {
     pub description: ::prost::alloc::string::String,
     /// +optional This object allows the user to specify how Artifacts are created.
     /// name, tag, partitions can be specified. The other fields (version and project/domain) are ignored.
-    #[prost(message, repeated, tag="3")]
-    pub artifact_partial_id: ::prost::alloc::vec::Vec<ArtifactId>,
+    #[prost(message, optional, tag="3")]
+    pub artifact_partial_id: ::core::option::Option<ArtifactId>,
+    #[prost(message, optional, tag="4")]
+    pub artifact_tag: ::core::option::Option<ArtifactTag>,
 }
 /// A map of Variables
 #[allow(clippy::derive_partial_eq_without_eq)]
