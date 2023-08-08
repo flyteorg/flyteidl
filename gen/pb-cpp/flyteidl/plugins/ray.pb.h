@@ -45,7 +45,7 @@ struct TableStruct_flyteidl_2fplugins_2fray_2eproto {
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
   static const ::google::protobuf::internal::AuxillaryParseTableField aux[]
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
-  static const ::google::protobuf::internal::ParseTable schema[7]
+  static const ::google::protobuf::internal::ParseTable schema[6]
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
   static const ::google::protobuf::internal::FieldMetadata field_metadata[];
   static const ::google::protobuf::internal::SerializationTable serialization_table[];
@@ -63,9 +63,6 @@ extern HeadGroupSpec_RayStartParamsEntry_DoNotUseDefaultTypeInternal _HeadGroupS
 class RayCluster;
 class RayClusterDefaultTypeInternal;
 extern RayClusterDefaultTypeInternal _RayCluster_default_instance_;
-class RayCluster_ConfigOverrideEntry_DoNotUse;
-class RayCluster_ConfigOverrideEntry_DoNotUseDefaultTypeInternal;
-extern RayCluster_ConfigOverrideEntry_DoNotUseDefaultTypeInternal _RayCluster_ConfigOverrideEntry_DoNotUse_default_instance_;
 class RayJob;
 class RayJobDefaultTypeInternal;
 extern RayJobDefaultTypeInternal _RayJob_default_instance_;
@@ -82,7 +79,6 @@ namespace protobuf {
 template<> ::flyteidl::plugins::HeadGroupSpec* Arena::CreateMaybeMessage<::flyteidl::plugins::HeadGroupSpec>(Arena*);
 template<> ::flyteidl::plugins::HeadGroupSpec_RayStartParamsEntry_DoNotUse* Arena::CreateMaybeMessage<::flyteidl::plugins::HeadGroupSpec_RayStartParamsEntry_DoNotUse>(Arena*);
 template<> ::flyteidl::plugins::RayCluster* Arena::CreateMaybeMessage<::flyteidl::plugins::RayCluster>(Arena*);
-template<> ::flyteidl::plugins::RayCluster_ConfigOverrideEntry_DoNotUse* Arena::CreateMaybeMessage<::flyteidl::plugins::RayCluster_ConfigOverrideEntry_DoNotUse>(Arena*);
 template<> ::flyteidl::plugins::RayJob* Arena::CreateMaybeMessage<::flyteidl::plugins::RayJob>(Arena*);
 template<> ::flyteidl::plugins::WorkerGroupSpec* Arena::CreateMaybeMessage<::flyteidl::plugins::WorkerGroupSpec>(Arena*);
 template<> ::flyteidl::plugins::WorkerGroupSpec_RayStartParamsEntry_DoNotUse* Arena::CreateMaybeMessage<::flyteidl::plugins::WorkerGroupSpec_RayStartParamsEntry_DoNotUse>(Arena*);
@@ -223,30 +219,6 @@ class RayJob final :
 };
 // -------------------------------------------------------------------
 
-class RayCluster_ConfigOverrideEntry_DoNotUse : public ::google::protobuf::internal::MapEntry<RayCluster_ConfigOverrideEntry_DoNotUse, 
-    ::std::string, ::std::string,
-    ::google::protobuf::internal::WireFormatLite::TYPE_STRING,
-    ::google::protobuf::internal::WireFormatLite::TYPE_STRING,
-    0 > {
-public:
-#if GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
-static bool _ParseMap(const char* begin, const char* end, void* object, ::google::protobuf::internal::ParseContext* ctx);
-#endif  // GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
-  typedef ::google::protobuf::internal::MapEntry<RayCluster_ConfigOverrideEntry_DoNotUse, 
-    ::std::string, ::std::string,
-    ::google::protobuf::internal::WireFormatLite::TYPE_STRING,
-    ::google::protobuf::internal::WireFormatLite::TYPE_STRING,
-    0 > SuperType;
-  RayCluster_ConfigOverrideEntry_DoNotUse();
-  RayCluster_ConfigOverrideEntry_DoNotUse(::google::protobuf::Arena* arena);
-  void MergeFrom(const RayCluster_ConfigOverrideEntry_DoNotUse& other);
-  static const RayCluster_ConfigOverrideEntry_DoNotUse* internal_default_instance() { return reinterpret_cast<const RayCluster_ConfigOverrideEntry_DoNotUse*>(&_RayCluster_ConfigOverrideEntry_DoNotUse_default_instance_); }
-  void MergeFrom(const ::google::protobuf::Message& other) final;
-  ::google::protobuf::Metadata GetMetadata() const;
-};
-
-// -------------------------------------------------------------------
-
 class RayCluster final :
     public ::google::protobuf::Message /* @@protoc_insertion_point(class_definition:flyteidl.plugins.RayCluster) */ {
  public:
@@ -285,7 +257,7 @@ class RayCluster final :
                &_RayCluster_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    2;
+    1;
 
   void Swap(RayCluster* other);
   friend void swap(RayCluster& a, RayCluster& b) {
@@ -340,7 +312,6 @@ class RayCluster final :
 
   // nested types ----------------------------------------------------
 
-
   // accessors -------------------------------------------------------
 
   // repeated .flyteidl.plugins.WorkerGroupSpec worker_group_spec = 2;
@@ -355,18 +326,9 @@ class RayCluster final :
   const ::google::protobuf::RepeatedPtrField< ::flyteidl::plugins::WorkerGroupSpec >&
       worker_group_spec() const;
 
-  // map<string, string> config_override = 3;
-  int config_override_size() const;
-  void clear_config_override();
-  static const int kConfigOverrideFieldNumber = 3;
-  const ::google::protobuf::Map< ::std::string, ::std::string >&
-      config_override() const;
-  ::google::protobuf::Map< ::std::string, ::std::string >*
-      mutable_config_override();
-
-  // string namespace = 4;
+  // string namespace = 3;
   void clear_namespace_();
-  static const int kNamespaceFieldNumber = 4;
+  static const int kNamespaceFieldNumber = 3;
   const ::std::string& namespace_() const;
   void set_namespace_(const ::std::string& value);
   #if LANG_CXX11
@@ -378,9 +340,9 @@ class RayCluster final :
   ::std::string* release_namespace_();
   void set_allocated_namespace_(::std::string* namespace_);
 
-  // string k8s_service_account = 5;
+  // string k8s_service_account = 4;
   void clear_k8s_service_account();
-  static const int kK8SServiceAccountFieldNumber = 5;
+  static const int kK8SServiceAccountFieldNumber = 4;
   const ::std::string& k8s_service_account() const;
   void set_k8s_service_account(const ::std::string& value);
   #if LANG_CXX11
@@ -407,12 +369,6 @@ class RayCluster final :
 
   ::google::protobuf::internal::InternalMetadataWithArena _internal_metadata_;
   ::google::protobuf::RepeatedPtrField< ::flyteidl::plugins::WorkerGroupSpec > worker_group_spec_;
-  ::google::protobuf::internal::MapField<
-      RayCluster_ConfigOverrideEntry_DoNotUse,
-      ::std::string, ::std::string,
-      ::google::protobuf::internal::WireFormatLite::TYPE_STRING,
-      ::google::protobuf::internal::WireFormatLite::TYPE_STRING,
-      0 > config_override_;
   ::google::protobuf::internal::ArenaStringPtr namespace__;
   ::google::protobuf::internal::ArenaStringPtr k8s_service_account_;
   ::flyteidl::plugins::HeadGroupSpec* head_group_spec_;
@@ -483,7 +439,7 @@ class HeadGroupSpec final :
                &_HeadGroupSpec_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    4;
+    3;
 
   void Swap(HeadGroupSpec* other);
   friend void swap(HeadGroupSpec& a, HeadGroupSpec& b) {
@@ -638,7 +594,7 @@ class WorkerGroupSpec final :
                &_WorkerGroupSpec_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    6;
+    5;
 
   void Swap(WorkerGroupSpec* other);
   friend void swap(WorkerGroupSpec& a, WorkerGroupSpec& b) {
@@ -882,8 +838,6 @@ inline void RayJob::set_allocated_runtime_env(::std::string* runtime_env) {
 
 // -------------------------------------------------------------------
 
-// -------------------------------------------------------------------
-
 // RayCluster
 
 // .flyteidl.plugins.HeadGroupSpec head_group_spec = 1;
@@ -967,25 +921,7 @@ RayCluster::worker_group_spec() const {
   return worker_group_spec_;
 }
 
-// map<string, string> config_override = 3;
-inline int RayCluster::config_override_size() const {
-  return config_override_.size();
-}
-inline void RayCluster::clear_config_override() {
-  config_override_.Clear();
-}
-inline const ::google::protobuf::Map< ::std::string, ::std::string >&
-RayCluster::config_override() const {
-  // @@protoc_insertion_point(field_map:flyteidl.plugins.RayCluster.config_override)
-  return config_override_.GetMap();
-}
-inline ::google::protobuf::Map< ::std::string, ::std::string >*
-RayCluster::mutable_config_override() {
-  // @@protoc_insertion_point(field_mutable_map:flyteidl.plugins.RayCluster.config_override)
-  return config_override_.MutableMap();
-}
-
-// string namespace = 4;
+// string namespace = 3;
 inline void RayCluster::clear_namespace_() {
   namespace__.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
 }
@@ -1038,7 +974,7 @@ inline void RayCluster::set_allocated_namespace_(::std::string* namespace_) {
   // @@protoc_insertion_point(field_set_allocated:flyteidl.plugins.RayCluster.namespace)
 }
 
-// string k8s_service_account = 5;
+// string k8s_service_account = 4;
 inline void RayCluster::clear_k8s_service_account() {
   k8s_service_account_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
 }
@@ -1327,8 +1263,6 @@ inline void WorkerGroupSpec::set_allocated_resources(::flyteidl::core::Resources
 #ifdef __GNUC__
   #pragma GCC diagnostic pop
 #endif  // __GNUC__
-// -------------------------------------------------------------------
-
 // -------------------------------------------------------------------
 
 // -------------------------------------------------------------------

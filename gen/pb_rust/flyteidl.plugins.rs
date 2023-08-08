@@ -186,14 +186,11 @@ pub struct RayCluster {
     /// WorkerGroupSpecs are the specs for the worker pods
     #[prost(message, repeated, tag="2")]
     pub worker_group_spec: ::prost::alloc::vec::Vec<WorkerGroupSpec>,
-    /// Additional parameter overrides for ray cluster config
-    #[prost(map="string, string", tag="3")]
-    pub config_override: ::std::collections::HashMap<::prost::alloc::string::String, ::prost::alloc::string::String>,
     /// Namespace used to create the ray cluster
-    #[prost(string, tag="4")]
+    #[prost(string, tag="3")]
     pub namespace: ::prost::alloc::string::String,
     /// Kubernetes service account used by the ray cluster
-    #[prost(string, tag="5")]
+    #[prost(string, tag="4")]
     pub k8s_service_account: ::prost::alloc::string::String,
 }
 /// HeadGroupSpec are the spec for the head pod

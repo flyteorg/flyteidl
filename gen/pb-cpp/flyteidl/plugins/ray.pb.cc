@@ -18,21 +18,16 @@
 
 extern PROTOBUF_INTERNAL_EXPORT_flyteidl_2fcore_2ftasks_2eproto ::google::protobuf::internal::SCCInfo<1> scc_info_Resources_flyteidl_2fcore_2ftasks_2eproto;
 extern PROTOBUF_INTERNAL_EXPORT_flyteidl_2fplugins_2fray_2eproto ::google::protobuf::internal::SCCInfo<0> scc_info_HeadGroupSpec_RayStartParamsEntry_DoNotUse_flyteidl_2fplugins_2fray_2eproto;
-extern PROTOBUF_INTERNAL_EXPORT_flyteidl_2fplugins_2fray_2eproto ::google::protobuf::internal::SCCInfo<0> scc_info_RayCluster_ConfigOverrideEntry_DoNotUse_flyteidl_2fplugins_2fray_2eproto;
 extern PROTOBUF_INTERNAL_EXPORT_flyteidl_2fplugins_2fray_2eproto ::google::protobuf::internal::SCCInfo<0> scc_info_WorkerGroupSpec_RayStartParamsEntry_DoNotUse_flyteidl_2fplugins_2fray_2eproto;
 extern PROTOBUF_INTERNAL_EXPORT_flyteidl_2fplugins_2fray_2eproto ::google::protobuf::internal::SCCInfo<2> scc_info_HeadGroupSpec_flyteidl_2fplugins_2fray_2eproto;
+extern PROTOBUF_INTERNAL_EXPORT_flyteidl_2fplugins_2fray_2eproto ::google::protobuf::internal::SCCInfo<2> scc_info_RayCluster_flyteidl_2fplugins_2fray_2eproto;
 extern PROTOBUF_INTERNAL_EXPORT_flyteidl_2fplugins_2fray_2eproto ::google::protobuf::internal::SCCInfo<2> scc_info_WorkerGroupSpec_flyteidl_2fplugins_2fray_2eproto;
-extern PROTOBUF_INTERNAL_EXPORT_flyteidl_2fplugins_2fray_2eproto ::google::protobuf::internal::SCCInfo<3> scc_info_RayCluster_flyteidl_2fplugins_2fray_2eproto;
 namespace flyteidl {
 namespace plugins {
 class RayJobDefaultTypeInternal {
  public:
   ::google::protobuf::internal::ExplicitlyConstructed<RayJob> _instance;
 } _RayJob_default_instance_;
-class RayCluster_ConfigOverrideEntry_DoNotUseDefaultTypeInternal {
- public:
-  ::google::protobuf::internal::ExplicitlyConstructed<RayCluster_ConfigOverrideEntry_DoNotUse> _instance;
-} _RayCluster_ConfigOverrideEntry_DoNotUse_default_instance_;
 class RayClusterDefaultTypeInternal {
  public:
   ::google::protobuf::internal::ExplicitlyConstructed<RayCluster> _instance;
@@ -70,19 +65,6 @@ static void InitDefaultsRayJob_flyteidl_2fplugins_2fray_2eproto() {
     {{ATOMIC_VAR_INIT(::google::protobuf::internal::SCCInfoBase::kUninitialized), 1, InitDefaultsRayJob_flyteidl_2fplugins_2fray_2eproto}, {
       &scc_info_RayCluster_flyteidl_2fplugins_2fray_2eproto.base,}};
 
-static void InitDefaultsRayCluster_ConfigOverrideEntry_DoNotUse_flyteidl_2fplugins_2fray_2eproto() {
-  GOOGLE_PROTOBUF_VERIFY_VERSION;
-
-  {
-    void* ptr = &::flyteidl::plugins::_RayCluster_ConfigOverrideEntry_DoNotUse_default_instance_;
-    new (ptr) ::flyteidl::plugins::RayCluster_ConfigOverrideEntry_DoNotUse();
-  }
-  ::flyteidl::plugins::RayCluster_ConfigOverrideEntry_DoNotUse::InitAsDefaultInstance();
-}
-
-::google::protobuf::internal::SCCInfo<0> scc_info_RayCluster_ConfigOverrideEntry_DoNotUse_flyteidl_2fplugins_2fray_2eproto =
-    {{ATOMIC_VAR_INIT(::google::protobuf::internal::SCCInfoBase::kUninitialized), 0, InitDefaultsRayCluster_ConfigOverrideEntry_DoNotUse_flyteidl_2fplugins_2fray_2eproto}, {}};
-
 static void InitDefaultsRayCluster_flyteidl_2fplugins_2fray_2eproto() {
   GOOGLE_PROTOBUF_VERIFY_VERSION;
 
@@ -94,11 +76,10 @@ static void InitDefaultsRayCluster_flyteidl_2fplugins_2fray_2eproto() {
   ::flyteidl::plugins::RayCluster::InitAsDefaultInstance();
 }
 
-::google::protobuf::internal::SCCInfo<3> scc_info_RayCluster_flyteidl_2fplugins_2fray_2eproto =
-    {{ATOMIC_VAR_INIT(::google::protobuf::internal::SCCInfoBase::kUninitialized), 3, InitDefaultsRayCluster_flyteidl_2fplugins_2fray_2eproto}, {
+::google::protobuf::internal::SCCInfo<2> scc_info_RayCluster_flyteidl_2fplugins_2fray_2eproto =
+    {{ATOMIC_VAR_INIT(::google::protobuf::internal::SCCInfoBase::kUninitialized), 2, InitDefaultsRayCluster_flyteidl_2fplugins_2fray_2eproto}, {
       &scc_info_HeadGroupSpec_flyteidl_2fplugins_2fray_2eproto.base,
-      &scc_info_WorkerGroupSpec_flyteidl_2fplugins_2fray_2eproto.base,
-      &scc_info_RayCluster_ConfigOverrideEntry_DoNotUse_flyteidl_2fplugins_2fray_2eproto.base,}};
+      &scc_info_WorkerGroupSpec_flyteidl_2fplugins_2fray_2eproto.base,}};
 
 static void InitDefaultsHeadGroupSpec_RayStartParamsEntry_DoNotUse_flyteidl_2fplugins_2fray_2eproto() {
   GOOGLE_PROTOBUF_VERIFY_VERSION;
@@ -160,7 +141,6 @@ static void InitDefaultsWorkerGroupSpec_flyteidl_2fplugins_2fray_2eproto() {
 
 void InitDefaults_flyteidl_2fplugins_2fray_2eproto() {
   ::google::protobuf::internal::InitSCC(&scc_info_RayJob_flyteidl_2fplugins_2fray_2eproto.base);
-  ::google::protobuf::internal::InitSCC(&scc_info_RayCluster_ConfigOverrideEntry_DoNotUse_flyteidl_2fplugins_2fray_2eproto.base);
   ::google::protobuf::internal::InitSCC(&scc_info_RayCluster_flyteidl_2fplugins_2fray_2eproto.base);
   ::google::protobuf::internal::InitSCC(&scc_info_HeadGroupSpec_RayStartParamsEntry_DoNotUse_flyteidl_2fplugins_2fray_2eproto.base);
   ::google::protobuf::internal::InitSCC(&scc_info_HeadGroupSpec_flyteidl_2fplugins_2fray_2eproto.base);
@@ -168,7 +148,7 @@ void InitDefaults_flyteidl_2fplugins_2fray_2eproto() {
   ::google::protobuf::internal::InitSCC(&scc_info_WorkerGroupSpec_flyteidl_2fplugins_2fray_2eproto.base);
 }
 
-::google::protobuf::Metadata file_level_metadata_flyteidl_2fplugins_2fray_2eproto[7];
+::google::protobuf::Metadata file_level_metadata_flyteidl_2fplugins_2fray_2eproto[6];
 constexpr ::google::protobuf::EnumDescriptor const** file_level_enum_descriptors_flyteidl_2fplugins_2fray_2eproto = nullptr;
 constexpr ::google::protobuf::ServiceDescriptor const** file_level_service_descriptors_flyteidl_2fplugins_2fray_2eproto = nullptr;
 
@@ -180,15 +160,6 @@ const ::google::protobuf::uint32 TableStruct_flyteidl_2fplugins_2fray_2eproto::o
   ~0u,  // no _weak_field_map_
   PROTOBUF_FIELD_OFFSET(::flyteidl::plugins::RayJob, ray_cluster_),
   PROTOBUF_FIELD_OFFSET(::flyteidl::plugins::RayJob, runtime_env_),
-  PROTOBUF_FIELD_OFFSET(::flyteidl::plugins::RayCluster_ConfigOverrideEntry_DoNotUse, _has_bits_),
-  PROTOBUF_FIELD_OFFSET(::flyteidl::plugins::RayCluster_ConfigOverrideEntry_DoNotUse, _internal_metadata_),
-  ~0u,  // no _extensions_
-  ~0u,  // no _oneof_case_
-  ~0u,  // no _weak_field_map_
-  PROTOBUF_FIELD_OFFSET(::flyteidl::plugins::RayCluster_ConfigOverrideEntry_DoNotUse, key_),
-  PROTOBUF_FIELD_OFFSET(::flyteidl::plugins::RayCluster_ConfigOverrideEntry_DoNotUse, value_),
-  0,
-  1,
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::flyteidl::plugins::RayCluster, _internal_metadata_),
   ~0u,  // no _extensions_
@@ -196,7 +167,6 @@ const ::google::protobuf::uint32 TableStruct_flyteidl_2fplugins_2fray_2eproto::o
   ~0u,  // no _weak_field_map_
   PROTOBUF_FIELD_OFFSET(::flyteidl::plugins::RayCluster, head_group_spec_),
   PROTOBUF_FIELD_OFFSET(::flyteidl::plugins::RayCluster, worker_group_spec_),
-  PROTOBUF_FIELD_OFFSET(::flyteidl::plugins::RayCluster, config_override_),
   PROTOBUF_FIELD_OFFSET(::flyteidl::plugins::RayCluster, namespace__),
   PROTOBUF_FIELD_OFFSET(::flyteidl::plugins::RayCluster, k8s_service_account_),
   PROTOBUF_FIELD_OFFSET(::flyteidl::plugins::HeadGroupSpec_RayStartParamsEntry_DoNotUse, _has_bits_),
@@ -238,17 +208,15 @@ const ::google::protobuf::uint32 TableStruct_flyteidl_2fplugins_2fray_2eproto::o
 };
 static const ::google::protobuf::internal::MigrationSchema schemas[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
   { 0, -1, sizeof(::flyteidl::plugins::RayJob)},
-  { 7, 14, sizeof(::flyteidl::plugins::RayCluster_ConfigOverrideEntry_DoNotUse)},
-  { 16, -1, sizeof(::flyteidl::plugins::RayCluster)},
-  { 26, 33, sizeof(::flyteidl::plugins::HeadGroupSpec_RayStartParamsEntry_DoNotUse)},
-  { 35, -1, sizeof(::flyteidl::plugins::HeadGroupSpec)},
-  { 42, 49, sizeof(::flyteidl::plugins::WorkerGroupSpec_RayStartParamsEntry_DoNotUse)},
-  { 51, -1, sizeof(::flyteidl::plugins::WorkerGroupSpec)},
+  { 7, -1, sizeof(::flyteidl::plugins::RayCluster)},
+  { 16, 23, sizeof(::flyteidl::plugins::HeadGroupSpec_RayStartParamsEntry_DoNotUse)},
+  { 25, -1, sizeof(::flyteidl::plugins::HeadGroupSpec)},
+  { 32, 39, sizeof(::flyteidl::plugins::WorkerGroupSpec_RayStartParamsEntry_DoNotUse)},
+  { 41, -1, sizeof(::flyteidl::plugins::WorkerGroupSpec)},
 };
 
 static ::google::protobuf::Message const * const file_default_instances[] = {
   reinterpret_cast<const ::google::protobuf::Message*>(&::flyteidl::plugins::_RayJob_default_instance_),
-  reinterpret_cast<const ::google::protobuf::Message*>(&::flyteidl::plugins::_RayCluster_ConfigOverrideEntry_DoNotUse_default_instance_),
   reinterpret_cast<const ::google::protobuf::Message*>(&::flyteidl::plugins::_RayCluster_default_instance_),
   reinterpret_cast<const ::google::protobuf::Message*>(&::flyteidl::plugins::_HeadGroupSpec_RayStartParamsEntry_DoNotUse_default_instance_),
   reinterpret_cast<const ::google::protobuf::Message*>(&::flyteidl::plugins::_HeadGroupSpec_default_instance_),
@@ -259,41 +227,38 @@ static ::google::protobuf::Message const * const file_default_instances[] = {
 ::google::protobuf::internal::AssignDescriptorsTable assign_descriptors_table_flyteidl_2fplugins_2fray_2eproto = {
   {}, AddDescriptors_flyteidl_2fplugins_2fray_2eproto, "flyteidl/plugins/ray.proto", schemas,
   file_default_instances, TableStruct_flyteidl_2fplugins_2fray_2eproto::offsets,
-  file_level_metadata_flyteidl_2fplugins_2fray_2eproto, 7, file_level_enum_descriptors_flyteidl_2fplugins_2fray_2eproto, file_level_service_descriptors_flyteidl_2fplugins_2fray_2eproto,
+  file_level_metadata_flyteidl_2fplugins_2fray_2eproto, 6, file_level_enum_descriptors_flyteidl_2fplugins_2fray_2eproto, file_level_service_descriptors_flyteidl_2fplugins_2fray_2eproto,
 };
 
 const char descriptor_table_protodef_flyteidl_2fplugins_2fray_2eproto[] =
   "\n\032flyteidl/plugins/ray.proto\022\020flyteidl.p"
   "lugins\032\031flyteidl/core/tasks.proto\"P\n\006Ray"
   "Job\0221\n\013ray_cluster\030\001 \001(\0132\034.flyteidl.plug"
-  "ins.RayCluster\022\023\n\013runtime_env\030\002 \001(\t\"\266\002\n\n"
+  "ins.RayCluster\022\023\n\013runtime_env\030\002 \001(\t\"\264\001\n\n"
   "RayCluster\0228\n\017head_group_spec\030\001 \001(\0132\037.fl"
   "yteidl.plugins.HeadGroupSpec\022<\n\021worker_g"
   "roup_spec\030\002 \003(\0132!.flyteidl.plugins.Worke"
-  "rGroupSpec\022I\n\017config_override\030\003 \003(\01320.fl"
-  "yteidl.plugins.RayCluster.ConfigOverride"
-  "Entry\022\021\n\tnamespace\030\004 \001(\t\022\033\n\023k8s_service_"
-  "account\030\005 \001(\t\0325\n\023ConfigOverrideEntry\022\013\n\003"
-  "key\030\001 \001(\t\022\r\n\005value\030\002 \001(\t:\0028\001\"\302\001\n\rHeadGro"
-  "upSpec\022M\n\020ray_start_params\030\001 \003(\01323.flyte"
-  "idl.plugins.HeadGroupSpec.RayStartParams"
-  "Entry\022+\n\tresources\030\006 \001(\0132\030.flyteidl.core"
-  ".Resources\0325\n\023RayStartParamsEntry\022\013\n\003key"
-  "\030\001 \001(\t\022\r\n\005value\030\002 \001(\t:\0028\001\"\230\002\n\017WorkerGrou"
-  "pSpec\022\022\n\ngroup_name\030\001 \001(\t\022\020\n\010replicas\030\002 "
-  "\001(\005\022\024\n\014min_replicas\030\003 \001(\005\022\024\n\014max_replica"
-  "s\030\004 \001(\005\022O\n\020ray_start_params\030\005 \003(\01325.flyt"
-  "eidl.plugins.WorkerGroupSpec.RayStartPar"
-  "amsEntry\022+\n\tresources\030\006 \001(\0132\030.flyteidl.c"
-  "ore.Resources\0325\n\023RayStartParamsEntry\022\013\n\003"
-  "key\030\001 \001(\t\022\r\n\005value\030\002 \001(\t:\0028\001B9Z7github.c"
-  "om/flyteorg/flyteidl/gen/pb-go/flyteidl/"
-  "pluginsb\006proto3"
+  "rGroupSpec\022\021\n\tnamespace\030\003 \001(\t\022\033\n\023k8s_ser"
+  "vice_account\030\004 \001(\t\"\302\001\n\rHeadGroupSpec\022M\n\020"
+  "ray_start_params\030\001 \003(\01323.flyteidl.plugin"
+  "s.HeadGroupSpec.RayStartParamsEntry\022+\n\tr"
+  "esources\030\006 \001(\0132\030.flyteidl.core.Resources"
+  "\0325\n\023RayStartParamsEntry\022\013\n\003key\030\001 \001(\t\022\r\n\005"
+  "value\030\002 \001(\t:\0028\001\"\230\002\n\017WorkerGroupSpec\022\022\n\ng"
+  "roup_name\030\001 \001(\t\022\020\n\010replicas\030\002 \001(\005\022\024\n\014min"
+  "_replicas\030\003 \001(\005\022\024\n\014max_replicas\030\004 \001(\005\022O\n"
+  "\020ray_start_params\030\005 \003(\01325.flyteidl.plugi"
+  "ns.WorkerGroupSpec.RayStartParamsEntry\022+"
+  "\n\tresources\030\006 \001(\0132\030.flyteidl.core.Resour"
+  "ces\0325\n\023RayStartParamsEntry\022\013\n\003key\030\001 \001(\t\022"
+  "\r\n\005value\030\002 \001(\t:\0028\001B9Z7github.com/flyteor"
+  "g/flyteidl/gen/pb-go/flyteidl/pluginsb\006p"
+  "roto3"
   ;
 ::google::protobuf::internal::DescriptorTable descriptor_table_flyteidl_2fplugins_2fray_2eproto = {
   false, InitDefaults_flyteidl_2fplugins_2fray_2eproto, 
   descriptor_table_protodef_flyteidl_2fplugins_2fray_2eproto,
-  "flyteidl/plugins/ray.proto", &assign_descriptors_table_flyteidl_2fplugins_2fray_2eproto, 1015,
+  "flyteidl/plugins/ray.proto", &assign_descriptors_table_flyteidl_2fplugins_2fray_2eproto, 885,
 };
 
 void AddDescriptors_flyteidl_2fplugins_2fray_2eproto() {
@@ -675,47 +640,6 @@ void RayJob::InternalSwap(RayJob* other) {
 
 // ===================================================================
 
-RayCluster_ConfigOverrideEntry_DoNotUse::RayCluster_ConfigOverrideEntry_DoNotUse() {}
-RayCluster_ConfigOverrideEntry_DoNotUse::RayCluster_ConfigOverrideEntry_DoNotUse(::google::protobuf::Arena* arena)
-    : SuperType(arena) {}
-void RayCluster_ConfigOverrideEntry_DoNotUse::MergeFrom(const RayCluster_ConfigOverrideEntry_DoNotUse& other) {
-  MergeFromInternal(other);
-}
-::google::protobuf::Metadata RayCluster_ConfigOverrideEntry_DoNotUse::GetMetadata() const {
-  ::google::protobuf::internal::AssignDescriptors(&::assign_descriptors_table_flyteidl_2fplugins_2fray_2eproto);
-  return ::file_level_metadata_flyteidl_2fplugins_2fray_2eproto[1];
-}
-void RayCluster_ConfigOverrideEntry_DoNotUse::MergeFrom(
-    const ::google::protobuf::Message& other) {
-  ::google::protobuf::Message::MergeFrom(other);
-}
-
-#if GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
-bool RayCluster_ConfigOverrideEntry_DoNotUse::_ParseMap(const char* begin, const char* end, void* object, ::google::protobuf::internal::ParseContext* ctx) {
-  using MF = ::google::protobuf::internal::MapField<
-      RayCluster_ConfigOverrideEntry_DoNotUse, EntryKeyType, EntryValueType,
-      kEntryKeyFieldType, kEntryValueFieldType,
-      kEntryDefaultEnumValue>;
-  auto mf = static_cast<MF*>(object);
-  Parser<MF, ::google::protobuf::Map<EntryKeyType, EntryValueType>> parser(mf);
-#define DO_(x) if (!(x)) return false
-  DO_(parser.ParseMap(begin, end));
-  DO_(::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
-    parser.key().data(), static_cast<int>(parser.key().length()),
-    ::google::protobuf::internal::WireFormatLite::PARSE,
-    "flyteidl.plugins.RayCluster.ConfigOverrideEntry.key"));
-  DO_(::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
-    parser.value().data(), static_cast<int>(parser.value().length()),
-    ::google::protobuf::internal::WireFormatLite::PARSE,
-    "flyteidl.plugins.RayCluster.ConfigOverrideEntry.value"));
-#undef DO_
-  return true;
-}
-#endif  // GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
-
-
-// ===================================================================
-
 void RayCluster::InitAsDefaultInstance() {
   ::flyteidl::plugins::_RayCluster_default_instance_._instance.get_mutable()->head_group_spec_ = const_cast< ::flyteidl::plugins::HeadGroupSpec*>(
       ::flyteidl::plugins::HeadGroupSpec::internal_default_instance());
@@ -732,7 +656,6 @@ RayCluster::HasBitSetters::head_group_spec(const RayCluster* msg) {
 #if !defined(_MSC_VER) || _MSC_VER >= 1900
 const int RayCluster::kHeadGroupSpecFieldNumber;
 const int RayCluster::kWorkerGroupSpecFieldNumber;
-const int RayCluster::kConfigOverrideFieldNumber;
 const int RayCluster::kNamespaceFieldNumber;
 const int RayCluster::kK8SServiceAccountFieldNumber;
 #endif  // !defined(_MSC_VER) || _MSC_VER >= 1900
@@ -747,7 +670,6 @@ RayCluster::RayCluster(const RayCluster& from)
       _internal_metadata_(nullptr),
       worker_group_spec_(from.worker_group_spec_) {
   _internal_metadata_.MergeFrom(from._internal_metadata_);
-  config_override_.MergeFrom(from.config_override_);
   namespace__.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
   if (from.namespace_().size() > 0) {
     namespace__.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.namespace__);
@@ -799,7 +721,6 @@ void RayCluster::Clear() {
   (void) cached_has_bits;
 
   worker_group_spec_.Clear();
-  config_override_.Clear();
   namespace__.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
   k8s_service_account_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
   if (GetArenaNoVirtual() == nullptr && head_group_spec_ != nullptr) {
@@ -851,28 +772,9 @@ const char* RayCluster::_InternalParse(const char* begin, const char* end, void*
         } while ((::google::protobuf::io::UnalignedLoad<::google::protobuf::uint64>(ptr) & 255) == 18 && (ptr += 1));
         break;
       }
-      // map<string, string> config_override = 3;
+      // string namespace = 3;
       case 3: {
         if (static_cast<::google::protobuf::uint8>(tag) != 26) goto handle_unusual;
-        do {
-          ptr = ::google::protobuf::io::ReadSize(ptr, &size);
-          GOOGLE_PROTOBUF_PARSER_ASSERT(ptr);
-          parser_till_end = ::google::protobuf::internal::SlowMapEntryParser;
-          auto parse_map = ::flyteidl::plugins::RayCluster_ConfigOverrideEntry_DoNotUse::_ParseMap;
-          ctx->extra_parse_data().payload.clear();
-          ctx->extra_parse_data().parse_map = parse_map;
-          object = &msg->config_override_;
-          if (size > end - ptr) goto len_delim_till_end;
-          auto newend = ptr + size;
-          GOOGLE_PROTOBUF_PARSER_ASSERT(parse_map(ptr, newend, object, ctx));
-          ptr = newend;
-          if (ptr >= end) break;
-        } while ((::google::protobuf::io::UnalignedLoad<::google::protobuf::uint64>(ptr) & 255) == 26 && (ptr += 1));
-        break;
-      }
-      // string namespace = 4;
-      case 4: {
-        if (static_cast<::google::protobuf::uint8>(tag) != 34) goto handle_unusual;
         ptr = ::google::protobuf::io::ReadSize(ptr, &size);
         GOOGLE_PROTOBUF_PARSER_ASSERT(ptr);
         ctx->extra_parse_data().SetFieldName("flyteidl.plugins.RayCluster.namespace");
@@ -886,9 +788,9 @@ const char* RayCluster::_InternalParse(const char* begin, const char* end, void*
         ptr += size;
         break;
       }
-      // string k8s_service_account = 5;
-      case 5: {
-        if (static_cast<::google::protobuf::uint8>(tag) != 42) goto handle_unusual;
+      // string k8s_service_account = 4;
+      case 4: {
+        if (static_cast<::google::protobuf::uint8>(tag) != 34) goto handle_unusual;
         ptr = ::google::protobuf::io::ReadSize(ptr, &size);
         GOOGLE_PROTOBUF_PARSER_ASSERT(ptr);
         ctx->extra_parse_data().SetFieldName("flyteidl.plugins.RayCluster.k8s_service_account");
@@ -958,35 +860,9 @@ bool RayCluster::MergePartialFromCodedStream(
         break;
       }
 
-      // map<string, string> config_override = 3;
+      // string namespace = 3;
       case 3: {
         if (static_cast< ::google::protobuf::uint8>(tag) == (26 & 0xFF)) {
-          RayCluster_ConfigOverrideEntry_DoNotUse::Parser< ::google::protobuf::internal::MapField<
-              RayCluster_ConfigOverrideEntry_DoNotUse,
-              ::std::string, ::std::string,
-              ::google::protobuf::internal::WireFormatLite::TYPE_STRING,
-              ::google::protobuf::internal::WireFormatLite::TYPE_STRING,
-              0 >,
-            ::google::protobuf::Map< ::std::string, ::std::string > > parser(&config_override_);
-          DO_(::google::protobuf::internal::WireFormatLite::ReadMessageNoVirtual(
-              input, &parser));
-          DO_(::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
-            parser.key().data(), static_cast<int>(parser.key().length()),
-            ::google::protobuf::internal::WireFormatLite::PARSE,
-            "flyteidl.plugins.RayCluster.ConfigOverrideEntry.key"));
-          DO_(::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
-            parser.value().data(), static_cast<int>(parser.value().length()),
-            ::google::protobuf::internal::WireFormatLite::PARSE,
-            "flyteidl.plugins.RayCluster.ConfigOverrideEntry.value"));
-        } else {
-          goto handle_unusual;
-        }
-        break;
-      }
-
-      // string namespace = 4;
-      case 4: {
-        if (static_cast< ::google::protobuf::uint8>(tag) == (34 & 0xFF)) {
           DO_(::google::protobuf::internal::WireFormatLite::ReadString(
                 input, this->mutable_namespace_()));
           DO_(::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
@@ -999,9 +875,9 @@ bool RayCluster::MergePartialFromCodedStream(
         break;
       }
 
-      // string k8s_service_account = 5;
-      case 5: {
-        if (static_cast< ::google::protobuf::uint8>(tag) == (42 & 0xFF)) {
+      // string k8s_service_account = 4;
+      case 4: {
+        if (static_cast< ::google::protobuf::uint8>(tag) == (34 & 0xFF)) {
           DO_(::google::protobuf::internal::WireFormatLite::ReadString(
                 input, this->mutable_k8s_service_account()));
           DO_(::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
@@ -1056,73 +932,24 @@ void RayCluster::SerializeWithCachedSizes(
       output);
   }
 
-  // map<string, string> config_override = 3;
-  if (!this->config_override().empty()) {
-    typedef ::google::protobuf::Map< ::std::string, ::std::string >::const_pointer
-        ConstPtr;
-    typedef ConstPtr SortItem;
-    typedef ::google::protobuf::internal::CompareByDerefFirst<SortItem> Less;
-    struct Utf8Check {
-      static void Check(ConstPtr p) {
-        ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
-          p->first.data(), static_cast<int>(p->first.length()),
-          ::google::protobuf::internal::WireFormatLite::SERIALIZE,
-          "flyteidl.plugins.RayCluster.ConfigOverrideEntry.key");
-        ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
-          p->second.data(), static_cast<int>(p->second.length()),
-          ::google::protobuf::internal::WireFormatLite::SERIALIZE,
-          "flyteidl.plugins.RayCluster.ConfigOverrideEntry.value");
-      }
-    };
-
-    if (output->IsSerializationDeterministic() &&
-        this->config_override().size() > 1) {
-      ::std::unique_ptr<SortItem[]> items(
-          new SortItem[this->config_override().size()]);
-      typedef ::google::protobuf::Map< ::std::string, ::std::string >::size_type size_type;
-      size_type n = 0;
-      for (::google::protobuf::Map< ::std::string, ::std::string >::const_iterator
-          it = this->config_override().begin();
-          it != this->config_override().end(); ++it, ++n) {
-        items[static_cast<ptrdiff_t>(n)] = SortItem(&*it);
-      }
-      ::std::sort(&items[0], &items[static_cast<ptrdiff_t>(n)], Less());
-      ::std::unique_ptr<RayCluster_ConfigOverrideEntry_DoNotUse> entry;
-      for (size_type i = 0; i < n; i++) {
-        entry.reset(config_override_.NewEntryWrapper(items[static_cast<ptrdiff_t>(i)]->first, items[static_cast<ptrdiff_t>(i)]->second));
-        ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(3, *entry, output);
-        Utf8Check::Check(&(*items[static_cast<ptrdiff_t>(i)]));
-      }
-    } else {
-      ::std::unique_ptr<RayCluster_ConfigOverrideEntry_DoNotUse> entry;
-      for (::google::protobuf::Map< ::std::string, ::std::string >::const_iterator
-          it = this->config_override().begin();
-          it != this->config_override().end(); ++it) {
-        entry.reset(config_override_.NewEntryWrapper(it->first, it->second));
-        ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(3, *entry, output);
-        Utf8Check::Check(&(*it));
-      }
-    }
-  }
-
-  // string namespace = 4;
+  // string namespace = 3;
   if (this->namespace_().size() > 0) {
     ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
       this->namespace_().data(), static_cast<int>(this->namespace_().length()),
       ::google::protobuf::internal::WireFormatLite::SERIALIZE,
       "flyteidl.plugins.RayCluster.namespace");
     ::google::protobuf::internal::WireFormatLite::WriteStringMaybeAliased(
-      4, this->namespace_(), output);
+      3, this->namespace_(), output);
   }
 
-  // string k8s_service_account = 5;
+  // string k8s_service_account = 4;
   if (this->k8s_service_account().size() > 0) {
     ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
       this->k8s_service_account().data(), static_cast<int>(this->k8s_service_account().length()),
       ::google::protobuf::internal::WireFormatLite::SERIALIZE,
       "flyteidl.plugins.RayCluster.k8s_service_account");
     ::google::protobuf::internal::WireFormatLite::WriteStringMaybeAliased(
-      5, this->k8s_service_account(), output);
+      4, this->k8s_service_account(), output);
   }
 
   if (_internal_metadata_.have_unknown_fields()) {
@@ -1153,56 +980,7 @@ void RayCluster::SerializeWithCachedSizes(
         2, this->worker_group_spec(static_cast<int>(i)), target);
   }
 
-  // map<string, string> config_override = 3;
-  if (!this->config_override().empty()) {
-    typedef ::google::protobuf::Map< ::std::string, ::std::string >::const_pointer
-        ConstPtr;
-    typedef ConstPtr SortItem;
-    typedef ::google::protobuf::internal::CompareByDerefFirst<SortItem> Less;
-    struct Utf8Check {
-      static void Check(ConstPtr p) {
-        ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
-          p->first.data(), static_cast<int>(p->first.length()),
-          ::google::protobuf::internal::WireFormatLite::SERIALIZE,
-          "flyteidl.plugins.RayCluster.ConfigOverrideEntry.key");
-        ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
-          p->second.data(), static_cast<int>(p->second.length()),
-          ::google::protobuf::internal::WireFormatLite::SERIALIZE,
-          "flyteidl.plugins.RayCluster.ConfigOverrideEntry.value");
-      }
-    };
-
-    if (false &&
-        this->config_override().size() > 1) {
-      ::std::unique_ptr<SortItem[]> items(
-          new SortItem[this->config_override().size()]);
-      typedef ::google::protobuf::Map< ::std::string, ::std::string >::size_type size_type;
-      size_type n = 0;
-      for (::google::protobuf::Map< ::std::string, ::std::string >::const_iterator
-          it = this->config_override().begin();
-          it != this->config_override().end(); ++it, ++n) {
-        items[static_cast<ptrdiff_t>(n)] = SortItem(&*it);
-      }
-      ::std::sort(&items[0], &items[static_cast<ptrdiff_t>(n)], Less());
-      ::std::unique_ptr<RayCluster_ConfigOverrideEntry_DoNotUse> entry;
-      for (size_type i = 0; i < n; i++) {
-        entry.reset(config_override_.NewEntryWrapper(items[static_cast<ptrdiff_t>(i)]->first, items[static_cast<ptrdiff_t>(i)]->second));
-        target = ::google::protobuf::internal::WireFormatLite::InternalWriteMessageNoVirtualToArray(3, *entry, target);
-        Utf8Check::Check(&(*items[static_cast<ptrdiff_t>(i)]));
-      }
-    } else {
-      ::std::unique_ptr<RayCluster_ConfigOverrideEntry_DoNotUse> entry;
-      for (::google::protobuf::Map< ::std::string, ::std::string >::const_iterator
-          it = this->config_override().begin();
-          it != this->config_override().end(); ++it) {
-        entry.reset(config_override_.NewEntryWrapper(it->first, it->second));
-        target = ::google::protobuf::internal::WireFormatLite::InternalWriteMessageNoVirtualToArray(3, *entry, target);
-        Utf8Check::Check(&(*it));
-      }
-    }
-  }
-
-  // string namespace = 4;
+  // string namespace = 3;
   if (this->namespace_().size() > 0) {
     ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
       this->namespace_().data(), static_cast<int>(this->namespace_().length()),
@@ -1210,10 +988,10 @@ void RayCluster::SerializeWithCachedSizes(
       "flyteidl.plugins.RayCluster.namespace");
     target =
       ::google::protobuf::internal::WireFormatLite::WriteStringToArray(
-        4, this->namespace_(), target);
+        3, this->namespace_(), target);
   }
 
-  // string k8s_service_account = 5;
+  // string k8s_service_account = 4;
   if (this->k8s_service_account().size() > 0) {
     ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
       this->k8s_service_account().data(), static_cast<int>(this->k8s_service_account().length()),
@@ -1221,7 +999,7 @@ void RayCluster::SerializeWithCachedSizes(
       "flyteidl.plugins.RayCluster.k8s_service_account");
     target =
       ::google::protobuf::internal::WireFormatLite::WriteStringToArray(
-        5, this->k8s_service_account(), target);
+        4, this->k8s_service_account(), target);
   }
 
   if (_internal_metadata_.have_unknown_fields()) {
@@ -1256,28 +1034,14 @@ size_t RayCluster::ByteSizeLong() const {
     }
   }
 
-  // map<string, string> config_override = 3;
-  total_size += 1 *
-      ::google::protobuf::internal::FromIntSize(this->config_override_size());
-  {
-    ::std::unique_ptr<RayCluster_ConfigOverrideEntry_DoNotUse> entry;
-    for (::google::protobuf::Map< ::std::string, ::std::string >::const_iterator
-        it = this->config_override().begin();
-        it != this->config_override().end(); ++it) {
-      entry.reset(config_override_.NewEntryWrapper(it->first, it->second));
-      total_size += ::google::protobuf::internal::WireFormatLite::
-          MessageSizeNoVirtual(*entry);
-    }
-  }
-
-  // string namespace = 4;
+  // string namespace = 3;
   if (this->namespace_().size() > 0) {
     total_size += 1 +
       ::google::protobuf::internal::WireFormatLite::StringSize(
         this->namespace_());
   }
 
-  // string k8s_service_account = 5;
+  // string k8s_service_account = 4;
   if (this->k8s_service_account().size() > 0) {
     total_size += 1 +
       ::google::protobuf::internal::WireFormatLite::StringSize(
@@ -1319,7 +1083,6 @@ void RayCluster::MergeFrom(const RayCluster& from) {
   (void) cached_has_bits;
 
   worker_group_spec_.MergeFrom(from.worker_group_spec_);
-  config_override_.MergeFrom(from.config_override_);
   if (from.namespace_().size() > 0) {
 
     namespace__.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.namespace__);
@@ -1359,7 +1122,6 @@ void RayCluster::InternalSwap(RayCluster* other) {
   using std::swap;
   _internal_metadata_.Swap(&other->_internal_metadata_);
   CastToBase(&worker_group_spec_)->InternalSwap(CastToBase(&other->worker_group_spec_));
-  config_override_.Swap(&other->config_override_);
   namespace__.Swap(&other->namespace__, &::google::protobuf::internal::GetEmptyStringAlreadyInited(),
     GetArenaNoVirtual());
   k8s_service_account_.Swap(&other->k8s_service_account_, &::google::protobuf::internal::GetEmptyStringAlreadyInited(),
@@ -1383,7 +1145,7 @@ void HeadGroupSpec_RayStartParamsEntry_DoNotUse::MergeFrom(const HeadGroupSpec_R
 }
 ::google::protobuf::Metadata HeadGroupSpec_RayStartParamsEntry_DoNotUse::GetMetadata() const {
   ::google::protobuf::internal::AssignDescriptors(&::assign_descriptors_table_flyteidl_2fplugins_2fray_2eproto);
-  return ::file_level_metadata_flyteidl_2fplugins_2fray_2eproto[3];
+  return ::file_level_metadata_flyteidl_2fplugins_2fray_2eproto[2];
 }
 void HeadGroupSpec_RayStartParamsEntry_DoNotUse::MergeFrom(
     const ::google::protobuf::Message& other) {
@@ -1879,7 +1641,7 @@ void WorkerGroupSpec_RayStartParamsEntry_DoNotUse::MergeFrom(const WorkerGroupSp
 }
 ::google::protobuf::Metadata WorkerGroupSpec_RayStartParamsEntry_DoNotUse::GetMetadata() const {
   ::google::protobuf::internal::AssignDescriptors(&::assign_descriptors_table_flyteidl_2fplugins_2fray_2eproto);
-  return ::file_level_metadata_flyteidl_2fplugins_2fray_2eproto[5];
+  return ::file_level_metadata_flyteidl_2fplugins_2fray_2eproto[4];
 }
 void WorkerGroupSpec_RayStartParamsEntry_DoNotUse::MergeFrom(
     const ::google::protobuf::Message& other) {
@@ -2583,9 +2345,6 @@ namespace google {
 namespace protobuf {
 template<> PROTOBUF_NOINLINE ::flyteidl::plugins::RayJob* Arena::CreateMaybeMessage< ::flyteidl::plugins::RayJob >(Arena* arena) {
   return Arena::CreateInternal< ::flyteidl::plugins::RayJob >(arena);
-}
-template<> PROTOBUF_NOINLINE ::flyteidl::plugins::RayCluster_ConfigOverrideEntry_DoNotUse* Arena::CreateMaybeMessage< ::flyteidl::plugins::RayCluster_ConfigOverrideEntry_DoNotUse >(Arena* arena) {
-  return Arena::CreateInternal< ::flyteidl::plugins::RayCluster_ConfigOverrideEntry_DoNotUse >(arena);
 }
 template<> PROTOBUF_NOINLINE ::flyteidl::plugins::RayCluster* Arena::CreateMaybeMessage< ::flyteidl::plugins::RayCluster >(Arena* arena) {
   return Arena::CreateInternal< ::flyteidl::plugins::RayCluster >(arena);

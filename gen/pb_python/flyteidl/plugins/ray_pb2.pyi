@@ -15,25 +15,16 @@ class RayJob(_message.Message):
     def __init__(self, ray_cluster: _Optional[_Union[RayCluster, _Mapping]] = ..., runtime_env: _Optional[str] = ...) -> None: ...
 
 class RayCluster(_message.Message):
-    __slots__ = ["head_group_spec", "worker_group_spec", "config_override", "namespace", "k8s_service_account"]
-    class ConfigOverrideEntry(_message.Message):
-        __slots__ = ["key", "value"]
-        KEY_FIELD_NUMBER: _ClassVar[int]
-        VALUE_FIELD_NUMBER: _ClassVar[int]
-        key: str
-        value: str
-        def __init__(self, key: _Optional[str] = ..., value: _Optional[str] = ...) -> None: ...
+    __slots__ = ["head_group_spec", "worker_group_spec", "namespace", "k8s_service_account"]
     HEAD_GROUP_SPEC_FIELD_NUMBER: _ClassVar[int]
     WORKER_GROUP_SPEC_FIELD_NUMBER: _ClassVar[int]
-    CONFIG_OVERRIDE_FIELD_NUMBER: _ClassVar[int]
     NAMESPACE_FIELD_NUMBER: _ClassVar[int]
     K8S_SERVICE_ACCOUNT_FIELD_NUMBER: _ClassVar[int]
     head_group_spec: HeadGroupSpec
     worker_group_spec: _containers.RepeatedCompositeFieldContainer[WorkerGroupSpec]
-    config_override: _containers.ScalarMap[str, str]
     namespace: str
     k8s_service_account: str
-    def __init__(self, head_group_spec: _Optional[_Union[HeadGroupSpec, _Mapping]] = ..., worker_group_spec: _Optional[_Iterable[_Union[WorkerGroupSpec, _Mapping]]] = ..., config_override: _Optional[_Mapping[str, str]] = ..., namespace: _Optional[str] = ..., k8s_service_account: _Optional[str] = ...) -> None: ...
+    def __init__(self, head_group_spec: _Optional[_Union[HeadGroupSpec, _Mapping]] = ..., worker_group_spec: _Optional[_Iterable[_Union[WorkerGroupSpec, _Mapping]]] = ..., namespace: _Optional[str] = ..., k8s_service_account: _Optional[str] = ...) -> None: ...
 
 class HeadGroupSpec(_message.Message):
     __slots__ = ["ray_start_params", "resources"]
