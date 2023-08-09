@@ -33,7 +33,7 @@ message HeadGroupSpec {
   // Refer to https://docs.ray.io/en/latest/ray-core/package-ref.html#ray-start
   map<string, string> ray_start_params = 1;
   // Resource specification for ray head pod
-  core.Resources resources = 6;
+  core.Resources resources = 2;
 }
 
 // WorkerGroupSpec are the specs for the worker pods
