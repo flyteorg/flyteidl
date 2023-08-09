@@ -392,6 +392,18 @@ pub struct CloudEventWorkflowExecution {
     pub output_data: ::core::option::Option<super::core::LiteralMap>,
     #[prost(message, optional, tag="3")]
     pub output_interface: ::core::option::Option<super::core::TypedInterface>,
+    #[prost(message, optional, tag="4")]
+    pub input_data: ::core::option::Option<super::core::LiteralMap>,
+    /// The following are ExecutionMetadata fields
+    /// We can't have the ExecutionMetadata object directly because of import cycle
+    #[prost(message, optional, tag="5")]
+    pub scheduled_at: ::core::option::Option<::prost_types::Timestamp>,
+    #[prost(message, repeated, tag="6")]
+    pub artifact_ids: ::prost::alloc::vec::Vec<super::core::ArtifactId>,
+    #[prost(message, optional, tag="7")]
+    pub parent_node_execution: ::core::option::Option<super::core::NodeExecutionIdentifier>,
+    #[prost(message, optional, tag="8")]
+    pub reference_execution: ::core::option::Option<super::core::WorkflowExecutionIdentifier>,
 }
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(Clone, PartialEq, ::prost::Message)]
@@ -410,5 +422,17 @@ pub struct CloudEventTaskExecution {
     /// The typed interface for the task that produced the event.
     #[prost(message, optional, tag="3")]
     pub output_interface: ::core::option::Option<super::core::TypedInterface>,
+    #[prost(message, optional, tag="4")]
+    pub input_data: ::core::option::Option<super::core::LiteralMap>,
+    /// The following are ExecutionMetadata fields
+    /// We can't have the ExecutionMetadata object directly because of import cycle
+    #[prost(message, optional, tag="5")]
+    pub scheduled_at: ::core::option::Option<::prost_types::Timestamp>,
+    #[prost(message, repeated, tag="6")]
+    pub artifact_ids: ::prost::alloc::vec::Vec<super::core::ArtifactId>,
+    #[prost(message, optional, tag="7")]
+    pub parent_node_execution: ::core::option::Option<super::core::NodeExecutionIdentifier>,
+    #[prost(message, optional, tag="8")]
+    pub reference_execution: ::core::option::Option<super::core::WorkflowExecutionIdentifier>,
 }
 // @@protoc_insertion_point(module)

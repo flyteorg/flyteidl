@@ -6913,6 +6913,21 @@ export namespace flyteidl {
 
             /** CloudEventWorkflowExecution outputInterface */
             outputInterface?: (flyteidl.core.ITypedInterface|null);
+
+            /** CloudEventWorkflowExecution inputData */
+            inputData?: (flyteidl.core.ILiteralMap|null);
+
+            /** CloudEventWorkflowExecution scheduledAt */
+            scheduledAt?: (google.protobuf.ITimestamp|null);
+
+            /** CloudEventWorkflowExecution artifactIds */
+            artifactIds?: (flyteidl.core.IArtifactID[]|null);
+
+            /** CloudEventWorkflowExecution parentNodeExecution */
+            parentNodeExecution?: (flyteidl.core.INodeExecutionIdentifier|null);
+
+            /** CloudEventWorkflowExecution referenceExecution */
+            referenceExecution?: (flyteidl.core.IWorkflowExecutionIdentifier|null);
         }
 
         /** Represents a CloudEventWorkflowExecution. */
@@ -6932,6 +6947,21 @@ export namespace flyteidl {
 
             /** CloudEventWorkflowExecution outputInterface. */
             public outputInterface?: (flyteidl.core.ITypedInterface|null);
+
+            /** CloudEventWorkflowExecution inputData. */
+            public inputData?: (flyteidl.core.ILiteralMap|null);
+
+            /** CloudEventWorkflowExecution scheduledAt. */
+            public scheduledAt?: (google.protobuf.ITimestamp|null);
+
+            /** CloudEventWorkflowExecution artifactIds. */
+            public artifactIds: flyteidl.core.IArtifactID[];
+
+            /** CloudEventWorkflowExecution parentNodeExecution. */
+            public parentNodeExecution?: (flyteidl.core.INodeExecutionIdentifier|null);
+
+            /** CloudEventWorkflowExecution referenceExecution. */
+            public referenceExecution?: (flyteidl.core.IWorkflowExecutionIdentifier|null);
 
             /**
              * Creates a new CloudEventWorkflowExecution instance using the specified properties.
@@ -7029,6 +7059,21 @@ export namespace flyteidl {
 
             /** CloudEventTaskExecution outputInterface */
             outputInterface?: (flyteidl.core.ITypedInterface|null);
+
+            /** CloudEventTaskExecution inputData */
+            inputData?: (flyteidl.core.ILiteralMap|null);
+
+            /** CloudEventTaskExecution scheduledAt */
+            scheduledAt?: (google.protobuf.ITimestamp|null);
+
+            /** CloudEventTaskExecution artifactIds */
+            artifactIds?: (flyteidl.core.IArtifactID[]|null);
+
+            /** CloudEventTaskExecution parentNodeExecution */
+            parentNodeExecution?: (flyteidl.core.INodeExecutionIdentifier|null);
+
+            /** CloudEventTaskExecution referenceExecution */
+            referenceExecution?: (flyteidl.core.IWorkflowExecutionIdentifier|null);
         }
 
         /** Represents a CloudEventTaskExecution. */
@@ -7048,6 +7093,21 @@ export namespace flyteidl {
 
             /** CloudEventTaskExecution outputInterface. */
             public outputInterface?: (flyteidl.core.ITypedInterface|null);
+
+            /** CloudEventTaskExecution inputData. */
+            public inputData?: (flyteidl.core.ILiteralMap|null);
+
+            /** CloudEventTaskExecution scheduledAt. */
+            public scheduledAt?: (google.protobuf.ITimestamp|null);
+
+            /** CloudEventTaskExecution artifactIds. */
+            public artifactIds: flyteidl.core.IArtifactID[];
+
+            /** CloudEventTaskExecution parentNodeExecution. */
+            public parentNodeExecution?: (flyteidl.core.INodeExecutionIdentifier|null);
+
+            /** CloudEventTaskExecution referenceExecution. */
+            public referenceExecution?: (flyteidl.core.IWorkflowExecutionIdentifier|null);
 
             /**
              * Creates a new CloudEventTaskExecution instance using the specified properties.
