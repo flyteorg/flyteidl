@@ -506,10 +506,10 @@ class HeadGroupSpec final :
   ::google::protobuf::Map< ::std::string, ::std::string >*
       mutable_ray_start_params();
 
-  // .flyteidl.core.Resources resources = 6;
+  // .flyteidl.core.Resources resources = 2;
   bool has_resources() const;
   void clear_resources();
-  static const int kResourcesFieldNumber = 6;
+  static const int kResourcesFieldNumber = 2;
   const ::flyteidl::core::Resources& resources() const;
   ::flyteidl::core::Resources* release_resources();
   ::flyteidl::core::Resources* mutable_resources();
@@ -1051,7 +1051,7 @@ HeadGroupSpec::mutable_ray_start_params() {
   return ray_start_params_.MutableMap();
 }
 
-// .flyteidl.core.Resources resources = 6;
+// .flyteidl.core.Resources resources = 2;
 inline bool HeadGroupSpec::has_resources() const {
   return this != internal_default_instance() && resources_ != nullptr;
 }

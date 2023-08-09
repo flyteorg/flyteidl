@@ -202,7 +202,7 @@ pub struct HeadGroupSpec {
     #[prost(map="string, string", tag="1")]
     pub ray_start_params: ::std::collections::HashMap<::prost::alloc::string::String, ::prost::alloc::string::String>,
     /// Resource specification for ray head pod
-    #[prost(message, optional, tag="6")]
+    #[prost(message, optional, tag="2")]
     pub resources: ::core::option::Option<super::core::Resources>,
 }
 /// WorkerGroupSpec are the specs for the worker pods

@@ -2442,7 +2442,7 @@ public final class Ray {
      * Resource specification for ray head pod
      * </pre>
      *
-     * <code>.flyteidl.core.Resources resources = 6;</code>
+     * <code>.flyteidl.core.Resources resources = 2;</code>
      */
     boolean hasResources();
     /**
@@ -2450,7 +2450,7 @@ public final class Ray {
      * Resource specification for ray head pod
      * </pre>
      *
-     * <code>.flyteidl.core.Resources resources = 6;</code>
+     * <code>.flyteidl.core.Resources resources = 2;</code>
      */
     flyteidl.core.Tasks.Resources getResources();
     /**
@@ -2458,7 +2458,7 @@ public final class Ray {
      * Resource specification for ray head pod
      * </pre>
      *
-     * <code>.flyteidl.core.Resources resources = 6;</code>
+     * <code>.flyteidl.core.Resources resources = 2;</code>
      */
     flyteidl.core.Tasks.ResourcesOrBuilder getResourcesOrBuilder();
   }
@@ -2518,7 +2518,7 @@ public final class Ray {
                   rayStartParams__.getKey(), rayStartParams__.getValue());
               break;
             }
-            case 50: {
+            case 18: {
               flyteidl.core.Tasks.Resources.Builder subBuilder = null;
               if (resources_ != null) {
                 subBuilder = resources_.toBuilder();
@@ -2672,14 +2672,14 @@ public final class Ray {
       return map.get(key);
     }
 
-    public static final int RESOURCES_FIELD_NUMBER = 6;
+    public static final int RESOURCES_FIELD_NUMBER = 2;
     private flyteidl.core.Tasks.Resources resources_;
     /**
      * <pre>
      * Resource specification for ray head pod
      * </pre>
      *
-     * <code>.flyteidl.core.Resources resources = 6;</code>
+     * <code>.flyteidl.core.Resources resources = 2;</code>
      */
     public boolean hasResources() {
       return resources_ != null;
@@ -2689,7 +2689,7 @@ public final class Ray {
      * Resource specification for ray head pod
      * </pre>
      *
-     * <code>.flyteidl.core.Resources resources = 6;</code>
+     * <code>.flyteidl.core.Resources resources = 2;</code>
      */
     public flyteidl.core.Tasks.Resources getResources() {
       return resources_ == null ? flyteidl.core.Tasks.Resources.getDefaultInstance() : resources_;
@@ -2699,7 +2699,7 @@ public final class Ray {
      * Resource specification for ray head pod
      * </pre>
      *
-     * <code>.flyteidl.core.Resources resources = 6;</code>
+     * <code>.flyteidl.core.Resources resources = 2;</code>
      */
     public flyteidl.core.Tasks.ResourcesOrBuilder getResourcesOrBuilder() {
       return getResources();
@@ -2726,7 +2726,7 @@ public final class Ray {
           RayStartParamsDefaultEntryHolder.defaultEntry,
           1);
       if (resources_ != null) {
-        output.writeMessage(6, getResources());
+        output.writeMessage(2, getResources());
       }
       unknownFields.writeTo(output);
     }
@@ -2749,7 +2749,7 @@ public final class Ray {
       }
       if (resources_ != null) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(6, getResources());
+          .computeMessageSize(2, getResources());
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -3243,7 +3243,7 @@ public final class Ray {
        * Resource specification for ray head pod
        * </pre>
        *
-       * <code>.flyteidl.core.Resources resources = 6;</code>
+       * <code>.flyteidl.core.Resources resources = 2;</code>
        */
       public boolean hasResources() {
         return resourcesBuilder_ != null || resources_ != null;
@@ -3253,7 +3253,7 @@ public final class Ray {
        * Resource specification for ray head pod
        * </pre>
        *
-       * <code>.flyteidl.core.Resources resources = 6;</code>
+       * <code>.flyteidl.core.Resources resources = 2;</code>
        */
       public flyteidl.core.Tasks.Resources getResources() {
         if (resourcesBuilder_ == null) {
@@ -3267,7 +3267,7 @@ public final class Ray {
        * Resource specification for ray head pod
        * </pre>
        *
-       * <code>.flyteidl.core.Resources resources = 6;</code>
+       * <code>.flyteidl.core.Resources resources = 2;</code>
        */
       public Builder setResources(flyteidl.core.Tasks.Resources value) {
         if (resourcesBuilder_ == null) {
@@ -3287,7 +3287,7 @@ public final class Ray {
        * Resource specification for ray head pod
        * </pre>
        *
-       * <code>.flyteidl.core.Resources resources = 6;</code>
+       * <code>.flyteidl.core.Resources resources = 2;</code>
        */
       public Builder setResources(
           flyteidl.core.Tasks.Resources.Builder builderForValue) {
@@ -3305,7 +3305,7 @@ public final class Ray {
        * Resource specification for ray head pod
        * </pre>
        *
-       * <code>.flyteidl.core.Resources resources = 6;</code>
+       * <code>.flyteidl.core.Resources resources = 2;</code>
        */
       public Builder mergeResources(flyteidl.core.Tasks.Resources value) {
         if (resourcesBuilder_ == null) {
@@ -3327,7 +3327,7 @@ public final class Ray {
        * Resource specification for ray head pod
        * </pre>
        *
-       * <code>.flyteidl.core.Resources resources = 6;</code>
+       * <code>.flyteidl.core.Resources resources = 2;</code>
        */
       public Builder clearResources() {
         if (resourcesBuilder_ == null) {
@@ -3345,7 +3345,7 @@ public final class Ray {
        * Resource specification for ray head pod
        * </pre>
        *
-       * <code>.flyteidl.core.Resources resources = 6;</code>
+       * <code>.flyteidl.core.Resources resources = 2;</code>
        */
       public flyteidl.core.Tasks.Resources.Builder getResourcesBuilder() {
         
@@ -3357,7 +3357,7 @@ public final class Ray {
        * Resource specification for ray head pod
        * </pre>
        *
-       * <code>.flyteidl.core.Resources resources = 6;</code>
+       * <code>.flyteidl.core.Resources resources = 2;</code>
        */
       public flyteidl.core.Tasks.ResourcesOrBuilder getResourcesOrBuilder() {
         if (resourcesBuilder_ != null) {
@@ -3372,7 +3372,7 @@ public final class Ray {
        * Resource specification for ray head pod
        * </pre>
        *
-       * <code>.flyteidl.core.Resources resources = 6;</code>
+       * <code>.flyteidl.core.Resources resources = 2;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
           flyteidl.core.Tasks.Resources, flyteidl.core.Tasks.Resources.Builder, flyteidl.core.Tasks.ResourcesOrBuilder> 
@@ -4975,7 +4975,7 @@ public final class Ray {
       "vice_account\030\004 \001(\t\"\302\001\n\rHeadGroupSpec\022M\n\020" +
       "ray_start_params\030\001 \003(\01323.flyteidl.plugin" +
       "s.HeadGroupSpec.RayStartParamsEntry\022+\n\tr" +
-      "esources\030\006 \001(\0132\030.flyteidl.core.Resources" +
+      "esources\030\002 \001(\0132\030.flyteidl.core.Resources" +
       "\0325\n\023RayStartParamsEntry\022\013\n\003key\030\001 \001(\t\022\r\n\005" +
       "value\030\002 \001(\t:\0028\001\"\230\002\n\017WorkerGroupSpec\022\022\n\ng" +
       "roup_name\030\001 \001(\t\022\020\n\010replicas\030\002 \001(\005\022\024\n\014min" +

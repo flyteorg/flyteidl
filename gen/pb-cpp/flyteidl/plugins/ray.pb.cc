@@ -242,7 +242,7 @@ const char descriptor_table_protodef_flyteidl_2fplugins_2fray_2eproto[] =
   "vice_account\030\004 \001(\t\"\302\001\n\rHeadGroupSpec\022M\n\020"
   "ray_start_params\030\001 \003(\01323.flyteidl.plugin"
   "s.HeadGroupSpec.RayStartParamsEntry\022+\n\tr"
-  "esources\030\006 \001(\0132\030.flyteidl.core.Resources"
+  "esources\030\002 \001(\0132\030.flyteidl.core.Resources"
   "\0325\n\023RayStartParamsEntry\022\013\n\003key\030\001 \001(\t\022\r\n\005"
   "value\030\002 \001(\t:\0028\001\"\230\002\n\017WorkerGroupSpec\022\022\n\ng"
   "roup_name\030\001 \001(\t\022\020\n\010replicas\030\002 \001(\005\022\024\n\014min"
@@ -1290,9 +1290,9 @@ const char* HeadGroupSpec::_InternalParse(const char* begin, const char* end, vo
         } while ((::google::protobuf::io::UnalignedLoad<::google::protobuf::uint64>(ptr) & 255) == 10 && (ptr += 1));
         break;
       }
-      // .flyteidl.core.Resources resources = 6;
-      case 6: {
-        if (static_cast<::google::protobuf::uint8>(tag) != 50) goto handle_unusual;
+      // .flyteidl.core.Resources resources = 2;
+      case 2: {
+        if (static_cast<::google::protobuf::uint8>(tag) != 18) goto handle_unusual;
         ptr = ::google::protobuf::io::ReadSize(ptr, &size);
         GOOGLE_PROTOBUF_PARSER_ASSERT(ptr);
         parser_till_end = ::flyteidl::core::Resources::_InternalParse;
@@ -1359,9 +1359,9 @@ bool HeadGroupSpec::MergePartialFromCodedStream(
         break;
       }
 
-      // .flyteidl.core.Resources resources = 6;
-      case 6: {
-        if (static_cast< ::google::protobuf::uint8>(tag) == (50 & 0xFF)) {
+      // .flyteidl.core.Resources resources = 2;
+      case 2: {
+        if (static_cast< ::google::protobuf::uint8>(tag) == (18 & 0xFF)) {
           DO_(::google::protobuf::internal::WireFormatLite::ReadMessage(
                input, mutable_resources()));
         } else {
@@ -1446,10 +1446,10 @@ void HeadGroupSpec::SerializeWithCachedSizes(
     }
   }
 
-  // .flyteidl.core.Resources resources = 6;
+  // .flyteidl.core.Resources resources = 2;
   if (this->has_resources()) {
     ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
-      6, HasBitSetters::resources(this), output);
+      2, HasBitSetters::resources(this), output);
   }
 
   if (_internal_metadata_.have_unknown_fields()) {
@@ -1514,11 +1514,11 @@ void HeadGroupSpec::SerializeWithCachedSizes(
     }
   }
 
-  // .flyteidl.core.Resources resources = 6;
+  // .flyteidl.core.Resources resources = 2;
   if (this->has_resources()) {
     target = ::google::protobuf::internal::WireFormatLite::
       InternalWriteMessageToArray(
-        6, HasBitSetters::resources(this), target);
+        2, HasBitSetters::resources(this), target);
   }
 
   if (_internal_metadata_.have_unknown_fields()) {
@@ -1556,7 +1556,7 @@ size_t HeadGroupSpec::ByteSizeLong() const {
     }
   }
 
-  // .flyteidl.core.Resources resources = 6;
+  // .flyteidl.core.Resources resources = 2;
   if (this->has_resources()) {
     total_size += 1 +
       ::google::protobuf::internal::WireFormatLite::MessageSize(
