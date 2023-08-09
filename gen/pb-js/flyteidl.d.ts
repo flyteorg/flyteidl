@@ -592,6 +592,58 @@ export namespace flyteidl {
             public static verify(message: { [k: string]: any }): (string|null);
         }
 
+        /** Properties of a Partitions. */
+        interface IPartitions {
+
+            /** Partitions value */
+            value?: ({ [k: string]: string }|null);
+        }
+
+        /** Represents a Partitions. */
+        class Partitions implements IPartitions {
+
+            /**
+             * Constructs a new Partitions.
+             * @param [properties] Properties to set
+             */
+            constructor(properties?: flyteidl.core.IPartitions);
+
+            /** Partitions value. */
+            public value: { [k: string]: string };
+
+            /**
+             * Creates a new Partitions instance using the specified properties.
+             * @param [properties] Properties to set
+             * @returns Partitions instance
+             */
+            public static create(properties?: flyteidl.core.IPartitions): flyteidl.core.Partitions;
+
+            /**
+             * Encodes the specified Partitions message. Does not implicitly {@link flyteidl.core.Partitions.verify|verify} messages.
+             * @param message Partitions message or plain object to encode
+             * @param [writer] Writer to encode to
+             * @returns Writer
+             */
+            public static encode(message: flyteidl.core.IPartitions, writer?: $protobuf.Writer): $protobuf.Writer;
+
+            /**
+             * Decodes a Partitions message from the specified reader or buffer.
+             * @param reader Reader or buffer to decode from
+             * @param [length] Message length if known beforehand
+             * @returns Partitions
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): flyteidl.core.Partitions;
+
+            /**
+             * Verifies a Partitions message.
+             * @param message Plain object to verify
+             * @returns `null` if valid, otherwise the reason why it is not
+             */
+            public static verify(message: { [k: string]: any }): (string|null);
+        }
+
         /** Properties of an ArtifactID. */
         interface IArtifactID {
 
@@ -602,7 +654,7 @@ export namespace flyteidl {
             version?: (string|null);
 
             /** ArtifactID partitions */
-            partitions?: ({ [k: string]: string }|null);
+            partitions?: (flyteidl.core.IPartitions|null);
         }
 
         /** Represents an ArtifactID. */
@@ -621,7 +673,10 @@ export namespace flyteidl {
             public version: string;
 
             /** ArtifactID partitions. */
-            public partitions: { [k: string]: string };
+            public partitions?: (flyteidl.core.IPartitions|null);
+
+            /** ArtifactID dimensions. */
+            public dimensions?: "partitions";
 
             /**
              * Creates a new ArtifactID instance using the specified properties.

@@ -17,6 +17,7 @@ import re  # noqa: F401
 import six
 
 from flyteadmin.models.core_artifact_key import CoreArtifactKey  # noqa: F401,E501
+from flyteadmin.models.core_partitions import CorePartitions  # noqa: F401,E501
 
 
 class CoreArtifactID(object):
@@ -35,7 +36,7 @@ class CoreArtifactID(object):
     swagger_types = {
         'artifact_key': 'CoreArtifactKey',
         'version': 'str',
-        'partitions': 'dict(str, str)'
+        'partitions': 'CorePartitions'
     }
 
     attribute_map = {
@@ -107,7 +108,7 @@ class CoreArtifactID(object):
 
 
         :return: The partitions of this CoreArtifactID.  # noqa: E501
-        :rtype: dict(str, str)
+        :rtype: CorePartitions
         """
         return self._partitions
 
@@ -117,7 +118,7 @@ class CoreArtifactID(object):
 
 
         :param partitions: The partitions of this CoreArtifactID.  # noqa: E501
-        :type: dict(str, str)
+        :type: CorePartitions
         """
 
         self._partitions = partitions

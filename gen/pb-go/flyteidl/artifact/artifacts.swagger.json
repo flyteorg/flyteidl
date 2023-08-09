@@ -139,11 +139,7 @@
           "type": "string"
         },
         "partitions": {
-          "type": "object",
-          "additionalProperties": {
-            "type": "string"
-          },
-          "title": "here for ds popularity"
+          "$ref": "#/definitions/corePartitions"
         }
       }
     },
@@ -409,6 +405,17 @@
         }
       },
       "description": "Encapsulation of fields that identify a Flyte node execution entity."
+    },
+    "corePartitions": {
+      "type": "object",
+      "properties": {
+        "value": {
+          "type": "object",
+          "additionalProperties": {
+            "type": "string"
+          }
+        }
+      }
     },
     "corePrimitive": {
       "type": "object",

@@ -173,11 +173,7 @@
           "type": "string"
         },
         "partitions": {
-          "type": "object",
-          "additionalProperties": {
-            "type": "string"
-          },
-          "title": "here for ds popularity"
+          "$ref": "#/definitions/corePartitions"
         }
       }
     },
@@ -644,6 +640,17 @@
       ],
       "default": "CLIENT_CREDENTIALS",
       "description": "Type of the token requested.\n\n - CLIENT_CREDENTIALS: CLIENT_CREDENTIALS indicates a 2-legged OAuth token requested using client credentials."
+    },
+    "corePartitions": {
+      "type": "object",
+      "properties": {
+        "value": {
+          "type": "object",
+          "additionalProperties": {
+            "type": "string"
+          }
+        }
+      }
     },
     "corePrimitive": {
       "type": "object",

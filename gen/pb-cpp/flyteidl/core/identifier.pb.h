@@ -45,7 +45,7 @@ struct TableStruct_flyteidl_2fcore_2fidentifier_2eproto {
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
   static const ::google::protobuf::internal::AuxillaryParseTableField aux[]
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
-  static const ::google::protobuf::internal::ParseTable schema[10]
+  static const ::google::protobuf::internal::ParseTable schema[11]
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
   static const ::google::protobuf::internal::FieldMetadata field_metadata[];
   static const ::google::protobuf::internal::SerializationTable serialization_table[];
@@ -57,9 +57,6 @@ namespace core {
 class ArtifactID;
 class ArtifactIDDefaultTypeInternal;
 extern ArtifactIDDefaultTypeInternal _ArtifactID_default_instance_;
-class ArtifactID_PartitionsEntry_DoNotUse;
-class ArtifactID_PartitionsEntry_DoNotUseDefaultTypeInternal;
-extern ArtifactID_PartitionsEntry_DoNotUseDefaultTypeInternal _ArtifactID_PartitionsEntry_DoNotUse_default_instance_;
 class ArtifactKey;
 class ArtifactKeyDefaultTypeInternal;
 extern ArtifactKeyDefaultTypeInternal _ArtifactKey_default_instance_;
@@ -75,6 +72,12 @@ extern IdentifierDefaultTypeInternal _Identifier_default_instance_;
 class NodeExecutionIdentifier;
 class NodeExecutionIdentifierDefaultTypeInternal;
 extern NodeExecutionIdentifierDefaultTypeInternal _NodeExecutionIdentifier_default_instance_;
+class Partitions;
+class PartitionsDefaultTypeInternal;
+extern PartitionsDefaultTypeInternal _Partitions_default_instance_;
+class Partitions_ValueEntry_DoNotUse;
+class Partitions_ValueEntry_DoNotUseDefaultTypeInternal;
+extern Partitions_ValueEntry_DoNotUseDefaultTypeInternal _Partitions_ValueEntry_DoNotUse_default_instance_;
 class SignalIdentifier;
 class SignalIdentifierDefaultTypeInternal;
 extern SignalIdentifierDefaultTypeInternal _SignalIdentifier_default_instance_;
@@ -89,12 +92,13 @@ extern WorkflowExecutionIdentifierDefaultTypeInternal _WorkflowExecutionIdentifi
 namespace google {
 namespace protobuf {
 template<> ::flyteidl::core::ArtifactID* Arena::CreateMaybeMessage<::flyteidl::core::ArtifactID>(Arena*);
-template<> ::flyteidl::core::ArtifactID_PartitionsEntry_DoNotUse* Arena::CreateMaybeMessage<::flyteidl::core::ArtifactID_PartitionsEntry_DoNotUse>(Arena*);
 template<> ::flyteidl::core::ArtifactKey* Arena::CreateMaybeMessage<::flyteidl::core::ArtifactKey>(Arena*);
 template<> ::flyteidl::core::ArtifactQuery* Arena::CreateMaybeMessage<::flyteidl::core::ArtifactQuery>(Arena*);
 template<> ::flyteidl::core::ArtifactTag* Arena::CreateMaybeMessage<::flyteidl::core::ArtifactTag>(Arena*);
 template<> ::flyteidl::core::Identifier* Arena::CreateMaybeMessage<::flyteidl::core::Identifier>(Arena*);
 template<> ::flyteidl::core::NodeExecutionIdentifier* Arena::CreateMaybeMessage<::flyteidl::core::NodeExecutionIdentifier>(Arena*);
+template<> ::flyteidl::core::Partitions* Arena::CreateMaybeMessage<::flyteidl::core::Partitions>(Arena*);
+template<> ::flyteidl::core::Partitions_ValueEntry_DoNotUse* Arena::CreateMaybeMessage<::flyteidl::core::Partitions_ValueEntry_DoNotUse>(Arena*);
 template<> ::flyteidl::core::SignalIdentifier* Arena::CreateMaybeMessage<::flyteidl::core::SignalIdentifier>(Arena*);
 template<> ::flyteidl::core::TaskExecutionIdentifier* Arena::CreateMaybeMessage<::flyteidl::core::TaskExecutionIdentifier>(Arena*);
 template<> ::flyteidl::core::WorkflowExecutionIdentifier* Arena::CreateMaybeMessage<::flyteidl::core::WorkflowExecutionIdentifier>(Arena*);
@@ -993,7 +997,7 @@ class ArtifactKey final :
 };
 // -------------------------------------------------------------------
 
-class ArtifactID_PartitionsEntry_DoNotUse : public ::google::protobuf::internal::MapEntry<ArtifactID_PartitionsEntry_DoNotUse, 
+class Partitions_ValueEntry_DoNotUse : public ::google::protobuf::internal::MapEntry<Partitions_ValueEntry_DoNotUse, 
     ::std::string, ::std::string,
     ::google::protobuf::internal::WireFormatLite::TYPE_STRING,
     ::google::protobuf::internal::WireFormatLite::TYPE_STRING,
@@ -1002,19 +1006,140 @@ public:
 #if GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
 static bool _ParseMap(const char* begin, const char* end, void* object, ::google::protobuf::internal::ParseContext* ctx);
 #endif  // GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
-  typedef ::google::protobuf::internal::MapEntry<ArtifactID_PartitionsEntry_DoNotUse, 
+  typedef ::google::protobuf::internal::MapEntry<Partitions_ValueEntry_DoNotUse, 
     ::std::string, ::std::string,
     ::google::protobuf::internal::WireFormatLite::TYPE_STRING,
     ::google::protobuf::internal::WireFormatLite::TYPE_STRING,
     0 > SuperType;
-  ArtifactID_PartitionsEntry_DoNotUse();
-  ArtifactID_PartitionsEntry_DoNotUse(::google::protobuf::Arena* arena);
-  void MergeFrom(const ArtifactID_PartitionsEntry_DoNotUse& other);
-  static const ArtifactID_PartitionsEntry_DoNotUse* internal_default_instance() { return reinterpret_cast<const ArtifactID_PartitionsEntry_DoNotUse*>(&_ArtifactID_PartitionsEntry_DoNotUse_default_instance_); }
+  Partitions_ValueEntry_DoNotUse();
+  Partitions_ValueEntry_DoNotUse(::google::protobuf::Arena* arena);
+  void MergeFrom(const Partitions_ValueEntry_DoNotUse& other);
+  static const Partitions_ValueEntry_DoNotUse* internal_default_instance() { return reinterpret_cast<const Partitions_ValueEntry_DoNotUse*>(&_Partitions_ValueEntry_DoNotUse_default_instance_); }
   void MergeFrom(const ::google::protobuf::Message& other) final;
   ::google::protobuf::Metadata GetMetadata() const;
 };
 
+// -------------------------------------------------------------------
+
+class Partitions final :
+    public ::google::protobuf::Message /* @@protoc_insertion_point(class_definition:flyteidl.core.Partitions) */ {
+ public:
+  Partitions();
+  virtual ~Partitions();
+
+  Partitions(const Partitions& from);
+
+  inline Partitions& operator=(const Partitions& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  #if LANG_CXX11
+  Partitions(Partitions&& from) noexcept
+    : Partitions() {
+    *this = ::std::move(from);
+  }
+
+  inline Partitions& operator=(Partitions&& from) noexcept {
+    if (GetArenaNoVirtual() == from.GetArenaNoVirtual()) {
+      if (this != &from) InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+  #endif
+  static const ::google::protobuf::Descriptor* descriptor() {
+    return default_instance().GetDescriptor();
+  }
+  static const Partitions& default_instance();
+
+  static void InitAsDefaultInstance();  // FOR INTERNAL USE ONLY
+  static inline const Partitions* internal_default_instance() {
+    return reinterpret_cast<const Partitions*>(
+               &_Partitions_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    7;
+
+  void Swap(Partitions* other);
+  friend void swap(Partitions& a, Partitions& b) {
+    a.Swap(&b);
+  }
+
+  // implements Message ----------------------------------------------
+
+  inline Partitions* New() const final {
+    return CreateMaybeMessage<Partitions>(nullptr);
+  }
+
+  Partitions* New(::google::protobuf::Arena* arena) const final {
+    return CreateMaybeMessage<Partitions>(arena);
+  }
+  void CopyFrom(const ::google::protobuf::Message& from) final;
+  void MergeFrom(const ::google::protobuf::Message& from) final;
+  void CopyFrom(const Partitions& from);
+  void MergeFrom(const Partitions& from);
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  #if GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
+  static const char* _InternalParse(const char* begin, const char* end, void* object, ::google::protobuf::internal::ParseContext* ctx);
+  ::google::protobuf::internal::ParseFunc _ParseFunc() const final { return _InternalParse; }
+  #else
+  bool MergePartialFromCodedStream(
+      ::google::protobuf::io::CodedInputStream* input) final;
+  #endif  // GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
+  void SerializeWithCachedSizes(
+      ::google::protobuf::io::CodedOutputStream* output) const final;
+  ::google::protobuf::uint8* InternalSerializeWithCachedSizesToArray(
+      ::google::protobuf::uint8* target) const final;
+  int GetCachedSize() const final { return _cached_size_.Get(); }
+
+  private:
+  void SharedCtor();
+  void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(Partitions* other);
+  private:
+  inline ::google::protobuf::Arena* GetArenaNoVirtual() const {
+    return nullptr;
+  }
+  inline void* MaybeArenaPtr() const {
+    return nullptr;
+  }
+  public:
+
+  ::google::protobuf::Metadata GetMetadata() const final;
+
+  // nested types ----------------------------------------------------
+
+
+  // accessors -------------------------------------------------------
+
+  // map<string, string> value = 1;
+  int value_size() const;
+  void clear_value();
+  static const int kValueFieldNumber = 1;
+  const ::google::protobuf::Map< ::std::string, ::std::string >&
+      value() const;
+  ::google::protobuf::Map< ::std::string, ::std::string >*
+      mutable_value();
+
+  // @@protoc_insertion_point(class_scope:flyteidl.core.Partitions)
+ private:
+  class HasBitSetters;
+
+  ::google::protobuf::internal::InternalMetadataWithArena _internal_metadata_;
+  ::google::protobuf::internal::MapField<
+      Partitions_ValueEntry_DoNotUse,
+      ::std::string, ::std::string,
+      ::google::protobuf::internal::WireFormatLite::TYPE_STRING,
+      ::google::protobuf::internal::WireFormatLite::TYPE_STRING,
+      0 > value_;
+  mutable ::google::protobuf::internal::CachedSize _cached_size_;
+  friend struct ::TableStruct_flyteidl_2fcore_2fidentifier_2eproto;
+};
 // -------------------------------------------------------------------
 
 class ArtifactID final :
@@ -1049,13 +1174,18 @@ class ArtifactID final :
   }
   static const ArtifactID& default_instance();
 
+  enum DimensionsCase {
+    kPartitions = 3,
+    DIMENSIONS_NOT_SET = 0,
+  };
+
   static void InitAsDefaultInstance();  // FOR INTERNAL USE ONLY
   static inline const ArtifactID* internal_default_instance() {
     return reinterpret_cast<const ArtifactID*>(
                &_ArtifactID_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    7;
+    8;
 
   void Swap(ArtifactID* other);
   friend void swap(ArtifactID& a, ArtifactID& b) {
@@ -1110,17 +1240,7 @@ class ArtifactID final :
 
   // nested types ----------------------------------------------------
 
-
   // accessors -------------------------------------------------------
-
-  // map<string, string> partitions = 3;
-  int partitions_size() const;
-  void clear_partitions();
-  static const int kPartitionsFieldNumber = 3;
-  const ::google::protobuf::Map< ::std::string, ::std::string >&
-      partitions() const;
-  ::google::protobuf::Map< ::std::string, ::std::string >*
-      mutable_partitions();
 
   // string version = 2;
   void clear_version();
@@ -1145,20 +1265,35 @@ class ArtifactID final :
   ::flyteidl::core::ArtifactKey* mutable_artifact_key();
   void set_allocated_artifact_key(::flyteidl::core::ArtifactKey* artifact_key);
 
+  // .flyteidl.core.Partitions partitions = 3;
+  bool has_partitions() const;
+  void clear_partitions();
+  static const int kPartitionsFieldNumber = 3;
+  const ::flyteidl::core::Partitions& partitions() const;
+  ::flyteidl::core::Partitions* release_partitions();
+  ::flyteidl::core::Partitions* mutable_partitions();
+  void set_allocated_partitions(::flyteidl::core::Partitions* partitions);
+
+  void clear_dimensions();
+  DimensionsCase dimensions_case() const;
   // @@protoc_insertion_point(class_scope:flyteidl.core.ArtifactID)
  private:
   class HasBitSetters;
+  void set_has_partitions();
+
+  inline bool has_dimensions() const;
+  inline void clear_has_dimensions();
 
   ::google::protobuf::internal::InternalMetadataWithArena _internal_metadata_;
-  ::google::protobuf::internal::MapField<
-      ArtifactID_PartitionsEntry_DoNotUse,
-      ::std::string, ::std::string,
-      ::google::protobuf::internal::WireFormatLite::TYPE_STRING,
-      ::google::protobuf::internal::WireFormatLite::TYPE_STRING,
-      0 > partitions_;
   ::google::protobuf::internal::ArenaStringPtr version_;
   ::flyteidl::core::ArtifactKey* artifact_key_;
+  union DimensionsUnion {
+    DimensionsUnion() {}
+    ::flyteidl::core::Partitions* partitions_;
+  } dimensions_;
   mutable ::google::protobuf::internal::CachedSize _cached_size_;
+  ::google::protobuf::uint32 _oneof_case_[1];
+
   friend struct ::TableStruct_flyteidl_2fcore_2fidentifier_2eproto;
 };
 // -------------------------------------------------------------------
@@ -1201,7 +1336,7 @@ class ArtifactTag final :
                &_ArtifactTag_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    8;
+    9;
 
   void Swap(ArtifactTag* other);
   friend void swap(ArtifactTag& a, ArtifactTag& b) {
@@ -1338,7 +1473,7 @@ class ArtifactQuery final :
                &_ArtifactQuery_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    9;
+    10;
 
   void Swap(ArtifactQuery* other);
   friend void swap(ArtifactQuery& a, ArtifactQuery& b) {
@@ -2357,6 +2492,28 @@ inline void ArtifactKey::set_allocated_name(::std::string* name) {
 
 // -------------------------------------------------------------------
 
+// Partitions
+
+// map<string, string> value = 1;
+inline int Partitions::value_size() const {
+  return value_.size();
+}
+inline void Partitions::clear_value() {
+  value_.Clear();
+}
+inline const ::google::protobuf::Map< ::std::string, ::std::string >&
+Partitions::value() const {
+  // @@protoc_insertion_point(field_map:flyteidl.core.Partitions.value)
+  return value_.GetMap();
+}
+inline ::google::protobuf::Map< ::std::string, ::std::string >*
+Partitions::mutable_value() {
+  // @@protoc_insertion_point(field_mutable_map:flyteidl.core.Partitions.value)
+  return value_.MutableMap();
+}
+
+// -------------------------------------------------------------------
+
 // ArtifactID
 
 // .flyteidl.core.ArtifactKey artifact_key = 1;
@@ -2463,24 +2620,56 @@ inline void ArtifactID::set_allocated_version(::std::string* version) {
   // @@protoc_insertion_point(field_set_allocated:flyteidl.core.ArtifactID.version)
 }
 
-// map<string, string> partitions = 3;
-inline int ArtifactID::partitions_size() const {
-  return partitions_.size();
+// .flyteidl.core.Partitions partitions = 3;
+inline bool ArtifactID::has_partitions() const {
+  return dimensions_case() == kPartitions;
+}
+inline void ArtifactID::set_has_partitions() {
+  _oneof_case_[0] = kPartitions;
 }
 inline void ArtifactID::clear_partitions() {
-  partitions_.Clear();
+  if (has_partitions()) {
+    delete dimensions_.partitions_;
+    clear_has_dimensions();
+  }
 }
-inline const ::google::protobuf::Map< ::std::string, ::std::string >&
-ArtifactID::partitions() const {
-  // @@protoc_insertion_point(field_map:flyteidl.core.ArtifactID.partitions)
-  return partitions_.GetMap();
+inline ::flyteidl::core::Partitions* ArtifactID::release_partitions() {
+  // @@protoc_insertion_point(field_release:flyteidl.core.ArtifactID.partitions)
+  if (has_partitions()) {
+    clear_has_dimensions();
+      ::flyteidl::core::Partitions* temp = dimensions_.partitions_;
+    dimensions_.partitions_ = nullptr;
+    return temp;
+  } else {
+    return nullptr;
+  }
 }
-inline ::google::protobuf::Map< ::std::string, ::std::string >*
-ArtifactID::mutable_partitions() {
-  // @@protoc_insertion_point(field_mutable_map:flyteidl.core.ArtifactID.partitions)
-  return partitions_.MutableMap();
+inline const ::flyteidl::core::Partitions& ArtifactID::partitions() const {
+  // @@protoc_insertion_point(field_get:flyteidl.core.ArtifactID.partitions)
+  return has_partitions()
+      ? *dimensions_.partitions_
+      : *reinterpret_cast< ::flyteidl::core::Partitions*>(&::flyteidl::core::_Partitions_default_instance_);
+}
+inline ::flyteidl::core::Partitions* ArtifactID::mutable_partitions() {
+  if (!has_partitions()) {
+    clear_dimensions();
+    set_has_partitions();
+    dimensions_.partitions_ = CreateMaybeMessage< ::flyteidl::core::Partitions >(
+        GetArenaNoVirtual());
+  }
+  // @@protoc_insertion_point(field_mutable:flyteidl.core.ArtifactID.partitions)
+  return dimensions_.partitions_;
 }
 
+inline bool ArtifactID::has_dimensions() const {
+  return dimensions_case() != DIMENSIONS_NOT_SET;
+}
+inline void ArtifactID::clear_has_dimensions() {
+  _oneof_case_[0] = DIMENSIONS_NOT_SET;
+}
+inline ArtifactID::DimensionsCase ArtifactID::dimensions_case() const {
+  return ArtifactID::DimensionsCase(_oneof_case_[0]);
+}
 // -------------------------------------------------------------------
 
 // ArtifactTag
@@ -2779,6 +2968,8 @@ inline ArtifactQuery::IdentifierCase ArtifactQuery::identifier_case() const {
 #ifdef __GNUC__
   #pragma GCC diagnostic pop
 #endif  // __GNUC__
+// -------------------------------------------------------------------
+
 // -------------------------------------------------------------------
 
 // -------------------------------------------------------------------

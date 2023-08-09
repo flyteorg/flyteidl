@@ -1366,6 +1366,128 @@
                 return ArtifactKey;
             })();
     
+            core.Partitions = (function() {
+    
+                /**
+                 * Properties of a Partitions.
+                 * @memberof flyteidl.core
+                 * @interface IPartitions
+                 * @property {Object.<string,string>|null} [value] Partitions value
+                 */
+    
+                /**
+                 * Constructs a new Partitions.
+                 * @memberof flyteidl.core
+                 * @classdesc Represents a Partitions.
+                 * @implements IPartitions
+                 * @constructor
+                 * @param {flyteidl.core.IPartitions=} [properties] Properties to set
+                 */
+                function Partitions(properties) {
+                    this.value = {};
+                    if (properties)
+                        for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                            if (properties[keys[i]] != null)
+                                this[keys[i]] = properties[keys[i]];
+                }
+    
+                /**
+                 * Partitions value.
+                 * @member {Object.<string,string>} value
+                 * @memberof flyteidl.core.Partitions
+                 * @instance
+                 */
+                Partitions.prototype.value = $util.emptyObject;
+    
+                /**
+                 * Creates a new Partitions instance using the specified properties.
+                 * @function create
+                 * @memberof flyteidl.core.Partitions
+                 * @static
+                 * @param {flyteidl.core.IPartitions=} [properties] Properties to set
+                 * @returns {flyteidl.core.Partitions} Partitions instance
+                 */
+                Partitions.create = function create(properties) {
+                    return new Partitions(properties);
+                };
+    
+                /**
+                 * Encodes the specified Partitions message. Does not implicitly {@link flyteidl.core.Partitions.verify|verify} messages.
+                 * @function encode
+                 * @memberof flyteidl.core.Partitions
+                 * @static
+                 * @param {flyteidl.core.IPartitions} message Partitions message or plain object to encode
+                 * @param {$protobuf.Writer} [writer] Writer to encode to
+                 * @returns {$protobuf.Writer} Writer
+                 */
+                Partitions.encode = function encode(message, writer) {
+                    if (!writer)
+                        writer = $Writer.create();
+                    if (message.value != null && message.hasOwnProperty("value"))
+                        for (var keys = Object.keys(message.value), i = 0; i < keys.length; ++i)
+                            writer.uint32(/* id 1, wireType 2 =*/10).fork().uint32(/* id 1, wireType 2 =*/10).string(keys[i]).uint32(/* id 2, wireType 2 =*/18).string(message.value[keys[i]]).ldelim();
+                    return writer;
+                };
+    
+                /**
+                 * Decodes a Partitions message from the specified reader or buffer.
+                 * @function decode
+                 * @memberof flyteidl.core.Partitions
+                 * @static
+                 * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+                 * @param {number} [length] Message length if known beforehand
+                 * @returns {flyteidl.core.Partitions} Partitions
+                 * @throws {Error} If the payload is not a reader or valid buffer
+                 * @throws {$protobuf.util.ProtocolError} If required fields are missing
+                 */
+                Partitions.decode = function decode(reader, length) {
+                    if (!(reader instanceof $Reader))
+                        reader = $Reader.create(reader);
+                    var end = length === undefined ? reader.len : reader.pos + length, message = new $root.flyteidl.core.Partitions(), key;
+                    while (reader.pos < end) {
+                        var tag = reader.uint32();
+                        switch (tag >>> 3) {
+                        case 1:
+                            reader.skip().pos++;
+                            if (message.value === $util.emptyObject)
+                                message.value = {};
+                            key = reader.string();
+                            reader.pos++;
+                            message.value[key] = reader.string();
+                            break;
+                        default:
+                            reader.skipType(tag & 7);
+                            break;
+                        }
+                    }
+                    return message;
+                };
+    
+                /**
+                 * Verifies a Partitions message.
+                 * @function verify
+                 * @memberof flyteidl.core.Partitions
+                 * @static
+                 * @param {Object.<string,*>} message Plain object to verify
+                 * @returns {string|null} `null` if valid, otherwise the reason why it is not
+                 */
+                Partitions.verify = function verify(message) {
+                    if (typeof message !== "object" || message === null)
+                        return "object expected";
+                    if (message.value != null && message.hasOwnProperty("value")) {
+                        if (!$util.isObject(message.value))
+                            return "value: object expected";
+                        var key = Object.keys(message.value);
+                        for (var i = 0; i < key.length; ++i)
+                            if (!$util.isString(message.value[key[i]]))
+                                return "value: string{k:string} expected";
+                    }
+                    return null;
+                };
+    
+                return Partitions;
+            })();
+    
             core.ArtifactID = (function() {
     
                 /**
@@ -1374,7 +1496,7 @@
                  * @interface IArtifactID
                  * @property {flyteidl.core.IArtifactKey|null} [artifactKey] ArtifactID artifactKey
                  * @property {string|null} [version] ArtifactID version
-                 * @property {Object.<string,string>|null} [partitions] ArtifactID partitions
+                 * @property {flyteidl.core.IPartitions|null} [partitions] ArtifactID partitions
                  */
     
                 /**
@@ -1386,7 +1508,6 @@
                  * @param {flyteidl.core.IArtifactID=} [properties] Properties to set
                  */
                 function ArtifactID(properties) {
-                    this.partitions = {};
                     if (properties)
                         for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
                             if (properties[keys[i]] != null)
@@ -1411,11 +1532,25 @@
     
                 /**
                  * ArtifactID partitions.
-                 * @member {Object.<string,string>} partitions
+                 * @member {flyteidl.core.IPartitions|null|undefined} partitions
                  * @memberof flyteidl.core.ArtifactID
                  * @instance
                  */
-                ArtifactID.prototype.partitions = $util.emptyObject;
+                ArtifactID.prototype.partitions = null;
+    
+                // OneOf field names bound to virtual getters and setters
+                var $oneOfFields;
+    
+                /**
+                 * ArtifactID dimensions.
+                 * @member {"partitions"|undefined} dimensions
+                 * @memberof flyteidl.core.ArtifactID
+                 * @instance
+                 */
+                Object.defineProperty(ArtifactID.prototype, "dimensions", {
+                    get: $util.oneOfGetter($oneOfFields = ["partitions"]),
+                    set: $util.oneOfSetter($oneOfFields)
+                });
     
                 /**
                  * Creates a new ArtifactID instance using the specified properties.
@@ -1446,8 +1581,7 @@
                     if (message.version != null && message.hasOwnProperty("version"))
                         writer.uint32(/* id 2, wireType 2 =*/18).string(message.version);
                     if (message.partitions != null && message.hasOwnProperty("partitions"))
-                        for (var keys = Object.keys(message.partitions), i = 0; i < keys.length; ++i)
-                            writer.uint32(/* id 3, wireType 2 =*/26).fork().uint32(/* id 1, wireType 2 =*/10).string(keys[i]).uint32(/* id 2, wireType 2 =*/18).string(message.partitions[keys[i]]).ldelim();
+                        $root.flyteidl.core.Partitions.encode(message.partitions, writer.uint32(/* id 3, wireType 2 =*/26).fork()).ldelim();
                     return writer;
                 };
     
@@ -1465,7 +1599,7 @@
                 ArtifactID.decode = function decode(reader, length) {
                     if (!(reader instanceof $Reader))
                         reader = $Reader.create(reader);
-                    var end = length === undefined ? reader.len : reader.pos + length, message = new $root.flyteidl.core.ArtifactID(), key;
+                    var end = length === undefined ? reader.len : reader.pos + length, message = new $root.flyteidl.core.ArtifactID();
                     while (reader.pos < end) {
                         var tag = reader.uint32();
                         switch (tag >>> 3) {
@@ -1476,12 +1610,7 @@
                             message.version = reader.string();
                             break;
                         case 3:
-                            reader.skip().pos++;
-                            if (message.partitions === $util.emptyObject)
-                                message.partitions = {};
-                            key = reader.string();
-                            reader.pos++;
-                            message.partitions[key] = reader.string();
+                            message.partitions = $root.flyteidl.core.Partitions.decode(reader, reader.uint32());
                             break;
                         default:
                             reader.skipType(tag & 7);
@@ -1502,6 +1631,7 @@
                 ArtifactID.verify = function verify(message) {
                     if (typeof message !== "object" || message === null)
                         return "object expected";
+                    var properties = {};
                     if (message.artifactKey != null && message.hasOwnProperty("artifactKey")) {
                         var error = $root.flyteidl.core.ArtifactKey.verify(message.artifactKey);
                         if (error)
@@ -1511,12 +1641,12 @@
                         if (!$util.isString(message.version))
                             return "version: string expected";
                     if (message.partitions != null && message.hasOwnProperty("partitions")) {
-                        if (!$util.isObject(message.partitions))
-                            return "partitions: object expected";
-                        var key = Object.keys(message.partitions);
-                        for (var i = 0; i < key.length; ++i)
-                            if (!$util.isString(message.partitions[key[i]]))
-                                return "partitions: string{k:string} expected";
+                        properties.dimensions = 1;
+                        {
+                            var error = $root.flyteidl.core.Partitions.verify(message.partitions);
+                            if (error)
+                                return "partitions." + error;
+                        }
                     }
                     return null;
                 };

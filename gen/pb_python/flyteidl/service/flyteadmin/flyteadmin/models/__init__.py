@@ -201,6 +201,7 @@ from flyteadmin.models.core_operand import CoreOperand
 from flyteadmin.models.core_output_reference import CoreOutputReference
 from flyteadmin.models.core_parameter import CoreParameter
 from flyteadmin.models.core_parameter_map import CoreParameterMap
+from flyteadmin.models.core_partitions import CorePartitions
 from flyteadmin.models.core_primitive import CorePrimitive
 from flyteadmin.models.core_quality_of_service import CoreQualityOfService
 from flyteadmin.models.core_quality_of_service_spec import CoreQualityOfServiceSpec

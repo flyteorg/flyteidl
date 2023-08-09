@@ -3524,14 +3524,16 @@ definitions:
             project: "project"
           artifact_ids:
           - partitions:
-              key: "partitions"
+              value:
+                key: "value"
             artifact_key:
               domain: "domain"
               name: "name"
               project: "project"
             version: "version"
           - partitions:
-              key: "partitions"
+              value:
+                key: "value"
             artifact_key:
               domain: "domain"
               name: "name"
@@ -3924,14 +3926,16 @@ definitions:
               project: "project"
             artifact_ids:
             - partitions:
-                key: "partitions"
+                value:
+                  key: "value"
               artifact_key:
                 domain: "domain"
                 name: "name"
                 project: "project"
               version: "version"
             - partitions:
-                key: "partitions"
+                value:
+                  key: "value"
               artifact_key:
                 domain: "domain"
                 name: "name"
@@ -4140,14 +4144,16 @@ definitions:
               project: "project"
             artifact_ids:
             - partitions:
-                key: "partitions"
+                value:
+                  key: "value"
               artifact_key:
                 domain: "domain"
                 name: "name"
                 project: "project"
               version: "version"
             - partitions:
-                key: "partitions"
+                value:
+                  key: "value"
               artifact_key:
                 domain: "domain"
                 name: "name"
@@ -4332,14 +4338,16 @@ definitions:
         project: "project"
       artifact_ids:
       - partitions:
-          key: "partitions"
+          value:
+            key: "value"
         artifact_key:
           domain: "domain"
           name: "name"
           project: "project"
         version: "version"
       - partitions:
-          key: "partitions"
+          value:
+            key: "value"
         artifact_key:
           domain: "domain"
           name: "name"
@@ -4492,14 +4500,16 @@ definitions:
           project: "project"
         artifact_ids:
         - partitions:
-            key: "partitions"
+            value:
+              key: "value"
           artifact_key:
             domain: "domain"
             name: "name"
             project: "project"
           version: "version"
         - partitions:
-            key: "partitions"
+            value:
+              key: "value"
           artifact_key:
             domain: "domain"
             name: "name"
@@ -4775,7 +4785,8 @@ definitions:
               description: "description"
               artifact_partial_id:
                 partitions:
-                  key: "partitions"
+                  value:
+                    key: "value"
                 artifact_key:
                   domain: "domain"
                   name: "name"
@@ -4955,7 +4966,8 @@ definitions:
                   - null
                 artifact_id:
                   partitions:
-                    key: "partitions"
+                    value:
+                      key: "value"
                   artifact_key:
                     domain: "domain"
                     name: "name"
@@ -5019,7 +5031,8 @@ definitions:
                 description: "description"
                 artifact_partial_id:
                   partitions:
-                    key: "partitions"
+                    value:
+                      key: "value"
                   artifact_key:
                     domain: "domain"
                     name: "name"
@@ -5085,7 +5098,8 @@ definitions:
               artifact_query:
                 artifact_id:
                   partitions:
-                    key: "partitions"
+                    value:
+                      key: "value"
                   artifact_key:
                     domain: "domain"
                     name: "name"
@@ -5288,7 +5302,8 @@ definitions:
                   - null
                 artifact_id:
                   partitions:
-                    key: "partitions"
+                    value:
+                      key: "value"
                   artifact_key:
                     domain: "domain"
                     name: "name"
@@ -5352,7 +5367,8 @@ definitions:
                 description: "description"
                 artifact_partial_id:
                   partitions:
-                    key: "partitions"
+                    value:
+                      key: "value"
                   artifact_key:
                     domain: "domain"
                     name: "name"
@@ -5418,7 +5434,8 @@ definitions:
               artifact_query:
                 artifact_id:
                   partitions:
-                    key: "partitions"
+                    value:
+                      key: "value"
                   artifact_key:
                     domain: "domain"
                     name: "name"
@@ -5512,7 +5529,8 @@ definitions:
             description: "description"
             artifact_partial_id:
               partitions:
-                key: "partitions"
+                value:
+                  key: "value"
               artifact_key:
                 domain: "domain"
                 name: "name"
@@ -5692,7 +5710,8 @@ definitions:
                 - null
               artifact_id:
                 partitions:
-                  key: "partitions"
+                  value:
+                    key: "value"
                 artifact_key:
                   domain: "domain"
                   name: "name"
@@ -5756,7 +5775,8 @@ definitions:
               description: "description"
               artifact_partial_id:
                 partitions:
-                  key: "partitions"
+                  value:
+                    key: "value"
                 artifact_key:
                   domain: "domain"
                   name: "name"
@@ -5822,7 +5842,8 @@ definitions:
             artifact_query:
               artifact_id:
                 partitions:
-                  key: "partitions"
+                  value:
+                    key: "value"
                 artifact_key:
                   domain: "domain"
                   name: "name"
@@ -5882,7 +5903,8 @@ definitions:
                 description: "description"
                 artifact_partial_id:
                   partitions:
-                    key: "partitions"
+                    value:
+                      key: "value"
                   artifact_key:
                     domain: "domain"
                     name: "name"
@@ -6062,7 +6084,8 @@ definitions:
                     - null
                   artifact_id:
                     partitions:
-                      key: "partitions"
+                      value:
+                        key: "value"
                     artifact_key:
                       domain: "domain"
                       name: "name"
@@ -6126,7 +6149,8 @@ definitions:
                   description: "description"
                   artifact_partial_id:
                     partitions:
-                      key: "partitions"
+                      value:
+                        key: "value"
                     artifact_key:
                       domain: "domain"
                       name: "name"
@@ -6192,7 +6216,8 @@ definitions:
                 artifact_query:
                   artifact_id:
                     partitions:
-                      key: "partitions"
+                      value:
+                        key: "value"
                     artifact_key:
                       domain: "domain"
                       name: "name"
@@ -6395,7 +6420,8 @@ definitions:
                     - null
                   artifact_id:
                     partitions:
-                      key: "partitions"
+                      value:
+                        key: "value"
                     artifact_key:
                       domain: "domain"
                       name: "name"
@@ -6459,7 +6485,8 @@ definitions:
                   description: "description"
                   artifact_partial_id:
                     partitions:
-                      key: "partitions"
+                      value:
+                        key: "value"
                     artifact_key:
                       domain: "domain"
                       name: "name"
@@ -6525,7 +6552,8 @@ definitions:
                 artifact_query:
                   artifact_id:
                     partitions:
-                      key: "partitions"
+                      value:
+                        key: "value"
                     artifact_key:
                       domain: "domain"
                       name: "name"
@@ -6599,7 +6627,8 @@ definitions:
                 description: "description"
                 artifact_partial_id:
                   partitions:
-                    key: "partitions"
+                    value:
+                      key: "value"
                   artifact_key:
                     domain: "domain"
                     name: "name"
@@ -6779,7 +6808,8 @@ definitions:
                     - null
                   artifact_id:
                     partitions:
-                      key: "partitions"
+                      value:
+                        key: "value"
                     artifact_key:
                       domain: "domain"
                       name: "name"
@@ -6843,7 +6873,8 @@ definitions:
                   description: "description"
                   artifact_partial_id:
                     partitions:
-                      key: "partitions"
+                      value:
+                        key: "value"
                     artifact_key:
                       domain: "domain"
                       name: "name"
@@ -6909,7 +6940,8 @@ definitions:
                 artifact_query:
                   artifact_id:
                     partitions:
-                      key: "partitions"
+                      value:
+                        key: "value"
                     artifact_key:
                       domain: "domain"
                       name: "name"
@@ -7112,7 +7144,8 @@ definitions:
                     - null
                   artifact_id:
                     partitions:
-                      key: "partitions"
+                      value:
+                        key: "value"
                     artifact_key:
                       domain: "domain"
                       name: "name"
@@ -7176,7 +7209,8 @@ definitions:
                   description: "description"
                   artifact_partial_id:
                     partitions:
-                      key: "partitions"
+                      value:
+                        key: "value"
                     artifact_key:
                       domain: "domain"
                       name: "name"
@@ -7242,7 +7276,8 @@ definitions:
                 artifact_query:
                   artifact_id:
                     partitions:
-                      key: "partitions"
+                      value:
+                        key: "value"
                     artifact_key:
                       domain: "domain"
                       name: "name"
@@ -7616,7 +7651,8 @@ definitions:
                 - null
               artifact_id:
                 partitions:
-                  key: "partitions"
+                  value:
+                    key: "value"
                 artifact_key:
                   domain: "domain"
                   name: "name"
@@ -7680,7 +7716,8 @@ definitions:
               description: "description"
               artifact_partial_id:
                 partitions:
-                  key: "partitions"
+                  value:
+                    key: "value"
                 artifact_key:
                   domain: "domain"
                   name: "name"
@@ -7746,7 +7783,8 @@ definitions:
             artifact_query:
               artifact_id:
                 partitions:
-                  key: "partitions"
+                  value:
+                    key: "value"
                 artifact_key:
                   domain: "domain"
                   name: "name"
@@ -10550,7 +10588,8 @@ definitions:
                       description: "description"
                       artifact_partial_id:
                         partitions:
-                          key: "partitions"
+                          value:
+                            key: "value"
                         artifact_key:
                           domain: "domain"
                           name: "name"
@@ -10619,7 +10658,8 @@ definitions:
                       description: "description"
                       artifact_partial_id:
                         partitions:
-                          key: "partitions"
+                          value:
+                            key: "value"
                         artifact_key:
                           domain: "domain"
                           name: "name"
@@ -12601,7 +12641,8 @@ definitions:
                       description: "description"
                       artifact_partial_id:
                         partitions:
-                          key: "partitions"
+                          value:
+                            key: "value"
                         artifact_key:
                           domain: "domain"
                           name: "name"
@@ -12670,7 +12711,8 @@ definitions:
                       description: "description"
                       artifact_partial_id:
                         partitions:
-                          key: "partitions"
+                          value:
+                            key: "value"
                         artifact_key:
                           domain: "domain"
                           name: "name"
@@ -12855,7 +12897,8 @@ definitions:
                       description: "description"
                       artifact_partial_id:
                         partitions:
-                          key: "partitions"
+                          value:
+                            key: "value"
                         artifact_key:
                           domain: "domain"
                           name: "name"
@@ -12924,7 +12967,8 @@ definitions:
                       description: "description"
                       artifact_partial_id:
                         partitions:
-                          key: "partitions"
+                          value:
+                            key: "value"
                         artifact_key:
                           domain: "domain"
                           name: "name"
@@ -13146,7 +13190,8 @@ definitions:
                       description: "description"
                       artifact_partial_id:
                         partitions:
-                          key: "partitions"
+                          value:
+                            key: "value"
                         artifact_key:
                           domain: "domain"
                           name: "name"
@@ -13215,7 +13260,8 @@ definitions:
                       description: "description"
                       artifact_partial_id:
                         partitions:
-                          key: "partitions"
+                          value:
+                            key: "value"
                         artifact_key:
                           domain: "domain"
                           name: "name"
@@ -15236,7 +15282,8 @@ definitions:
                       description: "description"
                       artifact_partial_id:
                         partitions:
-                          key: "partitions"
+                          value:
+                            key: "value"
                         artifact_key:
                           domain: "domain"
                           name: "name"
@@ -15305,7 +15352,8 @@ definitions:
                       description: "description"
                       artifact_partial_id:
                         partitions:
-                          key: "partitions"
+                          value:
+                            key: "value"
                         artifact_key:
                           domain: "domain"
                           name: "name"
@@ -16533,7 +16581,8 @@ definitions:
                     description: "description"
                     artifact_partial_id:
                       partitions:
-                        key: "partitions"
+                        value:
+                          key: "value"
                       artifact_key:
                         domain: "domain"
                         name: "name"
@@ -16602,7 +16651,8 @@ definitions:
                     description: "description"
                     artifact_partial_id:
                       partitions:
-                        key: "partitions"
+                        value:
+                          key: "value"
                       artifact_key:
                         domain: "domain"
                         name: "name"
@@ -16840,7 +16890,8 @@ definitions:
                   description: "description"
                   artifact_partial_id:
                     partitions:
-                      key: "partitions"
+                      value:
+                        key: "value"
                     artifact_key:
                       domain: "domain"
                       name: "name"
@@ -16909,7 +16960,8 @@ definitions:
                   description: "description"
                   artifact_partial_id:
                     partitions:
-                      key: "partitions"
+                      value:
+                        key: "value"
                     artifact_key:
                       domain: "domain"
                       name: "name"
@@ -17560,7 +17612,8 @@ definitions:
                       description: "description"
                       artifact_partial_id:
                         partitions:
-                          key: "partitions"
+                          value:
+                            key: "value"
                         artifact_key:
                           domain: "domain"
                           name: "name"
@@ -17629,7 +17682,8 @@ definitions:
                       description: "description"
                       artifact_partial_id:
                         partitions:
-                          key: "partitions"
+                          value:
+                            key: "value"
                         artifact_key:
                           domain: "domain"
                           name: "name"
@@ -17861,7 +17915,8 @@ definitions:
                       description: "description"
                       artifact_partial_id:
                         partitions:
-                          key: "partitions"
+                          value:
+                            key: "value"
                         artifact_key:
                           domain: "domain"
                           name: "name"
@@ -17930,7 +17985,8 @@ definitions:
                       description: "description"
                       artifact_partial_id:
                         partitions:
-                          key: "partitions"
+                          value:
+                            key: "value"
                         artifact_key:
                           domain: "domain"
                           name: "name"
@@ -20065,7 +20121,8 @@ definitions:
                       description: "description"
                       artifact_partial_id:
                         partitions:
-                          key: "partitions"
+                          value:
+                            key: "value"
                         artifact_key:
                           domain: "domain"
                           name: "name"
@@ -20134,7 +20191,8 @@ definitions:
                       description: "description"
                       artifact_partial_id:
                         partitions:
-                          key: "partitions"
+                          value:
+                            key: "value"
                         artifact_key:
                           domain: "domain"
                           name: "name"
@@ -22116,7 +22174,8 @@ definitions:
                       description: "description"
                       artifact_partial_id:
                         partitions:
-                          key: "partitions"
+                          value:
+                            key: "value"
                         artifact_key:
                           domain: "domain"
                           name: "name"
@@ -22185,7 +22244,8 @@ definitions:
                       description: "description"
                       artifact_partial_id:
                         partitions:
-                          key: "partitions"
+                          value:
+                            key: "value"
                         artifact_key:
                           domain: "domain"
                           name: "name"
@@ -22370,7 +22430,8 @@ definitions:
                       description: "description"
                       artifact_partial_id:
                         partitions:
-                          key: "partitions"
+                          value:
+                            key: "value"
                         artifact_key:
                           domain: "domain"
                           name: "name"
@@ -22439,7 +22500,8 @@ definitions:
                       description: "description"
                       artifact_partial_id:
                         partitions:
-                          key: "partitions"
+                          value:
+                            key: "value"
                         artifact_key:
                           domain: "domain"
                           name: "name"
@@ -22661,7 +22723,8 @@ definitions:
                       description: "description"
                       artifact_partial_id:
                         partitions:
-                          key: "partitions"
+                          value:
+                            key: "value"
                         artifact_key:
                           domain: "domain"
                           name: "name"
@@ -22730,7 +22793,8 @@ definitions:
                       description: "description"
                       artifact_partial_id:
                         partitions:
-                          key: "partitions"
+                          value:
+                            key: "value"
                         artifact_key:
                           domain: "domain"
                           name: "name"
@@ -24751,7 +24815,8 @@ definitions:
                       description: "description"
                       artifact_partial_id:
                         partitions:
-                          key: "partitions"
+                          value:
+                            key: "value"
                         artifact_key:
                           domain: "domain"
                           name: "name"
@@ -24820,7 +24885,8 @@ definitions:
                       description: "description"
                       artifact_partial_id:
                         partitions:
-                          key: "partitions"
+                          value:
+                            key: "value"
                         artifact_key:
                           domain: "domain"
                           name: "name"
@@ -27087,7 +27153,8 @@ definitions:
                     description: "description"
                     artifact_partial_id:
                       partitions:
-                        key: "partitions"
+                        value:
+                          key: "value"
                       artifact_key:
                         domain: "domain"
                         name: "name"
@@ -27156,7 +27223,8 @@ definitions:
                     description: "description"
                     artifact_partial_id:
                       partitions:
-                        key: "partitions"
+                        value:
+                          key: "value"
                       artifact_key:
                         domain: "domain"
                         name: "name"
@@ -29138,7 +29206,8 @@ definitions:
                     description: "description"
                     artifact_partial_id:
                       partitions:
-                        key: "partitions"
+                        value:
+                          key: "value"
                       artifact_key:
                         domain: "domain"
                         name: "name"
@@ -29207,7 +29276,8 @@ definitions:
                     description: "description"
                     artifact_partial_id:
                       partitions:
-                        key: "partitions"
+                        value:
+                          key: "value"
                       artifact_key:
                         domain: "domain"
                         name: "name"
@@ -29392,7 +29462,8 @@ definitions:
                     description: "description"
                     artifact_partial_id:
                       partitions:
-                        key: "partitions"
+                        value:
+                          key: "value"
                       artifact_key:
                         domain: "domain"
                         name: "name"
@@ -29461,7 +29532,8 @@ definitions:
                     description: "description"
                     artifact_partial_id:
                       partitions:
-                        key: "partitions"
+                        value:
+                          key: "value"
                       artifact_key:
                         domain: "domain"
                         name: "name"
@@ -29683,7 +29755,8 @@ definitions:
                     description: "description"
                     artifact_partial_id:
                       partitions:
-                        key: "partitions"
+                        value:
+                          key: "value"
                       artifact_key:
                         domain: "domain"
                         name: "name"
@@ -29752,7 +29825,8 @@ definitions:
                     description: "description"
                     artifact_partial_id:
                       partitions:
-                        key: "partitions"
+                        value:
+                          key: "value"
                       artifact_key:
                         domain: "domain"
                         name: "name"
@@ -31773,7 +31847,8 @@ definitions:
                     description: "description"
                     artifact_partial_id:
                       partitions:
-                        key: "partitions"
+                        value:
+                          key: "value"
                       artifact_key:
                         domain: "domain"
                         name: "name"
@@ -31842,7 +31917,8 @@ definitions:
                     description: "description"
                     artifact_partial_id:
                       partitions:
-                        key: "partitions"
+                        value:
+                          key: "value"
                       artifact_key:
                         domain: "domain"
                         name: "name"
@@ -34056,7 +34132,8 @@ definitions:
                         description: "description"
                         artifact_partial_id:
                           partitions:
-                            key: "partitions"
+                            value:
+                              key: "value"
                           artifact_key:
                             domain: "domain"
                             name: "name"
@@ -34125,7 +34202,8 @@ definitions:
                         description: "description"
                         artifact_partial_id:
                           partitions:
-                            key: "partitions"
+                            value:
+                              key: "value"
                           artifact_key:
                             domain: "domain"
                             name: "name"
@@ -36107,7 +36185,8 @@ definitions:
                         description: "description"
                         artifact_partial_id:
                           partitions:
-                            key: "partitions"
+                            value:
+                              key: "value"
                           artifact_key:
                             domain: "domain"
                             name: "name"
@@ -36176,7 +36255,8 @@ definitions:
                         description: "description"
                         artifact_partial_id:
                           partitions:
-                            key: "partitions"
+                            value:
+                              key: "value"
                           artifact_key:
                             domain: "domain"
                             name: "name"
@@ -36361,7 +36441,8 @@ definitions:
                         description: "description"
                         artifact_partial_id:
                           partitions:
-                            key: "partitions"
+                            value:
+                              key: "value"
                           artifact_key:
                             domain: "domain"
                             name: "name"
@@ -36430,7 +36511,8 @@ definitions:
                         description: "description"
                         artifact_partial_id:
                           partitions:
-                            key: "partitions"
+                            value:
+                              key: "value"
                           artifact_key:
                             domain: "domain"
                             name: "name"
@@ -36652,7 +36734,8 @@ definitions:
                         description: "description"
                         artifact_partial_id:
                           partitions:
-                            key: "partitions"
+                            value:
+                              key: "value"
                           artifact_key:
                             domain: "domain"
                             name: "name"
@@ -36721,7 +36804,8 @@ definitions:
                         description: "description"
                         artifact_partial_id:
                           partitions:
-                            key: "partitions"
+                            value:
+                              key: "value"
                           artifact_key:
                             domain: "domain"
                             name: "name"
@@ -38742,7 +38826,8 @@ definitions:
                         description: "description"
                         artifact_partial_id:
                           partitions:
-                            key: "partitions"
+                            value:
+                              key: "value"
                           artifact_key:
                             domain: "domain"
                             name: "name"
@@ -38811,7 +38896,8 @@ definitions:
                         description: "description"
                         artifact_partial_id:
                           partitions:
-                            key: "partitions"
+                            value:
+                              key: "value"
                           artifact_key:
                             domain: "domain"
                             name: "name"
@@ -40804,7 +40890,8 @@ definitions:
                         description: "description"
                         artifact_partial_id:
                           partitions:
-                            key: "partitions"
+                            value:
+                              key: "value"
                           artifact_key:
                             domain: "domain"
                             name: "name"
@@ -40873,7 +40960,8 @@ definitions:
                         description: "description"
                         artifact_partial_id:
                           partitions:
-                            key: "partitions"
+                            value:
+                              key: "value"
                           artifact_key:
                             domain: "domain"
                             name: "name"
@@ -42855,7 +42943,8 @@ definitions:
                         description: "description"
                         artifact_partial_id:
                           partitions:
-                            key: "partitions"
+                            value:
+                              key: "value"
                           artifact_key:
                             domain: "domain"
                             name: "name"
@@ -42924,7 +43013,8 @@ definitions:
                         description: "description"
                         artifact_partial_id:
                           partitions:
-                            key: "partitions"
+                            value:
+                              key: "value"
                           artifact_key:
                             domain: "domain"
                             name: "name"
@@ -43109,7 +43199,8 @@ definitions:
                         description: "description"
                         artifact_partial_id:
                           partitions:
-                            key: "partitions"
+                            value:
+                              key: "value"
                           artifact_key:
                             domain: "domain"
                             name: "name"
@@ -43178,7 +43269,8 @@ definitions:
                         description: "description"
                         artifact_partial_id:
                           partitions:
-                            key: "partitions"
+                            value:
+                              key: "value"
                           artifact_key:
                             domain: "domain"
                             name: "name"
@@ -43400,7 +43492,8 @@ definitions:
                         description: "description"
                         artifact_partial_id:
                           partitions:
-                            key: "partitions"
+                            value:
+                              key: "value"
                           artifact_key:
                             domain: "domain"
                             name: "name"
@@ -43469,7 +43562,8 @@ definitions:
                         description: "description"
                         artifact_partial_id:
                           partitions:
-                            key: "partitions"
+                            value:
+                              key: "value"
                           artifact_key:
                             domain: "domain"
                             name: "name"
@@ -45490,7 +45584,8 @@ definitions:
                         description: "description"
                         artifact_partial_id:
                           partitions:
-                            key: "partitions"
+                            value:
+                              key: "value"
                           artifact_key:
                             domain: "domain"
                             name: "name"
@@ -45559,7 +45654,8 @@ definitions:
                         description: "description"
                         artifact_partial_id:
                           partitions:
-                            key: "partitions"
+                            value:
+                              key: "value"
                           artifact_key:
                             domain: "domain"
                             name: "name"
@@ -45725,13 +45821,11 @@ definitions:
       version:
         type: "string"
       partitions:
-        type: "object"
-        title: "here for ds popularity"
-        additionalProperties:
-          type: "string"
+        $ref: "#/definitions/corePartitions"
     example:
       partitions:
-        key: "partitions"
+        value:
+          key: "value"
       artifact_key:
         domain: "domain"
         name: "name"
@@ -45768,7 +45862,8 @@ definitions:
     example:
       artifact_id:
         partitions:
-          key: "partitions"
+          value:
+            key: "value"
         artifact_key:
           domain: "domain"
           name: "name"
@@ -46572,7 +46667,8 @@ definitions:
                 description: "description"
                 artifact_partial_id:
                   partitions:
-                    key: "partitions"
+                    value:
+                      key: "value"
                   artifact_key:
                     domain: "domain"
                     name: "name"
@@ -46641,7 +46737,8 @@ definitions:
                 description: "description"
                 artifact_partial_id:
                   partitions:
-                    key: "partitions"
+                    value:
+                      key: "value"
                   artifact_key:
                     domain: "domain"
                     name: "name"
@@ -48674,7 +48771,8 @@ definitions:
                 description: "description"
                 artifact_partial_id:
                   partitions:
-                    key: "partitions"
+                    value:
+                      key: "value"
                   artifact_key:
                     domain: "domain"
                     name: "name"
@@ -48743,7 +48841,8 @@ definitions:
                 description: "description"
                 artifact_partial_id:
                   partitions:
-                    key: "partitions"
+                    value:
+                      key: "value"
                   artifact_key:
                     domain: "domain"
                     name: "name"
@@ -50752,7 +50851,8 @@ definitions:
                   description: "description"
                   artifact_partial_id:
                     partitions:
-                      key: "partitions"
+                      value:
+                        key: "value"
                     artifact_key:
                       domain: "domain"
                       name: "name"
@@ -50821,7 +50921,8 @@ definitions:
                   description: "description"
                   artifact_partial_id:
                     partitions:
-                      key: "partitions"
+                      value:
+                        key: "value"
                     artifact_key:
                       domain: "domain"
                       name: "name"
@@ -52803,7 +52904,8 @@ definitions:
                   description: "description"
                   artifact_partial_id:
                     partitions:
-                      key: "partitions"
+                      value:
+                        key: "value"
                     artifact_key:
                       domain: "domain"
                       name: "name"
@@ -52872,7 +52974,8 @@ definitions:
                   description: "description"
                   artifact_partial_id:
                     partitions:
-                      key: "partitions"
+                      value:
+                        key: "value"
                     artifact_key:
                       domain: "domain"
                       name: "name"
@@ -53057,7 +53160,8 @@ definitions:
                   description: "description"
                   artifact_partial_id:
                     partitions:
-                      key: "partitions"
+                      value:
+                        key: "value"
                     artifact_key:
                       domain: "domain"
                       name: "name"
@@ -53126,7 +53230,8 @@ definitions:
                   description: "description"
                   artifact_partial_id:
                     partitions:
-                      key: "partitions"
+                      value:
+                        key: "value"
                     artifact_key:
                       domain: "domain"
                       name: "name"
@@ -53348,7 +53453,8 @@ definitions:
                   description: "description"
                   artifact_partial_id:
                     partitions:
-                      key: "partitions"
+                      value:
+                        key: "value"
                     artifact_key:
                       domain: "domain"
                       name: "name"
@@ -53417,7 +53523,8 @@ definitions:
                   description: "description"
                   artifact_partial_id:
                     partitions:
-                      key: "partitions"
+                      value:
+                        key: "value"
                     artifact_key:
                       domain: "domain"
                       name: "name"
@@ -55438,7 +55545,8 @@ definitions:
                   description: "description"
                   artifact_partial_id:
                     partitions:
-                      key: "partitions"
+                      value:
+                        key: "value"
                     artifact_key:
                       domain: "domain"
                       name: "name"
@@ -55507,7 +55615,8 @@ definitions:
                   description: "description"
                   artifact_partial_id:
                     partitions:
-                      key: "partitions"
+                      value:
+                        key: "value"
                     artifact_key:
                       domain: "domain"
                       name: "name"
@@ -56323,7 +56432,8 @@ definitions:
         - null
       artifact_id:
         partitions:
-          key: "partitions"
+          value:
+            key: "value"
         artifact_key:
           domain: "domain"
           name: "name"
@@ -57358,7 +57468,8 @@ definitions:
           - null
         artifact_id:
           partitions:
-            key: "partitions"
+            value:
+              key: "value"
           artifact_key:
             domain: "domain"
             name: "name"
@@ -57422,7 +57533,8 @@ definitions:
         description: "description"
         artifact_partial_id:
           partitions:
-            key: "partitions"
+            value:
+              key: "value"
           artifact_key:
             domain: "domain"
             name: "name"
@@ -57488,7 +57600,8 @@ definitions:
       artifact_query:
         artifact_id:
           partitions:
-            key: "partitions"
+            value:
+              key: "value"
           artifact_key:
             domain: "domain"
             name: "name"
@@ -57625,7 +57738,8 @@ definitions:
               - null
             artifact_id:
               partitions:
-                key: "partitions"
+                value:
+                  key: "value"
               artifact_key:
                 domain: "domain"
                 name: "name"
@@ -57689,7 +57803,8 @@ definitions:
             description: "description"
             artifact_partial_id:
               partitions:
-                key: "partitions"
+                value:
+                  key: "value"
               artifact_key:
                 domain: "domain"
                 name: "name"
@@ -57755,7 +57870,8 @@ definitions:
           artifact_query:
             artifact_id:
               partitions:
-                key: "partitions"
+                value:
+                  key: "value"
               artifact_key:
                 domain: "domain"
                 name: "name"
@@ -57769,6 +57885,16 @@ definitions:
                 project: "project"
               value: "value"
           required: true
+  corePartitions:
+    type: "object"
+    properties:
+      value:
+        type: "object"
+        additionalProperties:
+          type: "string"
+    example:
+      value:
+        key: "value"
   corePrimitive:
     type: "object"
     properties:
@@ -58740,7 +58866,8 @@ definitions:
               description: "description"
               artifact_partial_id:
                 partitions:
-                  key: "partitions"
+                  value:
+                    key: "value"
                 artifact_key:
                   domain: "domain"
                   name: "name"
@@ -58809,7 +58936,8 @@ definitions:
               description: "description"
               artifact_partial_id:
                 partitions:
-                  key: "partitions"
+                  value:
+                    key: "value"
                 artifact_key:
                   domain: "domain"
                   name: "name"
@@ -58967,7 +59095,8 @@ definitions:
             description: "description"
             artifact_partial_id:
               partitions:
-                key: "partitions"
+                value:
+                  key: "value"
               artifact_key:
                 domain: "domain"
                 name: "name"
@@ -59036,7 +59165,8 @@ definitions:
             description: "description"
             artifact_partial_id:
               partitions:
-                key: "partitions"
+                value:
+                  key: "value"
               artifact_key:
                 domain: "domain"
                 name: "name"
@@ -59259,7 +59389,8 @@ definitions:
       description: "description"
       artifact_partial_id:
         partitions:
-          key: "partitions"
+          value:
+            key: "value"
         artifact_key:
           domain: "domain"
           name: "name"
@@ -59337,7 +59468,8 @@ definitions:
           description: "description"
           artifact_partial_id:
             partitions:
-              key: "partitions"
+              value:
+                key: "value"
             artifact_key:
               domain: "domain"
               name: "name"
@@ -61456,7 +61588,8 @@ definitions:
               description: "description"
               artifact_partial_id:
                 partitions:
-                  key: "partitions"
+                  value:
+                    key: "value"
                 artifact_key:
                   domain: "domain"
                   name: "name"
@@ -61525,7 +61658,8 @@ definitions:
               description: "description"
               artifact_partial_id:
                 partitions:
-                  key: "partitions"
+                  value:
+                    key: "value"
                 artifact_key:
                   domain: "domain"
                   name: "name"
@@ -63787,7 +63921,8 @@ definitions:
                     description: "description"
                     artifact_partial_id:
                       partitions:
-                        key: "partitions"
+                        value:
+                          key: "value"
                       artifact_key:
                         domain: "domain"
                         name: "name"
@@ -63856,7 +63991,8 @@ definitions:
                     description: "description"
                     artifact_partial_id:
                       partitions:
-                        key: "partitions"
+                        value:
+                          key: "value"
                       artifact_key:
                         domain: "domain"
                         name: "name"
@@ -65838,7 +65974,8 @@ definitions:
                     description: "description"
                     artifact_partial_id:
                       partitions:
-                        key: "partitions"
+                        value:
+                          key: "value"
                       artifact_key:
                         domain: "domain"
                         name: "name"
@@ -65907,7 +66044,8 @@ definitions:
                     description: "description"
                     artifact_partial_id:
                       partitions:
-                        key: "partitions"
+                        value:
+                          key: "value"
                       artifact_key:
                         domain: "domain"
                         name: "name"
@@ -66092,7 +66230,8 @@ definitions:
                     description: "description"
                     artifact_partial_id:
                       partitions:
-                        key: "partitions"
+                        value:
+                          key: "value"
                       artifact_key:
                         domain: "domain"
                         name: "name"
@@ -66161,7 +66300,8 @@ definitions:
                     description: "description"
                     artifact_partial_id:
                       partitions:
-                        key: "partitions"
+                        value:
+                          key: "value"
                       artifact_key:
                         domain: "domain"
                         name: "name"
@@ -66383,7 +66523,8 @@ definitions:
                     description: "description"
                     artifact_partial_id:
                       partitions:
-                        key: "partitions"
+                        value:
+                          key: "value"
                       artifact_key:
                         domain: "domain"
                         name: "name"
@@ -66452,7 +66593,8 @@ definitions:
                     description: "description"
                     artifact_partial_id:
                       partitions:
-                        key: "partitions"
+                        value:
+                          key: "value"
                       artifact_key:
                         domain: "domain"
                         name: "name"
@@ -68473,7 +68615,8 @@ definitions:
                     description: "description"
                     artifact_partial_id:
                       partitions:
-                        key: "partitions"
+                        value:
+                          key: "value"
                       artifact_key:
                         domain: "domain"
                         name: "name"
@@ -68542,7 +68685,8 @@ definitions:
                     description: "description"
                     artifact_partial_id:
                       partitions:
-                        key: "partitions"
+                        value:
+                          key: "value"
                       artifact_key:
                         domain: "domain"
                         name: "name"

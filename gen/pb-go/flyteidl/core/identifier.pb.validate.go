@@ -500,6 +500,72 @@ var _ interface {
 	ErrorName() string
 } = ArtifactKeyValidationError{}
 
+// Validate checks the field values on Partitions with the rules defined in the
+// proto definition for this message. If any rules are violated, an error is returned.
+func (m *Partitions) Validate() error {
+	if m == nil {
+		return nil
+	}
+
+	// no validation rules for Value
+
+	return nil
+}
+
+// PartitionsValidationError is the validation error returned by
+// Partitions.Validate if the designated constraints aren't met.
+type PartitionsValidationError struct {
+	field  string
+	reason string
+	cause  error
+	key    bool
+}
+
+// Field function returns field value.
+func (e PartitionsValidationError) Field() string { return e.field }
+
+// Reason function returns reason value.
+func (e PartitionsValidationError) Reason() string { return e.reason }
+
+// Cause function returns cause value.
+func (e PartitionsValidationError) Cause() error { return e.cause }
+
+// Key function returns key value.
+func (e PartitionsValidationError) Key() bool { return e.key }
+
+// ErrorName returns error name.
+func (e PartitionsValidationError) ErrorName() string { return "PartitionsValidationError" }
+
+// Error satisfies the builtin error interface
+func (e PartitionsValidationError) Error() string {
+	cause := ""
+	if e.cause != nil {
+		cause = fmt.Sprintf(" | caused by: %v", e.cause)
+	}
+
+	key := ""
+	if e.key {
+		key = "key for "
+	}
+
+	return fmt.Sprintf(
+		"invalid %sPartitions.%s: %s%s",
+		key,
+		e.field,
+		e.reason,
+		cause)
+}
+
+var _ error = PartitionsValidationError{}
+
+var _ interface {
+	Field() string
+	Reason() string
+	Key() bool
+	Cause() error
+	ErrorName() string
+} = PartitionsValidationError{}
+
 // Validate checks the field values on ArtifactID with the rules defined in the
 // proto definition for this message. If any rules are violated, an error is returned.
 func (m *ArtifactID) Validate() error {
@@ -519,7 +585,21 @@ func (m *ArtifactID) Validate() error {
 
 	// no validation rules for Version
 
-	// no validation rules for Partitions
+	switch m.Dimensions.(type) {
+
+	case *ArtifactID_Partitions:
+
+		if v, ok := interface{}(m.GetPartitions()).(interface{ Validate() error }); ok {
+			if err := v.Validate(); err != nil {
+				return ArtifactIDValidationError{
+					field:  "Partitions",
+					reason: "embedded message failed validation",
+					cause:  err,
+				}
+			}
+		}
+
+	}
 
 	return nil
 }

@@ -257,11 +257,7 @@
           "type": "string"
         },
         "partitions": {
-          "type": "object",
-          "additionalProperties": {
-            "type": "string"
-          },
-          "title": "here for ds popularity"
+          "$ref": "#/definitions/corePartitions"
         }
       }
     },
@@ -463,6 +459,17 @@
         }
       },
       "description": "Defines a strong type to allow type checking between interfaces."
+    },
+    "corePartitions": {
+      "type": "object",
+      "properties": {
+        "value": {
+          "type": "object",
+          "additionalProperties": {
+            "type": "string"
+          }
+        }
+      }
     },
     "corePrimitive": {
       "type": "object",

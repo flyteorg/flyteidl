@@ -79,22 +79,28 @@ class ArtifactKey(_message.Message):
     name: str
     def __init__(self, project: _Optional[str] = ..., domain: _Optional[str] = ..., name: _Optional[str] = ...) -> None: ...
 
-class ArtifactID(_message.Message):
-    __slots__ = ["artifact_key", "version", "partitions"]
-    class PartitionsEntry(_message.Message):
+class Partitions(_message.Message):
+    __slots__ = ["value"]
+    class ValueEntry(_message.Message):
         __slots__ = ["key", "value"]
         KEY_FIELD_NUMBER: _ClassVar[int]
         VALUE_FIELD_NUMBER: _ClassVar[int]
         key: str
         value: str
         def __init__(self, key: _Optional[str] = ..., value: _Optional[str] = ...) -> None: ...
+    VALUE_FIELD_NUMBER: _ClassVar[int]
+    value: _containers.ScalarMap[str, str]
+    def __init__(self, value: _Optional[_Mapping[str, str]] = ...) -> None: ...
+
+class ArtifactID(_message.Message):
+    __slots__ = ["artifact_key", "version", "partitions"]
     ARTIFACT_KEY_FIELD_NUMBER: _ClassVar[int]
     VERSION_FIELD_NUMBER: _ClassVar[int]
     PARTITIONS_FIELD_NUMBER: _ClassVar[int]
     artifact_key: ArtifactKey
     version: str
-    partitions: _containers.ScalarMap[str, str]
-    def __init__(self, artifact_key: _Optional[_Union[ArtifactKey, _Mapping]] = ..., version: _Optional[str] = ..., partitions: _Optional[_Mapping[str, str]] = ...) -> None: ...
+    partitions: Partitions
+    def __init__(self, artifact_key: _Optional[_Union[ArtifactKey, _Mapping]] = ..., version: _Optional[str] = ..., partitions: _Optional[_Union[Partitions, _Mapping]] = ...) -> None: ...
 
 class ArtifactTag(_message.Message):
     __slots__ = ["artifact_key", "value"]

@@ -5628,11 +5628,7 @@
           "type": "string"
         },
         "partitions": {
-          "type": "object",
-          "additionalProperties": {
-            "type": "string"
-          },
-          "title": "here for ds popularity"
+          "$ref": "#/definitions/corePartitions"
         }
       }
     },
@@ -6589,6 +6585,17 @@
         }
       },
       "description": "A map of Parameters."
+    },
+    "corePartitions": {
+      "type": "object",
+      "properties": {
+        "value": {
+          "type": "object",
+          "additionalProperties": {
+            "type": "string"
+          }
+        }
+      }
     },
     "corePrimitive": {
       "type": "object",

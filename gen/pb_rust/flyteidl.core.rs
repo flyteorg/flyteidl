@@ -385,14 +385,38 @@ pub struct ArtifactKey {
 }
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(Clone, PartialEq, ::prost::Message)]
+pub struct Partitions {
+    #[prost(map="string, string", tag="1")]
+    pub value: ::std::collections::HashMap<::prost::alloc::string::String, ::prost::alloc::string::String>,
+}
+#[allow(clippy::derive_partial_eq_without_eq)]
+#[derive(Clone, PartialEq, ::prost::Message)]
 pub struct ArtifactId {
     #[prost(message, optional, tag="1")]
     pub artifact_key: ::core::option::Option<ArtifactKey>,
     #[prost(string, tag="2")]
     pub version: ::prost::alloc::string::String,
     /// here for ds popularity
-    #[prost(map="string, string", tag="3")]
-    pub partitions: ::std::collections::HashMap<::prost::alloc::string::String, ::prost::alloc::string::String>,
+    /// this is a oneof because of partition querying... we need a way to distinguish between
+    /// a user not-specifying partitions when searching, and specifically searching for an Artifact
+    /// that is not partitioned (this can happen if an Artifact goes from partitioned to non-
+    /// partitioned across executions).
+    #[prost(oneof="artifact_id::Dimensions", tags="3")]
+    pub dimensions: ::core::option::Option<artifact_id::Dimensions>,
+}
+/// Nested message and enum types in `ArtifactID`.
+pub mod artifact_id {
+    /// here for ds popularity
+    /// this is a oneof because of partition querying... we need a way to distinguish between
+    /// a user not-specifying partitions when searching, and specifically searching for an Artifact
+    /// that is not partitioned (this can happen if an Artifact goes from partitioned to non-
+    /// partitioned across executions).
+    #[allow(clippy::derive_partial_eq_without_eq)]
+#[derive(Clone, PartialEq, ::prost::Oneof)]
+    pub enum Dimensions {
+        #[prost(message, tag="3")]
+        Partitions(super::Partitions),
+    }
 }
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(Clone, PartialEq, ::prost::Message)]

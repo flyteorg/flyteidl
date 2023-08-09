@@ -80,13 +80,23 @@ message ArtifactKey {
   string name = 3;
 }
 
+message Partitions {
+  map<string, string> value = 1;
+}
+
 message ArtifactID {
   ArtifactKey artifact_key = 1;
 
   string version = 2;
 
   // here for ds popularity
-  map<string, string> partitions = 3;
+  // this is a oneof because of partition querying... we need a way to distinguish between
+  // a user not-specifying partitions when searching, and specifically searching for an Artifact
+  // that is not partitioned (this can happen if an Artifact goes from partitioned to non-
+  // partitioned across executions).
+  oneof dimensions {
+       Partitions partitions = 3;
+  }
 }
 
 message ArtifactTag {
