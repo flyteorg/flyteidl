@@ -17713,6 +17713,41 @@ public final class ExecutionOuterClass {
      */
     flyteidl.admin.Common.EnvsOrBuilder getEnvsOrBuilder();
 
+    /**
+     * <pre>
+     * Tags to be set for the execution.
+     * </pre>
+     *
+     * <code>repeated string tags = 24;</code>
+     */
+    java.util.List<java.lang.String>
+        getTagsList();
+    /**
+     * <pre>
+     * Tags to be set for the execution.
+     * </pre>
+     *
+     * <code>repeated string tags = 24;</code>
+     */
+    int getTagsCount();
+    /**
+     * <pre>
+     * Tags to be set for the execution.
+     * </pre>
+     *
+     * <code>repeated string tags = 24;</code>
+     */
+    java.lang.String getTags(int index);
+    /**
+     * <pre>
+     * Tags to be set for the execution.
+     * </pre>
+     *
+     * <code>repeated string tags = 24;</code>
+     */
+    com.google.protobuf.ByteString
+        getTagsBytes(int index);
+
     public flyteidl.admin.ExecutionOuterClass.ExecutionSpec.NotificationOverridesCase getNotificationOverridesCase();
   }
   /**
@@ -17733,6 +17768,7 @@ public final class ExecutionOuterClass {
       super(builder);
     }
     private ExecutionSpec() {
+      tags_ = com.google.protobuf.LazyStringArrayList.EMPTY;
     }
 
     @java.lang.Override
@@ -17944,6 +17980,15 @@ public final class ExecutionOuterClass {
 
               break;
             }
+            case 194: {
+              java.lang.String s = input.readStringRequireUtf8();
+              if (!((mutable_bitField0_ & 0x00010000) != 0)) {
+                tags_ = new com.google.protobuf.LazyStringArrayList();
+                mutable_bitField0_ |= 0x00010000;
+              }
+              tags_.add(s);
+              break;
+            }
             default: {
               if (!parseUnknownField(
                   input, unknownFields, extensionRegistry, tag)) {
@@ -17959,6 +18004,9 @@ public final class ExecutionOuterClass {
         throw new com.google.protobuf.InvalidProtocolBufferException(
             e).setUnfinishedMessage(this);
       } finally {
+        if (((mutable_bitField0_ & 0x00010000) != 0)) {
+          tags_ = tags_.getUnmodifiableView();
+        }
         this.unknownFields = unknownFields.build();
         makeExtensionsImmutable();
       }
@@ -17976,6 +18024,7 @@ public final class ExecutionOuterClass {
               flyteidl.admin.ExecutionOuterClass.ExecutionSpec.class, flyteidl.admin.ExecutionOuterClass.ExecutionSpec.Builder.class);
     }
 
+    private int bitField0_;
     private int notificationOverridesCase_ = 0;
     private java.lang.Object notificationOverrides_;
     public enum NotificationOverridesCase
@@ -18511,6 +18560,51 @@ public final class ExecutionOuterClass {
       return getEnvs();
     }
 
+    public static final int TAGS_FIELD_NUMBER = 24;
+    private com.google.protobuf.LazyStringList tags_;
+    /**
+     * <pre>
+     * Tags to be set for the execution.
+     * </pre>
+     *
+     * <code>repeated string tags = 24;</code>
+     */
+    public com.google.protobuf.ProtocolStringList
+        getTagsList() {
+      return tags_;
+    }
+    /**
+     * <pre>
+     * Tags to be set for the execution.
+     * </pre>
+     *
+     * <code>repeated string tags = 24;</code>
+     */
+    public int getTagsCount() {
+      return tags_.size();
+    }
+    /**
+     * <pre>
+     * Tags to be set for the execution.
+     * </pre>
+     *
+     * <code>repeated string tags = 24;</code>
+     */
+    public java.lang.String getTags(int index) {
+      return tags_.get(index);
+    }
+    /**
+     * <pre>
+     * Tags to be set for the execution.
+     * </pre>
+     *
+     * <code>repeated string tags = 24;</code>
+     */
+    public com.google.protobuf.ByteString
+        getTagsBytes(int index) {
+      return tags_.getByteString(index);
+    }
+
     private byte memoizedIsInitialized = -1;
     @java.lang.Override
     public final boolean isInitialized() {
@@ -18573,6 +18667,9 @@ public final class ExecutionOuterClass {
       }
       if (envs_ != null) {
         output.writeMessage(23, getEnvs());
+      }
+      for (int i = 0; i < tags_.size(); i++) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 24, tags_.getRaw(i));
       }
       unknownFields.writeTo(output);
     }
@@ -18647,6 +18744,14 @@ public final class ExecutionOuterClass {
       if (envs_ != null) {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(23, getEnvs());
+      }
+      {
+        int dataSize = 0;
+        for (int i = 0; i < tags_.size(); i++) {
+          dataSize += computeStringSizeNoTag(tags_.getRaw(i));
+        }
+        size += dataSize;
+        size += 2 * getTagsList().size();
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -18727,6 +18832,8 @@ public final class ExecutionOuterClass {
         if (!getEnvs()
             .equals(other.getEnvs())) return false;
       }
+      if (!getTagsList()
+          .equals(other.getTagsList())) return false;
       if (!getNotificationOverridesCase().equals(other.getNotificationOverridesCase())) return false;
       switch (notificationOverridesCase_) {
         case 5:
@@ -18803,6 +18910,10 @@ public final class ExecutionOuterClass {
       if (hasEnvs()) {
         hash = (37 * hash) + ENVS_FIELD_NUMBER;
         hash = (53 * hash) + getEnvs().hashCode();
+      }
+      if (getTagsCount() > 0) {
+        hash = (37 * hash) + TAGS_FIELD_NUMBER;
+        hash = (53 * hash) + getTagsList().hashCode();
       }
       switch (notificationOverridesCase_) {
         case 5:
@@ -19031,6 +19142,8 @@ public final class ExecutionOuterClass {
           envs_ = null;
           envsBuilder_ = null;
         }
+        tags_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+        bitField0_ = (bitField0_ & ~0x00010000);
         notificationOverridesCase_ = 0;
         notificationOverrides_ = null;
         return this;
@@ -19059,6 +19172,8 @@ public final class ExecutionOuterClass {
       @java.lang.Override
       public flyteidl.admin.ExecutionOuterClass.ExecutionSpec buildPartial() {
         flyteidl.admin.ExecutionOuterClass.ExecutionSpec result = new flyteidl.admin.ExecutionOuterClass.ExecutionSpec(this);
+        int from_bitField0_ = bitField0_;
+        int to_bitField0_ = 0;
         if (launchPlanBuilder_ == null) {
           result.launchPlan_ = launchPlan_;
         } else {
@@ -19131,6 +19246,12 @@ public final class ExecutionOuterClass {
         } else {
           result.envs_ = envsBuilder_.build();
         }
+        if (((bitField0_ & 0x00010000) != 0)) {
+          tags_ = tags_.getUnmodifiableView();
+          bitField0_ = (bitField0_ & ~0x00010000);
+        }
+        result.tags_ = tags_;
+        result.bitField0_ = to_bitField0_;
         result.notificationOverridesCase_ = notificationOverridesCase_;
         onBuilt();
         return result;
@@ -19222,6 +19343,16 @@ public final class ExecutionOuterClass {
         if (other.hasEnvs()) {
           mergeEnvs(other.getEnvs());
         }
+        if (!other.tags_.isEmpty()) {
+          if (tags_.isEmpty()) {
+            tags_ = other.tags_;
+            bitField0_ = (bitField0_ & ~0x00010000);
+          } else {
+            ensureTagsIsMutable();
+            tags_.addAll(other.tags_);
+          }
+          onChanged();
+        }
         switch (other.getNotificationOverridesCase()) {
           case NOTIFICATIONS: {
             mergeNotifications(other.getNotifications());
@@ -19278,6 +19409,7 @@ public final class ExecutionOuterClass {
         return this;
       }
 
+      private int bitField0_;
 
       private flyteidl.core.IdentifierOuterClass.Identifier launchPlan_;
       private com.google.protobuf.SingleFieldBuilderV3<
@@ -21469,6 +21601,136 @@ public final class ExecutionOuterClass {
           envs_ = null;
         }
         return envsBuilder_;
+      }
+
+      private com.google.protobuf.LazyStringList tags_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      private void ensureTagsIsMutable() {
+        if (!((bitField0_ & 0x00010000) != 0)) {
+          tags_ = new com.google.protobuf.LazyStringArrayList(tags_);
+          bitField0_ |= 0x00010000;
+         }
+      }
+      /**
+       * <pre>
+       * Tags to be set for the execution.
+       * </pre>
+       *
+       * <code>repeated string tags = 24;</code>
+       */
+      public com.google.protobuf.ProtocolStringList
+          getTagsList() {
+        return tags_.getUnmodifiableView();
+      }
+      /**
+       * <pre>
+       * Tags to be set for the execution.
+       * </pre>
+       *
+       * <code>repeated string tags = 24;</code>
+       */
+      public int getTagsCount() {
+        return tags_.size();
+      }
+      /**
+       * <pre>
+       * Tags to be set for the execution.
+       * </pre>
+       *
+       * <code>repeated string tags = 24;</code>
+       */
+      public java.lang.String getTags(int index) {
+        return tags_.get(index);
+      }
+      /**
+       * <pre>
+       * Tags to be set for the execution.
+       * </pre>
+       *
+       * <code>repeated string tags = 24;</code>
+       */
+      public com.google.protobuf.ByteString
+          getTagsBytes(int index) {
+        return tags_.getByteString(index);
+      }
+      /**
+       * <pre>
+       * Tags to be set for the execution.
+       * </pre>
+       *
+       * <code>repeated string tags = 24;</code>
+       */
+      public Builder setTags(
+          int index, java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  ensureTagsIsMutable();
+        tags_.set(index, value);
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * Tags to be set for the execution.
+       * </pre>
+       *
+       * <code>repeated string tags = 24;</code>
+       */
+      public Builder addTags(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  ensureTagsIsMutable();
+        tags_.add(value);
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * Tags to be set for the execution.
+       * </pre>
+       *
+       * <code>repeated string tags = 24;</code>
+       */
+      public Builder addAllTags(
+          java.lang.Iterable<java.lang.String> values) {
+        ensureTagsIsMutable();
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(
+            values, tags_);
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * Tags to be set for the execution.
+       * </pre>
+       *
+       * <code>repeated string tags = 24;</code>
+       */
+      public Builder clearTags() {
+        tags_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+        bitField0_ = (bitField0_ & ~0x00010000);
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * Tags to be set for the execution.
+       * </pre>
+       *
+       * <code>repeated string tags = 24;</code>
+       */
+      public Builder addTagsBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        ensureTagsIsMutable();
+        tags_.add(value);
+        onChanged();
+        return this;
       }
       @java.lang.Override
       public final Builder setUnknownFields(
@@ -28753,7 +29015,7 @@ public final class ExecutionOuterClass {
       "HEDULED\020\001\022\n\n\006SYSTEM\020\002\022\014\n\010RELAUNCH\020\003\022\022\n\016C" +
       "HILD_WORKFLOW\020\004\022\r\n\tRECOVERED\020\005\"G\n\020Notifi" +
       "cationList\0223\n\rnotifications\030\001 \003(\0132\034.flyt" +
-      "eidl.admin.Notification\"\244\006\n\rExecutionSpe" +
+      "eidl.admin.Notification\"\262\006\n\rExecutionSpe" +
       "c\022.\n\013launch_plan\030\001 \001(\0132\031.flyteidl.core.I" +
       "dentifier\022-\n\006inputs\030\002 \001(\0132\031.flyteidl.cor" +
       "e.LiteralMapB\002\030\001\0223\n\010metadata\030\003 \001(\0132!.fly" +
@@ -28772,35 +29034,35 @@ public final class ExecutionOuterClass {
       "nment\030\024 \001(\0132!.flyteidl.admin.ClusterAssi" +
       "gnment\0221\n\rinterruptible\030\025 \001(\0132\032.google.p" +
       "rotobuf.BoolValue\022\027\n\017overwrite_cache\030\026 \001" +
-      "(\010\022\"\n\004envs\030\027 \001(\0132\024.flyteidl.admin.EnvsB\030" +
-      "\n\026notification_overridesJ\004\010\004\020\005\"b\n\031Execut" +
-      "ionTerminateRequest\0226\n\002id\030\001 \001(\0132*.flytei" +
-      "dl.core.WorkflowExecutionIdentifier\022\r\n\005c" +
-      "ause\030\002 \001(\t\"\034\n\032ExecutionTerminateResponse" +
-      "\"Y\n\037WorkflowExecutionGetDataRequest\0226\n\002i" +
-      "d\030\001 \001(\0132*.flyteidl.core.WorkflowExecutio" +
-      "nIdentifier\"\336\001\n WorkflowExecutionGetData" +
-      "Response\022,\n\007outputs\030\001 \001(\0132\027.flyteidl.adm" +
-      "in.UrlBlobB\002\030\001\022+\n\006inputs\030\002 \001(\0132\027.flyteid" +
-      "l.admin.UrlBlobB\002\030\001\022.\n\013full_inputs\030\003 \001(\013" +
-      "2\031.flyteidl.core.LiteralMap\022/\n\014full_outp" +
-      "uts\030\004 \001(\0132\031.flyteidl.core.LiteralMap\"\177\n\026" +
-      "ExecutionUpdateRequest\0226\n\002id\030\001 \001(\0132*.fly" +
-      "teidl.core.WorkflowExecutionIdentifier\022-" +
-      "\n\005state\030\002 \001(\0162\036.flyteidl.admin.Execution" +
-      "State\"\220\001\n\033ExecutionStateChangeDetails\022-\n" +
-      "\005state\030\001 \001(\0162\036.flyteidl.admin.ExecutionS" +
-      "tate\022/\n\013occurred_at\030\002 \001(\0132\032.google.proto" +
-      "buf.Timestamp\022\021\n\tprincipal\030\003 \001(\t\"\031\n\027Exec" +
-      "utionUpdateResponse\"k\n\"WorkflowExecution" +
-      "GetMetricsRequest\0226\n\002id\030\001 \001(\0132*.flyteidl" +
-      ".core.WorkflowExecutionIdentifier\022\r\n\005dep" +
-      "th\030\002 \001(\005\"H\n#WorkflowExecutionGetMetricsR" +
-      "esponse\022!\n\004span\030\001 \001(\0132\023.flyteidl.core.Sp" +
-      "an*>\n\016ExecutionState\022\024\n\020EXECUTION_ACTIVE" +
-      "\020\000\022\026\n\022EXECUTION_ARCHIVED\020\001B7Z5github.com" +
-      "/flyteorg/flyteidl/gen/pb-go/flyteidl/ad" +
-      "minb\006proto3"
+      "(\010\022\"\n\004envs\030\027 \001(\0132\024.flyteidl.admin.Envs\022\014" +
+      "\n\004tags\030\030 \003(\tB\030\n\026notification_overridesJ\004" +
+      "\010\004\020\005\"b\n\031ExecutionTerminateRequest\0226\n\002id\030" +
+      "\001 \001(\0132*.flyteidl.core.WorkflowExecutionI" +
+      "dentifier\022\r\n\005cause\030\002 \001(\t\"\034\n\032ExecutionTer" +
+      "minateResponse\"Y\n\037WorkflowExecutionGetDa" +
+      "taRequest\0226\n\002id\030\001 \001(\0132*.flyteidl.core.Wo" +
+      "rkflowExecutionIdentifier\"\336\001\n WorkflowEx" +
+      "ecutionGetDataResponse\022,\n\007outputs\030\001 \001(\0132" +
+      "\027.flyteidl.admin.UrlBlobB\002\030\001\022+\n\006inputs\030\002" +
+      " \001(\0132\027.flyteidl.admin.UrlBlobB\002\030\001\022.\n\013ful" +
+      "l_inputs\030\003 \001(\0132\031.flyteidl.core.LiteralMa" +
+      "p\022/\n\014full_outputs\030\004 \001(\0132\031.flyteidl.core." +
+      "LiteralMap\"\177\n\026ExecutionUpdateRequest\0226\n\002" +
+      "id\030\001 \001(\0132*.flyteidl.core.WorkflowExecuti" +
+      "onIdentifier\022-\n\005state\030\002 \001(\0162\036.flyteidl.a" +
+      "dmin.ExecutionState\"\220\001\n\033ExecutionStateCh" +
+      "angeDetails\022-\n\005state\030\001 \001(\0162\036.flyteidl.ad" +
+      "min.ExecutionState\022/\n\013occurred_at\030\002 \001(\0132" +
+      "\032.google.protobuf.Timestamp\022\021\n\tprincipal" +
+      "\030\003 \001(\t\"\031\n\027ExecutionUpdateResponse\"k\n\"Wor" +
+      "kflowExecutionGetMetricsRequest\0226\n\002id\030\001 " +
+      "\001(\0132*.flyteidl.core.WorkflowExecutionIde" +
+      "ntifier\022\r\n\005depth\030\002 \001(\005\"H\n#WorkflowExecut" +
+      "ionGetMetricsResponse\022!\n\004span\030\001 \001(\0132\023.fl" +
+      "yteidl.core.Span*>\n\016ExecutionState\022\024\n\020EX" +
+      "ECUTION_ACTIVE\020\000\022\026\n\022EXECUTION_ARCHIVED\020\001" +
+      "B7Z5github.com/flyteorg/flyteidl/gen/pb-" +
+      "go/flyteidl/adminb\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
@@ -28907,7 +29169,7 @@ public final class ExecutionOuterClass {
     internal_static_flyteidl_admin_ExecutionSpec_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_flyteidl_admin_ExecutionSpec_descriptor,
-        new java.lang.String[] { "LaunchPlan", "Inputs", "Metadata", "Notifications", "DisableAll", "Labels", "Annotations", "SecurityContext", "AuthRole", "QualityOfService", "MaxParallelism", "RawOutputDataConfig", "ClusterAssignment", "Interruptible", "OverwriteCache", "Envs", "NotificationOverrides", });
+        new java.lang.String[] { "LaunchPlan", "Inputs", "Metadata", "Notifications", "DisableAll", "Labels", "Annotations", "SecurityContext", "AuthRole", "QualityOfService", "MaxParallelism", "RawOutputDataConfig", "ClusterAssignment", "Interruptible", "OverwriteCache", "Envs", "Tags", "NotificationOverrides", });
     internal_static_flyteidl_admin_ExecutionTerminateRequest_descriptor =
       getDescriptor().getMessageTypes().get(14);
     internal_static_flyteidl_admin_ExecutionTerminateRequest_fieldAccessorTable = new
