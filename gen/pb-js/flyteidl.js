@@ -4862,6 +4862,7 @@
                  * @interface IOperand
                  * @property {flyteidl.core.IPrimitive|null} [primitive] Operand primitive
                  * @property {string|null} ["var"] Operand var
+                 * @property {flyteidl.core.IScalar|null} [scalar] Operand scalar
                  */
     
                 /**
@@ -4895,17 +4896,25 @@
                  */
                 Operand.prototype["var"] = "";
     
+                /**
+                 * Operand scalar.
+                 * @member {flyteidl.core.IScalar|null|undefined} scalar
+                 * @memberof flyteidl.core.Operand
+                 * @instance
+                 */
+                Operand.prototype.scalar = null;
+    
                 // OneOf field names bound to virtual getters and setters
                 var $oneOfFields;
     
                 /**
                  * Operand val.
-                 * @member {"primitive"|"var"|undefined} val
+                 * @member {"primitive"|"var"|"scalar"|undefined} val
                  * @memberof flyteidl.core.Operand
                  * @instance
                  */
                 Object.defineProperty(Operand.prototype, "val", {
-                    get: $util.oneOfGetter($oneOfFields = ["primitive", "var"]),
+                    get: $util.oneOfGetter($oneOfFields = ["primitive", "var", "scalar"]),
                     set: $util.oneOfSetter($oneOfFields)
                 });
     
@@ -4937,6 +4946,8 @@
                         $root.flyteidl.core.Primitive.encode(message.primitive, writer.uint32(/* id 1, wireType 2 =*/10).fork()).ldelim();
                     if (message["var"] != null && message.hasOwnProperty("var"))
                         writer.uint32(/* id 2, wireType 2 =*/18).string(message["var"]);
+                    if (message.scalar != null && message.hasOwnProperty("scalar"))
+                        $root.flyteidl.core.Scalar.encode(message.scalar, writer.uint32(/* id 3, wireType 2 =*/26).fork()).ldelim();
                     return writer;
                 };
     
@@ -4963,6 +4974,9 @@
                             break;
                         case 2:
                             message["var"] = reader.string();
+                            break;
+                        case 3:
+                            message.scalar = $root.flyteidl.core.Scalar.decode(reader, reader.uint32());
                             break;
                         default:
                             reader.skipType(tag & 7);
@@ -4998,6 +5012,16 @@
                         properties.val = 1;
                         if (!$util.isString(message["var"]))
                             return "var: string expected";
+                    }
+                    if (message.scalar != null && message.hasOwnProperty("scalar")) {
+                        if (properties.val === 1)
+                            return "val: multiple values";
+                        properties.val = 1;
+                        {
+                            var error = $root.flyteidl.core.Scalar.verify(message.scalar);
+                            if (error)
+                                return "scalar." + error;
+                        }
                     }
                     return null;
                 };
@@ -27236,6 +27260,7 @@
                  * @property {google.protobuf.IBoolValue|null} [interruptible] ExecutionSpec interruptible
                  * @property {boolean|null} [overwriteCache] ExecutionSpec overwriteCache
                  * @property {flyteidl.admin.IEnvs|null} [envs] ExecutionSpec envs
+                 * @property {Array.<string>|null} [tags] ExecutionSpec tags
                  */
     
                 /**
@@ -27247,6 +27272,7 @@
                  * @param {flyteidl.admin.IExecutionSpec=} [properties] Properties to set
                  */
                 function ExecutionSpec(properties) {
+                    this.tags = [];
                     if (properties)
                         for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
                             if (properties[keys[i]] != null)
@@ -27381,6 +27407,14 @@
                  */
                 ExecutionSpec.prototype.envs = null;
     
+                /**
+                 * ExecutionSpec tags.
+                 * @member {Array.<string>} tags
+                 * @memberof flyteidl.admin.ExecutionSpec
+                 * @instance
+                 */
+                ExecutionSpec.prototype.tags = $util.emptyArray;
+    
                 // OneOf field names bound to virtual getters and setters
                 var $oneOfFields;
     
@@ -27451,6 +27485,9 @@
                         writer.uint32(/* id 22, wireType 0 =*/176).bool(message.overwriteCache);
                     if (message.envs != null && message.hasOwnProperty("envs"))
                         $root.flyteidl.admin.Envs.encode(message.envs, writer.uint32(/* id 23, wireType 2 =*/186).fork()).ldelim();
+                    if (message.tags != null && message.tags.length)
+                        for (var i = 0; i < message.tags.length; ++i)
+                            writer.uint32(/* id 24, wireType 2 =*/194).string(message.tags[i]);
                     return writer;
                 };
     
@@ -27519,6 +27556,11 @@
                             break;
                         case 23:
                             message.envs = $root.flyteidl.admin.Envs.decode(reader, reader.uint32());
+                            break;
+                        case 24:
+                            if (!(message.tags && message.tags.length))
+                                message.tags = [];
+                            message.tags.push(reader.string());
                             break;
                         default:
                             reader.skipType(tag & 7);
@@ -27620,6 +27662,13 @@
                         var error = $root.flyteidl.admin.Envs.verify(message.envs);
                         if (error)
                             return "envs." + error;
+                    }
+                    if (message.tags != null && message.hasOwnProperty("tags")) {
+                        if (!Array.isArray(message.tags))
+                            return "tags: array expected";
+                        for (var i = 0; i < message.tags.length; ++i)
+                            if (!$util.isString(message.tags[i]))
+                                return "tags: string[] expected";
                     }
                     return null;
                 };

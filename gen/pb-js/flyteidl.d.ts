@@ -2018,6 +2018,9 @@ export namespace flyteidl {
 
             /** Operand var */
             "var"?: (string|null);
+
+            /** Operand scalar */
+            scalar?: (flyteidl.core.IScalar|null);
         }
 
         /** Represents an Operand. */
@@ -2035,8 +2038,11 @@ export namespace flyteidl {
             /** Operand var. */
             public var: string;
 
+            /** Operand scalar. */
+            public scalar?: (flyteidl.core.IScalar|null);
+
             /** Operand val. */
-            public val?: ("primitive"|"var");
+            public val?: ("primitive"|"var"|"scalar");
 
             /**
              * Creates a new Operand instance using the specified properties.
@@ -11341,6 +11347,9 @@ export namespace flyteidl {
 
             /** ExecutionSpec envs */
             envs?: (flyteidl.admin.IEnvs|null);
+
+            /** ExecutionSpec tags */
+            tags?: (string[]|null);
         }
 
         /** Represents an ExecutionSpec. */
@@ -11399,6 +11408,9 @@ export namespace flyteidl {
 
             /** ExecutionSpec envs. */
             public envs?: (flyteidl.admin.IEnvs|null);
+
+            /** ExecutionSpec tags. */
+            public tags: string[];
 
             /** ExecutionSpec notificationOverrides. */
             public notificationOverrides?: ("notifications"|"disableAll");
