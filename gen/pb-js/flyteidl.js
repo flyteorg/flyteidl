@@ -12101,6 +12101,171 @@
                 return Resources;
             })();
     
+            core.Selector = (function() {
+    
+                /**
+                 * Properties of a Selector.
+                 * @memberof flyteidl.core
+                 * @interface ISelector
+                 * @property {string|null} [gpuDevice] Selector gpuDevice
+                 * @property {string|null} [gpuPartitionSize] Selector gpuPartitionSize
+                 * @property {boolean|null} [onlyPreferred] Selector onlyPreferred
+                 */
+    
+                /**
+                 * Constructs a new Selector.
+                 * @memberof flyteidl.core
+                 * @classdesc Represents a Selector.
+                 * @implements ISelector
+                 * @constructor
+                 * @param {flyteidl.core.ISelector=} [properties] Properties to set
+                 */
+                function Selector(properties) {
+                    if (properties)
+                        for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                            if (properties[keys[i]] != null)
+                                this[keys[i]] = properties[keys[i]];
+                }
+    
+                /**
+                 * Selector gpuDevice.
+                 * @member {string} gpuDevice
+                 * @memberof flyteidl.core.Selector
+                 * @instance
+                 */
+                Selector.prototype.gpuDevice = "";
+    
+                /**
+                 * Selector gpuPartitionSize.
+                 * @member {string} gpuPartitionSize
+                 * @memberof flyteidl.core.Selector
+                 * @instance
+                 */
+                Selector.prototype.gpuPartitionSize = "";
+    
+                /**
+                 * Selector onlyPreferred.
+                 * @member {boolean} onlyPreferred
+                 * @memberof flyteidl.core.Selector
+                 * @instance
+                 */
+                Selector.prototype.onlyPreferred = false;
+    
+                // OneOf field names bound to virtual getters and setters
+                var $oneOfFields;
+    
+                /**
+                 * Selector selection.
+                 * @member {"gpuDevice"|"gpuPartitionSize"|undefined} selection
+                 * @memberof flyteidl.core.Selector
+                 * @instance
+                 */
+                Object.defineProperty(Selector.prototype, "selection", {
+                    get: $util.oneOfGetter($oneOfFields = ["gpuDevice", "gpuPartitionSize"]),
+                    set: $util.oneOfSetter($oneOfFields)
+                });
+    
+                /**
+                 * Creates a new Selector instance using the specified properties.
+                 * @function create
+                 * @memberof flyteidl.core.Selector
+                 * @static
+                 * @param {flyteidl.core.ISelector=} [properties] Properties to set
+                 * @returns {flyteidl.core.Selector} Selector instance
+                 */
+                Selector.create = function create(properties) {
+                    return new Selector(properties);
+                };
+    
+                /**
+                 * Encodes the specified Selector message. Does not implicitly {@link flyteidl.core.Selector.verify|verify} messages.
+                 * @function encode
+                 * @memberof flyteidl.core.Selector
+                 * @static
+                 * @param {flyteidl.core.ISelector} message Selector message or plain object to encode
+                 * @param {$protobuf.Writer} [writer] Writer to encode to
+                 * @returns {$protobuf.Writer} Writer
+                 */
+                Selector.encode = function encode(message, writer) {
+                    if (!writer)
+                        writer = $Writer.create();
+                    if (message.gpuDevice != null && message.hasOwnProperty("gpuDevice"))
+                        writer.uint32(/* id 1, wireType 2 =*/10).string(message.gpuDevice);
+                    if (message.gpuPartitionSize != null && message.hasOwnProperty("gpuPartitionSize"))
+                        writer.uint32(/* id 2, wireType 2 =*/18).string(message.gpuPartitionSize);
+                    if (message.onlyPreferred != null && message.hasOwnProperty("onlyPreferred"))
+                        writer.uint32(/* id 5, wireType 0 =*/40).bool(message.onlyPreferred);
+                    return writer;
+                };
+    
+                /**
+                 * Decodes a Selector message from the specified reader or buffer.
+                 * @function decode
+                 * @memberof flyteidl.core.Selector
+                 * @static
+                 * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+                 * @param {number} [length] Message length if known beforehand
+                 * @returns {flyteidl.core.Selector} Selector
+                 * @throws {Error} If the payload is not a reader or valid buffer
+                 * @throws {$protobuf.util.ProtocolError} If required fields are missing
+                 */
+                Selector.decode = function decode(reader, length) {
+                    if (!(reader instanceof $Reader))
+                        reader = $Reader.create(reader);
+                    var end = length === undefined ? reader.len : reader.pos + length, message = new $root.flyteidl.core.Selector();
+                    while (reader.pos < end) {
+                        var tag = reader.uint32();
+                        switch (tag >>> 3) {
+                        case 1:
+                            message.gpuDevice = reader.string();
+                            break;
+                        case 2:
+                            message.gpuPartitionSize = reader.string();
+                            break;
+                        case 5:
+                            message.onlyPreferred = reader.bool();
+                            break;
+                        default:
+                            reader.skipType(tag & 7);
+                            break;
+                        }
+                    }
+                    return message;
+                };
+    
+                /**
+                 * Verifies a Selector message.
+                 * @function verify
+                 * @memberof flyteidl.core.Selector
+                 * @static
+                 * @param {Object.<string,*>} message Plain object to verify
+                 * @returns {string|null} `null` if valid, otherwise the reason why it is not
+                 */
+                Selector.verify = function verify(message) {
+                    if (typeof message !== "object" || message === null)
+                        return "object expected";
+                    var properties = {};
+                    if (message.gpuDevice != null && message.hasOwnProperty("gpuDevice")) {
+                        properties.selection = 1;
+                        if (!$util.isString(message.gpuDevice))
+                            return "gpuDevice: string expected";
+                    }
+                    if (message.gpuPartitionSize != null && message.hasOwnProperty("gpuPartitionSize")) {
+                        if (properties.selection === 1)
+                            return "selection: multiple values";
+                        properties.selection = 1;
+                        if (!$util.isString(message.gpuPartitionSize))
+                            return "gpuPartitionSize: string expected";
+                    }
+                    if (message.onlyPreferred != null && message.hasOwnProperty("onlyPreferred"))
+                        if (typeof message.onlyPreferred !== "boolean")
+                            return "onlyPreferred: boolean expected";
+                    return null;
+                };
+    
+                return Selector;
+            })();
+    
             core.RuntimeMetadata = (function() {
     
                 /**
@@ -13040,6 +13205,7 @@
                  * @property {Array.<flyteidl.core.IContainerPort>|null} [ports] Container ports
                  * @property {flyteidl.core.IDataLoadingConfig|null} [dataConfig] Container dataConfig
                  * @property {flyteidl.core.Container.Architecture|null} [architecture] Container architecture
+                 * @property {Array.<flyteidl.core.ISelector>|null} [selectors] Container selectors
                  */
     
                 /**
@@ -13056,6 +13222,7 @@
                     this.env = [];
                     this.config = [];
                     this.ports = [];
+                    this.selectors = [];
                     if (properties)
                         for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
                             if (properties[keys[i]] != null)
@@ -13135,6 +13302,14 @@
                 Container.prototype.architecture = 0;
     
                 /**
+                 * Container selectors.
+                 * @member {Array.<flyteidl.core.ISelector>} selectors
+                 * @memberof flyteidl.core.Container
+                 * @instance
+                 */
+                Container.prototype.selectors = $util.emptyArray;
+    
+                /**
                  * Creates a new Container instance using the specified properties.
                  * @function create
                  * @memberof flyteidl.core.Container
@@ -13181,6 +13356,9 @@
                         $root.flyteidl.core.DataLoadingConfig.encode(message.dataConfig, writer.uint32(/* id 9, wireType 2 =*/74).fork()).ldelim();
                     if (message.architecture != null && message.hasOwnProperty("architecture"))
                         writer.uint32(/* id 10, wireType 0 =*/80).int32(message.architecture);
+                    if (message.selectors != null && message.selectors.length)
+                        for (var i = 0; i < message.selectors.length; ++i)
+                            $root.flyteidl.core.Selector.encode(message.selectors[i], writer.uint32(/* id 11, wireType 2 =*/90).fork()).ldelim();
                     return writer;
                 };
     
@@ -13238,6 +13416,11 @@
                             break;
                         case 10:
                             message.architecture = reader.int32();
+                            break;
+                        case 11:
+                            if (!(message.selectors && message.selectors.length))
+                                message.selectors = [];
+                            message.selectors.push($root.flyteidl.core.Selector.decode(reader, reader.uint32()));
                             break;
                         default:
                             reader.skipType(tag & 7);
@@ -13323,6 +13506,15 @@
                         case 4:
                             break;
                         }
+                    if (message.selectors != null && message.hasOwnProperty("selectors")) {
+                        if (!Array.isArray(message.selectors))
+                            return "selectors: array expected";
+                        for (var i = 0; i < message.selectors.length; ++i) {
+                            var error = $root.flyteidl.core.Selector.verify(message.selectors[i]);
+                            if (error)
+                                return "selectors." + error;
+                        }
+                    }
                     return null;
                 };
     

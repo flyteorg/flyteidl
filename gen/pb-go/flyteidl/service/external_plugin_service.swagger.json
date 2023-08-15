@@ -261,6 +261,12 @@
         },
         "architecture": {
           "$ref": "#/definitions/ContainerArchitecture"
+        },
+        "selectors": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/coreSelector"
+          }
         }
       }
     },
@@ -777,6 +783,21 @@
         }
       },
       "description": "SecurityContext holds security attributes that apply to tasks."
+    },
+    "coreSelector": {
+      "type": "object",
+      "properties": {
+        "gpu_device": {
+          "type": "string"
+        },
+        "gpu_partition_size": {
+          "type": "string"
+        },
+        "only_preferred": {
+          "type": "boolean",
+          "format": "boolean"
+        }
+      }
     },
     "coreSimpleType": {
       "type": "string",

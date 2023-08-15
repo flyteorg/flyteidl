@@ -216,6 +216,7 @@ from flyteadmin.models.core_schema import CoreSchema
 from flyteadmin.models.core_schema_type import CoreSchemaType
 from flyteadmin.models.core_secret import CoreSecret
 from flyteadmin.models.core_security_context import CoreSecurityContext
+from flyteadmin.models.core_selector import CoreSelector
 from flyteadmin.models.core_signal_condition import CoreSignalCondition
 from flyteadmin.models.core_simple_type import CoreSimpleType
 from flyteadmin.models.core_sleep_condition import CoreSleepCondition

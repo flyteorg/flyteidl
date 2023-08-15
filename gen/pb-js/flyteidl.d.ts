@@ -5084,6 +5084,73 @@ export namespace flyteidl {
             }
         }
 
+        /** Properties of a Selector. */
+        interface ISelector {
+
+            /** Selector gpuDevice */
+            gpuDevice?: (string|null);
+
+            /** Selector gpuPartitionSize */
+            gpuPartitionSize?: (string|null);
+
+            /** Selector onlyPreferred */
+            onlyPreferred?: (boolean|null);
+        }
+
+        /** Represents a Selector. */
+        class Selector implements ISelector {
+
+            /**
+             * Constructs a new Selector.
+             * @param [properties] Properties to set
+             */
+            constructor(properties?: flyteidl.core.ISelector);
+
+            /** Selector gpuDevice. */
+            public gpuDevice: string;
+
+            /** Selector gpuPartitionSize. */
+            public gpuPartitionSize: string;
+
+            /** Selector onlyPreferred. */
+            public onlyPreferred: boolean;
+
+            /** Selector selection. */
+            public selection?: ("gpuDevice"|"gpuPartitionSize");
+
+            /**
+             * Creates a new Selector instance using the specified properties.
+             * @param [properties] Properties to set
+             * @returns Selector instance
+             */
+            public static create(properties?: flyteidl.core.ISelector): flyteidl.core.Selector;
+
+            /**
+             * Encodes the specified Selector message. Does not implicitly {@link flyteidl.core.Selector.verify|verify} messages.
+             * @param message Selector message or plain object to encode
+             * @param [writer] Writer to encode to
+             * @returns Writer
+             */
+            public static encode(message: flyteidl.core.ISelector, writer?: $protobuf.Writer): $protobuf.Writer;
+
+            /**
+             * Decodes a Selector message from the specified reader or buffer.
+             * @param reader Reader or buffer to decode from
+             * @param [length] Message length if known beforehand
+             * @returns Selector
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): flyteidl.core.Selector;
+
+            /**
+             * Verifies a Selector message.
+             * @param message Plain object to verify
+             * @returns `null` if valid, otherwise the reason why it is not
+             */
+            public static verify(message: { [k: string]: any }): (string|null);
+        }
+
         /** Properties of a RuntimeMetadata. */
         interface IRuntimeMetadata {
 
@@ -5468,6 +5535,9 @@ export namespace flyteidl {
 
             /** Container architecture */
             architecture?: (flyteidl.core.Container.Architecture|null);
+
+            /** Container selectors */
+            selectors?: (flyteidl.core.ISelector[]|null);
         }
 
         /** Represents a Container. */
@@ -5505,6 +5575,9 @@ export namespace flyteidl {
 
             /** Container architecture. */
             public architecture: flyteidl.core.Container.Architecture;
+
+            /** Container selectors. */
+            public selectors: flyteidl.core.ISelector[];
 
             /**
              * Creates a new Container instance using the specified properties.

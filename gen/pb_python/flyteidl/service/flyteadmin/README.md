@@ -325,6 +325,7 @@ Class | Method | HTTP request | Description
  - [CoreSchemaType](docs/CoreSchemaType.md)
  - [CoreSecret](docs/CoreSecret.md)
  - [CoreSecurityContext](docs/CoreSecurityContext.md)
+ - [CoreSelector](docs/CoreSelector.md)
  - [CoreSignalCondition](docs/CoreSignalCondition.md)
  - [CoreSimpleType](docs/CoreSimpleType.md)
  - [CoreSleepCondition](docs/CoreSleepCondition.md)

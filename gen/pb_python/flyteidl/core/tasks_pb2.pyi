@@ -41,6 +41,16 @@ class Resources(_message.Message):
     limits: _containers.RepeatedCompositeFieldContainer[Resources.ResourceEntry]
     def __init__(self, requests: _Optional[_Iterable[_Union[Resources.ResourceEntry, _Mapping]]] = ..., limits: _Optional[_Iterable[_Union[Resources.ResourceEntry, _Mapping]]] = ...) -> None: ...
 
+class Selector(_message.Message):
+    __slots__ = ["gpu_device", "gpu_partition_size", "only_preferred"]
+    GPU_DEVICE_FIELD_NUMBER: _ClassVar[int]
+    GPU_PARTITION_SIZE_FIELD_NUMBER: _ClassVar[int]
+    ONLY_PREFERRED_FIELD_NUMBER: _ClassVar[int]
+    gpu_device: str
+    gpu_partition_size: str
+    only_preferred: bool
+    def __init__(self, gpu_device: _Optional[str] = ..., gpu_partition_size: _Optional[str] = ..., only_preferred: bool = ...) -> None: ...
+
 class RuntimeMetadata(_message.Message):
     __slots__ = ["type", "version", "flavor"]
     class RuntimeType(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
@@ -130,7 +140,7 @@ class ContainerPort(_message.Message):
     def __init__(self, container_port: _Optional[int] = ...) -> None: ...
 
 class Container(_message.Message):
-    __slots__ = ["image", "command", "args", "resources", "env", "config", "ports", "data_config", "architecture"]
+    __slots__ = ["image", "command", "args", "resources", "env", "config", "ports", "data_config", "architecture", "selectors"]
     class Architecture(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
         __slots__ = []
         UNKNOWN: _ClassVar[Container.Architecture]
@@ -152,6 +162,7 @@ class Container(_message.Message):
     PORTS_FIELD_NUMBER: _ClassVar[int]
     DATA_CONFIG_FIELD_NUMBER: _ClassVar[int]
     ARCHITECTURE_FIELD_NUMBER: _ClassVar[int]
+    SELECTORS_FIELD_NUMBER: _ClassVar[int]
     image: str
     command: _containers.RepeatedScalarFieldContainer[str]
     args: _containers.RepeatedScalarFieldContainer[str]
@@ -161,7 +172,8 @@ class Container(_message.Message):
     ports: _containers.RepeatedCompositeFieldContainer[ContainerPort]
     data_config: DataLoadingConfig
     architecture: Container.Architecture
-    def __init__(self, image: _Optional[str] = ..., command: _Optional[_Iterable[str]] = ..., args: _Optional[_Iterable[str]] = ..., resources: _Optional[_Union[Resources, _Mapping]] = ..., env: _Optional[_Iterable[_Union[_literals_pb2.KeyValuePair, _Mapping]]] = ..., config: _Optional[_Iterable[_Union[_literals_pb2.KeyValuePair, _Mapping]]] = ..., ports: _Optional[_Iterable[_Union[ContainerPort, _Mapping]]] = ..., data_config: _Optional[_Union[DataLoadingConfig, _Mapping]] = ..., architecture: _Optional[_Union[Container.Architecture, str]] = ...) -> None: ...
+    selectors: _containers.RepeatedCompositeFieldContainer[Selector]
+    def __init__(self, image: _Optional[str] = ..., command: _Optional[_Iterable[str]] = ..., args: _Optional[_Iterable[str]] = ..., resources: _Optional[_Union[Resources, _Mapping]] = ..., env: _Optional[_Iterable[_Union[_literals_pb2.KeyValuePair, _Mapping]]] = ..., config: _Optional[_Iterable[_Union[_literals_pb2.KeyValuePair, _Mapping]]] = ..., ports: _Optional[_Iterable[_Union[ContainerPort, _Mapping]]] = ..., data_config: _Optional[_Union[DataLoadingConfig, _Mapping]] = ..., architecture: _Optional[_Union[Container.Architecture, str]] = ..., selectors: _Optional[_Iterable[_Union[Selector, _Mapping]]] = ...) -> None: ...
 
 class IOStrategy(_message.Message):
     __slots__ = ["download_mode", "upload_mode"]

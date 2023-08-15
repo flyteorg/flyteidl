@@ -978,6 +978,25 @@ pub mod resources {
         }
     }
 }
+#[allow(clippy::derive_partial_eq_without_eq)]
+#[derive(Clone, PartialEq, ::prost::Message)]
+pub struct Selector {
+    #[prost(bool, tag="5")]
+    pub only_preferred: bool,
+    #[prost(oneof="selector::Selection", tags="1, 2")]
+    pub selection: ::core::option::Option<selector::Selection>,
+}
+/// Nested message and enum types in `Selector`.
+pub mod selector {
+    #[allow(clippy::derive_partial_eq_without_eq)]
+#[derive(Clone, PartialEq, ::prost::Oneof)]
+    pub enum Selection {
+        #[prost(string, tag="1")]
+        GpuDevice(::prost::alloc::string::String),
+        #[prost(string, tag="2")]
+        GpuPartitionSize(::prost::alloc::string::String),
+    }
+}
 /// Runtime information. This is loosely defined to allow for extensibility.
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(Clone, PartialEq, ::prost::Message)]
@@ -1194,6 +1213,8 @@ pub struct Container {
     pub data_config: ::core::option::Option<DataLoadingConfig>,
     #[prost(enumeration="container::Architecture", tag="10")]
     pub architecture: i32,
+    #[prost(message, repeated, tag="11")]
+    pub selectors: ::prost::alloc::vec::Vec<Selector>,
 }
 /// Nested message and enum types in `Container`.
 pub mod container {

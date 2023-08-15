@@ -51,7 +51,7 @@ struct TableStruct_flyteidl_2fcore_2ftasks_2eproto {
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
   static const ::google::protobuf::internal::AuxillaryParseTableField aux[]
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
-  static const ::google::protobuf::internal::ParseTable schema[16]
+  static const ::google::protobuf::internal::ParseTable schema[17]
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
   static const ::google::protobuf::internal::FieldMetadata field_metadata[];
   static const ::google::protobuf::internal::SerializationTable serialization_table[];
@@ -93,6 +93,9 @@ extern Resources_ResourceEntryDefaultTypeInternal _Resources_ResourceEntry_defau
 class RuntimeMetadata;
 class RuntimeMetadataDefaultTypeInternal;
 extern RuntimeMetadataDefaultTypeInternal _RuntimeMetadata_default_instance_;
+class Selector;
+class SelectorDefaultTypeInternal;
+extern SelectorDefaultTypeInternal _Selector_default_instance_;
 class Sql;
 class SqlDefaultTypeInternal;
 extern SqlDefaultTypeInternal _Sql_default_instance_;
@@ -123,6 +126,7 @@ template<> ::flyteidl::core::K8sPod* Arena::CreateMaybeMessage<::flyteidl::core:
 template<> ::flyteidl::core::Resources* Arena::CreateMaybeMessage<::flyteidl::core::Resources>(Arena*);
 template<> ::flyteidl::core::Resources_ResourceEntry* Arena::CreateMaybeMessage<::flyteidl::core::Resources_ResourceEntry>(Arena*);
 template<> ::flyteidl::core::RuntimeMetadata* Arena::CreateMaybeMessage<::flyteidl::core::RuntimeMetadata>(Arena*);
+template<> ::flyteidl::core::Selector* Arena::CreateMaybeMessage<::flyteidl::core::Selector>(Arena*);
 template<> ::flyteidl::core::Sql* Arena::CreateMaybeMessage<::flyteidl::core::Sql>(Arena*);
 template<> ::flyteidl::core::TaskMetadata* Arena::CreateMaybeMessage<::flyteidl::core::TaskMetadata>(Arena*);
 template<> ::flyteidl::core::TaskMetadata_TagsEntry_DoNotUse* Arena::CreateMaybeMessage<::flyteidl::core::TaskMetadata_TagsEntry_DoNotUse>(Arena*);
@@ -588,6 +592,172 @@ class Resources final :
 };
 // -------------------------------------------------------------------
 
+class Selector final :
+    public ::google::protobuf::Message /* @@protoc_insertion_point(class_definition:flyteidl.core.Selector) */ {
+ public:
+  Selector();
+  virtual ~Selector();
+
+  Selector(const Selector& from);
+
+  inline Selector& operator=(const Selector& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  #if LANG_CXX11
+  Selector(Selector&& from) noexcept
+    : Selector() {
+    *this = ::std::move(from);
+  }
+
+  inline Selector& operator=(Selector&& from) noexcept {
+    if (GetArenaNoVirtual() == from.GetArenaNoVirtual()) {
+      if (this != &from) InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+  #endif
+  static const ::google::protobuf::Descriptor* descriptor() {
+    return default_instance().GetDescriptor();
+  }
+  static const Selector& default_instance();
+
+  enum SelectionCase {
+    kGpuDevice = 1,
+    kGpuPartitionSize = 2,
+    SELECTION_NOT_SET = 0,
+  };
+
+  static void InitAsDefaultInstance();  // FOR INTERNAL USE ONLY
+  static inline const Selector* internal_default_instance() {
+    return reinterpret_cast<const Selector*>(
+               &_Selector_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    2;
+
+  void Swap(Selector* other);
+  friend void swap(Selector& a, Selector& b) {
+    a.Swap(&b);
+  }
+
+  // implements Message ----------------------------------------------
+
+  inline Selector* New() const final {
+    return CreateMaybeMessage<Selector>(nullptr);
+  }
+
+  Selector* New(::google::protobuf::Arena* arena) const final {
+    return CreateMaybeMessage<Selector>(arena);
+  }
+  void CopyFrom(const ::google::protobuf::Message& from) final;
+  void MergeFrom(const ::google::protobuf::Message& from) final;
+  void CopyFrom(const Selector& from);
+  void MergeFrom(const Selector& from);
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  #if GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
+  static const char* _InternalParse(const char* begin, const char* end, void* object, ::google::protobuf::internal::ParseContext* ctx);
+  ::google::protobuf::internal::ParseFunc _ParseFunc() const final { return _InternalParse; }
+  #else
+  bool MergePartialFromCodedStream(
+      ::google::protobuf::io::CodedInputStream* input) final;
+  #endif  // GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
+  void SerializeWithCachedSizes(
+      ::google::protobuf::io::CodedOutputStream* output) const final;
+  ::google::protobuf::uint8* InternalSerializeWithCachedSizesToArray(
+      ::google::protobuf::uint8* target) const final;
+  int GetCachedSize() const final { return _cached_size_.Get(); }
+
+  private:
+  void SharedCtor();
+  void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(Selector* other);
+  private:
+  inline ::google::protobuf::Arena* GetArenaNoVirtual() const {
+    return nullptr;
+  }
+  inline void* MaybeArenaPtr() const {
+    return nullptr;
+  }
+  public:
+
+  ::google::protobuf::Metadata GetMetadata() const final;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  // bool only_preferred = 5;
+  void clear_only_preferred();
+  static const int kOnlyPreferredFieldNumber = 5;
+  bool only_preferred() const;
+  void set_only_preferred(bool value);
+
+  // string gpu_device = 1;
+  private:
+  bool has_gpu_device() const;
+  public:
+  void clear_gpu_device();
+  static const int kGpuDeviceFieldNumber = 1;
+  const ::std::string& gpu_device() const;
+  void set_gpu_device(const ::std::string& value);
+  #if LANG_CXX11
+  void set_gpu_device(::std::string&& value);
+  #endif
+  void set_gpu_device(const char* value);
+  void set_gpu_device(const char* value, size_t size);
+  ::std::string* mutable_gpu_device();
+  ::std::string* release_gpu_device();
+  void set_allocated_gpu_device(::std::string* gpu_device);
+
+  // string gpu_partition_size = 2;
+  private:
+  bool has_gpu_partition_size() const;
+  public:
+  void clear_gpu_partition_size();
+  static const int kGpuPartitionSizeFieldNumber = 2;
+  const ::std::string& gpu_partition_size() const;
+  void set_gpu_partition_size(const ::std::string& value);
+  #if LANG_CXX11
+  void set_gpu_partition_size(::std::string&& value);
+  #endif
+  void set_gpu_partition_size(const char* value);
+  void set_gpu_partition_size(const char* value, size_t size);
+  ::std::string* mutable_gpu_partition_size();
+  ::std::string* release_gpu_partition_size();
+  void set_allocated_gpu_partition_size(::std::string* gpu_partition_size);
+
+  void clear_selection();
+  SelectionCase selection_case() const;
+  // @@protoc_insertion_point(class_scope:flyteidl.core.Selector)
+ private:
+  class HasBitSetters;
+  void set_has_gpu_device();
+  void set_has_gpu_partition_size();
+
+  inline bool has_selection() const;
+  inline void clear_has_selection();
+
+  ::google::protobuf::internal::InternalMetadataWithArena _internal_metadata_;
+  bool only_preferred_;
+  union SelectionUnion {
+    SelectionUnion() {}
+    ::google::protobuf::internal::ArenaStringPtr gpu_device_;
+    ::google::protobuf::internal::ArenaStringPtr gpu_partition_size_;
+  } selection_;
+  mutable ::google::protobuf::internal::CachedSize _cached_size_;
+  ::google::protobuf::uint32 _oneof_case_[1];
+
+  friend struct ::TableStruct_flyteidl_2fcore_2ftasks_2eproto;
+};
+// -------------------------------------------------------------------
+
 class RuntimeMetadata final :
     public ::google::protobuf::Message /* @@protoc_insertion_point(class_definition:flyteidl.core.RuntimeMetadata) */ {
  public:
@@ -626,7 +796,7 @@ class RuntimeMetadata final :
                &_RuntimeMetadata_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    2;
+    3;
 
   void Swap(RuntimeMetadata* other);
   friend void swap(RuntimeMetadata& a, RuntimeMetadata& b) {
@@ -823,7 +993,7 @@ class TaskMetadata final :
                &_TaskMetadata_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    4;
+    5;
 
   void Swap(TaskMetadata* other);
   friend void swap(TaskMetadata& a, TaskMetadata& b) {
@@ -1092,7 +1262,7 @@ class TaskTemplate final :
                &_TaskTemplate_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    6;
+    7;
 
   void Swap(TaskTemplate* other);
   friend void swap(TaskTemplate& a, TaskTemplate& b) {
@@ -1328,7 +1498,7 @@ class ContainerPort final :
                &_ContainerPort_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    7;
+    8;
 
   void Swap(ContainerPort* other);
   friend void swap(ContainerPort& a, ContainerPort& b) {
@@ -1440,7 +1610,7 @@ class Container final :
                &_Container_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    8;
+    9;
 
   void Swap(Container* other);
   friend void swap(Container& a, Container& b) {
@@ -1609,6 +1779,18 @@ class Container final :
   const ::google::protobuf::RepeatedPtrField< ::flyteidl::core::ContainerPort >&
       ports() const;
 
+  // repeated .flyteidl.core.Selector selectors = 11;
+  int selectors_size() const;
+  void clear_selectors();
+  static const int kSelectorsFieldNumber = 11;
+  ::flyteidl::core::Selector* mutable_selectors(int index);
+  ::google::protobuf::RepeatedPtrField< ::flyteidl::core::Selector >*
+      mutable_selectors();
+  const ::flyteidl::core::Selector& selectors(int index) const;
+  ::flyteidl::core::Selector* add_selectors();
+  const ::google::protobuf::RepeatedPtrField< ::flyteidl::core::Selector >&
+      selectors() const;
+
   // string image = 1;
   void clear_image();
   static const int kImageFieldNumber = 1;
@@ -1657,6 +1839,7 @@ class Container final :
   ::google::protobuf::RepeatedPtrField< ::flyteidl::core::KeyValuePair > env_;
   ::google::protobuf::RepeatedPtrField< ::flyteidl::core::KeyValuePair > config_;
   ::google::protobuf::RepeatedPtrField< ::flyteidl::core::ContainerPort > ports_;
+  ::google::protobuf::RepeatedPtrField< ::flyteidl::core::Selector > selectors_;
   ::google::protobuf::internal::ArenaStringPtr image_;
   ::flyteidl::core::Resources* resources_;
   ::flyteidl::core::DataLoadingConfig* data_config_;
@@ -1704,7 +1887,7 @@ class IOStrategy final :
                &_IOStrategy_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    9;
+    10;
 
   void Swap(IOStrategy* other);
   friend void swap(IOStrategy& a, IOStrategy& b) {
@@ -1879,7 +2062,7 @@ class DataLoadingConfig final :
                &_DataLoadingConfig_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    10;
+    11;
 
   void Swap(DataLoadingConfig* other);
   friend void swap(DataLoadingConfig& a, DataLoadingConfig& b) {
@@ -2066,7 +2249,7 @@ class K8sPod final :
                &_K8sPod_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    11;
+    12;
 
   void Swap(K8sPod* other);
   friend void swap(K8sPod& a, K8sPod& b) {
@@ -2249,7 +2432,7 @@ class K8sObjectMetadata final :
                &_K8sObjectMetadata_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    14;
+    15;
 
   void Swap(K8sObjectMetadata* other);
   friend void swap(K8sObjectMetadata& a, K8sObjectMetadata& b) {
@@ -2385,7 +2568,7 @@ class Sql final :
                &_Sql_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    15;
+    16;
 
   void Swap(Sql* other);
   friend void swap(Sql& a, Sql& b) {
@@ -2644,6 +2827,217 @@ Resources::limits() const {
   return limits_;
 }
 
+// -------------------------------------------------------------------
+
+// Selector
+
+// string gpu_device = 1;
+inline bool Selector::has_gpu_device() const {
+  return selection_case() == kGpuDevice;
+}
+inline void Selector::set_has_gpu_device() {
+  _oneof_case_[0] = kGpuDevice;
+}
+inline void Selector::clear_gpu_device() {
+  if (has_gpu_device()) {
+    selection_.gpu_device_.DestroyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+    clear_has_selection();
+  }
+}
+inline const ::std::string& Selector::gpu_device() const {
+  // @@protoc_insertion_point(field_get:flyteidl.core.Selector.gpu_device)
+  if (has_gpu_device()) {
+    return selection_.gpu_device_.GetNoArena();
+  }
+  return *&::google::protobuf::internal::GetEmptyStringAlreadyInited();
+}
+inline void Selector::set_gpu_device(const ::std::string& value) {
+  // @@protoc_insertion_point(field_set:flyteidl.core.Selector.gpu_device)
+  if (!has_gpu_device()) {
+    clear_selection();
+    set_has_gpu_device();
+    selection_.gpu_device_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  }
+  selection_.gpu_device_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
+  // @@protoc_insertion_point(field_set:flyteidl.core.Selector.gpu_device)
+}
+#if LANG_CXX11
+inline void Selector::set_gpu_device(::std::string&& value) {
+  // @@protoc_insertion_point(field_set:flyteidl.core.Selector.gpu_device)
+  if (!has_gpu_device()) {
+    clear_selection();
+    set_has_gpu_device();
+    selection_.gpu_device_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  }
+  selection_.gpu_device_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::move(value));
+  // @@protoc_insertion_point(field_set_rvalue:flyteidl.core.Selector.gpu_device)
+}
+#endif
+inline void Selector::set_gpu_device(const char* value) {
+  GOOGLE_DCHECK(value != nullptr);
+  if (!has_gpu_device()) {
+    clear_selection();
+    set_has_gpu_device();
+    selection_.gpu_device_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  }
+  selection_.gpu_device_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
+      ::std::string(value));
+  // @@protoc_insertion_point(field_set_char:flyteidl.core.Selector.gpu_device)
+}
+inline void Selector::set_gpu_device(const char* value, size_t size) {
+  if (!has_gpu_device()) {
+    clear_selection();
+    set_has_gpu_device();
+    selection_.gpu_device_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  }
+  selection_.gpu_device_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(
+      reinterpret_cast<const char*>(value), size));
+  // @@protoc_insertion_point(field_set_pointer:flyteidl.core.Selector.gpu_device)
+}
+inline ::std::string* Selector::mutable_gpu_device() {
+  if (!has_gpu_device()) {
+    clear_selection();
+    set_has_gpu_device();
+    selection_.gpu_device_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  }
+  // @@protoc_insertion_point(field_mutable:flyteidl.core.Selector.gpu_device)
+  return selection_.gpu_device_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline ::std::string* Selector::release_gpu_device() {
+  // @@protoc_insertion_point(field_release:flyteidl.core.Selector.gpu_device)
+  if (has_gpu_device()) {
+    clear_has_selection();
+    return selection_.gpu_device_.ReleaseNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  } else {
+    return nullptr;
+  }
+}
+inline void Selector::set_allocated_gpu_device(::std::string* gpu_device) {
+  if (has_selection()) {
+    clear_selection();
+  }
+  if (gpu_device != nullptr) {
+    set_has_gpu_device();
+    selection_.gpu_device_.UnsafeSetDefault(gpu_device);
+  }
+  // @@protoc_insertion_point(field_set_allocated:flyteidl.core.Selector.gpu_device)
+}
+
+// string gpu_partition_size = 2;
+inline bool Selector::has_gpu_partition_size() const {
+  return selection_case() == kGpuPartitionSize;
+}
+inline void Selector::set_has_gpu_partition_size() {
+  _oneof_case_[0] = kGpuPartitionSize;
+}
+inline void Selector::clear_gpu_partition_size() {
+  if (has_gpu_partition_size()) {
+    selection_.gpu_partition_size_.DestroyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+    clear_has_selection();
+  }
+}
+inline const ::std::string& Selector::gpu_partition_size() const {
+  // @@protoc_insertion_point(field_get:flyteidl.core.Selector.gpu_partition_size)
+  if (has_gpu_partition_size()) {
+    return selection_.gpu_partition_size_.GetNoArena();
+  }
+  return *&::google::protobuf::internal::GetEmptyStringAlreadyInited();
+}
+inline void Selector::set_gpu_partition_size(const ::std::string& value) {
+  // @@protoc_insertion_point(field_set:flyteidl.core.Selector.gpu_partition_size)
+  if (!has_gpu_partition_size()) {
+    clear_selection();
+    set_has_gpu_partition_size();
+    selection_.gpu_partition_size_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  }
+  selection_.gpu_partition_size_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
+  // @@protoc_insertion_point(field_set:flyteidl.core.Selector.gpu_partition_size)
+}
+#if LANG_CXX11
+inline void Selector::set_gpu_partition_size(::std::string&& value) {
+  // @@protoc_insertion_point(field_set:flyteidl.core.Selector.gpu_partition_size)
+  if (!has_gpu_partition_size()) {
+    clear_selection();
+    set_has_gpu_partition_size();
+    selection_.gpu_partition_size_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  }
+  selection_.gpu_partition_size_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::move(value));
+  // @@protoc_insertion_point(field_set_rvalue:flyteidl.core.Selector.gpu_partition_size)
+}
+#endif
+inline void Selector::set_gpu_partition_size(const char* value) {
+  GOOGLE_DCHECK(value != nullptr);
+  if (!has_gpu_partition_size()) {
+    clear_selection();
+    set_has_gpu_partition_size();
+    selection_.gpu_partition_size_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  }
+  selection_.gpu_partition_size_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
+      ::std::string(value));
+  // @@protoc_insertion_point(field_set_char:flyteidl.core.Selector.gpu_partition_size)
+}
+inline void Selector::set_gpu_partition_size(const char* value, size_t size) {
+  if (!has_gpu_partition_size()) {
+    clear_selection();
+    set_has_gpu_partition_size();
+    selection_.gpu_partition_size_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  }
+  selection_.gpu_partition_size_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(
+      reinterpret_cast<const char*>(value), size));
+  // @@protoc_insertion_point(field_set_pointer:flyteidl.core.Selector.gpu_partition_size)
+}
+inline ::std::string* Selector::mutable_gpu_partition_size() {
+  if (!has_gpu_partition_size()) {
+    clear_selection();
+    set_has_gpu_partition_size();
+    selection_.gpu_partition_size_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  }
+  // @@protoc_insertion_point(field_mutable:flyteidl.core.Selector.gpu_partition_size)
+  return selection_.gpu_partition_size_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline ::std::string* Selector::release_gpu_partition_size() {
+  // @@protoc_insertion_point(field_release:flyteidl.core.Selector.gpu_partition_size)
+  if (has_gpu_partition_size()) {
+    clear_has_selection();
+    return selection_.gpu_partition_size_.ReleaseNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  } else {
+    return nullptr;
+  }
+}
+inline void Selector::set_allocated_gpu_partition_size(::std::string* gpu_partition_size) {
+  if (has_selection()) {
+    clear_selection();
+  }
+  if (gpu_partition_size != nullptr) {
+    set_has_gpu_partition_size();
+    selection_.gpu_partition_size_.UnsafeSetDefault(gpu_partition_size);
+  }
+  // @@protoc_insertion_point(field_set_allocated:flyteidl.core.Selector.gpu_partition_size)
+}
+
+// bool only_preferred = 5;
+inline void Selector::clear_only_preferred() {
+  only_preferred_ = false;
+}
+inline bool Selector::only_preferred() const {
+  // @@protoc_insertion_point(field_get:flyteidl.core.Selector.only_preferred)
+  return only_preferred_;
+}
+inline void Selector::set_only_preferred(bool value) {
+  
+  only_preferred_ = value;
+  // @@protoc_insertion_point(field_set:flyteidl.core.Selector.only_preferred)
+}
+
+inline bool Selector::has_selection() const {
+  return selection_case() != SELECTION_NOT_SET;
+}
+inline void Selector::clear_has_selection() {
+  _oneof_case_[0] = SELECTION_NOT_SET;
+}
+inline Selector::SelectionCase Selector::selection_case() const {
+  return Selector::SelectionCase(_oneof_case_[0]);
+}
 // -------------------------------------------------------------------
 
 // RuntimeMetadata
@@ -4041,6 +4435,36 @@ inline void Container::set_architecture(::flyteidl::core::Container_Architecture
   // @@protoc_insertion_point(field_set:flyteidl.core.Container.architecture)
 }
 
+// repeated .flyteidl.core.Selector selectors = 11;
+inline int Container::selectors_size() const {
+  return selectors_.size();
+}
+inline void Container::clear_selectors() {
+  selectors_.Clear();
+}
+inline ::flyteidl::core::Selector* Container::mutable_selectors(int index) {
+  // @@protoc_insertion_point(field_mutable:flyteidl.core.Container.selectors)
+  return selectors_.Mutable(index);
+}
+inline ::google::protobuf::RepeatedPtrField< ::flyteidl::core::Selector >*
+Container::mutable_selectors() {
+  // @@protoc_insertion_point(field_mutable_list:flyteidl.core.Container.selectors)
+  return &selectors_;
+}
+inline const ::flyteidl::core::Selector& Container::selectors(int index) const {
+  // @@protoc_insertion_point(field_get:flyteidl.core.Container.selectors)
+  return selectors_.Get(index);
+}
+inline ::flyteidl::core::Selector* Container::add_selectors() {
+  // @@protoc_insertion_point(field_add:flyteidl.core.Container.selectors)
+  return selectors_.Add();
+}
+inline const ::google::protobuf::RepeatedPtrField< ::flyteidl::core::Selector >&
+Container::selectors() const {
+  // @@protoc_insertion_point(field_list:flyteidl.core.Container.selectors)
+  return selectors_;
+}
+
 // -------------------------------------------------------------------
 
 // IOStrategy
@@ -4532,6 +4956,8 @@ inline void Sql::set_dialect(::flyteidl::core::Sql_Dialect value) {
 #ifdef __GNUC__
   #pragma GCC diagnostic pop
 #endif  // __GNUC__
+// -------------------------------------------------------------------
+
 // -------------------------------------------------------------------
 
 // -------------------------------------------------------------------
