@@ -12446,6 +12446,7 @@
                  * @property {boolean|null} [generatesDeck] TaskMetadata generatesDeck
                  * @property {Object.<string,string>|null} [tags] TaskMetadata tags
                  * @property {string|null} [podTemplateName] TaskMetadata podTemplateName
+                 * @property {Array.<flyteidl.core.ISelector>|null} [selectors] TaskMetadata selectors
                  */
     
                 /**
@@ -12458,6 +12459,7 @@
                  */
                 function TaskMetadata(properties) {
                     this.tags = {};
+                    this.selectors = [];
                     if (properties)
                         for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
                             if (properties[keys[i]] != null)
@@ -12552,6 +12554,14 @@
                  */
                 TaskMetadata.prototype.podTemplateName = "";
     
+                /**
+                 * TaskMetadata selectors.
+                 * @member {Array.<flyteidl.core.ISelector>} selectors
+                 * @memberof flyteidl.core.TaskMetadata
+                 * @instance
+                 */
+                TaskMetadata.prototype.selectors = $util.emptyArray;
+    
                 // OneOf field names bound to virtual getters and setters
                 var $oneOfFields;
     
@@ -12613,6 +12623,9 @@
                             writer.uint32(/* id 11, wireType 2 =*/90).fork().uint32(/* id 1, wireType 2 =*/10).string(keys[i]).uint32(/* id 2, wireType 2 =*/18).string(message.tags[keys[i]]).ldelim();
                     if (message.podTemplateName != null && message.hasOwnProperty("podTemplateName"))
                         writer.uint32(/* id 12, wireType 2 =*/98).string(message.podTemplateName);
+                    if (message.selectors != null && message.selectors.length)
+                        for (var i = 0; i < message.selectors.length; ++i)
+                            $root.flyteidl.core.Selector.encode(message.selectors[i], writer.uint32(/* id 13, wireType 2 =*/106).fork()).ldelim();
                     return writer;
                 };
     
@@ -12671,6 +12684,11 @@
                             break;
                         case 12:
                             message.podTemplateName = reader.string();
+                            break;
+                        case 13:
+                            if (!(message.selectors && message.selectors.length))
+                                message.selectors = [];
+                            message.selectors.push($root.flyteidl.core.Selector.decode(reader, reader.uint32()));
                             break;
                         default:
                             reader.skipType(tag & 7);
@@ -12738,6 +12756,15 @@
                     if (message.podTemplateName != null && message.hasOwnProperty("podTemplateName"))
                         if (!$util.isString(message.podTemplateName))
                             return "podTemplateName: string expected";
+                    if (message.selectors != null && message.hasOwnProperty("selectors")) {
+                        if (!Array.isArray(message.selectors))
+                            return "selectors: array expected";
+                        for (var i = 0; i < message.selectors.length; ++i) {
+                            var error = $root.flyteidl.core.Selector.verify(message.selectors[i]);
+                            if (error)
+                                return "selectors." + error;
+                        }
+                    }
                     return null;
                 };
     
@@ -13205,7 +13232,6 @@
                  * @property {Array.<flyteidl.core.IContainerPort>|null} [ports] Container ports
                  * @property {flyteidl.core.IDataLoadingConfig|null} [dataConfig] Container dataConfig
                  * @property {flyteidl.core.Container.Architecture|null} [architecture] Container architecture
-                 * @property {Array.<flyteidl.core.ISelector>|null} [selectors] Container selectors
                  */
     
                 /**
@@ -13222,7 +13248,6 @@
                     this.env = [];
                     this.config = [];
                     this.ports = [];
-                    this.selectors = [];
                     if (properties)
                         for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
                             if (properties[keys[i]] != null)
@@ -13302,14 +13327,6 @@
                 Container.prototype.architecture = 0;
     
                 /**
-                 * Container selectors.
-                 * @member {Array.<flyteidl.core.ISelector>} selectors
-                 * @memberof flyteidl.core.Container
-                 * @instance
-                 */
-                Container.prototype.selectors = $util.emptyArray;
-    
-                /**
                  * Creates a new Container instance using the specified properties.
                  * @function create
                  * @memberof flyteidl.core.Container
@@ -13356,9 +13373,6 @@
                         $root.flyteidl.core.DataLoadingConfig.encode(message.dataConfig, writer.uint32(/* id 9, wireType 2 =*/74).fork()).ldelim();
                     if (message.architecture != null && message.hasOwnProperty("architecture"))
                         writer.uint32(/* id 10, wireType 0 =*/80).int32(message.architecture);
-                    if (message.selectors != null && message.selectors.length)
-                        for (var i = 0; i < message.selectors.length; ++i)
-                            $root.flyteidl.core.Selector.encode(message.selectors[i], writer.uint32(/* id 11, wireType 2 =*/90).fork()).ldelim();
                     return writer;
                 };
     
@@ -13416,11 +13430,6 @@
                             break;
                         case 10:
                             message.architecture = reader.int32();
-                            break;
-                        case 11:
-                            if (!(message.selectors && message.selectors.length))
-                                message.selectors = [];
-                            message.selectors.push($root.flyteidl.core.Selector.decode(reader, reader.uint32()));
                             break;
                         default:
                             reader.skipType(tag & 7);
@@ -13506,15 +13515,6 @@
                         case 4:
                             break;
                         }
-                    if (message.selectors != null && message.hasOwnProperty("selectors")) {
-                        if (!Array.isArray(message.selectors))
-                            return "selectors: array expected";
-                        for (var i = 0; i < message.selectors.length; ++i) {
-                            var error = $root.flyteidl.core.Selector.verify(message.selectors[i]);
-                            if (error)
-                                return "selectors." + error;
-                        }
-                    }
                     return null;
                 };
     

@@ -21,7 +21,6 @@ from flyteadmin.models.core_container_port import CoreContainerPort  # noqa: F40
 from flyteadmin.models.core_data_loading_config import CoreDataLoadingConfig  # noqa: F401,E501
 from flyteadmin.models.core_key_value_pair import CoreKeyValuePair  # noqa: F401,E501
 from flyteadmin.models.core_resources import CoreResources  # noqa: F401,E501
-from flyteadmin.models.core_selector import CoreSelector  # noqa: F401,E501
 
 
 class CoreContainer(object):
@@ -46,8 +45,7 @@ class CoreContainer(object):
         'config': 'list[CoreKeyValuePair]',
         'ports': 'list[CoreContainerPort]',
         'data_config': 'CoreDataLoadingConfig',
-        'architecture': 'ContainerArchitecture',
-        'selectors': 'list[CoreSelector]'
+        'architecture': 'ContainerArchitecture'
     }
 
     attribute_map = {
@@ -59,11 +57,10 @@ class CoreContainer(object):
         'config': 'config',
         'ports': 'ports',
         'data_config': 'data_config',
-        'architecture': 'architecture',
-        'selectors': 'selectors'
+        'architecture': 'architecture'
     }
 
-    def __init__(self, image=None, command=None, args=None, resources=None, env=None, config=None, ports=None, data_config=None, architecture=None, selectors=None):  # noqa: E501
+    def __init__(self, image=None, command=None, args=None, resources=None, env=None, config=None, ports=None, data_config=None, architecture=None):  # noqa: E501
         """CoreContainer - a model defined in Swagger"""  # noqa: E501
 
         self._image = None
@@ -75,7 +72,6 @@ class CoreContainer(object):
         self._ports = None
         self._data_config = None
         self._architecture = None
-        self._selectors = None
         self.discriminator = None
 
         if image is not None:
@@ -96,8 +92,6 @@ class CoreContainer(object):
             self.data_config = data_config
         if architecture is not None:
             self.architecture = architecture
-        if selectors is not None:
-            self.selectors = selectors
 
     @property
     def image(self):
@@ -297,27 +291,6 @@ class CoreContainer(object):
         """
 
         self._architecture = architecture
-
-    @property
-    def selectors(self):
-        """Gets the selectors of this CoreContainer.  # noqa: E501
-
-
-        :return: The selectors of this CoreContainer.  # noqa: E501
-        :rtype: list[CoreSelector]
-        """
-        return self._selectors
-
-    @selectors.setter
-    def selectors(self, selectors):
-        """Sets the selectors of this CoreContainer.
-
-
-        :param selectors: The selectors of this CoreContainer.  # noqa: E501
-        :type: list[CoreSelector]
-        """
-
-        self._selectors = selectors
 
     def to_dict(self):
         """Returns the model properties as a dict"""

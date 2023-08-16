@@ -4401,6 +4401,30 @@ public final class Tasks {
     com.google.protobuf.ByteString
         getPodTemplateNameBytes();
 
+    /**
+     * <code>repeated .flyteidl.core.Selector selectors = 13;</code>
+     */
+    java.util.List<flyteidl.core.Tasks.Selector> 
+        getSelectorsList();
+    /**
+     * <code>repeated .flyteidl.core.Selector selectors = 13;</code>
+     */
+    flyteidl.core.Tasks.Selector getSelectors(int index);
+    /**
+     * <code>repeated .flyteidl.core.Selector selectors = 13;</code>
+     */
+    int getSelectorsCount();
+    /**
+     * <code>repeated .flyteidl.core.Selector selectors = 13;</code>
+     */
+    java.util.List<? extends flyteidl.core.Tasks.SelectorOrBuilder> 
+        getSelectorsOrBuilderList();
+    /**
+     * <code>repeated .flyteidl.core.Selector selectors = 13;</code>
+     */
+    flyteidl.core.Tasks.SelectorOrBuilder getSelectorsOrBuilder(
+        int index);
+
     public flyteidl.core.Tasks.TaskMetadata.InterruptibleValueCase getInterruptibleValueCase();
   }
   /**
@@ -4423,6 +4447,7 @@ public final class Tasks {
       discoveryVersion_ = "";
       deprecatedErrorMessage_ = "";
       podTemplateName_ = "";
+      selectors_ = java.util.Collections.emptyList();
     }
 
     @java.lang.Override
@@ -4539,6 +4564,15 @@ public final class Tasks {
               podTemplateName_ = s;
               break;
             }
+            case 106: {
+              if (!((mutable_bitField0_ & 0x00000800) != 0)) {
+                selectors_ = new java.util.ArrayList<flyteidl.core.Tasks.Selector>();
+                mutable_bitField0_ |= 0x00000800;
+              }
+              selectors_.add(
+                  input.readMessage(flyteidl.core.Tasks.Selector.parser(), extensionRegistry));
+              break;
+            }
             default: {
               if (!parseUnknownField(
                   input, unknownFields, extensionRegistry, tag)) {
@@ -4554,6 +4588,9 @@ public final class Tasks {
         throw new com.google.protobuf.InvalidProtocolBufferException(
             e).setUnfinishedMessage(this);
       } finally {
+        if (((mutable_bitField0_ & 0x00000800) != 0)) {
+          selectors_ = java.util.Collections.unmodifiableList(selectors_);
+        }
         this.unknownFields = unknownFields.build();
         makeExtensionsImmutable();
       }
@@ -4993,6 +5030,41 @@ public final class Tasks {
       }
     }
 
+    public static final int SELECTORS_FIELD_NUMBER = 13;
+    private java.util.List<flyteidl.core.Tasks.Selector> selectors_;
+    /**
+     * <code>repeated .flyteidl.core.Selector selectors = 13;</code>
+     */
+    public java.util.List<flyteidl.core.Tasks.Selector> getSelectorsList() {
+      return selectors_;
+    }
+    /**
+     * <code>repeated .flyteidl.core.Selector selectors = 13;</code>
+     */
+    public java.util.List<? extends flyteidl.core.Tasks.SelectorOrBuilder> 
+        getSelectorsOrBuilderList() {
+      return selectors_;
+    }
+    /**
+     * <code>repeated .flyteidl.core.Selector selectors = 13;</code>
+     */
+    public int getSelectorsCount() {
+      return selectors_.size();
+    }
+    /**
+     * <code>repeated .flyteidl.core.Selector selectors = 13;</code>
+     */
+    public flyteidl.core.Tasks.Selector getSelectors(int index) {
+      return selectors_.get(index);
+    }
+    /**
+     * <code>repeated .flyteidl.core.Selector selectors = 13;</code>
+     */
+    public flyteidl.core.Tasks.SelectorOrBuilder getSelectorsOrBuilder(
+        int index) {
+      return selectors_.get(index);
+    }
+
     private byte memoizedIsInitialized = -1;
     @java.lang.Override
     public final boolean isInitialized() {
@@ -5043,6 +5115,9 @@ public final class Tasks {
           11);
       if (!getPodTemplateNameBytes().isEmpty()) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 12, podTemplateName_);
+      }
+      for (int i = 0; i < selectors_.size(); i++) {
+        output.writeMessage(13, selectors_.get(i));
       }
       unknownFields.writeTo(output);
     }
@@ -5101,6 +5176,10 @@ public final class Tasks {
       if (!getPodTemplateNameBytes().isEmpty()) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(12, podTemplateName_);
       }
+      for (int i = 0; i < selectors_.size(); i++) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(13, selectors_.get(i));
+      }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
@@ -5145,6 +5224,8 @@ public final class Tasks {
           other.internalGetTags())) return false;
       if (!getPodTemplateName()
           .equals(other.getPodTemplateName())) return false;
+      if (!getSelectorsList()
+          .equals(other.getSelectorsList())) return false;
       if (!getInterruptibleValueCase().equals(other.getInterruptibleValueCase())) return false;
       switch (interruptibleValueCase_) {
         case 8:
@@ -5196,6 +5277,10 @@ public final class Tasks {
       }
       hash = (37 * hash) + POD_TEMPLATE_NAME_FIELD_NUMBER;
       hash = (53 * hash) + getPodTemplateName().hashCode();
+      if (getSelectorsCount() > 0) {
+        hash = (37 * hash) + SELECTORS_FIELD_NUMBER;
+        hash = (53 * hash) + getSelectorsList().hashCode();
+      }
       switch (interruptibleValueCase_) {
         case 8:
           hash = (37 * hash) + INTERRUPTIBLE_FIELD_NUMBER;
@@ -5359,6 +5444,7 @@ public final class Tasks {
       private void maybeForceBuilderInitialization() {
         if (com.google.protobuf.GeneratedMessageV3
                 .alwaysUseFieldBuilders) {
+          getSelectorsFieldBuilder();
         }
       }
       @java.lang.Override
@@ -5395,6 +5481,12 @@ public final class Tasks {
         internalGetMutableTags().clear();
         podTemplateName_ = "";
 
+        if (selectorsBuilder_ == null) {
+          selectors_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000800);
+        } else {
+          selectorsBuilder_.clear();
+        }
         interruptibleValueCase_ = 0;
         interruptibleValue_ = null;
         return this;
@@ -5451,6 +5543,15 @@ public final class Tasks {
         result.tags_ = internalGetTags();
         result.tags_.makeImmutable();
         result.podTemplateName_ = podTemplateName_;
+        if (selectorsBuilder_ == null) {
+          if (((bitField0_ & 0x00000800) != 0)) {
+            selectors_ = java.util.Collections.unmodifiableList(selectors_);
+            bitField0_ = (bitField0_ & ~0x00000800);
+          }
+          result.selectors_ = selectors_;
+        } else {
+          result.selectors_ = selectorsBuilder_.build();
+        }
         result.bitField0_ = to_bitField0_;
         result.interruptibleValueCase_ = interruptibleValueCase_;
         onBuilt();
@@ -5532,6 +5633,32 @@ public final class Tasks {
         if (!other.getPodTemplateName().isEmpty()) {
           podTemplateName_ = other.podTemplateName_;
           onChanged();
+        }
+        if (selectorsBuilder_ == null) {
+          if (!other.selectors_.isEmpty()) {
+            if (selectors_.isEmpty()) {
+              selectors_ = other.selectors_;
+              bitField0_ = (bitField0_ & ~0x00000800);
+            } else {
+              ensureSelectorsIsMutable();
+              selectors_.addAll(other.selectors_);
+            }
+            onChanged();
+          }
+        } else {
+          if (!other.selectors_.isEmpty()) {
+            if (selectorsBuilder_.isEmpty()) {
+              selectorsBuilder_.dispose();
+              selectorsBuilder_ = null;
+              selectors_ = other.selectors_;
+              bitField0_ = (bitField0_ & ~0x00000800);
+              selectorsBuilder_ = 
+                com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
+                   getSelectorsFieldBuilder() : null;
+            } else {
+              selectorsBuilder_.addAllMessages(other.selectors_);
+            }
+          }
         }
         switch (other.getInterruptibleValueCase()) {
           case INTERRUPTIBLE: {
@@ -6621,6 +6748,246 @@ public final class Tasks {
         podTemplateName_ = value;
         onChanged();
         return this;
+      }
+
+      private java.util.List<flyteidl.core.Tasks.Selector> selectors_ =
+        java.util.Collections.emptyList();
+      private void ensureSelectorsIsMutable() {
+        if (!((bitField0_ & 0x00000800) != 0)) {
+          selectors_ = new java.util.ArrayList<flyteidl.core.Tasks.Selector>(selectors_);
+          bitField0_ |= 0x00000800;
+         }
+      }
+
+      private com.google.protobuf.RepeatedFieldBuilderV3<
+          flyteidl.core.Tasks.Selector, flyteidl.core.Tasks.Selector.Builder, flyteidl.core.Tasks.SelectorOrBuilder> selectorsBuilder_;
+
+      /**
+       * <code>repeated .flyteidl.core.Selector selectors = 13;</code>
+       */
+      public java.util.List<flyteidl.core.Tasks.Selector> getSelectorsList() {
+        if (selectorsBuilder_ == null) {
+          return java.util.Collections.unmodifiableList(selectors_);
+        } else {
+          return selectorsBuilder_.getMessageList();
+        }
+      }
+      /**
+       * <code>repeated .flyteidl.core.Selector selectors = 13;</code>
+       */
+      public int getSelectorsCount() {
+        if (selectorsBuilder_ == null) {
+          return selectors_.size();
+        } else {
+          return selectorsBuilder_.getCount();
+        }
+      }
+      /**
+       * <code>repeated .flyteidl.core.Selector selectors = 13;</code>
+       */
+      public flyteidl.core.Tasks.Selector getSelectors(int index) {
+        if (selectorsBuilder_ == null) {
+          return selectors_.get(index);
+        } else {
+          return selectorsBuilder_.getMessage(index);
+        }
+      }
+      /**
+       * <code>repeated .flyteidl.core.Selector selectors = 13;</code>
+       */
+      public Builder setSelectors(
+          int index, flyteidl.core.Tasks.Selector value) {
+        if (selectorsBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureSelectorsIsMutable();
+          selectors_.set(index, value);
+          onChanged();
+        } else {
+          selectorsBuilder_.setMessage(index, value);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .flyteidl.core.Selector selectors = 13;</code>
+       */
+      public Builder setSelectors(
+          int index, flyteidl.core.Tasks.Selector.Builder builderForValue) {
+        if (selectorsBuilder_ == null) {
+          ensureSelectorsIsMutable();
+          selectors_.set(index, builderForValue.build());
+          onChanged();
+        } else {
+          selectorsBuilder_.setMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .flyteidl.core.Selector selectors = 13;</code>
+       */
+      public Builder addSelectors(flyteidl.core.Tasks.Selector value) {
+        if (selectorsBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureSelectorsIsMutable();
+          selectors_.add(value);
+          onChanged();
+        } else {
+          selectorsBuilder_.addMessage(value);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .flyteidl.core.Selector selectors = 13;</code>
+       */
+      public Builder addSelectors(
+          int index, flyteidl.core.Tasks.Selector value) {
+        if (selectorsBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureSelectorsIsMutable();
+          selectors_.add(index, value);
+          onChanged();
+        } else {
+          selectorsBuilder_.addMessage(index, value);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .flyteidl.core.Selector selectors = 13;</code>
+       */
+      public Builder addSelectors(
+          flyteidl.core.Tasks.Selector.Builder builderForValue) {
+        if (selectorsBuilder_ == null) {
+          ensureSelectorsIsMutable();
+          selectors_.add(builderForValue.build());
+          onChanged();
+        } else {
+          selectorsBuilder_.addMessage(builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .flyteidl.core.Selector selectors = 13;</code>
+       */
+      public Builder addSelectors(
+          int index, flyteidl.core.Tasks.Selector.Builder builderForValue) {
+        if (selectorsBuilder_ == null) {
+          ensureSelectorsIsMutable();
+          selectors_.add(index, builderForValue.build());
+          onChanged();
+        } else {
+          selectorsBuilder_.addMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .flyteidl.core.Selector selectors = 13;</code>
+       */
+      public Builder addAllSelectors(
+          java.lang.Iterable<? extends flyteidl.core.Tasks.Selector> values) {
+        if (selectorsBuilder_ == null) {
+          ensureSelectorsIsMutable();
+          com.google.protobuf.AbstractMessageLite.Builder.addAll(
+              values, selectors_);
+          onChanged();
+        } else {
+          selectorsBuilder_.addAllMessages(values);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .flyteidl.core.Selector selectors = 13;</code>
+       */
+      public Builder clearSelectors() {
+        if (selectorsBuilder_ == null) {
+          selectors_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000800);
+          onChanged();
+        } else {
+          selectorsBuilder_.clear();
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .flyteidl.core.Selector selectors = 13;</code>
+       */
+      public Builder removeSelectors(int index) {
+        if (selectorsBuilder_ == null) {
+          ensureSelectorsIsMutable();
+          selectors_.remove(index);
+          onChanged();
+        } else {
+          selectorsBuilder_.remove(index);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .flyteidl.core.Selector selectors = 13;</code>
+       */
+      public flyteidl.core.Tasks.Selector.Builder getSelectorsBuilder(
+          int index) {
+        return getSelectorsFieldBuilder().getBuilder(index);
+      }
+      /**
+       * <code>repeated .flyteidl.core.Selector selectors = 13;</code>
+       */
+      public flyteidl.core.Tasks.SelectorOrBuilder getSelectorsOrBuilder(
+          int index) {
+        if (selectorsBuilder_ == null) {
+          return selectors_.get(index);  } else {
+          return selectorsBuilder_.getMessageOrBuilder(index);
+        }
+      }
+      /**
+       * <code>repeated .flyteidl.core.Selector selectors = 13;</code>
+       */
+      public java.util.List<? extends flyteidl.core.Tasks.SelectorOrBuilder> 
+           getSelectorsOrBuilderList() {
+        if (selectorsBuilder_ != null) {
+          return selectorsBuilder_.getMessageOrBuilderList();
+        } else {
+          return java.util.Collections.unmodifiableList(selectors_);
+        }
+      }
+      /**
+       * <code>repeated .flyteidl.core.Selector selectors = 13;</code>
+       */
+      public flyteidl.core.Tasks.Selector.Builder addSelectorsBuilder() {
+        return getSelectorsFieldBuilder().addBuilder(
+            flyteidl.core.Tasks.Selector.getDefaultInstance());
+      }
+      /**
+       * <code>repeated .flyteidl.core.Selector selectors = 13;</code>
+       */
+      public flyteidl.core.Tasks.Selector.Builder addSelectorsBuilder(
+          int index) {
+        return getSelectorsFieldBuilder().addBuilder(
+            index, flyteidl.core.Tasks.Selector.getDefaultInstance());
+      }
+      /**
+       * <code>repeated .flyteidl.core.Selector selectors = 13;</code>
+       */
+      public java.util.List<flyteidl.core.Tasks.Selector.Builder> 
+           getSelectorsBuilderList() {
+        return getSelectorsFieldBuilder().getBuilderList();
+      }
+      private com.google.protobuf.RepeatedFieldBuilderV3<
+          flyteidl.core.Tasks.Selector, flyteidl.core.Tasks.Selector.Builder, flyteidl.core.Tasks.SelectorOrBuilder> 
+          getSelectorsFieldBuilder() {
+        if (selectorsBuilder_ == null) {
+          selectorsBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
+              flyteidl.core.Tasks.Selector, flyteidl.core.Tasks.Selector.Builder, flyteidl.core.Tasks.SelectorOrBuilder>(
+                  selectors_,
+                  ((bitField0_ & 0x00000800) != 0),
+                  getParentForChildren(),
+                  isClean());
+          selectors_ = null;
+        }
+        return selectorsBuilder_;
       }
       @java.lang.Override
       public final Builder setUnknownFields(
@@ -10617,30 +10984,6 @@ public final class Tasks {
      * <code>.flyteidl.core.Container.Architecture architecture = 10;</code>
      */
     flyteidl.core.Tasks.Container.Architecture getArchitecture();
-
-    /**
-     * <code>repeated .flyteidl.core.Selector selectors = 11;</code>
-     */
-    java.util.List<flyteidl.core.Tasks.Selector> 
-        getSelectorsList();
-    /**
-     * <code>repeated .flyteidl.core.Selector selectors = 11;</code>
-     */
-    flyteidl.core.Tasks.Selector getSelectors(int index);
-    /**
-     * <code>repeated .flyteidl.core.Selector selectors = 11;</code>
-     */
-    int getSelectorsCount();
-    /**
-     * <code>repeated .flyteidl.core.Selector selectors = 11;</code>
-     */
-    java.util.List<? extends flyteidl.core.Tasks.SelectorOrBuilder> 
-        getSelectorsOrBuilderList();
-    /**
-     * <code>repeated .flyteidl.core.Selector selectors = 11;</code>
-     */
-    flyteidl.core.Tasks.SelectorOrBuilder getSelectorsOrBuilder(
-        int index);
   }
   /**
    * Protobuf type {@code flyteidl.core.Container}
@@ -10662,7 +11005,6 @@ public final class Tasks {
       config_ = java.util.Collections.emptyList();
       ports_ = java.util.Collections.emptyList();
       architecture_ = 0;
-      selectors_ = java.util.Collections.emptyList();
     }
 
     @java.lang.Override
@@ -10772,15 +11114,6 @@ public final class Tasks {
               architecture_ = rawValue;
               break;
             }
-            case 90: {
-              if (!((mutable_bitField0_ & 0x00000200) != 0)) {
-                selectors_ = new java.util.ArrayList<flyteidl.core.Tasks.Selector>();
-                mutable_bitField0_ |= 0x00000200;
-              }
-              selectors_.add(
-                  input.readMessage(flyteidl.core.Tasks.Selector.parser(), extensionRegistry));
-              break;
-            }
             default: {
               if (!parseUnknownField(
                   input, unknownFields, extensionRegistry, tag)) {
@@ -10810,9 +11143,6 @@ public final class Tasks {
         }
         if (((mutable_bitField0_ & 0x00000040) != 0)) {
           ports_ = java.util.Collections.unmodifiableList(ports_);
-        }
-        if (((mutable_bitField0_ & 0x00000200) != 0)) {
-          selectors_ = java.util.Collections.unmodifiableList(selectors_);
         }
         this.unknownFields = unknownFields.build();
         makeExtensionsImmutable();
@@ -11387,41 +11717,6 @@ public final class Tasks {
       return result == null ? flyteidl.core.Tasks.Container.Architecture.UNRECOGNIZED : result;
     }
 
-    public static final int SELECTORS_FIELD_NUMBER = 11;
-    private java.util.List<flyteidl.core.Tasks.Selector> selectors_;
-    /**
-     * <code>repeated .flyteidl.core.Selector selectors = 11;</code>
-     */
-    public java.util.List<flyteidl.core.Tasks.Selector> getSelectorsList() {
-      return selectors_;
-    }
-    /**
-     * <code>repeated .flyteidl.core.Selector selectors = 11;</code>
-     */
-    public java.util.List<? extends flyteidl.core.Tasks.SelectorOrBuilder> 
-        getSelectorsOrBuilderList() {
-      return selectors_;
-    }
-    /**
-     * <code>repeated .flyteidl.core.Selector selectors = 11;</code>
-     */
-    public int getSelectorsCount() {
-      return selectors_.size();
-    }
-    /**
-     * <code>repeated .flyteidl.core.Selector selectors = 11;</code>
-     */
-    public flyteidl.core.Tasks.Selector getSelectors(int index) {
-      return selectors_.get(index);
-    }
-    /**
-     * <code>repeated .flyteidl.core.Selector selectors = 11;</code>
-     */
-    public flyteidl.core.Tasks.SelectorOrBuilder getSelectorsOrBuilder(
-        int index) {
-      return selectors_.get(index);
-    }
-
     private byte memoizedIsInitialized = -1;
     @java.lang.Override
     public final boolean isInitialized() {
@@ -11462,9 +11757,6 @@ public final class Tasks {
       }
       if (architecture_ != flyteidl.core.Tasks.Container.Architecture.UNKNOWN.getNumber()) {
         output.writeEnum(10, architecture_);
-      }
-      for (int i = 0; i < selectors_.size(); i++) {
-        output.writeMessage(11, selectors_.get(i));
       }
       unknownFields.writeTo(output);
     }
@@ -11518,10 +11810,6 @@ public final class Tasks {
         size += com.google.protobuf.CodedOutputStream
           .computeEnumSize(10, architecture_);
       }
-      for (int i = 0; i < selectors_.size(); i++) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(11, selectors_.get(i));
-      }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
@@ -11560,8 +11848,6 @@ public final class Tasks {
             .equals(other.getDataConfig())) return false;
       }
       if (architecture_ != other.architecture_) return false;
-      if (!getSelectorsList()
-          .equals(other.getSelectorsList())) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -11605,10 +11891,6 @@ public final class Tasks {
       }
       hash = (37 * hash) + ARCHITECTURE_FIELD_NUMBER;
       hash = (53 * hash) + architecture_;
-      if (getSelectorsCount() > 0) {
-        hash = (37 * hash) + SELECTORS_FIELD_NUMBER;
-        hash = (53 * hash) + getSelectorsList().hashCode();
-      }
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -11740,7 +12022,6 @@ public final class Tasks {
           getEnvFieldBuilder();
           getConfigFieldBuilder();
           getPortsFieldBuilder();
-          getSelectorsFieldBuilder();
         }
       }
       @java.lang.Override
@@ -11784,12 +12065,6 @@ public final class Tasks {
         }
         architecture_ = 0;
 
-        if (selectorsBuilder_ == null) {
-          selectors_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000200);
-        } else {
-          selectorsBuilder_.clear();
-        }
         return this;
       }
 
@@ -11867,15 +12142,6 @@ public final class Tasks {
           result.dataConfig_ = dataConfigBuilder_.build();
         }
         result.architecture_ = architecture_;
-        if (selectorsBuilder_ == null) {
-          if (((bitField0_ & 0x00000200) != 0)) {
-            selectors_ = java.util.Collections.unmodifiableList(selectors_);
-            bitField0_ = (bitField0_ & ~0x00000200);
-          }
-          result.selectors_ = selectors_;
-        } else {
-          result.selectors_ = selectorsBuilder_.build();
-        }
         result.bitField0_ = to_bitField0_;
         onBuilt();
         return result;
@@ -12035,32 +12301,6 @@ public final class Tasks {
         }
         if (other.architecture_ != 0) {
           setArchitectureValue(other.getArchitectureValue());
-        }
-        if (selectorsBuilder_ == null) {
-          if (!other.selectors_.isEmpty()) {
-            if (selectors_.isEmpty()) {
-              selectors_ = other.selectors_;
-              bitField0_ = (bitField0_ & ~0x00000200);
-            } else {
-              ensureSelectorsIsMutable();
-              selectors_.addAll(other.selectors_);
-            }
-            onChanged();
-          }
-        } else {
-          if (!other.selectors_.isEmpty()) {
-            if (selectorsBuilder_.isEmpty()) {
-              selectorsBuilder_.dispose();
-              selectorsBuilder_ = null;
-              selectors_ = other.selectors_;
-              bitField0_ = (bitField0_ & ~0x00000200);
-              selectorsBuilder_ = 
-                com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
-                   getSelectorsFieldBuilder() : null;
-            } else {
-              selectorsBuilder_.addAllMessages(other.selectors_);
-            }
-          }
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -13870,246 +14110,6 @@ public final class Tasks {
         architecture_ = 0;
         onChanged();
         return this;
-      }
-
-      private java.util.List<flyteidl.core.Tasks.Selector> selectors_ =
-        java.util.Collections.emptyList();
-      private void ensureSelectorsIsMutable() {
-        if (!((bitField0_ & 0x00000200) != 0)) {
-          selectors_ = new java.util.ArrayList<flyteidl.core.Tasks.Selector>(selectors_);
-          bitField0_ |= 0x00000200;
-         }
-      }
-
-      private com.google.protobuf.RepeatedFieldBuilderV3<
-          flyteidl.core.Tasks.Selector, flyteidl.core.Tasks.Selector.Builder, flyteidl.core.Tasks.SelectorOrBuilder> selectorsBuilder_;
-
-      /**
-       * <code>repeated .flyteidl.core.Selector selectors = 11;</code>
-       */
-      public java.util.List<flyteidl.core.Tasks.Selector> getSelectorsList() {
-        if (selectorsBuilder_ == null) {
-          return java.util.Collections.unmodifiableList(selectors_);
-        } else {
-          return selectorsBuilder_.getMessageList();
-        }
-      }
-      /**
-       * <code>repeated .flyteidl.core.Selector selectors = 11;</code>
-       */
-      public int getSelectorsCount() {
-        if (selectorsBuilder_ == null) {
-          return selectors_.size();
-        } else {
-          return selectorsBuilder_.getCount();
-        }
-      }
-      /**
-       * <code>repeated .flyteidl.core.Selector selectors = 11;</code>
-       */
-      public flyteidl.core.Tasks.Selector getSelectors(int index) {
-        if (selectorsBuilder_ == null) {
-          return selectors_.get(index);
-        } else {
-          return selectorsBuilder_.getMessage(index);
-        }
-      }
-      /**
-       * <code>repeated .flyteidl.core.Selector selectors = 11;</code>
-       */
-      public Builder setSelectors(
-          int index, flyteidl.core.Tasks.Selector value) {
-        if (selectorsBuilder_ == null) {
-          if (value == null) {
-            throw new NullPointerException();
-          }
-          ensureSelectorsIsMutable();
-          selectors_.set(index, value);
-          onChanged();
-        } else {
-          selectorsBuilder_.setMessage(index, value);
-        }
-        return this;
-      }
-      /**
-       * <code>repeated .flyteidl.core.Selector selectors = 11;</code>
-       */
-      public Builder setSelectors(
-          int index, flyteidl.core.Tasks.Selector.Builder builderForValue) {
-        if (selectorsBuilder_ == null) {
-          ensureSelectorsIsMutable();
-          selectors_.set(index, builderForValue.build());
-          onChanged();
-        } else {
-          selectorsBuilder_.setMessage(index, builderForValue.build());
-        }
-        return this;
-      }
-      /**
-       * <code>repeated .flyteidl.core.Selector selectors = 11;</code>
-       */
-      public Builder addSelectors(flyteidl.core.Tasks.Selector value) {
-        if (selectorsBuilder_ == null) {
-          if (value == null) {
-            throw new NullPointerException();
-          }
-          ensureSelectorsIsMutable();
-          selectors_.add(value);
-          onChanged();
-        } else {
-          selectorsBuilder_.addMessage(value);
-        }
-        return this;
-      }
-      /**
-       * <code>repeated .flyteidl.core.Selector selectors = 11;</code>
-       */
-      public Builder addSelectors(
-          int index, flyteidl.core.Tasks.Selector value) {
-        if (selectorsBuilder_ == null) {
-          if (value == null) {
-            throw new NullPointerException();
-          }
-          ensureSelectorsIsMutable();
-          selectors_.add(index, value);
-          onChanged();
-        } else {
-          selectorsBuilder_.addMessage(index, value);
-        }
-        return this;
-      }
-      /**
-       * <code>repeated .flyteidl.core.Selector selectors = 11;</code>
-       */
-      public Builder addSelectors(
-          flyteidl.core.Tasks.Selector.Builder builderForValue) {
-        if (selectorsBuilder_ == null) {
-          ensureSelectorsIsMutable();
-          selectors_.add(builderForValue.build());
-          onChanged();
-        } else {
-          selectorsBuilder_.addMessage(builderForValue.build());
-        }
-        return this;
-      }
-      /**
-       * <code>repeated .flyteidl.core.Selector selectors = 11;</code>
-       */
-      public Builder addSelectors(
-          int index, flyteidl.core.Tasks.Selector.Builder builderForValue) {
-        if (selectorsBuilder_ == null) {
-          ensureSelectorsIsMutable();
-          selectors_.add(index, builderForValue.build());
-          onChanged();
-        } else {
-          selectorsBuilder_.addMessage(index, builderForValue.build());
-        }
-        return this;
-      }
-      /**
-       * <code>repeated .flyteidl.core.Selector selectors = 11;</code>
-       */
-      public Builder addAllSelectors(
-          java.lang.Iterable<? extends flyteidl.core.Tasks.Selector> values) {
-        if (selectorsBuilder_ == null) {
-          ensureSelectorsIsMutable();
-          com.google.protobuf.AbstractMessageLite.Builder.addAll(
-              values, selectors_);
-          onChanged();
-        } else {
-          selectorsBuilder_.addAllMessages(values);
-        }
-        return this;
-      }
-      /**
-       * <code>repeated .flyteidl.core.Selector selectors = 11;</code>
-       */
-      public Builder clearSelectors() {
-        if (selectorsBuilder_ == null) {
-          selectors_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000200);
-          onChanged();
-        } else {
-          selectorsBuilder_.clear();
-        }
-        return this;
-      }
-      /**
-       * <code>repeated .flyteidl.core.Selector selectors = 11;</code>
-       */
-      public Builder removeSelectors(int index) {
-        if (selectorsBuilder_ == null) {
-          ensureSelectorsIsMutable();
-          selectors_.remove(index);
-          onChanged();
-        } else {
-          selectorsBuilder_.remove(index);
-        }
-        return this;
-      }
-      /**
-       * <code>repeated .flyteidl.core.Selector selectors = 11;</code>
-       */
-      public flyteidl.core.Tasks.Selector.Builder getSelectorsBuilder(
-          int index) {
-        return getSelectorsFieldBuilder().getBuilder(index);
-      }
-      /**
-       * <code>repeated .flyteidl.core.Selector selectors = 11;</code>
-       */
-      public flyteidl.core.Tasks.SelectorOrBuilder getSelectorsOrBuilder(
-          int index) {
-        if (selectorsBuilder_ == null) {
-          return selectors_.get(index);  } else {
-          return selectorsBuilder_.getMessageOrBuilder(index);
-        }
-      }
-      /**
-       * <code>repeated .flyteidl.core.Selector selectors = 11;</code>
-       */
-      public java.util.List<? extends flyteidl.core.Tasks.SelectorOrBuilder> 
-           getSelectorsOrBuilderList() {
-        if (selectorsBuilder_ != null) {
-          return selectorsBuilder_.getMessageOrBuilderList();
-        } else {
-          return java.util.Collections.unmodifiableList(selectors_);
-        }
-      }
-      /**
-       * <code>repeated .flyteidl.core.Selector selectors = 11;</code>
-       */
-      public flyteidl.core.Tasks.Selector.Builder addSelectorsBuilder() {
-        return getSelectorsFieldBuilder().addBuilder(
-            flyteidl.core.Tasks.Selector.getDefaultInstance());
-      }
-      /**
-       * <code>repeated .flyteidl.core.Selector selectors = 11;</code>
-       */
-      public flyteidl.core.Tasks.Selector.Builder addSelectorsBuilder(
-          int index) {
-        return getSelectorsFieldBuilder().addBuilder(
-            index, flyteidl.core.Tasks.Selector.getDefaultInstance());
-      }
-      /**
-       * <code>repeated .flyteidl.core.Selector selectors = 11;</code>
-       */
-      public java.util.List<flyteidl.core.Tasks.Selector.Builder> 
-           getSelectorsBuilderList() {
-        return getSelectorsFieldBuilder().getBuilderList();
-      }
-      private com.google.protobuf.RepeatedFieldBuilderV3<
-          flyteidl.core.Tasks.Selector, flyteidl.core.Tasks.Selector.Builder, flyteidl.core.Tasks.SelectorOrBuilder> 
-          getSelectorsFieldBuilder() {
-        if (selectorsBuilder_ == null) {
-          selectorsBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
-              flyteidl.core.Tasks.Selector, flyteidl.core.Tasks.Selector.Builder, flyteidl.core.Tasks.SelectorOrBuilder>(
-                  selectors_,
-                  ((bitField0_ & 0x00000200) != 0),
-                  getParentForChildren(),
-                  isClean());
-          selectors_ = null;
-        }
-        return selectorsBuilder_;
       }
       @java.lang.Override
       public final Builder setUnknownFields(
@@ -19931,7 +19931,7 @@ public final class Tasks {
       "\017RuntimeMetadata\0228\n\004type\030\001 \001(\0162*.flyteid" +
       "l.core.RuntimeMetadata.RuntimeType\022\017\n\007ve" +
       "rsion\030\002 \001(\t\022\016\n\006flavor\030\003 \001(\t\"\'\n\013RuntimeTy" +
-      "pe\022\t\n\005OTHER\020\000\022\r\n\tFLYTE_SDK\020\001\"\316\003\n\014TaskMet" +
+      "pe\022\t\n\005OTHER\020\000\022\r\n\tFLYTE_SDK\020\001\"\372\003\n\014TaskMet" +
       "adata\022\024\n\014discoverable\030\001 \001(\010\022/\n\007runtime\030\002" +
       " \001(\0132\036.flyteidl.core.RuntimeMetadata\022*\n\007" +
       "timeout\030\004 \001(\0132\031.google.protobuf.Duration" +
@@ -19941,33 +19941,33 @@ public final class Tasks {
       "tible\030\010 \001(\010H\000\022\032\n\022cache_serializable\030\t \001(" +
       "\010\022\026\n\016generates_deck\030\n \001(\010\0223\n\004tags\030\013 \003(\0132" +
       "%.flyteidl.core.TaskMetadata.TagsEntry\022\031" +
-      "\n\021pod_template_name\030\014 \001(\t\032+\n\tTagsEntry\022\013" +
-      "\n\003key\030\001 \001(\t\022\r\n\005value\030\002 \001(\t:\0028\001B\025\n\023interr" +
-      "uptible_value\"\220\004\n\014TaskTemplate\022%\n\002id\030\001 \001" +
-      "(\0132\031.flyteidl.core.Identifier\022\014\n\004type\030\002 " +
-      "\001(\t\022-\n\010metadata\030\003 \001(\0132\033.flyteidl.core.Ta" +
-      "skMetadata\0220\n\tinterface\030\004 \001(\0132\035.flyteidl" +
-      ".core.TypedInterface\022\'\n\006custom\030\005 \001(\0132\027.g" +
-      "oogle.protobuf.Struct\022-\n\tcontainer\030\006 \001(\013" +
-      "2\030.flyteidl.core.ContainerH\000\022(\n\007k8s_pod\030" +
-      "\021 \001(\0132\025.flyteidl.core.K8sPodH\000\022!\n\003sql\030\022 " +
-      "\001(\0132\022.flyteidl.core.SqlH\000\022\031\n\021task_type_v" +
-      "ersion\030\007 \001(\005\0228\n\020security_context\030\010 \001(\0132\036" +
-      ".flyteidl.core.SecurityContext\0227\n\006config" +
-      "\030\020 \003(\0132\'.flyteidl.core.TaskTemplate.Conf" +
-      "igEntry\032-\n\013ConfigEntry\022\013\n\003key\030\001 \001(\t\022\r\n\005v" +
-      "alue\030\002 \001(\t:\0028\001B\010\n\006target\"\'\n\rContainerPor" +
-      "t\022\026\n\016container_port\030\001 \001(\r\"\331\003\n\tContainer\022" +
-      "\r\n\005image\030\001 \001(\t\022\017\n\007command\030\002 \003(\t\022\014\n\004args\030" +
-      "\003 \003(\t\022+\n\tresources\030\004 \001(\0132\030.flyteidl.core" +
-      ".Resources\022(\n\003env\030\005 \003(\0132\033.flyteidl.core." +
-      "KeyValuePair\022/\n\006config\030\006 \003(\0132\033.flyteidl." +
-      "core.KeyValuePairB\002\030\001\022+\n\005ports\030\007 \003(\0132\034.f" +
-      "lyteidl.core.ContainerPort\0225\n\013data_confi" +
-      "g\030\t \001(\0132 .flyteidl.core.DataLoadingConfi" +
-      "g\022;\n\014architecture\030\n \001(\0162%.flyteidl.core." +
-      "Container.Architecture\022*\n\tselectors\030\013 \003(" +
-      "\0132\027.flyteidl.core.Selector\"I\n\014Architectu" +
+      "\n\021pod_template_name\030\014 \001(\t\022*\n\tselectors\030\r" +
+      " \003(\0132\027.flyteidl.core.Selector\032+\n\tTagsEnt" +
+      "ry\022\013\n\003key\030\001 \001(\t\022\r\n\005value\030\002 \001(\t:\0028\001B\025\n\023in" +
+      "terruptible_value\"\220\004\n\014TaskTemplate\022%\n\002id" +
+      "\030\001 \001(\0132\031.flyteidl.core.Identifier\022\014\n\004typ" +
+      "e\030\002 \001(\t\022-\n\010metadata\030\003 \001(\0132\033.flyteidl.cor" +
+      "e.TaskMetadata\0220\n\tinterface\030\004 \001(\0132\035.flyt" +
+      "eidl.core.TypedInterface\022\'\n\006custom\030\005 \001(\013" +
+      "2\027.google.protobuf.Struct\022-\n\tcontainer\030\006" +
+      " \001(\0132\030.flyteidl.core.ContainerH\000\022(\n\007k8s_" +
+      "pod\030\021 \001(\0132\025.flyteidl.core.K8sPodH\000\022!\n\003sq" +
+      "l\030\022 \001(\0132\022.flyteidl.core.SqlH\000\022\031\n\021task_ty" +
+      "pe_version\030\007 \001(\005\0228\n\020security_context\030\010 \001" +
+      "(\0132\036.flyteidl.core.SecurityContext\0227\n\006co" +
+      "nfig\030\020 \003(\0132\'.flyteidl.core.TaskTemplate." +
+      "ConfigEntry\032-\n\013ConfigEntry\022\013\n\003key\030\001 \001(\t\022" +
+      "\r\n\005value\030\002 \001(\t:\0028\001B\010\n\006target\"\'\n\rContaine" +
+      "rPort\022\026\n\016container_port\030\001 \001(\r\"\255\003\n\tContai" +
+      "ner\022\r\n\005image\030\001 \001(\t\022\017\n\007command\030\002 \003(\t\022\014\n\004a" +
+      "rgs\030\003 \003(\t\022+\n\tresources\030\004 \001(\0132\030.flyteidl." +
+      "core.Resources\022(\n\003env\030\005 \003(\0132\033.flyteidl.c" +
+      "ore.KeyValuePair\022/\n\006config\030\006 \003(\0132\033.flyte" +
+      "idl.core.KeyValuePairB\002\030\001\022+\n\005ports\030\007 \003(\013" +
+      "2\034.flyteidl.core.ContainerPort\0225\n\013data_c" +
+      "onfig\030\t \001(\0132 .flyteidl.core.DataLoadingC" +
+      "onfig\022;\n\014architecture\030\n \001(\0162%.flyteidl.c" +
+      "ore.Container.Architecture\"I\n\014Architectu" +
       "re\022\013\n\007UNKNOWN\020\000\022\t\n\005AMD64\020\001\022\t\n\005ARM64\020\002\022\n\n" +
       "\006ARM_V6\020\003\022\n\n\006ARM_V7\020\004\"\233\002\n\nIOStrategy\022=\n\r" +
       "download_mode\030\001 \001(\0162&.flyteidl.core.IOSt" +
@@ -20047,7 +20047,7 @@ public final class Tasks {
     internal_static_flyteidl_core_TaskMetadata_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_flyteidl_core_TaskMetadata_descriptor,
-        new java.lang.String[] { "Discoverable", "Runtime", "Timeout", "Retries", "DiscoveryVersion", "DeprecatedErrorMessage", "Interruptible", "CacheSerializable", "GeneratesDeck", "Tags", "PodTemplateName", "InterruptibleValue", });
+        new java.lang.String[] { "Discoverable", "Runtime", "Timeout", "Retries", "DiscoveryVersion", "DeprecatedErrorMessage", "Interruptible", "CacheSerializable", "GeneratesDeck", "Tags", "PodTemplateName", "Selectors", "InterruptibleValue", });
     internal_static_flyteidl_core_TaskMetadata_TagsEntry_descriptor =
       internal_static_flyteidl_core_TaskMetadata_descriptor.getNestedTypes().get(0);
     internal_static_flyteidl_core_TaskMetadata_TagsEntry_fieldAccessorTable = new
@@ -20077,7 +20077,7 @@ public final class Tasks {
     internal_static_flyteidl_core_Container_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_flyteidl_core_Container_descriptor,
-        new java.lang.String[] { "Image", "Command", "Args", "Resources", "Env", "Config", "Ports", "DataConfig", "Architecture", "Selectors", });
+        new java.lang.String[] { "Image", "Command", "Args", "Resources", "Env", "Config", "Ports", "DataConfig", "Architecture", });
     internal_static_flyteidl_core_IOStrategy_descriptor =
       getDescriptor().getMessageTypes().get(7);
     internal_static_flyteidl_core_IOStrategy_fieldAccessorTable = new

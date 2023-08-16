@@ -117,6 +117,8 @@ message TaskMetadata {
     // task creates a k8s Pod. If this value is set, the specified PodTemplate will be used instead of, but applied
     // identically as, the default PodTemplate configured in FlytePropeller.
     string pod_template_name = 12;
+
+    repeated Selector selectors = 13;
 }
 
 // A Task structure that uniquely identifies a task in the system
@@ -216,8 +218,6 @@ message Container {
         ARM_V7 = 4;
     }
     Architecture architecture = 10;
-
-    repeated Selector selectors = 11;
 }
 
 // Strategy to use when dealing with Blob, Schema, or multipart blob data (large datasets)

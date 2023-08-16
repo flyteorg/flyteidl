@@ -329,6 +329,21 @@ func (m *TaskMetadata) Validate() error {
 
 	// no validation rules for PodTemplateName
 
+	for idx, item := range m.GetSelectors() {
+		_, _ = idx, item
+
+		if v, ok := interface{}(item).(interface{ Validate() error }); ok {
+			if err := v.Validate(); err != nil {
+				return TaskMetadataValidationError{
+					field:  fmt.Sprintf("Selectors[%v]", idx),
+					reason: "embedded message failed validation",
+					cause:  err,
+				}
+			}
+		}
+
+	}
+
 	switch m.InterruptibleValue.(type) {
 
 	case *TaskMetadata_Interruptible:
@@ -696,21 +711,6 @@ func (m *Container) Validate() error {
 	}
 
 	// no validation rules for Architecture
-
-	for idx, item := range m.GetSelectors() {
-		_, _ = idx, item
-
-		if v, ok := interface{}(item).(interface{ Validate() error }); ok {
-			if err := v.Validate(); err != nil {
-				return ContainerValidationError{
-					field:  fmt.Sprintf("Selectors[%v]", idx),
-					reason: "embedded message failed validation",
-					cause:  err,
-				}
-			}
-		}
-
-	}
 
 	return nil
 }

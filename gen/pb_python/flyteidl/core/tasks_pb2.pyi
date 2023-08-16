@@ -68,7 +68,7 @@ class RuntimeMetadata(_message.Message):
     def __init__(self, type: _Optional[_Union[RuntimeMetadata.RuntimeType, str]] = ..., version: _Optional[str] = ..., flavor: _Optional[str] = ...) -> None: ...
 
 class TaskMetadata(_message.Message):
-    __slots__ = ["discoverable", "runtime", "timeout", "retries", "discovery_version", "deprecated_error_message", "interruptible", "cache_serializable", "generates_deck", "tags", "pod_template_name"]
+    __slots__ = ["discoverable", "runtime", "timeout", "retries", "discovery_version", "deprecated_error_message", "interruptible", "cache_serializable", "generates_deck", "tags", "pod_template_name", "selectors"]
     class TagsEntry(_message.Message):
         __slots__ = ["key", "value"]
         KEY_FIELD_NUMBER: _ClassVar[int]
@@ -87,6 +87,7 @@ class TaskMetadata(_message.Message):
     GENERATES_DECK_FIELD_NUMBER: _ClassVar[int]
     TAGS_FIELD_NUMBER: _ClassVar[int]
     POD_TEMPLATE_NAME_FIELD_NUMBER: _ClassVar[int]
+    SELECTORS_FIELD_NUMBER: _ClassVar[int]
     discoverable: bool
     runtime: RuntimeMetadata
     timeout: _duration_pb2.Duration
@@ -98,7 +99,8 @@ class TaskMetadata(_message.Message):
     generates_deck: bool
     tags: _containers.ScalarMap[str, str]
     pod_template_name: str
-    def __init__(self, discoverable: bool = ..., runtime: _Optional[_Union[RuntimeMetadata, _Mapping]] = ..., timeout: _Optional[_Union[_duration_pb2.Duration, _Mapping]] = ..., retries: _Optional[_Union[_literals_pb2.RetryStrategy, _Mapping]] = ..., discovery_version: _Optional[str] = ..., deprecated_error_message: _Optional[str] = ..., interruptible: bool = ..., cache_serializable: bool = ..., generates_deck: bool = ..., tags: _Optional[_Mapping[str, str]] = ..., pod_template_name: _Optional[str] = ...) -> None: ...
+    selectors: _containers.RepeatedCompositeFieldContainer[Selector]
+    def __init__(self, discoverable: bool = ..., runtime: _Optional[_Union[RuntimeMetadata, _Mapping]] = ..., timeout: _Optional[_Union[_duration_pb2.Duration, _Mapping]] = ..., retries: _Optional[_Union[_literals_pb2.RetryStrategy, _Mapping]] = ..., discovery_version: _Optional[str] = ..., deprecated_error_message: _Optional[str] = ..., interruptible: bool = ..., cache_serializable: bool = ..., generates_deck: bool = ..., tags: _Optional[_Mapping[str, str]] = ..., pod_template_name: _Optional[str] = ..., selectors: _Optional[_Iterable[_Union[Selector, _Mapping]]] = ...) -> None: ...
 
 class TaskTemplate(_message.Message):
     __slots__ = ["id", "type", "metadata", "interface", "custom", "container", "k8s_pod", "sql", "task_type_version", "security_context", "config"]
@@ -140,7 +142,7 @@ class ContainerPort(_message.Message):
     def __init__(self, container_port: _Optional[int] = ...) -> None: ...
 
 class Container(_message.Message):
-    __slots__ = ["image", "command", "args", "resources", "env", "config", "ports", "data_config", "architecture", "selectors"]
+    __slots__ = ["image", "command", "args", "resources", "env", "config", "ports", "data_config", "architecture"]
     class Architecture(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
         __slots__ = []
         UNKNOWN: _ClassVar[Container.Architecture]
@@ -162,7 +164,6 @@ class Container(_message.Message):
     PORTS_FIELD_NUMBER: _ClassVar[int]
     DATA_CONFIG_FIELD_NUMBER: _ClassVar[int]
     ARCHITECTURE_FIELD_NUMBER: _ClassVar[int]
-    SELECTORS_FIELD_NUMBER: _ClassVar[int]
     image: str
     command: _containers.RepeatedScalarFieldContainer[str]
     args: _containers.RepeatedScalarFieldContainer[str]
@@ -172,8 +173,7 @@ class Container(_message.Message):
     ports: _containers.RepeatedCompositeFieldContainer[ContainerPort]
     data_config: DataLoadingConfig
     architecture: Container.Architecture
-    selectors: _containers.RepeatedCompositeFieldContainer[Selector]
-    def __init__(self, image: _Optional[str] = ..., command: _Optional[_Iterable[str]] = ..., args: _Optional[_Iterable[str]] = ..., resources: _Optional[_Union[Resources, _Mapping]] = ..., env: _Optional[_Iterable[_Union[_literals_pb2.KeyValuePair, _Mapping]]] = ..., config: _Optional[_Iterable[_Union[_literals_pb2.KeyValuePair, _Mapping]]] = ..., ports: _Optional[_Iterable[_Union[ContainerPort, _Mapping]]] = ..., data_config: _Optional[_Union[DataLoadingConfig, _Mapping]] = ..., architecture: _Optional[_Union[Container.Architecture, str]] = ..., selectors: _Optional[_Iterable[_Union[Selector, _Mapping]]] = ...) -> None: ...
+    def __init__(self, image: _Optional[str] = ..., command: _Optional[_Iterable[str]] = ..., args: _Optional[_Iterable[str]] = ..., resources: _Optional[_Union[Resources, _Mapping]] = ..., env: _Optional[_Iterable[_Union[_literals_pb2.KeyValuePair, _Mapping]]] = ..., config: _Optional[_Iterable[_Union[_literals_pb2.KeyValuePair, _Mapping]]] = ..., ports: _Optional[_Iterable[_Union[ContainerPort, _Mapping]]] = ..., data_config: _Optional[_Union[DataLoadingConfig, _Mapping]] = ..., architecture: _Optional[_Union[Container.Architecture, str]] = ...) -> None: ...
 
 class IOStrategy(_message.Message):
     __slots__ = ["download_mode", "upload_mode"]

@@ -24,5 +24,4 @@ type CoreContainer struct {
 	Ports []CoreContainerPort `json:"ports,omitempty"`
 	DataConfig *CoreDataLoadingConfig `json:"data_config,omitempty"`
 	Architecture *ContainerArchitecture `json:"architecture,omitempty"`
-	Selectors []CoreSelector `json:"selectors,omitempty"`
 }

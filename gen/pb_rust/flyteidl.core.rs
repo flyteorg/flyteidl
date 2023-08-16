@@ -1078,6 +1078,8 @@ pub struct TaskMetadata {
     /// identically as, the default PodTemplate configured in FlytePropeller.
     #[prost(string, tag="12")]
     pub pod_template_name: ::prost::alloc::string::String,
+    #[prost(message, repeated, tag="13")]
+    pub selectors: ::prost::alloc::vec::Vec<Selector>,
     // For interruptible we will populate it at the node level but require it be part of TaskMetadata
     // for a user to set the value.
     // We are using oneof instead of bool because otherwise we would be unable to distinguish between value being
@@ -1213,8 +1215,6 @@ pub struct Container {
     pub data_config: ::core::option::Option<DataLoadingConfig>,
     #[prost(enumeration="container::Architecture", tag="10")]
     pub architecture: i32,
-    #[prost(message, repeated, tag="11")]
-    pub selectors: ::prost::alloc::vec::Vec<Selector>,
 }
 /// Nested message and enum types in `Container`.
 pub mod container {

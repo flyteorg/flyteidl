@@ -1060,6 +1060,18 @@ class TaskMetadata final :
   ::google::protobuf::Map< ::std::string, ::std::string >*
       mutable_tags();
 
+  // repeated .flyteidl.core.Selector selectors = 13;
+  int selectors_size() const;
+  void clear_selectors();
+  static const int kSelectorsFieldNumber = 13;
+  ::flyteidl::core::Selector* mutable_selectors(int index);
+  ::google::protobuf::RepeatedPtrField< ::flyteidl::core::Selector >*
+      mutable_selectors();
+  const ::flyteidl::core::Selector& selectors(int index) const;
+  ::flyteidl::core::Selector* add_selectors();
+  const ::google::protobuf::RepeatedPtrField< ::flyteidl::core::Selector >&
+      selectors() const;
+
   // string discovery_version = 6;
   void clear_discovery_version();
   static const int kDiscoveryVersionFieldNumber = 6;
@@ -1173,6 +1185,7 @@ class TaskMetadata final :
       ::google::protobuf::internal::WireFormatLite::TYPE_STRING,
       ::google::protobuf::internal::WireFormatLite::TYPE_STRING,
       0 > tags_;
+  ::google::protobuf::RepeatedPtrField< ::flyteidl::core::Selector > selectors_;
   ::google::protobuf::internal::ArenaStringPtr discovery_version_;
   ::google::protobuf::internal::ArenaStringPtr deprecated_error_message_;
   ::google::protobuf::internal::ArenaStringPtr pod_template_name_;
@@ -1779,18 +1792,6 @@ class Container final :
   const ::google::protobuf::RepeatedPtrField< ::flyteidl::core::ContainerPort >&
       ports() const;
 
-  // repeated .flyteidl.core.Selector selectors = 11;
-  int selectors_size() const;
-  void clear_selectors();
-  static const int kSelectorsFieldNumber = 11;
-  ::flyteidl::core::Selector* mutable_selectors(int index);
-  ::google::protobuf::RepeatedPtrField< ::flyteidl::core::Selector >*
-      mutable_selectors();
-  const ::flyteidl::core::Selector& selectors(int index) const;
-  ::flyteidl::core::Selector* add_selectors();
-  const ::google::protobuf::RepeatedPtrField< ::flyteidl::core::Selector >&
-      selectors() const;
-
   // string image = 1;
   void clear_image();
   static const int kImageFieldNumber = 1;
@@ -1839,7 +1840,6 @@ class Container final :
   ::google::protobuf::RepeatedPtrField< ::flyteidl::core::KeyValuePair > env_;
   ::google::protobuf::RepeatedPtrField< ::flyteidl::core::KeyValuePair > config_;
   ::google::protobuf::RepeatedPtrField< ::flyteidl::core::ContainerPort > ports_;
-  ::google::protobuf::RepeatedPtrField< ::flyteidl::core::Selector > selectors_;
   ::google::protobuf::internal::ArenaStringPtr image_;
   ::flyteidl::core::Resources* resources_;
   ::flyteidl::core::DataLoadingConfig* data_config_;
@@ -3558,6 +3558,36 @@ inline void TaskMetadata::set_allocated_pod_template_name(::std::string* pod_tem
   // @@protoc_insertion_point(field_set_allocated:flyteidl.core.TaskMetadata.pod_template_name)
 }
 
+// repeated .flyteidl.core.Selector selectors = 13;
+inline int TaskMetadata::selectors_size() const {
+  return selectors_.size();
+}
+inline void TaskMetadata::clear_selectors() {
+  selectors_.Clear();
+}
+inline ::flyteidl::core::Selector* TaskMetadata::mutable_selectors(int index) {
+  // @@protoc_insertion_point(field_mutable:flyteidl.core.TaskMetadata.selectors)
+  return selectors_.Mutable(index);
+}
+inline ::google::protobuf::RepeatedPtrField< ::flyteidl::core::Selector >*
+TaskMetadata::mutable_selectors() {
+  // @@protoc_insertion_point(field_mutable_list:flyteidl.core.TaskMetadata.selectors)
+  return &selectors_;
+}
+inline const ::flyteidl::core::Selector& TaskMetadata::selectors(int index) const {
+  // @@protoc_insertion_point(field_get:flyteidl.core.TaskMetadata.selectors)
+  return selectors_.Get(index);
+}
+inline ::flyteidl::core::Selector* TaskMetadata::add_selectors() {
+  // @@protoc_insertion_point(field_add:flyteidl.core.TaskMetadata.selectors)
+  return selectors_.Add();
+}
+inline const ::google::protobuf::RepeatedPtrField< ::flyteidl::core::Selector >&
+TaskMetadata::selectors() const {
+  // @@protoc_insertion_point(field_list:flyteidl.core.TaskMetadata.selectors)
+  return selectors_;
+}
+
 inline bool TaskMetadata::has_interruptible_value() const {
   return interruptible_value_case() != INTERRUPTIBLE_VALUE_NOT_SET;
 }
@@ -4433,36 +4463,6 @@ inline void Container::set_architecture(::flyteidl::core::Container_Architecture
   
   architecture_ = value;
   // @@protoc_insertion_point(field_set:flyteidl.core.Container.architecture)
-}
-
-// repeated .flyteidl.core.Selector selectors = 11;
-inline int Container::selectors_size() const {
-  return selectors_.size();
-}
-inline void Container::clear_selectors() {
-  selectors_.Clear();
-}
-inline ::flyteidl::core::Selector* Container::mutable_selectors(int index) {
-  // @@protoc_insertion_point(field_mutable:flyteidl.core.Container.selectors)
-  return selectors_.Mutable(index);
-}
-inline ::google::protobuf::RepeatedPtrField< ::flyteidl::core::Selector >*
-Container::mutable_selectors() {
-  // @@protoc_insertion_point(field_mutable_list:flyteidl.core.Container.selectors)
-  return &selectors_;
-}
-inline const ::flyteidl::core::Selector& Container::selectors(int index) const {
-  // @@protoc_insertion_point(field_get:flyteidl.core.Container.selectors)
-  return selectors_.Get(index);
-}
-inline ::flyteidl::core::Selector* Container::add_selectors() {
-  // @@protoc_insertion_point(field_add:flyteidl.core.Container.selectors)
-  return selectors_.Add();
-}
-inline const ::google::protobuf::RepeatedPtrField< ::flyteidl::core::Selector >&
-Container::selectors() const {
-  // @@protoc_insertion_point(field_list:flyteidl.core.Container.selectors)
-  return selectors_;
 }
 
 // -------------------------------------------------------------------

@@ -5259,6 +5259,9 @@ export namespace flyteidl {
 
             /** TaskMetadata podTemplateName */
             podTemplateName?: (string|null);
+
+            /** TaskMetadata selectors */
+            selectors?: (flyteidl.core.ISelector[]|null);
         }
 
         /** Represents a TaskMetadata. */
@@ -5302,6 +5305,9 @@ export namespace flyteidl {
 
             /** TaskMetadata podTemplateName. */
             public podTemplateName: string;
+
+            /** TaskMetadata selectors. */
+            public selectors: flyteidl.core.ISelector[];
 
             /** TaskMetadata interruptibleValue. */
             public interruptibleValue?: "interruptible";
@@ -5535,9 +5541,6 @@ export namespace flyteidl {
 
             /** Container architecture */
             architecture?: (flyteidl.core.Container.Architecture|null);
-
-            /** Container selectors */
-            selectors?: (flyteidl.core.ISelector[]|null);
         }
 
         /** Represents a Container. */
@@ -5575,9 +5578,6 @@ export namespace flyteidl {
 
             /** Container architecture. */
             public architecture: flyteidl.core.Container.Architecture;
-
-            /** Container selectors. */
-            public selectors: flyteidl.core.ISelector[];
 
             /**
              * Creates a new Container instance using the specified properties.
