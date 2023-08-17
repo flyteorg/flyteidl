@@ -8902,6 +8902,9 @@ export namespace flyteidl {
 
             /** ResourceListRequest sortBy */
             sortBy?: (flyteidl.admin.ISort|null);
+
+            /** ResourceListRequest sortKeys */
+            sortKeys?: (flyteidl.admin.ISort[]|null);
         }
 
         /** Represents a ResourceListRequest. */
@@ -8927,6 +8930,9 @@ export namespace flyteidl {
 
             /** ResourceListRequest sortBy. */
             public sortBy?: (flyteidl.admin.ISort|null);
+
+            /** ResourceListRequest sortKeys. */
+            public sortKeys: flyteidl.admin.ISort[];
 
             /**
              * Creates a new ResourceListRequest instance using the specified properties.

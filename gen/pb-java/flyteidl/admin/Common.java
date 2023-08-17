@@ -12157,31 +12157,78 @@ public final class Common {
 
     /**
      * <pre>
-     * Sort ordering.
+     * Sort column ordering.
      * +optional
+     * Deprecated.
      * </pre>
      *
-     * <code>.flyteidl.admin.Sort sort_by = 5;</code>
+     * <code>.flyteidl.admin.Sort sort_by = 5 [deprecated = true];</code>
      */
-    boolean hasSortBy();
+    @java.lang.Deprecated boolean hasSortBy();
     /**
      * <pre>
-     * Sort ordering.
+     * Sort column ordering.
      * +optional
+     * Deprecated.
      * </pre>
      *
-     * <code>.flyteidl.admin.Sort sort_by = 5;</code>
+     * <code>.flyteidl.admin.Sort sort_by = 5 [deprecated = true];</code>
      */
-    flyteidl.admin.Common.Sort getSortBy();
+    @java.lang.Deprecated flyteidl.admin.Common.Sort getSortBy();
     /**
      * <pre>
-     * Sort ordering.
+     * Sort column ordering.
      * +optional
+     * Deprecated.
      * </pre>
      *
-     * <code>.flyteidl.admin.Sort sort_by = 5;</code>
+     * <code>.flyteidl.admin.Sort sort_by = 5 [deprecated = true];</code>
      */
-    flyteidl.admin.Common.SortOrBuilder getSortByOrBuilder();
+    @java.lang.Deprecated flyteidl.admin.Common.SortOrBuilder getSortByOrBuilder();
+
+    /**
+     * <pre>
+     * Sort column(s) with direction.
+     * </pre>
+     *
+     * <code>repeated .flyteidl.admin.Sort sort_keys = 6;</code>
+     */
+    java.util.List<flyteidl.admin.Common.Sort> 
+        getSortKeysList();
+    /**
+     * <pre>
+     * Sort column(s) with direction.
+     * </pre>
+     *
+     * <code>repeated .flyteidl.admin.Sort sort_keys = 6;</code>
+     */
+    flyteidl.admin.Common.Sort getSortKeys(int index);
+    /**
+     * <pre>
+     * Sort column(s) with direction.
+     * </pre>
+     *
+     * <code>repeated .flyteidl.admin.Sort sort_keys = 6;</code>
+     */
+    int getSortKeysCount();
+    /**
+     * <pre>
+     * Sort column(s) with direction.
+     * </pre>
+     *
+     * <code>repeated .flyteidl.admin.Sort sort_keys = 6;</code>
+     */
+    java.util.List<? extends flyteidl.admin.Common.SortOrBuilder> 
+        getSortKeysOrBuilderList();
+    /**
+     * <pre>
+     * Sort column(s) with direction.
+     * </pre>
+     *
+     * <code>repeated .flyteidl.admin.Sort sort_keys = 6;</code>
+     */
+    flyteidl.admin.Common.SortOrBuilder getSortKeysOrBuilder(
+        int index);
   }
   /**
    * <pre>
@@ -12203,6 +12250,7 @@ public final class Common {
     private ResourceListRequest() {
       token_ = "";
       filters_ = "";
+      sortKeys_ = java.util.Collections.emptyList();
     }
 
     @java.lang.Override
@@ -12272,6 +12320,15 @@ public final class Common {
 
               break;
             }
+            case 50: {
+              if (!((mutable_bitField0_ & 0x00000020) != 0)) {
+                sortKeys_ = new java.util.ArrayList<flyteidl.admin.Common.Sort>();
+                mutable_bitField0_ |= 0x00000020;
+              }
+              sortKeys_.add(
+                  input.readMessage(flyteidl.admin.Common.Sort.parser(), extensionRegistry));
+              break;
+            }
             default: {
               if (!parseUnknownField(
                   input, unknownFields, extensionRegistry, tag)) {
@@ -12287,6 +12344,9 @@ public final class Common {
         throw new com.google.protobuf.InvalidProtocolBufferException(
             e).setUnfinishedMessage(this);
       } finally {
+        if (((mutable_bitField0_ & 0x00000020) != 0)) {
+          sortKeys_ = java.util.Collections.unmodifiableList(sortKeys_);
+        }
         this.unknownFields = unknownFields.build();
         makeExtensionsImmutable();
       }
@@ -12304,6 +12364,7 @@ public final class Common {
               flyteidl.admin.Common.ResourceListRequest.class, flyteidl.admin.Common.ResourceListRequest.Builder.class);
     }
 
+    private int bitField0_;
     public static final int ID_FIELD_NUMBER = 1;
     private flyteidl.admin.Common.NamedEntityIdentifier id_;
     /**
@@ -12450,36 +12511,94 @@ public final class Common {
     private flyteidl.admin.Common.Sort sortBy_;
     /**
      * <pre>
-     * Sort ordering.
+     * Sort column ordering.
      * +optional
+     * Deprecated.
      * </pre>
      *
-     * <code>.flyteidl.admin.Sort sort_by = 5;</code>
+     * <code>.flyteidl.admin.Sort sort_by = 5 [deprecated = true];</code>
      */
-    public boolean hasSortBy() {
+    @java.lang.Deprecated public boolean hasSortBy() {
       return sortBy_ != null;
     }
     /**
      * <pre>
-     * Sort ordering.
+     * Sort column ordering.
      * +optional
+     * Deprecated.
      * </pre>
      *
-     * <code>.flyteidl.admin.Sort sort_by = 5;</code>
+     * <code>.flyteidl.admin.Sort sort_by = 5 [deprecated = true];</code>
      */
-    public flyteidl.admin.Common.Sort getSortBy() {
+    @java.lang.Deprecated public flyteidl.admin.Common.Sort getSortBy() {
       return sortBy_ == null ? flyteidl.admin.Common.Sort.getDefaultInstance() : sortBy_;
     }
     /**
      * <pre>
-     * Sort ordering.
+     * Sort column ordering.
      * +optional
+     * Deprecated.
      * </pre>
      *
-     * <code>.flyteidl.admin.Sort sort_by = 5;</code>
+     * <code>.flyteidl.admin.Sort sort_by = 5 [deprecated = true];</code>
      */
-    public flyteidl.admin.Common.SortOrBuilder getSortByOrBuilder() {
+    @java.lang.Deprecated public flyteidl.admin.Common.SortOrBuilder getSortByOrBuilder() {
       return getSortBy();
+    }
+
+    public static final int SORT_KEYS_FIELD_NUMBER = 6;
+    private java.util.List<flyteidl.admin.Common.Sort> sortKeys_;
+    /**
+     * <pre>
+     * Sort column(s) with direction.
+     * </pre>
+     *
+     * <code>repeated .flyteidl.admin.Sort sort_keys = 6;</code>
+     */
+    public java.util.List<flyteidl.admin.Common.Sort> getSortKeysList() {
+      return sortKeys_;
+    }
+    /**
+     * <pre>
+     * Sort column(s) with direction.
+     * </pre>
+     *
+     * <code>repeated .flyteidl.admin.Sort sort_keys = 6;</code>
+     */
+    public java.util.List<? extends flyteidl.admin.Common.SortOrBuilder> 
+        getSortKeysOrBuilderList() {
+      return sortKeys_;
+    }
+    /**
+     * <pre>
+     * Sort column(s) with direction.
+     * </pre>
+     *
+     * <code>repeated .flyteidl.admin.Sort sort_keys = 6;</code>
+     */
+    public int getSortKeysCount() {
+      return sortKeys_.size();
+    }
+    /**
+     * <pre>
+     * Sort column(s) with direction.
+     * </pre>
+     *
+     * <code>repeated .flyteidl.admin.Sort sort_keys = 6;</code>
+     */
+    public flyteidl.admin.Common.Sort getSortKeys(int index) {
+      return sortKeys_.get(index);
+    }
+    /**
+     * <pre>
+     * Sort column(s) with direction.
+     * </pre>
+     *
+     * <code>repeated .flyteidl.admin.Sort sort_keys = 6;</code>
+     */
+    public flyteidl.admin.Common.SortOrBuilder getSortKeysOrBuilder(
+        int index) {
+      return sortKeys_.get(index);
     }
 
     private byte memoizedIsInitialized = -1;
@@ -12511,6 +12630,9 @@ public final class Common {
       if (sortBy_ != null) {
         output.writeMessage(5, getSortBy());
       }
+      for (int i = 0; i < sortKeys_.size(); i++) {
+        output.writeMessage(6, sortKeys_.get(i));
+      }
       unknownFields.writeTo(output);
     }
 
@@ -12537,6 +12659,10 @@ public final class Common {
       if (sortBy_ != null) {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(5, getSortBy());
+      }
+      for (int i = 0; i < sortKeys_.size(); i++) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(6, sortKeys_.get(i));
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -12569,6 +12695,8 @@ public final class Common {
         if (!getSortBy()
             .equals(other.getSortBy())) return false;
       }
+      if (!getSortKeysList()
+          .equals(other.getSortKeysList())) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -12593,6 +12721,10 @@ public final class Common {
       if (hasSortBy()) {
         hash = (37 * hash) + SORT_BY_FIELD_NUMBER;
         hash = (53 * hash) + getSortBy().hashCode();
+      }
+      if (getSortKeysCount() > 0) {
+        hash = (37 * hash) + SORT_KEYS_FIELD_NUMBER;
+        hash = (53 * hash) + getSortKeysList().hashCode();
       }
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
@@ -12727,6 +12859,7 @@ public final class Common {
       private void maybeForceBuilderInitialization() {
         if (com.google.protobuf.GeneratedMessageV3
                 .alwaysUseFieldBuilders) {
+          getSortKeysFieldBuilder();
         }
       }
       @java.lang.Override
@@ -12749,6 +12882,12 @@ public final class Common {
         } else {
           sortBy_ = null;
           sortByBuilder_ = null;
+        }
+        if (sortKeysBuilder_ == null) {
+          sortKeys_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000020);
+        } else {
+          sortKeysBuilder_.clear();
         }
         return this;
       }
@@ -12776,6 +12915,8 @@ public final class Common {
       @java.lang.Override
       public flyteidl.admin.Common.ResourceListRequest buildPartial() {
         flyteidl.admin.Common.ResourceListRequest result = new flyteidl.admin.Common.ResourceListRequest(this);
+        int from_bitField0_ = bitField0_;
+        int to_bitField0_ = 0;
         if (idBuilder_ == null) {
           result.id_ = id_;
         } else {
@@ -12789,6 +12930,16 @@ public final class Common {
         } else {
           result.sortBy_ = sortByBuilder_.build();
         }
+        if (sortKeysBuilder_ == null) {
+          if (((bitField0_ & 0x00000020) != 0)) {
+            sortKeys_ = java.util.Collections.unmodifiableList(sortKeys_);
+            bitField0_ = (bitField0_ & ~0x00000020);
+          }
+          result.sortKeys_ = sortKeys_;
+        } else {
+          result.sortKeys_ = sortKeysBuilder_.build();
+        }
+        result.bitField0_ = to_bitField0_;
         onBuilt();
         return result;
       }
@@ -12854,6 +13005,32 @@ public final class Common {
         if (other.hasSortBy()) {
           mergeSortBy(other.getSortBy());
         }
+        if (sortKeysBuilder_ == null) {
+          if (!other.sortKeys_.isEmpty()) {
+            if (sortKeys_.isEmpty()) {
+              sortKeys_ = other.sortKeys_;
+              bitField0_ = (bitField0_ & ~0x00000020);
+            } else {
+              ensureSortKeysIsMutable();
+              sortKeys_.addAll(other.sortKeys_);
+            }
+            onChanged();
+          }
+        } else {
+          if (!other.sortKeys_.isEmpty()) {
+            if (sortKeysBuilder_.isEmpty()) {
+              sortKeysBuilder_.dispose();
+              sortKeysBuilder_ = null;
+              sortKeys_ = other.sortKeys_;
+              bitField0_ = (bitField0_ & ~0x00000020);
+              sortKeysBuilder_ = 
+                com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
+                   getSortKeysFieldBuilder() : null;
+            } else {
+              sortKeysBuilder_.addAllMessages(other.sortKeys_);
+            }
+          }
+        }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
@@ -12882,6 +13059,7 @@ public final class Common {
         }
         return this;
       }
+      private int bitField0_;
 
       private flyteidl.admin.Common.NamedEntityIdentifier id_;
       private com.google.protobuf.SingleFieldBuilderV3<
@@ -13289,24 +13467,26 @@ public final class Common {
           flyteidl.admin.Common.Sort, flyteidl.admin.Common.Sort.Builder, flyteidl.admin.Common.SortOrBuilder> sortByBuilder_;
       /**
        * <pre>
-       * Sort ordering.
+       * Sort column ordering.
        * +optional
+       * Deprecated.
        * </pre>
        *
-       * <code>.flyteidl.admin.Sort sort_by = 5;</code>
+       * <code>.flyteidl.admin.Sort sort_by = 5 [deprecated = true];</code>
        */
-      public boolean hasSortBy() {
+      @java.lang.Deprecated public boolean hasSortBy() {
         return sortByBuilder_ != null || sortBy_ != null;
       }
       /**
        * <pre>
-       * Sort ordering.
+       * Sort column ordering.
        * +optional
+       * Deprecated.
        * </pre>
        *
-       * <code>.flyteidl.admin.Sort sort_by = 5;</code>
+       * <code>.flyteidl.admin.Sort sort_by = 5 [deprecated = true];</code>
        */
-      public flyteidl.admin.Common.Sort getSortBy() {
+      @java.lang.Deprecated public flyteidl.admin.Common.Sort getSortBy() {
         if (sortByBuilder_ == null) {
           return sortBy_ == null ? flyteidl.admin.Common.Sort.getDefaultInstance() : sortBy_;
         } else {
@@ -13315,13 +13495,14 @@ public final class Common {
       }
       /**
        * <pre>
-       * Sort ordering.
+       * Sort column ordering.
        * +optional
+       * Deprecated.
        * </pre>
        *
-       * <code>.flyteidl.admin.Sort sort_by = 5;</code>
+       * <code>.flyteidl.admin.Sort sort_by = 5 [deprecated = true];</code>
        */
-      public Builder setSortBy(flyteidl.admin.Common.Sort value) {
+      @java.lang.Deprecated public Builder setSortBy(flyteidl.admin.Common.Sort value) {
         if (sortByBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
@@ -13336,13 +13517,14 @@ public final class Common {
       }
       /**
        * <pre>
-       * Sort ordering.
+       * Sort column ordering.
        * +optional
+       * Deprecated.
        * </pre>
        *
-       * <code>.flyteidl.admin.Sort sort_by = 5;</code>
+       * <code>.flyteidl.admin.Sort sort_by = 5 [deprecated = true];</code>
        */
-      public Builder setSortBy(
+      @java.lang.Deprecated public Builder setSortBy(
           flyteidl.admin.Common.Sort.Builder builderForValue) {
         if (sortByBuilder_ == null) {
           sortBy_ = builderForValue.build();
@@ -13355,13 +13537,14 @@ public final class Common {
       }
       /**
        * <pre>
-       * Sort ordering.
+       * Sort column ordering.
        * +optional
+       * Deprecated.
        * </pre>
        *
-       * <code>.flyteidl.admin.Sort sort_by = 5;</code>
+       * <code>.flyteidl.admin.Sort sort_by = 5 [deprecated = true];</code>
        */
-      public Builder mergeSortBy(flyteidl.admin.Common.Sort value) {
+      @java.lang.Deprecated public Builder mergeSortBy(flyteidl.admin.Common.Sort value) {
         if (sortByBuilder_ == null) {
           if (sortBy_ != null) {
             sortBy_ =
@@ -13378,13 +13561,14 @@ public final class Common {
       }
       /**
        * <pre>
-       * Sort ordering.
+       * Sort column ordering.
        * +optional
+       * Deprecated.
        * </pre>
        *
-       * <code>.flyteidl.admin.Sort sort_by = 5;</code>
+       * <code>.flyteidl.admin.Sort sort_by = 5 [deprecated = true];</code>
        */
-      public Builder clearSortBy() {
+      @java.lang.Deprecated public Builder clearSortBy() {
         if (sortByBuilder_ == null) {
           sortBy_ = null;
           onChanged();
@@ -13397,26 +13581,28 @@ public final class Common {
       }
       /**
        * <pre>
-       * Sort ordering.
+       * Sort column ordering.
        * +optional
+       * Deprecated.
        * </pre>
        *
-       * <code>.flyteidl.admin.Sort sort_by = 5;</code>
+       * <code>.flyteidl.admin.Sort sort_by = 5 [deprecated = true];</code>
        */
-      public flyteidl.admin.Common.Sort.Builder getSortByBuilder() {
+      @java.lang.Deprecated public flyteidl.admin.Common.Sort.Builder getSortByBuilder() {
         
         onChanged();
         return getSortByFieldBuilder().getBuilder();
       }
       /**
        * <pre>
-       * Sort ordering.
+       * Sort column ordering.
        * +optional
+       * Deprecated.
        * </pre>
        *
-       * <code>.flyteidl.admin.Sort sort_by = 5;</code>
+       * <code>.flyteidl.admin.Sort sort_by = 5 [deprecated = true];</code>
        */
-      public flyteidl.admin.Common.SortOrBuilder getSortByOrBuilder() {
+      @java.lang.Deprecated public flyteidl.admin.Common.SortOrBuilder getSortByOrBuilder() {
         if (sortByBuilder_ != null) {
           return sortByBuilder_.getMessageOrBuilder();
         } else {
@@ -13426,11 +13612,12 @@ public final class Common {
       }
       /**
        * <pre>
-       * Sort ordering.
+       * Sort column ordering.
        * +optional
+       * Deprecated.
        * </pre>
        *
-       * <code>.flyteidl.admin.Sort sort_by = 5;</code>
+       * <code>.flyteidl.admin.Sort sort_by = 5 [deprecated = true];</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
           flyteidl.admin.Common.Sort, flyteidl.admin.Common.Sort.Builder, flyteidl.admin.Common.SortOrBuilder> 
@@ -13444,6 +13631,318 @@ public final class Common {
           sortBy_ = null;
         }
         return sortByBuilder_;
+      }
+
+      private java.util.List<flyteidl.admin.Common.Sort> sortKeys_ =
+        java.util.Collections.emptyList();
+      private void ensureSortKeysIsMutable() {
+        if (!((bitField0_ & 0x00000020) != 0)) {
+          sortKeys_ = new java.util.ArrayList<flyteidl.admin.Common.Sort>(sortKeys_);
+          bitField0_ |= 0x00000020;
+         }
+      }
+
+      private com.google.protobuf.RepeatedFieldBuilderV3<
+          flyteidl.admin.Common.Sort, flyteidl.admin.Common.Sort.Builder, flyteidl.admin.Common.SortOrBuilder> sortKeysBuilder_;
+
+      /**
+       * <pre>
+       * Sort column(s) with direction.
+       * </pre>
+       *
+       * <code>repeated .flyteidl.admin.Sort sort_keys = 6;</code>
+       */
+      public java.util.List<flyteidl.admin.Common.Sort> getSortKeysList() {
+        if (sortKeysBuilder_ == null) {
+          return java.util.Collections.unmodifiableList(sortKeys_);
+        } else {
+          return sortKeysBuilder_.getMessageList();
+        }
+      }
+      /**
+       * <pre>
+       * Sort column(s) with direction.
+       * </pre>
+       *
+       * <code>repeated .flyteidl.admin.Sort sort_keys = 6;</code>
+       */
+      public int getSortKeysCount() {
+        if (sortKeysBuilder_ == null) {
+          return sortKeys_.size();
+        } else {
+          return sortKeysBuilder_.getCount();
+        }
+      }
+      /**
+       * <pre>
+       * Sort column(s) with direction.
+       * </pre>
+       *
+       * <code>repeated .flyteidl.admin.Sort sort_keys = 6;</code>
+       */
+      public flyteidl.admin.Common.Sort getSortKeys(int index) {
+        if (sortKeysBuilder_ == null) {
+          return sortKeys_.get(index);
+        } else {
+          return sortKeysBuilder_.getMessage(index);
+        }
+      }
+      /**
+       * <pre>
+       * Sort column(s) with direction.
+       * </pre>
+       *
+       * <code>repeated .flyteidl.admin.Sort sort_keys = 6;</code>
+       */
+      public Builder setSortKeys(
+          int index, flyteidl.admin.Common.Sort value) {
+        if (sortKeysBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureSortKeysIsMutable();
+          sortKeys_.set(index, value);
+          onChanged();
+        } else {
+          sortKeysBuilder_.setMessage(index, value);
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * Sort column(s) with direction.
+       * </pre>
+       *
+       * <code>repeated .flyteidl.admin.Sort sort_keys = 6;</code>
+       */
+      public Builder setSortKeys(
+          int index, flyteidl.admin.Common.Sort.Builder builderForValue) {
+        if (sortKeysBuilder_ == null) {
+          ensureSortKeysIsMutable();
+          sortKeys_.set(index, builderForValue.build());
+          onChanged();
+        } else {
+          sortKeysBuilder_.setMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * Sort column(s) with direction.
+       * </pre>
+       *
+       * <code>repeated .flyteidl.admin.Sort sort_keys = 6;</code>
+       */
+      public Builder addSortKeys(flyteidl.admin.Common.Sort value) {
+        if (sortKeysBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureSortKeysIsMutable();
+          sortKeys_.add(value);
+          onChanged();
+        } else {
+          sortKeysBuilder_.addMessage(value);
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * Sort column(s) with direction.
+       * </pre>
+       *
+       * <code>repeated .flyteidl.admin.Sort sort_keys = 6;</code>
+       */
+      public Builder addSortKeys(
+          int index, flyteidl.admin.Common.Sort value) {
+        if (sortKeysBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureSortKeysIsMutable();
+          sortKeys_.add(index, value);
+          onChanged();
+        } else {
+          sortKeysBuilder_.addMessage(index, value);
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * Sort column(s) with direction.
+       * </pre>
+       *
+       * <code>repeated .flyteidl.admin.Sort sort_keys = 6;</code>
+       */
+      public Builder addSortKeys(
+          flyteidl.admin.Common.Sort.Builder builderForValue) {
+        if (sortKeysBuilder_ == null) {
+          ensureSortKeysIsMutable();
+          sortKeys_.add(builderForValue.build());
+          onChanged();
+        } else {
+          sortKeysBuilder_.addMessage(builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * Sort column(s) with direction.
+       * </pre>
+       *
+       * <code>repeated .flyteidl.admin.Sort sort_keys = 6;</code>
+       */
+      public Builder addSortKeys(
+          int index, flyteidl.admin.Common.Sort.Builder builderForValue) {
+        if (sortKeysBuilder_ == null) {
+          ensureSortKeysIsMutable();
+          sortKeys_.add(index, builderForValue.build());
+          onChanged();
+        } else {
+          sortKeysBuilder_.addMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * Sort column(s) with direction.
+       * </pre>
+       *
+       * <code>repeated .flyteidl.admin.Sort sort_keys = 6;</code>
+       */
+      public Builder addAllSortKeys(
+          java.lang.Iterable<? extends flyteidl.admin.Common.Sort> values) {
+        if (sortKeysBuilder_ == null) {
+          ensureSortKeysIsMutable();
+          com.google.protobuf.AbstractMessageLite.Builder.addAll(
+              values, sortKeys_);
+          onChanged();
+        } else {
+          sortKeysBuilder_.addAllMessages(values);
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * Sort column(s) with direction.
+       * </pre>
+       *
+       * <code>repeated .flyteidl.admin.Sort sort_keys = 6;</code>
+       */
+      public Builder clearSortKeys() {
+        if (sortKeysBuilder_ == null) {
+          sortKeys_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000020);
+          onChanged();
+        } else {
+          sortKeysBuilder_.clear();
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * Sort column(s) with direction.
+       * </pre>
+       *
+       * <code>repeated .flyteidl.admin.Sort sort_keys = 6;</code>
+       */
+      public Builder removeSortKeys(int index) {
+        if (sortKeysBuilder_ == null) {
+          ensureSortKeysIsMutable();
+          sortKeys_.remove(index);
+          onChanged();
+        } else {
+          sortKeysBuilder_.remove(index);
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * Sort column(s) with direction.
+       * </pre>
+       *
+       * <code>repeated .flyteidl.admin.Sort sort_keys = 6;</code>
+       */
+      public flyteidl.admin.Common.Sort.Builder getSortKeysBuilder(
+          int index) {
+        return getSortKeysFieldBuilder().getBuilder(index);
+      }
+      /**
+       * <pre>
+       * Sort column(s) with direction.
+       * </pre>
+       *
+       * <code>repeated .flyteidl.admin.Sort sort_keys = 6;</code>
+       */
+      public flyteidl.admin.Common.SortOrBuilder getSortKeysOrBuilder(
+          int index) {
+        if (sortKeysBuilder_ == null) {
+          return sortKeys_.get(index);  } else {
+          return sortKeysBuilder_.getMessageOrBuilder(index);
+        }
+      }
+      /**
+       * <pre>
+       * Sort column(s) with direction.
+       * </pre>
+       *
+       * <code>repeated .flyteidl.admin.Sort sort_keys = 6;</code>
+       */
+      public java.util.List<? extends flyteidl.admin.Common.SortOrBuilder> 
+           getSortKeysOrBuilderList() {
+        if (sortKeysBuilder_ != null) {
+          return sortKeysBuilder_.getMessageOrBuilderList();
+        } else {
+          return java.util.Collections.unmodifiableList(sortKeys_);
+        }
+      }
+      /**
+       * <pre>
+       * Sort column(s) with direction.
+       * </pre>
+       *
+       * <code>repeated .flyteidl.admin.Sort sort_keys = 6;</code>
+       */
+      public flyteidl.admin.Common.Sort.Builder addSortKeysBuilder() {
+        return getSortKeysFieldBuilder().addBuilder(
+            flyteidl.admin.Common.Sort.getDefaultInstance());
+      }
+      /**
+       * <pre>
+       * Sort column(s) with direction.
+       * </pre>
+       *
+       * <code>repeated .flyteidl.admin.Sort sort_keys = 6;</code>
+       */
+      public flyteidl.admin.Common.Sort.Builder addSortKeysBuilder(
+          int index) {
+        return getSortKeysFieldBuilder().addBuilder(
+            index, flyteidl.admin.Common.Sort.getDefaultInstance());
+      }
+      /**
+       * <pre>
+       * Sort column(s) with direction.
+       * </pre>
+       *
+       * <code>repeated .flyteidl.admin.Sort sort_keys = 6;</code>
+       */
+      public java.util.List<flyteidl.admin.Common.Sort.Builder> 
+           getSortKeysBuilderList() {
+        return getSortKeysFieldBuilder().getBuilderList();
+      }
+      private com.google.protobuf.RepeatedFieldBuilderV3<
+          flyteidl.admin.Common.Sort, flyteidl.admin.Common.Sort.Builder, flyteidl.admin.Common.SortOrBuilder> 
+          getSortKeysFieldBuilder() {
+        if (sortKeysBuilder_ == null) {
+          sortKeysBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
+              flyteidl.admin.Common.Sort, flyteidl.admin.Common.Sort.Builder, flyteidl.admin.Common.SortOrBuilder>(
+                  sortKeys_,
+                  ((bitField0_ & 0x00000020) != 0),
+                  getParentForChildren(),
+                  isClean());
+          sortKeys_ = null;
+        }
+        return sortKeysBuilder_;
       }
       @java.lang.Override
       public final Builder setUnknownFields(
@@ -22657,37 +23156,38 @@ public final class Common {
       "2#.flyteidl.admin.NamedEntityMetadata\"\033\n" +
       "\031NamedEntityUpdateResponse\"9\n\020ObjectGetR" +
       "equest\022%\n\002id\030\001 \001(\0132\031.flyteidl.core.Ident" +
-      "ifier\"\236\001\n\023ResourceListRequest\0221\n\002id\030\001 \001(" +
+      "ifier\"\313\001\n\023ResourceListRequest\0221\n\002id\030\001 \001(" +
       "\0132%.flyteidl.admin.NamedEntityIdentifier" +
       "\022\r\n\005limit\030\002 \001(\r\022\r\n\005token\030\003 \001(\t\022\017\n\007filter" +
-      "s\030\004 \001(\t\022%\n\007sort_by\030\005 \001(\0132\024.flyteidl.admi" +
-      "n.Sort\"-\n\021EmailNotification\022\030\n\020recipient" +
-      "s_email\030\001 \003(\t\"1\n\025PagerDutyNotification\022\030" +
-      "\n\020recipients_email\030\001 \003(\t\"-\n\021SlackNotific" +
-      "ation\022\030\n\020recipients_email\030\001 \003(\t\"\363\001\n\014Noti" +
-      "fication\0226\n\006phases\030\001 \003(\0162&.flyteidl.core" +
-      ".WorkflowExecution.Phase\0222\n\005email\030\002 \001(\0132" +
-      "!.flyteidl.admin.EmailNotificationH\000\022;\n\n" +
-      "pager_duty\030\003 \001(\0132%.flyteidl.admin.PagerD" +
-      "utyNotificationH\000\0222\n\005slack\030\004 \001(\0132!.flyte" +
-      "idl.admin.SlackNotificationH\000B\006\n\004type\")\n" +
-      "\007UrlBlob\022\013\n\003url\030\001 \001(\t\022\r\n\005bytes\030\002 \001(\003:\002\030\001" +
-      "\"k\n\006Labels\0222\n\006values\030\001 \003(\0132\".flyteidl.ad" +
-      "min.Labels.ValuesEntry\032-\n\013ValuesEntry\022\013\n" +
-      "\003key\030\001 \001(\t\022\r\n\005value\030\002 \001(\t:\0028\001\"u\n\013Annotat" +
-      "ions\0227\n\006values\030\001 \003(\0132\'.flyteidl.admin.An" +
-      "notations.ValuesEntry\032-\n\013ValuesEntry\022\013\n\003" +
-      "key\030\001 \001(\t\022\r\n\005value\030\002 \001(\t:\0028\001\"3\n\004Envs\022+\n\006" +
-      "values\030\001 \003(\0132\033.flyteidl.core.KeyValuePai" +
-      "r\"N\n\010AuthRole\022\032\n\022assumable_iam_role\030\001 \001(" +
-      "\t\022\"\n\032kubernetes_service_account\030\002 \001(\t:\002\030" +
-      "\001\"5\n\023RawOutputDataConfig\022\036\n\026output_locat" +
-      "ion_prefix\030\001 \001(\t\":\n\tFlyteURLs\022\016\n\006inputs\030" +
-      "\001 \001(\t\022\017\n\007outputs\030\002 \001(\t\022\014\n\004deck\030\003 \001(\t*\\\n\020" +
-      "NamedEntityState\022\027\n\023NAMED_ENTITY_ACTIVE\020" +
-      "\000\022\031\n\025NAMED_ENTITY_ARCHIVED\020\001\022\024\n\020SYSTEM_G" +
-      "ENERATED\020\002B7Z5github.com/flyteorg/flytei" +
-      "dl/gen/pb-go/flyteidl/adminb\006proto3"
+      "s\030\004 \001(\t\022)\n\007sort_by\030\005 \001(\0132\024.flyteidl.admi" +
+      "n.SortB\002\030\001\022\'\n\tsort_keys\030\006 \003(\0132\024.flyteidl" +
+      ".admin.Sort\"-\n\021EmailNotification\022\030\n\020reci" +
+      "pients_email\030\001 \003(\t\"1\n\025PagerDutyNotificat" +
+      "ion\022\030\n\020recipients_email\030\001 \003(\t\"-\n\021SlackNo" +
+      "tification\022\030\n\020recipients_email\030\001 \003(\t\"\363\001\n" +
+      "\014Notification\0226\n\006phases\030\001 \003(\0162&.flyteidl" +
+      ".core.WorkflowExecution.Phase\0222\n\005email\030\002" +
+      " \001(\0132!.flyteidl.admin.EmailNotificationH" +
+      "\000\022;\n\npager_duty\030\003 \001(\0132%.flyteidl.admin.P" +
+      "agerDutyNotificationH\000\0222\n\005slack\030\004 \001(\0132!." +
+      "flyteidl.admin.SlackNotificationH\000B\006\n\004ty" +
+      "pe\")\n\007UrlBlob\022\013\n\003url\030\001 \001(\t\022\r\n\005bytes\030\002 \001(" +
+      "\003:\002\030\001\"k\n\006Labels\0222\n\006values\030\001 \003(\0132\".flytei" +
+      "dl.admin.Labels.ValuesEntry\032-\n\013ValuesEnt" +
+      "ry\022\013\n\003key\030\001 \001(\t\022\r\n\005value\030\002 \001(\t:\0028\001\"u\n\013An" +
+      "notations\0227\n\006values\030\001 \003(\0132\'.flyteidl.adm" +
+      "in.Annotations.ValuesEntry\032-\n\013ValuesEntr" +
+      "y\022\013\n\003key\030\001 \001(\t\022\r\n\005value\030\002 \001(\t:\0028\001\"3\n\004Env" +
+      "s\022+\n\006values\030\001 \003(\0132\033.flyteidl.core.KeyVal" +
+      "uePair\"N\n\010AuthRole\022\032\n\022assumable_iam_role" +
+      "\030\001 \001(\t\022\"\n\032kubernetes_service_account\030\002 \001" +
+      "(\t:\002\030\001\"5\n\023RawOutputDataConfig\022\036\n\026output_" +
+      "location_prefix\030\001 \001(\t\":\n\tFlyteURLs\022\016\n\006in" +
+      "puts\030\001 \001(\t\022\017\n\007outputs\030\002 \001(\t\022\014\n\004deck\030\003 \001(" +
+      "\t*\\\n\020NamedEntityState\022\027\n\023NAMED_ENTITY_AC" +
+      "TIVE\020\000\022\031\n\025NAMED_ENTITY_ARCHIVED\020\001\022\024\n\020SYS" +
+      "TEM_GENERATED\020\002B7Z5github.com/flyteorg/f" +
+      "lyteidl/gen/pb-go/flyteidl/adminb\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
@@ -22782,7 +23282,7 @@ public final class Common {
     internal_static_flyteidl_admin_ResourceListRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_flyteidl_admin_ResourceListRequest_descriptor,
-        new java.lang.String[] { "Id", "Limit", "Token", "Filters", "SortBy", });
+        new java.lang.String[] { "Id", "Limit", "Token", "Filters", "SortBy", "SortKeys", });
     internal_static_flyteidl_admin_EmailNotification_descriptor =
       getDescriptor().getMessageTypes().get(13);
     internal_static_flyteidl_admin_EmailNotification_fieldAccessorTable = new

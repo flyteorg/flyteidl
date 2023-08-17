@@ -1984,6 +1984,18 @@ class ResourceListRequest final :
 
   // accessors -------------------------------------------------------
 
+  // repeated .flyteidl.admin.Sort sort_keys = 6;
+  int sort_keys_size() const;
+  void clear_sort_keys();
+  static const int kSortKeysFieldNumber = 6;
+  ::flyteidl::admin::Sort* mutable_sort_keys(int index);
+  ::google::protobuf::RepeatedPtrField< ::flyteidl::admin::Sort >*
+      mutable_sort_keys();
+  const ::flyteidl::admin::Sort& sort_keys(int index) const;
+  ::flyteidl::admin::Sort* add_sort_keys();
+  const ::google::protobuf::RepeatedPtrField< ::flyteidl::admin::Sort >&
+      sort_keys() const;
+
   // string token = 3;
   void clear_token();
   static const int kTokenFieldNumber = 3;
@@ -2021,14 +2033,14 @@ class ResourceListRequest final :
   ::flyteidl::admin::NamedEntityIdentifier* mutable_id();
   void set_allocated_id(::flyteidl::admin::NamedEntityIdentifier* id);
 
-  // .flyteidl.admin.Sort sort_by = 5;
-  bool has_sort_by() const;
-  void clear_sort_by();
-  static const int kSortByFieldNumber = 5;
-  const ::flyteidl::admin::Sort& sort_by() const;
-  ::flyteidl::admin::Sort* release_sort_by();
-  ::flyteidl::admin::Sort* mutable_sort_by();
-  void set_allocated_sort_by(::flyteidl::admin::Sort* sort_by);
+  // .flyteidl.admin.Sort sort_by = 5 [deprecated = true];
+  PROTOBUF_DEPRECATED bool has_sort_by() const;
+  PROTOBUF_DEPRECATED void clear_sort_by();
+  PROTOBUF_DEPRECATED static const int kSortByFieldNumber = 5;
+  PROTOBUF_DEPRECATED const ::flyteidl::admin::Sort& sort_by() const;
+  PROTOBUF_DEPRECATED ::flyteidl::admin::Sort* release_sort_by();
+  PROTOBUF_DEPRECATED ::flyteidl::admin::Sort* mutable_sort_by();
+  PROTOBUF_DEPRECATED void set_allocated_sort_by(::flyteidl::admin::Sort* sort_by);
 
   // uint32 limit = 2;
   void clear_limit();
@@ -2041,6 +2053,7 @@ class ResourceListRequest final :
   class HasBitSetters;
 
   ::google::protobuf::internal::InternalMetadataWithArena _internal_metadata_;
+  ::google::protobuf::RepeatedPtrField< ::flyteidl::admin::Sort > sort_keys_;
   ::google::protobuf::internal::ArenaStringPtr token_;
   ::google::protobuf::internal::ArenaStringPtr filters_;
   ::flyteidl::admin::NamedEntityIdentifier* id_;
@@ -5139,7 +5152,7 @@ inline void ResourceListRequest::set_allocated_filters(::std::string* filters) {
   // @@protoc_insertion_point(field_set_allocated:flyteidl.admin.ResourceListRequest.filters)
 }
 
-// .flyteidl.admin.Sort sort_by = 5;
+// .flyteidl.admin.Sort sort_by = 5 [deprecated = true];
 inline bool ResourceListRequest::has_sort_by() const {
   return this != internal_default_instance() && sort_by_ != nullptr;
 }
@@ -5188,6 +5201,36 @@ inline void ResourceListRequest::set_allocated_sort_by(::flyteidl::admin::Sort* 
   }
   sort_by_ = sort_by;
   // @@protoc_insertion_point(field_set_allocated:flyteidl.admin.ResourceListRequest.sort_by)
+}
+
+// repeated .flyteidl.admin.Sort sort_keys = 6;
+inline int ResourceListRequest::sort_keys_size() const {
+  return sort_keys_.size();
+}
+inline void ResourceListRequest::clear_sort_keys() {
+  sort_keys_.Clear();
+}
+inline ::flyteidl::admin::Sort* ResourceListRequest::mutable_sort_keys(int index) {
+  // @@protoc_insertion_point(field_mutable:flyteidl.admin.ResourceListRequest.sort_keys)
+  return sort_keys_.Mutable(index);
+}
+inline ::google::protobuf::RepeatedPtrField< ::flyteidl::admin::Sort >*
+ResourceListRequest::mutable_sort_keys() {
+  // @@protoc_insertion_point(field_mutable_list:flyteidl.admin.ResourceListRequest.sort_keys)
+  return &sort_keys_;
+}
+inline const ::flyteidl::admin::Sort& ResourceListRequest::sort_keys(int index) const {
+  // @@protoc_insertion_point(field_get:flyteidl.admin.ResourceListRequest.sort_keys)
+  return sort_keys_.Get(index);
+}
+inline ::flyteidl::admin::Sort* ResourceListRequest::add_sort_keys() {
+  // @@protoc_insertion_point(field_add:flyteidl.admin.ResourceListRequest.sort_keys)
+  return sort_keys_.Add();
+}
+inline const ::google::protobuf::RepeatedPtrField< ::flyteidl::admin::Sort >&
+ResourceListRequest::sort_keys() const {
+  // @@protoc_insertion_point(field_list:flyteidl.admin.ResourceListRequest.sort_keys)
+  return sort_keys_;
 }
 
 // -------------------------------------------------------------------

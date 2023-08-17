@@ -383,10 +383,15 @@ pub struct ResourceListRequest {
     /// +optional
     #[prost(string, tag="4")]
     pub filters: ::prost::alloc::string::String,
-    /// Sort ordering.
+    /// Sort column ordering.
     /// +optional
+    /// Deprecated.
+    #[deprecated]
     #[prost(message, optional, tag="5")]
     pub sort_by: ::core::option::Option<Sort>,
+    /// Sort column(s) with direction.
+    #[prost(message, repeated, tag="6")]
+    pub sort_keys: ::prost::alloc::vec::Vec<Sort>,
 }
 /// Defines an email notification specification.
 #[allow(clippy::derive_partial_eq_without_eq)]

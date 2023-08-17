@@ -21548,6 +21548,7 @@
                  * @property {string|null} [token] ResourceListRequest token
                  * @property {string|null} [filters] ResourceListRequest filters
                  * @property {flyteidl.admin.ISort|null} [sortBy] ResourceListRequest sortBy
+                 * @property {Array.<flyteidl.admin.ISort>|null} [sortKeys] ResourceListRequest sortKeys
                  */
     
                 /**
@@ -21559,6 +21560,7 @@
                  * @param {flyteidl.admin.IResourceListRequest=} [properties] Properties to set
                  */
                 function ResourceListRequest(properties) {
+                    this.sortKeys = [];
                     if (properties)
                         for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
                             if (properties[keys[i]] != null)
@@ -21606,6 +21608,14 @@
                 ResourceListRequest.prototype.sortBy = null;
     
                 /**
+                 * ResourceListRequest sortKeys.
+                 * @member {Array.<flyteidl.admin.ISort>} sortKeys
+                 * @memberof flyteidl.admin.ResourceListRequest
+                 * @instance
+                 */
+                ResourceListRequest.prototype.sortKeys = $util.emptyArray;
+    
+                /**
                  * Creates a new ResourceListRequest instance using the specified properties.
                  * @function create
                  * @memberof flyteidl.admin.ResourceListRequest
@@ -21639,6 +21649,9 @@
                         writer.uint32(/* id 4, wireType 2 =*/34).string(message.filters);
                     if (message.sortBy != null && message.hasOwnProperty("sortBy"))
                         $root.flyteidl.admin.Sort.encode(message.sortBy, writer.uint32(/* id 5, wireType 2 =*/42).fork()).ldelim();
+                    if (message.sortKeys != null && message.sortKeys.length)
+                        for (var i = 0; i < message.sortKeys.length; ++i)
+                            $root.flyteidl.admin.Sort.encode(message.sortKeys[i], writer.uint32(/* id 6, wireType 2 =*/50).fork()).ldelim();
                     return writer;
                 };
     
@@ -21674,6 +21687,11 @@
                             break;
                         case 5:
                             message.sortBy = $root.flyteidl.admin.Sort.decode(reader, reader.uint32());
+                            break;
+                        case 6:
+                            if (!(message.sortKeys && message.sortKeys.length))
+                                message.sortKeys = [];
+                            message.sortKeys.push($root.flyteidl.admin.Sort.decode(reader, reader.uint32()));
                             break;
                         default:
                             reader.skipType(tag & 7);
@@ -21712,6 +21730,15 @@
                         var error = $root.flyteidl.admin.Sort.verify(message.sortBy);
                         if (error)
                             return "sortBy." + error;
+                    }
+                    if (message.sortKeys != null && message.hasOwnProperty("sortKeys")) {
+                        if (!Array.isArray(message.sortKeys))
+                            return "sortKeys: array expected";
+                        for (var i = 0; i < message.sortKeys.length; ++i) {
+                            var error = $root.flyteidl.admin.Sort.verify(message.sortKeys[i]);
+                            if (error)
+                                return "sortKeys." + error;
+                        }
                     }
                     return null;
                 };

@@ -140,18 +140,20 @@ class ObjectGetRequest(_message.Message):
     def __init__(self, id: _Optional[_Union[_identifier_pb2.Identifier, _Mapping]] = ...) -> None: ...
 
 class ResourceListRequest(_message.Message):
-    __slots__ = ["id", "limit", "token", "filters", "sort_by"]
+    __slots__ = ["id", "limit", "token", "filters", "sort_by", "sort_keys"]
     ID_FIELD_NUMBER: _ClassVar[int]
     LIMIT_FIELD_NUMBER: _ClassVar[int]
     TOKEN_FIELD_NUMBER: _ClassVar[int]
     FILTERS_FIELD_NUMBER: _ClassVar[int]
     SORT_BY_FIELD_NUMBER: _ClassVar[int]
+    SORT_KEYS_FIELD_NUMBER: _ClassVar[int]
     id: NamedEntityIdentifier
     limit: int
     token: str
     filters: str
     sort_by: Sort
-    def __init__(self, id: _Optional[_Union[NamedEntityIdentifier, _Mapping]] = ..., limit: _Optional[int] = ..., token: _Optional[str] = ..., filters: _Optional[str] = ..., sort_by: _Optional[_Union[Sort, _Mapping]] = ...) -> None: ...
+    sort_keys: _containers.RepeatedCompositeFieldContainer[Sort]
+    def __init__(self, id: _Optional[_Union[NamedEntityIdentifier, _Mapping]] = ..., limit: _Optional[int] = ..., token: _Optional[str] = ..., filters: _Optional[str] = ..., sort_by: _Optional[_Union[Sort, _Mapping]] = ..., sort_keys: _Optional[_Iterable[_Union[Sort, _Mapping]]] = ...) -> None: ...
 
 class EmailNotification(_message.Message):
     __slots__ = ["recipients_email"]

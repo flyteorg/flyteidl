@@ -210,9 +210,13 @@ message ResourceListRequest {
     // +optional
     string filters = 4;
 
-    // Sort ordering.
+    // Sort column ordering.
     // +optional
-    Sort sort_by = 5;
+    // Deprecated.
+    Sort sort_by = 5 [deprecated = true];
+
+    // Sort column(s) with direction.
+    repeated Sort sort_keys = 6;
 }
 
 // Defines an email notification specification.

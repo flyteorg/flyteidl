@@ -655,6 +655,7 @@ const ::google::protobuf::uint32 TableStruct_flyteidl_2fadmin_2fcommon_2eproto::
   PROTOBUF_FIELD_OFFSET(::flyteidl::admin::ResourceListRequest, token_),
   PROTOBUF_FIELD_OFFSET(::flyteidl::admin::ResourceListRequest, filters_),
   PROTOBUF_FIELD_OFFSET(::flyteidl::admin::ResourceListRequest, sort_by_),
+  PROTOBUF_FIELD_OFFSET(::flyteidl::admin::ResourceListRequest, sort_keys_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::flyteidl::admin::EmailNotification, _internal_metadata_),
   ~0u,  // no _extensions_
@@ -762,19 +763,19 @@ static const ::google::protobuf::internal::MigrationSchema schemas[] PROTOBUF_SE
   { 82, -1, sizeof(::flyteidl::admin::NamedEntityUpdateResponse)},
   { 87, -1, sizeof(::flyteidl::admin::ObjectGetRequest)},
   { 93, -1, sizeof(::flyteidl::admin::ResourceListRequest)},
-  { 103, -1, sizeof(::flyteidl::admin::EmailNotification)},
-  { 109, -1, sizeof(::flyteidl::admin::PagerDutyNotification)},
-  { 115, -1, sizeof(::flyteidl::admin::SlackNotification)},
-  { 121, -1, sizeof(::flyteidl::admin::Notification)},
-  { 131, -1, sizeof(::flyteidl::admin::UrlBlob)},
-  { 138, 145, sizeof(::flyteidl::admin::Labels_ValuesEntry_DoNotUse)},
-  { 147, -1, sizeof(::flyteidl::admin::Labels)},
-  { 153, 160, sizeof(::flyteidl::admin::Annotations_ValuesEntry_DoNotUse)},
-  { 162, -1, sizeof(::flyteidl::admin::Annotations)},
-  { 168, -1, sizeof(::flyteidl::admin::Envs)},
-  { 174, -1, sizeof(::flyteidl::admin::AuthRole)},
-  { 181, -1, sizeof(::flyteidl::admin::RawOutputDataConfig)},
-  { 187, -1, sizeof(::flyteidl::admin::FlyteURLs)},
+  { 104, -1, sizeof(::flyteidl::admin::EmailNotification)},
+  { 110, -1, sizeof(::flyteidl::admin::PagerDutyNotification)},
+  { 116, -1, sizeof(::flyteidl::admin::SlackNotification)},
+  { 122, -1, sizeof(::flyteidl::admin::Notification)},
+  { 132, -1, sizeof(::flyteidl::admin::UrlBlob)},
+  { 139, 146, sizeof(::flyteidl::admin::Labels_ValuesEntry_DoNotUse)},
+  { 148, -1, sizeof(::flyteidl::admin::Labels)},
+  { 154, 161, sizeof(::flyteidl::admin::Annotations_ValuesEntry_DoNotUse)},
+  { 163, -1, sizeof(::flyteidl::admin::Annotations)},
+  { 169, -1, sizeof(::flyteidl::admin::Envs)},
+  { 175, -1, sizeof(::flyteidl::admin::AuthRole)},
+  { 182, -1, sizeof(::flyteidl::admin::RawOutputDataConfig)},
+  { 188, -1, sizeof(::flyteidl::admin::FlyteURLs)},
 };
 
 static ::google::protobuf::Message const * const file_default_instances[] = {
@@ -852,42 +853,43 @@ const char descriptor_table_protodef_flyteidl_2fadmin_2fcommon_2eproto[] =
   "2#.flyteidl.admin.NamedEntityMetadata\"\033\n"
   "\031NamedEntityUpdateResponse\"9\n\020ObjectGetR"
   "equest\022%\n\002id\030\001 \001(\0132\031.flyteidl.core.Ident"
-  "ifier\"\236\001\n\023ResourceListRequest\0221\n\002id\030\001 \001("
+  "ifier\"\313\001\n\023ResourceListRequest\0221\n\002id\030\001 \001("
   "\0132%.flyteidl.admin.NamedEntityIdentifier"
   "\022\r\n\005limit\030\002 \001(\r\022\r\n\005token\030\003 \001(\t\022\017\n\007filter"
-  "s\030\004 \001(\t\022%\n\007sort_by\030\005 \001(\0132\024.flyteidl.admi"
-  "n.Sort\"-\n\021EmailNotification\022\030\n\020recipient"
-  "s_email\030\001 \003(\t\"1\n\025PagerDutyNotification\022\030"
-  "\n\020recipients_email\030\001 \003(\t\"-\n\021SlackNotific"
-  "ation\022\030\n\020recipients_email\030\001 \003(\t\"\363\001\n\014Noti"
-  "fication\0226\n\006phases\030\001 \003(\0162&.flyteidl.core"
-  ".WorkflowExecution.Phase\0222\n\005email\030\002 \001(\0132"
-  "!.flyteidl.admin.EmailNotificationH\000\022;\n\n"
-  "pager_duty\030\003 \001(\0132%.flyteidl.admin.PagerD"
-  "utyNotificationH\000\0222\n\005slack\030\004 \001(\0132!.flyte"
-  "idl.admin.SlackNotificationH\000B\006\n\004type\")\n"
-  "\007UrlBlob\022\013\n\003url\030\001 \001(\t\022\r\n\005bytes\030\002 \001(\003:\002\030\001"
-  "\"k\n\006Labels\0222\n\006values\030\001 \003(\0132\".flyteidl.ad"
-  "min.Labels.ValuesEntry\032-\n\013ValuesEntry\022\013\n"
-  "\003key\030\001 \001(\t\022\r\n\005value\030\002 \001(\t:\0028\001\"u\n\013Annotat"
-  "ions\0227\n\006values\030\001 \003(\0132\'.flyteidl.admin.An"
-  "notations.ValuesEntry\032-\n\013ValuesEntry\022\013\n\003"
-  "key\030\001 \001(\t\022\r\n\005value\030\002 \001(\t:\0028\001\"3\n\004Envs\022+\n\006"
-  "values\030\001 \003(\0132\033.flyteidl.core.KeyValuePai"
-  "r\"N\n\010AuthRole\022\032\n\022assumable_iam_role\030\001 \001("
-  "\t\022\"\n\032kubernetes_service_account\030\002 \001(\t:\002\030"
-  "\001\"5\n\023RawOutputDataConfig\022\036\n\026output_locat"
-  "ion_prefix\030\001 \001(\t\":\n\tFlyteURLs\022\016\n\006inputs\030"
-  "\001 \001(\t\022\017\n\007outputs\030\002 \001(\t\022\014\n\004deck\030\003 \001(\t*\\\n\020"
-  "NamedEntityState\022\027\n\023NAMED_ENTITY_ACTIVE\020"
-  "\000\022\031\n\025NAMED_ENTITY_ARCHIVED\020\001\022\024\n\020SYSTEM_G"
-  "ENERATED\020\002B7Z5github.com/flyteorg/flytei"
-  "dl/gen/pb-go/flyteidl/adminb\006proto3"
+  "s\030\004 \001(\t\022)\n\007sort_by\030\005 \001(\0132\024.flyteidl.admi"
+  "n.SortB\002\030\001\022\'\n\tsort_keys\030\006 \003(\0132\024.flyteidl"
+  ".admin.Sort\"-\n\021EmailNotification\022\030\n\020reci"
+  "pients_email\030\001 \003(\t\"1\n\025PagerDutyNotificat"
+  "ion\022\030\n\020recipients_email\030\001 \003(\t\"-\n\021SlackNo"
+  "tification\022\030\n\020recipients_email\030\001 \003(\t\"\363\001\n"
+  "\014Notification\0226\n\006phases\030\001 \003(\0162&.flyteidl"
+  ".core.WorkflowExecution.Phase\0222\n\005email\030\002"
+  " \001(\0132!.flyteidl.admin.EmailNotificationH"
+  "\000\022;\n\npager_duty\030\003 \001(\0132%.flyteidl.admin.P"
+  "agerDutyNotificationH\000\0222\n\005slack\030\004 \001(\0132!."
+  "flyteidl.admin.SlackNotificationH\000B\006\n\004ty"
+  "pe\")\n\007UrlBlob\022\013\n\003url\030\001 \001(\t\022\r\n\005bytes\030\002 \001("
+  "\003:\002\030\001\"k\n\006Labels\0222\n\006values\030\001 \003(\0132\".flytei"
+  "dl.admin.Labels.ValuesEntry\032-\n\013ValuesEnt"
+  "ry\022\013\n\003key\030\001 \001(\t\022\r\n\005value\030\002 \001(\t:\0028\001\"u\n\013An"
+  "notations\0227\n\006values\030\001 \003(\0132\'.flyteidl.adm"
+  "in.Annotations.ValuesEntry\032-\n\013ValuesEntr"
+  "y\022\013\n\003key\030\001 \001(\t\022\r\n\005value\030\002 \001(\t:\0028\001\"3\n\004Env"
+  "s\022+\n\006values\030\001 \003(\0132\033.flyteidl.core.KeyVal"
+  "uePair\"N\n\010AuthRole\022\032\n\022assumable_iam_role"
+  "\030\001 \001(\t\022\"\n\032kubernetes_service_account\030\002 \001"
+  "(\t:\002\030\001\"5\n\023RawOutputDataConfig\022\036\n\026output_"
+  "location_prefix\030\001 \001(\t\":\n\tFlyteURLs\022\016\n\006in"
+  "puts\030\001 \001(\t\022\017\n\007outputs\030\002 \001(\t\022\014\n\004deck\030\003 \001("
+  "\t*\\\n\020NamedEntityState\022\027\n\023NAMED_ENTITY_AC"
+  "TIVE\020\000\022\031\n\025NAMED_ENTITY_ARCHIVED\020\001\022\024\n\020SYS"
+  "TEM_GENERATED\020\002B7Z5github.com/flyteorg/f"
+  "lyteidl/gen/pb-go/flyteidl/adminb\006proto3"
   ;
 ::google::protobuf::internal::DescriptorTable descriptor_table_flyteidl_2fadmin_2fcommon_2eproto = {
   false, InitDefaults_flyteidl_2fadmin_2fcommon_2eproto, 
   descriptor_table_protodef_flyteidl_2fadmin_2fcommon_2eproto,
-  "flyteidl/admin/common.proto", &assign_descriptors_table_flyteidl_2fadmin_2fcommon_2eproto, 2795,
+  "flyteidl/admin/common.proto", &assign_descriptors_table_flyteidl_2fadmin_2fcommon_2eproto, 2840,
 };
 
 void AddDescriptors_flyteidl_2fadmin_2fcommon_2eproto() {
@@ -5766,6 +5768,7 @@ const int ResourceListRequest::kLimitFieldNumber;
 const int ResourceListRequest::kTokenFieldNumber;
 const int ResourceListRequest::kFiltersFieldNumber;
 const int ResourceListRequest::kSortByFieldNumber;
+const int ResourceListRequest::kSortKeysFieldNumber;
 #endif  // !defined(_MSC_VER) || _MSC_VER >= 1900
 
 ResourceListRequest::ResourceListRequest()
@@ -5775,7 +5778,8 @@ ResourceListRequest::ResourceListRequest()
 }
 ResourceListRequest::ResourceListRequest(const ResourceListRequest& from)
   : ::google::protobuf::Message(),
-      _internal_metadata_(nullptr) {
+      _internal_metadata_(nullptr),
+      sort_keys_(from.sort_keys_) {
   _internal_metadata_.MergeFrom(from._internal_metadata_);
   token_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
   if (from.token().size() > 0) {
@@ -5836,6 +5840,7 @@ void ResourceListRequest::Clear() {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
+  sort_keys_.Clear();
   token_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
   filters_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
   if (GetArenaNoVirtual() == nullptr && id_ != nullptr) {
@@ -5915,7 +5920,7 @@ const char* ResourceListRequest::_InternalParse(const char* begin, const char* e
         ptr += size;
         break;
       }
-      // .flyteidl.admin.Sort sort_by = 5;
+      // .flyteidl.admin.Sort sort_by = 5 [deprecated = true];
       case 5: {
         if (static_cast<::google::protobuf::uint8>(tag) != 42) goto handle_unusual;
         ptr = ::google::protobuf::io::ReadSize(ptr, &size);
@@ -5926,6 +5931,22 @@ const char* ResourceListRequest::_InternalParse(const char* begin, const char* e
         ptr += size;
         GOOGLE_PROTOBUF_PARSER_ASSERT(ctx->ParseExactRange(
             {parser_till_end, object}, ptr - size, ptr));
+        break;
+      }
+      // repeated .flyteidl.admin.Sort sort_keys = 6;
+      case 6: {
+        if (static_cast<::google::protobuf::uint8>(tag) != 50) goto handle_unusual;
+        do {
+          ptr = ::google::protobuf::io::ReadSize(ptr, &size);
+          GOOGLE_PROTOBUF_PARSER_ASSERT(ptr);
+          parser_till_end = ::flyteidl::admin::Sort::_InternalParse;
+          object = msg->add_sort_keys();
+          if (size > end - ptr) goto len_delim_till_end;
+          ptr += size;
+          GOOGLE_PROTOBUF_PARSER_ASSERT(ctx->ParseExactRange(
+              {parser_till_end, object}, ptr - size, ptr));
+          if (ptr >= end) break;
+        } while ((::google::protobuf::io::UnalignedLoad<::google::protobuf::uint64>(ptr) & 255) == 50 && (ptr += 1));
         break;
       }
       default: {
@@ -6016,11 +6037,22 @@ bool ResourceListRequest::MergePartialFromCodedStream(
         break;
       }
 
-      // .flyteidl.admin.Sort sort_by = 5;
+      // .flyteidl.admin.Sort sort_by = 5 [deprecated = true];
       case 5: {
         if (static_cast< ::google::protobuf::uint8>(tag) == (42 & 0xFF)) {
           DO_(::google::protobuf::internal::WireFormatLite::ReadMessage(
                input, mutable_sort_by()));
+        } else {
+          goto handle_unusual;
+        }
+        break;
+      }
+
+      // repeated .flyteidl.admin.Sort sort_keys = 6;
+      case 6: {
+        if (static_cast< ::google::protobuf::uint8>(tag) == (50 & 0xFF)) {
+          DO_(::google::protobuf::internal::WireFormatLite::ReadMessage(
+                input, add_sort_keys()));
         } else {
           goto handle_unusual;
         }
@@ -6085,10 +6117,19 @@ void ResourceListRequest::SerializeWithCachedSizes(
       4, this->filters(), output);
   }
 
-  // .flyteidl.admin.Sort sort_by = 5;
+  // .flyteidl.admin.Sort sort_by = 5 [deprecated = true];
   if (this->has_sort_by()) {
     ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
       5, HasBitSetters::sort_by(this), output);
+  }
+
+  // repeated .flyteidl.admin.Sort sort_keys = 6;
+  for (unsigned int i = 0,
+      n = static_cast<unsigned int>(this->sort_keys_size()); i < n; i++) {
+    ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
+      6,
+      this->sort_keys(static_cast<int>(i)),
+      output);
   }
 
   if (_internal_metadata_.have_unknown_fields()) {
@@ -6138,11 +6179,19 @@ void ResourceListRequest::SerializeWithCachedSizes(
         4, this->filters(), target);
   }
 
-  // .flyteidl.admin.Sort sort_by = 5;
+  // .flyteidl.admin.Sort sort_by = 5 [deprecated = true];
   if (this->has_sort_by()) {
     target = ::google::protobuf::internal::WireFormatLite::
       InternalWriteMessageToArray(
         5, HasBitSetters::sort_by(this), target);
+  }
+
+  // repeated .flyteidl.admin.Sort sort_keys = 6;
+  for (unsigned int i = 0,
+      n = static_cast<unsigned int>(this->sort_keys_size()); i < n; i++) {
+    target = ::google::protobuf::internal::WireFormatLite::
+      InternalWriteMessageToArray(
+        6, this->sort_keys(static_cast<int>(i)), target);
   }
 
   if (_internal_metadata_.have_unknown_fields()) {
@@ -6166,6 +6215,17 @@ size_t ResourceListRequest::ByteSizeLong() const {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
+  // repeated .flyteidl.admin.Sort sort_keys = 6;
+  {
+    unsigned int count = static_cast<unsigned int>(this->sort_keys_size());
+    total_size += 1UL * count;
+    for (unsigned int i = 0; i < count; i++) {
+      total_size +=
+        ::google::protobuf::internal::WireFormatLite::MessageSize(
+          this->sort_keys(static_cast<int>(i)));
+    }
+  }
+
   // string token = 3;
   if (this->token().size() > 0) {
     total_size += 1 +
@@ -6187,7 +6247,7 @@ size_t ResourceListRequest::ByteSizeLong() const {
         *id_);
   }
 
-  // .flyteidl.admin.Sort sort_by = 5;
+  // .flyteidl.admin.Sort sort_by = 5 [deprecated = true];
   if (this->has_sort_by()) {
     total_size += 1 +
       ::google::protobuf::internal::WireFormatLite::MessageSize(
@@ -6228,6 +6288,7 @@ void ResourceListRequest::MergeFrom(const ResourceListRequest& from) {
   ::google::protobuf::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
+  sort_keys_.MergeFrom(from.sort_keys_);
   if (from.token().size() > 0) {
 
     token_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.token_);
@@ -6272,6 +6333,7 @@ void ResourceListRequest::Swap(ResourceListRequest* other) {
 void ResourceListRequest::InternalSwap(ResourceListRequest* other) {
   using std::swap;
   _internal_metadata_.Swap(&other->_internal_metadata_);
+  CastToBase(&sort_keys_)->InternalSwap(CastToBase(&other->sort_keys_));
   token_.Swap(&other->token_, &::google::protobuf::internal::GetEmptyStringAlreadyInited(),
     GetArenaNoVirtual());
   filters_.Swap(&other->filters_, &::google::protobuf::internal::GetEmptyStringAlreadyInited(),
