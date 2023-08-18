@@ -229,6 +229,65 @@ pub mod sort {
         }
     }
 }
+#[allow(clippy::derive_partial_eq_without_eq)]
+#[derive(Clone, PartialEq, ::prost::Message)]
+pub struct Filter {
+    #[prost(enumeration="filter::Function", tag="1")]
+    pub function: i32,
+    /// e.g. name or version
+    #[prost(string, tag="2")]
+    pub field: ::prost::alloc::string::String,
+    /// Only in the case of a VALUE_IN function, values may contain multiple entries.
+    #[prost(string, repeated, tag="3")]
+    pub values: ::prost::alloc::vec::Vec<::prost::alloc::string::String>,
+}
+/// Nested message and enum types in `Filter`.
+pub mod filter {
+    #[derive(Clone, Copy, Debug, PartialEq, Eq, Hash, PartialOrd, Ord, ::prost::Enumeration)]
+    #[repr(i32)]
+    pub enum Function {
+        Equal = 0,
+        NotEqual = 1,
+        GreaterThan = 2,
+        GreaterThanOrEqual = 3,
+        LessThan = 4,
+        LessThanOrEqual = 5,
+        Contains = 6,
+        ValueIn = 7,
+    }
+    impl Function {
+        /// String value of the enum field names used in the ProtoBuf definition.
+        ///
+        /// The values are not transformed in any way and thus are considered stable
+        /// (if the ProtoBuf definition does not change) and safe for programmatic use.
+        pub fn as_str_name(&self) -> &'static str {
+            match self {
+                Function::Equal => "EQUAL",
+                Function::NotEqual => "NOT_EQUAL",
+                Function::GreaterThan => "GREATER_THAN",
+                Function::GreaterThanOrEqual => "GREATER_THAN_OR_EQUAL",
+                Function::LessThan => "LESS_THAN",
+                Function::LessThanOrEqual => "LESS_THAN_OR_EQUAL",
+                Function::Contains => "CONTAINS",
+                Function::ValueIn => "VALUE_IN",
+            }
+        }
+        /// Creates an enum from field names used in the ProtoBuf definition.
+        pub fn from_str_name(value: &str) -> ::core::option::Option<Self> {
+            match value {
+                "EQUAL" => Some(Self::Equal),
+                "NOT_EQUAL" => Some(Self::NotEqual),
+                "GREATER_THAN" => Some(Self::GreaterThan),
+                "GREATER_THAN_OR_EQUAL" => Some(Self::GreaterThanOrEqual),
+                "LESS_THAN" => Some(Self::LessThan),
+                "LESS_THAN_OR_EQUAL" => Some(Self::LessThanOrEqual),
+                "CONTAINS" => Some(Self::Contains),
+                "VALUE_IN" => Some(Self::ValueIn),
+                _ => None,
+            }
+        }
+    }
+}
 /// Represents a request structure to list NamedEntityIdentifiers.
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(Clone, PartialEq, ::prost::Message)]
@@ -381,17 +440,22 @@ pub struct ResourceListRequest {
     /// Indicates a list of filters passed as string.
     /// More info on constructing filters : <Link>
     /// +optional
+    /// Deprecated. Use filter_keys.
+    #[deprecated]
     #[prost(string, tag="4")]
     pub filters: ::prost::alloc::string::String,
     /// Sort column ordering.
     /// +optional
-    /// Deprecated.
+    /// Deprecated. Use sort_keys instead.
     #[deprecated]
     #[prost(message, optional, tag="5")]
     pub sort_by: ::core::option::Option<Sort>,
     /// Sort column(s) with direction.
     #[prost(message, repeated, tag="6")]
     pub sort_keys: ::prost::alloc::vec::Vec<Sort>,
+    /// Filter columns by applying function to specified value
+    #[prost(message, repeated, tag="7")]
+    pub filter_keys: ::prost::alloc::vec::Vec<Filter>,
 }
 /// Defines an email notification specification.
 #[allow(clippy::derive_partial_eq_without_eq)]
