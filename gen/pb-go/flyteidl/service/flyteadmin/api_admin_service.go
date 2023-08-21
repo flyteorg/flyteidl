@@ -2985,7 +2985,7 @@ AdminServiceApiService Fetch a list of :ref:&#x60;ref_flyteidl.admin.Execution&#
      * @param "IdName" (optional.String) -  User provided value for the resource. The combination of project + domain + name uniquely identifies the resource. +optional - in certain contexts - like &#39;List API&#39;, &#39;Launch plans&#39;.
      * @param "Limit" (optional.Int64) -  Indicates the number of resources to be returned. +required.
      * @param "Token" (optional.String) -  In the case of multiple pages of results, this server-provided token can be used to fetch the next page in a query. +optional.
-     * @param "Filters" (optional.String) -  Indicates a list of filters passed as string. More info on constructing filters : &lt;Link&gt; +optional.
+     * @param "Filters" (optional.String) -  Indicates a list of filters passed as string. More info on constructing filters : &lt;Link&gt; +optional Deprecated. Use filter_keys.
      * @param "SortByKey" (optional.String) -  Indicates an attribute to sort the response values. +required.
      * @param "SortByDirection" (optional.String) -  Indicates the direction to apply sort key for response values. +optional.   - DESCENDING: By default, fields are sorted in descending order.
 
@@ -3230,7 +3230,7 @@ AdminServiceApiService Fetch a list of :ref:&#x60;ref_flyteidl.admin.LaunchPlan&
  * @param optional nil or *ListLaunchPlansOpts - Optional Parameters:
      * @param "Limit" (optional.Int64) -  Indicates the number of resources to be returned. +required.
      * @param "Token" (optional.String) -  In the case of multiple pages of results, this server-provided token can be used to fetch the next page in a query. +optional.
-     * @param "Filters" (optional.String) -  Indicates a list of filters passed as string. More info on constructing filters : &lt;Link&gt; +optional.
+     * @param "Filters" (optional.String) -  Indicates a list of filters passed as string. More info on constructing filters : &lt;Link&gt; +optional Deprecated. Use filter_keys.
      * @param "SortByKey" (optional.String) -  Indicates an attribute to sort the response values. +required.
      * @param "SortByDirection" (optional.String) -  Indicates the direction to apply sort key for response values. +optional.   - DESCENDING: By default, fields are sorted in descending order.
 
@@ -3352,7 +3352,7 @@ AdminServiceApiService Fetch a list of :ref:&#x60;ref_flyteidl.admin.LaunchPlan&
      * @param "IdName" (optional.String) -  User provided value for the resource. The combination of project + domain + name uniquely identifies the resource. +optional - in certain contexts - like &#39;List API&#39;, &#39;Launch plans&#39;.
      * @param "Limit" (optional.Int64) -  Indicates the number of resources to be returned. +required.
      * @param "Token" (optional.String) -  In the case of multiple pages of results, this server-provided token can be used to fetch the next page in a query. +optional.
-     * @param "Filters" (optional.String) -  Indicates a list of filters passed as string. More info on constructing filters : &lt;Link&gt; +optional.
+     * @param "Filters" (optional.String) -  Indicates a list of filters passed as string. More info on constructing filters : &lt;Link&gt; +optional Deprecated. Use filter_keys.
      * @param "SortByKey" (optional.String) -  Indicates an attribute to sort the response values. +required.
      * @param "SortByDirection" (optional.String) -  Indicates the direction to apply sort key for response values. +optional.   - DESCENDING: By default, fields are sorted in descending order.
 
@@ -4321,7 +4321,7 @@ AdminServiceApiService Fetch a list of :ref:&#x60;ref_flyteidl.admin.Task&#x60; 
  * @param optional nil or *ListTasksOpts - Optional Parameters:
      * @param "Limit" (optional.Int64) -  Indicates the number of resources to be returned. +required.
      * @param "Token" (optional.String) -  In the case of multiple pages of results, this server-provided token can be used to fetch the next page in a query. +optional.
-     * @param "Filters" (optional.String) -  Indicates a list of filters passed as string. More info on constructing filters : &lt;Link&gt; +optional.
+     * @param "Filters" (optional.String) -  Indicates a list of filters passed as string. More info on constructing filters : &lt;Link&gt; +optional Deprecated. Use filter_keys.
      * @param "SortByKey" (optional.String) -  Indicates an attribute to sort the response values. +required.
      * @param "SortByDirection" (optional.String) -  Indicates the direction to apply sort key for response values. +optional.   - DESCENDING: By default, fields are sorted in descending order.
 
@@ -4443,7 +4443,7 @@ AdminServiceApiService Fetch a list of :ref:&#x60;ref_flyteidl.admin.Task&#x60; 
      * @param "IdName" (optional.String) -  User provided value for the resource. The combination of project + domain + name uniquely identifies the resource. +optional - in certain contexts - like &#39;List API&#39;, &#39;Launch plans&#39;.
      * @param "Limit" (optional.Int64) -  Indicates the number of resources to be returned. +required.
      * @param "Token" (optional.String) -  In the case of multiple pages of results, this server-provided token can be used to fetch the next page in a query. +optional.
-     * @param "Filters" (optional.String) -  Indicates a list of filters passed as string. More info on constructing filters : &lt;Link&gt; +optional.
+     * @param "Filters" (optional.String) -  Indicates a list of filters passed as string. More info on constructing filters : &lt;Link&gt; +optional Deprecated. Use filter_keys.
      * @param "SortByKey" (optional.String) -  Indicates an attribute to sort the response values. +required.
      * @param "SortByDirection" (optional.String) -  Indicates the direction to apply sort key for response values. +optional.   - DESCENDING: By default, fields are sorted in descending order.
 
@@ -4688,7 +4688,7 @@ AdminServiceApiService Fetch a list of :ref:&#x60;ref_flyteidl.admin.Workflow&#x
  * @param optional nil or *ListWorkflowsOpts - Optional Parameters:
      * @param "Limit" (optional.Int64) -  Indicates the number of resources to be returned. +required.
      * @param "Token" (optional.String) -  In the case of multiple pages of results, this server-provided token can be used to fetch the next page in a query. +optional.
-     * @param "Filters" (optional.String) -  Indicates a list of filters passed as string. More info on constructing filters : &lt;Link&gt; +optional.
+     * @param "Filters" (optional.String) -  Indicates a list of filters passed as string. More info on constructing filters : &lt;Link&gt; +optional Deprecated. Use filter_keys.
      * @param "SortByKey" (optional.String) -  Indicates an attribute to sort the response values. +required.
      * @param "SortByDirection" (optional.String) -  Indicates the direction to apply sort key for response values. +optional.   - DESCENDING: By default, fields are sorted in descending order.
 
@@ -4810,7 +4810,7 @@ AdminServiceApiService Fetch a list of :ref:&#x60;ref_flyteidl.admin.Workflow&#x
      * @param "IdName" (optional.String) -  User provided value for the resource. The combination of project + domain + name uniquely identifies the resource. +optional - in certain contexts - like &#39;List API&#39;, &#39;Launch plans&#39;.
      * @param "Limit" (optional.Int64) -  Indicates the number of resources to be returned. +required.
      * @param "Token" (optional.String) -  In the case of multiple pages of results, this server-provided token can be used to fetch the next page in a query. +optional.
-     * @param "Filters" (optional.String) -  Indicates a list of filters passed as string. More info on constructing filters : &lt;Link&gt; +optional.
+     * @param "Filters" (optional.String) -  Indicates a list of filters passed as string. More info on constructing filters : &lt;Link&gt; +optional Deprecated. Use filter_keys.
      * @param "SortByKey" (optional.String) -  Indicates an attribute to sort the response values. +required.
      * @param "SortByDirection" (optional.String) -  Indicates the direction to apply sort key for response values. +optional.   - DESCENDING: By default, fields are sorted in descending order.
 

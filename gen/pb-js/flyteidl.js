@@ -20346,6 +20346,195 @@
                 return Sort;
             })();
     
+            admin.Filter = (function() {
+    
+                /**
+                 * Properties of a Filter.
+                 * @memberof flyteidl.admin
+                 * @interface IFilter
+                 * @property {flyteidl.admin.Filter.Function|null} ["function"] Filter function
+                 * @property {string|null} [field] Filter field
+                 * @property {Array.<string>|null} [values] Filter values
+                 */
+    
+                /**
+                 * Constructs a new Filter.
+                 * @memberof flyteidl.admin
+                 * @classdesc Represents a Filter.
+                 * @implements IFilter
+                 * @constructor
+                 * @param {flyteidl.admin.IFilter=} [properties] Properties to set
+                 */
+                function Filter(properties) {
+                    this.values = [];
+                    if (properties)
+                        for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                            if (properties[keys[i]] != null)
+                                this[keys[i]] = properties[keys[i]];
+                }
+    
+                /**
+                 * Filter function.
+                 * @member {flyteidl.admin.Filter.Function} function
+                 * @memberof flyteidl.admin.Filter
+                 * @instance
+                 */
+                Filter.prototype["function"] = 0;
+    
+                /**
+                 * Filter field.
+                 * @member {string} field
+                 * @memberof flyteidl.admin.Filter
+                 * @instance
+                 */
+                Filter.prototype.field = "";
+    
+                /**
+                 * Filter values.
+                 * @member {Array.<string>} values
+                 * @memberof flyteidl.admin.Filter
+                 * @instance
+                 */
+                Filter.prototype.values = $util.emptyArray;
+    
+                /**
+                 * Creates a new Filter instance using the specified properties.
+                 * @function create
+                 * @memberof flyteidl.admin.Filter
+                 * @static
+                 * @param {flyteidl.admin.IFilter=} [properties] Properties to set
+                 * @returns {flyteidl.admin.Filter} Filter instance
+                 */
+                Filter.create = function create(properties) {
+                    return new Filter(properties);
+                };
+    
+                /**
+                 * Encodes the specified Filter message. Does not implicitly {@link flyteidl.admin.Filter.verify|verify} messages.
+                 * @function encode
+                 * @memberof flyteidl.admin.Filter
+                 * @static
+                 * @param {flyteidl.admin.IFilter} message Filter message or plain object to encode
+                 * @param {$protobuf.Writer} [writer] Writer to encode to
+                 * @returns {$protobuf.Writer} Writer
+                 */
+                Filter.encode = function encode(message, writer) {
+                    if (!writer)
+                        writer = $Writer.create();
+                    if (message["function"] != null && message.hasOwnProperty("function"))
+                        writer.uint32(/* id 1, wireType 0 =*/8).int32(message["function"]);
+                    if (message.field != null && message.hasOwnProperty("field"))
+                        writer.uint32(/* id 2, wireType 2 =*/18).string(message.field);
+                    if (message.values != null && message.values.length)
+                        for (var i = 0; i < message.values.length; ++i)
+                            writer.uint32(/* id 3, wireType 2 =*/26).string(message.values[i]);
+                    return writer;
+                };
+    
+                /**
+                 * Decodes a Filter message from the specified reader or buffer.
+                 * @function decode
+                 * @memberof flyteidl.admin.Filter
+                 * @static
+                 * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+                 * @param {number} [length] Message length if known beforehand
+                 * @returns {flyteidl.admin.Filter} Filter
+                 * @throws {Error} If the payload is not a reader or valid buffer
+                 * @throws {$protobuf.util.ProtocolError} If required fields are missing
+                 */
+                Filter.decode = function decode(reader, length) {
+                    if (!(reader instanceof $Reader))
+                        reader = $Reader.create(reader);
+                    var end = length === undefined ? reader.len : reader.pos + length, message = new $root.flyteidl.admin.Filter();
+                    while (reader.pos < end) {
+                        var tag = reader.uint32();
+                        switch (tag >>> 3) {
+                        case 1:
+                            message["function"] = reader.int32();
+                            break;
+                        case 2:
+                            message.field = reader.string();
+                            break;
+                        case 3:
+                            if (!(message.values && message.values.length))
+                                message.values = [];
+                            message.values.push(reader.string());
+                            break;
+                        default:
+                            reader.skipType(tag & 7);
+                            break;
+                        }
+                    }
+                    return message;
+                };
+    
+                /**
+                 * Verifies a Filter message.
+                 * @function verify
+                 * @memberof flyteidl.admin.Filter
+                 * @static
+                 * @param {Object.<string,*>} message Plain object to verify
+                 * @returns {string|null} `null` if valid, otherwise the reason why it is not
+                 */
+                Filter.verify = function verify(message) {
+                    if (typeof message !== "object" || message === null)
+                        return "object expected";
+                    if (message["function"] != null && message.hasOwnProperty("function"))
+                        switch (message["function"]) {
+                        default:
+                            return "function: enum value expected";
+                        case 0:
+                        case 1:
+                        case 2:
+                        case 3:
+                        case 4:
+                        case 5:
+                        case 6:
+                        case 7:
+                            break;
+                        }
+                    if (message.field != null && message.hasOwnProperty("field"))
+                        if (!$util.isString(message.field))
+                            return "field: string expected";
+                    if (message.values != null && message.hasOwnProperty("values")) {
+                        if (!Array.isArray(message.values))
+                            return "values: array expected";
+                        for (var i = 0; i < message.values.length; ++i)
+                            if (!$util.isString(message.values[i]))
+                                return "values: string[] expected";
+                    }
+                    return null;
+                };
+    
+                /**
+                 * Function enum.
+                 * @name flyteidl.admin.Filter.Function
+                 * @enum {string}
+                 * @property {number} EQUAL=0 EQUAL value
+                 * @property {number} NOT_EQUAL=1 NOT_EQUAL value
+                 * @property {number} GREATER_THAN=2 GREATER_THAN value
+                 * @property {number} GREATER_THAN_OR_EQUAL=3 GREATER_THAN_OR_EQUAL value
+                 * @property {number} LESS_THAN=4 LESS_THAN value
+                 * @property {number} LESS_THAN_OR_EQUAL=5 LESS_THAN_OR_EQUAL value
+                 * @property {number} CONTAINS=6 CONTAINS value
+                 * @property {number} VALUE_IN=7 VALUE_IN value
+                 */
+                Filter.Function = (function() {
+                    var valuesById = {}, values = Object.create(valuesById);
+                    values[valuesById[0] = "EQUAL"] = 0;
+                    values[valuesById[1] = "NOT_EQUAL"] = 1;
+                    values[valuesById[2] = "GREATER_THAN"] = 2;
+                    values[valuesById[3] = "GREATER_THAN_OR_EQUAL"] = 3;
+                    values[valuesById[4] = "LESS_THAN"] = 4;
+                    values[valuesById[5] = "LESS_THAN_OR_EQUAL"] = 5;
+                    values[valuesById[6] = "CONTAINS"] = 6;
+                    values[valuesById[7] = "VALUE_IN"] = 7;
+                    return values;
+                })();
+    
+                return Filter;
+            })();
+    
             admin.NamedEntityIdentifierListRequest = (function() {
     
                 /**
@@ -21548,6 +21737,8 @@
                  * @property {string|null} [token] ResourceListRequest token
                  * @property {string|null} [filters] ResourceListRequest filters
                  * @property {flyteidl.admin.ISort|null} [sortBy] ResourceListRequest sortBy
+                 * @property {Array.<flyteidl.admin.ISort>|null} [sortKeys] ResourceListRequest sortKeys
+                 * @property {Array.<flyteidl.admin.IFilter>|null} [filterKeys] ResourceListRequest filterKeys
                  */
     
                 /**
@@ -21559,6 +21750,8 @@
                  * @param {flyteidl.admin.IResourceListRequest=} [properties] Properties to set
                  */
                 function ResourceListRequest(properties) {
+                    this.sortKeys = [];
+                    this.filterKeys = [];
                     if (properties)
                         for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
                             if (properties[keys[i]] != null)
@@ -21606,6 +21799,22 @@
                 ResourceListRequest.prototype.sortBy = null;
     
                 /**
+                 * ResourceListRequest sortKeys.
+                 * @member {Array.<flyteidl.admin.ISort>} sortKeys
+                 * @memberof flyteidl.admin.ResourceListRequest
+                 * @instance
+                 */
+                ResourceListRequest.prototype.sortKeys = $util.emptyArray;
+    
+                /**
+                 * ResourceListRequest filterKeys.
+                 * @member {Array.<flyteidl.admin.IFilter>} filterKeys
+                 * @memberof flyteidl.admin.ResourceListRequest
+                 * @instance
+                 */
+                ResourceListRequest.prototype.filterKeys = $util.emptyArray;
+    
+                /**
                  * Creates a new ResourceListRequest instance using the specified properties.
                  * @function create
                  * @memberof flyteidl.admin.ResourceListRequest
@@ -21639,6 +21848,12 @@
                         writer.uint32(/* id 4, wireType 2 =*/34).string(message.filters);
                     if (message.sortBy != null && message.hasOwnProperty("sortBy"))
                         $root.flyteidl.admin.Sort.encode(message.sortBy, writer.uint32(/* id 5, wireType 2 =*/42).fork()).ldelim();
+                    if (message.sortKeys != null && message.sortKeys.length)
+                        for (var i = 0; i < message.sortKeys.length; ++i)
+                            $root.flyteidl.admin.Sort.encode(message.sortKeys[i], writer.uint32(/* id 6, wireType 2 =*/50).fork()).ldelim();
+                    if (message.filterKeys != null && message.filterKeys.length)
+                        for (var i = 0; i < message.filterKeys.length; ++i)
+                            $root.flyteidl.admin.Filter.encode(message.filterKeys[i], writer.uint32(/* id 7, wireType 2 =*/58).fork()).ldelim();
                     return writer;
                 };
     
@@ -21674,6 +21889,16 @@
                             break;
                         case 5:
                             message.sortBy = $root.flyteidl.admin.Sort.decode(reader, reader.uint32());
+                            break;
+                        case 6:
+                            if (!(message.sortKeys && message.sortKeys.length))
+                                message.sortKeys = [];
+                            message.sortKeys.push($root.flyteidl.admin.Sort.decode(reader, reader.uint32()));
+                            break;
+                        case 7:
+                            if (!(message.filterKeys && message.filterKeys.length))
+                                message.filterKeys = [];
+                            message.filterKeys.push($root.flyteidl.admin.Filter.decode(reader, reader.uint32()));
                             break;
                         default:
                             reader.skipType(tag & 7);
@@ -21712,6 +21937,24 @@
                         var error = $root.flyteidl.admin.Sort.verify(message.sortBy);
                         if (error)
                             return "sortBy." + error;
+                    }
+                    if (message.sortKeys != null && message.hasOwnProperty("sortKeys")) {
+                        if (!Array.isArray(message.sortKeys))
+                            return "sortKeys: array expected";
+                        for (var i = 0; i < message.sortKeys.length; ++i) {
+                            var error = $root.flyteidl.admin.Sort.verify(message.sortKeys[i]);
+                            if (error)
+                                return "sortKeys." + error;
+                        }
+                    }
+                    if (message.filterKeys != null && message.hasOwnProperty("filterKeys")) {
+                        if (!Array.isArray(message.filterKeys))
+                            return "filterKeys: array expected";
+                        for (var i = 0; i < message.filterKeys.length; ++i) {
+                            var error = $root.flyteidl.admin.Filter.verify(message.filterKeys[i]);
+                            if (error)
+                                return "filterKeys." + error;
+                        }
                     }
                     return null;
                 };

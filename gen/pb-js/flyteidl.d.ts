@@ -8379,6 +8379,85 @@ export namespace flyteidl {
             }
         }
 
+        /** Properties of a Filter. */
+        interface IFilter {
+
+            /** Filter function */
+            "function"?: (flyteidl.admin.Filter.Function|null);
+
+            /** Filter field */
+            field?: (string|null);
+
+            /** Filter values */
+            values?: (string[]|null);
+        }
+
+        /** Represents a Filter. */
+        class Filter implements IFilter {
+
+            /**
+             * Constructs a new Filter.
+             * @param [properties] Properties to set
+             */
+            constructor(properties?: flyteidl.admin.IFilter);
+
+            /** Filter function. */
+            public function: flyteidl.admin.Filter.Function;
+
+            /** Filter field. */
+            public field: string;
+
+            /** Filter values. */
+            public values: string[];
+
+            /**
+             * Creates a new Filter instance using the specified properties.
+             * @param [properties] Properties to set
+             * @returns Filter instance
+             */
+            public static create(properties?: flyteidl.admin.IFilter): flyteidl.admin.Filter;
+
+            /**
+             * Encodes the specified Filter message. Does not implicitly {@link flyteidl.admin.Filter.verify|verify} messages.
+             * @param message Filter message or plain object to encode
+             * @param [writer] Writer to encode to
+             * @returns Writer
+             */
+            public static encode(message: flyteidl.admin.IFilter, writer?: $protobuf.Writer): $protobuf.Writer;
+
+            /**
+             * Decodes a Filter message from the specified reader or buffer.
+             * @param reader Reader or buffer to decode from
+             * @param [length] Message length if known beforehand
+             * @returns Filter
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): flyteidl.admin.Filter;
+
+            /**
+             * Verifies a Filter message.
+             * @param message Plain object to verify
+             * @returns `null` if valid, otherwise the reason why it is not
+             */
+            public static verify(message: { [k: string]: any }): (string|null);
+        }
+
+        namespace Filter {
+
+            /** Function enum. */
+            enum Function {
+                EQUAL = 0,
+                NOT_EQUAL = 1,
+                GREATER_THAN = 2,
+                GREATER_THAN_OR_EQUAL = 3,
+                LESS_THAN = 4,
+                LESS_THAN_OR_EQUAL = 5,
+                CONTAINS = 6,
+                VALUE_IN = 7
+            }
+        }
+
         /** Properties of a NamedEntityIdentifierListRequest. */
         interface INamedEntityIdentifierListRequest {
 
@@ -8902,6 +8981,12 @@ export namespace flyteidl {
 
             /** ResourceListRequest sortBy */
             sortBy?: (flyteidl.admin.ISort|null);
+
+            /** ResourceListRequest sortKeys */
+            sortKeys?: (flyteidl.admin.ISort[]|null);
+
+            /** ResourceListRequest filterKeys */
+            filterKeys?: (flyteidl.admin.IFilter[]|null);
         }
 
         /** Represents a ResourceListRequest. */
@@ -8927,6 +9012,12 @@ export namespace flyteidl {
 
             /** ResourceListRequest sortBy. */
             public sortBy?: (flyteidl.admin.ISort|null);
+
+            /** ResourceListRequest sortKeys. */
+            public sortKeys: flyteidl.admin.ISort[];
+
+            /** ResourceListRequest filterKeys. */
+            public filterKeys: flyteidl.admin.IFilter[];
 
             /**
              * Creates a new ResourceListRequest instance using the specified properties.

@@ -76,6 +76,27 @@ message Sort {
     Direction direction = 2;
 }
 
+message Filter {
+    enum Function {
+        EQUAL = 0;
+        NOT_EQUAL = 1;
+        GREATER_THAN = 2;
+        GREATER_THAN_OR_EQUAL = 3;
+        LESS_THAN = 4;
+        LESS_THAN_OR_EQUAL = 5;
+        CONTAINS = 6;
+        VALUE_IN = 7;
+    }
+
+    Function function = 1;
+
+    // e.g. name or version
+    string field = 2;
+
+    // Only in the case of a VALUE_IN function, values may contain multiple entries.
+    repeated string values = 3;
+}
+
 // Represents a request structure to list NamedEntityIdentifiers.
 message NamedEntityIdentifierListRequest {
     // Name of the project that contains the identifiers.
@@ -208,11 +229,19 @@ message ResourceListRequest {
     // Indicates a list of filters passed as string.
     // More info on constructing filters : <Link>
     // +optional
-    string filters = 4;
+    // Deprecated. Use filter_keys.
+    string filters = 4 [deprecated = true];
 
-    // Sort ordering.
+    // Sort column ordering.
     // +optional
-    Sort sort_by = 5;
+    // Deprecated. Use sort_keys instead.
+    Sort sort_by = 5 [deprecated = true];
+
+    // Sort column(s) with direction.
+    repeated Sort sort_keys = 6;
+
+    // Filter columns by applying function to specified value
+    repeated Filter filter_keys = 7;
 }
 
 // Defines an email notification specification.
