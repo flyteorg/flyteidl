@@ -905,7 +905,7 @@
           },
           {
             "name": "filters",
-            "description": "Indicates a list of filters passed as string.\nMore info on constructing filters : \u003cLink\u003e\n+optional\nDeprecated. Use filter_keys.",
+            "description": "Indicates a list of filters passed as string.\nMore info on constructing filters : \u003cLink\u003e\n+optional.",
             "in": "query",
             "required": false,
             "type": "string"
@@ -1219,7 +1219,7 @@
           },
           {
             "name": "filters",
-            "description": "Indicates a list of filters passed as string.\nMore info on constructing filters : \u003cLink\u003e\n+optional\nDeprecated. Use filter_keys.",
+            "description": "Indicates a list of filters passed as string.\nMore info on constructing filters : \u003cLink\u003e\n+optional.",
             "in": "query",
             "required": false,
             "type": "string"
@@ -1300,7 +1300,7 @@
           },
           {
             "name": "filters",
-            "description": "Indicates a list of filters passed as string.\nMore info on constructing filters : \u003cLink\u003e\n+optional\nDeprecated. Use filter_keys.",
+            "description": "Indicates a list of filters passed as string.\nMore info on constructing filters : \u003cLink\u003e\n+optional.",
             "in": "query",
             "required": false,
             "type": "string"
@@ -2560,7 +2560,7 @@
           },
           {
             "name": "filters",
-            "description": "Indicates a list of filters passed as string.\nMore info on constructing filters : \u003cLink\u003e\n+optional\nDeprecated. Use filter_keys.",
+            "description": "Indicates a list of filters passed as string.\nMore info on constructing filters : \u003cLink\u003e\n+optional.",
             "in": "query",
             "required": false,
             "type": "string"
@@ -2641,7 +2641,7 @@
           },
           {
             "name": "filters",
-            "description": "Indicates a list of filters passed as string.\nMore info on constructing filters : \u003cLink\u003e\n+optional\nDeprecated. Use filter_keys.",
+            "description": "Indicates a list of filters passed as string.\nMore info on constructing filters : \u003cLink\u003e\n+optional.",
             "in": "query",
             "required": false,
             "type": "string"
@@ -3053,7 +3053,7 @@
           },
           {
             "name": "filters",
-            "description": "Indicates a list of filters passed as string.\nMore info on constructing filters : \u003cLink\u003e\n+optional\nDeprecated. Use filter_keys.",
+            "description": "Indicates a list of filters passed as string.\nMore info on constructing filters : \u003cLink\u003e\n+optional.",
             "in": "query",
             "required": false,
             "type": "string"
@@ -3134,7 +3134,7 @@
           },
           {
             "name": "filters",
-            "description": "Indicates a list of filters passed as string.\nMore info on constructing filters : \u003cLink\u003e\n+optional\nDeprecated. Use filter_keys.",
+            "description": "Indicates a list of filters passed as string.\nMore info on constructing filters : \u003cLink\u003e\n+optional.",
             "in": "query",
             "required": false,
             "type": "string"
@@ -3328,20 +3328,6 @@
       ],
       "default": "MANUAL",
       "description": "The method by which this execution was launched.\n\n - MANUAL: The default execution mode, MANUAL implies that an execution was launched by an individual.\n - SCHEDULED: A schedule triggered this execution launch.\n - SYSTEM: A system process was responsible for launching this execution rather an individual.\n - RELAUNCH: This execution was launched with identical inputs as a previous execution.\n - CHILD_WORKFLOW: This execution was triggered by another execution.\n - RECOVERED: This execution was recovered from another execution."
-    },
-    "FilterFunction": {
-      "type": "string",
-      "enum": [
-        "EQUAL",
-        "NOT_EQUAL",
-        "GREATER_THAN",
-        "GREATER_THAN_OR_EQUAL",
-        "LESS_THAN",
-        "LESS_THAN_OR_EQUAL",
-        "CONTAINS",
-        "VALUE_IN"
-      ],
-      "default": "EQUAL"
     },
     "IOStrategyDownloadMode": {
       "type": "string",
@@ -4106,25 +4092,6 @@
     },
     "adminExecutionUpdateResponse": {
       "type": "object"
-    },
-    "adminFilter": {
-      "type": "object",
-      "properties": {
-        "function": {
-          "$ref": "#/definitions/FilterFunction"
-        },
-        "field": {
-          "type": "string",
-          "title": "e.g. name or version"
-        },
-        "values": {
-          "type": "array",
-          "items": {
-            "type": "string"
-          },
-          "description": "Only in the case of a VALUE_IN function, values may contain multiple entries."
-        }
-      }
     },
     "adminFixedRate": {
       "type": "object",

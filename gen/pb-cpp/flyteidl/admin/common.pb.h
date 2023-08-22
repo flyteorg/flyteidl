@@ -49,7 +49,7 @@ struct TableStruct_flyteidl_2fadmin_2fcommon_2eproto {
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
   static const ::google::protobuf::internal::AuxillaryParseTableField aux[]
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
-  static const ::google::protobuf::internal::ParseTable schema[27]
+  static const ::google::protobuf::internal::ParseTable schema[26]
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
   static const ::google::protobuf::internal::FieldMetadata field_metadata[];
   static const ::google::protobuf::internal::SerializationTable serialization_table[];
@@ -73,9 +73,6 @@ extern EmailNotificationDefaultTypeInternal _EmailNotification_default_instance_
 class Envs;
 class EnvsDefaultTypeInternal;
 extern EnvsDefaultTypeInternal _Envs_default_instance_;
-class Filter;
-class FilterDefaultTypeInternal;
-extern FilterDefaultTypeInternal _Filter_default_instance_;
 class FlyteURLs;
 class FlyteURLsDefaultTypeInternal;
 extern FlyteURLsDefaultTypeInternal _FlyteURLs_default_instance_;
@@ -148,7 +145,6 @@ template<> ::flyteidl::admin::Annotations_ValuesEntry_DoNotUse* Arena::CreateMay
 template<> ::flyteidl::admin::AuthRole* Arena::CreateMaybeMessage<::flyteidl::admin::AuthRole>(Arena*);
 template<> ::flyteidl::admin::EmailNotification* Arena::CreateMaybeMessage<::flyteidl::admin::EmailNotification>(Arena*);
 template<> ::flyteidl::admin::Envs* Arena::CreateMaybeMessage<::flyteidl::admin::Envs>(Arena*);
-template<> ::flyteidl::admin::Filter* Arena::CreateMaybeMessage<::flyteidl::admin::Filter>(Arena*);
 template<> ::flyteidl::admin::FlyteURLs* Arena::CreateMaybeMessage<::flyteidl::admin::FlyteURLs>(Arena*);
 template<> ::flyteidl::admin::Labels* Arena::CreateMaybeMessage<::flyteidl::admin::Labels>(Arena*);
 template<> ::flyteidl::admin::Labels_ValuesEntry_DoNotUse* Arena::CreateMaybeMessage<::flyteidl::admin::Labels_ValuesEntry_DoNotUse>(Arena*);
@@ -195,33 +191,6 @@ inline bool Sort_Direction_Parse(
     const ::std::string& name, Sort_Direction* value) {
   return ::google::protobuf::internal::ParseNamedEnum<Sort_Direction>(
     Sort_Direction_descriptor(), name, value);
-}
-enum Filter_Function {
-  Filter_Function_EQUAL = 0,
-  Filter_Function_NOT_EQUAL = 1,
-  Filter_Function_GREATER_THAN = 2,
-  Filter_Function_GREATER_THAN_OR_EQUAL = 3,
-  Filter_Function_LESS_THAN = 4,
-  Filter_Function_LESS_THAN_OR_EQUAL = 5,
-  Filter_Function_CONTAINS = 6,
-  Filter_Function_VALUE_IN = 7,
-  Filter_Function_Filter_Function_INT_MIN_SENTINEL_DO_NOT_USE_ = std::numeric_limits<::google::protobuf::int32>::min(),
-  Filter_Function_Filter_Function_INT_MAX_SENTINEL_DO_NOT_USE_ = std::numeric_limits<::google::protobuf::int32>::max()
-};
-bool Filter_Function_IsValid(int value);
-const Filter_Function Filter_Function_Function_MIN = Filter_Function_EQUAL;
-const Filter_Function Filter_Function_Function_MAX = Filter_Function_VALUE_IN;
-const int Filter_Function_Function_ARRAYSIZE = Filter_Function_Function_MAX + 1;
-
-const ::google::protobuf::EnumDescriptor* Filter_Function_descriptor();
-inline const ::std::string& Filter_Function_Name(Filter_Function value) {
-  return ::google::protobuf::internal::NameOfEnum(
-    Filter_Function_descriptor(), value);
-}
-inline bool Filter_Function_Parse(
-    const ::std::string& name, Filter_Function* value) {
-  return ::google::protobuf::internal::ParseNamedEnum<Filter_Function>(
-    Filter_Function_descriptor(), name, value);
 }
 enum NamedEntityState {
   NAMED_ENTITY_ACTIVE = 0,
@@ -809,194 +778,6 @@ class Sort final :
 };
 // -------------------------------------------------------------------
 
-class Filter final :
-    public ::google::protobuf::Message /* @@protoc_insertion_point(class_definition:flyteidl.admin.Filter) */ {
- public:
-  Filter();
-  virtual ~Filter();
-
-  Filter(const Filter& from);
-
-  inline Filter& operator=(const Filter& from) {
-    CopyFrom(from);
-    return *this;
-  }
-  #if LANG_CXX11
-  Filter(Filter&& from) noexcept
-    : Filter() {
-    *this = ::std::move(from);
-  }
-
-  inline Filter& operator=(Filter&& from) noexcept {
-    if (GetArenaNoVirtual() == from.GetArenaNoVirtual()) {
-      if (this != &from) InternalSwap(&from);
-    } else {
-      CopyFrom(from);
-    }
-    return *this;
-  }
-  #endif
-  static const ::google::protobuf::Descriptor* descriptor() {
-    return default_instance().GetDescriptor();
-  }
-  static const Filter& default_instance();
-
-  static void InitAsDefaultInstance();  // FOR INTERNAL USE ONLY
-  static inline const Filter* internal_default_instance() {
-    return reinterpret_cast<const Filter*>(
-               &_Filter_default_instance_);
-  }
-  static constexpr int kIndexInFileMessages =
-    4;
-
-  void Swap(Filter* other);
-  friend void swap(Filter& a, Filter& b) {
-    a.Swap(&b);
-  }
-
-  // implements Message ----------------------------------------------
-
-  inline Filter* New() const final {
-    return CreateMaybeMessage<Filter>(nullptr);
-  }
-
-  Filter* New(::google::protobuf::Arena* arena) const final {
-    return CreateMaybeMessage<Filter>(arena);
-  }
-  void CopyFrom(const ::google::protobuf::Message& from) final;
-  void MergeFrom(const ::google::protobuf::Message& from) final;
-  void CopyFrom(const Filter& from);
-  void MergeFrom(const Filter& from);
-  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
-  bool IsInitialized() const final;
-
-  size_t ByteSizeLong() const final;
-  #if GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
-  static const char* _InternalParse(const char* begin, const char* end, void* object, ::google::protobuf::internal::ParseContext* ctx);
-  ::google::protobuf::internal::ParseFunc _ParseFunc() const final { return _InternalParse; }
-  #else
-  bool MergePartialFromCodedStream(
-      ::google::protobuf::io::CodedInputStream* input) final;
-  #endif  // GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
-  void SerializeWithCachedSizes(
-      ::google::protobuf::io::CodedOutputStream* output) const final;
-  ::google::protobuf::uint8* InternalSerializeWithCachedSizesToArray(
-      ::google::protobuf::uint8* target) const final;
-  int GetCachedSize() const final { return _cached_size_.Get(); }
-
-  private:
-  void SharedCtor();
-  void SharedDtor();
-  void SetCachedSize(int size) const final;
-  void InternalSwap(Filter* other);
-  private:
-  inline ::google::protobuf::Arena* GetArenaNoVirtual() const {
-    return nullptr;
-  }
-  inline void* MaybeArenaPtr() const {
-    return nullptr;
-  }
-  public:
-
-  ::google::protobuf::Metadata GetMetadata() const final;
-
-  // nested types ----------------------------------------------------
-
-  typedef Filter_Function Function;
-  static const Function EQUAL =
-    Filter_Function_EQUAL;
-  static const Function NOT_EQUAL =
-    Filter_Function_NOT_EQUAL;
-  static const Function GREATER_THAN =
-    Filter_Function_GREATER_THAN;
-  static const Function GREATER_THAN_OR_EQUAL =
-    Filter_Function_GREATER_THAN_OR_EQUAL;
-  static const Function LESS_THAN =
-    Filter_Function_LESS_THAN;
-  static const Function LESS_THAN_OR_EQUAL =
-    Filter_Function_LESS_THAN_OR_EQUAL;
-  static const Function CONTAINS =
-    Filter_Function_CONTAINS;
-  static const Function VALUE_IN =
-    Filter_Function_VALUE_IN;
-  static inline bool Function_IsValid(int value) {
-    return Filter_Function_IsValid(value);
-  }
-  static const Function Function_MIN =
-    Filter_Function_Function_MIN;
-  static const Function Function_MAX =
-    Filter_Function_Function_MAX;
-  static const int Function_ARRAYSIZE =
-    Filter_Function_Function_ARRAYSIZE;
-  static inline const ::google::protobuf::EnumDescriptor*
-  Function_descriptor() {
-    return Filter_Function_descriptor();
-  }
-  static inline const ::std::string& Function_Name(Function value) {
-    return Filter_Function_Name(value);
-  }
-  static inline bool Function_Parse(const ::std::string& name,
-      Function* value) {
-    return Filter_Function_Parse(name, value);
-  }
-
-  // accessors -------------------------------------------------------
-
-  // repeated string values = 3;
-  int values_size() const;
-  void clear_values();
-  static const int kValuesFieldNumber = 3;
-  const ::std::string& values(int index) const;
-  ::std::string* mutable_values(int index);
-  void set_values(int index, const ::std::string& value);
-  #if LANG_CXX11
-  void set_values(int index, ::std::string&& value);
-  #endif
-  void set_values(int index, const char* value);
-  void set_values(int index, const char* value, size_t size);
-  ::std::string* add_values();
-  void add_values(const ::std::string& value);
-  #if LANG_CXX11
-  void add_values(::std::string&& value);
-  #endif
-  void add_values(const char* value);
-  void add_values(const char* value, size_t size);
-  const ::google::protobuf::RepeatedPtrField<::std::string>& values() const;
-  ::google::protobuf::RepeatedPtrField<::std::string>* mutable_values();
-
-  // string field = 2;
-  void clear_field();
-  static const int kFieldFieldNumber = 2;
-  const ::std::string& field() const;
-  void set_field(const ::std::string& value);
-  #if LANG_CXX11
-  void set_field(::std::string&& value);
-  #endif
-  void set_field(const char* value);
-  void set_field(const char* value, size_t size);
-  ::std::string* mutable_field();
-  ::std::string* release_field();
-  void set_allocated_field(::std::string* field);
-
-  // .flyteidl.admin.Filter.Function function = 1;
-  void clear_function();
-  static const int kFunctionFieldNumber = 1;
-  ::flyteidl::admin::Filter_Function function() const;
-  void set_function(::flyteidl::admin::Filter_Function value);
-
-  // @@protoc_insertion_point(class_scope:flyteidl.admin.Filter)
- private:
-  class HasBitSetters;
-
-  ::google::protobuf::internal::InternalMetadataWithArena _internal_metadata_;
-  ::google::protobuf::RepeatedPtrField<::std::string> values_;
-  ::google::protobuf::internal::ArenaStringPtr field_;
-  int function_;
-  mutable ::google::protobuf::internal::CachedSize _cached_size_;
-  friend struct ::TableStruct_flyteidl_2fadmin_2fcommon_2eproto;
-};
-// -------------------------------------------------------------------
-
 class NamedEntityIdentifierListRequest final :
     public ::google::protobuf::Message /* @@protoc_insertion_point(class_definition:flyteidl.admin.NamedEntityIdentifierListRequest) */ {
  public:
@@ -1035,7 +816,7 @@ class NamedEntityIdentifierListRequest final :
                &_NamedEntityIdentifierListRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    5;
+    4;
 
   void Swap(NamedEntityIdentifierListRequest* other);
   friend void swap(NamedEntityIdentifierListRequest& a, NamedEntityIdentifierListRequest& b) {
@@ -1217,7 +998,7 @@ class NamedEntityListRequest final :
                &_NamedEntityListRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    6;
+    5;
 
   void Swap(NamedEntityListRequest* other);
   friend void swap(NamedEntityListRequest& a, NamedEntityListRequest& b) {
@@ -1406,7 +1187,7 @@ class NamedEntityIdentifierList final :
                &_NamedEntityIdentifierList_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    7;
+    6;
 
   void Swap(NamedEntityIdentifierList* other);
   friend void swap(NamedEntityIdentifierList& a, NamedEntityIdentifierList& b) {
@@ -1539,7 +1320,7 @@ class NamedEntityList final :
                &_NamedEntityList_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    8;
+    7;
 
   void Swap(NamedEntityList* other);
   friend void swap(NamedEntityList& a, NamedEntityList& b) {
@@ -1672,7 +1453,7 @@ class NamedEntityGetRequest final :
                &_NamedEntityGetRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    9;
+    8;
 
   void Swap(NamedEntityGetRequest* other);
   friend void swap(NamedEntityGetRequest& a, NamedEntityGetRequest& b) {
@@ -1794,7 +1575,7 @@ class NamedEntityUpdateRequest final :
                &_NamedEntityUpdateRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    10;
+    9;
 
   void Swap(NamedEntityUpdateRequest* other);
   friend void swap(NamedEntityUpdateRequest& a, NamedEntityUpdateRequest& b) {
@@ -1926,7 +1707,7 @@ class NamedEntityUpdateResponse final :
                &_NamedEntityUpdateResponse_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    11;
+    10;
 
   void Swap(NamedEntityUpdateResponse* other);
   friend void swap(NamedEntityUpdateResponse& a, NamedEntityUpdateResponse& b) {
@@ -2031,7 +1812,7 @@ class ObjectGetRequest final :
                &_ObjectGetRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    12;
+    11;
 
   void Swap(ObjectGetRequest* other);
   friend void swap(ObjectGetRequest& a, ObjectGetRequest& b) {
@@ -2146,7 +1927,7 @@ class ResourceListRequest final :
                &_ResourceListRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    13;
+    12;
 
   void Swap(ResourceListRequest* other);
   friend void swap(ResourceListRequest& a, ResourceListRequest& b) {
@@ -2215,18 +1996,6 @@ class ResourceListRequest final :
   const ::google::protobuf::RepeatedPtrField< ::flyteidl::admin::Sort >&
       sort_keys() const;
 
-  // repeated .flyteidl.admin.Filter filter_keys = 7;
-  int filter_keys_size() const;
-  void clear_filter_keys();
-  static const int kFilterKeysFieldNumber = 7;
-  ::flyteidl::admin::Filter* mutable_filter_keys(int index);
-  ::google::protobuf::RepeatedPtrField< ::flyteidl::admin::Filter >*
-      mutable_filter_keys();
-  const ::flyteidl::admin::Filter& filter_keys(int index) const;
-  ::flyteidl::admin::Filter* add_filter_keys();
-  const ::google::protobuf::RepeatedPtrField< ::flyteidl::admin::Filter >&
-      filter_keys() const;
-
   // string token = 3;
   void clear_token();
   static const int kTokenFieldNumber = 3;
@@ -2241,19 +2010,19 @@ class ResourceListRequest final :
   ::std::string* release_token();
   void set_allocated_token(::std::string* token);
 
-  // string filters = 4 [deprecated = true];
-  PROTOBUF_DEPRECATED void clear_filters();
-  PROTOBUF_DEPRECATED static const int kFiltersFieldNumber = 4;
-  PROTOBUF_DEPRECATED const ::std::string& filters() const;
-  PROTOBUF_DEPRECATED void set_filters(const ::std::string& value);
+  // string filters = 4;
+  void clear_filters();
+  static const int kFiltersFieldNumber = 4;
+  const ::std::string& filters() const;
+  void set_filters(const ::std::string& value);
   #if LANG_CXX11
-  PROTOBUF_DEPRECATED void set_filters(::std::string&& value);
+  void set_filters(::std::string&& value);
   #endif
-  PROTOBUF_DEPRECATED void set_filters(const char* value);
-  PROTOBUF_DEPRECATED void set_filters(const char* value, size_t size);
-  PROTOBUF_DEPRECATED ::std::string* mutable_filters();
-  PROTOBUF_DEPRECATED ::std::string* release_filters();
-  PROTOBUF_DEPRECATED void set_allocated_filters(::std::string* filters);
+  void set_filters(const char* value);
+  void set_filters(const char* value, size_t size);
+  ::std::string* mutable_filters();
+  ::std::string* release_filters();
+  void set_allocated_filters(::std::string* filters);
 
   // .flyteidl.admin.NamedEntityIdentifier id = 1;
   bool has_id() const;
@@ -2285,7 +2054,6 @@ class ResourceListRequest final :
 
   ::google::protobuf::internal::InternalMetadataWithArena _internal_metadata_;
   ::google::protobuf::RepeatedPtrField< ::flyteidl::admin::Sort > sort_keys_;
-  ::google::protobuf::RepeatedPtrField< ::flyteidl::admin::Filter > filter_keys_;
   ::google::protobuf::internal::ArenaStringPtr token_;
   ::google::protobuf::internal::ArenaStringPtr filters_;
   ::flyteidl::admin::NamedEntityIdentifier* id_;
@@ -2334,7 +2102,7 @@ class EmailNotification final :
                &_EmailNotification_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    14;
+    13;
 
   void Swap(EmailNotification* other);
   friend void swap(EmailNotification& a, EmailNotification& b) {
@@ -2462,7 +2230,7 @@ class PagerDutyNotification final :
                &_PagerDutyNotification_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    15;
+    14;
 
   void Swap(PagerDutyNotification* other);
   friend void swap(PagerDutyNotification& a, PagerDutyNotification& b) {
@@ -2590,7 +2358,7 @@ class SlackNotification final :
                &_SlackNotification_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    16;
+    15;
 
   void Swap(SlackNotification* other);
   friend void swap(SlackNotification& a, SlackNotification& b) {
@@ -2725,7 +2493,7 @@ class Notification final :
                &_Notification_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    17;
+    16;
 
   void Swap(Notification* other);
   friend void swap(Notification& a, Notification& b) {
@@ -2885,7 +2653,7 @@ class UrlBlob final :
                &_UrlBlob_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    18;
+    17;
 
   void Swap(UrlBlob* other);
   friend void swap(UrlBlob& a, UrlBlob& b) {
@@ -3036,7 +2804,7 @@ class Labels final :
                &_Labels_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    20;
+    19;
 
   void Swap(Labels* other);
   friend void swap(Labels& a, Labels& b) {
@@ -3181,7 +2949,7 @@ class Annotations final :
                &_Annotations_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    22;
+    21;
 
   void Swap(Annotations* other);
   friend void swap(Annotations& a, Annotations& b) {
@@ -3302,7 +3070,7 @@ class Envs final :
                &_Envs_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    23;
+    22;
 
   void Swap(Envs* other);
   friend void swap(Envs& a, Envs& b) {
@@ -3420,7 +3188,7 @@ class AuthRole final :
                &_AuthRole_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    24;
+    23;
 
   void Swap(AuthRole* other);
   friend void swap(AuthRole& a, AuthRole& b) {
@@ -3555,7 +3323,7 @@ class RawOutputDataConfig final :
                &_RawOutputDataConfig_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    25;
+    24;
 
   void Swap(RawOutputDataConfig* other);
   friend void swap(RawOutputDataConfig& a, RawOutputDataConfig& b) {
@@ -3675,7 +3443,7 @@ class FlyteURLs final :
                &_FlyteURLs_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    26;
+    25;
 
   void Swap(FlyteURLs* other);
   friend void swap(FlyteURLs& a, FlyteURLs& b) {
@@ -4215,146 +3983,6 @@ inline void Sort::set_direction(::flyteidl::admin::Sort_Direction value) {
   
   direction_ = value;
   // @@protoc_insertion_point(field_set:flyteidl.admin.Sort.direction)
-}
-
-// -------------------------------------------------------------------
-
-// Filter
-
-// .flyteidl.admin.Filter.Function function = 1;
-inline void Filter::clear_function() {
-  function_ = 0;
-}
-inline ::flyteidl::admin::Filter_Function Filter::function() const {
-  // @@protoc_insertion_point(field_get:flyteidl.admin.Filter.function)
-  return static_cast< ::flyteidl::admin::Filter_Function >(function_);
-}
-inline void Filter::set_function(::flyteidl::admin::Filter_Function value) {
-  
-  function_ = value;
-  // @@protoc_insertion_point(field_set:flyteidl.admin.Filter.function)
-}
-
-// string field = 2;
-inline void Filter::clear_field() {
-  field_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-}
-inline const ::std::string& Filter::field() const {
-  // @@protoc_insertion_point(field_get:flyteidl.admin.Filter.field)
-  return field_.GetNoArena();
-}
-inline void Filter::set_field(const ::std::string& value) {
-  
-  field_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
-  // @@protoc_insertion_point(field_set:flyteidl.admin.Filter.field)
-}
-#if LANG_CXX11
-inline void Filter::set_field(::std::string&& value) {
-  
-  field_.SetNoArena(
-    &::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::move(value));
-  // @@protoc_insertion_point(field_set_rvalue:flyteidl.admin.Filter.field)
-}
-#endif
-inline void Filter::set_field(const char* value) {
-  GOOGLE_DCHECK(value != nullptr);
-  
-  field_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
-  // @@protoc_insertion_point(field_set_char:flyteidl.admin.Filter.field)
-}
-inline void Filter::set_field(const char* value, size_t size) {
-  
-  field_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
-      ::std::string(reinterpret_cast<const char*>(value), size));
-  // @@protoc_insertion_point(field_set_pointer:flyteidl.admin.Filter.field)
-}
-inline ::std::string* Filter::mutable_field() {
-  
-  // @@protoc_insertion_point(field_mutable:flyteidl.admin.Filter.field)
-  return field_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-}
-inline ::std::string* Filter::release_field() {
-  // @@protoc_insertion_point(field_release:flyteidl.admin.Filter.field)
-  
-  return field_.ReleaseNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-}
-inline void Filter::set_allocated_field(::std::string* field) {
-  if (field != nullptr) {
-    
-  } else {
-    
-  }
-  field_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), field);
-  // @@protoc_insertion_point(field_set_allocated:flyteidl.admin.Filter.field)
-}
-
-// repeated string values = 3;
-inline int Filter::values_size() const {
-  return values_.size();
-}
-inline void Filter::clear_values() {
-  values_.Clear();
-}
-inline const ::std::string& Filter::values(int index) const {
-  // @@protoc_insertion_point(field_get:flyteidl.admin.Filter.values)
-  return values_.Get(index);
-}
-inline ::std::string* Filter::mutable_values(int index) {
-  // @@protoc_insertion_point(field_mutable:flyteidl.admin.Filter.values)
-  return values_.Mutable(index);
-}
-inline void Filter::set_values(int index, const ::std::string& value) {
-  // @@protoc_insertion_point(field_set:flyteidl.admin.Filter.values)
-  values_.Mutable(index)->assign(value);
-}
-#if LANG_CXX11
-inline void Filter::set_values(int index, ::std::string&& value) {
-  // @@protoc_insertion_point(field_set:flyteidl.admin.Filter.values)
-  values_.Mutable(index)->assign(std::move(value));
-}
-#endif
-inline void Filter::set_values(int index, const char* value) {
-  GOOGLE_DCHECK(value != nullptr);
-  values_.Mutable(index)->assign(value);
-  // @@protoc_insertion_point(field_set_char:flyteidl.admin.Filter.values)
-}
-inline void Filter::set_values(int index, const char* value, size_t size) {
-  values_.Mutable(index)->assign(
-    reinterpret_cast<const char*>(value), size);
-  // @@protoc_insertion_point(field_set_pointer:flyteidl.admin.Filter.values)
-}
-inline ::std::string* Filter::add_values() {
-  // @@protoc_insertion_point(field_add_mutable:flyteidl.admin.Filter.values)
-  return values_.Add();
-}
-inline void Filter::add_values(const ::std::string& value) {
-  values_.Add()->assign(value);
-  // @@protoc_insertion_point(field_add:flyteidl.admin.Filter.values)
-}
-#if LANG_CXX11
-inline void Filter::add_values(::std::string&& value) {
-  values_.Add(std::move(value));
-  // @@protoc_insertion_point(field_add:flyteidl.admin.Filter.values)
-}
-#endif
-inline void Filter::add_values(const char* value) {
-  GOOGLE_DCHECK(value != nullptr);
-  values_.Add()->assign(value);
-  // @@protoc_insertion_point(field_add_char:flyteidl.admin.Filter.values)
-}
-inline void Filter::add_values(const char* value, size_t size) {
-  values_.Add()->assign(reinterpret_cast<const char*>(value), size);
-  // @@protoc_insertion_point(field_add_pointer:flyteidl.admin.Filter.values)
-}
-inline const ::google::protobuf::RepeatedPtrField<::std::string>&
-Filter::values() const {
-  // @@protoc_insertion_point(field_list:flyteidl.admin.Filter.values)
-  return values_;
-}
-inline ::google::protobuf::RepeatedPtrField<::std::string>*
-Filter::mutable_values() {
-  // @@protoc_insertion_point(field_mutable_list:flyteidl.admin.Filter.values)
-  return &values_;
 }
 
 // -------------------------------------------------------------------
@@ -5471,7 +5099,7 @@ inline void ResourceListRequest::set_allocated_token(::std::string* token) {
   // @@protoc_insertion_point(field_set_allocated:flyteidl.admin.ResourceListRequest.token)
 }
 
-// string filters = 4 [deprecated = true];
+// string filters = 4;
 inline void ResourceListRequest::clear_filters() {
   filters_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
 }
@@ -5603,36 +5231,6 @@ inline const ::google::protobuf::RepeatedPtrField< ::flyteidl::admin::Sort >&
 ResourceListRequest::sort_keys() const {
   // @@protoc_insertion_point(field_list:flyteidl.admin.ResourceListRequest.sort_keys)
   return sort_keys_;
-}
-
-// repeated .flyteidl.admin.Filter filter_keys = 7;
-inline int ResourceListRequest::filter_keys_size() const {
-  return filter_keys_.size();
-}
-inline void ResourceListRequest::clear_filter_keys() {
-  filter_keys_.Clear();
-}
-inline ::flyteidl::admin::Filter* ResourceListRequest::mutable_filter_keys(int index) {
-  // @@protoc_insertion_point(field_mutable:flyteidl.admin.ResourceListRequest.filter_keys)
-  return filter_keys_.Mutable(index);
-}
-inline ::google::protobuf::RepeatedPtrField< ::flyteidl::admin::Filter >*
-ResourceListRequest::mutable_filter_keys() {
-  // @@protoc_insertion_point(field_mutable_list:flyteidl.admin.ResourceListRequest.filter_keys)
-  return &filter_keys_;
-}
-inline const ::flyteidl::admin::Filter& ResourceListRequest::filter_keys(int index) const {
-  // @@protoc_insertion_point(field_get:flyteidl.admin.ResourceListRequest.filter_keys)
-  return filter_keys_.Get(index);
-}
-inline ::flyteidl::admin::Filter* ResourceListRequest::add_filter_keys() {
-  // @@protoc_insertion_point(field_add:flyteidl.admin.ResourceListRequest.filter_keys)
-  return filter_keys_.Add();
-}
-inline const ::google::protobuf::RepeatedPtrField< ::flyteidl::admin::Filter >&
-ResourceListRequest::filter_keys() const {
-  // @@protoc_insertion_point(field_list:flyteidl.admin.ResourceListRequest.filter_keys)
-  return filter_keys_;
 }
 
 // -------------------------------------------------------------------
@@ -6553,8 +6151,6 @@ inline void FlyteURLs::set_allocated_deck(::std::string* deck) {
 
 // -------------------------------------------------------------------
 
-// -------------------------------------------------------------------
-
 
 // @@protoc_insertion_point(namespace_scope)
 
@@ -6568,11 +6164,6 @@ template <> struct is_proto_enum< ::flyteidl::admin::Sort_Direction> : ::std::tr
 template <>
 inline const EnumDescriptor* GetEnumDescriptor< ::flyteidl::admin::Sort_Direction>() {
   return ::flyteidl::admin::Sort_Direction_descriptor();
-}
-template <> struct is_proto_enum< ::flyteidl::admin::Filter_Function> : ::std::true_type {};
-template <>
-inline const EnumDescriptor* GetEnumDescriptor< ::flyteidl::admin::Filter_Function>() {
-  return ::flyteidl::admin::Filter_Function_descriptor();
 }
 template <> struct is_proto_enum< ::flyteidl::admin::NamedEntityState> : ::std::true_type {};
 template <>

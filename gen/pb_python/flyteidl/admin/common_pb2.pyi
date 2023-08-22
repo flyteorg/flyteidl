@@ -61,34 +61,6 @@ class Sort(_message.Message):
     direction: Sort.Direction
     def __init__(self, key: _Optional[str] = ..., direction: _Optional[_Union[Sort.Direction, str]] = ...) -> None: ...
 
-class Filter(_message.Message):
-    __slots__ = ["function", "field", "values"]
-    class Function(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
-        __slots__ = []
-        EQUAL: _ClassVar[Filter.Function]
-        NOT_EQUAL: _ClassVar[Filter.Function]
-        GREATER_THAN: _ClassVar[Filter.Function]
-        GREATER_THAN_OR_EQUAL: _ClassVar[Filter.Function]
-        LESS_THAN: _ClassVar[Filter.Function]
-        LESS_THAN_OR_EQUAL: _ClassVar[Filter.Function]
-        CONTAINS: _ClassVar[Filter.Function]
-        VALUE_IN: _ClassVar[Filter.Function]
-    EQUAL: Filter.Function
-    NOT_EQUAL: Filter.Function
-    GREATER_THAN: Filter.Function
-    GREATER_THAN_OR_EQUAL: Filter.Function
-    LESS_THAN: Filter.Function
-    LESS_THAN_OR_EQUAL: Filter.Function
-    CONTAINS: Filter.Function
-    VALUE_IN: Filter.Function
-    FUNCTION_FIELD_NUMBER: _ClassVar[int]
-    FIELD_FIELD_NUMBER: _ClassVar[int]
-    VALUES_FIELD_NUMBER: _ClassVar[int]
-    function: Filter.Function
-    field: str
-    values: _containers.RepeatedScalarFieldContainer[str]
-    def __init__(self, function: _Optional[_Union[Filter.Function, str]] = ..., field: _Optional[str] = ..., values: _Optional[_Iterable[str]] = ...) -> None: ...
-
 class NamedEntityIdentifierListRequest(_message.Message):
     __slots__ = ["project", "domain", "limit", "token", "sort_by", "filters"]
     PROJECT_FIELD_NUMBER: _ClassVar[int]
@@ -168,22 +140,20 @@ class ObjectGetRequest(_message.Message):
     def __init__(self, id: _Optional[_Union[_identifier_pb2.Identifier, _Mapping]] = ...) -> None: ...
 
 class ResourceListRequest(_message.Message):
-    __slots__ = ["id", "limit", "token", "filters", "sort_by", "sort_keys", "filter_keys"]
+    __slots__ = ["id", "limit", "token", "filters", "sort_by", "sort_keys"]
     ID_FIELD_NUMBER: _ClassVar[int]
     LIMIT_FIELD_NUMBER: _ClassVar[int]
     TOKEN_FIELD_NUMBER: _ClassVar[int]
     FILTERS_FIELD_NUMBER: _ClassVar[int]
     SORT_BY_FIELD_NUMBER: _ClassVar[int]
     SORT_KEYS_FIELD_NUMBER: _ClassVar[int]
-    FILTER_KEYS_FIELD_NUMBER: _ClassVar[int]
     id: NamedEntityIdentifier
     limit: int
     token: str
     filters: str
     sort_by: Sort
     sort_keys: _containers.RepeatedCompositeFieldContainer[Sort]
-    filter_keys: _containers.RepeatedCompositeFieldContainer[Filter]
-    def __init__(self, id: _Optional[_Union[NamedEntityIdentifier, _Mapping]] = ..., limit: _Optional[int] = ..., token: _Optional[str] = ..., filters: _Optional[str] = ..., sort_by: _Optional[_Union[Sort, _Mapping]] = ..., sort_keys: _Optional[_Iterable[_Union[Sort, _Mapping]]] = ..., filter_keys: _Optional[_Iterable[_Union[Filter, _Mapping]]] = ...) -> None: ...
+    def __init__(self, id: _Optional[_Union[NamedEntityIdentifier, _Mapping]] = ..., limit: _Optional[int] = ..., token: _Optional[str] = ..., filters: _Optional[str] = ..., sort_by: _Optional[_Union[Sort, _Mapping]] = ..., sort_keys: _Optional[_Iterable[_Union[Sort, _Mapping]]] = ...) -> None: ...
 
 class EmailNotification(_message.Message):
     __slots__ = ["recipients_email"]
