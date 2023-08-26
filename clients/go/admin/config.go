@@ -55,6 +55,7 @@ type Config struct {
 	ClientSecretLocation string   `json:"clientSecretLocation" pflag:",File containing the client secret"`
 	ClientSecretEnvVar   string   `json:"clientSecretEnvVar" pflag:",Environment variable containing the client secret"`
 	APIKeyEnvVar         string   `json:"apiKeyEnvVar" pflag:",Environment variable containing the API Key"`
+	APIKeyLocation       string   `json:"apiKeyLocation" pflag:",File containing the API Key"`
 	Scopes               []string `json:"scopes" pflag:",List of scopes to request"`
 	UseAudienceFromAdmin bool     `json:"useAudienceFromAdmin" pflag:",Use Audience configured from admins public endpoint config."`
 	Audience             string   `json:"audience" pflag:",Audience to use when initiating OAuth2 authorization requests."`

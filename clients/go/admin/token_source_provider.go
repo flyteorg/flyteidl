@@ -3,7 +3,6 @@ package admin
 import (
 	"context"
 	"fmt"
-	"io/ioutil"
 	"net/url"
 	"os"
 	"strings"
@@ -47,6 +46,9 @@ func NewTokenSourceProvider(ctx context.Context, cfg *Config, tokenCache cache.T
 	apiKey := os.Getenv(cfg.APIKeyEnvVar)
 	if len(apiKey) > 0 {
 		logger.Debugf(ctx, "Using API key from environment variable [%s]", cfg.APIKeyEnvVar)
+		cfg.AuthType = AuthTypeAPIKey
+	} else if len(cfg.APIKeyLocation) > 0 {
+		logger.Debugf(ctx, "Using API Key from file [%s]", cfg.APIKeyLocation)
 		cfg.AuthType = AuthTypeAPIKey
 	}
 
@@ -200,8 +202,17 @@ type ClientCredentialsTokenSourceProvider struct {
 func NewClientCredentialsTokenSourceProviderFromAPIKey(cfg *Config, scopes []string, tokenURL string,
 	tokenCache cache.TokenCache, audience string) (TokenSourceProvider, error) {
 	apiKey := os.Getenv(cfg.APIKeyEnvVar)
-	if len(apiKey) == 0 {
+	if len(apiKey) == 0 && len(cfg.APIKeyLocation) == 0 {
 		return nil, fmt.Errorf("API key is empty at Env Var [%v]", cfg.APIKeyEnvVar)
+	}
+
+	if len(apiKey) == 0 {
+		raw, err := os.ReadFile(cfg.APIKeyLocation)
+		if err != nil {
+			return nil, fmt.Errorf("failed to read API Key from [%v]. Error: %w", cfg.APIKeyLocation, err)
+		}
+
+		apiKey = string(raw)
 	}
 
 	decoded, err := DecodeAPIKey(apiKey)
@@ -218,7 +229,7 @@ func NewClientCredentialsTokenSourceProvider(ctx context.Context, cfg *Config, s
 	if len(cfg.ClientSecretEnvVar) > 0 {
 		secret = os.Getenv(cfg.ClientSecretEnvVar)
 	} else if len(cfg.ClientSecretLocation) > 0 {
-		secretBytes, err := ioutil.ReadFile(cfg.ClientSecretLocation)
+		secretBytes, err := os.ReadFile(cfg.ClientSecretLocation)
 		if err != nil {
 			logger.Errorf(ctx, "Error reading secret from location %s", cfg.ClientSecretLocation)
 			return nil, err
