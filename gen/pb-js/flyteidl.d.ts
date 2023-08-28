@@ -3153,9 +3153,6 @@ export namespace flyteidl {
             /** Literal map */
             map?: (flyteidl.core.ILiteralMap|null);
 
-            /** Literal artifactId */
-            artifactId?: (flyteidl.core.IArtifactID|null);
-
             /** Literal hash */
             hash?: (string|null);
 
@@ -3184,9 +3181,6 @@ export namespace flyteidl {
             /** Literal map. */
             public map?: (flyteidl.core.ILiteralMap|null);
 
-            /** Literal artifactId. */
-            public artifactId?: (flyteidl.core.IArtifactID|null);
-
             /** Literal hash. */
             public hash: string;
 
@@ -3197,7 +3191,7 @@ export namespace flyteidl {
             public literalType?: (flyteidl.core.ILiteralType|null);
 
             /** Literal value. */
-            public value?: ("scalar"|"collection"|"map"|"artifactId");
+            public value?: ("scalar"|"collection"|"map");
 
             /**
              * Creates a new Literal instance using the specified properties.
@@ -5182,6 +5176,9 @@ export namespace flyteidl {
 
             /** Parameter artifactQuery */
             artifactQuery?: (flyteidl.core.IArtifactQuery|null);
+
+            /** Parameter artifactId */
+            artifactId?: (flyteidl.core.IArtifactID|null);
         }
 
         /** Represents a Parameter. */
@@ -5205,8 +5202,11 @@ export namespace flyteidl {
             /** Parameter artifactQuery. */
             public artifactQuery?: (flyteidl.core.IArtifactQuery|null);
 
+            /** Parameter artifactId. */
+            public artifactId?: (flyteidl.core.IArtifactID|null);
+
             /** Parameter behavior. */
-            public behavior?: ("default"|"required"|"artifactQuery");
+            public behavior?: ("default"|"required"|"artifactQuery"|"artifactId");
 
             /**
              * Creates a new Parameter instance using the specified properties.

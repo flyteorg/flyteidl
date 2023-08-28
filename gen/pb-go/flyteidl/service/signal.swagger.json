@@ -247,35 +247,6 @@
       },
       "description": "Specifies sort ordering in a list request."
     },
-    "coreArtifactID": {
-      "type": "object",
-      "properties": {
-        "artifact_key": {
-          "$ref": "#/definitions/coreArtifactKey"
-        },
-        "version": {
-          "type": "string"
-        },
-        "partitions": {
-          "$ref": "#/definitions/corePartitions"
-        }
-      }
-    },
-    "coreArtifactKey": {
-      "type": "object",
-      "properties": {
-        "project": {
-          "type": "string",
-          "description": "Project and domain and suffix needs to be unique across a given artifact store."
-        },
-        "domain": {
-          "type": "string"
-        },
-        "name": {
-          "type": "string"
-        }
-      }
-    },
     "coreBinary": {
       "type": "object",
       "properties": {
@@ -363,10 +334,6 @@
         "map": {
           "$ref": "#/definitions/coreLiteralMap",
           "description": "A map of strings to literals."
-        },
-        "artifact_id": {
-          "$ref": "#/definitions/coreArtifactID",
-          "title": "A reference to another Literal"
         },
         "hash": {
           "type": "string",
@@ -459,17 +426,6 @@
         }
       },
       "description": "Defines a strong type to allow type checking between interfaces."
-    },
-    "corePartitions": {
-      "type": "object",
-      "properties": {
-        "value": {
-          "type": "object",
-          "additionalProperties": {
-            "type": "string"
-          }
-        }
-      }
     },
     "corePrimitive": {
       "type": "object",

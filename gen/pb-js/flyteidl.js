@@ -7593,7 +7593,6 @@
                  * @property {flyteidl.core.IScalar|null} [scalar] Literal scalar
                  * @property {flyteidl.core.ILiteralCollection|null} [collection] Literal collection
                  * @property {flyteidl.core.ILiteralMap|null} [map] Literal map
-                 * @property {flyteidl.core.IArtifactID|null} [artifactId] Literal artifactId
                  * @property {string|null} [hash] Literal hash
                  * @property {Object.<string,string>|null} [metadata] Literal metadata
                  * @property {flyteidl.core.ILiteralType|null} [literalType] Literal literalType
@@ -7640,14 +7639,6 @@
                 Literal.prototype.map = null;
     
                 /**
-                 * Literal artifactId.
-                 * @member {flyteidl.core.IArtifactID|null|undefined} artifactId
-                 * @memberof flyteidl.core.Literal
-                 * @instance
-                 */
-                Literal.prototype.artifactId = null;
-    
-                /**
                  * Literal hash.
                  * @member {string} hash
                  * @memberof flyteidl.core.Literal
@@ -7676,12 +7667,12 @@
     
                 /**
                  * Literal value.
-                 * @member {"scalar"|"collection"|"map"|"artifactId"|undefined} value
+                 * @member {"scalar"|"collection"|"map"|undefined} value
                  * @memberof flyteidl.core.Literal
                  * @instance
                  */
                 Object.defineProperty(Literal.prototype, "value", {
-                    get: $util.oneOfGetter($oneOfFields = ["scalar", "collection", "map", "artifactId"]),
+                    get: $util.oneOfGetter($oneOfFields = ["scalar", "collection", "map"]),
                     set: $util.oneOfSetter($oneOfFields)
                 });
     
@@ -7722,8 +7713,6 @@
                             writer.uint32(/* id 5, wireType 2 =*/42).fork().uint32(/* id 1, wireType 2 =*/10).string(keys[i]).uint32(/* id 2, wireType 2 =*/18).string(message.metadata[keys[i]]).ldelim();
                     if (message.literalType != null && message.hasOwnProperty("literalType"))
                         $root.flyteidl.core.LiteralType.encode(message.literalType, writer.uint32(/* id 6, wireType 2 =*/50).fork()).ldelim();
-                    if (message.artifactId != null && message.hasOwnProperty("artifactId"))
-                        $root.flyteidl.core.ArtifactID.encode(message.artifactId, writer.uint32(/* id 7, wireType 2 =*/58).fork()).ldelim();
                     return writer;
                 };
     
@@ -7753,9 +7742,6 @@
                             break;
                         case 3:
                             message.map = $root.flyteidl.core.LiteralMap.decode(reader, reader.uint32());
-                            break;
-                        case 7:
-                            message.artifactId = $root.flyteidl.core.ArtifactID.decode(reader, reader.uint32());
                             break;
                         case 4:
                             message.hash = reader.string();
@@ -7817,16 +7803,6 @@
                             var error = $root.flyteidl.core.LiteralMap.verify(message.map);
                             if (error)
                                 return "map." + error;
-                        }
-                    }
-                    if (message.artifactId != null && message.hasOwnProperty("artifactId")) {
-                        if (properties.value === 1)
-                            return "value: multiple values";
-                        properties.value = 1;
-                        {
-                            var error = $root.flyteidl.core.ArtifactID.verify(message.artifactId);
-                            if (error)
-                                return "artifactId." + error;
                         }
                     }
                     if (message.hash != null && message.hasOwnProperty("hash"))
@@ -12332,6 +12308,7 @@
                  * @property {flyteidl.core.ILiteral|null} ["default"] Parameter default
                  * @property {boolean|null} [required] Parameter required
                  * @property {flyteidl.core.IArtifactQuery|null} [artifactQuery] Parameter artifactQuery
+                 * @property {flyteidl.core.IArtifactID|null} [artifactId] Parameter artifactId
                  */
     
                 /**
@@ -12381,17 +12358,25 @@
                  */
                 Parameter.prototype.artifactQuery = null;
     
+                /**
+                 * Parameter artifactId.
+                 * @member {flyteidl.core.IArtifactID|null|undefined} artifactId
+                 * @memberof flyteidl.core.Parameter
+                 * @instance
+                 */
+                Parameter.prototype.artifactId = null;
+    
                 // OneOf field names bound to virtual getters and setters
                 var $oneOfFields;
     
                 /**
                  * Parameter behavior.
-                 * @member {"default"|"required"|"artifactQuery"|undefined} behavior
+                 * @member {"default"|"required"|"artifactQuery"|"artifactId"|undefined} behavior
                  * @memberof flyteidl.core.Parameter
                  * @instance
                  */
                 Object.defineProperty(Parameter.prototype, "behavior", {
-                    get: $util.oneOfGetter($oneOfFields = ["default", "required", "artifactQuery"]),
+                    get: $util.oneOfGetter($oneOfFields = ["default", "required", "artifactQuery", "artifactId"]),
                     set: $util.oneOfSetter($oneOfFields)
                 });
     
@@ -12427,6 +12412,8 @@
                         writer.uint32(/* id 3, wireType 0 =*/24).bool(message.required);
                     if (message.artifactQuery != null && message.hasOwnProperty("artifactQuery"))
                         $root.flyteidl.core.ArtifactQuery.encode(message.artifactQuery, writer.uint32(/* id 4, wireType 2 =*/34).fork()).ldelim();
+                    if (message.artifactId != null && message.hasOwnProperty("artifactId"))
+                        $root.flyteidl.core.ArtifactID.encode(message.artifactId, writer.uint32(/* id 5, wireType 2 =*/42).fork()).ldelim();
                     return writer;
                 };
     
@@ -12459,6 +12446,9 @@
                             break;
                         case 4:
                             message.artifactQuery = $root.flyteidl.core.ArtifactQuery.decode(reader, reader.uint32());
+                            break;
+                        case 5:
+                            message.artifactId = $root.flyteidl.core.ArtifactID.decode(reader, reader.uint32());
                             break;
                         default:
                             reader.skipType(tag & 7);
@@ -12508,6 +12498,16 @@
                             var error = $root.flyteidl.core.ArtifactQuery.verify(message.artifactQuery);
                             if (error)
                                 return "artifactQuery." + error;
+                        }
+                    }
+                    if (message.artifactId != null && message.hasOwnProperty("artifactId")) {
+                        if (properties.behavior === 1)
+                            return "behavior: multiple values";
+                        properties.behavior = 1;
+                        {
+                            var error = $root.flyteidl.core.ArtifactID.verify(message.artifactId);
+                            if (error)
+                                return "artifactId." + error;
                         }
                     }
                     return null;

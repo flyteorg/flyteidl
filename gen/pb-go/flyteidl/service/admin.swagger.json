@@ -6272,10 +6272,6 @@
           "$ref": "#/definitions/coreLiteralMap",
           "description": "A map of strings to literals."
         },
-        "artifact_id": {
-          "$ref": "#/definitions/coreArtifactID",
-          "title": "A reference to another Literal"
-        },
         "hash": {
           "type": "string",
           "title": "A hash representing this literal.\nThis is used for caching purposes. For more details refer to RFC 1893\n(https://github.com/flyteorg/flyte/blob/master/rfc/system/1893-caching-of-offloaded-objects.md)"
@@ -6569,6 +6565,9 @@
         "artifact_query": {
           "$ref": "#/definitions/coreArtifactQuery",
           "description": "This is an execution time search basically that should result in exactly one Artifact with a Type that\nmatches the type of the variable."
+        },
+        "artifact_id": {
+          "$ref": "#/definitions/coreArtifactID"
         }
       },
       "description": "A parameter is used as input to a launch plan and has\nthe special ability to have a default value or mark itself as required."

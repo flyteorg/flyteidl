@@ -24,7 +24,7 @@ extern PROTOBUF_INTERNAL_EXPORT_flyteidl_2fcore_2fidentifier_2eproto ::google::p
 extern PROTOBUF_INTERNAL_EXPORT_flyteidl_2fcore_2fidentifier_2eproto ::google::protobuf::internal::SCCInfo<2> scc_info_ArtifactID_flyteidl_2fcore_2fidentifier_2eproto;
 extern PROTOBUF_INTERNAL_EXPORT_flyteidl_2fcore_2fidentifier_2eproto ::google::protobuf::internal::SCCInfo<2> scc_info_ArtifactQuery_flyteidl_2fcore_2fidentifier_2eproto;
 extern PROTOBUF_INTERNAL_EXPORT_flyteidl_2fcore_2fidentifier_2eproto ::google::protobuf::internal::SCCInfo<2> scc_info_TaskExecutionIdentifier_flyteidl_2fcore_2fidentifier_2eproto;
-extern PROTOBUF_INTERNAL_EXPORT_flyteidl_2fcore_2fliterals_2eproto ::google::protobuf::internal::SCCInfo<11> scc_info_Literal_flyteidl_2fcore_2fliterals_2eproto;
+extern PROTOBUF_INTERNAL_EXPORT_flyteidl_2fcore_2fliterals_2eproto ::google::protobuf::internal::SCCInfo<10> scc_info_Literal_flyteidl_2fcore_2fliterals_2eproto;
 extern PROTOBUF_INTERNAL_EXPORT_flyteidl_2fcore_2ftypes_2eproto ::google::protobuf::internal::SCCInfo<6> scc_info_LiteralType_flyteidl_2fcore_2ftypes_2eproto;
 namespace flyteidl {
 namespace artifact {

@@ -4964,15 +4964,6 @@ definitions:
                   literals:
                   - null
                   - null
-                artifact_id:
-                  partitions:
-                    value:
-                      key: "value"
-                  artifact_key:
-                    domain: "domain"
-                    name: "name"
-                    project: "project"
-                  version: "version"
                 map:
                   literals: {}
                 hash: "hash"
@@ -5112,6 +5103,15 @@ definitions:
                     name: "name"
                     project: "project"
                   value: "value"
+              artifact_id:
+                partitions:
+                  value:
+                    key: "value"
+                artifact_key:
+                  domain: "domain"
+                  name: "name"
+                  project: "project"
+                version: "version"
               required: true
       spec:
         workflow_id:
@@ -5300,15 +5300,6 @@ definitions:
                   literals:
                   - null
                   - null
-                artifact_id:
-                  partitions:
-                    value:
-                      key: "value"
-                  artifact_key:
-                    domain: "domain"
-                    name: "name"
-                    project: "project"
-                  version: "version"
                 map:
                   literals: {}
                 hash: "hash"
@@ -5448,6 +5439,15 @@ definitions:
                     name: "name"
                     project: "project"
                   value: "value"
+              artifact_id:
+                partitions:
+                  value:
+                    key: "value"
+                artifact_key:
+                  domain: "domain"
+                  name: "name"
+                  project: "project"
+                version: "version"
               required: true
         security_context:
           run_as:
@@ -5708,15 +5708,6 @@ definitions:
                 literals:
                 - null
                 - null
-              artifact_id:
-                partitions:
-                  value:
-                    key: "value"
-                artifact_key:
-                  domain: "domain"
-                  name: "name"
-                  project: "project"
-                version: "version"
               map:
                 literals: {}
               hash: "hash"
@@ -5856,6 +5847,15 @@ definitions:
                   name: "name"
                   project: "project"
                 value: "value"
+            artifact_id:
+              partitions:
+                value:
+                  key: "value"
+              artifact_key:
+                domain: "domain"
+                name: "name"
+                project: "project"
+              version: "version"
             required: true
   adminLaunchPlanCreateRequest:
     type: "object"
@@ -6082,15 +6082,6 @@ definitions:
                     literals:
                     - null
                     - null
-                  artifact_id:
-                    partitions:
-                      value:
-                        key: "value"
-                    artifact_key:
-                      domain: "domain"
-                      name: "name"
-                      project: "project"
-                    version: "version"
                   map:
                     literals: {}
                   hash: "hash"
@@ -6230,6 +6221,15 @@ definitions:
                       name: "name"
                       project: "project"
                     value: "value"
+                artifact_id:
+                  partitions:
+                    value:
+                      key: "value"
+                  artifact_key:
+                    domain: "domain"
+                    name: "name"
+                    project: "project"
+                  version: "version"
                 required: true
         spec:
           workflow_id:
@@ -6418,15 +6418,6 @@ definitions:
                     literals:
                     - null
                     - null
-                  artifact_id:
-                    partitions:
-                      value:
-                        key: "value"
-                    artifact_key:
-                      domain: "domain"
-                      name: "name"
-                      project: "project"
-                    version: "version"
                   map:
                     literals: {}
                   hash: "hash"
@@ -6566,6 +6557,15 @@ definitions:
                       name: "name"
                       project: "project"
                     value: "value"
+                artifact_id:
+                  partitions:
+                    value:
+                      key: "value"
+                  artifact_key:
+                    domain: "domain"
+                    name: "name"
+                    project: "project"
+                  version: "version"
                 required: true
           security_context:
             run_as:
@@ -6806,15 +6806,6 @@ definitions:
                     literals:
                     - null
                     - null
-                  artifact_id:
-                    partitions:
-                      value:
-                        key: "value"
-                    artifact_key:
-                      domain: "domain"
-                      name: "name"
-                      project: "project"
-                    version: "version"
                   map:
                     literals: {}
                   hash: "hash"
@@ -6954,6 +6945,15 @@ definitions:
                       name: "name"
                       project: "project"
                     value: "value"
+                artifact_id:
+                  partitions:
+                    value:
+                      key: "value"
+                  artifact_key:
+                    domain: "domain"
+                    name: "name"
+                    project: "project"
+                  version: "version"
                 required: true
         spec:
           workflow_id:
@@ -7142,15 +7142,6 @@ definitions:
                     literals:
                     - null
                     - null
-                  artifact_id:
-                    partitions:
-                      value:
-                        key: "value"
-                    artifact_key:
-                      domain: "domain"
-                      name: "name"
-                      project: "project"
-                    version: "version"
                   map:
                     literals: {}
                   hash: "hash"
@@ -7290,6 +7281,15 @@ definitions:
                       name: "name"
                       project: "project"
                     value: "value"
+                artifact_id:
+                  partitions:
+                    value:
+                      key: "value"
+                  artifact_key:
+                    domain: "domain"
+                    name: "name"
+                    project: "project"
+                  version: "version"
                 required: true
           security_context:
             run_as:
@@ -7649,15 +7649,6 @@ definitions:
                 literals:
                 - null
                 - null
-              artifact_id:
-                partitions:
-                  value:
-                    key: "value"
-                artifact_key:
-                  domain: "domain"
-                  name: "name"
-                  project: "project"
-                version: "version"
               map:
                 literals: {}
               hash: "hash"
@@ -7797,6 +7788,15 @@ definitions:
                   name: "name"
                   project: "project"
                 value: "value"
+            artifact_id:
+              partitions:
+                value:
+                  key: "value"
+              artifact_key:
+                domain: "domain"
+                name: "name"
+                project: "project"
+              version: "version"
             required: true
       security_context:
         run_as:
@@ -56301,9 +56301,6 @@ definitions:
       map:
         description: "A map of strings to literals."
         $ref: "#/definitions/coreLiteralMap"
-      artifact_id:
-        title: "A reference to another Literal"
-        $ref: "#/definitions/coreArtifactID"
       hash:
         type: "string"
         title: "A hash representing this literal.\nThis is used for caching purposes.\
@@ -56430,15 +56427,6 @@ definitions:
         literals:
         - null
         - null
-      artifact_id:
-        partitions:
-          value:
-            key: "value"
-        artifact_key:
-          domain: "domain"
-          name: "name"
-          project: "project"
-        version: "version"
       map:
         literals: {}
       hash: "hash"
@@ -57354,6 +57342,8 @@ definitions:
         description: "This is an execution time search basically that should result\
           \ in exactly one Artifact with a Type that\nmatches the type of the variable."
         $ref: "#/definitions/coreArtifactQuery"
+      artifact_id:
+        $ref: "#/definitions/coreArtifactID"
     description: "A parameter is used as input to a launch plan and has\nthe special\
       \ ability to have a default value or mark itself as required."
     example:
@@ -57466,15 +57456,6 @@ definitions:
           literals:
           - null
           - null
-        artifact_id:
-          partitions:
-            value:
-              key: "value"
-          artifact_key:
-            domain: "domain"
-            name: "name"
-            project: "project"
-          version: "version"
         map:
           literals: {}
         hash: "hash"
@@ -57614,6 +57595,15 @@ definitions:
             name: "name"
             project: "project"
           value: "value"
+      artifact_id:
+        partitions:
+          value:
+            key: "value"
+        artifact_key:
+          domain: "domain"
+          name: "name"
+          project: "project"
+        version: "version"
       required: true
   coreParameterMap:
     type: "object"
@@ -57736,15 +57726,6 @@ definitions:
               literals:
               - null
               - null
-            artifact_id:
-              partitions:
-                value:
-                  key: "value"
-              artifact_key:
-                domain: "domain"
-                name: "name"
-                project: "project"
-              version: "version"
             map:
               literals: {}
             hash: "hash"
@@ -57884,6 +57865,15 @@ definitions:
                 name: "name"
                 project: "project"
               value: "value"
+          artifact_id:
+            partitions:
+              value:
+                key: "value"
+            artifact_key:
+              domain: "domain"
+              name: "name"
+              project: "project"
+            version: "version"
           required: true
   corePartitions:
     type: "object"

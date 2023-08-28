@@ -20,7 +20,7 @@ extern PROTOBUF_INTERNAL_EXPORT_flyteidl_2fcore_2fidentifier_2eproto ::google::p
 extern PROTOBUF_INTERNAL_EXPORT_flyteidl_2fcore_2fidentifier_2eproto ::google::protobuf::internal::SCCInfo<1> scc_info_NodeExecutionIdentifier_flyteidl_2fcore_2fidentifier_2eproto;
 extern PROTOBUF_INTERNAL_EXPORT_flyteidl_2fcore_2fidentifier_2eproto ::google::protobuf::internal::SCCInfo<2> scc_info_ArtifactID_flyteidl_2fcore_2fidentifier_2eproto;
 extern PROTOBUF_INTERNAL_EXPORT_flyteidl_2fcore_2finterface_2eproto ::google::protobuf::internal::SCCInfo<1> scc_info_TypedInterface_flyteidl_2fcore_2finterface_2eproto;
-extern PROTOBUF_INTERNAL_EXPORT_flyteidl_2fcore_2fliterals_2eproto ::google::protobuf::internal::SCCInfo<11> scc_info_Literal_flyteidl_2fcore_2fliterals_2eproto;
+extern PROTOBUF_INTERNAL_EXPORT_flyteidl_2fcore_2fliterals_2eproto ::google::protobuf::internal::SCCInfo<10> scc_info_Literal_flyteidl_2fcore_2fliterals_2eproto;
 extern PROTOBUF_INTERNAL_EXPORT_flyteidl_2fevent_2fevent_2eproto ::google::protobuf::internal::SCCInfo<4> scc_info_WorkflowExecutionEvent_flyteidl_2fevent_2fevent_2eproto;
 extern PROTOBUF_INTERNAL_EXPORT_flyteidl_2fevent_2fevent_2eproto ::google::protobuf::internal::SCCInfo<8> scc_info_NodeExecutionEvent_flyteidl_2fevent_2fevent_2eproto;
 extern PROTOBUF_INTERNAL_EXPORT_flyteidl_2fevent_2fevent_2eproto ::google::protobuf::internal::SCCInfo<8> scc_info_TaskExecutionEvent_flyteidl_2fevent_2fevent_2eproto;

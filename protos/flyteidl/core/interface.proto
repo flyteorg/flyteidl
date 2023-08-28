@@ -52,6 +52,8 @@ message Parameter {
         // This is an execution time search basically that should result in exactly one Artifact with a Type that
         // matches the type of the variable.
         core.ArtifactQuery artifact_query = 4;
+
+        core.ArtifactID artifact_id = 5;
     }
 }
 

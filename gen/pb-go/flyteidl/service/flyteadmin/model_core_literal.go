@@ -17,7 +17,6 @@ type CoreLiteral struct {
 	Collection *CoreLiteralCollection `json:"collection,omitempty"`
 	// A map of strings to literals.
 	Map_ *CoreLiteralMap `json:"map,omitempty"`
-	ArtifactId *CoreArtifactId `json:"artifact_id,omitempty"`
 	Hash string `json:"hash,omitempty"`
 	// Rejected: We were going to add the Artifact (or at least ArtifactID) here as a way to keep track of lineage But this was deemed too janky.
 	Metadata map[string]string `json:"metadata,omitempty"`

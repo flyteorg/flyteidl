@@ -345,6 +345,18 @@ func (m *Parameter) Validate() error {
 			}
 		}
 
+	case *Parameter_ArtifactId:
+
+		if v, ok := interface{}(m.GetArtifactId()).(interface{ Validate() error }); ok {
+			if err := v.Validate(); err != nil {
+				return ParameterValidationError{
+					field:  "ArtifactId",
+					reason: "embedded message failed validation",
+					cause:  err,
+				}
+			}
+		}
+
 	}
 
 	return nil

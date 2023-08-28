@@ -42,16 +42,18 @@ class TypedInterface(_message.Message):
     def __init__(self, inputs: _Optional[_Union[VariableMap, _Mapping]] = ..., outputs: _Optional[_Union[VariableMap, _Mapping]] = ...) -> None: ...
 
 class Parameter(_message.Message):
-    __slots__ = ["var", "default", "required", "artifact_query"]
+    __slots__ = ["var", "default", "required", "artifact_query", "artifact_id"]
     VAR_FIELD_NUMBER: _ClassVar[int]
     DEFAULT_FIELD_NUMBER: _ClassVar[int]
     REQUIRED_FIELD_NUMBER: _ClassVar[int]
     ARTIFACT_QUERY_FIELD_NUMBER: _ClassVar[int]
+    ARTIFACT_ID_FIELD_NUMBER: _ClassVar[int]
     var: Variable
     default: _literals_pb2.Literal
     required: bool
     artifact_query: _identifier_pb2.ArtifactQuery
-    def __init__(self, var: _Optional[_Union[Variable, _Mapping]] = ..., default: _Optional[_Union[_literals_pb2.Literal, _Mapping]] = ..., required: bool = ..., artifact_query: _Optional[_Union[_identifier_pb2.ArtifactQuery, _Mapping]] = ...) -> None: ...
+    artifact_id: _identifier_pb2.ArtifactID
+    def __init__(self, var: _Optional[_Union[Variable, _Mapping]] = ..., default: _Optional[_Union[_literals_pb2.Literal, _Mapping]] = ..., required: bool = ..., artifact_query: _Optional[_Union[_identifier_pb2.ArtifactQuery, _Mapping]] = ..., artifact_id: _Optional[_Union[_identifier_pb2.ArtifactID, _Mapping]] = ...) -> None: ...
 
 class ParameterMap(_message.Message):
     __slots__ = ["parameters"]

@@ -305,6 +305,270 @@ impl SimpleType {
         }
     }
 }
+/// Primitive Types
+#[allow(clippy::derive_partial_eq_without_eq)]
+#[derive(Clone, PartialEq, ::prost::Message)]
+pub struct Primitive {
+    /// Defines one of simple primitive types. These types will get translated into different programming languages as
+    /// described in <https://developers.google.com/protocol-buffers/docs/proto#scalar.>
+    #[prost(oneof="primitive::Value", tags="1, 2, 3, 4, 5, 6")]
+    pub value: ::core::option::Option<primitive::Value>,
+}
+/// Nested message and enum types in `Primitive`.
+pub mod primitive {
+    /// Defines one of simple primitive types. These types will get translated into different programming languages as
+    /// described in <https://developers.google.com/protocol-buffers/docs/proto#scalar.>
+    #[allow(clippy::derive_partial_eq_without_eq)]
+#[derive(Clone, PartialEq, ::prost::Oneof)]
+    pub enum Value {
+        #[prost(int64, tag="1")]
+        Integer(i64),
+        #[prost(double, tag="2")]
+        FloatValue(f64),
+        #[prost(string, tag="3")]
+        StringValue(::prost::alloc::string::String),
+        #[prost(bool, tag="4")]
+        Boolean(bool),
+        #[prost(message, tag="5")]
+        Datetime(::prost_types::Timestamp),
+        #[prost(message, tag="6")]
+        Duration(::prost_types::Duration),
+    }
+}
+/// Used to denote a nil/null/None assignment to a scalar value. The underlying LiteralType for Void is intentionally
+/// undefined since it can be assigned to a scalar of any LiteralType.
+#[allow(clippy::derive_partial_eq_without_eq)]
+#[derive(Clone, PartialEq, ::prost::Message)]
+pub struct Void {
+}
+/// Refers to an offloaded set of files. It encapsulates the type of the store and a unique uri for where the data is.
+/// There are no restrictions on how the uri is formatted since it will depend on how to interact with the store.
+#[allow(clippy::derive_partial_eq_without_eq)]
+#[derive(Clone, PartialEq, ::prost::Message)]
+pub struct Blob {
+    #[prost(message, optional, tag="1")]
+    pub metadata: ::core::option::Option<BlobMetadata>,
+    #[prost(string, tag="3")]
+    pub uri: ::prost::alloc::string::String,
+}
+#[allow(clippy::derive_partial_eq_without_eq)]
+#[derive(Clone, PartialEq, ::prost::Message)]
+pub struct BlobMetadata {
+    #[prost(message, optional, tag="1")]
+    pub r#type: ::core::option::Option<BlobType>,
+}
+/// A simple byte array with a tag to help different parts of the system communicate about what is in the byte array.
+/// It's strongly advisable that consumers of this type define a unique tag and validate the tag before parsing the data.
+#[allow(clippy::derive_partial_eq_without_eq)]
+#[derive(Clone, PartialEq, ::prost::Message)]
+pub struct Binary {
+    #[prost(bytes="vec", tag="1")]
+    pub value: ::prost::alloc::vec::Vec<u8>,
+    #[prost(string, tag="2")]
+    pub tag: ::prost::alloc::string::String,
+}
+/// A strongly typed schema that defines the interface of data retrieved from the underlying storage medium.
+#[allow(clippy::derive_partial_eq_without_eq)]
+#[derive(Clone, PartialEq, ::prost::Message)]
+pub struct Schema {
+    #[prost(string, tag="1")]
+    pub uri: ::prost::alloc::string::String,
+    #[prost(message, optional, tag="3")]
+    pub r#type: ::core::option::Option<SchemaType>,
+}
+/// The runtime representation of a tagged union value. See `UnionType` for more details.
+#[allow(clippy::derive_partial_eq_without_eq)]
+#[derive(Clone, PartialEq, ::prost::Message)]
+pub struct Union {
+    #[prost(message, optional, boxed, tag="1")]
+    pub value: ::core::option::Option<::prost::alloc::boxed::Box<Literal>>,
+    #[prost(message, optional, tag="2")]
+    pub r#type: ::core::option::Option<LiteralType>,
+}
+#[allow(clippy::derive_partial_eq_without_eq)]
+#[derive(Clone, PartialEq, ::prost::Message)]
+pub struct StructuredDatasetMetadata {
+    /// Bundle the type information along with the literal.
+    /// This is here because StructuredDatasets can often be more defined at run time than at compile time.
+    /// That is, at compile time you might only declare a task to return a pandas dataframe or a StructuredDataset,
+    /// without any column information, but at run time, you might have that column information.
+    /// flytekit python will copy this type information into the literal, from the type information, if not provided by
+    /// the various plugins (encoders).
+    /// Since this field is run time generated, it's not used for any type checking.
+    #[prost(message, optional, tag="1")]
+    pub structured_dataset_type: ::core::option::Option<StructuredDatasetType>,
+}
+#[allow(clippy::derive_partial_eq_without_eq)]
+#[derive(Clone, PartialEq, ::prost::Message)]
+pub struct StructuredDataset {
+    /// String location uniquely identifying where the data is.
+    /// Should start with the storage location (e.g. s3://, gs://, bq://, etc.)
+    #[prost(string, tag="1")]
+    pub uri: ::prost::alloc::string::String,
+    #[prost(message, optional, tag="2")]
+    pub metadata: ::core::option::Option<StructuredDatasetMetadata>,
+}
+#[allow(clippy::derive_partial_eq_without_eq)]
+#[derive(Clone, PartialEq, ::prost::Message)]
+pub struct Scalar {
+    #[prost(oneof="scalar::Value", tags="1, 2, 3, 4, 5, 6, 7, 8, 9")]
+    pub value: ::core::option::Option<scalar::Value>,
+}
+/// Nested message and enum types in `Scalar`.
+pub mod scalar {
+    #[allow(clippy::derive_partial_eq_without_eq)]
+#[derive(Clone, PartialEq, ::prost::Oneof)]
+    pub enum Value {
+        #[prost(message, tag="1")]
+        Primitive(super::Primitive),
+        #[prost(message, tag="2")]
+        Blob(super::Blob),
+        #[prost(message, tag="3")]
+        Binary(super::Binary),
+        #[prost(message, tag="4")]
+        Schema(super::Schema),
+        #[prost(message, tag="5")]
+        NoneType(super::Void),
+        #[prost(message, tag="6")]
+        Error(super::Error),
+        #[prost(message, tag="7")]
+        Generic(::prost_types::Struct),
+        #[prost(message, tag="8")]
+        StructuredDataset(super::StructuredDataset),
+        #[prost(message, tag="9")]
+        Union(::prost::alloc::boxed::Box<super::Union>),
+    }
+}
+/// A simple value. This supports any level of nesting (e.g. array of array of array of Blobs) as well as simple primitives.
+#[allow(clippy::derive_partial_eq_without_eq)]
+#[derive(Clone, PartialEq, ::prost::Message)]
+pub struct Literal {
+    /// A hash representing this literal.
+    /// This is used for caching purposes. For more details refer to RFC 1893
+    /// (<https://github.com/flyteorg/flyte/blob/master/rfc/system/1893-caching-of-offloaded-objects.md>)
+    #[prost(string, tag="4")]
+    pub hash: ::prost::alloc::string::String,
+    /// Rejected: We were going to add the Artifact (or at least ArtifactID) here as a way to keep track of lineage
+    /// But this was deemed too janky.
+    #[prost(map="string, string", tag="5")]
+    pub metadata: ::std::collections::HashMap<::prost::alloc::string::String, ::prost::alloc::string::String>,
+    /// Rejected: We were going to add the literal type here because we decided it was general enough, but this
+    /// is a lot of work to update everything. Can we think of an easier way?
+    #[prost(message, optional, tag="6")]
+    pub literal_type: ::core::option::Option<LiteralType>,
+    #[prost(oneof="literal::Value", tags="1, 2, 3")]
+    pub value: ::core::option::Option<literal::Value>,
+}
+/// Nested message and enum types in `Literal`.
+pub mod literal {
+    #[allow(clippy::derive_partial_eq_without_eq)]
+#[derive(Clone, PartialEq, ::prost::Oneof)]
+    pub enum Value {
+        /// A simple value.
+        #[prost(message, tag="1")]
+        Scalar(::prost::alloc::boxed::Box<super::Scalar>),
+        /// A collection of literals to allow nesting.
+        #[prost(message, tag="2")]
+        Collection(super::LiteralCollection),
+        /// A map of strings to literals.
+        #[prost(message, tag="3")]
+        Map(super::LiteralMap),
+    }
+}
+/// A collection of literals. This is a workaround since oneofs in proto messages cannot contain a repeated field.
+#[allow(clippy::derive_partial_eq_without_eq)]
+#[derive(Clone, PartialEq, ::prost::Message)]
+pub struct LiteralCollection {
+    #[prost(message, repeated, tag="1")]
+    pub literals: ::prost::alloc::vec::Vec<Literal>,
+}
+/// A map of literals. This is a workaround since oneofs in proto messages cannot contain a repeated field.
+#[allow(clippy::derive_partial_eq_without_eq)]
+#[derive(Clone, PartialEq, ::prost::Message)]
+pub struct LiteralMap {
+    #[prost(map="string, message", tag="1")]
+    pub literals: ::std::collections::HashMap<::prost::alloc::string::String, Literal>,
+}
+/// A collection of BindingData items.
+#[allow(clippy::derive_partial_eq_without_eq)]
+#[derive(Clone, PartialEq, ::prost::Message)]
+pub struct BindingDataCollection {
+    #[prost(message, repeated, tag="1")]
+    pub bindings: ::prost::alloc::vec::Vec<BindingData>,
+}
+/// A map of BindingData items.
+#[allow(clippy::derive_partial_eq_without_eq)]
+#[derive(Clone, PartialEq, ::prost::Message)]
+pub struct BindingDataMap {
+    #[prost(map="string, message", tag="1")]
+    pub bindings: ::std::collections::HashMap<::prost::alloc::string::String, BindingData>,
+}
+#[allow(clippy::derive_partial_eq_without_eq)]
+#[derive(Clone, PartialEq, ::prost::Message)]
+pub struct UnionInfo {
+    #[prost(message, optional, tag="1")]
+    pub target_type: ::core::option::Option<LiteralType>,
+}
+/// Specifies either a simple value or a reference to another output.
+#[allow(clippy::derive_partial_eq_without_eq)]
+#[derive(Clone, PartialEq, ::prost::Message)]
+pub struct BindingData {
+    #[prost(message, optional, tag="5")]
+    pub union: ::core::option::Option<UnionInfo>,
+    #[prost(oneof="binding_data::Value", tags="1, 2, 3, 4")]
+    pub value: ::core::option::Option<binding_data::Value>,
+}
+/// Nested message and enum types in `BindingData`.
+pub mod binding_data {
+    #[allow(clippy::derive_partial_eq_without_eq)]
+#[derive(Clone, PartialEq, ::prost::Oneof)]
+    pub enum Value {
+        /// A simple scalar value.
+        #[prost(message, tag="1")]
+        Scalar(super::Scalar),
+        /// A collection of binding data. This allows nesting of binding data to any number
+        /// of levels.
+        #[prost(message, tag="2")]
+        Collection(super::BindingDataCollection),
+        /// References an output promised by another node.
+        #[prost(message, tag="3")]
+        Promise(super::OutputReference),
+        /// A map of bindings. The key is always a string.
+        #[prost(message, tag="4")]
+        Map(super::BindingDataMap),
+    }
+}
+/// An input/output binding of a variable to either static value or a node output.
+#[allow(clippy::derive_partial_eq_without_eq)]
+#[derive(Clone, PartialEq, ::prost::Message)]
+pub struct Binding {
+    /// Variable name must match an input/output variable of the node.
+    #[prost(string, tag="1")]
+    pub var: ::prost::alloc::string::String,
+    /// Data to use to bind this variable.
+    #[prost(message, optional, tag="2")]
+    pub binding: ::core::option::Option<BindingData>,
+}
+/// A generic key value pair.
+#[allow(clippy::derive_partial_eq_without_eq)]
+#[derive(Clone, PartialEq, ::prost::Message)]
+pub struct KeyValuePair {
+    /// required.
+    #[prost(string, tag="1")]
+    pub key: ::prost::alloc::string::String,
+    /// +optional.
+    #[prost(string, tag="2")]
+    pub value: ::prost::alloc::string::String,
+}
+/// Retry strategy associated with an executable unit.
+#[allow(clippy::derive_partial_eq_without_eq)]
+#[derive(Clone, PartialEq, ::prost::Message)]
+pub struct RetryStrategy {
+    /// Number of retries. Retries will be consumed when the job fails with a recoverable error.
+    /// The number of retries must be less than or equals to 10.
+    #[prost(uint32, tag="5")]
+    pub retries: u32,
+}
 /// Encapsulation of fields that uniquely identifies a Flyte resource.
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(Clone, PartialEq, ::prost::Message)]
@@ -489,273 +753,6 @@ impl ResourceType {
         }
     }
 }
-/// Primitive Types
-#[allow(clippy::derive_partial_eq_without_eq)]
-#[derive(Clone, PartialEq, ::prost::Message)]
-pub struct Primitive {
-    /// Defines one of simple primitive types. These types will get translated into different programming languages as
-    /// described in <https://developers.google.com/protocol-buffers/docs/proto#scalar.>
-    #[prost(oneof="primitive::Value", tags="1, 2, 3, 4, 5, 6")]
-    pub value: ::core::option::Option<primitive::Value>,
-}
-/// Nested message and enum types in `Primitive`.
-pub mod primitive {
-    /// Defines one of simple primitive types. These types will get translated into different programming languages as
-    /// described in <https://developers.google.com/protocol-buffers/docs/proto#scalar.>
-    #[allow(clippy::derive_partial_eq_without_eq)]
-#[derive(Clone, PartialEq, ::prost::Oneof)]
-    pub enum Value {
-        #[prost(int64, tag="1")]
-        Integer(i64),
-        #[prost(double, tag="2")]
-        FloatValue(f64),
-        #[prost(string, tag="3")]
-        StringValue(::prost::alloc::string::String),
-        #[prost(bool, tag="4")]
-        Boolean(bool),
-        #[prost(message, tag="5")]
-        Datetime(::prost_types::Timestamp),
-        #[prost(message, tag="6")]
-        Duration(::prost_types::Duration),
-    }
-}
-/// Used to denote a nil/null/None assignment to a scalar value. The underlying LiteralType for Void is intentionally
-/// undefined since it can be assigned to a scalar of any LiteralType.
-#[allow(clippy::derive_partial_eq_without_eq)]
-#[derive(Clone, PartialEq, ::prost::Message)]
-pub struct Void {
-}
-/// Refers to an offloaded set of files. It encapsulates the type of the store and a unique uri for where the data is.
-/// There are no restrictions on how the uri is formatted since it will depend on how to interact with the store.
-#[allow(clippy::derive_partial_eq_without_eq)]
-#[derive(Clone, PartialEq, ::prost::Message)]
-pub struct Blob {
-    #[prost(message, optional, tag="1")]
-    pub metadata: ::core::option::Option<BlobMetadata>,
-    #[prost(string, tag="3")]
-    pub uri: ::prost::alloc::string::String,
-}
-#[allow(clippy::derive_partial_eq_without_eq)]
-#[derive(Clone, PartialEq, ::prost::Message)]
-pub struct BlobMetadata {
-    #[prost(message, optional, tag="1")]
-    pub r#type: ::core::option::Option<BlobType>,
-}
-/// A simple byte array with a tag to help different parts of the system communicate about what is in the byte array.
-/// It's strongly advisable that consumers of this type define a unique tag and validate the tag before parsing the data.
-#[allow(clippy::derive_partial_eq_without_eq)]
-#[derive(Clone, PartialEq, ::prost::Message)]
-pub struct Binary {
-    #[prost(bytes="vec", tag="1")]
-    pub value: ::prost::alloc::vec::Vec<u8>,
-    #[prost(string, tag="2")]
-    pub tag: ::prost::alloc::string::String,
-}
-/// A strongly typed schema that defines the interface of data retrieved from the underlying storage medium.
-#[allow(clippy::derive_partial_eq_without_eq)]
-#[derive(Clone, PartialEq, ::prost::Message)]
-pub struct Schema {
-    #[prost(string, tag="1")]
-    pub uri: ::prost::alloc::string::String,
-    #[prost(message, optional, tag="3")]
-    pub r#type: ::core::option::Option<SchemaType>,
-}
-/// The runtime representation of a tagged union value. See `UnionType` for more details.
-#[allow(clippy::derive_partial_eq_without_eq)]
-#[derive(Clone, PartialEq, ::prost::Message)]
-pub struct Union {
-    #[prost(message, optional, boxed, tag="1")]
-    pub value: ::core::option::Option<::prost::alloc::boxed::Box<Literal>>,
-    #[prost(message, optional, tag="2")]
-    pub r#type: ::core::option::Option<LiteralType>,
-}
-#[allow(clippy::derive_partial_eq_without_eq)]
-#[derive(Clone, PartialEq, ::prost::Message)]
-pub struct StructuredDatasetMetadata {
-    /// Bundle the type information along with the literal.
-    /// This is here because StructuredDatasets can often be more defined at run time than at compile time.
-    /// That is, at compile time you might only declare a task to return a pandas dataframe or a StructuredDataset,
-    /// without any column information, but at run time, you might have that column information.
-    /// flytekit python will copy this type information into the literal, from the type information, if not provided by
-    /// the various plugins (encoders).
-    /// Since this field is run time generated, it's not used for any type checking.
-    #[prost(message, optional, tag="1")]
-    pub structured_dataset_type: ::core::option::Option<StructuredDatasetType>,
-}
-#[allow(clippy::derive_partial_eq_without_eq)]
-#[derive(Clone, PartialEq, ::prost::Message)]
-pub struct StructuredDataset {
-    /// String location uniquely identifying where the data is.
-    /// Should start with the storage location (e.g. s3://, gs://, bq://, etc.)
-    #[prost(string, tag="1")]
-    pub uri: ::prost::alloc::string::String,
-    #[prost(message, optional, tag="2")]
-    pub metadata: ::core::option::Option<StructuredDatasetMetadata>,
-}
-#[allow(clippy::derive_partial_eq_without_eq)]
-#[derive(Clone, PartialEq, ::prost::Message)]
-pub struct Scalar {
-    #[prost(oneof="scalar::Value", tags="1, 2, 3, 4, 5, 6, 7, 8, 9")]
-    pub value: ::core::option::Option<scalar::Value>,
-}
-/// Nested message and enum types in `Scalar`.
-pub mod scalar {
-    #[allow(clippy::derive_partial_eq_without_eq)]
-#[derive(Clone, PartialEq, ::prost::Oneof)]
-    pub enum Value {
-        #[prost(message, tag="1")]
-        Primitive(super::Primitive),
-        #[prost(message, tag="2")]
-        Blob(super::Blob),
-        #[prost(message, tag="3")]
-        Binary(super::Binary),
-        #[prost(message, tag="4")]
-        Schema(super::Schema),
-        #[prost(message, tag="5")]
-        NoneType(super::Void),
-        #[prost(message, tag="6")]
-        Error(super::Error),
-        #[prost(message, tag="7")]
-        Generic(::prost_types::Struct),
-        #[prost(message, tag="8")]
-        StructuredDataset(super::StructuredDataset),
-        #[prost(message, tag="9")]
-        Union(::prost::alloc::boxed::Box<super::Union>),
-    }
-}
-/// A simple value. This supports any level of nesting (e.g. array of array of array of Blobs) as well as simple primitives.
-#[allow(clippy::derive_partial_eq_without_eq)]
-#[derive(Clone, PartialEq, ::prost::Message)]
-pub struct Literal {
-    /// A hash representing this literal.
-    /// This is used for caching purposes. For more details refer to RFC 1893
-    /// (<https://github.com/flyteorg/flyte/blob/master/rfc/system/1893-caching-of-offloaded-objects.md>)
-    #[prost(string, tag="4")]
-    pub hash: ::prost::alloc::string::String,
-    /// Rejected: We were going to add the Artifact (or at least ArtifactID) here as a way to keep track of lineage
-    /// But this was deemed too janky.
-    #[prost(map="string, string", tag="5")]
-    pub metadata: ::std::collections::HashMap<::prost::alloc::string::String, ::prost::alloc::string::String>,
-    /// Rejected: We were going to add the literal type here because we decided it was general enough, but this
-    /// is a lot of work to update everything. Can we think of an easier way?
-    #[prost(message, optional, tag="6")]
-    pub literal_type: ::core::option::Option<LiteralType>,
-    #[prost(oneof="literal::Value", tags="1, 2, 3, 7")]
-    pub value: ::core::option::Option<literal::Value>,
-}
-/// Nested message and enum types in `Literal`.
-pub mod literal {
-    #[allow(clippy::derive_partial_eq_without_eq)]
-#[derive(Clone, PartialEq, ::prost::Oneof)]
-    pub enum Value {
-        /// A simple value.
-        #[prost(message, tag="1")]
-        Scalar(::prost::alloc::boxed::Box<super::Scalar>),
-        /// A collection of literals to allow nesting.
-        #[prost(message, tag="2")]
-        Collection(super::LiteralCollection),
-        /// A map of strings to literals.
-        #[prost(message, tag="3")]
-        Map(super::LiteralMap),
-        /// A reference to another Literal
-        #[prost(message, tag="7")]
-        ArtifactId(super::ArtifactId),
-    }
-}
-/// A collection of literals. This is a workaround since oneofs in proto messages cannot contain a repeated field.
-#[allow(clippy::derive_partial_eq_without_eq)]
-#[derive(Clone, PartialEq, ::prost::Message)]
-pub struct LiteralCollection {
-    #[prost(message, repeated, tag="1")]
-    pub literals: ::prost::alloc::vec::Vec<Literal>,
-}
-/// A map of literals. This is a workaround since oneofs in proto messages cannot contain a repeated field.
-#[allow(clippy::derive_partial_eq_without_eq)]
-#[derive(Clone, PartialEq, ::prost::Message)]
-pub struct LiteralMap {
-    #[prost(map="string, message", tag="1")]
-    pub literals: ::std::collections::HashMap<::prost::alloc::string::String, Literal>,
-}
-/// A collection of BindingData items.
-#[allow(clippy::derive_partial_eq_without_eq)]
-#[derive(Clone, PartialEq, ::prost::Message)]
-pub struct BindingDataCollection {
-    #[prost(message, repeated, tag="1")]
-    pub bindings: ::prost::alloc::vec::Vec<BindingData>,
-}
-/// A map of BindingData items.
-#[allow(clippy::derive_partial_eq_without_eq)]
-#[derive(Clone, PartialEq, ::prost::Message)]
-pub struct BindingDataMap {
-    #[prost(map="string, message", tag="1")]
-    pub bindings: ::std::collections::HashMap<::prost::alloc::string::String, BindingData>,
-}
-#[allow(clippy::derive_partial_eq_without_eq)]
-#[derive(Clone, PartialEq, ::prost::Message)]
-pub struct UnionInfo {
-    #[prost(message, optional, tag="1")]
-    pub target_type: ::core::option::Option<LiteralType>,
-}
-/// Specifies either a simple value or a reference to another output.
-#[allow(clippy::derive_partial_eq_without_eq)]
-#[derive(Clone, PartialEq, ::prost::Message)]
-pub struct BindingData {
-    #[prost(message, optional, tag="5")]
-    pub union: ::core::option::Option<UnionInfo>,
-    #[prost(oneof="binding_data::Value", tags="1, 2, 3, 4")]
-    pub value: ::core::option::Option<binding_data::Value>,
-}
-/// Nested message and enum types in `BindingData`.
-pub mod binding_data {
-    #[allow(clippy::derive_partial_eq_without_eq)]
-#[derive(Clone, PartialEq, ::prost::Oneof)]
-    pub enum Value {
-        /// A simple scalar value.
-        #[prost(message, tag="1")]
-        Scalar(super::Scalar),
-        /// A collection of binding data. This allows nesting of binding data to any number
-        /// of levels.
-        #[prost(message, tag="2")]
-        Collection(super::BindingDataCollection),
-        /// References an output promised by another node.
-        #[prost(message, tag="3")]
-        Promise(super::OutputReference),
-        /// A map of bindings. The key is always a string.
-        #[prost(message, tag="4")]
-        Map(super::BindingDataMap),
-    }
-}
-/// An input/output binding of a variable to either static value or a node output.
-#[allow(clippy::derive_partial_eq_without_eq)]
-#[derive(Clone, PartialEq, ::prost::Message)]
-pub struct Binding {
-    /// Variable name must match an input/output variable of the node.
-    #[prost(string, tag="1")]
-    pub var: ::prost::alloc::string::String,
-    /// Data to use to bind this variable.
-    #[prost(message, optional, tag="2")]
-    pub binding: ::core::option::Option<BindingData>,
-}
-/// A generic key value pair.
-#[allow(clippy::derive_partial_eq_without_eq)]
-#[derive(Clone, PartialEq, ::prost::Message)]
-pub struct KeyValuePair {
-    /// required.
-    #[prost(string, tag="1")]
-    pub key: ::prost::alloc::string::String,
-    /// +optional.
-    #[prost(string, tag="2")]
-    pub value: ::prost::alloc::string::String,
-}
-/// Retry strategy associated with an executable unit.
-#[allow(clippy::derive_partial_eq_without_eq)]
-#[derive(Clone, PartialEq, ::prost::Message)]
-pub struct RetryStrategy {
-    /// Number of retries. Retries will be consumed when the job fails with a recoverable error.
-    /// The number of retries must be less than or equals to 10.
-    #[prost(uint32, tag="5")]
-    pub retries: u32,
-}
 /// Defines a strongly typed variable.
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(Clone, PartialEq, ::prost::Message)]
@@ -799,7 +796,7 @@ pub struct Parameter {
     #[prost(message, optional, tag="1")]
     pub var: ::core::option::Option<Variable>,
     /// +optional
-    #[prost(oneof="parameter::Behavior", tags="2, 3, 4")]
+    #[prost(oneof="parameter::Behavior", tags="2, 3, 4, 5")]
     pub behavior: ::core::option::Option<parameter::Behavior>,
 }
 /// Nested message and enum types in `Parameter`.
@@ -818,6 +815,8 @@ pub mod parameter {
         /// matches the type of the variable.
         #[prost(message, tag="4")]
         ArtifactQuery(super::ArtifactQuery),
+        #[prost(message, tag="5")]
+        ArtifactId(super::ArtifactId),
     }
 }
 /// A map of Parameters.
