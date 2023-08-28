@@ -95,6 +95,28 @@ pub struct DeleteTaskRequest {
 #[derive(Clone, PartialEq, ::prost::Message)]
 pub struct DeleteTaskResponse {
 }
+/// A message used to do a task
+#[allow(clippy::derive_partial_eq_without_eq)]
+#[derive(Clone, PartialEq, ::prost::Message)]
+pub struct DoTaskRequest {
+    /// The inputs required to start the execution. All required inputs must be
+    /// included in this map. If not required and not provided, defaults apply.
+    /// +optional
+    #[prost(message, optional, tag="1")]
+    pub inputs: ::core::option::Option<super::core::LiteralMap>,
+    /// Template of the task that encapsulates all the metadata of the task.
+    #[prost(message, optional, tag="2")]
+    pub template: ::core::option::Option<super::core::TaskTemplate>,
+    /// Prefix for where task output data will be written. (e.g. s3://my-bucket/randomstring)
+    #[prost(string, tag="3")]
+    pub output_prefix: ::prost::alloc::string::String,
+}
+#[allow(clippy::derive_partial_eq_without_eq)]
+#[derive(Clone, PartialEq, ::prost::Message)]
+pub struct DoTaskResponse {
+    #[prost(message, optional, tag="1")]
+    pub resource: ::core::option::Option<Resource>,
+}
 /// The state of the execution is used to control its visibility in the UI/CLI.
 #[derive(Clone, Copy, Debug, PartialEq, Eq, Hash, PartialOrd, Ord, ::prost::Enumeration)]
 #[repr(i32)]

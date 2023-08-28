@@ -86,3 +86,19 @@ message DeleteTaskRequest {
 // Response to delete a task.
 message DeleteTaskResponse {
 }
+
+// A message used to do a task
+message DoTaskRequest {
+  // The inputs required to start the execution. All required inputs must be
+  // included in this map. If not required and not provided, defaults apply.
+  // +optional
+  core.LiteralMap inputs = 1;
+  // Template of the task that encapsulates all the metadata of the task.
+  core.TaskTemplate template = 2;
+  // Prefix for where task output data will be written. (e.g. s3://my-bucket/randomstring)
+  string output_prefix = 3;
+}
+
+message DoTaskResponse {
+  Resource resource = 1;
+}
