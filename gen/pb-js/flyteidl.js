@@ -22073,6 +22073,150 @@
                 return SlackNotification;
             })();
     
+            admin.WebhookNotification = (function() {
+    
+                /**
+                 * Properties of a WebhookNotification.
+                 * @memberof flyteidl.admin
+                 * @interface IWebhookNotification
+                 * @property {string|null} [url] WebhookNotification url
+                 * @property {string|null} [secretName] WebhookNotification secretName
+                 * @property {string|null} [payload] WebhookNotification payload
+                 */
+    
+                /**
+                 * Constructs a new WebhookNotification.
+                 * @memberof flyteidl.admin
+                 * @classdesc Represents a WebhookNotification.
+                 * @implements IWebhookNotification
+                 * @constructor
+                 * @param {flyteidl.admin.IWebhookNotification=} [properties] Properties to set
+                 */
+                function WebhookNotification(properties) {
+                    if (properties)
+                        for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                            if (properties[keys[i]] != null)
+                                this[keys[i]] = properties[keys[i]];
+                }
+    
+                /**
+                 * WebhookNotification url.
+                 * @member {string} url
+                 * @memberof flyteidl.admin.WebhookNotification
+                 * @instance
+                 */
+                WebhookNotification.prototype.url = "";
+    
+                /**
+                 * WebhookNotification secretName.
+                 * @member {string} secretName
+                 * @memberof flyteidl.admin.WebhookNotification
+                 * @instance
+                 */
+                WebhookNotification.prototype.secretName = "";
+    
+                /**
+                 * WebhookNotification payload.
+                 * @member {string} payload
+                 * @memberof flyteidl.admin.WebhookNotification
+                 * @instance
+                 */
+                WebhookNotification.prototype.payload = "";
+    
+                /**
+                 * Creates a new WebhookNotification instance using the specified properties.
+                 * @function create
+                 * @memberof flyteidl.admin.WebhookNotification
+                 * @static
+                 * @param {flyteidl.admin.IWebhookNotification=} [properties] Properties to set
+                 * @returns {flyteidl.admin.WebhookNotification} WebhookNotification instance
+                 */
+                WebhookNotification.create = function create(properties) {
+                    return new WebhookNotification(properties);
+                };
+    
+                /**
+                 * Encodes the specified WebhookNotification message. Does not implicitly {@link flyteidl.admin.WebhookNotification.verify|verify} messages.
+                 * @function encode
+                 * @memberof flyteidl.admin.WebhookNotification
+                 * @static
+                 * @param {flyteidl.admin.IWebhookNotification} message WebhookNotification message or plain object to encode
+                 * @param {$protobuf.Writer} [writer] Writer to encode to
+                 * @returns {$protobuf.Writer} Writer
+                 */
+                WebhookNotification.encode = function encode(message, writer) {
+                    if (!writer)
+                        writer = $Writer.create();
+                    if (message.url != null && message.hasOwnProperty("url"))
+                        writer.uint32(/* id 1, wireType 2 =*/10).string(message.url);
+                    if (message.secretName != null && message.hasOwnProperty("secretName"))
+                        writer.uint32(/* id 2, wireType 2 =*/18).string(message.secretName);
+                    if (message.payload != null && message.hasOwnProperty("payload"))
+                        writer.uint32(/* id 3, wireType 2 =*/26).string(message.payload);
+                    return writer;
+                };
+    
+                /**
+                 * Decodes a WebhookNotification message from the specified reader or buffer.
+                 * @function decode
+                 * @memberof flyteidl.admin.WebhookNotification
+                 * @static
+                 * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+                 * @param {number} [length] Message length if known beforehand
+                 * @returns {flyteidl.admin.WebhookNotification} WebhookNotification
+                 * @throws {Error} If the payload is not a reader or valid buffer
+                 * @throws {$protobuf.util.ProtocolError} If required fields are missing
+                 */
+                WebhookNotification.decode = function decode(reader, length) {
+                    if (!(reader instanceof $Reader))
+                        reader = $Reader.create(reader);
+                    var end = length === undefined ? reader.len : reader.pos + length, message = new $root.flyteidl.admin.WebhookNotification();
+                    while (reader.pos < end) {
+                        var tag = reader.uint32();
+                        switch (tag >>> 3) {
+                        case 1:
+                            message.url = reader.string();
+                            break;
+                        case 2:
+                            message.secretName = reader.string();
+                            break;
+                        case 3:
+                            message.payload = reader.string();
+                            break;
+                        default:
+                            reader.skipType(tag & 7);
+                            break;
+                        }
+                    }
+                    return message;
+                };
+    
+                /**
+                 * Verifies a WebhookNotification message.
+                 * @function verify
+                 * @memberof flyteidl.admin.WebhookNotification
+                 * @static
+                 * @param {Object.<string,*>} message Plain object to verify
+                 * @returns {string|null} `null` if valid, otherwise the reason why it is not
+                 */
+                WebhookNotification.verify = function verify(message) {
+                    if (typeof message !== "object" || message === null)
+                        return "object expected";
+                    if (message.url != null && message.hasOwnProperty("url"))
+                        if (!$util.isString(message.url))
+                            return "url: string expected";
+                    if (message.secretName != null && message.hasOwnProperty("secretName"))
+                        if (!$util.isString(message.secretName))
+                            return "secretName: string expected";
+                    if (message.payload != null && message.hasOwnProperty("payload"))
+                        if (!$util.isString(message.payload))
+                            return "payload: string expected";
+                    return null;
+                };
+    
+                return WebhookNotification;
+            })();
+    
             admin.Notification = (function() {
     
                 /**
@@ -22083,6 +22227,7 @@
                  * @property {flyteidl.admin.IEmailNotification|null} [email] Notification email
                  * @property {flyteidl.admin.IPagerDutyNotification|null} [pagerDuty] Notification pagerDuty
                  * @property {flyteidl.admin.ISlackNotification|null} [slack] Notification slack
+                 * @property {flyteidl.admin.IWebhookNotification|null} [webhook] Notification webhook
                  */
     
                 /**
@@ -22133,17 +22278,25 @@
                  */
                 Notification.prototype.slack = null;
     
+                /**
+                 * Notification webhook.
+                 * @member {flyteidl.admin.IWebhookNotification|null|undefined} webhook
+                 * @memberof flyteidl.admin.Notification
+                 * @instance
+                 */
+                Notification.prototype.webhook = null;
+    
                 // OneOf field names bound to virtual getters and setters
                 var $oneOfFields;
     
                 /**
                  * Notification type.
-                 * @member {"email"|"pagerDuty"|"slack"|undefined} type
+                 * @member {"email"|"pagerDuty"|"slack"|"webhook"|undefined} type
                  * @memberof flyteidl.admin.Notification
                  * @instance
                  */
                 Object.defineProperty(Notification.prototype, "type", {
-                    get: $util.oneOfGetter($oneOfFields = ["email", "pagerDuty", "slack"]),
+                    get: $util.oneOfGetter($oneOfFields = ["email", "pagerDuty", "slack", "webhook"]),
                     set: $util.oneOfSetter($oneOfFields)
                 });
     
@@ -22183,6 +22336,8 @@
                         $root.flyteidl.admin.PagerDutyNotification.encode(message.pagerDuty, writer.uint32(/* id 3, wireType 2 =*/26).fork()).ldelim();
                     if (message.slack != null && message.hasOwnProperty("slack"))
                         $root.flyteidl.admin.SlackNotification.encode(message.slack, writer.uint32(/* id 4, wireType 2 =*/34).fork()).ldelim();
+                    if (message.webhook != null && message.hasOwnProperty("webhook"))
+                        $root.flyteidl.admin.WebhookNotification.encode(message.webhook, writer.uint32(/* id 5, wireType 2 =*/42).fork()).ldelim();
                     return writer;
                 };
     
@@ -22222,6 +22377,9 @@
                             break;
                         case 4:
                             message.slack = $root.flyteidl.admin.SlackNotification.decode(reader, reader.uint32());
+                            break;
+                        case 5:
+                            message.webhook = $root.flyteidl.admin.WebhookNotification.decode(reader, reader.uint32());
                             break;
                         default:
                             reader.skipType(tag & 7);
@@ -22289,6 +22447,16 @@
                             var error = $root.flyteidl.admin.SlackNotification.verify(message.slack);
                             if (error)
                                 return "slack." + error;
+                        }
+                    }
+                    if (message.webhook != null && message.hasOwnProperty("webhook")) {
+                        if (properties.type === 1)
+                            return "type: multiple values";
+                        properties.type = 1;
+                        {
+                            var error = $root.flyteidl.admin.WebhookNotification.verify(message.webhook);
+                            if (error)
+                                return "webhook." + error;
                         }
                     }
                     return null;
@@ -35341,6 +35509,116 @@
                 };
     
                 return EmailMessage;
+            })();
+    
+            admin.WebhookPayload = (function() {
+    
+                /**
+                 * Properties of a WebhookPayload.
+                 * @memberof flyteidl.admin
+                 * @interface IWebhookPayload
+                 * @property {string|null} [message] WebhookPayload message
+                 */
+    
+                /**
+                 * Constructs a new WebhookPayload.
+                 * @memberof flyteidl.admin
+                 * @classdesc Represents a WebhookPayload.
+                 * @implements IWebhookPayload
+                 * @constructor
+                 * @param {flyteidl.admin.IWebhookPayload=} [properties] Properties to set
+                 */
+                function WebhookPayload(properties) {
+                    if (properties)
+                        for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                            if (properties[keys[i]] != null)
+                                this[keys[i]] = properties[keys[i]];
+                }
+    
+                /**
+                 * WebhookPayload message.
+                 * @member {string} message
+                 * @memberof flyteidl.admin.WebhookPayload
+                 * @instance
+                 */
+                WebhookPayload.prototype.message = "";
+    
+                /**
+                 * Creates a new WebhookPayload instance using the specified properties.
+                 * @function create
+                 * @memberof flyteidl.admin.WebhookPayload
+                 * @static
+                 * @param {flyteidl.admin.IWebhookPayload=} [properties] Properties to set
+                 * @returns {flyteidl.admin.WebhookPayload} WebhookPayload instance
+                 */
+                WebhookPayload.create = function create(properties) {
+                    return new WebhookPayload(properties);
+                };
+    
+                /**
+                 * Encodes the specified WebhookPayload message. Does not implicitly {@link flyteidl.admin.WebhookPayload.verify|verify} messages.
+                 * @function encode
+                 * @memberof flyteidl.admin.WebhookPayload
+                 * @static
+                 * @param {flyteidl.admin.IWebhookPayload} message WebhookPayload message or plain object to encode
+                 * @param {$protobuf.Writer} [writer] Writer to encode to
+                 * @returns {$protobuf.Writer} Writer
+                 */
+                WebhookPayload.encode = function encode(message, writer) {
+                    if (!writer)
+                        writer = $Writer.create();
+                    if (message.message != null && message.hasOwnProperty("message"))
+                        writer.uint32(/* id 1, wireType 2 =*/10).string(message.message);
+                    return writer;
+                };
+    
+                /**
+                 * Decodes a WebhookPayload message from the specified reader or buffer.
+                 * @function decode
+                 * @memberof flyteidl.admin.WebhookPayload
+                 * @static
+                 * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+                 * @param {number} [length] Message length if known beforehand
+                 * @returns {flyteidl.admin.WebhookPayload} WebhookPayload
+                 * @throws {Error} If the payload is not a reader or valid buffer
+                 * @throws {$protobuf.util.ProtocolError} If required fields are missing
+                 */
+                WebhookPayload.decode = function decode(reader, length) {
+                    if (!(reader instanceof $Reader))
+                        reader = $Reader.create(reader);
+                    var end = length === undefined ? reader.len : reader.pos + length, message = new $root.flyteidl.admin.WebhookPayload();
+                    while (reader.pos < end) {
+                        var tag = reader.uint32();
+                        switch (tag >>> 3) {
+                        case 1:
+                            message.message = reader.string();
+                            break;
+                        default:
+                            reader.skipType(tag & 7);
+                            break;
+                        }
+                    }
+                    return message;
+                };
+    
+                /**
+                 * Verifies a WebhookPayload message.
+                 * @function verify
+                 * @memberof flyteidl.admin.WebhookPayload
+                 * @static
+                 * @param {Object.<string,*>} message Plain object to verify
+                 * @returns {string|null} `null` if valid, otherwise the reason why it is not
+                 */
+                WebhookPayload.verify = function verify(message) {
+                    if (typeof message !== "object" || message === null)
+                        return "object expected";
+                    if (message.message != null && message.hasOwnProperty("message"))
+                        if (!$util.isString(message.message))
+                            return "message: string expected";
+                    return null;
+                };
+    
+                return WebhookPayload;
             })();
     
             admin.Domain = (function() {

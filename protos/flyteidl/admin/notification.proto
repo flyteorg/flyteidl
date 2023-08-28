@@ -25,3 +25,7 @@ message EmailMessage {
     // This populates the BODY field.
     string body = 4;
 }
+
+message WebhookPayload {
+    string message = 1;
+}

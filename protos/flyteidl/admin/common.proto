@@ -236,6 +236,18 @@ message SlackNotification {
     repeated string recipients_email = 1;
 }
 
+// Defines a webhook notification specification.
+message WebhookNotification {
+    // webhook url to trigger the notification.
+    // +required
+    string url = 1;
+    // The secret name to use to trigger the webhook.
+    string secret_name = 2;
+    // The payload to send to the webhook.
+    // +required
+    string payload = 3;
+}
+
 // Represents a structure for notifications based on execution status.
 // The notification content is configured within flyte admin but can be templatized.
 // Future iterations could expose configuring notifications with custom content.
@@ -250,6 +262,7 @@ message Notification {
         EmailNotification email = 2;
         PagerDutyNotification pager_duty = 3;
         SlackNotification slack = 4;
+        WebhookNotification webhook = 5;
     }
 
 }

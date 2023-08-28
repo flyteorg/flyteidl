@@ -106,3 +106,70 @@ var _ interface {
 	Cause() error
 	ErrorName() string
 } = EmailMessageValidationError{}
+
+// Validate checks the field values on WebhookPayload with the rules defined in
+// the proto definition for this message. If any rules are violated, an error
+// is returned.
+func (m *WebhookPayload) Validate() error {
+	if m == nil {
+		return nil
+	}
+
+	// no validation rules for Message
+
+	return nil
+}
+
+// WebhookPayloadValidationError is the validation error returned by
+// WebhookPayload.Validate if the designated constraints aren't met.
+type WebhookPayloadValidationError struct {
+	field  string
+	reason string
+	cause  error
+	key    bool
+}
+
+// Field function returns field value.
+func (e WebhookPayloadValidationError) Field() string { return e.field }
+
+// Reason function returns reason value.
+func (e WebhookPayloadValidationError) Reason() string { return e.reason }
+
+// Cause function returns cause value.
+func (e WebhookPayloadValidationError) Cause() error { return e.cause }
+
+// Key function returns key value.
+func (e WebhookPayloadValidationError) Key() bool { return e.key }
+
+// ErrorName returns error name.
+func (e WebhookPayloadValidationError) ErrorName() string { return "WebhookPayloadValidationError" }
+
+// Error satisfies the builtin error interface
+func (e WebhookPayloadValidationError) Error() string {
+	cause := ""
+	if e.cause != nil {
+		cause = fmt.Sprintf(" | caused by: %v", e.cause)
+	}
+
+	key := ""
+	if e.key {
+		key = "key for "
+	}
+
+	return fmt.Sprintf(
+		"invalid %sWebhookPayload.%s: %s%s",
+		key,
+		e.field,
+		e.reason,
+		cause)
+}
+
+var _ error = WebhookPayloadValidationError{}
+
+var _ interface {
+	Field() string
+	Reason() string
+	Key() bool
+	Cause() error
+	ErrorName() string
+} = WebhookPayloadValidationError{}
