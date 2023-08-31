@@ -305,153 +305,6 @@ impl SimpleType {
         }
     }
 }
-/// Encapsulation of fields that uniquely identifies a Flyte resource.
-#[allow(clippy::derive_partial_eq_without_eq)]
-#[derive(Clone, PartialEq, ::prost::Message)]
-pub struct Identifier {
-    /// Identifies the specific type of resource that this identifier corresponds to.
-    #[prost(enumeration="ResourceType", tag="1")]
-    pub resource_type: i32,
-    /// Name of the project the resource belongs to.
-    #[prost(string, tag="2")]
-    pub project: ::prost::alloc::string::String,
-    /// Name of the domain the resource belongs to.
-    /// A domain can be considered as a subset within a specific project.
-    #[prost(string, tag="3")]
-    pub domain: ::prost::alloc::string::String,
-    /// User provided value for the resource.
-    #[prost(string, tag="4")]
-    pub name: ::prost::alloc::string::String,
-    /// Specific version of the resource.
-    #[prost(string, tag="5")]
-    pub version: ::prost::alloc::string::String,
-}
-/// Encapsulation of fields that uniquely identifies a Flyte workflow execution
-#[allow(clippy::derive_partial_eq_without_eq)]
-#[derive(Clone, PartialEq, ::prost::Message)]
-pub struct WorkflowExecutionIdentifier {
-    /// Name of the project the resource belongs to.
-    #[prost(string, tag="1")]
-    pub project: ::prost::alloc::string::String,
-    /// Name of the domain the resource belongs to.
-    /// A domain can be considered as a subset within a specific project.
-    #[prost(string, tag="2")]
-    pub domain: ::prost::alloc::string::String,
-    /// User or system provided value for the resource.
-    #[prost(string, tag="4")]
-    pub name: ::prost::alloc::string::String,
-}
-/// Encapsulation of fields that identify a Flyte node execution entity.
-#[allow(clippy::derive_partial_eq_without_eq)]
-#[derive(Clone, PartialEq, ::prost::Message)]
-pub struct NodeExecutionIdentifier {
-    #[prost(string, tag="1")]
-    pub node_id: ::prost::alloc::string::String,
-    #[prost(message, optional, tag="2")]
-    pub execution_id: ::core::option::Option<WorkflowExecutionIdentifier>,
-}
-/// Encapsulation of fields that identify a Flyte task execution entity.
-#[allow(clippy::derive_partial_eq_without_eq)]
-#[derive(Clone, PartialEq, ::prost::Message)]
-pub struct TaskExecutionIdentifier {
-    #[prost(message, optional, tag="1")]
-    pub task_id: ::core::option::Option<Identifier>,
-    #[prost(message, optional, tag="2")]
-    pub node_execution_id: ::core::option::Option<NodeExecutionIdentifier>,
-    #[prost(uint32, tag="3")]
-    pub retry_attempt: u32,
-}
-/// Encapsulation of fields the uniquely identify a signal.
-#[allow(clippy::derive_partial_eq_without_eq)]
-#[derive(Clone, PartialEq, ::prost::Message)]
-pub struct SignalIdentifier {
-    /// Unique identifier for a signal.
-    #[prost(string, tag="1")]
-    pub signal_id: ::prost::alloc::string::String,
-    /// Identifies the Flyte workflow execution this signal belongs to.
-    #[prost(message, optional, tag="2")]
-    pub execution_id: ::core::option::Option<WorkflowExecutionIdentifier>,
-}
-#[allow(clippy::derive_partial_eq_without_eq)]
-#[derive(Clone, PartialEq, ::prost::Message)]
-pub struct ArtifactKey {
-    /// Project and domain and suffix needs to be unique across a given artifact store.
-    #[prost(string, tag="1")]
-    pub project: ::prost::alloc::string::String,
-    #[prost(string, tag="2")]
-    pub domain: ::prost::alloc::string::String,
-    #[prost(string, tag="3")]
-    pub suffix: ::prost::alloc::string::String,
-}
-#[allow(clippy::derive_partial_eq_without_eq)]
-#[derive(Clone, PartialEq, ::prost::Message)]
-pub struct ArtifactId {
-    #[prost(message, optional, tag="1")]
-    pub artifact_key: ::core::option::Option<ArtifactKey>,
-    /// consider hiding - this is a storage layer ID. Might even change for the same object.
-    #[prost(string, tag="2")]
-    pub uuid: ::prost::alloc::string::String,
-}
-#[allow(clippy::derive_partial_eq_without_eq)]
-#[derive(Clone, PartialEq, ::prost::Message)]
-pub struct ArtifactAlias {
-    /// ties this directly to the artifact
-    #[prost(message, optional, tag="1")]
-    pub artifact_id: ::core::option::Option<ArtifactId>,
-    #[prost(string, tag="2")]
-    pub name: ::prost::alloc::string::String,
-    #[prost(string, tag="3")]
-    pub value: ::prost::alloc::string::String,
-}
-#[allow(clippy::derive_partial_eq_without_eq)]
-#[derive(Clone, PartialEq, ::prost::Message)]
-pub struct ArtifactQuery {
-    #[prost(string, tag="1")]
-    pub project: ::prost::alloc::string::String,
-    #[prost(string, tag="2")]
-    pub domain: ::prost::alloc::string::String,
-    #[prost(message, optional, tag="3")]
-    pub alias: ::core::option::Option<ArtifactAlias>,
-}
-/// Indicates a resource type within Flyte.
-#[derive(Clone, Copy, Debug, PartialEq, Eq, Hash, PartialOrd, Ord, ::prost::Enumeration)]
-#[repr(i32)]
-pub enum ResourceType {
-    Unspecified = 0,
-    Task = 1,
-    Workflow = 2,
-    LaunchPlan = 3,
-    /// A dataset represents an entity modeled in Flyte DataCatalog. A Dataset is also a versioned entity and can be a compilation of multiple individual objects.
-    /// Eventually all Catalog objects should be modeled similar to Flyte Objects. The Dataset entities makes it possible for the UI  and CLI to act on the objects 
-    /// in a similar manner to other Flyte objects
-    Dataset = 4,
-}
-impl ResourceType {
-    /// String value of the enum field names used in the ProtoBuf definition.
-    ///
-    /// The values are not transformed in any way and thus are considered stable
-    /// (if the ProtoBuf definition does not change) and safe for programmatic use.
-    pub fn as_str_name(&self) -> &'static str {
-        match self {
-            ResourceType::Unspecified => "UNSPECIFIED",
-            ResourceType::Task => "TASK",
-            ResourceType::Workflow => "WORKFLOW",
-            ResourceType::LaunchPlan => "LAUNCH_PLAN",
-            ResourceType::Dataset => "DATASET",
-        }
-    }
-    /// Creates an enum from field names used in the ProtoBuf definition.
-    pub fn from_str_name(value: &str) -> ::core::option::Option<Self> {
-        match value {
-            "UNSPECIFIED" => Some(Self::Unspecified),
-            "TASK" => Some(Self::Task),
-            "WORKFLOW" => Some(Self::Workflow),
-            "LAUNCH_PLAN" => Some(Self::LaunchPlan),
-            "DATASET" => Some(Self::Dataset),
-            _ => None,
-        }
-    }
-}
 /// Primitive Types
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(Clone, PartialEq, ::prost::Message)]
@@ -603,7 +456,7 @@ pub struct Literal {
     /// is a lot of work to update everything. Can we think of an easier way?
     #[prost(message, optional, tag="6")]
     pub literal_type: ::core::option::Option<LiteralType>,
-    #[prost(oneof="literal::Value", tags="1, 2, 3, 7")]
+    #[prost(oneof="literal::Value", tags="1, 2, 3")]
     pub value: ::core::option::Option<literal::Value>,
 }
 /// Nested message and enum types in `Literal`.
@@ -620,9 +473,6 @@ pub mod literal {
         /// A map of strings to literals.
         #[prost(message, tag="3")]
         Map(super::LiteralMap),
-        /// A reference to another Literal
-        #[prost(message, tag="7")]
-        ArtifactId(super::ArtifactId),
     }
 }
 /// A collection of literals. This is a workaround since oneofs in proto messages cannot contain a repeated field.
@@ -719,6 +569,190 @@ pub struct RetryStrategy {
     #[prost(uint32, tag="5")]
     pub retries: u32,
 }
+/// Encapsulation of fields that uniquely identifies a Flyte resource.
+#[allow(clippy::derive_partial_eq_without_eq)]
+#[derive(Clone, PartialEq, ::prost::Message)]
+pub struct Identifier {
+    /// Identifies the specific type of resource that this identifier corresponds to.
+    #[prost(enumeration="ResourceType", tag="1")]
+    pub resource_type: i32,
+    /// Name of the project the resource belongs to.
+    #[prost(string, tag="2")]
+    pub project: ::prost::alloc::string::String,
+    /// Name of the domain the resource belongs to.
+    /// A domain can be considered as a subset within a specific project.
+    #[prost(string, tag="3")]
+    pub domain: ::prost::alloc::string::String,
+    /// User provided value for the resource.
+    #[prost(string, tag="4")]
+    pub name: ::prost::alloc::string::String,
+    /// Specific version of the resource.
+    #[prost(string, tag="5")]
+    pub version: ::prost::alloc::string::String,
+}
+/// Encapsulation of fields that uniquely identifies a Flyte workflow execution
+#[allow(clippy::derive_partial_eq_without_eq)]
+#[derive(Clone, PartialEq, ::prost::Message)]
+pub struct WorkflowExecutionIdentifier {
+    /// Name of the project the resource belongs to.
+    #[prost(string, tag="1")]
+    pub project: ::prost::alloc::string::String,
+    /// Name of the domain the resource belongs to.
+    /// A domain can be considered as a subset within a specific project.
+    #[prost(string, tag="2")]
+    pub domain: ::prost::alloc::string::String,
+    /// User or system provided value for the resource.
+    #[prost(string, tag="4")]
+    pub name: ::prost::alloc::string::String,
+}
+/// Encapsulation of fields that identify a Flyte node execution entity.
+#[allow(clippy::derive_partial_eq_without_eq)]
+#[derive(Clone, PartialEq, ::prost::Message)]
+pub struct NodeExecutionIdentifier {
+    #[prost(string, tag="1")]
+    pub node_id: ::prost::alloc::string::String,
+    #[prost(message, optional, tag="2")]
+    pub execution_id: ::core::option::Option<WorkflowExecutionIdentifier>,
+}
+/// Encapsulation of fields that identify a Flyte task execution entity.
+#[allow(clippy::derive_partial_eq_without_eq)]
+#[derive(Clone, PartialEq, ::prost::Message)]
+pub struct TaskExecutionIdentifier {
+    #[prost(message, optional, tag="1")]
+    pub task_id: ::core::option::Option<Identifier>,
+    #[prost(message, optional, tag="2")]
+    pub node_execution_id: ::core::option::Option<NodeExecutionIdentifier>,
+    #[prost(uint32, tag="3")]
+    pub retry_attempt: u32,
+}
+/// Encapsulation of fields the uniquely identify a signal.
+#[allow(clippy::derive_partial_eq_without_eq)]
+#[derive(Clone, PartialEq, ::prost::Message)]
+pub struct SignalIdentifier {
+    /// Unique identifier for a signal.
+    #[prost(string, tag="1")]
+    pub signal_id: ::prost::alloc::string::String,
+    /// Identifies the Flyte workflow execution this signal belongs to.
+    #[prost(message, optional, tag="2")]
+    pub execution_id: ::core::option::Option<WorkflowExecutionIdentifier>,
+}
+#[allow(clippy::derive_partial_eq_without_eq)]
+#[derive(Clone, PartialEq, ::prost::Message)]
+pub struct ArtifactKey {
+    /// Project and domain and suffix needs to be unique across a given artifact store.
+    #[prost(string, tag="1")]
+    pub project: ::prost::alloc::string::String,
+    #[prost(string, tag="2")]
+    pub domain: ::prost::alloc::string::String,
+    #[prost(string, tag="3")]
+    pub name: ::prost::alloc::string::String,
+}
+#[allow(clippy::derive_partial_eq_without_eq)]
+#[derive(Clone, PartialEq, ::prost::Message)]
+pub struct Partitions {
+    #[prost(map="string, string", tag="1")]
+    pub value: ::std::collections::HashMap<::prost::alloc::string::String, ::prost::alloc::string::String>,
+}
+#[allow(clippy::derive_partial_eq_without_eq)]
+#[derive(Clone, PartialEq, ::prost::Message)]
+pub struct ArtifactId {
+    #[prost(message, optional, tag="1")]
+    pub artifact_key: ::core::option::Option<ArtifactKey>,
+    #[prost(string, tag="2")]
+    pub version: ::prost::alloc::string::String,
+    /// here for ds popularity
+    /// this is a oneof because of partition querying... we need a way to distinguish between
+    /// a user not-specifying partitions when searching, and specifically searching for an Artifact
+    /// that is not partitioned (this can happen if an Artifact goes from partitioned to non-
+    /// partitioned across executions).
+    #[prost(oneof="artifact_id::Dimensions", tags="3")]
+    pub dimensions: ::core::option::Option<artifact_id::Dimensions>,
+}
+/// Nested message and enum types in `ArtifactID`.
+pub mod artifact_id {
+    /// here for ds popularity
+    /// this is a oneof because of partition querying... we need a way to distinguish between
+    /// a user not-specifying partitions when searching, and specifically searching for an Artifact
+    /// that is not partitioned (this can happen if an Artifact goes from partitioned to non-
+    /// partitioned across executions).
+    #[allow(clippy::derive_partial_eq_without_eq)]
+#[derive(Clone, PartialEq, ::prost::Oneof)]
+    pub enum Dimensions {
+        #[prost(message, tag="3")]
+        Partitions(super::Partitions),
+    }
+}
+#[allow(clippy::derive_partial_eq_without_eq)]
+#[derive(Clone, PartialEq, ::prost::Message)]
+pub struct ArtifactTag {
+    #[prost(message, optional, tag="1")]
+    pub artifact_key: ::core::option::Option<ArtifactKey>,
+    #[prost(string, tag="2")]
+    pub value: ::prost::alloc::string::String,
+}
+/// Uniqueness constraints for Artifacts
+///   - project, domain, name, version, partitions
+/// Option 2 (tags are standalone, point to an individual artifact id):
+///   - project, domain, name, alias (points to one partition if partitioned)
+///   - project, domain, name, partition key, partition value
+#[allow(clippy::derive_partial_eq_without_eq)]
+#[derive(Clone, PartialEq, ::prost::Message)]
+pub struct ArtifactQuery {
+    #[prost(oneof="artifact_query::Identifier", tags="1, 2, 3")]
+    pub identifier: ::core::option::Option<artifact_query::Identifier>,
+}
+/// Nested message and enum types in `ArtifactQuery`.
+pub mod artifact_query {
+    #[allow(clippy::derive_partial_eq_without_eq)]
+#[derive(Clone, PartialEq, ::prost::Oneof)]
+    pub enum Identifier {
+        #[prost(message, tag="1")]
+        ArtifactId(super::ArtifactId),
+        #[prost(message, tag="2")]
+        ArtifactTag(super::ArtifactTag),
+        #[prost(string, tag="3")]
+        Uri(::prost::alloc::string::String),
+    }
+}
+/// Indicates a resource type within Flyte.
+#[derive(Clone, Copy, Debug, PartialEq, Eq, Hash, PartialOrd, Ord, ::prost::Enumeration)]
+#[repr(i32)]
+pub enum ResourceType {
+    Unspecified = 0,
+    Task = 1,
+    Workflow = 2,
+    LaunchPlan = 3,
+    /// A dataset represents an entity modeled in Flyte DataCatalog. A Dataset is also a versioned entity and can be a compilation of multiple individual objects.
+    /// Eventually all Catalog objects should be modeled similar to Flyte Objects. The Dataset entities makes it possible for the UI  and CLI to act on the objects 
+    /// in a similar manner to other Flyte objects
+    Dataset = 4,
+}
+impl ResourceType {
+    /// String value of the enum field names used in the ProtoBuf definition.
+    ///
+    /// The values are not transformed in any way and thus are considered stable
+    /// (if the ProtoBuf definition does not change) and safe for programmatic use.
+    pub fn as_str_name(&self) -> &'static str {
+        match self {
+            ResourceType::Unspecified => "UNSPECIFIED",
+            ResourceType::Task => "TASK",
+            ResourceType::Workflow => "WORKFLOW",
+            ResourceType::LaunchPlan => "LAUNCH_PLAN",
+            ResourceType::Dataset => "DATASET",
+        }
+    }
+    /// Creates an enum from field names used in the ProtoBuf definition.
+    pub fn from_str_name(value: &str) -> ::core::option::Option<Self> {
+        match value {
+            "UNSPECIFIED" => Some(Self::Unspecified),
+            "TASK" => Some(Self::Task),
+            "WORKFLOW" => Some(Self::Workflow),
+            "LAUNCH_PLAN" => Some(Self::LaunchPlan),
+            "DATASET" => Some(Self::Dataset),
+            _ => None,
+        }
+    }
+}
 /// Defines a strongly typed variable.
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(Clone, PartialEq, ::prost::Message)]
@@ -729,10 +763,12 @@ pub struct Variable {
     /// +optional string describing input variable
     #[prost(string, tag="2")]
     pub description: ::prost::alloc::string::String,
-    /// +optional If specified by user, this is still just a partial artifact. It's here so the user can control the
-    /// name, tags, aliases, of the artifact creation.
-    #[prost(message, repeated, tag="3")]
-    pub aliases: ::prost::alloc::vec::Vec<ArtifactAlias>,
+    /// +optional This object allows the user to specify how Artifacts are created.
+    /// name, tag, partitions can be specified. The other fields (version and project/domain) are ignored.
+    #[prost(message, optional, tag="3")]
+    pub artifact_partial_id: ::core::option::Option<ArtifactId>,
+    #[prost(message, optional, tag="4")]
+    pub artifact_tag: ::core::option::Option<ArtifactTag>,
 }
 /// A map of Variables
 #[allow(clippy::derive_partial_eq_without_eq)]
@@ -760,7 +796,7 @@ pub struct Parameter {
     #[prost(message, optional, tag="1")]
     pub var: ::core::option::Option<Variable>,
     /// +optional
-    #[prost(oneof="parameter::Behavior", tags="2, 3, 4")]
+    #[prost(oneof="parameter::Behavior", tags="2, 3, 4, 5")]
     pub behavior: ::core::option::Option<parameter::Behavior>,
 }
 /// Nested message and enum types in `Parameter`.
@@ -779,6 +815,8 @@ pub mod parameter {
         /// matches the type of the variable.
         #[prost(message, tag="4")]
         ArtifactQuery(super::ArtifactQuery),
+        #[prost(message, tag="5")]
+        ArtifactId(super::ArtifactId),
     }
 }
 /// A map of Parameters.

@@ -16,7 +16,8 @@ import re  # noqa: F401
 
 import six
 
-from flyteadmin.models.core_artifact_alias import CoreArtifactAlias  # noqa: F401,E501
+from flyteadmin.models.core_artifact_id import CoreArtifactID  # noqa: F401,E501
+from flyteadmin.models.core_artifact_tag import CoreArtifactTag  # noqa: F401,E501
 
 
 class CoreArtifactQuery(object):
@@ -33,94 +34,94 @@ class CoreArtifactQuery(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'project': 'str',
-        'domain': 'str',
-        'alias': 'CoreArtifactAlias'
+        'artifact_id': 'CoreArtifactID',
+        'artifact_tag': 'CoreArtifactTag',
+        'uri': 'str'
     }
 
     attribute_map = {
-        'project': 'project',
-        'domain': 'domain',
-        'alias': 'alias'
+        'artifact_id': 'artifact_id',
+        'artifact_tag': 'artifact_tag',
+        'uri': 'uri'
     }
 
-    def __init__(self, project=None, domain=None, alias=None):  # noqa: E501
+    def __init__(self, artifact_id=None, artifact_tag=None, uri=None):  # noqa: E501
         """CoreArtifactQuery - a model defined in Swagger"""  # noqa: E501
 
-        self._project = None
-        self._domain = None
-        self._alias = None
+        self._artifact_id = None
+        self._artifact_tag = None
+        self._uri = None
         self.discriminator = None
 
-        if project is not None:
-            self.project = project
-        if domain is not None:
-            self.domain = domain
-        if alias is not None:
-            self.alias = alias
+        if artifact_id is not None:
+            self.artifact_id = artifact_id
+        if artifact_tag is not None:
+            self.artifact_tag = artifact_tag
+        if uri is not None:
+            self.uri = uri
 
     @property
-    def project(self):
-        """Gets the project of this CoreArtifactQuery.  # noqa: E501
+    def artifact_id(self):
+        """Gets the artifact_id of this CoreArtifactQuery.  # noqa: E501
 
 
-        :return: The project of this CoreArtifactQuery.  # noqa: E501
+        :return: The artifact_id of this CoreArtifactQuery.  # noqa: E501
+        :rtype: CoreArtifactID
+        """
+        return self._artifact_id
+
+    @artifact_id.setter
+    def artifact_id(self, artifact_id):
+        """Sets the artifact_id of this CoreArtifactQuery.
+
+
+        :param artifact_id: The artifact_id of this CoreArtifactQuery.  # noqa: E501
+        :type: CoreArtifactID
+        """
+
+        self._artifact_id = artifact_id
+
+    @property
+    def artifact_tag(self):
+        """Gets the artifact_tag of this CoreArtifactQuery.  # noqa: E501
+
+
+        :return: The artifact_tag of this CoreArtifactQuery.  # noqa: E501
+        :rtype: CoreArtifactTag
+        """
+        return self._artifact_tag
+
+    @artifact_tag.setter
+    def artifact_tag(self, artifact_tag):
+        """Sets the artifact_tag of this CoreArtifactQuery.
+
+
+        :param artifact_tag: The artifact_tag of this CoreArtifactQuery.  # noqa: E501
+        :type: CoreArtifactTag
+        """
+
+        self._artifact_tag = artifact_tag
+
+    @property
+    def uri(self):
+        """Gets the uri of this CoreArtifactQuery.  # noqa: E501
+
+
+        :return: The uri of this CoreArtifactQuery.  # noqa: E501
         :rtype: str
         """
-        return self._project
+        return self._uri
 
-    @project.setter
-    def project(self, project):
-        """Sets the project of this CoreArtifactQuery.
+    @uri.setter
+    def uri(self, uri):
+        """Sets the uri of this CoreArtifactQuery.
 
 
-        :param project: The project of this CoreArtifactQuery.  # noqa: E501
+        :param uri: The uri of this CoreArtifactQuery.  # noqa: E501
         :type: str
         """
 
-        self._project = project
-
-    @property
-    def domain(self):
-        """Gets the domain of this CoreArtifactQuery.  # noqa: E501
-
-
-        :return: The domain of this CoreArtifactQuery.  # noqa: E501
-        :rtype: str
-        """
-        return self._domain
-
-    @domain.setter
-    def domain(self, domain):
-        """Sets the domain of this CoreArtifactQuery.
-
-
-        :param domain: The domain of this CoreArtifactQuery.  # noqa: E501
-        :type: str
-        """
-
-        self._domain = domain
-
-    @property
-    def alias(self):
-        """Gets the alias of this CoreArtifactQuery.  # noqa: E501
-
-
-        :return: The alias of this CoreArtifactQuery.  # noqa: E501
-        :rtype: CoreArtifactAlias
-        """
-        return self._alias
-
-    @alias.setter
-    def alias(self, alias):
-        """Sets the alias of this CoreArtifactQuery.
-
-
-        :param alias: The alias of this CoreArtifactQuery.  # noqa: E501
-        :type: CoreArtifactAlias
-        """
-
-        self._alias = alias
+        self._uri = uri
 
     def to_dict(self):
         """Returns the model properties as a dict"""

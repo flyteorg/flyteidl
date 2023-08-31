@@ -16,12 +16,12 @@ from __future__ import absolute_import
 import unittest
 
 import flyteadmin
-from flyteadmin.models.core_artifact_alias import CoreArtifactAlias  # noqa: E501
+from flyteadmin.models.core_partitions import CorePartitions  # noqa: E501
 from flyteadmin.rest import ApiException
 
 
-class TestCoreArtifactAlias(unittest.TestCase):
-    """CoreArtifactAlias unit test stubs"""
+class TestCorePartitions(unittest.TestCase):
+    """CorePartitions unit test stubs"""
 
     def setUp(self):
         pass
@@ -29,10 +29,10 @@ class TestCoreArtifactAlias(unittest.TestCase):
     def tearDown(self):
         pass
 
-    def testCoreArtifactAlias(self):
-        """Test CoreArtifactAlias"""
+    def testCorePartitions(self):
+        """Test CorePartitions"""
         # FIXME: construct object with mandatory attributes with example values
-        # model = flyteadmin.models.core_artifact_alias.CoreArtifactAlias()  # noqa: E501
+        # model = flyteadmin.models.core_partitions.CorePartitions()  # noqa: E501
         pass
 
 

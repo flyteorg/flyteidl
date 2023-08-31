@@ -9,8 +9,6 @@
 
 package flyteadmin
 
-type CoreArtifactAlias struct {
-	ArtifactId *CoreArtifactId `json:"artifact_id,omitempty"`
-	Name string `json:"name,omitempty"`
-	Value string `json:"value,omitempty"`
+type CorePartitions struct {
+	Value map[string]string `json:"value,omitempty"`
 }

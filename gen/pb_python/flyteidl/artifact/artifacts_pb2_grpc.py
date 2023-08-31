@@ -24,35 +24,10 @@ class ArtifactRegistryStub(object):
                 request_serializer=flyteidl_dot_artifact_dot_artifacts__pb2.GetArtifactRequest.SerializeToString,
                 response_deserializer=flyteidl_dot_artifact_dot_artifacts__pb2.GetArtifactResponse.FromString,
                 )
-        self.ListArtifactNames = channel.unary_unary(
-                '/flyteidl.artifact.ArtifactRegistry/ListArtifactNames',
-                request_serializer=flyteidl_dot_artifact_dot_artifacts__pb2.ListArtifactNamesRequest.SerializeToString,
-                response_deserializer=flyteidl_dot_artifact_dot_artifacts__pb2.ListArtifactNamesResponse.FromString,
-                )
-        self.ListArtifacts = channel.unary_unary(
-                '/flyteidl.artifact.ArtifactRegistry/ListArtifacts',
-                request_serializer=flyteidl_dot_artifact_dot_artifacts__pb2.ListArtifactsRequest.SerializeToString,
-                response_deserializer=flyteidl_dot_artifact_dot_artifacts__pb2.ListArtifactsResponse.FromString,
-                )
-        self.TagArtifact = channel.unary_unary(
-                '/flyteidl.artifact.ArtifactRegistry/TagArtifact',
-                request_serializer=flyteidl_dot_artifact_dot_artifacts__pb2.AddTagsRequest.SerializeToString,
-                response_deserializer=flyteidl_dot_artifact_dot_artifacts__pb2.AddTagsResponse.FromString,
-                )
-        self.RemoveTags = channel.unary_unary(
-                '/flyteidl.artifact.ArtifactRegistry/RemoveTags',
-                request_serializer=flyteidl_dot_artifact_dot_artifacts__pb2.RemoveTagsRequest.SerializeToString,
-                response_deserializer=flyteidl_dot_artifact_dot_artifacts__pb2.RemoveTagsResponse.FromString,
-                )
-        self.CreateAlias = channel.unary_unary(
-                '/flyteidl.artifact.ArtifactRegistry/CreateAlias',
-                request_serializer=flyteidl_dot_artifact_dot_artifacts__pb2.CreateAliasRequest.SerializeToString,
-                response_deserializer=flyteidl_dot_artifact_dot_artifacts__pb2.CreateAliasResponse.FromString,
-                )
-        self.RemoveAlias = channel.unary_unary(
-                '/flyteidl.artifact.ArtifactRegistry/RemoveAlias',
-                request_serializer=flyteidl_dot_artifact_dot_artifacts__pb2.RemoveAliasRequest.SerializeToString,
-                response_deserializer=flyteidl_dot_artifact_dot_artifacts__pb2.RemoveAliasResponse.FromString,
+        self.AddTag = channel.unary_unary(
+                '/flyteidl.artifact.ArtifactRegistry/AddTag',
+                request_serializer=flyteidl_dot_artifact_dot_artifacts__pb2.AddTagRequest.SerializeToString,
+                response_deserializer=flyteidl_dot_artifact_dot_artifacts__pb2.AddTagResponse.FromString,
                 )
 
 
@@ -71,38 +46,12 @@ class ArtifactRegistryServicer(object):
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
-    def ListArtifactNames(self, request, context):
-        """Missing associated documentation comment in .proto file."""
-        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
-        context.set_details('Method not implemented!')
-        raise NotImplementedError('Method not implemented!')
+    def AddTag(self, request, context):
+        """rpc ListArtifactNames (ListArtifactNamesRequest) returns (ListArtifactNamesResponse) {}
 
-    def ListArtifacts(self, request, context):
-        """Missing associated documentation comment in .proto file."""
-        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
-        context.set_details('Method not implemented!')
-        raise NotImplementedError('Method not implemented!')
+        rpc ListArtifacts (ListArtifactsRequest) returns (ListArtifactsResponse) {}
 
-    def TagArtifact(self, request, context):
-        """Missing associated documentation comment in .proto file."""
-        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
-        context.set_details('Method not implemented!')
-        raise NotImplementedError('Method not implemented!')
-
-    def RemoveTags(self, request, context):
-        """Missing associated documentation comment in .proto file."""
-        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
-        context.set_details('Method not implemented!')
-        raise NotImplementedError('Method not implemented!')
-
-    def CreateAlias(self, request, context):
-        """Missing associated documentation comment in .proto file."""
-        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
-        context.set_details('Method not implemented!')
-        raise NotImplementedError('Method not implemented!')
-
-    def RemoveAlias(self, request, context):
-        """Missing associated documentation comment in .proto file."""
+        """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
@@ -120,35 +69,10 @@ def add_ArtifactRegistryServicer_to_server(servicer, server):
                     request_deserializer=flyteidl_dot_artifact_dot_artifacts__pb2.GetArtifactRequest.FromString,
                     response_serializer=flyteidl_dot_artifact_dot_artifacts__pb2.GetArtifactResponse.SerializeToString,
             ),
-            'ListArtifactNames': grpc.unary_unary_rpc_method_handler(
-                    servicer.ListArtifactNames,
-                    request_deserializer=flyteidl_dot_artifact_dot_artifacts__pb2.ListArtifactNamesRequest.FromString,
-                    response_serializer=flyteidl_dot_artifact_dot_artifacts__pb2.ListArtifactNamesResponse.SerializeToString,
-            ),
-            'ListArtifacts': grpc.unary_unary_rpc_method_handler(
-                    servicer.ListArtifacts,
-                    request_deserializer=flyteidl_dot_artifact_dot_artifacts__pb2.ListArtifactsRequest.FromString,
-                    response_serializer=flyteidl_dot_artifact_dot_artifacts__pb2.ListArtifactsResponse.SerializeToString,
-            ),
-            'TagArtifact': grpc.unary_unary_rpc_method_handler(
-                    servicer.TagArtifact,
-                    request_deserializer=flyteidl_dot_artifact_dot_artifacts__pb2.AddTagsRequest.FromString,
-                    response_serializer=flyteidl_dot_artifact_dot_artifacts__pb2.AddTagsResponse.SerializeToString,
-            ),
-            'RemoveTags': grpc.unary_unary_rpc_method_handler(
-                    servicer.RemoveTags,
-                    request_deserializer=flyteidl_dot_artifact_dot_artifacts__pb2.RemoveTagsRequest.FromString,
-                    response_serializer=flyteidl_dot_artifact_dot_artifacts__pb2.RemoveTagsResponse.SerializeToString,
-            ),
-            'CreateAlias': grpc.unary_unary_rpc_method_handler(
-                    servicer.CreateAlias,
-                    request_deserializer=flyteidl_dot_artifact_dot_artifacts__pb2.CreateAliasRequest.FromString,
-                    response_serializer=flyteidl_dot_artifact_dot_artifacts__pb2.CreateAliasResponse.SerializeToString,
-            ),
-            'RemoveAlias': grpc.unary_unary_rpc_method_handler(
-                    servicer.RemoveAlias,
-                    request_deserializer=flyteidl_dot_artifact_dot_artifacts__pb2.RemoveAliasRequest.FromString,
-                    response_serializer=flyteidl_dot_artifact_dot_artifacts__pb2.RemoveAliasResponse.SerializeToString,
+            'AddTag': grpc.unary_unary_rpc_method_handler(
+                    servicer.AddTag,
+                    request_deserializer=flyteidl_dot_artifact_dot_artifacts__pb2.AddTagRequest.FromString,
+                    response_serializer=flyteidl_dot_artifact_dot_artifacts__pb2.AddTagResponse.SerializeToString,
             ),
     }
     generic_handler = grpc.method_handlers_generic_handler(
@@ -195,7 +119,7 @@ class ArtifactRegistry(object):
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
     @staticmethod
-    def ListArtifactNames(request,
+    def AddTag(request,
             target,
             options=(),
             channel_credentials=None,
@@ -205,93 +129,8 @@ class ArtifactRegistry(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/flyteidl.artifact.ArtifactRegistry/ListArtifactNames',
-            flyteidl_dot_artifact_dot_artifacts__pb2.ListArtifactNamesRequest.SerializeToString,
-            flyteidl_dot_artifact_dot_artifacts__pb2.ListArtifactNamesResponse.FromString,
-            options, channel_credentials,
-            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
-
-    @staticmethod
-    def ListArtifacts(request,
-            target,
-            options=(),
-            channel_credentials=None,
-            call_credentials=None,
-            insecure=False,
-            compression=None,
-            wait_for_ready=None,
-            timeout=None,
-            metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/flyteidl.artifact.ArtifactRegistry/ListArtifacts',
-            flyteidl_dot_artifact_dot_artifacts__pb2.ListArtifactsRequest.SerializeToString,
-            flyteidl_dot_artifact_dot_artifacts__pb2.ListArtifactsResponse.FromString,
-            options, channel_credentials,
-            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
-
-    @staticmethod
-    def TagArtifact(request,
-            target,
-            options=(),
-            channel_credentials=None,
-            call_credentials=None,
-            insecure=False,
-            compression=None,
-            wait_for_ready=None,
-            timeout=None,
-            metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/flyteidl.artifact.ArtifactRegistry/TagArtifact',
-            flyteidl_dot_artifact_dot_artifacts__pb2.AddTagsRequest.SerializeToString,
-            flyteidl_dot_artifact_dot_artifacts__pb2.AddTagsResponse.FromString,
-            options, channel_credentials,
-            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
-
-    @staticmethod
-    def RemoveTags(request,
-            target,
-            options=(),
-            channel_credentials=None,
-            call_credentials=None,
-            insecure=False,
-            compression=None,
-            wait_for_ready=None,
-            timeout=None,
-            metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/flyteidl.artifact.ArtifactRegistry/RemoveTags',
-            flyteidl_dot_artifact_dot_artifacts__pb2.RemoveTagsRequest.SerializeToString,
-            flyteidl_dot_artifact_dot_artifacts__pb2.RemoveTagsResponse.FromString,
-            options, channel_credentials,
-            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
-
-    @staticmethod
-    def CreateAlias(request,
-            target,
-            options=(),
-            channel_credentials=None,
-            call_credentials=None,
-            insecure=False,
-            compression=None,
-            wait_for_ready=None,
-            timeout=None,
-            metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/flyteidl.artifact.ArtifactRegistry/CreateAlias',
-            flyteidl_dot_artifact_dot_artifacts__pb2.CreateAliasRequest.SerializeToString,
-            flyteidl_dot_artifact_dot_artifacts__pb2.CreateAliasResponse.FromString,
-            options, channel_credentials,
-            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
-
-    @staticmethod
-    def RemoveAlias(request,
-            target,
-            options=(),
-            channel_credentials=None,
-            call_credentials=None,
-            insecure=False,
-            compression=None,
-            wait_for_ready=None,
-            timeout=None,
-            metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/flyteidl.artifact.ArtifactRegistry/RemoveAlias',
-            flyteidl_dot_artifact_dot_artifacts__pb2.RemoveAliasRequest.SerializeToString,
-            flyteidl_dot_artifact_dot_artifacts__pb2.RemoveAliasResponse.FromString,
+        return grpc.experimental.unary_unary(request, target, '/flyteidl.artifact.ArtifactRegistry/AddTag',
+            flyteidl_dot_artifact_dot_artifacts__pb2.AddTagRequest.SerializeToString,
+            flyteidl_dot_artifact_dot_artifacts__pb2.AddTagResponse.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)

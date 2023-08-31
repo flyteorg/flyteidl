@@ -247,33 +247,6 @@
       },
       "description": "Specifies sort ordering in a list request."
     },
-    "coreArtifactID": {
-      "type": "object",
-      "properties": {
-        "artifact_key": {
-          "$ref": "#/definitions/coreArtifactKey"
-        },
-        "uuid": {
-          "type": "string",
-          "description": "consider hiding - this is a storage layer ID. Might even change for the same object."
-        }
-      }
-    },
-    "coreArtifactKey": {
-      "type": "object",
-      "properties": {
-        "project": {
-          "type": "string",
-          "description": "Project and domain and suffix needs to be unique across a given artifact store."
-        },
-        "domain": {
-          "type": "string"
-        },
-        "suffix": {
-          "type": "string"
-        }
-      }
-    },
     "coreBinary": {
       "type": "object",
       "properties": {
@@ -361,10 +334,6 @@
         "map": {
           "$ref": "#/definitions/coreLiteralMap",
           "description": "A map of strings to literals."
-        },
-        "artifact_id": {
-          "$ref": "#/definitions/coreArtifactID",
-          "title": "A reference to another Literal"
         },
         "hash": {
           "type": "string",

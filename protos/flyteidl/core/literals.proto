@@ -8,7 +8,6 @@ import "google/protobuf/timestamp.proto";
 import "google/protobuf/duration.proto";
 import "google/protobuf/struct.proto";
 import "flyteidl/core/types.proto";
-import "flyteidl/core/identifier.proto";
 
 // Primitive Types
 message Primitive {
@@ -103,9 +102,6 @@ message Literal {
 
         // A map of strings to literals.
         LiteralMap map = 3;
-
-        // A reference to another Literal
-        core.ArtifactID artifact_id = 7;
     }
 
     // A hash representing this literal.

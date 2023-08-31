@@ -55,19 +55,24 @@ func (m *Variable) Validate() error {
 
 	// no validation rules for Description
 
-	for idx, item := range m.GetAliases() {
-		_, _ = idx, item
-
-		if v, ok := interface{}(item).(interface{ Validate() error }); ok {
-			if err := v.Validate(); err != nil {
-				return VariableValidationError{
-					field:  fmt.Sprintf("Aliases[%v]", idx),
-					reason: "embedded message failed validation",
-					cause:  err,
-				}
+	if v, ok := interface{}(m.GetArtifactPartialId()).(interface{ Validate() error }); ok {
+		if err := v.Validate(); err != nil {
+			return VariableValidationError{
+				field:  "ArtifactPartialId",
+				reason: "embedded message failed validation",
+				cause:  err,
 			}
 		}
+	}
 
+	if v, ok := interface{}(m.GetArtifactTag()).(interface{ Validate() error }); ok {
+		if err := v.Validate(); err != nil {
+			return VariableValidationError{
+				field:  "ArtifactTag",
+				reason: "embedded message failed validation",
+				cause:  err,
+			}
+		}
 	}
 
 	return nil
@@ -334,6 +339,18 @@ func (m *Parameter) Validate() error {
 			if err := v.Validate(); err != nil {
 				return ParameterValidationError{
 					field:  "ArtifactQuery",
+					reason: "embedded message failed validation",
+					cause:  err,
+				}
+			}
+		}
+
+	case *Parameter_ArtifactId:
+
+		if v, ok := interface{}(m.GetArtifactId()).(interface{ Validate() error }); ok {
+			if err := v.Validate(); err != nil {
+				return ParameterValidationError{
+					field:  "ArtifactId",
 					reason: "embedded message failed validation",
 					cause:  err,
 				}

@@ -22,12 +22,7 @@ namespace artifact {
 static const char* ArtifactRegistry_method_names[] = {
   "/flyteidl.artifact.ArtifactRegistry/CreateArtifact",
   "/flyteidl.artifact.ArtifactRegistry/GetArtifact",
-  "/flyteidl.artifact.ArtifactRegistry/ListArtifactNames",
-  "/flyteidl.artifact.ArtifactRegistry/ListArtifacts",
-  "/flyteidl.artifact.ArtifactRegistry/TagArtifact",
-  "/flyteidl.artifact.ArtifactRegistry/RemoveTags",
-  "/flyteidl.artifact.ArtifactRegistry/CreateAlias",
-  "/flyteidl.artifact.ArtifactRegistry/RemoveAlias",
+  "/flyteidl.artifact.ArtifactRegistry/AddTag",
 };
 
 std::unique_ptr< ArtifactRegistry::Stub> ArtifactRegistry::NewStub(const std::shared_ptr< ::grpc::ChannelInterface>& channel, const ::grpc::StubOptions& options) {
@@ -39,12 +34,7 @@ std::unique_ptr< ArtifactRegistry::Stub> ArtifactRegistry::NewStub(const std::sh
 ArtifactRegistry::Stub::Stub(const std::shared_ptr< ::grpc::ChannelInterface>& channel)
   : channel_(channel), rpcmethod_CreateArtifact_(ArtifactRegistry_method_names[0], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
   , rpcmethod_GetArtifact_(ArtifactRegistry_method_names[1], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
-  , rpcmethod_ListArtifactNames_(ArtifactRegistry_method_names[2], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
-  , rpcmethod_ListArtifacts_(ArtifactRegistry_method_names[3], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
-  , rpcmethod_TagArtifact_(ArtifactRegistry_method_names[4], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
-  , rpcmethod_RemoveTags_(ArtifactRegistry_method_names[5], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
-  , rpcmethod_CreateAlias_(ArtifactRegistry_method_names[6], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
-  , rpcmethod_RemoveAlias_(ArtifactRegistry_method_names[7], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_AddTag_(ArtifactRegistry_method_names[2], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
   {}
 
 ::grpc::Status ArtifactRegistry::Stub::CreateArtifact(::grpc::ClientContext* context, const ::flyteidl::artifact::CreateArtifactRequest& request, ::flyteidl::artifact::CreateArtifactResponse* response) {
@@ -103,172 +93,32 @@ void ArtifactRegistry::Stub::experimental_async::GetArtifact(::grpc::ClientConte
   return ::grpc::internal::ClientAsyncResponseReaderFactory< ::flyteidl::artifact::GetArtifactResponse>::Create(channel_.get(), cq, rpcmethod_GetArtifact_, context, request, false);
 }
 
-::grpc::Status ArtifactRegistry::Stub::ListArtifactNames(::grpc::ClientContext* context, const ::flyteidl::artifact::ListArtifactNamesRequest& request, ::flyteidl::artifact::ListArtifactNamesResponse* response) {
-  return ::grpc::internal::BlockingUnaryCall(channel_.get(), rpcmethod_ListArtifactNames_, context, request, response);
+::grpc::Status ArtifactRegistry::Stub::AddTag(::grpc::ClientContext* context, const ::flyteidl::artifact::AddTagRequest& request, ::flyteidl::artifact::AddTagResponse* response) {
+  return ::grpc::internal::BlockingUnaryCall(channel_.get(), rpcmethod_AddTag_, context, request, response);
 }
 
-void ArtifactRegistry::Stub::experimental_async::ListArtifactNames(::grpc::ClientContext* context, const ::flyteidl::artifact::ListArtifactNamesRequest* request, ::flyteidl::artifact::ListArtifactNamesResponse* response, std::function<void(::grpc::Status)> f) {
-  ::grpc::internal::CallbackUnaryCall(stub_->channel_.get(), stub_->rpcmethod_ListArtifactNames_, context, request, response, std::move(f));
+void ArtifactRegistry::Stub::experimental_async::AddTag(::grpc::ClientContext* context, const ::flyteidl::artifact::AddTagRequest* request, ::flyteidl::artifact::AddTagResponse* response, std::function<void(::grpc::Status)> f) {
+  ::grpc::internal::CallbackUnaryCall(stub_->channel_.get(), stub_->rpcmethod_AddTag_, context, request, response, std::move(f));
 }
 
-void ArtifactRegistry::Stub::experimental_async::ListArtifactNames(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::flyteidl::artifact::ListArtifactNamesResponse* response, std::function<void(::grpc::Status)> f) {
-  ::grpc::internal::CallbackUnaryCall(stub_->channel_.get(), stub_->rpcmethod_ListArtifactNames_, context, request, response, std::move(f));
+void ArtifactRegistry::Stub::experimental_async::AddTag(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::flyteidl::artifact::AddTagResponse* response, std::function<void(::grpc::Status)> f) {
+  ::grpc::internal::CallbackUnaryCall(stub_->channel_.get(), stub_->rpcmethod_AddTag_, context, request, response, std::move(f));
 }
 
-void ArtifactRegistry::Stub::experimental_async::ListArtifactNames(::grpc::ClientContext* context, const ::flyteidl::artifact::ListArtifactNamesRequest* request, ::flyteidl::artifact::ListArtifactNamesResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
-  ::grpc::internal::ClientCallbackUnaryFactory::Create(stub_->channel_.get(), stub_->rpcmethod_ListArtifactNames_, context, request, response, reactor);
+void ArtifactRegistry::Stub::experimental_async::AddTag(::grpc::ClientContext* context, const ::flyteidl::artifact::AddTagRequest* request, ::flyteidl::artifact::AddTagResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
+  ::grpc::internal::ClientCallbackUnaryFactory::Create(stub_->channel_.get(), stub_->rpcmethod_AddTag_, context, request, response, reactor);
 }
 
-void ArtifactRegistry::Stub::experimental_async::ListArtifactNames(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::flyteidl::artifact::ListArtifactNamesResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
-  ::grpc::internal::ClientCallbackUnaryFactory::Create(stub_->channel_.get(), stub_->rpcmethod_ListArtifactNames_, context, request, response, reactor);
+void ArtifactRegistry::Stub::experimental_async::AddTag(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::flyteidl::artifact::AddTagResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
+  ::grpc::internal::ClientCallbackUnaryFactory::Create(stub_->channel_.get(), stub_->rpcmethod_AddTag_, context, request, response, reactor);
 }
 
-::grpc::ClientAsyncResponseReader< ::flyteidl::artifact::ListArtifactNamesResponse>* ArtifactRegistry::Stub::AsyncListArtifactNamesRaw(::grpc::ClientContext* context, const ::flyteidl::artifact::ListArtifactNamesRequest& request, ::grpc::CompletionQueue* cq) {
-  return ::grpc::internal::ClientAsyncResponseReaderFactory< ::flyteidl::artifact::ListArtifactNamesResponse>::Create(channel_.get(), cq, rpcmethod_ListArtifactNames_, context, request, true);
+::grpc::ClientAsyncResponseReader< ::flyteidl::artifact::AddTagResponse>* ArtifactRegistry::Stub::AsyncAddTagRaw(::grpc::ClientContext* context, const ::flyteidl::artifact::AddTagRequest& request, ::grpc::CompletionQueue* cq) {
+  return ::grpc::internal::ClientAsyncResponseReaderFactory< ::flyteidl::artifact::AddTagResponse>::Create(channel_.get(), cq, rpcmethod_AddTag_, context, request, true);
 }
 
-::grpc::ClientAsyncResponseReader< ::flyteidl::artifact::ListArtifactNamesResponse>* ArtifactRegistry::Stub::PrepareAsyncListArtifactNamesRaw(::grpc::ClientContext* context, const ::flyteidl::artifact::ListArtifactNamesRequest& request, ::grpc::CompletionQueue* cq) {
-  return ::grpc::internal::ClientAsyncResponseReaderFactory< ::flyteidl::artifact::ListArtifactNamesResponse>::Create(channel_.get(), cq, rpcmethod_ListArtifactNames_, context, request, false);
-}
-
-::grpc::Status ArtifactRegistry::Stub::ListArtifacts(::grpc::ClientContext* context, const ::flyteidl::artifact::ListArtifactsRequest& request, ::flyteidl::artifact::ListArtifactsResponse* response) {
-  return ::grpc::internal::BlockingUnaryCall(channel_.get(), rpcmethod_ListArtifacts_, context, request, response);
-}
-
-void ArtifactRegistry::Stub::experimental_async::ListArtifacts(::grpc::ClientContext* context, const ::flyteidl::artifact::ListArtifactsRequest* request, ::flyteidl::artifact::ListArtifactsResponse* response, std::function<void(::grpc::Status)> f) {
-  ::grpc::internal::CallbackUnaryCall(stub_->channel_.get(), stub_->rpcmethod_ListArtifacts_, context, request, response, std::move(f));
-}
-
-void ArtifactRegistry::Stub::experimental_async::ListArtifacts(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::flyteidl::artifact::ListArtifactsResponse* response, std::function<void(::grpc::Status)> f) {
-  ::grpc::internal::CallbackUnaryCall(stub_->channel_.get(), stub_->rpcmethod_ListArtifacts_, context, request, response, std::move(f));
-}
-
-void ArtifactRegistry::Stub::experimental_async::ListArtifacts(::grpc::ClientContext* context, const ::flyteidl::artifact::ListArtifactsRequest* request, ::flyteidl::artifact::ListArtifactsResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
-  ::grpc::internal::ClientCallbackUnaryFactory::Create(stub_->channel_.get(), stub_->rpcmethod_ListArtifacts_, context, request, response, reactor);
-}
-
-void ArtifactRegistry::Stub::experimental_async::ListArtifacts(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::flyteidl::artifact::ListArtifactsResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
-  ::grpc::internal::ClientCallbackUnaryFactory::Create(stub_->channel_.get(), stub_->rpcmethod_ListArtifacts_, context, request, response, reactor);
-}
-
-::grpc::ClientAsyncResponseReader< ::flyteidl::artifact::ListArtifactsResponse>* ArtifactRegistry::Stub::AsyncListArtifactsRaw(::grpc::ClientContext* context, const ::flyteidl::artifact::ListArtifactsRequest& request, ::grpc::CompletionQueue* cq) {
-  return ::grpc::internal::ClientAsyncResponseReaderFactory< ::flyteidl::artifact::ListArtifactsResponse>::Create(channel_.get(), cq, rpcmethod_ListArtifacts_, context, request, true);
-}
-
-::grpc::ClientAsyncResponseReader< ::flyteidl::artifact::ListArtifactsResponse>* ArtifactRegistry::Stub::PrepareAsyncListArtifactsRaw(::grpc::ClientContext* context, const ::flyteidl::artifact::ListArtifactsRequest& request, ::grpc::CompletionQueue* cq) {
-  return ::grpc::internal::ClientAsyncResponseReaderFactory< ::flyteidl::artifact::ListArtifactsResponse>::Create(channel_.get(), cq, rpcmethod_ListArtifacts_, context, request, false);
-}
-
-::grpc::Status ArtifactRegistry::Stub::TagArtifact(::grpc::ClientContext* context, const ::flyteidl::artifact::AddTagsRequest& request, ::flyteidl::artifact::AddTagsResponse* response) {
-  return ::grpc::internal::BlockingUnaryCall(channel_.get(), rpcmethod_TagArtifact_, context, request, response);
-}
-
-void ArtifactRegistry::Stub::experimental_async::TagArtifact(::grpc::ClientContext* context, const ::flyteidl::artifact::AddTagsRequest* request, ::flyteidl::artifact::AddTagsResponse* response, std::function<void(::grpc::Status)> f) {
-  ::grpc::internal::CallbackUnaryCall(stub_->channel_.get(), stub_->rpcmethod_TagArtifact_, context, request, response, std::move(f));
-}
-
-void ArtifactRegistry::Stub::experimental_async::TagArtifact(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::flyteidl::artifact::AddTagsResponse* response, std::function<void(::grpc::Status)> f) {
-  ::grpc::internal::CallbackUnaryCall(stub_->channel_.get(), stub_->rpcmethod_TagArtifact_, context, request, response, std::move(f));
-}
-
-void ArtifactRegistry::Stub::experimental_async::TagArtifact(::grpc::ClientContext* context, const ::flyteidl::artifact::AddTagsRequest* request, ::flyteidl::artifact::AddTagsResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
-  ::grpc::internal::ClientCallbackUnaryFactory::Create(stub_->channel_.get(), stub_->rpcmethod_TagArtifact_, context, request, response, reactor);
-}
-
-void ArtifactRegistry::Stub::experimental_async::TagArtifact(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::flyteidl::artifact::AddTagsResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
-  ::grpc::internal::ClientCallbackUnaryFactory::Create(stub_->channel_.get(), stub_->rpcmethod_TagArtifact_, context, request, response, reactor);
-}
-
-::grpc::ClientAsyncResponseReader< ::flyteidl::artifact::AddTagsResponse>* ArtifactRegistry::Stub::AsyncTagArtifactRaw(::grpc::ClientContext* context, const ::flyteidl::artifact::AddTagsRequest& request, ::grpc::CompletionQueue* cq) {
-  return ::grpc::internal::ClientAsyncResponseReaderFactory< ::flyteidl::artifact::AddTagsResponse>::Create(channel_.get(), cq, rpcmethod_TagArtifact_, context, request, true);
-}
-
-::grpc::ClientAsyncResponseReader< ::flyteidl::artifact::AddTagsResponse>* ArtifactRegistry::Stub::PrepareAsyncTagArtifactRaw(::grpc::ClientContext* context, const ::flyteidl::artifact::AddTagsRequest& request, ::grpc::CompletionQueue* cq) {
-  return ::grpc::internal::ClientAsyncResponseReaderFactory< ::flyteidl::artifact::AddTagsResponse>::Create(channel_.get(), cq, rpcmethod_TagArtifact_, context, request, false);
-}
-
-::grpc::Status ArtifactRegistry::Stub::RemoveTags(::grpc::ClientContext* context, const ::flyteidl::artifact::RemoveTagsRequest& request, ::flyteidl::artifact::RemoveTagsResponse* response) {
-  return ::grpc::internal::BlockingUnaryCall(channel_.get(), rpcmethod_RemoveTags_, context, request, response);
-}
-
-void ArtifactRegistry::Stub::experimental_async::RemoveTags(::grpc::ClientContext* context, const ::flyteidl::artifact::RemoveTagsRequest* request, ::flyteidl::artifact::RemoveTagsResponse* response, std::function<void(::grpc::Status)> f) {
-  ::grpc::internal::CallbackUnaryCall(stub_->channel_.get(), stub_->rpcmethod_RemoveTags_, context, request, response, std::move(f));
-}
-
-void ArtifactRegistry::Stub::experimental_async::RemoveTags(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::flyteidl::artifact::RemoveTagsResponse* response, std::function<void(::grpc::Status)> f) {
-  ::grpc::internal::CallbackUnaryCall(stub_->channel_.get(), stub_->rpcmethod_RemoveTags_, context, request, response, std::move(f));
-}
-
-void ArtifactRegistry::Stub::experimental_async::RemoveTags(::grpc::ClientContext* context, const ::flyteidl::artifact::RemoveTagsRequest* request, ::flyteidl::artifact::RemoveTagsResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
-  ::grpc::internal::ClientCallbackUnaryFactory::Create(stub_->channel_.get(), stub_->rpcmethod_RemoveTags_, context, request, response, reactor);
-}
-
-void ArtifactRegistry::Stub::experimental_async::RemoveTags(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::flyteidl::artifact::RemoveTagsResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
-  ::grpc::internal::ClientCallbackUnaryFactory::Create(stub_->channel_.get(), stub_->rpcmethod_RemoveTags_, context, request, response, reactor);
-}
-
-::grpc::ClientAsyncResponseReader< ::flyteidl::artifact::RemoveTagsResponse>* ArtifactRegistry::Stub::AsyncRemoveTagsRaw(::grpc::ClientContext* context, const ::flyteidl::artifact::RemoveTagsRequest& request, ::grpc::CompletionQueue* cq) {
-  return ::grpc::internal::ClientAsyncResponseReaderFactory< ::flyteidl::artifact::RemoveTagsResponse>::Create(channel_.get(), cq, rpcmethod_RemoveTags_, context, request, true);
-}
-
-::grpc::ClientAsyncResponseReader< ::flyteidl::artifact::RemoveTagsResponse>* ArtifactRegistry::Stub::PrepareAsyncRemoveTagsRaw(::grpc::ClientContext* context, const ::flyteidl::artifact::RemoveTagsRequest& request, ::grpc::CompletionQueue* cq) {
-  return ::grpc::internal::ClientAsyncResponseReaderFactory< ::flyteidl::artifact::RemoveTagsResponse>::Create(channel_.get(), cq, rpcmethod_RemoveTags_, context, request, false);
-}
-
-::grpc::Status ArtifactRegistry::Stub::CreateAlias(::grpc::ClientContext* context, const ::flyteidl::artifact::CreateAliasRequest& request, ::flyteidl::artifact::CreateAliasResponse* response) {
-  return ::grpc::internal::BlockingUnaryCall(channel_.get(), rpcmethod_CreateAlias_, context, request, response);
-}
-
-void ArtifactRegistry::Stub::experimental_async::CreateAlias(::grpc::ClientContext* context, const ::flyteidl::artifact::CreateAliasRequest* request, ::flyteidl::artifact::CreateAliasResponse* response, std::function<void(::grpc::Status)> f) {
-  ::grpc::internal::CallbackUnaryCall(stub_->channel_.get(), stub_->rpcmethod_CreateAlias_, context, request, response, std::move(f));
-}
-
-void ArtifactRegistry::Stub::experimental_async::CreateAlias(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::flyteidl::artifact::CreateAliasResponse* response, std::function<void(::grpc::Status)> f) {
-  ::grpc::internal::CallbackUnaryCall(stub_->channel_.get(), stub_->rpcmethod_CreateAlias_, context, request, response, std::move(f));
-}
-
-void ArtifactRegistry::Stub::experimental_async::CreateAlias(::grpc::ClientContext* context, const ::flyteidl::artifact::CreateAliasRequest* request, ::flyteidl::artifact::CreateAliasResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
-  ::grpc::internal::ClientCallbackUnaryFactory::Create(stub_->channel_.get(), stub_->rpcmethod_CreateAlias_, context, request, response, reactor);
-}
-
-void ArtifactRegistry::Stub::experimental_async::CreateAlias(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::flyteidl::artifact::CreateAliasResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
-  ::grpc::internal::ClientCallbackUnaryFactory::Create(stub_->channel_.get(), stub_->rpcmethod_CreateAlias_, context, request, response, reactor);
-}
-
-::grpc::ClientAsyncResponseReader< ::flyteidl::artifact::CreateAliasResponse>* ArtifactRegistry::Stub::AsyncCreateAliasRaw(::grpc::ClientContext* context, const ::flyteidl::artifact::CreateAliasRequest& request, ::grpc::CompletionQueue* cq) {
-  return ::grpc::internal::ClientAsyncResponseReaderFactory< ::flyteidl::artifact::CreateAliasResponse>::Create(channel_.get(), cq, rpcmethod_CreateAlias_, context, request, true);
-}
-
-::grpc::ClientAsyncResponseReader< ::flyteidl::artifact::CreateAliasResponse>* ArtifactRegistry::Stub::PrepareAsyncCreateAliasRaw(::grpc::ClientContext* context, const ::flyteidl::artifact::CreateAliasRequest& request, ::grpc::CompletionQueue* cq) {
-  return ::grpc::internal::ClientAsyncResponseReaderFactory< ::flyteidl::artifact::CreateAliasResponse>::Create(channel_.get(), cq, rpcmethod_CreateAlias_, context, request, false);
-}
-
-::grpc::Status ArtifactRegistry::Stub::RemoveAlias(::grpc::ClientContext* context, const ::flyteidl::artifact::RemoveAliasRequest& request, ::flyteidl::artifact::RemoveAliasResponse* response) {
-  return ::grpc::internal::BlockingUnaryCall(channel_.get(), rpcmethod_RemoveAlias_, context, request, response);
-}
-
-void ArtifactRegistry::Stub::experimental_async::RemoveAlias(::grpc::ClientContext* context, const ::flyteidl::artifact::RemoveAliasRequest* request, ::flyteidl::artifact::RemoveAliasResponse* response, std::function<void(::grpc::Status)> f) {
-  ::grpc::internal::CallbackUnaryCall(stub_->channel_.get(), stub_->rpcmethod_RemoveAlias_, context, request, response, std::move(f));
-}
-
-void ArtifactRegistry::Stub::experimental_async::RemoveAlias(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::flyteidl::artifact::RemoveAliasResponse* response, std::function<void(::grpc::Status)> f) {
-  ::grpc::internal::CallbackUnaryCall(stub_->channel_.get(), stub_->rpcmethod_RemoveAlias_, context, request, response, std::move(f));
-}
-
-void ArtifactRegistry::Stub::experimental_async::RemoveAlias(::grpc::ClientContext* context, const ::flyteidl::artifact::RemoveAliasRequest* request, ::flyteidl::artifact::RemoveAliasResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
-  ::grpc::internal::ClientCallbackUnaryFactory::Create(stub_->channel_.get(), stub_->rpcmethod_RemoveAlias_, context, request, response, reactor);
-}
-
-void ArtifactRegistry::Stub::experimental_async::RemoveAlias(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::flyteidl::artifact::RemoveAliasResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
-  ::grpc::internal::ClientCallbackUnaryFactory::Create(stub_->channel_.get(), stub_->rpcmethod_RemoveAlias_, context, request, response, reactor);
-}
-
-::grpc::ClientAsyncResponseReader< ::flyteidl::artifact::RemoveAliasResponse>* ArtifactRegistry::Stub::AsyncRemoveAliasRaw(::grpc::ClientContext* context, const ::flyteidl::artifact::RemoveAliasRequest& request, ::grpc::CompletionQueue* cq) {
-  return ::grpc::internal::ClientAsyncResponseReaderFactory< ::flyteidl::artifact::RemoveAliasResponse>::Create(channel_.get(), cq, rpcmethod_RemoveAlias_, context, request, true);
-}
-
-::grpc::ClientAsyncResponseReader< ::flyteidl::artifact::RemoveAliasResponse>* ArtifactRegistry::Stub::PrepareAsyncRemoveAliasRaw(::grpc::ClientContext* context, const ::flyteidl::artifact::RemoveAliasRequest& request, ::grpc::CompletionQueue* cq) {
-  return ::grpc::internal::ClientAsyncResponseReaderFactory< ::flyteidl::artifact::RemoveAliasResponse>::Create(channel_.get(), cq, rpcmethod_RemoveAlias_, context, request, false);
+::grpc::ClientAsyncResponseReader< ::flyteidl::artifact::AddTagResponse>* ArtifactRegistry::Stub::PrepareAsyncAddTagRaw(::grpc::ClientContext* context, const ::flyteidl::artifact::AddTagRequest& request, ::grpc::CompletionQueue* cq) {
+  return ::grpc::internal::ClientAsyncResponseReaderFactory< ::flyteidl::artifact::AddTagResponse>::Create(channel_.get(), cq, rpcmethod_AddTag_, context, request, false);
 }
 
 ArtifactRegistry::Service::Service() {
@@ -285,33 +135,8 @@ ArtifactRegistry::Service::Service() {
   AddMethod(new ::grpc::internal::RpcServiceMethod(
       ArtifactRegistry_method_names[2],
       ::grpc::internal::RpcMethod::NORMAL_RPC,
-      new ::grpc::internal::RpcMethodHandler< ArtifactRegistry::Service, ::flyteidl::artifact::ListArtifactNamesRequest, ::flyteidl::artifact::ListArtifactNamesResponse>(
-          std::mem_fn(&ArtifactRegistry::Service::ListArtifactNames), this)));
-  AddMethod(new ::grpc::internal::RpcServiceMethod(
-      ArtifactRegistry_method_names[3],
-      ::grpc::internal::RpcMethod::NORMAL_RPC,
-      new ::grpc::internal::RpcMethodHandler< ArtifactRegistry::Service, ::flyteidl::artifact::ListArtifactsRequest, ::flyteidl::artifact::ListArtifactsResponse>(
-          std::mem_fn(&ArtifactRegistry::Service::ListArtifacts), this)));
-  AddMethod(new ::grpc::internal::RpcServiceMethod(
-      ArtifactRegistry_method_names[4],
-      ::grpc::internal::RpcMethod::NORMAL_RPC,
-      new ::grpc::internal::RpcMethodHandler< ArtifactRegistry::Service, ::flyteidl::artifact::AddTagsRequest, ::flyteidl::artifact::AddTagsResponse>(
-          std::mem_fn(&ArtifactRegistry::Service::TagArtifact), this)));
-  AddMethod(new ::grpc::internal::RpcServiceMethod(
-      ArtifactRegistry_method_names[5],
-      ::grpc::internal::RpcMethod::NORMAL_RPC,
-      new ::grpc::internal::RpcMethodHandler< ArtifactRegistry::Service, ::flyteidl::artifact::RemoveTagsRequest, ::flyteidl::artifact::RemoveTagsResponse>(
-          std::mem_fn(&ArtifactRegistry::Service::RemoveTags), this)));
-  AddMethod(new ::grpc::internal::RpcServiceMethod(
-      ArtifactRegistry_method_names[6],
-      ::grpc::internal::RpcMethod::NORMAL_RPC,
-      new ::grpc::internal::RpcMethodHandler< ArtifactRegistry::Service, ::flyteidl::artifact::CreateAliasRequest, ::flyteidl::artifact::CreateAliasResponse>(
-          std::mem_fn(&ArtifactRegistry::Service::CreateAlias), this)));
-  AddMethod(new ::grpc::internal::RpcServiceMethod(
-      ArtifactRegistry_method_names[7],
-      ::grpc::internal::RpcMethod::NORMAL_RPC,
-      new ::grpc::internal::RpcMethodHandler< ArtifactRegistry::Service, ::flyteidl::artifact::RemoveAliasRequest, ::flyteidl::artifact::RemoveAliasResponse>(
-          std::mem_fn(&ArtifactRegistry::Service::RemoveAlias), this)));
+      new ::grpc::internal::RpcMethodHandler< ArtifactRegistry::Service, ::flyteidl::artifact::AddTagRequest, ::flyteidl::artifact::AddTagResponse>(
+          std::mem_fn(&ArtifactRegistry::Service::AddTag), this)));
 }
 
 ArtifactRegistry::Service::~Service() {
@@ -331,42 +156,7 @@ ArtifactRegistry::Service::~Service() {
   return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
 }
 
-::grpc::Status ArtifactRegistry::Service::ListArtifactNames(::grpc::ServerContext* context, const ::flyteidl::artifact::ListArtifactNamesRequest* request, ::flyteidl::artifact::ListArtifactNamesResponse* response) {
-  (void) context;
-  (void) request;
-  (void) response;
-  return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
-}
-
-::grpc::Status ArtifactRegistry::Service::ListArtifacts(::grpc::ServerContext* context, const ::flyteidl::artifact::ListArtifactsRequest* request, ::flyteidl::artifact::ListArtifactsResponse* response) {
-  (void) context;
-  (void) request;
-  (void) response;
-  return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
-}
-
-::grpc::Status ArtifactRegistry::Service::TagArtifact(::grpc::ServerContext* context, const ::flyteidl::artifact::AddTagsRequest* request, ::flyteidl::artifact::AddTagsResponse* response) {
-  (void) context;
-  (void) request;
-  (void) response;
-  return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
-}
-
-::grpc::Status ArtifactRegistry::Service::RemoveTags(::grpc::ServerContext* context, const ::flyteidl::artifact::RemoveTagsRequest* request, ::flyteidl::artifact::RemoveTagsResponse* response) {
-  (void) context;
-  (void) request;
-  (void) response;
-  return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
-}
-
-::grpc::Status ArtifactRegistry::Service::CreateAlias(::grpc::ServerContext* context, const ::flyteidl::artifact::CreateAliasRequest* request, ::flyteidl::artifact::CreateAliasResponse* response) {
-  (void) context;
-  (void) request;
-  (void) response;
-  return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
-}
-
-::grpc::Status ArtifactRegistry::Service::RemoveAlias(::grpc::ServerContext* context, const ::flyteidl::artifact::RemoveAliasRequest* request, ::flyteidl::artifact::RemoveAliasResponse* response) {
+::grpc::Status ArtifactRegistry::Service::AddTag(::grpc::ServerContext* context, const ::flyteidl::artifact::AddTagRequest* request, ::flyteidl::artifact::AddTagResponse* response) {
   (void) context;
   (void) request;
   (void) response;

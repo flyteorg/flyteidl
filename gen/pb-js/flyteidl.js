@@ -1230,7 +1230,7 @@
                  * @interface IArtifactKey
                  * @property {string|null} [project] ArtifactKey project
                  * @property {string|null} [domain] ArtifactKey domain
-                 * @property {string|null} [suffix] ArtifactKey suffix
+                 * @property {string|null} [name] ArtifactKey name
                  */
     
                 /**
@@ -1265,12 +1265,12 @@
                 ArtifactKey.prototype.domain = "";
     
                 /**
-                 * ArtifactKey suffix.
-                 * @member {string} suffix
+                 * ArtifactKey name.
+                 * @member {string} name
                  * @memberof flyteidl.core.ArtifactKey
                  * @instance
                  */
-                ArtifactKey.prototype.suffix = "";
+                ArtifactKey.prototype.name = "";
     
                 /**
                  * Creates a new ArtifactKey instance using the specified properties.
@@ -1300,8 +1300,8 @@
                         writer.uint32(/* id 1, wireType 2 =*/10).string(message.project);
                     if (message.domain != null && message.hasOwnProperty("domain"))
                         writer.uint32(/* id 2, wireType 2 =*/18).string(message.domain);
-                    if (message.suffix != null && message.hasOwnProperty("suffix"))
-                        writer.uint32(/* id 3, wireType 2 =*/26).string(message.suffix);
+                    if (message.name != null && message.hasOwnProperty("name"))
+                        writer.uint32(/* id 3, wireType 2 =*/26).string(message.name);
                     return writer;
                 };
     
@@ -1330,7 +1330,7 @@
                             message.domain = reader.string();
                             break;
                         case 3:
-                            message.suffix = reader.string();
+                            message.name = reader.string();
                             break;
                         default:
                             reader.skipType(tag & 7);
@@ -1357,13 +1357,135 @@
                     if (message.domain != null && message.hasOwnProperty("domain"))
                         if (!$util.isString(message.domain))
                             return "domain: string expected";
-                    if (message.suffix != null && message.hasOwnProperty("suffix"))
-                        if (!$util.isString(message.suffix))
-                            return "suffix: string expected";
+                    if (message.name != null && message.hasOwnProperty("name"))
+                        if (!$util.isString(message.name))
+                            return "name: string expected";
                     return null;
                 };
     
                 return ArtifactKey;
+            })();
+    
+            core.Partitions = (function() {
+    
+                /**
+                 * Properties of a Partitions.
+                 * @memberof flyteidl.core
+                 * @interface IPartitions
+                 * @property {Object.<string,string>|null} [value] Partitions value
+                 */
+    
+                /**
+                 * Constructs a new Partitions.
+                 * @memberof flyteidl.core
+                 * @classdesc Represents a Partitions.
+                 * @implements IPartitions
+                 * @constructor
+                 * @param {flyteidl.core.IPartitions=} [properties] Properties to set
+                 */
+                function Partitions(properties) {
+                    this.value = {};
+                    if (properties)
+                        for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                            if (properties[keys[i]] != null)
+                                this[keys[i]] = properties[keys[i]];
+                }
+    
+                /**
+                 * Partitions value.
+                 * @member {Object.<string,string>} value
+                 * @memberof flyteidl.core.Partitions
+                 * @instance
+                 */
+                Partitions.prototype.value = $util.emptyObject;
+    
+                /**
+                 * Creates a new Partitions instance using the specified properties.
+                 * @function create
+                 * @memberof flyteidl.core.Partitions
+                 * @static
+                 * @param {flyteidl.core.IPartitions=} [properties] Properties to set
+                 * @returns {flyteidl.core.Partitions} Partitions instance
+                 */
+                Partitions.create = function create(properties) {
+                    return new Partitions(properties);
+                };
+    
+                /**
+                 * Encodes the specified Partitions message. Does not implicitly {@link flyteidl.core.Partitions.verify|verify} messages.
+                 * @function encode
+                 * @memberof flyteidl.core.Partitions
+                 * @static
+                 * @param {flyteidl.core.IPartitions} message Partitions message or plain object to encode
+                 * @param {$protobuf.Writer} [writer] Writer to encode to
+                 * @returns {$protobuf.Writer} Writer
+                 */
+                Partitions.encode = function encode(message, writer) {
+                    if (!writer)
+                        writer = $Writer.create();
+                    if (message.value != null && message.hasOwnProperty("value"))
+                        for (var keys = Object.keys(message.value), i = 0; i < keys.length; ++i)
+                            writer.uint32(/* id 1, wireType 2 =*/10).fork().uint32(/* id 1, wireType 2 =*/10).string(keys[i]).uint32(/* id 2, wireType 2 =*/18).string(message.value[keys[i]]).ldelim();
+                    return writer;
+                };
+    
+                /**
+                 * Decodes a Partitions message from the specified reader or buffer.
+                 * @function decode
+                 * @memberof flyteidl.core.Partitions
+                 * @static
+                 * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+                 * @param {number} [length] Message length if known beforehand
+                 * @returns {flyteidl.core.Partitions} Partitions
+                 * @throws {Error} If the payload is not a reader or valid buffer
+                 * @throws {$protobuf.util.ProtocolError} If required fields are missing
+                 */
+                Partitions.decode = function decode(reader, length) {
+                    if (!(reader instanceof $Reader))
+                        reader = $Reader.create(reader);
+                    var end = length === undefined ? reader.len : reader.pos + length, message = new $root.flyteidl.core.Partitions(), key;
+                    while (reader.pos < end) {
+                        var tag = reader.uint32();
+                        switch (tag >>> 3) {
+                        case 1:
+                            reader.skip().pos++;
+                            if (message.value === $util.emptyObject)
+                                message.value = {};
+                            key = reader.string();
+                            reader.pos++;
+                            message.value[key] = reader.string();
+                            break;
+                        default:
+                            reader.skipType(tag & 7);
+                            break;
+                        }
+                    }
+                    return message;
+                };
+    
+                /**
+                 * Verifies a Partitions message.
+                 * @function verify
+                 * @memberof flyteidl.core.Partitions
+                 * @static
+                 * @param {Object.<string,*>} message Plain object to verify
+                 * @returns {string|null} `null` if valid, otherwise the reason why it is not
+                 */
+                Partitions.verify = function verify(message) {
+                    if (typeof message !== "object" || message === null)
+                        return "object expected";
+                    if (message.value != null && message.hasOwnProperty("value")) {
+                        if (!$util.isObject(message.value))
+                            return "value: object expected";
+                        var key = Object.keys(message.value);
+                        for (var i = 0; i < key.length; ++i)
+                            if (!$util.isString(message.value[key[i]]))
+                                return "value: string{k:string} expected";
+                    }
+                    return null;
+                };
+    
+                return Partitions;
             })();
     
             core.ArtifactID = (function() {
@@ -1373,7 +1495,8 @@
                  * @memberof flyteidl.core
                  * @interface IArtifactID
                  * @property {flyteidl.core.IArtifactKey|null} [artifactKey] ArtifactID artifactKey
-                 * @property {string|null} [uuid] ArtifactID uuid
+                 * @property {string|null} [version] ArtifactID version
+                 * @property {flyteidl.core.IPartitions|null} [partitions] ArtifactID partitions
                  */
     
                 /**
@@ -1400,12 +1523,34 @@
                 ArtifactID.prototype.artifactKey = null;
     
                 /**
-                 * ArtifactID uuid.
-                 * @member {string} uuid
+                 * ArtifactID version.
+                 * @member {string} version
                  * @memberof flyteidl.core.ArtifactID
                  * @instance
                  */
-                ArtifactID.prototype.uuid = "";
+                ArtifactID.prototype.version = "";
+    
+                /**
+                 * ArtifactID partitions.
+                 * @member {flyteidl.core.IPartitions|null|undefined} partitions
+                 * @memberof flyteidl.core.ArtifactID
+                 * @instance
+                 */
+                ArtifactID.prototype.partitions = null;
+    
+                // OneOf field names bound to virtual getters and setters
+                var $oneOfFields;
+    
+                /**
+                 * ArtifactID dimensions.
+                 * @member {"partitions"|undefined} dimensions
+                 * @memberof flyteidl.core.ArtifactID
+                 * @instance
+                 */
+                Object.defineProperty(ArtifactID.prototype, "dimensions", {
+                    get: $util.oneOfGetter($oneOfFields = ["partitions"]),
+                    set: $util.oneOfSetter($oneOfFields)
+                });
     
                 /**
                  * Creates a new ArtifactID instance using the specified properties.
@@ -1433,8 +1578,10 @@
                         writer = $Writer.create();
                     if (message.artifactKey != null && message.hasOwnProperty("artifactKey"))
                         $root.flyteidl.core.ArtifactKey.encode(message.artifactKey, writer.uint32(/* id 1, wireType 2 =*/10).fork()).ldelim();
-                    if (message.uuid != null && message.hasOwnProperty("uuid"))
-                        writer.uint32(/* id 2, wireType 2 =*/18).string(message.uuid);
+                    if (message.version != null && message.hasOwnProperty("version"))
+                        writer.uint32(/* id 2, wireType 2 =*/18).string(message.version);
+                    if (message.partitions != null && message.hasOwnProperty("partitions"))
+                        $root.flyteidl.core.Partitions.encode(message.partitions, writer.uint32(/* id 3, wireType 2 =*/26).fork()).ldelim();
                     return writer;
                 };
     
@@ -1460,7 +1607,10 @@
                             message.artifactKey = $root.flyteidl.core.ArtifactKey.decode(reader, reader.uint32());
                             break;
                         case 2:
-                            message.uuid = reader.string();
+                            message.version = reader.string();
+                            break;
+                        case 3:
+                            message.partitions = $root.flyteidl.core.Partitions.decode(reader, reader.uint32());
                             break;
                         default:
                             reader.skipType(tag & 7);
@@ -1481,40 +1631,48 @@
                 ArtifactID.verify = function verify(message) {
                     if (typeof message !== "object" || message === null)
                         return "object expected";
+                    var properties = {};
                     if (message.artifactKey != null && message.hasOwnProperty("artifactKey")) {
                         var error = $root.flyteidl.core.ArtifactKey.verify(message.artifactKey);
                         if (error)
                             return "artifactKey." + error;
                     }
-                    if (message.uuid != null && message.hasOwnProperty("uuid"))
-                        if (!$util.isString(message.uuid))
-                            return "uuid: string expected";
+                    if (message.version != null && message.hasOwnProperty("version"))
+                        if (!$util.isString(message.version))
+                            return "version: string expected";
+                    if (message.partitions != null && message.hasOwnProperty("partitions")) {
+                        properties.dimensions = 1;
+                        {
+                            var error = $root.flyteidl.core.Partitions.verify(message.partitions);
+                            if (error)
+                                return "partitions." + error;
+                        }
+                    }
                     return null;
                 };
     
                 return ArtifactID;
             })();
     
-            core.ArtifactAlias = (function() {
+            core.ArtifactTag = (function() {
     
                 /**
-                 * Properties of an ArtifactAlias.
+                 * Properties of an ArtifactTag.
                  * @memberof flyteidl.core
-                 * @interface IArtifactAlias
-                 * @property {flyteidl.core.IArtifactID|null} [artifactId] ArtifactAlias artifactId
-                 * @property {string|null} [name] ArtifactAlias name
-                 * @property {string|null} [value] ArtifactAlias value
+                 * @interface IArtifactTag
+                 * @property {flyteidl.core.IArtifactKey|null} [artifactKey] ArtifactTag artifactKey
+                 * @property {string|null} [value] ArtifactTag value
                  */
     
                 /**
-                 * Constructs a new ArtifactAlias.
+                 * Constructs a new ArtifactTag.
                  * @memberof flyteidl.core
-                 * @classdesc Represents an ArtifactAlias.
-                 * @implements IArtifactAlias
+                 * @classdesc Represents an ArtifactTag.
+                 * @implements IArtifactTag
                  * @constructor
-                 * @param {flyteidl.core.IArtifactAlias=} [properties] Properties to set
+                 * @param {flyteidl.core.IArtifactTag=} [properties] Properties to set
                  */
-                function ArtifactAlias(properties) {
+                function ArtifactTag(properties) {
                     if (properties)
                         for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
                             if (properties[keys[i]] != null)
@@ -1522,87 +1680,74 @@
                 }
     
                 /**
-                 * ArtifactAlias artifactId.
-                 * @member {flyteidl.core.IArtifactID|null|undefined} artifactId
-                 * @memberof flyteidl.core.ArtifactAlias
+                 * ArtifactTag artifactKey.
+                 * @member {flyteidl.core.IArtifactKey|null|undefined} artifactKey
+                 * @memberof flyteidl.core.ArtifactTag
                  * @instance
                  */
-                ArtifactAlias.prototype.artifactId = null;
+                ArtifactTag.prototype.artifactKey = null;
     
                 /**
-                 * ArtifactAlias name.
-                 * @member {string} name
-                 * @memberof flyteidl.core.ArtifactAlias
-                 * @instance
-                 */
-                ArtifactAlias.prototype.name = "";
-    
-                /**
-                 * ArtifactAlias value.
+                 * ArtifactTag value.
                  * @member {string} value
-                 * @memberof flyteidl.core.ArtifactAlias
+                 * @memberof flyteidl.core.ArtifactTag
                  * @instance
                  */
-                ArtifactAlias.prototype.value = "";
+                ArtifactTag.prototype.value = "";
     
                 /**
-                 * Creates a new ArtifactAlias instance using the specified properties.
+                 * Creates a new ArtifactTag instance using the specified properties.
                  * @function create
-                 * @memberof flyteidl.core.ArtifactAlias
+                 * @memberof flyteidl.core.ArtifactTag
                  * @static
-                 * @param {flyteidl.core.IArtifactAlias=} [properties] Properties to set
-                 * @returns {flyteidl.core.ArtifactAlias} ArtifactAlias instance
+                 * @param {flyteidl.core.IArtifactTag=} [properties] Properties to set
+                 * @returns {flyteidl.core.ArtifactTag} ArtifactTag instance
                  */
-                ArtifactAlias.create = function create(properties) {
-                    return new ArtifactAlias(properties);
+                ArtifactTag.create = function create(properties) {
+                    return new ArtifactTag(properties);
                 };
     
                 /**
-                 * Encodes the specified ArtifactAlias message. Does not implicitly {@link flyteidl.core.ArtifactAlias.verify|verify} messages.
+                 * Encodes the specified ArtifactTag message. Does not implicitly {@link flyteidl.core.ArtifactTag.verify|verify} messages.
                  * @function encode
-                 * @memberof flyteidl.core.ArtifactAlias
+                 * @memberof flyteidl.core.ArtifactTag
                  * @static
-                 * @param {flyteidl.core.IArtifactAlias} message ArtifactAlias message or plain object to encode
+                 * @param {flyteidl.core.IArtifactTag} message ArtifactTag message or plain object to encode
                  * @param {$protobuf.Writer} [writer] Writer to encode to
                  * @returns {$protobuf.Writer} Writer
                  */
-                ArtifactAlias.encode = function encode(message, writer) {
+                ArtifactTag.encode = function encode(message, writer) {
                     if (!writer)
                         writer = $Writer.create();
-                    if (message.artifactId != null && message.hasOwnProperty("artifactId"))
-                        $root.flyteidl.core.ArtifactID.encode(message.artifactId, writer.uint32(/* id 1, wireType 2 =*/10).fork()).ldelim();
-                    if (message.name != null && message.hasOwnProperty("name"))
-                        writer.uint32(/* id 2, wireType 2 =*/18).string(message.name);
+                    if (message.artifactKey != null && message.hasOwnProperty("artifactKey"))
+                        $root.flyteidl.core.ArtifactKey.encode(message.artifactKey, writer.uint32(/* id 1, wireType 2 =*/10).fork()).ldelim();
                     if (message.value != null && message.hasOwnProperty("value"))
-                        writer.uint32(/* id 3, wireType 2 =*/26).string(message.value);
+                        writer.uint32(/* id 2, wireType 2 =*/18).string(message.value);
                     return writer;
                 };
     
                 /**
-                 * Decodes an ArtifactAlias message from the specified reader or buffer.
+                 * Decodes an ArtifactTag message from the specified reader or buffer.
                  * @function decode
-                 * @memberof flyteidl.core.ArtifactAlias
+                 * @memberof flyteidl.core.ArtifactTag
                  * @static
                  * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
                  * @param {number} [length] Message length if known beforehand
-                 * @returns {flyteidl.core.ArtifactAlias} ArtifactAlias
+                 * @returns {flyteidl.core.ArtifactTag} ArtifactTag
                  * @throws {Error} If the payload is not a reader or valid buffer
                  * @throws {$protobuf.util.ProtocolError} If required fields are missing
                  */
-                ArtifactAlias.decode = function decode(reader, length) {
+                ArtifactTag.decode = function decode(reader, length) {
                     if (!(reader instanceof $Reader))
                         reader = $Reader.create(reader);
-                    var end = length === undefined ? reader.len : reader.pos + length, message = new $root.flyteidl.core.ArtifactAlias();
+                    var end = length === undefined ? reader.len : reader.pos + length, message = new $root.flyteidl.core.ArtifactTag();
                     while (reader.pos < end) {
                         var tag = reader.uint32();
                         switch (tag >>> 3) {
                         case 1:
-                            message.artifactId = $root.flyteidl.core.ArtifactID.decode(reader, reader.uint32());
+                            message.artifactKey = $root.flyteidl.core.ArtifactKey.decode(reader, reader.uint32());
                             break;
                         case 2:
-                            message.name = reader.string();
-                            break;
-                        case 3:
                             message.value = reader.string();
                             break;
                         default:
@@ -1614,31 +1759,28 @@
                 };
     
                 /**
-                 * Verifies an ArtifactAlias message.
+                 * Verifies an ArtifactTag message.
                  * @function verify
-                 * @memberof flyteidl.core.ArtifactAlias
+                 * @memberof flyteidl.core.ArtifactTag
                  * @static
                  * @param {Object.<string,*>} message Plain object to verify
                  * @returns {string|null} `null` if valid, otherwise the reason why it is not
                  */
-                ArtifactAlias.verify = function verify(message) {
+                ArtifactTag.verify = function verify(message) {
                     if (typeof message !== "object" || message === null)
                         return "object expected";
-                    if (message.artifactId != null && message.hasOwnProperty("artifactId")) {
-                        var error = $root.flyteidl.core.ArtifactID.verify(message.artifactId);
+                    if (message.artifactKey != null && message.hasOwnProperty("artifactKey")) {
+                        var error = $root.flyteidl.core.ArtifactKey.verify(message.artifactKey);
                         if (error)
-                            return "artifactId." + error;
+                            return "artifactKey." + error;
                     }
-                    if (message.name != null && message.hasOwnProperty("name"))
-                        if (!$util.isString(message.name))
-                            return "name: string expected";
                     if (message.value != null && message.hasOwnProperty("value"))
                         if (!$util.isString(message.value))
                             return "value: string expected";
                     return null;
                 };
     
-                return ArtifactAlias;
+                return ArtifactTag;
             })();
     
             core.ArtifactQuery = (function() {
@@ -1647,9 +1789,9 @@
                  * Properties of an ArtifactQuery.
                  * @memberof flyteidl.core
                  * @interface IArtifactQuery
-                 * @property {string|null} [project] ArtifactQuery project
-                 * @property {string|null} [domain] ArtifactQuery domain
-                 * @property {flyteidl.core.IArtifactAlias|null} [alias] ArtifactQuery alias
+                 * @property {flyteidl.core.IArtifactID|null} [artifactId] ArtifactQuery artifactId
+                 * @property {flyteidl.core.IArtifactTag|null} [artifactTag] ArtifactQuery artifactTag
+                 * @property {string|null} [uri] ArtifactQuery uri
                  */
     
                 /**
@@ -1668,28 +1810,42 @@
                 }
     
                 /**
-                 * ArtifactQuery project.
-                 * @member {string} project
+                 * ArtifactQuery artifactId.
+                 * @member {flyteidl.core.IArtifactID|null|undefined} artifactId
                  * @memberof flyteidl.core.ArtifactQuery
                  * @instance
                  */
-                ArtifactQuery.prototype.project = "";
+                ArtifactQuery.prototype.artifactId = null;
     
                 /**
-                 * ArtifactQuery domain.
-                 * @member {string} domain
+                 * ArtifactQuery artifactTag.
+                 * @member {flyteidl.core.IArtifactTag|null|undefined} artifactTag
                  * @memberof flyteidl.core.ArtifactQuery
                  * @instance
                  */
-                ArtifactQuery.prototype.domain = "";
+                ArtifactQuery.prototype.artifactTag = null;
     
                 /**
-                 * ArtifactQuery alias.
-                 * @member {flyteidl.core.IArtifactAlias|null|undefined} alias
+                 * ArtifactQuery uri.
+                 * @member {string} uri
                  * @memberof flyteidl.core.ArtifactQuery
                  * @instance
                  */
-                ArtifactQuery.prototype.alias = null;
+                ArtifactQuery.prototype.uri = "";
+    
+                // OneOf field names bound to virtual getters and setters
+                var $oneOfFields;
+    
+                /**
+                 * ArtifactQuery identifier.
+                 * @member {"artifactId"|"artifactTag"|"uri"|undefined} identifier
+                 * @memberof flyteidl.core.ArtifactQuery
+                 * @instance
+                 */
+                Object.defineProperty(ArtifactQuery.prototype, "identifier", {
+                    get: $util.oneOfGetter($oneOfFields = ["artifactId", "artifactTag", "uri"]),
+                    set: $util.oneOfSetter($oneOfFields)
+                });
     
                 /**
                  * Creates a new ArtifactQuery instance using the specified properties.
@@ -1715,12 +1871,12 @@
                 ArtifactQuery.encode = function encode(message, writer) {
                     if (!writer)
                         writer = $Writer.create();
-                    if (message.project != null && message.hasOwnProperty("project"))
-                        writer.uint32(/* id 1, wireType 2 =*/10).string(message.project);
-                    if (message.domain != null && message.hasOwnProperty("domain"))
-                        writer.uint32(/* id 2, wireType 2 =*/18).string(message.domain);
-                    if (message.alias != null && message.hasOwnProperty("alias"))
-                        $root.flyteidl.core.ArtifactAlias.encode(message.alias, writer.uint32(/* id 3, wireType 2 =*/26).fork()).ldelim();
+                    if (message.artifactId != null && message.hasOwnProperty("artifactId"))
+                        $root.flyteidl.core.ArtifactID.encode(message.artifactId, writer.uint32(/* id 1, wireType 2 =*/10).fork()).ldelim();
+                    if (message.artifactTag != null && message.hasOwnProperty("artifactTag"))
+                        $root.flyteidl.core.ArtifactTag.encode(message.artifactTag, writer.uint32(/* id 2, wireType 2 =*/18).fork()).ldelim();
+                    if (message.uri != null && message.hasOwnProperty("uri"))
+                        writer.uint32(/* id 3, wireType 2 =*/26).string(message.uri);
                     return writer;
                 };
     
@@ -1743,13 +1899,13 @@
                         var tag = reader.uint32();
                         switch (tag >>> 3) {
                         case 1:
-                            message.project = reader.string();
+                            message.artifactId = $root.flyteidl.core.ArtifactID.decode(reader, reader.uint32());
                             break;
                         case 2:
-                            message.domain = reader.string();
+                            message.artifactTag = $root.flyteidl.core.ArtifactTag.decode(reader, reader.uint32());
                             break;
                         case 3:
-                            message.alias = $root.flyteidl.core.ArtifactAlias.decode(reader, reader.uint32());
+                            message.uri = reader.string();
                             break;
                         default:
                             reader.skipType(tag & 7);
@@ -1770,16 +1926,31 @@
                 ArtifactQuery.verify = function verify(message) {
                     if (typeof message !== "object" || message === null)
                         return "object expected";
-                    if (message.project != null && message.hasOwnProperty("project"))
-                        if (!$util.isString(message.project))
-                            return "project: string expected";
-                    if (message.domain != null && message.hasOwnProperty("domain"))
-                        if (!$util.isString(message.domain))
-                            return "domain: string expected";
-                    if (message.alias != null && message.hasOwnProperty("alias")) {
-                        var error = $root.flyteidl.core.ArtifactAlias.verify(message.alias);
-                        if (error)
-                            return "alias." + error;
+                    var properties = {};
+                    if (message.artifactId != null && message.hasOwnProperty("artifactId")) {
+                        properties.identifier = 1;
+                        {
+                            var error = $root.flyteidl.core.ArtifactID.verify(message.artifactId);
+                            if (error)
+                                return "artifactId." + error;
+                        }
+                    }
+                    if (message.artifactTag != null && message.hasOwnProperty("artifactTag")) {
+                        if (properties.identifier === 1)
+                            return "identifier: multiple values";
+                        properties.identifier = 1;
+                        {
+                            var error = $root.flyteidl.core.ArtifactTag.verify(message.artifactTag);
+                            if (error)
+                                return "artifactTag." + error;
+                        }
+                    }
+                    if (message.uri != null && message.hasOwnProperty("uri")) {
+                        if (properties.identifier === 1)
+                            return "identifier: multiple values";
+                        properties.identifier = 1;
+                        if (!$util.isString(message.uri))
+                            return "uri: string expected";
                     }
                     return null;
                 };
@@ -7422,7 +7593,6 @@
                  * @property {flyteidl.core.IScalar|null} [scalar] Literal scalar
                  * @property {flyteidl.core.ILiteralCollection|null} [collection] Literal collection
                  * @property {flyteidl.core.ILiteralMap|null} [map] Literal map
-                 * @property {flyteidl.core.IArtifactID|null} [artifactId] Literal artifactId
                  * @property {string|null} [hash] Literal hash
                  * @property {Object.<string,string>|null} [metadata] Literal metadata
                  * @property {flyteidl.core.ILiteralType|null} [literalType] Literal literalType
@@ -7469,14 +7639,6 @@
                 Literal.prototype.map = null;
     
                 /**
-                 * Literal artifactId.
-                 * @member {flyteidl.core.IArtifactID|null|undefined} artifactId
-                 * @memberof flyteidl.core.Literal
-                 * @instance
-                 */
-                Literal.prototype.artifactId = null;
-    
-                /**
                  * Literal hash.
                  * @member {string} hash
                  * @memberof flyteidl.core.Literal
@@ -7505,12 +7667,12 @@
     
                 /**
                  * Literal value.
-                 * @member {"scalar"|"collection"|"map"|"artifactId"|undefined} value
+                 * @member {"scalar"|"collection"|"map"|undefined} value
                  * @memberof flyteidl.core.Literal
                  * @instance
                  */
                 Object.defineProperty(Literal.prototype, "value", {
-                    get: $util.oneOfGetter($oneOfFields = ["scalar", "collection", "map", "artifactId"]),
+                    get: $util.oneOfGetter($oneOfFields = ["scalar", "collection", "map"]),
                     set: $util.oneOfSetter($oneOfFields)
                 });
     
@@ -7551,8 +7713,6 @@
                             writer.uint32(/* id 5, wireType 2 =*/42).fork().uint32(/* id 1, wireType 2 =*/10).string(keys[i]).uint32(/* id 2, wireType 2 =*/18).string(message.metadata[keys[i]]).ldelim();
                     if (message.literalType != null && message.hasOwnProperty("literalType"))
                         $root.flyteidl.core.LiteralType.encode(message.literalType, writer.uint32(/* id 6, wireType 2 =*/50).fork()).ldelim();
-                    if (message.artifactId != null && message.hasOwnProperty("artifactId"))
-                        $root.flyteidl.core.ArtifactID.encode(message.artifactId, writer.uint32(/* id 7, wireType 2 =*/58).fork()).ldelim();
                     return writer;
                 };
     
@@ -7582,9 +7742,6 @@
                             break;
                         case 3:
                             message.map = $root.flyteidl.core.LiteralMap.decode(reader, reader.uint32());
-                            break;
-                        case 7:
-                            message.artifactId = $root.flyteidl.core.ArtifactID.decode(reader, reader.uint32());
                             break;
                         case 4:
                             message.hash = reader.string();
@@ -7646,16 +7803,6 @@
                             var error = $root.flyteidl.core.LiteralMap.verify(message.map);
                             if (error)
                                 return "map." + error;
-                        }
-                    }
-                    if (message.artifactId != null && message.hasOwnProperty("artifactId")) {
-                        if (properties.value === 1)
-                            return "value: multiple values";
-                        properties.value = 1;
-                        {
-                            var error = $root.flyteidl.core.ArtifactID.verify(message.artifactId);
-                            if (error)
-                                return "artifactId." + error;
                         }
                     }
                     if (message.hash != null && message.hasOwnProperty("hash"))
@@ -11735,7 +11882,8 @@
                  * @interface IVariable
                  * @property {flyteidl.core.ILiteralType|null} [type] Variable type
                  * @property {string|null} [description] Variable description
-                 * @property {Array.<flyteidl.core.IArtifactAlias>|null} [aliases] Variable aliases
+                 * @property {flyteidl.core.IArtifactID|null} [artifactPartialId] Variable artifactPartialId
+                 * @property {flyteidl.core.IArtifactTag|null} [artifactTag] Variable artifactTag
                  */
     
                 /**
@@ -11747,7 +11895,6 @@
                  * @param {flyteidl.core.IVariable=} [properties] Properties to set
                  */
                 function Variable(properties) {
-                    this.aliases = [];
                     if (properties)
                         for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
                             if (properties[keys[i]] != null)
@@ -11771,12 +11918,20 @@
                 Variable.prototype.description = "";
     
                 /**
-                 * Variable aliases.
-                 * @member {Array.<flyteidl.core.IArtifactAlias>} aliases
+                 * Variable artifactPartialId.
+                 * @member {flyteidl.core.IArtifactID|null|undefined} artifactPartialId
                  * @memberof flyteidl.core.Variable
                  * @instance
                  */
-                Variable.prototype.aliases = $util.emptyArray;
+                Variable.prototype.artifactPartialId = null;
+    
+                /**
+                 * Variable artifactTag.
+                 * @member {flyteidl.core.IArtifactTag|null|undefined} artifactTag
+                 * @memberof flyteidl.core.Variable
+                 * @instance
+                 */
+                Variable.prototype.artifactTag = null;
     
                 /**
                  * Creates a new Variable instance using the specified properties.
@@ -11806,9 +11961,10 @@
                         $root.flyteidl.core.LiteralType.encode(message.type, writer.uint32(/* id 1, wireType 2 =*/10).fork()).ldelim();
                     if (message.description != null && message.hasOwnProperty("description"))
                         writer.uint32(/* id 2, wireType 2 =*/18).string(message.description);
-                    if (message.aliases != null && message.aliases.length)
-                        for (var i = 0; i < message.aliases.length; ++i)
-                            $root.flyteidl.core.ArtifactAlias.encode(message.aliases[i], writer.uint32(/* id 3, wireType 2 =*/26).fork()).ldelim();
+                    if (message.artifactPartialId != null && message.hasOwnProperty("artifactPartialId"))
+                        $root.flyteidl.core.ArtifactID.encode(message.artifactPartialId, writer.uint32(/* id 3, wireType 2 =*/26).fork()).ldelim();
+                    if (message.artifactTag != null && message.hasOwnProperty("artifactTag"))
+                        $root.flyteidl.core.ArtifactTag.encode(message.artifactTag, writer.uint32(/* id 4, wireType 2 =*/34).fork()).ldelim();
                     return writer;
                 };
     
@@ -11837,9 +11993,10 @@
                             message.description = reader.string();
                             break;
                         case 3:
-                            if (!(message.aliases && message.aliases.length))
-                                message.aliases = [];
-                            message.aliases.push($root.flyteidl.core.ArtifactAlias.decode(reader, reader.uint32()));
+                            message.artifactPartialId = $root.flyteidl.core.ArtifactID.decode(reader, reader.uint32());
+                            break;
+                        case 4:
+                            message.artifactTag = $root.flyteidl.core.ArtifactTag.decode(reader, reader.uint32());
                             break;
                         default:
                             reader.skipType(tag & 7);
@@ -11868,14 +12025,15 @@
                     if (message.description != null && message.hasOwnProperty("description"))
                         if (!$util.isString(message.description))
                             return "description: string expected";
-                    if (message.aliases != null && message.hasOwnProperty("aliases")) {
-                        if (!Array.isArray(message.aliases))
-                            return "aliases: array expected";
-                        for (var i = 0; i < message.aliases.length; ++i) {
-                            var error = $root.flyteidl.core.ArtifactAlias.verify(message.aliases[i]);
-                            if (error)
-                                return "aliases." + error;
-                        }
+                    if (message.artifactPartialId != null && message.hasOwnProperty("artifactPartialId")) {
+                        var error = $root.flyteidl.core.ArtifactID.verify(message.artifactPartialId);
+                        if (error)
+                            return "artifactPartialId." + error;
+                    }
+                    if (message.artifactTag != null && message.hasOwnProperty("artifactTag")) {
+                        var error = $root.flyteidl.core.ArtifactTag.verify(message.artifactTag);
+                        if (error)
+                            return "artifactTag." + error;
                     }
                     return null;
                 };
@@ -12150,6 +12308,7 @@
                  * @property {flyteidl.core.ILiteral|null} ["default"] Parameter default
                  * @property {boolean|null} [required] Parameter required
                  * @property {flyteidl.core.IArtifactQuery|null} [artifactQuery] Parameter artifactQuery
+                 * @property {flyteidl.core.IArtifactID|null} [artifactId] Parameter artifactId
                  */
     
                 /**
@@ -12199,17 +12358,25 @@
                  */
                 Parameter.prototype.artifactQuery = null;
     
+                /**
+                 * Parameter artifactId.
+                 * @member {flyteidl.core.IArtifactID|null|undefined} artifactId
+                 * @memberof flyteidl.core.Parameter
+                 * @instance
+                 */
+                Parameter.prototype.artifactId = null;
+    
                 // OneOf field names bound to virtual getters and setters
                 var $oneOfFields;
     
                 /**
                  * Parameter behavior.
-                 * @member {"default"|"required"|"artifactQuery"|undefined} behavior
+                 * @member {"default"|"required"|"artifactQuery"|"artifactId"|undefined} behavior
                  * @memberof flyteidl.core.Parameter
                  * @instance
                  */
                 Object.defineProperty(Parameter.prototype, "behavior", {
-                    get: $util.oneOfGetter($oneOfFields = ["default", "required", "artifactQuery"]),
+                    get: $util.oneOfGetter($oneOfFields = ["default", "required", "artifactQuery", "artifactId"]),
                     set: $util.oneOfSetter($oneOfFields)
                 });
     
@@ -12245,6 +12412,8 @@
                         writer.uint32(/* id 3, wireType 0 =*/24).bool(message.required);
                     if (message.artifactQuery != null && message.hasOwnProperty("artifactQuery"))
                         $root.flyteidl.core.ArtifactQuery.encode(message.artifactQuery, writer.uint32(/* id 4, wireType 2 =*/34).fork()).ldelim();
+                    if (message.artifactId != null && message.hasOwnProperty("artifactId"))
+                        $root.flyteidl.core.ArtifactID.encode(message.artifactId, writer.uint32(/* id 5, wireType 2 =*/42).fork()).ldelim();
                     return writer;
                 };
     
@@ -12277,6 +12446,9 @@
                             break;
                         case 4:
                             message.artifactQuery = $root.flyteidl.core.ArtifactQuery.decode(reader, reader.uint32());
+                            break;
+                        case 5:
+                            message.artifactId = $root.flyteidl.core.ArtifactID.decode(reader, reader.uint32());
                             break;
                         default:
                             reader.skipType(tag & 7);
@@ -12326,6 +12498,16 @@
                             var error = $root.flyteidl.core.ArtifactQuery.verify(message.artifactQuery);
                             if (error)
                                 return "artifactQuery." + error;
+                        }
+                    }
+                    if (message.artifactId != null && message.hasOwnProperty("artifactId")) {
+                        if (properties.behavior === 1)
+                            return "behavior: multiple values";
+                        properties.behavior = 1;
+                        {
+                            var error = $root.flyteidl.core.ArtifactID.verify(message.artifactId);
+                            if (error)
+                                return "artifactId." + error;
                         }
                     }
                     return null;
@@ -16616,6 +16798,11 @@
                  * @property {flyteidl.event.IWorkflowExecutionEvent|null} [rawEvent] CloudEventWorkflowExecution rawEvent
                  * @property {flyteidl.core.ILiteralMap|null} [outputData] CloudEventWorkflowExecution outputData
                  * @property {flyteidl.core.ITypedInterface|null} [outputInterface] CloudEventWorkflowExecution outputInterface
+                 * @property {flyteidl.core.ILiteralMap|null} [inputData] CloudEventWorkflowExecution inputData
+                 * @property {google.protobuf.ITimestamp|null} [scheduledAt] CloudEventWorkflowExecution scheduledAt
+                 * @property {Array.<flyteidl.core.IArtifactID>|null} [artifactIds] CloudEventWorkflowExecution artifactIds
+                 * @property {flyteidl.core.INodeExecutionIdentifier|null} [parentNodeExecution] CloudEventWorkflowExecution parentNodeExecution
+                 * @property {flyteidl.core.IWorkflowExecutionIdentifier|null} [referenceExecution] CloudEventWorkflowExecution referenceExecution
                  */
     
                 /**
@@ -16627,6 +16814,7 @@
                  * @param {flyteidl.event.ICloudEventWorkflowExecution=} [properties] Properties to set
                  */
                 function CloudEventWorkflowExecution(properties) {
+                    this.artifactIds = [];
                     if (properties)
                         for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
                             if (properties[keys[i]] != null)
@@ -16658,6 +16846,46 @@
                 CloudEventWorkflowExecution.prototype.outputInterface = null;
     
                 /**
+                 * CloudEventWorkflowExecution inputData.
+                 * @member {flyteidl.core.ILiteralMap|null|undefined} inputData
+                 * @memberof flyteidl.event.CloudEventWorkflowExecution
+                 * @instance
+                 */
+                CloudEventWorkflowExecution.prototype.inputData = null;
+    
+                /**
+                 * CloudEventWorkflowExecution scheduledAt.
+                 * @member {google.protobuf.ITimestamp|null|undefined} scheduledAt
+                 * @memberof flyteidl.event.CloudEventWorkflowExecution
+                 * @instance
+                 */
+                CloudEventWorkflowExecution.prototype.scheduledAt = null;
+    
+                /**
+                 * CloudEventWorkflowExecution artifactIds.
+                 * @member {Array.<flyteidl.core.IArtifactID>} artifactIds
+                 * @memberof flyteidl.event.CloudEventWorkflowExecution
+                 * @instance
+                 */
+                CloudEventWorkflowExecution.prototype.artifactIds = $util.emptyArray;
+    
+                /**
+                 * CloudEventWorkflowExecution parentNodeExecution.
+                 * @member {flyteidl.core.INodeExecutionIdentifier|null|undefined} parentNodeExecution
+                 * @memberof flyteidl.event.CloudEventWorkflowExecution
+                 * @instance
+                 */
+                CloudEventWorkflowExecution.prototype.parentNodeExecution = null;
+    
+                /**
+                 * CloudEventWorkflowExecution referenceExecution.
+                 * @member {flyteidl.core.IWorkflowExecutionIdentifier|null|undefined} referenceExecution
+                 * @memberof flyteidl.event.CloudEventWorkflowExecution
+                 * @instance
+                 */
+                CloudEventWorkflowExecution.prototype.referenceExecution = null;
+    
+                /**
                  * Creates a new CloudEventWorkflowExecution instance using the specified properties.
                  * @function create
                  * @memberof flyteidl.event.CloudEventWorkflowExecution
@@ -16687,6 +16915,17 @@
                         $root.flyteidl.core.LiteralMap.encode(message.outputData, writer.uint32(/* id 2, wireType 2 =*/18).fork()).ldelim();
                     if (message.outputInterface != null && message.hasOwnProperty("outputInterface"))
                         $root.flyteidl.core.TypedInterface.encode(message.outputInterface, writer.uint32(/* id 3, wireType 2 =*/26).fork()).ldelim();
+                    if (message.inputData != null && message.hasOwnProperty("inputData"))
+                        $root.flyteidl.core.LiteralMap.encode(message.inputData, writer.uint32(/* id 4, wireType 2 =*/34).fork()).ldelim();
+                    if (message.scheduledAt != null && message.hasOwnProperty("scheduledAt"))
+                        $root.google.protobuf.Timestamp.encode(message.scheduledAt, writer.uint32(/* id 5, wireType 2 =*/42).fork()).ldelim();
+                    if (message.artifactIds != null && message.artifactIds.length)
+                        for (var i = 0; i < message.artifactIds.length; ++i)
+                            $root.flyteidl.core.ArtifactID.encode(message.artifactIds[i], writer.uint32(/* id 6, wireType 2 =*/50).fork()).ldelim();
+                    if (message.parentNodeExecution != null && message.hasOwnProperty("parentNodeExecution"))
+                        $root.flyteidl.core.NodeExecutionIdentifier.encode(message.parentNodeExecution, writer.uint32(/* id 7, wireType 2 =*/58).fork()).ldelim();
+                    if (message.referenceExecution != null && message.hasOwnProperty("referenceExecution"))
+                        $root.flyteidl.core.WorkflowExecutionIdentifier.encode(message.referenceExecution, writer.uint32(/* id 8, wireType 2 =*/66).fork()).ldelim();
                     return writer;
                 };
     
@@ -16716,6 +16955,23 @@
                             break;
                         case 3:
                             message.outputInterface = $root.flyteidl.core.TypedInterface.decode(reader, reader.uint32());
+                            break;
+                        case 4:
+                            message.inputData = $root.flyteidl.core.LiteralMap.decode(reader, reader.uint32());
+                            break;
+                        case 5:
+                            message.scheduledAt = $root.google.protobuf.Timestamp.decode(reader, reader.uint32());
+                            break;
+                        case 6:
+                            if (!(message.artifactIds && message.artifactIds.length))
+                                message.artifactIds = [];
+                            message.artifactIds.push($root.flyteidl.core.ArtifactID.decode(reader, reader.uint32()));
+                            break;
+                        case 7:
+                            message.parentNodeExecution = $root.flyteidl.core.NodeExecutionIdentifier.decode(reader, reader.uint32());
+                            break;
+                        case 8:
+                            message.referenceExecution = $root.flyteidl.core.WorkflowExecutionIdentifier.decode(reader, reader.uint32());
                             break;
                         default:
                             reader.skipType(tag & 7);
@@ -16750,6 +17006,35 @@
                         var error = $root.flyteidl.core.TypedInterface.verify(message.outputInterface);
                         if (error)
                             return "outputInterface." + error;
+                    }
+                    if (message.inputData != null && message.hasOwnProperty("inputData")) {
+                        var error = $root.flyteidl.core.LiteralMap.verify(message.inputData);
+                        if (error)
+                            return "inputData." + error;
+                    }
+                    if (message.scheduledAt != null && message.hasOwnProperty("scheduledAt")) {
+                        var error = $root.google.protobuf.Timestamp.verify(message.scheduledAt);
+                        if (error)
+                            return "scheduledAt." + error;
+                    }
+                    if (message.artifactIds != null && message.hasOwnProperty("artifactIds")) {
+                        if (!Array.isArray(message.artifactIds))
+                            return "artifactIds: array expected";
+                        for (var i = 0; i < message.artifactIds.length; ++i) {
+                            var error = $root.flyteidl.core.ArtifactID.verify(message.artifactIds[i]);
+                            if (error)
+                                return "artifactIds." + error;
+                        }
+                    }
+                    if (message.parentNodeExecution != null && message.hasOwnProperty("parentNodeExecution")) {
+                        var error = $root.flyteidl.core.NodeExecutionIdentifier.verify(message.parentNodeExecution);
+                        if (error)
+                            return "parentNodeExecution." + error;
+                    }
+                    if (message.referenceExecution != null && message.hasOwnProperty("referenceExecution")) {
+                        var error = $root.flyteidl.core.WorkflowExecutionIdentifier.verify(message.referenceExecution);
+                        if (error)
+                            return "referenceExecution." + error;
                     }
                     return null;
                 };
@@ -16878,6 +17163,11 @@
                  * @property {flyteidl.event.ITaskExecutionEvent|null} [rawEvent] CloudEventTaskExecution rawEvent
                  * @property {flyteidl.core.ILiteralMap|null} [outputData] CloudEventTaskExecution outputData
                  * @property {flyteidl.core.ITypedInterface|null} [outputInterface] CloudEventTaskExecution outputInterface
+                 * @property {flyteidl.core.ILiteralMap|null} [inputData] CloudEventTaskExecution inputData
+                 * @property {google.protobuf.ITimestamp|null} [scheduledAt] CloudEventTaskExecution scheduledAt
+                 * @property {Array.<flyteidl.core.IArtifactID>|null} [artifactIds] CloudEventTaskExecution artifactIds
+                 * @property {flyteidl.core.INodeExecutionIdentifier|null} [parentNodeExecution] CloudEventTaskExecution parentNodeExecution
+                 * @property {flyteidl.core.IWorkflowExecutionIdentifier|null} [referenceExecution] CloudEventTaskExecution referenceExecution
                  */
     
                 /**
@@ -16889,6 +17179,7 @@
                  * @param {flyteidl.event.ICloudEventTaskExecution=} [properties] Properties to set
                  */
                 function CloudEventTaskExecution(properties) {
+                    this.artifactIds = [];
                     if (properties)
                         for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
                             if (properties[keys[i]] != null)
@@ -16920,6 +17211,46 @@
                 CloudEventTaskExecution.prototype.outputInterface = null;
     
                 /**
+                 * CloudEventTaskExecution inputData.
+                 * @member {flyteidl.core.ILiteralMap|null|undefined} inputData
+                 * @memberof flyteidl.event.CloudEventTaskExecution
+                 * @instance
+                 */
+                CloudEventTaskExecution.prototype.inputData = null;
+    
+                /**
+                 * CloudEventTaskExecution scheduledAt.
+                 * @member {google.protobuf.ITimestamp|null|undefined} scheduledAt
+                 * @memberof flyteidl.event.CloudEventTaskExecution
+                 * @instance
+                 */
+                CloudEventTaskExecution.prototype.scheduledAt = null;
+    
+                /**
+                 * CloudEventTaskExecution artifactIds.
+                 * @member {Array.<flyteidl.core.IArtifactID>} artifactIds
+                 * @memberof flyteidl.event.CloudEventTaskExecution
+                 * @instance
+                 */
+                CloudEventTaskExecution.prototype.artifactIds = $util.emptyArray;
+    
+                /**
+                 * CloudEventTaskExecution parentNodeExecution.
+                 * @member {flyteidl.core.INodeExecutionIdentifier|null|undefined} parentNodeExecution
+                 * @memberof flyteidl.event.CloudEventTaskExecution
+                 * @instance
+                 */
+                CloudEventTaskExecution.prototype.parentNodeExecution = null;
+    
+                /**
+                 * CloudEventTaskExecution referenceExecution.
+                 * @member {flyteidl.core.IWorkflowExecutionIdentifier|null|undefined} referenceExecution
+                 * @memberof flyteidl.event.CloudEventTaskExecution
+                 * @instance
+                 */
+                CloudEventTaskExecution.prototype.referenceExecution = null;
+    
+                /**
                  * Creates a new CloudEventTaskExecution instance using the specified properties.
                  * @function create
                  * @memberof flyteidl.event.CloudEventTaskExecution
@@ -16949,6 +17280,17 @@
                         $root.flyteidl.core.LiteralMap.encode(message.outputData, writer.uint32(/* id 2, wireType 2 =*/18).fork()).ldelim();
                     if (message.outputInterface != null && message.hasOwnProperty("outputInterface"))
                         $root.flyteidl.core.TypedInterface.encode(message.outputInterface, writer.uint32(/* id 3, wireType 2 =*/26).fork()).ldelim();
+                    if (message.inputData != null && message.hasOwnProperty("inputData"))
+                        $root.flyteidl.core.LiteralMap.encode(message.inputData, writer.uint32(/* id 4, wireType 2 =*/34).fork()).ldelim();
+                    if (message.scheduledAt != null && message.hasOwnProperty("scheduledAt"))
+                        $root.google.protobuf.Timestamp.encode(message.scheduledAt, writer.uint32(/* id 5, wireType 2 =*/42).fork()).ldelim();
+                    if (message.artifactIds != null && message.artifactIds.length)
+                        for (var i = 0; i < message.artifactIds.length; ++i)
+                            $root.flyteidl.core.ArtifactID.encode(message.artifactIds[i], writer.uint32(/* id 6, wireType 2 =*/50).fork()).ldelim();
+                    if (message.parentNodeExecution != null && message.hasOwnProperty("parentNodeExecution"))
+                        $root.flyteidl.core.NodeExecutionIdentifier.encode(message.parentNodeExecution, writer.uint32(/* id 7, wireType 2 =*/58).fork()).ldelim();
+                    if (message.referenceExecution != null && message.hasOwnProperty("referenceExecution"))
+                        $root.flyteidl.core.WorkflowExecutionIdentifier.encode(message.referenceExecution, writer.uint32(/* id 8, wireType 2 =*/66).fork()).ldelim();
                     return writer;
                 };
     
@@ -16978,6 +17320,23 @@
                             break;
                         case 3:
                             message.outputInterface = $root.flyteidl.core.TypedInterface.decode(reader, reader.uint32());
+                            break;
+                        case 4:
+                            message.inputData = $root.flyteidl.core.LiteralMap.decode(reader, reader.uint32());
+                            break;
+                        case 5:
+                            message.scheduledAt = $root.google.protobuf.Timestamp.decode(reader, reader.uint32());
+                            break;
+                        case 6:
+                            if (!(message.artifactIds && message.artifactIds.length))
+                                message.artifactIds = [];
+                            message.artifactIds.push($root.flyteidl.core.ArtifactID.decode(reader, reader.uint32()));
+                            break;
+                        case 7:
+                            message.parentNodeExecution = $root.flyteidl.core.NodeExecutionIdentifier.decode(reader, reader.uint32());
+                            break;
+                        case 8:
+                            message.referenceExecution = $root.flyteidl.core.WorkflowExecutionIdentifier.decode(reader, reader.uint32());
                             break;
                         default:
                             reader.skipType(tag & 7);
@@ -17012,6 +17371,35 @@
                         var error = $root.flyteidl.core.TypedInterface.verify(message.outputInterface);
                         if (error)
                             return "outputInterface." + error;
+                    }
+                    if (message.inputData != null && message.hasOwnProperty("inputData")) {
+                        var error = $root.flyteidl.core.LiteralMap.verify(message.inputData);
+                        if (error)
+                            return "inputData." + error;
+                    }
+                    if (message.scheduledAt != null && message.hasOwnProperty("scheduledAt")) {
+                        var error = $root.google.protobuf.Timestamp.verify(message.scheduledAt);
+                        if (error)
+                            return "scheduledAt." + error;
+                    }
+                    if (message.artifactIds != null && message.hasOwnProperty("artifactIds")) {
+                        if (!Array.isArray(message.artifactIds))
+                            return "artifactIds: array expected";
+                        for (var i = 0; i < message.artifactIds.length; ++i) {
+                            var error = $root.flyteidl.core.ArtifactID.verify(message.artifactIds[i]);
+                            if (error)
+                                return "artifactIds." + error;
+                        }
+                    }
+                    if (message.parentNodeExecution != null && message.hasOwnProperty("parentNodeExecution")) {
+                        var error = $root.flyteidl.core.NodeExecutionIdentifier.verify(message.parentNodeExecution);
+                        if (error)
+                            return "parentNodeExecution." + error;
+                    }
+                    if (message.referenceExecution != null && message.hasOwnProperty("referenceExecution")) {
+                        var error = $root.flyteidl.core.WorkflowExecutionIdentifier.verify(message.referenceExecution);
+                        if (error)
+                            return "referenceExecution." + error;
                     }
                     return null;
                 };
@@ -19710,8 +20098,8 @@
                  * @memberof flyteidl.artifact
                  * @interface IArtifact
                  * @property {flyteidl.core.IArtifactID|null} [artifactId] Artifact artifactId
-                 * @property {string|null} [uri] Artifact uri
                  * @property {flyteidl.artifact.IArtifactSpec|null} [spec] Artifact spec
+                 * @property {Array.<string>|null} [tags] Artifact tags
                  */
     
                 /**
@@ -19723,6 +20111,7 @@
                  * @param {flyteidl.artifact.IArtifact=} [properties] Properties to set
                  */
                 function Artifact(properties) {
+                    this.tags = [];
                     if (properties)
                         for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
                             if (properties[keys[i]] != null)
@@ -19738,20 +20127,20 @@
                 Artifact.prototype.artifactId = null;
     
                 /**
-                 * Artifact uri.
-                 * @member {string} uri
-                 * @memberof flyteidl.artifact.Artifact
-                 * @instance
-                 */
-                Artifact.prototype.uri = "";
-    
-                /**
                  * Artifact spec.
                  * @member {flyteidl.artifact.IArtifactSpec|null|undefined} spec
                  * @memberof flyteidl.artifact.Artifact
                  * @instance
                  */
                 Artifact.prototype.spec = null;
+    
+                /**
+                 * Artifact tags.
+                 * @member {Array.<string>} tags
+                 * @memberof flyteidl.artifact.Artifact
+                 * @instance
+                 */
+                Artifact.prototype.tags = $util.emptyArray;
     
                 /**
                  * Creates a new Artifact instance using the specified properties.
@@ -19779,10 +20168,11 @@
                         writer = $Writer.create();
                     if (message.artifactId != null && message.hasOwnProperty("artifactId"))
                         $root.flyteidl.core.ArtifactID.encode(message.artifactId, writer.uint32(/* id 1, wireType 2 =*/10).fork()).ldelim();
-                    if (message.uri != null && message.hasOwnProperty("uri"))
-                        writer.uint32(/* id 2, wireType 2 =*/18).string(message.uri);
                     if (message.spec != null && message.hasOwnProperty("spec"))
-                        $root.flyteidl.artifact.ArtifactSpec.encode(message.spec, writer.uint32(/* id 3, wireType 2 =*/26).fork()).ldelim();
+                        $root.flyteidl.artifact.ArtifactSpec.encode(message.spec, writer.uint32(/* id 2, wireType 2 =*/18).fork()).ldelim();
+                    if (message.tags != null && message.tags.length)
+                        for (var i = 0; i < message.tags.length; ++i)
+                            writer.uint32(/* id 3, wireType 2 =*/26).string(message.tags[i]);
                     return writer;
                 };
     
@@ -19808,10 +20198,12 @@
                             message.artifactId = $root.flyteidl.core.ArtifactID.decode(reader, reader.uint32());
                             break;
                         case 2:
-                            message.uri = reader.string();
+                            message.spec = $root.flyteidl.artifact.ArtifactSpec.decode(reader, reader.uint32());
                             break;
                         case 3:
-                            message.spec = $root.flyteidl.artifact.ArtifactSpec.decode(reader, reader.uint32());
+                            if (!(message.tags && message.tags.length))
+                                message.tags = [];
+                            message.tags.push(reader.string());
                             break;
                         default:
                             reader.skipType(tag & 7);
@@ -19837,13 +20229,17 @@
                         if (error)
                             return "artifactId." + error;
                     }
-                    if (message.uri != null && message.hasOwnProperty("uri"))
-                        if (!$util.isString(message.uri))
-                            return "uri: string expected";
                     if (message.spec != null && message.hasOwnProperty("spec")) {
                         var error = $root.flyteidl.artifact.ArtifactSpec.verify(message.spec);
                         if (error)
                             return "spec." + error;
+                    }
+                    if (message.tags != null && message.hasOwnProperty("tags")) {
+                        if (!Array.isArray(message.tags))
+                            return "tags: array expected";
+                        for (var i = 0; i < message.tags.length; ++i)
+                            if (!$util.isString(message.tags[i]))
+                                return "tags: string[] expected";
                     }
                     return null;
                 };
@@ -19858,7 +20254,10 @@
                  * @memberof flyteidl.artifact
                  * @interface ICreateArtifactRequest
                  * @property {flyteidl.core.IArtifactKey|null} [artifactKey] CreateArtifactRequest artifactKey
+                 * @property {string|null} [version] CreateArtifactRequest version
                  * @property {flyteidl.artifact.IArtifactSpec|null} [spec] CreateArtifactRequest spec
+                 * @property {Object.<string,string>|null} [partitions] CreateArtifactRequest partitions
+                 * @property {string|null} [tag] CreateArtifactRequest tag
                  */
     
                 /**
@@ -19870,6 +20269,7 @@
                  * @param {flyteidl.artifact.ICreateArtifactRequest=} [properties] Properties to set
                  */
                 function CreateArtifactRequest(properties) {
+                    this.partitions = {};
                     if (properties)
                         for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
                             if (properties[keys[i]] != null)
@@ -19885,12 +20285,36 @@
                 CreateArtifactRequest.prototype.artifactKey = null;
     
                 /**
+                 * CreateArtifactRequest version.
+                 * @member {string} version
+                 * @memberof flyteidl.artifact.CreateArtifactRequest
+                 * @instance
+                 */
+                CreateArtifactRequest.prototype.version = "";
+    
+                /**
                  * CreateArtifactRequest spec.
                  * @member {flyteidl.artifact.IArtifactSpec|null|undefined} spec
                  * @memberof flyteidl.artifact.CreateArtifactRequest
                  * @instance
                  */
                 CreateArtifactRequest.prototype.spec = null;
+    
+                /**
+                 * CreateArtifactRequest partitions.
+                 * @member {Object.<string,string>} partitions
+                 * @memberof flyteidl.artifact.CreateArtifactRequest
+                 * @instance
+                 */
+                CreateArtifactRequest.prototype.partitions = $util.emptyObject;
+    
+                /**
+                 * CreateArtifactRequest tag.
+                 * @member {string} tag
+                 * @memberof flyteidl.artifact.CreateArtifactRequest
+                 * @instance
+                 */
+                CreateArtifactRequest.prototype.tag = "";
     
                 /**
                  * Creates a new CreateArtifactRequest instance using the specified properties.
@@ -19920,6 +20344,13 @@
                         $root.flyteidl.core.ArtifactKey.encode(message.artifactKey, writer.uint32(/* id 1, wireType 2 =*/10).fork()).ldelim();
                     if (message.spec != null && message.hasOwnProperty("spec"))
                         $root.flyteidl.artifact.ArtifactSpec.encode(message.spec, writer.uint32(/* id 2, wireType 2 =*/18).fork()).ldelim();
+                    if (message.version != null && message.hasOwnProperty("version"))
+                        writer.uint32(/* id 3, wireType 2 =*/26).string(message.version);
+                    if (message.partitions != null && message.hasOwnProperty("partitions"))
+                        for (var keys = Object.keys(message.partitions), i = 0; i < keys.length; ++i)
+                            writer.uint32(/* id 4, wireType 2 =*/34).fork().uint32(/* id 1, wireType 2 =*/10).string(keys[i]).uint32(/* id 2, wireType 2 =*/18).string(message.partitions[keys[i]]).ldelim();
+                    if (message.tag != null && message.hasOwnProperty("tag"))
+                        writer.uint32(/* id 5, wireType 2 =*/42).string(message.tag);
                     return writer;
                 };
     
@@ -19937,15 +20368,29 @@
                 CreateArtifactRequest.decode = function decode(reader, length) {
                     if (!(reader instanceof $Reader))
                         reader = $Reader.create(reader);
-                    var end = length === undefined ? reader.len : reader.pos + length, message = new $root.flyteidl.artifact.CreateArtifactRequest();
+                    var end = length === undefined ? reader.len : reader.pos + length, message = new $root.flyteidl.artifact.CreateArtifactRequest(), key;
                     while (reader.pos < end) {
                         var tag = reader.uint32();
                         switch (tag >>> 3) {
                         case 1:
                             message.artifactKey = $root.flyteidl.core.ArtifactKey.decode(reader, reader.uint32());
                             break;
+                        case 3:
+                            message.version = reader.string();
+                            break;
                         case 2:
                             message.spec = $root.flyteidl.artifact.ArtifactSpec.decode(reader, reader.uint32());
+                            break;
+                        case 4:
+                            reader.skip().pos++;
+                            if (message.partitions === $util.emptyObject)
+                                message.partitions = {};
+                            key = reader.string();
+                            reader.pos++;
+                            message.partitions[key] = reader.string();
+                            break;
+                        case 5:
+                            message.tag = reader.string();
                             break;
                         default:
                             reader.skipType(tag & 7);
@@ -19971,11 +20416,25 @@
                         if (error)
                             return "artifactKey." + error;
                     }
+                    if (message.version != null && message.hasOwnProperty("version"))
+                        if (!$util.isString(message.version))
+                            return "version: string expected";
                     if (message.spec != null && message.hasOwnProperty("spec")) {
                         var error = $root.flyteidl.artifact.ArtifactSpec.verify(message.spec);
                         if (error)
                             return "spec." + error;
                     }
+                    if (message.partitions != null && message.hasOwnProperty("partitions")) {
+                        if (!$util.isObject(message.partitions))
+                            return "partitions: object expected";
+                        var key = Object.keys(message.partitions);
+                        for (var i = 0; i < key.length; ++i)
+                            if (!$util.isString(message.partitions[key[i]]))
+                                return "partitions: string{k:string} expected";
+                    }
+                    if (message.tag != null && message.hasOwnProperty("tag"))
+                        if (!$util.isString(message.tag))
+                            return "tag: string expected";
                     return null;
                 };
     
@@ -19990,8 +20449,6 @@
                  * @interface IArtifactSpec
                  * @property {flyteidl.core.ILiteral|null} [value] ArtifactSpec value
                  * @property {flyteidl.core.ILiteralType|null} [type] ArtifactSpec type
-                 * @property {Array.<flyteidl.artifact.ITag>|null} [tags] ArtifactSpec tags
-                 * @property {Array.<flyteidl.core.IArtifactAlias>|null} [aliases] ArtifactSpec aliases
                  * @property {flyteidl.core.ITaskExecutionIdentifier|null} [taskExecution] ArtifactSpec taskExecution
                  * @property {flyteidl.core.IWorkflowExecutionIdentifier|null} [execution] ArtifactSpec execution
                  * @property {string|null} [principal] ArtifactSpec principal
@@ -20008,8 +20465,6 @@
                  * @param {flyteidl.artifact.IArtifactSpec=} [properties] Properties to set
                  */
                 function ArtifactSpec(properties) {
-                    this.tags = [];
-                    this.aliases = [];
                     if (properties)
                         for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
                             if (properties[keys[i]] != null)
@@ -20031,22 +20486,6 @@
                  * @instance
                  */
                 ArtifactSpec.prototype.type = null;
-    
-                /**
-                 * ArtifactSpec tags.
-                 * @member {Array.<flyteidl.artifact.ITag>} tags
-                 * @memberof flyteidl.artifact.ArtifactSpec
-                 * @instance
-                 */
-                ArtifactSpec.prototype.tags = $util.emptyArray;
-    
-                /**
-                 * ArtifactSpec aliases.
-                 * @member {Array.<flyteidl.core.IArtifactAlias>} aliases
-                 * @memberof flyteidl.artifact.ArtifactSpec
-                 * @instance
-                 */
-                ArtifactSpec.prototype.aliases = $util.emptyArray;
     
                 /**
                  * ArtifactSpec taskExecution.
@@ -20130,12 +20569,6 @@
                         $root.flyteidl.core.Literal.encode(message.value, writer.uint32(/* id 1, wireType 2 =*/10).fork()).ldelim();
                     if (message.type != null && message.hasOwnProperty("type"))
                         $root.flyteidl.core.LiteralType.encode(message.type, writer.uint32(/* id 2, wireType 2 =*/18).fork()).ldelim();
-                    if (message.tags != null && message.tags.length)
-                        for (var i = 0; i < message.tags.length; ++i)
-                            $root.flyteidl.artifact.Tag.encode(message.tags[i], writer.uint32(/* id 3, wireType 2 =*/26).fork()).ldelim();
-                    if (message.aliases != null && message.aliases.length)
-                        for (var i = 0; i < message.aliases.length; ++i)
-                            $root.flyteidl.core.ArtifactAlias.encode(message.aliases[i], writer.uint32(/* id 4, wireType 2 =*/34).fork()).ldelim();
                     if (message.taskExecution != null && message.hasOwnProperty("taskExecution"))
                         $root.flyteidl.core.TaskExecutionIdentifier.encode(message.taskExecution, writer.uint32(/* id 5, wireType 2 =*/42).fork()).ldelim();
                     if (message.execution != null && message.hasOwnProperty("execution"))
@@ -20172,16 +20605,6 @@
                             break;
                         case 2:
                             message.type = $root.flyteidl.core.LiteralType.decode(reader, reader.uint32());
-                            break;
-                        case 3:
-                            if (!(message.tags && message.tags.length))
-                                message.tags = [];
-                            message.tags.push($root.flyteidl.artifact.Tag.decode(reader, reader.uint32()));
-                            break;
-                        case 4:
-                            if (!(message.aliases && message.aliases.length))
-                                message.aliases = [];
-                            message.aliases.push($root.flyteidl.core.ArtifactAlias.decode(reader, reader.uint32()));
                             break;
                         case 5:
                             message.taskExecution = $root.flyteidl.core.TaskExecutionIdentifier.decode(reader, reader.uint32());
@@ -20227,24 +20650,6 @@
                         var error = $root.flyteidl.core.LiteralType.verify(message.type);
                         if (error)
                             return "type." + error;
-                    }
-                    if (message.tags != null && message.hasOwnProperty("tags")) {
-                        if (!Array.isArray(message.tags))
-                            return "tags: array expected";
-                        for (var i = 0; i < message.tags.length; ++i) {
-                            var error = $root.flyteidl.artifact.Tag.verify(message.tags[i]);
-                            if (error)
-                                return "tags." + error;
-                        }
-                    }
-                    if (message.aliases != null && message.hasOwnProperty("aliases")) {
-                        if (!Array.isArray(message.aliases))
-                            return "aliases: array expected";
-                        for (var i = 0; i < message.aliases.length; ++i) {
-                            var error = $root.flyteidl.core.ArtifactAlias.verify(message.aliases[i]);
-                            if (error)
-                                return "aliases." + error;
-                        }
                     }
                     if (message.taskExecution != null && message.hasOwnProperty("taskExecution")) {
                         properties.source = 1;
@@ -20401,9 +20806,6 @@
                  * Properties of a GetArtifactRequest.
                  * @memberof flyteidl.artifact
                  * @interface IGetArtifactRequest
-                 * @property {flyteidl.core.IArtifactKey|null} [artifactKey] GetArtifactRequest artifactKey
-                 * @property {flyteidl.core.IArtifactID|null} [artifactId] GetArtifactRequest artifactId
-                 * @property {string|null} [uri] GetArtifactRequest uri
                  * @property {flyteidl.core.IArtifactQuery|null} [query] GetArtifactRequest query
                  * @property {boolean|null} [details] GetArtifactRequest details
                  */
@@ -20424,30 +20826,6 @@
                 }
     
                 /**
-                 * GetArtifactRequest artifactKey.
-                 * @member {flyteidl.core.IArtifactKey|null|undefined} artifactKey
-                 * @memberof flyteidl.artifact.GetArtifactRequest
-                 * @instance
-                 */
-                GetArtifactRequest.prototype.artifactKey = null;
-    
-                /**
-                 * GetArtifactRequest artifactId.
-                 * @member {flyteidl.core.IArtifactID|null|undefined} artifactId
-                 * @memberof flyteidl.artifact.GetArtifactRequest
-                 * @instance
-                 */
-                GetArtifactRequest.prototype.artifactId = null;
-    
-                /**
-                 * GetArtifactRequest uri.
-                 * @member {string} uri
-                 * @memberof flyteidl.artifact.GetArtifactRequest
-                 * @instance
-                 */
-                GetArtifactRequest.prototype.uri = "";
-    
-                /**
                  * GetArtifactRequest query.
                  * @member {flyteidl.core.IArtifactQuery|null|undefined} query
                  * @memberof flyteidl.artifact.GetArtifactRequest
@@ -20462,20 +20840,6 @@
                  * @instance
                  */
                 GetArtifactRequest.prototype.details = false;
-    
-                // OneOf field names bound to virtual getters and setters
-                var $oneOfFields;
-    
-                /**
-                 * GetArtifactRequest identifier.
-                 * @member {"artifactKey"|"artifactId"|"uri"|"query"|undefined} identifier
-                 * @memberof flyteidl.artifact.GetArtifactRequest
-                 * @instance
-                 */
-                Object.defineProperty(GetArtifactRequest.prototype, "identifier", {
-                    get: $util.oneOfGetter($oneOfFields = ["artifactKey", "artifactId", "uri", "query"]),
-                    set: $util.oneOfSetter($oneOfFields)
-                });
     
                 /**
                  * Creates a new GetArtifactRequest instance using the specified properties.
@@ -20501,16 +20865,10 @@
                 GetArtifactRequest.encode = function encode(message, writer) {
                     if (!writer)
                         writer = $Writer.create();
-                    if (message.artifactKey != null && message.hasOwnProperty("artifactKey"))
-                        $root.flyteidl.core.ArtifactKey.encode(message.artifactKey, writer.uint32(/* id 1, wireType 2 =*/10).fork()).ldelim();
-                    if (message.artifactId != null && message.hasOwnProperty("artifactId"))
-                        $root.flyteidl.core.ArtifactID.encode(message.artifactId, writer.uint32(/* id 2, wireType 2 =*/18).fork()).ldelim();
-                    if (message.uri != null && message.hasOwnProperty("uri"))
-                        writer.uint32(/* id 3, wireType 2 =*/26).string(message.uri);
                     if (message.query != null && message.hasOwnProperty("query"))
-                        $root.flyteidl.core.ArtifactQuery.encode(message.query, writer.uint32(/* id 4, wireType 2 =*/34).fork()).ldelim();
+                        $root.flyteidl.core.ArtifactQuery.encode(message.query, writer.uint32(/* id 1, wireType 2 =*/10).fork()).ldelim();
                     if (message.details != null && message.hasOwnProperty("details"))
-                        writer.uint32(/* id 5, wireType 0 =*/40).bool(message.details);
+                        writer.uint32(/* id 2, wireType 0 =*/16).bool(message.details);
                     return writer;
                 };
     
@@ -20533,18 +20891,9 @@
                         var tag = reader.uint32();
                         switch (tag >>> 3) {
                         case 1:
-                            message.artifactKey = $root.flyteidl.core.ArtifactKey.decode(reader, reader.uint32());
-                            break;
-                        case 2:
-                            message.artifactId = $root.flyteidl.core.ArtifactID.decode(reader, reader.uint32());
-                            break;
-                        case 3:
-                            message.uri = reader.string();
-                            break;
-                        case 4:
                             message.query = $root.flyteidl.core.ArtifactQuery.decode(reader, reader.uint32());
                             break;
-                        case 5:
+                        case 2:
                             message.details = reader.bool();
                             break;
                         default:
@@ -20566,41 +20915,10 @@
                 GetArtifactRequest.verify = function verify(message) {
                     if (typeof message !== "object" || message === null)
                         return "object expected";
-                    var properties = {};
-                    if (message.artifactKey != null && message.hasOwnProperty("artifactKey")) {
-                        properties.identifier = 1;
-                        {
-                            var error = $root.flyteidl.core.ArtifactKey.verify(message.artifactKey);
-                            if (error)
-                                return "artifactKey." + error;
-                        }
-                    }
-                    if (message.artifactId != null && message.hasOwnProperty("artifactId")) {
-                        if (properties.identifier === 1)
-                            return "identifier: multiple values";
-                        properties.identifier = 1;
-                        {
-                            var error = $root.flyteidl.core.ArtifactID.verify(message.artifactId);
-                            if (error)
-                                return "artifactId." + error;
-                        }
-                    }
-                    if (message.uri != null && message.hasOwnProperty("uri")) {
-                        if (properties.identifier === 1)
-                            return "identifier: multiple values";
-                        properties.identifier = 1;
-                        if (!$util.isString(message.uri))
-                            return "uri: string expected";
-                    }
                     if (message.query != null && message.hasOwnProperty("query")) {
-                        if (properties.identifier === 1)
-                            return "identifier: multiple values";
-                        properties.identifier = 1;
-                        {
-                            var error = $root.flyteidl.core.ArtifactQuery.verify(message.query);
-                            if (error)
-                                return "query." + error;
-                        }
+                        var error = $root.flyteidl.core.ArtifactQuery.verify(message.query);
+                        if (error)
+                            return "query." + error;
                     }
                     if (message.details != null && message.hasOwnProperty("details"))
                         if (typeof message.details !== "boolean")
@@ -20721,597 +21039,6 @@
                 };
     
                 return GetArtifactResponse;
-            })();
-    
-            artifact.Tag = (function() {
-    
-                /**
-                 * Properties of a Tag.
-                 * @memberof flyteidl.artifact
-                 * @interface ITag
-                 * @property {string|null} [key] Tag key
-                 * @property {string|null} [value] Tag value
-                 */
-    
-                /**
-                 * Constructs a new Tag.
-                 * @memberof flyteidl.artifact
-                 * @classdesc Represents a Tag.
-                 * @implements ITag
-                 * @constructor
-                 * @param {flyteidl.artifact.ITag=} [properties] Properties to set
-                 */
-                function Tag(properties) {
-                    if (properties)
-                        for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
-                            if (properties[keys[i]] != null)
-                                this[keys[i]] = properties[keys[i]];
-                }
-    
-                /**
-                 * Tag key.
-                 * @member {string} key
-                 * @memberof flyteidl.artifact.Tag
-                 * @instance
-                 */
-                Tag.prototype.key = "";
-    
-                /**
-                 * Tag value.
-                 * @member {string} value
-                 * @memberof flyteidl.artifact.Tag
-                 * @instance
-                 */
-                Tag.prototype.value = "";
-    
-                /**
-                 * Creates a new Tag instance using the specified properties.
-                 * @function create
-                 * @memberof flyteidl.artifact.Tag
-                 * @static
-                 * @param {flyteidl.artifact.ITag=} [properties] Properties to set
-                 * @returns {flyteidl.artifact.Tag} Tag instance
-                 */
-                Tag.create = function create(properties) {
-                    return new Tag(properties);
-                };
-    
-                /**
-                 * Encodes the specified Tag message. Does not implicitly {@link flyteidl.artifact.Tag.verify|verify} messages.
-                 * @function encode
-                 * @memberof flyteidl.artifact.Tag
-                 * @static
-                 * @param {flyteidl.artifact.ITag} message Tag message or plain object to encode
-                 * @param {$protobuf.Writer} [writer] Writer to encode to
-                 * @returns {$protobuf.Writer} Writer
-                 */
-                Tag.encode = function encode(message, writer) {
-                    if (!writer)
-                        writer = $Writer.create();
-                    if (message.key != null && message.hasOwnProperty("key"))
-                        writer.uint32(/* id 1, wireType 2 =*/10).string(message.key);
-                    if (message.value != null && message.hasOwnProperty("value"))
-                        writer.uint32(/* id 2, wireType 2 =*/18).string(message.value);
-                    return writer;
-                };
-    
-                /**
-                 * Decodes a Tag message from the specified reader or buffer.
-                 * @function decode
-                 * @memberof flyteidl.artifact.Tag
-                 * @static
-                 * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
-                 * @param {number} [length] Message length if known beforehand
-                 * @returns {flyteidl.artifact.Tag} Tag
-                 * @throws {Error} If the payload is not a reader or valid buffer
-                 * @throws {$protobuf.util.ProtocolError} If required fields are missing
-                 */
-                Tag.decode = function decode(reader, length) {
-                    if (!(reader instanceof $Reader))
-                        reader = $Reader.create(reader);
-                    var end = length === undefined ? reader.len : reader.pos + length, message = new $root.flyteidl.artifact.Tag();
-                    while (reader.pos < end) {
-                        var tag = reader.uint32();
-                        switch (tag >>> 3) {
-                        case 1:
-                            message.key = reader.string();
-                            break;
-                        case 2:
-                            message.value = reader.string();
-                            break;
-                        default:
-                            reader.skipType(tag & 7);
-                            break;
-                        }
-                    }
-                    return message;
-                };
-    
-                /**
-                 * Verifies a Tag message.
-                 * @function verify
-                 * @memberof flyteidl.artifact.Tag
-                 * @static
-                 * @param {Object.<string,*>} message Plain object to verify
-                 * @returns {string|null} `null` if valid, otherwise the reason why it is not
-                 */
-                Tag.verify = function verify(message) {
-                    if (typeof message !== "object" || message === null)
-                        return "object expected";
-                    if (message.key != null && message.hasOwnProperty("key"))
-                        if (!$util.isString(message.key))
-                            return "key: string expected";
-                    if (message.value != null && message.hasOwnProperty("value"))
-                        if (!$util.isString(message.value))
-                            return "value: string expected";
-                    return null;
-                };
-    
-                return Tag;
-            })();
-    
-            artifact.AddTagsRequest = (function() {
-    
-                /**
-                 * Properties of an AddTagsRequest.
-                 * @memberof flyteidl.artifact
-                 * @interface IAddTagsRequest
-                 * @property {flyteidl.core.IArtifactID|null} [artifactId] AddTagsRequest artifactId
-                 * @property {Array.<flyteidl.artifact.ITag>|null} [tags] AddTagsRequest tags
-                 */
-    
-                /**
-                 * Constructs a new AddTagsRequest.
-                 * @memberof flyteidl.artifact
-                 * @classdesc Represents an AddTagsRequest.
-                 * @implements IAddTagsRequest
-                 * @constructor
-                 * @param {flyteidl.artifact.IAddTagsRequest=} [properties] Properties to set
-                 */
-                function AddTagsRequest(properties) {
-                    this.tags = [];
-                    if (properties)
-                        for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
-                            if (properties[keys[i]] != null)
-                                this[keys[i]] = properties[keys[i]];
-                }
-    
-                /**
-                 * AddTagsRequest artifactId.
-                 * @member {flyteidl.core.IArtifactID|null|undefined} artifactId
-                 * @memberof flyteidl.artifact.AddTagsRequest
-                 * @instance
-                 */
-                AddTagsRequest.prototype.artifactId = null;
-    
-                /**
-                 * AddTagsRequest tags.
-                 * @member {Array.<flyteidl.artifact.ITag>} tags
-                 * @memberof flyteidl.artifact.AddTagsRequest
-                 * @instance
-                 */
-                AddTagsRequest.prototype.tags = $util.emptyArray;
-    
-                /**
-                 * Creates a new AddTagsRequest instance using the specified properties.
-                 * @function create
-                 * @memberof flyteidl.artifact.AddTagsRequest
-                 * @static
-                 * @param {flyteidl.artifact.IAddTagsRequest=} [properties] Properties to set
-                 * @returns {flyteidl.artifact.AddTagsRequest} AddTagsRequest instance
-                 */
-                AddTagsRequest.create = function create(properties) {
-                    return new AddTagsRequest(properties);
-                };
-    
-                /**
-                 * Encodes the specified AddTagsRequest message. Does not implicitly {@link flyteidl.artifact.AddTagsRequest.verify|verify} messages.
-                 * @function encode
-                 * @memberof flyteidl.artifact.AddTagsRequest
-                 * @static
-                 * @param {flyteidl.artifact.IAddTagsRequest} message AddTagsRequest message or plain object to encode
-                 * @param {$protobuf.Writer} [writer] Writer to encode to
-                 * @returns {$protobuf.Writer} Writer
-                 */
-                AddTagsRequest.encode = function encode(message, writer) {
-                    if (!writer)
-                        writer = $Writer.create();
-                    if (message.artifactId != null && message.hasOwnProperty("artifactId"))
-                        $root.flyteidl.core.ArtifactID.encode(message.artifactId, writer.uint32(/* id 1, wireType 2 =*/10).fork()).ldelim();
-                    if (message.tags != null && message.tags.length)
-                        for (var i = 0; i < message.tags.length; ++i)
-                            $root.flyteidl.artifact.Tag.encode(message.tags[i], writer.uint32(/* id 2, wireType 2 =*/18).fork()).ldelim();
-                    return writer;
-                };
-    
-                /**
-                 * Decodes an AddTagsRequest message from the specified reader or buffer.
-                 * @function decode
-                 * @memberof flyteidl.artifact.AddTagsRequest
-                 * @static
-                 * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
-                 * @param {number} [length] Message length if known beforehand
-                 * @returns {flyteidl.artifact.AddTagsRequest} AddTagsRequest
-                 * @throws {Error} If the payload is not a reader or valid buffer
-                 * @throws {$protobuf.util.ProtocolError} If required fields are missing
-                 */
-                AddTagsRequest.decode = function decode(reader, length) {
-                    if (!(reader instanceof $Reader))
-                        reader = $Reader.create(reader);
-                    var end = length === undefined ? reader.len : reader.pos + length, message = new $root.flyteidl.artifact.AddTagsRequest();
-                    while (reader.pos < end) {
-                        var tag = reader.uint32();
-                        switch (tag >>> 3) {
-                        case 1:
-                            message.artifactId = $root.flyteidl.core.ArtifactID.decode(reader, reader.uint32());
-                            break;
-                        case 2:
-                            if (!(message.tags && message.tags.length))
-                                message.tags = [];
-                            message.tags.push($root.flyteidl.artifact.Tag.decode(reader, reader.uint32()));
-                            break;
-                        default:
-                            reader.skipType(tag & 7);
-                            break;
-                        }
-                    }
-                    return message;
-                };
-    
-                /**
-                 * Verifies an AddTagsRequest message.
-                 * @function verify
-                 * @memberof flyteidl.artifact.AddTagsRequest
-                 * @static
-                 * @param {Object.<string,*>} message Plain object to verify
-                 * @returns {string|null} `null` if valid, otherwise the reason why it is not
-                 */
-                AddTagsRequest.verify = function verify(message) {
-                    if (typeof message !== "object" || message === null)
-                        return "object expected";
-                    if (message.artifactId != null && message.hasOwnProperty("artifactId")) {
-                        var error = $root.flyteidl.core.ArtifactID.verify(message.artifactId);
-                        if (error)
-                            return "artifactId." + error;
-                    }
-                    if (message.tags != null && message.hasOwnProperty("tags")) {
-                        if (!Array.isArray(message.tags))
-                            return "tags: array expected";
-                        for (var i = 0; i < message.tags.length; ++i) {
-                            var error = $root.flyteidl.artifact.Tag.verify(message.tags[i]);
-                            if (error)
-                                return "tags." + error;
-                        }
-                    }
-                    return null;
-                };
-    
-                return AddTagsRequest;
-            })();
-    
-            artifact.AddTagsResponse = (function() {
-    
-                /**
-                 * Properties of an AddTagsResponse.
-                 * @memberof flyteidl.artifact
-                 * @interface IAddTagsResponse
-                 */
-    
-                /**
-                 * Constructs a new AddTagsResponse.
-                 * @memberof flyteidl.artifact
-                 * @classdesc Represents an AddTagsResponse.
-                 * @implements IAddTagsResponse
-                 * @constructor
-                 * @param {flyteidl.artifact.IAddTagsResponse=} [properties] Properties to set
-                 */
-                function AddTagsResponse(properties) {
-                    if (properties)
-                        for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
-                            if (properties[keys[i]] != null)
-                                this[keys[i]] = properties[keys[i]];
-                }
-    
-                /**
-                 * Creates a new AddTagsResponse instance using the specified properties.
-                 * @function create
-                 * @memberof flyteidl.artifact.AddTagsResponse
-                 * @static
-                 * @param {flyteidl.artifact.IAddTagsResponse=} [properties] Properties to set
-                 * @returns {flyteidl.artifact.AddTagsResponse} AddTagsResponse instance
-                 */
-                AddTagsResponse.create = function create(properties) {
-                    return new AddTagsResponse(properties);
-                };
-    
-                /**
-                 * Encodes the specified AddTagsResponse message. Does not implicitly {@link flyteidl.artifact.AddTagsResponse.verify|verify} messages.
-                 * @function encode
-                 * @memberof flyteidl.artifact.AddTagsResponse
-                 * @static
-                 * @param {flyteidl.artifact.IAddTagsResponse} message AddTagsResponse message or plain object to encode
-                 * @param {$protobuf.Writer} [writer] Writer to encode to
-                 * @returns {$protobuf.Writer} Writer
-                 */
-                AddTagsResponse.encode = function encode(message, writer) {
-                    if (!writer)
-                        writer = $Writer.create();
-                    return writer;
-                };
-    
-                /**
-                 * Decodes an AddTagsResponse message from the specified reader or buffer.
-                 * @function decode
-                 * @memberof flyteidl.artifact.AddTagsResponse
-                 * @static
-                 * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
-                 * @param {number} [length] Message length if known beforehand
-                 * @returns {flyteidl.artifact.AddTagsResponse} AddTagsResponse
-                 * @throws {Error} If the payload is not a reader or valid buffer
-                 * @throws {$protobuf.util.ProtocolError} If required fields are missing
-                 */
-                AddTagsResponse.decode = function decode(reader, length) {
-                    if (!(reader instanceof $Reader))
-                        reader = $Reader.create(reader);
-                    var end = length === undefined ? reader.len : reader.pos + length, message = new $root.flyteidl.artifact.AddTagsResponse();
-                    while (reader.pos < end) {
-                        var tag = reader.uint32();
-                        switch (tag >>> 3) {
-                        default:
-                            reader.skipType(tag & 7);
-                            break;
-                        }
-                    }
-                    return message;
-                };
-    
-                /**
-                 * Verifies an AddTagsResponse message.
-                 * @function verify
-                 * @memberof flyteidl.artifact.AddTagsResponse
-                 * @static
-                 * @param {Object.<string,*>} message Plain object to verify
-                 * @returns {string|null} `null` if valid, otherwise the reason why it is not
-                 */
-                AddTagsResponse.verify = function verify(message) {
-                    if (typeof message !== "object" || message === null)
-                        return "object expected";
-                    return null;
-                };
-    
-                return AddTagsResponse;
-            })();
-    
-            artifact.RemoveTagsRequest = (function() {
-    
-                /**
-                 * Properties of a RemoveTagsRequest.
-                 * @memberof flyteidl.artifact
-                 * @interface IRemoveTagsRequest
-                 * @property {flyteidl.core.IArtifactID|null} [artifactId] RemoveTagsRequest artifactId
-                 * @property {Array.<flyteidl.artifact.ITag>|null} [tags] RemoveTagsRequest tags
-                 */
-    
-                /**
-                 * Constructs a new RemoveTagsRequest.
-                 * @memberof flyteidl.artifact
-                 * @classdesc Represents a RemoveTagsRequest.
-                 * @implements IRemoveTagsRequest
-                 * @constructor
-                 * @param {flyteidl.artifact.IRemoveTagsRequest=} [properties] Properties to set
-                 */
-                function RemoveTagsRequest(properties) {
-                    this.tags = [];
-                    if (properties)
-                        for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
-                            if (properties[keys[i]] != null)
-                                this[keys[i]] = properties[keys[i]];
-                }
-    
-                /**
-                 * RemoveTagsRequest artifactId.
-                 * @member {flyteidl.core.IArtifactID|null|undefined} artifactId
-                 * @memberof flyteidl.artifact.RemoveTagsRequest
-                 * @instance
-                 */
-                RemoveTagsRequest.prototype.artifactId = null;
-    
-                /**
-                 * RemoveTagsRequest tags.
-                 * @member {Array.<flyteidl.artifact.ITag>} tags
-                 * @memberof flyteidl.artifact.RemoveTagsRequest
-                 * @instance
-                 */
-                RemoveTagsRequest.prototype.tags = $util.emptyArray;
-    
-                /**
-                 * Creates a new RemoveTagsRequest instance using the specified properties.
-                 * @function create
-                 * @memberof flyteidl.artifact.RemoveTagsRequest
-                 * @static
-                 * @param {flyteidl.artifact.IRemoveTagsRequest=} [properties] Properties to set
-                 * @returns {flyteidl.artifact.RemoveTagsRequest} RemoveTagsRequest instance
-                 */
-                RemoveTagsRequest.create = function create(properties) {
-                    return new RemoveTagsRequest(properties);
-                };
-    
-                /**
-                 * Encodes the specified RemoveTagsRequest message. Does not implicitly {@link flyteidl.artifact.RemoveTagsRequest.verify|verify} messages.
-                 * @function encode
-                 * @memberof flyteidl.artifact.RemoveTagsRequest
-                 * @static
-                 * @param {flyteidl.artifact.IRemoveTagsRequest} message RemoveTagsRequest message or plain object to encode
-                 * @param {$protobuf.Writer} [writer] Writer to encode to
-                 * @returns {$protobuf.Writer} Writer
-                 */
-                RemoveTagsRequest.encode = function encode(message, writer) {
-                    if (!writer)
-                        writer = $Writer.create();
-                    if (message.artifactId != null && message.hasOwnProperty("artifactId"))
-                        $root.flyteidl.core.ArtifactID.encode(message.artifactId, writer.uint32(/* id 1, wireType 2 =*/10).fork()).ldelim();
-                    if (message.tags != null && message.tags.length)
-                        for (var i = 0; i < message.tags.length; ++i)
-                            $root.flyteidl.artifact.Tag.encode(message.tags[i], writer.uint32(/* id 2, wireType 2 =*/18).fork()).ldelim();
-                    return writer;
-                };
-    
-                /**
-                 * Decodes a RemoveTagsRequest message from the specified reader or buffer.
-                 * @function decode
-                 * @memberof flyteidl.artifact.RemoveTagsRequest
-                 * @static
-                 * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
-                 * @param {number} [length] Message length if known beforehand
-                 * @returns {flyteidl.artifact.RemoveTagsRequest} RemoveTagsRequest
-                 * @throws {Error} If the payload is not a reader or valid buffer
-                 * @throws {$protobuf.util.ProtocolError} If required fields are missing
-                 */
-                RemoveTagsRequest.decode = function decode(reader, length) {
-                    if (!(reader instanceof $Reader))
-                        reader = $Reader.create(reader);
-                    var end = length === undefined ? reader.len : reader.pos + length, message = new $root.flyteidl.artifact.RemoveTagsRequest();
-                    while (reader.pos < end) {
-                        var tag = reader.uint32();
-                        switch (tag >>> 3) {
-                        case 1:
-                            message.artifactId = $root.flyteidl.core.ArtifactID.decode(reader, reader.uint32());
-                            break;
-                        case 2:
-                            if (!(message.tags && message.tags.length))
-                                message.tags = [];
-                            message.tags.push($root.flyteidl.artifact.Tag.decode(reader, reader.uint32()));
-                            break;
-                        default:
-                            reader.skipType(tag & 7);
-                            break;
-                        }
-                    }
-                    return message;
-                };
-    
-                /**
-                 * Verifies a RemoveTagsRequest message.
-                 * @function verify
-                 * @memberof flyteidl.artifact.RemoveTagsRequest
-                 * @static
-                 * @param {Object.<string,*>} message Plain object to verify
-                 * @returns {string|null} `null` if valid, otherwise the reason why it is not
-                 */
-                RemoveTagsRequest.verify = function verify(message) {
-                    if (typeof message !== "object" || message === null)
-                        return "object expected";
-                    if (message.artifactId != null && message.hasOwnProperty("artifactId")) {
-                        var error = $root.flyteidl.core.ArtifactID.verify(message.artifactId);
-                        if (error)
-                            return "artifactId." + error;
-                    }
-                    if (message.tags != null && message.hasOwnProperty("tags")) {
-                        if (!Array.isArray(message.tags))
-                            return "tags: array expected";
-                        for (var i = 0; i < message.tags.length; ++i) {
-                            var error = $root.flyteidl.artifact.Tag.verify(message.tags[i]);
-                            if (error)
-                                return "tags." + error;
-                        }
-                    }
-                    return null;
-                };
-    
-                return RemoveTagsRequest;
-            })();
-    
-            artifact.RemoveTagsResponse = (function() {
-    
-                /**
-                 * Properties of a RemoveTagsResponse.
-                 * @memberof flyteidl.artifact
-                 * @interface IRemoveTagsResponse
-                 */
-    
-                /**
-                 * Constructs a new RemoveTagsResponse.
-                 * @memberof flyteidl.artifact
-                 * @classdesc Represents a RemoveTagsResponse.
-                 * @implements IRemoveTagsResponse
-                 * @constructor
-                 * @param {flyteidl.artifact.IRemoveTagsResponse=} [properties] Properties to set
-                 */
-                function RemoveTagsResponse(properties) {
-                    if (properties)
-                        for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
-                            if (properties[keys[i]] != null)
-                                this[keys[i]] = properties[keys[i]];
-                }
-    
-                /**
-                 * Creates a new RemoveTagsResponse instance using the specified properties.
-                 * @function create
-                 * @memberof flyteidl.artifact.RemoveTagsResponse
-                 * @static
-                 * @param {flyteidl.artifact.IRemoveTagsResponse=} [properties] Properties to set
-                 * @returns {flyteidl.artifact.RemoveTagsResponse} RemoveTagsResponse instance
-                 */
-                RemoveTagsResponse.create = function create(properties) {
-                    return new RemoveTagsResponse(properties);
-                };
-    
-                /**
-                 * Encodes the specified RemoveTagsResponse message. Does not implicitly {@link flyteidl.artifact.RemoveTagsResponse.verify|verify} messages.
-                 * @function encode
-                 * @memberof flyteidl.artifact.RemoveTagsResponse
-                 * @static
-                 * @param {flyteidl.artifact.IRemoveTagsResponse} message RemoveTagsResponse message or plain object to encode
-                 * @param {$protobuf.Writer} [writer] Writer to encode to
-                 * @returns {$protobuf.Writer} Writer
-                 */
-                RemoveTagsResponse.encode = function encode(message, writer) {
-                    if (!writer)
-                        writer = $Writer.create();
-                    return writer;
-                };
-    
-                /**
-                 * Decodes a RemoveTagsResponse message from the specified reader or buffer.
-                 * @function decode
-                 * @memberof flyteidl.artifact.RemoveTagsResponse
-                 * @static
-                 * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
-                 * @param {number} [length] Message length if known beforehand
-                 * @returns {flyteidl.artifact.RemoveTagsResponse} RemoveTagsResponse
-                 * @throws {Error} If the payload is not a reader or valid buffer
-                 * @throws {$protobuf.util.ProtocolError} If required fields are missing
-                 */
-                RemoveTagsResponse.decode = function decode(reader, length) {
-                    if (!(reader instanceof $Reader))
-                        reader = $Reader.create(reader);
-                    var end = length === undefined ? reader.len : reader.pos + length, message = new $root.flyteidl.artifact.RemoveTagsResponse();
-                    while (reader.pos < end) {
-                        var tag = reader.uint32();
-                        switch (tag >>> 3) {
-                        default:
-                            reader.skipType(tag & 7);
-                            break;
-                        }
-                    }
-                    return message;
-                };
-    
-                /**
-                 * Verifies a RemoveTagsResponse message.
-                 * @function verify
-                 * @memberof flyteidl.artifact.RemoveTagsResponse
-                 * @static
-                 * @param {Object.<string,*>} message Plain object to verify
-                 * @returns {string|null} `null` if valid, otherwise the reason why it is not
-                 */
-                RemoveTagsResponse.verify = function verify(message) {
-                    if (typeof message !== "object" || message === null)
-                        return "object expected";
-                    return null;
-                };
-    
-                return RemoveTagsResponse;
             })();
     
             artifact.ListArtifactNamesRequest = (function() {
@@ -21793,26 +21520,26 @@
                 return ListArtifactsResponse;
             })();
     
-            artifact.CreateAliasRequest = (function() {
+            artifact.AddTagRequest = (function() {
     
                 /**
-                 * Properties of a CreateAliasRequest.
+                 * Properties of an AddTagRequest.
                  * @memberof flyteidl.artifact
-                 * @interface ICreateAliasRequest
-                 * @property {flyteidl.core.IArtifactKey|null} [artifactKey] CreateAliasRequest artifactKey
-                 * @property {flyteidl.core.IArtifactAlias|null} [alias] CreateAliasRequest alias
-                 * @property {boolean|null} [overwrite] CreateAliasRequest overwrite
+                 * @interface IAddTagRequest
+                 * @property {flyteidl.core.IArtifactID|null} [artifactId] AddTagRequest artifactId
+                 * @property {string|null} [value] AddTagRequest value
+                 * @property {boolean|null} [overwrite] AddTagRequest overwrite
                  */
     
                 /**
-                 * Constructs a new CreateAliasRequest.
+                 * Constructs a new AddTagRequest.
                  * @memberof flyteidl.artifact
-                 * @classdesc Represents a CreateAliasRequest.
-                 * @implements ICreateAliasRequest
+                 * @classdesc Represents an AddTagRequest.
+                 * @implements IAddTagRequest
                  * @constructor
-                 * @param {flyteidl.artifact.ICreateAliasRequest=} [properties] Properties to set
+                 * @param {flyteidl.artifact.IAddTagRequest=} [properties] Properties to set
                  */
-                function CreateAliasRequest(properties) {
+                function AddTagRequest(properties) {
                     if (properties)
                         for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
                             if (properties[keys[i]] != null)
@@ -21820,85 +21547,85 @@
                 }
     
                 /**
-                 * CreateAliasRequest artifactKey.
-                 * @member {flyteidl.core.IArtifactKey|null|undefined} artifactKey
-                 * @memberof flyteidl.artifact.CreateAliasRequest
+                 * AddTagRequest artifactId.
+                 * @member {flyteidl.core.IArtifactID|null|undefined} artifactId
+                 * @memberof flyteidl.artifact.AddTagRequest
                  * @instance
                  */
-                CreateAliasRequest.prototype.artifactKey = null;
+                AddTagRequest.prototype.artifactId = null;
     
                 /**
-                 * CreateAliasRequest alias.
-                 * @member {flyteidl.core.IArtifactAlias|null|undefined} alias
-                 * @memberof flyteidl.artifact.CreateAliasRequest
+                 * AddTagRequest value.
+                 * @member {string} value
+                 * @memberof flyteidl.artifact.AddTagRequest
                  * @instance
                  */
-                CreateAliasRequest.prototype.alias = null;
+                AddTagRequest.prototype.value = "";
     
                 /**
-                 * CreateAliasRequest overwrite.
+                 * AddTagRequest overwrite.
                  * @member {boolean} overwrite
-                 * @memberof flyteidl.artifact.CreateAliasRequest
+                 * @memberof flyteidl.artifact.AddTagRequest
                  * @instance
                  */
-                CreateAliasRequest.prototype.overwrite = false;
+                AddTagRequest.prototype.overwrite = false;
     
                 /**
-                 * Creates a new CreateAliasRequest instance using the specified properties.
+                 * Creates a new AddTagRequest instance using the specified properties.
                  * @function create
-                 * @memberof flyteidl.artifact.CreateAliasRequest
+                 * @memberof flyteidl.artifact.AddTagRequest
                  * @static
-                 * @param {flyteidl.artifact.ICreateAliasRequest=} [properties] Properties to set
-                 * @returns {flyteidl.artifact.CreateAliasRequest} CreateAliasRequest instance
+                 * @param {flyteidl.artifact.IAddTagRequest=} [properties] Properties to set
+                 * @returns {flyteidl.artifact.AddTagRequest} AddTagRequest instance
                  */
-                CreateAliasRequest.create = function create(properties) {
-                    return new CreateAliasRequest(properties);
+                AddTagRequest.create = function create(properties) {
+                    return new AddTagRequest(properties);
                 };
     
                 /**
-                 * Encodes the specified CreateAliasRequest message. Does not implicitly {@link flyteidl.artifact.CreateAliasRequest.verify|verify} messages.
+                 * Encodes the specified AddTagRequest message. Does not implicitly {@link flyteidl.artifact.AddTagRequest.verify|verify} messages.
                  * @function encode
-                 * @memberof flyteidl.artifact.CreateAliasRequest
+                 * @memberof flyteidl.artifact.AddTagRequest
                  * @static
-                 * @param {flyteidl.artifact.ICreateAliasRequest} message CreateAliasRequest message or plain object to encode
+                 * @param {flyteidl.artifact.IAddTagRequest} message AddTagRequest message or plain object to encode
                  * @param {$protobuf.Writer} [writer] Writer to encode to
                  * @returns {$protobuf.Writer} Writer
                  */
-                CreateAliasRequest.encode = function encode(message, writer) {
+                AddTagRequest.encode = function encode(message, writer) {
                     if (!writer)
                         writer = $Writer.create();
-                    if (message.artifactKey != null && message.hasOwnProperty("artifactKey"))
-                        $root.flyteidl.core.ArtifactKey.encode(message.artifactKey, writer.uint32(/* id 1, wireType 2 =*/10).fork()).ldelim();
-                    if (message.alias != null && message.hasOwnProperty("alias"))
-                        $root.flyteidl.core.ArtifactAlias.encode(message.alias, writer.uint32(/* id 2, wireType 2 =*/18).fork()).ldelim();
+                    if (message.artifactId != null && message.hasOwnProperty("artifactId"))
+                        $root.flyteidl.core.ArtifactID.encode(message.artifactId, writer.uint32(/* id 1, wireType 2 =*/10).fork()).ldelim();
+                    if (message.value != null && message.hasOwnProperty("value"))
+                        writer.uint32(/* id 2, wireType 2 =*/18).string(message.value);
                     if (message.overwrite != null && message.hasOwnProperty("overwrite"))
                         writer.uint32(/* id 3, wireType 0 =*/24).bool(message.overwrite);
                     return writer;
                 };
     
                 /**
-                 * Decodes a CreateAliasRequest message from the specified reader or buffer.
+                 * Decodes an AddTagRequest message from the specified reader or buffer.
                  * @function decode
-                 * @memberof flyteidl.artifact.CreateAliasRequest
+                 * @memberof flyteidl.artifact.AddTagRequest
                  * @static
                  * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
                  * @param {number} [length] Message length if known beforehand
-                 * @returns {flyteidl.artifact.CreateAliasRequest} CreateAliasRequest
+                 * @returns {flyteidl.artifact.AddTagRequest} AddTagRequest
                  * @throws {Error} If the payload is not a reader or valid buffer
                  * @throws {$protobuf.util.ProtocolError} If required fields are missing
                  */
-                CreateAliasRequest.decode = function decode(reader, length) {
+                AddTagRequest.decode = function decode(reader, length) {
                     if (!(reader instanceof $Reader))
                         reader = $Reader.create(reader);
-                    var end = length === undefined ? reader.len : reader.pos + length, message = new $root.flyteidl.artifact.CreateAliasRequest();
+                    var end = length === undefined ? reader.len : reader.pos + length, message = new $root.flyteidl.artifact.AddTagRequest();
                     while (reader.pos < end) {
                         var tag = reader.uint32();
                         switch (tag >>> 3) {
                         case 1:
-                            message.artifactKey = $root.flyteidl.core.ArtifactKey.decode(reader, reader.uint32());
+                            message.artifactId = $root.flyteidl.core.ArtifactID.decode(reader, reader.uint32());
                             break;
                         case 2:
-                            message.alias = $root.flyteidl.core.ArtifactAlias.decode(reader, reader.uint32());
+                            message.value = reader.string();
                             break;
                         case 3:
                             message.overwrite = reader.bool();
@@ -21912,52 +21639,50 @@
                 };
     
                 /**
-                 * Verifies a CreateAliasRequest message.
+                 * Verifies an AddTagRequest message.
                  * @function verify
-                 * @memberof flyteidl.artifact.CreateAliasRequest
+                 * @memberof flyteidl.artifact.AddTagRequest
                  * @static
                  * @param {Object.<string,*>} message Plain object to verify
                  * @returns {string|null} `null` if valid, otherwise the reason why it is not
                  */
-                CreateAliasRequest.verify = function verify(message) {
+                AddTagRequest.verify = function verify(message) {
                     if (typeof message !== "object" || message === null)
                         return "object expected";
-                    if (message.artifactKey != null && message.hasOwnProperty("artifactKey")) {
-                        var error = $root.flyteidl.core.ArtifactKey.verify(message.artifactKey);
+                    if (message.artifactId != null && message.hasOwnProperty("artifactId")) {
+                        var error = $root.flyteidl.core.ArtifactID.verify(message.artifactId);
                         if (error)
-                            return "artifactKey." + error;
+                            return "artifactId." + error;
                     }
-                    if (message.alias != null && message.hasOwnProperty("alias")) {
-                        var error = $root.flyteidl.core.ArtifactAlias.verify(message.alias);
-                        if (error)
-                            return "alias." + error;
-                    }
+                    if (message.value != null && message.hasOwnProperty("value"))
+                        if (!$util.isString(message.value))
+                            return "value: string expected";
                     if (message.overwrite != null && message.hasOwnProperty("overwrite"))
                         if (typeof message.overwrite !== "boolean")
                             return "overwrite: boolean expected";
                     return null;
                 };
     
-                return CreateAliasRequest;
+                return AddTagRequest;
             })();
     
-            artifact.CreateAliasResponse = (function() {
+            artifact.AddTagResponse = (function() {
     
                 /**
-                 * Properties of a CreateAliasResponse.
+                 * Properties of an AddTagResponse.
                  * @memberof flyteidl.artifact
-                 * @interface ICreateAliasResponse
+                 * @interface IAddTagResponse
                  */
     
                 /**
-                 * Constructs a new CreateAliasResponse.
+                 * Constructs a new AddTagResponse.
                  * @memberof flyteidl.artifact
-                 * @classdesc Represents a CreateAliasResponse.
-                 * @implements ICreateAliasResponse
+                 * @classdesc Represents an AddTagResponse.
+                 * @implements IAddTagResponse
                  * @constructor
-                 * @param {flyteidl.artifact.ICreateAliasResponse=} [properties] Properties to set
+                 * @param {flyteidl.artifact.IAddTagResponse=} [properties] Properties to set
                  */
-                function CreateAliasResponse(properties) {
+                function AddTagResponse(properties) {
                     if (properties)
                         for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
                             if (properties[keys[i]] != null)
@@ -21965,47 +21690,47 @@
                 }
     
                 /**
-                 * Creates a new CreateAliasResponse instance using the specified properties.
+                 * Creates a new AddTagResponse instance using the specified properties.
                  * @function create
-                 * @memberof flyteidl.artifact.CreateAliasResponse
+                 * @memberof flyteidl.artifact.AddTagResponse
                  * @static
-                 * @param {flyteidl.artifact.ICreateAliasResponse=} [properties] Properties to set
-                 * @returns {flyteidl.artifact.CreateAliasResponse} CreateAliasResponse instance
+                 * @param {flyteidl.artifact.IAddTagResponse=} [properties] Properties to set
+                 * @returns {flyteidl.artifact.AddTagResponse} AddTagResponse instance
                  */
-                CreateAliasResponse.create = function create(properties) {
-                    return new CreateAliasResponse(properties);
+                AddTagResponse.create = function create(properties) {
+                    return new AddTagResponse(properties);
                 };
     
                 /**
-                 * Encodes the specified CreateAliasResponse message. Does not implicitly {@link flyteidl.artifact.CreateAliasResponse.verify|verify} messages.
+                 * Encodes the specified AddTagResponse message. Does not implicitly {@link flyteidl.artifact.AddTagResponse.verify|verify} messages.
                  * @function encode
-                 * @memberof flyteidl.artifact.CreateAliasResponse
+                 * @memberof flyteidl.artifact.AddTagResponse
                  * @static
-                 * @param {flyteidl.artifact.ICreateAliasResponse} message CreateAliasResponse message or plain object to encode
+                 * @param {flyteidl.artifact.IAddTagResponse} message AddTagResponse message or plain object to encode
                  * @param {$protobuf.Writer} [writer] Writer to encode to
                  * @returns {$protobuf.Writer} Writer
                  */
-                CreateAliasResponse.encode = function encode(message, writer) {
+                AddTagResponse.encode = function encode(message, writer) {
                     if (!writer)
                         writer = $Writer.create();
                     return writer;
                 };
     
                 /**
-                 * Decodes a CreateAliasResponse message from the specified reader or buffer.
+                 * Decodes an AddTagResponse message from the specified reader or buffer.
                  * @function decode
-                 * @memberof flyteidl.artifact.CreateAliasResponse
+                 * @memberof flyteidl.artifact.AddTagResponse
                  * @static
                  * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
                  * @param {number} [length] Message length if known beforehand
-                 * @returns {flyteidl.artifact.CreateAliasResponse} CreateAliasResponse
+                 * @returns {flyteidl.artifact.AddTagResponse} AddTagResponse
                  * @throws {Error} If the payload is not a reader or valid buffer
                  * @throws {$protobuf.util.ProtocolError} If required fields are missing
                  */
-                CreateAliasResponse.decode = function decode(reader, length) {
+                AddTagResponse.decode = function decode(reader, length) {
                     if (!(reader instanceof $Reader))
                         reader = $Reader.create(reader);
-                    var end = length === undefined ? reader.len : reader.pos + length, message = new $root.flyteidl.artifact.CreateAliasResponse();
+                    var end = length === undefined ? reader.len : reader.pos + length, message = new $root.flyteidl.artifact.AddTagResponse();
                     while (reader.pos < end) {
                         var tag = reader.uint32();
                         switch (tag >>> 3) {
@@ -22018,244 +21743,20 @@
                 };
     
                 /**
-                 * Verifies a CreateAliasResponse message.
+                 * Verifies an AddTagResponse message.
                  * @function verify
-                 * @memberof flyteidl.artifact.CreateAliasResponse
+                 * @memberof flyteidl.artifact.AddTagResponse
                  * @static
                  * @param {Object.<string,*>} message Plain object to verify
                  * @returns {string|null} `null` if valid, otherwise the reason why it is not
                  */
-                CreateAliasResponse.verify = function verify(message) {
+                AddTagResponse.verify = function verify(message) {
                     if (typeof message !== "object" || message === null)
                         return "object expected";
                     return null;
                 };
     
-                return CreateAliasResponse;
-            })();
-    
-            artifact.RemoveAliasRequest = (function() {
-    
-                /**
-                 * Properties of a RemoveAliasRequest.
-                 * @memberof flyteidl.artifact
-                 * @interface IRemoveAliasRequest
-                 * @property {flyteidl.core.IArtifactKey|null} [artifactKey] RemoveAliasRequest artifactKey
-                 * @property {flyteidl.core.IArtifactAlias|null} [alias] RemoveAliasRequest alias
-                 */
-    
-                /**
-                 * Constructs a new RemoveAliasRequest.
-                 * @memberof flyteidl.artifact
-                 * @classdesc Represents a RemoveAliasRequest.
-                 * @implements IRemoveAliasRequest
-                 * @constructor
-                 * @param {flyteidl.artifact.IRemoveAliasRequest=} [properties] Properties to set
-                 */
-                function RemoveAliasRequest(properties) {
-                    if (properties)
-                        for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
-                            if (properties[keys[i]] != null)
-                                this[keys[i]] = properties[keys[i]];
-                }
-    
-                /**
-                 * RemoveAliasRequest artifactKey.
-                 * @member {flyteidl.core.IArtifactKey|null|undefined} artifactKey
-                 * @memberof flyteidl.artifact.RemoveAliasRequest
-                 * @instance
-                 */
-                RemoveAliasRequest.prototype.artifactKey = null;
-    
-                /**
-                 * RemoveAliasRequest alias.
-                 * @member {flyteidl.core.IArtifactAlias|null|undefined} alias
-                 * @memberof flyteidl.artifact.RemoveAliasRequest
-                 * @instance
-                 */
-                RemoveAliasRequest.prototype.alias = null;
-    
-                /**
-                 * Creates a new RemoveAliasRequest instance using the specified properties.
-                 * @function create
-                 * @memberof flyteidl.artifact.RemoveAliasRequest
-                 * @static
-                 * @param {flyteidl.artifact.IRemoveAliasRequest=} [properties] Properties to set
-                 * @returns {flyteidl.artifact.RemoveAliasRequest} RemoveAliasRequest instance
-                 */
-                RemoveAliasRequest.create = function create(properties) {
-                    return new RemoveAliasRequest(properties);
-                };
-    
-                /**
-                 * Encodes the specified RemoveAliasRequest message. Does not implicitly {@link flyteidl.artifact.RemoveAliasRequest.verify|verify} messages.
-                 * @function encode
-                 * @memberof flyteidl.artifact.RemoveAliasRequest
-                 * @static
-                 * @param {flyteidl.artifact.IRemoveAliasRequest} message RemoveAliasRequest message or plain object to encode
-                 * @param {$protobuf.Writer} [writer] Writer to encode to
-                 * @returns {$protobuf.Writer} Writer
-                 */
-                RemoveAliasRequest.encode = function encode(message, writer) {
-                    if (!writer)
-                        writer = $Writer.create();
-                    if (message.artifactKey != null && message.hasOwnProperty("artifactKey"))
-                        $root.flyteidl.core.ArtifactKey.encode(message.artifactKey, writer.uint32(/* id 1, wireType 2 =*/10).fork()).ldelim();
-                    if (message.alias != null && message.hasOwnProperty("alias"))
-                        $root.flyteidl.core.ArtifactAlias.encode(message.alias, writer.uint32(/* id 2, wireType 2 =*/18).fork()).ldelim();
-                    return writer;
-                };
-    
-                /**
-                 * Decodes a RemoveAliasRequest message from the specified reader or buffer.
-                 * @function decode
-                 * @memberof flyteidl.artifact.RemoveAliasRequest
-                 * @static
-                 * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
-                 * @param {number} [length] Message length if known beforehand
-                 * @returns {flyteidl.artifact.RemoveAliasRequest} RemoveAliasRequest
-                 * @throws {Error} If the payload is not a reader or valid buffer
-                 * @throws {$protobuf.util.ProtocolError} If required fields are missing
-                 */
-                RemoveAliasRequest.decode = function decode(reader, length) {
-                    if (!(reader instanceof $Reader))
-                        reader = $Reader.create(reader);
-                    var end = length === undefined ? reader.len : reader.pos + length, message = new $root.flyteidl.artifact.RemoveAliasRequest();
-                    while (reader.pos < end) {
-                        var tag = reader.uint32();
-                        switch (tag >>> 3) {
-                        case 1:
-                            message.artifactKey = $root.flyteidl.core.ArtifactKey.decode(reader, reader.uint32());
-                            break;
-                        case 2:
-                            message.alias = $root.flyteidl.core.ArtifactAlias.decode(reader, reader.uint32());
-                            break;
-                        default:
-                            reader.skipType(tag & 7);
-                            break;
-                        }
-                    }
-                    return message;
-                };
-    
-                /**
-                 * Verifies a RemoveAliasRequest message.
-                 * @function verify
-                 * @memberof flyteidl.artifact.RemoveAliasRequest
-                 * @static
-                 * @param {Object.<string,*>} message Plain object to verify
-                 * @returns {string|null} `null` if valid, otherwise the reason why it is not
-                 */
-                RemoveAliasRequest.verify = function verify(message) {
-                    if (typeof message !== "object" || message === null)
-                        return "object expected";
-                    if (message.artifactKey != null && message.hasOwnProperty("artifactKey")) {
-                        var error = $root.flyteidl.core.ArtifactKey.verify(message.artifactKey);
-                        if (error)
-                            return "artifactKey." + error;
-                    }
-                    if (message.alias != null && message.hasOwnProperty("alias")) {
-                        var error = $root.flyteidl.core.ArtifactAlias.verify(message.alias);
-                        if (error)
-                            return "alias." + error;
-                    }
-                    return null;
-                };
-    
-                return RemoveAliasRequest;
-            })();
-    
-            artifact.RemoveAliasResponse = (function() {
-    
-                /**
-                 * Properties of a RemoveAliasResponse.
-                 * @memberof flyteidl.artifact
-                 * @interface IRemoveAliasResponse
-                 */
-    
-                /**
-                 * Constructs a new RemoveAliasResponse.
-                 * @memberof flyteidl.artifact
-                 * @classdesc Represents a RemoveAliasResponse.
-                 * @implements IRemoveAliasResponse
-                 * @constructor
-                 * @param {flyteidl.artifact.IRemoveAliasResponse=} [properties] Properties to set
-                 */
-                function RemoveAliasResponse(properties) {
-                    if (properties)
-                        for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
-                            if (properties[keys[i]] != null)
-                                this[keys[i]] = properties[keys[i]];
-                }
-    
-                /**
-                 * Creates a new RemoveAliasResponse instance using the specified properties.
-                 * @function create
-                 * @memberof flyteidl.artifact.RemoveAliasResponse
-                 * @static
-                 * @param {flyteidl.artifact.IRemoveAliasResponse=} [properties] Properties to set
-                 * @returns {flyteidl.artifact.RemoveAliasResponse} RemoveAliasResponse instance
-                 */
-                RemoveAliasResponse.create = function create(properties) {
-                    return new RemoveAliasResponse(properties);
-                };
-    
-                /**
-                 * Encodes the specified RemoveAliasResponse message. Does not implicitly {@link flyteidl.artifact.RemoveAliasResponse.verify|verify} messages.
-                 * @function encode
-                 * @memberof flyteidl.artifact.RemoveAliasResponse
-                 * @static
-                 * @param {flyteidl.artifact.IRemoveAliasResponse} message RemoveAliasResponse message or plain object to encode
-                 * @param {$protobuf.Writer} [writer] Writer to encode to
-                 * @returns {$protobuf.Writer} Writer
-                 */
-                RemoveAliasResponse.encode = function encode(message, writer) {
-                    if (!writer)
-                        writer = $Writer.create();
-                    return writer;
-                };
-    
-                /**
-                 * Decodes a RemoveAliasResponse message from the specified reader or buffer.
-                 * @function decode
-                 * @memberof flyteidl.artifact.RemoveAliasResponse
-                 * @static
-                 * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
-                 * @param {number} [length] Message length if known beforehand
-                 * @returns {flyteidl.artifact.RemoveAliasResponse} RemoveAliasResponse
-                 * @throws {Error} If the payload is not a reader or valid buffer
-                 * @throws {$protobuf.util.ProtocolError} If required fields are missing
-                 */
-                RemoveAliasResponse.decode = function decode(reader, length) {
-                    if (!(reader instanceof $Reader))
-                        reader = $Reader.create(reader);
-                    var end = length === undefined ? reader.len : reader.pos + length, message = new $root.flyteidl.artifact.RemoveAliasResponse();
-                    while (reader.pos < end) {
-                        var tag = reader.uint32();
-                        switch (tag >>> 3) {
-                        default:
-                            reader.skipType(tag & 7);
-                            break;
-                        }
-                    }
-                    return message;
-                };
-    
-                /**
-                 * Verifies a RemoveAliasResponse message.
-                 * @function verify
-                 * @memberof flyteidl.artifact.RemoveAliasResponse
-                 * @static
-                 * @param {Object.<string,*>} message Plain object to verify
-                 * @returns {string|null} `null` if valid, otherwise the reason why it is not
-                 */
-                RemoveAliasResponse.verify = function verify(message) {
-                    if (typeof message !== "object" || message === null)
-                        return "object expected";
-                    return null;
-                };
-    
-                return RemoveAliasResponse;
+                return AddTagResponse;
             })();
     
             artifact.ArtifactRegistry = (function() {
@@ -22357,200 +21858,35 @@
                  */
     
                 /**
-                 * Callback as used by {@link flyteidl.artifact.ArtifactRegistry#listArtifactNames}.
+                 * Callback as used by {@link flyteidl.artifact.ArtifactRegistry#addTag}.
                  * @memberof flyteidl.artifact.ArtifactRegistry
-                 * @typedef ListArtifactNamesCallback
+                 * @typedef AddTagCallback
                  * @type {function}
                  * @param {Error|null} error Error, if any
-                 * @param {flyteidl.artifact.ListArtifactNamesResponse} [response] ListArtifactNamesResponse
+                 * @param {flyteidl.artifact.AddTagResponse} [response] AddTagResponse
                  */
     
                 /**
-                 * Calls ListArtifactNames.
-                 * @function listArtifactNames
+                 * Calls AddTag.
+                 * @function addTag
                  * @memberof flyteidl.artifact.ArtifactRegistry
                  * @instance
-                 * @param {flyteidl.artifact.IListArtifactNamesRequest} request ListArtifactNamesRequest message or plain object
-                 * @param {flyteidl.artifact.ArtifactRegistry.ListArtifactNamesCallback} callback Node-style callback called with the error, if any, and ListArtifactNamesResponse
+                 * @param {flyteidl.artifact.IAddTagRequest} request AddTagRequest message or plain object
+                 * @param {flyteidl.artifact.ArtifactRegistry.AddTagCallback} callback Node-style callback called with the error, if any, and AddTagResponse
                  * @returns {undefined}
                  * @variation 1
                  */
-                Object.defineProperty(ArtifactRegistry.prototype.listArtifactNames = function listArtifactNames(request, callback) {
-                    return this.rpcCall(listArtifactNames, $root.flyteidl.artifact.ListArtifactNamesRequest, $root.flyteidl.artifact.ListArtifactNamesResponse, request, callback);
-                }, "name", { value: "ListArtifactNames" });
+                Object.defineProperty(ArtifactRegistry.prototype.addTag = function addTag(request, callback) {
+                    return this.rpcCall(addTag, $root.flyteidl.artifact.AddTagRequest, $root.flyteidl.artifact.AddTagResponse, request, callback);
+                }, "name", { value: "AddTag" });
     
                 /**
-                 * Calls ListArtifactNames.
-                 * @function listArtifactNames
+                 * Calls AddTag.
+                 * @function addTag
                  * @memberof flyteidl.artifact.ArtifactRegistry
                  * @instance
-                 * @param {flyteidl.artifact.IListArtifactNamesRequest} request ListArtifactNamesRequest message or plain object
-                 * @returns {Promise<flyteidl.artifact.ListArtifactNamesResponse>} Promise
-                 * @variation 2
-                 */
-    
-                /**
-                 * Callback as used by {@link flyteidl.artifact.ArtifactRegistry#listArtifacts}.
-                 * @memberof flyteidl.artifact.ArtifactRegistry
-                 * @typedef ListArtifactsCallback
-                 * @type {function}
-                 * @param {Error|null} error Error, if any
-                 * @param {flyteidl.artifact.ListArtifactsResponse} [response] ListArtifactsResponse
-                 */
-    
-                /**
-                 * Calls ListArtifacts.
-                 * @function listArtifacts
-                 * @memberof flyteidl.artifact.ArtifactRegistry
-                 * @instance
-                 * @param {flyteidl.artifact.IListArtifactsRequest} request ListArtifactsRequest message or plain object
-                 * @param {flyteidl.artifact.ArtifactRegistry.ListArtifactsCallback} callback Node-style callback called with the error, if any, and ListArtifactsResponse
-                 * @returns {undefined}
-                 * @variation 1
-                 */
-                Object.defineProperty(ArtifactRegistry.prototype.listArtifacts = function listArtifacts(request, callback) {
-                    return this.rpcCall(listArtifacts, $root.flyteidl.artifact.ListArtifactsRequest, $root.flyteidl.artifact.ListArtifactsResponse, request, callback);
-                }, "name", { value: "ListArtifacts" });
-    
-                /**
-                 * Calls ListArtifacts.
-                 * @function listArtifacts
-                 * @memberof flyteidl.artifact.ArtifactRegistry
-                 * @instance
-                 * @param {flyteidl.artifact.IListArtifactsRequest} request ListArtifactsRequest message or plain object
-                 * @returns {Promise<flyteidl.artifact.ListArtifactsResponse>} Promise
-                 * @variation 2
-                 */
-    
-                /**
-                 * Callback as used by {@link flyteidl.artifact.ArtifactRegistry#tagArtifact}.
-                 * @memberof flyteidl.artifact.ArtifactRegistry
-                 * @typedef TagArtifactCallback
-                 * @type {function}
-                 * @param {Error|null} error Error, if any
-                 * @param {flyteidl.artifact.AddTagsResponse} [response] AddTagsResponse
-                 */
-    
-                /**
-                 * Calls TagArtifact.
-                 * @function tagArtifact
-                 * @memberof flyteidl.artifact.ArtifactRegistry
-                 * @instance
-                 * @param {flyteidl.artifact.IAddTagsRequest} request AddTagsRequest message or plain object
-                 * @param {flyteidl.artifact.ArtifactRegistry.TagArtifactCallback} callback Node-style callback called with the error, if any, and AddTagsResponse
-                 * @returns {undefined}
-                 * @variation 1
-                 */
-                Object.defineProperty(ArtifactRegistry.prototype.tagArtifact = function tagArtifact(request, callback) {
-                    return this.rpcCall(tagArtifact, $root.flyteidl.artifact.AddTagsRequest, $root.flyteidl.artifact.AddTagsResponse, request, callback);
-                }, "name", { value: "TagArtifact" });
-    
-                /**
-                 * Calls TagArtifact.
-                 * @function tagArtifact
-                 * @memberof flyteidl.artifact.ArtifactRegistry
-                 * @instance
-                 * @param {flyteidl.artifact.IAddTagsRequest} request AddTagsRequest message or plain object
-                 * @returns {Promise<flyteidl.artifact.AddTagsResponse>} Promise
-                 * @variation 2
-                 */
-    
-                /**
-                 * Callback as used by {@link flyteidl.artifact.ArtifactRegistry#removeTags}.
-                 * @memberof flyteidl.artifact.ArtifactRegistry
-                 * @typedef RemoveTagsCallback
-                 * @type {function}
-                 * @param {Error|null} error Error, if any
-                 * @param {flyteidl.artifact.RemoveTagsResponse} [response] RemoveTagsResponse
-                 */
-    
-                /**
-                 * Calls RemoveTags.
-                 * @function removeTags
-                 * @memberof flyteidl.artifact.ArtifactRegistry
-                 * @instance
-                 * @param {flyteidl.artifact.IRemoveTagsRequest} request RemoveTagsRequest message or plain object
-                 * @param {flyteidl.artifact.ArtifactRegistry.RemoveTagsCallback} callback Node-style callback called with the error, if any, and RemoveTagsResponse
-                 * @returns {undefined}
-                 * @variation 1
-                 */
-                Object.defineProperty(ArtifactRegistry.prototype.removeTags = function removeTags(request, callback) {
-                    return this.rpcCall(removeTags, $root.flyteidl.artifact.RemoveTagsRequest, $root.flyteidl.artifact.RemoveTagsResponse, request, callback);
-                }, "name", { value: "RemoveTags" });
-    
-                /**
-                 * Calls RemoveTags.
-                 * @function removeTags
-                 * @memberof flyteidl.artifact.ArtifactRegistry
-                 * @instance
-                 * @param {flyteidl.artifact.IRemoveTagsRequest} request RemoveTagsRequest message or plain object
-                 * @returns {Promise<flyteidl.artifact.RemoveTagsResponse>} Promise
-                 * @variation 2
-                 */
-    
-                /**
-                 * Callback as used by {@link flyteidl.artifact.ArtifactRegistry#createAlias}.
-                 * @memberof flyteidl.artifact.ArtifactRegistry
-                 * @typedef CreateAliasCallback
-                 * @type {function}
-                 * @param {Error|null} error Error, if any
-                 * @param {flyteidl.artifact.CreateAliasResponse} [response] CreateAliasResponse
-                 */
-    
-                /**
-                 * Calls CreateAlias.
-                 * @function createAlias
-                 * @memberof flyteidl.artifact.ArtifactRegistry
-                 * @instance
-                 * @param {flyteidl.artifact.ICreateAliasRequest} request CreateAliasRequest message or plain object
-                 * @param {flyteidl.artifact.ArtifactRegistry.CreateAliasCallback} callback Node-style callback called with the error, if any, and CreateAliasResponse
-                 * @returns {undefined}
-                 * @variation 1
-                 */
-                Object.defineProperty(ArtifactRegistry.prototype.createAlias = function createAlias(request, callback) {
-                    return this.rpcCall(createAlias, $root.flyteidl.artifact.CreateAliasRequest, $root.flyteidl.artifact.CreateAliasResponse, request, callback);
-                }, "name", { value: "CreateAlias" });
-    
-                /**
-                 * Calls CreateAlias.
-                 * @function createAlias
-                 * @memberof flyteidl.artifact.ArtifactRegistry
-                 * @instance
-                 * @param {flyteidl.artifact.ICreateAliasRequest} request CreateAliasRequest message or plain object
-                 * @returns {Promise<flyteidl.artifact.CreateAliasResponse>} Promise
-                 * @variation 2
-                 */
-    
-                /**
-                 * Callback as used by {@link flyteidl.artifact.ArtifactRegistry#removeAlias}.
-                 * @memberof flyteidl.artifact.ArtifactRegistry
-                 * @typedef RemoveAliasCallback
-                 * @type {function}
-                 * @param {Error|null} error Error, if any
-                 * @param {flyteidl.artifact.RemoveAliasResponse} [response] RemoveAliasResponse
-                 */
-    
-                /**
-                 * Calls RemoveAlias.
-                 * @function removeAlias
-                 * @memberof flyteidl.artifact.ArtifactRegistry
-                 * @instance
-                 * @param {flyteidl.artifact.IRemoveAliasRequest} request RemoveAliasRequest message or plain object
-                 * @param {flyteidl.artifact.ArtifactRegistry.RemoveAliasCallback} callback Node-style callback called with the error, if any, and RemoveAliasResponse
-                 * @returns {undefined}
-                 * @variation 1
-                 */
-                Object.defineProperty(ArtifactRegistry.prototype.removeAlias = function removeAlias(request, callback) {
-                    return this.rpcCall(removeAlias, $root.flyteidl.artifact.RemoveAliasRequest, $root.flyteidl.artifact.RemoveAliasResponse, request, callback);
-                }, "name", { value: "RemoveAlias" });
-    
-                /**
-                 * Calls RemoveAlias.
-                 * @function removeAlias
-                 * @memberof flyteidl.artifact.ArtifactRegistry
-                 * @instance
-                 * @param {flyteidl.artifact.IRemoveAliasRequest} request RemoveAliasRequest message or plain object
-                 * @returns {Promise<flyteidl.artifact.RemoveAliasResponse>} Promise
+                 * @param {flyteidl.artifact.IAddTagRequest} request AddTagRequest message or plain object
+                 * @returns {Promise<flyteidl.artifact.AddTagResponse>} Promise
                  * @variation 2
                  */
     
@@ -31341,6 +30677,7 @@
                  * @property {google.protobuf.IBoolValue|null} [interruptible] ExecutionSpec interruptible
                  * @property {boolean|null} [overwriteCache] ExecutionSpec overwriteCache
                  * @property {flyteidl.admin.IEnvs|null} [envs] ExecutionSpec envs
+                 * @property {Array.<string>|null} [tags] ExecutionSpec tags
                  */
     
                 /**
@@ -31352,6 +30689,7 @@
                  * @param {flyteidl.admin.IExecutionSpec=} [properties] Properties to set
                  */
                 function ExecutionSpec(properties) {
+                    this.tags = [];
                     if (properties)
                         for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
                             if (properties[keys[i]] != null)
@@ -31486,6 +30824,14 @@
                  */
                 ExecutionSpec.prototype.envs = null;
     
+                /**
+                 * ExecutionSpec tags.
+                 * @member {Array.<string>} tags
+                 * @memberof flyteidl.admin.ExecutionSpec
+                 * @instance
+                 */
+                ExecutionSpec.prototype.tags = $util.emptyArray;
+    
                 // OneOf field names bound to virtual getters and setters
                 var $oneOfFields;
     
@@ -31556,6 +30902,9 @@
                         writer.uint32(/* id 22, wireType 0 =*/176).bool(message.overwriteCache);
                     if (message.envs != null && message.hasOwnProperty("envs"))
                         $root.flyteidl.admin.Envs.encode(message.envs, writer.uint32(/* id 23, wireType 2 =*/186).fork()).ldelim();
+                    if (message.tags != null && message.tags.length)
+                        for (var i = 0; i < message.tags.length; ++i)
+                            writer.uint32(/* id 24, wireType 2 =*/194).string(message.tags[i]);
                     return writer;
                 };
     
@@ -31624,6 +30973,11 @@
                             break;
                         case 23:
                             message.envs = $root.flyteidl.admin.Envs.decode(reader, reader.uint32());
+                            break;
+                        case 24:
+                            if (!(message.tags && message.tags.length))
+                                message.tags = [];
+                            message.tags.push(reader.string());
                             break;
                         default:
                             reader.skipType(tag & 7);
@@ -31725,6 +31079,13 @@
                         var error = $root.flyteidl.admin.Envs.verify(message.envs);
                         if (error)
                             return "envs." + error;
+                    }
+                    if (message.tags != null && message.hasOwnProperty("tags")) {
+                        if (!Array.isArray(message.tags))
+                            return "tags: array expected";
+                        for (var i = 0; i < message.tags.length; ++i)
+                            if (!$util.isString(message.tags[i]))
+                                return "tags: string[] expected";
                     }
                     return null;
                 };

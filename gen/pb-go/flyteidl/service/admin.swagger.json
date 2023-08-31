@@ -4029,6 +4029,13 @@
         "envs": {
           "$ref": "#/definitions/adminEnvs",
           "description": "Environment variables to be set for the execution."
+        },
+        "tags": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "description": "Tags to be set for the execution."
         }
       },
       "description": "An ExecutionSpec encompasses all data used to launch this execution. The Spec does not change over the lifetime\nof an execution as it progresses across phase changes."
@@ -5611,30 +5618,17 @@
       },
       "description": "ArrayNode is a Flyte node type that simplifies the execution of a sub-node over a list of input\nvalues. An ArrayNode can be executed with configurable parallelism (separate from the parent\nworkflow) and can be configured to succeed when a certain number of sub-nodes succeed."
     },
-    "coreArtifactAlias": {
-      "type": "object",
-      "properties": {
-        "artifact_id": {
-          "$ref": "#/definitions/coreArtifactID",
-          "title": "ties this directly to the artifact"
-        },
-        "name": {
-          "type": "string"
-        },
-        "value": {
-          "type": "string"
-        }
-      }
-    },
     "coreArtifactID": {
       "type": "object",
       "properties": {
         "artifact_key": {
           "$ref": "#/definitions/coreArtifactKey"
         },
-        "uuid": {
-          "type": "string",
-          "description": "consider hiding - this is a storage layer ID. Might even change for the same object."
+        "version": {
+          "type": "string"
+        },
+        "partitions": {
+          "$ref": "#/definitions/corePartitions"
         }
       }
     },
@@ -5648,7 +5642,7 @@
         "domain": {
           "type": "string"
         },
-        "suffix": {
+        "name": {
           "type": "string"
         }
       }
@@ -5656,14 +5650,26 @@
     "coreArtifactQuery": {
       "type": "object",
       "properties": {
-        "project": {
-          "type": "string"
+        "artifact_id": {
+          "$ref": "#/definitions/coreArtifactID"
         },
-        "domain": {
-          "type": "string"
+        "artifact_tag": {
+          "$ref": "#/definitions/coreArtifactTag"
         },
-        "alias": {
-          "$ref": "#/definitions/coreArtifactAlias"
+        "uri": {
+          "type": "string"
+        }
+      },
+      "title": "Uniqueness constraints for Artifacts\n - project, domain, name, version, partitions\nOption 2 (tags are standalone, point to an individual artifact id):\n - project, domain, name, alias (points to one partition if partitioned)\n - project, domain, name, partition key, partition value"
+    },
+    "coreArtifactTag": {
+      "type": "object",
+      "properties": {
+        "artifact_key": {
+          "$ref": "#/definitions/coreArtifactKey"
+        },
+        "value": {
+          "type": "string"
         }
       }
     },
@@ -6266,10 +6272,6 @@
           "$ref": "#/definitions/coreLiteralMap",
           "description": "A map of strings to literals."
         },
-        "artifact_id": {
-          "$ref": "#/definitions/coreArtifactID",
-          "title": "A reference to another Literal"
-        },
         "hash": {
           "type": "string",
           "title": "A hash representing this literal.\nThis is used for caching purposes. For more details refer to RFC 1893\n(https://github.com/flyteorg/flyte/blob/master/rfc/system/1893-caching-of-offloaded-objects.md)"
@@ -6563,6 +6565,9 @@
         "artifact_query": {
           "$ref": "#/definitions/coreArtifactQuery",
           "description": "This is an execution time search basically that should result in exactly one Artifact with a Type that\nmatches the type of the variable."
+        },
+        "artifact_id": {
+          "$ref": "#/definitions/coreArtifactID"
         }
       },
       "description": "A parameter is used as input to a launch plan and has\nthe special ability to have a default value or mark itself as required."
@@ -6579,6 +6584,17 @@
         }
       },
       "description": "A map of Parameters."
+    },
+    "corePartitions": {
+      "type": "object",
+      "properties": {
+        "value": {
+          "type": "object",
+          "additionalProperties": {
+            "type": "string"
+          }
+        }
+      }
     },
     "corePrimitive": {
       "type": "object",
@@ -7193,12 +7209,12 @@
           "type": "string",
           "title": "+optional string describing input variable"
         },
-        "aliases": {
-          "type": "array",
-          "items": {
-            "$ref": "#/definitions/coreArtifactAlias"
-          },
-          "description": "+optional If specified by user, this is still just a partial artifact. It's here so the user can control the\nname, tags, aliases, of the artifact creation."
+        "artifact_partial_id": {
+          "$ref": "#/definitions/coreArtifactID",
+          "description": "+optional This object allows the user to specify how Artifacts are created.\nname, tag, partitions can be specified. The other fields (version and project/domain) are ignored."
+        },
+        "artifact_tag": {
+          "$ref": "#/definitions/coreArtifactTag"
         }
       },
       "description": "Defines a strongly typed variable."

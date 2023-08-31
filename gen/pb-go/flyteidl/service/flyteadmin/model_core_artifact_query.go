@@ -10,7 +10,7 @@
 package flyteadmin
 
 type CoreArtifactQuery struct {
-	Project string `json:"project,omitempty"`
-	Domain string `json:"domain,omitempty"`
-	Alias *CoreArtifactAlias `json:"alias,omitempty"`
+	ArtifactId *CoreArtifactId `json:"artifact_id,omitempty"`
+	ArtifactTag *CoreArtifactTag `json:"artifact_tag,omitempty"`
+	Uri string `json:"uri,omitempty"`
 }

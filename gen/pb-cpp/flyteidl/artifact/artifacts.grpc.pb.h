@@ -62,47 +62,16 @@ class ArtifactRegistry final {
     std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::flyteidl::artifact::GetArtifactResponse>> PrepareAsyncGetArtifact(::grpc::ClientContext* context, const ::flyteidl::artifact::GetArtifactRequest& request, ::grpc::CompletionQueue* cq) {
       return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::flyteidl::artifact::GetArtifactResponse>>(PrepareAsyncGetArtifactRaw(context, request, cq));
     }
-    virtual ::grpc::Status ListArtifactNames(::grpc::ClientContext* context, const ::flyteidl::artifact::ListArtifactNamesRequest& request, ::flyteidl::artifact::ListArtifactNamesResponse* response) = 0;
-    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::flyteidl::artifact::ListArtifactNamesResponse>> AsyncListArtifactNames(::grpc::ClientContext* context, const ::flyteidl::artifact::ListArtifactNamesRequest& request, ::grpc::CompletionQueue* cq) {
-      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::flyteidl::artifact::ListArtifactNamesResponse>>(AsyncListArtifactNamesRaw(context, request, cq));
+    //  rpc ListArtifactNames (ListArtifactNamesRequest) returns (ListArtifactNamesResponse) {}
+    //
+    //  rpc ListArtifacts (ListArtifactsRequest) returns (ListArtifactsResponse) {}
+    //
+    virtual ::grpc::Status AddTag(::grpc::ClientContext* context, const ::flyteidl::artifact::AddTagRequest& request, ::flyteidl::artifact::AddTagResponse* response) = 0;
+    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::flyteidl::artifact::AddTagResponse>> AsyncAddTag(::grpc::ClientContext* context, const ::flyteidl::artifact::AddTagRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::flyteidl::artifact::AddTagResponse>>(AsyncAddTagRaw(context, request, cq));
     }
-    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::flyteidl::artifact::ListArtifactNamesResponse>> PrepareAsyncListArtifactNames(::grpc::ClientContext* context, const ::flyteidl::artifact::ListArtifactNamesRequest& request, ::grpc::CompletionQueue* cq) {
-      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::flyteidl::artifact::ListArtifactNamesResponse>>(PrepareAsyncListArtifactNamesRaw(context, request, cq));
-    }
-    virtual ::grpc::Status ListArtifacts(::grpc::ClientContext* context, const ::flyteidl::artifact::ListArtifactsRequest& request, ::flyteidl::artifact::ListArtifactsResponse* response) = 0;
-    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::flyteidl::artifact::ListArtifactsResponse>> AsyncListArtifacts(::grpc::ClientContext* context, const ::flyteidl::artifact::ListArtifactsRequest& request, ::grpc::CompletionQueue* cq) {
-      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::flyteidl::artifact::ListArtifactsResponse>>(AsyncListArtifactsRaw(context, request, cq));
-    }
-    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::flyteidl::artifact::ListArtifactsResponse>> PrepareAsyncListArtifacts(::grpc::ClientContext* context, const ::flyteidl::artifact::ListArtifactsRequest& request, ::grpc::CompletionQueue* cq) {
-      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::flyteidl::artifact::ListArtifactsResponse>>(PrepareAsyncListArtifactsRaw(context, request, cq));
-    }
-    virtual ::grpc::Status TagArtifact(::grpc::ClientContext* context, const ::flyteidl::artifact::AddTagsRequest& request, ::flyteidl::artifact::AddTagsResponse* response) = 0;
-    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::flyteidl::artifact::AddTagsResponse>> AsyncTagArtifact(::grpc::ClientContext* context, const ::flyteidl::artifact::AddTagsRequest& request, ::grpc::CompletionQueue* cq) {
-      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::flyteidl::artifact::AddTagsResponse>>(AsyncTagArtifactRaw(context, request, cq));
-    }
-    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::flyteidl::artifact::AddTagsResponse>> PrepareAsyncTagArtifact(::grpc::ClientContext* context, const ::flyteidl::artifact::AddTagsRequest& request, ::grpc::CompletionQueue* cq) {
-      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::flyteidl::artifact::AddTagsResponse>>(PrepareAsyncTagArtifactRaw(context, request, cq));
-    }
-    virtual ::grpc::Status RemoveTags(::grpc::ClientContext* context, const ::flyteidl::artifact::RemoveTagsRequest& request, ::flyteidl::artifact::RemoveTagsResponse* response) = 0;
-    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::flyteidl::artifact::RemoveTagsResponse>> AsyncRemoveTags(::grpc::ClientContext* context, const ::flyteidl::artifact::RemoveTagsRequest& request, ::grpc::CompletionQueue* cq) {
-      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::flyteidl::artifact::RemoveTagsResponse>>(AsyncRemoveTagsRaw(context, request, cq));
-    }
-    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::flyteidl::artifact::RemoveTagsResponse>> PrepareAsyncRemoveTags(::grpc::ClientContext* context, const ::flyteidl::artifact::RemoveTagsRequest& request, ::grpc::CompletionQueue* cq) {
-      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::flyteidl::artifact::RemoveTagsResponse>>(PrepareAsyncRemoveTagsRaw(context, request, cq));
-    }
-    virtual ::grpc::Status CreateAlias(::grpc::ClientContext* context, const ::flyteidl::artifact::CreateAliasRequest& request, ::flyteidl::artifact::CreateAliasResponse* response) = 0;
-    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::flyteidl::artifact::CreateAliasResponse>> AsyncCreateAlias(::grpc::ClientContext* context, const ::flyteidl::artifact::CreateAliasRequest& request, ::grpc::CompletionQueue* cq) {
-      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::flyteidl::artifact::CreateAliasResponse>>(AsyncCreateAliasRaw(context, request, cq));
-    }
-    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::flyteidl::artifact::CreateAliasResponse>> PrepareAsyncCreateAlias(::grpc::ClientContext* context, const ::flyteidl::artifact::CreateAliasRequest& request, ::grpc::CompletionQueue* cq) {
-      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::flyteidl::artifact::CreateAliasResponse>>(PrepareAsyncCreateAliasRaw(context, request, cq));
-    }
-    virtual ::grpc::Status RemoveAlias(::grpc::ClientContext* context, const ::flyteidl::artifact::RemoveAliasRequest& request, ::flyteidl::artifact::RemoveAliasResponse* response) = 0;
-    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::flyteidl::artifact::RemoveAliasResponse>> AsyncRemoveAlias(::grpc::ClientContext* context, const ::flyteidl::artifact::RemoveAliasRequest& request, ::grpc::CompletionQueue* cq) {
-      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::flyteidl::artifact::RemoveAliasResponse>>(AsyncRemoveAliasRaw(context, request, cq));
-    }
-    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::flyteidl::artifact::RemoveAliasResponse>> PrepareAsyncRemoveAlias(::grpc::ClientContext* context, const ::flyteidl::artifact::RemoveAliasRequest& request, ::grpc::CompletionQueue* cq) {
-      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::flyteidl::artifact::RemoveAliasResponse>>(PrepareAsyncRemoveAliasRaw(context, request, cq));
+    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::flyteidl::artifact::AddTagResponse>> PrepareAsyncAddTag(::grpc::ClientContext* context, const ::flyteidl::artifact::AddTagRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::flyteidl::artifact::AddTagResponse>>(PrepareAsyncAddTagRaw(context, request, cq));
     }
     class experimental_async_interface {
      public:
@@ -115,30 +84,14 @@ class ArtifactRegistry final {
       virtual void GetArtifact(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::flyteidl::artifact::GetArtifactResponse* response, std::function<void(::grpc::Status)>) = 0;
       virtual void GetArtifact(::grpc::ClientContext* context, const ::flyteidl::artifact::GetArtifactRequest* request, ::flyteidl::artifact::GetArtifactResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
       virtual void GetArtifact(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::flyteidl::artifact::GetArtifactResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
-      virtual void ListArtifactNames(::grpc::ClientContext* context, const ::flyteidl::artifact::ListArtifactNamesRequest* request, ::flyteidl::artifact::ListArtifactNamesResponse* response, std::function<void(::grpc::Status)>) = 0;
-      virtual void ListArtifactNames(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::flyteidl::artifact::ListArtifactNamesResponse* response, std::function<void(::grpc::Status)>) = 0;
-      virtual void ListArtifactNames(::grpc::ClientContext* context, const ::flyteidl::artifact::ListArtifactNamesRequest* request, ::flyteidl::artifact::ListArtifactNamesResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
-      virtual void ListArtifactNames(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::flyteidl::artifact::ListArtifactNamesResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
-      virtual void ListArtifacts(::grpc::ClientContext* context, const ::flyteidl::artifact::ListArtifactsRequest* request, ::flyteidl::artifact::ListArtifactsResponse* response, std::function<void(::grpc::Status)>) = 0;
-      virtual void ListArtifacts(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::flyteidl::artifact::ListArtifactsResponse* response, std::function<void(::grpc::Status)>) = 0;
-      virtual void ListArtifacts(::grpc::ClientContext* context, const ::flyteidl::artifact::ListArtifactsRequest* request, ::flyteidl::artifact::ListArtifactsResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
-      virtual void ListArtifacts(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::flyteidl::artifact::ListArtifactsResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
-      virtual void TagArtifact(::grpc::ClientContext* context, const ::flyteidl::artifact::AddTagsRequest* request, ::flyteidl::artifact::AddTagsResponse* response, std::function<void(::grpc::Status)>) = 0;
-      virtual void TagArtifact(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::flyteidl::artifact::AddTagsResponse* response, std::function<void(::grpc::Status)>) = 0;
-      virtual void TagArtifact(::grpc::ClientContext* context, const ::flyteidl::artifact::AddTagsRequest* request, ::flyteidl::artifact::AddTagsResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
-      virtual void TagArtifact(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::flyteidl::artifact::AddTagsResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
-      virtual void RemoveTags(::grpc::ClientContext* context, const ::flyteidl::artifact::RemoveTagsRequest* request, ::flyteidl::artifact::RemoveTagsResponse* response, std::function<void(::grpc::Status)>) = 0;
-      virtual void RemoveTags(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::flyteidl::artifact::RemoveTagsResponse* response, std::function<void(::grpc::Status)>) = 0;
-      virtual void RemoveTags(::grpc::ClientContext* context, const ::flyteidl::artifact::RemoveTagsRequest* request, ::flyteidl::artifact::RemoveTagsResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
-      virtual void RemoveTags(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::flyteidl::artifact::RemoveTagsResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
-      virtual void CreateAlias(::grpc::ClientContext* context, const ::flyteidl::artifact::CreateAliasRequest* request, ::flyteidl::artifact::CreateAliasResponse* response, std::function<void(::grpc::Status)>) = 0;
-      virtual void CreateAlias(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::flyteidl::artifact::CreateAliasResponse* response, std::function<void(::grpc::Status)>) = 0;
-      virtual void CreateAlias(::grpc::ClientContext* context, const ::flyteidl::artifact::CreateAliasRequest* request, ::flyteidl::artifact::CreateAliasResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
-      virtual void CreateAlias(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::flyteidl::artifact::CreateAliasResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
-      virtual void RemoveAlias(::grpc::ClientContext* context, const ::flyteidl::artifact::RemoveAliasRequest* request, ::flyteidl::artifact::RemoveAliasResponse* response, std::function<void(::grpc::Status)>) = 0;
-      virtual void RemoveAlias(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::flyteidl::artifact::RemoveAliasResponse* response, std::function<void(::grpc::Status)>) = 0;
-      virtual void RemoveAlias(::grpc::ClientContext* context, const ::flyteidl::artifact::RemoveAliasRequest* request, ::flyteidl::artifact::RemoveAliasResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
-      virtual void RemoveAlias(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::flyteidl::artifact::RemoveAliasResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
+      //  rpc ListArtifactNames (ListArtifactNamesRequest) returns (ListArtifactNamesResponse) {}
+      //
+      //  rpc ListArtifacts (ListArtifactsRequest) returns (ListArtifactsResponse) {}
+      //
+      virtual void AddTag(::grpc::ClientContext* context, const ::flyteidl::artifact::AddTagRequest* request, ::flyteidl::artifact::AddTagResponse* response, std::function<void(::grpc::Status)>) = 0;
+      virtual void AddTag(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::flyteidl::artifact::AddTagResponse* response, std::function<void(::grpc::Status)>) = 0;
+      virtual void AddTag(::grpc::ClientContext* context, const ::flyteidl::artifact::AddTagRequest* request, ::flyteidl::artifact::AddTagResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
+      virtual void AddTag(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::flyteidl::artifact::AddTagResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
     };
     virtual class experimental_async_interface* experimental_async() { return nullptr; }
   private:
@@ -146,18 +99,8 @@ class ArtifactRegistry final {
     virtual ::grpc::ClientAsyncResponseReaderInterface< ::flyteidl::artifact::CreateArtifactResponse>* PrepareAsyncCreateArtifactRaw(::grpc::ClientContext* context, const ::flyteidl::artifact::CreateArtifactRequest& request, ::grpc::CompletionQueue* cq) = 0;
     virtual ::grpc::ClientAsyncResponseReaderInterface< ::flyteidl::artifact::GetArtifactResponse>* AsyncGetArtifactRaw(::grpc::ClientContext* context, const ::flyteidl::artifact::GetArtifactRequest& request, ::grpc::CompletionQueue* cq) = 0;
     virtual ::grpc::ClientAsyncResponseReaderInterface< ::flyteidl::artifact::GetArtifactResponse>* PrepareAsyncGetArtifactRaw(::grpc::ClientContext* context, const ::flyteidl::artifact::GetArtifactRequest& request, ::grpc::CompletionQueue* cq) = 0;
-    virtual ::grpc::ClientAsyncResponseReaderInterface< ::flyteidl::artifact::ListArtifactNamesResponse>* AsyncListArtifactNamesRaw(::grpc::ClientContext* context, const ::flyteidl::artifact::ListArtifactNamesRequest& request, ::grpc::CompletionQueue* cq) = 0;
-    virtual ::grpc::ClientAsyncResponseReaderInterface< ::flyteidl::artifact::ListArtifactNamesResponse>* PrepareAsyncListArtifactNamesRaw(::grpc::ClientContext* context, const ::flyteidl::artifact::ListArtifactNamesRequest& request, ::grpc::CompletionQueue* cq) = 0;
-    virtual ::grpc::ClientAsyncResponseReaderInterface< ::flyteidl::artifact::ListArtifactsResponse>* AsyncListArtifactsRaw(::grpc::ClientContext* context, const ::flyteidl::artifact::ListArtifactsRequest& request, ::grpc::CompletionQueue* cq) = 0;
-    virtual ::grpc::ClientAsyncResponseReaderInterface< ::flyteidl::artifact::ListArtifactsResponse>* PrepareAsyncListArtifactsRaw(::grpc::ClientContext* context, const ::flyteidl::artifact::ListArtifactsRequest& request, ::grpc::CompletionQueue* cq) = 0;
-    virtual ::grpc::ClientAsyncResponseReaderInterface< ::flyteidl::artifact::AddTagsResponse>* AsyncTagArtifactRaw(::grpc::ClientContext* context, const ::flyteidl::artifact::AddTagsRequest& request, ::grpc::CompletionQueue* cq) = 0;
-    virtual ::grpc::ClientAsyncResponseReaderInterface< ::flyteidl::artifact::AddTagsResponse>* PrepareAsyncTagArtifactRaw(::grpc::ClientContext* context, const ::flyteidl::artifact::AddTagsRequest& request, ::grpc::CompletionQueue* cq) = 0;
-    virtual ::grpc::ClientAsyncResponseReaderInterface< ::flyteidl::artifact::RemoveTagsResponse>* AsyncRemoveTagsRaw(::grpc::ClientContext* context, const ::flyteidl::artifact::RemoveTagsRequest& request, ::grpc::CompletionQueue* cq) = 0;
-    virtual ::grpc::ClientAsyncResponseReaderInterface< ::flyteidl::artifact::RemoveTagsResponse>* PrepareAsyncRemoveTagsRaw(::grpc::ClientContext* context, const ::flyteidl::artifact::RemoveTagsRequest& request, ::grpc::CompletionQueue* cq) = 0;
-    virtual ::grpc::ClientAsyncResponseReaderInterface< ::flyteidl::artifact::CreateAliasResponse>* AsyncCreateAliasRaw(::grpc::ClientContext* context, const ::flyteidl::artifact::CreateAliasRequest& request, ::grpc::CompletionQueue* cq) = 0;
-    virtual ::grpc::ClientAsyncResponseReaderInterface< ::flyteidl::artifact::CreateAliasResponse>* PrepareAsyncCreateAliasRaw(::grpc::ClientContext* context, const ::flyteidl::artifact::CreateAliasRequest& request, ::grpc::CompletionQueue* cq) = 0;
-    virtual ::grpc::ClientAsyncResponseReaderInterface< ::flyteidl::artifact::RemoveAliasResponse>* AsyncRemoveAliasRaw(::grpc::ClientContext* context, const ::flyteidl::artifact::RemoveAliasRequest& request, ::grpc::CompletionQueue* cq) = 0;
-    virtual ::grpc::ClientAsyncResponseReaderInterface< ::flyteidl::artifact::RemoveAliasResponse>* PrepareAsyncRemoveAliasRaw(::grpc::ClientContext* context, const ::flyteidl::artifact::RemoveAliasRequest& request, ::grpc::CompletionQueue* cq) = 0;
+    virtual ::grpc::ClientAsyncResponseReaderInterface< ::flyteidl::artifact::AddTagResponse>* AsyncAddTagRaw(::grpc::ClientContext* context, const ::flyteidl::artifact::AddTagRequest& request, ::grpc::CompletionQueue* cq) = 0;
+    virtual ::grpc::ClientAsyncResponseReaderInterface< ::flyteidl::artifact::AddTagResponse>* PrepareAsyncAddTagRaw(::grpc::ClientContext* context, const ::flyteidl::artifact::AddTagRequest& request, ::grpc::CompletionQueue* cq) = 0;
   };
   class Stub final : public StubInterface {
    public:
@@ -176,47 +119,12 @@ class ArtifactRegistry final {
     std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::flyteidl::artifact::GetArtifactResponse>> PrepareAsyncGetArtifact(::grpc::ClientContext* context, const ::flyteidl::artifact::GetArtifactRequest& request, ::grpc::CompletionQueue* cq) {
       return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::flyteidl::artifact::GetArtifactResponse>>(PrepareAsyncGetArtifactRaw(context, request, cq));
     }
-    ::grpc::Status ListArtifactNames(::grpc::ClientContext* context, const ::flyteidl::artifact::ListArtifactNamesRequest& request, ::flyteidl::artifact::ListArtifactNamesResponse* response) override;
-    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::flyteidl::artifact::ListArtifactNamesResponse>> AsyncListArtifactNames(::grpc::ClientContext* context, const ::flyteidl::artifact::ListArtifactNamesRequest& request, ::grpc::CompletionQueue* cq) {
-      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::flyteidl::artifact::ListArtifactNamesResponse>>(AsyncListArtifactNamesRaw(context, request, cq));
+    ::grpc::Status AddTag(::grpc::ClientContext* context, const ::flyteidl::artifact::AddTagRequest& request, ::flyteidl::artifact::AddTagResponse* response) override;
+    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::flyteidl::artifact::AddTagResponse>> AsyncAddTag(::grpc::ClientContext* context, const ::flyteidl::artifact::AddTagRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::flyteidl::artifact::AddTagResponse>>(AsyncAddTagRaw(context, request, cq));
     }
-    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::flyteidl::artifact::ListArtifactNamesResponse>> PrepareAsyncListArtifactNames(::grpc::ClientContext* context, const ::flyteidl::artifact::ListArtifactNamesRequest& request, ::grpc::CompletionQueue* cq) {
-      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::flyteidl::artifact::ListArtifactNamesResponse>>(PrepareAsyncListArtifactNamesRaw(context, request, cq));
-    }
-    ::grpc::Status ListArtifacts(::grpc::ClientContext* context, const ::flyteidl::artifact::ListArtifactsRequest& request, ::flyteidl::artifact::ListArtifactsResponse* response) override;
-    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::flyteidl::artifact::ListArtifactsResponse>> AsyncListArtifacts(::grpc::ClientContext* context, const ::flyteidl::artifact::ListArtifactsRequest& request, ::grpc::CompletionQueue* cq) {
-      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::flyteidl::artifact::ListArtifactsResponse>>(AsyncListArtifactsRaw(context, request, cq));
-    }
-    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::flyteidl::artifact::ListArtifactsResponse>> PrepareAsyncListArtifacts(::grpc::ClientContext* context, const ::flyteidl::artifact::ListArtifactsRequest& request, ::grpc::CompletionQueue* cq) {
-      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::flyteidl::artifact::ListArtifactsResponse>>(PrepareAsyncListArtifactsRaw(context, request, cq));
-    }
-    ::grpc::Status TagArtifact(::grpc::ClientContext* context, const ::flyteidl::artifact::AddTagsRequest& request, ::flyteidl::artifact::AddTagsResponse* response) override;
-    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::flyteidl::artifact::AddTagsResponse>> AsyncTagArtifact(::grpc::ClientContext* context, const ::flyteidl::artifact::AddTagsRequest& request, ::grpc::CompletionQueue* cq) {
-      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::flyteidl::artifact::AddTagsResponse>>(AsyncTagArtifactRaw(context, request, cq));
-    }
-    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::flyteidl::artifact::AddTagsResponse>> PrepareAsyncTagArtifact(::grpc::ClientContext* context, const ::flyteidl::artifact::AddTagsRequest& request, ::grpc::CompletionQueue* cq) {
-      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::flyteidl::artifact::AddTagsResponse>>(PrepareAsyncTagArtifactRaw(context, request, cq));
-    }
-    ::grpc::Status RemoveTags(::grpc::ClientContext* context, const ::flyteidl::artifact::RemoveTagsRequest& request, ::flyteidl::artifact::RemoveTagsResponse* response) override;
-    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::flyteidl::artifact::RemoveTagsResponse>> AsyncRemoveTags(::grpc::ClientContext* context, const ::flyteidl::artifact::RemoveTagsRequest& request, ::grpc::CompletionQueue* cq) {
-      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::flyteidl::artifact::RemoveTagsResponse>>(AsyncRemoveTagsRaw(context, request, cq));
-    }
-    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::flyteidl::artifact::RemoveTagsResponse>> PrepareAsyncRemoveTags(::grpc::ClientContext* context, const ::flyteidl::artifact::RemoveTagsRequest& request, ::grpc::CompletionQueue* cq) {
-      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::flyteidl::artifact::RemoveTagsResponse>>(PrepareAsyncRemoveTagsRaw(context, request, cq));
-    }
-    ::grpc::Status CreateAlias(::grpc::ClientContext* context, const ::flyteidl::artifact::CreateAliasRequest& request, ::flyteidl::artifact::CreateAliasResponse* response) override;
-    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::flyteidl::artifact::CreateAliasResponse>> AsyncCreateAlias(::grpc::ClientContext* context, const ::flyteidl::artifact::CreateAliasRequest& request, ::grpc::CompletionQueue* cq) {
-      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::flyteidl::artifact::CreateAliasResponse>>(AsyncCreateAliasRaw(context, request, cq));
-    }
-    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::flyteidl::artifact::CreateAliasResponse>> PrepareAsyncCreateAlias(::grpc::ClientContext* context, const ::flyteidl::artifact::CreateAliasRequest& request, ::grpc::CompletionQueue* cq) {
-      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::flyteidl::artifact::CreateAliasResponse>>(PrepareAsyncCreateAliasRaw(context, request, cq));
-    }
-    ::grpc::Status RemoveAlias(::grpc::ClientContext* context, const ::flyteidl::artifact::RemoveAliasRequest& request, ::flyteidl::artifact::RemoveAliasResponse* response) override;
-    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::flyteidl::artifact::RemoveAliasResponse>> AsyncRemoveAlias(::grpc::ClientContext* context, const ::flyteidl::artifact::RemoveAliasRequest& request, ::grpc::CompletionQueue* cq) {
-      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::flyteidl::artifact::RemoveAliasResponse>>(AsyncRemoveAliasRaw(context, request, cq));
-    }
-    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::flyteidl::artifact::RemoveAliasResponse>> PrepareAsyncRemoveAlias(::grpc::ClientContext* context, const ::flyteidl::artifact::RemoveAliasRequest& request, ::grpc::CompletionQueue* cq) {
-      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::flyteidl::artifact::RemoveAliasResponse>>(PrepareAsyncRemoveAliasRaw(context, request, cq));
+    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::flyteidl::artifact::AddTagResponse>> PrepareAsyncAddTag(::grpc::ClientContext* context, const ::flyteidl::artifact::AddTagRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::flyteidl::artifact::AddTagResponse>>(PrepareAsyncAddTagRaw(context, request, cq));
     }
     class experimental_async final :
       public StubInterface::experimental_async_interface {
@@ -229,30 +137,10 @@ class ArtifactRegistry final {
       void GetArtifact(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::flyteidl::artifact::GetArtifactResponse* response, std::function<void(::grpc::Status)>) override;
       void GetArtifact(::grpc::ClientContext* context, const ::flyteidl::artifact::GetArtifactRequest* request, ::flyteidl::artifact::GetArtifactResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
       void GetArtifact(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::flyteidl::artifact::GetArtifactResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
-      void ListArtifactNames(::grpc::ClientContext* context, const ::flyteidl::artifact::ListArtifactNamesRequest* request, ::flyteidl::artifact::ListArtifactNamesResponse* response, std::function<void(::grpc::Status)>) override;
-      void ListArtifactNames(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::flyteidl::artifact::ListArtifactNamesResponse* response, std::function<void(::grpc::Status)>) override;
-      void ListArtifactNames(::grpc::ClientContext* context, const ::flyteidl::artifact::ListArtifactNamesRequest* request, ::flyteidl::artifact::ListArtifactNamesResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
-      void ListArtifactNames(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::flyteidl::artifact::ListArtifactNamesResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
-      void ListArtifacts(::grpc::ClientContext* context, const ::flyteidl::artifact::ListArtifactsRequest* request, ::flyteidl::artifact::ListArtifactsResponse* response, std::function<void(::grpc::Status)>) override;
-      void ListArtifacts(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::flyteidl::artifact::ListArtifactsResponse* response, std::function<void(::grpc::Status)>) override;
-      void ListArtifacts(::grpc::ClientContext* context, const ::flyteidl::artifact::ListArtifactsRequest* request, ::flyteidl::artifact::ListArtifactsResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
-      void ListArtifacts(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::flyteidl::artifact::ListArtifactsResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
-      void TagArtifact(::grpc::ClientContext* context, const ::flyteidl::artifact::AddTagsRequest* request, ::flyteidl::artifact::AddTagsResponse* response, std::function<void(::grpc::Status)>) override;
-      void TagArtifact(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::flyteidl::artifact::AddTagsResponse* response, std::function<void(::grpc::Status)>) override;
-      void TagArtifact(::grpc::ClientContext* context, const ::flyteidl::artifact::AddTagsRequest* request, ::flyteidl::artifact::AddTagsResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
-      void TagArtifact(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::flyteidl::artifact::AddTagsResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
-      void RemoveTags(::grpc::ClientContext* context, const ::flyteidl::artifact::RemoveTagsRequest* request, ::flyteidl::artifact::RemoveTagsResponse* response, std::function<void(::grpc::Status)>) override;
-      void RemoveTags(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::flyteidl::artifact::RemoveTagsResponse* response, std::function<void(::grpc::Status)>) override;
-      void RemoveTags(::grpc::ClientContext* context, const ::flyteidl::artifact::RemoveTagsRequest* request, ::flyteidl::artifact::RemoveTagsResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
-      void RemoveTags(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::flyteidl::artifact::RemoveTagsResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
-      void CreateAlias(::grpc::ClientContext* context, const ::flyteidl::artifact::CreateAliasRequest* request, ::flyteidl::artifact::CreateAliasResponse* response, std::function<void(::grpc::Status)>) override;
-      void CreateAlias(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::flyteidl::artifact::CreateAliasResponse* response, std::function<void(::grpc::Status)>) override;
-      void CreateAlias(::grpc::ClientContext* context, const ::flyteidl::artifact::CreateAliasRequest* request, ::flyteidl::artifact::CreateAliasResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
-      void CreateAlias(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::flyteidl::artifact::CreateAliasResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
-      void RemoveAlias(::grpc::ClientContext* context, const ::flyteidl::artifact::RemoveAliasRequest* request, ::flyteidl::artifact::RemoveAliasResponse* response, std::function<void(::grpc::Status)>) override;
-      void RemoveAlias(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::flyteidl::artifact::RemoveAliasResponse* response, std::function<void(::grpc::Status)>) override;
-      void RemoveAlias(::grpc::ClientContext* context, const ::flyteidl::artifact::RemoveAliasRequest* request, ::flyteidl::artifact::RemoveAliasResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
-      void RemoveAlias(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::flyteidl::artifact::RemoveAliasResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
+      void AddTag(::grpc::ClientContext* context, const ::flyteidl::artifact::AddTagRequest* request, ::flyteidl::artifact::AddTagResponse* response, std::function<void(::grpc::Status)>) override;
+      void AddTag(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::flyteidl::artifact::AddTagResponse* response, std::function<void(::grpc::Status)>) override;
+      void AddTag(::grpc::ClientContext* context, const ::flyteidl::artifact::AddTagRequest* request, ::flyteidl::artifact::AddTagResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
+      void AddTag(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::flyteidl::artifact::AddTagResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
      private:
       friend class Stub;
       explicit experimental_async(Stub* stub): stub_(stub) { }
@@ -268,26 +156,11 @@ class ArtifactRegistry final {
     ::grpc::ClientAsyncResponseReader< ::flyteidl::artifact::CreateArtifactResponse>* PrepareAsyncCreateArtifactRaw(::grpc::ClientContext* context, const ::flyteidl::artifact::CreateArtifactRequest& request, ::grpc::CompletionQueue* cq) override;
     ::grpc::ClientAsyncResponseReader< ::flyteidl::artifact::GetArtifactResponse>* AsyncGetArtifactRaw(::grpc::ClientContext* context, const ::flyteidl::artifact::GetArtifactRequest& request, ::grpc::CompletionQueue* cq) override;
     ::grpc::ClientAsyncResponseReader< ::flyteidl::artifact::GetArtifactResponse>* PrepareAsyncGetArtifactRaw(::grpc::ClientContext* context, const ::flyteidl::artifact::GetArtifactRequest& request, ::grpc::CompletionQueue* cq) override;
-    ::grpc::ClientAsyncResponseReader< ::flyteidl::artifact::ListArtifactNamesResponse>* AsyncListArtifactNamesRaw(::grpc::ClientContext* context, const ::flyteidl::artifact::ListArtifactNamesRequest& request, ::grpc::CompletionQueue* cq) override;
-    ::grpc::ClientAsyncResponseReader< ::flyteidl::artifact::ListArtifactNamesResponse>* PrepareAsyncListArtifactNamesRaw(::grpc::ClientContext* context, const ::flyteidl::artifact::ListArtifactNamesRequest& request, ::grpc::CompletionQueue* cq) override;
-    ::grpc::ClientAsyncResponseReader< ::flyteidl::artifact::ListArtifactsResponse>* AsyncListArtifactsRaw(::grpc::ClientContext* context, const ::flyteidl::artifact::ListArtifactsRequest& request, ::grpc::CompletionQueue* cq) override;
-    ::grpc::ClientAsyncResponseReader< ::flyteidl::artifact::ListArtifactsResponse>* PrepareAsyncListArtifactsRaw(::grpc::ClientContext* context, const ::flyteidl::artifact::ListArtifactsRequest& request, ::grpc::CompletionQueue* cq) override;
-    ::grpc::ClientAsyncResponseReader< ::flyteidl::artifact::AddTagsResponse>* AsyncTagArtifactRaw(::grpc::ClientContext* context, const ::flyteidl::artifact::AddTagsRequest& request, ::grpc::CompletionQueue* cq) override;
-    ::grpc::ClientAsyncResponseReader< ::flyteidl::artifact::AddTagsResponse>* PrepareAsyncTagArtifactRaw(::grpc::ClientContext* context, const ::flyteidl::artifact::AddTagsRequest& request, ::grpc::CompletionQueue* cq) override;
-    ::grpc::ClientAsyncResponseReader< ::flyteidl::artifact::RemoveTagsResponse>* AsyncRemoveTagsRaw(::grpc::ClientContext* context, const ::flyteidl::artifact::RemoveTagsRequest& request, ::grpc::CompletionQueue* cq) override;
-    ::grpc::ClientAsyncResponseReader< ::flyteidl::artifact::RemoveTagsResponse>* PrepareAsyncRemoveTagsRaw(::grpc::ClientContext* context, const ::flyteidl::artifact::RemoveTagsRequest& request, ::grpc::CompletionQueue* cq) override;
-    ::grpc::ClientAsyncResponseReader< ::flyteidl::artifact::CreateAliasResponse>* AsyncCreateAliasRaw(::grpc::ClientContext* context, const ::flyteidl::artifact::CreateAliasRequest& request, ::grpc::CompletionQueue* cq) override;
-    ::grpc::ClientAsyncResponseReader< ::flyteidl::artifact::CreateAliasResponse>* PrepareAsyncCreateAliasRaw(::grpc::ClientContext* context, const ::flyteidl::artifact::CreateAliasRequest& request, ::grpc::CompletionQueue* cq) override;
-    ::grpc::ClientAsyncResponseReader< ::flyteidl::artifact::RemoveAliasResponse>* AsyncRemoveAliasRaw(::grpc::ClientContext* context, const ::flyteidl::artifact::RemoveAliasRequest& request, ::grpc::CompletionQueue* cq) override;
-    ::grpc::ClientAsyncResponseReader< ::flyteidl::artifact::RemoveAliasResponse>* PrepareAsyncRemoveAliasRaw(::grpc::ClientContext* context, const ::flyteidl::artifact::RemoveAliasRequest& request, ::grpc::CompletionQueue* cq) override;
+    ::grpc::ClientAsyncResponseReader< ::flyteidl::artifact::AddTagResponse>* AsyncAddTagRaw(::grpc::ClientContext* context, const ::flyteidl::artifact::AddTagRequest& request, ::grpc::CompletionQueue* cq) override;
+    ::grpc::ClientAsyncResponseReader< ::flyteidl::artifact::AddTagResponse>* PrepareAsyncAddTagRaw(::grpc::ClientContext* context, const ::flyteidl::artifact::AddTagRequest& request, ::grpc::CompletionQueue* cq) override;
     const ::grpc::internal::RpcMethod rpcmethod_CreateArtifact_;
     const ::grpc::internal::RpcMethod rpcmethod_GetArtifact_;
-    const ::grpc::internal::RpcMethod rpcmethod_ListArtifactNames_;
-    const ::grpc::internal::RpcMethod rpcmethod_ListArtifacts_;
-    const ::grpc::internal::RpcMethod rpcmethod_TagArtifact_;
-    const ::grpc::internal::RpcMethod rpcmethod_RemoveTags_;
-    const ::grpc::internal::RpcMethod rpcmethod_CreateAlias_;
-    const ::grpc::internal::RpcMethod rpcmethod_RemoveAlias_;
+    const ::grpc::internal::RpcMethod rpcmethod_AddTag_;
   };
   static std::unique_ptr<Stub> NewStub(const std::shared_ptr< ::grpc::ChannelInterface>& channel, const ::grpc::StubOptions& options = ::grpc::StubOptions());
 
@@ -297,12 +170,11 @@ class ArtifactRegistry final {
     virtual ~Service();
     virtual ::grpc::Status CreateArtifact(::grpc::ServerContext* context, const ::flyteidl::artifact::CreateArtifactRequest* request, ::flyteidl::artifact::CreateArtifactResponse* response);
     virtual ::grpc::Status GetArtifact(::grpc::ServerContext* context, const ::flyteidl::artifact::GetArtifactRequest* request, ::flyteidl::artifact::GetArtifactResponse* response);
-    virtual ::grpc::Status ListArtifactNames(::grpc::ServerContext* context, const ::flyteidl::artifact::ListArtifactNamesRequest* request, ::flyteidl::artifact::ListArtifactNamesResponse* response);
-    virtual ::grpc::Status ListArtifacts(::grpc::ServerContext* context, const ::flyteidl::artifact::ListArtifactsRequest* request, ::flyteidl::artifact::ListArtifactsResponse* response);
-    virtual ::grpc::Status TagArtifact(::grpc::ServerContext* context, const ::flyteidl::artifact::AddTagsRequest* request, ::flyteidl::artifact::AddTagsResponse* response);
-    virtual ::grpc::Status RemoveTags(::grpc::ServerContext* context, const ::flyteidl::artifact::RemoveTagsRequest* request, ::flyteidl::artifact::RemoveTagsResponse* response);
-    virtual ::grpc::Status CreateAlias(::grpc::ServerContext* context, const ::flyteidl::artifact::CreateAliasRequest* request, ::flyteidl::artifact::CreateAliasResponse* response);
-    virtual ::grpc::Status RemoveAlias(::grpc::ServerContext* context, const ::flyteidl::artifact::RemoveAliasRequest* request, ::flyteidl::artifact::RemoveAliasResponse* response);
+    //  rpc ListArtifactNames (ListArtifactNamesRequest) returns (ListArtifactNamesResponse) {}
+    //
+    //  rpc ListArtifacts (ListArtifactsRequest) returns (ListArtifactsResponse) {}
+    //
+    virtual ::grpc::Status AddTag(::grpc::ServerContext* context, const ::flyteidl::artifact::AddTagRequest* request, ::flyteidl::artifact::AddTagResponse* response);
   };
   template <class BaseClass>
   class WithAsyncMethod_CreateArtifact : public BaseClass {
@@ -345,126 +217,26 @@ class ArtifactRegistry final {
     }
   };
   template <class BaseClass>
-  class WithAsyncMethod_ListArtifactNames : public BaseClass {
+  class WithAsyncMethod_AddTag : public BaseClass {
    private:
     void BaseClassMustBeDerivedFromService(const Service *service) {}
    public:
-    WithAsyncMethod_ListArtifactNames() {
+    WithAsyncMethod_AddTag() {
       ::grpc::Service::MarkMethodAsync(2);
     }
-    ~WithAsyncMethod_ListArtifactNames() override {
+    ~WithAsyncMethod_AddTag() override {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
-    ::grpc::Status ListArtifactNames(::grpc::ServerContext* context, const ::flyteidl::artifact::ListArtifactNamesRequest* request, ::flyteidl::artifact::ListArtifactNamesResponse* response) override {
+    ::grpc::Status AddTag(::grpc::ServerContext* context, const ::flyteidl::artifact::AddTagRequest* request, ::flyteidl::artifact::AddTagResponse* response) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
-    void RequestListArtifactNames(::grpc::ServerContext* context, ::flyteidl::artifact::ListArtifactNamesRequest* request, ::grpc::ServerAsyncResponseWriter< ::flyteidl::artifact::ListArtifactNamesResponse>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
+    void RequestAddTag(::grpc::ServerContext* context, ::flyteidl::artifact::AddTagRequest* request, ::grpc::ServerAsyncResponseWriter< ::flyteidl::artifact::AddTagResponse>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
       ::grpc::Service::RequestAsyncUnary(2, context, request, response, new_call_cq, notification_cq, tag);
     }
   };
-  template <class BaseClass>
-  class WithAsyncMethod_ListArtifacts : public BaseClass {
-   private:
-    void BaseClassMustBeDerivedFromService(const Service *service) {}
-   public:
-    WithAsyncMethod_ListArtifacts() {
-      ::grpc::Service::MarkMethodAsync(3);
-    }
-    ~WithAsyncMethod_ListArtifacts() override {
-      BaseClassMustBeDerivedFromService(this);
-    }
-    // disable synchronous version of this method
-    ::grpc::Status ListArtifacts(::grpc::ServerContext* context, const ::flyteidl::artifact::ListArtifactsRequest* request, ::flyteidl::artifact::ListArtifactsResponse* response) override {
-      abort();
-      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
-    }
-    void RequestListArtifacts(::grpc::ServerContext* context, ::flyteidl::artifact::ListArtifactsRequest* request, ::grpc::ServerAsyncResponseWriter< ::flyteidl::artifact::ListArtifactsResponse>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
-      ::grpc::Service::RequestAsyncUnary(3, context, request, response, new_call_cq, notification_cq, tag);
-    }
-  };
-  template <class BaseClass>
-  class WithAsyncMethod_TagArtifact : public BaseClass {
-   private:
-    void BaseClassMustBeDerivedFromService(const Service *service) {}
-   public:
-    WithAsyncMethod_TagArtifact() {
-      ::grpc::Service::MarkMethodAsync(4);
-    }
-    ~WithAsyncMethod_TagArtifact() override {
-      BaseClassMustBeDerivedFromService(this);
-    }
-    // disable synchronous version of this method
-    ::grpc::Status TagArtifact(::grpc::ServerContext* context, const ::flyteidl::artifact::AddTagsRequest* request, ::flyteidl::artifact::AddTagsResponse* response) override {
-      abort();
-      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
-    }
-    void RequestTagArtifact(::grpc::ServerContext* context, ::flyteidl::artifact::AddTagsRequest* request, ::grpc::ServerAsyncResponseWriter< ::flyteidl::artifact::AddTagsResponse>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
-      ::grpc::Service::RequestAsyncUnary(4, context, request, response, new_call_cq, notification_cq, tag);
-    }
-  };
-  template <class BaseClass>
-  class WithAsyncMethod_RemoveTags : public BaseClass {
-   private:
-    void BaseClassMustBeDerivedFromService(const Service *service) {}
-   public:
-    WithAsyncMethod_RemoveTags() {
-      ::grpc::Service::MarkMethodAsync(5);
-    }
-    ~WithAsyncMethod_RemoveTags() override {
-      BaseClassMustBeDerivedFromService(this);
-    }
-    // disable synchronous version of this method
-    ::grpc::Status RemoveTags(::grpc::ServerContext* context, const ::flyteidl::artifact::RemoveTagsRequest* request, ::flyteidl::artifact::RemoveTagsResponse* response) override {
-      abort();
-      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
-    }
-    void RequestRemoveTags(::grpc::ServerContext* context, ::flyteidl::artifact::RemoveTagsRequest* request, ::grpc::ServerAsyncResponseWriter< ::flyteidl::artifact::RemoveTagsResponse>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
-      ::grpc::Service::RequestAsyncUnary(5, context, request, response, new_call_cq, notification_cq, tag);
-    }
-  };
-  template <class BaseClass>
-  class WithAsyncMethod_CreateAlias : public BaseClass {
-   private:
-    void BaseClassMustBeDerivedFromService(const Service *service) {}
-   public:
-    WithAsyncMethod_CreateAlias() {
-      ::grpc::Service::MarkMethodAsync(6);
-    }
-    ~WithAsyncMethod_CreateAlias() override {
-      BaseClassMustBeDerivedFromService(this);
-    }
-    // disable synchronous version of this method
-    ::grpc::Status CreateAlias(::grpc::ServerContext* context, const ::flyteidl::artifact::CreateAliasRequest* request, ::flyteidl::artifact::CreateAliasResponse* response) override {
-      abort();
-      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
-    }
-    void RequestCreateAlias(::grpc::ServerContext* context, ::flyteidl::artifact::CreateAliasRequest* request, ::grpc::ServerAsyncResponseWriter< ::flyteidl::artifact::CreateAliasResponse>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
-      ::grpc::Service::RequestAsyncUnary(6, context, request, response, new_call_cq, notification_cq, tag);
-    }
-  };
-  template <class BaseClass>
-  class WithAsyncMethod_RemoveAlias : public BaseClass {
-   private:
-    void BaseClassMustBeDerivedFromService(const Service *service) {}
-   public:
-    WithAsyncMethod_RemoveAlias() {
-      ::grpc::Service::MarkMethodAsync(7);
-    }
-    ~WithAsyncMethod_RemoveAlias() override {
-      BaseClassMustBeDerivedFromService(this);
-    }
-    // disable synchronous version of this method
-    ::grpc::Status RemoveAlias(::grpc::ServerContext* context, const ::flyteidl::artifact::RemoveAliasRequest* request, ::flyteidl::artifact::RemoveAliasResponse* response) override {
-      abort();
-      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
-    }
-    void RequestRemoveAlias(::grpc::ServerContext* context, ::flyteidl::artifact::RemoveAliasRequest* request, ::grpc::ServerAsyncResponseWriter< ::flyteidl::artifact::RemoveAliasResponse>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
-      ::grpc::Service::RequestAsyncUnary(7, context, request, response, new_call_cq, notification_cq, tag);
-    }
-  };
-  typedef WithAsyncMethod_CreateArtifact<WithAsyncMethod_GetArtifact<WithAsyncMethod_ListArtifactNames<WithAsyncMethod_ListArtifacts<WithAsyncMethod_TagArtifact<WithAsyncMethod_RemoveTags<WithAsyncMethod_CreateAlias<WithAsyncMethod_RemoveAlias<Service > > > > > > > > AsyncService;
+  typedef WithAsyncMethod_CreateArtifact<WithAsyncMethod_GetArtifact<WithAsyncMethod_AddTag<Service > > > AsyncService;
   template <class BaseClass>
   class ExperimentalWithCallbackMethod_CreateArtifact : public BaseClass {
    private:
@@ -528,192 +300,37 @@ class ArtifactRegistry final {
     virtual void GetArtifact(::grpc::ServerContext* context, const ::flyteidl::artifact::GetArtifactRequest* request, ::flyteidl::artifact::GetArtifactResponse* response, ::grpc::experimental::ServerCallbackRpcController* controller) { controller->Finish(::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "")); }
   };
   template <class BaseClass>
-  class ExperimentalWithCallbackMethod_ListArtifactNames : public BaseClass {
+  class ExperimentalWithCallbackMethod_AddTag : public BaseClass {
    private:
     void BaseClassMustBeDerivedFromService(const Service *service) {}
    public:
-    ExperimentalWithCallbackMethod_ListArtifactNames() {
+    ExperimentalWithCallbackMethod_AddTag() {
       ::grpc::Service::experimental().MarkMethodCallback(2,
-        new ::grpc::internal::CallbackUnaryHandler< ::flyteidl::artifact::ListArtifactNamesRequest, ::flyteidl::artifact::ListArtifactNamesResponse>(
+        new ::grpc::internal::CallbackUnaryHandler< ::flyteidl::artifact::AddTagRequest, ::flyteidl::artifact::AddTagResponse>(
           [this](::grpc::ServerContext* context,
-                 const ::flyteidl::artifact::ListArtifactNamesRequest* request,
-                 ::flyteidl::artifact::ListArtifactNamesResponse* response,
+                 const ::flyteidl::artifact::AddTagRequest* request,
+                 ::flyteidl::artifact::AddTagResponse* response,
                  ::grpc::experimental::ServerCallbackRpcController* controller) {
-                   return this->ListArtifactNames(context, request, response, controller);
+                   return this->AddTag(context, request, response, controller);
                  }));
     }
-    void SetMessageAllocatorFor_ListArtifactNames(
-        ::grpc::experimental::MessageAllocator< ::flyteidl::artifact::ListArtifactNamesRequest, ::flyteidl::artifact::ListArtifactNamesResponse>* allocator) {
-      static_cast<::grpc::internal::CallbackUnaryHandler< ::flyteidl::artifact::ListArtifactNamesRequest, ::flyteidl::artifact::ListArtifactNamesResponse>*>(
+    void SetMessageAllocatorFor_AddTag(
+        ::grpc::experimental::MessageAllocator< ::flyteidl::artifact::AddTagRequest, ::flyteidl::artifact::AddTagResponse>* allocator) {
+      static_cast<::grpc::internal::CallbackUnaryHandler< ::flyteidl::artifact::AddTagRequest, ::flyteidl::artifact::AddTagResponse>*>(
           ::grpc::Service::experimental().GetHandler(2))
               ->SetMessageAllocator(allocator);
     }
-    ~ExperimentalWithCallbackMethod_ListArtifactNames() override {
+    ~ExperimentalWithCallbackMethod_AddTag() override {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
-    ::grpc::Status ListArtifactNames(::grpc::ServerContext* context, const ::flyteidl::artifact::ListArtifactNamesRequest* request, ::flyteidl::artifact::ListArtifactNamesResponse* response) override {
+    ::grpc::Status AddTag(::grpc::ServerContext* context, const ::flyteidl::artifact::AddTagRequest* request, ::flyteidl::artifact::AddTagResponse* response) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
-    virtual void ListArtifactNames(::grpc::ServerContext* context, const ::flyteidl::artifact::ListArtifactNamesRequest* request, ::flyteidl::artifact::ListArtifactNamesResponse* response, ::grpc::experimental::ServerCallbackRpcController* controller) { controller->Finish(::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "")); }
+    virtual void AddTag(::grpc::ServerContext* context, const ::flyteidl::artifact::AddTagRequest* request, ::flyteidl::artifact::AddTagResponse* response, ::grpc::experimental::ServerCallbackRpcController* controller) { controller->Finish(::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "")); }
   };
-  template <class BaseClass>
-  class ExperimentalWithCallbackMethod_ListArtifacts : public BaseClass {
-   private:
-    void BaseClassMustBeDerivedFromService(const Service *service) {}
-   public:
-    ExperimentalWithCallbackMethod_ListArtifacts() {
-      ::grpc::Service::experimental().MarkMethodCallback(3,
-        new ::grpc::internal::CallbackUnaryHandler< ::flyteidl::artifact::ListArtifactsRequest, ::flyteidl::artifact::ListArtifactsResponse>(
-          [this](::grpc::ServerContext* context,
-                 const ::flyteidl::artifact::ListArtifactsRequest* request,
-                 ::flyteidl::artifact::ListArtifactsResponse* response,
-                 ::grpc::experimental::ServerCallbackRpcController* controller) {
-                   return this->ListArtifacts(context, request, response, controller);
-                 }));
-    }
-    void SetMessageAllocatorFor_ListArtifacts(
-        ::grpc::experimental::MessageAllocator< ::flyteidl::artifact::ListArtifactsRequest, ::flyteidl::artifact::ListArtifactsResponse>* allocator) {
-      static_cast<::grpc::internal::CallbackUnaryHandler< ::flyteidl::artifact::ListArtifactsRequest, ::flyteidl::artifact::ListArtifactsResponse>*>(
-          ::grpc::Service::experimental().GetHandler(3))
-              ->SetMessageAllocator(allocator);
-    }
-    ~ExperimentalWithCallbackMethod_ListArtifacts() override {
-      BaseClassMustBeDerivedFromService(this);
-    }
-    // disable synchronous version of this method
-    ::grpc::Status ListArtifacts(::grpc::ServerContext* context, const ::flyteidl::artifact::ListArtifactsRequest* request, ::flyteidl::artifact::ListArtifactsResponse* response) override {
-      abort();
-      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
-    }
-    virtual void ListArtifacts(::grpc::ServerContext* context, const ::flyteidl::artifact::ListArtifactsRequest* request, ::flyteidl::artifact::ListArtifactsResponse* response, ::grpc::experimental::ServerCallbackRpcController* controller) { controller->Finish(::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "")); }
-  };
-  template <class BaseClass>
-  class ExperimentalWithCallbackMethod_TagArtifact : public BaseClass {
-   private:
-    void BaseClassMustBeDerivedFromService(const Service *service) {}
-   public:
-    ExperimentalWithCallbackMethod_TagArtifact() {
-      ::grpc::Service::experimental().MarkMethodCallback(4,
-        new ::grpc::internal::CallbackUnaryHandler< ::flyteidl::artifact::AddTagsRequest, ::flyteidl::artifact::AddTagsResponse>(
-          [this](::grpc::ServerContext* context,
-                 const ::flyteidl::artifact::AddTagsRequest* request,
-                 ::flyteidl::artifact::AddTagsResponse* response,
-                 ::grpc::experimental::ServerCallbackRpcController* controller) {
-                   return this->TagArtifact(context, request, response, controller);
-                 }));
-    }
-    void SetMessageAllocatorFor_TagArtifact(
-        ::grpc::experimental::MessageAllocator< ::flyteidl::artifact::AddTagsRequest, ::flyteidl::artifact::AddTagsResponse>* allocator) {
-      static_cast<::grpc::internal::CallbackUnaryHandler< ::flyteidl::artifact::AddTagsRequest, ::flyteidl::artifact::AddTagsResponse>*>(
-          ::grpc::Service::experimental().GetHandler(4))
-              ->SetMessageAllocator(allocator);
-    }
-    ~ExperimentalWithCallbackMethod_TagArtifact() override {
-      BaseClassMustBeDerivedFromService(this);
-    }
-    // disable synchronous version of this method
-    ::grpc::Status TagArtifact(::grpc::ServerContext* context, const ::flyteidl::artifact::AddTagsRequest* request, ::flyteidl::artifact::AddTagsResponse* response) override {
-      abort();
-      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
-    }
-    virtual void TagArtifact(::grpc::ServerContext* context, const ::flyteidl::artifact::AddTagsRequest* request, ::flyteidl::artifact::AddTagsResponse* response, ::grpc::experimental::ServerCallbackRpcController* controller) { controller->Finish(::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "")); }
-  };
-  template <class BaseClass>
-  class ExperimentalWithCallbackMethod_RemoveTags : public BaseClass {
-   private:
-    void BaseClassMustBeDerivedFromService(const Service *service) {}
-   public:
-    ExperimentalWithCallbackMethod_RemoveTags() {
-      ::grpc::Service::experimental().MarkMethodCallback(5,
-        new ::grpc::internal::CallbackUnaryHandler< ::flyteidl::artifact::RemoveTagsRequest, ::flyteidl::artifact::RemoveTagsResponse>(
-          [this](::grpc::ServerContext* context,
-                 const ::flyteidl::artifact::RemoveTagsRequest* request,
-                 ::flyteidl::artifact::RemoveTagsResponse* response,
-                 ::grpc::experimental::ServerCallbackRpcController* controller) {
-                   return this->RemoveTags(context, request, response, controller);
-                 }));
-    }
-    void SetMessageAllocatorFor_RemoveTags(
-        ::grpc::experimental::MessageAllocator< ::flyteidl::artifact::RemoveTagsRequest, ::flyteidl::artifact::RemoveTagsResponse>* allocator) {
-      static_cast<::grpc::internal::CallbackUnaryHandler< ::flyteidl::artifact::RemoveTagsRequest, ::flyteidl::artifact::RemoveTagsResponse>*>(
-          ::grpc::Service::experimental().GetHandler(5))
-              ->SetMessageAllocator(allocator);
-    }
-    ~ExperimentalWithCallbackMethod_RemoveTags() override {
-      BaseClassMustBeDerivedFromService(this);
-    }
-    // disable synchronous version of this method
-    ::grpc::Status RemoveTags(::grpc::ServerContext* context, const ::flyteidl::artifact::RemoveTagsRequest* request, ::flyteidl::artifact::RemoveTagsResponse* response) override {
-      abort();
-      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
-    }
-    virtual void RemoveTags(::grpc::ServerContext* context, const ::flyteidl::artifact::RemoveTagsRequest* request, ::flyteidl::artifact::RemoveTagsResponse* response, ::grpc::experimental::ServerCallbackRpcController* controller) { controller->Finish(::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "")); }
-  };
-  template <class BaseClass>
-  class ExperimentalWithCallbackMethod_CreateAlias : public BaseClass {
-   private:
-    void BaseClassMustBeDerivedFromService(const Service *service) {}
-   public:
-    ExperimentalWithCallbackMethod_CreateAlias() {
-      ::grpc::Service::experimental().MarkMethodCallback(6,
-        new ::grpc::internal::CallbackUnaryHandler< ::flyteidl::artifact::CreateAliasRequest, ::flyteidl::artifact::CreateAliasResponse>(
-          [this](::grpc::ServerContext* context,
-                 const ::flyteidl::artifact::CreateAliasRequest* request,
-                 ::flyteidl::artifact::CreateAliasResponse* response,
-                 ::grpc::experimental::ServerCallbackRpcController* controller) {
-                   return this->CreateAlias(context, request, response, controller);
-                 }));
-    }
-    void SetMessageAllocatorFor_CreateAlias(
-        ::grpc::experimental::MessageAllocator< ::flyteidl::artifact::CreateAliasRequest, ::flyteidl::artifact::CreateAliasResponse>* allocator) {
-      static_cast<::grpc::internal::CallbackUnaryHandler< ::flyteidl::artifact::CreateAliasRequest, ::flyteidl::artifact::CreateAliasResponse>*>(
-          ::grpc::Service::experimental().GetHandler(6))
-              ->SetMessageAllocator(allocator);
-    }
-    ~ExperimentalWithCallbackMethod_CreateAlias() override {
-      BaseClassMustBeDerivedFromService(this);
-    }
-    // disable synchronous version of this method
-    ::grpc::Status CreateAlias(::grpc::ServerContext* context, const ::flyteidl::artifact::CreateAliasRequest* request, ::flyteidl::artifact::CreateAliasResponse* response) override {
-      abort();
-      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
-    }
-    virtual void CreateAlias(::grpc::ServerContext* context, const ::flyteidl::artifact::CreateAliasRequest* request, ::flyteidl::artifact::CreateAliasResponse* response, ::grpc::experimental::ServerCallbackRpcController* controller) { controller->Finish(::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "")); }
-  };
-  template <class BaseClass>
-  class ExperimentalWithCallbackMethod_RemoveAlias : public BaseClass {
-   private:
-    void BaseClassMustBeDerivedFromService(const Service *service) {}
-   public:
-    ExperimentalWithCallbackMethod_RemoveAlias() {
-      ::grpc::Service::experimental().MarkMethodCallback(7,
-        new ::grpc::internal::CallbackUnaryHandler< ::flyteidl::artifact::RemoveAliasRequest, ::flyteidl::artifact::RemoveAliasResponse>(
-          [this](::grpc::ServerContext* context,
-                 const ::flyteidl::artifact::RemoveAliasRequest* request,
-                 ::flyteidl::artifact::RemoveAliasResponse* response,
-                 ::grpc::experimental::ServerCallbackRpcController* controller) {
-                   return this->RemoveAlias(context, request, response, controller);
-                 }));
-    }
-    void SetMessageAllocatorFor_RemoveAlias(
-        ::grpc::experimental::MessageAllocator< ::flyteidl::artifact::RemoveAliasRequest, ::flyteidl::artifact::RemoveAliasResponse>* allocator) {
-      static_cast<::grpc::internal::CallbackUnaryHandler< ::flyteidl::artifact::RemoveAliasRequest, ::flyteidl::artifact::RemoveAliasResponse>*>(
-          ::grpc::Service::experimental().GetHandler(7))
-              ->SetMessageAllocator(allocator);
-    }
-    ~ExperimentalWithCallbackMethod_RemoveAlias() override {
-      BaseClassMustBeDerivedFromService(this);
-    }
-    // disable synchronous version of this method
-    ::grpc::Status RemoveAlias(::grpc::ServerContext* context, const ::flyteidl::artifact::RemoveAliasRequest* request, ::flyteidl::artifact::RemoveAliasResponse* response) override {
-      abort();
-      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
-    }
-    virtual void RemoveAlias(::grpc::ServerContext* context, const ::flyteidl::artifact::RemoveAliasRequest* request, ::flyteidl::artifact::RemoveAliasResponse* response, ::grpc::experimental::ServerCallbackRpcController* controller) { controller->Finish(::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "")); }
-  };
-  typedef ExperimentalWithCallbackMethod_CreateArtifact<ExperimentalWithCallbackMethod_GetArtifact<ExperimentalWithCallbackMethod_ListArtifactNames<ExperimentalWithCallbackMethod_ListArtifacts<ExperimentalWithCallbackMethod_TagArtifact<ExperimentalWithCallbackMethod_RemoveTags<ExperimentalWithCallbackMethod_CreateAlias<ExperimentalWithCallbackMethod_RemoveAlias<Service > > > > > > > > ExperimentalCallbackService;
+  typedef ExperimentalWithCallbackMethod_CreateArtifact<ExperimentalWithCallbackMethod_GetArtifact<ExperimentalWithCallbackMethod_AddTag<Service > > > ExperimentalCallbackService;
   template <class BaseClass>
   class WithGenericMethod_CreateArtifact : public BaseClass {
    private:
@@ -749,103 +366,18 @@ class ArtifactRegistry final {
     }
   };
   template <class BaseClass>
-  class WithGenericMethod_ListArtifactNames : public BaseClass {
+  class WithGenericMethod_AddTag : public BaseClass {
    private:
     void BaseClassMustBeDerivedFromService(const Service *service) {}
    public:
-    WithGenericMethod_ListArtifactNames() {
+    WithGenericMethod_AddTag() {
       ::grpc::Service::MarkMethodGeneric(2);
     }
-    ~WithGenericMethod_ListArtifactNames() override {
+    ~WithGenericMethod_AddTag() override {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
-    ::grpc::Status ListArtifactNames(::grpc::ServerContext* context, const ::flyteidl::artifact::ListArtifactNamesRequest* request, ::flyteidl::artifact::ListArtifactNamesResponse* response) override {
-      abort();
-      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
-    }
-  };
-  template <class BaseClass>
-  class WithGenericMethod_ListArtifacts : public BaseClass {
-   private:
-    void BaseClassMustBeDerivedFromService(const Service *service) {}
-   public:
-    WithGenericMethod_ListArtifacts() {
-      ::grpc::Service::MarkMethodGeneric(3);
-    }
-    ~WithGenericMethod_ListArtifacts() override {
-      BaseClassMustBeDerivedFromService(this);
-    }
-    // disable synchronous version of this method
-    ::grpc::Status ListArtifacts(::grpc::ServerContext* context, const ::flyteidl::artifact::ListArtifactsRequest* request, ::flyteidl::artifact::ListArtifactsResponse* response) override {
-      abort();
-      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
-    }
-  };
-  template <class BaseClass>
-  class WithGenericMethod_TagArtifact : public BaseClass {
-   private:
-    void BaseClassMustBeDerivedFromService(const Service *service) {}
-   public:
-    WithGenericMethod_TagArtifact() {
-      ::grpc::Service::MarkMethodGeneric(4);
-    }
-    ~WithGenericMethod_TagArtifact() override {
-      BaseClassMustBeDerivedFromService(this);
-    }
-    // disable synchronous version of this method
-    ::grpc::Status TagArtifact(::grpc::ServerContext* context, const ::flyteidl::artifact::AddTagsRequest* request, ::flyteidl::artifact::AddTagsResponse* response) override {
-      abort();
-      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
-    }
-  };
-  template <class BaseClass>
-  class WithGenericMethod_RemoveTags : public BaseClass {
-   private:
-    void BaseClassMustBeDerivedFromService(const Service *service) {}
-   public:
-    WithGenericMethod_RemoveTags() {
-      ::grpc::Service::MarkMethodGeneric(5);
-    }
-    ~WithGenericMethod_RemoveTags() override {
-      BaseClassMustBeDerivedFromService(this);
-    }
-    // disable synchronous version of this method
-    ::grpc::Status RemoveTags(::grpc::ServerContext* context, const ::flyteidl::artifact::RemoveTagsRequest* request, ::flyteidl::artifact::RemoveTagsResponse* response) override {
-      abort();
-      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
-    }
-  };
-  template <class BaseClass>
-  class WithGenericMethod_CreateAlias : public BaseClass {
-   private:
-    void BaseClassMustBeDerivedFromService(const Service *service) {}
-   public:
-    WithGenericMethod_CreateAlias() {
-      ::grpc::Service::MarkMethodGeneric(6);
-    }
-    ~WithGenericMethod_CreateAlias() override {
-      BaseClassMustBeDerivedFromService(this);
-    }
-    // disable synchronous version of this method
-    ::grpc::Status CreateAlias(::grpc::ServerContext* context, const ::flyteidl::artifact::CreateAliasRequest* request, ::flyteidl::artifact::CreateAliasResponse* response) override {
-      abort();
-      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
-    }
-  };
-  template <class BaseClass>
-  class WithGenericMethod_RemoveAlias : public BaseClass {
-   private:
-    void BaseClassMustBeDerivedFromService(const Service *service) {}
-   public:
-    WithGenericMethod_RemoveAlias() {
-      ::grpc::Service::MarkMethodGeneric(7);
-    }
-    ~WithGenericMethod_RemoveAlias() override {
-      BaseClassMustBeDerivedFromService(this);
-    }
-    // disable synchronous version of this method
-    ::grpc::Status RemoveAlias(::grpc::ServerContext* context, const ::flyteidl::artifact::RemoveAliasRequest* request, ::flyteidl::artifact::RemoveAliasResponse* response) override {
+    ::grpc::Status AddTag(::grpc::ServerContext* context, const ::flyteidl::artifact::AddTagRequest* request, ::flyteidl::artifact::AddTagResponse* response) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
@@ -891,123 +423,23 @@ class ArtifactRegistry final {
     }
   };
   template <class BaseClass>
-  class WithRawMethod_ListArtifactNames : public BaseClass {
+  class WithRawMethod_AddTag : public BaseClass {
    private:
     void BaseClassMustBeDerivedFromService(const Service *service) {}
    public:
-    WithRawMethod_ListArtifactNames() {
+    WithRawMethod_AddTag() {
       ::grpc::Service::MarkMethodRaw(2);
     }
-    ~WithRawMethod_ListArtifactNames() override {
+    ~WithRawMethod_AddTag() override {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
-    ::grpc::Status ListArtifactNames(::grpc::ServerContext* context, const ::flyteidl::artifact::ListArtifactNamesRequest* request, ::flyteidl::artifact::ListArtifactNamesResponse* response) override {
+    ::grpc::Status AddTag(::grpc::ServerContext* context, const ::flyteidl::artifact::AddTagRequest* request, ::flyteidl::artifact::AddTagResponse* response) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
-    void RequestListArtifactNames(::grpc::ServerContext* context, ::grpc::ByteBuffer* request, ::grpc::ServerAsyncResponseWriter< ::grpc::ByteBuffer>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
+    void RequestAddTag(::grpc::ServerContext* context, ::grpc::ByteBuffer* request, ::grpc::ServerAsyncResponseWriter< ::grpc::ByteBuffer>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
       ::grpc::Service::RequestAsyncUnary(2, context, request, response, new_call_cq, notification_cq, tag);
-    }
-  };
-  template <class BaseClass>
-  class WithRawMethod_ListArtifacts : public BaseClass {
-   private:
-    void BaseClassMustBeDerivedFromService(const Service *service) {}
-   public:
-    WithRawMethod_ListArtifacts() {
-      ::grpc::Service::MarkMethodRaw(3);
-    }
-    ~WithRawMethod_ListArtifacts() override {
-      BaseClassMustBeDerivedFromService(this);
-    }
-    // disable synchronous version of this method
-    ::grpc::Status ListArtifacts(::grpc::ServerContext* context, const ::flyteidl::artifact::ListArtifactsRequest* request, ::flyteidl::artifact::ListArtifactsResponse* response) override {
-      abort();
-      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
-    }
-    void RequestListArtifacts(::grpc::ServerContext* context, ::grpc::ByteBuffer* request, ::grpc::ServerAsyncResponseWriter< ::grpc::ByteBuffer>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
-      ::grpc::Service::RequestAsyncUnary(3, context, request, response, new_call_cq, notification_cq, tag);
-    }
-  };
-  template <class BaseClass>
-  class WithRawMethod_TagArtifact : public BaseClass {
-   private:
-    void BaseClassMustBeDerivedFromService(const Service *service) {}
-   public:
-    WithRawMethod_TagArtifact() {
-      ::grpc::Service::MarkMethodRaw(4);
-    }
-    ~WithRawMethod_TagArtifact() override {
-      BaseClassMustBeDerivedFromService(this);
-    }
-    // disable synchronous version of this method
-    ::grpc::Status TagArtifact(::grpc::ServerContext* context, const ::flyteidl::artifact::AddTagsRequest* request, ::flyteidl::artifact::AddTagsResponse* response) override {
-      abort();
-      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
-    }
-    void RequestTagArtifact(::grpc::ServerContext* context, ::grpc::ByteBuffer* request, ::grpc::ServerAsyncResponseWriter< ::grpc::ByteBuffer>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
-      ::grpc::Service::RequestAsyncUnary(4, context, request, response, new_call_cq, notification_cq, tag);
-    }
-  };
-  template <class BaseClass>
-  class WithRawMethod_RemoveTags : public BaseClass {
-   private:
-    void BaseClassMustBeDerivedFromService(const Service *service) {}
-   public:
-    WithRawMethod_RemoveTags() {
-      ::grpc::Service::MarkMethodRaw(5);
-    }
-    ~WithRawMethod_RemoveTags() override {
-      BaseClassMustBeDerivedFromService(this);
-    }
-    // disable synchronous version of this method
-    ::grpc::Status RemoveTags(::grpc::ServerContext* context, const ::flyteidl::artifact::RemoveTagsRequest* request, ::flyteidl::artifact::RemoveTagsResponse* response) override {
-      abort();
-      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
-    }
-    void RequestRemoveTags(::grpc::ServerContext* context, ::grpc::ByteBuffer* request, ::grpc::ServerAsyncResponseWriter< ::grpc::ByteBuffer>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
-      ::grpc::Service::RequestAsyncUnary(5, context, request, response, new_call_cq, notification_cq, tag);
-    }
-  };
-  template <class BaseClass>
-  class WithRawMethod_CreateAlias : public BaseClass {
-   private:
-    void BaseClassMustBeDerivedFromService(const Service *service) {}
-   public:
-    WithRawMethod_CreateAlias() {
-      ::grpc::Service::MarkMethodRaw(6);
-    }
-    ~WithRawMethod_CreateAlias() override {
-      BaseClassMustBeDerivedFromService(this);
-    }
-    // disable synchronous version of this method
-    ::grpc::Status CreateAlias(::grpc::ServerContext* context, const ::flyteidl::artifact::CreateAliasRequest* request, ::flyteidl::artifact::CreateAliasResponse* response) override {
-      abort();
-      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
-    }
-    void RequestCreateAlias(::grpc::ServerContext* context, ::grpc::ByteBuffer* request, ::grpc::ServerAsyncResponseWriter< ::grpc::ByteBuffer>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
-      ::grpc::Service::RequestAsyncUnary(6, context, request, response, new_call_cq, notification_cq, tag);
-    }
-  };
-  template <class BaseClass>
-  class WithRawMethod_RemoveAlias : public BaseClass {
-   private:
-    void BaseClassMustBeDerivedFromService(const Service *service) {}
-   public:
-    WithRawMethod_RemoveAlias() {
-      ::grpc::Service::MarkMethodRaw(7);
-    }
-    ~WithRawMethod_RemoveAlias() override {
-      BaseClassMustBeDerivedFromService(this);
-    }
-    // disable synchronous version of this method
-    ::grpc::Status RemoveAlias(::grpc::ServerContext* context, const ::flyteidl::artifact::RemoveAliasRequest* request, ::flyteidl::artifact::RemoveAliasResponse* response) override {
-      abort();
-      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
-    }
-    void RequestRemoveAlias(::grpc::ServerContext* context, ::grpc::ByteBuffer* request, ::grpc::ServerAsyncResponseWriter< ::grpc::ByteBuffer>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
-      ::grpc::Service::RequestAsyncUnary(7, context, request, response, new_call_cq, notification_cq, tag);
     }
   };
   template <class BaseClass>
@@ -1061,154 +493,29 @@ class ArtifactRegistry final {
     virtual void GetArtifact(::grpc::ServerContext* context, const ::grpc::ByteBuffer* request, ::grpc::ByteBuffer* response, ::grpc::experimental::ServerCallbackRpcController* controller) { controller->Finish(::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "")); }
   };
   template <class BaseClass>
-  class ExperimentalWithRawCallbackMethod_ListArtifactNames : public BaseClass {
+  class ExperimentalWithRawCallbackMethod_AddTag : public BaseClass {
    private:
     void BaseClassMustBeDerivedFromService(const Service *service) {}
    public:
-    ExperimentalWithRawCallbackMethod_ListArtifactNames() {
+    ExperimentalWithRawCallbackMethod_AddTag() {
       ::grpc::Service::experimental().MarkMethodRawCallback(2,
         new ::grpc::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
           [this](::grpc::ServerContext* context,
                  const ::grpc::ByteBuffer* request,
                  ::grpc::ByteBuffer* response,
                  ::grpc::experimental::ServerCallbackRpcController* controller) {
-                   this->ListArtifactNames(context, request, response, controller);
+                   this->AddTag(context, request, response, controller);
                  }));
     }
-    ~ExperimentalWithRawCallbackMethod_ListArtifactNames() override {
+    ~ExperimentalWithRawCallbackMethod_AddTag() override {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
-    ::grpc::Status ListArtifactNames(::grpc::ServerContext* context, const ::flyteidl::artifact::ListArtifactNamesRequest* request, ::flyteidl::artifact::ListArtifactNamesResponse* response) override {
+    ::grpc::Status AddTag(::grpc::ServerContext* context, const ::flyteidl::artifact::AddTagRequest* request, ::flyteidl::artifact::AddTagResponse* response) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
-    virtual void ListArtifactNames(::grpc::ServerContext* context, const ::grpc::ByteBuffer* request, ::grpc::ByteBuffer* response, ::grpc::experimental::ServerCallbackRpcController* controller) { controller->Finish(::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "")); }
-  };
-  template <class BaseClass>
-  class ExperimentalWithRawCallbackMethod_ListArtifacts : public BaseClass {
-   private:
-    void BaseClassMustBeDerivedFromService(const Service *service) {}
-   public:
-    ExperimentalWithRawCallbackMethod_ListArtifacts() {
-      ::grpc::Service::experimental().MarkMethodRawCallback(3,
-        new ::grpc::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
-          [this](::grpc::ServerContext* context,
-                 const ::grpc::ByteBuffer* request,
-                 ::grpc::ByteBuffer* response,
-                 ::grpc::experimental::ServerCallbackRpcController* controller) {
-                   this->ListArtifacts(context, request, response, controller);
-                 }));
-    }
-    ~ExperimentalWithRawCallbackMethod_ListArtifacts() override {
-      BaseClassMustBeDerivedFromService(this);
-    }
-    // disable synchronous version of this method
-    ::grpc::Status ListArtifacts(::grpc::ServerContext* context, const ::flyteidl::artifact::ListArtifactsRequest* request, ::flyteidl::artifact::ListArtifactsResponse* response) override {
-      abort();
-      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
-    }
-    virtual void ListArtifacts(::grpc::ServerContext* context, const ::grpc::ByteBuffer* request, ::grpc::ByteBuffer* response, ::grpc::experimental::ServerCallbackRpcController* controller) { controller->Finish(::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "")); }
-  };
-  template <class BaseClass>
-  class ExperimentalWithRawCallbackMethod_TagArtifact : public BaseClass {
-   private:
-    void BaseClassMustBeDerivedFromService(const Service *service) {}
-   public:
-    ExperimentalWithRawCallbackMethod_TagArtifact() {
-      ::grpc::Service::experimental().MarkMethodRawCallback(4,
-        new ::grpc::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
-          [this](::grpc::ServerContext* context,
-                 const ::grpc::ByteBuffer* request,
-                 ::grpc::ByteBuffer* response,
-                 ::grpc::experimental::ServerCallbackRpcController* controller) {
-                   this->TagArtifact(context, request, response, controller);
-                 }));
-    }
-    ~ExperimentalWithRawCallbackMethod_TagArtifact() override {
-      BaseClassMustBeDerivedFromService(this);
-    }
-    // disable synchronous version of this method
-    ::grpc::Status TagArtifact(::grpc::ServerContext* context, const ::flyteidl::artifact::AddTagsRequest* request, ::flyteidl::artifact::AddTagsResponse* response) override {
-      abort();
-      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
-    }
-    virtual void TagArtifact(::grpc::ServerContext* context, const ::grpc::ByteBuffer* request, ::grpc::ByteBuffer* response, ::grpc::experimental::ServerCallbackRpcController* controller) { controller->Finish(::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "")); }
-  };
-  template <class BaseClass>
-  class ExperimentalWithRawCallbackMethod_RemoveTags : public BaseClass {
-   private:
-    void BaseClassMustBeDerivedFromService(const Service *service) {}
-   public:
-    ExperimentalWithRawCallbackMethod_RemoveTags() {
-      ::grpc::Service::experimental().MarkMethodRawCallback(5,
-        new ::grpc::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
-          [this](::grpc::ServerContext* context,
-                 const ::grpc::ByteBuffer* request,
-                 ::grpc::ByteBuffer* response,
-                 ::grpc::experimental::ServerCallbackRpcController* controller) {
-                   this->RemoveTags(context, request, response, controller);
-                 }));
-    }
-    ~ExperimentalWithRawCallbackMethod_RemoveTags() override {
-      BaseClassMustBeDerivedFromService(this);
-    }
-    // disable synchronous version of this method
-    ::grpc::Status RemoveTags(::grpc::ServerContext* context, const ::flyteidl::artifact::RemoveTagsRequest* request, ::flyteidl::artifact::RemoveTagsResponse* response) override {
-      abort();
-      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
-    }
-    virtual void RemoveTags(::grpc::ServerContext* context, const ::grpc::ByteBuffer* request, ::grpc::ByteBuffer* response, ::grpc::experimental::ServerCallbackRpcController* controller) { controller->Finish(::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "")); }
-  };
-  template <class BaseClass>
-  class ExperimentalWithRawCallbackMethod_CreateAlias : public BaseClass {
-   private:
-    void BaseClassMustBeDerivedFromService(const Service *service) {}
-   public:
-    ExperimentalWithRawCallbackMethod_CreateAlias() {
-      ::grpc::Service::experimental().MarkMethodRawCallback(6,
-        new ::grpc::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
-          [this](::grpc::ServerContext* context,
-                 const ::grpc::ByteBuffer* request,
-                 ::grpc::ByteBuffer* response,
-                 ::grpc::experimental::ServerCallbackRpcController* controller) {
-                   this->CreateAlias(context, request, response, controller);
-                 }));
-    }
-    ~ExperimentalWithRawCallbackMethod_CreateAlias() override {
-      BaseClassMustBeDerivedFromService(this);
-    }
-    // disable synchronous version of this method
-    ::grpc::Status CreateAlias(::grpc::ServerContext* context, const ::flyteidl::artifact::CreateAliasRequest* request, ::flyteidl::artifact::CreateAliasResponse* response) override {
-      abort();
-      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
-    }
-    virtual void CreateAlias(::grpc::ServerContext* context, const ::grpc::ByteBuffer* request, ::grpc::ByteBuffer* response, ::grpc::experimental::ServerCallbackRpcController* controller) { controller->Finish(::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "")); }
-  };
-  template <class BaseClass>
-  class ExperimentalWithRawCallbackMethod_RemoveAlias : public BaseClass {
-   private:
-    void BaseClassMustBeDerivedFromService(const Service *service) {}
-   public:
-    ExperimentalWithRawCallbackMethod_RemoveAlias() {
-      ::grpc::Service::experimental().MarkMethodRawCallback(7,
-        new ::grpc::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
-          [this](::grpc::ServerContext* context,
-                 const ::grpc::ByteBuffer* request,
-                 ::grpc::ByteBuffer* response,
-                 ::grpc::experimental::ServerCallbackRpcController* controller) {
-                   this->RemoveAlias(context, request, response, controller);
-                 }));
-    }
-    ~ExperimentalWithRawCallbackMethod_RemoveAlias() override {
-      BaseClassMustBeDerivedFromService(this);
-    }
-    // disable synchronous version of this method
-    ::grpc::Status RemoveAlias(::grpc::ServerContext* context, const ::flyteidl::artifact::RemoveAliasRequest* request, ::flyteidl::artifact::RemoveAliasResponse* response) override {
-      abort();
-      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
-    }
-    virtual void RemoveAlias(::grpc::ServerContext* context, const ::grpc::ByteBuffer* request, ::grpc::ByteBuffer* response, ::grpc::experimental::ServerCallbackRpcController* controller) { controller->Finish(::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "")); }
+    virtual void AddTag(::grpc::ServerContext* context, const ::grpc::ByteBuffer* request, ::grpc::ByteBuffer* response, ::grpc::experimental::ServerCallbackRpcController* controller) { controller->Finish(::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "")); }
   };
   template <class BaseClass>
   class WithStreamedUnaryMethod_CreateArtifact : public BaseClass {
@@ -1251,128 +558,28 @@ class ArtifactRegistry final {
     virtual ::grpc::Status StreamedGetArtifact(::grpc::ServerContext* context, ::grpc::ServerUnaryStreamer< ::flyteidl::artifact::GetArtifactRequest,::flyteidl::artifact::GetArtifactResponse>* server_unary_streamer) = 0;
   };
   template <class BaseClass>
-  class WithStreamedUnaryMethod_ListArtifactNames : public BaseClass {
+  class WithStreamedUnaryMethod_AddTag : public BaseClass {
    private:
     void BaseClassMustBeDerivedFromService(const Service *service) {}
    public:
-    WithStreamedUnaryMethod_ListArtifactNames() {
+    WithStreamedUnaryMethod_AddTag() {
       ::grpc::Service::MarkMethodStreamed(2,
-        new ::grpc::internal::StreamedUnaryHandler< ::flyteidl::artifact::ListArtifactNamesRequest, ::flyteidl::artifact::ListArtifactNamesResponse>(std::bind(&WithStreamedUnaryMethod_ListArtifactNames<BaseClass>::StreamedListArtifactNames, this, std::placeholders::_1, std::placeholders::_2)));
+        new ::grpc::internal::StreamedUnaryHandler< ::flyteidl::artifact::AddTagRequest, ::flyteidl::artifact::AddTagResponse>(std::bind(&WithStreamedUnaryMethod_AddTag<BaseClass>::StreamedAddTag, this, std::placeholders::_1, std::placeholders::_2)));
     }
-    ~WithStreamedUnaryMethod_ListArtifactNames() override {
+    ~WithStreamedUnaryMethod_AddTag() override {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable regular version of this method
-    ::grpc::Status ListArtifactNames(::grpc::ServerContext* context, const ::flyteidl::artifact::ListArtifactNamesRequest* request, ::flyteidl::artifact::ListArtifactNamesResponse* response) override {
+    ::grpc::Status AddTag(::grpc::ServerContext* context, const ::flyteidl::artifact::AddTagRequest* request, ::flyteidl::artifact::AddTagResponse* response) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     // replace default version of method with streamed unary
-    virtual ::grpc::Status StreamedListArtifactNames(::grpc::ServerContext* context, ::grpc::ServerUnaryStreamer< ::flyteidl::artifact::ListArtifactNamesRequest,::flyteidl::artifact::ListArtifactNamesResponse>* server_unary_streamer) = 0;
+    virtual ::grpc::Status StreamedAddTag(::grpc::ServerContext* context, ::grpc::ServerUnaryStreamer< ::flyteidl::artifact::AddTagRequest,::flyteidl::artifact::AddTagResponse>* server_unary_streamer) = 0;
   };
-  template <class BaseClass>
-  class WithStreamedUnaryMethod_ListArtifacts : public BaseClass {
-   private:
-    void BaseClassMustBeDerivedFromService(const Service *service) {}
-   public:
-    WithStreamedUnaryMethod_ListArtifacts() {
-      ::grpc::Service::MarkMethodStreamed(3,
-        new ::grpc::internal::StreamedUnaryHandler< ::flyteidl::artifact::ListArtifactsRequest, ::flyteidl::artifact::ListArtifactsResponse>(std::bind(&WithStreamedUnaryMethod_ListArtifacts<BaseClass>::StreamedListArtifacts, this, std::placeholders::_1, std::placeholders::_2)));
-    }
-    ~WithStreamedUnaryMethod_ListArtifacts() override {
-      BaseClassMustBeDerivedFromService(this);
-    }
-    // disable regular version of this method
-    ::grpc::Status ListArtifacts(::grpc::ServerContext* context, const ::flyteidl::artifact::ListArtifactsRequest* request, ::flyteidl::artifact::ListArtifactsResponse* response) override {
-      abort();
-      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
-    }
-    // replace default version of method with streamed unary
-    virtual ::grpc::Status StreamedListArtifacts(::grpc::ServerContext* context, ::grpc::ServerUnaryStreamer< ::flyteidl::artifact::ListArtifactsRequest,::flyteidl::artifact::ListArtifactsResponse>* server_unary_streamer) = 0;
-  };
-  template <class BaseClass>
-  class WithStreamedUnaryMethod_TagArtifact : public BaseClass {
-   private:
-    void BaseClassMustBeDerivedFromService(const Service *service) {}
-   public:
-    WithStreamedUnaryMethod_TagArtifact() {
-      ::grpc::Service::MarkMethodStreamed(4,
-        new ::grpc::internal::StreamedUnaryHandler< ::flyteidl::artifact::AddTagsRequest, ::flyteidl::artifact::AddTagsResponse>(std::bind(&WithStreamedUnaryMethod_TagArtifact<BaseClass>::StreamedTagArtifact, this, std::placeholders::_1, std::placeholders::_2)));
-    }
-    ~WithStreamedUnaryMethod_TagArtifact() override {
-      BaseClassMustBeDerivedFromService(this);
-    }
-    // disable regular version of this method
-    ::grpc::Status TagArtifact(::grpc::ServerContext* context, const ::flyteidl::artifact::AddTagsRequest* request, ::flyteidl::artifact::AddTagsResponse* response) override {
-      abort();
-      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
-    }
-    // replace default version of method with streamed unary
-    virtual ::grpc::Status StreamedTagArtifact(::grpc::ServerContext* context, ::grpc::ServerUnaryStreamer< ::flyteidl::artifact::AddTagsRequest,::flyteidl::artifact::AddTagsResponse>* server_unary_streamer) = 0;
-  };
-  template <class BaseClass>
-  class WithStreamedUnaryMethod_RemoveTags : public BaseClass {
-   private:
-    void BaseClassMustBeDerivedFromService(const Service *service) {}
-   public:
-    WithStreamedUnaryMethod_RemoveTags() {
-      ::grpc::Service::MarkMethodStreamed(5,
-        new ::grpc::internal::StreamedUnaryHandler< ::flyteidl::artifact::RemoveTagsRequest, ::flyteidl::artifact::RemoveTagsResponse>(std::bind(&WithStreamedUnaryMethod_RemoveTags<BaseClass>::StreamedRemoveTags, this, std::placeholders::_1, std::placeholders::_2)));
-    }
-    ~WithStreamedUnaryMethod_RemoveTags() override {
-      BaseClassMustBeDerivedFromService(this);
-    }
-    // disable regular version of this method
-    ::grpc::Status RemoveTags(::grpc::ServerContext* context, const ::flyteidl::artifact::RemoveTagsRequest* request, ::flyteidl::artifact::RemoveTagsResponse* response) override {
-      abort();
-      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
-    }
-    // replace default version of method with streamed unary
-    virtual ::grpc::Status StreamedRemoveTags(::grpc::ServerContext* context, ::grpc::ServerUnaryStreamer< ::flyteidl::artifact::RemoveTagsRequest,::flyteidl::artifact::RemoveTagsResponse>* server_unary_streamer) = 0;
-  };
-  template <class BaseClass>
-  class WithStreamedUnaryMethod_CreateAlias : public BaseClass {
-   private:
-    void BaseClassMustBeDerivedFromService(const Service *service) {}
-   public:
-    WithStreamedUnaryMethod_CreateAlias() {
-      ::grpc::Service::MarkMethodStreamed(6,
-        new ::grpc::internal::StreamedUnaryHandler< ::flyteidl::artifact::CreateAliasRequest, ::flyteidl::artifact::CreateAliasResponse>(std::bind(&WithStreamedUnaryMethod_CreateAlias<BaseClass>::StreamedCreateAlias, this, std::placeholders::_1, std::placeholders::_2)));
-    }
-    ~WithStreamedUnaryMethod_CreateAlias() override {
-      BaseClassMustBeDerivedFromService(this);
-    }
-    // disable regular version of this method
-    ::grpc::Status CreateAlias(::grpc::ServerContext* context, const ::flyteidl::artifact::CreateAliasRequest* request, ::flyteidl::artifact::CreateAliasResponse* response) override {
-      abort();
-      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
-    }
-    // replace default version of method with streamed unary
-    virtual ::grpc::Status StreamedCreateAlias(::grpc::ServerContext* context, ::grpc::ServerUnaryStreamer< ::flyteidl::artifact::CreateAliasRequest,::flyteidl::artifact::CreateAliasResponse>* server_unary_streamer) = 0;
-  };
-  template <class BaseClass>
-  class WithStreamedUnaryMethod_RemoveAlias : public BaseClass {
-   private:
-    void BaseClassMustBeDerivedFromService(const Service *service) {}
-   public:
-    WithStreamedUnaryMethod_RemoveAlias() {
-      ::grpc::Service::MarkMethodStreamed(7,
-        new ::grpc::internal::StreamedUnaryHandler< ::flyteidl::artifact::RemoveAliasRequest, ::flyteidl::artifact::RemoveAliasResponse>(std::bind(&WithStreamedUnaryMethod_RemoveAlias<BaseClass>::StreamedRemoveAlias, this, std::placeholders::_1, std::placeholders::_2)));
-    }
-    ~WithStreamedUnaryMethod_RemoveAlias() override {
-      BaseClassMustBeDerivedFromService(this);
-    }
-    // disable regular version of this method
-    ::grpc::Status RemoveAlias(::grpc::ServerContext* context, const ::flyteidl::artifact::RemoveAliasRequest* request, ::flyteidl::artifact::RemoveAliasResponse* response) override {
-      abort();
-      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
-    }
-    // replace default version of method with streamed unary
-    virtual ::grpc::Status StreamedRemoveAlias(::grpc::ServerContext* context, ::grpc::ServerUnaryStreamer< ::flyteidl::artifact::RemoveAliasRequest,::flyteidl::artifact::RemoveAliasResponse>* server_unary_streamer) = 0;
-  };
-  typedef WithStreamedUnaryMethod_CreateArtifact<WithStreamedUnaryMethod_GetArtifact<WithStreamedUnaryMethod_ListArtifactNames<WithStreamedUnaryMethod_ListArtifacts<WithStreamedUnaryMethod_TagArtifact<WithStreamedUnaryMethod_RemoveTags<WithStreamedUnaryMethod_CreateAlias<WithStreamedUnaryMethod_RemoveAlias<Service > > > > > > > > StreamedUnaryService;
+  typedef WithStreamedUnaryMethod_CreateArtifact<WithStreamedUnaryMethod_GetArtifact<WithStreamedUnaryMethod_AddTag<Service > > > StreamedUnaryService;
   typedef Service SplitStreamedService;
-  typedef WithStreamedUnaryMethod_CreateArtifact<WithStreamedUnaryMethod_GetArtifact<WithStreamedUnaryMethod_ListArtifactNames<WithStreamedUnaryMethod_ListArtifacts<WithStreamedUnaryMethod_TagArtifact<WithStreamedUnaryMethod_RemoveTags<WithStreamedUnaryMethod_CreateAlias<WithStreamedUnaryMethod_RemoveAlias<Service > > > > > > > > StreamedService;
+  typedef WithStreamedUnaryMethod_CreateArtifact<WithStreamedUnaryMethod_GetArtifact<WithStreamedUnaryMethod_AddTag<Service > > > StreamedService;
 };
 
 }  // namespace artifact

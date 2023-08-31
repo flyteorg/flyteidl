@@ -16,7 +16,6 @@ import re  # noqa: F401
 
 import six
 
-from flyteadmin.models.core_artifact_id import CoreArtifactID  # noqa: F401,E501
 from flyteadmin.models.core_literal_collection import CoreLiteralCollection  # noqa: F401,E501
 from flyteadmin.models.core_literal_map import CoreLiteralMap  # noqa: F401,E501
 from flyteadmin.models.core_literal_type import CoreLiteralType  # noqa: F401,E501
@@ -40,7 +39,6 @@ class CoreLiteral(object):
         'scalar': 'CoreScalar',
         'collection': 'CoreLiteralCollection',
         'map': 'CoreLiteralMap',
-        'artifact_id': 'CoreArtifactID',
         'hash': 'str',
         'metadata': 'dict(str, str)',
         'literal_type': 'CoreLiteralType'
@@ -50,19 +48,17 @@ class CoreLiteral(object):
         'scalar': 'scalar',
         'collection': 'collection',
         'map': 'map',
-        'artifact_id': 'artifact_id',
         'hash': 'hash',
         'metadata': 'metadata',
         'literal_type': 'literal_type'
     }
 
-    def __init__(self, scalar=None, collection=None, map=None, artifact_id=None, hash=None, metadata=None, literal_type=None):  # noqa: E501
+    def __init__(self, scalar=None, collection=None, map=None, hash=None, metadata=None, literal_type=None):  # noqa: E501
         """CoreLiteral - a model defined in Swagger"""  # noqa: E501
 
         self._scalar = None
         self._collection = None
         self._map = None
-        self._artifact_id = None
         self._hash = None
         self._metadata = None
         self._literal_type = None
@@ -74,8 +70,6 @@ class CoreLiteral(object):
             self.collection = collection
         if map is not None:
             self.map = map
-        if artifact_id is not None:
-            self.artifact_id = artifact_id
         if hash is not None:
             self.hash = hash
         if metadata is not None:
@@ -151,27 +145,6 @@ class CoreLiteral(object):
         """
 
         self._map = map
-
-    @property
-    def artifact_id(self):
-        """Gets the artifact_id of this CoreLiteral.  # noqa: E501
-
-
-        :return: The artifact_id of this CoreLiteral.  # noqa: E501
-        :rtype: CoreArtifactID
-        """
-        return self._artifact_id
-
-    @artifact_id.setter
-    def artifact_id(self, artifact_id):
-        """Sets the artifact_id of this CoreLiteral.
-
-
-        :param artifact_id: The artifact_id of this CoreLiteral.  # noqa: E501
-        :type: CoreArtifactID
-        """
-
-        self._artifact_id = artifact_id
 
     @property
     def hash(self):

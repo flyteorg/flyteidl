@@ -77,26 +77,44 @@ message ArtifactKey {
   // Project and domain and suffix needs to be unique across a given artifact store.
   string project = 1;
   string domain = 2;
-  string suffix = 3;
+  string name = 3;
+}
+
+message Partitions {
+  map<string, string> value = 1;
 }
 
 message ArtifactID {
   ArtifactKey artifact_key = 1;
 
-  // consider hiding - this is a storage layer ID. Might even change for the same object.
-  string uuid = 2;
+  string version = 2;
+
+  // here for ds popularity
+  // this is a oneof because of partition querying... we need a way to distinguish between
+  // a user not-specifying partitions when searching, and specifically searching for an Artifact
+  // that is not partitioned (this can happen if an Artifact goes from partitioned to non-
+  // partitioned across executions).
+  oneof dimensions {
+       Partitions partitions = 3;
+  }
 }
 
-message ArtifactAlias {
-  // ties this directly to the artifact
-  ArtifactID artifact_id = 1;
+message ArtifactTag {
+  ArtifactKey artifact_key = 1;
 
-  string name = 2;
-  string value = 3;
+  string value = 2;
 }
 
+// Uniqueness constraints for Artifacts
+//  - project, domain, name, version, partitions
+// Option 2 (tags are standalone, point to an individual artifact id):
+//  - project, domain, name, alias (points to one partition if partitioned)
+//  - project, domain, name, partition key, partition value
 message ArtifactQuery {
-  string project = 1;
-  string domain = 2;
-  ArtifactAlias alias = 3;
+  oneof identifier {
+    ArtifactID artifact_id = 1;
+    ArtifactTag artifact_tag = 2;
+    string uri = 3;
+  }
 }
+

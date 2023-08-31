@@ -200,30 +200,17 @@
         }
       }
     },
-    "coreArtifactAlias": {
-      "type": "object",
-      "properties": {
-        "artifact_id": {
-          "$ref": "#/definitions/coreArtifactID",
-          "title": "ties this directly to the artifact"
-        },
-        "name": {
-          "type": "string"
-        },
-        "value": {
-          "type": "string"
-        }
-      }
-    },
     "coreArtifactID": {
       "type": "object",
       "properties": {
         "artifact_key": {
           "$ref": "#/definitions/coreArtifactKey"
         },
-        "uuid": {
-          "type": "string",
-          "description": "consider hiding - this is a storage layer ID. Might even change for the same object."
+        "version": {
+          "type": "string"
+        },
+        "partitions": {
+          "$ref": "#/definitions/corePartitions"
         }
       }
     },
@@ -237,7 +224,18 @@
         "domain": {
           "type": "string"
         },
-        "suffix": {
+        "name": {
+          "type": "string"
+        }
+      }
+    },
+    "coreArtifactTag": {
+      "type": "object",
+      "properties": {
+        "artifact_key": {
+          "$ref": "#/definitions/coreArtifactKey"
+        },
+        "value": {
           "type": "string"
         }
       }
@@ -536,10 +534,6 @@
           "$ref": "#/definitions/coreLiteralMap",
           "description": "A map of strings to literals."
         },
-        "artifact_id": {
-          "$ref": "#/definitions/coreArtifactID",
-          "title": "A reference to another Literal"
-        },
         "hash": {
           "type": "string",
           "title": "A hash representing this literal.\nThis is used for caching purposes. For more details refer to RFC 1893\n(https://github.com/flyteorg/flyte/blob/master/rfc/system/1893-caching-of-offloaded-objects.md)"
@@ -691,6 +685,17 @@
       ],
       "default": "CLIENT_CREDENTIALS",
       "description": "Type of the token requested.\n\n - CLIENT_CREDENTIALS: CLIENT_CREDENTIALS indicates a 2-legged OAuth token requested using client credentials."
+    },
+    "corePartitions": {
+      "type": "object",
+      "properties": {
+        "value": {
+          "type": "object",
+          "additionalProperties": {
+            "type": "string"
+          }
+        }
+      }
     },
     "corePrimitive": {
       "type": "object",
@@ -1151,12 +1156,12 @@
           "type": "string",
           "title": "+optional string describing input variable"
         },
-        "aliases": {
-          "type": "array",
-          "items": {
-            "$ref": "#/definitions/coreArtifactAlias"
-          },
-          "description": "+optional If specified by user, this is still just a partial artifact. It's here so the user can control the\nname, tags, aliases, of the artifact creation."
+        "artifact_partial_id": {
+          "$ref": "#/definitions/coreArtifactID",
+          "description": "+optional This object allows the user to specify how Artifacts are created.\nname, tag, partitions can be specified. The other fields (version and project/domain) are ignored."
+        },
+        "artifact_tag": {
+          "$ref": "#/definitions/coreArtifactTag"
         }
       },
       "description": "Defines a strongly typed variable."

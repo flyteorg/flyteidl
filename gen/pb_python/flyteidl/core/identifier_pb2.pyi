@@ -1,3 +1,4 @@
+from google.protobuf.internal import containers as _containers
 from google.protobuf.internal import enum_type_wrapper as _enum_type_wrapper
 from google.protobuf import descriptor as _descriptor
 from google.protobuf import message as _message
@@ -69,39 +70,52 @@ class SignalIdentifier(_message.Message):
     def __init__(self, signal_id: _Optional[str] = ..., execution_id: _Optional[_Union[WorkflowExecutionIdentifier, _Mapping]] = ...) -> None: ...
 
 class ArtifactKey(_message.Message):
-    __slots__ = ["project", "domain", "suffix"]
+    __slots__ = ["project", "domain", "name"]
     PROJECT_FIELD_NUMBER: _ClassVar[int]
     DOMAIN_FIELD_NUMBER: _ClassVar[int]
-    SUFFIX_FIELD_NUMBER: _ClassVar[int]
+    NAME_FIELD_NUMBER: _ClassVar[int]
     project: str
     domain: str
-    suffix: str
-    def __init__(self, project: _Optional[str] = ..., domain: _Optional[str] = ..., suffix: _Optional[str] = ...) -> None: ...
+    name: str
+    def __init__(self, project: _Optional[str] = ..., domain: _Optional[str] = ..., name: _Optional[str] = ...) -> None: ...
+
+class Partitions(_message.Message):
+    __slots__ = ["value"]
+    class ValueEntry(_message.Message):
+        __slots__ = ["key", "value"]
+        KEY_FIELD_NUMBER: _ClassVar[int]
+        VALUE_FIELD_NUMBER: _ClassVar[int]
+        key: str
+        value: str
+        def __init__(self, key: _Optional[str] = ..., value: _Optional[str] = ...) -> None: ...
+    VALUE_FIELD_NUMBER: _ClassVar[int]
+    value: _containers.ScalarMap[str, str]
+    def __init__(self, value: _Optional[_Mapping[str, str]] = ...) -> None: ...
 
 class ArtifactID(_message.Message):
-    __slots__ = ["artifact_key", "uuid"]
+    __slots__ = ["artifact_key", "version", "partitions"]
     ARTIFACT_KEY_FIELD_NUMBER: _ClassVar[int]
-    UUID_FIELD_NUMBER: _ClassVar[int]
+    VERSION_FIELD_NUMBER: _ClassVar[int]
+    PARTITIONS_FIELD_NUMBER: _ClassVar[int]
     artifact_key: ArtifactKey
-    uuid: str
-    def __init__(self, artifact_key: _Optional[_Union[ArtifactKey, _Mapping]] = ..., uuid: _Optional[str] = ...) -> None: ...
+    version: str
+    partitions: Partitions
+    def __init__(self, artifact_key: _Optional[_Union[ArtifactKey, _Mapping]] = ..., version: _Optional[str] = ..., partitions: _Optional[_Union[Partitions, _Mapping]] = ...) -> None: ...
 
-class ArtifactAlias(_message.Message):
-    __slots__ = ["artifact_id", "name", "value"]
-    ARTIFACT_ID_FIELD_NUMBER: _ClassVar[int]
-    NAME_FIELD_NUMBER: _ClassVar[int]
+class ArtifactTag(_message.Message):
+    __slots__ = ["artifact_key", "value"]
+    ARTIFACT_KEY_FIELD_NUMBER: _ClassVar[int]
     VALUE_FIELD_NUMBER: _ClassVar[int]
-    artifact_id: ArtifactID
-    name: str
+    artifact_key: ArtifactKey
     value: str
-    def __init__(self, artifact_id: _Optional[_Union[ArtifactID, _Mapping]] = ..., name: _Optional[str] = ..., value: _Optional[str] = ...) -> None: ...
+    def __init__(self, artifact_key: _Optional[_Union[ArtifactKey, _Mapping]] = ..., value: _Optional[str] = ...) -> None: ...
 
 class ArtifactQuery(_message.Message):
-    __slots__ = ["project", "domain", "alias"]
-    PROJECT_FIELD_NUMBER: _ClassVar[int]
-    DOMAIN_FIELD_NUMBER: _ClassVar[int]
-    ALIAS_FIELD_NUMBER: _ClassVar[int]
-    project: str
-    domain: str
-    alias: ArtifactAlias
-    def __init__(self, project: _Optional[str] = ..., domain: _Optional[str] = ..., alias: _Optional[_Union[ArtifactAlias, _Mapping]] = ...) -> None: ...
+    __slots__ = ["artifact_id", "artifact_tag", "uri"]
+    ARTIFACT_ID_FIELD_NUMBER: _ClassVar[int]
+    ARTIFACT_TAG_FIELD_NUMBER: _ClassVar[int]
+    URI_FIELD_NUMBER: _ClassVar[int]
+    artifact_id: ArtifactID
+    artifact_tag: ArtifactTag
+    uri: str
+    def __init__(self, artifact_id: _Optional[_Union[ArtifactID, _Mapping]] = ..., artifact_tag: _Optional[_Union[ArtifactTag, _Mapping]] = ..., uri: _Optional[str] = ...) -> None: ...

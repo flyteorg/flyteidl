@@ -13,5 +13,5 @@ type CoreArtifactKey struct {
 	// Project and domain and suffix needs to be unique across a given artifact store.
 	Project string `json:"project,omitempty"`
 	Domain string `json:"domain,omitempty"`
-	Suffix string `json:"suffix,omitempty"`
+	Name string `json:"name,omitempty"`
 }

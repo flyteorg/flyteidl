@@ -9,29 +9,40 @@ from typing import ClassVar as _ClassVar, Iterable as _Iterable, Mapping as _Map
 DESCRIPTOR: _descriptor.FileDescriptor
 
 class Artifact(_message.Message):
-    __slots__ = ["artifact_id", "uri", "spec"]
+    __slots__ = ["artifact_id", "spec", "tags"]
     ARTIFACT_ID_FIELD_NUMBER: _ClassVar[int]
-    URI_FIELD_NUMBER: _ClassVar[int]
     SPEC_FIELD_NUMBER: _ClassVar[int]
+    TAGS_FIELD_NUMBER: _ClassVar[int]
     artifact_id: _identifier_pb2.ArtifactID
-    uri: str
     spec: ArtifactSpec
-    def __init__(self, artifact_id: _Optional[_Union[_identifier_pb2.ArtifactID, _Mapping]] = ..., uri: _Optional[str] = ..., spec: _Optional[_Union[ArtifactSpec, _Mapping]] = ...) -> None: ...
+    tags: _containers.RepeatedScalarFieldContainer[str]
+    def __init__(self, artifact_id: _Optional[_Union[_identifier_pb2.ArtifactID, _Mapping]] = ..., spec: _Optional[_Union[ArtifactSpec, _Mapping]] = ..., tags: _Optional[_Iterable[str]] = ...) -> None: ...
 
 class CreateArtifactRequest(_message.Message):
-    __slots__ = ["artifact_key", "spec"]
+    __slots__ = ["artifact_key", "version", "spec", "partitions", "tag"]
+    class PartitionsEntry(_message.Message):
+        __slots__ = ["key", "value"]
+        KEY_FIELD_NUMBER: _ClassVar[int]
+        VALUE_FIELD_NUMBER: _ClassVar[int]
+        key: str
+        value: str
+        def __init__(self, key: _Optional[str] = ..., value: _Optional[str] = ...) -> None: ...
     ARTIFACT_KEY_FIELD_NUMBER: _ClassVar[int]
+    VERSION_FIELD_NUMBER: _ClassVar[int]
     SPEC_FIELD_NUMBER: _ClassVar[int]
+    PARTITIONS_FIELD_NUMBER: _ClassVar[int]
+    TAG_FIELD_NUMBER: _ClassVar[int]
     artifact_key: _identifier_pb2.ArtifactKey
+    version: str
     spec: ArtifactSpec
-    def __init__(self, artifact_key: _Optional[_Union[_identifier_pb2.ArtifactKey, _Mapping]] = ..., spec: _Optional[_Union[ArtifactSpec, _Mapping]] = ...) -> None: ...
+    partitions: _containers.ScalarMap[str, str]
+    tag: str
+    def __init__(self, artifact_key: _Optional[_Union[_identifier_pb2.ArtifactKey, _Mapping]] = ..., version: _Optional[str] = ..., spec: _Optional[_Union[ArtifactSpec, _Mapping]] = ..., partitions: _Optional[_Mapping[str, str]] = ..., tag: _Optional[str] = ...) -> None: ...
 
 class ArtifactSpec(_message.Message):
-    __slots__ = ["value", "type", "tags", "aliases", "task_execution", "execution", "principal", "short_description", "long_description"]
+    __slots__ = ["value", "type", "task_execution", "execution", "principal", "short_description", "long_description"]
     VALUE_FIELD_NUMBER: _ClassVar[int]
     TYPE_FIELD_NUMBER: _ClassVar[int]
-    TAGS_FIELD_NUMBER: _ClassVar[int]
-    ALIASES_FIELD_NUMBER: _ClassVar[int]
     TASK_EXECUTION_FIELD_NUMBER: _ClassVar[int]
     EXECUTION_FIELD_NUMBER: _ClassVar[int]
     PRINCIPAL_FIELD_NUMBER: _ClassVar[int]
@@ -39,14 +50,12 @@ class ArtifactSpec(_message.Message):
     LONG_DESCRIPTION_FIELD_NUMBER: _ClassVar[int]
     value: _literals_pb2.Literal
     type: _types_pb2.LiteralType
-    tags: _containers.RepeatedCompositeFieldContainer[Tag]
-    aliases: _containers.RepeatedCompositeFieldContainer[_identifier_pb2.ArtifactAlias]
     task_execution: _identifier_pb2.TaskExecutionIdentifier
     execution: _identifier_pb2.WorkflowExecutionIdentifier
     principal: str
     short_description: str
     long_description: str
-    def __init__(self, value: _Optional[_Union[_literals_pb2.Literal, _Mapping]] = ..., type: _Optional[_Union[_types_pb2.LiteralType, _Mapping]] = ..., tags: _Optional[_Iterable[_Union[Tag, _Mapping]]] = ..., aliases: _Optional[_Iterable[_Union[_identifier_pb2.ArtifactAlias, _Mapping]]] = ..., task_execution: _Optional[_Union[_identifier_pb2.TaskExecutionIdentifier, _Mapping]] = ..., execution: _Optional[_Union[_identifier_pb2.WorkflowExecutionIdentifier, _Mapping]] = ..., principal: _Optional[str] = ..., short_description: _Optional[str] = ..., long_description: _Optional[str] = ...) -> None: ...
+    def __init__(self, value: _Optional[_Union[_literals_pb2.Literal, _Mapping]] = ..., type: _Optional[_Union[_types_pb2.LiteralType, _Mapping]] = ..., task_execution: _Optional[_Union[_identifier_pb2.TaskExecutionIdentifier, _Mapping]] = ..., execution: _Optional[_Union[_identifier_pb2.WorkflowExecutionIdentifier, _Mapping]] = ..., principal: _Optional[str] = ..., short_description: _Optional[str] = ..., long_description: _Optional[str] = ...) -> None: ...
 
 class CreateArtifactResponse(_message.Message):
     __slots__ = ["artifact"]
@@ -55,56 +64,18 @@ class CreateArtifactResponse(_message.Message):
     def __init__(self, artifact: _Optional[_Union[Artifact, _Mapping]] = ...) -> None: ...
 
 class GetArtifactRequest(_message.Message):
-    __slots__ = ["artifact_key", "artifact_id", "uri", "query", "details"]
-    ARTIFACT_KEY_FIELD_NUMBER: _ClassVar[int]
-    ARTIFACT_ID_FIELD_NUMBER: _ClassVar[int]
-    URI_FIELD_NUMBER: _ClassVar[int]
+    __slots__ = ["query", "details"]
     QUERY_FIELD_NUMBER: _ClassVar[int]
     DETAILS_FIELD_NUMBER: _ClassVar[int]
-    artifact_key: _identifier_pb2.ArtifactKey
-    artifact_id: _identifier_pb2.ArtifactID
-    uri: str
     query: _identifier_pb2.ArtifactQuery
     details: bool
-    def __init__(self, artifact_key: _Optional[_Union[_identifier_pb2.ArtifactKey, _Mapping]] = ..., artifact_id: _Optional[_Union[_identifier_pb2.ArtifactID, _Mapping]] = ..., uri: _Optional[str] = ..., query: _Optional[_Union[_identifier_pb2.ArtifactQuery, _Mapping]] = ..., details: bool = ...) -> None: ...
+    def __init__(self, query: _Optional[_Union[_identifier_pb2.ArtifactQuery, _Mapping]] = ..., details: bool = ...) -> None: ...
 
 class GetArtifactResponse(_message.Message):
     __slots__ = ["artifact"]
     ARTIFACT_FIELD_NUMBER: _ClassVar[int]
     artifact: Artifact
     def __init__(self, artifact: _Optional[_Union[Artifact, _Mapping]] = ...) -> None: ...
-
-class Tag(_message.Message):
-    __slots__ = ["key", "value"]
-    KEY_FIELD_NUMBER: _ClassVar[int]
-    VALUE_FIELD_NUMBER: _ClassVar[int]
-    key: str
-    value: str
-    def __init__(self, key: _Optional[str] = ..., value: _Optional[str] = ...) -> None: ...
-
-class AddTagsRequest(_message.Message):
-    __slots__ = ["artifact_id", "tags"]
-    ARTIFACT_ID_FIELD_NUMBER: _ClassVar[int]
-    TAGS_FIELD_NUMBER: _ClassVar[int]
-    artifact_id: _identifier_pb2.ArtifactID
-    tags: _containers.RepeatedCompositeFieldContainer[Tag]
-    def __init__(self, artifact_id: _Optional[_Union[_identifier_pb2.ArtifactID, _Mapping]] = ..., tags: _Optional[_Iterable[_Union[Tag, _Mapping]]] = ...) -> None: ...
-
-class AddTagsResponse(_message.Message):
-    __slots__ = []
-    def __init__(self) -> None: ...
-
-class RemoveTagsRequest(_message.Message):
-    __slots__ = ["artifact_id", "tags"]
-    ARTIFACT_ID_FIELD_NUMBER: _ClassVar[int]
-    TAGS_FIELD_NUMBER: _ClassVar[int]
-    artifact_id: _identifier_pb2.ArtifactID
-    tags: _containers.RepeatedCompositeFieldContainer[Tag]
-    def __init__(self, artifact_id: _Optional[_Union[_identifier_pb2.ArtifactID, _Mapping]] = ..., tags: _Optional[_Iterable[_Union[Tag, _Mapping]]] = ...) -> None: ...
-
-class RemoveTagsResponse(_message.Message):
-    __slots__ = []
-    def __init__(self) -> None: ...
 
 class ListArtifactNamesRequest(_message.Message):
     __slots__ = ["project", "domain"]
@@ -132,28 +103,16 @@ class ListArtifactsResponse(_message.Message):
     artifacts: _containers.RepeatedCompositeFieldContainer[Artifact]
     def __init__(self, artifacts: _Optional[_Iterable[_Union[Artifact, _Mapping]]] = ...) -> None: ...
 
-class CreateAliasRequest(_message.Message):
-    __slots__ = ["artifact_key", "alias", "overwrite"]
-    ARTIFACT_KEY_FIELD_NUMBER: _ClassVar[int]
-    ALIAS_FIELD_NUMBER: _ClassVar[int]
+class AddTagRequest(_message.Message):
+    __slots__ = ["artifact_id", "value", "overwrite"]
+    ARTIFACT_ID_FIELD_NUMBER: _ClassVar[int]
+    VALUE_FIELD_NUMBER: _ClassVar[int]
     OVERWRITE_FIELD_NUMBER: _ClassVar[int]
-    artifact_key: _identifier_pb2.ArtifactKey
-    alias: _identifier_pb2.ArtifactAlias
+    artifact_id: _identifier_pb2.ArtifactID
+    value: str
     overwrite: bool
-    def __init__(self, artifact_key: _Optional[_Union[_identifier_pb2.ArtifactKey, _Mapping]] = ..., alias: _Optional[_Union[_identifier_pb2.ArtifactAlias, _Mapping]] = ..., overwrite: bool = ...) -> None: ...
+    def __init__(self, artifact_id: _Optional[_Union[_identifier_pb2.ArtifactID, _Mapping]] = ..., value: _Optional[str] = ..., overwrite: bool = ...) -> None: ...
 
-class CreateAliasResponse(_message.Message):
-    __slots__ = []
-    def __init__(self) -> None: ...
-
-class RemoveAliasRequest(_message.Message):
-    __slots__ = ["artifact_key", "alias"]
-    ARTIFACT_KEY_FIELD_NUMBER: _ClassVar[int]
-    ALIAS_FIELD_NUMBER: _ClassVar[int]
-    artifact_key: _identifier_pb2.ArtifactKey
-    alias: _identifier_pb2.ArtifactAlias
-    def __init__(self, artifact_key: _Optional[_Union[_identifier_pb2.ArtifactKey, _Mapping]] = ..., alias: _Optional[_Union[_identifier_pb2.ArtifactAlias, _Mapping]] = ...) -> None: ...
-
-class RemoveAliasResponse(_message.Message):
+class AddTagResponse(_message.Message):
     __slots__ = []
     def __init__(self) -> None: ...
