@@ -784,12 +784,12 @@
         "gpu_device": {
           "type": "string"
         },
-        "gpu_partition_size": {
-          "type": "string"
-        },
-        "only_preferred": {
+        "gpu_unpartitioned": {
           "type": "boolean",
           "format": "boolean"
+        },
+        "gpu_partition_size": {
+          "type": "string"
         }
       }
     },

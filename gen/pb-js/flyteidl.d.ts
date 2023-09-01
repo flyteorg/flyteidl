@@ -5090,11 +5090,11 @@ export namespace flyteidl {
             /** Selector gpuDevice */
             gpuDevice?: (string|null);
 
+            /** Selector gpuUnpartitioned */
+            gpuUnpartitioned?: (boolean|null);
+
             /** Selector gpuPartitionSize */
             gpuPartitionSize?: (string|null);
-
-            /** Selector onlyPreferred */
-            onlyPreferred?: (boolean|null);
         }
 
         /** Represents a Selector. */
@@ -5109,14 +5109,14 @@ export namespace flyteidl {
             /** Selector gpuDevice. */
             public gpuDevice: string;
 
+            /** Selector gpuUnpartitioned. */
+            public gpuUnpartitioned: boolean;
+
             /** Selector gpuPartitionSize. */
             public gpuPartitionSize: string;
 
-            /** Selector onlyPreferred. */
-            public onlyPreferred: boolean;
-
             /** Selector selection. */
-            public selection?: ("gpuDevice"|"gpuPartitionSize");
+            public selection?: ("gpuDevice"|"gpuUnpartitioned"|"gpuPartitionSize");
 
             /**
              * Creates a new Selector instance using the specified properties.

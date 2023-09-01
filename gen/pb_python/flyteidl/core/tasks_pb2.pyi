@@ -42,14 +42,14 @@ class Resources(_message.Message):
     def __init__(self, requests: _Optional[_Iterable[_Union[Resources.ResourceEntry, _Mapping]]] = ..., limits: _Optional[_Iterable[_Union[Resources.ResourceEntry, _Mapping]]] = ...) -> None: ...
 
 class Selector(_message.Message):
-    __slots__ = ["gpu_device", "gpu_partition_size", "only_preferred"]
+    __slots__ = ["gpu_device", "gpu_unpartitioned", "gpu_partition_size"]
     GPU_DEVICE_FIELD_NUMBER: _ClassVar[int]
+    GPU_UNPARTITIONED_FIELD_NUMBER: _ClassVar[int]
     GPU_PARTITION_SIZE_FIELD_NUMBER: _ClassVar[int]
-    ONLY_PREFERRED_FIELD_NUMBER: _ClassVar[int]
     gpu_device: str
+    gpu_unpartitioned: bool
     gpu_partition_size: str
-    only_preferred: bool
-    def __init__(self, gpu_device: _Optional[str] = ..., gpu_partition_size: _Optional[str] = ..., only_preferred: bool = ...) -> None: ...
+    def __init__(self, gpu_device: _Optional[str] = ..., gpu_unpartitioned: bool = ..., gpu_partition_size: _Optional[str] = ...) -> None: ...
 
 class RuntimeMetadata(_message.Message):
     __slots__ = ["type", "version", "flavor"]

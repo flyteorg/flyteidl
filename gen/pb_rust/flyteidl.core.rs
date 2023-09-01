@@ -981,9 +981,7 @@ pub mod resources {
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(Clone, PartialEq, ::prost::Message)]
 pub struct Selector {
-    #[prost(bool, tag="5")]
-    pub only_preferred: bool,
-    #[prost(oneof="selector::Selection", tags="1, 2")]
+    #[prost(oneof="selector::Selection", tags="1, 2, 3")]
     pub selection: ::core::option::Option<selector::Selection>,
 }
 /// Nested message and enum types in `Selector`.
@@ -993,7 +991,9 @@ pub mod selector {
     pub enum Selection {
         #[prost(string, tag="1")]
         GpuDevice(::prost::alloc::string::String),
-        #[prost(string, tag="2")]
+        #[prost(bool, tag="2")]
+        GpuUnpartitioned(bool),
+        #[prost(string, tag="3")]
         GpuPartitionSize(::prost::alloc::string::String),
     }
 }

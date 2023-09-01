@@ -12108,8 +12108,8 @@
                  * @memberof flyteidl.core
                  * @interface ISelector
                  * @property {string|null} [gpuDevice] Selector gpuDevice
+                 * @property {boolean|null} [gpuUnpartitioned] Selector gpuUnpartitioned
                  * @property {string|null} [gpuPartitionSize] Selector gpuPartitionSize
-                 * @property {boolean|null} [onlyPreferred] Selector onlyPreferred
                  */
     
                 /**
@@ -12136,6 +12136,14 @@
                 Selector.prototype.gpuDevice = "";
     
                 /**
+                 * Selector gpuUnpartitioned.
+                 * @member {boolean} gpuUnpartitioned
+                 * @memberof flyteidl.core.Selector
+                 * @instance
+                 */
+                Selector.prototype.gpuUnpartitioned = false;
+    
+                /**
                  * Selector gpuPartitionSize.
                  * @member {string} gpuPartitionSize
                  * @memberof flyteidl.core.Selector
@@ -12143,25 +12151,17 @@
                  */
                 Selector.prototype.gpuPartitionSize = "";
     
-                /**
-                 * Selector onlyPreferred.
-                 * @member {boolean} onlyPreferred
-                 * @memberof flyteidl.core.Selector
-                 * @instance
-                 */
-                Selector.prototype.onlyPreferred = false;
-    
                 // OneOf field names bound to virtual getters and setters
                 var $oneOfFields;
     
                 /**
                  * Selector selection.
-                 * @member {"gpuDevice"|"gpuPartitionSize"|undefined} selection
+                 * @member {"gpuDevice"|"gpuUnpartitioned"|"gpuPartitionSize"|undefined} selection
                  * @memberof flyteidl.core.Selector
                  * @instance
                  */
                 Object.defineProperty(Selector.prototype, "selection", {
-                    get: $util.oneOfGetter($oneOfFields = ["gpuDevice", "gpuPartitionSize"]),
+                    get: $util.oneOfGetter($oneOfFields = ["gpuDevice", "gpuUnpartitioned", "gpuPartitionSize"]),
                     set: $util.oneOfSetter($oneOfFields)
                 });
     
@@ -12191,10 +12191,10 @@
                         writer = $Writer.create();
                     if (message.gpuDevice != null && message.hasOwnProperty("gpuDevice"))
                         writer.uint32(/* id 1, wireType 2 =*/10).string(message.gpuDevice);
+                    if (message.gpuUnpartitioned != null && message.hasOwnProperty("gpuUnpartitioned"))
+                        writer.uint32(/* id 2, wireType 0 =*/16).bool(message.gpuUnpartitioned);
                     if (message.gpuPartitionSize != null && message.hasOwnProperty("gpuPartitionSize"))
-                        writer.uint32(/* id 2, wireType 2 =*/18).string(message.gpuPartitionSize);
-                    if (message.onlyPreferred != null && message.hasOwnProperty("onlyPreferred"))
-                        writer.uint32(/* id 5, wireType 0 =*/40).bool(message.onlyPreferred);
+                        writer.uint32(/* id 3, wireType 2 =*/26).string(message.gpuPartitionSize);
                     return writer;
                 };
     
@@ -12220,10 +12220,10 @@
                             message.gpuDevice = reader.string();
                             break;
                         case 2:
-                            message.gpuPartitionSize = reader.string();
+                            message.gpuUnpartitioned = reader.bool();
                             break;
-                        case 5:
-                            message.onlyPreferred = reader.bool();
+                        case 3:
+                            message.gpuPartitionSize = reader.string();
                             break;
                         default:
                             reader.skipType(tag & 7);
@@ -12250,6 +12250,13 @@
                         if (!$util.isString(message.gpuDevice))
                             return "gpuDevice: string expected";
                     }
+                    if (message.gpuUnpartitioned != null && message.hasOwnProperty("gpuUnpartitioned")) {
+                        if (properties.selection === 1)
+                            return "selection: multiple values";
+                        properties.selection = 1;
+                        if (typeof message.gpuUnpartitioned !== "boolean")
+                            return "gpuUnpartitioned: boolean expected";
+                    }
                     if (message.gpuPartitionSize != null && message.hasOwnProperty("gpuPartitionSize")) {
                         if (properties.selection === 1)
                             return "selection: multiple values";
@@ -12257,9 +12264,6 @@
                         if (!$util.isString(message.gpuPartitionSize))
                             return "gpuPartitionSize: string expected";
                     }
-                    if (message.onlyPreferred != null && message.hasOwnProperty("onlyPreferred"))
-                        if (typeof message.onlyPreferred !== "boolean")
-                            return "onlyPreferred: boolean expected";
                     return null;
                 };
     

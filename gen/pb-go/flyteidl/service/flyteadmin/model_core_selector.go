@@ -11,6 +11,6 @@ package flyteadmin
 
 type CoreSelector struct {
 	GpuDevice string `json:"gpu_device,omitempty"`
+	GpuUnpartitioned bool `json:"gpu_unpartitioned,omitempty"`
 	GpuPartitionSize string `json:"gpu_partition_size,omitempty"`
-	OnlyPreferred bool `json:"only_preferred,omitempty"`
 }

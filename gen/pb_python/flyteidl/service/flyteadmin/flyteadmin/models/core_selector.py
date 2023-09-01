@@ -32,30 +32,30 @@ class CoreSelector(object):
     """
     swagger_types = {
         'gpu_device': 'str',
-        'gpu_partition_size': 'str',
-        'only_preferred': 'bool'
+        'gpu_unpartitioned': 'bool',
+        'gpu_partition_size': 'str'
     }
 
     attribute_map = {
         'gpu_device': 'gpu_device',
-        'gpu_partition_size': 'gpu_partition_size',
-        'only_preferred': 'only_preferred'
+        'gpu_unpartitioned': 'gpu_unpartitioned',
+        'gpu_partition_size': 'gpu_partition_size'
     }
 
-    def __init__(self, gpu_device=None, gpu_partition_size=None, only_preferred=None):  # noqa: E501
+    def __init__(self, gpu_device=None, gpu_unpartitioned=None, gpu_partition_size=None):  # noqa: E501
         """CoreSelector - a model defined in Swagger"""  # noqa: E501
 
         self._gpu_device = None
+        self._gpu_unpartitioned = None
         self._gpu_partition_size = None
-        self._only_preferred = None
         self.discriminator = None
 
         if gpu_device is not None:
             self.gpu_device = gpu_device
+        if gpu_unpartitioned is not None:
+            self.gpu_unpartitioned = gpu_unpartitioned
         if gpu_partition_size is not None:
             self.gpu_partition_size = gpu_partition_size
-        if only_preferred is not None:
-            self.only_preferred = only_preferred
 
     @property
     def gpu_device(self):
@@ -79,6 +79,27 @@ class CoreSelector(object):
         self._gpu_device = gpu_device
 
     @property
+    def gpu_unpartitioned(self):
+        """Gets the gpu_unpartitioned of this CoreSelector.  # noqa: E501
+
+
+        :return: The gpu_unpartitioned of this CoreSelector.  # noqa: E501
+        :rtype: bool
+        """
+        return self._gpu_unpartitioned
+
+    @gpu_unpartitioned.setter
+    def gpu_unpartitioned(self, gpu_unpartitioned):
+        """Sets the gpu_unpartitioned of this CoreSelector.
+
+
+        :param gpu_unpartitioned: The gpu_unpartitioned of this CoreSelector.  # noqa: E501
+        :type: bool
+        """
+
+        self._gpu_unpartitioned = gpu_unpartitioned
+
+    @property
     def gpu_partition_size(self):
         """Gets the gpu_partition_size of this CoreSelector.  # noqa: E501
 
@@ -98,27 +119,6 @@ class CoreSelector(object):
         """
 
         self._gpu_partition_size = gpu_partition_size
-
-    @property
-    def only_preferred(self):
-        """Gets the only_preferred of this CoreSelector.  # noqa: E501
-
-
-        :return: The only_preferred of this CoreSelector.  # noqa: E501
-        :rtype: bool
-        """
-        return self._only_preferred
-
-    @only_preferred.setter
-    def only_preferred(self, only_preferred):
-        """Sets the only_preferred of this CoreSelector.
-
-
-        :param only_preferred: The only_preferred of this CoreSelector.  # noqa: E501
-        :type: bool
-        """
-
-        self._only_preferred = only_preferred
 
     def to_dict(self):
         """Returns the model properties as a dict"""

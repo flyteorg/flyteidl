@@ -626,7 +626,8 @@ class Selector final :
 
   enum SelectionCase {
     kGpuDevice = 1,
-    kGpuPartitionSize = 2,
+    kGpuUnpartitioned = 2,
+    kGpuPartitionSize = 3,
     SELECTION_NOT_SET = 0,
   };
 
@@ -693,12 +694,6 @@ class Selector final :
 
   // accessors -------------------------------------------------------
 
-  // bool only_preferred = 5;
-  void clear_only_preferred();
-  static const int kOnlyPreferredFieldNumber = 5;
-  bool only_preferred() const;
-  void set_only_preferred(bool value);
-
   // string gpu_device = 1;
   private:
   bool has_gpu_device() const;
@@ -716,12 +711,21 @@ class Selector final :
   ::std::string* release_gpu_device();
   void set_allocated_gpu_device(::std::string* gpu_device);
 
-  // string gpu_partition_size = 2;
+  // bool gpu_unpartitioned = 2;
+  private:
+  bool has_gpu_unpartitioned() const;
+  public:
+  void clear_gpu_unpartitioned();
+  static const int kGpuUnpartitionedFieldNumber = 2;
+  bool gpu_unpartitioned() const;
+  void set_gpu_unpartitioned(bool value);
+
+  // string gpu_partition_size = 3;
   private:
   bool has_gpu_partition_size() const;
   public:
   void clear_gpu_partition_size();
-  static const int kGpuPartitionSizeFieldNumber = 2;
+  static const int kGpuPartitionSizeFieldNumber = 3;
   const ::std::string& gpu_partition_size() const;
   void set_gpu_partition_size(const ::std::string& value);
   #if LANG_CXX11
@@ -739,16 +743,17 @@ class Selector final :
  private:
   class HasBitSetters;
   void set_has_gpu_device();
+  void set_has_gpu_unpartitioned();
   void set_has_gpu_partition_size();
 
   inline bool has_selection() const;
   inline void clear_has_selection();
 
   ::google::protobuf::internal::InternalMetadataWithArena _internal_metadata_;
-  bool only_preferred_;
   union SelectionUnion {
     SelectionUnion() {}
     ::google::protobuf::internal::ArenaStringPtr gpu_device_;
+    bool gpu_unpartitioned_;
     ::google::protobuf::internal::ArenaStringPtr gpu_partition_size_;
   } selection_;
   mutable ::google::protobuf::internal::CachedSize _cached_size_;
@@ -2923,7 +2928,36 @@ inline void Selector::set_allocated_gpu_device(::std::string* gpu_device) {
   // @@protoc_insertion_point(field_set_allocated:flyteidl.core.Selector.gpu_device)
 }
 
-// string gpu_partition_size = 2;
+// bool gpu_unpartitioned = 2;
+inline bool Selector::has_gpu_unpartitioned() const {
+  return selection_case() == kGpuUnpartitioned;
+}
+inline void Selector::set_has_gpu_unpartitioned() {
+  _oneof_case_[0] = kGpuUnpartitioned;
+}
+inline void Selector::clear_gpu_unpartitioned() {
+  if (has_gpu_unpartitioned()) {
+    selection_.gpu_unpartitioned_ = false;
+    clear_has_selection();
+  }
+}
+inline bool Selector::gpu_unpartitioned() const {
+  // @@protoc_insertion_point(field_get:flyteidl.core.Selector.gpu_unpartitioned)
+  if (has_gpu_unpartitioned()) {
+    return selection_.gpu_unpartitioned_;
+  }
+  return false;
+}
+inline void Selector::set_gpu_unpartitioned(bool value) {
+  if (!has_gpu_unpartitioned()) {
+    clear_selection();
+    set_has_gpu_unpartitioned();
+  }
+  selection_.gpu_unpartitioned_ = value;
+  // @@protoc_insertion_point(field_set:flyteidl.core.Selector.gpu_unpartitioned)
+}
+
+// string gpu_partition_size = 3;
 inline bool Selector::has_gpu_partition_size() const {
   return selection_case() == kGpuPartitionSize;
 }
@@ -3013,20 +3047,6 @@ inline void Selector::set_allocated_gpu_partition_size(::std::string* gpu_partit
     selection_.gpu_partition_size_.UnsafeSetDefault(gpu_partition_size);
   }
   // @@protoc_insertion_point(field_set_allocated:flyteidl.core.Selector.gpu_partition_size)
-}
-
-// bool only_preferred = 5;
-inline void Selector::clear_only_preferred() {
-  only_preferred_ = false;
-}
-inline bool Selector::only_preferred() const {
-  // @@protoc_insertion_point(field_get:flyteidl.core.Selector.only_preferred)
-  return only_preferred_;
-}
-inline void Selector::set_only_preferred(bool value) {
-  
-  only_preferred_ = value;
-  // @@protoc_insertion_point(field_set:flyteidl.core.Selector.only_preferred)
 }
 
 inline bool Selector::has_selection() const {

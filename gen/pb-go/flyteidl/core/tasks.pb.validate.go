@@ -137,12 +137,13 @@ func (m *Selector) Validate() error {
 		return nil
 	}
 
-	// no validation rules for OnlyPreferred
-
 	switch m.Selection.(type) {
 
 	case *Selector_GpuDevice:
 		// no validation rules for GpuDevice
+
+	case *Selector_GpuUnpartitioned:
+		// no validation rules for GpuUnpartitioned
 
 	case *Selector_GpuPartitionSize:
 		// no validation rules for GpuPartitionSize

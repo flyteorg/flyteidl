@@ -53,6 +53,7 @@ class SelectorDefaultTypeInternal {
  public:
   ::google::protobuf::internal::ExplicitlyConstructed<Selector> _instance;
   ::google::protobuf::internal::ArenaStringPtr gpu_device_;
+  bool gpu_unpartitioned_;
   ::google::protobuf::internal::ArenaStringPtr gpu_partition_size_;
 } _Selector_default_instance_;
 class RuntimeMetadataDefaultTypeInternal {
@@ -421,8 +422,8 @@ const ::google::protobuf::uint32 TableStruct_flyteidl_2fcore_2ftasks_2eproto::of
   PROTOBUF_FIELD_OFFSET(::flyteidl::core::Selector, _oneof_case_[0]),
   ~0u,  // no _weak_field_map_
   offsetof(::flyteidl::core::SelectorDefaultTypeInternal, gpu_device_),
+  offsetof(::flyteidl::core::SelectorDefaultTypeInternal, gpu_unpartitioned_),
   offsetof(::flyteidl::core::SelectorDefaultTypeInternal, gpu_partition_size_),
-  PROTOBUF_FIELD_OFFSET(::flyteidl::core::Selector, only_preferred_),
   PROTOBUF_FIELD_OFFSET(::flyteidl::core::Selector, selection_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::flyteidl::core::RuntimeMetadata, _internal_metadata_),
@@ -623,85 +624,85 @@ const char descriptor_table_protodef_flyteidl_2fcore_2ftasks_2eproto[] =
   "re.Resources.ResourceName\022\r\n\005value\030\002 \001(\t"
   "\"]\n\014ResourceName\022\013\n\007UNKNOWN\020\000\022\007\n\003CPU\020\001\022\007"
   "\n\003GPU\020\002\022\n\n\006MEMORY\020\003\022\013\n\007STORAGE\020\004\022\025\n\021EPHE"
-  "MERAL_STORAGE\020\005\"c\n\010Selector\022\024\n\ngpu_devic"
-  "e\030\001 \001(\tH\000\022\034\n\022gpu_partition_size\030\002 \001(\tH\000\022"
-  "\026\n\016only_preferred\030\005 \001(\010B\013\n\tselection\"\225\001\n"
-  "\017RuntimeMetadata\0228\n\004type\030\001 \001(\0162*.flyteid"
-  "l.core.RuntimeMetadata.RuntimeType\022\017\n\007ve"
-  "rsion\030\002 \001(\t\022\016\n\006flavor\030\003 \001(\t\"\'\n\013RuntimeTy"
-  "pe\022\t\n\005OTHER\020\000\022\r\n\tFLYTE_SDK\020\001\"\372\003\n\014TaskMet"
-  "adata\022\024\n\014discoverable\030\001 \001(\010\022/\n\007runtime\030\002"
-  " \001(\0132\036.flyteidl.core.RuntimeMetadata\022*\n\007"
-  "timeout\030\004 \001(\0132\031.google.protobuf.Duration"
-  "\022-\n\007retries\030\005 \001(\0132\034.flyteidl.core.RetryS"
-  "trategy\022\031\n\021discovery_version\030\006 \001(\t\022 \n\030de"
-  "precated_error_message\030\007 \001(\t\022\027\n\rinterrup"
-  "tible\030\010 \001(\010H\000\022\032\n\022cache_serializable\030\t \001("
-  "\010\022\026\n\016generates_deck\030\n \001(\010\0223\n\004tags\030\013 \003(\0132"
-  "%.flyteidl.core.TaskMetadata.TagsEntry\022\031"
-  "\n\021pod_template_name\030\014 \001(\t\022*\n\tselectors\030\r"
-  " \003(\0132\027.flyteidl.core.Selector\032+\n\tTagsEnt"
-  "ry\022\013\n\003key\030\001 \001(\t\022\r\n\005value\030\002 \001(\t:\0028\001B\025\n\023in"
-  "terruptible_value\"\220\004\n\014TaskTemplate\022%\n\002id"
-  "\030\001 \001(\0132\031.flyteidl.core.Identifier\022\014\n\004typ"
-  "e\030\002 \001(\t\022-\n\010metadata\030\003 \001(\0132\033.flyteidl.cor"
-  "e.TaskMetadata\0220\n\tinterface\030\004 \001(\0132\035.flyt"
-  "eidl.core.TypedInterface\022\'\n\006custom\030\005 \001(\013"
-  "2\027.google.protobuf.Struct\022-\n\tcontainer\030\006"
-  " \001(\0132\030.flyteidl.core.ContainerH\000\022(\n\007k8s_"
-  "pod\030\021 \001(\0132\025.flyteidl.core.K8sPodH\000\022!\n\003sq"
-  "l\030\022 \001(\0132\022.flyteidl.core.SqlH\000\022\031\n\021task_ty"
-  "pe_version\030\007 \001(\005\0228\n\020security_context\030\010 \001"
-  "(\0132\036.flyteidl.core.SecurityContext\0227\n\006co"
-  "nfig\030\020 \003(\0132\'.flyteidl.core.TaskTemplate."
-  "ConfigEntry\032-\n\013ConfigEntry\022\013\n\003key\030\001 \001(\t\022"
-  "\r\n\005value\030\002 \001(\t:\0028\001B\010\n\006target\"\'\n\rContaine"
-  "rPort\022\026\n\016container_port\030\001 \001(\r\"\255\003\n\tContai"
-  "ner\022\r\n\005image\030\001 \001(\t\022\017\n\007command\030\002 \003(\t\022\014\n\004a"
-  "rgs\030\003 \003(\t\022+\n\tresources\030\004 \001(\0132\030.flyteidl."
-  "core.Resources\022(\n\003env\030\005 \003(\0132\033.flyteidl.c"
-  "ore.KeyValuePair\022/\n\006config\030\006 \003(\0132\033.flyte"
-  "idl.core.KeyValuePairB\002\030\001\022+\n\005ports\030\007 \003(\013"
-  "2\034.flyteidl.core.ContainerPort\0225\n\013data_c"
-  "onfig\030\t \001(\0132 .flyteidl.core.DataLoadingC"
-  "onfig\022;\n\014architecture\030\n \001(\0162%.flyteidl.c"
-  "ore.Container.Architecture\"I\n\014Architectu"
-  "re\022\013\n\007UNKNOWN\020\000\022\t\n\005AMD64\020\001\022\t\n\005ARM64\020\002\022\n\n"
-  "\006ARM_V6\020\003\022\n\n\006ARM_V7\020\004\"\233\002\n\nIOStrategy\022=\n\r"
-  "download_mode\030\001 \001(\0162&.flyteidl.core.IOSt"
-  "rategy.DownloadMode\0229\n\013upload_mode\030\002 \001(\016"
-  "2$.flyteidl.core.IOStrategy.UploadMode\"L"
-  "\n\014DownloadMode\022\022\n\016DOWNLOAD_EAGER\020\000\022\023\n\017DO"
-  "WNLOAD_STREAM\020\001\022\023\n\017DO_NOT_DOWNLOAD\020\002\"E\n\n"
-  "UploadMode\022\022\n\016UPLOAD_ON_EXIT\020\000\022\020\n\014UPLOAD"
-  "_EAGER\020\001\022\021\n\rDO_NOT_UPLOAD\020\002\"\363\001\n\021DataLoad"
-  "ingConfig\022\017\n\007enabled\030\001 \001(\010\022\022\n\ninput_path"
-  "\030\002 \001(\t\022\023\n\013output_path\030\003 \001(\t\022A\n\006format\030\004 "
-  "\001(\01621.flyteidl.core.DataLoadingConfig.Li"
-  "teralMapFormat\022.\n\013io_strategy\030\005 \001(\0132\031.fl"
-  "yteidl.core.IOStrategy\"1\n\020LiteralMapForm"
-  "at\022\010\n\004JSON\020\000\022\010\n\004YAML\020\001\022\t\n\005PROTO\020\002\"\236\001\n\006K8"
-  "sPod\0222\n\010metadata\030\001 \001(\0132 .flyteidl.core.K"
-  "8sObjectMetadata\022)\n\010pod_spec\030\002 \001(\0132\027.goo"
-  "gle.protobuf.Struct\0225\n\013data_config\030\003 \001(\013"
-  "2 .flyteidl.core.DataLoadingConfig\"\374\001\n\021K"
-  "8sObjectMetadata\022<\n\006labels\030\001 \003(\0132,.flyte"
-  "idl.core.K8sObjectMetadata.LabelsEntry\022F"
-  "\n\013annotations\030\002 \003(\01321.flyteidl.core.K8sO"
-  "bjectMetadata.AnnotationsEntry\032-\n\013Labels"
-  "Entry\022\013\n\003key\030\001 \001(\t\022\r\n\005value\030\002 \001(\t:\0028\001\0322\n"
-  "\020AnnotationsEntry\022\013\n\003key\030\001 \001(\t\022\r\n\005value\030"
-  "\002 \001(\t:\0028\001\"~\n\003Sql\022\021\n\tstatement\030\001 \001(\t\022+\n\007d"
-  "ialect\030\002 \001(\0162\032.flyteidl.core.Sql.Dialect"
-  "\"7\n\007Dialect\022\r\n\tUNDEFINED\020\000\022\010\n\004ANSI\020\001\022\010\n\004"
-  "HIVE\020\002\022\t\n\005OTHER\020\003B6Z4github.com/flyteorg"
-  "/flyteidl/gen/pb-go/flyteidl/coreb\006proto"
-  "3"
+  "MERAL_STORAGE\020\005\"h\n\010Selector\022\024\n\ngpu_devic"
+  "e\030\001 \001(\tH\000\022\033\n\021gpu_unpartitioned\030\002 \001(\010H\000\022\034"
+  "\n\022gpu_partition_size\030\003 \001(\tH\000B\013\n\tselectio"
+  "n\"\225\001\n\017RuntimeMetadata\0228\n\004type\030\001 \001(\0162*.fl"
+  "yteidl.core.RuntimeMetadata.RuntimeType\022"
+  "\017\n\007version\030\002 \001(\t\022\016\n\006flavor\030\003 \001(\t\"\'\n\013Runt"
+  "imeType\022\t\n\005OTHER\020\000\022\r\n\tFLYTE_SDK\020\001\"\372\003\n\014Ta"
+  "skMetadata\022\024\n\014discoverable\030\001 \001(\010\022/\n\007runt"
+  "ime\030\002 \001(\0132\036.flyteidl.core.RuntimeMetadat"
+  "a\022*\n\007timeout\030\004 \001(\0132\031.google.protobuf.Dur"
+  "ation\022-\n\007retries\030\005 \001(\0132\034.flyteidl.core.R"
+  "etryStrategy\022\031\n\021discovery_version\030\006 \001(\t\022"
+  " \n\030deprecated_error_message\030\007 \001(\t\022\027\n\rint"
+  "erruptible\030\010 \001(\010H\000\022\032\n\022cache_serializable"
+  "\030\t \001(\010\022\026\n\016generates_deck\030\n \001(\010\0223\n\004tags\030\013"
+  " \003(\0132%.flyteidl.core.TaskMetadata.TagsEn"
+  "try\022\031\n\021pod_template_name\030\014 \001(\t\022*\n\tselect"
+  "ors\030\r \003(\0132\027.flyteidl.core.Selector\032+\n\tTa"
+  "gsEntry\022\013\n\003key\030\001 \001(\t\022\r\n\005value\030\002 \001(\t:\0028\001B"
+  "\025\n\023interruptible_value\"\220\004\n\014TaskTemplate\022"
+  "%\n\002id\030\001 \001(\0132\031.flyteidl.core.Identifier\022\014"
+  "\n\004type\030\002 \001(\t\022-\n\010metadata\030\003 \001(\0132\033.flyteid"
+  "l.core.TaskMetadata\0220\n\tinterface\030\004 \001(\0132\035"
+  ".flyteidl.core.TypedInterface\022\'\n\006custom\030"
+  "\005 \001(\0132\027.google.protobuf.Struct\022-\n\tcontai"
+  "ner\030\006 \001(\0132\030.flyteidl.core.ContainerH\000\022(\n"
+  "\007k8s_pod\030\021 \001(\0132\025.flyteidl.core.K8sPodH\000\022"
+  "!\n\003sql\030\022 \001(\0132\022.flyteidl.core.SqlH\000\022\031\n\021ta"
+  "sk_type_version\030\007 \001(\005\0228\n\020security_contex"
+  "t\030\010 \001(\0132\036.flyteidl.core.SecurityContext\022"
+  "7\n\006config\030\020 \003(\0132\'.flyteidl.core.TaskTemp"
+  "late.ConfigEntry\032-\n\013ConfigEntry\022\013\n\003key\030\001"
+  " \001(\t\022\r\n\005value\030\002 \001(\t:\0028\001B\010\n\006target\"\'\n\rCon"
+  "tainerPort\022\026\n\016container_port\030\001 \001(\r\"\255\003\n\tC"
+  "ontainer\022\r\n\005image\030\001 \001(\t\022\017\n\007command\030\002 \003(\t"
+  "\022\014\n\004args\030\003 \003(\t\022+\n\tresources\030\004 \001(\0132\030.flyt"
+  "eidl.core.Resources\022(\n\003env\030\005 \003(\0132\033.flyte"
+  "idl.core.KeyValuePair\022/\n\006config\030\006 \003(\0132\033."
+  "flyteidl.core.KeyValuePairB\002\030\001\022+\n\005ports\030"
+  "\007 \003(\0132\034.flyteidl.core.ContainerPort\0225\n\013d"
+  "ata_config\030\t \001(\0132 .flyteidl.core.DataLoa"
+  "dingConfig\022;\n\014architecture\030\n \001(\0162%.flyte"
+  "idl.core.Container.Architecture\"I\n\014Archi"
+  "tecture\022\013\n\007UNKNOWN\020\000\022\t\n\005AMD64\020\001\022\t\n\005ARM64"
+  "\020\002\022\n\n\006ARM_V6\020\003\022\n\n\006ARM_V7\020\004\"\233\002\n\nIOStrateg"
+  "y\022=\n\rdownload_mode\030\001 \001(\0162&.flyteidl.core"
+  ".IOStrategy.DownloadMode\0229\n\013upload_mode\030"
+  "\002 \001(\0162$.flyteidl.core.IOStrategy.UploadM"
+  "ode\"L\n\014DownloadMode\022\022\n\016DOWNLOAD_EAGER\020\000\022"
+  "\023\n\017DOWNLOAD_STREAM\020\001\022\023\n\017DO_NOT_DOWNLOAD\020"
+  "\002\"E\n\nUploadMode\022\022\n\016UPLOAD_ON_EXIT\020\000\022\020\n\014U"
+  "PLOAD_EAGER\020\001\022\021\n\rDO_NOT_UPLOAD\020\002\"\363\001\n\021Dat"
+  "aLoadingConfig\022\017\n\007enabled\030\001 \001(\010\022\022\n\ninput"
+  "_path\030\002 \001(\t\022\023\n\013output_path\030\003 \001(\t\022A\n\006form"
+  "at\030\004 \001(\01621.flyteidl.core.DataLoadingConf"
+  "ig.LiteralMapFormat\022.\n\013io_strategy\030\005 \001(\013"
+  "2\031.flyteidl.core.IOStrategy\"1\n\020LiteralMa"
+  "pFormat\022\010\n\004JSON\020\000\022\010\n\004YAML\020\001\022\t\n\005PROTO\020\002\"\236"
+  "\001\n\006K8sPod\0222\n\010metadata\030\001 \001(\0132 .flyteidl.c"
+  "ore.K8sObjectMetadata\022)\n\010pod_spec\030\002 \001(\0132"
+  "\027.google.protobuf.Struct\0225\n\013data_config\030"
+  "\003 \001(\0132 .flyteidl.core.DataLoadingConfig\""
+  "\374\001\n\021K8sObjectMetadata\022<\n\006labels\030\001 \003(\0132,."
+  "flyteidl.core.K8sObjectMetadata.LabelsEn"
+  "try\022F\n\013annotations\030\002 \003(\01321.flyteidl.core"
+  ".K8sObjectMetadata.AnnotationsEntry\032-\n\013L"
+  "abelsEntry\022\013\n\003key\030\001 \001(\t\022\r\n\005value\030\002 \001(\t:\002"
+  "8\001\0322\n\020AnnotationsEntry\022\013\n\003key\030\001 \001(\t\022\r\n\005v"
+  "alue\030\002 \001(\t:\0028\001\"~\n\003Sql\022\021\n\tstatement\030\001 \001(\t"
+  "\022+\n\007dialect\030\002 \001(\0162\032.flyteidl.core.Sql.Di"
+  "alect\"7\n\007Dialect\022\r\n\tUNDEFINED\020\000\022\010\n\004ANSI\020"
+  "\001\022\010\n\004HIVE\020\002\022\t\n\005OTHER\020\003B6Z4github.com/fly"
+  "teorg/flyteidl/gen/pb-go/flyteidl/coreb\006"
+  "proto3"
   ;
 ::google::protobuf::internal::DescriptorTable descriptor_table_flyteidl_2fcore_2ftasks_2eproto = {
   false, InitDefaults_flyteidl_2fcore_2ftasks_2eproto, 
   descriptor_table_protodef_flyteidl_2fcore_2ftasks_2eproto,
-  "flyteidl/core/tasks.proto", &assign_descriptors_table_flyteidl_2fcore_2ftasks_2eproto, 3441,
+  "flyteidl/core/tasks.proto", &assign_descriptors_table_flyteidl_2fcore_2ftasks_2eproto, 3446,
 };
 
 void AddDescriptors_flyteidl_2fcore_2ftasks_2eproto() {
@@ -1583,6 +1584,7 @@ void Resources::InternalSwap(Resources* other) {
 void Selector::InitAsDefaultInstance() {
   ::flyteidl::core::_Selector_default_instance_.gpu_device_.UnsafeSetDefault(
       &::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  ::flyteidl::core::_Selector_default_instance_.gpu_unpartitioned_ = false;
   ::flyteidl::core::_Selector_default_instance_.gpu_partition_size_.UnsafeSetDefault(
       &::google::protobuf::internal::GetEmptyStringAlreadyInited());
 }
@@ -1592,8 +1594,8 @@ class Selector::HasBitSetters {
 
 #if !defined(_MSC_VER) || _MSC_VER >= 1900
 const int Selector::kGpuDeviceFieldNumber;
+const int Selector::kGpuUnpartitionedFieldNumber;
 const int Selector::kGpuPartitionSizeFieldNumber;
-const int Selector::kOnlyPreferredFieldNumber;
 #endif  // !defined(_MSC_VER) || _MSC_VER >= 1900
 
 Selector::Selector()
@@ -1605,11 +1607,14 @@ Selector::Selector(const Selector& from)
   : ::google::protobuf::Message(),
       _internal_metadata_(nullptr) {
   _internal_metadata_.MergeFrom(from._internal_metadata_);
-  only_preferred_ = from.only_preferred_;
   clear_has_selection();
   switch (from.selection_case()) {
     case kGpuDevice: {
       set_gpu_device(from.gpu_device());
+      break;
+    }
+    case kGpuUnpartitioned: {
+      set_gpu_unpartitioned(from.gpu_unpartitioned());
       break;
     }
     case kGpuPartitionSize: {
@@ -1626,7 +1631,6 @@ Selector::Selector(const Selector& from)
 void Selector::SharedCtor() {
   ::google::protobuf::internal::InitSCC(
       &scc_info_Selector_flyteidl_2fcore_2ftasks_2eproto.base);
-  only_preferred_ = false;
   clear_has_selection();
 }
 
@@ -1657,6 +1661,10 @@ void Selector::clear_selection() {
       selection_.gpu_device_.DestroyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
       break;
     }
+    case kGpuUnpartitioned: {
+      // No need to clear
+      break;
+    }
     case kGpuPartitionSize: {
       selection_.gpu_partition_size_.DestroyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
       break;
@@ -1675,7 +1683,6 @@ void Selector::Clear() {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  only_preferred_ = false;
   clear_selection();
   _internal_metadata_.Clear();
 }
@@ -1709,9 +1716,16 @@ const char* Selector::_InternalParse(const char* begin, const char* end, void* o
         ptr += size;
         break;
       }
-      // string gpu_partition_size = 2;
+      // bool gpu_unpartitioned = 2;
       case 2: {
-        if (static_cast<::google::protobuf::uint8>(tag) != 18) goto handle_unusual;
+        if (static_cast<::google::protobuf::uint8>(tag) != 16) goto handle_unusual;
+        msg->set_gpu_unpartitioned(::google::protobuf::internal::ReadVarint(&ptr));
+        GOOGLE_PROTOBUF_PARSER_ASSERT(ptr);
+        break;
+      }
+      // string gpu_partition_size = 3;
+      case 3: {
+        if (static_cast<::google::protobuf::uint8>(tag) != 26) goto handle_unusual;
         ptr = ::google::protobuf::io::ReadSize(ptr, &size);
         GOOGLE_PROTOBUF_PARSER_ASSERT(ptr);
         ctx->extra_parse_data().SetFieldName("flyteidl.core.Selector.gpu_partition_size");
@@ -1723,13 +1737,6 @@ const char* Selector::_InternalParse(const char* begin, const char* end, void* o
         GOOGLE_PROTOBUF_PARSER_ASSERT(::google::protobuf::internal::StringCheckUTF8(ptr, size, ctx));
         ::google::protobuf::internal::InlineGreedyStringParser(object, ptr, size, ctx);
         ptr += size;
-        break;
-      }
-      // bool only_preferred = 5;
-      case 5: {
-        if (static_cast<::google::protobuf::uint8>(tag) != 40) goto handle_unusual;
-        msg->set_only_preferred(::google::protobuf::internal::ReadVarint(&ptr));
-        GOOGLE_PROTOBUF_PARSER_ASSERT(ptr);
         break;
       }
       default: {
@@ -1781,28 +1788,29 @@ bool Selector::MergePartialFromCodedStream(
         break;
       }
 
-      // string gpu_partition_size = 2;
+      // bool gpu_unpartitioned = 2;
       case 2: {
-        if (static_cast< ::google::protobuf::uint8>(tag) == (18 & 0xFF)) {
-          DO_(::google::protobuf::internal::WireFormatLite::ReadString(
-                input, this->mutable_gpu_partition_size()));
-          DO_(::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
-            this->gpu_partition_size().data(), static_cast<int>(this->gpu_partition_size().length()),
-            ::google::protobuf::internal::WireFormatLite::PARSE,
-            "flyteidl.core.Selector.gpu_partition_size"));
+        if (static_cast< ::google::protobuf::uint8>(tag) == (16 & 0xFF)) {
+          clear_selection();
+          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
+                   bool, ::google::protobuf::internal::WireFormatLite::TYPE_BOOL>(
+                 input, &selection_.gpu_unpartitioned_)));
+          set_has_gpu_unpartitioned();
         } else {
           goto handle_unusual;
         }
         break;
       }
 
-      // bool only_preferred = 5;
-      case 5: {
-        if (static_cast< ::google::protobuf::uint8>(tag) == (40 & 0xFF)) {
-
-          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
-                   bool, ::google::protobuf::internal::WireFormatLite::TYPE_BOOL>(
-                 input, &only_preferred_)));
+      // string gpu_partition_size = 3;
+      case 3: {
+        if (static_cast< ::google::protobuf::uint8>(tag) == (26 & 0xFF)) {
+          DO_(::google::protobuf::internal::WireFormatLite::ReadString(
+                input, this->mutable_gpu_partition_size()));
+          DO_(::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
+            this->gpu_partition_size().data(), static_cast<int>(this->gpu_partition_size().length()),
+            ::google::protobuf::internal::WireFormatLite::PARSE,
+            "flyteidl.core.Selector.gpu_partition_size"));
         } else {
           goto handle_unusual;
         }
@@ -1846,19 +1854,19 @@ void Selector::SerializeWithCachedSizes(
       1, this->gpu_device(), output);
   }
 
-  // string gpu_partition_size = 2;
+  // bool gpu_unpartitioned = 2;
+  if (has_gpu_unpartitioned()) {
+    ::google::protobuf::internal::WireFormatLite::WriteBool(2, this->gpu_unpartitioned(), output);
+  }
+
+  // string gpu_partition_size = 3;
   if (has_gpu_partition_size()) {
     ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
       this->gpu_partition_size().data(), static_cast<int>(this->gpu_partition_size().length()),
       ::google::protobuf::internal::WireFormatLite::SERIALIZE,
       "flyteidl.core.Selector.gpu_partition_size");
     ::google::protobuf::internal::WireFormatLite::WriteStringMaybeAliased(
-      2, this->gpu_partition_size(), output);
-  }
-
-  // bool only_preferred = 5;
-  if (this->only_preferred() != 0) {
-    ::google::protobuf::internal::WireFormatLite::WriteBool(5, this->only_preferred(), output);
+      3, this->gpu_partition_size(), output);
   }
 
   if (_internal_metadata_.have_unknown_fields()) {
@@ -1885,7 +1893,12 @@ void Selector::SerializeWithCachedSizes(
         1, this->gpu_device(), target);
   }
 
-  // string gpu_partition_size = 2;
+  // bool gpu_unpartitioned = 2;
+  if (has_gpu_unpartitioned()) {
+    target = ::google::protobuf::internal::WireFormatLite::WriteBoolToArray(2, this->gpu_unpartitioned(), target);
+  }
+
+  // string gpu_partition_size = 3;
   if (has_gpu_partition_size()) {
     ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
       this->gpu_partition_size().data(), static_cast<int>(this->gpu_partition_size().length()),
@@ -1893,12 +1906,7 @@ void Selector::SerializeWithCachedSizes(
       "flyteidl.core.Selector.gpu_partition_size");
     target =
       ::google::protobuf::internal::WireFormatLite::WriteStringToArray(
-        2, this->gpu_partition_size(), target);
-  }
-
-  // bool only_preferred = 5;
-  if (this->only_preferred() != 0) {
-    target = ::google::protobuf::internal::WireFormatLite::WriteBoolToArray(5, this->only_preferred(), target);
+        3, this->gpu_partition_size(), target);
   }
 
   if (_internal_metadata_.have_unknown_fields()) {
@@ -1922,11 +1930,6 @@ size_t Selector::ByteSizeLong() const {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  // bool only_preferred = 5;
-  if (this->only_preferred() != 0) {
-    total_size += 1 + 1;
-  }
-
   switch (selection_case()) {
     // string gpu_device = 1;
     case kGpuDevice: {
@@ -1935,7 +1938,12 @@ size_t Selector::ByteSizeLong() const {
           this->gpu_device());
       break;
     }
-    // string gpu_partition_size = 2;
+    // bool gpu_unpartitioned = 2;
+    case kGpuUnpartitioned: {
+      total_size += 1 + 1;
+      break;
+    }
+    // string gpu_partition_size = 3;
     case kGpuPartitionSize: {
       total_size += 1 +
         ::google::protobuf::internal::WireFormatLite::StringSize(
@@ -1973,12 +1981,13 @@ void Selector::MergeFrom(const Selector& from) {
   ::google::protobuf::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  if (from.only_preferred() != 0) {
-    set_only_preferred(from.only_preferred());
-  }
   switch (from.selection_case()) {
     case kGpuDevice: {
       set_gpu_device(from.gpu_device());
+      break;
+    }
+    case kGpuUnpartitioned: {
+      set_gpu_unpartitioned(from.gpu_unpartitioned());
       break;
     }
     case kGpuPartitionSize: {
@@ -2016,7 +2025,6 @@ void Selector::Swap(Selector* other) {
 void Selector::InternalSwap(Selector* other) {
   using std::swap;
   _internal_metadata_.Swap(&other->_internal_metadata_);
-  swap(only_preferred_, other->only_preferred_);
   swap(selection_, other->selection_);
   swap(_oneof_case_[0], other->_oneof_case_[0]);
 }

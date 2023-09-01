@@ -2317,19 +2317,19 @@ public final class Tasks {
         getGpuDeviceBytes();
 
     /**
-     * <code>string gpu_partition_size = 2;</code>
+     * <code>bool gpu_unpartitioned = 2;</code>
+     */
+    boolean getGpuUnpartitioned();
+
+    /**
+     * <code>string gpu_partition_size = 3;</code>
      */
     java.lang.String getGpuPartitionSize();
     /**
-     * <code>string gpu_partition_size = 2;</code>
+     * <code>string gpu_partition_size = 3;</code>
      */
     com.google.protobuf.ByteString
         getGpuPartitionSizeBytes();
-
-    /**
-     * <code>bool only_preferred = 5;</code>
-     */
-    boolean getOnlyPreferred();
 
     public flyteidl.core.Tasks.Selector.SelectionCase getSelectionCase();
   }
@@ -2378,15 +2378,15 @@ public final class Tasks {
               selection_ = s;
               break;
             }
-            case 18: {
-              java.lang.String s = input.readStringRequireUtf8();
+            case 16: {
               selectionCase_ = 2;
-              selection_ = s;
+              selection_ = input.readBool();
               break;
             }
-            case 40: {
-
-              onlyPreferred_ = input.readBool();
+            case 26: {
+              java.lang.String s = input.readStringRequireUtf8();
+              selectionCase_ = 3;
+              selection_ = s;
               break;
             }
             default: {
@@ -2426,7 +2426,8 @@ public final class Tasks {
     public enum SelectionCase
         implements com.google.protobuf.Internal.EnumLite {
       GPU_DEVICE(1),
-      GPU_PARTITION_SIZE(2),
+      GPU_UNPARTITIONED(2),
+      GPU_PARTITION_SIZE(3),
       SELECTION_NOT_SET(0);
       private final int value;
       private SelectionCase(int value) {
@@ -2443,7 +2444,8 @@ public final class Tasks {
       public static SelectionCase forNumber(int value) {
         switch (value) {
           case 1: return GPU_DEVICE;
-          case 2: return GPU_PARTITION_SIZE;
+          case 2: return GPU_UNPARTITIONED;
+          case 3: return GPU_PARTITION_SIZE;
           case 0: return SELECTION_NOT_SET;
           default: return null;
         }
@@ -2502,13 +2504,24 @@ public final class Tasks {
       }
     }
 
-    public static final int GPU_PARTITION_SIZE_FIELD_NUMBER = 2;
+    public static final int GPU_UNPARTITIONED_FIELD_NUMBER = 2;
     /**
-     * <code>string gpu_partition_size = 2;</code>
+     * <code>bool gpu_unpartitioned = 2;</code>
+     */
+    public boolean getGpuUnpartitioned() {
+      if (selectionCase_ == 2) {
+        return (java.lang.Boolean) selection_;
+      }
+      return false;
+    }
+
+    public static final int GPU_PARTITION_SIZE_FIELD_NUMBER = 3;
+    /**
+     * <code>string gpu_partition_size = 3;</code>
      */
     public java.lang.String getGpuPartitionSize() {
       java.lang.Object ref = "";
-      if (selectionCase_ == 2) {
+      if (selectionCase_ == 3) {
         ref = selection_;
       }
       if (ref instanceof java.lang.String) {
@@ -2517,41 +2530,32 @@ public final class Tasks {
         com.google.protobuf.ByteString bs = 
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
-        if (selectionCase_ == 2) {
+        if (selectionCase_ == 3) {
           selection_ = s;
         }
         return s;
       }
     }
     /**
-     * <code>string gpu_partition_size = 2;</code>
+     * <code>string gpu_partition_size = 3;</code>
      */
     public com.google.protobuf.ByteString
         getGpuPartitionSizeBytes() {
       java.lang.Object ref = "";
-      if (selectionCase_ == 2) {
+      if (selectionCase_ == 3) {
         ref = selection_;
       }
       if (ref instanceof java.lang.String) {
         com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
-        if (selectionCase_ == 2) {
+        if (selectionCase_ == 3) {
           selection_ = b;
         }
         return b;
       } else {
         return (com.google.protobuf.ByteString) ref;
       }
-    }
-
-    public static final int ONLY_PREFERRED_FIELD_NUMBER = 5;
-    private boolean onlyPreferred_;
-    /**
-     * <code>bool only_preferred = 5;</code>
-     */
-    public boolean getOnlyPreferred() {
-      return onlyPreferred_;
     }
 
     private byte memoizedIsInitialized = -1;
@@ -2572,10 +2576,11 @@ public final class Tasks {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 1, selection_);
       }
       if (selectionCase_ == 2) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 2, selection_);
+        output.writeBool(
+            2, (boolean)((java.lang.Boolean) selection_));
       }
-      if (onlyPreferred_ != false) {
-        output.writeBool(5, onlyPreferred_);
+      if (selectionCase_ == 3) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 3, selection_);
       }
       unknownFields.writeTo(output);
     }
@@ -2590,11 +2595,12 @@ public final class Tasks {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, selection_);
       }
       if (selectionCase_ == 2) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, selection_);
-      }
-      if (onlyPreferred_ != false) {
         size += com.google.protobuf.CodedOutputStream
-          .computeBoolSize(5, onlyPreferred_);
+          .computeBoolSize(
+              2, (boolean)((java.lang.Boolean) selection_));
+      }
+      if (selectionCase_ == 3) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, selection_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -2611,8 +2617,6 @@ public final class Tasks {
       }
       flyteidl.core.Tasks.Selector other = (flyteidl.core.Tasks.Selector) obj;
 
-      if (getOnlyPreferred()
-          != other.getOnlyPreferred()) return false;
       if (!getSelectionCase().equals(other.getSelectionCase())) return false;
       switch (selectionCase_) {
         case 1:
@@ -2620,6 +2624,10 @@ public final class Tasks {
               .equals(other.getGpuDevice())) return false;
           break;
         case 2:
+          if (getGpuUnpartitioned()
+              != other.getGpuUnpartitioned()) return false;
+          break;
+        case 3:
           if (!getGpuPartitionSize()
               .equals(other.getGpuPartitionSize())) return false;
           break;
@@ -2637,15 +2645,17 @@ public final class Tasks {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
-      hash = (37 * hash) + ONLY_PREFERRED_FIELD_NUMBER;
-      hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
-          getOnlyPreferred());
       switch (selectionCase_) {
         case 1:
           hash = (37 * hash) + GPU_DEVICE_FIELD_NUMBER;
           hash = (53 * hash) + getGpuDevice().hashCode();
           break;
         case 2:
+          hash = (37 * hash) + GPU_UNPARTITIONED_FIELD_NUMBER;
+          hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
+              getGpuUnpartitioned());
+          break;
+        case 3:
           hash = (37 * hash) + GPU_PARTITION_SIZE_FIELD_NUMBER;
           hash = (53 * hash) + getGpuPartitionSize().hashCode();
           break;
@@ -2785,8 +2795,6 @@ public final class Tasks {
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        onlyPreferred_ = false;
-
         selectionCase_ = 0;
         selection_ = null;
         return this;
@@ -2821,7 +2829,9 @@ public final class Tasks {
         if (selectionCase_ == 2) {
           result.selection_ = selection_;
         }
-        result.onlyPreferred_ = onlyPreferred_;
+        if (selectionCase_ == 3) {
+          result.selection_ = selection_;
+        }
         result.selectionCase_ = selectionCase_;
         onBuilt();
         return result;
@@ -2871,9 +2881,6 @@ public final class Tasks {
 
       public Builder mergeFrom(flyteidl.core.Tasks.Selector other) {
         if (other == flyteidl.core.Tasks.Selector.getDefaultInstance()) return this;
-        if (other.getOnlyPreferred() != false) {
-          setOnlyPreferred(other.getOnlyPreferred());
-        }
         switch (other.getSelectionCase()) {
           case GPU_DEVICE: {
             selectionCase_ = 1;
@@ -2881,8 +2888,12 @@ public final class Tasks {
             onChanged();
             break;
           }
+          case GPU_UNPARTITIONED: {
+            setGpuUnpartitioned(other.getGpuUnpartitioned());
+            break;
+          }
           case GPU_PARTITION_SIZE: {
-            selectionCase_ = 2;
+            selectionCase_ = 3;
             selection_ = other.selection_;
             onChanged();
             break;
@@ -3016,18 +3027,48 @@ public final class Tasks {
       }
 
       /**
-       * <code>string gpu_partition_size = 2;</code>
+       * <code>bool gpu_unpartitioned = 2;</code>
+       */
+      public boolean getGpuUnpartitioned() {
+        if (selectionCase_ == 2) {
+          return (java.lang.Boolean) selection_;
+        }
+        return false;
+      }
+      /**
+       * <code>bool gpu_unpartitioned = 2;</code>
+       */
+      public Builder setGpuUnpartitioned(boolean value) {
+        selectionCase_ = 2;
+        selection_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>bool gpu_unpartitioned = 2;</code>
+       */
+      public Builder clearGpuUnpartitioned() {
+        if (selectionCase_ == 2) {
+          selectionCase_ = 0;
+          selection_ = null;
+          onChanged();
+        }
+        return this;
+      }
+
+      /**
+       * <code>string gpu_partition_size = 3;</code>
        */
       public java.lang.String getGpuPartitionSize() {
         java.lang.Object ref = "";
-        if (selectionCase_ == 2) {
+        if (selectionCase_ == 3) {
           ref = selection_;
         }
         if (!(ref instanceof java.lang.String)) {
           com.google.protobuf.ByteString bs =
               (com.google.protobuf.ByteString) ref;
           java.lang.String s = bs.toStringUtf8();
-          if (selectionCase_ == 2) {
+          if (selectionCase_ == 3) {
             selection_ = s;
           }
           return s;
@@ -3036,19 +3077,19 @@ public final class Tasks {
         }
       }
       /**
-       * <code>string gpu_partition_size = 2;</code>
+       * <code>string gpu_partition_size = 3;</code>
        */
       public com.google.protobuf.ByteString
           getGpuPartitionSizeBytes() {
         java.lang.Object ref = "";
-        if (selectionCase_ == 2) {
+        if (selectionCase_ == 3) {
           ref = selection_;
         }
         if (ref instanceof String) {
           com.google.protobuf.ByteString b = 
               com.google.protobuf.ByteString.copyFromUtf8(
                   (java.lang.String) ref);
-          if (selectionCase_ == 2) {
+          if (selectionCase_ == 3) {
             selection_ = b;
           }
           return b;
@@ -3057,23 +3098,23 @@ public final class Tasks {
         }
       }
       /**
-       * <code>string gpu_partition_size = 2;</code>
+       * <code>string gpu_partition_size = 3;</code>
        */
       public Builder setGpuPartitionSize(
           java.lang.String value) {
         if (value == null) {
     throw new NullPointerException();
   }
-  selectionCase_ = 2;
+  selectionCase_ = 3;
         selection_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>string gpu_partition_size = 2;</code>
+       * <code>string gpu_partition_size = 3;</code>
        */
       public Builder clearGpuPartitionSize() {
-        if (selectionCase_ == 2) {
+        if (selectionCase_ == 3) {
           selectionCase_ = 0;
           selection_ = null;
           onChanged();
@@ -3081,7 +3122,7 @@ public final class Tasks {
         return this;
       }
       /**
-       * <code>string gpu_partition_size = 2;</code>
+       * <code>string gpu_partition_size = 3;</code>
        */
       public Builder setGpuPartitionSizeBytes(
           com.google.protobuf.ByteString value) {
@@ -3089,34 +3130,8 @@ public final class Tasks {
     throw new NullPointerException();
   }
   checkByteStringIsUtf8(value);
-        selectionCase_ = 2;
+        selectionCase_ = 3;
         selection_ = value;
-        onChanged();
-        return this;
-      }
-
-      private boolean onlyPreferred_ ;
-      /**
-       * <code>bool only_preferred = 5;</code>
-       */
-      public boolean getOnlyPreferred() {
-        return onlyPreferred_;
-      }
-      /**
-       * <code>bool only_preferred = 5;</code>
-       */
-      public Builder setOnlyPreferred(boolean value) {
-        
-        onlyPreferred_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>bool only_preferred = 5;</code>
-       */
-      public Builder clearOnlyPreferred() {
-        
-        onlyPreferred_ = false;
         onChanged();
         return this;
       }
@@ -19925,80 +19940,80 @@ public final class Tasks {
       "re.Resources.ResourceName\022\r\n\005value\030\002 \001(\t" +
       "\"]\n\014ResourceName\022\013\n\007UNKNOWN\020\000\022\007\n\003CPU\020\001\022\007" +
       "\n\003GPU\020\002\022\n\n\006MEMORY\020\003\022\013\n\007STORAGE\020\004\022\025\n\021EPHE" +
-      "MERAL_STORAGE\020\005\"c\n\010Selector\022\024\n\ngpu_devic" +
-      "e\030\001 \001(\tH\000\022\034\n\022gpu_partition_size\030\002 \001(\tH\000\022" +
-      "\026\n\016only_preferred\030\005 \001(\010B\013\n\tselection\"\225\001\n" +
-      "\017RuntimeMetadata\0228\n\004type\030\001 \001(\0162*.flyteid" +
-      "l.core.RuntimeMetadata.RuntimeType\022\017\n\007ve" +
-      "rsion\030\002 \001(\t\022\016\n\006flavor\030\003 \001(\t\"\'\n\013RuntimeTy" +
-      "pe\022\t\n\005OTHER\020\000\022\r\n\tFLYTE_SDK\020\001\"\372\003\n\014TaskMet" +
-      "adata\022\024\n\014discoverable\030\001 \001(\010\022/\n\007runtime\030\002" +
-      " \001(\0132\036.flyteidl.core.RuntimeMetadata\022*\n\007" +
-      "timeout\030\004 \001(\0132\031.google.protobuf.Duration" +
-      "\022-\n\007retries\030\005 \001(\0132\034.flyteidl.core.RetryS" +
-      "trategy\022\031\n\021discovery_version\030\006 \001(\t\022 \n\030de" +
-      "precated_error_message\030\007 \001(\t\022\027\n\rinterrup" +
-      "tible\030\010 \001(\010H\000\022\032\n\022cache_serializable\030\t \001(" +
-      "\010\022\026\n\016generates_deck\030\n \001(\010\0223\n\004tags\030\013 \003(\0132" +
-      "%.flyteidl.core.TaskMetadata.TagsEntry\022\031" +
-      "\n\021pod_template_name\030\014 \001(\t\022*\n\tselectors\030\r" +
-      " \003(\0132\027.flyteidl.core.Selector\032+\n\tTagsEnt" +
-      "ry\022\013\n\003key\030\001 \001(\t\022\r\n\005value\030\002 \001(\t:\0028\001B\025\n\023in" +
-      "terruptible_value\"\220\004\n\014TaskTemplate\022%\n\002id" +
-      "\030\001 \001(\0132\031.flyteidl.core.Identifier\022\014\n\004typ" +
-      "e\030\002 \001(\t\022-\n\010metadata\030\003 \001(\0132\033.flyteidl.cor" +
-      "e.TaskMetadata\0220\n\tinterface\030\004 \001(\0132\035.flyt" +
-      "eidl.core.TypedInterface\022\'\n\006custom\030\005 \001(\013" +
-      "2\027.google.protobuf.Struct\022-\n\tcontainer\030\006" +
-      " \001(\0132\030.flyteidl.core.ContainerH\000\022(\n\007k8s_" +
-      "pod\030\021 \001(\0132\025.flyteidl.core.K8sPodH\000\022!\n\003sq" +
-      "l\030\022 \001(\0132\022.flyteidl.core.SqlH\000\022\031\n\021task_ty" +
-      "pe_version\030\007 \001(\005\0228\n\020security_context\030\010 \001" +
-      "(\0132\036.flyteidl.core.SecurityContext\0227\n\006co" +
-      "nfig\030\020 \003(\0132\'.flyteidl.core.TaskTemplate." +
-      "ConfigEntry\032-\n\013ConfigEntry\022\013\n\003key\030\001 \001(\t\022" +
-      "\r\n\005value\030\002 \001(\t:\0028\001B\010\n\006target\"\'\n\rContaine" +
-      "rPort\022\026\n\016container_port\030\001 \001(\r\"\255\003\n\tContai" +
-      "ner\022\r\n\005image\030\001 \001(\t\022\017\n\007command\030\002 \003(\t\022\014\n\004a" +
-      "rgs\030\003 \003(\t\022+\n\tresources\030\004 \001(\0132\030.flyteidl." +
-      "core.Resources\022(\n\003env\030\005 \003(\0132\033.flyteidl.c" +
-      "ore.KeyValuePair\022/\n\006config\030\006 \003(\0132\033.flyte" +
-      "idl.core.KeyValuePairB\002\030\001\022+\n\005ports\030\007 \003(\013" +
-      "2\034.flyteidl.core.ContainerPort\0225\n\013data_c" +
-      "onfig\030\t \001(\0132 .flyteidl.core.DataLoadingC" +
-      "onfig\022;\n\014architecture\030\n \001(\0162%.flyteidl.c" +
-      "ore.Container.Architecture\"I\n\014Architectu" +
-      "re\022\013\n\007UNKNOWN\020\000\022\t\n\005AMD64\020\001\022\t\n\005ARM64\020\002\022\n\n" +
-      "\006ARM_V6\020\003\022\n\n\006ARM_V7\020\004\"\233\002\n\nIOStrategy\022=\n\r" +
-      "download_mode\030\001 \001(\0162&.flyteidl.core.IOSt" +
-      "rategy.DownloadMode\0229\n\013upload_mode\030\002 \001(\016" +
-      "2$.flyteidl.core.IOStrategy.UploadMode\"L" +
-      "\n\014DownloadMode\022\022\n\016DOWNLOAD_EAGER\020\000\022\023\n\017DO" +
-      "WNLOAD_STREAM\020\001\022\023\n\017DO_NOT_DOWNLOAD\020\002\"E\n\n" +
-      "UploadMode\022\022\n\016UPLOAD_ON_EXIT\020\000\022\020\n\014UPLOAD" +
-      "_EAGER\020\001\022\021\n\rDO_NOT_UPLOAD\020\002\"\363\001\n\021DataLoad" +
-      "ingConfig\022\017\n\007enabled\030\001 \001(\010\022\022\n\ninput_path" +
-      "\030\002 \001(\t\022\023\n\013output_path\030\003 \001(\t\022A\n\006format\030\004 " +
-      "\001(\01621.flyteidl.core.DataLoadingConfig.Li" +
-      "teralMapFormat\022.\n\013io_strategy\030\005 \001(\0132\031.fl" +
-      "yteidl.core.IOStrategy\"1\n\020LiteralMapForm" +
-      "at\022\010\n\004JSON\020\000\022\010\n\004YAML\020\001\022\t\n\005PROTO\020\002\"\236\001\n\006K8" +
-      "sPod\0222\n\010metadata\030\001 \001(\0132 .flyteidl.core.K" +
-      "8sObjectMetadata\022)\n\010pod_spec\030\002 \001(\0132\027.goo" +
-      "gle.protobuf.Struct\0225\n\013data_config\030\003 \001(\013" +
-      "2 .flyteidl.core.DataLoadingConfig\"\374\001\n\021K" +
-      "8sObjectMetadata\022<\n\006labels\030\001 \003(\0132,.flyte" +
-      "idl.core.K8sObjectMetadata.LabelsEntry\022F" +
-      "\n\013annotations\030\002 \003(\01321.flyteidl.core.K8sO" +
-      "bjectMetadata.AnnotationsEntry\032-\n\013Labels" +
-      "Entry\022\013\n\003key\030\001 \001(\t\022\r\n\005value\030\002 \001(\t:\0028\001\0322\n" +
-      "\020AnnotationsEntry\022\013\n\003key\030\001 \001(\t\022\r\n\005value\030" +
-      "\002 \001(\t:\0028\001\"~\n\003Sql\022\021\n\tstatement\030\001 \001(\t\022+\n\007d" +
-      "ialect\030\002 \001(\0162\032.flyteidl.core.Sql.Dialect" +
-      "\"7\n\007Dialect\022\r\n\tUNDEFINED\020\000\022\010\n\004ANSI\020\001\022\010\n\004" +
-      "HIVE\020\002\022\t\n\005OTHER\020\003B6Z4github.com/flyteorg" +
-      "/flyteidl/gen/pb-go/flyteidl/coreb\006proto" +
-      "3"
+      "MERAL_STORAGE\020\005\"h\n\010Selector\022\024\n\ngpu_devic" +
+      "e\030\001 \001(\tH\000\022\033\n\021gpu_unpartitioned\030\002 \001(\010H\000\022\034" +
+      "\n\022gpu_partition_size\030\003 \001(\tH\000B\013\n\tselectio" +
+      "n\"\225\001\n\017RuntimeMetadata\0228\n\004type\030\001 \001(\0162*.fl" +
+      "yteidl.core.RuntimeMetadata.RuntimeType\022" +
+      "\017\n\007version\030\002 \001(\t\022\016\n\006flavor\030\003 \001(\t\"\'\n\013Runt" +
+      "imeType\022\t\n\005OTHER\020\000\022\r\n\tFLYTE_SDK\020\001\"\372\003\n\014Ta" +
+      "skMetadata\022\024\n\014discoverable\030\001 \001(\010\022/\n\007runt" +
+      "ime\030\002 \001(\0132\036.flyteidl.core.RuntimeMetadat" +
+      "a\022*\n\007timeout\030\004 \001(\0132\031.google.protobuf.Dur" +
+      "ation\022-\n\007retries\030\005 \001(\0132\034.flyteidl.core.R" +
+      "etryStrategy\022\031\n\021discovery_version\030\006 \001(\t\022" +
+      " \n\030deprecated_error_message\030\007 \001(\t\022\027\n\rint" +
+      "erruptible\030\010 \001(\010H\000\022\032\n\022cache_serializable" +
+      "\030\t \001(\010\022\026\n\016generates_deck\030\n \001(\010\0223\n\004tags\030\013" +
+      " \003(\0132%.flyteidl.core.TaskMetadata.TagsEn" +
+      "try\022\031\n\021pod_template_name\030\014 \001(\t\022*\n\tselect" +
+      "ors\030\r \003(\0132\027.flyteidl.core.Selector\032+\n\tTa" +
+      "gsEntry\022\013\n\003key\030\001 \001(\t\022\r\n\005value\030\002 \001(\t:\0028\001B" +
+      "\025\n\023interruptible_value\"\220\004\n\014TaskTemplate\022" +
+      "%\n\002id\030\001 \001(\0132\031.flyteidl.core.Identifier\022\014" +
+      "\n\004type\030\002 \001(\t\022-\n\010metadata\030\003 \001(\0132\033.flyteid" +
+      "l.core.TaskMetadata\0220\n\tinterface\030\004 \001(\0132\035" +
+      ".flyteidl.core.TypedInterface\022\'\n\006custom\030" +
+      "\005 \001(\0132\027.google.protobuf.Struct\022-\n\tcontai" +
+      "ner\030\006 \001(\0132\030.flyteidl.core.ContainerH\000\022(\n" +
+      "\007k8s_pod\030\021 \001(\0132\025.flyteidl.core.K8sPodH\000\022" +
+      "!\n\003sql\030\022 \001(\0132\022.flyteidl.core.SqlH\000\022\031\n\021ta" +
+      "sk_type_version\030\007 \001(\005\0228\n\020security_contex" +
+      "t\030\010 \001(\0132\036.flyteidl.core.SecurityContext\022" +
+      "7\n\006config\030\020 \003(\0132\'.flyteidl.core.TaskTemp" +
+      "late.ConfigEntry\032-\n\013ConfigEntry\022\013\n\003key\030\001" +
+      " \001(\t\022\r\n\005value\030\002 \001(\t:\0028\001B\010\n\006target\"\'\n\rCon" +
+      "tainerPort\022\026\n\016container_port\030\001 \001(\r\"\255\003\n\tC" +
+      "ontainer\022\r\n\005image\030\001 \001(\t\022\017\n\007command\030\002 \003(\t" +
+      "\022\014\n\004args\030\003 \003(\t\022+\n\tresources\030\004 \001(\0132\030.flyt" +
+      "eidl.core.Resources\022(\n\003env\030\005 \003(\0132\033.flyte" +
+      "idl.core.KeyValuePair\022/\n\006config\030\006 \003(\0132\033." +
+      "flyteidl.core.KeyValuePairB\002\030\001\022+\n\005ports\030" +
+      "\007 \003(\0132\034.flyteidl.core.ContainerPort\0225\n\013d" +
+      "ata_config\030\t \001(\0132 .flyteidl.core.DataLoa" +
+      "dingConfig\022;\n\014architecture\030\n \001(\0162%.flyte" +
+      "idl.core.Container.Architecture\"I\n\014Archi" +
+      "tecture\022\013\n\007UNKNOWN\020\000\022\t\n\005AMD64\020\001\022\t\n\005ARM64" +
+      "\020\002\022\n\n\006ARM_V6\020\003\022\n\n\006ARM_V7\020\004\"\233\002\n\nIOStrateg" +
+      "y\022=\n\rdownload_mode\030\001 \001(\0162&.flyteidl.core" +
+      ".IOStrategy.DownloadMode\0229\n\013upload_mode\030" +
+      "\002 \001(\0162$.flyteidl.core.IOStrategy.UploadM" +
+      "ode\"L\n\014DownloadMode\022\022\n\016DOWNLOAD_EAGER\020\000\022" +
+      "\023\n\017DOWNLOAD_STREAM\020\001\022\023\n\017DO_NOT_DOWNLOAD\020" +
+      "\002\"E\n\nUploadMode\022\022\n\016UPLOAD_ON_EXIT\020\000\022\020\n\014U" +
+      "PLOAD_EAGER\020\001\022\021\n\rDO_NOT_UPLOAD\020\002\"\363\001\n\021Dat" +
+      "aLoadingConfig\022\017\n\007enabled\030\001 \001(\010\022\022\n\ninput" +
+      "_path\030\002 \001(\t\022\023\n\013output_path\030\003 \001(\t\022A\n\006form" +
+      "at\030\004 \001(\01621.flyteidl.core.DataLoadingConf" +
+      "ig.LiteralMapFormat\022.\n\013io_strategy\030\005 \001(\013" +
+      "2\031.flyteidl.core.IOStrategy\"1\n\020LiteralMa" +
+      "pFormat\022\010\n\004JSON\020\000\022\010\n\004YAML\020\001\022\t\n\005PROTO\020\002\"\236" +
+      "\001\n\006K8sPod\0222\n\010metadata\030\001 \001(\0132 .flyteidl.c" +
+      "ore.K8sObjectMetadata\022)\n\010pod_spec\030\002 \001(\0132" +
+      "\027.google.protobuf.Struct\0225\n\013data_config\030" +
+      "\003 \001(\0132 .flyteidl.core.DataLoadingConfig\"" +
+      "\374\001\n\021K8sObjectMetadata\022<\n\006labels\030\001 \003(\0132,." +
+      "flyteidl.core.K8sObjectMetadata.LabelsEn" +
+      "try\022F\n\013annotations\030\002 \003(\01321.flyteidl.core" +
+      ".K8sObjectMetadata.AnnotationsEntry\032-\n\013L" +
+      "abelsEntry\022\013\n\003key\030\001 \001(\t\022\r\n\005value\030\002 \001(\t:\002" +
+      "8\001\0322\n\020AnnotationsEntry\022\013\n\003key\030\001 \001(\t\022\r\n\005v" +
+      "alue\030\002 \001(\t:\0028\001\"~\n\003Sql\022\021\n\tstatement\030\001 \001(\t" +
+      "\022+\n\007dialect\030\002 \001(\0162\032.flyteidl.core.Sql.Di" +
+      "alect\"7\n\007Dialect\022\r\n\tUNDEFINED\020\000\022\010\n\004ANSI\020" +
+      "\001\022\010\n\004HIVE\020\002\022\t\n\005OTHER\020\003B6Z4github.com/fly" +
+      "teorg/flyteidl/gen/pb-go/flyteidl/coreb\006" +
+      "proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
@@ -20035,7 +20050,7 @@ public final class Tasks {
     internal_static_flyteidl_core_Selector_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_flyteidl_core_Selector_descriptor,
-        new java.lang.String[] { "GpuDevice", "GpuPartitionSize", "OnlyPreferred", "Selection", });
+        new java.lang.String[] { "GpuDevice", "GpuUnpartitioned", "GpuPartitionSize", "Selection", });
     internal_static_flyteidl_core_RuntimeMetadata_descriptor =
       getDescriptor().getMessageTypes().get(2);
     internal_static_flyteidl_core_RuntimeMetadata_fieldAccessorTable = new
