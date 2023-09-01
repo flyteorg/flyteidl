@@ -44,13 +44,10 @@ message Resources {
 }
 
 message Selector {
-
     oneof selection {
         string gpu_device = 1;
         string gpu_partition_size = 2;
     }
-
-    bool only_preferred = 5;
 }
 
 
