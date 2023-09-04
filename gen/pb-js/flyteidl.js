@@ -7595,7 +7595,6 @@
                  * @property {flyteidl.core.ILiteralMap|null} [map] Literal map
                  * @property {string|null} [hash] Literal hash
                  * @property {Object.<string,string>|null} [metadata] Literal metadata
-                 * @property {flyteidl.core.ILiteralType|null} [literalType] Literal literalType
                  */
     
                 /**
@@ -7654,14 +7653,6 @@
                  */
                 Literal.prototype.metadata = $util.emptyObject;
     
-                /**
-                 * Literal literalType.
-                 * @member {flyteidl.core.ILiteralType|null|undefined} literalType
-                 * @memberof flyteidl.core.Literal
-                 * @instance
-                 */
-                Literal.prototype.literalType = null;
-    
                 // OneOf field names bound to virtual getters and setters
                 var $oneOfFields;
     
@@ -7711,8 +7702,6 @@
                     if (message.metadata != null && message.hasOwnProperty("metadata"))
                         for (var keys = Object.keys(message.metadata), i = 0; i < keys.length; ++i)
                             writer.uint32(/* id 5, wireType 2 =*/42).fork().uint32(/* id 1, wireType 2 =*/10).string(keys[i]).uint32(/* id 2, wireType 2 =*/18).string(message.metadata[keys[i]]).ldelim();
-                    if (message.literalType != null && message.hasOwnProperty("literalType"))
-                        $root.flyteidl.core.LiteralType.encode(message.literalType, writer.uint32(/* id 6, wireType 2 =*/50).fork()).ldelim();
                     return writer;
                 };
     
@@ -7753,9 +7742,6 @@
                             key = reader.string();
                             reader.pos++;
                             message.metadata[key] = reader.string();
-                            break;
-                        case 6:
-                            message.literalType = $root.flyteidl.core.LiteralType.decode(reader, reader.uint32());
                             break;
                         default:
                             reader.skipType(tag & 7);
@@ -7815,11 +7801,6 @@
                         for (var i = 0; i < key.length; ++i)
                             if (!$util.isString(message.metadata[key[i]]))
                                 return "metadata: string{k:string} expected";
-                    }
-                    if (message.literalType != null && message.hasOwnProperty("literalType")) {
-                        var error = $root.flyteidl.core.LiteralType.verify(message.literalType);
-                        if (error)
-                            return "literalType." + error;
                     }
                     return null;
                 };
@@ -17405,6 +17386,208 @@
                 };
     
                 return CloudEventTaskExecution;
+            })();
+    
+            event.CloudEventExecutionStart = (function() {
+    
+                /**
+                 * Properties of a CloudEventExecutionStart.
+                 * @memberof flyteidl.event
+                 * @interface ICloudEventExecutionStart
+                 * @property {flyteidl.core.IWorkflowExecutionIdentifier|null} [executionId] CloudEventExecutionStart executionId
+                 * @property {flyteidl.core.IIdentifier|null} [launchPlanId] CloudEventExecutionStart launchPlanId
+                 * @property {flyteidl.core.IIdentifier|null} [workflowId] CloudEventExecutionStart workflowId
+                 * @property {Array.<flyteidl.core.IArtifactID>|null} [artifactIds] CloudEventExecutionStart artifactIds
+                 * @property {Array.<string>|null} [artifactKeys] CloudEventExecutionStart artifactKeys
+                 */
+    
+                /**
+                 * Constructs a new CloudEventExecutionStart.
+                 * @memberof flyteidl.event
+                 * @classdesc Represents a CloudEventExecutionStart.
+                 * @implements ICloudEventExecutionStart
+                 * @constructor
+                 * @param {flyteidl.event.ICloudEventExecutionStart=} [properties] Properties to set
+                 */
+                function CloudEventExecutionStart(properties) {
+                    this.artifactIds = [];
+                    this.artifactKeys = [];
+                    if (properties)
+                        for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                            if (properties[keys[i]] != null)
+                                this[keys[i]] = properties[keys[i]];
+                }
+    
+                /**
+                 * CloudEventExecutionStart executionId.
+                 * @member {flyteidl.core.IWorkflowExecutionIdentifier|null|undefined} executionId
+                 * @memberof flyteidl.event.CloudEventExecutionStart
+                 * @instance
+                 */
+                CloudEventExecutionStart.prototype.executionId = null;
+    
+                /**
+                 * CloudEventExecutionStart launchPlanId.
+                 * @member {flyteidl.core.IIdentifier|null|undefined} launchPlanId
+                 * @memberof flyteidl.event.CloudEventExecutionStart
+                 * @instance
+                 */
+                CloudEventExecutionStart.prototype.launchPlanId = null;
+    
+                /**
+                 * CloudEventExecutionStart workflowId.
+                 * @member {flyteidl.core.IIdentifier|null|undefined} workflowId
+                 * @memberof flyteidl.event.CloudEventExecutionStart
+                 * @instance
+                 */
+                CloudEventExecutionStart.prototype.workflowId = null;
+    
+                /**
+                 * CloudEventExecutionStart artifactIds.
+                 * @member {Array.<flyteidl.core.IArtifactID>} artifactIds
+                 * @memberof flyteidl.event.CloudEventExecutionStart
+                 * @instance
+                 */
+                CloudEventExecutionStart.prototype.artifactIds = $util.emptyArray;
+    
+                /**
+                 * CloudEventExecutionStart artifactKeys.
+                 * @member {Array.<string>} artifactKeys
+                 * @memberof flyteidl.event.CloudEventExecutionStart
+                 * @instance
+                 */
+                CloudEventExecutionStart.prototype.artifactKeys = $util.emptyArray;
+    
+                /**
+                 * Creates a new CloudEventExecutionStart instance using the specified properties.
+                 * @function create
+                 * @memberof flyteidl.event.CloudEventExecutionStart
+                 * @static
+                 * @param {flyteidl.event.ICloudEventExecutionStart=} [properties] Properties to set
+                 * @returns {flyteidl.event.CloudEventExecutionStart} CloudEventExecutionStart instance
+                 */
+                CloudEventExecutionStart.create = function create(properties) {
+                    return new CloudEventExecutionStart(properties);
+                };
+    
+                /**
+                 * Encodes the specified CloudEventExecutionStart message. Does not implicitly {@link flyteidl.event.CloudEventExecutionStart.verify|verify} messages.
+                 * @function encode
+                 * @memberof flyteidl.event.CloudEventExecutionStart
+                 * @static
+                 * @param {flyteidl.event.ICloudEventExecutionStart} message CloudEventExecutionStart message or plain object to encode
+                 * @param {$protobuf.Writer} [writer] Writer to encode to
+                 * @returns {$protobuf.Writer} Writer
+                 */
+                CloudEventExecutionStart.encode = function encode(message, writer) {
+                    if (!writer)
+                        writer = $Writer.create();
+                    if (message.executionId != null && message.hasOwnProperty("executionId"))
+                        $root.flyteidl.core.WorkflowExecutionIdentifier.encode(message.executionId, writer.uint32(/* id 1, wireType 2 =*/10).fork()).ldelim();
+                    if (message.launchPlanId != null && message.hasOwnProperty("launchPlanId"))
+                        $root.flyteidl.core.Identifier.encode(message.launchPlanId, writer.uint32(/* id 2, wireType 2 =*/18).fork()).ldelim();
+                    if (message.workflowId != null && message.hasOwnProperty("workflowId"))
+                        $root.flyteidl.core.Identifier.encode(message.workflowId, writer.uint32(/* id 3, wireType 2 =*/26).fork()).ldelim();
+                    if (message.artifactIds != null && message.artifactIds.length)
+                        for (var i = 0; i < message.artifactIds.length; ++i)
+                            $root.flyteidl.core.ArtifactID.encode(message.artifactIds[i], writer.uint32(/* id 4, wireType 2 =*/34).fork()).ldelim();
+                    if (message.artifactKeys != null && message.artifactKeys.length)
+                        for (var i = 0; i < message.artifactKeys.length; ++i)
+                            writer.uint32(/* id 5, wireType 2 =*/42).string(message.artifactKeys[i]);
+                    return writer;
+                };
+    
+                /**
+                 * Decodes a CloudEventExecutionStart message from the specified reader or buffer.
+                 * @function decode
+                 * @memberof flyteidl.event.CloudEventExecutionStart
+                 * @static
+                 * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+                 * @param {number} [length] Message length if known beforehand
+                 * @returns {flyteidl.event.CloudEventExecutionStart} CloudEventExecutionStart
+                 * @throws {Error} If the payload is not a reader or valid buffer
+                 * @throws {$protobuf.util.ProtocolError} If required fields are missing
+                 */
+                CloudEventExecutionStart.decode = function decode(reader, length) {
+                    if (!(reader instanceof $Reader))
+                        reader = $Reader.create(reader);
+                    var end = length === undefined ? reader.len : reader.pos + length, message = new $root.flyteidl.event.CloudEventExecutionStart();
+                    while (reader.pos < end) {
+                        var tag = reader.uint32();
+                        switch (tag >>> 3) {
+                        case 1:
+                            message.executionId = $root.flyteidl.core.WorkflowExecutionIdentifier.decode(reader, reader.uint32());
+                            break;
+                        case 2:
+                            message.launchPlanId = $root.flyteidl.core.Identifier.decode(reader, reader.uint32());
+                            break;
+                        case 3:
+                            message.workflowId = $root.flyteidl.core.Identifier.decode(reader, reader.uint32());
+                            break;
+                        case 4:
+                            if (!(message.artifactIds && message.artifactIds.length))
+                                message.artifactIds = [];
+                            message.artifactIds.push($root.flyteidl.core.ArtifactID.decode(reader, reader.uint32()));
+                            break;
+                        case 5:
+                            if (!(message.artifactKeys && message.artifactKeys.length))
+                                message.artifactKeys = [];
+                            message.artifactKeys.push(reader.string());
+                            break;
+                        default:
+                            reader.skipType(tag & 7);
+                            break;
+                        }
+                    }
+                    return message;
+                };
+    
+                /**
+                 * Verifies a CloudEventExecutionStart message.
+                 * @function verify
+                 * @memberof flyteidl.event.CloudEventExecutionStart
+                 * @static
+                 * @param {Object.<string,*>} message Plain object to verify
+                 * @returns {string|null} `null` if valid, otherwise the reason why it is not
+                 */
+                CloudEventExecutionStart.verify = function verify(message) {
+                    if (typeof message !== "object" || message === null)
+                        return "object expected";
+                    if (message.executionId != null && message.hasOwnProperty("executionId")) {
+                        var error = $root.flyteidl.core.WorkflowExecutionIdentifier.verify(message.executionId);
+                        if (error)
+                            return "executionId." + error;
+                    }
+                    if (message.launchPlanId != null && message.hasOwnProperty("launchPlanId")) {
+                        var error = $root.flyteidl.core.Identifier.verify(message.launchPlanId);
+                        if (error)
+                            return "launchPlanId." + error;
+                    }
+                    if (message.workflowId != null && message.hasOwnProperty("workflowId")) {
+                        var error = $root.flyteidl.core.Identifier.verify(message.workflowId);
+                        if (error)
+                            return "workflowId." + error;
+                    }
+                    if (message.artifactIds != null && message.hasOwnProperty("artifactIds")) {
+                        if (!Array.isArray(message.artifactIds))
+                            return "artifactIds: array expected";
+                        for (var i = 0; i < message.artifactIds.length; ++i) {
+                            var error = $root.flyteidl.core.ArtifactID.verify(message.artifactIds[i]);
+                            if (error)
+                                return "artifactIds." + error;
+                        }
+                    }
+                    if (message.artifactKeys != null && message.hasOwnProperty("artifactKeys")) {
+                        if (!Array.isArray(message.artifactKeys))
+                            return "artifactKeys: array expected";
+                        for (var i = 0; i < message.artifactKeys.length; ++i)
+                            if (!$util.isString(message.artifactKeys[i]))
+                                return "artifactKeys: string[] expected";
+                    }
+                    return null;
+                };
+    
+                return CloudEventExecutionStart;
             })();
     
             event.ArtifactCreateEvent = (function() {

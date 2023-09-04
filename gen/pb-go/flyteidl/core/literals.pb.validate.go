@@ -926,16 +926,6 @@ func (m *Literal) Validate() error {
 
 	// no validation rules for Metadata
 
-	if v, ok := interface{}(m.GetLiteralType()).(interface{ Validate() error }); ok {
-		if err := v.Validate(); err != nil {
-			return LiteralValidationError{
-				field:  "LiteralType",
-				reason: "embedded message failed validation",
-				cause:  err,
-			}
-		}
-	}
-
 	switch m.Value.(type) {
 
 	case *Literal_Scalar:

@@ -4967,57 +4967,6 @@ definitions:
                 map:
                   literals: {}
                 hash: "hash"
-                literal_type:
-                  schema:
-                    columns:
-                    - name: "name"
-                      type: {}
-                    - name: "name"
-                      type: {}
-                  annotation:
-                    annotations:
-                      fields:
-                        key:
-                          list_value:
-                            values:
-                            - null
-                            - null
-                          number_value: 6.027456183070403
-                          string_value: "string_value"
-                          null_value: {}
-                          bool_value: true
-                  structured_dataset_type:
-                    external_schema_type: "external_schema_type"
-                    columns:
-                    - name: "name"
-                    - name: "name"
-                    format: "format"
-                    external_schema_bytes: "external_schema_bytes"
-                  metadata:
-                    fields:
-                      key:
-                        list_value:
-                          values:
-                          - null
-                          - null
-                        number_value: 6.027456183070403
-                        string_value: "string_value"
-                        null_value: {}
-                        bool_value: true
-                  blob:
-                    dimensionality: {}
-                    format: "format"
-                  enum_type:
-                    values:
-                    - "values"
-                    - "values"
-                  union_type:
-                    variants:
-                    - null
-                    - null
-                  simple: {}
-                  structure:
-                    tag: "tag"
               var:
                 description: "description"
                 artifact_partial_id:
@@ -5303,57 +5252,6 @@ definitions:
                 map:
                   literals: {}
                 hash: "hash"
-                literal_type:
-                  schema:
-                    columns:
-                    - name: "name"
-                      type: {}
-                    - name: "name"
-                      type: {}
-                  annotation:
-                    annotations:
-                      fields:
-                        key:
-                          list_value:
-                            values:
-                            - null
-                            - null
-                          number_value: 6.027456183070403
-                          string_value: "string_value"
-                          null_value: {}
-                          bool_value: true
-                  structured_dataset_type:
-                    external_schema_type: "external_schema_type"
-                    columns:
-                    - name: "name"
-                    - name: "name"
-                    format: "format"
-                    external_schema_bytes: "external_schema_bytes"
-                  metadata:
-                    fields:
-                      key:
-                        list_value:
-                          values:
-                          - null
-                          - null
-                        number_value: 6.027456183070403
-                        string_value: "string_value"
-                        null_value: {}
-                        bool_value: true
-                  blob:
-                    dimensionality: {}
-                    format: "format"
-                  enum_type:
-                    values:
-                    - "values"
-                    - "values"
-                  union_type:
-                    variants:
-                    - null
-                    - null
-                  simple: {}
-                  structure:
-                    tag: "tag"
               var:
                 description: "description"
                 artifact_partial_id:
@@ -5711,57 +5609,6 @@ definitions:
               map:
                 literals: {}
               hash: "hash"
-              literal_type:
-                schema:
-                  columns:
-                  - name: "name"
-                    type: {}
-                  - name: "name"
-                    type: {}
-                annotation:
-                  annotations:
-                    fields:
-                      key:
-                        list_value:
-                          values:
-                          - null
-                          - null
-                        number_value: 6.027456183070403
-                        string_value: "string_value"
-                        null_value: {}
-                        bool_value: true
-                structured_dataset_type:
-                  external_schema_type: "external_schema_type"
-                  columns:
-                  - name: "name"
-                  - name: "name"
-                  format: "format"
-                  external_schema_bytes: "external_schema_bytes"
-                metadata:
-                  fields:
-                    key:
-                      list_value:
-                        values:
-                        - null
-                        - null
-                      number_value: 6.027456183070403
-                      string_value: "string_value"
-                      null_value: {}
-                      bool_value: true
-                blob:
-                  dimensionality: {}
-                  format: "format"
-                enum_type:
-                  values:
-                  - "values"
-                  - "values"
-                union_type:
-                  variants:
-                  - null
-                  - null
-                simple: {}
-                structure:
-                  tag: "tag"
             var:
               description: "description"
               artifact_partial_id:
@@ -6085,57 +5932,6 @@ definitions:
                   map:
                     literals: {}
                   hash: "hash"
-                  literal_type:
-                    schema:
-                      columns:
-                      - name: "name"
-                        type: {}
-                      - name: "name"
-                        type: {}
-                    annotation:
-                      annotations:
-                        fields:
-                          key:
-                            list_value:
-                              values:
-                              - null
-                              - null
-                            number_value: 6.027456183070403
-                            string_value: "string_value"
-                            null_value: {}
-                            bool_value: true
-                    structured_dataset_type:
-                      external_schema_type: "external_schema_type"
-                      columns:
-                      - name: "name"
-                      - name: "name"
-                      format: "format"
-                      external_schema_bytes: "external_schema_bytes"
-                    metadata:
-                      fields:
-                        key:
-                          list_value:
-                            values:
-                            - null
-                            - null
-                          number_value: 6.027456183070403
-                          string_value: "string_value"
-                          null_value: {}
-                          bool_value: true
-                    blob:
-                      dimensionality: {}
-                      format: "format"
-                    enum_type:
-                      values:
-                      - "values"
-                      - "values"
-                    union_type:
-                      variants:
-                      - null
-                      - null
-                    simple: {}
-                    structure:
-                      tag: "tag"
                 var:
                   description: "description"
                   artifact_partial_id:
@@ -6421,57 +6217,6 @@ definitions:
                   map:
                     literals: {}
                   hash: "hash"
-                  literal_type:
-                    schema:
-                      columns:
-                      - name: "name"
-                        type: {}
-                      - name: "name"
-                        type: {}
-                    annotation:
-                      annotations:
-                        fields:
-                          key:
-                            list_value:
-                              values:
-                              - null
-                              - null
-                            number_value: 6.027456183070403
-                            string_value: "string_value"
-                            null_value: {}
-                            bool_value: true
-                    structured_dataset_type:
-                      external_schema_type: "external_schema_type"
-                      columns:
-                      - name: "name"
-                      - name: "name"
-                      format: "format"
-                      external_schema_bytes: "external_schema_bytes"
-                    metadata:
-                      fields:
-                        key:
-                          list_value:
-                            values:
-                            - null
-                            - null
-                          number_value: 6.027456183070403
-                          string_value: "string_value"
-                          null_value: {}
-                          bool_value: true
-                    blob:
-                      dimensionality: {}
-                      format: "format"
-                    enum_type:
-                      values:
-                      - "values"
-                      - "values"
-                    union_type:
-                      variants:
-                      - null
-                      - null
-                    simple: {}
-                    structure:
-                      tag: "tag"
                 var:
                   description: "description"
                   artifact_partial_id:
@@ -6809,57 +6554,6 @@ definitions:
                   map:
                     literals: {}
                   hash: "hash"
-                  literal_type:
-                    schema:
-                      columns:
-                      - name: "name"
-                        type: {}
-                      - name: "name"
-                        type: {}
-                    annotation:
-                      annotations:
-                        fields:
-                          key:
-                            list_value:
-                              values:
-                              - null
-                              - null
-                            number_value: 6.027456183070403
-                            string_value: "string_value"
-                            null_value: {}
-                            bool_value: true
-                    structured_dataset_type:
-                      external_schema_type: "external_schema_type"
-                      columns:
-                      - name: "name"
-                      - name: "name"
-                      format: "format"
-                      external_schema_bytes: "external_schema_bytes"
-                    metadata:
-                      fields:
-                        key:
-                          list_value:
-                            values:
-                            - null
-                            - null
-                          number_value: 6.027456183070403
-                          string_value: "string_value"
-                          null_value: {}
-                          bool_value: true
-                    blob:
-                      dimensionality: {}
-                      format: "format"
-                    enum_type:
-                      values:
-                      - "values"
-                      - "values"
-                    union_type:
-                      variants:
-                      - null
-                      - null
-                    simple: {}
-                    structure:
-                      tag: "tag"
                 var:
                   description: "description"
                   artifact_partial_id:
@@ -7145,57 +6839,6 @@ definitions:
                   map:
                     literals: {}
                   hash: "hash"
-                  literal_type:
-                    schema:
-                      columns:
-                      - name: "name"
-                        type: {}
-                      - name: "name"
-                        type: {}
-                    annotation:
-                      annotations:
-                        fields:
-                          key:
-                            list_value:
-                              values:
-                              - null
-                              - null
-                            number_value: 6.027456183070403
-                            string_value: "string_value"
-                            null_value: {}
-                            bool_value: true
-                    structured_dataset_type:
-                      external_schema_type: "external_schema_type"
-                      columns:
-                      - name: "name"
-                      - name: "name"
-                      format: "format"
-                      external_schema_bytes: "external_schema_bytes"
-                    metadata:
-                      fields:
-                        key:
-                          list_value:
-                            values:
-                            - null
-                            - null
-                          number_value: 6.027456183070403
-                          string_value: "string_value"
-                          null_value: {}
-                          bool_value: true
-                    blob:
-                      dimensionality: {}
-                      format: "format"
-                    enum_type:
-                      values:
-                      - "values"
-                      - "values"
-                    union_type:
-                      variants:
-                      - null
-                      - null
-                    simple: {}
-                    structure:
-                      tag: "tag"
                 var:
                   description: "description"
                   artifact_partial_id:
@@ -7652,57 +7295,6 @@ definitions:
               map:
                 literals: {}
               hash: "hash"
-              literal_type:
-                schema:
-                  columns:
-                  - name: "name"
-                    type: {}
-                  - name: "name"
-                    type: {}
-                annotation:
-                  annotations:
-                    fields:
-                      key:
-                        list_value:
-                          values:
-                          - null
-                          - null
-                        number_value: 6.027456183070403
-                        string_value: "string_value"
-                        null_value: {}
-                        bool_value: true
-                structured_dataset_type:
-                  external_schema_type: "external_schema_type"
-                  columns:
-                  - name: "name"
-                  - name: "name"
-                  format: "format"
-                  external_schema_bytes: "external_schema_bytes"
-                metadata:
-                  fields:
-                    key:
-                      list_value:
-                        values:
-                        - null
-                        - null
-                      number_value: 6.027456183070403
-                      string_value: "string_value"
-                      null_value: {}
-                      bool_value: true
-                blob:
-                  dimensionality: {}
-                  format: "format"
-                enum_type:
-                  values:
-                  - "values"
-                  - "values"
-                union_type:
-                  variants:
-                  - null
-                  - null
-                simple: {}
-                structure:
-                  tag: "tag"
             var:
               description: "description"
               artifact_partial_id:
@@ -56311,11 +55903,6 @@ definitions:
           \ here as a way to keep track of lineage\nBut this was deemed too janky."
         additionalProperties:
           type: "string"
-      literal_type:
-        title: "Rejected: We were going to add the literal type here because we decided\
-          \ it was general enough, but this\nis a lot of work to update everything.\
-          \ Can we think of an easier way?"
-        $ref: "#/definitions/coreLiteralType"
     description: "A simple value. This supports any level of nesting (e.g. array of\
       \ array of array of Blobs) as well as simple primitives."
     example:
@@ -56430,57 +56017,6 @@ definitions:
       map:
         literals: {}
       hash: "hash"
-      literal_type:
-        schema:
-          columns:
-          - name: "name"
-            type: {}
-          - name: "name"
-            type: {}
-        annotation:
-          annotations:
-            fields:
-              key:
-                list_value:
-                  values:
-                  - null
-                  - null
-                number_value: 6.027456183070403
-                string_value: "string_value"
-                null_value: {}
-                bool_value: true
-        structured_dataset_type:
-          external_schema_type: "external_schema_type"
-          columns:
-          - name: "name"
-          - name: "name"
-          format: "format"
-          external_schema_bytes: "external_schema_bytes"
-        metadata:
-          fields:
-            key:
-              list_value:
-                values:
-                - null
-                - null
-              number_value: 6.027456183070403
-              string_value: "string_value"
-              null_value: {}
-              bool_value: true
-        blob:
-          dimensionality: {}
-          format: "format"
-        enum_type:
-          values:
-          - "values"
-          - "values"
-        union_type:
-          variants:
-          - null
-          - null
-        simple: {}
-        structure:
-          tag: "tag"
   coreLiteralCollection:
     type: "object"
     properties:
@@ -57459,57 +56995,6 @@ definitions:
         map:
           literals: {}
         hash: "hash"
-        literal_type:
-          schema:
-            columns:
-            - name: "name"
-              type: {}
-            - name: "name"
-              type: {}
-          annotation:
-            annotations:
-              fields:
-                key:
-                  list_value:
-                    values:
-                    - null
-                    - null
-                  number_value: 6.027456183070403
-                  string_value: "string_value"
-                  null_value: {}
-                  bool_value: true
-          structured_dataset_type:
-            external_schema_type: "external_schema_type"
-            columns:
-            - name: "name"
-            - name: "name"
-            format: "format"
-            external_schema_bytes: "external_schema_bytes"
-          metadata:
-            fields:
-              key:
-                list_value:
-                  values:
-                  - null
-                  - null
-                number_value: 6.027456183070403
-                string_value: "string_value"
-                null_value: {}
-                bool_value: true
-          blob:
-            dimensionality: {}
-            format: "format"
-          enum_type:
-            values:
-            - "values"
-            - "values"
-          union_type:
-            variants:
-            - null
-            - null
-          simple: {}
-          structure:
-            tag: "tag"
       var:
         description: "description"
         artifact_partial_id:
@@ -57729,57 +57214,6 @@ definitions:
             map:
               literals: {}
             hash: "hash"
-            literal_type:
-              schema:
-                columns:
-                - name: "name"
-                  type: {}
-                - name: "name"
-                  type: {}
-              annotation:
-                annotations:
-                  fields:
-                    key:
-                      list_value:
-                        values:
-                        - null
-                        - null
-                      number_value: 6.027456183070403
-                      string_value: "string_value"
-                      null_value: {}
-                      bool_value: true
-              structured_dataset_type:
-                external_schema_type: "external_schema_type"
-                columns:
-                - name: "name"
-                - name: "name"
-                format: "format"
-                external_schema_bytes: "external_schema_bytes"
-              metadata:
-                fields:
-                  key:
-                    list_value:
-                      values:
-                      - null
-                      - null
-                    number_value: 6.027456183070403
-                    string_value: "string_value"
-                    null_value: {}
-                    bool_value: true
-              blob:
-                dimensionality: {}
-                format: "format"
-              enum_type:
-                values:
-                - "values"
-                - "values"
-              union_type:
-                variants:
-                - null
-                - null
-              simple: {}
-              structure:
-                tag: "tag"
           var:
             description: "description"
             artifact_partial_id:

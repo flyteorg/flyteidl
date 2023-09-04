@@ -398,10 +398,6 @@
             "type": "string"
           },
           "description": "Rejected: We were going to add the Artifact (or at least ArtifactID) here as a way to keep track of lineage\nBut this was deemed too janky."
-        },
-        "literal_type": {
-          "$ref": "#/definitions/coreLiteralType",
-          "title": "Rejected: We were going to add the literal type here because we decided it was general enough, but this\nis a lot of work to update everything. Can we think of an easier way?"
         }
       },
       "description": "A simple value. This supports any level of nesting (e.g. array of array of array of Blobs) as well as simple primitives."

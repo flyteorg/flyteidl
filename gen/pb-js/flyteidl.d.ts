@@ -3158,9 +3158,6 @@ export namespace flyteidl {
 
             /** Literal metadata */
             metadata?: ({ [k: string]: string }|null);
-
-            /** Literal literalType */
-            literalType?: (flyteidl.core.ILiteralType|null);
         }
 
         /** Represents a Literal. */
@@ -3186,9 +3183,6 @@ export namespace flyteidl {
 
             /** Literal metadata. */
             public metadata: { [k: string]: string };
-
-            /** Literal literalType. */
-            public literalType?: (flyteidl.core.ILiteralType|null);
 
             /** Literal value. */
             public value?: ("scalar"|"collection"|"map");
@@ -7191,6 +7185,82 @@ export namespace flyteidl {
 
             /**
              * Verifies a CloudEventTaskExecution message.
+             * @param message Plain object to verify
+             * @returns `null` if valid, otherwise the reason why it is not
+             */
+            public static verify(message: { [k: string]: any }): (string|null);
+        }
+
+        /** Properties of a CloudEventExecutionStart. */
+        interface ICloudEventExecutionStart {
+
+            /** CloudEventExecutionStart executionId */
+            executionId?: (flyteidl.core.IWorkflowExecutionIdentifier|null);
+
+            /** CloudEventExecutionStart launchPlanId */
+            launchPlanId?: (flyteidl.core.IIdentifier|null);
+
+            /** CloudEventExecutionStart workflowId */
+            workflowId?: (flyteidl.core.IIdentifier|null);
+
+            /** CloudEventExecutionStart artifactIds */
+            artifactIds?: (flyteidl.core.IArtifactID[]|null);
+
+            /** CloudEventExecutionStart artifactKeys */
+            artifactKeys?: (string[]|null);
+        }
+
+        /** Represents a CloudEventExecutionStart. */
+        class CloudEventExecutionStart implements ICloudEventExecutionStart {
+
+            /**
+             * Constructs a new CloudEventExecutionStart.
+             * @param [properties] Properties to set
+             */
+            constructor(properties?: flyteidl.event.ICloudEventExecutionStart);
+
+            /** CloudEventExecutionStart executionId. */
+            public executionId?: (flyteidl.core.IWorkflowExecutionIdentifier|null);
+
+            /** CloudEventExecutionStart launchPlanId. */
+            public launchPlanId?: (flyteidl.core.IIdentifier|null);
+
+            /** CloudEventExecutionStart workflowId. */
+            public workflowId?: (flyteidl.core.IIdentifier|null);
+
+            /** CloudEventExecutionStart artifactIds. */
+            public artifactIds: flyteidl.core.IArtifactID[];
+
+            /** CloudEventExecutionStart artifactKeys. */
+            public artifactKeys: string[];
+
+            /**
+             * Creates a new CloudEventExecutionStart instance using the specified properties.
+             * @param [properties] Properties to set
+             * @returns CloudEventExecutionStart instance
+             */
+            public static create(properties?: flyteidl.event.ICloudEventExecutionStart): flyteidl.event.CloudEventExecutionStart;
+
+            /**
+             * Encodes the specified CloudEventExecutionStart message. Does not implicitly {@link flyteidl.event.CloudEventExecutionStart.verify|verify} messages.
+             * @param message CloudEventExecutionStart message or plain object to encode
+             * @param [writer] Writer to encode to
+             * @returns Writer
+             */
+            public static encode(message: flyteidl.event.ICloudEventExecutionStart, writer?: $protobuf.Writer): $protobuf.Writer;
+
+            /**
+             * Decodes a CloudEventExecutionStart message from the specified reader or buffer.
+             * @param reader Reader or buffer to decode from
+             * @param [length] Message length if known beforehand
+             * @returns CloudEventExecutionStart
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): flyteidl.event.CloudEventExecutionStart;
+
+            /**
+             * Verifies a CloudEventExecutionStart message.
              * @param message Plain object to verify
              * @returns `null` if valid, otherwise the reason why it is not
              */

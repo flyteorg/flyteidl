@@ -53,3 +53,19 @@ message CloudEventTaskExecution {
   core.WorkflowExecutionIdentifier reference_execution = 8;
 
 }
+
+// This event is to be sent by Admin after it creates an execution.
+message CloudEventExecutionStart {
+  // The execution created.
+  core.WorkflowExecutionIdentifier execution_id = 1;
+  // The launch plan used.
+  core.Identifier launch_plan_id = 2;
+
+  core.Identifier workflow_id = 3;
+
+  // Artifact IDs found
+  repeated core.ArtifactID artifact_ids = 4;
+
+  // Artifact keys found.
+  repeated string artifact_keys = 5;
+}

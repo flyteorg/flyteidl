@@ -452,10 +452,6 @@ pub struct Literal {
     /// But this was deemed too janky.
     #[prost(map="string, string", tag="5")]
     pub metadata: ::std::collections::HashMap<::prost::alloc::string::String, ::prost::alloc::string::String>,
-    /// Rejected: We were going to add the literal type here because we decided it was general enough, but this
-    /// is a lot of work to update everything. Can we think of an easier way?
-    #[prost(message, optional, tag="6")]
-    pub literal_type: ::core::option::Option<LiteralType>,
     #[prost(oneof="literal::Value", tags="1, 2, 3")]
     pub value: ::core::option::Option<literal::Value>,
 }
