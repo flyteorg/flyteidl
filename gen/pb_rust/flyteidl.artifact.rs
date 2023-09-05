@@ -126,6 +126,7 @@ pub struct AddTagResponse {
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(Clone, PartialEq, ::prost::Message)]
 pub struct ArtifactProducer {
+    /// These can be tasks, launch plans and workflows.
     #[prost(message, optional, tag="1")]
     pub task_id: ::core::option::Option<super::core::Identifier>,
     #[prost(message, optional, tag="2")]

@@ -664,6 +664,7 @@ func (m *AddTagResponse) XXX_DiscardUnknown() {
 var xxx_messageInfo_AddTagResponse proto.InternalMessageInfo
 
 type ArtifactProducer struct {
+	// These can be tasks, launch plans and workflows.
 	TaskId               *core.Identifier  `protobuf:"bytes,1,opt,name=task_id,json=taskId,proto3" json:"task_id,omitempty"`
 	Outputs              *core.VariableMap `protobuf:"bytes,2,opt,name=outputs,proto3" json:"outputs,omitempty"`
 	XXX_NoUnkeyedLiteral struct{}          `json:"-"`

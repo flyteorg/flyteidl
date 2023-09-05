@@ -10517,14 +10517,26 @@ public final class Artifacts {
       com.google.protobuf.MessageOrBuilder {
 
     /**
+     * <pre>
+     * These can be tasks, launch plans and workflows.
+     * </pre>
+     *
      * <code>.flyteidl.core.Identifier task_id = 1;</code>
      */
     boolean hasTaskId();
     /**
+     * <pre>
+     * These can be tasks, launch plans and workflows.
+     * </pre>
+     *
      * <code>.flyteidl.core.Identifier task_id = 1;</code>
      */
     flyteidl.core.IdentifierOuterClass.Identifier getTaskId();
     /**
+     * <pre>
+     * These can be tasks, launch plans and workflows.
+     * </pre>
+     *
      * <code>.flyteidl.core.Identifier task_id = 1;</code>
      */
     flyteidl.core.IdentifierOuterClass.IdentifierOrBuilder getTaskIdOrBuilder();
@@ -10642,18 +10654,30 @@ public final class Artifacts {
     public static final int TASK_ID_FIELD_NUMBER = 1;
     private flyteidl.core.IdentifierOuterClass.Identifier taskId_;
     /**
+     * <pre>
+     * These can be tasks, launch plans and workflows.
+     * </pre>
+     *
      * <code>.flyteidl.core.Identifier task_id = 1;</code>
      */
     public boolean hasTaskId() {
       return taskId_ != null;
     }
     /**
+     * <pre>
+     * These can be tasks, launch plans and workflows.
+     * </pre>
+     *
      * <code>.flyteidl.core.Identifier task_id = 1;</code>
      */
     public flyteidl.core.IdentifierOuterClass.Identifier getTaskId() {
       return taskId_ == null ? flyteidl.core.IdentifierOuterClass.Identifier.getDefaultInstance() : taskId_;
     }
     /**
+     * <pre>
+     * These can be tasks, launch plans and workflows.
+     * </pre>
+     *
      * <code>.flyteidl.core.Identifier task_id = 1;</code>
      */
     public flyteidl.core.IdentifierOuterClass.IdentifierOrBuilder getTaskIdOrBuilder() {
@@ -11030,12 +11054,20 @@ public final class Artifacts {
       private com.google.protobuf.SingleFieldBuilderV3<
           flyteidl.core.IdentifierOuterClass.Identifier, flyteidl.core.IdentifierOuterClass.Identifier.Builder, flyteidl.core.IdentifierOuterClass.IdentifierOrBuilder> taskIdBuilder_;
       /**
+       * <pre>
+       * These can be tasks, launch plans and workflows.
+       * </pre>
+       *
        * <code>.flyteidl.core.Identifier task_id = 1;</code>
        */
       public boolean hasTaskId() {
         return taskIdBuilder_ != null || taskId_ != null;
       }
       /**
+       * <pre>
+       * These can be tasks, launch plans and workflows.
+       * </pre>
+       *
        * <code>.flyteidl.core.Identifier task_id = 1;</code>
        */
       public flyteidl.core.IdentifierOuterClass.Identifier getTaskId() {
@@ -11046,6 +11078,10 @@ public final class Artifacts {
         }
       }
       /**
+       * <pre>
+       * These can be tasks, launch plans and workflows.
+       * </pre>
+       *
        * <code>.flyteidl.core.Identifier task_id = 1;</code>
        */
       public Builder setTaskId(flyteidl.core.IdentifierOuterClass.Identifier value) {
@@ -11062,6 +11098,10 @@ public final class Artifacts {
         return this;
       }
       /**
+       * <pre>
+       * These can be tasks, launch plans and workflows.
+       * </pre>
+       *
        * <code>.flyteidl.core.Identifier task_id = 1;</code>
        */
       public Builder setTaskId(
@@ -11076,6 +11116,10 @@ public final class Artifacts {
         return this;
       }
       /**
+       * <pre>
+       * These can be tasks, launch plans and workflows.
+       * </pre>
+       *
        * <code>.flyteidl.core.Identifier task_id = 1;</code>
        */
       public Builder mergeTaskId(flyteidl.core.IdentifierOuterClass.Identifier value) {
@@ -11094,6 +11138,10 @@ public final class Artifacts {
         return this;
       }
       /**
+       * <pre>
+       * These can be tasks, launch plans and workflows.
+       * </pre>
+       *
        * <code>.flyteidl.core.Identifier task_id = 1;</code>
        */
       public Builder clearTaskId() {
@@ -11108,6 +11156,10 @@ public final class Artifacts {
         return this;
       }
       /**
+       * <pre>
+       * These can be tasks, launch plans and workflows.
+       * </pre>
+       *
        * <code>.flyteidl.core.Identifier task_id = 1;</code>
        */
       public flyteidl.core.IdentifierOuterClass.Identifier.Builder getTaskIdBuilder() {
@@ -11116,6 +11168,10 @@ public final class Artifacts {
         return getTaskIdFieldBuilder().getBuilder();
       }
       /**
+       * <pre>
+       * These can be tasks, launch plans and workflows.
+       * </pre>
+       *
        * <code>.flyteidl.core.Identifier task_id = 1;</code>
        */
       public flyteidl.core.IdentifierOuterClass.IdentifierOrBuilder getTaskIdOrBuilder() {
@@ -11127,6 +11183,10 @@ public final class Artifacts {
         }
       }
       /**
+       * <pre>
+       * These can be tasks, launch plans and workflows.
+       * </pre>
+       *
        * <code>.flyteidl.core.Identifier task_id = 1;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<

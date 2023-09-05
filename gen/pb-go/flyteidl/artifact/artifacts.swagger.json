@@ -99,7 +99,8 @@
       "type": "object",
       "properties": {
         "task_id": {
-          "$ref": "#/definitions/coreIdentifier"
+          "$ref": "#/definitions/coreIdentifier",
+          "description": "These can be tasks, launch plans and workflows."
         },
         "outputs": {
           "$ref": "#/definitions/coreVariableMap"
