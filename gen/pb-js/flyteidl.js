@@ -21948,7 +21948,7 @@
                  * Properties of an ArtifactProducer.
                  * @memberof flyteidl.artifact
                  * @interface IArtifactProducer
-                 * @property {flyteidl.core.IIdentifier|null} [taskId] ArtifactProducer taskId
+                 * @property {flyteidl.core.IIdentifier|null} [entityId] ArtifactProducer entityId
                  * @property {flyteidl.core.IVariableMap|null} [outputs] ArtifactProducer outputs
                  */
     
@@ -21968,12 +21968,12 @@
                 }
     
                 /**
-                 * ArtifactProducer taskId.
-                 * @member {flyteidl.core.IIdentifier|null|undefined} taskId
+                 * ArtifactProducer entityId.
+                 * @member {flyteidl.core.IIdentifier|null|undefined} entityId
                  * @memberof flyteidl.artifact.ArtifactProducer
                  * @instance
                  */
-                ArtifactProducer.prototype.taskId = null;
+                ArtifactProducer.prototype.entityId = null;
     
                 /**
                  * ArtifactProducer outputs.
@@ -22007,8 +22007,8 @@
                 ArtifactProducer.encode = function encode(message, writer) {
                     if (!writer)
                         writer = $Writer.create();
-                    if (message.taskId != null && message.hasOwnProperty("taskId"))
-                        $root.flyteidl.core.Identifier.encode(message.taskId, writer.uint32(/* id 1, wireType 2 =*/10).fork()).ldelim();
+                    if (message.entityId != null && message.hasOwnProperty("entityId"))
+                        $root.flyteidl.core.Identifier.encode(message.entityId, writer.uint32(/* id 1, wireType 2 =*/10).fork()).ldelim();
                     if (message.outputs != null && message.hasOwnProperty("outputs"))
                         $root.flyteidl.core.VariableMap.encode(message.outputs, writer.uint32(/* id 2, wireType 2 =*/18).fork()).ldelim();
                     return writer;
@@ -22033,7 +22033,7 @@
                         var tag = reader.uint32();
                         switch (tag >>> 3) {
                         case 1:
-                            message.taskId = $root.flyteidl.core.Identifier.decode(reader, reader.uint32());
+                            message.entityId = $root.flyteidl.core.Identifier.decode(reader, reader.uint32());
                             break;
                         case 2:
                             message.outputs = $root.flyteidl.core.VariableMap.decode(reader, reader.uint32());
@@ -22057,10 +22057,10 @@
                 ArtifactProducer.verify = function verify(message) {
                     if (typeof message !== "object" || message === null)
                         return "object expected";
-                    if (message.taskId != null && message.hasOwnProperty("taskId")) {
-                        var error = $root.flyteidl.core.Identifier.verify(message.taskId);
+                    if (message.entityId != null && message.hasOwnProperty("entityId")) {
+                        var error = $root.flyteidl.core.Identifier.verify(message.entityId);
                         if (error)
-                            return "taskId." + error;
+                            return "entityId." + error;
                     }
                     if (message.outputs != null && message.hasOwnProperty("outputs")) {
                         var error = $root.flyteidl.core.VariableMap.verify(message.outputs);
@@ -22199,7 +22199,7 @@
                  * Properties of an ArtifactConsumer.
                  * @memberof flyteidl.artifact
                  * @interface IArtifactConsumer
-                 * @property {flyteidl.core.IIdentifier|null} [taskId] ArtifactConsumer taskId
+                 * @property {flyteidl.core.IIdentifier|null} [entityId] ArtifactConsumer entityId
                  * @property {flyteidl.core.IParameterMap|null} [inputs] ArtifactConsumer inputs
                  */
     
@@ -22219,12 +22219,12 @@
                 }
     
                 /**
-                 * ArtifactConsumer taskId.
-                 * @member {flyteidl.core.IIdentifier|null|undefined} taskId
+                 * ArtifactConsumer entityId.
+                 * @member {flyteidl.core.IIdentifier|null|undefined} entityId
                  * @memberof flyteidl.artifact.ArtifactConsumer
                  * @instance
                  */
-                ArtifactConsumer.prototype.taskId = null;
+                ArtifactConsumer.prototype.entityId = null;
     
                 /**
                  * ArtifactConsumer inputs.
@@ -22258,8 +22258,8 @@
                 ArtifactConsumer.encode = function encode(message, writer) {
                     if (!writer)
                         writer = $Writer.create();
-                    if (message.taskId != null && message.hasOwnProperty("taskId"))
-                        $root.flyteidl.core.Identifier.encode(message.taskId, writer.uint32(/* id 1, wireType 2 =*/10).fork()).ldelim();
+                    if (message.entityId != null && message.hasOwnProperty("entityId"))
+                        $root.flyteidl.core.Identifier.encode(message.entityId, writer.uint32(/* id 1, wireType 2 =*/10).fork()).ldelim();
                     if (message.inputs != null && message.hasOwnProperty("inputs"))
                         $root.flyteidl.core.ParameterMap.encode(message.inputs, writer.uint32(/* id 2, wireType 2 =*/18).fork()).ldelim();
                     return writer;
@@ -22284,7 +22284,7 @@
                         var tag = reader.uint32();
                         switch (tag >>> 3) {
                         case 1:
-                            message.taskId = $root.flyteidl.core.Identifier.decode(reader, reader.uint32());
+                            message.entityId = $root.flyteidl.core.Identifier.decode(reader, reader.uint32());
                             break;
                         case 2:
                             message.inputs = $root.flyteidl.core.ParameterMap.decode(reader, reader.uint32());
@@ -22308,10 +22308,10 @@
                 ArtifactConsumer.verify = function verify(message) {
                     if (typeof message !== "object" || message === null)
                         return "object expected";
-                    if (message.taskId != null && message.hasOwnProperty("taskId")) {
-                        var error = $root.flyteidl.core.Identifier.verify(message.taskId);
+                    if (message.entityId != null && message.hasOwnProperty("entityId")) {
+                        var error = $root.flyteidl.core.Identifier.verify(message.entityId);
                         if (error)
-                            return "taskId." + error;
+                            return "entityId." + error;
                     }
                     if (message.inputs != null && message.hasOwnProperty("inputs")) {
                         var error = $root.flyteidl.core.ParameterMap.verify(message.inputs);

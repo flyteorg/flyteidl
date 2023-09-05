@@ -1030,10 +1030,10 @@ func (m *ArtifactProducer) Validate() error {
 		return nil
 	}
 
-	if v, ok := interface{}(m.GetTaskId()).(interface{ Validate() error }); ok {
+	if v, ok := interface{}(m.GetEntityId()).(interface{ Validate() error }); ok {
 		if err := v.Validate(); err != nil {
 			return ArtifactProducerValidationError{
-				field:  "TaskId",
+				field:  "EntityId",
 				reason: "embedded message failed validation",
 				cause:  err,
 			}
@@ -1197,10 +1197,10 @@ func (m *ArtifactConsumer) Validate() error {
 		return nil
 	}
 
-	if v, ok := interface{}(m.GetTaskId()).(interface{ Validate() error }); ok {
+	if v, ok := interface{}(m.GetEntityId()).(interface{ Validate() error }); ok {
 		if err := v.Validate(); err != nil {
 			return ArtifactConsumerValidationError{
-				field:  "TaskId",
+				field:  "EntityId",
 				reason: "embedded message failed validation",
 				cause:  err,
 			}

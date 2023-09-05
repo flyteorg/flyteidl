@@ -101,8 +101,9 @@ message AddTagRequest {
 message AddTagResponse {}
 
 message ArtifactProducer {
-  // These can be tasks, launch plans and workflows.
-  core.Identifier task_id = 1;
+  // These can be tasks, and workflows. Keeping track of the launch plans that a given workflow has is purely in
+  // Admin's domain.
+  core.Identifier entity_id = 1;
 
   core.VariableMap outputs = 2;
 }
@@ -113,7 +114,7 @@ message RegisterProducerRequest {
 
 message ArtifactConsumer {
   // These should all be launch plan IDs
-  core.Identifier task_id = 1;
+  core.Identifier entity_id = 1;
 
   core.ParameterMap inputs = 2;
 }

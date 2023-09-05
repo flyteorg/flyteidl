@@ -119,12 +119,12 @@ class AddTagResponse(_message.Message):
     def __init__(self) -> None: ...
 
 class ArtifactProducer(_message.Message):
-    __slots__ = ["task_id", "outputs"]
-    TASK_ID_FIELD_NUMBER: _ClassVar[int]
+    __slots__ = ["entity_id", "outputs"]
+    ENTITY_ID_FIELD_NUMBER: _ClassVar[int]
     OUTPUTS_FIELD_NUMBER: _ClassVar[int]
-    task_id: _identifier_pb2.Identifier
+    entity_id: _identifier_pb2.Identifier
     outputs: _interface_pb2.VariableMap
-    def __init__(self, task_id: _Optional[_Union[_identifier_pb2.Identifier, _Mapping]] = ..., outputs: _Optional[_Union[_interface_pb2.VariableMap, _Mapping]] = ...) -> None: ...
+    def __init__(self, entity_id: _Optional[_Union[_identifier_pb2.Identifier, _Mapping]] = ..., outputs: _Optional[_Union[_interface_pb2.VariableMap, _Mapping]] = ...) -> None: ...
 
 class RegisterProducerRequest(_message.Message):
     __slots__ = ["producers"]
@@ -133,12 +133,12 @@ class RegisterProducerRequest(_message.Message):
     def __init__(self, producers: _Optional[_Iterable[_Union[ArtifactProducer, _Mapping]]] = ...) -> None: ...
 
 class ArtifactConsumer(_message.Message):
-    __slots__ = ["task_id", "inputs"]
-    TASK_ID_FIELD_NUMBER: _ClassVar[int]
+    __slots__ = ["entity_id", "inputs"]
+    ENTITY_ID_FIELD_NUMBER: _ClassVar[int]
     INPUTS_FIELD_NUMBER: _ClassVar[int]
-    task_id: _identifier_pb2.Identifier
+    entity_id: _identifier_pb2.Identifier
     inputs: _interface_pb2.ParameterMap
-    def __init__(self, task_id: _Optional[_Union[_identifier_pb2.Identifier, _Mapping]] = ..., inputs: _Optional[_Union[_interface_pb2.ParameterMap, _Mapping]] = ...) -> None: ...
+    def __init__(self, entity_id: _Optional[_Union[_identifier_pb2.Identifier, _Mapping]] = ..., inputs: _Optional[_Union[_interface_pb2.ParameterMap, _Mapping]] = ...) -> None: ...
 
 class RegisterConsumerRequest(_message.Message):
     __slots__ = ["consumers"]

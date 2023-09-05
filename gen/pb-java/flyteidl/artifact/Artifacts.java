@@ -10518,28 +10518,31 @@ public final class Artifacts {
 
     /**
      * <pre>
-     * These can be tasks, launch plans and workflows.
+     * These can be tasks, and workflows. Keeping track of the launch plans that a given workflow has is purely in
+     * Admin's domain.
      * </pre>
      *
-     * <code>.flyteidl.core.Identifier task_id = 1;</code>
+     * <code>.flyteidl.core.Identifier entity_id = 1;</code>
      */
-    boolean hasTaskId();
+    boolean hasEntityId();
     /**
      * <pre>
-     * These can be tasks, launch plans and workflows.
+     * These can be tasks, and workflows. Keeping track of the launch plans that a given workflow has is purely in
+     * Admin's domain.
      * </pre>
      *
-     * <code>.flyteidl.core.Identifier task_id = 1;</code>
+     * <code>.flyteidl.core.Identifier entity_id = 1;</code>
      */
-    flyteidl.core.IdentifierOuterClass.Identifier getTaskId();
+    flyteidl.core.IdentifierOuterClass.Identifier getEntityId();
     /**
      * <pre>
-     * These can be tasks, launch plans and workflows.
+     * These can be tasks, and workflows. Keeping track of the launch plans that a given workflow has is purely in
+     * Admin's domain.
      * </pre>
      *
-     * <code>.flyteidl.core.Identifier task_id = 1;</code>
+     * <code>.flyteidl.core.Identifier entity_id = 1;</code>
      */
-    flyteidl.core.IdentifierOuterClass.IdentifierOrBuilder getTaskIdOrBuilder();
+    flyteidl.core.IdentifierOuterClass.IdentifierOrBuilder getEntityIdOrBuilder();
 
     /**
      * <code>.flyteidl.core.VariableMap outputs = 2;</code>
@@ -10595,13 +10598,13 @@ public final class Artifacts {
               break;
             case 10: {
               flyteidl.core.IdentifierOuterClass.Identifier.Builder subBuilder = null;
-              if (taskId_ != null) {
-                subBuilder = taskId_.toBuilder();
+              if (entityId_ != null) {
+                subBuilder = entityId_.toBuilder();
               }
-              taskId_ = input.readMessage(flyteidl.core.IdentifierOuterClass.Identifier.parser(), extensionRegistry);
+              entityId_ = input.readMessage(flyteidl.core.IdentifierOuterClass.Identifier.parser(), extensionRegistry);
               if (subBuilder != null) {
-                subBuilder.mergeFrom(taskId_);
-                taskId_ = subBuilder.buildPartial();
+                subBuilder.mergeFrom(entityId_);
+                entityId_ = subBuilder.buildPartial();
               }
 
               break;
@@ -10651,37 +10654,40 @@ public final class Artifacts {
               flyteidl.artifact.Artifacts.ArtifactProducer.class, flyteidl.artifact.Artifacts.ArtifactProducer.Builder.class);
     }
 
-    public static final int TASK_ID_FIELD_NUMBER = 1;
-    private flyteidl.core.IdentifierOuterClass.Identifier taskId_;
+    public static final int ENTITY_ID_FIELD_NUMBER = 1;
+    private flyteidl.core.IdentifierOuterClass.Identifier entityId_;
     /**
      * <pre>
-     * These can be tasks, launch plans and workflows.
+     * These can be tasks, and workflows. Keeping track of the launch plans that a given workflow has is purely in
+     * Admin's domain.
      * </pre>
      *
-     * <code>.flyteidl.core.Identifier task_id = 1;</code>
+     * <code>.flyteidl.core.Identifier entity_id = 1;</code>
      */
-    public boolean hasTaskId() {
-      return taskId_ != null;
+    public boolean hasEntityId() {
+      return entityId_ != null;
     }
     /**
      * <pre>
-     * These can be tasks, launch plans and workflows.
+     * These can be tasks, and workflows. Keeping track of the launch plans that a given workflow has is purely in
+     * Admin's domain.
      * </pre>
      *
-     * <code>.flyteidl.core.Identifier task_id = 1;</code>
+     * <code>.flyteidl.core.Identifier entity_id = 1;</code>
      */
-    public flyteidl.core.IdentifierOuterClass.Identifier getTaskId() {
-      return taskId_ == null ? flyteidl.core.IdentifierOuterClass.Identifier.getDefaultInstance() : taskId_;
+    public flyteidl.core.IdentifierOuterClass.Identifier getEntityId() {
+      return entityId_ == null ? flyteidl.core.IdentifierOuterClass.Identifier.getDefaultInstance() : entityId_;
     }
     /**
      * <pre>
-     * These can be tasks, launch plans and workflows.
+     * These can be tasks, and workflows. Keeping track of the launch plans that a given workflow has is purely in
+     * Admin's domain.
      * </pre>
      *
-     * <code>.flyteidl.core.Identifier task_id = 1;</code>
+     * <code>.flyteidl.core.Identifier entity_id = 1;</code>
      */
-    public flyteidl.core.IdentifierOuterClass.IdentifierOrBuilder getTaskIdOrBuilder() {
-      return getTaskId();
+    public flyteidl.core.IdentifierOuterClass.IdentifierOrBuilder getEntityIdOrBuilder() {
+      return getEntityId();
     }
 
     public static final int OUTPUTS_FIELD_NUMBER = 2;
@@ -10719,8 +10725,8 @@ public final class Artifacts {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (taskId_ != null) {
-        output.writeMessage(1, getTaskId());
+      if (entityId_ != null) {
+        output.writeMessage(1, getEntityId());
       }
       if (outputs_ != null) {
         output.writeMessage(2, getOutputs());
@@ -10734,9 +10740,9 @@ public final class Artifacts {
       if (size != -1) return size;
 
       size = 0;
-      if (taskId_ != null) {
+      if (entityId_ != null) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(1, getTaskId());
+          .computeMessageSize(1, getEntityId());
       }
       if (outputs_ != null) {
         size += com.google.protobuf.CodedOutputStream
@@ -10757,10 +10763,10 @@ public final class Artifacts {
       }
       flyteidl.artifact.Artifacts.ArtifactProducer other = (flyteidl.artifact.Artifacts.ArtifactProducer) obj;
 
-      if (hasTaskId() != other.hasTaskId()) return false;
-      if (hasTaskId()) {
-        if (!getTaskId()
-            .equals(other.getTaskId())) return false;
+      if (hasEntityId() != other.hasEntityId()) return false;
+      if (hasEntityId()) {
+        if (!getEntityId()
+            .equals(other.getEntityId())) return false;
       }
       if (hasOutputs() != other.hasOutputs()) return false;
       if (hasOutputs()) {
@@ -10778,9 +10784,9 @@ public final class Artifacts {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
-      if (hasTaskId()) {
-        hash = (37 * hash) + TASK_ID_FIELD_NUMBER;
-        hash = (53 * hash) + getTaskId().hashCode();
+      if (hasEntityId()) {
+        hash = (37 * hash) + ENTITY_ID_FIELD_NUMBER;
+        hash = (53 * hash) + getEntityId().hashCode();
       }
       if (hasOutputs()) {
         hash = (37 * hash) + OUTPUTS_FIELD_NUMBER;
@@ -10919,11 +10925,11 @@ public final class Artifacts {
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        if (taskIdBuilder_ == null) {
-          taskId_ = null;
+        if (entityIdBuilder_ == null) {
+          entityId_ = null;
         } else {
-          taskId_ = null;
-          taskIdBuilder_ = null;
+          entityId_ = null;
+          entityIdBuilder_ = null;
         }
         if (outputsBuilder_ == null) {
           outputs_ = null;
@@ -10957,10 +10963,10 @@ public final class Artifacts {
       @java.lang.Override
       public flyteidl.artifact.Artifacts.ArtifactProducer buildPartial() {
         flyteidl.artifact.Artifacts.ArtifactProducer result = new flyteidl.artifact.Artifacts.ArtifactProducer(this);
-        if (taskIdBuilder_ == null) {
-          result.taskId_ = taskId_;
+        if (entityIdBuilder_ == null) {
+          result.entityId_ = entityId_;
         } else {
-          result.taskId_ = taskIdBuilder_.build();
+          result.entityId_ = entityIdBuilder_.build();
         }
         if (outputsBuilder_ == null) {
           result.outputs_ = outputs_;
@@ -11015,8 +11021,8 @@ public final class Artifacts {
 
       public Builder mergeFrom(flyteidl.artifact.Artifacts.ArtifactProducer other) {
         if (other == flyteidl.artifact.Artifacts.ArtifactProducer.getDefaultInstance()) return this;
-        if (other.hasTaskId()) {
-          mergeTaskId(other.getTaskId());
+        if (other.hasEntityId()) {
+          mergeEntityId(other.getEntityId());
         }
         if (other.hasOutputs()) {
           mergeOutputs(other.getOutputs());
@@ -11050,157 +11056,166 @@ public final class Artifacts {
         return this;
       }
 
-      private flyteidl.core.IdentifierOuterClass.Identifier taskId_;
+      private flyteidl.core.IdentifierOuterClass.Identifier entityId_;
       private com.google.protobuf.SingleFieldBuilderV3<
-          flyteidl.core.IdentifierOuterClass.Identifier, flyteidl.core.IdentifierOuterClass.Identifier.Builder, flyteidl.core.IdentifierOuterClass.IdentifierOrBuilder> taskIdBuilder_;
+          flyteidl.core.IdentifierOuterClass.Identifier, flyteidl.core.IdentifierOuterClass.Identifier.Builder, flyteidl.core.IdentifierOuterClass.IdentifierOrBuilder> entityIdBuilder_;
       /**
        * <pre>
-       * These can be tasks, launch plans and workflows.
+       * These can be tasks, and workflows. Keeping track of the launch plans that a given workflow has is purely in
+       * Admin's domain.
        * </pre>
        *
-       * <code>.flyteidl.core.Identifier task_id = 1;</code>
+       * <code>.flyteidl.core.Identifier entity_id = 1;</code>
        */
-      public boolean hasTaskId() {
-        return taskIdBuilder_ != null || taskId_ != null;
+      public boolean hasEntityId() {
+        return entityIdBuilder_ != null || entityId_ != null;
       }
       /**
        * <pre>
-       * These can be tasks, launch plans and workflows.
+       * These can be tasks, and workflows. Keeping track of the launch plans that a given workflow has is purely in
+       * Admin's domain.
        * </pre>
        *
-       * <code>.flyteidl.core.Identifier task_id = 1;</code>
+       * <code>.flyteidl.core.Identifier entity_id = 1;</code>
        */
-      public flyteidl.core.IdentifierOuterClass.Identifier getTaskId() {
-        if (taskIdBuilder_ == null) {
-          return taskId_ == null ? flyteidl.core.IdentifierOuterClass.Identifier.getDefaultInstance() : taskId_;
+      public flyteidl.core.IdentifierOuterClass.Identifier getEntityId() {
+        if (entityIdBuilder_ == null) {
+          return entityId_ == null ? flyteidl.core.IdentifierOuterClass.Identifier.getDefaultInstance() : entityId_;
         } else {
-          return taskIdBuilder_.getMessage();
+          return entityIdBuilder_.getMessage();
         }
       }
       /**
        * <pre>
-       * These can be tasks, launch plans and workflows.
+       * These can be tasks, and workflows. Keeping track of the launch plans that a given workflow has is purely in
+       * Admin's domain.
        * </pre>
        *
-       * <code>.flyteidl.core.Identifier task_id = 1;</code>
+       * <code>.flyteidl.core.Identifier entity_id = 1;</code>
        */
-      public Builder setTaskId(flyteidl.core.IdentifierOuterClass.Identifier value) {
-        if (taskIdBuilder_ == null) {
+      public Builder setEntityId(flyteidl.core.IdentifierOuterClass.Identifier value) {
+        if (entityIdBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
           }
-          taskId_ = value;
+          entityId_ = value;
           onChanged();
         } else {
-          taskIdBuilder_.setMessage(value);
+          entityIdBuilder_.setMessage(value);
         }
 
         return this;
       }
       /**
        * <pre>
-       * These can be tasks, launch plans and workflows.
+       * These can be tasks, and workflows. Keeping track of the launch plans that a given workflow has is purely in
+       * Admin's domain.
        * </pre>
        *
-       * <code>.flyteidl.core.Identifier task_id = 1;</code>
+       * <code>.flyteidl.core.Identifier entity_id = 1;</code>
        */
-      public Builder setTaskId(
+      public Builder setEntityId(
           flyteidl.core.IdentifierOuterClass.Identifier.Builder builderForValue) {
-        if (taskIdBuilder_ == null) {
-          taskId_ = builderForValue.build();
+        if (entityIdBuilder_ == null) {
+          entityId_ = builderForValue.build();
           onChanged();
         } else {
-          taskIdBuilder_.setMessage(builderForValue.build());
+          entityIdBuilder_.setMessage(builderForValue.build());
         }
 
         return this;
       }
       /**
        * <pre>
-       * These can be tasks, launch plans and workflows.
+       * These can be tasks, and workflows. Keeping track of the launch plans that a given workflow has is purely in
+       * Admin's domain.
        * </pre>
        *
-       * <code>.flyteidl.core.Identifier task_id = 1;</code>
+       * <code>.flyteidl.core.Identifier entity_id = 1;</code>
        */
-      public Builder mergeTaskId(flyteidl.core.IdentifierOuterClass.Identifier value) {
-        if (taskIdBuilder_ == null) {
-          if (taskId_ != null) {
-            taskId_ =
-              flyteidl.core.IdentifierOuterClass.Identifier.newBuilder(taskId_).mergeFrom(value).buildPartial();
+      public Builder mergeEntityId(flyteidl.core.IdentifierOuterClass.Identifier value) {
+        if (entityIdBuilder_ == null) {
+          if (entityId_ != null) {
+            entityId_ =
+              flyteidl.core.IdentifierOuterClass.Identifier.newBuilder(entityId_).mergeFrom(value).buildPartial();
           } else {
-            taskId_ = value;
+            entityId_ = value;
           }
           onChanged();
         } else {
-          taskIdBuilder_.mergeFrom(value);
+          entityIdBuilder_.mergeFrom(value);
         }
 
         return this;
       }
       /**
        * <pre>
-       * These can be tasks, launch plans and workflows.
+       * These can be tasks, and workflows. Keeping track of the launch plans that a given workflow has is purely in
+       * Admin's domain.
        * </pre>
        *
-       * <code>.flyteidl.core.Identifier task_id = 1;</code>
+       * <code>.flyteidl.core.Identifier entity_id = 1;</code>
        */
-      public Builder clearTaskId() {
-        if (taskIdBuilder_ == null) {
-          taskId_ = null;
+      public Builder clearEntityId() {
+        if (entityIdBuilder_ == null) {
+          entityId_ = null;
           onChanged();
         } else {
-          taskId_ = null;
-          taskIdBuilder_ = null;
+          entityId_ = null;
+          entityIdBuilder_ = null;
         }
 
         return this;
       }
       /**
        * <pre>
-       * These can be tasks, launch plans and workflows.
+       * These can be tasks, and workflows. Keeping track of the launch plans that a given workflow has is purely in
+       * Admin's domain.
        * </pre>
        *
-       * <code>.flyteidl.core.Identifier task_id = 1;</code>
+       * <code>.flyteidl.core.Identifier entity_id = 1;</code>
        */
-      public flyteidl.core.IdentifierOuterClass.Identifier.Builder getTaskIdBuilder() {
+      public flyteidl.core.IdentifierOuterClass.Identifier.Builder getEntityIdBuilder() {
         
         onChanged();
-        return getTaskIdFieldBuilder().getBuilder();
+        return getEntityIdFieldBuilder().getBuilder();
       }
       /**
        * <pre>
-       * These can be tasks, launch plans and workflows.
+       * These can be tasks, and workflows. Keeping track of the launch plans that a given workflow has is purely in
+       * Admin's domain.
        * </pre>
        *
-       * <code>.flyteidl.core.Identifier task_id = 1;</code>
+       * <code>.flyteidl.core.Identifier entity_id = 1;</code>
        */
-      public flyteidl.core.IdentifierOuterClass.IdentifierOrBuilder getTaskIdOrBuilder() {
-        if (taskIdBuilder_ != null) {
-          return taskIdBuilder_.getMessageOrBuilder();
+      public flyteidl.core.IdentifierOuterClass.IdentifierOrBuilder getEntityIdOrBuilder() {
+        if (entityIdBuilder_ != null) {
+          return entityIdBuilder_.getMessageOrBuilder();
         } else {
-          return taskId_ == null ?
-              flyteidl.core.IdentifierOuterClass.Identifier.getDefaultInstance() : taskId_;
+          return entityId_ == null ?
+              flyteidl.core.IdentifierOuterClass.Identifier.getDefaultInstance() : entityId_;
         }
       }
       /**
        * <pre>
-       * These can be tasks, launch plans and workflows.
+       * These can be tasks, and workflows. Keeping track of the launch plans that a given workflow has is purely in
+       * Admin's domain.
        * </pre>
        *
-       * <code>.flyteidl.core.Identifier task_id = 1;</code>
+       * <code>.flyteidl.core.Identifier entity_id = 1;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
           flyteidl.core.IdentifierOuterClass.Identifier, flyteidl.core.IdentifierOuterClass.Identifier.Builder, flyteidl.core.IdentifierOuterClass.IdentifierOrBuilder> 
-          getTaskIdFieldBuilder() {
-        if (taskIdBuilder_ == null) {
-          taskIdBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+          getEntityIdFieldBuilder() {
+        if (entityIdBuilder_ == null) {
+          entityIdBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
               flyteidl.core.IdentifierOuterClass.Identifier, flyteidl.core.IdentifierOuterClass.Identifier.Builder, flyteidl.core.IdentifierOuterClass.IdentifierOrBuilder>(
-                  getTaskId(),
+                  getEntityId(),
                   getParentForChildren(),
                   isClean());
-          taskId_ = null;
+          entityId_ = null;
         }
-        return taskIdBuilder_;
+        return entityIdBuilder_;
       }
 
       private flyteidl.core.Interface.VariableMap outputs_;
@@ -12162,25 +12177,25 @@ public final class Artifacts {
      * These should all be launch plan IDs
      * </pre>
      *
-     * <code>.flyteidl.core.Identifier task_id = 1;</code>
+     * <code>.flyteidl.core.Identifier entity_id = 1;</code>
      */
-    boolean hasTaskId();
+    boolean hasEntityId();
     /**
      * <pre>
      * These should all be launch plan IDs
      * </pre>
      *
-     * <code>.flyteidl.core.Identifier task_id = 1;</code>
+     * <code>.flyteidl.core.Identifier entity_id = 1;</code>
      */
-    flyteidl.core.IdentifierOuterClass.Identifier getTaskId();
+    flyteidl.core.IdentifierOuterClass.Identifier getEntityId();
     /**
      * <pre>
      * These should all be launch plan IDs
      * </pre>
      *
-     * <code>.flyteidl.core.Identifier task_id = 1;</code>
+     * <code>.flyteidl.core.Identifier entity_id = 1;</code>
      */
-    flyteidl.core.IdentifierOuterClass.IdentifierOrBuilder getTaskIdOrBuilder();
+    flyteidl.core.IdentifierOuterClass.IdentifierOrBuilder getEntityIdOrBuilder();
 
     /**
      * <code>.flyteidl.core.ParameterMap inputs = 2;</code>
@@ -12236,13 +12251,13 @@ public final class Artifacts {
               break;
             case 10: {
               flyteidl.core.IdentifierOuterClass.Identifier.Builder subBuilder = null;
-              if (taskId_ != null) {
-                subBuilder = taskId_.toBuilder();
+              if (entityId_ != null) {
+                subBuilder = entityId_.toBuilder();
               }
-              taskId_ = input.readMessage(flyteidl.core.IdentifierOuterClass.Identifier.parser(), extensionRegistry);
+              entityId_ = input.readMessage(flyteidl.core.IdentifierOuterClass.Identifier.parser(), extensionRegistry);
               if (subBuilder != null) {
-                subBuilder.mergeFrom(taskId_);
-                taskId_ = subBuilder.buildPartial();
+                subBuilder.mergeFrom(entityId_);
+                entityId_ = subBuilder.buildPartial();
               }
 
               break;
@@ -12292,37 +12307,37 @@ public final class Artifacts {
               flyteidl.artifact.Artifacts.ArtifactConsumer.class, flyteidl.artifact.Artifacts.ArtifactConsumer.Builder.class);
     }
 
-    public static final int TASK_ID_FIELD_NUMBER = 1;
-    private flyteidl.core.IdentifierOuterClass.Identifier taskId_;
+    public static final int ENTITY_ID_FIELD_NUMBER = 1;
+    private flyteidl.core.IdentifierOuterClass.Identifier entityId_;
     /**
      * <pre>
      * These should all be launch plan IDs
      * </pre>
      *
-     * <code>.flyteidl.core.Identifier task_id = 1;</code>
+     * <code>.flyteidl.core.Identifier entity_id = 1;</code>
      */
-    public boolean hasTaskId() {
-      return taskId_ != null;
+    public boolean hasEntityId() {
+      return entityId_ != null;
     }
     /**
      * <pre>
      * These should all be launch plan IDs
      * </pre>
      *
-     * <code>.flyteidl.core.Identifier task_id = 1;</code>
+     * <code>.flyteidl.core.Identifier entity_id = 1;</code>
      */
-    public flyteidl.core.IdentifierOuterClass.Identifier getTaskId() {
-      return taskId_ == null ? flyteidl.core.IdentifierOuterClass.Identifier.getDefaultInstance() : taskId_;
+    public flyteidl.core.IdentifierOuterClass.Identifier getEntityId() {
+      return entityId_ == null ? flyteidl.core.IdentifierOuterClass.Identifier.getDefaultInstance() : entityId_;
     }
     /**
      * <pre>
      * These should all be launch plan IDs
      * </pre>
      *
-     * <code>.flyteidl.core.Identifier task_id = 1;</code>
+     * <code>.flyteidl.core.Identifier entity_id = 1;</code>
      */
-    public flyteidl.core.IdentifierOuterClass.IdentifierOrBuilder getTaskIdOrBuilder() {
-      return getTaskId();
+    public flyteidl.core.IdentifierOuterClass.IdentifierOrBuilder getEntityIdOrBuilder() {
+      return getEntityId();
     }
 
     public static final int INPUTS_FIELD_NUMBER = 2;
@@ -12360,8 +12375,8 @@ public final class Artifacts {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (taskId_ != null) {
-        output.writeMessage(1, getTaskId());
+      if (entityId_ != null) {
+        output.writeMessage(1, getEntityId());
       }
       if (inputs_ != null) {
         output.writeMessage(2, getInputs());
@@ -12375,9 +12390,9 @@ public final class Artifacts {
       if (size != -1) return size;
 
       size = 0;
-      if (taskId_ != null) {
+      if (entityId_ != null) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(1, getTaskId());
+          .computeMessageSize(1, getEntityId());
       }
       if (inputs_ != null) {
         size += com.google.protobuf.CodedOutputStream
@@ -12398,10 +12413,10 @@ public final class Artifacts {
       }
       flyteidl.artifact.Artifacts.ArtifactConsumer other = (flyteidl.artifact.Artifacts.ArtifactConsumer) obj;
 
-      if (hasTaskId() != other.hasTaskId()) return false;
-      if (hasTaskId()) {
-        if (!getTaskId()
-            .equals(other.getTaskId())) return false;
+      if (hasEntityId() != other.hasEntityId()) return false;
+      if (hasEntityId()) {
+        if (!getEntityId()
+            .equals(other.getEntityId())) return false;
       }
       if (hasInputs() != other.hasInputs()) return false;
       if (hasInputs()) {
@@ -12419,9 +12434,9 @@ public final class Artifacts {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
-      if (hasTaskId()) {
-        hash = (37 * hash) + TASK_ID_FIELD_NUMBER;
-        hash = (53 * hash) + getTaskId().hashCode();
+      if (hasEntityId()) {
+        hash = (37 * hash) + ENTITY_ID_FIELD_NUMBER;
+        hash = (53 * hash) + getEntityId().hashCode();
       }
       if (hasInputs()) {
         hash = (37 * hash) + INPUTS_FIELD_NUMBER;
@@ -12560,11 +12575,11 @@ public final class Artifacts {
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        if (taskIdBuilder_ == null) {
-          taskId_ = null;
+        if (entityIdBuilder_ == null) {
+          entityId_ = null;
         } else {
-          taskId_ = null;
-          taskIdBuilder_ = null;
+          entityId_ = null;
+          entityIdBuilder_ = null;
         }
         if (inputsBuilder_ == null) {
           inputs_ = null;
@@ -12598,10 +12613,10 @@ public final class Artifacts {
       @java.lang.Override
       public flyteidl.artifact.Artifacts.ArtifactConsumer buildPartial() {
         flyteidl.artifact.Artifacts.ArtifactConsumer result = new flyteidl.artifact.Artifacts.ArtifactConsumer(this);
-        if (taskIdBuilder_ == null) {
-          result.taskId_ = taskId_;
+        if (entityIdBuilder_ == null) {
+          result.entityId_ = entityId_;
         } else {
-          result.taskId_ = taskIdBuilder_.build();
+          result.entityId_ = entityIdBuilder_.build();
         }
         if (inputsBuilder_ == null) {
           result.inputs_ = inputs_;
@@ -12656,8 +12671,8 @@ public final class Artifacts {
 
       public Builder mergeFrom(flyteidl.artifact.Artifacts.ArtifactConsumer other) {
         if (other == flyteidl.artifact.Artifacts.ArtifactConsumer.getDefaultInstance()) return this;
-        if (other.hasTaskId()) {
-          mergeTaskId(other.getTaskId());
+        if (other.hasEntityId()) {
+          mergeEntityId(other.getEntityId());
         }
         if (other.hasInputs()) {
           mergeInputs(other.getInputs());
@@ -12691,31 +12706,31 @@ public final class Artifacts {
         return this;
       }
 
-      private flyteidl.core.IdentifierOuterClass.Identifier taskId_;
+      private flyteidl.core.IdentifierOuterClass.Identifier entityId_;
       private com.google.protobuf.SingleFieldBuilderV3<
-          flyteidl.core.IdentifierOuterClass.Identifier, flyteidl.core.IdentifierOuterClass.Identifier.Builder, flyteidl.core.IdentifierOuterClass.IdentifierOrBuilder> taskIdBuilder_;
+          flyteidl.core.IdentifierOuterClass.Identifier, flyteidl.core.IdentifierOuterClass.Identifier.Builder, flyteidl.core.IdentifierOuterClass.IdentifierOrBuilder> entityIdBuilder_;
       /**
        * <pre>
        * These should all be launch plan IDs
        * </pre>
        *
-       * <code>.flyteidl.core.Identifier task_id = 1;</code>
+       * <code>.flyteidl.core.Identifier entity_id = 1;</code>
        */
-      public boolean hasTaskId() {
-        return taskIdBuilder_ != null || taskId_ != null;
+      public boolean hasEntityId() {
+        return entityIdBuilder_ != null || entityId_ != null;
       }
       /**
        * <pre>
        * These should all be launch plan IDs
        * </pre>
        *
-       * <code>.flyteidl.core.Identifier task_id = 1;</code>
+       * <code>.flyteidl.core.Identifier entity_id = 1;</code>
        */
-      public flyteidl.core.IdentifierOuterClass.Identifier getTaskId() {
-        if (taskIdBuilder_ == null) {
-          return taskId_ == null ? flyteidl.core.IdentifierOuterClass.Identifier.getDefaultInstance() : taskId_;
+      public flyteidl.core.IdentifierOuterClass.Identifier getEntityId() {
+        if (entityIdBuilder_ == null) {
+          return entityId_ == null ? flyteidl.core.IdentifierOuterClass.Identifier.getDefaultInstance() : entityId_;
         } else {
-          return taskIdBuilder_.getMessage();
+          return entityIdBuilder_.getMessage();
         }
       }
       /**
@@ -12723,17 +12738,17 @@ public final class Artifacts {
        * These should all be launch plan IDs
        * </pre>
        *
-       * <code>.flyteidl.core.Identifier task_id = 1;</code>
+       * <code>.flyteidl.core.Identifier entity_id = 1;</code>
        */
-      public Builder setTaskId(flyteidl.core.IdentifierOuterClass.Identifier value) {
-        if (taskIdBuilder_ == null) {
+      public Builder setEntityId(flyteidl.core.IdentifierOuterClass.Identifier value) {
+        if (entityIdBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
           }
-          taskId_ = value;
+          entityId_ = value;
           onChanged();
         } else {
-          taskIdBuilder_.setMessage(value);
+          entityIdBuilder_.setMessage(value);
         }
 
         return this;
@@ -12743,15 +12758,15 @@ public final class Artifacts {
        * These should all be launch plan IDs
        * </pre>
        *
-       * <code>.flyteidl.core.Identifier task_id = 1;</code>
+       * <code>.flyteidl.core.Identifier entity_id = 1;</code>
        */
-      public Builder setTaskId(
+      public Builder setEntityId(
           flyteidl.core.IdentifierOuterClass.Identifier.Builder builderForValue) {
-        if (taskIdBuilder_ == null) {
-          taskId_ = builderForValue.build();
+        if (entityIdBuilder_ == null) {
+          entityId_ = builderForValue.build();
           onChanged();
         } else {
-          taskIdBuilder_.setMessage(builderForValue.build());
+          entityIdBuilder_.setMessage(builderForValue.build());
         }
 
         return this;
@@ -12761,19 +12776,19 @@ public final class Artifacts {
        * These should all be launch plan IDs
        * </pre>
        *
-       * <code>.flyteidl.core.Identifier task_id = 1;</code>
+       * <code>.flyteidl.core.Identifier entity_id = 1;</code>
        */
-      public Builder mergeTaskId(flyteidl.core.IdentifierOuterClass.Identifier value) {
-        if (taskIdBuilder_ == null) {
-          if (taskId_ != null) {
-            taskId_ =
-              flyteidl.core.IdentifierOuterClass.Identifier.newBuilder(taskId_).mergeFrom(value).buildPartial();
+      public Builder mergeEntityId(flyteidl.core.IdentifierOuterClass.Identifier value) {
+        if (entityIdBuilder_ == null) {
+          if (entityId_ != null) {
+            entityId_ =
+              flyteidl.core.IdentifierOuterClass.Identifier.newBuilder(entityId_).mergeFrom(value).buildPartial();
           } else {
-            taskId_ = value;
+            entityId_ = value;
           }
           onChanged();
         } else {
-          taskIdBuilder_.mergeFrom(value);
+          entityIdBuilder_.mergeFrom(value);
         }
 
         return this;
@@ -12783,15 +12798,15 @@ public final class Artifacts {
        * These should all be launch plan IDs
        * </pre>
        *
-       * <code>.flyteidl.core.Identifier task_id = 1;</code>
+       * <code>.flyteidl.core.Identifier entity_id = 1;</code>
        */
-      public Builder clearTaskId() {
-        if (taskIdBuilder_ == null) {
-          taskId_ = null;
+      public Builder clearEntityId() {
+        if (entityIdBuilder_ == null) {
+          entityId_ = null;
           onChanged();
         } else {
-          taskId_ = null;
-          taskIdBuilder_ = null;
+          entityId_ = null;
+          entityIdBuilder_ = null;
         }
 
         return this;
@@ -12801,26 +12816,26 @@ public final class Artifacts {
        * These should all be launch plan IDs
        * </pre>
        *
-       * <code>.flyteidl.core.Identifier task_id = 1;</code>
+       * <code>.flyteidl.core.Identifier entity_id = 1;</code>
        */
-      public flyteidl.core.IdentifierOuterClass.Identifier.Builder getTaskIdBuilder() {
+      public flyteidl.core.IdentifierOuterClass.Identifier.Builder getEntityIdBuilder() {
         
         onChanged();
-        return getTaskIdFieldBuilder().getBuilder();
+        return getEntityIdFieldBuilder().getBuilder();
       }
       /**
        * <pre>
        * These should all be launch plan IDs
        * </pre>
        *
-       * <code>.flyteidl.core.Identifier task_id = 1;</code>
+       * <code>.flyteidl.core.Identifier entity_id = 1;</code>
        */
-      public flyteidl.core.IdentifierOuterClass.IdentifierOrBuilder getTaskIdOrBuilder() {
-        if (taskIdBuilder_ != null) {
-          return taskIdBuilder_.getMessageOrBuilder();
+      public flyteidl.core.IdentifierOuterClass.IdentifierOrBuilder getEntityIdOrBuilder() {
+        if (entityIdBuilder_ != null) {
+          return entityIdBuilder_.getMessageOrBuilder();
         } else {
-          return taskId_ == null ?
-              flyteidl.core.IdentifierOuterClass.Identifier.getDefaultInstance() : taskId_;
+          return entityId_ == null ?
+              flyteidl.core.IdentifierOuterClass.Identifier.getDefaultInstance() : entityId_;
         }
       }
       /**
@@ -12828,20 +12843,20 @@ public final class Artifacts {
        * These should all be launch plan IDs
        * </pre>
        *
-       * <code>.flyteidl.core.Identifier task_id = 1;</code>
+       * <code>.flyteidl.core.Identifier entity_id = 1;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
           flyteidl.core.IdentifierOuterClass.Identifier, flyteidl.core.IdentifierOuterClass.Identifier.Builder, flyteidl.core.IdentifierOuterClass.IdentifierOrBuilder> 
-          getTaskIdFieldBuilder() {
-        if (taskIdBuilder_ == null) {
-          taskIdBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+          getEntityIdFieldBuilder() {
+        if (entityIdBuilder_ == null) {
+          entityIdBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
               flyteidl.core.IdentifierOuterClass.Identifier, flyteidl.core.IdentifierOuterClass.Identifier.Builder, flyteidl.core.IdentifierOuterClass.IdentifierOrBuilder>(
-                  getTaskId(),
+                  getEntityId(),
                   getParentForChildren(),
                   isClean());
-          taskId_ = null;
+          entityId_ = null;
         }
-        return taskIdBuilder_;
+        return entityIdBuilder_;
       }
 
       private flyteidl.core.Interface.ParameterMap inputs_;
@@ -14342,31 +14357,31 @@ public final class Artifacts {
       "ifact\"a\n\rAddTagRequest\022.\n\013artifact_id\030\001 " +
       "\001(\0132\031.flyteidl.core.ArtifactID\022\r\n\005value\030" +
       "\002 \001(\t\022\021\n\toverwrite\030\003 \001(\010\"\020\n\016AddTagRespon" +
-      "se\"k\n\020ArtifactProducer\022*\n\007task_id\030\001 \001(\0132" +
-      "\031.flyteidl.core.Identifier\022+\n\007outputs\030\002 " +
-      "\001(\0132\032.flyteidl.core.VariableMap\"Q\n\027Regis" +
-      "terProducerRequest\0226\n\tproducers\030\001 \003(\0132#." +
-      "flyteidl.artifact.ArtifactProducer\"k\n\020Ar" +
-      "tifactConsumer\022*\n\007task_id\030\001 \001(\0132\031.flytei" +
-      "dl.core.Identifier\022+\n\006inputs\030\002 \001(\0132\033.fly" +
-      "teidl.core.ParameterMap\"Q\n\027RegisterConsu" +
-      "merRequest\0226\n\tconsumers\030\001 \003(\0132#.flyteidl" +
-      ".artifact.ArtifactConsumer\"\022\n\020RegisterRe" +
-      "sponse2\372\003\n\020ArtifactRegistry\022g\n\016CreateArt" +
-      "ifact\022(.flyteidl.artifact.CreateArtifact" +
-      "Request\032).flyteidl.artifact.CreateArtifa" +
-      "ctResponse\"\000\022^\n\013GetArtifact\022%.flyteidl.a" +
-      "rtifact.GetArtifactRequest\032&.flyteidl.ar" +
-      "tifact.GetArtifactResponse\"\000\022O\n\006AddTag\022 " +
-      ".flyteidl.artifact.AddTagRequest\032!.flyte" +
-      "idl.artifact.AddTagResponse\"\000\022e\n\020Registe" +
-      "rProducer\022*.flyteidl.artifact.RegisterPr" +
-      "oducerRequest\032#.flyteidl.artifact.Regist" +
-      "erResponse\"\000\022e\n\020RegisterConsumer\022*.flyte" +
-      "idl.artifact.RegisterConsumerRequest\032#.f" +
-      "lyteidl.artifact.RegisterResponse\"\000B:Z8g" +
-      "ithub.com/flyteorg/flyteidl/gen/pb-go/fl" +
-      "yteidl/artifactb\006proto3"
+      "se\"m\n\020ArtifactProducer\022,\n\tentity_id\030\001 \001(" +
+      "\0132\031.flyteidl.core.Identifier\022+\n\007outputs\030" +
+      "\002 \001(\0132\032.flyteidl.core.VariableMap\"Q\n\027Reg" +
+      "isterProducerRequest\0226\n\tproducers\030\001 \003(\0132" +
+      "#.flyteidl.artifact.ArtifactProducer\"m\n\020" +
+      "ArtifactConsumer\022,\n\tentity_id\030\001 \001(\0132\031.fl" +
+      "yteidl.core.Identifier\022+\n\006inputs\030\002 \001(\0132\033" +
+      ".flyteidl.core.ParameterMap\"Q\n\027RegisterC" +
+      "onsumerRequest\0226\n\tconsumers\030\001 \003(\0132#.flyt" +
+      "eidl.artifact.ArtifactConsumer\"\022\n\020Regist" +
+      "erResponse2\372\003\n\020ArtifactRegistry\022g\n\016Creat" +
+      "eArtifact\022(.flyteidl.artifact.CreateArti" +
+      "factRequest\032).flyteidl.artifact.CreateAr" +
+      "tifactResponse\"\000\022^\n\013GetArtifact\022%.flytei" +
+      "dl.artifact.GetArtifactRequest\032&.flyteid" +
+      "l.artifact.GetArtifactResponse\"\000\022O\n\006AddT" +
+      "ag\022 .flyteidl.artifact.AddTagRequest\032!.f" +
+      "lyteidl.artifact.AddTagResponse\"\000\022e\n\020Reg" +
+      "isterProducer\022*.flyteidl.artifact.Regist" +
+      "erProducerRequest\032#.flyteidl.artifact.Re" +
+      "gisterResponse\"\000\022e\n\020RegisterConsumer\022*.f" +
+      "lyteidl.artifact.RegisterConsumerRequest" +
+      "\032#.flyteidl.artifact.RegisterResponse\"\000B" +
+      ":Z8github.com/flyteorg/flyteidl/gen/pb-g" +
+      "o/flyteidl/artifactb\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
@@ -14467,7 +14482,7 @@ public final class Artifacts {
     internal_static_flyteidl_artifact_ArtifactProducer_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_flyteidl_artifact_ArtifactProducer_descriptor,
-        new java.lang.String[] { "TaskId", "Outputs", });
+        new java.lang.String[] { "EntityId", "Outputs", });
     internal_static_flyteidl_artifact_RegisterProducerRequest_descriptor =
       getDescriptor().getMessageTypes().get(13);
     internal_static_flyteidl_artifact_RegisterProducerRequest_fieldAccessorTable = new
@@ -14479,7 +14494,7 @@ public final class Artifacts {
     internal_static_flyteidl_artifact_ArtifactConsumer_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_flyteidl_artifact_ArtifactConsumer_descriptor,
-        new java.lang.String[] { "TaskId", "Inputs", });
+        new java.lang.String[] { "EntityId", "Inputs", });
     internal_static_flyteidl_artifact_RegisterConsumerRequest_descriptor =
       getDescriptor().getMessageTypes().get(15);
     internal_static_flyteidl_artifact_RegisterConsumerRequest_fieldAccessorTable = new

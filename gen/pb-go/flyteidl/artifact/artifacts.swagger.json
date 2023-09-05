@@ -86,7 +86,7 @@
     "artifactArtifactConsumer": {
       "type": "object",
       "properties": {
-        "task_id": {
+        "entity_id": {
           "$ref": "#/definitions/coreIdentifier",
           "title": "These should all be launch plan IDs"
         },
@@ -98,9 +98,9 @@
     "artifactArtifactProducer": {
       "type": "object",
       "properties": {
-        "task_id": {
+        "entity_id": {
           "$ref": "#/definitions/coreIdentifier",
-          "description": "These can be tasks, launch plans and workflows."
+          "description": "These can be tasks, and workflows. Keeping track of the launch plans that a given workflow has is purely in\nAdmin's domain."
         },
         "outputs": {
           "$ref": "#/definitions/coreVariableMap"

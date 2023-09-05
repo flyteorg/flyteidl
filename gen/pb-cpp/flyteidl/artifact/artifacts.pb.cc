@@ -511,7 +511,7 @@ const ::google::protobuf::uint32 TableStruct_flyteidl_2fartifact_2fartifacts_2ep
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
-  PROTOBUF_FIELD_OFFSET(::flyteidl::artifact::ArtifactProducer, task_id_),
+  PROTOBUF_FIELD_OFFSET(::flyteidl::artifact::ArtifactProducer, entity_id_),
   PROTOBUF_FIELD_OFFSET(::flyteidl::artifact::ArtifactProducer, outputs_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::flyteidl::artifact::RegisterProducerRequest, _internal_metadata_),
@@ -524,7 +524,7 @@ const ::google::protobuf::uint32 TableStruct_flyteidl_2fartifact_2fartifacts_2ep
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
-  PROTOBUF_FIELD_OFFSET(::flyteidl::artifact::ArtifactConsumer, task_id_),
+  PROTOBUF_FIELD_OFFSET(::flyteidl::artifact::ArtifactConsumer, entity_id_),
   PROTOBUF_FIELD_OFFSET(::flyteidl::artifact::ArtifactConsumer, inputs_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::flyteidl::artifact::RegisterConsumerRequest, _internal_metadata_),
@@ -625,36 +625,36 @@ const char descriptor_table_protodef_flyteidl_2fartifact_2fartifacts_2eproto[] =
   "ifact\"a\n\rAddTagRequest\022.\n\013artifact_id\030\001 "
   "\001(\0132\031.flyteidl.core.ArtifactID\022\r\n\005value\030"
   "\002 \001(\t\022\021\n\toverwrite\030\003 \001(\010\"\020\n\016AddTagRespon"
-  "se\"k\n\020ArtifactProducer\022*\n\007task_id\030\001 \001(\0132"
-  "\031.flyteidl.core.Identifier\022+\n\007outputs\030\002 "
-  "\001(\0132\032.flyteidl.core.VariableMap\"Q\n\027Regis"
-  "terProducerRequest\0226\n\tproducers\030\001 \003(\0132#."
-  "flyteidl.artifact.ArtifactProducer\"k\n\020Ar"
-  "tifactConsumer\022*\n\007task_id\030\001 \001(\0132\031.flytei"
-  "dl.core.Identifier\022+\n\006inputs\030\002 \001(\0132\033.fly"
-  "teidl.core.ParameterMap\"Q\n\027RegisterConsu"
-  "merRequest\0226\n\tconsumers\030\001 \003(\0132#.flyteidl"
-  ".artifact.ArtifactConsumer\"\022\n\020RegisterRe"
-  "sponse2\372\003\n\020ArtifactRegistry\022g\n\016CreateArt"
-  "ifact\022(.flyteidl.artifact.CreateArtifact"
-  "Request\032).flyteidl.artifact.CreateArtifa"
-  "ctResponse\"\000\022^\n\013GetArtifact\022%.flyteidl.a"
-  "rtifact.GetArtifactRequest\032&.flyteidl.ar"
-  "tifact.GetArtifactResponse\"\000\022O\n\006AddTag\022 "
-  ".flyteidl.artifact.AddTagRequest\032!.flyte"
-  "idl.artifact.AddTagResponse\"\000\022e\n\020Registe"
-  "rProducer\022*.flyteidl.artifact.RegisterPr"
-  "oducerRequest\032#.flyteidl.artifact.Regist"
-  "erResponse\"\000\022e\n\020RegisterConsumer\022*.flyte"
-  "idl.artifact.RegisterConsumerRequest\032#.f"
-  "lyteidl.artifact.RegisterResponse\"\000B:Z8g"
-  "ithub.com/flyteorg/flyteidl/gen/pb-go/fl"
-  "yteidl/artifactb\006proto3"
+  "se\"m\n\020ArtifactProducer\022,\n\tentity_id\030\001 \001("
+  "\0132\031.flyteidl.core.Identifier\022+\n\007outputs\030"
+  "\002 \001(\0132\032.flyteidl.core.VariableMap\"Q\n\027Reg"
+  "isterProducerRequest\0226\n\tproducers\030\001 \003(\0132"
+  "#.flyteidl.artifact.ArtifactProducer\"m\n\020"
+  "ArtifactConsumer\022,\n\tentity_id\030\001 \001(\0132\031.fl"
+  "yteidl.core.Identifier\022+\n\006inputs\030\002 \001(\0132\033"
+  ".flyteidl.core.ParameterMap\"Q\n\027RegisterC"
+  "onsumerRequest\0226\n\tconsumers\030\001 \003(\0132#.flyt"
+  "eidl.artifact.ArtifactConsumer\"\022\n\020Regist"
+  "erResponse2\372\003\n\020ArtifactRegistry\022g\n\016Creat"
+  "eArtifact\022(.flyteidl.artifact.CreateArti"
+  "factRequest\032).flyteidl.artifact.CreateAr"
+  "tifactResponse\"\000\022^\n\013GetArtifact\022%.flytei"
+  "dl.artifact.GetArtifactRequest\032&.flyteid"
+  "l.artifact.GetArtifactResponse\"\000\022O\n\006AddT"
+  "ag\022 .flyteidl.artifact.AddTagRequest\032!.f"
+  "lyteidl.artifact.AddTagResponse\"\000\022e\n\020Reg"
+  "isterProducer\022*.flyteidl.artifact.Regist"
+  "erProducerRequest\032#.flyteidl.artifact.Re"
+  "gisterResponse\"\000\022e\n\020RegisterConsumer\022*.f"
+  "lyteidl.artifact.RegisterConsumerRequest"
+  "\032#.flyteidl.artifact.RegisterResponse\"\000B"
+  ":Z8github.com/flyteorg/flyteidl/gen/pb-g"
+  "o/flyteidl/artifactb\006proto3"
   ;
 ::google::protobuf::internal::DescriptorTable descriptor_table_flyteidl_2fartifact_2fartifacts_2eproto = {
   false, InitDefaults_flyteidl_2fartifact_2fartifacts_2eproto, 
   descriptor_table_protodef_flyteidl_2fartifact_2fartifacts_2eproto,
-  "flyteidl/artifact/artifacts.proto", &assign_descriptors_table_flyteidl_2fartifact_2fartifacts_2eproto, 2503,
+  "flyteidl/artifact/artifacts.proto", &assign_descriptors_table_flyteidl_2fartifact_2fartifacts_2eproto, 2507,
 };
 
 void AddDescriptors_flyteidl_2fartifact_2fartifacts_2eproto() {
@@ -5376,30 +5376,30 @@ void AddTagResponse::InternalSwap(AddTagResponse* other) {
 // ===================================================================
 
 void ArtifactProducer::InitAsDefaultInstance() {
-  ::flyteidl::artifact::_ArtifactProducer_default_instance_._instance.get_mutable()->task_id_ = const_cast< ::flyteidl::core::Identifier*>(
+  ::flyteidl::artifact::_ArtifactProducer_default_instance_._instance.get_mutable()->entity_id_ = const_cast< ::flyteidl::core::Identifier*>(
       ::flyteidl::core::Identifier::internal_default_instance());
   ::flyteidl::artifact::_ArtifactProducer_default_instance_._instance.get_mutable()->outputs_ = const_cast< ::flyteidl::core::VariableMap*>(
       ::flyteidl::core::VariableMap::internal_default_instance());
 }
 class ArtifactProducer::HasBitSetters {
  public:
-  static const ::flyteidl::core::Identifier& task_id(const ArtifactProducer* msg);
+  static const ::flyteidl::core::Identifier& entity_id(const ArtifactProducer* msg);
   static const ::flyteidl::core::VariableMap& outputs(const ArtifactProducer* msg);
 };
 
 const ::flyteidl::core::Identifier&
-ArtifactProducer::HasBitSetters::task_id(const ArtifactProducer* msg) {
-  return *msg->task_id_;
+ArtifactProducer::HasBitSetters::entity_id(const ArtifactProducer* msg) {
+  return *msg->entity_id_;
 }
 const ::flyteidl::core::VariableMap&
 ArtifactProducer::HasBitSetters::outputs(const ArtifactProducer* msg) {
   return *msg->outputs_;
 }
-void ArtifactProducer::clear_task_id() {
-  if (GetArenaNoVirtual() == nullptr && task_id_ != nullptr) {
-    delete task_id_;
+void ArtifactProducer::clear_entity_id() {
+  if (GetArenaNoVirtual() == nullptr && entity_id_ != nullptr) {
+    delete entity_id_;
   }
-  task_id_ = nullptr;
+  entity_id_ = nullptr;
 }
 void ArtifactProducer::clear_outputs() {
   if (GetArenaNoVirtual() == nullptr && outputs_ != nullptr) {
@@ -5408,7 +5408,7 @@ void ArtifactProducer::clear_outputs() {
   outputs_ = nullptr;
 }
 #if !defined(_MSC_VER) || _MSC_VER >= 1900
-const int ArtifactProducer::kTaskIdFieldNumber;
+const int ArtifactProducer::kEntityIdFieldNumber;
 const int ArtifactProducer::kOutputsFieldNumber;
 #endif  // !defined(_MSC_VER) || _MSC_VER >= 1900
 
@@ -5421,10 +5421,10 @@ ArtifactProducer::ArtifactProducer(const ArtifactProducer& from)
   : ::google::protobuf::Message(),
       _internal_metadata_(nullptr) {
   _internal_metadata_.MergeFrom(from._internal_metadata_);
-  if (from.has_task_id()) {
-    task_id_ = new ::flyteidl::core::Identifier(*from.task_id_);
+  if (from.has_entity_id()) {
+    entity_id_ = new ::flyteidl::core::Identifier(*from.entity_id_);
   } else {
-    task_id_ = nullptr;
+    entity_id_ = nullptr;
   }
   if (from.has_outputs()) {
     outputs_ = new ::flyteidl::core::VariableMap(*from.outputs_);
@@ -5437,9 +5437,9 @@ ArtifactProducer::ArtifactProducer(const ArtifactProducer& from)
 void ArtifactProducer::SharedCtor() {
   ::google::protobuf::internal::InitSCC(
       &scc_info_ArtifactProducer_flyteidl_2fartifact_2fartifacts_2eproto.base);
-  ::memset(&task_id_, 0, static_cast<size_t>(
+  ::memset(&entity_id_, 0, static_cast<size_t>(
       reinterpret_cast<char*>(&outputs_) -
-      reinterpret_cast<char*>(&task_id_)) + sizeof(outputs_));
+      reinterpret_cast<char*>(&entity_id_)) + sizeof(outputs_));
 }
 
 ArtifactProducer::~ArtifactProducer() {
@@ -5448,7 +5448,7 @@ ArtifactProducer::~ArtifactProducer() {
 }
 
 void ArtifactProducer::SharedDtor() {
-  if (this != internal_default_instance()) delete task_id_;
+  if (this != internal_default_instance()) delete entity_id_;
   if (this != internal_default_instance()) delete outputs_;
 }
 
@@ -5467,10 +5467,10 @@ void ArtifactProducer::Clear() {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  if (GetArenaNoVirtual() == nullptr && task_id_ != nullptr) {
-    delete task_id_;
+  if (GetArenaNoVirtual() == nullptr && entity_id_ != nullptr) {
+    delete entity_id_;
   }
-  task_id_ = nullptr;
+  entity_id_ = nullptr;
   if (GetArenaNoVirtual() == nullptr && outputs_ != nullptr) {
     delete outputs_;
   }
@@ -5491,13 +5491,13 @@ const char* ArtifactProducer::_InternalParse(const char* begin, const char* end,
     ptr = ::google::protobuf::io::Parse32(ptr, &tag);
     GOOGLE_PROTOBUF_PARSER_ASSERT(ptr);
     switch (tag >> 3) {
-      // .flyteidl.core.Identifier task_id = 1;
+      // .flyteidl.core.Identifier entity_id = 1;
       case 1: {
         if (static_cast<::google::protobuf::uint8>(tag) != 10) goto handle_unusual;
         ptr = ::google::protobuf::io::ReadSize(ptr, &size);
         GOOGLE_PROTOBUF_PARSER_ASSERT(ptr);
         parser_till_end = ::flyteidl::core::Identifier::_InternalParse;
-        object = msg->mutable_task_id();
+        object = msg->mutable_entity_id();
         if (size > end - ptr) goto len_delim_till_end;
         ptr += size;
         GOOGLE_PROTOBUF_PARSER_ASSERT(ctx->ParseExactRange(
@@ -5547,11 +5547,11 @@ bool ArtifactProducer::MergePartialFromCodedStream(
     tag = p.first;
     if (!p.second) goto handle_unusual;
     switch (::google::protobuf::internal::WireFormatLite::GetTagFieldNumber(tag)) {
-      // .flyteidl.core.Identifier task_id = 1;
+      // .flyteidl.core.Identifier entity_id = 1;
       case 1: {
         if (static_cast< ::google::protobuf::uint8>(tag) == (10 & 0xFF)) {
           DO_(::google::protobuf::internal::WireFormatLite::ReadMessage(
-               input, mutable_task_id()));
+               input, mutable_entity_id()));
         } else {
           goto handle_unusual;
         }
@@ -5596,10 +5596,10 @@ void ArtifactProducer::SerializeWithCachedSizes(
   ::google::protobuf::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  // .flyteidl.core.Identifier task_id = 1;
-  if (this->has_task_id()) {
+  // .flyteidl.core.Identifier entity_id = 1;
+  if (this->has_entity_id()) {
     ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
-      1, HasBitSetters::task_id(this), output);
+      1, HasBitSetters::entity_id(this), output);
   }
 
   // .flyteidl.core.VariableMap outputs = 2;
@@ -5621,11 +5621,11 @@ void ArtifactProducer::SerializeWithCachedSizes(
   ::google::protobuf::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  // .flyteidl.core.Identifier task_id = 1;
-  if (this->has_task_id()) {
+  // .flyteidl.core.Identifier entity_id = 1;
+  if (this->has_entity_id()) {
     target = ::google::protobuf::internal::WireFormatLite::
       InternalWriteMessageToArray(
-        1, HasBitSetters::task_id(this), target);
+        1, HasBitSetters::entity_id(this), target);
   }
 
   // .flyteidl.core.VariableMap outputs = 2;
@@ -5656,11 +5656,11 @@ size_t ArtifactProducer::ByteSizeLong() const {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  // .flyteidl.core.Identifier task_id = 1;
-  if (this->has_task_id()) {
+  // .flyteidl.core.Identifier entity_id = 1;
+  if (this->has_entity_id()) {
     total_size += 1 +
       ::google::protobuf::internal::WireFormatLite::MessageSize(
-        *task_id_);
+        *entity_id_);
   }
 
   // .flyteidl.core.VariableMap outputs = 2;
@@ -5697,8 +5697,8 @@ void ArtifactProducer::MergeFrom(const ArtifactProducer& from) {
   ::google::protobuf::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  if (from.has_task_id()) {
-    mutable_task_id()->::flyteidl::core::Identifier::MergeFrom(from.task_id());
+  if (from.has_entity_id()) {
+    mutable_entity_id()->::flyteidl::core::Identifier::MergeFrom(from.entity_id());
   }
   if (from.has_outputs()) {
     mutable_outputs()->::flyteidl::core::VariableMap::MergeFrom(from.outputs());
@@ -5730,7 +5730,7 @@ void ArtifactProducer::Swap(ArtifactProducer* other) {
 void ArtifactProducer::InternalSwap(ArtifactProducer* other) {
   using std::swap;
   _internal_metadata_.Swap(&other->_internal_metadata_);
-  swap(task_id_, other->task_id_);
+  swap(entity_id_, other->entity_id_);
   swap(outputs_, other->outputs_);
 }
 
@@ -6023,30 +6023,30 @@ void RegisterProducerRequest::InternalSwap(RegisterProducerRequest* other) {
 // ===================================================================
 
 void ArtifactConsumer::InitAsDefaultInstance() {
-  ::flyteidl::artifact::_ArtifactConsumer_default_instance_._instance.get_mutable()->task_id_ = const_cast< ::flyteidl::core::Identifier*>(
+  ::flyteidl::artifact::_ArtifactConsumer_default_instance_._instance.get_mutable()->entity_id_ = const_cast< ::flyteidl::core::Identifier*>(
       ::flyteidl::core::Identifier::internal_default_instance());
   ::flyteidl::artifact::_ArtifactConsumer_default_instance_._instance.get_mutable()->inputs_ = const_cast< ::flyteidl::core::ParameterMap*>(
       ::flyteidl::core::ParameterMap::internal_default_instance());
 }
 class ArtifactConsumer::HasBitSetters {
  public:
-  static const ::flyteidl::core::Identifier& task_id(const ArtifactConsumer* msg);
+  static const ::flyteidl::core::Identifier& entity_id(const ArtifactConsumer* msg);
   static const ::flyteidl::core::ParameterMap& inputs(const ArtifactConsumer* msg);
 };
 
 const ::flyteidl::core::Identifier&
-ArtifactConsumer::HasBitSetters::task_id(const ArtifactConsumer* msg) {
-  return *msg->task_id_;
+ArtifactConsumer::HasBitSetters::entity_id(const ArtifactConsumer* msg) {
+  return *msg->entity_id_;
 }
 const ::flyteidl::core::ParameterMap&
 ArtifactConsumer::HasBitSetters::inputs(const ArtifactConsumer* msg) {
   return *msg->inputs_;
 }
-void ArtifactConsumer::clear_task_id() {
-  if (GetArenaNoVirtual() == nullptr && task_id_ != nullptr) {
-    delete task_id_;
+void ArtifactConsumer::clear_entity_id() {
+  if (GetArenaNoVirtual() == nullptr && entity_id_ != nullptr) {
+    delete entity_id_;
   }
-  task_id_ = nullptr;
+  entity_id_ = nullptr;
 }
 void ArtifactConsumer::clear_inputs() {
   if (GetArenaNoVirtual() == nullptr && inputs_ != nullptr) {
@@ -6055,7 +6055,7 @@ void ArtifactConsumer::clear_inputs() {
   inputs_ = nullptr;
 }
 #if !defined(_MSC_VER) || _MSC_VER >= 1900
-const int ArtifactConsumer::kTaskIdFieldNumber;
+const int ArtifactConsumer::kEntityIdFieldNumber;
 const int ArtifactConsumer::kInputsFieldNumber;
 #endif  // !defined(_MSC_VER) || _MSC_VER >= 1900
 
@@ -6068,10 +6068,10 @@ ArtifactConsumer::ArtifactConsumer(const ArtifactConsumer& from)
   : ::google::protobuf::Message(),
       _internal_metadata_(nullptr) {
   _internal_metadata_.MergeFrom(from._internal_metadata_);
-  if (from.has_task_id()) {
-    task_id_ = new ::flyteidl::core::Identifier(*from.task_id_);
+  if (from.has_entity_id()) {
+    entity_id_ = new ::flyteidl::core::Identifier(*from.entity_id_);
   } else {
-    task_id_ = nullptr;
+    entity_id_ = nullptr;
   }
   if (from.has_inputs()) {
     inputs_ = new ::flyteidl::core::ParameterMap(*from.inputs_);
@@ -6084,9 +6084,9 @@ ArtifactConsumer::ArtifactConsumer(const ArtifactConsumer& from)
 void ArtifactConsumer::SharedCtor() {
   ::google::protobuf::internal::InitSCC(
       &scc_info_ArtifactConsumer_flyteidl_2fartifact_2fartifacts_2eproto.base);
-  ::memset(&task_id_, 0, static_cast<size_t>(
+  ::memset(&entity_id_, 0, static_cast<size_t>(
       reinterpret_cast<char*>(&inputs_) -
-      reinterpret_cast<char*>(&task_id_)) + sizeof(inputs_));
+      reinterpret_cast<char*>(&entity_id_)) + sizeof(inputs_));
 }
 
 ArtifactConsumer::~ArtifactConsumer() {
@@ -6095,7 +6095,7 @@ ArtifactConsumer::~ArtifactConsumer() {
 }
 
 void ArtifactConsumer::SharedDtor() {
-  if (this != internal_default_instance()) delete task_id_;
+  if (this != internal_default_instance()) delete entity_id_;
   if (this != internal_default_instance()) delete inputs_;
 }
 
@@ -6114,10 +6114,10 @@ void ArtifactConsumer::Clear() {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  if (GetArenaNoVirtual() == nullptr && task_id_ != nullptr) {
-    delete task_id_;
+  if (GetArenaNoVirtual() == nullptr && entity_id_ != nullptr) {
+    delete entity_id_;
   }
-  task_id_ = nullptr;
+  entity_id_ = nullptr;
   if (GetArenaNoVirtual() == nullptr && inputs_ != nullptr) {
     delete inputs_;
   }
@@ -6138,13 +6138,13 @@ const char* ArtifactConsumer::_InternalParse(const char* begin, const char* end,
     ptr = ::google::protobuf::io::Parse32(ptr, &tag);
     GOOGLE_PROTOBUF_PARSER_ASSERT(ptr);
     switch (tag >> 3) {
-      // .flyteidl.core.Identifier task_id = 1;
+      // .flyteidl.core.Identifier entity_id = 1;
       case 1: {
         if (static_cast<::google::protobuf::uint8>(tag) != 10) goto handle_unusual;
         ptr = ::google::protobuf::io::ReadSize(ptr, &size);
         GOOGLE_PROTOBUF_PARSER_ASSERT(ptr);
         parser_till_end = ::flyteidl::core::Identifier::_InternalParse;
-        object = msg->mutable_task_id();
+        object = msg->mutable_entity_id();
         if (size > end - ptr) goto len_delim_till_end;
         ptr += size;
         GOOGLE_PROTOBUF_PARSER_ASSERT(ctx->ParseExactRange(
@@ -6194,11 +6194,11 @@ bool ArtifactConsumer::MergePartialFromCodedStream(
     tag = p.first;
     if (!p.second) goto handle_unusual;
     switch (::google::protobuf::internal::WireFormatLite::GetTagFieldNumber(tag)) {
-      // .flyteidl.core.Identifier task_id = 1;
+      // .flyteidl.core.Identifier entity_id = 1;
       case 1: {
         if (static_cast< ::google::protobuf::uint8>(tag) == (10 & 0xFF)) {
           DO_(::google::protobuf::internal::WireFormatLite::ReadMessage(
-               input, mutable_task_id()));
+               input, mutable_entity_id()));
         } else {
           goto handle_unusual;
         }
@@ -6243,10 +6243,10 @@ void ArtifactConsumer::SerializeWithCachedSizes(
   ::google::protobuf::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  // .flyteidl.core.Identifier task_id = 1;
-  if (this->has_task_id()) {
+  // .flyteidl.core.Identifier entity_id = 1;
+  if (this->has_entity_id()) {
     ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
-      1, HasBitSetters::task_id(this), output);
+      1, HasBitSetters::entity_id(this), output);
   }
 
   // .flyteidl.core.ParameterMap inputs = 2;
@@ -6268,11 +6268,11 @@ void ArtifactConsumer::SerializeWithCachedSizes(
   ::google::protobuf::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  // .flyteidl.core.Identifier task_id = 1;
-  if (this->has_task_id()) {
+  // .flyteidl.core.Identifier entity_id = 1;
+  if (this->has_entity_id()) {
     target = ::google::protobuf::internal::WireFormatLite::
       InternalWriteMessageToArray(
-        1, HasBitSetters::task_id(this), target);
+        1, HasBitSetters::entity_id(this), target);
   }
 
   // .flyteidl.core.ParameterMap inputs = 2;
@@ -6303,11 +6303,11 @@ size_t ArtifactConsumer::ByteSizeLong() const {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  // .flyteidl.core.Identifier task_id = 1;
-  if (this->has_task_id()) {
+  // .flyteidl.core.Identifier entity_id = 1;
+  if (this->has_entity_id()) {
     total_size += 1 +
       ::google::protobuf::internal::WireFormatLite::MessageSize(
-        *task_id_);
+        *entity_id_);
   }
 
   // .flyteidl.core.ParameterMap inputs = 2;
@@ -6344,8 +6344,8 @@ void ArtifactConsumer::MergeFrom(const ArtifactConsumer& from) {
   ::google::protobuf::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  if (from.has_task_id()) {
-    mutable_task_id()->::flyteidl::core::Identifier::MergeFrom(from.task_id());
+  if (from.has_entity_id()) {
+    mutable_entity_id()->::flyteidl::core::Identifier::MergeFrom(from.entity_id());
   }
   if (from.has_inputs()) {
     mutable_inputs()->::flyteidl::core::ParameterMap::MergeFrom(from.inputs());
@@ -6377,7 +6377,7 @@ void ArtifactConsumer::Swap(ArtifactConsumer* other) {
 void ArtifactConsumer::InternalSwap(ArtifactConsumer* other) {
   using std::swap;
   _internal_metadata_.Swap(&other->_internal_metadata_);
-  swap(task_id_, other->task_id_);
+  swap(entity_id_, other->entity_id_);
   swap(inputs_, other->inputs_);
 }
 

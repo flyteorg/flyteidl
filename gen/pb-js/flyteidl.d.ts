@@ -9002,8 +9002,8 @@ export namespace flyteidl {
         /** Properties of an ArtifactProducer. */
         interface IArtifactProducer {
 
-            /** ArtifactProducer taskId */
-            taskId?: (flyteidl.core.IIdentifier|null);
+            /** ArtifactProducer entityId */
+            entityId?: (flyteidl.core.IIdentifier|null);
 
             /** ArtifactProducer outputs */
             outputs?: (flyteidl.core.IVariableMap|null);
@@ -9018,8 +9018,8 @@ export namespace flyteidl {
              */
             constructor(properties?: flyteidl.artifact.IArtifactProducer);
 
-            /** ArtifactProducer taskId. */
-            public taskId?: (flyteidl.core.IIdentifier|null);
+            /** ArtifactProducer entityId. */
+            public entityId?: (flyteidl.core.IIdentifier|null);
 
             /** ArtifactProducer outputs. */
             public outputs?: (flyteidl.core.IVariableMap|null);
@@ -9112,8 +9112,8 @@ export namespace flyteidl {
         /** Properties of an ArtifactConsumer. */
         interface IArtifactConsumer {
 
-            /** ArtifactConsumer taskId */
-            taskId?: (flyteidl.core.IIdentifier|null);
+            /** ArtifactConsumer entityId */
+            entityId?: (flyteidl.core.IIdentifier|null);
 
             /** ArtifactConsumer inputs */
             inputs?: (flyteidl.core.IParameterMap|null);
@@ -9128,8 +9128,8 @@ export namespace flyteidl {
              */
             constructor(properties?: flyteidl.artifact.IArtifactConsumer);
 
-            /** ArtifactConsumer taskId. */
-            public taskId?: (flyteidl.core.IIdentifier|null);
+            /** ArtifactConsumer entityId. */
+            public entityId?: (flyteidl.core.IIdentifier|null);
 
             /** ArtifactConsumer inputs. */
             public inputs?: (flyteidl.core.IParameterMap|null);

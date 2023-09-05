@@ -1871,14 +1871,14 @@ class ArtifactProducer final :
 
   // accessors -------------------------------------------------------
 
-  // .flyteidl.core.Identifier task_id = 1;
-  bool has_task_id() const;
-  void clear_task_id();
-  static const int kTaskIdFieldNumber = 1;
-  const ::flyteidl::core::Identifier& task_id() const;
-  ::flyteidl::core::Identifier* release_task_id();
-  ::flyteidl::core::Identifier* mutable_task_id();
-  void set_allocated_task_id(::flyteidl::core::Identifier* task_id);
+  // .flyteidl.core.Identifier entity_id = 1;
+  bool has_entity_id() const;
+  void clear_entity_id();
+  static const int kEntityIdFieldNumber = 1;
+  const ::flyteidl::core::Identifier& entity_id() const;
+  ::flyteidl::core::Identifier* release_entity_id();
+  ::flyteidl::core::Identifier* mutable_entity_id();
+  void set_allocated_entity_id(::flyteidl::core::Identifier* entity_id);
 
   // .flyteidl.core.VariableMap outputs = 2;
   bool has_outputs() const;
@@ -1894,7 +1894,7 @@ class ArtifactProducer final :
   class HasBitSetters;
 
   ::google::protobuf::internal::InternalMetadataWithArena _internal_metadata_;
-  ::flyteidl::core::Identifier* task_id_;
+  ::flyteidl::core::Identifier* entity_id_;
   ::flyteidl::core::VariableMap* outputs_;
   mutable ::google::protobuf::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_flyteidl_2fartifact_2fartifacts_2eproto;
@@ -2114,14 +2114,14 @@ class ArtifactConsumer final :
 
   // accessors -------------------------------------------------------
 
-  // .flyteidl.core.Identifier task_id = 1;
-  bool has_task_id() const;
-  void clear_task_id();
-  static const int kTaskIdFieldNumber = 1;
-  const ::flyteidl::core::Identifier& task_id() const;
-  ::flyteidl::core::Identifier* release_task_id();
-  ::flyteidl::core::Identifier* mutable_task_id();
-  void set_allocated_task_id(::flyteidl::core::Identifier* task_id);
+  // .flyteidl.core.Identifier entity_id = 1;
+  bool has_entity_id() const;
+  void clear_entity_id();
+  static const int kEntityIdFieldNumber = 1;
+  const ::flyteidl::core::Identifier& entity_id() const;
+  ::flyteidl::core::Identifier* release_entity_id();
+  ::flyteidl::core::Identifier* mutable_entity_id();
+  void set_allocated_entity_id(::flyteidl::core::Identifier* entity_id);
 
   // .flyteidl.core.ParameterMap inputs = 2;
   bool has_inputs() const;
@@ -2137,7 +2137,7 @@ class ArtifactConsumer final :
   class HasBitSetters;
 
   ::google::protobuf::internal::InternalMetadataWithArena _internal_metadata_;
-  ::flyteidl::core::Identifier* task_id_;
+  ::flyteidl::core::Identifier* entity_id_;
   ::flyteidl::core::ParameterMap* inputs_;
   mutable ::google::protobuf::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_flyteidl_2fartifact_2fartifacts_2eproto;
@@ -3659,49 +3659,49 @@ inline void AddTagRequest::set_overwrite(bool value) {
 
 // ArtifactProducer
 
-// .flyteidl.core.Identifier task_id = 1;
-inline bool ArtifactProducer::has_task_id() const {
-  return this != internal_default_instance() && task_id_ != nullptr;
+// .flyteidl.core.Identifier entity_id = 1;
+inline bool ArtifactProducer::has_entity_id() const {
+  return this != internal_default_instance() && entity_id_ != nullptr;
 }
-inline const ::flyteidl::core::Identifier& ArtifactProducer::task_id() const {
-  const ::flyteidl::core::Identifier* p = task_id_;
-  // @@protoc_insertion_point(field_get:flyteidl.artifact.ArtifactProducer.task_id)
+inline const ::flyteidl::core::Identifier& ArtifactProducer::entity_id() const {
+  const ::flyteidl::core::Identifier* p = entity_id_;
+  // @@protoc_insertion_point(field_get:flyteidl.artifact.ArtifactProducer.entity_id)
   return p != nullptr ? *p : *reinterpret_cast<const ::flyteidl::core::Identifier*>(
       &::flyteidl::core::_Identifier_default_instance_);
 }
-inline ::flyteidl::core::Identifier* ArtifactProducer::release_task_id() {
-  // @@protoc_insertion_point(field_release:flyteidl.artifact.ArtifactProducer.task_id)
+inline ::flyteidl::core::Identifier* ArtifactProducer::release_entity_id() {
+  // @@protoc_insertion_point(field_release:flyteidl.artifact.ArtifactProducer.entity_id)
   
-  ::flyteidl::core::Identifier* temp = task_id_;
-  task_id_ = nullptr;
+  ::flyteidl::core::Identifier* temp = entity_id_;
+  entity_id_ = nullptr;
   return temp;
 }
-inline ::flyteidl::core::Identifier* ArtifactProducer::mutable_task_id() {
+inline ::flyteidl::core::Identifier* ArtifactProducer::mutable_entity_id() {
   
-  if (task_id_ == nullptr) {
+  if (entity_id_ == nullptr) {
     auto* p = CreateMaybeMessage<::flyteidl::core::Identifier>(GetArenaNoVirtual());
-    task_id_ = p;
+    entity_id_ = p;
   }
-  // @@protoc_insertion_point(field_mutable:flyteidl.artifact.ArtifactProducer.task_id)
-  return task_id_;
+  // @@protoc_insertion_point(field_mutable:flyteidl.artifact.ArtifactProducer.entity_id)
+  return entity_id_;
 }
-inline void ArtifactProducer::set_allocated_task_id(::flyteidl::core::Identifier* task_id) {
+inline void ArtifactProducer::set_allocated_entity_id(::flyteidl::core::Identifier* entity_id) {
   ::google::protobuf::Arena* message_arena = GetArenaNoVirtual();
   if (message_arena == nullptr) {
-    delete reinterpret_cast< ::google::protobuf::MessageLite*>(task_id_);
+    delete reinterpret_cast< ::google::protobuf::MessageLite*>(entity_id_);
   }
-  if (task_id) {
+  if (entity_id) {
     ::google::protobuf::Arena* submessage_arena = nullptr;
     if (message_arena != submessage_arena) {
-      task_id = ::google::protobuf::internal::GetOwnedMessage(
-          message_arena, task_id, submessage_arena);
+      entity_id = ::google::protobuf::internal::GetOwnedMessage(
+          message_arena, entity_id, submessage_arena);
     }
     
   } else {
     
   }
-  task_id_ = task_id;
-  // @@protoc_insertion_point(field_set_allocated:flyteidl.artifact.ArtifactProducer.task_id)
+  entity_id_ = entity_id;
+  // @@protoc_insertion_point(field_set_allocated:flyteidl.artifact.ArtifactProducer.entity_id)
 }
 
 // .flyteidl.core.VariableMap outputs = 2;
@@ -3787,49 +3787,49 @@ RegisterProducerRequest::producers() const {
 
 // ArtifactConsumer
 
-// .flyteidl.core.Identifier task_id = 1;
-inline bool ArtifactConsumer::has_task_id() const {
-  return this != internal_default_instance() && task_id_ != nullptr;
+// .flyteidl.core.Identifier entity_id = 1;
+inline bool ArtifactConsumer::has_entity_id() const {
+  return this != internal_default_instance() && entity_id_ != nullptr;
 }
-inline const ::flyteidl::core::Identifier& ArtifactConsumer::task_id() const {
-  const ::flyteidl::core::Identifier* p = task_id_;
-  // @@protoc_insertion_point(field_get:flyteidl.artifact.ArtifactConsumer.task_id)
+inline const ::flyteidl::core::Identifier& ArtifactConsumer::entity_id() const {
+  const ::flyteidl::core::Identifier* p = entity_id_;
+  // @@protoc_insertion_point(field_get:flyteidl.artifact.ArtifactConsumer.entity_id)
   return p != nullptr ? *p : *reinterpret_cast<const ::flyteidl::core::Identifier*>(
       &::flyteidl::core::_Identifier_default_instance_);
 }
-inline ::flyteidl::core::Identifier* ArtifactConsumer::release_task_id() {
-  // @@protoc_insertion_point(field_release:flyteidl.artifact.ArtifactConsumer.task_id)
+inline ::flyteidl::core::Identifier* ArtifactConsumer::release_entity_id() {
+  // @@protoc_insertion_point(field_release:flyteidl.artifact.ArtifactConsumer.entity_id)
   
-  ::flyteidl::core::Identifier* temp = task_id_;
-  task_id_ = nullptr;
+  ::flyteidl::core::Identifier* temp = entity_id_;
+  entity_id_ = nullptr;
   return temp;
 }
-inline ::flyteidl::core::Identifier* ArtifactConsumer::mutable_task_id() {
+inline ::flyteidl::core::Identifier* ArtifactConsumer::mutable_entity_id() {
   
-  if (task_id_ == nullptr) {
+  if (entity_id_ == nullptr) {
     auto* p = CreateMaybeMessage<::flyteidl::core::Identifier>(GetArenaNoVirtual());
-    task_id_ = p;
+    entity_id_ = p;
   }
-  // @@protoc_insertion_point(field_mutable:flyteidl.artifact.ArtifactConsumer.task_id)
-  return task_id_;
+  // @@protoc_insertion_point(field_mutable:flyteidl.artifact.ArtifactConsumer.entity_id)
+  return entity_id_;
 }
-inline void ArtifactConsumer::set_allocated_task_id(::flyteidl::core::Identifier* task_id) {
+inline void ArtifactConsumer::set_allocated_entity_id(::flyteidl::core::Identifier* entity_id) {
   ::google::protobuf::Arena* message_arena = GetArenaNoVirtual();
   if (message_arena == nullptr) {
-    delete reinterpret_cast< ::google::protobuf::MessageLite*>(task_id_);
+    delete reinterpret_cast< ::google::protobuf::MessageLite*>(entity_id_);
   }
-  if (task_id) {
+  if (entity_id) {
     ::google::protobuf::Arena* submessage_arena = nullptr;
     if (message_arena != submessage_arena) {
-      task_id = ::google::protobuf::internal::GetOwnedMessage(
-          message_arena, task_id, submessage_arena);
+      entity_id = ::google::protobuf::internal::GetOwnedMessage(
+          message_arena, entity_id, submessage_arena);
     }
     
   } else {
     
   }
-  task_id_ = task_id;
-  // @@protoc_insertion_point(field_set_allocated:flyteidl.artifact.ArtifactConsumer.task_id)
+  entity_id_ = entity_id;
+  // @@protoc_insertion_point(field_set_allocated:flyteidl.artifact.ArtifactConsumer.entity_id)
 }
 
 // .flyteidl.core.ParameterMap inputs = 2;
