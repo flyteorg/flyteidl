@@ -37,6 +37,7 @@
 #include "flyteidl/core/literals.pb.h"
 #include "flyteidl/core/types.pb.h"
 #include "flyteidl/core/identifier.pb.h"
+#include "flyteidl/core/interface.pb.h"
 // @@protoc_insertion_point(includes)
 #include <google/protobuf/port_def.inc>
 #define PROTOBUF_INTERNAL_EXPORT_flyteidl_2fartifact_2fartifacts_2eproto
@@ -47,7 +48,7 @@ struct TableStruct_flyteidl_2fartifact_2fartifacts_2eproto {
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
   static const ::google::protobuf::internal::AuxillaryParseTableField aux[]
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
-  static const ::google::protobuf::internal::ParseTable schema[13]
+  static const ::google::protobuf::internal::ParseTable schema[18]
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
   static const ::google::protobuf::internal::FieldMetadata field_metadata[];
   static const ::google::protobuf::internal::SerializationTable serialization_table[];
@@ -65,6 +66,12 @@ extern AddTagResponseDefaultTypeInternal _AddTagResponse_default_instance_;
 class Artifact;
 class ArtifactDefaultTypeInternal;
 extern ArtifactDefaultTypeInternal _Artifact_default_instance_;
+class ArtifactConsumer;
+class ArtifactConsumerDefaultTypeInternal;
+extern ArtifactConsumerDefaultTypeInternal _ArtifactConsumer_default_instance_;
+class ArtifactProducer;
+class ArtifactProducerDefaultTypeInternal;
+extern ArtifactProducerDefaultTypeInternal _ArtifactProducer_default_instance_;
 class ArtifactSpec;
 class ArtifactSpecDefaultTypeInternal;
 extern ArtifactSpecDefaultTypeInternal _ArtifactSpec_default_instance_;
@@ -95,6 +102,15 @@ extern ListArtifactsRequestDefaultTypeInternal _ListArtifactsRequest_default_ins
 class ListArtifactsResponse;
 class ListArtifactsResponseDefaultTypeInternal;
 extern ListArtifactsResponseDefaultTypeInternal _ListArtifactsResponse_default_instance_;
+class RegisterConsumerRequest;
+class RegisterConsumerRequestDefaultTypeInternal;
+extern RegisterConsumerRequestDefaultTypeInternal _RegisterConsumerRequest_default_instance_;
+class RegisterProducerRequest;
+class RegisterProducerRequestDefaultTypeInternal;
+extern RegisterProducerRequestDefaultTypeInternal _RegisterProducerRequest_default_instance_;
+class RegisterResponse;
+class RegisterResponseDefaultTypeInternal;
+extern RegisterResponseDefaultTypeInternal _RegisterResponse_default_instance_;
 }  // namespace artifact
 }  // namespace flyteidl
 namespace google {
@@ -102,6 +118,8 @@ namespace protobuf {
 template<> ::flyteidl::artifact::AddTagRequest* Arena::CreateMaybeMessage<::flyteidl::artifact::AddTagRequest>(Arena*);
 template<> ::flyteidl::artifact::AddTagResponse* Arena::CreateMaybeMessage<::flyteidl::artifact::AddTagResponse>(Arena*);
 template<> ::flyteidl::artifact::Artifact* Arena::CreateMaybeMessage<::flyteidl::artifact::Artifact>(Arena*);
+template<> ::flyteidl::artifact::ArtifactConsumer* Arena::CreateMaybeMessage<::flyteidl::artifact::ArtifactConsumer>(Arena*);
+template<> ::flyteidl::artifact::ArtifactProducer* Arena::CreateMaybeMessage<::flyteidl::artifact::ArtifactProducer>(Arena*);
 template<> ::flyteidl::artifact::ArtifactSpec* Arena::CreateMaybeMessage<::flyteidl::artifact::ArtifactSpec>(Arena*);
 template<> ::flyteidl::artifact::CreateArtifactRequest* Arena::CreateMaybeMessage<::flyteidl::artifact::CreateArtifactRequest>(Arena*);
 template<> ::flyteidl::artifact::CreateArtifactRequest_PartitionsEntry_DoNotUse* Arena::CreateMaybeMessage<::flyteidl::artifact::CreateArtifactRequest_PartitionsEntry_DoNotUse>(Arena*);
@@ -112,6 +130,9 @@ template<> ::flyteidl::artifact::ListArtifactNamesRequest* Arena::CreateMaybeMes
 template<> ::flyteidl::artifact::ListArtifactNamesResponse* Arena::CreateMaybeMessage<::flyteidl::artifact::ListArtifactNamesResponse>(Arena*);
 template<> ::flyteidl::artifact::ListArtifactsRequest* Arena::CreateMaybeMessage<::flyteidl::artifact::ListArtifactsRequest>(Arena*);
 template<> ::flyteidl::artifact::ListArtifactsResponse* Arena::CreateMaybeMessage<::flyteidl::artifact::ListArtifactsResponse>(Arena*);
+template<> ::flyteidl::artifact::RegisterConsumerRequest* Arena::CreateMaybeMessage<::flyteidl::artifact::RegisterConsumerRequest>(Arena*);
+template<> ::flyteidl::artifact::RegisterProducerRequest* Arena::CreateMaybeMessage<::flyteidl::artifact::RegisterProducerRequest>(Arena*);
+template<> ::flyteidl::artifact::RegisterResponse* Arena::CreateMaybeMessage<::flyteidl::artifact::RegisterResponse>(Arena*);
 }  // namespace protobuf
 }  // namespace google
 namespace flyteidl {
@@ -1753,6 +1774,597 @@ class AddTagResponse final :
   mutable ::google::protobuf::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_flyteidl_2fartifact_2fartifacts_2eproto;
 };
+// -------------------------------------------------------------------
+
+class ArtifactProducer final :
+    public ::google::protobuf::Message /* @@protoc_insertion_point(class_definition:flyteidl.artifact.ArtifactProducer) */ {
+ public:
+  ArtifactProducer();
+  virtual ~ArtifactProducer();
+
+  ArtifactProducer(const ArtifactProducer& from);
+
+  inline ArtifactProducer& operator=(const ArtifactProducer& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  #if LANG_CXX11
+  ArtifactProducer(ArtifactProducer&& from) noexcept
+    : ArtifactProducer() {
+    *this = ::std::move(from);
+  }
+
+  inline ArtifactProducer& operator=(ArtifactProducer&& from) noexcept {
+    if (GetArenaNoVirtual() == from.GetArenaNoVirtual()) {
+      if (this != &from) InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+  #endif
+  static const ::google::protobuf::Descriptor* descriptor() {
+    return default_instance().GetDescriptor();
+  }
+  static const ArtifactProducer& default_instance();
+
+  static void InitAsDefaultInstance();  // FOR INTERNAL USE ONLY
+  static inline const ArtifactProducer* internal_default_instance() {
+    return reinterpret_cast<const ArtifactProducer*>(
+               &_ArtifactProducer_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    13;
+
+  void Swap(ArtifactProducer* other);
+  friend void swap(ArtifactProducer& a, ArtifactProducer& b) {
+    a.Swap(&b);
+  }
+
+  // implements Message ----------------------------------------------
+
+  inline ArtifactProducer* New() const final {
+    return CreateMaybeMessage<ArtifactProducer>(nullptr);
+  }
+
+  ArtifactProducer* New(::google::protobuf::Arena* arena) const final {
+    return CreateMaybeMessage<ArtifactProducer>(arena);
+  }
+  void CopyFrom(const ::google::protobuf::Message& from) final;
+  void MergeFrom(const ::google::protobuf::Message& from) final;
+  void CopyFrom(const ArtifactProducer& from);
+  void MergeFrom(const ArtifactProducer& from);
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  #if GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
+  static const char* _InternalParse(const char* begin, const char* end, void* object, ::google::protobuf::internal::ParseContext* ctx);
+  ::google::protobuf::internal::ParseFunc _ParseFunc() const final { return _InternalParse; }
+  #else
+  bool MergePartialFromCodedStream(
+      ::google::protobuf::io::CodedInputStream* input) final;
+  #endif  // GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
+  void SerializeWithCachedSizes(
+      ::google::protobuf::io::CodedOutputStream* output) const final;
+  ::google::protobuf::uint8* InternalSerializeWithCachedSizesToArray(
+      ::google::protobuf::uint8* target) const final;
+  int GetCachedSize() const final { return _cached_size_.Get(); }
+
+  private:
+  void SharedCtor();
+  void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(ArtifactProducer* other);
+  private:
+  inline ::google::protobuf::Arena* GetArenaNoVirtual() const {
+    return nullptr;
+  }
+  inline void* MaybeArenaPtr() const {
+    return nullptr;
+  }
+  public:
+
+  ::google::protobuf::Metadata GetMetadata() const final;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  // .flyteidl.core.Identifier task_id = 1;
+  bool has_task_id() const;
+  void clear_task_id();
+  static const int kTaskIdFieldNumber = 1;
+  const ::flyteidl::core::Identifier& task_id() const;
+  ::flyteidl::core::Identifier* release_task_id();
+  ::flyteidl::core::Identifier* mutable_task_id();
+  void set_allocated_task_id(::flyteidl::core::Identifier* task_id);
+
+  // .flyteidl.core.VariableMap outputs = 2;
+  bool has_outputs() const;
+  void clear_outputs();
+  static const int kOutputsFieldNumber = 2;
+  const ::flyteidl::core::VariableMap& outputs() const;
+  ::flyteidl::core::VariableMap* release_outputs();
+  ::flyteidl::core::VariableMap* mutable_outputs();
+  void set_allocated_outputs(::flyteidl::core::VariableMap* outputs);
+
+  // @@protoc_insertion_point(class_scope:flyteidl.artifact.ArtifactProducer)
+ private:
+  class HasBitSetters;
+
+  ::google::protobuf::internal::InternalMetadataWithArena _internal_metadata_;
+  ::flyteidl::core::Identifier* task_id_;
+  ::flyteidl::core::VariableMap* outputs_;
+  mutable ::google::protobuf::internal::CachedSize _cached_size_;
+  friend struct ::TableStruct_flyteidl_2fartifact_2fartifacts_2eproto;
+};
+// -------------------------------------------------------------------
+
+class RegisterProducerRequest final :
+    public ::google::protobuf::Message /* @@protoc_insertion_point(class_definition:flyteidl.artifact.RegisterProducerRequest) */ {
+ public:
+  RegisterProducerRequest();
+  virtual ~RegisterProducerRequest();
+
+  RegisterProducerRequest(const RegisterProducerRequest& from);
+
+  inline RegisterProducerRequest& operator=(const RegisterProducerRequest& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  #if LANG_CXX11
+  RegisterProducerRequest(RegisterProducerRequest&& from) noexcept
+    : RegisterProducerRequest() {
+    *this = ::std::move(from);
+  }
+
+  inline RegisterProducerRequest& operator=(RegisterProducerRequest&& from) noexcept {
+    if (GetArenaNoVirtual() == from.GetArenaNoVirtual()) {
+      if (this != &from) InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+  #endif
+  static const ::google::protobuf::Descriptor* descriptor() {
+    return default_instance().GetDescriptor();
+  }
+  static const RegisterProducerRequest& default_instance();
+
+  static void InitAsDefaultInstance();  // FOR INTERNAL USE ONLY
+  static inline const RegisterProducerRequest* internal_default_instance() {
+    return reinterpret_cast<const RegisterProducerRequest*>(
+               &_RegisterProducerRequest_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    14;
+
+  void Swap(RegisterProducerRequest* other);
+  friend void swap(RegisterProducerRequest& a, RegisterProducerRequest& b) {
+    a.Swap(&b);
+  }
+
+  // implements Message ----------------------------------------------
+
+  inline RegisterProducerRequest* New() const final {
+    return CreateMaybeMessage<RegisterProducerRequest>(nullptr);
+  }
+
+  RegisterProducerRequest* New(::google::protobuf::Arena* arena) const final {
+    return CreateMaybeMessage<RegisterProducerRequest>(arena);
+  }
+  void CopyFrom(const ::google::protobuf::Message& from) final;
+  void MergeFrom(const ::google::protobuf::Message& from) final;
+  void CopyFrom(const RegisterProducerRequest& from);
+  void MergeFrom(const RegisterProducerRequest& from);
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  #if GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
+  static const char* _InternalParse(const char* begin, const char* end, void* object, ::google::protobuf::internal::ParseContext* ctx);
+  ::google::protobuf::internal::ParseFunc _ParseFunc() const final { return _InternalParse; }
+  #else
+  bool MergePartialFromCodedStream(
+      ::google::protobuf::io::CodedInputStream* input) final;
+  #endif  // GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
+  void SerializeWithCachedSizes(
+      ::google::protobuf::io::CodedOutputStream* output) const final;
+  ::google::protobuf::uint8* InternalSerializeWithCachedSizesToArray(
+      ::google::protobuf::uint8* target) const final;
+  int GetCachedSize() const final { return _cached_size_.Get(); }
+
+  private:
+  void SharedCtor();
+  void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(RegisterProducerRequest* other);
+  private:
+  inline ::google::protobuf::Arena* GetArenaNoVirtual() const {
+    return nullptr;
+  }
+  inline void* MaybeArenaPtr() const {
+    return nullptr;
+  }
+  public:
+
+  ::google::protobuf::Metadata GetMetadata() const final;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  // repeated .flyteidl.artifact.ArtifactProducer producers = 1;
+  int producers_size() const;
+  void clear_producers();
+  static const int kProducersFieldNumber = 1;
+  ::flyteidl::artifact::ArtifactProducer* mutable_producers(int index);
+  ::google::protobuf::RepeatedPtrField< ::flyteidl::artifact::ArtifactProducer >*
+      mutable_producers();
+  const ::flyteidl::artifact::ArtifactProducer& producers(int index) const;
+  ::flyteidl::artifact::ArtifactProducer* add_producers();
+  const ::google::protobuf::RepeatedPtrField< ::flyteidl::artifact::ArtifactProducer >&
+      producers() const;
+
+  // @@protoc_insertion_point(class_scope:flyteidl.artifact.RegisterProducerRequest)
+ private:
+  class HasBitSetters;
+
+  ::google::protobuf::internal::InternalMetadataWithArena _internal_metadata_;
+  ::google::protobuf::RepeatedPtrField< ::flyteidl::artifact::ArtifactProducer > producers_;
+  mutable ::google::protobuf::internal::CachedSize _cached_size_;
+  friend struct ::TableStruct_flyteidl_2fartifact_2fartifacts_2eproto;
+};
+// -------------------------------------------------------------------
+
+class ArtifactConsumer final :
+    public ::google::protobuf::Message /* @@protoc_insertion_point(class_definition:flyteidl.artifact.ArtifactConsumer) */ {
+ public:
+  ArtifactConsumer();
+  virtual ~ArtifactConsumer();
+
+  ArtifactConsumer(const ArtifactConsumer& from);
+
+  inline ArtifactConsumer& operator=(const ArtifactConsumer& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  #if LANG_CXX11
+  ArtifactConsumer(ArtifactConsumer&& from) noexcept
+    : ArtifactConsumer() {
+    *this = ::std::move(from);
+  }
+
+  inline ArtifactConsumer& operator=(ArtifactConsumer&& from) noexcept {
+    if (GetArenaNoVirtual() == from.GetArenaNoVirtual()) {
+      if (this != &from) InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+  #endif
+  static const ::google::protobuf::Descriptor* descriptor() {
+    return default_instance().GetDescriptor();
+  }
+  static const ArtifactConsumer& default_instance();
+
+  static void InitAsDefaultInstance();  // FOR INTERNAL USE ONLY
+  static inline const ArtifactConsumer* internal_default_instance() {
+    return reinterpret_cast<const ArtifactConsumer*>(
+               &_ArtifactConsumer_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    15;
+
+  void Swap(ArtifactConsumer* other);
+  friend void swap(ArtifactConsumer& a, ArtifactConsumer& b) {
+    a.Swap(&b);
+  }
+
+  // implements Message ----------------------------------------------
+
+  inline ArtifactConsumer* New() const final {
+    return CreateMaybeMessage<ArtifactConsumer>(nullptr);
+  }
+
+  ArtifactConsumer* New(::google::protobuf::Arena* arena) const final {
+    return CreateMaybeMessage<ArtifactConsumer>(arena);
+  }
+  void CopyFrom(const ::google::protobuf::Message& from) final;
+  void MergeFrom(const ::google::protobuf::Message& from) final;
+  void CopyFrom(const ArtifactConsumer& from);
+  void MergeFrom(const ArtifactConsumer& from);
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  #if GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
+  static const char* _InternalParse(const char* begin, const char* end, void* object, ::google::protobuf::internal::ParseContext* ctx);
+  ::google::protobuf::internal::ParseFunc _ParseFunc() const final { return _InternalParse; }
+  #else
+  bool MergePartialFromCodedStream(
+      ::google::protobuf::io::CodedInputStream* input) final;
+  #endif  // GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
+  void SerializeWithCachedSizes(
+      ::google::protobuf::io::CodedOutputStream* output) const final;
+  ::google::protobuf::uint8* InternalSerializeWithCachedSizesToArray(
+      ::google::protobuf::uint8* target) const final;
+  int GetCachedSize() const final { return _cached_size_.Get(); }
+
+  private:
+  void SharedCtor();
+  void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(ArtifactConsumer* other);
+  private:
+  inline ::google::protobuf::Arena* GetArenaNoVirtual() const {
+    return nullptr;
+  }
+  inline void* MaybeArenaPtr() const {
+    return nullptr;
+  }
+  public:
+
+  ::google::protobuf::Metadata GetMetadata() const final;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  // .flyteidl.core.Identifier task_id = 1;
+  bool has_task_id() const;
+  void clear_task_id();
+  static const int kTaskIdFieldNumber = 1;
+  const ::flyteidl::core::Identifier& task_id() const;
+  ::flyteidl::core::Identifier* release_task_id();
+  ::flyteidl::core::Identifier* mutable_task_id();
+  void set_allocated_task_id(::flyteidl::core::Identifier* task_id);
+
+  // .flyteidl.core.ParameterMap inputs = 2;
+  bool has_inputs() const;
+  void clear_inputs();
+  static const int kInputsFieldNumber = 2;
+  const ::flyteidl::core::ParameterMap& inputs() const;
+  ::flyteidl::core::ParameterMap* release_inputs();
+  ::flyteidl::core::ParameterMap* mutable_inputs();
+  void set_allocated_inputs(::flyteidl::core::ParameterMap* inputs);
+
+  // @@protoc_insertion_point(class_scope:flyteidl.artifact.ArtifactConsumer)
+ private:
+  class HasBitSetters;
+
+  ::google::protobuf::internal::InternalMetadataWithArena _internal_metadata_;
+  ::flyteidl::core::Identifier* task_id_;
+  ::flyteidl::core::ParameterMap* inputs_;
+  mutable ::google::protobuf::internal::CachedSize _cached_size_;
+  friend struct ::TableStruct_flyteidl_2fartifact_2fartifacts_2eproto;
+};
+// -------------------------------------------------------------------
+
+class RegisterConsumerRequest final :
+    public ::google::protobuf::Message /* @@protoc_insertion_point(class_definition:flyteidl.artifact.RegisterConsumerRequest) */ {
+ public:
+  RegisterConsumerRequest();
+  virtual ~RegisterConsumerRequest();
+
+  RegisterConsumerRequest(const RegisterConsumerRequest& from);
+
+  inline RegisterConsumerRequest& operator=(const RegisterConsumerRequest& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  #if LANG_CXX11
+  RegisterConsumerRequest(RegisterConsumerRequest&& from) noexcept
+    : RegisterConsumerRequest() {
+    *this = ::std::move(from);
+  }
+
+  inline RegisterConsumerRequest& operator=(RegisterConsumerRequest&& from) noexcept {
+    if (GetArenaNoVirtual() == from.GetArenaNoVirtual()) {
+      if (this != &from) InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+  #endif
+  static const ::google::protobuf::Descriptor* descriptor() {
+    return default_instance().GetDescriptor();
+  }
+  static const RegisterConsumerRequest& default_instance();
+
+  static void InitAsDefaultInstance();  // FOR INTERNAL USE ONLY
+  static inline const RegisterConsumerRequest* internal_default_instance() {
+    return reinterpret_cast<const RegisterConsumerRequest*>(
+               &_RegisterConsumerRequest_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    16;
+
+  void Swap(RegisterConsumerRequest* other);
+  friend void swap(RegisterConsumerRequest& a, RegisterConsumerRequest& b) {
+    a.Swap(&b);
+  }
+
+  // implements Message ----------------------------------------------
+
+  inline RegisterConsumerRequest* New() const final {
+    return CreateMaybeMessage<RegisterConsumerRequest>(nullptr);
+  }
+
+  RegisterConsumerRequest* New(::google::protobuf::Arena* arena) const final {
+    return CreateMaybeMessage<RegisterConsumerRequest>(arena);
+  }
+  void CopyFrom(const ::google::protobuf::Message& from) final;
+  void MergeFrom(const ::google::protobuf::Message& from) final;
+  void CopyFrom(const RegisterConsumerRequest& from);
+  void MergeFrom(const RegisterConsumerRequest& from);
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  #if GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
+  static const char* _InternalParse(const char* begin, const char* end, void* object, ::google::protobuf::internal::ParseContext* ctx);
+  ::google::protobuf::internal::ParseFunc _ParseFunc() const final { return _InternalParse; }
+  #else
+  bool MergePartialFromCodedStream(
+      ::google::protobuf::io::CodedInputStream* input) final;
+  #endif  // GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
+  void SerializeWithCachedSizes(
+      ::google::protobuf::io::CodedOutputStream* output) const final;
+  ::google::protobuf::uint8* InternalSerializeWithCachedSizesToArray(
+      ::google::protobuf::uint8* target) const final;
+  int GetCachedSize() const final { return _cached_size_.Get(); }
+
+  private:
+  void SharedCtor();
+  void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(RegisterConsumerRequest* other);
+  private:
+  inline ::google::protobuf::Arena* GetArenaNoVirtual() const {
+    return nullptr;
+  }
+  inline void* MaybeArenaPtr() const {
+    return nullptr;
+  }
+  public:
+
+  ::google::protobuf::Metadata GetMetadata() const final;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  // repeated .flyteidl.artifact.ArtifactConsumer consumers = 1;
+  int consumers_size() const;
+  void clear_consumers();
+  static const int kConsumersFieldNumber = 1;
+  ::flyteidl::artifact::ArtifactConsumer* mutable_consumers(int index);
+  ::google::protobuf::RepeatedPtrField< ::flyteidl::artifact::ArtifactConsumer >*
+      mutable_consumers();
+  const ::flyteidl::artifact::ArtifactConsumer& consumers(int index) const;
+  ::flyteidl::artifact::ArtifactConsumer* add_consumers();
+  const ::google::protobuf::RepeatedPtrField< ::flyteidl::artifact::ArtifactConsumer >&
+      consumers() const;
+
+  // @@protoc_insertion_point(class_scope:flyteidl.artifact.RegisterConsumerRequest)
+ private:
+  class HasBitSetters;
+
+  ::google::protobuf::internal::InternalMetadataWithArena _internal_metadata_;
+  ::google::protobuf::RepeatedPtrField< ::flyteidl::artifact::ArtifactConsumer > consumers_;
+  mutable ::google::protobuf::internal::CachedSize _cached_size_;
+  friend struct ::TableStruct_flyteidl_2fartifact_2fartifacts_2eproto;
+};
+// -------------------------------------------------------------------
+
+class RegisterResponse final :
+    public ::google::protobuf::Message /* @@protoc_insertion_point(class_definition:flyteidl.artifact.RegisterResponse) */ {
+ public:
+  RegisterResponse();
+  virtual ~RegisterResponse();
+
+  RegisterResponse(const RegisterResponse& from);
+
+  inline RegisterResponse& operator=(const RegisterResponse& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  #if LANG_CXX11
+  RegisterResponse(RegisterResponse&& from) noexcept
+    : RegisterResponse() {
+    *this = ::std::move(from);
+  }
+
+  inline RegisterResponse& operator=(RegisterResponse&& from) noexcept {
+    if (GetArenaNoVirtual() == from.GetArenaNoVirtual()) {
+      if (this != &from) InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+  #endif
+  static const ::google::protobuf::Descriptor* descriptor() {
+    return default_instance().GetDescriptor();
+  }
+  static const RegisterResponse& default_instance();
+
+  static void InitAsDefaultInstance();  // FOR INTERNAL USE ONLY
+  static inline const RegisterResponse* internal_default_instance() {
+    return reinterpret_cast<const RegisterResponse*>(
+               &_RegisterResponse_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    17;
+
+  void Swap(RegisterResponse* other);
+  friend void swap(RegisterResponse& a, RegisterResponse& b) {
+    a.Swap(&b);
+  }
+
+  // implements Message ----------------------------------------------
+
+  inline RegisterResponse* New() const final {
+    return CreateMaybeMessage<RegisterResponse>(nullptr);
+  }
+
+  RegisterResponse* New(::google::protobuf::Arena* arena) const final {
+    return CreateMaybeMessage<RegisterResponse>(arena);
+  }
+  void CopyFrom(const ::google::protobuf::Message& from) final;
+  void MergeFrom(const ::google::protobuf::Message& from) final;
+  void CopyFrom(const RegisterResponse& from);
+  void MergeFrom(const RegisterResponse& from);
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  #if GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
+  static const char* _InternalParse(const char* begin, const char* end, void* object, ::google::protobuf::internal::ParseContext* ctx);
+  ::google::protobuf::internal::ParseFunc _ParseFunc() const final { return _InternalParse; }
+  #else
+  bool MergePartialFromCodedStream(
+      ::google::protobuf::io::CodedInputStream* input) final;
+  #endif  // GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
+  void SerializeWithCachedSizes(
+      ::google::protobuf::io::CodedOutputStream* output) const final;
+  ::google::protobuf::uint8* InternalSerializeWithCachedSizesToArray(
+      ::google::protobuf::uint8* target) const final;
+  int GetCachedSize() const final { return _cached_size_.Get(); }
+
+  private:
+  void SharedCtor();
+  void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(RegisterResponse* other);
+  private:
+  inline ::google::protobuf::Arena* GetArenaNoVirtual() const {
+    return nullptr;
+  }
+  inline void* MaybeArenaPtr() const {
+    return nullptr;
+  }
+  public:
+
+  ::google::protobuf::Metadata GetMetadata() const final;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  // @@protoc_insertion_point(class_scope:flyteidl.artifact.RegisterResponse)
+ private:
+  class HasBitSetters;
+
+  ::google::protobuf::internal::InternalMetadataWithArena _internal_metadata_;
+  mutable ::google::protobuf::internal::CachedSize _cached_size_;
+  friend struct ::TableStruct_flyteidl_2fartifact_2fartifacts_2eproto;
+};
 // ===================================================================
 
 
@@ -3043,9 +3655,279 @@ inline void AddTagRequest::set_overwrite(bool value) {
 
 // AddTagResponse
 
+// -------------------------------------------------------------------
+
+// ArtifactProducer
+
+// .flyteidl.core.Identifier task_id = 1;
+inline bool ArtifactProducer::has_task_id() const {
+  return this != internal_default_instance() && task_id_ != nullptr;
+}
+inline const ::flyteidl::core::Identifier& ArtifactProducer::task_id() const {
+  const ::flyteidl::core::Identifier* p = task_id_;
+  // @@protoc_insertion_point(field_get:flyteidl.artifact.ArtifactProducer.task_id)
+  return p != nullptr ? *p : *reinterpret_cast<const ::flyteidl::core::Identifier*>(
+      &::flyteidl::core::_Identifier_default_instance_);
+}
+inline ::flyteidl::core::Identifier* ArtifactProducer::release_task_id() {
+  // @@protoc_insertion_point(field_release:flyteidl.artifact.ArtifactProducer.task_id)
+  
+  ::flyteidl::core::Identifier* temp = task_id_;
+  task_id_ = nullptr;
+  return temp;
+}
+inline ::flyteidl::core::Identifier* ArtifactProducer::mutable_task_id() {
+  
+  if (task_id_ == nullptr) {
+    auto* p = CreateMaybeMessage<::flyteidl::core::Identifier>(GetArenaNoVirtual());
+    task_id_ = p;
+  }
+  // @@protoc_insertion_point(field_mutable:flyteidl.artifact.ArtifactProducer.task_id)
+  return task_id_;
+}
+inline void ArtifactProducer::set_allocated_task_id(::flyteidl::core::Identifier* task_id) {
+  ::google::protobuf::Arena* message_arena = GetArenaNoVirtual();
+  if (message_arena == nullptr) {
+    delete reinterpret_cast< ::google::protobuf::MessageLite*>(task_id_);
+  }
+  if (task_id) {
+    ::google::protobuf::Arena* submessage_arena = nullptr;
+    if (message_arena != submessage_arena) {
+      task_id = ::google::protobuf::internal::GetOwnedMessage(
+          message_arena, task_id, submessage_arena);
+    }
+    
+  } else {
+    
+  }
+  task_id_ = task_id;
+  // @@protoc_insertion_point(field_set_allocated:flyteidl.artifact.ArtifactProducer.task_id)
+}
+
+// .flyteidl.core.VariableMap outputs = 2;
+inline bool ArtifactProducer::has_outputs() const {
+  return this != internal_default_instance() && outputs_ != nullptr;
+}
+inline const ::flyteidl::core::VariableMap& ArtifactProducer::outputs() const {
+  const ::flyteidl::core::VariableMap* p = outputs_;
+  // @@protoc_insertion_point(field_get:flyteidl.artifact.ArtifactProducer.outputs)
+  return p != nullptr ? *p : *reinterpret_cast<const ::flyteidl::core::VariableMap*>(
+      &::flyteidl::core::_VariableMap_default_instance_);
+}
+inline ::flyteidl::core::VariableMap* ArtifactProducer::release_outputs() {
+  // @@protoc_insertion_point(field_release:flyteidl.artifact.ArtifactProducer.outputs)
+  
+  ::flyteidl::core::VariableMap* temp = outputs_;
+  outputs_ = nullptr;
+  return temp;
+}
+inline ::flyteidl::core::VariableMap* ArtifactProducer::mutable_outputs() {
+  
+  if (outputs_ == nullptr) {
+    auto* p = CreateMaybeMessage<::flyteidl::core::VariableMap>(GetArenaNoVirtual());
+    outputs_ = p;
+  }
+  // @@protoc_insertion_point(field_mutable:flyteidl.artifact.ArtifactProducer.outputs)
+  return outputs_;
+}
+inline void ArtifactProducer::set_allocated_outputs(::flyteidl::core::VariableMap* outputs) {
+  ::google::protobuf::Arena* message_arena = GetArenaNoVirtual();
+  if (message_arena == nullptr) {
+    delete reinterpret_cast< ::google::protobuf::MessageLite*>(outputs_);
+  }
+  if (outputs) {
+    ::google::protobuf::Arena* submessage_arena = nullptr;
+    if (message_arena != submessage_arena) {
+      outputs = ::google::protobuf::internal::GetOwnedMessage(
+          message_arena, outputs, submessage_arena);
+    }
+    
+  } else {
+    
+  }
+  outputs_ = outputs;
+  // @@protoc_insertion_point(field_set_allocated:flyteidl.artifact.ArtifactProducer.outputs)
+}
+
+// -------------------------------------------------------------------
+
+// RegisterProducerRequest
+
+// repeated .flyteidl.artifact.ArtifactProducer producers = 1;
+inline int RegisterProducerRequest::producers_size() const {
+  return producers_.size();
+}
+inline void RegisterProducerRequest::clear_producers() {
+  producers_.Clear();
+}
+inline ::flyteidl::artifact::ArtifactProducer* RegisterProducerRequest::mutable_producers(int index) {
+  // @@protoc_insertion_point(field_mutable:flyteidl.artifact.RegisterProducerRequest.producers)
+  return producers_.Mutable(index);
+}
+inline ::google::protobuf::RepeatedPtrField< ::flyteidl::artifact::ArtifactProducer >*
+RegisterProducerRequest::mutable_producers() {
+  // @@protoc_insertion_point(field_mutable_list:flyteidl.artifact.RegisterProducerRequest.producers)
+  return &producers_;
+}
+inline const ::flyteidl::artifact::ArtifactProducer& RegisterProducerRequest::producers(int index) const {
+  // @@protoc_insertion_point(field_get:flyteidl.artifact.RegisterProducerRequest.producers)
+  return producers_.Get(index);
+}
+inline ::flyteidl::artifact::ArtifactProducer* RegisterProducerRequest::add_producers() {
+  // @@protoc_insertion_point(field_add:flyteidl.artifact.RegisterProducerRequest.producers)
+  return producers_.Add();
+}
+inline const ::google::protobuf::RepeatedPtrField< ::flyteidl::artifact::ArtifactProducer >&
+RegisterProducerRequest::producers() const {
+  // @@protoc_insertion_point(field_list:flyteidl.artifact.RegisterProducerRequest.producers)
+  return producers_;
+}
+
+// -------------------------------------------------------------------
+
+// ArtifactConsumer
+
+// .flyteidl.core.Identifier task_id = 1;
+inline bool ArtifactConsumer::has_task_id() const {
+  return this != internal_default_instance() && task_id_ != nullptr;
+}
+inline const ::flyteidl::core::Identifier& ArtifactConsumer::task_id() const {
+  const ::flyteidl::core::Identifier* p = task_id_;
+  // @@protoc_insertion_point(field_get:flyteidl.artifact.ArtifactConsumer.task_id)
+  return p != nullptr ? *p : *reinterpret_cast<const ::flyteidl::core::Identifier*>(
+      &::flyteidl::core::_Identifier_default_instance_);
+}
+inline ::flyteidl::core::Identifier* ArtifactConsumer::release_task_id() {
+  // @@protoc_insertion_point(field_release:flyteidl.artifact.ArtifactConsumer.task_id)
+  
+  ::flyteidl::core::Identifier* temp = task_id_;
+  task_id_ = nullptr;
+  return temp;
+}
+inline ::flyteidl::core::Identifier* ArtifactConsumer::mutable_task_id() {
+  
+  if (task_id_ == nullptr) {
+    auto* p = CreateMaybeMessage<::flyteidl::core::Identifier>(GetArenaNoVirtual());
+    task_id_ = p;
+  }
+  // @@protoc_insertion_point(field_mutable:flyteidl.artifact.ArtifactConsumer.task_id)
+  return task_id_;
+}
+inline void ArtifactConsumer::set_allocated_task_id(::flyteidl::core::Identifier* task_id) {
+  ::google::protobuf::Arena* message_arena = GetArenaNoVirtual();
+  if (message_arena == nullptr) {
+    delete reinterpret_cast< ::google::protobuf::MessageLite*>(task_id_);
+  }
+  if (task_id) {
+    ::google::protobuf::Arena* submessage_arena = nullptr;
+    if (message_arena != submessage_arena) {
+      task_id = ::google::protobuf::internal::GetOwnedMessage(
+          message_arena, task_id, submessage_arena);
+    }
+    
+  } else {
+    
+  }
+  task_id_ = task_id;
+  // @@protoc_insertion_point(field_set_allocated:flyteidl.artifact.ArtifactConsumer.task_id)
+}
+
+// .flyteidl.core.ParameterMap inputs = 2;
+inline bool ArtifactConsumer::has_inputs() const {
+  return this != internal_default_instance() && inputs_ != nullptr;
+}
+inline const ::flyteidl::core::ParameterMap& ArtifactConsumer::inputs() const {
+  const ::flyteidl::core::ParameterMap* p = inputs_;
+  // @@protoc_insertion_point(field_get:flyteidl.artifact.ArtifactConsumer.inputs)
+  return p != nullptr ? *p : *reinterpret_cast<const ::flyteidl::core::ParameterMap*>(
+      &::flyteidl::core::_ParameterMap_default_instance_);
+}
+inline ::flyteidl::core::ParameterMap* ArtifactConsumer::release_inputs() {
+  // @@protoc_insertion_point(field_release:flyteidl.artifact.ArtifactConsumer.inputs)
+  
+  ::flyteidl::core::ParameterMap* temp = inputs_;
+  inputs_ = nullptr;
+  return temp;
+}
+inline ::flyteidl::core::ParameterMap* ArtifactConsumer::mutable_inputs() {
+  
+  if (inputs_ == nullptr) {
+    auto* p = CreateMaybeMessage<::flyteidl::core::ParameterMap>(GetArenaNoVirtual());
+    inputs_ = p;
+  }
+  // @@protoc_insertion_point(field_mutable:flyteidl.artifact.ArtifactConsumer.inputs)
+  return inputs_;
+}
+inline void ArtifactConsumer::set_allocated_inputs(::flyteidl::core::ParameterMap* inputs) {
+  ::google::protobuf::Arena* message_arena = GetArenaNoVirtual();
+  if (message_arena == nullptr) {
+    delete reinterpret_cast< ::google::protobuf::MessageLite*>(inputs_);
+  }
+  if (inputs) {
+    ::google::protobuf::Arena* submessage_arena = nullptr;
+    if (message_arena != submessage_arena) {
+      inputs = ::google::protobuf::internal::GetOwnedMessage(
+          message_arena, inputs, submessage_arena);
+    }
+    
+  } else {
+    
+  }
+  inputs_ = inputs;
+  // @@protoc_insertion_point(field_set_allocated:flyteidl.artifact.ArtifactConsumer.inputs)
+}
+
+// -------------------------------------------------------------------
+
+// RegisterConsumerRequest
+
+// repeated .flyteidl.artifact.ArtifactConsumer consumers = 1;
+inline int RegisterConsumerRequest::consumers_size() const {
+  return consumers_.size();
+}
+inline void RegisterConsumerRequest::clear_consumers() {
+  consumers_.Clear();
+}
+inline ::flyteidl::artifact::ArtifactConsumer* RegisterConsumerRequest::mutable_consumers(int index) {
+  // @@protoc_insertion_point(field_mutable:flyteidl.artifact.RegisterConsumerRequest.consumers)
+  return consumers_.Mutable(index);
+}
+inline ::google::protobuf::RepeatedPtrField< ::flyteidl::artifact::ArtifactConsumer >*
+RegisterConsumerRequest::mutable_consumers() {
+  // @@protoc_insertion_point(field_mutable_list:flyteidl.artifact.RegisterConsumerRequest.consumers)
+  return &consumers_;
+}
+inline const ::flyteidl::artifact::ArtifactConsumer& RegisterConsumerRequest::consumers(int index) const {
+  // @@protoc_insertion_point(field_get:flyteidl.artifact.RegisterConsumerRequest.consumers)
+  return consumers_.Get(index);
+}
+inline ::flyteidl::artifact::ArtifactConsumer* RegisterConsumerRequest::add_consumers() {
+  // @@protoc_insertion_point(field_add:flyteidl.artifact.RegisterConsumerRequest.consumers)
+  return consumers_.Add();
+}
+inline const ::google::protobuf::RepeatedPtrField< ::flyteidl::artifact::ArtifactConsumer >&
+RegisterConsumerRequest::consumers() const {
+  // @@protoc_insertion_point(field_list:flyteidl.artifact.RegisterConsumerRequest.consumers)
+  return consumers_;
+}
+
+// -------------------------------------------------------------------
+
+// RegisterResponse
+
 #ifdef __GNUC__
   #pragma GCC diagnostic pop
 #endif  // __GNUC__
+// -------------------------------------------------------------------
+
+// -------------------------------------------------------------------
+
+// -------------------------------------------------------------------
+
+// -------------------------------------------------------------------
+
+// -------------------------------------------------------------------
+
 // -------------------------------------------------------------------
 
 // -------------------------------------------------------------------

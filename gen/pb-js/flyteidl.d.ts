@@ -8999,6 +8999,272 @@ export namespace flyteidl {
             public static verify(message: { [k: string]: any }): (string|null);
         }
 
+        /** Properties of an ArtifactProducer. */
+        interface IArtifactProducer {
+
+            /** ArtifactProducer taskId */
+            taskId?: (flyteidl.core.IIdentifier|null);
+
+            /** ArtifactProducer outputs */
+            outputs?: (flyteidl.core.IVariableMap|null);
+        }
+
+        /** Represents an ArtifactProducer. */
+        class ArtifactProducer implements IArtifactProducer {
+
+            /**
+             * Constructs a new ArtifactProducer.
+             * @param [properties] Properties to set
+             */
+            constructor(properties?: flyteidl.artifact.IArtifactProducer);
+
+            /** ArtifactProducer taskId. */
+            public taskId?: (flyteidl.core.IIdentifier|null);
+
+            /** ArtifactProducer outputs. */
+            public outputs?: (flyteidl.core.IVariableMap|null);
+
+            /**
+             * Creates a new ArtifactProducer instance using the specified properties.
+             * @param [properties] Properties to set
+             * @returns ArtifactProducer instance
+             */
+            public static create(properties?: flyteidl.artifact.IArtifactProducer): flyteidl.artifact.ArtifactProducer;
+
+            /**
+             * Encodes the specified ArtifactProducer message. Does not implicitly {@link flyteidl.artifact.ArtifactProducer.verify|verify} messages.
+             * @param message ArtifactProducer message or plain object to encode
+             * @param [writer] Writer to encode to
+             * @returns Writer
+             */
+            public static encode(message: flyteidl.artifact.IArtifactProducer, writer?: $protobuf.Writer): $protobuf.Writer;
+
+            /**
+             * Decodes an ArtifactProducer message from the specified reader or buffer.
+             * @param reader Reader or buffer to decode from
+             * @param [length] Message length if known beforehand
+             * @returns ArtifactProducer
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): flyteidl.artifact.ArtifactProducer;
+
+            /**
+             * Verifies an ArtifactProducer message.
+             * @param message Plain object to verify
+             * @returns `null` if valid, otherwise the reason why it is not
+             */
+            public static verify(message: { [k: string]: any }): (string|null);
+        }
+
+        /** Properties of a RegisterProducerRequest. */
+        interface IRegisterProducerRequest {
+
+            /** RegisterProducerRequest producers */
+            producers?: (flyteidl.artifact.IArtifactProducer[]|null);
+        }
+
+        /** Represents a RegisterProducerRequest. */
+        class RegisterProducerRequest implements IRegisterProducerRequest {
+
+            /**
+             * Constructs a new RegisterProducerRequest.
+             * @param [properties] Properties to set
+             */
+            constructor(properties?: flyteidl.artifact.IRegisterProducerRequest);
+
+            /** RegisterProducerRequest producers. */
+            public producers: flyteidl.artifact.IArtifactProducer[];
+
+            /**
+             * Creates a new RegisterProducerRequest instance using the specified properties.
+             * @param [properties] Properties to set
+             * @returns RegisterProducerRequest instance
+             */
+            public static create(properties?: flyteidl.artifact.IRegisterProducerRequest): flyteidl.artifact.RegisterProducerRequest;
+
+            /**
+             * Encodes the specified RegisterProducerRequest message. Does not implicitly {@link flyteidl.artifact.RegisterProducerRequest.verify|verify} messages.
+             * @param message RegisterProducerRequest message or plain object to encode
+             * @param [writer] Writer to encode to
+             * @returns Writer
+             */
+            public static encode(message: flyteidl.artifact.IRegisterProducerRequest, writer?: $protobuf.Writer): $protobuf.Writer;
+
+            /**
+             * Decodes a RegisterProducerRequest message from the specified reader or buffer.
+             * @param reader Reader or buffer to decode from
+             * @param [length] Message length if known beforehand
+             * @returns RegisterProducerRequest
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): flyteidl.artifact.RegisterProducerRequest;
+
+            /**
+             * Verifies a RegisterProducerRequest message.
+             * @param message Plain object to verify
+             * @returns `null` if valid, otherwise the reason why it is not
+             */
+            public static verify(message: { [k: string]: any }): (string|null);
+        }
+
+        /** Properties of an ArtifactConsumer. */
+        interface IArtifactConsumer {
+
+            /** ArtifactConsumer taskId */
+            taskId?: (flyteidl.core.IIdentifier|null);
+
+            /** ArtifactConsumer inputs */
+            inputs?: (flyteidl.core.IParameterMap|null);
+        }
+
+        /** Represents an ArtifactConsumer. */
+        class ArtifactConsumer implements IArtifactConsumer {
+
+            /**
+             * Constructs a new ArtifactConsumer.
+             * @param [properties] Properties to set
+             */
+            constructor(properties?: flyteidl.artifact.IArtifactConsumer);
+
+            /** ArtifactConsumer taskId. */
+            public taskId?: (flyteidl.core.IIdentifier|null);
+
+            /** ArtifactConsumer inputs. */
+            public inputs?: (flyteidl.core.IParameterMap|null);
+
+            /**
+             * Creates a new ArtifactConsumer instance using the specified properties.
+             * @param [properties] Properties to set
+             * @returns ArtifactConsumer instance
+             */
+            public static create(properties?: flyteidl.artifact.IArtifactConsumer): flyteidl.artifact.ArtifactConsumer;
+
+            /**
+             * Encodes the specified ArtifactConsumer message. Does not implicitly {@link flyteidl.artifact.ArtifactConsumer.verify|verify} messages.
+             * @param message ArtifactConsumer message or plain object to encode
+             * @param [writer] Writer to encode to
+             * @returns Writer
+             */
+            public static encode(message: flyteidl.artifact.IArtifactConsumer, writer?: $protobuf.Writer): $protobuf.Writer;
+
+            /**
+             * Decodes an ArtifactConsumer message from the specified reader or buffer.
+             * @param reader Reader or buffer to decode from
+             * @param [length] Message length if known beforehand
+             * @returns ArtifactConsumer
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): flyteidl.artifact.ArtifactConsumer;
+
+            /**
+             * Verifies an ArtifactConsumer message.
+             * @param message Plain object to verify
+             * @returns `null` if valid, otherwise the reason why it is not
+             */
+            public static verify(message: { [k: string]: any }): (string|null);
+        }
+
+        /** Properties of a RegisterConsumerRequest. */
+        interface IRegisterConsumerRequest {
+
+            /** RegisterConsumerRequest consumers */
+            consumers?: (flyteidl.artifact.IArtifactConsumer[]|null);
+        }
+
+        /** Represents a RegisterConsumerRequest. */
+        class RegisterConsumerRequest implements IRegisterConsumerRequest {
+
+            /**
+             * Constructs a new RegisterConsumerRequest.
+             * @param [properties] Properties to set
+             */
+            constructor(properties?: flyteidl.artifact.IRegisterConsumerRequest);
+
+            /** RegisterConsumerRequest consumers. */
+            public consumers: flyteidl.artifact.IArtifactConsumer[];
+
+            /**
+             * Creates a new RegisterConsumerRequest instance using the specified properties.
+             * @param [properties] Properties to set
+             * @returns RegisterConsumerRequest instance
+             */
+            public static create(properties?: flyteidl.artifact.IRegisterConsumerRequest): flyteidl.artifact.RegisterConsumerRequest;
+
+            /**
+             * Encodes the specified RegisterConsumerRequest message. Does not implicitly {@link flyteidl.artifact.RegisterConsumerRequest.verify|verify} messages.
+             * @param message RegisterConsumerRequest message or plain object to encode
+             * @param [writer] Writer to encode to
+             * @returns Writer
+             */
+            public static encode(message: flyteidl.artifact.IRegisterConsumerRequest, writer?: $protobuf.Writer): $protobuf.Writer;
+
+            /**
+             * Decodes a RegisterConsumerRequest message from the specified reader or buffer.
+             * @param reader Reader or buffer to decode from
+             * @param [length] Message length if known beforehand
+             * @returns RegisterConsumerRequest
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): flyteidl.artifact.RegisterConsumerRequest;
+
+            /**
+             * Verifies a RegisterConsumerRequest message.
+             * @param message Plain object to verify
+             * @returns `null` if valid, otherwise the reason why it is not
+             */
+            public static verify(message: { [k: string]: any }): (string|null);
+        }
+
+        /** Properties of a RegisterResponse. */
+        interface IRegisterResponse {
+        }
+
+        /** Represents a RegisterResponse. */
+        class RegisterResponse implements IRegisterResponse {
+
+            /**
+             * Constructs a new RegisterResponse.
+             * @param [properties] Properties to set
+             */
+            constructor(properties?: flyteidl.artifact.IRegisterResponse);
+
+            /**
+             * Creates a new RegisterResponse instance using the specified properties.
+             * @param [properties] Properties to set
+             * @returns RegisterResponse instance
+             */
+            public static create(properties?: flyteidl.artifact.IRegisterResponse): flyteidl.artifact.RegisterResponse;
+
+            /**
+             * Encodes the specified RegisterResponse message. Does not implicitly {@link flyteidl.artifact.RegisterResponse.verify|verify} messages.
+             * @param message RegisterResponse message or plain object to encode
+             * @param [writer] Writer to encode to
+             * @returns Writer
+             */
+            public static encode(message: flyteidl.artifact.IRegisterResponse, writer?: $protobuf.Writer): $protobuf.Writer;
+
+            /**
+             * Decodes a RegisterResponse message from the specified reader or buffer.
+             * @param reader Reader or buffer to decode from
+             * @param [length] Message length if known beforehand
+             * @returns RegisterResponse
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): flyteidl.artifact.RegisterResponse;
+
+            /**
+             * Verifies a RegisterResponse message.
+             * @param message Plain object to verify
+             * @returns `null` if valid, otherwise the reason why it is not
+             */
+            public static verify(message: { [k: string]: any }): (string|null);
+        }
+
         /** Represents an ArtifactRegistry */
         class ArtifactRegistry extends $protobuf.rpc.Service {
 
@@ -9060,6 +9326,34 @@ export namespace flyteidl {
              * @returns Promise
              */
             public addTag(request: flyteidl.artifact.IAddTagRequest): Promise<flyteidl.artifact.AddTagResponse>;
+
+            /**
+             * Calls RegisterProducer.
+             * @param request RegisterProducerRequest message or plain object
+             * @param callback Node-style callback called with the error, if any, and RegisterResponse
+             */
+            public registerProducer(request: flyteidl.artifact.IRegisterProducerRequest, callback: flyteidl.artifact.ArtifactRegistry.RegisterProducerCallback): void;
+
+            /**
+             * Calls RegisterProducer.
+             * @param request RegisterProducerRequest message or plain object
+             * @returns Promise
+             */
+            public registerProducer(request: flyteidl.artifact.IRegisterProducerRequest): Promise<flyteidl.artifact.RegisterResponse>;
+
+            /**
+             * Calls RegisterConsumer.
+             * @param request RegisterConsumerRequest message or plain object
+             * @param callback Node-style callback called with the error, if any, and RegisterResponse
+             */
+            public registerConsumer(request: flyteidl.artifact.IRegisterConsumerRequest, callback: flyteidl.artifact.ArtifactRegistry.RegisterConsumerCallback): void;
+
+            /**
+             * Calls RegisterConsumer.
+             * @param request RegisterConsumerRequest message or plain object
+             * @returns Promise
+             */
+            public registerConsumer(request: flyteidl.artifact.IRegisterConsumerRequest): Promise<flyteidl.artifact.RegisterResponse>;
         }
 
         namespace ArtifactRegistry {
@@ -9084,6 +9378,20 @@ export namespace flyteidl {
              * @param [response] AddTagResponse
              */
             type AddTagCallback = (error: (Error|null), response?: flyteidl.artifact.AddTagResponse) => void;
+
+            /**
+             * Callback as used by {@link flyteidl.artifact.ArtifactRegistry#registerProducer}.
+             * @param error Error, if any
+             * @param [response] RegisterResponse
+             */
+            type RegisterProducerCallback = (error: (Error|null), response?: flyteidl.artifact.RegisterResponse) => void;
+
+            /**
+             * Callback as used by {@link flyteidl.artifact.ArtifactRegistry#registerConsumer}.
+             * @param error Error, if any
+             * @param [response] RegisterResponse
+             */
+            type RegisterConsumerCallback = (error: (Error|null), response?: flyteidl.artifact.RegisterResponse) => void;
         }
     }
 

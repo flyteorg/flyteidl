@@ -1,6 +1,7 @@
 from flyteidl.core import literals_pb2 as _literals_pb2
 from flyteidl.core import types_pb2 as _types_pb2
 from flyteidl.core import identifier_pb2 as _identifier_pb2
+from flyteidl.core import interface_pb2 as _interface_pb2
 from google.protobuf.internal import containers as _containers
 from google.protobuf import descriptor as _descriptor
 from google.protobuf import message as _message
@@ -114,5 +115,37 @@ class AddTagRequest(_message.Message):
     def __init__(self, artifact_id: _Optional[_Union[_identifier_pb2.ArtifactID, _Mapping]] = ..., value: _Optional[str] = ..., overwrite: bool = ...) -> None: ...
 
 class AddTagResponse(_message.Message):
+    __slots__ = []
+    def __init__(self) -> None: ...
+
+class ArtifactProducer(_message.Message):
+    __slots__ = ["task_id", "outputs"]
+    TASK_ID_FIELD_NUMBER: _ClassVar[int]
+    OUTPUTS_FIELD_NUMBER: _ClassVar[int]
+    task_id: _identifier_pb2.Identifier
+    outputs: _interface_pb2.VariableMap
+    def __init__(self, task_id: _Optional[_Union[_identifier_pb2.Identifier, _Mapping]] = ..., outputs: _Optional[_Union[_interface_pb2.VariableMap, _Mapping]] = ...) -> None: ...
+
+class RegisterProducerRequest(_message.Message):
+    __slots__ = ["producers"]
+    PRODUCERS_FIELD_NUMBER: _ClassVar[int]
+    producers: _containers.RepeatedCompositeFieldContainer[ArtifactProducer]
+    def __init__(self, producers: _Optional[_Iterable[_Union[ArtifactProducer, _Mapping]]] = ...) -> None: ...
+
+class ArtifactConsumer(_message.Message):
+    __slots__ = ["task_id", "inputs"]
+    TASK_ID_FIELD_NUMBER: _ClassVar[int]
+    INPUTS_FIELD_NUMBER: _ClassVar[int]
+    task_id: _identifier_pb2.Identifier
+    inputs: _interface_pb2.ParameterMap
+    def __init__(self, task_id: _Optional[_Union[_identifier_pb2.Identifier, _Mapping]] = ..., inputs: _Optional[_Union[_interface_pb2.ParameterMap, _Mapping]] = ...) -> None: ...
+
+class RegisterConsumerRequest(_message.Message):
+    __slots__ = ["consumers"]
+    CONSUMERS_FIELD_NUMBER: _ClassVar[int]
+    consumers: _containers.RepeatedCompositeFieldContainer[ArtifactConsumer]
+    def __init__(self, consumers: _Optional[_Iterable[_Union[ArtifactConsumer, _Mapping]]] = ...) -> None: ...
+
+class RegisterResponse(_message.Message):
     __slots__ = []
     def __init__(self) -> None: ...

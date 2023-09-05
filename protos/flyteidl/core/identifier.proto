@@ -117,4 +117,3 @@ message ArtifactQuery {
     string uri = 3;
   }
 }
-
