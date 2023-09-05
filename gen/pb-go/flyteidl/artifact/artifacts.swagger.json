@@ -121,6 +121,12 @@
         }
       }
     },
+    "artifactCreateTriggerResponse": {
+      "type": "object"
+    },
+    "artifactDeleteTriggerResponse": {
+      "type": "object"
+    },
     "artifactGetArtifactResponse": {
       "type": "object",
       "properties": {
@@ -402,6 +408,45 @@
       },
       "description": "Encapsulation of fields that identify a Flyte node execution entity."
     },
+    "coreParameter": {
+      "type": "object",
+      "properties": {
+        "var": {
+          "$ref": "#/definitions/coreVariable",
+          "description": "+required Variable. Defines the type of the variable backing this parameter."
+        },
+        "default": {
+          "$ref": "#/definitions/coreLiteral",
+          "description": "Defines a default value that has to match the variable type defined."
+        },
+        "required": {
+          "type": "boolean",
+          "format": "boolean",
+          "description": "+optional, is this value required to be filled."
+        },
+        "artifact_query": {
+          "$ref": "#/definitions/coreArtifactQuery",
+          "description": "This is an execution time search basically that should result in exactly one Artifact with a Type that\nmatches the type of the variable."
+        },
+        "artifact_id": {
+          "$ref": "#/definitions/coreArtifactID"
+        }
+      },
+      "description": "A parameter is used as input to a launch plan and has\nthe special ability to have a default value or mark itself as required."
+    },
+    "coreParameterMap": {
+      "type": "object",
+      "properties": {
+        "parameters": {
+          "type": "object",
+          "additionalProperties": {
+            "$ref": "#/definitions/coreParameter"
+          },
+          "description": "Defines a map of parameter names to parameters."
+        }
+      },
+      "description": "A map of Parameters."
+    },
     "corePartitions": {
       "type": "object",
       "properties": {
@@ -633,6 +678,27 @@
         }
       },
       "description": "Defines a tagged union type, also known as a variant (and formally as the sum type).\n\nA sum type S is defined by a sequence of types (A, B, C, ...), each tagged by a string tag\nA value of type S is constructed from a value of any of the variant types. The specific choice of type is recorded by\nstoring the varaint's tag with the literal value and can be examined in runtime.\n\nType S is typically written as\nS := Apple A | Banana B | Cantaloupe C | ...\n\nNotably, a nullable (optional) type is a sum type between some type X and the singleton type representing a null-value:\nOptional X := X | Null\n\nSee also: https://en.wikipedia.org/wiki/Tagged_union"
+    },
+    "coreVariable": {
+      "type": "object",
+      "properties": {
+        "type": {
+          "$ref": "#/definitions/coreLiteralType",
+          "description": "Variable literal type."
+        },
+        "description": {
+          "type": "string",
+          "title": "+optional string describing input variable"
+        },
+        "artifact_partial_id": {
+          "$ref": "#/definitions/coreArtifactID",
+          "description": "+optional This object allows the user to specify how Artifacts are created.\nname, tag, partitions can be specified. The other fields (version and project/domain) are ignored."
+        },
+        "artifact_tag": {
+          "$ref": "#/definitions/coreArtifactTag"
+        }
+      },
+      "description": "Defines a strongly typed variable."
     },
     "coreVoid": {
       "type": "object",

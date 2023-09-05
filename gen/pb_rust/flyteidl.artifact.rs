@@ -123,4 +123,32 @@ pub struct AddTagRequest {
 #[derive(Clone, PartialEq, ::prost::Message)]
 pub struct AddTagResponse {
 }
+/// Artifact Trigger
+#[allow(clippy::derive_partial_eq_without_eq)]
+#[derive(Clone, PartialEq, ::prost::Message)]
+pub struct CreateTriggerRequest {
+    /// TODO: This should be a list of artifact keys
+    #[prost(message, optional, tag="1")]
+    pub artifact_key: ::core::option::Option<super::core::ArtifactKey>,
+    #[prost(message, optional, tag="2")]
+    pub downstream_id: ::core::option::Option<super::core::Identifier>,
+    #[prost(message, optional, tag="3")]
+    pub inputs: ::core::option::Option<super::core::ParameterMap>,
+}
+#[allow(clippy::derive_partial_eq_without_eq)]
+#[derive(Clone, PartialEq, ::prost::Message)]
+pub struct CreateTriggerResponse {
+}
+#[allow(clippy::derive_partial_eq_without_eq)]
+#[derive(Clone, PartialEq, ::prost::Message)]
+pub struct DeleteTriggerRequest {
+    #[prost(message, optional, tag="1")]
+    pub artifact_key: ::core::option::Option<super::core::ArtifactKey>,
+    #[prost(message, optional, tag="2")]
+    pub downstream_id: ::core::option::Option<super::core::Identifier>,
+}
+#[allow(clippy::derive_partial_eq_without_eq)]
+#[derive(Clone, PartialEq, ::prost::Message)]
+pub struct DeleteTriggerResponse {
+}
 // @@protoc_insertion_point(module)

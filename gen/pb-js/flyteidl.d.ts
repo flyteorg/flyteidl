@@ -8929,6 +8929,220 @@ export namespace flyteidl {
             public static verify(message: { [k: string]: any }): (string|null);
         }
 
+        /** Properties of a CreateTriggerRequest. */
+        interface ICreateTriggerRequest {
+
+            /** CreateTriggerRequest artifactKey */
+            artifactKey?: (flyteidl.core.IArtifactKey|null);
+
+            /** CreateTriggerRequest downstreamId */
+            downstreamId?: (flyteidl.core.IIdentifier|null);
+
+            /** CreateTriggerRequest inputs */
+            inputs?: (flyteidl.core.IParameterMap|null);
+        }
+
+        /** Represents a CreateTriggerRequest. */
+        class CreateTriggerRequest implements ICreateTriggerRequest {
+
+            /**
+             * Constructs a new CreateTriggerRequest.
+             * @param [properties] Properties to set
+             */
+            constructor(properties?: flyteidl.artifact.ICreateTriggerRequest);
+
+            /** CreateTriggerRequest artifactKey. */
+            public artifactKey?: (flyteidl.core.IArtifactKey|null);
+
+            /** CreateTriggerRequest downstreamId. */
+            public downstreamId?: (flyteidl.core.IIdentifier|null);
+
+            /** CreateTriggerRequest inputs. */
+            public inputs?: (flyteidl.core.IParameterMap|null);
+
+            /**
+             * Creates a new CreateTriggerRequest instance using the specified properties.
+             * @param [properties] Properties to set
+             * @returns CreateTriggerRequest instance
+             */
+            public static create(properties?: flyteidl.artifact.ICreateTriggerRequest): flyteidl.artifact.CreateTriggerRequest;
+
+            /**
+             * Encodes the specified CreateTriggerRequest message. Does not implicitly {@link flyteidl.artifact.CreateTriggerRequest.verify|verify} messages.
+             * @param message CreateTriggerRequest message or plain object to encode
+             * @param [writer] Writer to encode to
+             * @returns Writer
+             */
+            public static encode(message: flyteidl.artifact.ICreateTriggerRequest, writer?: $protobuf.Writer): $protobuf.Writer;
+
+            /**
+             * Decodes a CreateTriggerRequest message from the specified reader or buffer.
+             * @param reader Reader or buffer to decode from
+             * @param [length] Message length if known beforehand
+             * @returns CreateTriggerRequest
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): flyteidl.artifact.CreateTriggerRequest;
+
+            /**
+             * Verifies a CreateTriggerRequest message.
+             * @param message Plain object to verify
+             * @returns `null` if valid, otherwise the reason why it is not
+             */
+            public static verify(message: { [k: string]: any }): (string|null);
+        }
+
+        /** Properties of a CreateTriggerResponse. */
+        interface ICreateTriggerResponse {
+        }
+
+        /** Represents a CreateTriggerResponse. */
+        class CreateTriggerResponse implements ICreateTriggerResponse {
+
+            /**
+             * Constructs a new CreateTriggerResponse.
+             * @param [properties] Properties to set
+             */
+            constructor(properties?: flyteidl.artifact.ICreateTriggerResponse);
+
+            /**
+             * Creates a new CreateTriggerResponse instance using the specified properties.
+             * @param [properties] Properties to set
+             * @returns CreateTriggerResponse instance
+             */
+            public static create(properties?: flyteidl.artifact.ICreateTriggerResponse): flyteidl.artifact.CreateTriggerResponse;
+
+            /**
+             * Encodes the specified CreateTriggerResponse message. Does not implicitly {@link flyteidl.artifact.CreateTriggerResponse.verify|verify} messages.
+             * @param message CreateTriggerResponse message or plain object to encode
+             * @param [writer] Writer to encode to
+             * @returns Writer
+             */
+            public static encode(message: flyteidl.artifact.ICreateTriggerResponse, writer?: $protobuf.Writer): $protobuf.Writer;
+
+            /**
+             * Decodes a CreateTriggerResponse message from the specified reader or buffer.
+             * @param reader Reader or buffer to decode from
+             * @param [length] Message length if known beforehand
+             * @returns CreateTriggerResponse
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): flyteidl.artifact.CreateTriggerResponse;
+
+            /**
+             * Verifies a CreateTriggerResponse message.
+             * @param message Plain object to verify
+             * @returns `null` if valid, otherwise the reason why it is not
+             */
+            public static verify(message: { [k: string]: any }): (string|null);
+        }
+
+        /** Properties of a DeleteTriggerRequest. */
+        interface IDeleteTriggerRequest {
+
+            /** DeleteTriggerRequest artifactKey */
+            artifactKey?: (flyteidl.core.IArtifactKey|null);
+
+            /** DeleteTriggerRequest downstreamId */
+            downstreamId?: (flyteidl.core.IIdentifier|null);
+        }
+
+        /** Represents a DeleteTriggerRequest. */
+        class DeleteTriggerRequest implements IDeleteTriggerRequest {
+
+            /**
+             * Constructs a new DeleteTriggerRequest.
+             * @param [properties] Properties to set
+             */
+            constructor(properties?: flyteidl.artifact.IDeleteTriggerRequest);
+
+            /** DeleteTriggerRequest artifactKey. */
+            public artifactKey?: (flyteidl.core.IArtifactKey|null);
+
+            /** DeleteTriggerRequest downstreamId. */
+            public downstreamId?: (flyteidl.core.IIdentifier|null);
+
+            /**
+             * Creates a new DeleteTriggerRequest instance using the specified properties.
+             * @param [properties] Properties to set
+             * @returns DeleteTriggerRequest instance
+             */
+            public static create(properties?: flyteidl.artifact.IDeleteTriggerRequest): flyteidl.artifact.DeleteTriggerRequest;
+
+            /**
+             * Encodes the specified DeleteTriggerRequest message. Does not implicitly {@link flyteidl.artifact.DeleteTriggerRequest.verify|verify} messages.
+             * @param message DeleteTriggerRequest message or plain object to encode
+             * @param [writer] Writer to encode to
+             * @returns Writer
+             */
+            public static encode(message: flyteidl.artifact.IDeleteTriggerRequest, writer?: $protobuf.Writer): $protobuf.Writer;
+
+            /**
+             * Decodes a DeleteTriggerRequest message from the specified reader or buffer.
+             * @param reader Reader or buffer to decode from
+             * @param [length] Message length if known beforehand
+             * @returns DeleteTriggerRequest
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): flyteidl.artifact.DeleteTriggerRequest;
+
+            /**
+             * Verifies a DeleteTriggerRequest message.
+             * @param message Plain object to verify
+             * @returns `null` if valid, otherwise the reason why it is not
+             */
+            public static verify(message: { [k: string]: any }): (string|null);
+        }
+
+        /** Properties of a DeleteTriggerResponse. */
+        interface IDeleteTriggerResponse {
+        }
+
+        /** Represents a DeleteTriggerResponse. */
+        class DeleteTriggerResponse implements IDeleteTriggerResponse {
+
+            /**
+             * Constructs a new DeleteTriggerResponse.
+             * @param [properties] Properties to set
+             */
+            constructor(properties?: flyteidl.artifact.IDeleteTriggerResponse);
+
+            /**
+             * Creates a new DeleteTriggerResponse instance using the specified properties.
+             * @param [properties] Properties to set
+             * @returns DeleteTriggerResponse instance
+             */
+            public static create(properties?: flyteidl.artifact.IDeleteTriggerResponse): flyteidl.artifact.DeleteTriggerResponse;
+
+            /**
+             * Encodes the specified DeleteTriggerResponse message. Does not implicitly {@link flyteidl.artifact.DeleteTriggerResponse.verify|verify} messages.
+             * @param message DeleteTriggerResponse message or plain object to encode
+             * @param [writer] Writer to encode to
+             * @returns Writer
+             */
+            public static encode(message: flyteidl.artifact.IDeleteTriggerResponse, writer?: $protobuf.Writer): $protobuf.Writer;
+
+            /**
+             * Decodes a DeleteTriggerResponse message from the specified reader or buffer.
+             * @param reader Reader or buffer to decode from
+             * @param [length] Message length if known beforehand
+             * @returns DeleteTriggerResponse
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): flyteidl.artifact.DeleteTriggerResponse;
+
+            /**
+             * Verifies a DeleteTriggerResponse message.
+             * @param message Plain object to verify
+             * @returns `null` if valid, otherwise the reason why it is not
+             */
+            public static verify(message: { [k: string]: any }): (string|null);
+        }
+
         /** Represents an ArtifactRegistry */
         class ArtifactRegistry extends $protobuf.rpc.Service {
 
@@ -8978,6 +9192,34 @@ export namespace flyteidl {
             public getArtifact(request: flyteidl.artifact.IGetArtifactRequest): Promise<flyteidl.artifact.GetArtifactResponse>;
 
             /**
+             * Calls CreateTrigger.
+             * @param request CreateTriggerRequest message or plain object
+             * @param callback Node-style callback called with the error, if any, and CreateTriggerResponse
+             */
+            public createTrigger(request: flyteidl.artifact.ICreateTriggerRequest, callback: flyteidl.artifact.ArtifactRegistry.CreateTriggerCallback): void;
+
+            /**
+             * Calls CreateTrigger.
+             * @param request CreateTriggerRequest message or plain object
+             * @returns Promise
+             */
+            public createTrigger(request: flyteidl.artifact.ICreateTriggerRequest): Promise<flyteidl.artifact.CreateTriggerResponse>;
+
+            /**
+             * Calls DeleteTrigger.
+             * @param request DeleteTriggerRequest message or plain object
+             * @param callback Node-style callback called with the error, if any, and DeleteTriggerResponse
+             */
+            public deleteTrigger(request: flyteidl.artifact.IDeleteTriggerRequest, callback: flyteidl.artifact.ArtifactRegistry.DeleteTriggerCallback): void;
+
+            /**
+             * Calls DeleteTrigger.
+             * @param request DeleteTriggerRequest message or plain object
+             * @returns Promise
+             */
+            public deleteTrigger(request: flyteidl.artifact.IDeleteTriggerRequest): Promise<flyteidl.artifact.DeleteTriggerResponse>;
+
+            /**
              * Calls AddTag.
              * @param request AddTagRequest message or plain object
              * @param callback Node-style callback called with the error, if any, and AddTagResponse
@@ -9007,6 +9249,20 @@ export namespace flyteidl {
              * @param [response] GetArtifactResponse
              */
             type GetArtifactCallback = (error: (Error|null), response?: flyteidl.artifact.GetArtifactResponse) => void;
+
+            /**
+             * Callback as used by {@link flyteidl.artifact.ArtifactRegistry#createTrigger}.
+             * @param error Error, if any
+             * @param [response] CreateTriggerResponse
+             */
+            type CreateTriggerCallback = (error: (Error|null), response?: flyteidl.artifact.CreateTriggerResponse) => void;
+
+            /**
+             * Callback as used by {@link flyteidl.artifact.ArtifactRegistry#deleteTrigger}.
+             * @param error Error, if any
+             * @param [response] DeleteTriggerResponse
+             */
+            type DeleteTriggerCallback = (error: (Error|null), response?: flyteidl.artifact.DeleteTriggerResponse) => void;
 
             /**
              * Callback as used by {@link flyteidl.artifact.ArtifactRegistry#addTag}.

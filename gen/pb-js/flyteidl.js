@@ -21759,6 +21759,473 @@
                 return AddTagResponse;
             })();
     
+            artifact.CreateTriggerRequest = (function() {
+    
+                /**
+                 * Properties of a CreateTriggerRequest.
+                 * @memberof flyteidl.artifact
+                 * @interface ICreateTriggerRequest
+                 * @property {flyteidl.core.IArtifactKey|null} [artifactKey] CreateTriggerRequest artifactKey
+                 * @property {flyteidl.core.IIdentifier|null} [downstreamId] CreateTriggerRequest downstreamId
+                 * @property {flyteidl.core.IParameterMap|null} [inputs] CreateTriggerRequest inputs
+                 */
+    
+                /**
+                 * Constructs a new CreateTriggerRequest.
+                 * @memberof flyteidl.artifact
+                 * @classdesc Represents a CreateTriggerRequest.
+                 * @implements ICreateTriggerRequest
+                 * @constructor
+                 * @param {flyteidl.artifact.ICreateTriggerRequest=} [properties] Properties to set
+                 */
+                function CreateTriggerRequest(properties) {
+                    if (properties)
+                        for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                            if (properties[keys[i]] != null)
+                                this[keys[i]] = properties[keys[i]];
+                }
+    
+                /**
+                 * CreateTriggerRequest artifactKey.
+                 * @member {flyteidl.core.IArtifactKey|null|undefined} artifactKey
+                 * @memberof flyteidl.artifact.CreateTriggerRequest
+                 * @instance
+                 */
+                CreateTriggerRequest.prototype.artifactKey = null;
+    
+                /**
+                 * CreateTriggerRequest downstreamId.
+                 * @member {flyteidl.core.IIdentifier|null|undefined} downstreamId
+                 * @memberof flyteidl.artifact.CreateTriggerRequest
+                 * @instance
+                 */
+                CreateTriggerRequest.prototype.downstreamId = null;
+    
+                /**
+                 * CreateTriggerRequest inputs.
+                 * @member {flyteidl.core.IParameterMap|null|undefined} inputs
+                 * @memberof flyteidl.artifact.CreateTriggerRequest
+                 * @instance
+                 */
+                CreateTriggerRequest.prototype.inputs = null;
+    
+                /**
+                 * Creates a new CreateTriggerRequest instance using the specified properties.
+                 * @function create
+                 * @memberof flyteidl.artifact.CreateTriggerRequest
+                 * @static
+                 * @param {flyteidl.artifact.ICreateTriggerRequest=} [properties] Properties to set
+                 * @returns {flyteidl.artifact.CreateTriggerRequest} CreateTriggerRequest instance
+                 */
+                CreateTriggerRequest.create = function create(properties) {
+                    return new CreateTriggerRequest(properties);
+                };
+    
+                /**
+                 * Encodes the specified CreateTriggerRequest message. Does not implicitly {@link flyteidl.artifact.CreateTriggerRequest.verify|verify} messages.
+                 * @function encode
+                 * @memberof flyteidl.artifact.CreateTriggerRequest
+                 * @static
+                 * @param {flyteidl.artifact.ICreateTriggerRequest} message CreateTriggerRequest message or plain object to encode
+                 * @param {$protobuf.Writer} [writer] Writer to encode to
+                 * @returns {$protobuf.Writer} Writer
+                 */
+                CreateTriggerRequest.encode = function encode(message, writer) {
+                    if (!writer)
+                        writer = $Writer.create();
+                    if (message.artifactKey != null && message.hasOwnProperty("artifactKey"))
+                        $root.flyteidl.core.ArtifactKey.encode(message.artifactKey, writer.uint32(/* id 1, wireType 2 =*/10).fork()).ldelim();
+                    if (message.downstreamId != null && message.hasOwnProperty("downstreamId"))
+                        $root.flyteidl.core.Identifier.encode(message.downstreamId, writer.uint32(/* id 2, wireType 2 =*/18).fork()).ldelim();
+                    if (message.inputs != null && message.hasOwnProperty("inputs"))
+                        $root.flyteidl.core.ParameterMap.encode(message.inputs, writer.uint32(/* id 3, wireType 2 =*/26).fork()).ldelim();
+                    return writer;
+                };
+    
+                /**
+                 * Decodes a CreateTriggerRequest message from the specified reader or buffer.
+                 * @function decode
+                 * @memberof flyteidl.artifact.CreateTriggerRequest
+                 * @static
+                 * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+                 * @param {number} [length] Message length if known beforehand
+                 * @returns {flyteidl.artifact.CreateTriggerRequest} CreateTriggerRequest
+                 * @throws {Error} If the payload is not a reader or valid buffer
+                 * @throws {$protobuf.util.ProtocolError} If required fields are missing
+                 */
+                CreateTriggerRequest.decode = function decode(reader, length) {
+                    if (!(reader instanceof $Reader))
+                        reader = $Reader.create(reader);
+                    var end = length === undefined ? reader.len : reader.pos + length, message = new $root.flyteidl.artifact.CreateTriggerRequest();
+                    while (reader.pos < end) {
+                        var tag = reader.uint32();
+                        switch (tag >>> 3) {
+                        case 1:
+                            message.artifactKey = $root.flyteidl.core.ArtifactKey.decode(reader, reader.uint32());
+                            break;
+                        case 2:
+                            message.downstreamId = $root.flyteidl.core.Identifier.decode(reader, reader.uint32());
+                            break;
+                        case 3:
+                            message.inputs = $root.flyteidl.core.ParameterMap.decode(reader, reader.uint32());
+                            break;
+                        default:
+                            reader.skipType(tag & 7);
+                            break;
+                        }
+                    }
+                    return message;
+                };
+    
+                /**
+                 * Verifies a CreateTriggerRequest message.
+                 * @function verify
+                 * @memberof flyteidl.artifact.CreateTriggerRequest
+                 * @static
+                 * @param {Object.<string,*>} message Plain object to verify
+                 * @returns {string|null} `null` if valid, otherwise the reason why it is not
+                 */
+                CreateTriggerRequest.verify = function verify(message) {
+                    if (typeof message !== "object" || message === null)
+                        return "object expected";
+                    if (message.artifactKey != null && message.hasOwnProperty("artifactKey")) {
+                        var error = $root.flyteidl.core.ArtifactKey.verify(message.artifactKey);
+                        if (error)
+                            return "artifactKey." + error;
+                    }
+                    if (message.downstreamId != null && message.hasOwnProperty("downstreamId")) {
+                        var error = $root.flyteidl.core.Identifier.verify(message.downstreamId);
+                        if (error)
+                            return "downstreamId." + error;
+                    }
+                    if (message.inputs != null && message.hasOwnProperty("inputs")) {
+                        var error = $root.flyteidl.core.ParameterMap.verify(message.inputs);
+                        if (error)
+                            return "inputs." + error;
+                    }
+                    return null;
+                };
+    
+                return CreateTriggerRequest;
+            })();
+    
+            artifact.CreateTriggerResponse = (function() {
+    
+                /**
+                 * Properties of a CreateTriggerResponse.
+                 * @memberof flyteidl.artifact
+                 * @interface ICreateTriggerResponse
+                 */
+    
+                /**
+                 * Constructs a new CreateTriggerResponse.
+                 * @memberof flyteidl.artifact
+                 * @classdesc Represents a CreateTriggerResponse.
+                 * @implements ICreateTriggerResponse
+                 * @constructor
+                 * @param {flyteidl.artifact.ICreateTriggerResponse=} [properties] Properties to set
+                 */
+                function CreateTriggerResponse(properties) {
+                    if (properties)
+                        for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                            if (properties[keys[i]] != null)
+                                this[keys[i]] = properties[keys[i]];
+                }
+    
+                /**
+                 * Creates a new CreateTriggerResponse instance using the specified properties.
+                 * @function create
+                 * @memberof flyteidl.artifact.CreateTriggerResponse
+                 * @static
+                 * @param {flyteidl.artifact.ICreateTriggerResponse=} [properties] Properties to set
+                 * @returns {flyteidl.artifact.CreateTriggerResponse} CreateTriggerResponse instance
+                 */
+                CreateTriggerResponse.create = function create(properties) {
+                    return new CreateTriggerResponse(properties);
+                };
+    
+                /**
+                 * Encodes the specified CreateTriggerResponse message. Does not implicitly {@link flyteidl.artifact.CreateTriggerResponse.verify|verify} messages.
+                 * @function encode
+                 * @memberof flyteidl.artifact.CreateTriggerResponse
+                 * @static
+                 * @param {flyteidl.artifact.ICreateTriggerResponse} message CreateTriggerResponse message or plain object to encode
+                 * @param {$protobuf.Writer} [writer] Writer to encode to
+                 * @returns {$protobuf.Writer} Writer
+                 */
+                CreateTriggerResponse.encode = function encode(message, writer) {
+                    if (!writer)
+                        writer = $Writer.create();
+                    return writer;
+                };
+    
+                /**
+                 * Decodes a CreateTriggerResponse message from the specified reader or buffer.
+                 * @function decode
+                 * @memberof flyteidl.artifact.CreateTriggerResponse
+                 * @static
+                 * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+                 * @param {number} [length] Message length if known beforehand
+                 * @returns {flyteidl.artifact.CreateTriggerResponse} CreateTriggerResponse
+                 * @throws {Error} If the payload is not a reader or valid buffer
+                 * @throws {$protobuf.util.ProtocolError} If required fields are missing
+                 */
+                CreateTriggerResponse.decode = function decode(reader, length) {
+                    if (!(reader instanceof $Reader))
+                        reader = $Reader.create(reader);
+                    var end = length === undefined ? reader.len : reader.pos + length, message = new $root.flyteidl.artifact.CreateTriggerResponse();
+                    while (reader.pos < end) {
+                        var tag = reader.uint32();
+                        switch (tag >>> 3) {
+                        default:
+                            reader.skipType(tag & 7);
+                            break;
+                        }
+                    }
+                    return message;
+                };
+    
+                /**
+                 * Verifies a CreateTriggerResponse message.
+                 * @function verify
+                 * @memberof flyteidl.artifact.CreateTriggerResponse
+                 * @static
+                 * @param {Object.<string,*>} message Plain object to verify
+                 * @returns {string|null} `null` if valid, otherwise the reason why it is not
+                 */
+                CreateTriggerResponse.verify = function verify(message) {
+                    if (typeof message !== "object" || message === null)
+                        return "object expected";
+                    return null;
+                };
+    
+                return CreateTriggerResponse;
+            })();
+    
+            artifact.DeleteTriggerRequest = (function() {
+    
+                /**
+                 * Properties of a DeleteTriggerRequest.
+                 * @memberof flyteidl.artifact
+                 * @interface IDeleteTriggerRequest
+                 * @property {flyteidl.core.IArtifactKey|null} [artifactKey] DeleteTriggerRequest artifactKey
+                 * @property {flyteidl.core.IIdentifier|null} [downstreamId] DeleteTriggerRequest downstreamId
+                 */
+    
+                /**
+                 * Constructs a new DeleteTriggerRequest.
+                 * @memberof flyteidl.artifact
+                 * @classdesc Represents a DeleteTriggerRequest.
+                 * @implements IDeleteTriggerRequest
+                 * @constructor
+                 * @param {flyteidl.artifact.IDeleteTriggerRequest=} [properties] Properties to set
+                 */
+                function DeleteTriggerRequest(properties) {
+                    if (properties)
+                        for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                            if (properties[keys[i]] != null)
+                                this[keys[i]] = properties[keys[i]];
+                }
+    
+                /**
+                 * DeleteTriggerRequest artifactKey.
+                 * @member {flyteidl.core.IArtifactKey|null|undefined} artifactKey
+                 * @memberof flyteidl.artifact.DeleteTriggerRequest
+                 * @instance
+                 */
+                DeleteTriggerRequest.prototype.artifactKey = null;
+    
+                /**
+                 * DeleteTriggerRequest downstreamId.
+                 * @member {flyteidl.core.IIdentifier|null|undefined} downstreamId
+                 * @memberof flyteidl.artifact.DeleteTriggerRequest
+                 * @instance
+                 */
+                DeleteTriggerRequest.prototype.downstreamId = null;
+    
+                /**
+                 * Creates a new DeleteTriggerRequest instance using the specified properties.
+                 * @function create
+                 * @memberof flyteidl.artifact.DeleteTriggerRequest
+                 * @static
+                 * @param {flyteidl.artifact.IDeleteTriggerRequest=} [properties] Properties to set
+                 * @returns {flyteidl.artifact.DeleteTriggerRequest} DeleteTriggerRequest instance
+                 */
+                DeleteTriggerRequest.create = function create(properties) {
+                    return new DeleteTriggerRequest(properties);
+                };
+    
+                /**
+                 * Encodes the specified DeleteTriggerRequest message. Does not implicitly {@link flyteidl.artifact.DeleteTriggerRequest.verify|verify} messages.
+                 * @function encode
+                 * @memberof flyteidl.artifact.DeleteTriggerRequest
+                 * @static
+                 * @param {flyteidl.artifact.IDeleteTriggerRequest} message DeleteTriggerRequest message or plain object to encode
+                 * @param {$protobuf.Writer} [writer] Writer to encode to
+                 * @returns {$protobuf.Writer} Writer
+                 */
+                DeleteTriggerRequest.encode = function encode(message, writer) {
+                    if (!writer)
+                        writer = $Writer.create();
+                    if (message.artifactKey != null && message.hasOwnProperty("artifactKey"))
+                        $root.flyteidl.core.ArtifactKey.encode(message.artifactKey, writer.uint32(/* id 1, wireType 2 =*/10).fork()).ldelim();
+                    if (message.downstreamId != null && message.hasOwnProperty("downstreamId"))
+                        $root.flyteidl.core.Identifier.encode(message.downstreamId, writer.uint32(/* id 2, wireType 2 =*/18).fork()).ldelim();
+                    return writer;
+                };
+    
+                /**
+                 * Decodes a DeleteTriggerRequest message from the specified reader or buffer.
+                 * @function decode
+                 * @memberof flyteidl.artifact.DeleteTriggerRequest
+                 * @static
+                 * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+                 * @param {number} [length] Message length if known beforehand
+                 * @returns {flyteidl.artifact.DeleteTriggerRequest} DeleteTriggerRequest
+                 * @throws {Error} If the payload is not a reader or valid buffer
+                 * @throws {$protobuf.util.ProtocolError} If required fields are missing
+                 */
+                DeleteTriggerRequest.decode = function decode(reader, length) {
+                    if (!(reader instanceof $Reader))
+                        reader = $Reader.create(reader);
+                    var end = length === undefined ? reader.len : reader.pos + length, message = new $root.flyteidl.artifact.DeleteTriggerRequest();
+                    while (reader.pos < end) {
+                        var tag = reader.uint32();
+                        switch (tag >>> 3) {
+                        case 1:
+                            message.artifactKey = $root.flyteidl.core.ArtifactKey.decode(reader, reader.uint32());
+                            break;
+                        case 2:
+                            message.downstreamId = $root.flyteidl.core.Identifier.decode(reader, reader.uint32());
+                            break;
+                        default:
+                            reader.skipType(tag & 7);
+                            break;
+                        }
+                    }
+                    return message;
+                };
+    
+                /**
+                 * Verifies a DeleteTriggerRequest message.
+                 * @function verify
+                 * @memberof flyteidl.artifact.DeleteTriggerRequest
+                 * @static
+                 * @param {Object.<string,*>} message Plain object to verify
+                 * @returns {string|null} `null` if valid, otherwise the reason why it is not
+                 */
+                DeleteTriggerRequest.verify = function verify(message) {
+                    if (typeof message !== "object" || message === null)
+                        return "object expected";
+                    if (message.artifactKey != null && message.hasOwnProperty("artifactKey")) {
+                        var error = $root.flyteidl.core.ArtifactKey.verify(message.artifactKey);
+                        if (error)
+                            return "artifactKey." + error;
+                    }
+                    if (message.downstreamId != null && message.hasOwnProperty("downstreamId")) {
+                        var error = $root.flyteidl.core.Identifier.verify(message.downstreamId);
+                        if (error)
+                            return "downstreamId." + error;
+                    }
+                    return null;
+                };
+    
+                return DeleteTriggerRequest;
+            })();
+    
+            artifact.DeleteTriggerResponse = (function() {
+    
+                /**
+                 * Properties of a DeleteTriggerResponse.
+                 * @memberof flyteidl.artifact
+                 * @interface IDeleteTriggerResponse
+                 */
+    
+                /**
+                 * Constructs a new DeleteTriggerResponse.
+                 * @memberof flyteidl.artifact
+                 * @classdesc Represents a DeleteTriggerResponse.
+                 * @implements IDeleteTriggerResponse
+                 * @constructor
+                 * @param {flyteidl.artifact.IDeleteTriggerResponse=} [properties] Properties to set
+                 */
+                function DeleteTriggerResponse(properties) {
+                    if (properties)
+                        for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                            if (properties[keys[i]] != null)
+                                this[keys[i]] = properties[keys[i]];
+                }
+    
+                /**
+                 * Creates a new DeleteTriggerResponse instance using the specified properties.
+                 * @function create
+                 * @memberof flyteidl.artifact.DeleteTriggerResponse
+                 * @static
+                 * @param {flyteidl.artifact.IDeleteTriggerResponse=} [properties] Properties to set
+                 * @returns {flyteidl.artifact.DeleteTriggerResponse} DeleteTriggerResponse instance
+                 */
+                DeleteTriggerResponse.create = function create(properties) {
+                    return new DeleteTriggerResponse(properties);
+                };
+    
+                /**
+                 * Encodes the specified DeleteTriggerResponse message. Does not implicitly {@link flyteidl.artifact.DeleteTriggerResponse.verify|verify} messages.
+                 * @function encode
+                 * @memberof flyteidl.artifact.DeleteTriggerResponse
+                 * @static
+                 * @param {flyteidl.artifact.IDeleteTriggerResponse} message DeleteTriggerResponse message or plain object to encode
+                 * @param {$protobuf.Writer} [writer] Writer to encode to
+                 * @returns {$protobuf.Writer} Writer
+                 */
+                DeleteTriggerResponse.encode = function encode(message, writer) {
+                    if (!writer)
+                        writer = $Writer.create();
+                    return writer;
+                };
+    
+                /**
+                 * Decodes a DeleteTriggerResponse message from the specified reader or buffer.
+                 * @function decode
+                 * @memberof flyteidl.artifact.DeleteTriggerResponse
+                 * @static
+                 * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+                 * @param {number} [length] Message length if known beforehand
+                 * @returns {flyteidl.artifact.DeleteTriggerResponse} DeleteTriggerResponse
+                 * @throws {Error} If the payload is not a reader or valid buffer
+                 * @throws {$protobuf.util.ProtocolError} If required fields are missing
+                 */
+                DeleteTriggerResponse.decode = function decode(reader, length) {
+                    if (!(reader instanceof $Reader))
+                        reader = $Reader.create(reader);
+                    var end = length === undefined ? reader.len : reader.pos + length, message = new $root.flyteidl.artifact.DeleteTriggerResponse();
+                    while (reader.pos < end) {
+                        var tag = reader.uint32();
+                        switch (tag >>> 3) {
+                        default:
+                            reader.skipType(tag & 7);
+                            break;
+                        }
+                    }
+                    return message;
+                };
+    
+                /**
+                 * Verifies a DeleteTriggerResponse message.
+                 * @function verify
+                 * @memberof flyteidl.artifact.DeleteTriggerResponse
+                 * @static
+                 * @param {Object.<string,*>} message Plain object to verify
+                 * @returns {string|null} `null` if valid, otherwise the reason why it is not
+                 */
+                DeleteTriggerResponse.verify = function verify(message) {
+                    if (typeof message !== "object" || message === null)
+                        return "object expected";
+                    return null;
+                };
+    
+                return DeleteTriggerResponse;
+            })();
+    
             artifact.ArtifactRegistry = (function() {
     
                 /**
@@ -21854,6 +22321,72 @@
                  * @instance
                  * @param {flyteidl.artifact.IGetArtifactRequest} request GetArtifactRequest message or plain object
                  * @returns {Promise<flyteidl.artifact.GetArtifactResponse>} Promise
+                 * @variation 2
+                 */
+    
+                /**
+                 * Callback as used by {@link flyteidl.artifact.ArtifactRegistry#createTrigger}.
+                 * @memberof flyteidl.artifact.ArtifactRegistry
+                 * @typedef CreateTriggerCallback
+                 * @type {function}
+                 * @param {Error|null} error Error, if any
+                 * @param {flyteidl.artifact.CreateTriggerResponse} [response] CreateTriggerResponse
+                 */
+    
+                /**
+                 * Calls CreateTrigger.
+                 * @function createTrigger
+                 * @memberof flyteidl.artifact.ArtifactRegistry
+                 * @instance
+                 * @param {flyteidl.artifact.ICreateTriggerRequest} request CreateTriggerRequest message or plain object
+                 * @param {flyteidl.artifact.ArtifactRegistry.CreateTriggerCallback} callback Node-style callback called with the error, if any, and CreateTriggerResponse
+                 * @returns {undefined}
+                 * @variation 1
+                 */
+                Object.defineProperty(ArtifactRegistry.prototype.createTrigger = function createTrigger(request, callback) {
+                    return this.rpcCall(createTrigger, $root.flyteidl.artifact.CreateTriggerRequest, $root.flyteidl.artifact.CreateTriggerResponse, request, callback);
+                }, "name", { value: "CreateTrigger" });
+    
+                /**
+                 * Calls CreateTrigger.
+                 * @function createTrigger
+                 * @memberof flyteidl.artifact.ArtifactRegistry
+                 * @instance
+                 * @param {flyteidl.artifact.ICreateTriggerRequest} request CreateTriggerRequest message or plain object
+                 * @returns {Promise<flyteidl.artifact.CreateTriggerResponse>} Promise
+                 * @variation 2
+                 */
+    
+                /**
+                 * Callback as used by {@link flyteidl.artifact.ArtifactRegistry#deleteTrigger}.
+                 * @memberof flyteidl.artifact.ArtifactRegistry
+                 * @typedef DeleteTriggerCallback
+                 * @type {function}
+                 * @param {Error|null} error Error, if any
+                 * @param {flyteidl.artifact.DeleteTriggerResponse} [response] DeleteTriggerResponse
+                 */
+    
+                /**
+                 * Calls DeleteTrigger.
+                 * @function deleteTrigger
+                 * @memberof flyteidl.artifact.ArtifactRegistry
+                 * @instance
+                 * @param {flyteidl.artifact.IDeleteTriggerRequest} request DeleteTriggerRequest message or plain object
+                 * @param {flyteidl.artifact.ArtifactRegistry.DeleteTriggerCallback} callback Node-style callback called with the error, if any, and DeleteTriggerResponse
+                 * @returns {undefined}
+                 * @variation 1
+                 */
+                Object.defineProperty(ArtifactRegistry.prototype.deleteTrigger = function deleteTrigger(request, callback) {
+                    return this.rpcCall(deleteTrigger, $root.flyteidl.artifact.DeleteTriggerRequest, $root.flyteidl.artifact.DeleteTriggerResponse, request, callback);
+                }, "name", { value: "DeleteTrigger" });
+    
+                /**
+                 * Calls DeleteTrigger.
+                 * @function deleteTrigger
+                 * @memberof flyteidl.artifact.ArtifactRegistry
+                 * @instance
+                 * @param {flyteidl.artifact.IDeleteTriggerRequest} request DeleteTriggerRequest message or plain object
+                 * @returns {Promise<flyteidl.artifact.DeleteTriggerResponse>} Promise
                  * @variation 2
                  */
     

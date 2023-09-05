@@ -1,6 +1,7 @@
 from flyteidl.core import literals_pb2 as _literals_pb2
 from flyteidl.core import types_pb2 as _types_pb2
 from flyteidl.core import identifier_pb2 as _identifier_pb2
+from flyteidl.core import interface_pb2 as _interface_pb2
 from google.protobuf.internal import containers as _containers
 from google.protobuf import descriptor as _descriptor
 from google.protobuf import message as _message
@@ -114,5 +115,31 @@ class AddTagRequest(_message.Message):
     def __init__(self, artifact_id: _Optional[_Union[_identifier_pb2.ArtifactID, _Mapping]] = ..., value: _Optional[str] = ..., overwrite: bool = ...) -> None: ...
 
 class AddTagResponse(_message.Message):
+    __slots__ = []
+    def __init__(self) -> None: ...
+
+class CreateTriggerRequest(_message.Message):
+    __slots__ = ["artifact_key", "downstream_id", "inputs"]
+    ARTIFACT_KEY_FIELD_NUMBER: _ClassVar[int]
+    DOWNSTREAM_ID_FIELD_NUMBER: _ClassVar[int]
+    INPUTS_FIELD_NUMBER: _ClassVar[int]
+    artifact_key: _identifier_pb2.ArtifactKey
+    downstream_id: _identifier_pb2.Identifier
+    inputs: _interface_pb2.ParameterMap
+    def __init__(self, artifact_key: _Optional[_Union[_identifier_pb2.ArtifactKey, _Mapping]] = ..., downstream_id: _Optional[_Union[_identifier_pb2.Identifier, _Mapping]] = ..., inputs: _Optional[_Union[_interface_pb2.ParameterMap, _Mapping]] = ...) -> None: ...
+
+class CreateTriggerResponse(_message.Message):
+    __slots__ = []
+    def __init__(self) -> None: ...
+
+class DeleteTriggerRequest(_message.Message):
+    __slots__ = ["artifact_key", "downstream_id"]
+    ARTIFACT_KEY_FIELD_NUMBER: _ClassVar[int]
+    DOWNSTREAM_ID_FIELD_NUMBER: _ClassVar[int]
+    artifact_key: _identifier_pb2.ArtifactKey
+    downstream_id: _identifier_pb2.Identifier
+    def __init__(self, artifact_key: _Optional[_Union[_identifier_pb2.ArtifactKey, _Mapping]] = ..., downstream_id: _Optional[_Union[_identifier_pb2.Identifier, _Mapping]] = ...) -> None: ...
+
+class DeleteTriggerResponse(_message.Message):
     __slots__ = []
     def __init__(self) -> None: ...

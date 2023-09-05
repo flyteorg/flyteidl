@@ -6,6 +6,7 @@ option go_package = "github.com/flyteorg/flyteidl/gen/pb-go/flyteidl/artifact";
 import "flyteidl/core/literals.proto";
 import "flyteidl/core/types.proto";
 import "flyteidl/core/identifier.proto";
+import "flyteidl/core/interface.proto";
 
 
 message Artifact {
@@ -100,6 +101,26 @@ message AddTagRequest {
 
 message AddTagResponse {}
 
+// Artifact Trigger
+message CreateTriggerRequest {
+  // TODO: This should be a list of artifact keys
+  core.ArtifactKey artifact_key = 1;
+
+  core.Identifier downstream_id = 2;
+
+  core.ParameterMap inputs = 3;
+}
+
+message CreateTriggerResponse {}
+
+message DeleteTriggerRequest {
+  core.ArtifactKey artifact_key = 1;
+
+  core.Identifier downstream_id = 2;
+}
+
+message DeleteTriggerResponse {}
+
 service ArtifactRegistry {
   rpc CreateArtifact (CreateArtifactRequest) returns (CreateArtifactResponse) {}
 
@@ -108,6 +129,10 @@ service ArtifactRegistry {
 //  rpc ListArtifactNames (ListArtifactNamesRequest) returns (ListArtifactNamesResponse) {}
 //
 //  rpc ListArtifacts (ListArtifactsRequest) returns (ListArtifactsResponse) {}
+
+  rpc CreateTrigger (CreateTriggerRequest) returns (CreateTriggerResponse) {}
+
+  rpc DeleteTrigger (DeleteTriggerRequest) returns (DeleteTriggerResponse) {}
 
   rpc AddTag(AddTagRequest) returns (AddTagResponse) {}
 }
