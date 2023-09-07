@@ -123,4 +123,39 @@ pub struct AddTagRequest {
 #[derive(Clone, PartialEq, ::prost::Message)]
 pub struct AddTagResponse {
 }
+#[allow(clippy::derive_partial_eq_without_eq)]
+#[derive(Clone, PartialEq, ::prost::Message)]
+pub struct ArtifactProducer {
+    /// These can be tasks, and workflows. Keeping track of the launch plans that a given workflow has is purely in
+    /// Admin's domain.
+    #[prost(message, optional, tag="1")]
+    pub entity_id: ::core::option::Option<super::core::Identifier>,
+    #[prost(message, optional, tag="2")]
+    pub outputs: ::core::option::Option<super::core::VariableMap>,
+}
+#[allow(clippy::derive_partial_eq_without_eq)]
+#[derive(Clone, PartialEq, ::prost::Message)]
+pub struct RegisterProducerRequest {
+    #[prost(message, repeated, tag="1")]
+    pub producers: ::prost::alloc::vec::Vec<ArtifactProducer>,
+}
+#[allow(clippy::derive_partial_eq_without_eq)]
+#[derive(Clone, PartialEq, ::prost::Message)]
+pub struct ArtifactConsumer {
+    /// These should all be launch plan IDs
+    #[prost(message, optional, tag="1")]
+    pub entity_id: ::core::option::Option<super::core::Identifier>,
+    #[prost(message, optional, tag="2")]
+    pub inputs: ::core::option::Option<super::core::ParameterMap>,
+}
+#[allow(clippy::derive_partial_eq_without_eq)]
+#[derive(Clone, PartialEq, ::prost::Message)]
+pub struct RegisterConsumerRequest {
+    #[prost(message, repeated, tag="1")]
+    pub consumers: ::prost::alloc::vec::Vec<ArtifactConsumer>,
+}
+#[allow(clippy::derive_partial_eq_without_eq)]
+#[derive(Clone, PartialEq, ::prost::Message)]
+pub struct RegisterResponse {
+}
 // @@protoc_insertion_point(module)

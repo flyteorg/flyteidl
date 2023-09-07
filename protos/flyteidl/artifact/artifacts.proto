@@ -6,7 +6,7 @@ option go_package = "github.com/flyteorg/flyteidl/gen/pb-go/flyteidl/artifact";
 import "flyteidl/core/literals.proto";
 import "flyteidl/core/types.proto";
 import "flyteidl/core/identifier.proto";
-
+import "flyteidl/core/interface.proto";
 
 message Artifact {
   core.ArtifactID artifact_id = 1;
@@ -100,6 +100,31 @@ message AddTagRequest {
 
 message AddTagResponse {}
 
+message ArtifactProducer {
+  // These can be tasks, and workflows. Keeping track of the launch plans that a given workflow has is purely in
+  // Admin's domain.
+  core.Identifier entity_id = 1;
+
+  core.VariableMap outputs = 2;
+}
+
+message RegisterProducerRequest {
+  repeated ArtifactProducer producers = 1;
+}
+
+message ArtifactConsumer {
+  // These should all be launch plan IDs
+  core.Identifier entity_id = 1;
+
+  core.ParameterMap inputs = 2;
+}
+
+message RegisterConsumerRequest {
+  repeated ArtifactConsumer consumers = 1;
+}
+
+message RegisterResponse {}
+
 service ArtifactRegistry {
   rpc CreateArtifact (CreateArtifactRequest) returns (CreateArtifactResponse) {}
 
@@ -110,4 +135,8 @@ service ArtifactRegistry {
 //  rpc ListArtifacts (ListArtifactsRequest) returns (ListArtifactsResponse) {}
 
   rpc AddTag(AddTagRequest) returns (AddTagResponse) {}
+
+  rpc RegisterProducer(RegisterProducerRequest) returns (RegisterResponse) {}
+
+  rpc RegisterConsumer(RegisterConsumerRequest) returns (RegisterResponse) {}
 }

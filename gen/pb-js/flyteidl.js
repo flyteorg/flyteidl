@@ -21942,6 +21942,601 @@
                 return AddTagResponse;
             })();
     
+            artifact.ArtifactProducer = (function() {
+    
+                /**
+                 * Properties of an ArtifactProducer.
+                 * @memberof flyteidl.artifact
+                 * @interface IArtifactProducer
+                 * @property {flyteidl.core.IIdentifier|null} [entityId] ArtifactProducer entityId
+                 * @property {flyteidl.core.IVariableMap|null} [outputs] ArtifactProducer outputs
+                 */
+    
+                /**
+                 * Constructs a new ArtifactProducer.
+                 * @memberof flyteidl.artifact
+                 * @classdesc Represents an ArtifactProducer.
+                 * @implements IArtifactProducer
+                 * @constructor
+                 * @param {flyteidl.artifact.IArtifactProducer=} [properties] Properties to set
+                 */
+                function ArtifactProducer(properties) {
+                    if (properties)
+                        for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                            if (properties[keys[i]] != null)
+                                this[keys[i]] = properties[keys[i]];
+                }
+    
+                /**
+                 * ArtifactProducer entityId.
+                 * @member {flyteidl.core.IIdentifier|null|undefined} entityId
+                 * @memberof flyteidl.artifact.ArtifactProducer
+                 * @instance
+                 */
+                ArtifactProducer.prototype.entityId = null;
+    
+                /**
+                 * ArtifactProducer outputs.
+                 * @member {flyteidl.core.IVariableMap|null|undefined} outputs
+                 * @memberof flyteidl.artifact.ArtifactProducer
+                 * @instance
+                 */
+                ArtifactProducer.prototype.outputs = null;
+    
+                /**
+                 * Creates a new ArtifactProducer instance using the specified properties.
+                 * @function create
+                 * @memberof flyteidl.artifact.ArtifactProducer
+                 * @static
+                 * @param {flyteidl.artifact.IArtifactProducer=} [properties] Properties to set
+                 * @returns {flyteidl.artifact.ArtifactProducer} ArtifactProducer instance
+                 */
+                ArtifactProducer.create = function create(properties) {
+                    return new ArtifactProducer(properties);
+                };
+    
+                /**
+                 * Encodes the specified ArtifactProducer message. Does not implicitly {@link flyteidl.artifact.ArtifactProducer.verify|verify} messages.
+                 * @function encode
+                 * @memberof flyteidl.artifact.ArtifactProducer
+                 * @static
+                 * @param {flyteidl.artifact.IArtifactProducer} message ArtifactProducer message or plain object to encode
+                 * @param {$protobuf.Writer} [writer] Writer to encode to
+                 * @returns {$protobuf.Writer} Writer
+                 */
+                ArtifactProducer.encode = function encode(message, writer) {
+                    if (!writer)
+                        writer = $Writer.create();
+                    if (message.entityId != null && message.hasOwnProperty("entityId"))
+                        $root.flyteidl.core.Identifier.encode(message.entityId, writer.uint32(/* id 1, wireType 2 =*/10).fork()).ldelim();
+                    if (message.outputs != null && message.hasOwnProperty("outputs"))
+                        $root.flyteidl.core.VariableMap.encode(message.outputs, writer.uint32(/* id 2, wireType 2 =*/18).fork()).ldelim();
+                    return writer;
+                };
+    
+                /**
+                 * Decodes an ArtifactProducer message from the specified reader or buffer.
+                 * @function decode
+                 * @memberof flyteidl.artifact.ArtifactProducer
+                 * @static
+                 * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+                 * @param {number} [length] Message length if known beforehand
+                 * @returns {flyteidl.artifact.ArtifactProducer} ArtifactProducer
+                 * @throws {Error} If the payload is not a reader or valid buffer
+                 * @throws {$protobuf.util.ProtocolError} If required fields are missing
+                 */
+                ArtifactProducer.decode = function decode(reader, length) {
+                    if (!(reader instanceof $Reader))
+                        reader = $Reader.create(reader);
+                    var end = length === undefined ? reader.len : reader.pos + length, message = new $root.flyteidl.artifact.ArtifactProducer();
+                    while (reader.pos < end) {
+                        var tag = reader.uint32();
+                        switch (tag >>> 3) {
+                        case 1:
+                            message.entityId = $root.flyteidl.core.Identifier.decode(reader, reader.uint32());
+                            break;
+                        case 2:
+                            message.outputs = $root.flyteidl.core.VariableMap.decode(reader, reader.uint32());
+                            break;
+                        default:
+                            reader.skipType(tag & 7);
+                            break;
+                        }
+                    }
+                    return message;
+                };
+    
+                /**
+                 * Verifies an ArtifactProducer message.
+                 * @function verify
+                 * @memberof flyteidl.artifact.ArtifactProducer
+                 * @static
+                 * @param {Object.<string,*>} message Plain object to verify
+                 * @returns {string|null} `null` if valid, otherwise the reason why it is not
+                 */
+                ArtifactProducer.verify = function verify(message) {
+                    if (typeof message !== "object" || message === null)
+                        return "object expected";
+                    if (message.entityId != null && message.hasOwnProperty("entityId")) {
+                        var error = $root.flyteidl.core.Identifier.verify(message.entityId);
+                        if (error)
+                            return "entityId." + error;
+                    }
+                    if (message.outputs != null && message.hasOwnProperty("outputs")) {
+                        var error = $root.flyteidl.core.VariableMap.verify(message.outputs);
+                        if (error)
+                            return "outputs." + error;
+                    }
+                    return null;
+                };
+    
+                return ArtifactProducer;
+            })();
+    
+            artifact.RegisterProducerRequest = (function() {
+    
+                /**
+                 * Properties of a RegisterProducerRequest.
+                 * @memberof flyteidl.artifact
+                 * @interface IRegisterProducerRequest
+                 * @property {Array.<flyteidl.artifact.IArtifactProducer>|null} [producers] RegisterProducerRequest producers
+                 */
+    
+                /**
+                 * Constructs a new RegisterProducerRequest.
+                 * @memberof flyteidl.artifact
+                 * @classdesc Represents a RegisterProducerRequest.
+                 * @implements IRegisterProducerRequest
+                 * @constructor
+                 * @param {flyteidl.artifact.IRegisterProducerRequest=} [properties] Properties to set
+                 */
+                function RegisterProducerRequest(properties) {
+                    this.producers = [];
+                    if (properties)
+                        for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                            if (properties[keys[i]] != null)
+                                this[keys[i]] = properties[keys[i]];
+                }
+    
+                /**
+                 * RegisterProducerRequest producers.
+                 * @member {Array.<flyteidl.artifact.IArtifactProducer>} producers
+                 * @memberof flyteidl.artifact.RegisterProducerRequest
+                 * @instance
+                 */
+                RegisterProducerRequest.prototype.producers = $util.emptyArray;
+    
+                /**
+                 * Creates a new RegisterProducerRequest instance using the specified properties.
+                 * @function create
+                 * @memberof flyteidl.artifact.RegisterProducerRequest
+                 * @static
+                 * @param {flyteidl.artifact.IRegisterProducerRequest=} [properties] Properties to set
+                 * @returns {flyteidl.artifact.RegisterProducerRequest} RegisterProducerRequest instance
+                 */
+                RegisterProducerRequest.create = function create(properties) {
+                    return new RegisterProducerRequest(properties);
+                };
+    
+                /**
+                 * Encodes the specified RegisterProducerRequest message. Does not implicitly {@link flyteidl.artifact.RegisterProducerRequest.verify|verify} messages.
+                 * @function encode
+                 * @memberof flyteidl.artifact.RegisterProducerRequest
+                 * @static
+                 * @param {flyteidl.artifact.IRegisterProducerRequest} message RegisterProducerRequest message or plain object to encode
+                 * @param {$protobuf.Writer} [writer] Writer to encode to
+                 * @returns {$protobuf.Writer} Writer
+                 */
+                RegisterProducerRequest.encode = function encode(message, writer) {
+                    if (!writer)
+                        writer = $Writer.create();
+                    if (message.producers != null && message.producers.length)
+                        for (var i = 0; i < message.producers.length; ++i)
+                            $root.flyteidl.artifact.ArtifactProducer.encode(message.producers[i], writer.uint32(/* id 1, wireType 2 =*/10).fork()).ldelim();
+                    return writer;
+                };
+    
+                /**
+                 * Decodes a RegisterProducerRequest message from the specified reader or buffer.
+                 * @function decode
+                 * @memberof flyteidl.artifact.RegisterProducerRequest
+                 * @static
+                 * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+                 * @param {number} [length] Message length if known beforehand
+                 * @returns {flyteidl.artifact.RegisterProducerRequest} RegisterProducerRequest
+                 * @throws {Error} If the payload is not a reader or valid buffer
+                 * @throws {$protobuf.util.ProtocolError} If required fields are missing
+                 */
+                RegisterProducerRequest.decode = function decode(reader, length) {
+                    if (!(reader instanceof $Reader))
+                        reader = $Reader.create(reader);
+                    var end = length === undefined ? reader.len : reader.pos + length, message = new $root.flyteidl.artifact.RegisterProducerRequest();
+                    while (reader.pos < end) {
+                        var tag = reader.uint32();
+                        switch (tag >>> 3) {
+                        case 1:
+                            if (!(message.producers && message.producers.length))
+                                message.producers = [];
+                            message.producers.push($root.flyteidl.artifact.ArtifactProducer.decode(reader, reader.uint32()));
+                            break;
+                        default:
+                            reader.skipType(tag & 7);
+                            break;
+                        }
+                    }
+                    return message;
+                };
+    
+                /**
+                 * Verifies a RegisterProducerRequest message.
+                 * @function verify
+                 * @memberof flyteidl.artifact.RegisterProducerRequest
+                 * @static
+                 * @param {Object.<string,*>} message Plain object to verify
+                 * @returns {string|null} `null` if valid, otherwise the reason why it is not
+                 */
+                RegisterProducerRequest.verify = function verify(message) {
+                    if (typeof message !== "object" || message === null)
+                        return "object expected";
+                    if (message.producers != null && message.hasOwnProperty("producers")) {
+                        if (!Array.isArray(message.producers))
+                            return "producers: array expected";
+                        for (var i = 0; i < message.producers.length; ++i) {
+                            var error = $root.flyteidl.artifact.ArtifactProducer.verify(message.producers[i]);
+                            if (error)
+                                return "producers." + error;
+                        }
+                    }
+                    return null;
+                };
+    
+                return RegisterProducerRequest;
+            })();
+    
+            artifact.ArtifactConsumer = (function() {
+    
+                /**
+                 * Properties of an ArtifactConsumer.
+                 * @memberof flyteidl.artifact
+                 * @interface IArtifactConsumer
+                 * @property {flyteidl.core.IIdentifier|null} [entityId] ArtifactConsumer entityId
+                 * @property {flyteidl.core.IParameterMap|null} [inputs] ArtifactConsumer inputs
+                 */
+    
+                /**
+                 * Constructs a new ArtifactConsumer.
+                 * @memberof flyteidl.artifact
+                 * @classdesc Represents an ArtifactConsumer.
+                 * @implements IArtifactConsumer
+                 * @constructor
+                 * @param {flyteidl.artifact.IArtifactConsumer=} [properties] Properties to set
+                 */
+                function ArtifactConsumer(properties) {
+                    if (properties)
+                        for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                            if (properties[keys[i]] != null)
+                                this[keys[i]] = properties[keys[i]];
+                }
+    
+                /**
+                 * ArtifactConsumer entityId.
+                 * @member {flyteidl.core.IIdentifier|null|undefined} entityId
+                 * @memberof flyteidl.artifact.ArtifactConsumer
+                 * @instance
+                 */
+                ArtifactConsumer.prototype.entityId = null;
+    
+                /**
+                 * ArtifactConsumer inputs.
+                 * @member {flyteidl.core.IParameterMap|null|undefined} inputs
+                 * @memberof flyteidl.artifact.ArtifactConsumer
+                 * @instance
+                 */
+                ArtifactConsumer.prototype.inputs = null;
+    
+                /**
+                 * Creates a new ArtifactConsumer instance using the specified properties.
+                 * @function create
+                 * @memberof flyteidl.artifact.ArtifactConsumer
+                 * @static
+                 * @param {flyteidl.artifact.IArtifactConsumer=} [properties] Properties to set
+                 * @returns {flyteidl.artifact.ArtifactConsumer} ArtifactConsumer instance
+                 */
+                ArtifactConsumer.create = function create(properties) {
+                    return new ArtifactConsumer(properties);
+                };
+    
+                /**
+                 * Encodes the specified ArtifactConsumer message. Does not implicitly {@link flyteidl.artifact.ArtifactConsumer.verify|verify} messages.
+                 * @function encode
+                 * @memberof flyteidl.artifact.ArtifactConsumer
+                 * @static
+                 * @param {flyteidl.artifact.IArtifactConsumer} message ArtifactConsumer message or plain object to encode
+                 * @param {$protobuf.Writer} [writer] Writer to encode to
+                 * @returns {$protobuf.Writer} Writer
+                 */
+                ArtifactConsumer.encode = function encode(message, writer) {
+                    if (!writer)
+                        writer = $Writer.create();
+                    if (message.entityId != null && message.hasOwnProperty("entityId"))
+                        $root.flyteidl.core.Identifier.encode(message.entityId, writer.uint32(/* id 1, wireType 2 =*/10).fork()).ldelim();
+                    if (message.inputs != null && message.hasOwnProperty("inputs"))
+                        $root.flyteidl.core.ParameterMap.encode(message.inputs, writer.uint32(/* id 2, wireType 2 =*/18).fork()).ldelim();
+                    return writer;
+                };
+    
+                /**
+                 * Decodes an ArtifactConsumer message from the specified reader or buffer.
+                 * @function decode
+                 * @memberof flyteidl.artifact.ArtifactConsumer
+                 * @static
+                 * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+                 * @param {number} [length] Message length if known beforehand
+                 * @returns {flyteidl.artifact.ArtifactConsumer} ArtifactConsumer
+                 * @throws {Error} If the payload is not a reader or valid buffer
+                 * @throws {$protobuf.util.ProtocolError} If required fields are missing
+                 */
+                ArtifactConsumer.decode = function decode(reader, length) {
+                    if (!(reader instanceof $Reader))
+                        reader = $Reader.create(reader);
+                    var end = length === undefined ? reader.len : reader.pos + length, message = new $root.flyteidl.artifact.ArtifactConsumer();
+                    while (reader.pos < end) {
+                        var tag = reader.uint32();
+                        switch (tag >>> 3) {
+                        case 1:
+                            message.entityId = $root.flyteidl.core.Identifier.decode(reader, reader.uint32());
+                            break;
+                        case 2:
+                            message.inputs = $root.flyteidl.core.ParameterMap.decode(reader, reader.uint32());
+                            break;
+                        default:
+                            reader.skipType(tag & 7);
+                            break;
+                        }
+                    }
+                    return message;
+                };
+    
+                /**
+                 * Verifies an ArtifactConsumer message.
+                 * @function verify
+                 * @memberof flyteidl.artifact.ArtifactConsumer
+                 * @static
+                 * @param {Object.<string,*>} message Plain object to verify
+                 * @returns {string|null} `null` if valid, otherwise the reason why it is not
+                 */
+                ArtifactConsumer.verify = function verify(message) {
+                    if (typeof message !== "object" || message === null)
+                        return "object expected";
+                    if (message.entityId != null && message.hasOwnProperty("entityId")) {
+                        var error = $root.flyteidl.core.Identifier.verify(message.entityId);
+                        if (error)
+                            return "entityId." + error;
+                    }
+                    if (message.inputs != null && message.hasOwnProperty("inputs")) {
+                        var error = $root.flyteidl.core.ParameterMap.verify(message.inputs);
+                        if (error)
+                            return "inputs." + error;
+                    }
+                    return null;
+                };
+    
+                return ArtifactConsumer;
+            })();
+    
+            artifact.RegisterConsumerRequest = (function() {
+    
+                /**
+                 * Properties of a RegisterConsumerRequest.
+                 * @memberof flyteidl.artifact
+                 * @interface IRegisterConsumerRequest
+                 * @property {Array.<flyteidl.artifact.IArtifactConsumer>|null} [consumers] RegisterConsumerRequest consumers
+                 */
+    
+                /**
+                 * Constructs a new RegisterConsumerRequest.
+                 * @memberof flyteidl.artifact
+                 * @classdesc Represents a RegisterConsumerRequest.
+                 * @implements IRegisterConsumerRequest
+                 * @constructor
+                 * @param {flyteidl.artifact.IRegisterConsumerRequest=} [properties] Properties to set
+                 */
+                function RegisterConsumerRequest(properties) {
+                    this.consumers = [];
+                    if (properties)
+                        for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                            if (properties[keys[i]] != null)
+                                this[keys[i]] = properties[keys[i]];
+                }
+    
+                /**
+                 * RegisterConsumerRequest consumers.
+                 * @member {Array.<flyteidl.artifact.IArtifactConsumer>} consumers
+                 * @memberof flyteidl.artifact.RegisterConsumerRequest
+                 * @instance
+                 */
+                RegisterConsumerRequest.prototype.consumers = $util.emptyArray;
+    
+                /**
+                 * Creates a new RegisterConsumerRequest instance using the specified properties.
+                 * @function create
+                 * @memberof flyteidl.artifact.RegisterConsumerRequest
+                 * @static
+                 * @param {flyteidl.artifact.IRegisterConsumerRequest=} [properties] Properties to set
+                 * @returns {flyteidl.artifact.RegisterConsumerRequest} RegisterConsumerRequest instance
+                 */
+                RegisterConsumerRequest.create = function create(properties) {
+                    return new RegisterConsumerRequest(properties);
+                };
+    
+                /**
+                 * Encodes the specified RegisterConsumerRequest message. Does not implicitly {@link flyteidl.artifact.RegisterConsumerRequest.verify|verify} messages.
+                 * @function encode
+                 * @memberof flyteidl.artifact.RegisterConsumerRequest
+                 * @static
+                 * @param {flyteidl.artifact.IRegisterConsumerRequest} message RegisterConsumerRequest message or plain object to encode
+                 * @param {$protobuf.Writer} [writer] Writer to encode to
+                 * @returns {$protobuf.Writer} Writer
+                 */
+                RegisterConsumerRequest.encode = function encode(message, writer) {
+                    if (!writer)
+                        writer = $Writer.create();
+                    if (message.consumers != null && message.consumers.length)
+                        for (var i = 0; i < message.consumers.length; ++i)
+                            $root.flyteidl.artifact.ArtifactConsumer.encode(message.consumers[i], writer.uint32(/* id 1, wireType 2 =*/10).fork()).ldelim();
+                    return writer;
+                };
+    
+                /**
+                 * Decodes a RegisterConsumerRequest message from the specified reader or buffer.
+                 * @function decode
+                 * @memberof flyteidl.artifact.RegisterConsumerRequest
+                 * @static
+                 * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+                 * @param {number} [length] Message length if known beforehand
+                 * @returns {flyteidl.artifact.RegisterConsumerRequest} RegisterConsumerRequest
+                 * @throws {Error} If the payload is not a reader or valid buffer
+                 * @throws {$protobuf.util.ProtocolError} If required fields are missing
+                 */
+                RegisterConsumerRequest.decode = function decode(reader, length) {
+                    if (!(reader instanceof $Reader))
+                        reader = $Reader.create(reader);
+                    var end = length === undefined ? reader.len : reader.pos + length, message = new $root.flyteidl.artifact.RegisterConsumerRequest();
+                    while (reader.pos < end) {
+                        var tag = reader.uint32();
+                        switch (tag >>> 3) {
+                        case 1:
+                            if (!(message.consumers && message.consumers.length))
+                                message.consumers = [];
+                            message.consumers.push($root.flyteidl.artifact.ArtifactConsumer.decode(reader, reader.uint32()));
+                            break;
+                        default:
+                            reader.skipType(tag & 7);
+                            break;
+                        }
+                    }
+                    return message;
+                };
+    
+                /**
+                 * Verifies a RegisterConsumerRequest message.
+                 * @function verify
+                 * @memberof flyteidl.artifact.RegisterConsumerRequest
+                 * @static
+                 * @param {Object.<string,*>} message Plain object to verify
+                 * @returns {string|null} `null` if valid, otherwise the reason why it is not
+                 */
+                RegisterConsumerRequest.verify = function verify(message) {
+                    if (typeof message !== "object" || message === null)
+                        return "object expected";
+                    if (message.consumers != null && message.hasOwnProperty("consumers")) {
+                        if (!Array.isArray(message.consumers))
+                            return "consumers: array expected";
+                        for (var i = 0; i < message.consumers.length; ++i) {
+                            var error = $root.flyteidl.artifact.ArtifactConsumer.verify(message.consumers[i]);
+                            if (error)
+                                return "consumers." + error;
+                        }
+                    }
+                    return null;
+                };
+    
+                return RegisterConsumerRequest;
+            })();
+    
+            artifact.RegisterResponse = (function() {
+    
+                /**
+                 * Properties of a RegisterResponse.
+                 * @memberof flyteidl.artifact
+                 * @interface IRegisterResponse
+                 */
+    
+                /**
+                 * Constructs a new RegisterResponse.
+                 * @memberof flyteidl.artifact
+                 * @classdesc Represents a RegisterResponse.
+                 * @implements IRegisterResponse
+                 * @constructor
+                 * @param {flyteidl.artifact.IRegisterResponse=} [properties] Properties to set
+                 */
+                function RegisterResponse(properties) {
+                    if (properties)
+                        for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                            if (properties[keys[i]] != null)
+                                this[keys[i]] = properties[keys[i]];
+                }
+    
+                /**
+                 * Creates a new RegisterResponse instance using the specified properties.
+                 * @function create
+                 * @memberof flyteidl.artifact.RegisterResponse
+                 * @static
+                 * @param {flyteidl.artifact.IRegisterResponse=} [properties] Properties to set
+                 * @returns {flyteidl.artifact.RegisterResponse} RegisterResponse instance
+                 */
+                RegisterResponse.create = function create(properties) {
+                    return new RegisterResponse(properties);
+                };
+    
+                /**
+                 * Encodes the specified RegisterResponse message. Does not implicitly {@link flyteidl.artifact.RegisterResponse.verify|verify} messages.
+                 * @function encode
+                 * @memberof flyteidl.artifact.RegisterResponse
+                 * @static
+                 * @param {flyteidl.artifact.IRegisterResponse} message RegisterResponse message or plain object to encode
+                 * @param {$protobuf.Writer} [writer] Writer to encode to
+                 * @returns {$protobuf.Writer} Writer
+                 */
+                RegisterResponse.encode = function encode(message, writer) {
+                    if (!writer)
+                        writer = $Writer.create();
+                    return writer;
+                };
+    
+                /**
+                 * Decodes a RegisterResponse message from the specified reader or buffer.
+                 * @function decode
+                 * @memberof flyteidl.artifact.RegisterResponse
+                 * @static
+                 * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+                 * @param {number} [length] Message length if known beforehand
+                 * @returns {flyteidl.artifact.RegisterResponse} RegisterResponse
+                 * @throws {Error} If the payload is not a reader or valid buffer
+                 * @throws {$protobuf.util.ProtocolError} If required fields are missing
+                 */
+                RegisterResponse.decode = function decode(reader, length) {
+                    if (!(reader instanceof $Reader))
+                        reader = $Reader.create(reader);
+                    var end = length === undefined ? reader.len : reader.pos + length, message = new $root.flyteidl.artifact.RegisterResponse();
+                    while (reader.pos < end) {
+                        var tag = reader.uint32();
+                        switch (tag >>> 3) {
+                        default:
+                            reader.skipType(tag & 7);
+                            break;
+                        }
+                    }
+                    return message;
+                };
+    
+                /**
+                 * Verifies a RegisterResponse message.
+                 * @function verify
+                 * @memberof flyteidl.artifact.RegisterResponse
+                 * @static
+                 * @param {Object.<string,*>} message Plain object to verify
+                 * @returns {string|null} `null` if valid, otherwise the reason why it is not
+                 */
+                RegisterResponse.verify = function verify(message) {
+                    if (typeof message !== "object" || message === null)
+                        return "object expected";
+                    return null;
+                };
+    
+                return RegisterResponse;
+            })();
+    
             artifact.ArtifactRegistry = (function() {
     
                 /**
@@ -22070,6 +22665,72 @@
                  * @instance
                  * @param {flyteidl.artifact.IAddTagRequest} request AddTagRequest message or plain object
                  * @returns {Promise<flyteidl.artifact.AddTagResponse>} Promise
+                 * @variation 2
+                 */
+    
+                /**
+                 * Callback as used by {@link flyteidl.artifact.ArtifactRegistry#registerProducer}.
+                 * @memberof flyteidl.artifact.ArtifactRegistry
+                 * @typedef RegisterProducerCallback
+                 * @type {function}
+                 * @param {Error|null} error Error, if any
+                 * @param {flyteidl.artifact.RegisterResponse} [response] RegisterResponse
+                 */
+    
+                /**
+                 * Calls RegisterProducer.
+                 * @function registerProducer
+                 * @memberof flyteidl.artifact.ArtifactRegistry
+                 * @instance
+                 * @param {flyteidl.artifact.IRegisterProducerRequest} request RegisterProducerRequest message or plain object
+                 * @param {flyteidl.artifact.ArtifactRegistry.RegisterProducerCallback} callback Node-style callback called with the error, if any, and RegisterResponse
+                 * @returns {undefined}
+                 * @variation 1
+                 */
+                Object.defineProperty(ArtifactRegistry.prototype.registerProducer = function registerProducer(request, callback) {
+                    return this.rpcCall(registerProducer, $root.flyteidl.artifact.RegisterProducerRequest, $root.flyteidl.artifact.RegisterResponse, request, callback);
+                }, "name", { value: "RegisterProducer" });
+    
+                /**
+                 * Calls RegisterProducer.
+                 * @function registerProducer
+                 * @memberof flyteidl.artifact.ArtifactRegistry
+                 * @instance
+                 * @param {flyteidl.artifact.IRegisterProducerRequest} request RegisterProducerRequest message or plain object
+                 * @returns {Promise<flyteidl.artifact.RegisterResponse>} Promise
+                 * @variation 2
+                 */
+    
+                /**
+                 * Callback as used by {@link flyteidl.artifact.ArtifactRegistry#registerConsumer}.
+                 * @memberof flyteidl.artifact.ArtifactRegistry
+                 * @typedef RegisterConsumerCallback
+                 * @type {function}
+                 * @param {Error|null} error Error, if any
+                 * @param {flyteidl.artifact.RegisterResponse} [response] RegisterResponse
+                 */
+    
+                /**
+                 * Calls RegisterConsumer.
+                 * @function registerConsumer
+                 * @memberof flyteidl.artifact.ArtifactRegistry
+                 * @instance
+                 * @param {flyteidl.artifact.IRegisterConsumerRequest} request RegisterConsumerRequest message or plain object
+                 * @param {flyteidl.artifact.ArtifactRegistry.RegisterConsumerCallback} callback Node-style callback called with the error, if any, and RegisterResponse
+                 * @returns {undefined}
+                 * @variation 1
+                 */
+                Object.defineProperty(ArtifactRegistry.prototype.registerConsumer = function registerConsumer(request, callback) {
+                    return this.rpcCall(registerConsumer, $root.flyteidl.artifact.RegisterConsumerRequest, $root.flyteidl.artifact.RegisterResponse, request, callback);
+                }, "name", { value: "RegisterConsumer" });
+    
+                /**
+                 * Calls RegisterConsumer.
+                 * @function registerConsumer
+                 * @memberof flyteidl.artifact.ArtifactRegistry
+                 * @instance
+                 * @param {flyteidl.artifact.IRegisterConsumerRequest} request RegisterConsumerRequest message or plain object
+                 * @returns {Promise<flyteidl.artifact.RegisterResponse>} Promise
                  * @variation 2
                  */
     
