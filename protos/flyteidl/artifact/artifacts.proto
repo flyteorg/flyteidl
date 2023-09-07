@@ -3,6 +3,8 @@ package flyteidl.artifact;
 
 option go_package = "github.com/flyteorg/flyteidl/gen/pb-go/flyteidl/artifact";
 
+import "google/protobuf/any.proto";
+
 import "flyteidl/core/literals.proto";
 import "flyteidl/core/types.proto";
 import "flyteidl/core/identifier.proto";
@@ -51,6 +53,9 @@ message ArtifactSpec {
 
   string short_description = 8;
   string long_description = 9;
+
+  // Additional user metadata
+  google.protobuf.Any user_metadata = 10;
 }
 
 

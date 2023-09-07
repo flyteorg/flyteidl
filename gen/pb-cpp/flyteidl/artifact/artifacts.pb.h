@@ -34,6 +34,7 @@
 #include <google/protobuf/map_entry.h>
 #include <google/protobuf/map_field_inl.h>
 #include <google/protobuf/unknown_field_set.h>
+#include <google/protobuf/any.pb.h>
 #include "flyteidl/core/literals.pb.h"
 #include "flyteidl/core/types.pb.h"
 #include "flyteidl/core/identifier.pb.h"
@@ -631,6 +632,15 @@ class ArtifactSpec final :
   ::flyteidl::core::LiteralType* mutable_type();
   void set_allocated_type(::flyteidl::core::LiteralType* type);
 
+  // .google.protobuf.Any user_metadata = 10;
+  bool has_user_metadata() const;
+  void clear_user_metadata();
+  static const int kUserMetadataFieldNumber = 10;
+  const ::google::protobuf::Any& user_metadata() const;
+  ::google::protobuf::Any* release_user_metadata();
+  ::google::protobuf::Any* mutable_user_metadata();
+  void set_allocated_user_metadata(::google::protobuf::Any* user_metadata);
+
   // .flyteidl.core.TaskExecutionIdentifier task_execution = 5;
   bool has_task_execution() const;
   void clear_task_execution();
@@ -683,6 +693,7 @@ class ArtifactSpec final :
   ::google::protobuf::internal::ArenaStringPtr long_description_;
   ::flyteidl::core::Literal* value_;
   ::flyteidl::core::LiteralType* type_;
+  ::google::protobuf::Any* user_metadata_;
   union SourceUnion {
     SourceUnion() {}
     ::flyteidl::core::TaskExecutionIdentifier* task_execution_;
@@ -3127,6 +3138,51 @@ inline void ArtifactSpec::set_allocated_long_description(::std::string* long_des
   }
   long_description_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), long_description);
   // @@protoc_insertion_point(field_set_allocated:flyteidl.artifact.ArtifactSpec.long_description)
+}
+
+// .google.protobuf.Any user_metadata = 10;
+inline bool ArtifactSpec::has_user_metadata() const {
+  return this != internal_default_instance() && user_metadata_ != nullptr;
+}
+inline const ::google::protobuf::Any& ArtifactSpec::user_metadata() const {
+  const ::google::protobuf::Any* p = user_metadata_;
+  // @@protoc_insertion_point(field_get:flyteidl.artifact.ArtifactSpec.user_metadata)
+  return p != nullptr ? *p : *reinterpret_cast<const ::google::protobuf::Any*>(
+      &::google::protobuf::_Any_default_instance_);
+}
+inline ::google::protobuf::Any* ArtifactSpec::release_user_metadata() {
+  // @@protoc_insertion_point(field_release:flyteidl.artifact.ArtifactSpec.user_metadata)
+  
+  ::google::protobuf::Any* temp = user_metadata_;
+  user_metadata_ = nullptr;
+  return temp;
+}
+inline ::google::protobuf::Any* ArtifactSpec::mutable_user_metadata() {
+  
+  if (user_metadata_ == nullptr) {
+    auto* p = CreateMaybeMessage<::google::protobuf::Any>(GetArenaNoVirtual());
+    user_metadata_ = p;
+  }
+  // @@protoc_insertion_point(field_mutable:flyteidl.artifact.ArtifactSpec.user_metadata)
+  return user_metadata_;
+}
+inline void ArtifactSpec::set_allocated_user_metadata(::google::protobuf::Any* user_metadata) {
+  ::google::protobuf::Arena* message_arena = GetArenaNoVirtual();
+  if (message_arena == nullptr) {
+    delete reinterpret_cast< ::google::protobuf::MessageLite*>(user_metadata_);
+  }
+  if (user_metadata) {
+    ::google::protobuf::Arena* submessage_arena = nullptr;
+    if (message_arena != submessage_arena) {
+      user_metadata = ::google::protobuf::internal::GetOwnedMessage(
+          message_arena, user_metadata, submessage_arena);
+    }
+    
+  } else {
+    
+  }
+  user_metadata_ = user_metadata;
+  // @@protoc_insertion_point(field_set_allocated:flyteidl.artifact.ArtifactSpec.user_metadata)
 }
 
 inline bool ArtifactSpec::has_source() const {

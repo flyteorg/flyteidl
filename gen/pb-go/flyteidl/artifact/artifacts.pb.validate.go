@@ -245,6 +245,16 @@ func (m *ArtifactSpec) Validate() error {
 
 	// no validation rules for LongDescription
 
+	if v, ok := interface{}(m.GetUserMetadata()).(interface{ Validate() error }); ok {
+		if err := v.Validate(); err != nil {
+			return ArtifactSpecValidationError{
+				field:  "UserMetadata",
+				reason: "embedded message failed validation",
+				cause:  err,
+			}
+		}
+	}
+
 	switch m.Source.(type) {
 
 	case *ArtifactSpec_TaskExecution:

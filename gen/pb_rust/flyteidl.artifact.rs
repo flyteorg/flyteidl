@@ -39,6 +39,9 @@ pub struct ArtifactSpec {
     pub short_description: ::prost::alloc::string::String,
     #[prost(string, tag="9")]
     pub long_description: ::prost::alloc::string::String,
+    /// Additional user metadata
+    #[prost(message, optional, tag="10")]
+    pub user_metadata: ::core::option::Option<::prost_types::Any>,
     #[prost(oneof="artifact_spec::Source", tags="5, 6, 7")]
     pub source: ::core::option::Option<artifact_spec::Source>,
 }
