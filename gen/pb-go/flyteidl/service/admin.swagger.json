@@ -6586,6 +6586,9 @@
         "artifact_id": {
           "$ref": "#/definitions/coreArtifactID"
         },
+        "partition_reference": {
+          "$ref": "#/definitions/corePartitionReference"
+        },
         "expression": {
           "$ref": "#/definitions/coreExpression"
         }
@@ -6604,6 +6607,19 @@
         }
       },
       "description": "A map of Parameters."
+    },
+    "corePartitionReference": {
+      "type": "object",
+      "properties": {
+        "artifact_id": {
+          "$ref": "#/definitions/coreArtifactID"
+        },
+        "partition": {
+          "type": "string",
+          "description": "partition name must refer to an one of partition in the artifact."
+        }
+      },
+      "description": "A reference that points to a partition of an artifact."
     },
     "corePartitions": {
       "type": "object",

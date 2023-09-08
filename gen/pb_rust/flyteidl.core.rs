@@ -804,6 +804,16 @@ pub mod expression {
         Minus(::prost::alloc::string::String),
     }
 }
+/// A reference that points to a partition of an artifact.
+#[allow(clippy::derive_partial_eq_without_eq)]
+#[derive(Clone, PartialEq, ::prost::Message)]
+pub struct PartitionReference {
+    #[prost(message, optional, tag="1")]
+    pub artifact_id: ::core::option::Option<ArtifactId>,
+    /// partition name must refer to an one of partition in the artifact.
+    #[prost(string, tag="2")]
+    pub partition: ::prost::alloc::string::String,
+}
 /// A parameter is used as input to a launch plan and has
 /// the special ability to have a default value or mark itself as required.
 #[allow(clippy::derive_partial_eq_without_eq)]
@@ -813,7 +823,7 @@ pub struct Parameter {
     #[prost(message, optional, tag="1")]
     pub var: ::core::option::Option<Variable>,
     /// +optional
-    #[prost(oneof="parameter::Behavior", tags="2, 3, 4, 5, 6")]
+    #[prost(oneof="parameter::Behavior", tags="2, 3, 4, 5, 6, 7")]
     pub behavior: ::core::option::Option<parameter::Behavior>,
 }
 /// Nested message and enum types in `Parameter`.
@@ -835,6 +845,8 @@ pub mod parameter {
         #[prost(message, tag="5")]
         ArtifactId(super::ArtifactId),
         #[prost(message, tag="6")]
+        PartitionReference(super::PartitionReference),
+        #[prost(message, tag="7")]
         Expression(::prost::alloc::boxed::Box<super::Expression>),
     }
 }

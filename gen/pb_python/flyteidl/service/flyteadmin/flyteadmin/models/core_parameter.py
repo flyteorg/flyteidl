@@ -20,6 +20,7 @@ from flyteadmin.models.core_artifact_id import CoreArtifactID  # noqa: F401,E501
 from flyteadmin.models.core_artifact_query import CoreArtifactQuery  # noqa: F401,E501
 from flyteadmin.models.core_expression import CoreExpression  # noqa: F401,E501
 from flyteadmin.models.core_literal import CoreLiteral  # noqa: F401,E501
+from flyteadmin.models.core_partition_reference import CorePartitionReference  # noqa: F401,E501
 from flyteadmin.models.core_variable import CoreVariable  # noqa: F401,E501
 
 
@@ -42,6 +43,7 @@ class CoreParameter(object):
         'required': 'bool',
         'artifact_query': 'CoreArtifactQuery',
         'artifact_id': 'CoreArtifactID',
+        'partition_reference': 'CorePartitionReference',
         'expression': 'CoreExpression'
     }
 
@@ -51,10 +53,11 @@ class CoreParameter(object):
         'required': 'required',
         'artifact_query': 'artifact_query',
         'artifact_id': 'artifact_id',
+        'partition_reference': 'partition_reference',
         'expression': 'expression'
     }
 
-    def __init__(self, var=None, default=None, required=None, artifact_query=None, artifact_id=None, expression=None):  # noqa: E501
+    def __init__(self, var=None, default=None, required=None, artifact_query=None, artifact_id=None, partition_reference=None, expression=None):  # noqa: E501
         """CoreParameter - a model defined in Swagger"""  # noqa: E501
 
         self._var = None
@@ -62,6 +65,7 @@ class CoreParameter(object):
         self._required = None
         self._artifact_query = None
         self._artifact_id = None
+        self._partition_reference = None
         self._expression = None
         self.discriminator = None
 
@@ -75,6 +79,8 @@ class CoreParameter(object):
             self.artifact_query = artifact_query
         if artifact_id is not None:
             self.artifact_id = artifact_id
+        if partition_reference is not None:
+            self.partition_reference = partition_reference
         if expression is not None:
             self.expression = expression
 
@@ -190,6 +196,27 @@ class CoreParameter(object):
         """
 
         self._artifact_id = artifact_id
+
+    @property
+    def partition_reference(self):
+        """Gets the partition_reference of this CoreParameter.  # noqa: E501
+
+
+        :return: The partition_reference of this CoreParameter.  # noqa: E501
+        :rtype: CorePartitionReference
+        """
+        return self._partition_reference
+
+    @partition_reference.setter
+    def partition_reference(self, partition_reference):
+        """Sets the partition_reference of this CoreParameter.
+
+
+        :param partition_reference: The partition_reference of this CoreParameter.  # noqa: E501
+        :type: CorePartitionReference
+        """
+
+        self._partition_reference = partition_reference
 
     @property
     def expression(self):

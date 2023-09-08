@@ -44,6 +44,14 @@ message Expression {
     }
 }
 
+// A reference that points to a partition of an artifact.
+message PartitionReference {
+    core.ArtifactID artifact_id = 1;
+
+    // partition name must refer to an one of partition in the artifact.
+    string partition = 2;
+}
+
 
 // A parameter is used as input to a launch plan and has
 // the special ability to have a default value or mark itself as required.
@@ -65,7 +73,9 @@ message Parameter {
 
         core.ArtifactID artifact_id = 5;
 
-        Expression expression = 6;
+        PartitionReference partition_reference = 6;
+
+        Expression expression = 7;
     }
 }
 

@@ -5235,6 +5235,64 @@ export namespace flyteidl {
             public static verify(message: { [k: string]: any }): (string|null);
         }
 
+        /** Properties of a PartitionReference. */
+        interface IPartitionReference {
+
+            /** PartitionReference artifactId */
+            artifactId?: (flyteidl.core.IArtifactID|null);
+
+            /** PartitionReference partition */
+            partition?: (string|null);
+        }
+
+        /** Represents a PartitionReference. */
+        class PartitionReference implements IPartitionReference {
+
+            /**
+             * Constructs a new PartitionReference.
+             * @param [properties] Properties to set
+             */
+            constructor(properties?: flyteidl.core.IPartitionReference);
+
+            /** PartitionReference artifactId. */
+            public artifactId?: (flyteidl.core.IArtifactID|null);
+
+            /** PartitionReference partition. */
+            public partition: string;
+
+            /**
+             * Creates a new PartitionReference instance using the specified properties.
+             * @param [properties] Properties to set
+             * @returns PartitionReference instance
+             */
+            public static create(properties?: flyteidl.core.IPartitionReference): flyteidl.core.PartitionReference;
+
+            /**
+             * Encodes the specified PartitionReference message. Does not implicitly {@link flyteidl.core.PartitionReference.verify|verify} messages.
+             * @param message PartitionReference message or plain object to encode
+             * @param [writer] Writer to encode to
+             * @returns Writer
+             */
+            public static encode(message: flyteidl.core.IPartitionReference, writer?: $protobuf.Writer): $protobuf.Writer;
+
+            /**
+             * Decodes a PartitionReference message from the specified reader or buffer.
+             * @param reader Reader or buffer to decode from
+             * @param [length] Message length if known beforehand
+             * @returns PartitionReference
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): flyteidl.core.PartitionReference;
+
+            /**
+             * Verifies a PartitionReference message.
+             * @param message Plain object to verify
+             * @returns `null` if valid, otherwise the reason why it is not
+             */
+            public static verify(message: { [k: string]: any }): (string|null);
+        }
+
         /** Properties of a Parameter. */
         interface IParameter {
 
@@ -5252,6 +5310,9 @@ export namespace flyteidl {
 
             /** Parameter artifactId */
             artifactId?: (flyteidl.core.IArtifactID|null);
+
+            /** Parameter partitionReference */
+            partitionReference?: (flyteidl.core.IPartitionReference|null);
 
             /** Parameter expression */
             expression?: (flyteidl.core.IExpression|null);
@@ -5281,11 +5342,14 @@ export namespace flyteidl {
             /** Parameter artifactId. */
             public artifactId?: (flyteidl.core.IArtifactID|null);
 
+            /** Parameter partitionReference. */
+            public partitionReference?: (flyteidl.core.IPartitionReference|null);
+
             /** Parameter expression. */
             public expression?: (flyteidl.core.IExpression|null);
 
             /** Parameter behavior. */
-            public behavior?: ("default"|"required"|"artifactQuery"|"artifactId"|"expression");
+            public behavior?: ("default"|"required"|"artifactQuery"|"artifactId"|"partitionReference"|"expression");
 
             /**
              * Creates a new Parameter instance using the specified properties.

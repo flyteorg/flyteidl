@@ -393,6 +393,85 @@ var _ interface {
 	ErrorName() string
 } = ExpressionValidationError{}
 
+// Validate checks the field values on PartitionReference with the rules
+// defined in the proto definition for this message. If any rules are
+// violated, an error is returned.
+func (m *PartitionReference) Validate() error {
+	if m == nil {
+		return nil
+	}
+
+	if v, ok := interface{}(m.GetArtifactId()).(interface{ Validate() error }); ok {
+		if err := v.Validate(); err != nil {
+			return PartitionReferenceValidationError{
+				field:  "ArtifactId",
+				reason: "embedded message failed validation",
+				cause:  err,
+			}
+		}
+	}
+
+	// no validation rules for Partition
+
+	return nil
+}
+
+// PartitionReferenceValidationError is the validation error returned by
+// PartitionReference.Validate if the designated constraints aren't met.
+type PartitionReferenceValidationError struct {
+	field  string
+	reason string
+	cause  error
+	key    bool
+}
+
+// Field function returns field value.
+func (e PartitionReferenceValidationError) Field() string { return e.field }
+
+// Reason function returns reason value.
+func (e PartitionReferenceValidationError) Reason() string { return e.reason }
+
+// Cause function returns cause value.
+func (e PartitionReferenceValidationError) Cause() error { return e.cause }
+
+// Key function returns key value.
+func (e PartitionReferenceValidationError) Key() bool { return e.key }
+
+// ErrorName returns error name.
+func (e PartitionReferenceValidationError) ErrorName() string {
+	return "PartitionReferenceValidationError"
+}
+
+// Error satisfies the builtin error interface
+func (e PartitionReferenceValidationError) Error() string {
+	cause := ""
+	if e.cause != nil {
+		cause = fmt.Sprintf(" | caused by: %v", e.cause)
+	}
+
+	key := ""
+	if e.key {
+		key = "key for "
+	}
+
+	return fmt.Sprintf(
+		"invalid %sPartitionReference.%s: %s%s",
+		key,
+		e.field,
+		e.reason,
+		cause)
+}
+
+var _ error = PartitionReferenceValidationError{}
+
+var _ interface {
+	Field() string
+	Reason() string
+	Key() bool
+	Cause() error
+	ErrorName() string
+} = PartitionReferenceValidationError{}
+
 // Validate checks the field values on Parameter with the rules defined in the
 // proto definition for this message. If any rules are violated, an error is returned.
 func (m *Parameter) Validate() error {
@@ -445,6 +524,18 @@ func (m *Parameter) Validate() error {
 			if err := v.Validate(); err != nil {
 				return ParameterValidationError{
 					field:  "ArtifactId",
+					reason: "embedded message failed validation",
+					cause:  err,
+				}
+			}
+		}
+
+	case *Parameter_PartitionReference:
+
+		if v, ok := interface{}(m.GetPartitionReference()).(interface{ Validate() error }); ok {
+			if err := v.Validate(); err != nil {
+				return ParameterValidationError{
+					field:  "PartitionReference",
 					reason: "embedded message failed validation",
 					cause:  err,
 				}

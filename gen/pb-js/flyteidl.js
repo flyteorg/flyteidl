@@ -12489,6 +12489,135 @@
                 return Expression;
             })();
     
+            core.PartitionReference = (function() {
+    
+                /**
+                 * Properties of a PartitionReference.
+                 * @memberof flyteidl.core
+                 * @interface IPartitionReference
+                 * @property {flyteidl.core.IArtifactID|null} [artifactId] PartitionReference artifactId
+                 * @property {string|null} [partition] PartitionReference partition
+                 */
+    
+                /**
+                 * Constructs a new PartitionReference.
+                 * @memberof flyteidl.core
+                 * @classdesc Represents a PartitionReference.
+                 * @implements IPartitionReference
+                 * @constructor
+                 * @param {flyteidl.core.IPartitionReference=} [properties] Properties to set
+                 */
+                function PartitionReference(properties) {
+                    if (properties)
+                        for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                            if (properties[keys[i]] != null)
+                                this[keys[i]] = properties[keys[i]];
+                }
+    
+                /**
+                 * PartitionReference artifactId.
+                 * @member {flyteidl.core.IArtifactID|null|undefined} artifactId
+                 * @memberof flyteidl.core.PartitionReference
+                 * @instance
+                 */
+                PartitionReference.prototype.artifactId = null;
+    
+                /**
+                 * PartitionReference partition.
+                 * @member {string} partition
+                 * @memberof flyteidl.core.PartitionReference
+                 * @instance
+                 */
+                PartitionReference.prototype.partition = "";
+    
+                /**
+                 * Creates a new PartitionReference instance using the specified properties.
+                 * @function create
+                 * @memberof flyteidl.core.PartitionReference
+                 * @static
+                 * @param {flyteidl.core.IPartitionReference=} [properties] Properties to set
+                 * @returns {flyteidl.core.PartitionReference} PartitionReference instance
+                 */
+                PartitionReference.create = function create(properties) {
+                    return new PartitionReference(properties);
+                };
+    
+                /**
+                 * Encodes the specified PartitionReference message. Does not implicitly {@link flyteidl.core.PartitionReference.verify|verify} messages.
+                 * @function encode
+                 * @memberof flyteidl.core.PartitionReference
+                 * @static
+                 * @param {flyteidl.core.IPartitionReference} message PartitionReference message or plain object to encode
+                 * @param {$protobuf.Writer} [writer] Writer to encode to
+                 * @returns {$protobuf.Writer} Writer
+                 */
+                PartitionReference.encode = function encode(message, writer) {
+                    if (!writer)
+                        writer = $Writer.create();
+                    if (message.artifactId != null && message.hasOwnProperty("artifactId"))
+                        $root.flyteidl.core.ArtifactID.encode(message.artifactId, writer.uint32(/* id 1, wireType 2 =*/10).fork()).ldelim();
+                    if (message.partition != null && message.hasOwnProperty("partition"))
+                        writer.uint32(/* id 2, wireType 2 =*/18).string(message.partition);
+                    return writer;
+                };
+    
+                /**
+                 * Decodes a PartitionReference message from the specified reader or buffer.
+                 * @function decode
+                 * @memberof flyteidl.core.PartitionReference
+                 * @static
+                 * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+                 * @param {number} [length] Message length if known beforehand
+                 * @returns {flyteidl.core.PartitionReference} PartitionReference
+                 * @throws {Error} If the payload is not a reader or valid buffer
+                 * @throws {$protobuf.util.ProtocolError} If required fields are missing
+                 */
+                PartitionReference.decode = function decode(reader, length) {
+                    if (!(reader instanceof $Reader))
+                        reader = $Reader.create(reader);
+                    var end = length === undefined ? reader.len : reader.pos + length, message = new $root.flyteidl.core.PartitionReference();
+                    while (reader.pos < end) {
+                        var tag = reader.uint32();
+                        switch (tag >>> 3) {
+                        case 1:
+                            message.artifactId = $root.flyteidl.core.ArtifactID.decode(reader, reader.uint32());
+                            break;
+                        case 2:
+                            message.partition = reader.string();
+                            break;
+                        default:
+                            reader.skipType(tag & 7);
+                            break;
+                        }
+                    }
+                    return message;
+                };
+    
+                /**
+                 * Verifies a PartitionReference message.
+                 * @function verify
+                 * @memberof flyteidl.core.PartitionReference
+                 * @static
+                 * @param {Object.<string,*>} message Plain object to verify
+                 * @returns {string|null} `null` if valid, otherwise the reason why it is not
+                 */
+                PartitionReference.verify = function verify(message) {
+                    if (typeof message !== "object" || message === null)
+                        return "object expected";
+                    if (message.artifactId != null && message.hasOwnProperty("artifactId")) {
+                        var error = $root.flyteidl.core.ArtifactID.verify(message.artifactId);
+                        if (error)
+                            return "artifactId." + error;
+                    }
+                    if (message.partition != null && message.hasOwnProperty("partition"))
+                        if (!$util.isString(message.partition))
+                            return "partition: string expected";
+                    return null;
+                };
+    
+                return PartitionReference;
+            })();
+    
             core.Parameter = (function() {
     
                 /**
@@ -12500,6 +12629,7 @@
                  * @property {boolean|null} [required] Parameter required
                  * @property {flyteidl.core.IArtifactQuery|null} [artifactQuery] Parameter artifactQuery
                  * @property {flyteidl.core.IArtifactID|null} [artifactId] Parameter artifactId
+                 * @property {flyteidl.core.IPartitionReference|null} [partitionReference] Parameter partitionReference
                  * @property {flyteidl.core.IExpression|null} [expression] Parameter expression
                  */
     
@@ -12559,6 +12689,14 @@
                 Parameter.prototype.artifactId = null;
     
                 /**
+                 * Parameter partitionReference.
+                 * @member {flyteidl.core.IPartitionReference|null|undefined} partitionReference
+                 * @memberof flyteidl.core.Parameter
+                 * @instance
+                 */
+                Parameter.prototype.partitionReference = null;
+    
+                /**
                  * Parameter expression.
                  * @member {flyteidl.core.IExpression|null|undefined} expression
                  * @memberof flyteidl.core.Parameter
@@ -12571,12 +12709,12 @@
     
                 /**
                  * Parameter behavior.
-                 * @member {"default"|"required"|"artifactQuery"|"artifactId"|"expression"|undefined} behavior
+                 * @member {"default"|"required"|"artifactQuery"|"artifactId"|"partitionReference"|"expression"|undefined} behavior
                  * @memberof flyteidl.core.Parameter
                  * @instance
                  */
                 Object.defineProperty(Parameter.prototype, "behavior", {
-                    get: $util.oneOfGetter($oneOfFields = ["default", "required", "artifactQuery", "artifactId", "expression"]),
+                    get: $util.oneOfGetter($oneOfFields = ["default", "required", "artifactQuery", "artifactId", "partitionReference", "expression"]),
                     set: $util.oneOfSetter($oneOfFields)
                 });
     
@@ -12614,8 +12752,10 @@
                         $root.flyteidl.core.ArtifactQuery.encode(message.artifactQuery, writer.uint32(/* id 4, wireType 2 =*/34).fork()).ldelim();
                     if (message.artifactId != null && message.hasOwnProperty("artifactId"))
                         $root.flyteidl.core.ArtifactID.encode(message.artifactId, writer.uint32(/* id 5, wireType 2 =*/42).fork()).ldelim();
+                    if (message.partitionReference != null && message.hasOwnProperty("partitionReference"))
+                        $root.flyteidl.core.PartitionReference.encode(message.partitionReference, writer.uint32(/* id 6, wireType 2 =*/50).fork()).ldelim();
                     if (message.expression != null && message.hasOwnProperty("expression"))
-                        $root.flyteidl.core.Expression.encode(message.expression, writer.uint32(/* id 6, wireType 2 =*/50).fork()).ldelim();
+                        $root.flyteidl.core.Expression.encode(message.expression, writer.uint32(/* id 7, wireType 2 =*/58).fork()).ldelim();
                     return writer;
                 };
     
@@ -12653,6 +12793,9 @@
                             message.artifactId = $root.flyteidl.core.ArtifactID.decode(reader, reader.uint32());
                             break;
                         case 6:
+                            message.partitionReference = $root.flyteidl.core.PartitionReference.decode(reader, reader.uint32());
+                            break;
+                        case 7:
                             message.expression = $root.flyteidl.core.Expression.decode(reader, reader.uint32());
                             break;
                         default:
@@ -12713,6 +12856,16 @@
                             var error = $root.flyteidl.core.ArtifactID.verify(message.artifactId);
                             if (error)
                                 return "artifactId." + error;
+                        }
+                    }
+                    if (message.partitionReference != null && message.hasOwnProperty("partitionReference")) {
+                        if (properties.behavior === 1)
+                            return "behavior: multiple values";
+                        properties.behavior = 1;
+                        {
+                            var error = $root.flyteidl.core.PartitionReference.verify(message.partitionReference);
+                            if (error)
+                                return "partitionReference." + error;
                         }
                     }
                     if (message.expression != null && message.hasOwnProperty("expression")) {

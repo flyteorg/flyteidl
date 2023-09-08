@@ -4121,6 +4121,793 @@ public final class Interface {
 
   }
 
+  public interface PartitionReferenceOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:flyteidl.core.PartitionReference)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <code>.flyteidl.core.ArtifactID artifact_id = 1;</code>
+     */
+    boolean hasArtifactId();
+    /**
+     * <code>.flyteidl.core.ArtifactID artifact_id = 1;</code>
+     */
+    flyteidl.core.IdentifierOuterClass.ArtifactID getArtifactId();
+    /**
+     * <code>.flyteidl.core.ArtifactID artifact_id = 1;</code>
+     */
+    flyteidl.core.IdentifierOuterClass.ArtifactIDOrBuilder getArtifactIdOrBuilder();
+
+    /**
+     * <pre>
+     * partition name must refer to an one of partition in the artifact.
+     * </pre>
+     *
+     * <code>string partition = 2;</code>
+     */
+    java.lang.String getPartition();
+    /**
+     * <pre>
+     * partition name must refer to an one of partition in the artifact.
+     * </pre>
+     *
+     * <code>string partition = 2;</code>
+     */
+    com.google.protobuf.ByteString
+        getPartitionBytes();
+  }
+  /**
+   * <pre>
+   * A reference that points to a partition of an artifact.
+   * </pre>
+   *
+   * Protobuf type {@code flyteidl.core.PartitionReference}
+   */
+  public  static final class PartitionReference extends
+      com.google.protobuf.GeneratedMessageV3 implements
+      // @@protoc_insertion_point(message_implements:flyteidl.core.PartitionReference)
+      PartitionReferenceOrBuilder {
+  private static final long serialVersionUID = 0L;
+    // Use PartitionReference.newBuilder() to construct.
+    private PartitionReference(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+    private PartitionReference() {
+      partition_ = "";
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+      return this.unknownFields;
+    }
+    private PartitionReference(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10: {
+              flyteidl.core.IdentifierOuterClass.ArtifactID.Builder subBuilder = null;
+              if (artifactId_ != null) {
+                subBuilder = artifactId_.toBuilder();
+              }
+              artifactId_ = input.readMessage(flyteidl.core.IdentifierOuterClass.ArtifactID.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(artifactId_);
+                artifactId_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
+            case 18: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              partition_ = s;
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return flyteidl.core.Interface.internal_static_flyteidl_core_PartitionReference_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return flyteidl.core.Interface.internal_static_flyteidl_core_PartitionReference_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              flyteidl.core.Interface.PartitionReference.class, flyteidl.core.Interface.PartitionReference.Builder.class);
+    }
+
+    public static final int ARTIFACT_ID_FIELD_NUMBER = 1;
+    private flyteidl.core.IdentifierOuterClass.ArtifactID artifactId_;
+    /**
+     * <code>.flyteidl.core.ArtifactID artifact_id = 1;</code>
+     */
+    public boolean hasArtifactId() {
+      return artifactId_ != null;
+    }
+    /**
+     * <code>.flyteidl.core.ArtifactID artifact_id = 1;</code>
+     */
+    public flyteidl.core.IdentifierOuterClass.ArtifactID getArtifactId() {
+      return artifactId_ == null ? flyteidl.core.IdentifierOuterClass.ArtifactID.getDefaultInstance() : artifactId_;
+    }
+    /**
+     * <code>.flyteidl.core.ArtifactID artifact_id = 1;</code>
+     */
+    public flyteidl.core.IdentifierOuterClass.ArtifactIDOrBuilder getArtifactIdOrBuilder() {
+      return getArtifactId();
+    }
+
+    public static final int PARTITION_FIELD_NUMBER = 2;
+    private volatile java.lang.Object partition_;
+    /**
+     * <pre>
+     * partition name must refer to an one of partition in the artifact.
+     * </pre>
+     *
+     * <code>string partition = 2;</code>
+     */
+    public java.lang.String getPartition() {
+      java.lang.Object ref = partition_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        partition_ = s;
+        return s;
+      }
+    }
+    /**
+     * <pre>
+     * partition name must refer to an one of partition in the artifact.
+     * </pre>
+     *
+     * <code>string partition = 2;</code>
+     */
+    public com.google.protobuf.ByteString
+        getPartitionBytes() {
+      java.lang.Object ref = partition_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        partition_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    private byte memoizedIsInitialized = -1;
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      if (artifactId_ != null) {
+        output.writeMessage(1, getArtifactId());
+      }
+      if (!getPartitionBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 2, partition_);
+      }
+      unknownFields.writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (artifactId_ != null) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(1, getArtifactId());
+      }
+      if (!getPartitionBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, partition_);
+      }
+      size += unknownFields.getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof flyteidl.core.Interface.PartitionReference)) {
+        return super.equals(obj);
+      }
+      flyteidl.core.Interface.PartitionReference other = (flyteidl.core.Interface.PartitionReference) obj;
+
+      if (hasArtifactId() != other.hasArtifactId()) return false;
+      if (hasArtifactId()) {
+        if (!getArtifactId()
+            .equals(other.getArtifactId())) return false;
+      }
+      if (!getPartition()
+          .equals(other.getPartition())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      if (hasArtifactId()) {
+        hash = (37 * hash) + ARTIFACT_ID_FIELD_NUMBER;
+        hash = (53 * hash) + getArtifactId().hashCode();
+      }
+      hash = (37 * hash) + PARTITION_FIELD_NUMBER;
+      hash = (53 * hash) + getPartition().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static flyteidl.core.Interface.PartitionReference parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static flyteidl.core.Interface.PartitionReference parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static flyteidl.core.Interface.PartitionReference parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static flyteidl.core.Interface.PartitionReference parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static flyteidl.core.Interface.PartitionReference parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static flyteidl.core.Interface.PartitionReference parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static flyteidl.core.Interface.PartitionReference parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static flyteidl.core.Interface.PartitionReference parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static flyteidl.core.Interface.PartitionReference parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+    public static flyteidl.core.Interface.PartitionReference parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static flyteidl.core.Interface.PartitionReference parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static flyteidl.core.Interface.PartitionReference parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(flyteidl.core.Interface.PartitionReference prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * <pre>
+     * A reference that points to a partition of an artifact.
+     * </pre>
+     *
+     * Protobuf type {@code flyteidl.core.PartitionReference}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:flyteidl.core.PartitionReference)
+        flyteidl.core.Interface.PartitionReferenceOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return flyteidl.core.Interface.internal_static_flyteidl_core_PartitionReference_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return flyteidl.core.Interface.internal_static_flyteidl_core_PartitionReference_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                flyteidl.core.Interface.PartitionReference.class, flyteidl.core.Interface.PartitionReference.Builder.class);
+      }
+
+      // Construct using flyteidl.core.Interface.PartitionReference.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
+      }
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        if (artifactIdBuilder_ == null) {
+          artifactId_ = null;
+        } else {
+          artifactId_ = null;
+          artifactIdBuilder_ = null;
+        }
+        partition_ = "";
+
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return flyteidl.core.Interface.internal_static_flyteidl_core_PartitionReference_descriptor;
+      }
+
+      @java.lang.Override
+      public flyteidl.core.Interface.PartitionReference getDefaultInstanceForType() {
+        return flyteidl.core.Interface.PartitionReference.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public flyteidl.core.Interface.PartitionReference build() {
+        flyteidl.core.Interface.PartitionReference result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public flyteidl.core.Interface.PartitionReference buildPartial() {
+        flyteidl.core.Interface.PartitionReference result = new flyteidl.core.Interface.PartitionReference(this);
+        if (artifactIdBuilder_ == null) {
+          result.artifactId_ = artifactId_;
+        } else {
+          result.artifactId_ = artifactIdBuilder_.build();
+        }
+        result.partition_ = partition_;
+        onBuilt();
+        return result;
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.setField(field, value);
+      }
+      @java.lang.Override
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+      @java.lang.Override
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof flyteidl.core.Interface.PartitionReference) {
+          return mergeFrom((flyteidl.core.Interface.PartitionReference)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(flyteidl.core.Interface.PartitionReference other) {
+        if (other == flyteidl.core.Interface.PartitionReference.getDefaultInstance()) return this;
+        if (other.hasArtifactId()) {
+          mergeArtifactId(other.getArtifactId());
+        }
+        if (!other.getPartition().isEmpty()) {
+          partition_ = other.partition_;
+          onChanged();
+        }
+        this.mergeUnknownFields(other.unknownFields);
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        flyteidl.core.Interface.PartitionReference parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (flyteidl.core.Interface.PartitionReference) e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+
+      private flyteidl.core.IdentifierOuterClass.ArtifactID artifactId_;
+      private com.google.protobuf.SingleFieldBuilderV3<
+          flyteidl.core.IdentifierOuterClass.ArtifactID, flyteidl.core.IdentifierOuterClass.ArtifactID.Builder, flyteidl.core.IdentifierOuterClass.ArtifactIDOrBuilder> artifactIdBuilder_;
+      /**
+       * <code>.flyteidl.core.ArtifactID artifact_id = 1;</code>
+       */
+      public boolean hasArtifactId() {
+        return artifactIdBuilder_ != null || artifactId_ != null;
+      }
+      /**
+       * <code>.flyteidl.core.ArtifactID artifact_id = 1;</code>
+       */
+      public flyteidl.core.IdentifierOuterClass.ArtifactID getArtifactId() {
+        if (artifactIdBuilder_ == null) {
+          return artifactId_ == null ? flyteidl.core.IdentifierOuterClass.ArtifactID.getDefaultInstance() : artifactId_;
+        } else {
+          return artifactIdBuilder_.getMessage();
+        }
+      }
+      /**
+       * <code>.flyteidl.core.ArtifactID artifact_id = 1;</code>
+       */
+      public Builder setArtifactId(flyteidl.core.IdentifierOuterClass.ArtifactID value) {
+        if (artifactIdBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          artifactId_ = value;
+          onChanged();
+        } else {
+          artifactIdBuilder_.setMessage(value);
+        }
+
+        return this;
+      }
+      /**
+       * <code>.flyteidl.core.ArtifactID artifact_id = 1;</code>
+       */
+      public Builder setArtifactId(
+          flyteidl.core.IdentifierOuterClass.ArtifactID.Builder builderForValue) {
+        if (artifactIdBuilder_ == null) {
+          artifactId_ = builderForValue.build();
+          onChanged();
+        } else {
+          artifactIdBuilder_.setMessage(builderForValue.build());
+        }
+
+        return this;
+      }
+      /**
+       * <code>.flyteidl.core.ArtifactID artifact_id = 1;</code>
+       */
+      public Builder mergeArtifactId(flyteidl.core.IdentifierOuterClass.ArtifactID value) {
+        if (artifactIdBuilder_ == null) {
+          if (artifactId_ != null) {
+            artifactId_ =
+              flyteidl.core.IdentifierOuterClass.ArtifactID.newBuilder(artifactId_).mergeFrom(value).buildPartial();
+          } else {
+            artifactId_ = value;
+          }
+          onChanged();
+        } else {
+          artifactIdBuilder_.mergeFrom(value);
+        }
+
+        return this;
+      }
+      /**
+       * <code>.flyteidl.core.ArtifactID artifact_id = 1;</code>
+       */
+      public Builder clearArtifactId() {
+        if (artifactIdBuilder_ == null) {
+          artifactId_ = null;
+          onChanged();
+        } else {
+          artifactId_ = null;
+          artifactIdBuilder_ = null;
+        }
+
+        return this;
+      }
+      /**
+       * <code>.flyteidl.core.ArtifactID artifact_id = 1;</code>
+       */
+      public flyteidl.core.IdentifierOuterClass.ArtifactID.Builder getArtifactIdBuilder() {
+        
+        onChanged();
+        return getArtifactIdFieldBuilder().getBuilder();
+      }
+      /**
+       * <code>.flyteidl.core.ArtifactID artifact_id = 1;</code>
+       */
+      public flyteidl.core.IdentifierOuterClass.ArtifactIDOrBuilder getArtifactIdOrBuilder() {
+        if (artifactIdBuilder_ != null) {
+          return artifactIdBuilder_.getMessageOrBuilder();
+        } else {
+          return artifactId_ == null ?
+              flyteidl.core.IdentifierOuterClass.ArtifactID.getDefaultInstance() : artifactId_;
+        }
+      }
+      /**
+       * <code>.flyteidl.core.ArtifactID artifact_id = 1;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+          flyteidl.core.IdentifierOuterClass.ArtifactID, flyteidl.core.IdentifierOuterClass.ArtifactID.Builder, flyteidl.core.IdentifierOuterClass.ArtifactIDOrBuilder> 
+          getArtifactIdFieldBuilder() {
+        if (artifactIdBuilder_ == null) {
+          artifactIdBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              flyteidl.core.IdentifierOuterClass.ArtifactID, flyteidl.core.IdentifierOuterClass.ArtifactID.Builder, flyteidl.core.IdentifierOuterClass.ArtifactIDOrBuilder>(
+                  getArtifactId(),
+                  getParentForChildren(),
+                  isClean());
+          artifactId_ = null;
+        }
+        return artifactIdBuilder_;
+      }
+
+      private java.lang.Object partition_ = "";
+      /**
+       * <pre>
+       * partition name must refer to an one of partition in the artifact.
+       * </pre>
+       *
+       * <code>string partition = 2;</code>
+       */
+      public java.lang.String getPartition() {
+        java.lang.Object ref = partition_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          partition_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <pre>
+       * partition name must refer to an one of partition in the artifact.
+       * </pre>
+       *
+       * <code>string partition = 2;</code>
+       */
+      public com.google.protobuf.ByteString
+          getPartitionBytes() {
+        java.lang.Object ref = partition_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          partition_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <pre>
+       * partition name must refer to an one of partition in the artifact.
+       * </pre>
+       *
+       * <code>string partition = 2;</code>
+       */
+      public Builder setPartition(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        partition_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * partition name must refer to an one of partition in the artifact.
+       * </pre>
+       *
+       * <code>string partition = 2;</code>
+       */
+      public Builder clearPartition() {
+        
+        partition_ = getDefaultInstance().getPartition();
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * partition name must refer to an one of partition in the artifact.
+       * </pre>
+       *
+       * <code>string partition = 2;</code>
+       */
+      public Builder setPartitionBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        partition_ = value;
+        onChanged();
+        return this;
+      }
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+
+      // @@protoc_insertion_point(builder_scope:flyteidl.core.PartitionReference)
+    }
+
+    // @@protoc_insertion_point(class_scope:flyteidl.core.PartitionReference)
+    private static final flyteidl.core.Interface.PartitionReference DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new flyteidl.core.Interface.PartitionReference();
+    }
+
+    public static flyteidl.core.Interface.PartitionReference getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<PartitionReference>
+        PARSER = new com.google.protobuf.AbstractParser<PartitionReference>() {
+      @java.lang.Override
+      public PartitionReference parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new PartitionReference(input, extensionRegistry);
+      }
+    };
+
+    public static com.google.protobuf.Parser<PartitionReference> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<PartitionReference> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public flyteidl.core.Interface.PartitionReference getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
   public interface ParameterOrBuilder extends
       // @@protoc_insertion_point(interface_extends:flyteidl.core.Parameter)
       com.google.protobuf.MessageOrBuilder {
@@ -4226,15 +5013,28 @@ public final class Interface {
     flyteidl.core.IdentifierOuterClass.ArtifactIDOrBuilder getArtifactIdOrBuilder();
 
     /**
-     * <code>.flyteidl.core.Expression expression = 6;</code>
+     * <code>.flyteidl.core.PartitionReference partition_reference = 6;</code>
+     */
+    boolean hasPartitionReference();
+    /**
+     * <code>.flyteidl.core.PartitionReference partition_reference = 6;</code>
+     */
+    flyteidl.core.Interface.PartitionReference getPartitionReference();
+    /**
+     * <code>.flyteidl.core.PartitionReference partition_reference = 6;</code>
+     */
+    flyteidl.core.Interface.PartitionReferenceOrBuilder getPartitionReferenceOrBuilder();
+
+    /**
+     * <code>.flyteidl.core.Expression expression = 7;</code>
      */
     boolean hasExpression();
     /**
-     * <code>.flyteidl.core.Expression expression = 6;</code>
+     * <code>.flyteidl.core.Expression expression = 7;</code>
      */
     flyteidl.core.Interface.Expression getExpression();
     /**
-     * <code>.flyteidl.core.Expression expression = 6;</code>
+     * <code>.flyteidl.core.Expression expression = 7;</code>
      */
     flyteidl.core.Interface.ExpressionOrBuilder getExpressionOrBuilder();
 
@@ -4345,8 +5145,22 @@ public final class Interface {
               break;
             }
             case 50: {
-              flyteidl.core.Interface.Expression.Builder subBuilder = null;
+              flyteidl.core.Interface.PartitionReference.Builder subBuilder = null;
               if (behaviorCase_ == 6) {
+                subBuilder = ((flyteidl.core.Interface.PartitionReference) behavior_).toBuilder();
+              }
+              behavior_ =
+                  input.readMessage(flyteidl.core.Interface.PartitionReference.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom((flyteidl.core.Interface.PartitionReference) behavior_);
+                behavior_ = subBuilder.buildPartial();
+              }
+              behaviorCase_ = 6;
+              break;
+            }
+            case 58: {
+              flyteidl.core.Interface.Expression.Builder subBuilder = null;
+              if (behaviorCase_ == 7) {
                 subBuilder = ((flyteidl.core.Interface.Expression) behavior_).toBuilder();
               }
               behavior_ =
@@ -4355,7 +5169,7 @@ public final class Interface {
                 subBuilder.mergeFrom((flyteidl.core.Interface.Expression) behavior_);
                 behavior_ = subBuilder.buildPartial();
               }
-              behaviorCase_ = 6;
+              behaviorCase_ = 7;
               break;
             }
             default: {
@@ -4398,7 +5212,8 @@ public final class Interface {
       REQUIRED(3),
       ARTIFACT_QUERY(4),
       ARTIFACT_ID(5),
-      EXPRESSION(6),
+      PARTITION_REFERENCE(6),
+      EXPRESSION(7),
       BEHAVIOR_NOT_SET(0);
       private final int value;
       private BehaviorCase(int value) {
@@ -4418,7 +5233,8 @@ public final class Interface {
           case 3: return REQUIRED;
           case 4: return ARTIFACT_QUERY;
           case 5: return ARTIFACT_ID;
-          case 6: return EXPRESSION;
+          case 6: return PARTITION_REFERENCE;
+          case 7: return EXPRESSION;
           case 0: return BEHAVIOR_NOT_SET;
           default: return null;
         }
@@ -4587,27 +5403,53 @@ public final class Interface {
       return flyteidl.core.IdentifierOuterClass.ArtifactID.getDefaultInstance();
     }
 
-    public static final int EXPRESSION_FIELD_NUMBER = 6;
+    public static final int PARTITION_REFERENCE_FIELD_NUMBER = 6;
     /**
-     * <code>.flyteidl.core.Expression expression = 6;</code>
+     * <code>.flyteidl.core.PartitionReference partition_reference = 6;</code>
      */
-    public boolean hasExpression() {
+    public boolean hasPartitionReference() {
       return behaviorCase_ == 6;
     }
     /**
-     * <code>.flyteidl.core.Expression expression = 6;</code>
+     * <code>.flyteidl.core.PartitionReference partition_reference = 6;</code>
+     */
+    public flyteidl.core.Interface.PartitionReference getPartitionReference() {
+      if (behaviorCase_ == 6) {
+         return (flyteidl.core.Interface.PartitionReference) behavior_;
+      }
+      return flyteidl.core.Interface.PartitionReference.getDefaultInstance();
+    }
+    /**
+     * <code>.flyteidl.core.PartitionReference partition_reference = 6;</code>
+     */
+    public flyteidl.core.Interface.PartitionReferenceOrBuilder getPartitionReferenceOrBuilder() {
+      if (behaviorCase_ == 6) {
+         return (flyteidl.core.Interface.PartitionReference) behavior_;
+      }
+      return flyteidl.core.Interface.PartitionReference.getDefaultInstance();
+    }
+
+    public static final int EXPRESSION_FIELD_NUMBER = 7;
+    /**
+     * <code>.flyteidl.core.Expression expression = 7;</code>
+     */
+    public boolean hasExpression() {
+      return behaviorCase_ == 7;
+    }
+    /**
+     * <code>.flyteidl.core.Expression expression = 7;</code>
      */
     public flyteidl.core.Interface.Expression getExpression() {
-      if (behaviorCase_ == 6) {
+      if (behaviorCase_ == 7) {
          return (flyteidl.core.Interface.Expression) behavior_;
       }
       return flyteidl.core.Interface.Expression.getDefaultInstance();
     }
     /**
-     * <code>.flyteidl.core.Expression expression = 6;</code>
+     * <code>.flyteidl.core.Expression expression = 7;</code>
      */
     public flyteidl.core.Interface.ExpressionOrBuilder getExpressionOrBuilder() {
-      if (behaviorCase_ == 6) {
+      if (behaviorCase_ == 7) {
          return (flyteidl.core.Interface.Expression) behavior_;
       }
       return flyteidl.core.Interface.Expression.getDefaultInstance();
@@ -4644,7 +5486,10 @@ public final class Interface {
         output.writeMessage(5, (flyteidl.core.IdentifierOuterClass.ArtifactID) behavior_);
       }
       if (behaviorCase_ == 6) {
-        output.writeMessage(6, (flyteidl.core.Interface.Expression) behavior_);
+        output.writeMessage(6, (flyteidl.core.Interface.PartitionReference) behavior_);
+      }
+      if (behaviorCase_ == 7) {
+        output.writeMessage(7, (flyteidl.core.Interface.Expression) behavior_);
       }
       unknownFields.writeTo(output);
     }
@@ -4678,7 +5523,11 @@ public final class Interface {
       }
       if (behaviorCase_ == 6) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(6, (flyteidl.core.Interface.Expression) behavior_);
+          .computeMessageSize(6, (flyteidl.core.Interface.PartitionReference) behavior_);
+      }
+      if (behaviorCase_ == 7) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(7, (flyteidl.core.Interface.Expression) behavior_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -4719,6 +5568,10 @@ public final class Interface {
               .equals(other.getArtifactId())) return false;
           break;
         case 6:
+          if (!getPartitionReference()
+              .equals(other.getPartitionReference())) return false;
+          break;
+        case 7:
           if (!getExpression()
               .equals(other.getExpression())) return false;
           break;
@@ -4759,6 +5612,10 @@ public final class Interface {
           hash = (53 * hash) + getArtifactId().hashCode();
           break;
         case 6:
+          hash = (37 * hash) + PARTITION_REFERENCE_FIELD_NUMBER;
+          hash = (53 * hash) + getPartitionReference().hashCode();
+          break;
+        case 7:
           hash = (37 * hash) + EXPRESSION_FIELD_NUMBER;
           hash = (53 * hash) + getExpression().hashCode();
           break;
@@ -4967,6 +5824,13 @@ public final class Interface {
           }
         }
         if (behaviorCase_ == 6) {
+          if (partitionReferenceBuilder_ == null) {
+            result.behavior_ = behavior_;
+          } else {
+            result.behavior_ = partitionReferenceBuilder_.build();
+          }
+        }
+        if (behaviorCase_ == 7) {
           if (expressionBuilder_ == null) {
             result.behavior_ = behavior_;
           } else {
@@ -5040,6 +5904,10 @@ public final class Interface {
           }
           case ARTIFACT_ID: {
             mergeArtifactId(other.getArtifactId());
+            break;
+          }
+          case PARTITION_REFERENCE: {
+            mergePartitionReference(other.getPartitionReference());
             break;
           }
           case EXPRESSION: {
@@ -5779,31 +6647,167 @@ public final class Interface {
       }
 
       private com.google.protobuf.SingleFieldBuilderV3<
-          flyteidl.core.Interface.Expression, flyteidl.core.Interface.Expression.Builder, flyteidl.core.Interface.ExpressionOrBuilder> expressionBuilder_;
+          flyteidl.core.Interface.PartitionReference, flyteidl.core.Interface.PartitionReference.Builder, flyteidl.core.Interface.PartitionReferenceOrBuilder> partitionReferenceBuilder_;
       /**
-       * <code>.flyteidl.core.Expression expression = 6;</code>
+       * <code>.flyteidl.core.PartitionReference partition_reference = 6;</code>
        */
-      public boolean hasExpression() {
+      public boolean hasPartitionReference() {
         return behaviorCase_ == 6;
       }
       /**
-       * <code>.flyteidl.core.Expression expression = 6;</code>
+       * <code>.flyteidl.core.PartitionReference partition_reference = 6;</code>
+       */
+      public flyteidl.core.Interface.PartitionReference getPartitionReference() {
+        if (partitionReferenceBuilder_ == null) {
+          if (behaviorCase_ == 6) {
+            return (flyteidl.core.Interface.PartitionReference) behavior_;
+          }
+          return flyteidl.core.Interface.PartitionReference.getDefaultInstance();
+        } else {
+          if (behaviorCase_ == 6) {
+            return partitionReferenceBuilder_.getMessage();
+          }
+          return flyteidl.core.Interface.PartitionReference.getDefaultInstance();
+        }
+      }
+      /**
+       * <code>.flyteidl.core.PartitionReference partition_reference = 6;</code>
+       */
+      public Builder setPartitionReference(flyteidl.core.Interface.PartitionReference value) {
+        if (partitionReferenceBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          behavior_ = value;
+          onChanged();
+        } else {
+          partitionReferenceBuilder_.setMessage(value);
+        }
+        behaviorCase_ = 6;
+        return this;
+      }
+      /**
+       * <code>.flyteidl.core.PartitionReference partition_reference = 6;</code>
+       */
+      public Builder setPartitionReference(
+          flyteidl.core.Interface.PartitionReference.Builder builderForValue) {
+        if (partitionReferenceBuilder_ == null) {
+          behavior_ = builderForValue.build();
+          onChanged();
+        } else {
+          partitionReferenceBuilder_.setMessage(builderForValue.build());
+        }
+        behaviorCase_ = 6;
+        return this;
+      }
+      /**
+       * <code>.flyteidl.core.PartitionReference partition_reference = 6;</code>
+       */
+      public Builder mergePartitionReference(flyteidl.core.Interface.PartitionReference value) {
+        if (partitionReferenceBuilder_ == null) {
+          if (behaviorCase_ == 6 &&
+              behavior_ != flyteidl.core.Interface.PartitionReference.getDefaultInstance()) {
+            behavior_ = flyteidl.core.Interface.PartitionReference.newBuilder((flyteidl.core.Interface.PartitionReference) behavior_)
+                .mergeFrom(value).buildPartial();
+          } else {
+            behavior_ = value;
+          }
+          onChanged();
+        } else {
+          if (behaviorCase_ == 6) {
+            partitionReferenceBuilder_.mergeFrom(value);
+          }
+          partitionReferenceBuilder_.setMessage(value);
+        }
+        behaviorCase_ = 6;
+        return this;
+      }
+      /**
+       * <code>.flyteidl.core.PartitionReference partition_reference = 6;</code>
+       */
+      public Builder clearPartitionReference() {
+        if (partitionReferenceBuilder_ == null) {
+          if (behaviorCase_ == 6) {
+            behaviorCase_ = 0;
+            behavior_ = null;
+            onChanged();
+          }
+        } else {
+          if (behaviorCase_ == 6) {
+            behaviorCase_ = 0;
+            behavior_ = null;
+          }
+          partitionReferenceBuilder_.clear();
+        }
+        return this;
+      }
+      /**
+       * <code>.flyteidl.core.PartitionReference partition_reference = 6;</code>
+       */
+      public flyteidl.core.Interface.PartitionReference.Builder getPartitionReferenceBuilder() {
+        return getPartitionReferenceFieldBuilder().getBuilder();
+      }
+      /**
+       * <code>.flyteidl.core.PartitionReference partition_reference = 6;</code>
+       */
+      public flyteidl.core.Interface.PartitionReferenceOrBuilder getPartitionReferenceOrBuilder() {
+        if ((behaviorCase_ == 6) && (partitionReferenceBuilder_ != null)) {
+          return partitionReferenceBuilder_.getMessageOrBuilder();
+        } else {
+          if (behaviorCase_ == 6) {
+            return (flyteidl.core.Interface.PartitionReference) behavior_;
+          }
+          return flyteidl.core.Interface.PartitionReference.getDefaultInstance();
+        }
+      }
+      /**
+       * <code>.flyteidl.core.PartitionReference partition_reference = 6;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+          flyteidl.core.Interface.PartitionReference, flyteidl.core.Interface.PartitionReference.Builder, flyteidl.core.Interface.PartitionReferenceOrBuilder> 
+          getPartitionReferenceFieldBuilder() {
+        if (partitionReferenceBuilder_ == null) {
+          if (!(behaviorCase_ == 6)) {
+            behavior_ = flyteidl.core.Interface.PartitionReference.getDefaultInstance();
+          }
+          partitionReferenceBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              flyteidl.core.Interface.PartitionReference, flyteidl.core.Interface.PartitionReference.Builder, flyteidl.core.Interface.PartitionReferenceOrBuilder>(
+                  (flyteidl.core.Interface.PartitionReference) behavior_,
+                  getParentForChildren(),
+                  isClean());
+          behavior_ = null;
+        }
+        behaviorCase_ = 6;
+        onChanged();;
+        return partitionReferenceBuilder_;
+      }
+
+      private com.google.protobuf.SingleFieldBuilderV3<
+          flyteidl.core.Interface.Expression, flyteidl.core.Interface.Expression.Builder, flyteidl.core.Interface.ExpressionOrBuilder> expressionBuilder_;
+      /**
+       * <code>.flyteidl.core.Expression expression = 7;</code>
+       */
+      public boolean hasExpression() {
+        return behaviorCase_ == 7;
+      }
+      /**
+       * <code>.flyteidl.core.Expression expression = 7;</code>
        */
       public flyteidl.core.Interface.Expression getExpression() {
         if (expressionBuilder_ == null) {
-          if (behaviorCase_ == 6) {
+          if (behaviorCase_ == 7) {
             return (flyteidl.core.Interface.Expression) behavior_;
           }
           return flyteidl.core.Interface.Expression.getDefaultInstance();
         } else {
-          if (behaviorCase_ == 6) {
+          if (behaviorCase_ == 7) {
             return expressionBuilder_.getMessage();
           }
           return flyteidl.core.Interface.Expression.getDefaultInstance();
         }
       }
       /**
-       * <code>.flyteidl.core.Expression expression = 6;</code>
+       * <code>.flyteidl.core.Expression expression = 7;</code>
        */
       public Builder setExpression(flyteidl.core.Interface.Expression value) {
         if (expressionBuilder_ == null) {
@@ -5815,11 +6819,11 @@ public final class Interface {
         } else {
           expressionBuilder_.setMessage(value);
         }
-        behaviorCase_ = 6;
+        behaviorCase_ = 7;
         return this;
       }
       /**
-       * <code>.flyteidl.core.Expression expression = 6;</code>
+       * <code>.flyteidl.core.Expression expression = 7;</code>
        */
       public Builder setExpression(
           flyteidl.core.Interface.Expression.Builder builderForValue) {
@@ -5829,15 +6833,15 @@ public final class Interface {
         } else {
           expressionBuilder_.setMessage(builderForValue.build());
         }
-        behaviorCase_ = 6;
+        behaviorCase_ = 7;
         return this;
       }
       /**
-       * <code>.flyteidl.core.Expression expression = 6;</code>
+       * <code>.flyteidl.core.Expression expression = 7;</code>
        */
       public Builder mergeExpression(flyteidl.core.Interface.Expression value) {
         if (expressionBuilder_ == null) {
-          if (behaviorCase_ == 6 &&
+          if (behaviorCase_ == 7 &&
               behavior_ != flyteidl.core.Interface.Expression.getDefaultInstance()) {
             behavior_ = flyteidl.core.Interface.Expression.newBuilder((flyteidl.core.Interface.Expression) behavior_)
                 .mergeFrom(value).buildPartial();
@@ -5846,26 +6850,26 @@ public final class Interface {
           }
           onChanged();
         } else {
-          if (behaviorCase_ == 6) {
+          if (behaviorCase_ == 7) {
             expressionBuilder_.mergeFrom(value);
           }
           expressionBuilder_.setMessage(value);
         }
-        behaviorCase_ = 6;
+        behaviorCase_ = 7;
         return this;
       }
       /**
-       * <code>.flyteidl.core.Expression expression = 6;</code>
+       * <code>.flyteidl.core.Expression expression = 7;</code>
        */
       public Builder clearExpression() {
         if (expressionBuilder_ == null) {
-          if (behaviorCase_ == 6) {
+          if (behaviorCase_ == 7) {
             behaviorCase_ = 0;
             behavior_ = null;
             onChanged();
           }
         } else {
-          if (behaviorCase_ == 6) {
+          if (behaviorCase_ == 7) {
             behaviorCase_ = 0;
             behavior_ = null;
           }
@@ -5874,32 +6878,32 @@ public final class Interface {
         return this;
       }
       /**
-       * <code>.flyteidl.core.Expression expression = 6;</code>
+       * <code>.flyteidl.core.Expression expression = 7;</code>
        */
       public flyteidl.core.Interface.Expression.Builder getExpressionBuilder() {
         return getExpressionFieldBuilder().getBuilder();
       }
       /**
-       * <code>.flyteidl.core.Expression expression = 6;</code>
+       * <code>.flyteidl.core.Expression expression = 7;</code>
        */
       public flyteidl.core.Interface.ExpressionOrBuilder getExpressionOrBuilder() {
-        if ((behaviorCase_ == 6) && (expressionBuilder_ != null)) {
+        if ((behaviorCase_ == 7) && (expressionBuilder_ != null)) {
           return expressionBuilder_.getMessageOrBuilder();
         } else {
-          if (behaviorCase_ == 6) {
+          if (behaviorCase_ == 7) {
             return (flyteidl.core.Interface.Expression) behavior_;
           }
           return flyteidl.core.Interface.Expression.getDefaultInstance();
         }
       }
       /**
-       * <code>.flyteidl.core.Expression expression = 6;</code>
+       * <code>.flyteidl.core.Expression expression = 7;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
           flyteidl.core.Interface.Expression, flyteidl.core.Interface.Expression.Builder, flyteidl.core.Interface.ExpressionOrBuilder> 
           getExpressionFieldBuilder() {
         if (expressionBuilder_ == null) {
-          if (!(behaviorCase_ == 6)) {
+          if (!(behaviorCase_ == 7)) {
             behavior_ = flyteidl.core.Interface.Expression.getDefaultInstance();
           }
           expressionBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
@@ -5909,7 +6913,7 @@ public final class Interface {
                   isClean());
           behavior_ = null;
         }
-        behaviorCase_ = 6;
+        behaviorCase_ = 7;
         onChanged();;
         return expressionBuilder_;
       }
@@ -6785,6 +7789,11 @@ public final class Interface {
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_flyteidl_core_Expression_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_flyteidl_core_PartitionReference_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_flyteidl_core_PartitionReference_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_flyteidl_core_Parameter_descriptor;
   private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
@@ -6825,20 +7834,24 @@ public final class Interface {
       ".core.VariableMap\"\207\001\n\nExpression\022%\n\003lhs\030" +
       "\001 \001(\0132\030.flyteidl.core.Parameter\022%\n\003rhs\030\002" +
       " \001(\0132\030.flyteidl.core.Parameter\022\016\n\004plus\030\013" +
-      " \001(\tH\000\022\017\n\005minus\030\014 \001(\tH\000B\n\n\010operator\"\227\002\n\t" +
-      "Parameter\022$\n\003var\030\001 \001(\0132\027.flyteidl.core.V" +
-      "ariable\022)\n\007default\030\002 \001(\0132\026.flyteidl.core" +
-      ".LiteralH\000\022\022\n\010required\030\003 \001(\010H\000\0226\n\016artifa" +
-      "ct_query\030\004 \001(\0132\034.flyteidl.core.ArtifactQ" +
-      "ueryH\000\0220\n\013artifact_id\030\005 \001(\0132\031.flyteidl.c" +
-      "ore.ArtifactIDH\000\022/\n\nexpression\030\006 \001(\0132\031.f" +
-      "lyteidl.core.ExpressionH\000B\n\n\010behavior\"\234\001" +
-      "\n\014ParameterMap\022?\n\nparameters\030\001 \003(\0132+.fly" +
-      "teidl.core.ParameterMap.ParametersEntry\032" +
-      "K\n\017ParametersEntry\022\013\n\003key\030\001 \001(\t\022\'\n\005value" +
-      "\030\002 \001(\0132\030.flyteidl.core.Parameter:\0028\001B6Z4" +
-      "github.com/flyteorg/flyteidl/gen/pb-go/f" +
-      "lyteidl/coreb\006proto3"
+      " \001(\tH\000\022\017\n\005minus\030\014 \001(\tH\000B\n\n\010operator\"W\n\022P" +
+      "artitionReference\022.\n\013artifact_id\030\001 \001(\0132\031" +
+      ".flyteidl.core.ArtifactID\022\021\n\tpartition\030\002" +
+      " \001(\t\"\331\002\n\tParameter\022$\n\003var\030\001 \001(\0132\027.flytei" +
+      "dl.core.Variable\022)\n\007default\030\002 \001(\0132\026.flyt" +
+      "eidl.core.LiteralH\000\022\022\n\010required\030\003 \001(\010H\000\022" +
+      "6\n\016artifact_query\030\004 \001(\0132\034.flyteidl.core." +
+      "ArtifactQueryH\000\0220\n\013artifact_id\030\005 \001(\0132\031.f" +
+      "lyteidl.core.ArtifactIDH\000\022@\n\023partition_r" +
+      "eference\030\006 \001(\0132!.flyteidl.core.Partition" +
+      "ReferenceH\000\022/\n\nexpression\030\007 \001(\0132\031.flytei" +
+      "dl.core.ExpressionH\000B\n\n\010behavior\"\234\001\n\014Par" +
+      "ameterMap\022?\n\nparameters\030\001 \003(\0132+.flyteidl" +
+      ".core.ParameterMap.ParametersEntry\032K\n\017Pa" +
+      "rametersEntry\022\013\n\003key\030\001 \001(\t\022\'\n\005value\030\002 \001(" +
+      "\0132\030.flyteidl.core.Parameter:\0028\001B6Z4githu" +
+      "b.com/flyteorg/flyteidl/gen/pb-go/flytei" +
+      "dl/coreb\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
@@ -6885,14 +7898,20 @@ public final class Interface {
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_flyteidl_core_Expression_descriptor,
         new java.lang.String[] { "Lhs", "Rhs", "Plus", "Minus", "Operator", });
-    internal_static_flyteidl_core_Parameter_descriptor =
+    internal_static_flyteidl_core_PartitionReference_descriptor =
       getDescriptor().getMessageTypes().get(4);
+    internal_static_flyteidl_core_PartitionReference_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_flyteidl_core_PartitionReference_descriptor,
+        new java.lang.String[] { "ArtifactId", "Partition", });
+    internal_static_flyteidl_core_Parameter_descriptor =
+      getDescriptor().getMessageTypes().get(5);
     internal_static_flyteidl_core_Parameter_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_flyteidl_core_Parameter_descriptor,
-        new java.lang.String[] { "Var", "Default", "Required", "ArtifactQuery", "ArtifactId", "Expression", "Behavior", });
+        new java.lang.String[] { "Var", "Default", "Required", "ArtifactQuery", "ArtifactId", "PartitionReference", "Expression", "Behavior", });
     internal_static_flyteidl_core_ParameterMap_descriptor =
-      getDescriptor().getMessageTypes().get(5);
+      getDescriptor().getMessageTypes().get(6);
     internal_static_flyteidl_core_ParameterMap_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_flyteidl_core_ParameterMap_descriptor,
