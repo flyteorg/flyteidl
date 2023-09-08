@@ -344,6 +344,16 @@ func (m *ArtifactSpec) Validate() error {
 
 	// no validation rules for LongDescription
 
+	if v, ok := interface{}(m.GetUserMetadata()).(interface{ Validate() error }); ok {
+		if err := v.Validate(); err != nil {
+			return ArtifactSpecValidationError{
+				field:  "UserMetadata",
+				reason: "embedded message failed validation",
+				cause:  err,
+			}
+		}
+	}
+
 	switch m.Source.(type) {
 
 	case *ArtifactSpec_TaskExecution:
@@ -1408,3 +1418,402 @@ var _ interface {
 	Cause() error
 	ErrorName() string
 } = DeleteTriggerResponseValidationError{}
+
+// Validate checks the field values on ArtifactProducer with the rules defined
+// in the proto definition for this message. If any rules are violated, an
+// error is returned.
+func (m *ArtifactProducer) Validate() error {
+	if m == nil {
+		return nil
+	}
+
+	if v, ok := interface{}(m.GetEntityId()).(interface{ Validate() error }); ok {
+		if err := v.Validate(); err != nil {
+			return ArtifactProducerValidationError{
+				field:  "EntityId",
+				reason: "embedded message failed validation",
+				cause:  err,
+			}
+		}
+	}
+
+	if v, ok := interface{}(m.GetOutputs()).(interface{ Validate() error }); ok {
+		if err := v.Validate(); err != nil {
+			return ArtifactProducerValidationError{
+				field:  "Outputs",
+				reason: "embedded message failed validation",
+				cause:  err,
+			}
+		}
+	}
+
+	return nil
+}
+
+// ArtifactProducerValidationError is the validation error returned by
+// ArtifactProducer.Validate if the designated constraints aren't met.
+type ArtifactProducerValidationError struct {
+	field  string
+	reason string
+	cause  error
+	key    bool
+}
+
+// Field function returns field value.
+func (e ArtifactProducerValidationError) Field() string { return e.field }
+
+// Reason function returns reason value.
+func (e ArtifactProducerValidationError) Reason() string { return e.reason }
+
+// Cause function returns cause value.
+func (e ArtifactProducerValidationError) Cause() error { return e.cause }
+
+// Key function returns key value.
+func (e ArtifactProducerValidationError) Key() bool { return e.key }
+
+// ErrorName returns error name.
+func (e ArtifactProducerValidationError) ErrorName() string { return "ArtifactProducerValidationError" }
+
+// Error satisfies the builtin error interface
+func (e ArtifactProducerValidationError) Error() string {
+	cause := ""
+	if e.cause != nil {
+		cause = fmt.Sprintf(" | caused by: %v", e.cause)
+	}
+
+	key := ""
+	if e.key {
+		key = "key for "
+	}
+
+	return fmt.Sprintf(
+		"invalid %sArtifactProducer.%s: %s%s",
+		key,
+		e.field,
+		e.reason,
+		cause)
+}
+
+var _ error = ArtifactProducerValidationError{}
+
+var _ interface {
+	Field() string
+	Reason() string
+	Key() bool
+	Cause() error
+	ErrorName() string
+} = ArtifactProducerValidationError{}
+
+// Validate checks the field values on RegisterProducerRequest with the rules
+// defined in the proto definition for this message. If any rules are
+// violated, an error is returned.
+func (m *RegisterProducerRequest) Validate() error {
+	if m == nil {
+		return nil
+	}
+
+	for idx, item := range m.GetProducers() {
+		_, _ = idx, item
+
+		if v, ok := interface{}(item).(interface{ Validate() error }); ok {
+			if err := v.Validate(); err != nil {
+				return RegisterProducerRequestValidationError{
+					field:  fmt.Sprintf("Producers[%v]", idx),
+					reason: "embedded message failed validation",
+					cause:  err,
+				}
+			}
+		}
+
+	}
+
+	return nil
+}
+
+// RegisterProducerRequestValidationError is the validation error returned by
+// RegisterProducerRequest.Validate if the designated constraints aren't met.
+type RegisterProducerRequestValidationError struct {
+	field  string
+	reason string
+	cause  error
+	key    bool
+}
+
+// Field function returns field value.
+func (e RegisterProducerRequestValidationError) Field() string { return e.field }
+
+// Reason function returns reason value.
+func (e RegisterProducerRequestValidationError) Reason() string { return e.reason }
+
+// Cause function returns cause value.
+func (e RegisterProducerRequestValidationError) Cause() error { return e.cause }
+
+// Key function returns key value.
+func (e RegisterProducerRequestValidationError) Key() bool { return e.key }
+
+// ErrorName returns error name.
+func (e RegisterProducerRequestValidationError) ErrorName() string {
+	return "RegisterProducerRequestValidationError"
+}
+
+// Error satisfies the builtin error interface
+func (e RegisterProducerRequestValidationError) Error() string {
+	cause := ""
+	if e.cause != nil {
+		cause = fmt.Sprintf(" | caused by: %v", e.cause)
+	}
+
+	key := ""
+	if e.key {
+		key = "key for "
+	}
+
+	return fmt.Sprintf(
+		"invalid %sRegisterProducerRequest.%s: %s%s",
+		key,
+		e.field,
+		e.reason,
+		cause)
+}
+
+var _ error = RegisterProducerRequestValidationError{}
+
+var _ interface {
+	Field() string
+	Reason() string
+	Key() bool
+	Cause() error
+	ErrorName() string
+} = RegisterProducerRequestValidationError{}
+
+// Validate checks the field values on ArtifactConsumer with the rules defined
+// in the proto definition for this message. If any rules are violated, an
+// error is returned.
+func (m *ArtifactConsumer) Validate() error {
+	if m == nil {
+		return nil
+	}
+
+	if v, ok := interface{}(m.GetEntityId()).(interface{ Validate() error }); ok {
+		if err := v.Validate(); err != nil {
+			return ArtifactConsumerValidationError{
+				field:  "EntityId",
+				reason: "embedded message failed validation",
+				cause:  err,
+			}
+		}
+	}
+
+	if v, ok := interface{}(m.GetInputs()).(interface{ Validate() error }); ok {
+		if err := v.Validate(); err != nil {
+			return ArtifactConsumerValidationError{
+				field:  "Inputs",
+				reason: "embedded message failed validation",
+				cause:  err,
+			}
+		}
+	}
+
+	return nil
+}
+
+// ArtifactConsumerValidationError is the validation error returned by
+// ArtifactConsumer.Validate if the designated constraints aren't met.
+type ArtifactConsumerValidationError struct {
+	field  string
+	reason string
+	cause  error
+	key    bool
+}
+
+// Field function returns field value.
+func (e ArtifactConsumerValidationError) Field() string { return e.field }
+
+// Reason function returns reason value.
+func (e ArtifactConsumerValidationError) Reason() string { return e.reason }
+
+// Cause function returns cause value.
+func (e ArtifactConsumerValidationError) Cause() error { return e.cause }
+
+// Key function returns key value.
+func (e ArtifactConsumerValidationError) Key() bool { return e.key }
+
+// ErrorName returns error name.
+func (e ArtifactConsumerValidationError) ErrorName() string { return "ArtifactConsumerValidationError" }
+
+// Error satisfies the builtin error interface
+func (e ArtifactConsumerValidationError) Error() string {
+	cause := ""
+	if e.cause != nil {
+		cause = fmt.Sprintf(" | caused by: %v", e.cause)
+	}
+
+	key := ""
+	if e.key {
+		key = "key for "
+	}
+
+	return fmt.Sprintf(
+		"invalid %sArtifactConsumer.%s: %s%s",
+		key,
+		e.field,
+		e.reason,
+		cause)
+}
+
+var _ error = ArtifactConsumerValidationError{}
+
+var _ interface {
+	Field() string
+	Reason() string
+	Key() bool
+	Cause() error
+	ErrorName() string
+} = ArtifactConsumerValidationError{}
+
+// Validate checks the field values on RegisterConsumerRequest with the rules
+// defined in the proto definition for this message. If any rules are
+// violated, an error is returned.
+func (m *RegisterConsumerRequest) Validate() error {
+	if m == nil {
+		return nil
+	}
+
+	for idx, item := range m.GetConsumers() {
+		_, _ = idx, item
+
+		if v, ok := interface{}(item).(interface{ Validate() error }); ok {
+			if err := v.Validate(); err != nil {
+				return RegisterConsumerRequestValidationError{
+					field:  fmt.Sprintf("Consumers[%v]", idx),
+					reason: "embedded message failed validation",
+					cause:  err,
+				}
+			}
+		}
+
+	}
+
+	return nil
+}
+
+// RegisterConsumerRequestValidationError is the validation error returned by
+// RegisterConsumerRequest.Validate if the designated constraints aren't met.
+type RegisterConsumerRequestValidationError struct {
+	field  string
+	reason string
+	cause  error
+	key    bool
+}
+
+// Field function returns field value.
+func (e RegisterConsumerRequestValidationError) Field() string { return e.field }
+
+// Reason function returns reason value.
+func (e RegisterConsumerRequestValidationError) Reason() string { return e.reason }
+
+// Cause function returns cause value.
+func (e RegisterConsumerRequestValidationError) Cause() error { return e.cause }
+
+// Key function returns key value.
+func (e RegisterConsumerRequestValidationError) Key() bool { return e.key }
+
+// ErrorName returns error name.
+func (e RegisterConsumerRequestValidationError) ErrorName() string {
+	return "RegisterConsumerRequestValidationError"
+}
+
+// Error satisfies the builtin error interface
+func (e RegisterConsumerRequestValidationError) Error() string {
+	cause := ""
+	if e.cause != nil {
+		cause = fmt.Sprintf(" | caused by: %v", e.cause)
+	}
+
+	key := ""
+	if e.key {
+		key = "key for "
+	}
+
+	return fmt.Sprintf(
+		"invalid %sRegisterConsumerRequest.%s: %s%s",
+		key,
+		e.field,
+		e.reason,
+		cause)
+}
+
+var _ error = RegisterConsumerRequestValidationError{}
+
+var _ interface {
+	Field() string
+	Reason() string
+	Key() bool
+	Cause() error
+	ErrorName() string
+} = RegisterConsumerRequestValidationError{}
+
+// Validate checks the field values on RegisterResponse with the rules defined
+// in the proto definition for this message. If any rules are violated, an
+// error is returned.
+func (m *RegisterResponse) Validate() error {
+	if m == nil {
+		return nil
+	}
+
+	return nil
+}
+
+// RegisterResponseValidationError is the validation error returned by
+// RegisterResponse.Validate if the designated constraints aren't met.
+type RegisterResponseValidationError struct {
+	field  string
+	reason string
+	cause  error
+	key    bool
+}
+
+// Field function returns field value.
+func (e RegisterResponseValidationError) Field() string { return e.field }
+
+// Reason function returns reason value.
+func (e RegisterResponseValidationError) Reason() string { return e.reason }
+
+// Cause function returns cause value.
+func (e RegisterResponseValidationError) Cause() error { return e.cause }
+
+// Key function returns key value.
+func (e RegisterResponseValidationError) Key() bool { return e.key }
+
+// ErrorName returns error name.
+func (e RegisterResponseValidationError) ErrorName() string { return "RegisterResponseValidationError" }
+
+// Error satisfies the builtin error interface
+func (e RegisterResponseValidationError) Error() string {
+	cause := ""
+	if e.cause != nil {
+		cause = fmt.Sprintf(" | caused by: %v", e.cause)
+	}
+
+	key := ""
+	if e.key {
+		key = "key for "
+	}
+
+	return fmt.Sprintf(
+		"invalid %sRegisterResponse.%s: %s%s",
+		key,
+		e.field,
+		e.reason,
+		cause)
+}
+
+var _ error = RegisterResponseValidationError{}
+
+var _ interface {
+	Field() string
+	Reason() string
+	Key() bool
+	Cause() error
+	ErrorName() string
+} = RegisterResponseValidationError{}

@@ -18,7 +18,6 @@ import six
 
 from flyteadmin.models.core_literal_collection import CoreLiteralCollection  # noqa: F401,E501
 from flyteadmin.models.core_literal_map import CoreLiteralMap  # noqa: F401,E501
-from flyteadmin.models.core_literal_type import CoreLiteralType  # noqa: F401,E501
 from flyteadmin.models.core_scalar import CoreScalar  # noqa: F401,E501
 
 
@@ -40,8 +39,7 @@ class CoreLiteral(object):
         'collection': 'CoreLiteralCollection',
         'map': 'CoreLiteralMap',
         'hash': 'str',
-        'metadata': 'dict(str, str)',
-        'literal_type': 'CoreLiteralType'
+        'metadata': 'dict(str, str)'
     }
 
     attribute_map = {
@@ -49,11 +47,10 @@ class CoreLiteral(object):
         'collection': 'collection',
         'map': 'map',
         'hash': 'hash',
-        'metadata': 'metadata',
-        'literal_type': 'literal_type'
+        'metadata': 'metadata'
     }
 
-    def __init__(self, scalar=None, collection=None, map=None, hash=None, metadata=None, literal_type=None):  # noqa: E501
+    def __init__(self, scalar=None, collection=None, map=None, hash=None, metadata=None):  # noqa: E501
         """CoreLiteral - a model defined in Swagger"""  # noqa: E501
 
         self._scalar = None
@@ -61,7 +58,6 @@ class CoreLiteral(object):
         self._map = None
         self._hash = None
         self._metadata = None
-        self._literal_type = None
         self.discriminator = None
 
         if scalar is not None:
@@ -74,8 +70,6 @@ class CoreLiteral(object):
             self.hash = hash
         if metadata is not None:
             self.metadata = metadata
-        if literal_type is not None:
-            self.literal_type = literal_type
 
     @property
     def scalar(self):
@@ -189,27 +183,6 @@ class CoreLiteral(object):
         """
 
         self._metadata = metadata
-
-    @property
-    def literal_type(self):
-        """Gets the literal_type of this CoreLiteral.  # noqa: E501
-
-
-        :return: The literal_type of this CoreLiteral.  # noqa: E501
-        :rtype: CoreLiteralType
-        """
-        return self._literal_type
-
-    @literal_type.setter
-    def literal_type(self, literal_type):
-        """Sets the literal_type of this CoreLiteral.
-
-
-        :param literal_type: The literal_type of this CoreLiteral.  # noqa: E501
-        :type: CoreLiteralType
-        """
-
-        self._literal_type = literal_type
 
     def to_dict(self):
         """Returns the model properties as a dict"""

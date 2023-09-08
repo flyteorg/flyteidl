@@ -112,10 +112,6 @@ message Literal {
     // Rejected: We were going to add the Artifact (or at least ArtifactID) here as a way to keep track of lineage
     // But this was deemed too janky.
     map<string, string> metadata = 5;
-
-    // Rejected: We were going to add the literal type here because we decided it was general enough, but this
-    // is a lot of work to update everything. Can we think of an easier way?
-    LiteralType literal_type = 6;
 }
 
 // A collection of literals. This is a workaround since oneofs in proto messages cannot contain a repeated field.

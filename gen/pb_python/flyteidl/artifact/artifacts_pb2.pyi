@@ -1,3 +1,4 @@
+from google.protobuf import any_pb2 as _any_pb2
 from flyteidl.core import literals_pb2 as _literals_pb2
 from flyteidl.core import types_pb2 as _types_pb2
 from flyteidl.core import identifier_pb2 as _identifier_pb2
@@ -51,7 +52,7 @@ class CreateArtifactRequest(_message.Message):
     def __init__(self, artifact_key: _Optional[_Union[_identifier_pb2.ArtifactKey, _Mapping]] = ..., version: _Optional[str] = ..., spec: _Optional[_Union[ArtifactSpec, _Mapping]] = ..., partitions: _Optional[_Mapping[str, str]] = ..., tag: _Optional[str] = ...) -> None: ...
 
 class ArtifactSpec(_message.Message):
-    __slots__ = ["value", "type", "task_execution", "execution", "principal", "short_description", "long_description"]
+    __slots__ = ["value", "type", "task_execution", "execution", "principal", "short_description", "long_description", "user_metadata"]
     VALUE_FIELD_NUMBER: _ClassVar[int]
     TYPE_FIELD_NUMBER: _ClassVar[int]
     TASK_EXECUTION_FIELD_NUMBER: _ClassVar[int]
@@ -59,6 +60,7 @@ class ArtifactSpec(_message.Message):
     PRINCIPAL_FIELD_NUMBER: _ClassVar[int]
     SHORT_DESCRIPTION_FIELD_NUMBER: _ClassVar[int]
     LONG_DESCRIPTION_FIELD_NUMBER: _ClassVar[int]
+    USER_METADATA_FIELD_NUMBER: _ClassVar[int]
     value: _literals_pb2.Literal
     type: _types_pb2.LiteralType
     task_execution: _identifier_pb2.TaskExecutionIdentifier
@@ -66,7 +68,8 @@ class ArtifactSpec(_message.Message):
     principal: str
     short_description: str
     long_description: str
-    def __init__(self, value: _Optional[_Union[_literals_pb2.Literal, _Mapping]] = ..., type: _Optional[_Union[_types_pb2.LiteralType, _Mapping]] = ..., task_execution: _Optional[_Union[_identifier_pb2.TaskExecutionIdentifier, _Mapping]] = ..., execution: _Optional[_Union[_identifier_pb2.WorkflowExecutionIdentifier, _Mapping]] = ..., principal: _Optional[str] = ..., short_description: _Optional[str] = ..., long_description: _Optional[str] = ...) -> None: ...
+    user_metadata: _any_pb2.Any
+    def __init__(self, value: _Optional[_Union[_literals_pb2.Literal, _Mapping]] = ..., type: _Optional[_Union[_types_pb2.LiteralType, _Mapping]] = ..., task_execution: _Optional[_Union[_identifier_pb2.TaskExecutionIdentifier, _Mapping]] = ..., execution: _Optional[_Union[_identifier_pb2.WorkflowExecutionIdentifier, _Mapping]] = ..., principal: _Optional[str] = ..., short_description: _Optional[str] = ..., long_description: _Optional[str] = ..., user_metadata: _Optional[_Union[_any_pb2.Any, _Mapping]] = ...) -> None: ...
 
 class CreateArtifactResponse(_message.Message):
     __slots__ = ["artifact"]
@@ -145,5 +148,37 @@ class DeleteTriggerRequest(_message.Message):
     def __init__(self, trigger: _Optional[_Union[Trigger, _Mapping]] = ...) -> None: ...
 
 class DeleteTriggerResponse(_message.Message):
+    __slots__ = []
+    def __init__(self) -> None: ...
+
+class ArtifactProducer(_message.Message):
+    __slots__ = ["entity_id", "outputs"]
+    ENTITY_ID_FIELD_NUMBER: _ClassVar[int]
+    OUTPUTS_FIELD_NUMBER: _ClassVar[int]
+    entity_id: _identifier_pb2.Identifier
+    outputs: _interface_pb2.VariableMap
+    def __init__(self, entity_id: _Optional[_Union[_identifier_pb2.Identifier, _Mapping]] = ..., outputs: _Optional[_Union[_interface_pb2.VariableMap, _Mapping]] = ...) -> None: ...
+
+class RegisterProducerRequest(_message.Message):
+    __slots__ = ["producers"]
+    PRODUCERS_FIELD_NUMBER: _ClassVar[int]
+    producers: _containers.RepeatedCompositeFieldContainer[ArtifactProducer]
+    def __init__(self, producers: _Optional[_Iterable[_Union[ArtifactProducer, _Mapping]]] = ...) -> None: ...
+
+class ArtifactConsumer(_message.Message):
+    __slots__ = ["entity_id", "inputs"]
+    ENTITY_ID_FIELD_NUMBER: _ClassVar[int]
+    INPUTS_FIELD_NUMBER: _ClassVar[int]
+    entity_id: _identifier_pb2.Identifier
+    inputs: _interface_pb2.ParameterMap
+    def __init__(self, entity_id: _Optional[_Union[_identifier_pb2.Identifier, _Mapping]] = ..., inputs: _Optional[_Union[_interface_pb2.ParameterMap, _Mapping]] = ...) -> None: ...
+
+class RegisterConsumerRequest(_message.Message):
+    __slots__ = ["consumers"]
+    CONSUMERS_FIELD_NUMBER: _ClassVar[int]
+    consumers: _containers.RepeatedCompositeFieldContainer[ArtifactConsumer]
+    def __init__(self, consumers: _Optional[_Iterable[_Union[ArtifactConsumer, _Mapping]]] = ...) -> None: ...
+
+class RegisterResponse(_message.Message):
     __slots__ = []
     def __init__(self) -> None: ...

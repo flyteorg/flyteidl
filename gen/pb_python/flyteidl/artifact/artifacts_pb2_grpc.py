@@ -39,6 +39,16 @@ class ArtifactRegistryStub(object):
                 request_serializer=flyteidl_dot_artifact_dot_artifacts__pb2.AddTagRequest.SerializeToString,
                 response_deserializer=flyteidl_dot_artifact_dot_artifacts__pb2.AddTagResponse.FromString,
                 )
+        self.RegisterProducer = channel.unary_unary(
+                '/flyteidl.artifact.ArtifactRegistry/RegisterProducer',
+                request_serializer=flyteidl_dot_artifact_dot_artifacts__pb2.RegisterProducerRequest.SerializeToString,
+                response_deserializer=flyteidl_dot_artifact_dot_artifacts__pb2.RegisterResponse.FromString,
+                )
+        self.RegisterConsumer = channel.unary_unary(
+                '/flyteidl.artifact.ArtifactRegistry/RegisterConsumer',
+                request_serializer=flyteidl_dot_artifact_dot_artifacts__pb2.RegisterConsumerRequest.SerializeToString,
+                response_deserializer=flyteidl_dot_artifact_dot_artifacts__pb2.RegisterResponse.FromString,
+                )
 
 
 class ArtifactRegistryServicer(object):
@@ -78,6 +88,18 @@ class ArtifactRegistryServicer(object):
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
+    def RegisterProducer(self, request, context):
+        """Missing associated documentation comment in .proto file."""
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def RegisterConsumer(self, request, context):
+        """Missing associated documentation comment in .proto file."""
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
 
 def add_ArtifactRegistryServicer_to_server(servicer, server):
     rpc_method_handlers = {
@@ -105,6 +127,16 @@ def add_ArtifactRegistryServicer_to_server(servicer, server):
                     servicer.AddTag,
                     request_deserializer=flyteidl_dot_artifact_dot_artifacts__pb2.AddTagRequest.FromString,
                     response_serializer=flyteidl_dot_artifact_dot_artifacts__pb2.AddTagResponse.SerializeToString,
+            ),
+            'RegisterProducer': grpc.unary_unary_rpc_method_handler(
+                    servicer.RegisterProducer,
+                    request_deserializer=flyteidl_dot_artifact_dot_artifacts__pb2.RegisterProducerRequest.FromString,
+                    response_serializer=flyteidl_dot_artifact_dot_artifacts__pb2.RegisterResponse.SerializeToString,
+            ),
+            'RegisterConsumer': grpc.unary_unary_rpc_method_handler(
+                    servicer.RegisterConsumer,
+                    request_deserializer=flyteidl_dot_artifact_dot_artifacts__pb2.RegisterConsumerRequest.FromString,
+                    response_serializer=flyteidl_dot_artifact_dot_artifacts__pb2.RegisterResponse.SerializeToString,
             ),
     }
     generic_handler = grpc.method_handlers_generic_handler(
@@ -198,5 +230,39 @@ class ArtifactRegistry(object):
         return grpc.experimental.unary_unary(request, target, '/flyteidl.artifact.ArtifactRegistry/AddTag',
             flyteidl_dot_artifact_dot_artifacts__pb2.AddTagRequest.SerializeToString,
             flyteidl_dot_artifact_dot_artifacts__pb2.AddTagResponse.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def RegisterProducer(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/flyteidl.artifact.ArtifactRegistry/RegisterProducer',
+            flyteidl_dot_artifact_dot_artifacts__pb2.RegisterProducerRequest.SerializeToString,
+            flyteidl_dot_artifact_dot_artifacts__pb2.RegisterResponse.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def RegisterConsumer(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/flyteidl.artifact.ArtifactRegistry/RegisterConsumer',
+            flyteidl_dot_artifact_dot_artifacts__pb2.RegisterConsumerRequest.SerializeToString,
+            flyteidl_dot_artifact_dot_artifacts__pb2.RegisterResponse.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)

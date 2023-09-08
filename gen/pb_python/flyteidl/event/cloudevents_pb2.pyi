@@ -55,3 +55,17 @@ class CloudEventTaskExecution(_message.Message):
     parent_node_execution: _identifier_pb2.NodeExecutionIdentifier
     reference_execution: _identifier_pb2.WorkflowExecutionIdentifier
     def __init__(self, raw_event: _Optional[_Union[_event_pb2.TaskExecutionEvent, _Mapping]] = ..., output_data: _Optional[_Union[_literals_pb2.LiteralMap, _Mapping]] = ..., output_interface: _Optional[_Union[_interface_pb2.TypedInterface, _Mapping]] = ..., input_data: _Optional[_Union[_literals_pb2.LiteralMap, _Mapping]] = ..., scheduled_at: _Optional[_Union[_timestamp_pb2.Timestamp, _Mapping]] = ..., artifact_ids: _Optional[_Iterable[_Union[_identifier_pb2.ArtifactID, _Mapping]]] = ..., parent_node_execution: _Optional[_Union[_identifier_pb2.NodeExecutionIdentifier, _Mapping]] = ..., reference_execution: _Optional[_Union[_identifier_pb2.WorkflowExecutionIdentifier, _Mapping]] = ...) -> None: ...
+
+class CloudEventExecutionStart(_message.Message):
+    __slots__ = ["execution_id", "launch_plan_id", "workflow_id", "artifact_ids", "artifact_keys"]
+    EXECUTION_ID_FIELD_NUMBER: _ClassVar[int]
+    LAUNCH_PLAN_ID_FIELD_NUMBER: _ClassVar[int]
+    WORKFLOW_ID_FIELD_NUMBER: _ClassVar[int]
+    ARTIFACT_IDS_FIELD_NUMBER: _ClassVar[int]
+    ARTIFACT_KEYS_FIELD_NUMBER: _ClassVar[int]
+    execution_id: _identifier_pb2.WorkflowExecutionIdentifier
+    launch_plan_id: _identifier_pb2.Identifier
+    workflow_id: _identifier_pb2.Identifier
+    artifact_ids: _containers.RepeatedCompositeFieldContainer[_identifier_pb2.ArtifactID]
+    artifact_keys: _containers.RepeatedScalarFieldContainer[str]
+    def __init__(self, execution_id: _Optional[_Union[_identifier_pb2.WorkflowExecutionIdentifier, _Mapping]] = ..., launch_plan_id: _Optional[_Union[_identifier_pb2.Identifier, _Mapping]] = ..., workflow_id: _Optional[_Union[_identifier_pb2.Identifier, _Mapping]] = ..., artifact_ids: _Optional[_Iterable[_Union[_identifier_pb2.ArtifactID, _Mapping]]] = ..., artifact_keys: _Optional[_Iterable[str]] = ...) -> None: ...
