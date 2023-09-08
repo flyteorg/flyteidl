@@ -910,6 +910,23 @@ pub struct SecurityContext {
     #[prost(message, repeated, tag="3")]
     pub tokens: ::prost::alloc::vec::Vec<OAuth2TokenRequest>,
 }
+#[allow(clippy::derive_partial_eq_without_eq)]
+#[derive(Clone, PartialEq, ::prost::Message)]
+pub struct GpuAccelerator {
+    #[prost(string, tag="1")]
+    pub device: ::prost::alloc::string::String,
+    #[prost(oneof="gpu_accelerator::Partition", tags="2")]
+    pub partition: ::core::option::Option<gpu_accelerator::Partition>,
+}
+/// Nested message and enum types in `GPUAccelerator`.
+pub mod gpu_accelerator {
+    #[allow(clippy::derive_partial_eq_without_eq)]
+#[derive(Clone, PartialEq, ::prost::Oneof)]
+    pub enum Partition {
+        #[prost(string, tag="2")]
+        Size(::prost::alloc::string::String),
+    }
+}
 /// A customizable interface to convey resources requested for a container. This can be interpreted differently for different
 /// container engines.
 #[allow(clippy::derive_partial_eq_without_eq)]
@@ -922,6 +939,8 @@ pub struct Resources {
     /// within the list.
     #[prost(message, repeated, tag="2")]
     pub limits: ::prost::alloc::vec::Vec<resources::ResourceEntry>,
+    #[prost(oneof="resources::Accelerator", tags="3")]
+    pub accelerator: ::core::option::Option<resources::Accelerator>,
 }
 /// Nested message and enum types in `Resources`.
 pub mod resources {
@@ -977,24 +996,11 @@ pub mod resources {
             }
         }
     }
-}
-#[allow(clippy::derive_partial_eq_without_eq)]
-#[derive(Clone, PartialEq, ::prost::Message)]
-pub struct Selector {
-    #[prost(oneof="selector::Selection", tags="1, 2, 3")]
-    pub selection: ::core::option::Option<selector::Selection>,
-}
-/// Nested message and enum types in `Selector`.
-pub mod selector {
     #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(Clone, PartialEq, ::prost::Oneof)]
-    pub enum Selection {
-        #[prost(string, tag="1")]
-        GpuDevice(::prost::alloc::string::String),
-        #[prost(bool, tag="2")]
-        GpuUnpartitioned(bool),
-        #[prost(string, tag="3")]
-        GpuPartitionSize(::prost::alloc::string::String),
+    pub enum Accelerator {
+        #[prost(message, tag="3")]
+        Gpu(super::GpuAccelerator),
     }
 }
 /// Runtime information. This is loosely defined to allow for extensibility.
@@ -1078,8 +1084,6 @@ pub struct TaskMetadata {
     /// identically as, the default PodTemplate configured in FlytePropeller.
     #[prost(string, tag="12")]
     pub pod_template_name: ::prost::alloc::string::String,
-    #[prost(message, repeated, tag="13")]
-    pub selectors: ::prost::alloc::vec::Vec<Selector>,
     // For interruptible we will populate it at the node level but require it be part of TaskMetadata
     // for a user to set the value.
     // We are using oneof instead of bool because otherwise we would be unable to distinguish between value being

@@ -11796,6 +11796,150 @@
                 return ParameterMap;
             })();
     
+            core.GPUAccelerator = (function() {
+    
+                /**
+                 * Properties of a GPUAccelerator.
+                 * @memberof flyteidl.core
+                 * @interface IGPUAccelerator
+                 * @property {string|null} [device] GPUAccelerator device
+                 * @property {string|null} [size] GPUAccelerator size
+                 */
+    
+                /**
+                 * Constructs a new GPUAccelerator.
+                 * @memberof flyteidl.core
+                 * @classdesc Represents a GPUAccelerator.
+                 * @implements IGPUAccelerator
+                 * @constructor
+                 * @param {flyteidl.core.IGPUAccelerator=} [properties] Properties to set
+                 */
+                function GPUAccelerator(properties) {
+                    if (properties)
+                        for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                            if (properties[keys[i]] != null)
+                                this[keys[i]] = properties[keys[i]];
+                }
+    
+                /**
+                 * GPUAccelerator device.
+                 * @member {string} device
+                 * @memberof flyteidl.core.GPUAccelerator
+                 * @instance
+                 */
+                GPUAccelerator.prototype.device = "";
+    
+                /**
+                 * GPUAccelerator size.
+                 * @member {string} size
+                 * @memberof flyteidl.core.GPUAccelerator
+                 * @instance
+                 */
+                GPUAccelerator.prototype.size = "";
+    
+                // OneOf field names bound to virtual getters and setters
+                var $oneOfFields;
+    
+                /**
+                 * GPUAccelerator partition.
+                 * @member {"size"|undefined} partition
+                 * @memberof flyteidl.core.GPUAccelerator
+                 * @instance
+                 */
+                Object.defineProperty(GPUAccelerator.prototype, "partition", {
+                    get: $util.oneOfGetter($oneOfFields = ["size"]),
+                    set: $util.oneOfSetter($oneOfFields)
+                });
+    
+                /**
+                 * Creates a new GPUAccelerator instance using the specified properties.
+                 * @function create
+                 * @memberof flyteidl.core.GPUAccelerator
+                 * @static
+                 * @param {flyteidl.core.IGPUAccelerator=} [properties] Properties to set
+                 * @returns {flyteidl.core.GPUAccelerator} GPUAccelerator instance
+                 */
+                GPUAccelerator.create = function create(properties) {
+                    return new GPUAccelerator(properties);
+                };
+    
+                /**
+                 * Encodes the specified GPUAccelerator message. Does not implicitly {@link flyteidl.core.GPUAccelerator.verify|verify} messages.
+                 * @function encode
+                 * @memberof flyteidl.core.GPUAccelerator
+                 * @static
+                 * @param {flyteidl.core.IGPUAccelerator} message GPUAccelerator message or plain object to encode
+                 * @param {$protobuf.Writer} [writer] Writer to encode to
+                 * @returns {$protobuf.Writer} Writer
+                 */
+                GPUAccelerator.encode = function encode(message, writer) {
+                    if (!writer)
+                        writer = $Writer.create();
+                    if (message.device != null && message.hasOwnProperty("device"))
+                        writer.uint32(/* id 1, wireType 2 =*/10).string(message.device);
+                    if (message.size != null && message.hasOwnProperty("size"))
+                        writer.uint32(/* id 2, wireType 2 =*/18).string(message.size);
+                    return writer;
+                };
+    
+                /**
+                 * Decodes a GPUAccelerator message from the specified reader or buffer.
+                 * @function decode
+                 * @memberof flyteidl.core.GPUAccelerator
+                 * @static
+                 * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+                 * @param {number} [length] Message length if known beforehand
+                 * @returns {flyteidl.core.GPUAccelerator} GPUAccelerator
+                 * @throws {Error} If the payload is not a reader or valid buffer
+                 * @throws {$protobuf.util.ProtocolError} If required fields are missing
+                 */
+                GPUAccelerator.decode = function decode(reader, length) {
+                    if (!(reader instanceof $Reader))
+                        reader = $Reader.create(reader);
+                    var end = length === undefined ? reader.len : reader.pos + length, message = new $root.flyteidl.core.GPUAccelerator();
+                    while (reader.pos < end) {
+                        var tag = reader.uint32();
+                        switch (tag >>> 3) {
+                        case 1:
+                            message.device = reader.string();
+                            break;
+                        case 2:
+                            message.size = reader.string();
+                            break;
+                        default:
+                            reader.skipType(tag & 7);
+                            break;
+                        }
+                    }
+                    return message;
+                };
+    
+                /**
+                 * Verifies a GPUAccelerator message.
+                 * @function verify
+                 * @memberof flyteidl.core.GPUAccelerator
+                 * @static
+                 * @param {Object.<string,*>} message Plain object to verify
+                 * @returns {string|null} `null` if valid, otherwise the reason why it is not
+                 */
+                GPUAccelerator.verify = function verify(message) {
+                    if (typeof message !== "object" || message === null)
+                        return "object expected";
+                    var properties = {};
+                    if (message.device != null && message.hasOwnProperty("device"))
+                        if (!$util.isString(message.device))
+                            return "device: string expected";
+                    if (message.size != null && message.hasOwnProperty("size")) {
+                        properties.partition = 1;
+                        if (!$util.isString(message.size))
+                            return "size: string expected";
+                    }
+                    return null;
+                };
+    
+                return GPUAccelerator;
+            })();
+    
             core.Resources = (function() {
     
                 /**
@@ -11804,6 +11948,7 @@
                  * @interface IResources
                  * @property {Array.<flyteidl.core.Resources.IResourceEntry>|null} [requests] Resources requests
                  * @property {Array.<flyteidl.core.Resources.IResourceEntry>|null} [limits] Resources limits
+                 * @property {flyteidl.core.IGPUAccelerator|null} [gpu] Resources gpu
                  */
     
                 /**
@@ -11840,6 +11985,28 @@
                 Resources.prototype.limits = $util.emptyArray;
     
                 /**
+                 * Resources gpu.
+                 * @member {flyteidl.core.IGPUAccelerator|null|undefined} gpu
+                 * @memberof flyteidl.core.Resources
+                 * @instance
+                 */
+                Resources.prototype.gpu = null;
+    
+                // OneOf field names bound to virtual getters and setters
+                var $oneOfFields;
+    
+                /**
+                 * Resources accelerator.
+                 * @member {"gpu"|undefined} accelerator
+                 * @memberof flyteidl.core.Resources
+                 * @instance
+                 */
+                Object.defineProperty(Resources.prototype, "accelerator", {
+                    get: $util.oneOfGetter($oneOfFields = ["gpu"]),
+                    set: $util.oneOfSetter($oneOfFields)
+                });
+    
+                /**
                  * Creates a new Resources instance using the specified properties.
                  * @function create
                  * @memberof flyteidl.core.Resources
@@ -11869,6 +12036,8 @@
                     if (message.limits != null && message.limits.length)
                         for (var i = 0; i < message.limits.length; ++i)
                             $root.flyteidl.core.Resources.ResourceEntry.encode(message.limits[i], writer.uint32(/* id 2, wireType 2 =*/18).fork()).ldelim();
+                    if (message.gpu != null && message.hasOwnProperty("gpu"))
+                        $root.flyteidl.core.GPUAccelerator.encode(message.gpu, writer.uint32(/* id 3, wireType 2 =*/26).fork()).ldelim();
                     return writer;
                 };
     
@@ -11900,6 +12069,9 @@
                                 message.limits = [];
                             message.limits.push($root.flyteidl.core.Resources.ResourceEntry.decode(reader, reader.uint32()));
                             break;
+                        case 3:
+                            message.gpu = $root.flyteidl.core.GPUAccelerator.decode(reader, reader.uint32());
+                            break;
                         default:
                             reader.skipType(tag & 7);
                             break;
@@ -11919,6 +12091,7 @@
                 Resources.verify = function verify(message) {
                     if (typeof message !== "object" || message === null)
                         return "object expected";
+                    var properties = {};
                     if (message.requests != null && message.hasOwnProperty("requests")) {
                         if (!Array.isArray(message.requests))
                             return "requests: array expected";
@@ -11935,6 +12108,14 @@
                             var error = $root.flyteidl.core.Resources.ResourceEntry.verify(message.limits[i]);
                             if (error)
                                 return "limits." + error;
+                        }
+                    }
+                    if (message.gpu != null && message.hasOwnProperty("gpu")) {
+                        properties.accelerator = 1;
+                        {
+                            var error = $root.flyteidl.core.GPUAccelerator.verify(message.gpu);
+                            if (error)
+                                return "gpu." + error;
                         }
                     }
                     return null;
@@ -12099,175 +12280,6 @@
                 })();
     
                 return Resources;
-            })();
-    
-            core.Selector = (function() {
-    
-                /**
-                 * Properties of a Selector.
-                 * @memberof flyteidl.core
-                 * @interface ISelector
-                 * @property {string|null} [gpuDevice] Selector gpuDevice
-                 * @property {boolean|null} [gpuUnpartitioned] Selector gpuUnpartitioned
-                 * @property {string|null} [gpuPartitionSize] Selector gpuPartitionSize
-                 */
-    
-                /**
-                 * Constructs a new Selector.
-                 * @memberof flyteidl.core
-                 * @classdesc Represents a Selector.
-                 * @implements ISelector
-                 * @constructor
-                 * @param {flyteidl.core.ISelector=} [properties] Properties to set
-                 */
-                function Selector(properties) {
-                    if (properties)
-                        for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
-                            if (properties[keys[i]] != null)
-                                this[keys[i]] = properties[keys[i]];
-                }
-    
-                /**
-                 * Selector gpuDevice.
-                 * @member {string} gpuDevice
-                 * @memberof flyteidl.core.Selector
-                 * @instance
-                 */
-                Selector.prototype.gpuDevice = "";
-    
-                /**
-                 * Selector gpuUnpartitioned.
-                 * @member {boolean} gpuUnpartitioned
-                 * @memberof flyteidl.core.Selector
-                 * @instance
-                 */
-                Selector.prototype.gpuUnpartitioned = false;
-    
-                /**
-                 * Selector gpuPartitionSize.
-                 * @member {string} gpuPartitionSize
-                 * @memberof flyteidl.core.Selector
-                 * @instance
-                 */
-                Selector.prototype.gpuPartitionSize = "";
-    
-                // OneOf field names bound to virtual getters and setters
-                var $oneOfFields;
-    
-                /**
-                 * Selector selection.
-                 * @member {"gpuDevice"|"gpuUnpartitioned"|"gpuPartitionSize"|undefined} selection
-                 * @memberof flyteidl.core.Selector
-                 * @instance
-                 */
-                Object.defineProperty(Selector.prototype, "selection", {
-                    get: $util.oneOfGetter($oneOfFields = ["gpuDevice", "gpuUnpartitioned", "gpuPartitionSize"]),
-                    set: $util.oneOfSetter($oneOfFields)
-                });
-    
-                /**
-                 * Creates a new Selector instance using the specified properties.
-                 * @function create
-                 * @memberof flyteidl.core.Selector
-                 * @static
-                 * @param {flyteidl.core.ISelector=} [properties] Properties to set
-                 * @returns {flyteidl.core.Selector} Selector instance
-                 */
-                Selector.create = function create(properties) {
-                    return new Selector(properties);
-                };
-    
-                /**
-                 * Encodes the specified Selector message. Does not implicitly {@link flyteidl.core.Selector.verify|verify} messages.
-                 * @function encode
-                 * @memberof flyteidl.core.Selector
-                 * @static
-                 * @param {flyteidl.core.ISelector} message Selector message or plain object to encode
-                 * @param {$protobuf.Writer} [writer] Writer to encode to
-                 * @returns {$protobuf.Writer} Writer
-                 */
-                Selector.encode = function encode(message, writer) {
-                    if (!writer)
-                        writer = $Writer.create();
-                    if (message.gpuDevice != null && message.hasOwnProperty("gpuDevice"))
-                        writer.uint32(/* id 1, wireType 2 =*/10).string(message.gpuDevice);
-                    if (message.gpuUnpartitioned != null && message.hasOwnProperty("gpuUnpartitioned"))
-                        writer.uint32(/* id 2, wireType 0 =*/16).bool(message.gpuUnpartitioned);
-                    if (message.gpuPartitionSize != null && message.hasOwnProperty("gpuPartitionSize"))
-                        writer.uint32(/* id 3, wireType 2 =*/26).string(message.gpuPartitionSize);
-                    return writer;
-                };
-    
-                /**
-                 * Decodes a Selector message from the specified reader or buffer.
-                 * @function decode
-                 * @memberof flyteidl.core.Selector
-                 * @static
-                 * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
-                 * @param {number} [length] Message length if known beforehand
-                 * @returns {flyteidl.core.Selector} Selector
-                 * @throws {Error} If the payload is not a reader or valid buffer
-                 * @throws {$protobuf.util.ProtocolError} If required fields are missing
-                 */
-                Selector.decode = function decode(reader, length) {
-                    if (!(reader instanceof $Reader))
-                        reader = $Reader.create(reader);
-                    var end = length === undefined ? reader.len : reader.pos + length, message = new $root.flyteidl.core.Selector();
-                    while (reader.pos < end) {
-                        var tag = reader.uint32();
-                        switch (tag >>> 3) {
-                        case 1:
-                            message.gpuDevice = reader.string();
-                            break;
-                        case 2:
-                            message.gpuUnpartitioned = reader.bool();
-                            break;
-                        case 3:
-                            message.gpuPartitionSize = reader.string();
-                            break;
-                        default:
-                            reader.skipType(tag & 7);
-                            break;
-                        }
-                    }
-                    return message;
-                };
-    
-                /**
-                 * Verifies a Selector message.
-                 * @function verify
-                 * @memberof flyteidl.core.Selector
-                 * @static
-                 * @param {Object.<string,*>} message Plain object to verify
-                 * @returns {string|null} `null` if valid, otherwise the reason why it is not
-                 */
-                Selector.verify = function verify(message) {
-                    if (typeof message !== "object" || message === null)
-                        return "object expected";
-                    var properties = {};
-                    if (message.gpuDevice != null && message.hasOwnProperty("gpuDevice")) {
-                        properties.selection = 1;
-                        if (!$util.isString(message.gpuDevice))
-                            return "gpuDevice: string expected";
-                    }
-                    if (message.gpuUnpartitioned != null && message.hasOwnProperty("gpuUnpartitioned")) {
-                        if (properties.selection === 1)
-                            return "selection: multiple values";
-                        properties.selection = 1;
-                        if (typeof message.gpuUnpartitioned !== "boolean")
-                            return "gpuUnpartitioned: boolean expected";
-                    }
-                    if (message.gpuPartitionSize != null && message.hasOwnProperty("gpuPartitionSize")) {
-                        if (properties.selection === 1)
-                            return "selection: multiple values";
-                        properties.selection = 1;
-                        if (!$util.isString(message.gpuPartitionSize))
-                            return "gpuPartitionSize: string expected";
-                    }
-                    return null;
-                };
-    
-                return Selector;
             })();
     
             core.RuntimeMetadata = (function() {
@@ -12450,7 +12462,6 @@
                  * @property {boolean|null} [generatesDeck] TaskMetadata generatesDeck
                  * @property {Object.<string,string>|null} [tags] TaskMetadata tags
                  * @property {string|null} [podTemplateName] TaskMetadata podTemplateName
-                 * @property {Array.<flyteidl.core.ISelector>|null} [selectors] TaskMetadata selectors
                  */
     
                 /**
@@ -12463,7 +12474,6 @@
                  */
                 function TaskMetadata(properties) {
                     this.tags = {};
-                    this.selectors = [];
                     if (properties)
                         for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
                             if (properties[keys[i]] != null)
@@ -12558,14 +12568,6 @@
                  */
                 TaskMetadata.prototype.podTemplateName = "";
     
-                /**
-                 * TaskMetadata selectors.
-                 * @member {Array.<flyteidl.core.ISelector>} selectors
-                 * @memberof flyteidl.core.TaskMetadata
-                 * @instance
-                 */
-                TaskMetadata.prototype.selectors = $util.emptyArray;
-    
                 // OneOf field names bound to virtual getters and setters
                 var $oneOfFields;
     
@@ -12627,9 +12629,6 @@
                             writer.uint32(/* id 11, wireType 2 =*/90).fork().uint32(/* id 1, wireType 2 =*/10).string(keys[i]).uint32(/* id 2, wireType 2 =*/18).string(message.tags[keys[i]]).ldelim();
                     if (message.podTemplateName != null && message.hasOwnProperty("podTemplateName"))
                         writer.uint32(/* id 12, wireType 2 =*/98).string(message.podTemplateName);
-                    if (message.selectors != null && message.selectors.length)
-                        for (var i = 0; i < message.selectors.length; ++i)
-                            $root.flyteidl.core.Selector.encode(message.selectors[i], writer.uint32(/* id 13, wireType 2 =*/106).fork()).ldelim();
                     return writer;
                 };
     
@@ -12688,11 +12687,6 @@
                             break;
                         case 12:
                             message.podTemplateName = reader.string();
-                            break;
-                        case 13:
-                            if (!(message.selectors && message.selectors.length))
-                                message.selectors = [];
-                            message.selectors.push($root.flyteidl.core.Selector.decode(reader, reader.uint32()));
                             break;
                         default:
                             reader.skipType(tag & 7);
@@ -12760,15 +12754,6 @@
                     if (message.podTemplateName != null && message.hasOwnProperty("podTemplateName"))
                         if (!$util.isString(message.podTemplateName))
                             return "podTemplateName: string expected";
-                    if (message.selectors != null && message.hasOwnProperty("selectors")) {
-                        if (!Array.isArray(message.selectors))
-                            return "selectors: array expected";
-                        for (var i = 0; i < message.selectors.length; ++i) {
-                            var error = $root.flyteidl.core.Selector.verify(message.selectors[i]);
-                            if (error)
-                                return "selectors." + error;
-                        }
-                    }
                     return null;
                 };
     

@@ -11,6 +11,13 @@ package flyteidl.core;
 
 option go_package = "github.com/flyteorg/flyteidl/gen/pb-go/flyteidl/core";
 
+message GPUAccelerator {
+    string device = 1;
+    oneof partition {
+        string size = 2;
+    }
+}
+
 // A customizable interface to convey resources requested for a container. This can be interpreted differently for different
 // container engines.
 message Resources {
@@ -41,16 +48,11 @@ message Resources {
     // Defines a set of bounds (e.g. min/max) within which the task can reliably run. ResourceNames must be unique
     // within the list.
     repeated ResourceEntry limits = 2;
-}
 
-message Selector {
-    oneof selection {
-        string gpu_device = 1;
-        bool gpu_unpartitioned = 2;
-        string gpu_partition_size = 3;
+    oneof accelerator {
+        GPUAccelerator gpu = 3;
     }
 }
-
 
 // Runtime information. This is loosely defined to allow for extensibility.
 message RuntimeMetadata {
@@ -115,8 +117,6 @@ message TaskMetadata {
     // task creates a k8s Pod. If this value is set, the specified PodTemplate will be used instead of, but applied
     // identically as, the default PodTemplate configured in FlytePropeller.
     string pod_template_name = 12;
-
-    repeated Selector selectors = 13;
 }
 
 // A Task structure that uniquely identifies a task in the system

@@ -18,7 +18,6 @@ import six
 
 from flyteadmin.models.core_retry_strategy import CoreRetryStrategy  # noqa: F401,E501
 from flyteadmin.models.core_runtime_metadata import CoreRuntimeMetadata  # noqa: F401,E501
-from flyteadmin.models.core_selector import CoreSelector  # noqa: F401,E501
 
 
 class CoreTaskMetadata(object):
@@ -45,8 +44,7 @@ class CoreTaskMetadata(object):
         'cache_serializable': 'bool',
         'generates_deck': 'bool',
         'tags': 'dict(str, str)',
-        'pod_template_name': 'str',
-        'selectors': 'list[CoreSelector]'
+        'pod_template_name': 'str'
     }
 
     attribute_map = {
@@ -60,11 +58,10 @@ class CoreTaskMetadata(object):
         'cache_serializable': 'cache_serializable',
         'generates_deck': 'generates_deck',
         'tags': 'tags',
-        'pod_template_name': 'pod_template_name',
-        'selectors': 'selectors'
+        'pod_template_name': 'pod_template_name'
     }
 
-    def __init__(self, discoverable=None, runtime=None, timeout=None, retries=None, discovery_version=None, deprecated_error_message=None, interruptible=None, cache_serializable=None, generates_deck=None, tags=None, pod_template_name=None, selectors=None):  # noqa: E501
+    def __init__(self, discoverable=None, runtime=None, timeout=None, retries=None, discovery_version=None, deprecated_error_message=None, interruptible=None, cache_serializable=None, generates_deck=None, tags=None, pod_template_name=None):  # noqa: E501
         """CoreTaskMetadata - a model defined in Swagger"""  # noqa: E501
 
         self._discoverable = None
@@ -78,7 +75,6 @@ class CoreTaskMetadata(object):
         self._generates_deck = None
         self._tags = None
         self._pod_template_name = None
-        self._selectors = None
         self.discriminator = None
 
         if discoverable is not None:
@@ -103,8 +99,6 @@ class CoreTaskMetadata(object):
             self.tags = tags
         if pod_template_name is not None:
             self.pod_template_name = pod_template_name
-        if selectors is not None:
-            self.selectors = selectors
 
     @property
     def discoverable(self):
@@ -352,27 +346,6 @@ class CoreTaskMetadata(object):
         """
 
         self._pod_template_name = pod_template_name
-
-    @property
-    def selectors(self):
-        """Gets the selectors of this CoreTaskMetadata.  # noqa: E501
-
-
-        :return: The selectors of this CoreTaskMetadata.  # noqa: E501
-        :rtype: list[CoreSelector]
-        """
-        return self._selectors
-
-    @selectors.setter
-    def selectors(self, selectors):
-        """Sets the selectors of this CoreTaskMetadata.
-
-
-        :param selectors: The selectors of this CoreTaskMetadata.  # noqa: E501
-        :type: list[CoreSelector]
-        """
-
-        self._selectors = selectors
 
     def to_dict(self):
         """Returns the model properties as a dict"""

@@ -4955,6 +4955,67 @@ export namespace flyteidl {
             public static verify(message: { [k: string]: any }): (string|null);
         }
 
+        /** Properties of a GPUAccelerator. */
+        interface IGPUAccelerator {
+
+            /** GPUAccelerator device */
+            device?: (string|null);
+
+            /** GPUAccelerator size */
+            size?: (string|null);
+        }
+
+        /** Represents a GPUAccelerator. */
+        class GPUAccelerator implements IGPUAccelerator {
+
+            /**
+             * Constructs a new GPUAccelerator.
+             * @param [properties] Properties to set
+             */
+            constructor(properties?: flyteidl.core.IGPUAccelerator);
+
+            /** GPUAccelerator device. */
+            public device: string;
+
+            /** GPUAccelerator size. */
+            public size: string;
+
+            /** GPUAccelerator partition. */
+            public partition?: "size";
+
+            /**
+             * Creates a new GPUAccelerator instance using the specified properties.
+             * @param [properties] Properties to set
+             * @returns GPUAccelerator instance
+             */
+            public static create(properties?: flyteidl.core.IGPUAccelerator): flyteidl.core.GPUAccelerator;
+
+            /**
+             * Encodes the specified GPUAccelerator message. Does not implicitly {@link flyteidl.core.GPUAccelerator.verify|verify} messages.
+             * @param message GPUAccelerator message or plain object to encode
+             * @param [writer] Writer to encode to
+             * @returns Writer
+             */
+            public static encode(message: flyteidl.core.IGPUAccelerator, writer?: $protobuf.Writer): $protobuf.Writer;
+
+            /**
+             * Decodes a GPUAccelerator message from the specified reader or buffer.
+             * @param reader Reader or buffer to decode from
+             * @param [length] Message length if known beforehand
+             * @returns GPUAccelerator
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): flyteidl.core.GPUAccelerator;
+
+            /**
+             * Verifies a GPUAccelerator message.
+             * @param message Plain object to verify
+             * @returns `null` if valid, otherwise the reason why it is not
+             */
+            public static verify(message: { [k: string]: any }): (string|null);
+        }
+
         /** Properties of a Resources. */
         interface IResources {
 
@@ -4963,6 +5024,9 @@ export namespace flyteidl {
 
             /** Resources limits */
             limits?: (flyteidl.core.Resources.IResourceEntry[]|null);
+
+            /** Resources gpu */
+            gpu?: (flyteidl.core.IGPUAccelerator|null);
         }
 
         /** Represents a Resources. */
@@ -4979,6 +5043,12 @@ export namespace flyteidl {
 
             /** Resources limits. */
             public limits: flyteidl.core.Resources.IResourceEntry[];
+
+            /** Resources gpu. */
+            public gpu?: (flyteidl.core.IGPUAccelerator|null);
+
+            /** Resources accelerator. */
+            public accelerator?: "gpu";
 
             /**
              * Creates a new Resources instance using the specified properties.
@@ -5082,73 +5152,6 @@ export namespace flyteidl {
                  */
                 public static verify(message: { [k: string]: any }): (string|null);
             }
-        }
-
-        /** Properties of a Selector. */
-        interface ISelector {
-
-            /** Selector gpuDevice */
-            gpuDevice?: (string|null);
-
-            /** Selector gpuUnpartitioned */
-            gpuUnpartitioned?: (boolean|null);
-
-            /** Selector gpuPartitionSize */
-            gpuPartitionSize?: (string|null);
-        }
-
-        /** Represents a Selector. */
-        class Selector implements ISelector {
-
-            /**
-             * Constructs a new Selector.
-             * @param [properties] Properties to set
-             */
-            constructor(properties?: flyteidl.core.ISelector);
-
-            /** Selector gpuDevice. */
-            public gpuDevice: string;
-
-            /** Selector gpuUnpartitioned. */
-            public gpuUnpartitioned: boolean;
-
-            /** Selector gpuPartitionSize. */
-            public gpuPartitionSize: string;
-
-            /** Selector selection. */
-            public selection?: ("gpuDevice"|"gpuUnpartitioned"|"gpuPartitionSize");
-
-            /**
-             * Creates a new Selector instance using the specified properties.
-             * @param [properties] Properties to set
-             * @returns Selector instance
-             */
-            public static create(properties?: flyteidl.core.ISelector): flyteidl.core.Selector;
-
-            /**
-             * Encodes the specified Selector message. Does not implicitly {@link flyteidl.core.Selector.verify|verify} messages.
-             * @param message Selector message or plain object to encode
-             * @param [writer] Writer to encode to
-             * @returns Writer
-             */
-            public static encode(message: flyteidl.core.ISelector, writer?: $protobuf.Writer): $protobuf.Writer;
-
-            /**
-             * Decodes a Selector message from the specified reader or buffer.
-             * @param reader Reader or buffer to decode from
-             * @param [length] Message length if known beforehand
-             * @returns Selector
-             * @throws {Error} If the payload is not a reader or valid buffer
-             * @throws {$protobuf.util.ProtocolError} If required fields are missing
-             */
-            public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): flyteidl.core.Selector;
-
-            /**
-             * Verifies a Selector message.
-             * @param message Plain object to verify
-             * @returns `null` if valid, otherwise the reason why it is not
-             */
-            public static verify(message: { [k: string]: any }): (string|null);
         }
 
         /** Properties of a RuntimeMetadata. */
@@ -5259,9 +5262,6 @@ export namespace flyteidl {
 
             /** TaskMetadata podTemplateName */
             podTemplateName?: (string|null);
-
-            /** TaskMetadata selectors */
-            selectors?: (flyteidl.core.ISelector[]|null);
         }
 
         /** Represents a TaskMetadata. */
@@ -5305,9 +5305,6 @@ export namespace flyteidl {
 
             /** TaskMetadata podTemplateName. */
             public podTemplateName: string;
-
-            /** TaskMetadata selectors. */
-            public selectors: flyteidl.core.ISelector[];
 
             /** TaskMetadata interruptibleValue. */
             public interruptibleValue?: "interruptible";

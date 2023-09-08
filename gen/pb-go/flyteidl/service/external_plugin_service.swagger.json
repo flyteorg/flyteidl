@@ -328,6 +328,17 @@
       },
       "description": "Represents an error thrown from a node."
     },
+    "coreGPUAccelerator": {
+      "type": "object",
+      "properties": {
+        "device": {
+          "type": "string"
+        },
+        "size": {
+          "type": "string"
+        }
+      }
+    },
     "coreIOStrategy": {
       "type": "object",
       "properties": {
@@ -642,6 +653,9 @@
             "$ref": "#/definitions/ResourcesResourceEntry"
           },
           "description": "Defines a set of bounds (e.g. min/max) within which the task can reliably run. ResourceNames must be unique\nwithin the list."
+        },
+        "gpu": {
+          "$ref": "#/definitions/coreGPUAccelerator"
         }
       },
       "description": "A customizable interface to convey resources requested for a container. This can be interpreted differently for different\ncontainer engines."
@@ -778,21 +792,6 @@
       },
       "description": "SecurityContext holds security attributes that apply to tasks."
     },
-    "coreSelector": {
-      "type": "object",
-      "properties": {
-        "gpu_device": {
-          "type": "string"
-        },
-        "gpu_unpartitioned": {
-          "type": "boolean",
-          "format": "boolean"
-        },
-        "gpu_partition_size": {
-          "type": "string"
-        }
-      }
-    },
     "coreSimpleType": {
       "type": "string",
       "enum": [
@@ -921,12 +920,6 @@
         "pod_template_name": {
           "type": "string",
           "description": "pod_template_name is the unique name of a PodTemplate k8s resource to be used as the base configuration if this\ntask creates a k8s Pod. If this value is set, the specified PodTemplate will be used instead of, but applied\nidentically as, the default PodTemplate configured in FlytePropeller."
-        },
-        "selectors": {
-          "type": "array",
-          "items": {
-            "$ref": "#/definitions/coreSelector"
-          }
         }
       },
       "title": "Task Metadata"
