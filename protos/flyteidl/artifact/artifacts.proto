@@ -18,6 +18,14 @@ message Artifact {
   repeated string tags = 3;
 }
 
+message Trigger {
+  repeated core.ArtifactKey artifact_key = 1;
+
+  core.Identifier downstream_id = 2;
+
+  core.ParameterMap inputs = 3;
+}
+
 message CreateArtifactRequest {
   // Specify just project/domain on creation
   core.ArtifactKey artifact_key = 1;
@@ -101,22 +109,14 @@ message AddTagRequest {
 
 message AddTagResponse {}
 
-// Artifact Trigger
 message CreateTriggerRequest {
-  // TODO: This should be a list of artifact keys
-  core.ArtifactKey artifact_key = 1;
-
-  core.Identifier downstream_id = 2;
-
-  core.ParameterMap inputs = 3;
+  Trigger trigger = 1;
 }
 
 message CreateTriggerResponse {}
 
 message DeleteTriggerRequest {
-  core.ArtifactKey artifact_key = 1;
-
-  core.Identifier downstream_id = 2;
+  Trigger trigger = 1;
 }
 
 message DeleteTriggerResponse {}

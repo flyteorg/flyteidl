@@ -19,6 +19,16 @@ class Artifact(_message.Message):
     tags: _containers.RepeatedScalarFieldContainer[str]
     def __init__(self, artifact_id: _Optional[_Union[_identifier_pb2.ArtifactID, _Mapping]] = ..., spec: _Optional[_Union[ArtifactSpec, _Mapping]] = ..., tags: _Optional[_Iterable[str]] = ...) -> None: ...
 
+class Trigger(_message.Message):
+    __slots__ = ["artifact_key", "downstream_id", "inputs"]
+    ARTIFACT_KEY_FIELD_NUMBER: _ClassVar[int]
+    DOWNSTREAM_ID_FIELD_NUMBER: _ClassVar[int]
+    INPUTS_FIELD_NUMBER: _ClassVar[int]
+    artifact_key: _containers.RepeatedCompositeFieldContainer[_identifier_pb2.ArtifactKey]
+    downstream_id: _identifier_pb2.Identifier
+    inputs: _interface_pb2.ParameterMap
+    def __init__(self, artifact_key: _Optional[_Iterable[_Union[_identifier_pb2.ArtifactKey, _Mapping]]] = ..., downstream_id: _Optional[_Union[_identifier_pb2.Identifier, _Mapping]] = ..., inputs: _Optional[_Union[_interface_pb2.ParameterMap, _Mapping]] = ...) -> None: ...
+
 class CreateArtifactRequest(_message.Message):
     __slots__ = ["artifact_key", "version", "spec", "partitions", "tag"]
     class PartitionsEntry(_message.Message):
@@ -119,26 +129,20 @@ class AddTagResponse(_message.Message):
     def __init__(self) -> None: ...
 
 class CreateTriggerRequest(_message.Message):
-    __slots__ = ["artifact_key", "downstream_id", "inputs"]
-    ARTIFACT_KEY_FIELD_NUMBER: _ClassVar[int]
-    DOWNSTREAM_ID_FIELD_NUMBER: _ClassVar[int]
-    INPUTS_FIELD_NUMBER: _ClassVar[int]
-    artifact_key: _identifier_pb2.ArtifactKey
-    downstream_id: _identifier_pb2.Identifier
-    inputs: _interface_pb2.ParameterMap
-    def __init__(self, artifact_key: _Optional[_Union[_identifier_pb2.ArtifactKey, _Mapping]] = ..., downstream_id: _Optional[_Union[_identifier_pb2.Identifier, _Mapping]] = ..., inputs: _Optional[_Union[_interface_pb2.ParameterMap, _Mapping]] = ...) -> None: ...
+    __slots__ = ["trigger"]
+    TRIGGER_FIELD_NUMBER: _ClassVar[int]
+    trigger: Trigger
+    def __init__(self, trigger: _Optional[_Union[Trigger, _Mapping]] = ...) -> None: ...
 
 class CreateTriggerResponse(_message.Message):
     __slots__ = []
     def __init__(self) -> None: ...
 
 class DeleteTriggerRequest(_message.Message):
-    __slots__ = ["artifact_key", "downstream_id"]
-    ARTIFACT_KEY_FIELD_NUMBER: _ClassVar[int]
-    DOWNSTREAM_ID_FIELD_NUMBER: _ClassVar[int]
-    artifact_key: _identifier_pb2.ArtifactKey
-    downstream_id: _identifier_pb2.Identifier
-    def __init__(self, artifact_key: _Optional[_Union[_identifier_pb2.ArtifactKey, _Mapping]] = ..., downstream_id: _Optional[_Union[_identifier_pb2.Identifier, _Mapping]] = ...) -> None: ...
+    __slots__ = ["trigger"]
+    TRIGGER_FIELD_NUMBER: _ClassVar[int]
+    trigger: Trigger
+    def __init__(self, trigger: _Optional[_Union[Trigger, _Mapping]] = ...) -> None: ...
 
 class DeleteTriggerResponse(_message.Message):
     __slots__ = []

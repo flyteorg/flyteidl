@@ -18,6 +18,7 @@
 
 extern PROTOBUF_INTERNAL_EXPORT_flyteidl_2fartifact_2fartifacts_2eproto ::google::protobuf::internal::SCCInfo<0> scc_info_CreateArtifactRequest_PartitionsEntry_DoNotUse_flyteidl_2fartifact_2fartifacts_2eproto;
 extern PROTOBUF_INTERNAL_EXPORT_flyteidl_2fartifact_2fartifacts_2eproto ::google::protobuf::internal::SCCInfo<2> scc_info_Artifact_flyteidl_2fartifact_2fartifacts_2eproto;
+extern PROTOBUF_INTERNAL_EXPORT_flyteidl_2fartifact_2fartifacts_2eproto ::google::protobuf::internal::SCCInfo<3> scc_info_Trigger_flyteidl_2fartifact_2fartifacts_2eproto;
 extern PROTOBUF_INTERNAL_EXPORT_flyteidl_2fartifact_2fartifacts_2eproto ::google::protobuf::internal::SCCInfo<4> scc_info_ArtifactSpec_flyteidl_2fartifact_2fartifacts_2eproto;
 extern PROTOBUF_INTERNAL_EXPORT_flyteidl_2fcore_2fidentifier_2eproto ::google::protobuf::internal::SCCInfo<0> scc_info_ArtifactKey_flyteidl_2fcore_2fidentifier_2eproto;
 extern PROTOBUF_INTERNAL_EXPORT_flyteidl_2fcore_2fidentifier_2eproto ::google::protobuf::internal::SCCInfo<0> scc_info_Identifier_flyteidl_2fcore_2fidentifier_2eproto;
@@ -34,6 +35,10 @@ class ArtifactDefaultTypeInternal {
  public:
   ::google::protobuf::internal::ExplicitlyConstructed<Artifact> _instance;
 } _Artifact_default_instance_;
+class TriggerDefaultTypeInternal {
+ public:
+  ::google::protobuf::internal::ExplicitlyConstructed<Trigger> _instance;
+} _Trigger_default_instance_;
 class CreateArtifactRequest_PartitionsEntry_DoNotUseDefaultTypeInternal {
  public:
   ::google::protobuf::internal::ExplicitlyConstructed<CreateArtifactRequest_PartitionsEntry_DoNotUse> _instance;
@@ -118,6 +123,23 @@ static void InitDefaultsArtifact_flyteidl_2fartifact_2fartifacts_2eproto() {
     {{ATOMIC_VAR_INIT(::google::protobuf::internal::SCCInfoBase::kUninitialized), 2, InitDefaultsArtifact_flyteidl_2fartifact_2fartifacts_2eproto}, {
       &scc_info_ArtifactID_flyteidl_2fcore_2fidentifier_2eproto.base,
       &scc_info_ArtifactSpec_flyteidl_2fartifact_2fartifacts_2eproto.base,}};
+
+static void InitDefaultsTrigger_flyteidl_2fartifact_2fartifacts_2eproto() {
+  GOOGLE_PROTOBUF_VERIFY_VERSION;
+
+  {
+    void* ptr = &::flyteidl::artifact::_Trigger_default_instance_;
+    new (ptr) ::flyteidl::artifact::Trigger();
+    ::google::protobuf::internal::OnShutdownDestroyMessage(ptr);
+  }
+  ::flyteidl::artifact::Trigger::InitAsDefaultInstance();
+}
+
+::google::protobuf::internal::SCCInfo<3> scc_info_Trigger_flyteidl_2fartifact_2fartifacts_2eproto =
+    {{ATOMIC_VAR_INIT(::google::protobuf::internal::SCCInfoBase::kUninitialized), 3, InitDefaultsTrigger_flyteidl_2fartifact_2fartifacts_2eproto}, {
+      &scc_info_ArtifactKey_flyteidl_2fcore_2fidentifier_2eproto.base,
+      &scc_info_Identifier_flyteidl_2fcore_2fidentifier_2eproto.base,
+      &scc_info_ParameterMap_flyteidl_2fcore_2finterface_2eproto.base,}};
 
 static void InitDefaultsCreateArtifactRequest_PartitionsEntry_DoNotUse_flyteidl_2fartifact_2fartifacts_2eproto() {
   GOOGLE_PROTOBUF_VERIFY_VERSION;
@@ -311,11 +333,9 @@ static void InitDefaultsCreateTriggerRequest_flyteidl_2fartifact_2fartifacts_2ep
   ::flyteidl::artifact::CreateTriggerRequest::InitAsDefaultInstance();
 }
 
-::google::protobuf::internal::SCCInfo<3> scc_info_CreateTriggerRequest_flyteidl_2fartifact_2fartifacts_2eproto =
-    {{ATOMIC_VAR_INIT(::google::protobuf::internal::SCCInfoBase::kUninitialized), 3, InitDefaultsCreateTriggerRequest_flyteidl_2fartifact_2fartifacts_2eproto}, {
-      &scc_info_ArtifactKey_flyteidl_2fcore_2fidentifier_2eproto.base,
-      &scc_info_Identifier_flyteidl_2fcore_2fidentifier_2eproto.base,
-      &scc_info_ParameterMap_flyteidl_2fcore_2finterface_2eproto.base,}};
+::google::protobuf::internal::SCCInfo<1> scc_info_CreateTriggerRequest_flyteidl_2fartifact_2fartifacts_2eproto =
+    {{ATOMIC_VAR_INIT(::google::protobuf::internal::SCCInfoBase::kUninitialized), 1, InitDefaultsCreateTriggerRequest_flyteidl_2fartifact_2fartifacts_2eproto}, {
+      &scc_info_Trigger_flyteidl_2fartifact_2fartifacts_2eproto.base,}};
 
 static void InitDefaultsCreateTriggerResponse_flyteidl_2fartifact_2fartifacts_2eproto() {
   GOOGLE_PROTOBUF_VERIFY_VERSION;
@@ -342,10 +362,9 @@ static void InitDefaultsDeleteTriggerRequest_flyteidl_2fartifact_2fartifacts_2ep
   ::flyteidl::artifact::DeleteTriggerRequest::InitAsDefaultInstance();
 }
 
-::google::protobuf::internal::SCCInfo<2> scc_info_DeleteTriggerRequest_flyteidl_2fartifact_2fartifacts_2eproto =
-    {{ATOMIC_VAR_INIT(::google::protobuf::internal::SCCInfoBase::kUninitialized), 2, InitDefaultsDeleteTriggerRequest_flyteidl_2fartifact_2fartifacts_2eproto}, {
-      &scc_info_ArtifactKey_flyteidl_2fcore_2fidentifier_2eproto.base,
-      &scc_info_Identifier_flyteidl_2fcore_2fidentifier_2eproto.base,}};
+::google::protobuf::internal::SCCInfo<1> scc_info_DeleteTriggerRequest_flyteidl_2fartifact_2fartifacts_2eproto =
+    {{ATOMIC_VAR_INIT(::google::protobuf::internal::SCCInfoBase::kUninitialized), 1, InitDefaultsDeleteTriggerRequest_flyteidl_2fartifact_2fartifacts_2eproto}, {
+      &scc_info_Trigger_flyteidl_2fartifact_2fartifacts_2eproto.base,}};
 
 static void InitDefaultsDeleteTriggerResponse_flyteidl_2fartifact_2fartifacts_2eproto() {
   GOOGLE_PROTOBUF_VERIFY_VERSION;
@@ -363,6 +382,7 @@ static void InitDefaultsDeleteTriggerResponse_flyteidl_2fartifact_2fartifacts_2e
 
 void InitDefaults_flyteidl_2fartifact_2fartifacts_2eproto() {
   ::google::protobuf::internal::InitSCC(&scc_info_Artifact_flyteidl_2fartifact_2fartifacts_2eproto.base);
+  ::google::protobuf::internal::InitSCC(&scc_info_Trigger_flyteidl_2fartifact_2fartifacts_2eproto.base);
   ::google::protobuf::internal::InitSCC(&scc_info_CreateArtifactRequest_PartitionsEntry_DoNotUse_flyteidl_2fartifact_2fartifacts_2eproto.base);
   ::google::protobuf::internal::InitSCC(&scc_info_CreateArtifactRequest_flyteidl_2fartifact_2fartifacts_2eproto.base);
   ::google::protobuf::internal::InitSCC(&scc_info_ArtifactSpec_flyteidl_2fartifact_2fartifacts_2eproto.base);
@@ -381,7 +401,7 @@ void InitDefaults_flyteidl_2fartifact_2fartifacts_2eproto() {
   ::google::protobuf::internal::InitSCC(&scc_info_DeleteTriggerResponse_flyteidl_2fartifact_2fartifacts_2eproto.base);
 }
 
-::google::protobuf::Metadata file_level_metadata_flyteidl_2fartifact_2fartifacts_2eproto[17];
+::google::protobuf::Metadata file_level_metadata_flyteidl_2fartifact_2fartifacts_2eproto[18];
 constexpr ::google::protobuf::EnumDescriptor const** file_level_enum_descriptors_flyteidl_2fartifact_2fartifacts_2eproto = nullptr;
 constexpr ::google::protobuf::ServiceDescriptor const** file_level_service_descriptors_flyteidl_2fartifact_2fartifacts_2eproto = nullptr;
 
@@ -394,6 +414,14 @@ const ::google::protobuf::uint32 TableStruct_flyteidl_2fartifact_2fartifacts_2ep
   PROTOBUF_FIELD_OFFSET(::flyteidl::artifact::Artifact, artifact_id_),
   PROTOBUF_FIELD_OFFSET(::flyteidl::artifact::Artifact, spec_),
   PROTOBUF_FIELD_OFFSET(::flyteidl::artifact::Artifact, tags_),
+  ~0u,  // no _has_bits_
+  PROTOBUF_FIELD_OFFSET(::flyteidl::artifact::Trigger, _internal_metadata_),
+  ~0u,  // no _extensions_
+  ~0u,  // no _oneof_case_
+  ~0u,  // no _weak_field_map_
+  PROTOBUF_FIELD_OFFSET(::flyteidl::artifact::Trigger, artifact_key_),
+  PROTOBUF_FIELD_OFFSET(::flyteidl::artifact::Trigger, downstream_id_),
+  PROTOBUF_FIELD_OFFSET(::flyteidl::artifact::Trigger, inputs_),
   PROTOBUF_FIELD_OFFSET(::flyteidl::artifact::CreateArtifactRequest_PartitionsEntry_DoNotUse, _has_bits_),
   PROTOBUF_FIELD_OFFSET(::flyteidl::artifact::CreateArtifactRequest_PartitionsEntry_DoNotUse, _internal_metadata_),
   ~0u,  // no _extensions_
@@ -488,9 +516,7 @@ const ::google::protobuf::uint32 TableStruct_flyteidl_2fartifact_2fartifacts_2ep
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
-  PROTOBUF_FIELD_OFFSET(::flyteidl::artifact::CreateTriggerRequest, artifact_key_),
-  PROTOBUF_FIELD_OFFSET(::flyteidl::artifact::CreateTriggerRequest, downstream_id_),
-  PROTOBUF_FIELD_OFFSET(::flyteidl::artifact::CreateTriggerRequest, inputs_),
+  PROTOBUF_FIELD_OFFSET(::flyteidl::artifact::CreateTriggerRequest, trigger_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::flyteidl::artifact::CreateTriggerResponse, _internal_metadata_),
   ~0u,  // no _extensions_
@@ -501,8 +527,7 @@ const ::google::protobuf::uint32 TableStruct_flyteidl_2fartifact_2fartifacts_2ep
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
-  PROTOBUF_FIELD_OFFSET(::flyteidl::artifact::DeleteTriggerRequest, artifact_key_),
-  PROTOBUF_FIELD_OFFSET(::flyteidl::artifact::DeleteTriggerRequest, downstream_id_),
+  PROTOBUF_FIELD_OFFSET(::flyteidl::artifact::DeleteTriggerRequest, trigger_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::flyteidl::artifact::DeleteTriggerResponse, _internal_metadata_),
   ~0u,  // no _extensions_
@@ -511,26 +536,28 @@ const ::google::protobuf::uint32 TableStruct_flyteidl_2fartifact_2fartifacts_2ep
 };
 static const ::google::protobuf::internal::MigrationSchema schemas[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
   { 0, -1, sizeof(::flyteidl::artifact::Artifact)},
-  { 8, 15, sizeof(::flyteidl::artifact::CreateArtifactRequest_PartitionsEntry_DoNotUse)},
-  { 17, -1, sizeof(::flyteidl::artifact::CreateArtifactRequest)},
-  { 27, -1, sizeof(::flyteidl::artifact::ArtifactSpec)},
-  { 40, -1, sizeof(::flyteidl::artifact::CreateArtifactResponse)},
-  { 46, -1, sizeof(::flyteidl::artifact::GetArtifactRequest)},
-  { 53, -1, sizeof(::flyteidl::artifact::GetArtifactResponse)},
-  { 59, -1, sizeof(::flyteidl::artifact::ListArtifactNamesRequest)},
-  { 66, -1, sizeof(::flyteidl::artifact::ListArtifactNamesResponse)},
-  { 72, -1, sizeof(::flyteidl::artifact::ListArtifactsRequest)},
-  { 78, -1, sizeof(::flyteidl::artifact::ListArtifactsResponse)},
-  { 84, -1, sizeof(::flyteidl::artifact::AddTagRequest)},
-  { 92, -1, sizeof(::flyteidl::artifact::AddTagResponse)},
-  { 97, -1, sizeof(::flyteidl::artifact::CreateTriggerRequest)},
-  { 105, -1, sizeof(::flyteidl::artifact::CreateTriggerResponse)},
-  { 110, -1, sizeof(::flyteidl::artifact::DeleteTriggerRequest)},
-  { 117, -1, sizeof(::flyteidl::artifact::DeleteTriggerResponse)},
+  { 8, -1, sizeof(::flyteidl::artifact::Trigger)},
+  { 16, 23, sizeof(::flyteidl::artifact::CreateArtifactRequest_PartitionsEntry_DoNotUse)},
+  { 25, -1, sizeof(::flyteidl::artifact::CreateArtifactRequest)},
+  { 35, -1, sizeof(::flyteidl::artifact::ArtifactSpec)},
+  { 48, -1, sizeof(::flyteidl::artifact::CreateArtifactResponse)},
+  { 54, -1, sizeof(::flyteidl::artifact::GetArtifactRequest)},
+  { 61, -1, sizeof(::flyteidl::artifact::GetArtifactResponse)},
+  { 67, -1, sizeof(::flyteidl::artifact::ListArtifactNamesRequest)},
+  { 74, -1, sizeof(::flyteidl::artifact::ListArtifactNamesResponse)},
+  { 80, -1, sizeof(::flyteidl::artifact::ListArtifactsRequest)},
+  { 86, -1, sizeof(::flyteidl::artifact::ListArtifactsResponse)},
+  { 92, -1, sizeof(::flyteidl::artifact::AddTagRequest)},
+  { 100, -1, sizeof(::flyteidl::artifact::AddTagResponse)},
+  { 105, -1, sizeof(::flyteidl::artifact::CreateTriggerRequest)},
+  { 111, -1, sizeof(::flyteidl::artifact::CreateTriggerResponse)},
+  { 116, -1, sizeof(::flyteidl::artifact::DeleteTriggerRequest)},
+  { 122, -1, sizeof(::flyteidl::artifact::DeleteTriggerResponse)},
 };
 
 static ::google::protobuf::Message const * const file_default_instances[] = {
   reinterpret_cast<const ::google::protobuf::Message*>(&::flyteidl::artifact::_Artifact_default_instance_),
+  reinterpret_cast<const ::google::protobuf::Message*>(&::flyteidl::artifact::_Trigger_default_instance_),
   reinterpret_cast<const ::google::protobuf::Message*>(&::flyteidl::artifact::_CreateArtifactRequest_PartitionsEntry_DoNotUse_default_instance_),
   reinterpret_cast<const ::google::protobuf::Message*>(&::flyteidl::artifact::_CreateArtifactRequest_default_instance_),
   reinterpret_cast<const ::google::protobuf::Message*>(&::flyteidl::artifact::_ArtifactSpec_default_instance_),
@@ -552,7 +579,7 @@ static ::google::protobuf::Message const * const file_default_instances[] = {
 ::google::protobuf::internal::AssignDescriptorsTable assign_descriptors_table_flyteidl_2fartifact_2fartifacts_2eproto = {
   {}, AddDescriptors_flyteidl_2fartifact_2fartifacts_2eproto, "flyteidl/artifact/artifacts.proto", schemas,
   file_default_instances, TableStruct_flyteidl_2fartifact_2fartifacts_2eproto::offsets,
-  file_level_metadata_flyteidl_2fartifact_2fartifacts_2eproto, 17, file_level_enum_descriptors_flyteidl_2fartifact_2fartifacts_2eproto, file_level_service_descriptors_flyteidl_2fartifact_2fartifacts_2eproto,
+  file_level_metadata_flyteidl_2fartifact_2fartifacts_2eproto, 18, file_level_enum_descriptors_flyteidl_2fartifact_2fartifacts_2eproto, file_level_service_descriptors_flyteidl_2fartifact_2fartifacts_2eproto,
 };
 
 const char descriptor_table_protodef_flyteidl_2fartifact_2fartifacts_2eproto[] =
@@ -563,66 +590,66 @@ const char descriptor_table_protodef_flyteidl_2fartifact_2fartifacts_2eproto[] =
   "nterface.proto\"w\n\010Artifact\022.\n\013artifact_i"
   "d\030\001 \001(\0132\031.flyteidl.core.ArtifactID\022-\n\004sp"
   "ec\030\002 \001(\0132\037.flyteidl.artifact.ArtifactSpe"
-  "c\022\014\n\004tags\030\003 \003(\t\"\227\002\n\025CreateArtifactReques"
-  "t\0220\n\014artifact_key\030\001 \001(\0132\032.flyteidl.core."
-  "ArtifactKey\022\017\n\007version\030\003 \001(\t\022-\n\004spec\030\002 \001"
-  "(\0132\037.flyteidl.artifact.ArtifactSpec\022L\n\np"
-  "artitions\030\004 \003(\01328.flyteidl.artifact.Crea"
-  "teArtifactRequest.PartitionsEntry\022\013\n\003tag"
-  "\030\005 \001(\t\0321\n\017PartitionsEntry\022\013\n\003key\030\001 \001(\t\022\r"
-  "\n\005value\030\002 \001(\t:\0028\001\"\266\002\n\014ArtifactSpec\022%\n\005va"
-  "lue\030\001 \001(\0132\026.flyteidl.core.Literal\022(\n\004typ"
-  "e\030\002 \001(\0132\032.flyteidl.core.LiteralType\022@\n\016t"
-  "ask_execution\030\005 \001(\0132&.flyteidl.core.Task"
-  "ExecutionIdentifierH\000\022\?\n\texecution\030\006 \001(\013"
-  "2*.flyteidl.core.WorkflowExecutionIdenti"
-  "fierH\000\022\023\n\tprincipal\030\007 \001(\tH\000\022\031\n\021short_des"
-  "cription\030\010 \001(\t\022\030\n\020long_description\030\t \001(\t"
-  "B\010\n\006source\"G\n\026CreateArtifactResponse\022-\n\010"
-  "artifact\030\001 \001(\0132\033.flyteidl.artifact.Artif"
-  "act\"R\n\022GetArtifactRequest\022+\n\005query\030\001 \001(\013"
-  "2\034.flyteidl.core.ArtifactQuery\022\017\n\007detail"
-  "s\030\002 \001(\010\"D\n\023GetArtifactResponse\022-\n\010artifa"
-  "ct\030\001 \001(\0132\033.flyteidl.artifact.Artifact\";\n"
-  "\030ListArtifactNamesRequest\022\017\n\007project\030\001 \001"
-  "(\t\022\016\n\006domain\030\002 \001(\t\"N\n\031ListArtifactNamesR"
-  "esponse\0221\n\rartifact_keys\030\001 \003(\0132\032.flyteid"
-  "l.core.ArtifactKey\"H\n\024ListArtifactsReque"
-  "st\0220\n\014artifact_key\030\001 \001(\0132\032.flyteidl.core"
-  ".ArtifactKey\"G\n\025ListArtifactsResponse\022.\n"
-  "\tartifacts\030\001 \003(\0132\033.flyteidl.artifact.Art"
-  "ifact\"a\n\rAddTagRequest\022.\n\013artifact_id\030\001 "
-  "\001(\0132\031.flyteidl.core.ArtifactID\022\r\n\005value\030"
-  "\002 \001(\t\022\021\n\toverwrite\030\003 \001(\010\"\020\n\016AddTagRespon"
-  "se\"\247\001\n\024CreateTriggerRequest\0220\n\014artifact_"
-  "key\030\001 \001(\0132\032.flyteidl.core.ArtifactKey\0220\n"
+  "c\022\014\n\004tags\030\003 \003(\t\"\232\001\n\007Trigger\0220\n\014artifact_"
+  "key\030\001 \003(\0132\032.flyteidl.core.ArtifactKey\0220\n"
   "\rdownstream_id\030\002 \001(\0132\031.flyteidl.core.Ide"
   "ntifier\022+\n\006inputs\030\003 \001(\0132\033.flyteidl.core."
-  "ParameterMap\"\027\n\025CreateTriggerResponse\"z\n"
-  "\024DeleteTriggerRequest\0220\n\014artifact_key\030\001 "
-  "\001(\0132\032.flyteidl.core.ArtifactKey\0220\n\rdowns"
-  "tream_id\030\002 \001(\0132\031.flyteidl.core.Identifie"
-  "r\"\027\n\025DeleteTriggerResponse2\370\003\n\020ArtifactR"
-  "egistry\022g\n\016CreateArtifact\022(.flyteidl.art"
-  "ifact.CreateArtifactRequest\032).flyteidl.a"
-  "rtifact.CreateArtifactResponse\"\000\022^\n\013GetA"
-  "rtifact\022%.flyteidl.artifact.GetArtifactR"
-  "equest\032&.flyteidl.artifact.GetArtifactRe"
-  "sponse\"\000\022d\n\rCreateTrigger\022\'.flyteidl.art"
-  "ifact.CreateTriggerRequest\032(.flyteidl.ar"
-  "tifact.CreateTriggerResponse\"\000\022d\n\rDelete"
-  "Trigger\022\'.flyteidl.artifact.DeleteTrigge"
-  "rRequest\032(.flyteidl.artifact.DeleteTrigg"
-  "erResponse\"\000\022O\n\006AddTag\022 .flyteidl.artifa"
-  "ct.AddTagRequest\032!.flyteidl.artifact.Add"
-  "TagResponse\"\000B:Z8github.com/flyteorg/fly"
-  "teidl/gen/pb-go/flyteidl/artifactb\006proto"
-  "3"
+  "ParameterMap\"\227\002\n\025CreateArtifactRequest\0220"
+  "\n\014artifact_key\030\001 \001(\0132\032.flyteidl.core.Art"
+  "ifactKey\022\017\n\007version\030\003 \001(\t\022-\n\004spec\030\002 \001(\0132"
+  "\037.flyteidl.artifact.ArtifactSpec\022L\n\npart"
+  "itions\030\004 \003(\01328.flyteidl.artifact.CreateA"
+  "rtifactRequest.PartitionsEntry\022\013\n\003tag\030\005 "
+  "\001(\t\0321\n\017PartitionsEntry\022\013\n\003key\030\001 \001(\t\022\r\n\005v"
+  "alue\030\002 \001(\t:\0028\001\"\266\002\n\014ArtifactSpec\022%\n\005value"
+  "\030\001 \001(\0132\026.flyteidl.core.Literal\022(\n\004type\030\002"
+  " \001(\0132\032.flyteidl.core.LiteralType\022@\n\016task"
+  "_execution\030\005 \001(\0132&.flyteidl.core.TaskExe"
+  "cutionIdentifierH\000\022\?\n\texecution\030\006 \001(\0132*."
+  "flyteidl.core.WorkflowExecutionIdentifie"
+  "rH\000\022\023\n\tprincipal\030\007 \001(\tH\000\022\031\n\021short_descri"
+  "ption\030\010 \001(\t\022\030\n\020long_description\030\t \001(\tB\010\n"
+  "\006source\"G\n\026CreateArtifactResponse\022-\n\010art"
+  "ifact\030\001 \001(\0132\033.flyteidl.artifact.Artifact"
+  "\"R\n\022GetArtifactRequest\022+\n\005query\030\001 \001(\0132\034."
+  "flyteidl.core.ArtifactQuery\022\017\n\007details\030\002"
+  " \001(\010\"D\n\023GetArtifactResponse\022-\n\010artifact\030"
+  "\001 \001(\0132\033.flyteidl.artifact.Artifact\";\n\030Li"
+  "stArtifactNamesRequest\022\017\n\007project\030\001 \001(\t\022"
+  "\016\n\006domain\030\002 \001(\t\"N\n\031ListArtifactNamesResp"
+  "onse\0221\n\rartifact_keys\030\001 \003(\0132\032.flyteidl.c"
+  "ore.ArtifactKey\"H\n\024ListArtifactsRequest\022"
+  "0\n\014artifact_key\030\001 \001(\0132\032.flyteidl.core.Ar"
+  "tifactKey\"G\n\025ListArtifactsResponse\022.\n\tar"
+  "tifacts\030\001 \003(\0132\033.flyteidl.artifact.Artifa"
+  "ct\"a\n\rAddTagRequest\022.\n\013artifact_id\030\001 \001(\013"
+  "2\031.flyteidl.core.ArtifactID\022\r\n\005value\030\002 \001"
+  "(\t\022\021\n\toverwrite\030\003 \001(\010\"\020\n\016AddTagResponse\""
+  "C\n\024CreateTriggerRequest\022+\n\007trigger\030\001 \001(\013"
+  "2\032.flyteidl.artifact.Trigger\"\027\n\025CreateTr"
+  "iggerResponse\"C\n\024DeleteTriggerRequest\022+\n"
+  "\007trigger\030\001 \001(\0132\032.flyteidl.artifact.Trigg"
+  "er\"\027\n\025DeleteTriggerResponse2\370\003\n\020Artifact"
+  "Registry\022g\n\016CreateArtifact\022(.flyteidl.ar"
+  "tifact.CreateArtifactRequest\032).flyteidl."
+  "artifact.CreateArtifactResponse\"\000\022^\n\013Get"
+  "Artifact\022%.flyteidl.artifact.GetArtifact"
+  "Request\032&.flyteidl.artifact.GetArtifactR"
+  "esponse\"\000\022d\n\rCreateTrigger\022\'.flyteidl.ar"
+  "tifact.CreateTriggerRequest\032(.flyteidl.a"
+  "rtifact.CreateTriggerResponse\"\000\022d\n\rDelet"
+  "eTrigger\022\'.flyteidl.artifact.DeleteTrigg"
+  "erRequest\032(.flyteidl.artifact.DeleteTrig"
+  "gerResponse\"\000\022O\n\006AddTag\022 .flyteidl.artif"
+  "act.AddTagRequest\032!.flyteidl.artifact.Ad"
+  "dTagResponse\"\000B:Z8github.com/flyteorg/fl"
+  "yteidl/gen/pb-go/flyteidl/artifactb\006prot"
+  "o3"
   ;
 ::google::protobuf::internal::DescriptorTable descriptor_table_flyteidl_2fartifact_2fartifacts_2eproto = {
   false, InitDefaults_flyteidl_2fartifact_2fartifacts_2eproto, 
   descriptor_table_protodef_flyteidl_2fartifact_2fartifacts_2eproto,
-  "flyteidl/artifact/artifacts.proto", &assign_descriptors_table_flyteidl_2fartifact_2fartifacts_2eproto, 2441,
+  "flyteidl/artifact/artifacts.proto", &assign_descriptors_table_flyteidl_2fartifact_2fartifacts_2eproto, 2442,
 };
 
 void AddDescriptors_flyteidl_2fartifact_2fartifacts_2eproto() {
@@ -1076,6 +1103,436 @@ void Artifact::InternalSwap(Artifact* other) {
 
 // ===================================================================
 
+void Trigger::InitAsDefaultInstance() {
+  ::flyteidl::artifact::_Trigger_default_instance_._instance.get_mutable()->downstream_id_ = const_cast< ::flyteidl::core::Identifier*>(
+      ::flyteidl::core::Identifier::internal_default_instance());
+  ::flyteidl::artifact::_Trigger_default_instance_._instance.get_mutable()->inputs_ = const_cast< ::flyteidl::core::ParameterMap*>(
+      ::flyteidl::core::ParameterMap::internal_default_instance());
+}
+class Trigger::HasBitSetters {
+ public:
+  static const ::flyteidl::core::Identifier& downstream_id(const Trigger* msg);
+  static const ::flyteidl::core::ParameterMap& inputs(const Trigger* msg);
+};
+
+const ::flyteidl::core::Identifier&
+Trigger::HasBitSetters::downstream_id(const Trigger* msg) {
+  return *msg->downstream_id_;
+}
+const ::flyteidl::core::ParameterMap&
+Trigger::HasBitSetters::inputs(const Trigger* msg) {
+  return *msg->inputs_;
+}
+void Trigger::clear_artifact_key() {
+  artifact_key_.Clear();
+}
+void Trigger::clear_downstream_id() {
+  if (GetArenaNoVirtual() == nullptr && downstream_id_ != nullptr) {
+    delete downstream_id_;
+  }
+  downstream_id_ = nullptr;
+}
+void Trigger::clear_inputs() {
+  if (GetArenaNoVirtual() == nullptr && inputs_ != nullptr) {
+    delete inputs_;
+  }
+  inputs_ = nullptr;
+}
+#if !defined(_MSC_VER) || _MSC_VER >= 1900
+const int Trigger::kArtifactKeyFieldNumber;
+const int Trigger::kDownstreamIdFieldNumber;
+const int Trigger::kInputsFieldNumber;
+#endif  // !defined(_MSC_VER) || _MSC_VER >= 1900
+
+Trigger::Trigger()
+  : ::google::protobuf::Message(), _internal_metadata_(nullptr) {
+  SharedCtor();
+  // @@protoc_insertion_point(constructor:flyteidl.artifact.Trigger)
+}
+Trigger::Trigger(const Trigger& from)
+  : ::google::protobuf::Message(),
+      _internal_metadata_(nullptr),
+      artifact_key_(from.artifact_key_) {
+  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  if (from.has_downstream_id()) {
+    downstream_id_ = new ::flyteidl::core::Identifier(*from.downstream_id_);
+  } else {
+    downstream_id_ = nullptr;
+  }
+  if (from.has_inputs()) {
+    inputs_ = new ::flyteidl::core::ParameterMap(*from.inputs_);
+  } else {
+    inputs_ = nullptr;
+  }
+  // @@protoc_insertion_point(copy_constructor:flyteidl.artifact.Trigger)
+}
+
+void Trigger::SharedCtor() {
+  ::google::protobuf::internal::InitSCC(
+      &scc_info_Trigger_flyteidl_2fartifact_2fartifacts_2eproto.base);
+  ::memset(&downstream_id_, 0, static_cast<size_t>(
+      reinterpret_cast<char*>(&inputs_) -
+      reinterpret_cast<char*>(&downstream_id_)) + sizeof(inputs_));
+}
+
+Trigger::~Trigger() {
+  // @@protoc_insertion_point(destructor:flyteidl.artifact.Trigger)
+  SharedDtor();
+}
+
+void Trigger::SharedDtor() {
+  if (this != internal_default_instance()) delete downstream_id_;
+  if (this != internal_default_instance()) delete inputs_;
+}
+
+void Trigger::SetCachedSize(int size) const {
+  _cached_size_.Set(size);
+}
+const Trigger& Trigger::default_instance() {
+  ::google::protobuf::internal::InitSCC(&::scc_info_Trigger_flyteidl_2fartifact_2fartifacts_2eproto.base);
+  return *internal_default_instance();
+}
+
+
+void Trigger::Clear() {
+// @@protoc_insertion_point(message_clear_start:flyteidl.artifact.Trigger)
+  ::google::protobuf::uint32 cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  artifact_key_.Clear();
+  if (GetArenaNoVirtual() == nullptr && downstream_id_ != nullptr) {
+    delete downstream_id_;
+  }
+  downstream_id_ = nullptr;
+  if (GetArenaNoVirtual() == nullptr && inputs_ != nullptr) {
+    delete inputs_;
+  }
+  inputs_ = nullptr;
+  _internal_metadata_.Clear();
+}
+
+#if GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
+const char* Trigger::_InternalParse(const char* begin, const char* end, void* object,
+                  ::google::protobuf::internal::ParseContext* ctx) {
+  auto msg = static_cast<Trigger*>(object);
+  ::google::protobuf::int32 size; (void)size;
+  int depth; (void)depth;
+  ::google::protobuf::uint32 tag;
+  ::google::protobuf::internal::ParseFunc parser_till_end; (void)parser_till_end;
+  auto ptr = begin;
+  while (ptr < end) {
+    ptr = ::google::protobuf::io::Parse32(ptr, &tag);
+    GOOGLE_PROTOBUF_PARSER_ASSERT(ptr);
+    switch (tag >> 3) {
+      // repeated .flyteidl.core.ArtifactKey artifact_key = 1;
+      case 1: {
+        if (static_cast<::google::protobuf::uint8>(tag) != 10) goto handle_unusual;
+        do {
+          ptr = ::google::protobuf::io::ReadSize(ptr, &size);
+          GOOGLE_PROTOBUF_PARSER_ASSERT(ptr);
+          parser_till_end = ::flyteidl::core::ArtifactKey::_InternalParse;
+          object = msg->add_artifact_key();
+          if (size > end - ptr) goto len_delim_till_end;
+          ptr += size;
+          GOOGLE_PROTOBUF_PARSER_ASSERT(ctx->ParseExactRange(
+              {parser_till_end, object}, ptr - size, ptr));
+          if (ptr >= end) break;
+        } while ((::google::protobuf::io::UnalignedLoad<::google::protobuf::uint64>(ptr) & 255) == 10 && (ptr += 1));
+        break;
+      }
+      // .flyteidl.core.Identifier downstream_id = 2;
+      case 2: {
+        if (static_cast<::google::protobuf::uint8>(tag) != 18) goto handle_unusual;
+        ptr = ::google::protobuf::io::ReadSize(ptr, &size);
+        GOOGLE_PROTOBUF_PARSER_ASSERT(ptr);
+        parser_till_end = ::flyteidl::core::Identifier::_InternalParse;
+        object = msg->mutable_downstream_id();
+        if (size > end - ptr) goto len_delim_till_end;
+        ptr += size;
+        GOOGLE_PROTOBUF_PARSER_ASSERT(ctx->ParseExactRange(
+            {parser_till_end, object}, ptr - size, ptr));
+        break;
+      }
+      // .flyteidl.core.ParameterMap inputs = 3;
+      case 3: {
+        if (static_cast<::google::protobuf::uint8>(tag) != 26) goto handle_unusual;
+        ptr = ::google::protobuf::io::ReadSize(ptr, &size);
+        GOOGLE_PROTOBUF_PARSER_ASSERT(ptr);
+        parser_till_end = ::flyteidl::core::ParameterMap::_InternalParse;
+        object = msg->mutable_inputs();
+        if (size > end - ptr) goto len_delim_till_end;
+        ptr += size;
+        GOOGLE_PROTOBUF_PARSER_ASSERT(ctx->ParseExactRange(
+            {parser_till_end, object}, ptr - size, ptr));
+        break;
+      }
+      default: {
+      handle_unusual:
+        if ((tag & 7) == 4 || tag == 0) {
+          ctx->EndGroup(tag);
+          return ptr;
+        }
+        auto res = UnknownFieldParse(tag, {_InternalParse, msg},
+          ptr, end, msg->_internal_metadata_.mutable_unknown_fields(), ctx);
+        ptr = res.first;
+        GOOGLE_PROTOBUF_PARSER_ASSERT(ptr != nullptr);
+        if (res.second) return ptr;
+      }
+    }  // switch
+  }  // while
+  return ptr;
+len_delim_till_end:
+  return ctx->StoreAndTailCall(ptr, end, {_InternalParse, msg},
+                               {parser_till_end, object}, size);
+}
+#else  // GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
+bool Trigger::MergePartialFromCodedStream(
+    ::google::protobuf::io::CodedInputStream* input) {
+#define DO_(EXPRESSION) if (!PROTOBUF_PREDICT_TRUE(EXPRESSION)) goto failure
+  ::google::protobuf::uint32 tag;
+  // @@protoc_insertion_point(parse_start:flyteidl.artifact.Trigger)
+  for (;;) {
+    ::std::pair<::google::protobuf::uint32, bool> p = input->ReadTagWithCutoffNoLastTag(127u);
+    tag = p.first;
+    if (!p.second) goto handle_unusual;
+    switch (::google::protobuf::internal::WireFormatLite::GetTagFieldNumber(tag)) {
+      // repeated .flyteidl.core.ArtifactKey artifact_key = 1;
+      case 1: {
+        if (static_cast< ::google::protobuf::uint8>(tag) == (10 & 0xFF)) {
+          DO_(::google::protobuf::internal::WireFormatLite::ReadMessage(
+                input, add_artifact_key()));
+        } else {
+          goto handle_unusual;
+        }
+        break;
+      }
+
+      // .flyteidl.core.Identifier downstream_id = 2;
+      case 2: {
+        if (static_cast< ::google::protobuf::uint8>(tag) == (18 & 0xFF)) {
+          DO_(::google::protobuf::internal::WireFormatLite::ReadMessage(
+               input, mutable_downstream_id()));
+        } else {
+          goto handle_unusual;
+        }
+        break;
+      }
+
+      // .flyteidl.core.ParameterMap inputs = 3;
+      case 3: {
+        if (static_cast< ::google::protobuf::uint8>(tag) == (26 & 0xFF)) {
+          DO_(::google::protobuf::internal::WireFormatLite::ReadMessage(
+               input, mutable_inputs()));
+        } else {
+          goto handle_unusual;
+        }
+        break;
+      }
+
+      default: {
+      handle_unusual:
+        if (tag == 0) {
+          goto success;
+        }
+        DO_(::google::protobuf::internal::WireFormat::SkipField(
+              input, tag, _internal_metadata_.mutable_unknown_fields()));
+        break;
+      }
+    }
+  }
+success:
+  // @@protoc_insertion_point(parse_success:flyteidl.artifact.Trigger)
+  return true;
+failure:
+  // @@protoc_insertion_point(parse_failure:flyteidl.artifact.Trigger)
+  return false;
+#undef DO_
+}
+#endif  // GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
+
+void Trigger::SerializeWithCachedSizes(
+    ::google::protobuf::io::CodedOutputStream* output) const {
+  // @@protoc_insertion_point(serialize_start:flyteidl.artifact.Trigger)
+  ::google::protobuf::uint32 cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  // repeated .flyteidl.core.ArtifactKey artifact_key = 1;
+  for (unsigned int i = 0,
+      n = static_cast<unsigned int>(this->artifact_key_size()); i < n; i++) {
+    ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
+      1,
+      this->artifact_key(static_cast<int>(i)),
+      output);
+  }
+
+  // .flyteidl.core.Identifier downstream_id = 2;
+  if (this->has_downstream_id()) {
+    ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
+      2, HasBitSetters::downstream_id(this), output);
+  }
+
+  // .flyteidl.core.ParameterMap inputs = 3;
+  if (this->has_inputs()) {
+    ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
+      3, HasBitSetters::inputs(this), output);
+  }
+
+  if (_internal_metadata_.have_unknown_fields()) {
+    ::google::protobuf::internal::WireFormat::SerializeUnknownFields(
+        _internal_metadata_.unknown_fields(), output);
+  }
+  // @@protoc_insertion_point(serialize_end:flyteidl.artifact.Trigger)
+}
+
+::google::protobuf::uint8* Trigger::InternalSerializeWithCachedSizesToArray(
+    ::google::protobuf::uint8* target) const {
+  // @@protoc_insertion_point(serialize_to_array_start:flyteidl.artifact.Trigger)
+  ::google::protobuf::uint32 cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  // repeated .flyteidl.core.ArtifactKey artifact_key = 1;
+  for (unsigned int i = 0,
+      n = static_cast<unsigned int>(this->artifact_key_size()); i < n; i++) {
+    target = ::google::protobuf::internal::WireFormatLite::
+      InternalWriteMessageToArray(
+        1, this->artifact_key(static_cast<int>(i)), target);
+  }
+
+  // .flyteidl.core.Identifier downstream_id = 2;
+  if (this->has_downstream_id()) {
+    target = ::google::protobuf::internal::WireFormatLite::
+      InternalWriteMessageToArray(
+        2, HasBitSetters::downstream_id(this), target);
+  }
+
+  // .flyteidl.core.ParameterMap inputs = 3;
+  if (this->has_inputs()) {
+    target = ::google::protobuf::internal::WireFormatLite::
+      InternalWriteMessageToArray(
+        3, HasBitSetters::inputs(this), target);
+  }
+
+  if (_internal_metadata_.have_unknown_fields()) {
+    target = ::google::protobuf::internal::WireFormat::SerializeUnknownFieldsToArray(
+        _internal_metadata_.unknown_fields(), target);
+  }
+  // @@protoc_insertion_point(serialize_to_array_end:flyteidl.artifact.Trigger)
+  return target;
+}
+
+size_t Trigger::ByteSizeLong() const {
+// @@protoc_insertion_point(message_byte_size_start:flyteidl.artifact.Trigger)
+  size_t total_size = 0;
+
+  if (_internal_metadata_.have_unknown_fields()) {
+    total_size +=
+      ::google::protobuf::internal::WireFormat::ComputeUnknownFieldsSize(
+        _internal_metadata_.unknown_fields());
+  }
+  ::google::protobuf::uint32 cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  // repeated .flyteidl.core.ArtifactKey artifact_key = 1;
+  {
+    unsigned int count = static_cast<unsigned int>(this->artifact_key_size());
+    total_size += 1UL * count;
+    for (unsigned int i = 0; i < count; i++) {
+      total_size +=
+        ::google::protobuf::internal::WireFormatLite::MessageSize(
+          this->artifact_key(static_cast<int>(i)));
+    }
+  }
+
+  // .flyteidl.core.Identifier downstream_id = 2;
+  if (this->has_downstream_id()) {
+    total_size += 1 +
+      ::google::protobuf::internal::WireFormatLite::MessageSize(
+        *downstream_id_);
+  }
+
+  // .flyteidl.core.ParameterMap inputs = 3;
+  if (this->has_inputs()) {
+    total_size += 1 +
+      ::google::protobuf::internal::WireFormatLite::MessageSize(
+        *inputs_);
+  }
+
+  int cached_size = ::google::protobuf::internal::ToCachedSize(total_size);
+  SetCachedSize(cached_size);
+  return total_size;
+}
+
+void Trigger::MergeFrom(const ::google::protobuf::Message& from) {
+// @@protoc_insertion_point(generalized_merge_from_start:flyteidl.artifact.Trigger)
+  GOOGLE_DCHECK_NE(&from, this);
+  const Trigger* source =
+      ::google::protobuf::DynamicCastToGenerated<Trigger>(
+          &from);
+  if (source == nullptr) {
+  // @@protoc_insertion_point(generalized_merge_from_cast_fail:flyteidl.artifact.Trigger)
+    ::google::protobuf::internal::ReflectionOps::Merge(from, this);
+  } else {
+  // @@protoc_insertion_point(generalized_merge_from_cast_success:flyteidl.artifact.Trigger)
+    MergeFrom(*source);
+  }
+}
+
+void Trigger::MergeFrom(const Trigger& from) {
+// @@protoc_insertion_point(class_specific_merge_from_start:flyteidl.artifact.Trigger)
+  GOOGLE_DCHECK_NE(&from, this);
+  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  ::google::protobuf::uint32 cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  artifact_key_.MergeFrom(from.artifact_key_);
+  if (from.has_downstream_id()) {
+    mutable_downstream_id()->::flyteidl::core::Identifier::MergeFrom(from.downstream_id());
+  }
+  if (from.has_inputs()) {
+    mutable_inputs()->::flyteidl::core::ParameterMap::MergeFrom(from.inputs());
+  }
+}
+
+void Trigger::CopyFrom(const ::google::protobuf::Message& from) {
+// @@protoc_insertion_point(generalized_copy_from_start:flyteidl.artifact.Trigger)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+void Trigger::CopyFrom(const Trigger& from) {
+// @@protoc_insertion_point(class_specific_copy_from_start:flyteidl.artifact.Trigger)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+bool Trigger::IsInitialized() const {
+  return true;
+}
+
+void Trigger::Swap(Trigger* other) {
+  if (other == this) return;
+  InternalSwap(other);
+}
+void Trigger::InternalSwap(Trigger* other) {
+  using std::swap;
+  _internal_metadata_.Swap(&other->_internal_metadata_);
+  CastToBase(&artifact_key_)->InternalSwap(CastToBase(&other->artifact_key_));
+  swap(downstream_id_, other->downstream_id_);
+  swap(inputs_, other->inputs_);
+}
+
+::google::protobuf::Metadata Trigger::GetMetadata() const {
+  ::google::protobuf::internal::AssignDescriptors(&::assign_descriptors_table_flyteidl_2fartifact_2fartifacts_2eproto);
+  return ::file_level_metadata_flyteidl_2fartifact_2fartifacts_2eproto[kIndexInFileMessages];
+}
+
+
+// ===================================================================
+
 CreateArtifactRequest_PartitionsEntry_DoNotUse::CreateArtifactRequest_PartitionsEntry_DoNotUse() {}
 CreateArtifactRequest_PartitionsEntry_DoNotUse::CreateArtifactRequest_PartitionsEntry_DoNotUse(::google::protobuf::Arena* arena)
     : SuperType(arena) {}
@@ -1084,7 +1541,7 @@ void CreateArtifactRequest_PartitionsEntry_DoNotUse::MergeFrom(const CreateArtif
 }
 ::google::protobuf::Metadata CreateArtifactRequest_PartitionsEntry_DoNotUse::GetMetadata() const {
   ::google::protobuf::internal::AssignDescriptors(&::assign_descriptors_table_flyteidl_2fartifact_2fartifacts_2eproto);
-  return ::file_level_metadata_flyteidl_2fartifact_2fartifacts_2eproto[1];
+  return ::file_level_metadata_flyteidl_2fartifact_2fartifacts_2eproto[2];
 }
 void CreateArtifactRequest_PartitionsEntry_DoNotUse::MergeFrom(
     const ::google::protobuf::Message& other) {
@@ -5344,54 +5801,20 @@ void AddTagResponse::InternalSwap(AddTagResponse* other) {
 // ===================================================================
 
 void CreateTriggerRequest::InitAsDefaultInstance() {
-  ::flyteidl::artifact::_CreateTriggerRequest_default_instance_._instance.get_mutable()->artifact_key_ = const_cast< ::flyteidl::core::ArtifactKey*>(
-      ::flyteidl::core::ArtifactKey::internal_default_instance());
-  ::flyteidl::artifact::_CreateTriggerRequest_default_instance_._instance.get_mutable()->downstream_id_ = const_cast< ::flyteidl::core::Identifier*>(
-      ::flyteidl::core::Identifier::internal_default_instance());
-  ::flyteidl::artifact::_CreateTriggerRequest_default_instance_._instance.get_mutable()->inputs_ = const_cast< ::flyteidl::core::ParameterMap*>(
-      ::flyteidl::core::ParameterMap::internal_default_instance());
+  ::flyteidl::artifact::_CreateTriggerRequest_default_instance_._instance.get_mutable()->trigger_ = const_cast< ::flyteidl::artifact::Trigger*>(
+      ::flyteidl::artifact::Trigger::internal_default_instance());
 }
 class CreateTriggerRequest::HasBitSetters {
  public:
-  static const ::flyteidl::core::ArtifactKey& artifact_key(const CreateTriggerRequest* msg);
-  static const ::flyteidl::core::Identifier& downstream_id(const CreateTriggerRequest* msg);
-  static const ::flyteidl::core::ParameterMap& inputs(const CreateTriggerRequest* msg);
+  static const ::flyteidl::artifact::Trigger& trigger(const CreateTriggerRequest* msg);
 };
 
-const ::flyteidl::core::ArtifactKey&
-CreateTriggerRequest::HasBitSetters::artifact_key(const CreateTriggerRequest* msg) {
-  return *msg->artifact_key_;
-}
-const ::flyteidl::core::Identifier&
-CreateTriggerRequest::HasBitSetters::downstream_id(const CreateTriggerRequest* msg) {
-  return *msg->downstream_id_;
-}
-const ::flyteidl::core::ParameterMap&
-CreateTriggerRequest::HasBitSetters::inputs(const CreateTriggerRequest* msg) {
-  return *msg->inputs_;
-}
-void CreateTriggerRequest::clear_artifact_key() {
-  if (GetArenaNoVirtual() == nullptr && artifact_key_ != nullptr) {
-    delete artifact_key_;
-  }
-  artifact_key_ = nullptr;
-}
-void CreateTriggerRequest::clear_downstream_id() {
-  if (GetArenaNoVirtual() == nullptr && downstream_id_ != nullptr) {
-    delete downstream_id_;
-  }
-  downstream_id_ = nullptr;
-}
-void CreateTriggerRequest::clear_inputs() {
-  if (GetArenaNoVirtual() == nullptr && inputs_ != nullptr) {
-    delete inputs_;
-  }
-  inputs_ = nullptr;
+const ::flyteidl::artifact::Trigger&
+CreateTriggerRequest::HasBitSetters::trigger(const CreateTriggerRequest* msg) {
+  return *msg->trigger_;
 }
 #if !defined(_MSC_VER) || _MSC_VER >= 1900
-const int CreateTriggerRequest::kArtifactKeyFieldNumber;
-const int CreateTriggerRequest::kDownstreamIdFieldNumber;
-const int CreateTriggerRequest::kInputsFieldNumber;
+const int CreateTriggerRequest::kTriggerFieldNumber;
 #endif  // !defined(_MSC_VER) || _MSC_VER >= 1900
 
 CreateTriggerRequest::CreateTriggerRequest()
@@ -5403,20 +5826,10 @@ CreateTriggerRequest::CreateTriggerRequest(const CreateTriggerRequest& from)
   : ::google::protobuf::Message(),
       _internal_metadata_(nullptr) {
   _internal_metadata_.MergeFrom(from._internal_metadata_);
-  if (from.has_artifact_key()) {
-    artifact_key_ = new ::flyteidl::core::ArtifactKey(*from.artifact_key_);
+  if (from.has_trigger()) {
+    trigger_ = new ::flyteidl::artifact::Trigger(*from.trigger_);
   } else {
-    artifact_key_ = nullptr;
-  }
-  if (from.has_downstream_id()) {
-    downstream_id_ = new ::flyteidl::core::Identifier(*from.downstream_id_);
-  } else {
-    downstream_id_ = nullptr;
-  }
-  if (from.has_inputs()) {
-    inputs_ = new ::flyteidl::core::ParameterMap(*from.inputs_);
-  } else {
-    inputs_ = nullptr;
+    trigger_ = nullptr;
   }
   // @@protoc_insertion_point(copy_constructor:flyteidl.artifact.CreateTriggerRequest)
 }
@@ -5424,9 +5837,7 @@ CreateTriggerRequest::CreateTriggerRequest(const CreateTriggerRequest& from)
 void CreateTriggerRequest::SharedCtor() {
   ::google::protobuf::internal::InitSCC(
       &scc_info_CreateTriggerRequest_flyteidl_2fartifact_2fartifacts_2eproto.base);
-  ::memset(&artifact_key_, 0, static_cast<size_t>(
-      reinterpret_cast<char*>(&inputs_) -
-      reinterpret_cast<char*>(&artifact_key_)) + sizeof(inputs_));
+  trigger_ = nullptr;
 }
 
 CreateTriggerRequest::~CreateTriggerRequest() {
@@ -5435,9 +5846,7 @@ CreateTriggerRequest::~CreateTriggerRequest() {
 }
 
 void CreateTriggerRequest::SharedDtor() {
-  if (this != internal_default_instance()) delete artifact_key_;
-  if (this != internal_default_instance()) delete downstream_id_;
-  if (this != internal_default_instance()) delete inputs_;
+  if (this != internal_default_instance()) delete trigger_;
 }
 
 void CreateTriggerRequest::SetCachedSize(int size) const {
@@ -5455,18 +5864,10 @@ void CreateTriggerRequest::Clear() {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  if (GetArenaNoVirtual() == nullptr && artifact_key_ != nullptr) {
-    delete artifact_key_;
+  if (GetArenaNoVirtual() == nullptr && trigger_ != nullptr) {
+    delete trigger_;
   }
-  artifact_key_ = nullptr;
-  if (GetArenaNoVirtual() == nullptr && downstream_id_ != nullptr) {
-    delete downstream_id_;
-  }
-  downstream_id_ = nullptr;
-  if (GetArenaNoVirtual() == nullptr && inputs_ != nullptr) {
-    delete inputs_;
-  }
-  inputs_ = nullptr;
+  trigger_ = nullptr;
   _internal_metadata_.Clear();
 }
 
@@ -5483,39 +5884,13 @@ const char* CreateTriggerRequest::_InternalParse(const char* begin, const char* 
     ptr = ::google::protobuf::io::Parse32(ptr, &tag);
     GOOGLE_PROTOBUF_PARSER_ASSERT(ptr);
     switch (tag >> 3) {
-      // .flyteidl.core.ArtifactKey artifact_key = 1;
+      // .flyteidl.artifact.Trigger trigger = 1;
       case 1: {
         if (static_cast<::google::protobuf::uint8>(tag) != 10) goto handle_unusual;
         ptr = ::google::protobuf::io::ReadSize(ptr, &size);
         GOOGLE_PROTOBUF_PARSER_ASSERT(ptr);
-        parser_till_end = ::flyteidl::core::ArtifactKey::_InternalParse;
-        object = msg->mutable_artifact_key();
-        if (size > end - ptr) goto len_delim_till_end;
-        ptr += size;
-        GOOGLE_PROTOBUF_PARSER_ASSERT(ctx->ParseExactRange(
-            {parser_till_end, object}, ptr - size, ptr));
-        break;
-      }
-      // .flyteidl.core.Identifier downstream_id = 2;
-      case 2: {
-        if (static_cast<::google::protobuf::uint8>(tag) != 18) goto handle_unusual;
-        ptr = ::google::protobuf::io::ReadSize(ptr, &size);
-        GOOGLE_PROTOBUF_PARSER_ASSERT(ptr);
-        parser_till_end = ::flyteidl::core::Identifier::_InternalParse;
-        object = msg->mutable_downstream_id();
-        if (size > end - ptr) goto len_delim_till_end;
-        ptr += size;
-        GOOGLE_PROTOBUF_PARSER_ASSERT(ctx->ParseExactRange(
-            {parser_till_end, object}, ptr - size, ptr));
-        break;
-      }
-      // .flyteidl.core.ParameterMap inputs = 3;
-      case 3: {
-        if (static_cast<::google::protobuf::uint8>(tag) != 26) goto handle_unusual;
-        ptr = ::google::protobuf::io::ReadSize(ptr, &size);
-        GOOGLE_PROTOBUF_PARSER_ASSERT(ptr);
-        parser_till_end = ::flyteidl::core::ParameterMap::_InternalParse;
-        object = msg->mutable_inputs();
+        parser_till_end = ::flyteidl::artifact::Trigger::_InternalParse;
+        object = msg->mutable_trigger();
         if (size > end - ptr) goto len_delim_till_end;
         ptr += size;
         GOOGLE_PROTOBUF_PARSER_ASSERT(ctx->ParseExactRange(
@@ -5552,33 +5927,11 @@ bool CreateTriggerRequest::MergePartialFromCodedStream(
     tag = p.first;
     if (!p.second) goto handle_unusual;
     switch (::google::protobuf::internal::WireFormatLite::GetTagFieldNumber(tag)) {
-      // .flyteidl.core.ArtifactKey artifact_key = 1;
+      // .flyteidl.artifact.Trigger trigger = 1;
       case 1: {
         if (static_cast< ::google::protobuf::uint8>(tag) == (10 & 0xFF)) {
           DO_(::google::protobuf::internal::WireFormatLite::ReadMessage(
-               input, mutable_artifact_key()));
-        } else {
-          goto handle_unusual;
-        }
-        break;
-      }
-
-      // .flyteidl.core.Identifier downstream_id = 2;
-      case 2: {
-        if (static_cast< ::google::protobuf::uint8>(tag) == (18 & 0xFF)) {
-          DO_(::google::protobuf::internal::WireFormatLite::ReadMessage(
-               input, mutable_downstream_id()));
-        } else {
-          goto handle_unusual;
-        }
-        break;
-      }
-
-      // .flyteidl.core.ParameterMap inputs = 3;
-      case 3: {
-        if (static_cast< ::google::protobuf::uint8>(tag) == (26 & 0xFF)) {
-          DO_(::google::protobuf::internal::WireFormatLite::ReadMessage(
-               input, mutable_inputs()));
+               input, mutable_trigger()));
         } else {
           goto handle_unusual;
         }
@@ -5612,22 +5965,10 @@ void CreateTriggerRequest::SerializeWithCachedSizes(
   ::google::protobuf::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  // .flyteidl.core.ArtifactKey artifact_key = 1;
-  if (this->has_artifact_key()) {
+  // .flyteidl.artifact.Trigger trigger = 1;
+  if (this->has_trigger()) {
     ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
-      1, HasBitSetters::artifact_key(this), output);
-  }
-
-  // .flyteidl.core.Identifier downstream_id = 2;
-  if (this->has_downstream_id()) {
-    ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
-      2, HasBitSetters::downstream_id(this), output);
-  }
-
-  // .flyteidl.core.ParameterMap inputs = 3;
-  if (this->has_inputs()) {
-    ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
-      3, HasBitSetters::inputs(this), output);
+      1, HasBitSetters::trigger(this), output);
   }
 
   if (_internal_metadata_.have_unknown_fields()) {
@@ -5643,25 +5984,11 @@ void CreateTriggerRequest::SerializeWithCachedSizes(
   ::google::protobuf::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  // .flyteidl.core.ArtifactKey artifact_key = 1;
-  if (this->has_artifact_key()) {
+  // .flyteidl.artifact.Trigger trigger = 1;
+  if (this->has_trigger()) {
     target = ::google::protobuf::internal::WireFormatLite::
       InternalWriteMessageToArray(
-        1, HasBitSetters::artifact_key(this), target);
-  }
-
-  // .flyteidl.core.Identifier downstream_id = 2;
-  if (this->has_downstream_id()) {
-    target = ::google::protobuf::internal::WireFormatLite::
-      InternalWriteMessageToArray(
-        2, HasBitSetters::downstream_id(this), target);
-  }
-
-  // .flyteidl.core.ParameterMap inputs = 3;
-  if (this->has_inputs()) {
-    target = ::google::protobuf::internal::WireFormatLite::
-      InternalWriteMessageToArray(
-        3, HasBitSetters::inputs(this), target);
+        1, HasBitSetters::trigger(this), target);
   }
 
   if (_internal_metadata_.have_unknown_fields()) {
@@ -5685,25 +6012,11 @@ size_t CreateTriggerRequest::ByteSizeLong() const {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  // .flyteidl.core.ArtifactKey artifact_key = 1;
-  if (this->has_artifact_key()) {
+  // .flyteidl.artifact.Trigger trigger = 1;
+  if (this->has_trigger()) {
     total_size += 1 +
       ::google::protobuf::internal::WireFormatLite::MessageSize(
-        *artifact_key_);
-  }
-
-  // .flyteidl.core.Identifier downstream_id = 2;
-  if (this->has_downstream_id()) {
-    total_size += 1 +
-      ::google::protobuf::internal::WireFormatLite::MessageSize(
-        *downstream_id_);
-  }
-
-  // .flyteidl.core.ParameterMap inputs = 3;
-  if (this->has_inputs()) {
-    total_size += 1 +
-      ::google::protobuf::internal::WireFormatLite::MessageSize(
-        *inputs_);
+        *trigger_);
   }
 
   int cached_size = ::google::protobuf::internal::ToCachedSize(total_size);
@@ -5733,14 +6046,8 @@ void CreateTriggerRequest::MergeFrom(const CreateTriggerRequest& from) {
   ::google::protobuf::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  if (from.has_artifact_key()) {
-    mutable_artifact_key()->::flyteidl::core::ArtifactKey::MergeFrom(from.artifact_key());
-  }
-  if (from.has_downstream_id()) {
-    mutable_downstream_id()->::flyteidl::core::Identifier::MergeFrom(from.downstream_id());
-  }
-  if (from.has_inputs()) {
-    mutable_inputs()->::flyteidl::core::ParameterMap::MergeFrom(from.inputs());
+  if (from.has_trigger()) {
+    mutable_trigger()->::flyteidl::artifact::Trigger::MergeFrom(from.trigger());
   }
 }
 
@@ -5769,9 +6076,7 @@ void CreateTriggerRequest::Swap(CreateTriggerRequest* other) {
 void CreateTriggerRequest::InternalSwap(CreateTriggerRequest* other) {
   using std::swap;
   _internal_metadata_.Swap(&other->_internal_metadata_);
-  swap(artifact_key_, other->artifact_key_);
-  swap(downstream_id_, other->downstream_id_);
-  swap(inputs_, other->inputs_);
+  swap(trigger_, other->trigger_);
 }
 
 ::google::protobuf::Metadata CreateTriggerRequest::GetMetadata() const {
@@ -5992,40 +6297,20 @@ void CreateTriggerResponse::InternalSwap(CreateTriggerResponse* other) {
 // ===================================================================
 
 void DeleteTriggerRequest::InitAsDefaultInstance() {
-  ::flyteidl::artifact::_DeleteTriggerRequest_default_instance_._instance.get_mutable()->artifact_key_ = const_cast< ::flyteidl::core::ArtifactKey*>(
-      ::flyteidl::core::ArtifactKey::internal_default_instance());
-  ::flyteidl::artifact::_DeleteTriggerRequest_default_instance_._instance.get_mutable()->downstream_id_ = const_cast< ::flyteidl::core::Identifier*>(
-      ::flyteidl::core::Identifier::internal_default_instance());
+  ::flyteidl::artifact::_DeleteTriggerRequest_default_instance_._instance.get_mutable()->trigger_ = const_cast< ::flyteidl::artifact::Trigger*>(
+      ::flyteidl::artifact::Trigger::internal_default_instance());
 }
 class DeleteTriggerRequest::HasBitSetters {
  public:
-  static const ::flyteidl::core::ArtifactKey& artifact_key(const DeleteTriggerRequest* msg);
-  static const ::flyteidl::core::Identifier& downstream_id(const DeleteTriggerRequest* msg);
+  static const ::flyteidl::artifact::Trigger& trigger(const DeleteTriggerRequest* msg);
 };
 
-const ::flyteidl::core::ArtifactKey&
-DeleteTriggerRequest::HasBitSetters::artifact_key(const DeleteTriggerRequest* msg) {
-  return *msg->artifact_key_;
-}
-const ::flyteidl::core::Identifier&
-DeleteTriggerRequest::HasBitSetters::downstream_id(const DeleteTriggerRequest* msg) {
-  return *msg->downstream_id_;
-}
-void DeleteTriggerRequest::clear_artifact_key() {
-  if (GetArenaNoVirtual() == nullptr && artifact_key_ != nullptr) {
-    delete artifact_key_;
-  }
-  artifact_key_ = nullptr;
-}
-void DeleteTriggerRequest::clear_downstream_id() {
-  if (GetArenaNoVirtual() == nullptr && downstream_id_ != nullptr) {
-    delete downstream_id_;
-  }
-  downstream_id_ = nullptr;
+const ::flyteidl::artifact::Trigger&
+DeleteTriggerRequest::HasBitSetters::trigger(const DeleteTriggerRequest* msg) {
+  return *msg->trigger_;
 }
 #if !defined(_MSC_VER) || _MSC_VER >= 1900
-const int DeleteTriggerRequest::kArtifactKeyFieldNumber;
-const int DeleteTriggerRequest::kDownstreamIdFieldNumber;
+const int DeleteTriggerRequest::kTriggerFieldNumber;
 #endif  // !defined(_MSC_VER) || _MSC_VER >= 1900
 
 DeleteTriggerRequest::DeleteTriggerRequest()
@@ -6037,15 +6322,10 @@ DeleteTriggerRequest::DeleteTriggerRequest(const DeleteTriggerRequest& from)
   : ::google::protobuf::Message(),
       _internal_metadata_(nullptr) {
   _internal_metadata_.MergeFrom(from._internal_metadata_);
-  if (from.has_artifact_key()) {
-    artifact_key_ = new ::flyteidl::core::ArtifactKey(*from.artifact_key_);
+  if (from.has_trigger()) {
+    trigger_ = new ::flyteidl::artifact::Trigger(*from.trigger_);
   } else {
-    artifact_key_ = nullptr;
-  }
-  if (from.has_downstream_id()) {
-    downstream_id_ = new ::flyteidl::core::Identifier(*from.downstream_id_);
-  } else {
-    downstream_id_ = nullptr;
+    trigger_ = nullptr;
   }
   // @@protoc_insertion_point(copy_constructor:flyteidl.artifact.DeleteTriggerRequest)
 }
@@ -6053,9 +6333,7 @@ DeleteTriggerRequest::DeleteTriggerRequest(const DeleteTriggerRequest& from)
 void DeleteTriggerRequest::SharedCtor() {
   ::google::protobuf::internal::InitSCC(
       &scc_info_DeleteTriggerRequest_flyteidl_2fartifact_2fartifacts_2eproto.base);
-  ::memset(&artifact_key_, 0, static_cast<size_t>(
-      reinterpret_cast<char*>(&downstream_id_) -
-      reinterpret_cast<char*>(&artifact_key_)) + sizeof(downstream_id_));
+  trigger_ = nullptr;
 }
 
 DeleteTriggerRequest::~DeleteTriggerRequest() {
@@ -6064,8 +6342,7 @@ DeleteTriggerRequest::~DeleteTriggerRequest() {
 }
 
 void DeleteTriggerRequest::SharedDtor() {
-  if (this != internal_default_instance()) delete artifact_key_;
-  if (this != internal_default_instance()) delete downstream_id_;
+  if (this != internal_default_instance()) delete trigger_;
 }
 
 void DeleteTriggerRequest::SetCachedSize(int size) const {
@@ -6083,14 +6360,10 @@ void DeleteTriggerRequest::Clear() {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  if (GetArenaNoVirtual() == nullptr && artifact_key_ != nullptr) {
-    delete artifact_key_;
+  if (GetArenaNoVirtual() == nullptr && trigger_ != nullptr) {
+    delete trigger_;
   }
-  artifact_key_ = nullptr;
-  if (GetArenaNoVirtual() == nullptr && downstream_id_ != nullptr) {
-    delete downstream_id_;
-  }
-  downstream_id_ = nullptr;
+  trigger_ = nullptr;
   _internal_metadata_.Clear();
 }
 
@@ -6107,26 +6380,13 @@ const char* DeleteTriggerRequest::_InternalParse(const char* begin, const char* 
     ptr = ::google::protobuf::io::Parse32(ptr, &tag);
     GOOGLE_PROTOBUF_PARSER_ASSERT(ptr);
     switch (tag >> 3) {
-      // .flyteidl.core.ArtifactKey artifact_key = 1;
+      // .flyteidl.artifact.Trigger trigger = 1;
       case 1: {
         if (static_cast<::google::protobuf::uint8>(tag) != 10) goto handle_unusual;
         ptr = ::google::protobuf::io::ReadSize(ptr, &size);
         GOOGLE_PROTOBUF_PARSER_ASSERT(ptr);
-        parser_till_end = ::flyteidl::core::ArtifactKey::_InternalParse;
-        object = msg->mutable_artifact_key();
-        if (size > end - ptr) goto len_delim_till_end;
-        ptr += size;
-        GOOGLE_PROTOBUF_PARSER_ASSERT(ctx->ParseExactRange(
-            {parser_till_end, object}, ptr - size, ptr));
-        break;
-      }
-      // .flyteidl.core.Identifier downstream_id = 2;
-      case 2: {
-        if (static_cast<::google::protobuf::uint8>(tag) != 18) goto handle_unusual;
-        ptr = ::google::protobuf::io::ReadSize(ptr, &size);
-        GOOGLE_PROTOBUF_PARSER_ASSERT(ptr);
-        parser_till_end = ::flyteidl::core::Identifier::_InternalParse;
-        object = msg->mutable_downstream_id();
+        parser_till_end = ::flyteidl::artifact::Trigger::_InternalParse;
+        object = msg->mutable_trigger();
         if (size > end - ptr) goto len_delim_till_end;
         ptr += size;
         GOOGLE_PROTOBUF_PARSER_ASSERT(ctx->ParseExactRange(
@@ -6163,22 +6423,11 @@ bool DeleteTriggerRequest::MergePartialFromCodedStream(
     tag = p.first;
     if (!p.second) goto handle_unusual;
     switch (::google::protobuf::internal::WireFormatLite::GetTagFieldNumber(tag)) {
-      // .flyteidl.core.ArtifactKey artifact_key = 1;
+      // .flyteidl.artifact.Trigger trigger = 1;
       case 1: {
         if (static_cast< ::google::protobuf::uint8>(tag) == (10 & 0xFF)) {
           DO_(::google::protobuf::internal::WireFormatLite::ReadMessage(
-               input, mutable_artifact_key()));
-        } else {
-          goto handle_unusual;
-        }
-        break;
-      }
-
-      // .flyteidl.core.Identifier downstream_id = 2;
-      case 2: {
-        if (static_cast< ::google::protobuf::uint8>(tag) == (18 & 0xFF)) {
-          DO_(::google::protobuf::internal::WireFormatLite::ReadMessage(
-               input, mutable_downstream_id()));
+               input, mutable_trigger()));
         } else {
           goto handle_unusual;
         }
@@ -6212,16 +6461,10 @@ void DeleteTriggerRequest::SerializeWithCachedSizes(
   ::google::protobuf::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  // .flyteidl.core.ArtifactKey artifact_key = 1;
-  if (this->has_artifact_key()) {
+  // .flyteidl.artifact.Trigger trigger = 1;
+  if (this->has_trigger()) {
     ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
-      1, HasBitSetters::artifact_key(this), output);
-  }
-
-  // .flyteidl.core.Identifier downstream_id = 2;
-  if (this->has_downstream_id()) {
-    ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
-      2, HasBitSetters::downstream_id(this), output);
+      1, HasBitSetters::trigger(this), output);
   }
 
   if (_internal_metadata_.have_unknown_fields()) {
@@ -6237,18 +6480,11 @@ void DeleteTriggerRequest::SerializeWithCachedSizes(
   ::google::protobuf::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  // .flyteidl.core.ArtifactKey artifact_key = 1;
-  if (this->has_artifact_key()) {
+  // .flyteidl.artifact.Trigger trigger = 1;
+  if (this->has_trigger()) {
     target = ::google::protobuf::internal::WireFormatLite::
       InternalWriteMessageToArray(
-        1, HasBitSetters::artifact_key(this), target);
-  }
-
-  // .flyteidl.core.Identifier downstream_id = 2;
-  if (this->has_downstream_id()) {
-    target = ::google::protobuf::internal::WireFormatLite::
-      InternalWriteMessageToArray(
-        2, HasBitSetters::downstream_id(this), target);
+        1, HasBitSetters::trigger(this), target);
   }
 
   if (_internal_metadata_.have_unknown_fields()) {
@@ -6272,18 +6508,11 @@ size_t DeleteTriggerRequest::ByteSizeLong() const {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  // .flyteidl.core.ArtifactKey artifact_key = 1;
-  if (this->has_artifact_key()) {
+  // .flyteidl.artifact.Trigger trigger = 1;
+  if (this->has_trigger()) {
     total_size += 1 +
       ::google::protobuf::internal::WireFormatLite::MessageSize(
-        *artifact_key_);
-  }
-
-  // .flyteidl.core.Identifier downstream_id = 2;
-  if (this->has_downstream_id()) {
-    total_size += 1 +
-      ::google::protobuf::internal::WireFormatLite::MessageSize(
-        *downstream_id_);
+        *trigger_);
   }
 
   int cached_size = ::google::protobuf::internal::ToCachedSize(total_size);
@@ -6313,11 +6542,8 @@ void DeleteTriggerRequest::MergeFrom(const DeleteTriggerRequest& from) {
   ::google::protobuf::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  if (from.has_artifact_key()) {
-    mutable_artifact_key()->::flyteidl::core::ArtifactKey::MergeFrom(from.artifact_key());
-  }
-  if (from.has_downstream_id()) {
-    mutable_downstream_id()->::flyteidl::core::Identifier::MergeFrom(from.downstream_id());
+  if (from.has_trigger()) {
+    mutable_trigger()->::flyteidl::artifact::Trigger::MergeFrom(from.trigger());
   }
 }
 
@@ -6346,8 +6572,7 @@ void DeleteTriggerRequest::Swap(DeleteTriggerRequest* other) {
 void DeleteTriggerRequest::InternalSwap(DeleteTriggerRequest* other) {
   using std::swap;
   _internal_metadata_.Swap(&other->_internal_metadata_);
-  swap(artifact_key_, other->artifact_key_);
-  swap(downstream_id_, other->downstream_id_);
+  swap(trigger_, other->trigger_);
 }
 
 ::google::protobuf::Metadata DeleteTriggerRequest::GetMetadata() const {
@@ -6572,6 +6797,9 @@ namespace google {
 namespace protobuf {
 template<> PROTOBUF_NOINLINE ::flyteidl::artifact::Artifact* Arena::CreateMaybeMessage< ::flyteidl::artifact::Artifact >(Arena* arena) {
   return Arena::CreateInternal< ::flyteidl::artifact::Artifact >(arena);
+}
+template<> PROTOBUF_NOINLINE ::flyteidl::artifact::Trigger* Arena::CreateMaybeMessage< ::flyteidl::artifact::Trigger >(Arena* arena) {
+  return Arena::CreateInternal< ::flyteidl::artifact::Trigger >(arena);
 }
 template<> PROTOBUF_NOINLINE ::flyteidl::artifact::CreateArtifactRequest_PartitionsEntry_DoNotUse* Arena::CreateMaybeMessage< ::flyteidl::artifact::CreateArtifactRequest_PartitionsEntry_DoNotUse >(Arena* arena) {
   return Arena::CreateInternal< ::flyteidl::artifact::CreateArtifactRequest_PartitionsEntry_DoNotUse >(arena);

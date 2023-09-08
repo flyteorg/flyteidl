@@ -5598,6 +5598,7 @@
                  * @interface IOperand
                  * @property {flyteidl.core.IPrimitive|null} [primitive] Operand primitive
                  * @property {string|null} ["var"] Operand var
+                 * @property {flyteidl.core.IScalar|null} [scalar] Operand scalar
                  */
     
                 /**
@@ -5631,17 +5632,25 @@
                  */
                 Operand.prototype["var"] = "";
     
+                /**
+                 * Operand scalar.
+                 * @member {flyteidl.core.IScalar|null|undefined} scalar
+                 * @memberof flyteidl.core.Operand
+                 * @instance
+                 */
+                Operand.prototype.scalar = null;
+    
                 // OneOf field names bound to virtual getters and setters
                 var $oneOfFields;
     
                 /**
                  * Operand val.
-                 * @member {"primitive"|"var"|undefined} val
+                 * @member {"primitive"|"var"|"scalar"|undefined} val
                  * @memberof flyteidl.core.Operand
                  * @instance
                  */
                 Object.defineProperty(Operand.prototype, "val", {
-                    get: $util.oneOfGetter($oneOfFields = ["primitive", "var"]),
+                    get: $util.oneOfGetter($oneOfFields = ["primitive", "var", "scalar"]),
                     set: $util.oneOfSetter($oneOfFields)
                 });
     
@@ -5673,6 +5682,8 @@
                         $root.flyteidl.core.Primitive.encode(message.primitive, writer.uint32(/* id 1, wireType 2 =*/10).fork()).ldelim();
                     if (message["var"] != null && message.hasOwnProperty("var"))
                         writer.uint32(/* id 2, wireType 2 =*/18).string(message["var"]);
+                    if (message.scalar != null && message.hasOwnProperty("scalar"))
+                        $root.flyteidl.core.Scalar.encode(message.scalar, writer.uint32(/* id 3, wireType 2 =*/26).fork()).ldelim();
                     return writer;
                 };
     
@@ -5699,6 +5710,9 @@
                             break;
                         case 2:
                             message["var"] = reader.string();
+                            break;
+                        case 3:
+                            message.scalar = $root.flyteidl.core.Scalar.decode(reader, reader.uint32());
                             break;
                         default:
                             reader.skipType(tag & 7);
@@ -5734,6 +5748,16 @@
                         properties.val = 1;
                         if (!$util.isString(message["var"]))
                             return "var: string expected";
+                    }
+                    if (message.scalar != null && message.hasOwnProperty("scalar")) {
+                        if (properties.val === 1)
+                            return "val: multiple values";
+                        properties.val = 1;
+                        {
+                            var error = $root.flyteidl.core.Scalar.verify(message.scalar);
+                            if (error)
+                                return "scalar." + error;
+                        }
                     }
                     return null;
                 };
@@ -20247,6 +20271,164 @@
                 return Artifact;
             })();
     
+            artifact.Trigger = (function() {
+    
+                /**
+                 * Properties of a Trigger.
+                 * @memberof flyteidl.artifact
+                 * @interface ITrigger
+                 * @property {Array.<flyteidl.core.IArtifactKey>|null} [artifactKey] Trigger artifactKey
+                 * @property {flyteidl.core.IIdentifier|null} [downstreamId] Trigger downstreamId
+                 * @property {flyteidl.core.IParameterMap|null} [inputs] Trigger inputs
+                 */
+    
+                /**
+                 * Constructs a new Trigger.
+                 * @memberof flyteidl.artifact
+                 * @classdesc Represents a Trigger.
+                 * @implements ITrigger
+                 * @constructor
+                 * @param {flyteidl.artifact.ITrigger=} [properties] Properties to set
+                 */
+                function Trigger(properties) {
+                    this.artifactKey = [];
+                    if (properties)
+                        for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                            if (properties[keys[i]] != null)
+                                this[keys[i]] = properties[keys[i]];
+                }
+    
+                /**
+                 * Trigger artifactKey.
+                 * @member {Array.<flyteidl.core.IArtifactKey>} artifactKey
+                 * @memberof flyteidl.artifact.Trigger
+                 * @instance
+                 */
+                Trigger.prototype.artifactKey = $util.emptyArray;
+    
+                /**
+                 * Trigger downstreamId.
+                 * @member {flyteidl.core.IIdentifier|null|undefined} downstreamId
+                 * @memberof flyteidl.artifact.Trigger
+                 * @instance
+                 */
+                Trigger.prototype.downstreamId = null;
+    
+                /**
+                 * Trigger inputs.
+                 * @member {flyteidl.core.IParameterMap|null|undefined} inputs
+                 * @memberof flyteidl.artifact.Trigger
+                 * @instance
+                 */
+                Trigger.prototype.inputs = null;
+    
+                /**
+                 * Creates a new Trigger instance using the specified properties.
+                 * @function create
+                 * @memberof flyteidl.artifact.Trigger
+                 * @static
+                 * @param {flyteidl.artifact.ITrigger=} [properties] Properties to set
+                 * @returns {flyteidl.artifact.Trigger} Trigger instance
+                 */
+                Trigger.create = function create(properties) {
+                    return new Trigger(properties);
+                };
+    
+                /**
+                 * Encodes the specified Trigger message. Does not implicitly {@link flyteidl.artifact.Trigger.verify|verify} messages.
+                 * @function encode
+                 * @memberof flyteidl.artifact.Trigger
+                 * @static
+                 * @param {flyteidl.artifact.ITrigger} message Trigger message or plain object to encode
+                 * @param {$protobuf.Writer} [writer] Writer to encode to
+                 * @returns {$protobuf.Writer} Writer
+                 */
+                Trigger.encode = function encode(message, writer) {
+                    if (!writer)
+                        writer = $Writer.create();
+                    if (message.artifactKey != null && message.artifactKey.length)
+                        for (var i = 0; i < message.artifactKey.length; ++i)
+                            $root.flyteidl.core.ArtifactKey.encode(message.artifactKey[i], writer.uint32(/* id 1, wireType 2 =*/10).fork()).ldelim();
+                    if (message.downstreamId != null && message.hasOwnProperty("downstreamId"))
+                        $root.flyteidl.core.Identifier.encode(message.downstreamId, writer.uint32(/* id 2, wireType 2 =*/18).fork()).ldelim();
+                    if (message.inputs != null && message.hasOwnProperty("inputs"))
+                        $root.flyteidl.core.ParameterMap.encode(message.inputs, writer.uint32(/* id 3, wireType 2 =*/26).fork()).ldelim();
+                    return writer;
+                };
+    
+                /**
+                 * Decodes a Trigger message from the specified reader or buffer.
+                 * @function decode
+                 * @memberof flyteidl.artifact.Trigger
+                 * @static
+                 * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+                 * @param {number} [length] Message length if known beforehand
+                 * @returns {flyteidl.artifact.Trigger} Trigger
+                 * @throws {Error} If the payload is not a reader or valid buffer
+                 * @throws {$protobuf.util.ProtocolError} If required fields are missing
+                 */
+                Trigger.decode = function decode(reader, length) {
+                    if (!(reader instanceof $Reader))
+                        reader = $Reader.create(reader);
+                    var end = length === undefined ? reader.len : reader.pos + length, message = new $root.flyteidl.artifact.Trigger();
+                    while (reader.pos < end) {
+                        var tag = reader.uint32();
+                        switch (tag >>> 3) {
+                        case 1:
+                            if (!(message.artifactKey && message.artifactKey.length))
+                                message.artifactKey = [];
+                            message.artifactKey.push($root.flyteidl.core.ArtifactKey.decode(reader, reader.uint32()));
+                            break;
+                        case 2:
+                            message.downstreamId = $root.flyteidl.core.Identifier.decode(reader, reader.uint32());
+                            break;
+                        case 3:
+                            message.inputs = $root.flyteidl.core.ParameterMap.decode(reader, reader.uint32());
+                            break;
+                        default:
+                            reader.skipType(tag & 7);
+                            break;
+                        }
+                    }
+                    return message;
+                };
+    
+                /**
+                 * Verifies a Trigger message.
+                 * @function verify
+                 * @memberof flyteidl.artifact.Trigger
+                 * @static
+                 * @param {Object.<string,*>} message Plain object to verify
+                 * @returns {string|null} `null` if valid, otherwise the reason why it is not
+                 */
+                Trigger.verify = function verify(message) {
+                    if (typeof message !== "object" || message === null)
+                        return "object expected";
+                    if (message.artifactKey != null && message.hasOwnProperty("artifactKey")) {
+                        if (!Array.isArray(message.artifactKey))
+                            return "artifactKey: array expected";
+                        for (var i = 0; i < message.artifactKey.length; ++i) {
+                            var error = $root.flyteidl.core.ArtifactKey.verify(message.artifactKey[i]);
+                            if (error)
+                                return "artifactKey." + error;
+                        }
+                    }
+                    if (message.downstreamId != null && message.hasOwnProperty("downstreamId")) {
+                        var error = $root.flyteidl.core.Identifier.verify(message.downstreamId);
+                        if (error)
+                            return "downstreamId." + error;
+                    }
+                    if (message.inputs != null && message.hasOwnProperty("inputs")) {
+                        var error = $root.flyteidl.core.ParameterMap.verify(message.inputs);
+                        if (error)
+                            return "inputs." + error;
+                    }
+                    return null;
+                };
+    
+                return Trigger;
+            })();
+    
             artifact.CreateArtifactRequest = (function() {
     
                 /**
@@ -21765,9 +21947,7 @@
                  * Properties of a CreateTriggerRequest.
                  * @memberof flyteidl.artifact
                  * @interface ICreateTriggerRequest
-                 * @property {flyteidl.core.IArtifactKey|null} [artifactKey] CreateTriggerRequest artifactKey
-                 * @property {flyteidl.core.IIdentifier|null} [downstreamId] CreateTriggerRequest downstreamId
-                 * @property {flyteidl.core.IParameterMap|null} [inputs] CreateTriggerRequest inputs
+                 * @property {flyteidl.artifact.ITrigger|null} [trigger] CreateTriggerRequest trigger
                  */
     
                 /**
@@ -21786,28 +21966,12 @@
                 }
     
                 /**
-                 * CreateTriggerRequest artifactKey.
-                 * @member {flyteidl.core.IArtifactKey|null|undefined} artifactKey
+                 * CreateTriggerRequest trigger.
+                 * @member {flyteidl.artifact.ITrigger|null|undefined} trigger
                  * @memberof flyteidl.artifact.CreateTriggerRequest
                  * @instance
                  */
-                CreateTriggerRequest.prototype.artifactKey = null;
-    
-                /**
-                 * CreateTriggerRequest downstreamId.
-                 * @member {flyteidl.core.IIdentifier|null|undefined} downstreamId
-                 * @memberof flyteidl.artifact.CreateTriggerRequest
-                 * @instance
-                 */
-                CreateTriggerRequest.prototype.downstreamId = null;
-    
-                /**
-                 * CreateTriggerRequest inputs.
-                 * @member {flyteidl.core.IParameterMap|null|undefined} inputs
-                 * @memberof flyteidl.artifact.CreateTriggerRequest
-                 * @instance
-                 */
-                CreateTriggerRequest.prototype.inputs = null;
+                CreateTriggerRequest.prototype.trigger = null;
     
                 /**
                  * Creates a new CreateTriggerRequest instance using the specified properties.
@@ -21833,12 +21997,8 @@
                 CreateTriggerRequest.encode = function encode(message, writer) {
                     if (!writer)
                         writer = $Writer.create();
-                    if (message.artifactKey != null && message.hasOwnProperty("artifactKey"))
-                        $root.flyteidl.core.ArtifactKey.encode(message.artifactKey, writer.uint32(/* id 1, wireType 2 =*/10).fork()).ldelim();
-                    if (message.downstreamId != null && message.hasOwnProperty("downstreamId"))
-                        $root.flyteidl.core.Identifier.encode(message.downstreamId, writer.uint32(/* id 2, wireType 2 =*/18).fork()).ldelim();
-                    if (message.inputs != null && message.hasOwnProperty("inputs"))
-                        $root.flyteidl.core.ParameterMap.encode(message.inputs, writer.uint32(/* id 3, wireType 2 =*/26).fork()).ldelim();
+                    if (message.trigger != null && message.hasOwnProperty("trigger"))
+                        $root.flyteidl.artifact.Trigger.encode(message.trigger, writer.uint32(/* id 1, wireType 2 =*/10).fork()).ldelim();
                     return writer;
                 };
     
@@ -21861,13 +22021,7 @@
                         var tag = reader.uint32();
                         switch (tag >>> 3) {
                         case 1:
-                            message.artifactKey = $root.flyteidl.core.ArtifactKey.decode(reader, reader.uint32());
-                            break;
-                        case 2:
-                            message.downstreamId = $root.flyteidl.core.Identifier.decode(reader, reader.uint32());
-                            break;
-                        case 3:
-                            message.inputs = $root.flyteidl.core.ParameterMap.decode(reader, reader.uint32());
+                            message.trigger = $root.flyteidl.artifact.Trigger.decode(reader, reader.uint32());
                             break;
                         default:
                             reader.skipType(tag & 7);
@@ -21888,20 +22042,10 @@
                 CreateTriggerRequest.verify = function verify(message) {
                     if (typeof message !== "object" || message === null)
                         return "object expected";
-                    if (message.artifactKey != null && message.hasOwnProperty("artifactKey")) {
-                        var error = $root.flyteidl.core.ArtifactKey.verify(message.artifactKey);
+                    if (message.trigger != null && message.hasOwnProperty("trigger")) {
+                        var error = $root.flyteidl.artifact.Trigger.verify(message.trigger);
                         if (error)
-                            return "artifactKey." + error;
-                    }
-                    if (message.downstreamId != null && message.hasOwnProperty("downstreamId")) {
-                        var error = $root.flyteidl.core.Identifier.verify(message.downstreamId);
-                        if (error)
-                            return "downstreamId." + error;
-                    }
-                    if (message.inputs != null && message.hasOwnProperty("inputs")) {
-                        var error = $root.flyteidl.core.ParameterMap.verify(message.inputs);
-                        if (error)
-                            return "inputs." + error;
+                            return "trigger." + error;
                     }
                     return null;
                 };
@@ -22008,8 +22152,7 @@
                  * Properties of a DeleteTriggerRequest.
                  * @memberof flyteidl.artifact
                  * @interface IDeleteTriggerRequest
-                 * @property {flyteidl.core.IArtifactKey|null} [artifactKey] DeleteTriggerRequest artifactKey
-                 * @property {flyteidl.core.IIdentifier|null} [downstreamId] DeleteTriggerRequest downstreamId
+                 * @property {flyteidl.artifact.ITrigger|null} [trigger] DeleteTriggerRequest trigger
                  */
     
                 /**
@@ -22028,20 +22171,12 @@
                 }
     
                 /**
-                 * DeleteTriggerRequest artifactKey.
-                 * @member {flyteidl.core.IArtifactKey|null|undefined} artifactKey
+                 * DeleteTriggerRequest trigger.
+                 * @member {flyteidl.artifact.ITrigger|null|undefined} trigger
                  * @memberof flyteidl.artifact.DeleteTriggerRequest
                  * @instance
                  */
-                DeleteTriggerRequest.prototype.artifactKey = null;
-    
-                /**
-                 * DeleteTriggerRequest downstreamId.
-                 * @member {flyteidl.core.IIdentifier|null|undefined} downstreamId
-                 * @memberof flyteidl.artifact.DeleteTriggerRequest
-                 * @instance
-                 */
-                DeleteTriggerRequest.prototype.downstreamId = null;
+                DeleteTriggerRequest.prototype.trigger = null;
     
                 /**
                  * Creates a new DeleteTriggerRequest instance using the specified properties.
@@ -22067,10 +22202,8 @@
                 DeleteTriggerRequest.encode = function encode(message, writer) {
                     if (!writer)
                         writer = $Writer.create();
-                    if (message.artifactKey != null && message.hasOwnProperty("artifactKey"))
-                        $root.flyteidl.core.ArtifactKey.encode(message.artifactKey, writer.uint32(/* id 1, wireType 2 =*/10).fork()).ldelim();
-                    if (message.downstreamId != null && message.hasOwnProperty("downstreamId"))
-                        $root.flyteidl.core.Identifier.encode(message.downstreamId, writer.uint32(/* id 2, wireType 2 =*/18).fork()).ldelim();
+                    if (message.trigger != null && message.hasOwnProperty("trigger"))
+                        $root.flyteidl.artifact.Trigger.encode(message.trigger, writer.uint32(/* id 1, wireType 2 =*/10).fork()).ldelim();
                     return writer;
                 };
     
@@ -22093,10 +22226,7 @@
                         var tag = reader.uint32();
                         switch (tag >>> 3) {
                         case 1:
-                            message.artifactKey = $root.flyteidl.core.ArtifactKey.decode(reader, reader.uint32());
-                            break;
-                        case 2:
-                            message.downstreamId = $root.flyteidl.core.Identifier.decode(reader, reader.uint32());
+                            message.trigger = $root.flyteidl.artifact.Trigger.decode(reader, reader.uint32());
                             break;
                         default:
                             reader.skipType(tag & 7);
@@ -22117,15 +22247,10 @@
                 DeleteTriggerRequest.verify = function verify(message) {
                     if (typeof message !== "object" || message === null)
                         return "object expected";
-                    if (message.artifactKey != null && message.hasOwnProperty("artifactKey")) {
-                        var error = $root.flyteidl.core.ArtifactKey.verify(message.artifactKey);
+                    if (message.trigger != null && message.hasOwnProperty("trigger")) {
+                        var error = $root.flyteidl.artifact.Trigger.verify(message.trigger);
                         if (error)
-                            return "artifactKey." + error;
-                    }
-                    if (message.downstreamId != null && message.hasOwnProperty("downstreamId")) {
-                        var error = $root.flyteidl.core.Identifier.verify(message.downstreamId);
-                        if (error)
-                            return "downstreamId." + error;
+                            return "trigger." + error;
                     }
                     return null;
                 };

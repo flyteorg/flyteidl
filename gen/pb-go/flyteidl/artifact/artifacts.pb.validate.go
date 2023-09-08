@@ -120,6 +120,105 @@ var _ interface {
 	ErrorName() string
 } = ArtifactValidationError{}
 
+// Validate checks the field values on Trigger with the rules defined in the
+// proto definition for this message. If any rules are violated, an error is returned.
+func (m *Trigger) Validate() error {
+	if m == nil {
+		return nil
+	}
+
+	for idx, item := range m.GetArtifactKey() {
+		_, _ = idx, item
+
+		if v, ok := interface{}(item).(interface{ Validate() error }); ok {
+			if err := v.Validate(); err != nil {
+				return TriggerValidationError{
+					field:  fmt.Sprintf("ArtifactKey[%v]", idx),
+					reason: "embedded message failed validation",
+					cause:  err,
+				}
+			}
+		}
+
+	}
+
+	if v, ok := interface{}(m.GetDownstreamId()).(interface{ Validate() error }); ok {
+		if err := v.Validate(); err != nil {
+			return TriggerValidationError{
+				field:  "DownstreamId",
+				reason: "embedded message failed validation",
+				cause:  err,
+			}
+		}
+	}
+
+	if v, ok := interface{}(m.GetInputs()).(interface{ Validate() error }); ok {
+		if err := v.Validate(); err != nil {
+			return TriggerValidationError{
+				field:  "Inputs",
+				reason: "embedded message failed validation",
+				cause:  err,
+			}
+		}
+	}
+
+	return nil
+}
+
+// TriggerValidationError is the validation error returned by Trigger.Validate
+// if the designated constraints aren't met.
+type TriggerValidationError struct {
+	field  string
+	reason string
+	cause  error
+	key    bool
+}
+
+// Field function returns field value.
+func (e TriggerValidationError) Field() string { return e.field }
+
+// Reason function returns reason value.
+func (e TriggerValidationError) Reason() string { return e.reason }
+
+// Cause function returns cause value.
+func (e TriggerValidationError) Cause() error { return e.cause }
+
+// Key function returns key value.
+func (e TriggerValidationError) Key() bool { return e.key }
+
+// ErrorName returns error name.
+func (e TriggerValidationError) ErrorName() string { return "TriggerValidationError" }
+
+// Error satisfies the builtin error interface
+func (e TriggerValidationError) Error() string {
+	cause := ""
+	if e.cause != nil {
+		cause = fmt.Sprintf(" | caused by: %v", e.cause)
+	}
+
+	key := ""
+	if e.key {
+		key = "key for "
+	}
+
+	return fmt.Sprintf(
+		"invalid %sTrigger.%s: %s%s",
+		key,
+		e.field,
+		e.reason,
+		cause)
+}
+
+var _ error = TriggerValidationError{}
+
+var _ interface {
+	Field() string
+	Reason() string
+	Key() bool
+	Cause() error
+	ErrorName() string
+} = TriggerValidationError{}
+
 // Validate checks the field values on CreateArtifactRequest with the rules
 // defined in the proto definition for this message. If any rules are
 // violated, an error is returned.
@@ -1030,30 +1129,10 @@ func (m *CreateTriggerRequest) Validate() error {
 		return nil
 	}
 
-	if v, ok := interface{}(m.GetArtifactKey()).(interface{ Validate() error }); ok {
+	if v, ok := interface{}(m.GetTrigger()).(interface{ Validate() error }); ok {
 		if err := v.Validate(); err != nil {
 			return CreateTriggerRequestValidationError{
-				field:  "ArtifactKey",
-				reason: "embedded message failed validation",
-				cause:  err,
-			}
-		}
-	}
-
-	if v, ok := interface{}(m.GetDownstreamId()).(interface{ Validate() error }); ok {
-		if err := v.Validate(); err != nil {
-			return CreateTriggerRequestValidationError{
-				field:  "DownstreamId",
-				reason: "embedded message failed validation",
-				cause:  err,
-			}
-		}
-	}
-
-	if v, ok := interface{}(m.GetInputs()).(interface{ Validate() error }); ok {
-		if err := v.Validate(); err != nil {
-			return CreateTriggerRequestValidationError{
-				field:  "Inputs",
+				field:  "Trigger",
 				reason: "embedded message failed validation",
 				cause:  err,
 			}
@@ -1194,20 +1273,10 @@ func (m *DeleteTriggerRequest) Validate() error {
 		return nil
 	}
 
-	if v, ok := interface{}(m.GetArtifactKey()).(interface{ Validate() error }); ok {
+	if v, ok := interface{}(m.GetTrigger()).(interface{ Validate() error }); ok {
 		if err := v.Validate(); err != nil {
 			return DeleteTriggerRequestValidationError{
-				field:  "ArtifactKey",
-				reason: "embedded message failed validation",
-				cause:  err,
-			}
-		}
-	}
-
-	if v, ok := interface{}(m.GetDownstreamId()).(interface{ Validate() error }); ok {
-		if err := v.Validate(); err != nil {
-			return DeleteTriggerRequestValidationError{
-				field:  "DownstreamId",
+				field:  "Trigger",
 				reason: "embedded message failed validation",
 				cause:  err,
 			}

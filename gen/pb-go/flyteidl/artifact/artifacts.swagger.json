@@ -135,6 +135,23 @@
         }
       }
     },
+    "artifactTrigger": {
+      "type": "object",
+      "properties": {
+        "artifact_key": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/coreArtifactKey"
+          }
+        },
+        "downstream_id": {
+          "$ref": "#/definitions/coreIdentifier"
+        },
+        "inputs": {
+          "$ref": "#/definitions/coreParameterMap"
+        }
+      }
+    },
     "coreArtifactID": {
       "type": "object",
       "properties": {

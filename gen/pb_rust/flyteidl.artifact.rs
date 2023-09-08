@@ -12,6 +12,16 @@ pub struct Artifact {
 }
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(Clone, PartialEq, ::prost::Message)]
+pub struct Trigger {
+    #[prost(message, repeated, tag="1")]
+    pub artifact_key: ::prost::alloc::vec::Vec<super::core::ArtifactKey>,
+    #[prost(message, optional, tag="2")]
+    pub downstream_id: ::core::option::Option<super::core::Identifier>,
+    #[prost(message, optional, tag="3")]
+    pub inputs: ::core::option::Option<super::core::ParameterMap>,
+}
+#[allow(clippy::derive_partial_eq_without_eq)]
+#[derive(Clone, PartialEq, ::prost::Message)]
 pub struct CreateArtifactRequest {
     /// Specify just project/domain on creation
     #[prost(message, optional, tag="1")]
@@ -123,17 +133,11 @@ pub struct AddTagRequest {
 #[derive(Clone, PartialEq, ::prost::Message)]
 pub struct AddTagResponse {
 }
-/// Artifact Trigger
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(Clone, PartialEq, ::prost::Message)]
 pub struct CreateTriggerRequest {
-    /// TODO: This should be a list of artifact keys
     #[prost(message, optional, tag="1")]
-    pub artifact_key: ::core::option::Option<super::core::ArtifactKey>,
-    #[prost(message, optional, tag="2")]
-    pub downstream_id: ::core::option::Option<super::core::Identifier>,
-    #[prost(message, optional, tag="3")]
-    pub inputs: ::core::option::Option<super::core::ParameterMap>,
+    pub trigger: ::core::option::Option<Trigger>,
 }
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(Clone, PartialEq, ::prost::Message)]
@@ -143,9 +147,7 @@ pub struct CreateTriggerResponse {
 #[derive(Clone, PartialEq, ::prost::Message)]
 pub struct DeleteTriggerRequest {
     #[prost(message, optional, tag="1")]
-    pub artifact_key: ::core::option::Option<super::core::ArtifactKey>,
-    #[prost(message, optional, tag="2")]
-    pub downstream_id: ::core::option::Option<super::core::Identifier>,
+    pub trigger: ::core::option::Option<Trigger>,
 }
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(Clone, PartialEq, ::prost::Message)]

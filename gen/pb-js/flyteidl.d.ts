@@ -2326,6 +2326,9 @@ export namespace flyteidl {
 
             /** Operand var */
             "var"?: (string|null);
+
+            /** Operand scalar */
+            scalar?: (flyteidl.core.IScalar|null);
         }
 
         /** Represents an Operand. */
@@ -2343,8 +2346,11 @@ export namespace flyteidl {
             /** Operand var. */
             public var: string;
 
+            /** Operand scalar. */
+            public scalar?: (flyteidl.core.IScalar|null);
+
             /** Operand val. */
-            public val?: ("primitive"|"var");
+            public val?: ("primitive"|"var"|"scalar");
 
             /**
              * Creates a new Operand instance using the specified properties.
@@ -8276,6 +8282,70 @@ export namespace flyteidl {
             public static verify(message: { [k: string]: any }): (string|null);
         }
 
+        /** Properties of a Trigger. */
+        interface ITrigger {
+
+            /** Trigger artifactKey */
+            artifactKey?: (flyteidl.core.IArtifactKey[]|null);
+
+            /** Trigger downstreamId */
+            downstreamId?: (flyteidl.core.IIdentifier|null);
+
+            /** Trigger inputs */
+            inputs?: (flyteidl.core.IParameterMap|null);
+        }
+
+        /** Represents a Trigger. */
+        class Trigger implements ITrigger {
+
+            /**
+             * Constructs a new Trigger.
+             * @param [properties] Properties to set
+             */
+            constructor(properties?: flyteidl.artifact.ITrigger);
+
+            /** Trigger artifactKey. */
+            public artifactKey: flyteidl.core.IArtifactKey[];
+
+            /** Trigger downstreamId. */
+            public downstreamId?: (flyteidl.core.IIdentifier|null);
+
+            /** Trigger inputs. */
+            public inputs?: (flyteidl.core.IParameterMap|null);
+
+            /**
+             * Creates a new Trigger instance using the specified properties.
+             * @param [properties] Properties to set
+             * @returns Trigger instance
+             */
+            public static create(properties?: flyteidl.artifact.ITrigger): flyteidl.artifact.Trigger;
+
+            /**
+             * Encodes the specified Trigger message. Does not implicitly {@link flyteidl.artifact.Trigger.verify|verify} messages.
+             * @param message Trigger message or plain object to encode
+             * @param [writer] Writer to encode to
+             * @returns Writer
+             */
+            public static encode(message: flyteidl.artifact.ITrigger, writer?: $protobuf.Writer): $protobuf.Writer;
+
+            /**
+             * Decodes a Trigger message from the specified reader or buffer.
+             * @param reader Reader or buffer to decode from
+             * @param [length] Message length if known beforehand
+             * @returns Trigger
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): flyteidl.artifact.Trigger;
+
+            /**
+             * Verifies a Trigger message.
+             * @param message Plain object to verify
+             * @returns `null` if valid, otherwise the reason why it is not
+             */
+            public static verify(message: { [k: string]: any }): (string|null);
+        }
+
         /** Properties of a CreateArtifactRequest. */
         interface ICreateArtifactRequest {
 
@@ -8932,14 +9002,8 @@ export namespace flyteidl {
         /** Properties of a CreateTriggerRequest. */
         interface ICreateTriggerRequest {
 
-            /** CreateTriggerRequest artifactKey */
-            artifactKey?: (flyteidl.core.IArtifactKey|null);
-
-            /** CreateTriggerRequest downstreamId */
-            downstreamId?: (flyteidl.core.IIdentifier|null);
-
-            /** CreateTriggerRequest inputs */
-            inputs?: (flyteidl.core.IParameterMap|null);
+            /** CreateTriggerRequest trigger */
+            trigger?: (flyteidl.artifact.ITrigger|null);
         }
 
         /** Represents a CreateTriggerRequest. */
@@ -8951,14 +9015,8 @@ export namespace flyteidl {
              */
             constructor(properties?: flyteidl.artifact.ICreateTriggerRequest);
 
-            /** CreateTriggerRequest artifactKey. */
-            public artifactKey?: (flyteidl.core.IArtifactKey|null);
-
-            /** CreateTriggerRequest downstreamId. */
-            public downstreamId?: (flyteidl.core.IIdentifier|null);
-
-            /** CreateTriggerRequest inputs. */
-            public inputs?: (flyteidl.core.IParameterMap|null);
+            /** CreateTriggerRequest trigger. */
+            public trigger?: (flyteidl.artifact.ITrigger|null);
 
             /**
              * Creates a new CreateTriggerRequest instance using the specified properties.
@@ -9042,11 +9100,8 @@ export namespace flyteidl {
         /** Properties of a DeleteTriggerRequest. */
         interface IDeleteTriggerRequest {
 
-            /** DeleteTriggerRequest artifactKey */
-            artifactKey?: (flyteidl.core.IArtifactKey|null);
-
-            /** DeleteTriggerRequest downstreamId */
-            downstreamId?: (flyteidl.core.IIdentifier|null);
+            /** DeleteTriggerRequest trigger */
+            trigger?: (flyteidl.artifact.ITrigger|null);
         }
 
         /** Represents a DeleteTriggerRequest. */
@@ -9058,11 +9113,8 @@ export namespace flyteidl {
              */
             constructor(properties?: flyteidl.artifact.IDeleteTriggerRequest);
 
-            /** DeleteTriggerRequest artifactKey. */
-            public artifactKey?: (flyteidl.core.IArtifactKey|null);
-
-            /** DeleteTriggerRequest downstreamId. */
-            public downstreamId?: (flyteidl.core.IIdentifier|null);
+            /** DeleteTriggerRequest trigger. */
+            public trigger?: (flyteidl.artifact.ITrigger|null);
 
             /**
              * Creates a new DeleteTriggerRequest instance using the specified properties.
