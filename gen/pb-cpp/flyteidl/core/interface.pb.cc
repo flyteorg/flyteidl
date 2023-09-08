@@ -23,7 +23,7 @@ extern PROTOBUF_INTERNAL_EXPORT_flyteidl_2fcore_2finterface_2eproto ::google::pr
 extern PROTOBUF_INTERNAL_EXPORT_flyteidl_2fcore_2finterface_2eproto ::google::protobuf::internal::SCCInfo<1> scc_info_VariableMap_VariablesEntry_DoNotUse_flyteidl_2fcore_2finterface_2eproto;
 extern PROTOBUF_INTERNAL_EXPORT_flyteidl_2fcore_2finterface_2eproto ::google::protobuf::internal::SCCInfo<1> scc_info_VariableMap_flyteidl_2fcore_2finterface_2eproto;
 extern PROTOBUF_INTERNAL_EXPORT_flyteidl_2fcore_2finterface_2eproto ::google::protobuf::internal::SCCInfo<3> scc_info_Variable_flyteidl_2fcore_2finterface_2eproto;
-extern PROTOBUF_INTERNAL_EXPORT_flyteidl_2fcore_2finterface_2eproto ::google::protobuf::internal::SCCInfo<4> scc_info_Parameter_flyteidl_2fcore_2finterface_2eproto;
+extern PROTOBUF_INTERNAL_EXPORT_flyteidl_2fcore_2finterface_2eproto ::google::protobuf::internal::SCCInfo<4> scc_info_Expression_flyteidl_2fcore_2finterface_2eproto;
 extern PROTOBUF_INTERNAL_EXPORT_flyteidl_2fcore_2fliterals_2eproto ::google::protobuf::internal::SCCInfo<10> scc_info_Literal_flyteidl_2fcore_2fliterals_2eproto;
 extern PROTOBUF_INTERNAL_EXPORT_flyteidl_2fcore_2ftypes_2eproto ::google::protobuf::internal::SCCInfo<6> scc_info_LiteralType_flyteidl_2fcore_2ftypes_2eproto;
 namespace flyteidl {
@@ -44,6 +44,12 @@ class TypedInterfaceDefaultTypeInternal {
  public:
   ::google::protobuf::internal::ExplicitlyConstructed<TypedInterface> _instance;
 } _TypedInterface_default_instance_;
+class ExpressionDefaultTypeInternal {
+ public:
+  ::google::protobuf::internal::ExplicitlyConstructed<Expression> _instance;
+  ::google::protobuf::internal::ArenaStringPtr plus_;
+  ::google::protobuf::internal::ArenaStringPtr minus_;
+} _Expression_default_instance_;
 class ParameterDefaultTypeInternal {
  public:
   ::google::protobuf::internal::ExplicitlyConstructed<Parameter> _instance;
@@ -51,6 +57,7 @@ class ParameterDefaultTypeInternal {
   bool required_;
   const ::flyteidl::core::ArtifactQuery* artifact_query_;
   const ::flyteidl::core::ArtifactID* artifact_id_;
+  const ::flyteidl::core::Expression* expression_;
 } _Parameter_default_instance_;
 class ParameterMap_ParametersEntry_DoNotUseDefaultTypeInternal {
  public:
@@ -123,19 +130,25 @@ static void InitDefaultsTypedInterface_flyteidl_2fcore_2finterface_2eproto() {
     {{ATOMIC_VAR_INIT(::google::protobuf::internal::SCCInfoBase::kUninitialized), 1, InitDefaultsTypedInterface_flyteidl_2fcore_2finterface_2eproto}, {
       &scc_info_VariableMap_flyteidl_2fcore_2finterface_2eproto.base,}};
 
-static void InitDefaultsParameter_flyteidl_2fcore_2finterface_2eproto() {
+static void InitDefaultsExpression_flyteidl_2fcore_2finterface_2eproto() {
   GOOGLE_PROTOBUF_VERIFY_VERSION;
 
+  {
+    void* ptr = &::flyteidl::core::_Expression_default_instance_;
+    new (ptr) ::flyteidl::core::Expression();
+    ::google::protobuf::internal::OnShutdownDestroyMessage(ptr);
+  }
   {
     void* ptr = &::flyteidl::core::_Parameter_default_instance_;
     new (ptr) ::flyteidl::core::Parameter();
     ::google::protobuf::internal::OnShutdownDestroyMessage(ptr);
   }
+  ::flyteidl::core::Expression::InitAsDefaultInstance();
   ::flyteidl::core::Parameter::InitAsDefaultInstance();
 }
 
-::google::protobuf::internal::SCCInfo<4> scc_info_Parameter_flyteidl_2fcore_2finterface_2eproto =
-    {{ATOMIC_VAR_INIT(::google::protobuf::internal::SCCInfoBase::kUninitialized), 4, InitDefaultsParameter_flyteidl_2fcore_2finterface_2eproto}, {
+::google::protobuf::internal::SCCInfo<4> scc_info_Expression_flyteidl_2fcore_2finterface_2eproto =
+    {{ATOMIC_VAR_INIT(::google::protobuf::internal::SCCInfoBase::kUninitialized), 4, InitDefaultsExpression_flyteidl_2fcore_2finterface_2eproto}, {
       &scc_info_Variable_flyteidl_2fcore_2finterface_2eproto.base,
       &scc_info_Literal_flyteidl_2fcore_2fliterals_2eproto.base,
       &scc_info_ArtifactQuery_flyteidl_2fcore_2fidentifier_2eproto.base,
@@ -153,7 +166,7 @@ static void InitDefaultsParameterMap_ParametersEntry_DoNotUse_flyteidl_2fcore_2f
 
 ::google::protobuf::internal::SCCInfo<1> scc_info_ParameterMap_ParametersEntry_DoNotUse_flyteidl_2fcore_2finterface_2eproto =
     {{ATOMIC_VAR_INIT(::google::protobuf::internal::SCCInfoBase::kUninitialized), 1, InitDefaultsParameterMap_ParametersEntry_DoNotUse_flyteidl_2fcore_2finterface_2eproto}, {
-      &scc_info_Parameter_flyteidl_2fcore_2finterface_2eproto.base,}};
+      &scc_info_Expression_flyteidl_2fcore_2finterface_2eproto.base,}};
 
 static void InitDefaultsParameterMap_flyteidl_2fcore_2finterface_2eproto() {
   GOOGLE_PROTOBUF_VERIFY_VERSION;
@@ -175,12 +188,12 @@ void InitDefaults_flyteidl_2fcore_2finterface_2eproto() {
   ::google::protobuf::internal::InitSCC(&scc_info_VariableMap_VariablesEntry_DoNotUse_flyteidl_2fcore_2finterface_2eproto.base);
   ::google::protobuf::internal::InitSCC(&scc_info_VariableMap_flyteidl_2fcore_2finterface_2eproto.base);
   ::google::protobuf::internal::InitSCC(&scc_info_TypedInterface_flyteidl_2fcore_2finterface_2eproto.base);
-  ::google::protobuf::internal::InitSCC(&scc_info_Parameter_flyteidl_2fcore_2finterface_2eproto.base);
+  ::google::protobuf::internal::InitSCC(&scc_info_Expression_flyteidl_2fcore_2finterface_2eproto.base);
   ::google::protobuf::internal::InitSCC(&scc_info_ParameterMap_ParametersEntry_DoNotUse_flyteidl_2fcore_2finterface_2eproto.base);
   ::google::protobuf::internal::InitSCC(&scc_info_ParameterMap_flyteidl_2fcore_2finterface_2eproto.base);
 }
 
-::google::protobuf::Metadata file_level_metadata_flyteidl_2fcore_2finterface_2eproto[7];
+::google::protobuf::Metadata file_level_metadata_flyteidl_2fcore_2finterface_2eproto[8];
 constexpr ::google::protobuf::EnumDescriptor const** file_level_enum_descriptors_flyteidl_2fcore_2finterface_2eproto = nullptr;
 constexpr ::google::protobuf::ServiceDescriptor const** file_level_service_descriptors_flyteidl_2fcore_2finterface_2eproto = nullptr;
 
@@ -217,6 +230,16 @@ const ::google::protobuf::uint32 TableStruct_flyteidl_2fcore_2finterface_2eproto
   PROTOBUF_FIELD_OFFSET(::flyteidl::core::TypedInterface, inputs_),
   PROTOBUF_FIELD_OFFSET(::flyteidl::core::TypedInterface, outputs_),
   ~0u,  // no _has_bits_
+  PROTOBUF_FIELD_OFFSET(::flyteidl::core::Expression, _internal_metadata_),
+  ~0u,  // no _extensions_
+  PROTOBUF_FIELD_OFFSET(::flyteidl::core::Expression, _oneof_case_[0]),
+  ~0u,  // no _weak_field_map_
+  PROTOBUF_FIELD_OFFSET(::flyteidl::core::Expression, lhs_),
+  PROTOBUF_FIELD_OFFSET(::flyteidl::core::Expression, rhs_),
+  offsetof(::flyteidl::core::ExpressionDefaultTypeInternal, plus_),
+  offsetof(::flyteidl::core::ExpressionDefaultTypeInternal, minus_),
+  PROTOBUF_FIELD_OFFSET(::flyteidl::core::Expression, operator_),
+  ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::flyteidl::core::Parameter, _internal_metadata_),
   ~0u,  // no _extensions_
   PROTOBUF_FIELD_OFFSET(::flyteidl::core::Parameter, _oneof_case_[0]),
@@ -226,6 +249,7 @@ const ::google::protobuf::uint32 TableStruct_flyteidl_2fcore_2finterface_2eproto
   offsetof(::flyteidl::core::ParameterDefaultTypeInternal, required_),
   offsetof(::flyteidl::core::ParameterDefaultTypeInternal, artifact_query_),
   offsetof(::flyteidl::core::ParameterDefaultTypeInternal, artifact_id_),
+  offsetof(::flyteidl::core::ParameterDefaultTypeInternal, expression_),
   PROTOBUF_FIELD_OFFSET(::flyteidl::core::Parameter, behavior_),
   PROTOBUF_FIELD_OFFSET(::flyteidl::core::ParameterMap_ParametersEntry_DoNotUse, _has_bits_),
   PROTOBUF_FIELD_OFFSET(::flyteidl::core::ParameterMap_ParametersEntry_DoNotUse, _internal_metadata_),
@@ -248,9 +272,10 @@ static const ::google::protobuf::internal::MigrationSchema schemas[] PROTOBUF_SE
   { 9, 16, sizeof(::flyteidl::core::VariableMap_VariablesEntry_DoNotUse)},
   { 18, -1, sizeof(::flyteidl::core::VariableMap)},
   { 24, -1, sizeof(::flyteidl::core::TypedInterface)},
-  { 31, -1, sizeof(::flyteidl::core::Parameter)},
-  { 42, 49, sizeof(::flyteidl::core::ParameterMap_ParametersEntry_DoNotUse)},
-  { 51, -1, sizeof(::flyteidl::core::ParameterMap)},
+  { 31, -1, sizeof(::flyteidl::core::Expression)},
+  { 41, -1, sizeof(::flyteidl::core::Parameter)},
+  { 53, 60, sizeof(::flyteidl::core::ParameterMap_ParametersEntry_DoNotUse)},
+  { 62, -1, sizeof(::flyteidl::core::ParameterMap)},
 };
 
 static ::google::protobuf::Message const * const file_default_instances[] = {
@@ -258,6 +283,7 @@ static ::google::protobuf::Message const * const file_default_instances[] = {
   reinterpret_cast<const ::google::protobuf::Message*>(&::flyteidl::core::_VariableMap_VariablesEntry_DoNotUse_default_instance_),
   reinterpret_cast<const ::google::protobuf::Message*>(&::flyteidl::core::_VariableMap_default_instance_),
   reinterpret_cast<const ::google::protobuf::Message*>(&::flyteidl::core::_TypedInterface_default_instance_),
+  reinterpret_cast<const ::google::protobuf::Message*>(&::flyteidl::core::_Expression_default_instance_),
   reinterpret_cast<const ::google::protobuf::Message*>(&::flyteidl::core::_Parameter_default_instance_),
   reinterpret_cast<const ::google::protobuf::Message*>(&::flyteidl::core::_ParameterMap_ParametersEntry_DoNotUse_default_instance_),
   reinterpret_cast<const ::google::protobuf::Message*>(&::flyteidl::core::_ParameterMap_default_instance_),
@@ -266,7 +292,7 @@ static ::google::protobuf::Message const * const file_default_instances[] = {
 ::google::protobuf::internal::AssignDescriptorsTable assign_descriptors_table_flyteidl_2fcore_2finterface_2eproto = {
   {}, AddDescriptors_flyteidl_2fcore_2finterface_2eproto, "flyteidl/core/interface.proto", schemas,
   file_default_instances, TableStruct_flyteidl_2fcore_2finterface_2eproto::offsets,
-  file_level_metadata_flyteidl_2fcore_2finterface_2eproto, 7, file_level_enum_descriptors_flyteidl_2fcore_2finterface_2eproto, file_level_service_descriptors_flyteidl_2fcore_2finterface_2eproto,
+  file_level_metadata_flyteidl_2fcore_2finterface_2eproto, 8, file_level_enum_descriptors_flyteidl_2fcore_2finterface_2eproto, file_level_service_descriptors_flyteidl_2fcore_2finterface_2eproto,
 };
 
 const char descriptor_table_protodef_flyteidl_2fcore_2finterface_2eproto[] =
@@ -284,23 +310,28 @@ const char descriptor_table_protodef_flyteidl_2fcore_2finterface_2eproto[] =
   "\0132\027.flyteidl.core.Variable:\0028\001\"i\n\016TypedI"
   "nterface\022*\n\006inputs\030\001 \001(\0132\032.flyteidl.core"
   ".VariableMap\022+\n\007outputs\030\002 \001(\0132\032.flyteidl"
-  ".core.VariableMap\"\346\001\n\tParameter\022$\n\003var\030\001"
-  " \001(\0132\027.flyteidl.core.Variable\022)\n\007default"
-  "\030\002 \001(\0132\026.flyteidl.core.LiteralH\000\022\022\n\010requ"
-  "ired\030\003 \001(\010H\000\0226\n\016artifact_query\030\004 \001(\0132\034.f"
-  "lyteidl.core.ArtifactQueryH\000\0220\n\013artifact"
-  "_id\030\005 \001(\0132\031.flyteidl.core.ArtifactIDH\000B\n"
-  "\n\010behavior\"\234\001\n\014ParameterMap\022\?\n\nparameter"
-  "s\030\001 \003(\0132+.flyteidl.core.ParameterMap.Par"
-  "ametersEntry\032K\n\017ParametersEntry\022\013\n\003key\030\001"
-  " \001(\t\022\'\n\005value\030\002 \001(\0132\030.flyteidl.core.Para"
-  "meter:\0028\001B6Z4github.com/flyteorg/flyteid"
-  "l/gen/pb-go/flyteidl/coreb\006proto3"
+  ".core.VariableMap\"\207\001\n\nExpression\022%\n\003lhs\030"
+  "\001 \001(\0132\030.flyteidl.core.Parameter\022%\n\003rhs\030\002"
+  " \001(\0132\030.flyteidl.core.Parameter\022\016\n\004plus\030\013"
+  " \001(\tH\000\022\017\n\005minus\030\014 \001(\tH\000B\n\n\010operator\"\227\002\n\t"
+  "Parameter\022$\n\003var\030\001 \001(\0132\027.flyteidl.core.V"
+  "ariable\022)\n\007default\030\002 \001(\0132\026.flyteidl.core"
+  ".LiteralH\000\022\022\n\010required\030\003 \001(\010H\000\0226\n\016artifa"
+  "ct_query\030\004 \001(\0132\034.flyteidl.core.ArtifactQ"
+  "ueryH\000\0220\n\013artifact_id\030\005 \001(\0132\031.flyteidl.c"
+  "ore.ArtifactIDH\000\022/\n\nexpression\030\006 \001(\0132\031.f"
+  "lyteidl.core.ExpressionH\000B\n\n\010behavior\"\234\001"
+  "\n\014ParameterMap\022\?\n\nparameters\030\001 \003(\0132+.fly"
+  "teidl.core.ParameterMap.ParametersEntry\032"
+  "K\n\017ParametersEntry\022\013\n\003key\030\001 \001(\t\022\'\n\005value"
+  "\030\002 \001(\0132\030.flyteidl.core.Parameter:\0028\001B6Z4"
+  "github.com/flyteorg/flyteidl/gen/pb-go/f"
+  "lyteidl/coreb\006proto3"
   ;
 ::google::protobuf::internal::DescriptorTable descriptor_table_flyteidl_2fcore_2finterface_2eproto = {
   false, InitDefaults_flyteidl_2fcore_2finterface_2eproto, 
   descriptor_table_protodef_flyteidl_2fcore_2finterface_2eproto,
-  "flyteidl/core/interface.proto", &assign_descriptors_table_flyteidl_2fcore_2finterface_2eproto, 1033,
+  "flyteidl/core/interface.proto", &assign_descriptors_table_flyteidl_2fcore_2finterface_2eproto, 1220,
 };
 
 void AddDescriptors_flyteidl_2fcore_2finterface_2eproto() {
@@ -1598,6 +1629,547 @@ void TypedInterface::InternalSwap(TypedInterface* other) {
 
 // ===================================================================
 
+void Expression::InitAsDefaultInstance() {
+  ::flyteidl::core::_Expression_default_instance_._instance.get_mutable()->lhs_ = const_cast< ::flyteidl::core::Parameter*>(
+      ::flyteidl::core::Parameter::internal_default_instance());
+  ::flyteidl::core::_Expression_default_instance_._instance.get_mutable()->rhs_ = const_cast< ::flyteidl::core::Parameter*>(
+      ::flyteidl::core::Parameter::internal_default_instance());
+  ::flyteidl::core::_Expression_default_instance_.plus_.UnsafeSetDefault(
+      &::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  ::flyteidl::core::_Expression_default_instance_.minus_.UnsafeSetDefault(
+      &::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+class Expression::HasBitSetters {
+ public:
+  static const ::flyteidl::core::Parameter& lhs(const Expression* msg);
+  static const ::flyteidl::core::Parameter& rhs(const Expression* msg);
+};
+
+const ::flyteidl::core::Parameter&
+Expression::HasBitSetters::lhs(const Expression* msg) {
+  return *msg->lhs_;
+}
+const ::flyteidl::core::Parameter&
+Expression::HasBitSetters::rhs(const Expression* msg) {
+  return *msg->rhs_;
+}
+#if !defined(_MSC_VER) || _MSC_VER >= 1900
+const int Expression::kLhsFieldNumber;
+const int Expression::kRhsFieldNumber;
+const int Expression::kPlusFieldNumber;
+const int Expression::kMinusFieldNumber;
+#endif  // !defined(_MSC_VER) || _MSC_VER >= 1900
+
+Expression::Expression()
+  : ::google::protobuf::Message(), _internal_metadata_(nullptr) {
+  SharedCtor();
+  // @@protoc_insertion_point(constructor:flyteidl.core.Expression)
+}
+Expression::Expression(const Expression& from)
+  : ::google::protobuf::Message(),
+      _internal_metadata_(nullptr) {
+  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  if (from.has_lhs()) {
+    lhs_ = new ::flyteidl::core::Parameter(*from.lhs_);
+  } else {
+    lhs_ = nullptr;
+  }
+  if (from.has_rhs()) {
+    rhs_ = new ::flyteidl::core::Parameter(*from.rhs_);
+  } else {
+    rhs_ = nullptr;
+  }
+  clear_has_operator();
+  switch (from.operator_case()) {
+    case kPlus: {
+      set_plus(from.plus());
+      break;
+    }
+    case kMinus: {
+      set_minus(from.minus());
+      break;
+    }
+    case OPERATOR_NOT_SET: {
+      break;
+    }
+  }
+  // @@protoc_insertion_point(copy_constructor:flyteidl.core.Expression)
+}
+
+void Expression::SharedCtor() {
+  ::google::protobuf::internal::InitSCC(
+      &scc_info_Expression_flyteidl_2fcore_2finterface_2eproto.base);
+  ::memset(&lhs_, 0, static_cast<size_t>(
+      reinterpret_cast<char*>(&rhs_) -
+      reinterpret_cast<char*>(&lhs_)) + sizeof(rhs_));
+  clear_has_operator();
+}
+
+Expression::~Expression() {
+  // @@protoc_insertion_point(destructor:flyteidl.core.Expression)
+  SharedDtor();
+}
+
+void Expression::SharedDtor() {
+  if (this != internal_default_instance()) delete lhs_;
+  if (this != internal_default_instance()) delete rhs_;
+  if (has_operator()) {
+    clear_operator();
+  }
+}
+
+void Expression::SetCachedSize(int size) const {
+  _cached_size_.Set(size);
+}
+const Expression& Expression::default_instance() {
+  ::google::protobuf::internal::InitSCC(&::scc_info_Expression_flyteidl_2fcore_2finterface_2eproto.base);
+  return *internal_default_instance();
+}
+
+
+void Expression::clear_operator() {
+// @@protoc_insertion_point(one_of_clear_start:flyteidl.core.Expression)
+  switch (operator_case()) {
+    case kPlus: {
+      operator_.plus_.DestroyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+      break;
+    }
+    case kMinus: {
+      operator_.minus_.DestroyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+      break;
+    }
+    case OPERATOR_NOT_SET: {
+      break;
+    }
+  }
+  _oneof_case_[0] = OPERATOR_NOT_SET;
+}
+
+
+void Expression::Clear() {
+// @@protoc_insertion_point(message_clear_start:flyteidl.core.Expression)
+  ::google::protobuf::uint32 cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  if (GetArenaNoVirtual() == nullptr && lhs_ != nullptr) {
+    delete lhs_;
+  }
+  lhs_ = nullptr;
+  if (GetArenaNoVirtual() == nullptr && rhs_ != nullptr) {
+    delete rhs_;
+  }
+  rhs_ = nullptr;
+  clear_operator();
+  _internal_metadata_.Clear();
+}
+
+#if GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
+const char* Expression::_InternalParse(const char* begin, const char* end, void* object,
+                  ::google::protobuf::internal::ParseContext* ctx) {
+  auto msg = static_cast<Expression*>(object);
+  ::google::protobuf::int32 size; (void)size;
+  int depth; (void)depth;
+  ::google::protobuf::uint32 tag;
+  ::google::protobuf::internal::ParseFunc parser_till_end; (void)parser_till_end;
+  auto ptr = begin;
+  while (ptr < end) {
+    ptr = ::google::protobuf::io::Parse32(ptr, &tag);
+    GOOGLE_PROTOBUF_PARSER_ASSERT(ptr);
+    switch (tag >> 3) {
+      // .flyteidl.core.Parameter lhs = 1;
+      case 1: {
+        if (static_cast<::google::protobuf::uint8>(tag) != 10) goto handle_unusual;
+        ptr = ::google::protobuf::io::ReadSize(ptr, &size);
+        GOOGLE_PROTOBUF_PARSER_ASSERT(ptr);
+        parser_till_end = ::flyteidl::core::Parameter::_InternalParse;
+        object = msg->mutable_lhs();
+        if (size > end - ptr) goto len_delim_till_end;
+        ptr += size;
+        GOOGLE_PROTOBUF_PARSER_ASSERT(ctx->ParseExactRange(
+            {parser_till_end, object}, ptr - size, ptr));
+        break;
+      }
+      // .flyteidl.core.Parameter rhs = 2;
+      case 2: {
+        if (static_cast<::google::protobuf::uint8>(tag) != 18) goto handle_unusual;
+        ptr = ::google::protobuf::io::ReadSize(ptr, &size);
+        GOOGLE_PROTOBUF_PARSER_ASSERT(ptr);
+        parser_till_end = ::flyteidl::core::Parameter::_InternalParse;
+        object = msg->mutable_rhs();
+        if (size > end - ptr) goto len_delim_till_end;
+        ptr += size;
+        GOOGLE_PROTOBUF_PARSER_ASSERT(ctx->ParseExactRange(
+            {parser_till_end, object}, ptr - size, ptr));
+        break;
+      }
+      // string plus = 11;
+      case 11: {
+        if (static_cast<::google::protobuf::uint8>(tag) != 90) goto handle_unusual;
+        ptr = ::google::protobuf::io::ReadSize(ptr, &size);
+        GOOGLE_PROTOBUF_PARSER_ASSERT(ptr);
+        ctx->extra_parse_data().SetFieldName("flyteidl.core.Expression.plus");
+        object = msg->mutable_plus();
+        if (size > end - ptr + ::google::protobuf::internal::ParseContext::kSlopBytes) {
+          parser_till_end = ::google::protobuf::internal::GreedyStringParserUTF8;
+          goto string_till_end;
+        }
+        GOOGLE_PROTOBUF_PARSER_ASSERT(::google::protobuf::internal::StringCheckUTF8(ptr, size, ctx));
+        ::google::protobuf::internal::InlineGreedyStringParser(object, ptr, size, ctx);
+        ptr += size;
+        break;
+      }
+      // string minus = 12;
+      case 12: {
+        if (static_cast<::google::protobuf::uint8>(tag) != 98) goto handle_unusual;
+        ptr = ::google::protobuf::io::ReadSize(ptr, &size);
+        GOOGLE_PROTOBUF_PARSER_ASSERT(ptr);
+        ctx->extra_parse_data().SetFieldName("flyteidl.core.Expression.minus");
+        object = msg->mutable_minus();
+        if (size > end - ptr + ::google::protobuf::internal::ParseContext::kSlopBytes) {
+          parser_till_end = ::google::protobuf::internal::GreedyStringParserUTF8;
+          goto string_till_end;
+        }
+        GOOGLE_PROTOBUF_PARSER_ASSERT(::google::protobuf::internal::StringCheckUTF8(ptr, size, ctx));
+        ::google::protobuf::internal::InlineGreedyStringParser(object, ptr, size, ctx);
+        ptr += size;
+        break;
+      }
+      default: {
+      handle_unusual:
+        if ((tag & 7) == 4 || tag == 0) {
+          ctx->EndGroup(tag);
+          return ptr;
+        }
+        auto res = UnknownFieldParse(tag, {_InternalParse, msg},
+          ptr, end, msg->_internal_metadata_.mutable_unknown_fields(), ctx);
+        ptr = res.first;
+        GOOGLE_PROTOBUF_PARSER_ASSERT(ptr != nullptr);
+        if (res.second) return ptr;
+      }
+    }  // switch
+  }  // while
+  return ptr;
+string_till_end:
+  static_cast<::std::string*>(object)->clear();
+  static_cast<::std::string*>(object)->reserve(size);
+  goto len_delim_till_end;
+len_delim_till_end:
+  return ctx->StoreAndTailCall(ptr, end, {_InternalParse, msg},
+                               {parser_till_end, object}, size);
+}
+#else  // GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
+bool Expression::MergePartialFromCodedStream(
+    ::google::protobuf::io::CodedInputStream* input) {
+#define DO_(EXPRESSION) if (!PROTOBUF_PREDICT_TRUE(EXPRESSION)) goto failure
+  ::google::protobuf::uint32 tag;
+  // @@protoc_insertion_point(parse_start:flyteidl.core.Expression)
+  for (;;) {
+    ::std::pair<::google::protobuf::uint32, bool> p = input->ReadTagWithCutoffNoLastTag(127u);
+    tag = p.first;
+    if (!p.second) goto handle_unusual;
+    switch (::google::protobuf::internal::WireFormatLite::GetTagFieldNumber(tag)) {
+      // .flyteidl.core.Parameter lhs = 1;
+      case 1: {
+        if (static_cast< ::google::protobuf::uint8>(tag) == (10 & 0xFF)) {
+          DO_(::google::protobuf::internal::WireFormatLite::ReadMessage(
+               input, mutable_lhs()));
+        } else {
+          goto handle_unusual;
+        }
+        break;
+      }
+
+      // .flyteidl.core.Parameter rhs = 2;
+      case 2: {
+        if (static_cast< ::google::protobuf::uint8>(tag) == (18 & 0xFF)) {
+          DO_(::google::protobuf::internal::WireFormatLite::ReadMessage(
+               input, mutable_rhs()));
+        } else {
+          goto handle_unusual;
+        }
+        break;
+      }
+
+      // string plus = 11;
+      case 11: {
+        if (static_cast< ::google::protobuf::uint8>(tag) == (90 & 0xFF)) {
+          DO_(::google::protobuf::internal::WireFormatLite::ReadString(
+                input, this->mutable_plus()));
+          DO_(::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
+            this->plus().data(), static_cast<int>(this->plus().length()),
+            ::google::protobuf::internal::WireFormatLite::PARSE,
+            "flyteidl.core.Expression.plus"));
+        } else {
+          goto handle_unusual;
+        }
+        break;
+      }
+
+      // string minus = 12;
+      case 12: {
+        if (static_cast< ::google::protobuf::uint8>(tag) == (98 & 0xFF)) {
+          DO_(::google::protobuf::internal::WireFormatLite::ReadString(
+                input, this->mutable_minus()));
+          DO_(::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
+            this->minus().data(), static_cast<int>(this->minus().length()),
+            ::google::protobuf::internal::WireFormatLite::PARSE,
+            "flyteidl.core.Expression.minus"));
+        } else {
+          goto handle_unusual;
+        }
+        break;
+      }
+
+      default: {
+      handle_unusual:
+        if (tag == 0) {
+          goto success;
+        }
+        DO_(::google::protobuf::internal::WireFormat::SkipField(
+              input, tag, _internal_metadata_.mutable_unknown_fields()));
+        break;
+      }
+    }
+  }
+success:
+  // @@protoc_insertion_point(parse_success:flyteidl.core.Expression)
+  return true;
+failure:
+  // @@protoc_insertion_point(parse_failure:flyteidl.core.Expression)
+  return false;
+#undef DO_
+}
+#endif  // GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
+
+void Expression::SerializeWithCachedSizes(
+    ::google::protobuf::io::CodedOutputStream* output) const {
+  // @@protoc_insertion_point(serialize_start:flyteidl.core.Expression)
+  ::google::protobuf::uint32 cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  // .flyteidl.core.Parameter lhs = 1;
+  if (this->has_lhs()) {
+    ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
+      1, HasBitSetters::lhs(this), output);
+  }
+
+  // .flyteidl.core.Parameter rhs = 2;
+  if (this->has_rhs()) {
+    ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
+      2, HasBitSetters::rhs(this), output);
+  }
+
+  // string plus = 11;
+  if (has_plus()) {
+    ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
+      this->plus().data(), static_cast<int>(this->plus().length()),
+      ::google::protobuf::internal::WireFormatLite::SERIALIZE,
+      "flyteidl.core.Expression.plus");
+    ::google::protobuf::internal::WireFormatLite::WriteStringMaybeAliased(
+      11, this->plus(), output);
+  }
+
+  // string minus = 12;
+  if (has_minus()) {
+    ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
+      this->minus().data(), static_cast<int>(this->minus().length()),
+      ::google::protobuf::internal::WireFormatLite::SERIALIZE,
+      "flyteidl.core.Expression.minus");
+    ::google::protobuf::internal::WireFormatLite::WriteStringMaybeAliased(
+      12, this->minus(), output);
+  }
+
+  if (_internal_metadata_.have_unknown_fields()) {
+    ::google::protobuf::internal::WireFormat::SerializeUnknownFields(
+        _internal_metadata_.unknown_fields(), output);
+  }
+  // @@protoc_insertion_point(serialize_end:flyteidl.core.Expression)
+}
+
+::google::protobuf::uint8* Expression::InternalSerializeWithCachedSizesToArray(
+    ::google::protobuf::uint8* target) const {
+  // @@protoc_insertion_point(serialize_to_array_start:flyteidl.core.Expression)
+  ::google::protobuf::uint32 cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  // .flyteidl.core.Parameter lhs = 1;
+  if (this->has_lhs()) {
+    target = ::google::protobuf::internal::WireFormatLite::
+      InternalWriteMessageToArray(
+        1, HasBitSetters::lhs(this), target);
+  }
+
+  // .flyteidl.core.Parameter rhs = 2;
+  if (this->has_rhs()) {
+    target = ::google::protobuf::internal::WireFormatLite::
+      InternalWriteMessageToArray(
+        2, HasBitSetters::rhs(this), target);
+  }
+
+  // string plus = 11;
+  if (has_plus()) {
+    ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
+      this->plus().data(), static_cast<int>(this->plus().length()),
+      ::google::protobuf::internal::WireFormatLite::SERIALIZE,
+      "flyteidl.core.Expression.plus");
+    target =
+      ::google::protobuf::internal::WireFormatLite::WriteStringToArray(
+        11, this->plus(), target);
+  }
+
+  // string minus = 12;
+  if (has_minus()) {
+    ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
+      this->minus().data(), static_cast<int>(this->minus().length()),
+      ::google::protobuf::internal::WireFormatLite::SERIALIZE,
+      "flyteidl.core.Expression.minus");
+    target =
+      ::google::protobuf::internal::WireFormatLite::WriteStringToArray(
+        12, this->minus(), target);
+  }
+
+  if (_internal_metadata_.have_unknown_fields()) {
+    target = ::google::protobuf::internal::WireFormat::SerializeUnknownFieldsToArray(
+        _internal_metadata_.unknown_fields(), target);
+  }
+  // @@protoc_insertion_point(serialize_to_array_end:flyteidl.core.Expression)
+  return target;
+}
+
+size_t Expression::ByteSizeLong() const {
+// @@protoc_insertion_point(message_byte_size_start:flyteidl.core.Expression)
+  size_t total_size = 0;
+
+  if (_internal_metadata_.have_unknown_fields()) {
+    total_size +=
+      ::google::protobuf::internal::WireFormat::ComputeUnknownFieldsSize(
+        _internal_metadata_.unknown_fields());
+  }
+  ::google::protobuf::uint32 cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  // .flyteidl.core.Parameter lhs = 1;
+  if (this->has_lhs()) {
+    total_size += 1 +
+      ::google::protobuf::internal::WireFormatLite::MessageSize(
+        *lhs_);
+  }
+
+  // .flyteidl.core.Parameter rhs = 2;
+  if (this->has_rhs()) {
+    total_size += 1 +
+      ::google::protobuf::internal::WireFormatLite::MessageSize(
+        *rhs_);
+  }
+
+  switch (operator_case()) {
+    // string plus = 11;
+    case kPlus: {
+      total_size += 1 +
+        ::google::protobuf::internal::WireFormatLite::StringSize(
+          this->plus());
+      break;
+    }
+    // string minus = 12;
+    case kMinus: {
+      total_size += 1 +
+        ::google::protobuf::internal::WireFormatLite::StringSize(
+          this->minus());
+      break;
+    }
+    case OPERATOR_NOT_SET: {
+      break;
+    }
+  }
+  int cached_size = ::google::protobuf::internal::ToCachedSize(total_size);
+  SetCachedSize(cached_size);
+  return total_size;
+}
+
+void Expression::MergeFrom(const ::google::protobuf::Message& from) {
+// @@protoc_insertion_point(generalized_merge_from_start:flyteidl.core.Expression)
+  GOOGLE_DCHECK_NE(&from, this);
+  const Expression* source =
+      ::google::protobuf::DynamicCastToGenerated<Expression>(
+          &from);
+  if (source == nullptr) {
+  // @@protoc_insertion_point(generalized_merge_from_cast_fail:flyteidl.core.Expression)
+    ::google::protobuf::internal::ReflectionOps::Merge(from, this);
+  } else {
+  // @@protoc_insertion_point(generalized_merge_from_cast_success:flyteidl.core.Expression)
+    MergeFrom(*source);
+  }
+}
+
+void Expression::MergeFrom(const Expression& from) {
+// @@protoc_insertion_point(class_specific_merge_from_start:flyteidl.core.Expression)
+  GOOGLE_DCHECK_NE(&from, this);
+  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  ::google::protobuf::uint32 cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  if (from.has_lhs()) {
+    mutable_lhs()->::flyteidl::core::Parameter::MergeFrom(from.lhs());
+  }
+  if (from.has_rhs()) {
+    mutable_rhs()->::flyteidl::core::Parameter::MergeFrom(from.rhs());
+  }
+  switch (from.operator_case()) {
+    case kPlus: {
+      set_plus(from.plus());
+      break;
+    }
+    case kMinus: {
+      set_minus(from.minus());
+      break;
+    }
+    case OPERATOR_NOT_SET: {
+      break;
+    }
+  }
+}
+
+void Expression::CopyFrom(const ::google::protobuf::Message& from) {
+// @@protoc_insertion_point(generalized_copy_from_start:flyteidl.core.Expression)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+void Expression::CopyFrom(const Expression& from) {
+// @@protoc_insertion_point(class_specific_copy_from_start:flyteidl.core.Expression)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+bool Expression::IsInitialized() const {
+  return true;
+}
+
+void Expression::Swap(Expression* other) {
+  if (other == this) return;
+  InternalSwap(other);
+}
+void Expression::InternalSwap(Expression* other) {
+  using std::swap;
+  _internal_metadata_.Swap(&other->_internal_metadata_);
+  swap(lhs_, other->lhs_);
+  swap(rhs_, other->rhs_);
+  swap(operator_, other->operator_);
+  swap(_oneof_case_[0], other->_oneof_case_[0]);
+}
+
+::google::protobuf::Metadata Expression::GetMetadata() const {
+  ::google::protobuf::internal::AssignDescriptors(&::assign_descriptors_table_flyteidl_2fcore_2finterface_2eproto);
+  return ::file_level_metadata_flyteidl_2fcore_2finterface_2eproto[kIndexInFileMessages];
+}
+
+
+// ===================================================================
+
 void Parameter::InitAsDefaultInstance() {
   ::flyteidl::core::_Parameter_default_instance_._instance.get_mutable()->var_ = const_cast< ::flyteidl::core::Variable*>(
       ::flyteidl::core::Variable::internal_default_instance());
@@ -1608,6 +2180,8 @@ void Parameter::InitAsDefaultInstance() {
       ::flyteidl::core::ArtifactQuery::internal_default_instance());
   ::flyteidl::core::_Parameter_default_instance_.artifact_id_ = const_cast< ::flyteidl::core::ArtifactID*>(
       ::flyteidl::core::ArtifactID::internal_default_instance());
+  ::flyteidl::core::_Parameter_default_instance_.expression_ = const_cast< ::flyteidl::core::Expression*>(
+      ::flyteidl::core::Expression::internal_default_instance());
 }
 class Parameter::HasBitSetters {
  public:
@@ -1615,6 +2189,7 @@ class Parameter::HasBitSetters {
   static const ::flyteidl::core::Literal& default_(const Parameter* msg);
   static const ::flyteidl::core::ArtifactQuery& artifact_query(const Parameter* msg);
   static const ::flyteidl::core::ArtifactID& artifact_id(const Parameter* msg);
+  static const ::flyteidl::core::Expression& expression(const Parameter* msg);
 };
 
 const ::flyteidl::core::Variable&
@@ -1632,6 +2207,10 @@ Parameter::HasBitSetters::artifact_query(const Parameter* msg) {
 const ::flyteidl::core::ArtifactID&
 Parameter::HasBitSetters::artifact_id(const Parameter* msg) {
   return *msg->behavior_.artifact_id_;
+}
+const ::flyteidl::core::Expression&
+Parameter::HasBitSetters::expression(const Parameter* msg) {
+  return *msg->behavior_.expression_;
 }
 void Parameter::set_allocated_default_(::flyteidl::core::Literal* default_) {
   ::google::protobuf::Arena* message_arena = GetArenaNoVirtual();
@@ -1693,12 +2272,27 @@ void Parameter::clear_artifact_id() {
     clear_has_behavior();
   }
 }
+void Parameter::set_allocated_expression(::flyteidl::core::Expression* expression) {
+  ::google::protobuf::Arena* message_arena = GetArenaNoVirtual();
+  clear_behavior();
+  if (expression) {
+    ::google::protobuf::Arena* submessage_arena = nullptr;
+    if (message_arena != submessage_arena) {
+      expression = ::google::protobuf::internal::GetOwnedMessage(
+          message_arena, expression, submessage_arena);
+    }
+    set_has_expression();
+    behavior_.expression_ = expression;
+  }
+  // @@protoc_insertion_point(field_set_allocated:flyteidl.core.Parameter.expression)
+}
 #if !defined(_MSC_VER) || _MSC_VER >= 1900
 const int Parameter::kVarFieldNumber;
 const int Parameter::kDefaultFieldNumber;
 const int Parameter::kRequiredFieldNumber;
 const int Parameter::kArtifactQueryFieldNumber;
 const int Parameter::kArtifactIdFieldNumber;
+const int Parameter::kExpressionFieldNumber;
 #endif  // !defined(_MSC_VER) || _MSC_VER >= 1900
 
 Parameter::Parameter()
@@ -1733,6 +2327,10 @@ Parameter::Parameter(const Parameter& from)
       mutable_artifact_id()->::flyteidl::core::ArtifactID::MergeFrom(from.artifact_id());
       break;
     }
+    case kExpression: {
+      mutable_expression()->::flyteidl::core::Expression::MergeFrom(from.expression());
+      break;
+    }
     case BEHAVIOR_NOT_SET: {
       break;
     }
@@ -1742,7 +2340,7 @@ Parameter::Parameter(const Parameter& from)
 
 void Parameter::SharedCtor() {
   ::google::protobuf::internal::InitSCC(
-      &scc_info_Parameter_flyteidl_2fcore_2finterface_2eproto.base);
+      &scc_info_Expression_flyteidl_2fcore_2finterface_2eproto.base);
   var_ = nullptr;
   clear_has_behavior();
 }
@@ -1763,7 +2361,7 @@ void Parameter::SetCachedSize(int size) const {
   _cached_size_.Set(size);
 }
 const Parameter& Parameter::default_instance() {
-  ::google::protobuf::internal::InitSCC(&::scc_info_Parameter_flyteidl_2fcore_2finterface_2eproto.base);
+  ::google::protobuf::internal::InitSCC(&::scc_info_Expression_flyteidl_2fcore_2finterface_2eproto.base);
   return *internal_default_instance();
 }
 
@@ -1785,6 +2383,10 @@ void Parameter::clear_behavior() {
     }
     case kArtifactId: {
       delete behavior_.artifact_id_;
+      break;
+    }
+    case kExpression: {
+      delete behavior_.expression_;
       break;
     }
     case BEHAVIOR_NOT_SET: {
@@ -1881,6 +2483,19 @@ const char* Parameter::_InternalParse(const char* begin, const char* end, void* 
             {parser_till_end, object}, ptr - size, ptr));
         break;
       }
+      // .flyteidl.core.Expression expression = 6;
+      case 6: {
+        if (static_cast<::google::protobuf::uint8>(tag) != 50) goto handle_unusual;
+        ptr = ::google::protobuf::io::ReadSize(ptr, &size);
+        GOOGLE_PROTOBUF_PARSER_ASSERT(ptr);
+        parser_till_end = ::flyteidl::core::Expression::_InternalParse;
+        object = msg->mutable_expression();
+        if (size > end - ptr) goto len_delim_till_end;
+        ptr += size;
+        GOOGLE_PROTOBUF_PARSER_ASSERT(ctx->ParseExactRange(
+            {parser_till_end, object}, ptr - size, ptr));
+        break;
+      }
       default: {
       handle_unusual:
         if ((tag & 7) == 4 || tag == 0) {
@@ -1969,6 +2584,17 @@ bool Parameter::MergePartialFromCodedStream(
         break;
       }
 
+      // .flyteidl.core.Expression expression = 6;
+      case 6: {
+        if (static_cast< ::google::protobuf::uint8>(tag) == (50 & 0xFF)) {
+          DO_(::google::protobuf::internal::WireFormatLite::ReadMessage(
+               input, mutable_expression()));
+        } else {
+          goto handle_unusual;
+        }
+        break;
+      }
+
       default: {
       handle_unusual:
         if (tag == 0) {
@@ -2025,6 +2651,12 @@ void Parameter::SerializeWithCachedSizes(
       5, HasBitSetters::artifact_id(this), output);
   }
 
+  // .flyteidl.core.Expression expression = 6;
+  if (has_expression()) {
+    ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
+      6, HasBitSetters::expression(this), output);
+  }
+
   if (_internal_metadata_.have_unknown_fields()) {
     ::google::protobuf::internal::WireFormat::SerializeUnknownFields(
         _internal_metadata_.unknown_fields(), output);
@@ -2069,6 +2701,13 @@ void Parameter::SerializeWithCachedSizes(
     target = ::google::protobuf::internal::WireFormatLite::
       InternalWriteMessageToArray(
         5, HasBitSetters::artifact_id(this), target);
+  }
+
+  // .flyteidl.core.Expression expression = 6;
+  if (has_expression()) {
+    target = ::google::protobuf::internal::WireFormatLite::
+      InternalWriteMessageToArray(
+        6, HasBitSetters::expression(this), target);
   }
 
   if (_internal_metadata_.have_unknown_fields()) {
@@ -2126,6 +2765,13 @@ size_t Parameter::ByteSizeLong() const {
           *behavior_.artifact_id_);
       break;
     }
+    // .flyteidl.core.Expression expression = 6;
+    case kExpression: {
+      total_size += 1 +
+        ::google::protobuf::internal::WireFormatLite::MessageSize(
+          *behavior_.expression_);
+      break;
+    }
     case BEHAVIOR_NOT_SET: {
       break;
     }
@@ -2175,6 +2821,10 @@ void Parameter::MergeFrom(const Parameter& from) {
     }
     case kArtifactId: {
       mutable_artifact_id()->::flyteidl::core::ArtifactID::MergeFrom(from.artifact_id());
+      break;
+    }
+    case kExpression: {
+      mutable_expression()->::flyteidl::core::Expression::MergeFrom(from.expression());
       break;
     }
     case BEHAVIOR_NOT_SET: {
@@ -2229,7 +2879,7 @@ void ParameterMap_ParametersEntry_DoNotUse::MergeFrom(const ParameterMap_Paramet
 }
 ::google::protobuf::Metadata ParameterMap_ParametersEntry_DoNotUse::GetMetadata() const {
   ::google::protobuf::internal::AssignDescriptors(&::assign_descriptors_table_flyteidl_2fcore_2finterface_2eproto);
-  return ::file_level_metadata_flyteidl_2fcore_2finterface_2eproto[5];
+  return ::file_level_metadata_flyteidl_2fcore_2finterface_2eproto[6];
 }
 void ParameterMap_ParametersEntry_DoNotUse::MergeFrom(
     const ::google::protobuf::Message& other) {
@@ -2642,6 +3292,9 @@ template<> PROTOBUF_NOINLINE ::flyteidl::core::VariableMap* Arena::CreateMaybeMe
 }
 template<> PROTOBUF_NOINLINE ::flyteidl::core::TypedInterface* Arena::CreateMaybeMessage< ::flyteidl::core::TypedInterface >(Arena* arena) {
   return Arena::CreateInternal< ::flyteidl::core::TypedInterface >(arena);
+}
+template<> PROTOBUF_NOINLINE ::flyteidl::core::Expression* Arena::CreateMaybeMessage< ::flyteidl::core::Expression >(Arena* arena) {
+  return Arena::CreateInternal< ::flyteidl::core::Expression >(arena);
 }
 template<> PROTOBUF_NOINLINE ::flyteidl::core::Parameter* Arena::CreateMaybeMessage< ::flyteidl::core::Parameter >(Arena* arena) {
   return Arena::CreateInternal< ::flyteidl::core::Parameter >(arena);

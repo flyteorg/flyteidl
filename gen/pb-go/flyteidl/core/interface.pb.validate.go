@@ -299,6 +299,100 @@ var _ interface {
 	ErrorName() string
 } = TypedInterfaceValidationError{}
 
+// Validate checks the field values on Expression with the rules defined in the
+// proto definition for this message. If any rules are violated, an error is returned.
+func (m *Expression) Validate() error {
+	if m == nil {
+		return nil
+	}
+
+	if v, ok := interface{}(m.GetLhs()).(interface{ Validate() error }); ok {
+		if err := v.Validate(); err != nil {
+			return ExpressionValidationError{
+				field:  "Lhs",
+				reason: "embedded message failed validation",
+				cause:  err,
+			}
+		}
+	}
+
+	if v, ok := interface{}(m.GetRhs()).(interface{ Validate() error }); ok {
+		if err := v.Validate(); err != nil {
+			return ExpressionValidationError{
+				field:  "Rhs",
+				reason: "embedded message failed validation",
+				cause:  err,
+			}
+		}
+	}
+
+	switch m.Operator.(type) {
+
+	case *Expression_Plus:
+		// no validation rules for Plus
+
+	case *Expression_Minus:
+		// no validation rules for Minus
+
+	}
+
+	return nil
+}
+
+// ExpressionValidationError is the validation error returned by
+// Expression.Validate if the designated constraints aren't met.
+type ExpressionValidationError struct {
+	field  string
+	reason string
+	cause  error
+	key    bool
+}
+
+// Field function returns field value.
+func (e ExpressionValidationError) Field() string { return e.field }
+
+// Reason function returns reason value.
+func (e ExpressionValidationError) Reason() string { return e.reason }
+
+// Cause function returns cause value.
+func (e ExpressionValidationError) Cause() error { return e.cause }
+
+// Key function returns key value.
+func (e ExpressionValidationError) Key() bool { return e.key }
+
+// ErrorName returns error name.
+func (e ExpressionValidationError) ErrorName() string { return "ExpressionValidationError" }
+
+// Error satisfies the builtin error interface
+func (e ExpressionValidationError) Error() string {
+	cause := ""
+	if e.cause != nil {
+		cause = fmt.Sprintf(" | caused by: %v", e.cause)
+	}
+
+	key := ""
+	if e.key {
+		key = "key for "
+	}
+
+	return fmt.Sprintf(
+		"invalid %sExpression.%s: %s%s",
+		key,
+		e.field,
+		e.reason,
+		cause)
+}
+
+var _ error = ExpressionValidationError{}
+
+var _ interface {
+	Field() string
+	Reason() string
+	Key() bool
+	Cause() error
+	ErrorName() string
+} = ExpressionValidationError{}
+
 // Validate checks the field values on Parameter with the rules defined in the
 // proto definition for this message. If any rules are violated, an error is returned.
 func (m *Parameter) Validate() error {
@@ -351,6 +445,18 @@ func (m *Parameter) Validate() error {
 			if err := v.Validate(); err != nil {
 				return ParameterValidationError{
 					field:  "ArtifactId",
+					reason: "embedded message failed validation",
+					cause:  err,
+				}
+			}
+		}
+
+	case *Parameter_Expression:
+
+		if v, ok := interface{}(m.GetExpression()).(interface{ Validate() error }); ok {
+			if err := v.Validate(); err != nil {
+				return ParameterValidationError{
+					field:  "Expression",
 					reason: "embedded message failed validation",
 					cause:  err,
 				}

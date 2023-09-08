@@ -41,19 +41,33 @@ class TypedInterface(_message.Message):
     outputs: VariableMap
     def __init__(self, inputs: _Optional[_Union[VariableMap, _Mapping]] = ..., outputs: _Optional[_Union[VariableMap, _Mapping]] = ...) -> None: ...
 
+class Expression(_message.Message):
+    __slots__ = ["lhs", "rhs", "plus", "minus"]
+    LHS_FIELD_NUMBER: _ClassVar[int]
+    RHS_FIELD_NUMBER: _ClassVar[int]
+    PLUS_FIELD_NUMBER: _ClassVar[int]
+    MINUS_FIELD_NUMBER: _ClassVar[int]
+    lhs: Parameter
+    rhs: Parameter
+    plus: str
+    minus: str
+    def __init__(self, lhs: _Optional[_Union[Parameter, _Mapping]] = ..., rhs: _Optional[_Union[Parameter, _Mapping]] = ..., plus: _Optional[str] = ..., minus: _Optional[str] = ...) -> None: ...
+
 class Parameter(_message.Message):
-    __slots__ = ["var", "default", "required", "artifact_query", "artifact_id"]
+    __slots__ = ["var", "default", "required", "artifact_query", "artifact_id", "expression"]
     VAR_FIELD_NUMBER: _ClassVar[int]
     DEFAULT_FIELD_NUMBER: _ClassVar[int]
     REQUIRED_FIELD_NUMBER: _ClassVar[int]
     ARTIFACT_QUERY_FIELD_NUMBER: _ClassVar[int]
     ARTIFACT_ID_FIELD_NUMBER: _ClassVar[int]
+    EXPRESSION_FIELD_NUMBER: _ClassVar[int]
     var: Variable
     default: _literals_pb2.Literal
     required: bool
     artifact_query: _identifier_pb2.ArtifactQuery
     artifact_id: _identifier_pb2.ArtifactID
-    def __init__(self, var: _Optional[_Union[Variable, _Mapping]] = ..., default: _Optional[_Union[_literals_pb2.Literal, _Mapping]] = ..., required: bool = ..., artifact_query: _Optional[_Union[_identifier_pb2.ArtifactQuery, _Mapping]] = ..., artifact_id: _Optional[_Union[_identifier_pb2.ArtifactID, _Mapping]] = ...) -> None: ...
+    expression: Expression
+    def __init__(self, var: _Optional[_Union[Variable, _Mapping]] = ..., default: _Optional[_Union[_literals_pb2.Literal, _Mapping]] = ..., required: bool = ..., artifact_query: _Optional[_Union[_identifier_pb2.ArtifactQuery, _Mapping]] = ..., artifact_id: _Optional[_Union[_identifier_pb2.ArtifactID, _Mapping]] = ..., expression: _Optional[_Union[Expression, _Mapping]] = ...) -> None: ...
 
 class ParameterMap(_message.Message):
     __slots__ = ["parameters"]

@@ -244,6 +244,7 @@ Class | Method | HTTP request | Description
  - [CoreEnumType](docs/CoreEnumType.md)
  - [CoreError](docs/CoreError.md)
  - [CoreExecutionError](docs/CoreExecutionError.md)
+ - [CoreExpression](docs/CoreExpression.md)
  - [CoreGateNode](docs/CoreGateNode.md)
  - [CoreIdentifier](docs/CoreIdentifier.md)
  - [CoreIdentity](docs/CoreIdentity.md)

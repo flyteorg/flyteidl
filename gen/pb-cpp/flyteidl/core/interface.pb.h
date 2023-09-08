@@ -47,7 +47,7 @@ struct TableStruct_flyteidl_2fcore_2finterface_2eproto {
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
   static const ::google::protobuf::internal::AuxillaryParseTableField aux[]
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
-  static const ::google::protobuf::internal::ParseTable schema[7]
+  static const ::google::protobuf::internal::ParseTable schema[8]
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
   static const ::google::protobuf::internal::FieldMetadata field_metadata[];
   static const ::google::protobuf::internal::SerializationTable serialization_table[];
@@ -56,6 +56,9 @@ struct TableStruct_flyteidl_2fcore_2finterface_2eproto {
 void AddDescriptors_flyteidl_2fcore_2finterface_2eproto();
 namespace flyteidl {
 namespace core {
+class Expression;
+class ExpressionDefaultTypeInternal;
+extern ExpressionDefaultTypeInternal _Expression_default_instance_;
 class Parameter;
 class ParameterDefaultTypeInternal;
 extern ParameterDefaultTypeInternal _Parameter_default_instance_;
@@ -81,6 +84,7 @@ extern VariableMap_VariablesEntry_DoNotUseDefaultTypeInternal _VariableMap_Varia
 }  // namespace flyteidl
 namespace google {
 namespace protobuf {
+template<> ::flyteidl::core::Expression* Arena::CreateMaybeMessage<::flyteidl::core::Expression>(Arena*);
 template<> ::flyteidl::core::Parameter* Arena::CreateMaybeMessage<::flyteidl::core::Parameter>(Arena*);
 template<> ::flyteidl::core::ParameterMap* Arena::CreateMaybeMessage<::flyteidl::core::ParameterMap>(Arena*);
 template<> ::flyteidl::core::ParameterMap_ParametersEntry_DoNotUse* Arena::CreateMaybeMessage<::flyteidl::core::ParameterMap_ParametersEntry_DoNotUse>(Arena*);
@@ -515,6 +519,185 @@ class TypedInterface final :
 };
 // -------------------------------------------------------------------
 
+class Expression final :
+    public ::google::protobuf::Message /* @@protoc_insertion_point(class_definition:flyteidl.core.Expression) */ {
+ public:
+  Expression();
+  virtual ~Expression();
+
+  Expression(const Expression& from);
+
+  inline Expression& operator=(const Expression& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  #if LANG_CXX11
+  Expression(Expression&& from) noexcept
+    : Expression() {
+    *this = ::std::move(from);
+  }
+
+  inline Expression& operator=(Expression&& from) noexcept {
+    if (GetArenaNoVirtual() == from.GetArenaNoVirtual()) {
+      if (this != &from) InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+  #endif
+  static const ::google::protobuf::Descriptor* descriptor() {
+    return default_instance().GetDescriptor();
+  }
+  static const Expression& default_instance();
+
+  enum OperatorCase {
+    kPlus = 11,
+    kMinus = 12,
+    OPERATOR_NOT_SET = 0,
+  };
+
+  static void InitAsDefaultInstance();  // FOR INTERNAL USE ONLY
+  static inline const Expression* internal_default_instance() {
+    return reinterpret_cast<const Expression*>(
+               &_Expression_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    4;
+
+  void Swap(Expression* other);
+  friend void swap(Expression& a, Expression& b) {
+    a.Swap(&b);
+  }
+
+  // implements Message ----------------------------------------------
+
+  inline Expression* New() const final {
+    return CreateMaybeMessage<Expression>(nullptr);
+  }
+
+  Expression* New(::google::protobuf::Arena* arena) const final {
+    return CreateMaybeMessage<Expression>(arena);
+  }
+  void CopyFrom(const ::google::protobuf::Message& from) final;
+  void MergeFrom(const ::google::protobuf::Message& from) final;
+  void CopyFrom(const Expression& from);
+  void MergeFrom(const Expression& from);
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  #if GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
+  static const char* _InternalParse(const char* begin, const char* end, void* object, ::google::protobuf::internal::ParseContext* ctx);
+  ::google::protobuf::internal::ParseFunc _ParseFunc() const final { return _InternalParse; }
+  #else
+  bool MergePartialFromCodedStream(
+      ::google::protobuf::io::CodedInputStream* input) final;
+  #endif  // GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
+  void SerializeWithCachedSizes(
+      ::google::protobuf::io::CodedOutputStream* output) const final;
+  ::google::protobuf::uint8* InternalSerializeWithCachedSizesToArray(
+      ::google::protobuf::uint8* target) const final;
+  int GetCachedSize() const final { return _cached_size_.Get(); }
+
+  private:
+  void SharedCtor();
+  void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(Expression* other);
+  private:
+  inline ::google::protobuf::Arena* GetArenaNoVirtual() const {
+    return nullptr;
+  }
+  inline void* MaybeArenaPtr() const {
+    return nullptr;
+  }
+  public:
+
+  ::google::protobuf::Metadata GetMetadata() const final;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  // .flyteidl.core.Parameter lhs = 1;
+  bool has_lhs() const;
+  void clear_lhs();
+  static const int kLhsFieldNumber = 1;
+  const ::flyteidl::core::Parameter& lhs() const;
+  ::flyteidl::core::Parameter* release_lhs();
+  ::flyteidl::core::Parameter* mutable_lhs();
+  void set_allocated_lhs(::flyteidl::core::Parameter* lhs);
+
+  // .flyteidl.core.Parameter rhs = 2;
+  bool has_rhs() const;
+  void clear_rhs();
+  static const int kRhsFieldNumber = 2;
+  const ::flyteidl::core::Parameter& rhs() const;
+  ::flyteidl::core::Parameter* release_rhs();
+  ::flyteidl::core::Parameter* mutable_rhs();
+  void set_allocated_rhs(::flyteidl::core::Parameter* rhs);
+
+  // string plus = 11;
+  private:
+  bool has_plus() const;
+  public:
+  void clear_plus();
+  static const int kPlusFieldNumber = 11;
+  const ::std::string& plus() const;
+  void set_plus(const ::std::string& value);
+  #if LANG_CXX11
+  void set_plus(::std::string&& value);
+  #endif
+  void set_plus(const char* value);
+  void set_plus(const char* value, size_t size);
+  ::std::string* mutable_plus();
+  ::std::string* release_plus();
+  void set_allocated_plus(::std::string* plus);
+
+  // string minus = 12;
+  private:
+  bool has_minus() const;
+  public:
+  void clear_minus();
+  static const int kMinusFieldNumber = 12;
+  const ::std::string& minus() const;
+  void set_minus(const ::std::string& value);
+  #if LANG_CXX11
+  void set_minus(::std::string&& value);
+  #endif
+  void set_minus(const char* value);
+  void set_minus(const char* value, size_t size);
+  ::std::string* mutable_minus();
+  ::std::string* release_minus();
+  void set_allocated_minus(::std::string* minus);
+
+  void clear_operator();
+  OperatorCase operator_case() const;
+  // @@protoc_insertion_point(class_scope:flyteidl.core.Expression)
+ private:
+  class HasBitSetters;
+  void set_has_plus();
+  void set_has_minus();
+
+  inline bool has_operator() const;
+  inline void clear_has_operator();
+
+  ::google::protobuf::internal::InternalMetadataWithArena _internal_metadata_;
+  ::flyteidl::core::Parameter* lhs_;
+  ::flyteidl::core::Parameter* rhs_;
+  union OperatorUnion {
+    OperatorUnion() {}
+    ::google::protobuf::internal::ArenaStringPtr plus_;
+    ::google::protobuf::internal::ArenaStringPtr minus_;
+  } operator_;
+  mutable ::google::protobuf::internal::CachedSize _cached_size_;
+  ::google::protobuf::uint32 _oneof_case_[1];
+
+  friend struct ::TableStruct_flyteidl_2fcore_2finterface_2eproto;
+};
+// -------------------------------------------------------------------
+
 class Parameter final :
     public ::google::protobuf::Message /* @@protoc_insertion_point(class_definition:flyteidl.core.Parameter) */ {
  public:
@@ -552,6 +735,7 @@ class Parameter final :
     kRequired = 3,
     kArtifactQuery = 4,
     kArtifactId = 5,
+    kExpression = 6,
     BEHAVIOR_NOT_SET = 0,
   };
 
@@ -561,7 +745,7 @@ class Parameter final :
                &_Parameter_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    4;
+    5;
 
   void Swap(Parameter* other);
   friend void swap(Parameter& a, Parameter& b) {
@@ -663,6 +847,15 @@ class Parameter final :
   ::flyteidl::core::ArtifactID* mutable_artifact_id();
   void set_allocated_artifact_id(::flyteidl::core::ArtifactID* artifact_id);
 
+  // .flyteidl.core.Expression expression = 6;
+  bool has_expression() const;
+  void clear_expression();
+  static const int kExpressionFieldNumber = 6;
+  const ::flyteidl::core::Expression& expression() const;
+  ::flyteidl::core::Expression* release_expression();
+  ::flyteidl::core::Expression* mutable_expression();
+  void set_allocated_expression(::flyteidl::core::Expression* expression);
+
   void clear_behavior();
   BehaviorCase behavior_case() const;
   // @@protoc_insertion_point(class_scope:flyteidl.core.Parameter)
@@ -672,6 +865,7 @@ class Parameter final :
   void set_has_required();
   void set_has_artifact_query();
   void set_has_artifact_id();
+  void set_has_expression();
 
   inline bool has_behavior() const;
   inline void clear_has_behavior();
@@ -684,6 +878,7 @@ class Parameter final :
     bool required_;
     ::flyteidl::core::ArtifactQuery* artifact_query_;
     ::flyteidl::core::ArtifactID* artifact_id_;
+    ::flyteidl::core::Expression* expression_;
   } behavior_;
   mutable ::google::protobuf::internal::CachedSize _cached_size_;
   ::google::protobuf::uint32 _oneof_case_[1];
@@ -754,7 +949,7 @@ class ParameterMap final :
                &_ParameterMap_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    6;
+    7;
 
   void Swap(ParameterMap* other);
   friend void swap(ParameterMap& a, ParameterMap& b) {
@@ -1166,6 +1361,305 @@ inline void TypedInterface::set_allocated_outputs(::flyteidl::core::VariableMap*
 
 // -------------------------------------------------------------------
 
+// Expression
+
+// .flyteidl.core.Parameter lhs = 1;
+inline bool Expression::has_lhs() const {
+  return this != internal_default_instance() && lhs_ != nullptr;
+}
+inline void Expression::clear_lhs() {
+  if (GetArenaNoVirtual() == nullptr && lhs_ != nullptr) {
+    delete lhs_;
+  }
+  lhs_ = nullptr;
+}
+inline const ::flyteidl::core::Parameter& Expression::lhs() const {
+  const ::flyteidl::core::Parameter* p = lhs_;
+  // @@protoc_insertion_point(field_get:flyteidl.core.Expression.lhs)
+  return p != nullptr ? *p : *reinterpret_cast<const ::flyteidl::core::Parameter*>(
+      &::flyteidl::core::_Parameter_default_instance_);
+}
+inline ::flyteidl::core::Parameter* Expression::release_lhs() {
+  // @@protoc_insertion_point(field_release:flyteidl.core.Expression.lhs)
+  
+  ::flyteidl::core::Parameter* temp = lhs_;
+  lhs_ = nullptr;
+  return temp;
+}
+inline ::flyteidl::core::Parameter* Expression::mutable_lhs() {
+  
+  if (lhs_ == nullptr) {
+    auto* p = CreateMaybeMessage<::flyteidl::core::Parameter>(GetArenaNoVirtual());
+    lhs_ = p;
+  }
+  // @@protoc_insertion_point(field_mutable:flyteidl.core.Expression.lhs)
+  return lhs_;
+}
+inline void Expression::set_allocated_lhs(::flyteidl::core::Parameter* lhs) {
+  ::google::protobuf::Arena* message_arena = GetArenaNoVirtual();
+  if (message_arena == nullptr) {
+    delete lhs_;
+  }
+  if (lhs) {
+    ::google::protobuf::Arena* submessage_arena = nullptr;
+    if (message_arena != submessage_arena) {
+      lhs = ::google::protobuf::internal::GetOwnedMessage(
+          message_arena, lhs, submessage_arena);
+    }
+    
+  } else {
+    
+  }
+  lhs_ = lhs;
+  // @@protoc_insertion_point(field_set_allocated:flyteidl.core.Expression.lhs)
+}
+
+// .flyteidl.core.Parameter rhs = 2;
+inline bool Expression::has_rhs() const {
+  return this != internal_default_instance() && rhs_ != nullptr;
+}
+inline void Expression::clear_rhs() {
+  if (GetArenaNoVirtual() == nullptr && rhs_ != nullptr) {
+    delete rhs_;
+  }
+  rhs_ = nullptr;
+}
+inline const ::flyteidl::core::Parameter& Expression::rhs() const {
+  const ::flyteidl::core::Parameter* p = rhs_;
+  // @@protoc_insertion_point(field_get:flyteidl.core.Expression.rhs)
+  return p != nullptr ? *p : *reinterpret_cast<const ::flyteidl::core::Parameter*>(
+      &::flyteidl::core::_Parameter_default_instance_);
+}
+inline ::flyteidl::core::Parameter* Expression::release_rhs() {
+  // @@protoc_insertion_point(field_release:flyteidl.core.Expression.rhs)
+  
+  ::flyteidl::core::Parameter* temp = rhs_;
+  rhs_ = nullptr;
+  return temp;
+}
+inline ::flyteidl::core::Parameter* Expression::mutable_rhs() {
+  
+  if (rhs_ == nullptr) {
+    auto* p = CreateMaybeMessage<::flyteidl::core::Parameter>(GetArenaNoVirtual());
+    rhs_ = p;
+  }
+  // @@protoc_insertion_point(field_mutable:flyteidl.core.Expression.rhs)
+  return rhs_;
+}
+inline void Expression::set_allocated_rhs(::flyteidl::core::Parameter* rhs) {
+  ::google::protobuf::Arena* message_arena = GetArenaNoVirtual();
+  if (message_arena == nullptr) {
+    delete rhs_;
+  }
+  if (rhs) {
+    ::google::protobuf::Arena* submessage_arena = nullptr;
+    if (message_arena != submessage_arena) {
+      rhs = ::google::protobuf::internal::GetOwnedMessage(
+          message_arena, rhs, submessage_arena);
+    }
+    
+  } else {
+    
+  }
+  rhs_ = rhs;
+  // @@protoc_insertion_point(field_set_allocated:flyteidl.core.Expression.rhs)
+}
+
+// string plus = 11;
+inline bool Expression::has_plus() const {
+  return operator_case() == kPlus;
+}
+inline void Expression::set_has_plus() {
+  _oneof_case_[0] = kPlus;
+}
+inline void Expression::clear_plus() {
+  if (has_plus()) {
+    operator_.plus_.DestroyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+    clear_has_operator();
+  }
+}
+inline const ::std::string& Expression::plus() const {
+  // @@protoc_insertion_point(field_get:flyteidl.core.Expression.plus)
+  if (has_plus()) {
+    return operator_.plus_.GetNoArena();
+  }
+  return *&::google::protobuf::internal::GetEmptyStringAlreadyInited();
+}
+inline void Expression::set_plus(const ::std::string& value) {
+  // @@protoc_insertion_point(field_set:flyteidl.core.Expression.plus)
+  if (!has_plus()) {
+    clear_operator();
+    set_has_plus();
+    operator_.plus_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  }
+  operator_.plus_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
+  // @@protoc_insertion_point(field_set:flyteidl.core.Expression.plus)
+}
+#if LANG_CXX11
+inline void Expression::set_plus(::std::string&& value) {
+  // @@protoc_insertion_point(field_set:flyteidl.core.Expression.plus)
+  if (!has_plus()) {
+    clear_operator();
+    set_has_plus();
+    operator_.plus_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  }
+  operator_.plus_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::move(value));
+  // @@protoc_insertion_point(field_set_rvalue:flyteidl.core.Expression.plus)
+}
+#endif
+inline void Expression::set_plus(const char* value) {
+  GOOGLE_DCHECK(value != nullptr);
+  if (!has_plus()) {
+    clear_operator();
+    set_has_plus();
+    operator_.plus_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  }
+  operator_.plus_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
+      ::std::string(value));
+  // @@protoc_insertion_point(field_set_char:flyteidl.core.Expression.plus)
+}
+inline void Expression::set_plus(const char* value, size_t size) {
+  if (!has_plus()) {
+    clear_operator();
+    set_has_plus();
+    operator_.plus_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  }
+  operator_.plus_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(
+      reinterpret_cast<const char*>(value), size));
+  // @@protoc_insertion_point(field_set_pointer:flyteidl.core.Expression.plus)
+}
+inline ::std::string* Expression::mutable_plus() {
+  if (!has_plus()) {
+    clear_operator();
+    set_has_plus();
+    operator_.plus_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  }
+  // @@protoc_insertion_point(field_mutable:flyteidl.core.Expression.plus)
+  return operator_.plus_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline ::std::string* Expression::release_plus() {
+  // @@protoc_insertion_point(field_release:flyteidl.core.Expression.plus)
+  if (has_plus()) {
+    clear_has_operator();
+    return operator_.plus_.ReleaseNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  } else {
+    return nullptr;
+  }
+}
+inline void Expression::set_allocated_plus(::std::string* plus) {
+  if (has_operator()) {
+    clear_operator();
+  }
+  if (plus != nullptr) {
+    set_has_plus();
+    operator_.plus_.UnsafeSetDefault(plus);
+  }
+  // @@protoc_insertion_point(field_set_allocated:flyteidl.core.Expression.plus)
+}
+
+// string minus = 12;
+inline bool Expression::has_minus() const {
+  return operator_case() == kMinus;
+}
+inline void Expression::set_has_minus() {
+  _oneof_case_[0] = kMinus;
+}
+inline void Expression::clear_minus() {
+  if (has_minus()) {
+    operator_.minus_.DestroyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+    clear_has_operator();
+  }
+}
+inline const ::std::string& Expression::minus() const {
+  // @@protoc_insertion_point(field_get:flyteidl.core.Expression.minus)
+  if (has_minus()) {
+    return operator_.minus_.GetNoArena();
+  }
+  return *&::google::protobuf::internal::GetEmptyStringAlreadyInited();
+}
+inline void Expression::set_minus(const ::std::string& value) {
+  // @@protoc_insertion_point(field_set:flyteidl.core.Expression.minus)
+  if (!has_minus()) {
+    clear_operator();
+    set_has_minus();
+    operator_.minus_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  }
+  operator_.minus_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
+  // @@protoc_insertion_point(field_set:flyteidl.core.Expression.minus)
+}
+#if LANG_CXX11
+inline void Expression::set_minus(::std::string&& value) {
+  // @@protoc_insertion_point(field_set:flyteidl.core.Expression.minus)
+  if (!has_minus()) {
+    clear_operator();
+    set_has_minus();
+    operator_.minus_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  }
+  operator_.minus_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::move(value));
+  // @@protoc_insertion_point(field_set_rvalue:flyteidl.core.Expression.minus)
+}
+#endif
+inline void Expression::set_minus(const char* value) {
+  GOOGLE_DCHECK(value != nullptr);
+  if (!has_minus()) {
+    clear_operator();
+    set_has_minus();
+    operator_.minus_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  }
+  operator_.minus_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
+      ::std::string(value));
+  // @@protoc_insertion_point(field_set_char:flyteidl.core.Expression.minus)
+}
+inline void Expression::set_minus(const char* value, size_t size) {
+  if (!has_minus()) {
+    clear_operator();
+    set_has_minus();
+    operator_.minus_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  }
+  operator_.minus_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(
+      reinterpret_cast<const char*>(value), size));
+  // @@protoc_insertion_point(field_set_pointer:flyteidl.core.Expression.minus)
+}
+inline ::std::string* Expression::mutable_minus() {
+  if (!has_minus()) {
+    clear_operator();
+    set_has_minus();
+    operator_.minus_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  }
+  // @@protoc_insertion_point(field_mutable:flyteidl.core.Expression.minus)
+  return operator_.minus_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline ::std::string* Expression::release_minus() {
+  // @@protoc_insertion_point(field_release:flyteidl.core.Expression.minus)
+  if (has_minus()) {
+    clear_has_operator();
+    return operator_.minus_.ReleaseNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  } else {
+    return nullptr;
+  }
+}
+inline void Expression::set_allocated_minus(::std::string* minus) {
+  if (has_operator()) {
+    clear_operator();
+  }
+  if (minus != nullptr) {
+    set_has_minus();
+    operator_.minus_.UnsafeSetDefault(minus);
+  }
+  // @@protoc_insertion_point(field_set_allocated:flyteidl.core.Expression.minus)
+}
+
+inline bool Expression::has_operator() const {
+  return operator_case() != OPERATOR_NOT_SET;
+}
+inline void Expression::clear_has_operator() {
+  _oneof_case_[0] = OPERATOR_NOT_SET;
+}
+inline Expression::OperatorCase Expression::operator_case() const {
+  return Expression::OperatorCase(_oneof_case_[0]);
+}
+// -------------------------------------------------------------------
+
 // Parameter
 
 // .flyteidl.core.Variable var = 1;
@@ -1353,6 +1847,47 @@ inline ::flyteidl::core::ArtifactID* Parameter::mutable_artifact_id() {
   return behavior_.artifact_id_;
 }
 
+// .flyteidl.core.Expression expression = 6;
+inline bool Parameter::has_expression() const {
+  return behavior_case() == kExpression;
+}
+inline void Parameter::set_has_expression() {
+  _oneof_case_[0] = kExpression;
+}
+inline void Parameter::clear_expression() {
+  if (has_expression()) {
+    delete behavior_.expression_;
+    clear_has_behavior();
+  }
+}
+inline ::flyteidl::core::Expression* Parameter::release_expression() {
+  // @@protoc_insertion_point(field_release:flyteidl.core.Parameter.expression)
+  if (has_expression()) {
+    clear_has_behavior();
+      ::flyteidl::core::Expression* temp = behavior_.expression_;
+    behavior_.expression_ = nullptr;
+    return temp;
+  } else {
+    return nullptr;
+  }
+}
+inline const ::flyteidl::core::Expression& Parameter::expression() const {
+  // @@protoc_insertion_point(field_get:flyteidl.core.Parameter.expression)
+  return has_expression()
+      ? *behavior_.expression_
+      : *reinterpret_cast< ::flyteidl::core::Expression*>(&::flyteidl::core::_Expression_default_instance_);
+}
+inline ::flyteidl::core::Expression* Parameter::mutable_expression() {
+  if (!has_expression()) {
+    clear_behavior();
+    set_has_expression();
+    behavior_.expression_ = CreateMaybeMessage< ::flyteidl::core::Expression >(
+        GetArenaNoVirtual());
+  }
+  // @@protoc_insertion_point(field_mutable:flyteidl.core.Parameter.expression)
+  return behavior_.expression_;
+}
+
 inline bool Parameter::has_behavior() const {
   return behavior_case() != BEHAVIOR_NOT_SET;
 }
@@ -1389,6 +1924,8 @@ ParameterMap::mutable_parameters() {
 #ifdef __GNUC__
   #pragma GCC diagnostic pop
 #endif  // __GNUC__
+// -------------------------------------------------------------------
+
 // -------------------------------------------------------------------
 
 // -------------------------------------------------------------------

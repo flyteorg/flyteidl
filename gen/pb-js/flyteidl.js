@@ -12303,6 +12303,192 @@
                 return TypedInterface;
             })();
     
+            core.Expression = (function() {
+    
+                /**
+                 * Properties of an Expression.
+                 * @memberof flyteidl.core
+                 * @interface IExpression
+                 * @property {flyteidl.core.IParameter|null} [lhs] Expression lhs
+                 * @property {flyteidl.core.IParameter|null} [rhs] Expression rhs
+                 * @property {string|null} [plus] Expression plus
+                 * @property {string|null} [minus] Expression minus
+                 */
+    
+                /**
+                 * Constructs a new Expression.
+                 * @memberof flyteidl.core
+                 * @classdesc Represents an Expression.
+                 * @implements IExpression
+                 * @constructor
+                 * @param {flyteidl.core.IExpression=} [properties] Properties to set
+                 */
+                function Expression(properties) {
+                    if (properties)
+                        for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                            if (properties[keys[i]] != null)
+                                this[keys[i]] = properties[keys[i]];
+                }
+    
+                /**
+                 * Expression lhs.
+                 * @member {flyteidl.core.IParameter|null|undefined} lhs
+                 * @memberof flyteidl.core.Expression
+                 * @instance
+                 */
+                Expression.prototype.lhs = null;
+    
+                /**
+                 * Expression rhs.
+                 * @member {flyteidl.core.IParameter|null|undefined} rhs
+                 * @memberof flyteidl.core.Expression
+                 * @instance
+                 */
+                Expression.prototype.rhs = null;
+    
+                /**
+                 * Expression plus.
+                 * @member {string} plus
+                 * @memberof flyteidl.core.Expression
+                 * @instance
+                 */
+                Expression.prototype.plus = "";
+    
+                /**
+                 * Expression minus.
+                 * @member {string} minus
+                 * @memberof flyteidl.core.Expression
+                 * @instance
+                 */
+                Expression.prototype.minus = "";
+    
+                // OneOf field names bound to virtual getters and setters
+                var $oneOfFields;
+    
+                /**
+                 * Expression operator.
+                 * @member {"plus"|"minus"|undefined} operator
+                 * @memberof flyteidl.core.Expression
+                 * @instance
+                 */
+                Object.defineProperty(Expression.prototype, "operator", {
+                    get: $util.oneOfGetter($oneOfFields = ["plus", "minus"]),
+                    set: $util.oneOfSetter($oneOfFields)
+                });
+    
+                /**
+                 * Creates a new Expression instance using the specified properties.
+                 * @function create
+                 * @memberof flyteidl.core.Expression
+                 * @static
+                 * @param {flyteidl.core.IExpression=} [properties] Properties to set
+                 * @returns {flyteidl.core.Expression} Expression instance
+                 */
+                Expression.create = function create(properties) {
+                    return new Expression(properties);
+                };
+    
+                /**
+                 * Encodes the specified Expression message. Does not implicitly {@link flyteidl.core.Expression.verify|verify} messages.
+                 * @function encode
+                 * @memberof flyteidl.core.Expression
+                 * @static
+                 * @param {flyteidl.core.IExpression} message Expression message or plain object to encode
+                 * @param {$protobuf.Writer} [writer] Writer to encode to
+                 * @returns {$protobuf.Writer} Writer
+                 */
+                Expression.encode = function encode(message, writer) {
+                    if (!writer)
+                        writer = $Writer.create();
+                    if (message.lhs != null && message.hasOwnProperty("lhs"))
+                        $root.flyteidl.core.Parameter.encode(message.lhs, writer.uint32(/* id 1, wireType 2 =*/10).fork()).ldelim();
+                    if (message.rhs != null && message.hasOwnProperty("rhs"))
+                        $root.flyteidl.core.Parameter.encode(message.rhs, writer.uint32(/* id 2, wireType 2 =*/18).fork()).ldelim();
+                    if (message.plus != null && message.hasOwnProperty("plus"))
+                        writer.uint32(/* id 11, wireType 2 =*/90).string(message.plus);
+                    if (message.minus != null && message.hasOwnProperty("minus"))
+                        writer.uint32(/* id 12, wireType 2 =*/98).string(message.minus);
+                    return writer;
+                };
+    
+                /**
+                 * Decodes an Expression message from the specified reader or buffer.
+                 * @function decode
+                 * @memberof flyteidl.core.Expression
+                 * @static
+                 * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+                 * @param {number} [length] Message length if known beforehand
+                 * @returns {flyteidl.core.Expression} Expression
+                 * @throws {Error} If the payload is not a reader or valid buffer
+                 * @throws {$protobuf.util.ProtocolError} If required fields are missing
+                 */
+                Expression.decode = function decode(reader, length) {
+                    if (!(reader instanceof $Reader))
+                        reader = $Reader.create(reader);
+                    var end = length === undefined ? reader.len : reader.pos + length, message = new $root.flyteidl.core.Expression();
+                    while (reader.pos < end) {
+                        var tag = reader.uint32();
+                        switch (tag >>> 3) {
+                        case 1:
+                            message.lhs = $root.flyteidl.core.Parameter.decode(reader, reader.uint32());
+                            break;
+                        case 2:
+                            message.rhs = $root.flyteidl.core.Parameter.decode(reader, reader.uint32());
+                            break;
+                        case 11:
+                            message.plus = reader.string();
+                            break;
+                        case 12:
+                            message.minus = reader.string();
+                            break;
+                        default:
+                            reader.skipType(tag & 7);
+                            break;
+                        }
+                    }
+                    return message;
+                };
+    
+                /**
+                 * Verifies an Expression message.
+                 * @function verify
+                 * @memberof flyteidl.core.Expression
+                 * @static
+                 * @param {Object.<string,*>} message Plain object to verify
+                 * @returns {string|null} `null` if valid, otherwise the reason why it is not
+                 */
+                Expression.verify = function verify(message) {
+                    if (typeof message !== "object" || message === null)
+                        return "object expected";
+                    var properties = {};
+                    if (message.lhs != null && message.hasOwnProperty("lhs")) {
+                        var error = $root.flyteidl.core.Parameter.verify(message.lhs);
+                        if (error)
+                            return "lhs." + error;
+                    }
+                    if (message.rhs != null && message.hasOwnProperty("rhs")) {
+                        var error = $root.flyteidl.core.Parameter.verify(message.rhs);
+                        if (error)
+                            return "rhs." + error;
+                    }
+                    if (message.plus != null && message.hasOwnProperty("plus")) {
+                        properties.operator = 1;
+                        if (!$util.isString(message.plus))
+                            return "plus: string expected";
+                    }
+                    if (message.minus != null && message.hasOwnProperty("minus")) {
+                        if (properties.operator === 1)
+                            return "operator: multiple values";
+                        properties.operator = 1;
+                        if (!$util.isString(message.minus))
+                            return "minus: string expected";
+                    }
+                    return null;
+                };
+    
+                return Expression;
+            })();
+    
             core.Parameter = (function() {
     
                 /**
@@ -12314,6 +12500,7 @@
                  * @property {boolean|null} [required] Parameter required
                  * @property {flyteidl.core.IArtifactQuery|null} [artifactQuery] Parameter artifactQuery
                  * @property {flyteidl.core.IArtifactID|null} [artifactId] Parameter artifactId
+                 * @property {flyteidl.core.IExpression|null} [expression] Parameter expression
                  */
     
                 /**
@@ -12371,17 +12558,25 @@
                  */
                 Parameter.prototype.artifactId = null;
     
+                /**
+                 * Parameter expression.
+                 * @member {flyteidl.core.IExpression|null|undefined} expression
+                 * @memberof flyteidl.core.Parameter
+                 * @instance
+                 */
+                Parameter.prototype.expression = null;
+    
                 // OneOf field names bound to virtual getters and setters
                 var $oneOfFields;
     
                 /**
                  * Parameter behavior.
-                 * @member {"default"|"required"|"artifactQuery"|"artifactId"|undefined} behavior
+                 * @member {"default"|"required"|"artifactQuery"|"artifactId"|"expression"|undefined} behavior
                  * @memberof flyteidl.core.Parameter
                  * @instance
                  */
                 Object.defineProperty(Parameter.prototype, "behavior", {
-                    get: $util.oneOfGetter($oneOfFields = ["default", "required", "artifactQuery", "artifactId"]),
+                    get: $util.oneOfGetter($oneOfFields = ["default", "required", "artifactQuery", "artifactId", "expression"]),
                     set: $util.oneOfSetter($oneOfFields)
                 });
     
@@ -12419,6 +12614,8 @@
                         $root.flyteidl.core.ArtifactQuery.encode(message.artifactQuery, writer.uint32(/* id 4, wireType 2 =*/34).fork()).ldelim();
                     if (message.artifactId != null && message.hasOwnProperty("artifactId"))
                         $root.flyteidl.core.ArtifactID.encode(message.artifactId, writer.uint32(/* id 5, wireType 2 =*/42).fork()).ldelim();
+                    if (message.expression != null && message.hasOwnProperty("expression"))
+                        $root.flyteidl.core.Expression.encode(message.expression, writer.uint32(/* id 6, wireType 2 =*/50).fork()).ldelim();
                     return writer;
                 };
     
@@ -12454,6 +12651,9 @@
                             break;
                         case 5:
                             message.artifactId = $root.flyteidl.core.ArtifactID.decode(reader, reader.uint32());
+                            break;
+                        case 6:
+                            message.expression = $root.flyteidl.core.Expression.decode(reader, reader.uint32());
                             break;
                         default:
                             reader.skipType(tag & 7);
@@ -12513,6 +12713,16 @@
                             var error = $root.flyteidl.core.ArtifactID.verify(message.artifactId);
                             if (error)
                                 return "artifactId." + error;
+                        }
+                    }
+                    if (message.expression != null && message.hasOwnProperty("expression")) {
+                        if (properties.behavior === 1)
+                            return "behavior: multiple values";
+                        properties.behavior = 1;
+                        {
+                            var error = $root.flyteidl.core.Expression.verify(message.expression);
+                            if (error)
+                                return "expression." + error;
                         }
                     }
                     return null;

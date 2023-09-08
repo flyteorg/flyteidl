@@ -783,6 +783,27 @@ pub struct TypedInterface {
     #[prost(message, optional, tag="2")]
     pub outputs: ::core::option::Option<VariableMap>,
 }
+#[allow(clippy::derive_partial_eq_without_eq)]
+#[derive(Clone, PartialEq, ::prost::Message)]
+pub struct Expression {
+    #[prost(message, optional, boxed, tag="1")]
+    pub lhs: ::core::option::Option<::prost::alloc::boxed::Box<Parameter>>,
+    #[prost(message, optional, boxed, tag="2")]
+    pub rhs: ::core::option::Option<::prost::alloc::boxed::Box<Parameter>>,
+    #[prost(oneof="expression::Operator", tags="11, 12")]
+    pub operator: ::core::option::Option<expression::Operator>,
+}
+/// Nested message and enum types in `Expression`.
+pub mod expression {
+    #[allow(clippy::derive_partial_eq_without_eq)]
+#[derive(Clone, PartialEq, ::prost::Oneof)]
+    pub enum Operator {
+        #[prost(string, tag="11")]
+        Plus(::prost::alloc::string::String),
+        #[prost(string, tag="12")]
+        Minus(::prost::alloc::string::String),
+    }
+}
 /// A parameter is used as input to a launch plan and has
 /// the special ability to have a default value or mark itself as required.
 #[allow(clippy::derive_partial_eq_without_eq)]
@@ -792,7 +813,7 @@ pub struct Parameter {
     #[prost(message, optional, tag="1")]
     pub var: ::core::option::Option<Variable>,
     /// +optional
-    #[prost(oneof="parameter::Behavior", tags="2, 3, 4, 5")]
+    #[prost(oneof="parameter::Behavior", tags="2, 3, 4, 5, 6")]
     pub behavior: ::core::option::Option<parameter::Behavior>,
 }
 /// Nested message and enum types in `Parameter`.
@@ -813,6 +834,8 @@ pub mod parameter {
         ArtifactQuery(super::ArtifactQuery),
         #[prost(message, tag="5")]
         ArtifactId(super::ArtifactId),
+        #[prost(message, tag="6")]
+        Expression(::prost::alloc::boxed::Box<super::Expression>),
     }
 }
 /// A map of Parameters.

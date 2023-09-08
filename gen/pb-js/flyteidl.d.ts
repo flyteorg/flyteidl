@@ -5162,6 +5162,79 @@ export namespace flyteidl {
             public static verify(message: { [k: string]: any }): (string|null);
         }
 
+        /** Properties of an Expression. */
+        interface IExpression {
+
+            /** Expression lhs */
+            lhs?: (flyteidl.core.IParameter|null);
+
+            /** Expression rhs */
+            rhs?: (flyteidl.core.IParameter|null);
+
+            /** Expression plus */
+            plus?: (string|null);
+
+            /** Expression minus */
+            minus?: (string|null);
+        }
+
+        /** Represents an Expression. */
+        class Expression implements IExpression {
+
+            /**
+             * Constructs a new Expression.
+             * @param [properties] Properties to set
+             */
+            constructor(properties?: flyteidl.core.IExpression);
+
+            /** Expression lhs. */
+            public lhs?: (flyteidl.core.IParameter|null);
+
+            /** Expression rhs. */
+            public rhs?: (flyteidl.core.IParameter|null);
+
+            /** Expression plus. */
+            public plus: string;
+
+            /** Expression minus. */
+            public minus: string;
+
+            /** Expression operator. */
+            public operator?: ("plus"|"minus");
+
+            /**
+             * Creates a new Expression instance using the specified properties.
+             * @param [properties] Properties to set
+             * @returns Expression instance
+             */
+            public static create(properties?: flyteidl.core.IExpression): flyteidl.core.Expression;
+
+            /**
+             * Encodes the specified Expression message. Does not implicitly {@link flyteidl.core.Expression.verify|verify} messages.
+             * @param message Expression message or plain object to encode
+             * @param [writer] Writer to encode to
+             * @returns Writer
+             */
+            public static encode(message: flyteidl.core.IExpression, writer?: $protobuf.Writer): $protobuf.Writer;
+
+            /**
+             * Decodes an Expression message from the specified reader or buffer.
+             * @param reader Reader or buffer to decode from
+             * @param [length] Message length if known beforehand
+             * @returns Expression
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): flyteidl.core.Expression;
+
+            /**
+             * Verifies an Expression message.
+             * @param message Plain object to verify
+             * @returns `null` if valid, otherwise the reason why it is not
+             */
+            public static verify(message: { [k: string]: any }): (string|null);
+        }
+
         /** Properties of a Parameter. */
         interface IParameter {
 
@@ -5179,6 +5252,9 @@ export namespace flyteidl {
 
             /** Parameter artifactId */
             artifactId?: (flyteidl.core.IArtifactID|null);
+
+            /** Parameter expression */
+            expression?: (flyteidl.core.IExpression|null);
         }
 
         /** Represents a Parameter. */
@@ -5205,8 +5281,11 @@ export namespace flyteidl {
             /** Parameter artifactId. */
             public artifactId?: (flyteidl.core.IArtifactID|null);
 
+            /** Parameter expression. */
+            public expression?: (flyteidl.core.IExpression|null);
+
             /** Parameter behavior. */
-            public behavior?: ("default"|"required"|"artifactQuery"|"artifactId");
+            public behavior?: ("default"|"required"|"artifactQuery"|"artifactId"|"expression");
 
             /**
              * Creates a new Parameter instance using the specified properties.

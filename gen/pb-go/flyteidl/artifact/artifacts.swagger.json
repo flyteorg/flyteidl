@@ -311,6 +311,23 @@
       },
       "description": "Represents an error thrown from a node."
     },
+    "coreExpression": {
+      "type": "object",
+      "properties": {
+        "lhs": {
+          "$ref": "#/definitions/coreParameter"
+        },
+        "rhs": {
+          "$ref": "#/definitions/coreParameter"
+        },
+        "plus": {
+          "type": "string"
+        },
+        "minus": {
+          "type": "string"
+        }
+      }
+    },
     "coreIdentifier": {
       "type": "object",
       "properties": {
@@ -474,6 +491,9 @@
         },
         "artifact_id": {
           "$ref": "#/definitions/coreArtifactID"
+        },
+        "expression": {
+          "$ref": "#/definitions/coreExpression"
         }
       },
       "description": "A parameter is used as input to a launch plan and has\nthe special ability to have a default value or mark itself as required."

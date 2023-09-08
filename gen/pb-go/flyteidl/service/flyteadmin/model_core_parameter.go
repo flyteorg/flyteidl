@@ -20,4 +20,5 @@ type CoreParameter struct {
 	// This is an execution time search basically that should result in exactly one Artifact with a Type that matches the type of the variable.
 	ArtifactQuery *CoreArtifactQuery `json:"artifact_query,omitempty"`
 	ArtifactId *CoreArtifactId `json:"artifact_id,omitempty"`
+	Expression *CoreExpression `json:"expression,omitempty"`
 }

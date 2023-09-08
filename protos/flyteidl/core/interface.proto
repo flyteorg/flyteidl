@@ -35,6 +35,16 @@ message TypedInterface {
     VariableMap outputs = 2;
 }
 
+message Expression {
+    Parameter lhs = 1;
+    Parameter rhs = 2;
+    oneof operator {
+        string plus = 11;
+        string minus = 12;
+    }
+}
+
+
 // A parameter is used as input to a launch plan and has
 // the special ability to have a default value or mark itself as required.
 message Parameter {
@@ -54,6 +64,8 @@ message Parameter {
         core.ArtifactQuery artifact_query = 4;
 
         core.ArtifactID artifact_id = 5;
+
+        Expression expression = 6;
     }
 }
 
