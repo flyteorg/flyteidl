@@ -242,6 +242,36 @@ pub struct OutputReference {
     /// Variable name must refer to an output variable for the node.
     #[prost(string, tag="2")]
     pub var: ::prost::alloc::string::String,
+    #[prost(message, repeated, tag="3")]
+    pub attr_path: ::prost::alloc::vec::Vec<PromiseAtrribute>,
+}
+// PromiseAttribute stores the attribute path of a promise, which will be resolved at runtime.
+// The attribute path is a list of strings and integers.
+// In the following example,
+// ```
+// @workflow
+// def wf():
+//      o = t1()
+//      t2(o.a\["b"][0\])
+// ```
+// the output reference t2 binds to has a list of PromiseAttribute ["a", "b", 0]
+
+#[allow(clippy::derive_partial_eq_without_eq)]
+#[derive(Clone, PartialEq, ::prost::Message)]
+pub struct PromiseAtrribute {
+    #[prost(oneof="promise_atrribute::Value", tags="1, 2")]
+    pub value: ::core::option::Option<promise_atrribute::Value>,
+}
+/// Nested message and enum types in `PromiseAtrribute`.
+pub mod promise_atrribute {
+    #[allow(clippy::derive_partial_eq_without_eq)]
+#[derive(Clone, PartialEq, ::prost::Oneof)]
+    pub enum Value {
+        #[prost(string, tag="1")]
+        StringValue(::prost::alloc::string::String),
+        #[prost(int32, tag="2")]
+        IntValue(i32),
+    }
 }
 /// Represents an error thrown from a node.
 #[allow(clippy::derive_partial_eq_without_eq)]

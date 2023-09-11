@@ -4094,6 +4094,9 @@ export namespace flyteidl {
 
             /** OutputReference var */
             "var"?: (string|null);
+
+            /** OutputReference attrPath */
+            attrPath?: (flyteidl.core.IPromiseAtrribute[]|null);
         }
 
         /** Represents an OutputReference. */
@@ -4110,6 +4113,9 @@ export namespace flyteidl {
 
             /** OutputReference var. */
             public var: string;
+
+            /** OutputReference attrPath. */
+            public attrPath: flyteidl.core.IPromiseAtrribute[];
 
             /**
              * Creates a new OutputReference instance using the specified properties.
@@ -4138,6 +4144,67 @@ export namespace flyteidl {
 
             /**
              * Verifies an OutputReference message.
+             * @param message Plain object to verify
+             * @returns `null` if valid, otherwise the reason why it is not
+             */
+            public static verify(message: { [k: string]: any }): (string|null);
+        }
+
+        /** Properties of a PromiseAtrribute. */
+        interface IPromiseAtrribute {
+
+            /** PromiseAtrribute stringValue */
+            stringValue?: (string|null);
+
+            /** PromiseAtrribute intValue */
+            intValue?: (number|null);
+        }
+
+        /** Represents a PromiseAtrribute. */
+        class PromiseAtrribute implements IPromiseAtrribute {
+
+            /**
+             * Constructs a new PromiseAtrribute.
+             * @param [properties] Properties to set
+             */
+            constructor(properties?: flyteidl.core.IPromiseAtrribute);
+
+            /** PromiseAtrribute stringValue. */
+            public stringValue: string;
+
+            /** PromiseAtrribute intValue. */
+            public intValue: number;
+
+            /** PromiseAtrribute value. */
+            public value?: ("stringValue"|"intValue");
+
+            /**
+             * Creates a new PromiseAtrribute instance using the specified properties.
+             * @param [properties] Properties to set
+             * @returns PromiseAtrribute instance
+             */
+            public static create(properties?: flyteidl.core.IPromiseAtrribute): flyteidl.core.PromiseAtrribute;
+
+            /**
+             * Encodes the specified PromiseAtrribute message. Does not implicitly {@link flyteidl.core.PromiseAtrribute.verify|verify} messages.
+             * @param message PromiseAtrribute message or plain object to encode
+             * @param [writer] Writer to encode to
+             * @returns Writer
+             */
+            public static encode(message: flyteidl.core.IPromiseAtrribute, writer?: $protobuf.Writer): $protobuf.Writer;
+
+            /**
+             * Decodes a PromiseAtrribute message from the specified reader or buffer.
+             * @param reader Reader or buffer to decode from
+             * @param [length] Message length if known beforehand
+             * @returns PromiseAtrribute
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): flyteidl.core.PromiseAtrribute;
+
+            /**
+             * Verifies a PromiseAtrribute message.
              * @param message Plain object to verify
              * @returns `null` if valid, otherwise the reason why it is not
              */
