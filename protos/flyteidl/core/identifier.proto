@@ -80,8 +80,19 @@ message ArtifactKey {
   string name = 3;
 }
 
+// Only valid for triggers
+message ArtifactBindingData {
+  uint32 index = 1;
+  string partition_key = 2;
+  string transform = 3;
+}
+
+message PartitionValue {
+  string static_value = 1;
+  ArtifactBindingData binding = 2;
+}
 message Partitions {
-  map<string, string> value = 1;
+  map<string, PartitionValue> value = 1;
 }
 
 message ArtifactID {
@@ -115,5 +126,16 @@ message ArtifactQuery {
     ArtifactID artifact_id = 1;
     ArtifactTag artifact_tag = 2;
     string uri = 3;
+    ArtifactBindingData binding = 4;
   }
 }
+
+message Trigger {
+  // This will be set to a launch plan type, but note that this is different than the actual launch plan type.
+  Identifier trigger_id = 1;
+
+  // These are partial artifact IDs that will be triggered on
+  // Consider making these ArtifactQuery instead.
+  repeated core.ArtifactID triggers = 2;
+}
+

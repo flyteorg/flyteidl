@@ -200,6 +200,22 @@
         }
       }
     },
+    "coreArtifactBindingData": {
+      "type": "object",
+      "properties": {
+        "index": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "partition_key": {
+          "type": "string"
+        },
+        "transform": {
+          "type": "string"
+        }
+      },
+      "title": "Only valid for triggers"
+    },
     "coreArtifactID": {
       "type": "object",
       "properties": {
@@ -682,13 +698,24 @@
       "default": "CLIENT_CREDENTIALS",
       "description": "Type of the token requested.\n\n - CLIENT_CREDENTIALS: CLIENT_CREDENTIALS indicates a 2-legged OAuth token requested using client credentials."
     },
+    "corePartitionValue": {
+      "type": "object",
+      "properties": {
+        "static_value": {
+          "type": "string"
+        },
+        "binding": {
+          "$ref": "#/definitions/coreArtifactBindingData"
+        }
+      }
+    },
     "corePartitions": {
       "type": "object",
       "properties": {
         "value": {
           "type": "object",
           "additionalProperties": {
-            "type": "string"
+            "$ref": "#/definitions/corePartitionValue"
           }
         }
       }

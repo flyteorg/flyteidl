@@ -5618,6 +5618,22 @@
       },
       "description": "ArrayNode is a Flyte node type that simplifies the execution of a sub-node over a list of input\nvalues. An ArrayNode can be executed with configurable parallelism (separate from the parent\nworkflow) and can be configured to succeed when a certain number of sub-nodes succeed."
     },
+    "coreArtifactBindingData": {
+      "type": "object",
+      "properties": {
+        "index": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "partition_key": {
+          "type": "string"
+        },
+        "transform": {
+          "type": "string"
+        }
+      },
+      "title": "Only valid for triggers"
+    },
     "coreArtifactID": {
       "type": "object",
       "properties": {
@@ -5658,6 +5674,9 @@
         },
         "uri": {
           "type": "string"
+        },
+        "binding": {
+          "$ref": "#/definitions/coreArtifactBindingData"
         }
       },
       "title": "Uniqueness constraints for Artifacts\n - project, domain, name, version, partitions\nOption 2 (tags are standalone, point to an individual artifact id):\n - project, domain, name, alias (points to one partition if partitioned)\n - project, domain, name, partition key, partition value"
@@ -6581,13 +6600,24 @@
       },
       "description": "A map of Parameters."
     },
+    "corePartitionValue": {
+      "type": "object",
+      "properties": {
+        "static_value": {
+          "type": "string"
+        },
+        "binding": {
+          "$ref": "#/definitions/coreArtifactBindingData"
+        }
+      }
+    },
     "corePartitions": {
       "type": "object",
       "properties": {
         "value": {
           "type": "object",
           "additionalProperties": {
-            "type": "string"
+            "$ref": "#/definitions/corePartitionValue"
           }
         }
       }

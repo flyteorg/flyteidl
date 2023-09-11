@@ -249,6 +249,22 @@
         }
       }
     },
+    "coreArtifactBindingData": {
+      "type": "object",
+      "properties": {
+        "index": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "partition_key": {
+          "type": "string"
+        },
+        "transform": {
+          "type": "string"
+        }
+      },
+      "title": "Only valid for triggers"
+    },
     "coreArtifactID": {
       "type": "object",
       "properties": {
@@ -492,13 +508,24 @@
       },
       "description": "Encapsulation of fields that identify a Flyte node execution entity."
     },
+    "corePartitionValue": {
+      "type": "object",
+      "properties": {
+        "static_value": {
+          "type": "string"
+        },
+        "binding": {
+          "$ref": "#/definitions/coreArtifactBindingData"
+        }
+      }
+    },
     "corePartitions": {
       "type": "object",
       "properties": {
         "value": {
           "type": "object",
           "additionalProperties": {
-            "type": "string"
+            "$ref": "#/definitions/corePartitionValue"
           }
         }
       }

@@ -643,11 +643,30 @@ pub struct ArtifactKey {
     #[prost(string, tag="3")]
     pub name: ::prost::alloc::string::String,
 }
+/// Only valid for triggers
+#[allow(clippy::derive_partial_eq_without_eq)]
+#[derive(Clone, PartialEq, ::prost::Message)]
+pub struct ArtifactBindingData {
+    #[prost(uint32, tag="1")]
+    pub index: u32,
+    #[prost(string, tag="2")]
+    pub partition_key: ::prost::alloc::string::String,
+    #[prost(string, tag="3")]
+    pub transform: ::prost::alloc::string::String,
+}
+#[allow(clippy::derive_partial_eq_without_eq)]
+#[derive(Clone, PartialEq, ::prost::Message)]
+pub struct PartitionValue {
+    #[prost(string, tag="1")]
+    pub static_value: ::prost::alloc::string::String,
+    #[prost(message, optional, tag="2")]
+    pub binding: ::core::option::Option<ArtifactBindingData>,
+}
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(Clone, PartialEq, ::prost::Message)]
 pub struct Partitions {
-    #[prost(map="string, string", tag="1")]
-    pub value: ::std::collections::HashMap<::prost::alloc::string::String, ::prost::alloc::string::String>,
+    #[prost(map="string, message", tag="1")]
+    pub value: ::std::collections::HashMap<::prost::alloc::string::String, PartitionValue>,
 }
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(Clone, PartialEq, ::prost::Message)]
@@ -694,7 +713,7 @@ pub struct ArtifactTag {
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(Clone, PartialEq, ::prost::Message)]
 pub struct ArtifactQuery {
-    #[prost(oneof="artifact_query::Identifier", tags="1, 2, 3")]
+    #[prost(oneof="artifact_query::Identifier", tags="1, 2, 3, 4")]
     pub identifier: ::core::option::Option<artifact_query::Identifier>,
 }
 /// Nested message and enum types in `ArtifactQuery`.
@@ -708,7 +727,20 @@ pub mod artifact_query {
         ArtifactTag(super::ArtifactTag),
         #[prost(string, tag="3")]
         Uri(::prost::alloc::string::String),
+        #[prost(message, tag="4")]
+        Binding(super::ArtifactBindingData),
     }
+}
+#[allow(clippy::derive_partial_eq_without_eq)]
+#[derive(Clone, PartialEq, ::prost::Message)]
+pub struct Trigger {
+    /// This will be set to a launch plan type, but note that this is different than the actual launch plan type.
+    #[prost(message, optional, tag="1")]
+    pub trigger_id: ::core::option::Option<Identifier>,
+    /// These are partial artifact IDs that will be triggered on
+    /// Consider making these ArtifactQuery instead.
+    #[prost(message, repeated, tag="2")]
+    pub triggers: ::prost::alloc::vec::Vec<ArtifactId>,
 }
 /// Indicates a resource type within Flyte.
 #[derive(Clone, Copy, Debug, PartialEq, Eq, Hash, PartialOrd, Ord, ::prost::Enumeration)]

@@ -592,11 +592,133 @@ export namespace flyteidl {
             public static verify(message: { [k: string]: any }): (string|null);
         }
 
+        /** Properties of an ArtifactBindingData. */
+        interface IArtifactBindingData {
+
+            /** ArtifactBindingData index */
+            index?: (number|null);
+
+            /** ArtifactBindingData partitionKey */
+            partitionKey?: (string|null);
+
+            /** ArtifactBindingData transform */
+            transform?: (string|null);
+        }
+
+        /** Represents an ArtifactBindingData. */
+        class ArtifactBindingData implements IArtifactBindingData {
+
+            /**
+             * Constructs a new ArtifactBindingData.
+             * @param [properties] Properties to set
+             */
+            constructor(properties?: flyteidl.core.IArtifactBindingData);
+
+            /** ArtifactBindingData index. */
+            public index: number;
+
+            /** ArtifactBindingData partitionKey. */
+            public partitionKey: string;
+
+            /** ArtifactBindingData transform. */
+            public transform: string;
+
+            /**
+             * Creates a new ArtifactBindingData instance using the specified properties.
+             * @param [properties] Properties to set
+             * @returns ArtifactBindingData instance
+             */
+            public static create(properties?: flyteidl.core.IArtifactBindingData): flyteidl.core.ArtifactBindingData;
+
+            /**
+             * Encodes the specified ArtifactBindingData message. Does not implicitly {@link flyteidl.core.ArtifactBindingData.verify|verify} messages.
+             * @param message ArtifactBindingData message or plain object to encode
+             * @param [writer] Writer to encode to
+             * @returns Writer
+             */
+            public static encode(message: flyteidl.core.IArtifactBindingData, writer?: $protobuf.Writer): $protobuf.Writer;
+
+            /**
+             * Decodes an ArtifactBindingData message from the specified reader or buffer.
+             * @param reader Reader or buffer to decode from
+             * @param [length] Message length if known beforehand
+             * @returns ArtifactBindingData
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): flyteidl.core.ArtifactBindingData;
+
+            /**
+             * Verifies an ArtifactBindingData message.
+             * @param message Plain object to verify
+             * @returns `null` if valid, otherwise the reason why it is not
+             */
+            public static verify(message: { [k: string]: any }): (string|null);
+        }
+
+        /** Properties of a PartitionValue. */
+        interface IPartitionValue {
+
+            /** PartitionValue staticValue */
+            staticValue?: (string|null);
+
+            /** PartitionValue binding */
+            binding?: (flyteidl.core.IArtifactBindingData|null);
+        }
+
+        /** Represents a PartitionValue. */
+        class PartitionValue implements IPartitionValue {
+
+            /**
+             * Constructs a new PartitionValue.
+             * @param [properties] Properties to set
+             */
+            constructor(properties?: flyteidl.core.IPartitionValue);
+
+            /** PartitionValue staticValue. */
+            public staticValue: string;
+
+            /** PartitionValue binding. */
+            public binding?: (flyteidl.core.IArtifactBindingData|null);
+
+            /**
+             * Creates a new PartitionValue instance using the specified properties.
+             * @param [properties] Properties to set
+             * @returns PartitionValue instance
+             */
+            public static create(properties?: flyteidl.core.IPartitionValue): flyteidl.core.PartitionValue;
+
+            /**
+             * Encodes the specified PartitionValue message. Does not implicitly {@link flyteidl.core.PartitionValue.verify|verify} messages.
+             * @param message PartitionValue message or plain object to encode
+             * @param [writer] Writer to encode to
+             * @returns Writer
+             */
+            public static encode(message: flyteidl.core.IPartitionValue, writer?: $protobuf.Writer): $protobuf.Writer;
+
+            /**
+             * Decodes a PartitionValue message from the specified reader or buffer.
+             * @param reader Reader or buffer to decode from
+             * @param [length] Message length if known beforehand
+             * @returns PartitionValue
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): flyteidl.core.PartitionValue;
+
+            /**
+             * Verifies a PartitionValue message.
+             * @param message Plain object to verify
+             * @returns `null` if valid, otherwise the reason why it is not
+             */
+            public static verify(message: { [k: string]: any }): (string|null);
+        }
+
         /** Properties of a Partitions. */
         interface IPartitions {
 
             /** Partitions value */
-            value?: ({ [k: string]: string }|null);
+            value?: ({ [k: string]: flyteidl.core.IPartitionValue }|null);
         }
 
         /** Represents a Partitions. */
@@ -609,7 +731,7 @@ export namespace flyteidl {
             constructor(properties?: flyteidl.core.IPartitions);
 
             /** Partitions value. */
-            public value: { [k: string]: string };
+            public value: { [k: string]: flyteidl.core.IPartitionValue };
 
             /**
              * Creates a new Partitions instance using the specified properties.
@@ -780,6 +902,9 @@ export namespace flyteidl {
 
             /** ArtifactQuery uri */
             uri?: (string|null);
+
+            /** ArtifactQuery binding */
+            binding?: (flyteidl.core.IArtifactBindingData|null);
         }
 
         /** Represents an ArtifactQuery. */
@@ -800,8 +925,11 @@ export namespace flyteidl {
             /** ArtifactQuery uri. */
             public uri: string;
 
+            /** ArtifactQuery binding. */
+            public binding?: (flyteidl.core.IArtifactBindingData|null);
+
             /** ArtifactQuery identifier. */
-            public identifier?: ("artifactId"|"artifactTag"|"uri");
+            public identifier?: ("artifactId"|"artifactTag"|"uri"|"binding");
 
             /**
              * Creates a new ArtifactQuery instance using the specified properties.
@@ -830,6 +958,64 @@ export namespace flyteidl {
 
             /**
              * Verifies an ArtifactQuery message.
+             * @param message Plain object to verify
+             * @returns `null` if valid, otherwise the reason why it is not
+             */
+            public static verify(message: { [k: string]: any }): (string|null);
+        }
+
+        /** Properties of a Trigger. */
+        interface ITrigger {
+
+            /** Trigger triggerId */
+            triggerId?: (flyteidl.core.IIdentifier|null);
+
+            /** Trigger triggers */
+            triggers?: (flyteidl.core.IArtifactID[]|null);
+        }
+
+        /** Represents a Trigger. */
+        class Trigger implements ITrigger {
+
+            /**
+             * Constructs a new Trigger.
+             * @param [properties] Properties to set
+             */
+            constructor(properties?: flyteidl.core.ITrigger);
+
+            /** Trigger triggerId. */
+            public triggerId?: (flyteidl.core.IIdentifier|null);
+
+            /** Trigger triggers. */
+            public triggers: flyteidl.core.IArtifactID[];
+
+            /**
+             * Creates a new Trigger instance using the specified properties.
+             * @param [properties] Properties to set
+             * @returns Trigger instance
+             */
+            public static create(properties?: flyteidl.core.ITrigger): flyteidl.core.Trigger;
+
+            /**
+             * Encodes the specified Trigger message. Does not implicitly {@link flyteidl.core.Trigger.verify|verify} messages.
+             * @param message Trigger message or plain object to encode
+             * @param [writer] Writer to encode to
+             * @returns Writer
+             */
+            public static encode(message: flyteidl.core.ITrigger, writer?: $protobuf.Writer): $protobuf.Writer;
+
+            /**
+             * Decodes a Trigger message from the specified reader or buffer.
+             * @param reader Reader or buffer to decode from
+             * @param [length] Message length if known beforehand
+             * @returns Trigger
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): flyteidl.core.Trigger;
+
+            /**
+             * Verifies a Trigger message.
              * @param message Plain object to verify
              * @returns `null` if valid, otherwise the reason why it is not
              */

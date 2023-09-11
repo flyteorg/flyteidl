@@ -155,6 +155,7 @@ from flyteadmin.models.container_architecture import ContainerArchitecture
 from flyteadmin.models.core_alias import CoreAlias
 from flyteadmin.models.core_approve_condition import CoreApproveCondition
 from flyteadmin.models.core_array_node import CoreArrayNode
+from flyteadmin.models.core_artifact_binding_data import CoreArtifactBindingData
 from flyteadmin.models.core_artifact_id import CoreArtifactID
 from flyteadmin.models.core_artifact_key import CoreArtifactKey
 from flyteadmin.models.core_artifact_query import CoreArtifactQuery
@@ -208,6 +209,7 @@ from flyteadmin.models.core_operand import CoreOperand
 from flyteadmin.models.core_output_reference import CoreOutputReference
 from flyteadmin.models.core_parameter import CoreParameter
 from flyteadmin.models.core_parameter_map import CoreParameterMap
+from flyteadmin.models.core_partition_value import CorePartitionValue
 from flyteadmin.models.core_partitions import CorePartitions
 from flyteadmin.models.core_primitive import CorePrimitive
 from flyteadmin.models.core_quality_of_service import CoreQualityOfService
