@@ -317,6 +317,7 @@ Class | Method | HTTP request | Description
  - [CorePrimitive](docs/CorePrimitive.md)
  - [CoreQualityOfService](docs/CoreQualityOfService.md)
  - [CoreQualityOfServiceSpec](docs/CoreQualityOfServiceSpec.md)
+ - [CoreResourceMetadata](docs/CoreResourceMetadata.md)
  - [CoreResourceType](docs/CoreResourceType.md)
  - [CoreResources](docs/CoreResources.md)
  - [CoreRetryStrategy](docs/CoreRetryStrategy.md)

@@ -11,5 +11,6 @@ package flyteadmin
 
 type CoreGpuAccelerator struct {
 	Device string `json:"device,omitempty"`
-	Size string `json:"size,omitempty"`
+	Unpartitioned bool `json:"unpartitioned,omitempty"`
+	PartitionSize string `json:"partition_size,omitempty"`
 }

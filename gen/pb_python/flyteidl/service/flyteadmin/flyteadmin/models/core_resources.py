@@ -16,7 +16,6 @@ import re  # noqa: F401
 
 import six
 
-from flyteadmin.models.core_gpu_accelerator import CoreGPUAccelerator  # noqa: F401,E501
 from flyteadmin.models.resources_resource_entry import ResourcesResourceEntry  # noqa: F401,E501
 
 
@@ -35,30 +34,25 @@ class CoreResources(object):
     """
     swagger_types = {
         'requests': 'list[ResourcesResourceEntry]',
-        'limits': 'list[ResourcesResourceEntry]',
-        'gpu': 'CoreGPUAccelerator'
+        'limits': 'list[ResourcesResourceEntry]'
     }
 
     attribute_map = {
         'requests': 'requests',
-        'limits': 'limits',
-        'gpu': 'gpu'
+        'limits': 'limits'
     }
 
-    def __init__(self, requests=None, limits=None, gpu=None):  # noqa: E501
+    def __init__(self, requests=None, limits=None):  # noqa: E501
         """CoreResources - a model defined in Swagger"""  # noqa: E501
 
         self._requests = None
         self._limits = None
-        self._gpu = None
         self.discriminator = None
 
         if requests is not None:
             self.requests = requests
         if limits is not None:
             self.limits = limits
-        if gpu is not None:
-            self.gpu = gpu
 
     @property
     def requests(self):
@@ -105,27 +99,6 @@ class CoreResources(object):
         """
 
         self._limits = limits
-
-    @property
-    def gpu(self):
-        """Gets the gpu of this CoreResources.  # noqa: E501
-
-
-        :return: The gpu of this CoreResources.  # noqa: E501
-        :rtype: CoreGPUAccelerator
-        """
-        return self._gpu
-
-    @gpu.setter
-    def gpu(self, gpu):
-        """Sets the gpu of this CoreResources.
-
-
-        :param gpu: The gpu of this CoreResources.  # noqa: E501
-        :type: CoreGPUAccelerator
-        """
-
-        self._gpu = gpu
 
     def to_dict(self):
         """Returns the model properties as a dict"""

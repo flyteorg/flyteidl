@@ -1886,6 +1886,9 @@ export namespace flyteidl {
 
             /** TaskNodeOverrides resources */
             resources?: (flyteidl.core.IResources|null);
+
+            /** TaskNodeOverrides resourceMetadata */
+            resourceMetadata?: (flyteidl.core.IResourceMetadata|null);
         }
 
         /** Represents a TaskNodeOverrides. */
@@ -1899,6 +1902,9 @@ export namespace flyteidl {
 
             /** TaskNodeOverrides resources. */
             public resources?: (flyteidl.core.IResources|null);
+
+            /** TaskNodeOverrides resourceMetadata. */
+            public resourceMetadata?: (flyteidl.core.IResourceMetadata|null);
 
             /**
              * Creates a new TaskNodeOverrides instance using the specified properties.
@@ -4955,67 +4961,6 @@ export namespace flyteidl {
             public static verify(message: { [k: string]: any }): (string|null);
         }
 
-        /** Properties of a GPUAccelerator. */
-        interface IGPUAccelerator {
-
-            /** GPUAccelerator device */
-            device?: (string|null);
-
-            /** GPUAccelerator size */
-            size?: (string|null);
-        }
-
-        /** Represents a GPUAccelerator. */
-        class GPUAccelerator implements IGPUAccelerator {
-
-            /**
-             * Constructs a new GPUAccelerator.
-             * @param [properties] Properties to set
-             */
-            constructor(properties?: flyteidl.core.IGPUAccelerator);
-
-            /** GPUAccelerator device. */
-            public device: string;
-
-            /** GPUAccelerator size. */
-            public size: string;
-
-            /** GPUAccelerator partition. */
-            public partition?: "size";
-
-            /**
-             * Creates a new GPUAccelerator instance using the specified properties.
-             * @param [properties] Properties to set
-             * @returns GPUAccelerator instance
-             */
-            public static create(properties?: flyteidl.core.IGPUAccelerator): flyteidl.core.GPUAccelerator;
-
-            /**
-             * Encodes the specified GPUAccelerator message. Does not implicitly {@link flyteidl.core.GPUAccelerator.verify|verify} messages.
-             * @param message GPUAccelerator message or plain object to encode
-             * @param [writer] Writer to encode to
-             * @returns Writer
-             */
-            public static encode(message: flyteidl.core.IGPUAccelerator, writer?: $protobuf.Writer): $protobuf.Writer;
-
-            /**
-             * Decodes a GPUAccelerator message from the specified reader or buffer.
-             * @param reader Reader or buffer to decode from
-             * @param [length] Message length if known beforehand
-             * @returns GPUAccelerator
-             * @throws {Error} If the payload is not a reader or valid buffer
-             * @throws {$protobuf.util.ProtocolError} If required fields are missing
-             */
-            public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): flyteidl.core.GPUAccelerator;
-
-            /**
-             * Verifies a GPUAccelerator message.
-             * @param message Plain object to verify
-             * @returns `null` if valid, otherwise the reason why it is not
-             */
-            public static verify(message: { [k: string]: any }): (string|null);
-        }
-
         /** Properties of a Resources. */
         interface IResources {
 
@@ -5024,9 +4969,6 @@ export namespace flyteidl {
 
             /** Resources limits */
             limits?: (flyteidl.core.Resources.IResourceEntry[]|null);
-
-            /** Resources gpu */
-            gpu?: (flyteidl.core.IGPUAccelerator|null);
         }
 
         /** Represents a Resources. */
@@ -5043,12 +4985,6 @@ export namespace flyteidl {
 
             /** Resources limits. */
             public limits: flyteidl.core.Resources.IResourceEntry[];
-
-            /** Resources gpu. */
-            public gpu?: (flyteidl.core.IGPUAccelerator|null);
-
-            /** Resources accelerator. */
-            public accelerator?: "gpu";
 
             /**
              * Creates a new Resources instance using the specified properties.
@@ -5227,6 +5163,128 @@ export namespace flyteidl {
             }
         }
 
+        /** Properties of a GPUAccelerator. */
+        interface IGPUAccelerator {
+
+            /** GPUAccelerator device */
+            device?: (string|null);
+
+            /** GPUAccelerator unpartitioned */
+            unpartitioned?: (boolean|null);
+
+            /** GPUAccelerator partitionSize */
+            partitionSize?: (string|null);
+        }
+
+        /** Represents a GPUAccelerator. */
+        class GPUAccelerator implements IGPUAccelerator {
+
+            /**
+             * Constructs a new GPUAccelerator.
+             * @param [properties] Properties to set
+             */
+            constructor(properties?: flyteidl.core.IGPUAccelerator);
+
+            /** GPUAccelerator device. */
+            public device: string;
+
+            /** GPUAccelerator unpartitioned. */
+            public unpartitioned: boolean;
+
+            /** GPUAccelerator partitionSize. */
+            public partitionSize: string;
+
+            /** GPUAccelerator partition. */
+            public partition?: ("unpartitioned"|"partitionSize");
+
+            /**
+             * Creates a new GPUAccelerator instance using the specified properties.
+             * @param [properties] Properties to set
+             * @returns GPUAccelerator instance
+             */
+            public static create(properties?: flyteidl.core.IGPUAccelerator): flyteidl.core.GPUAccelerator;
+
+            /**
+             * Encodes the specified GPUAccelerator message. Does not implicitly {@link flyteidl.core.GPUAccelerator.verify|verify} messages.
+             * @param message GPUAccelerator message or plain object to encode
+             * @param [writer] Writer to encode to
+             * @returns Writer
+             */
+            public static encode(message: flyteidl.core.IGPUAccelerator, writer?: $protobuf.Writer): $protobuf.Writer;
+
+            /**
+             * Decodes a GPUAccelerator message from the specified reader or buffer.
+             * @param reader Reader or buffer to decode from
+             * @param [length] Message length if known beforehand
+             * @returns GPUAccelerator
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): flyteidl.core.GPUAccelerator;
+
+            /**
+             * Verifies a GPUAccelerator message.
+             * @param message Plain object to verify
+             * @returns `null` if valid, otherwise the reason why it is not
+             */
+            public static verify(message: { [k: string]: any }): (string|null);
+        }
+
+        /** Properties of a ResourceMetadata. */
+        interface IResourceMetadata {
+
+            /** ResourceMetadata gpuAccelerator */
+            gpuAccelerator?: (flyteidl.core.IGPUAccelerator|null);
+        }
+
+        /** Represents a ResourceMetadata. */
+        class ResourceMetadata implements IResourceMetadata {
+
+            /**
+             * Constructs a new ResourceMetadata.
+             * @param [properties] Properties to set
+             */
+            constructor(properties?: flyteidl.core.IResourceMetadata);
+
+            /** ResourceMetadata gpuAccelerator. */
+            public gpuAccelerator?: (flyteidl.core.IGPUAccelerator|null);
+
+            /** ResourceMetadata accelerator. */
+            public accelerator?: "gpuAccelerator";
+
+            /**
+             * Creates a new ResourceMetadata instance using the specified properties.
+             * @param [properties] Properties to set
+             * @returns ResourceMetadata instance
+             */
+            public static create(properties?: flyteidl.core.IResourceMetadata): flyteidl.core.ResourceMetadata;
+
+            /**
+             * Encodes the specified ResourceMetadata message. Does not implicitly {@link flyteidl.core.ResourceMetadata.verify|verify} messages.
+             * @param message ResourceMetadata message or plain object to encode
+             * @param [writer] Writer to encode to
+             * @returns Writer
+             */
+            public static encode(message: flyteidl.core.IResourceMetadata, writer?: $protobuf.Writer): $protobuf.Writer;
+
+            /**
+             * Decodes a ResourceMetadata message from the specified reader or buffer.
+             * @param reader Reader or buffer to decode from
+             * @param [length] Message length if known beforehand
+             * @returns ResourceMetadata
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): flyteidl.core.ResourceMetadata;
+
+            /**
+             * Verifies a ResourceMetadata message.
+             * @param message Plain object to verify
+             * @returns `null` if valid, otherwise the reason why it is not
+             */
+            public static verify(message: { [k: string]: any }): (string|null);
+        }
+
         /** Properties of a TaskMetadata. */
         interface ITaskMetadata {
 
@@ -5262,6 +5320,9 @@ export namespace flyteidl {
 
             /** TaskMetadata podTemplateName */
             podTemplateName?: (string|null);
+
+            /** TaskMetadata resourceMetadata */
+            resourceMetadata?: (flyteidl.core.IResourceMetadata|null);
         }
 
         /** Represents a TaskMetadata. */
@@ -5305,6 +5366,9 @@ export namespace flyteidl {
 
             /** TaskMetadata podTemplateName. */
             public podTemplateName: string;
+
+            /** TaskMetadata resourceMetadata. */
+            public resourceMetadata?: (flyteidl.core.IResourceMetadata|null);
 
             /** TaskMetadata interruptibleValue. */
             public interruptibleValue?: "interruptible";

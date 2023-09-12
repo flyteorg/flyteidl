@@ -32,25 +32,30 @@ class CoreGPUAccelerator(object):
     """
     swagger_types = {
         'device': 'str',
-        'size': 'str'
+        'unpartitioned': 'bool',
+        'partition_size': 'str'
     }
 
     attribute_map = {
         'device': 'device',
-        'size': 'size'
+        'unpartitioned': 'unpartitioned',
+        'partition_size': 'partition_size'
     }
 
-    def __init__(self, device=None, size=None):  # noqa: E501
+    def __init__(self, device=None, unpartitioned=None, partition_size=None):  # noqa: E501
         """CoreGPUAccelerator - a model defined in Swagger"""  # noqa: E501
 
         self._device = None
-        self._size = None
+        self._unpartitioned = None
+        self._partition_size = None
         self.discriminator = None
 
         if device is not None:
             self.device = device
-        if size is not None:
-            self.size = size
+        if unpartitioned is not None:
+            self.unpartitioned = unpartitioned
+        if partition_size is not None:
+            self.partition_size = partition_size
 
     @property
     def device(self):
@@ -74,25 +79,46 @@ class CoreGPUAccelerator(object):
         self._device = device
 
     @property
-    def size(self):
-        """Gets the size of this CoreGPUAccelerator.  # noqa: E501
+    def unpartitioned(self):
+        """Gets the unpartitioned of this CoreGPUAccelerator.  # noqa: E501
 
 
-        :return: The size of this CoreGPUAccelerator.  # noqa: E501
+        :return: The unpartitioned of this CoreGPUAccelerator.  # noqa: E501
+        :rtype: bool
+        """
+        return self._unpartitioned
+
+    @unpartitioned.setter
+    def unpartitioned(self, unpartitioned):
+        """Sets the unpartitioned of this CoreGPUAccelerator.
+
+
+        :param unpartitioned: The unpartitioned of this CoreGPUAccelerator.  # noqa: E501
+        :type: bool
+        """
+
+        self._unpartitioned = unpartitioned
+
+    @property
+    def partition_size(self):
+        """Gets the partition_size of this CoreGPUAccelerator.  # noqa: E501
+
+
+        :return: The partition_size of this CoreGPUAccelerator.  # noqa: E501
         :rtype: str
         """
-        return self._size
+        return self._partition_size
 
-    @size.setter
-    def size(self, size):
-        """Sets the size of this CoreGPUAccelerator.
+    @partition_size.setter
+    def partition_size(self, partition_size):
+        """Sets the partition_size of this CoreGPUAccelerator.
 
 
-        :param size: The size of this CoreGPUAccelerator.  # noqa: E501
+        :param partition_size: The partition_size of this CoreGPUAccelerator.  # noqa: E501
         :type: str
         """
 
-        self._size = size
+        self._partition_size = partition_size
 
     def to_dict(self):
         """Returns the model properties as a dict"""

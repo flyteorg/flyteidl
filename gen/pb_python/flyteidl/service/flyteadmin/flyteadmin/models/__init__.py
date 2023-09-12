@@ -201,6 +201,7 @@ from flyteadmin.models.core_parameter_map import CoreParameterMap
 from flyteadmin.models.core_primitive import CorePrimitive
 from flyteadmin.models.core_quality_of_service import CoreQualityOfService
 from flyteadmin.models.core_quality_of_service_spec import CoreQualityOfServiceSpec
+from flyteadmin.models.core_resource_metadata import CoreResourceMetadata
 from flyteadmin.models.core_resource_type import CoreResourceType
 from flyteadmin.models.core_resources import CoreResources
 from flyteadmin.models.core_retry_strategy import CoreRetryStrategy
