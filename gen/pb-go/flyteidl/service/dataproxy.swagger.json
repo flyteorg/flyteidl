@@ -257,7 +257,8 @@
           "format": "int64"
         },
         "partition_key": {
-          "type": "string"
+          "type": "string",
+          "title": "These two fields are only relevant in the partition value case"
         },
         "transform": {
           "type": "string"

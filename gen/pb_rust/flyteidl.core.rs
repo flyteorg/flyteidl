@@ -649,6 +649,7 @@ pub struct ArtifactKey {
 pub struct ArtifactBindingData {
     #[prost(uint32, tag="1")]
     pub index: u32,
+    /// These two fields are only relevant in the partition value case
     #[prost(string, tag="2")]
     pub partition_key: ::prost::alloc::string::String,
     #[prost(string, tag="3")]
@@ -675,8 +676,9 @@ pub struct ArtifactId {
     pub artifact_key: ::core::option::Option<ArtifactKey>,
     #[prost(string, tag="2")]
     pub version: ::prost::alloc::string::String,
-    /// here for ds popularity
-    /// this is a oneof because of partition querying... we need a way to distinguish between
+    /// Think of a partition as a tag on an Artifact, except it's a key-value pair.
+    /// Different partitions naturally have different versions (execution ids).
+    /// This is a oneof because of partition querying... we need a way to distinguish between
     /// a user not-specifying partitions when searching, and specifically searching for an Artifact
     /// that is not partitioned (this can happen if an Artifact goes from partitioned to non-
     /// partitioned across executions).
@@ -685,8 +687,9 @@ pub struct ArtifactId {
 }
 /// Nested message and enum types in `ArtifactID`.
 pub mod artifact_id {
-    /// here for ds popularity
-    /// this is a oneof because of partition querying... we need a way to distinguish between
+    /// Think of a partition as a tag on an Artifact, except it's a key-value pair.
+    /// Different partitions naturally have different versions (execution ids).
+    /// This is a oneof because of partition querying... we need a way to distinguish between
     /// a user not-specifying partitions when searching, and specifically searching for an Artifact
     /// that is not partitioned (this can happen if an Artifact goes from partitioned to non-
     /// partitioned across executions).

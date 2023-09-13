@@ -34774,6 +34774,7 @@
                  * @interface ILaunchPlanMetadata
                  * @property {flyteidl.admin.ISchedule|null} [schedule] LaunchPlanMetadata schedule
                  * @property {Array.<flyteidl.admin.INotification>|null} [notifications] LaunchPlanMetadata notifications
+                 * @property {google.protobuf.IAny|null} [launchConditions] LaunchPlanMetadata launchConditions
                  */
     
                 /**
@@ -34809,6 +34810,14 @@
                 LaunchPlanMetadata.prototype.notifications = $util.emptyArray;
     
                 /**
+                 * LaunchPlanMetadata launchConditions.
+                 * @member {google.protobuf.IAny|null|undefined} launchConditions
+                 * @memberof flyteidl.admin.LaunchPlanMetadata
+                 * @instance
+                 */
+                LaunchPlanMetadata.prototype.launchConditions = null;
+    
+                /**
                  * Creates a new LaunchPlanMetadata instance using the specified properties.
                  * @function create
                  * @memberof flyteidl.admin.LaunchPlanMetadata
@@ -34837,6 +34846,8 @@
                     if (message.notifications != null && message.notifications.length)
                         for (var i = 0; i < message.notifications.length; ++i)
                             $root.flyteidl.admin.Notification.encode(message.notifications[i], writer.uint32(/* id 2, wireType 2 =*/18).fork()).ldelim();
+                    if (message.launchConditions != null && message.hasOwnProperty("launchConditions"))
+                        $root.google.protobuf.Any.encode(message.launchConditions, writer.uint32(/* id 3, wireType 2 =*/26).fork()).ldelim();
                     return writer;
                 };
     
@@ -34865,6 +34876,9 @@
                             if (!(message.notifications && message.notifications.length))
                                 message.notifications = [];
                             message.notifications.push($root.flyteidl.admin.Notification.decode(reader, reader.uint32()));
+                            break;
+                        case 3:
+                            message.launchConditions = $root.google.protobuf.Any.decode(reader, reader.uint32());
                             break;
                         default:
                             reader.skipType(tag & 7);
@@ -34898,6 +34912,11 @@
                             if (error)
                                 return "notifications." + error;
                         }
+                    }
+                    if (message.launchConditions != null && message.hasOwnProperty("launchConditions")) {
+                        var error = $root.google.protobuf.Any.verify(message.launchConditions);
+                        if (error)
+                            return "launchConditions." + error;
                     }
                     return null;
                 };

@@ -1524,6 +1524,9 @@ pub struct LaunchPlanMetadata {
     /// List of notifications based on Execution status transitions
     #[prost(message, repeated, tag="2")]
     pub notifications: ::prost::alloc::vec::Vec<Notification>,
+    /// Additional metadata for how to launch the launch plan
+    #[prost(message, optional, tag="3")]
+    pub launch_conditions: ::core::option::Option<::prost_types::Any>,
 }
 /// Request to set the referenced launch plan state to the configured value.
 /// See :ref:`ref_flyteidl.admin.LaunchPlan` for more details

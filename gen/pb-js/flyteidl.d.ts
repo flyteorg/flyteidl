@@ -14488,6 +14488,9 @@ export namespace flyteidl {
 
             /** LaunchPlanMetadata notifications */
             notifications?: (flyteidl.admin.INotification[]|null);
+
+            /** LaunchPlanMetadata launchConditions */
+            launchConditions?: (google.protobuf.IAny|null);
         }
 
         /** Represents a LaunchPlanMetadata. */
@@ -14504,6 +14507,9 @@ export namespace flyteidl {
 
             /** LaunchPlanMetadata notifications. */
             public notifications: flyteidl.admin.INotification[];
+
+            /** LaunchPlanMetadata launchConditions. */
+            public launchConditions?: (google.protobuf.IAny|null);
 
             /**
              * Creates a new LaunchPlanMetadata instance using the specified properties.

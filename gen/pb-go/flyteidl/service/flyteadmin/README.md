@@ -338,6 +338,7 @@ Class | Method | HTTP request | Description
  - [IoStrategyUploadMode](docs/IoStrategyUploadMode.md)
  - [PluginOverrideMissingPluginBehavior](docs/PluginOverrideMissingPluginBehavior.md)
  - [ProjectProjectState](docs/ProjectProjectState.md)
+ - [ProtobufAny](docs/ProtobufAny.md)
  - [ProtobufListValue](docs/ProtobufListValue.md)
  - [ProtobufNullValue](docs/ProtobufNullValue.md)
  - [ProtobufStruct](docs/ProtobufStruct.md)

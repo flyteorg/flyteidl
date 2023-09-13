@@ -408,7 +408,8 @@ func (m *ArtifactKey) GetName() string {
 
 // Only valid for triggers
 type ArtifactBindingData struct {
-	Index                uint32   `protobuf:"varint,1,opt,name=index,proto3" json:"index,omitempty"`
+	Index uint32 `protobuf:"varint,1,opt,name=index,proto3" json:"index,omitempty"`
+	// These two fields are only relevant in the partition value case
 	PartitionKey         string   `protobuf:"bytes,2,opt,name=partition_key,json=partitionKey,proto3" json:"partition_key,omitempty"`
 	Transform            string   `protobuf:"bytes,3,opt,name=transform,proto3" json:"transform,omitempty"`
 	XXX_NoUnkeyedLiteral struct{} `json:"-"`
@@ -551,8 +552,9 @@ func (m *Partitions) GetValue() map[string]*PartitionValue {
 type ArtifactID struct {
 	ArtifactKey *ArtifactKey `protobuf:"bytes,1,opt,name=artifact_key,json=artifactKey,proto3" json:"artifact_key,omitempty"`
 	Version     string       `protobuf:"bytes,2,opt,name=version,proto3" json:"version,omitempty"`
-	// here for ds popularity
-	// this is a oneof because of partition querying... we need a way to distinguish between
+	// Think of a partition as a tag on an Artifact, except it's a key-value pair.
+	// Different partitions naturally have different versions (execution ids).
+	// This is a oneof because of partition querying... we need a way to distinguish between
 	// a user not-specifying partitions when searching, and specifically searching for an Artifact
 	// that is not partitioned (this can happen if an Artifact goes from partitioned to non-
 	// partitioned across executions).

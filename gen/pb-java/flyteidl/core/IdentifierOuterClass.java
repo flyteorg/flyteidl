@@ -5691,10 +5691,18 @@ public final class IdentifierOuterClass {
     int getIndex();
 
     /**
+     * <pre>
+     * These two fields are only relevant in the partition value case
+     * </pre>
+     *
      * <code>string partition_key = 2;</code>
      */
     java.lang.String getPartitionKey();
     /**
+     * <pre>
+     * These two fields are only relevant in the partition value case
+     * </pre>
+     *
      * <code>string partition_key = 2;</code>
      */
     com.google.protobuf.ByteString
@@ -5816,6 +5824,10 @@ public final class IdentifierOuterClass {
     public static final int PARTITION_KEY_FIELD_NUMBER = 2;
     private volatile java.lang.Object partitionKey_;
     /**
+     * <pre>
+     * These two fields are only relevant in the partition value case
+     * </pre>
+     *
      * <code>string partition_key = 2;</code>
      */
     public java.lang.String getPartitionKey() {
@@ -5831,6 +5843,10 @@ public final class IdentifierOuterClass {
       }
     }
     /**
+     * <pre>
+     * These two fields are only relevant in the partition value case
+     * </pre>
+     *
      * <code>string partition_key = 2;</code>
      */
     public com.google.protobuf.ByteString
@@ -6249,6 +6265,10 @@ public final class IdentifierOuterClass {
 
       private java.lang.Object partitionKey_ = "";
       /**
+       * <pre>
+       * These two fields are only relevant in the partition value case
+       * </pre>
+       *
        * <code>string partition_key = 2;</code>
        */
       public java.lang.String getPartitionKey() {
@@ -6264,6 +6284,10 @@ public final class IdentifierOuterClass {
         }
       }
       /**
+       * <pre>
+       * These two fields are only relevant in the partition value case
+       * </pre>
+       *
        * <code>string partition_key = 2;</code>
        */
       public com.google.protobuf.ByteString
@@ -6280,6 +6304,10 @@ public final class IdentifierOuterClass {
         }
       }
       /**
+       * <pre>
+       * These two fields are only relevant in the partition value case
+       * </pre>
+       *
        * <code>string partition_key = 2;</code>
        */
       public Builder setPartitionKey(
@@ -6293,6 +6321,10 @@ public final class IdentifierOuterClass {
         return this;
       }
       /**
+       * <pre>
+       * These two fields are only relevant in the partition value case
+       * </pre>
+       *
        * <code>string partition_key = 2;</code>
        */
       public Builder clearPartitionKey() {
@@ -6302,6 +6334,10 @@ public final class IdentifierOuterClass {
         return this;
       }
       /**
+       * <pre>
+       * These two fields are only relevant in the partition value case
+       * </pre>
+       *
        * <code>string partition_key = 2;</code>
        */
       public Builder setPartitionKeyBytes(
