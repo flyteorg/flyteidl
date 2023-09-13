@@ -64,7 +64,7 @@ message RuntimeMetadata {
 // Metadata associated with the GPU accelerator to allocate to a task
 message GPUAccelerator {
     string device = 1;
-    oneof partition {
+    oneof partition_size_value {
         bool unpartitioned = 2;
         string partition_size = 3;
     }
@@ -72,7 +72,7 @@ message GPUAccelerator {
 
 // Additional metadata associated with resources to allocate to a task
 message ResourceMetadata {
-    oneof accelerator {
+    oneof accelerator_value {
         GPUAccelerator gpu_accelerator = 1;
     }
 }

@@ -12337,12 +12337,12 @@
                 var $oneOfFields;
     
                 /**
-                 * GPUAccelerator partition.
-                 * @member {"unpartitioned"|"partitionSize"|undefined} partition
+                 * GPUAccelerator partitionSizeValue.
+                 * @member {"unpartitioned"|"partitionSize"|undefined} partitionSizeValue
                  * @memberof flyteidl.core.GPUAccelerator
                  * @instance
                  */
-                Object.defineProperty(GPUAccelerator.prototype, "partition", {
+                Object.defineProperty(GPUAccelerator.prototype, "partitionSizeValue", {
                     get: $util.oneOfGetter($oneOfFields = ["unpartitioned", "partitionSize"]),
                     set: $util.oneOfSetter($oneOfFields)
                 });
@@ -12431,14 +12431,14 @@
                         if (!$util.isString(message.device))
                             return "device: string expected";
                     if (message.unpartitioned != null && message.hasOwnProperty("unpartitioned")) {
-                        properties.partition = 1;
+                        properties.partitionSizeValue = 1;
                         if (typeof message.unpartitioned !== "boolean")
                             return "unpartitioned: boolean expected";
                     }
                     if (message.partitionSize != null && message.hasOwnProperty("partitionSize")) {
-                        if (properties.partition === 1)
-                            return "partition: multiple values";
-                        properties.partition = 1;
+                        if (properties.partitionSizeValue === 1)
+                            return "partitionSizeValue: multiple values";
+                        properties.partitionSizeValue = 1;
                         if (!$util.isString(message.partitionSize))
                             return "partitionSize: string expected";
                     }
@@ -12484,12 +12484,12 @@
                 var $oneOfFields;
     
                 /**
-                 * ResourceMetadata accelerator.
-                 * @member {"gpuAccelerator"|undefined} accelerator
+                 * ResourceMetadata acceleratorValue.
+                 * @member {"gpuAccelerator"|undefined} acceleratorValue
                  * @memberof flyteidl.core.ResourceMetadata
                  * @instance
                  */
-                Object.defineProperty(ResourceMetadata.prototype, "accelerator", {
+                Object.defineProperty(ResourceMetadata.prototype, "acceleratorValue", {
                     get: $util.oneOfGetter($oneOfFields = ["gpuAccelerator"]),
                     set: $util.oneOfSetter($oneOfFields)
                 });
@@ -12565,7 +12565,7 @@
                         return "object expected";
                     var properties = {};
                     if (message.gpuAccelerator != null && message.hasOwnProperty("gpuAccelerator")) {
-                        properties.accelerator = 1;
+                        properties.acceleratorValue = 1;
                         {
                             var error = $root.flyteidl.core.GPUAccelerator.verify(message.gpuAccelerator);
                             if (error)

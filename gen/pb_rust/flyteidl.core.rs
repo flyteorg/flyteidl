@@ -1028,14 +1028,14 @@ pub mod runtime_metadata {
 pub struct GpuAccelerator {
     #[prost(string, tag="1")]
     pub device: ::prost::alloc::string::String,
-    #[prost(oneof="gpu_accelerator::Partition", tags="2, 3")]
-    pub partition: ::core::option::Option<gpu_accelerator::Partition>,
+    #[prost(oneof="gpu_accelerator::PartitionSizeValue", tags="2, 3")]
+    pub partition_size_value: ::core::option::Option<gpu_accelerator::PartitionSizeValue>,
 }
 /// Nested message and enum types in `GPUAccelerator`.
 pub mod gpu_accelerator {
     #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(Clone, PartialEq, ::prost::Oneof)]
-    pub enum Partition {
+    pub enum PartitionSizeValue {
         #[prost(bool, tag="2")]
         Unpartitioned(bool),
         #[prost(string, tag="3")]
@@ -1046,14 +1046,14 @@ pub mod gpu_accelerator {
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(Clone, PartialEq, ::prost::Message)]
 pub struct ResourceMetadata {
-    #[prost(oneof="resource_metadata::Accelerator", tags="1")]
-    pub accelerator: ::core::option::Option<resource_metadata::Accelerator>,
+    #[prost(oneof="resource_metadata::AcceleratorValue", tags="1")]
+    pub accelerator_value: ::core::option::Option<resource_metadata::AcceleratorValue>,
 }
 /// Nested message and enum types in `ResourceMetadata`.
 pub mod resource_metadata {
     #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(Clone, PartialEq, ::prost::Oneof)]
-    pub enum Accelerator {
+    pub enum AcceleratorValue {
         #[prost(message, tag="1")]
         GpuAccelerator(super::GpuAccelerator),
     }

@@ -211,7 +211,7 @@ func (m *GPUAccelerator) Validate() error {
 
 	// no validation rules for Device
 
-	switch m.Partition.(type) {
+	switch m.PartitionSizeValue.(type) {
 
 	case *GPUAccelerator_Unpartitioned:
 		// no validation rules for Unpartitioned
@@ -286,7 +286,7 @@ func (m *ResourceMetadata) Validate() error {
 		return nil
 	}
 
-	switch m.Accelerator.(type) {
+	switch m.AcceleratorValue.(type) {
 
 	case *ResourceMetadata_GpuAccelerator:
 

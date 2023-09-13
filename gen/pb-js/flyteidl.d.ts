@@ -5194,8 +5194,8 @@ export namespace flyteidl {
             /** GPUAccelerator partitionSize. */
             public partitionSize: string;
 
-            /** GPUAccelerator partition. */
-            public partition?: ("unpartitioned"|"partitionSize");
+            /** GPUAccelerator partitionSizeValue. */
+            public partitionSizeValue?: ("unpartitioned"|"partitionSize");
 
             /**
              * Creates a new GPUAccelerator instance using the specified properties.
@@ -5249,8 +5249,8 @@ export namespace flyteidl {
             /** ResourceMetadata gpuAccelerator. */
             public gpuAccelerator?: (flyteidl.core.IGPUAccelerator|null);
 
-            /** ResourceMetadata accelerator. */
-            public accelerator?: "gpuAccelerator";
+            /** ResourceMetadata acceleratorValue. */
+            public acceleratorValue?: "gpuAccelerator";
 
             /**
              * Creates a new ResourceMetadata instance using the specified properties.

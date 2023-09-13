@@ -796,10 +796,10 @@ class GPUAccelerator final :
   }
   static const GPUAccelerator& default_instance();
 
-  enum PartitionCase {
+  enum PartitionSizeValueCase {
     kUnpartitioned = 2,
     kPartitionSize = 3,
-    PARTITION_NOT_SET = 0,
+    PARTITION_SIZE_VALUE_NOT_SET = 0,
   };
 
   static void InitAsDefaultInstance();  // FOR INTERNAL USE ONLY
@@ -905,24 +905,24 @@ class GPUAccelerator final :
   ::std::string* release_partition_size();
   void set_allocated_partition_size(::std::string* partition_size);
 
-  void clear_partition();
-  PartitionCase partition_case() const;
+  void clear_partition_size_value();
+  PartitionSizeValueCase partition_size_value_case() const;
   // @@protoc_insertion_point(class_scope:flyteidl.core.GPUAccelerator)
  private:
   class HasBitSetters;
   void set_has_unpartitioned();
   void set_has_partition_size();
 
-  inline bool has_partition() const;
-  inline void clear_has_partition();
+  inline bool has_partition_size_value() const;
+  inline void clear_has_partition_size_value();
 
   ::google::protobuf::internal::InternalMetadataWithArena _internal_metadata_;
   ::google::protobuf::internal::ArenaStringPtr device_;
-  union PartitionUnion {
-    PartitionUnion() {}
+  union PartitionSizeValueUnion {
+    PartitionSizeValueUnion() {}
     bool unpartitioned_;
     ::google::protobuf::internal::ArenaStringPtr partition_size_;
-  } partition_;
+  } partition_size_value_;
   mutable ::google::protobuf::internal::CachedSize _cached_size_;
   ::google::protobuf::uint32 _oneof_case_[1];
 
@@ -962,9 +962,9 @@ class ResourceMetadata final :
   }
   static const ResourceMetadata& default_instance();
 
-  enum AcceleratorCase {
+  enum AcceleratorValueCase {
     kGpuAccelerator = 1,
-    ACCELERATOR_NOT_SET = 0,
+    ACCELERATOR_VALUE_NOT_SET = 0,
   };
 
   static void InitAsDefaultInstance();  // FOR INTERNAL USE ONLY
@@ -1039,21 +1039,21 @@ class ResourceMetadata final :
   ::flyteidl::core::GPUAccelerator* mutable_gpu_accelerator();
   void set_allocated_gpu_accelerator(::flyteidl::core::GPUAccelerator* gpu_accelerator);
 
-  void clear_accelerator();
-  AcceleratorCase accelerator_case() const;
+  void clear_accelerator_value();
+  AcceleratorValueCase accelerator_value_case() const;
   // @@protoc_insertion_point(class_scope:flyteidl.core.ResourceMetadata)
  private:
   class HasBitSetters;
   void set_has_gpu_accelerator();
 
-  inline bool has_accelerator() const;
-  inline void clear_has_accelerator();
+  inline bool has_accelerator_value() const;
+  inline void clear_has_accelerator_value();
 
   ::google::protobuf::internal::InternalMetadataWithArena _internal_metadata_;
-  union AcceleratorUnion {
-    AcceleratorUnion() {}
+  union AcceleratorValueUnion {
+    AcceleratorValueUnion() {}
     ::flyteidl::core::GPUAccelerator* gpu_accelerator_;
-  } accelerator_;
+  } accelerator_value_;
   mutable ::google::protobuf::internal::CachedSize _cached_size_;
   ::google::protobuf::uint32 _oneof_case_[1];
 
@@ -3142,133 +3142,133 @@ inline void GPUAccelerator::set_allocated_device(::std::string* device) {
 
 // bool unpartitioned = 2;
 inline bool GPUAccelerator::has_unpartitioned() const {
-  return partition_case() == kUnpartitioned;
+  return partition_size_value_case() == kUnpartitioned;
 }
 inline void GPUAccelerator::set_has_unpartitioned() {
   _oneof_case_[0] = kUnpartitioned;
 }
 inline void GPUAccelerator::clear_unpartitioned() {
   if (has_unpartitioned()) {
-    partition_.unpartitioned_ = false;
-    clear_has_partition();
+    partition_size_value_.unpartitioned_ = false;
+    clear_has_partition_size_value();
   }
 }
 inline bool GPUAccelerator::unpartitioned() const {
   // @@protoc_insertion_point(field_get:flyteidl.core.GPUAccelerator.unpartitioned)
   if (has_unpartitioned()) {
-    return partition_.unpartitioned_;
+    return partition_size_value_.unpartitioned_;
   }
   return false;
 }
 inline void GPUAccelerator::set_unpartitioned(bool value) {
   if (!has_unpartitioned()) {
-    clear_partition();
+    clear_partition_size_value();
     set_has_unpartitioned();
   }
-  partition_.unpartitioned_ = value;
+  partition_size_value_.unpartitioned_ = value;
   // @@protoc_insertion_point(field_set:flyteidl.core.GPUAccelerator.unpartitioned)
 }
 
 // string partition_size = 3;
 inline bool GPUAccelerator::has_partition_size() const {
-  return partition_case() == kPartitionSize;
+  return partition_size_value_case() == kPartitionSize;
 }
 inline void GPUAccelerator::set_has_partition_size() {
   _oneof_case_[0] = kPartitionSize;
 }
 inline void GPUAccelerator::clear_partition_size() {
   if (has_partition_size()) {
-    partition_.partition_size_.DestroyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-    clear_has_partition();
+    partition_size_value_.partition_size_.DestroyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+    clear_has_partition_size_value();
   }
 }
 inline const ::std::string& GPUAccelerator::partition_size() const {
   // @@protoc_insertion_point(field_get:flyteidl.core.GPUAccelerator.partition_size)
   if (has_partition_size()) {
-    return partition_.partition_size_.GetNoArena();
+    return partition_size_value_.partition_size_.GetNoArena();
   }
   return *&::google::protobuf::internal::GetEmptyStringAlreadyInited();
 }
 inline void GPUAccelerator::set_partition_size(const ::std::string& value) {
   // @@protoc_insertion_point(field_set:flyteidl.core.GPUAccelerator.partition_size)
   if (!has_partition_size()) {
-    clear_partition();
+    clear_partition_size_value();
     set_has_partition_size();
-    partition_.partition_size_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+    partition_size_value_.partition_size_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
   }
-  partition_.partition_size_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
+  partition_size_value_.partition_size_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
   // @@protoc_insertion_point(field_set:flyteidl.core.GPUAccelerator.partition_size)
 }
 #if LANG_CXX11
 inline void GPUAccelerator::set_partition_size(::std::string&& value) {
   // @@protoc_insertion_point(field_set:flyteidl.core.GPUAccelerator.partition_size)
   if (!has_partition_size()) {
-    clear_partition();
+    clear_partition_size_value();
     set_has_partition_size();
-    partition_.partition_size_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+    partition_size_value_.partition_size_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
   }
-  partition_.partition_size_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::move(value));
+  partition_size_value_.partition_size_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::move(value));
   // @@protoc_insertion_point(field_set_rvalue:flyteidl.core.GPUAccelerator.partition_size)
 }
 #endif
 inline void GPUAccelerator::set_partition_size(const char* value) {
   GOOGLE_DCHECK(value != nullptr);
   if (!has_partition_size()) {
-    clear_partition();
+    clear_partition_size_value();
     set_has_partition_size();
-    partition_.partition_size_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+    partition_size_value_.partition_size_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
   }
-  partition_.partition_size_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
+  partition_size_value_.partition_size_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
       ::std::string(value));
   // @@protoc_insertion_point(field_set_char:flyteidl.core.GPUAccelerator.partition_size)
 }
 inline void GPUAccelerator::set_partition_size(const char* value, size_t size) {
   if (!has_partition_size()) {
-    clear_partition();
+    clear_partition_size_value();
     set_has_partition_size();
-    partition_.partition_size_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+    partition_size_value_.partition_size_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
   }
-  partition_.partition_size_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(
+  partition_size_value_.partition_size_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(
       reinterpret_cast<const char*>(value), size));
   // @@protoc_insertion_point(field_set_pointer:flyteidl.core.GPUAccelerator.partition_size)
 }
 inline ::std::string* GPUAccelerator::mutable_partition_size() {
   if (!has_partition_size()) {
-    clear_partition();
+    clear_partition_size_value();
     set_has_partition_size();
-    partition_.partition_size_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+    partition_size_value_.partition_size_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
   }
   // @@protoc_insertion_point(field_mutable:flyteidl.core.GPUAccelerator.partition_size)
-  return partition_.partition_size_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  return partition_size_value_.partition_size_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
 }
 inline ::std::string* GPUAccelerator::release_partition_size() {
   // @@protoc_insertion_point(field_release:flyteidl.core.GPUAccelerator.partition_size)
   if (has_partition_size()) {
-    clear_has_partition();
-    return partition_.partition_size_.ReleaseNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+    clear_has_partition_size_value();
+    return partition_size_value_.partition_size_.ReleaseNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
   } else {
     return nullptr;
   }
 }
 inline void GPUAccelerator::set_allocated_partition_size(::std::string* partition_size) {
-  if (has_partition()) {
-    clear_partition();
+  if (has_partition_size_value()) {
+    clear_partition_size_value();
   }
   if (partition_size != nullptr) {
     set_has_partition_size();
-    partition_.partition_size_.UnsafeSetDefault(partition_size);
+    partition_size_value_.partition_size_.UnsafeSetDefault(partition_size);
   }
   // @@protoc_insertion_point(field_set_allocated:flyteidl.core.GPUAccelerator.partition_size)
 }
 
-inline bool GPUAccelerator::has_partition() const {
-  return partition_case() != PARTITION_NOT_SET;
+inline bool GPUAccelerator::has_partition_size_value() const {
+  return partition_size_value_case() != PARTITION_SIZE_VALUE_NOT_SET;
 }
-inline void GPUAccelerator::clear_has_partition() {
-  _oneof_case_[0] = PARTITION_NOT_SET;
+inline void GPUAccelerator::clear_has_partition_size_value() {
+  _oneof_case_[0] = PARTITION_SIZE_VALUE_NOT_SET;
 }
-inline GPUAccelerator::PartitionCase GPUAccelerator::partition_case() const {
-  return GPUAccelerator::PartitionCase(_oneof_case_[0]);
+inline GPUAccelerator::PartitionSizeValueCase GPUAccelerator::partition_size_value_case() const {
+  return GPUAccelerator::PartitionSizeValueCase(_oneof_case_[0]);
 }
 // -------------------------------------------------------------------
 
@@ -3276,23 +3276,23 @@ inline GPUAccelerator::PartitionCase GPUAccelerator::partition_case() const {
 
 // .flyteidl.core.GPUAccelerator gpu_accelerator = 1;
 inline bool ResourceMetadata::has_gpu_accelerator() const {
-  return accelerator_case() == kGpuAccelerator;
+  return accelerator_value_case() == kGpuAccelerator;
 }
 inline void ResourceMetadata::set_has_gpu_accelerator() {
   _oneof_case_[0] = kGpuAccelerator;
 }
 inline void ResourceMetadata::clear_gpu_accelerator() {
   if (has_gpu_accelerator()) {
-    delete accelerator_.gpu_accelerator_;
-    clear_has_accelerator();
+    delete accelerator_value_.gpu_accelerator_;
+    clear_has_accelerator_value();
   }
 }
 inline ::flyteidl::core::GPUAccelerator* ResourceMetadata::release_gpu_accelerator() {
   // @@protoc_insertion_point(field_release:flyteidl.core.ResourceMetadata.gpu_accelerator)
   if (has_gpu_accelerator()) {
-    clear_has_accelerator();
-      ::flyteidl::core::GPUAccelerator* temp = accelerator_.gpu_accelerator_;
-    accelerator_.gpu_accelerator_ = nullptr;
+    clear_has_accelerator_value();
+      ::flyteidl::core::GPUAccelerator* temp = accelerator_value_.gpu_accelerator_;
+    accelerator_value_.gpu_accelerator_ = nullptr;
     return temp;
   } else {
     return nullptr;
@@ -3301,28 +3301,28 @@ inline ::flyteidl::core::GPUAccelerator* ResourceMetadata::release_gpu_accelerat
 inline const ::flyteidl::core::GPUAccelerator& ResourceMetadata::gpu_accelerator() const {
   // @@protoc_insertion_point(field_get:flyteidl.core.ResourceMetadata.gpu_accelerator)
   return has_gpu_accelerator()
-      ? *accelerator_.gpu_accelerator_
+      ? *accelerator_value_.gpu_accelerator_
       : *reinterpret_cast< ::flyteidl::core::GPUAccelerator*>(&::flyteidl::core::_GPUAccelerator_default_instance_);
 }
 inline ::flyteidl::core::GPUAccelerator* ResourceMetadata::mutable_gpu_accelerator() {
   if (!has_gpu_accelerator()) {
-    clear_accelerator();
+    clear_accelerator_value();
     set_has_gpu_accelerator();
-    accelerator_.gpu_accelerator_ = CreateMaybeMessage< ::flyteidl::core::GPUAccelerator >(
+    accelerator_value_.gpu_accelerator_ = CreateMaybeMessage< ::flyteidl::core::GPUAccelerator >(
         GetArenaNoVirtual());
   }
   // @@protoc_insertion_point(field_mutable:flyteidl.core.ResourceMetadata.gpu_accelerator)
-  return accelerator_.gpu_accelerator_;
+  return accelerator_value_.gpu_accelerator_;
 }
 
-inline bool ResourceMetadata::has_accelerator() const {
-  return accelerator_case() != ACCELERATOR_NOT_SET;
+inline bool ResourceMetadata::has_accelerator_value() const {
+  return accelerator_value_case() != ACCELERATOR_VALUE_NOT_SET;
 }
-inline void ResourceMetadata::clear_has_accelerator() {
-  _oneof_case_[0] = ACCELERATOR_NOT_SET;
+inline void ResourceMetadata::clear_has_accelerator_value() {
+  _oneof_case_[0] = ACCELERATOR_VALUE_NOT_SET;
 }
-inline ResourceMetadata::AcceleratorCase ResourceMetadata::accelerator_case() const {
-  return ResourceMetadata::AcceleratorCase(_oneof_case_[0]);
+inline ResourceMetadata::AcceleratorValueCase ResourceMetadata::accelerator_value_case() const {
+  return ResourceMetadata::AcceleratorValueCase(_oneof_case_[0]);
 }
 // -------------------------------------------------------------------
 
