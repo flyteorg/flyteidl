@@ -1032,6 +1032,294 @@ var _ interface {
 	ErrorName() string
 } = AddTagResponseValidationError{}
 
+// Validate checks the field values on CreateTriggerRequest with the rules
+// defined in the proto definition for this message. If any rules are
+// violated, an error is returned.
+func (m *CreateTriggerRequest) Validate() error {
+	if m == nil {
+		return nil
+	}
+
+	if v, ok := interface{}(m.GetTriggerLaunchPlan()).(interface{ Validate() error }); ok {
+		if err := v.Validate(); err != nil {
+			return CreateTriggerRequestValidationError{
+				field:  "TriggerLaunchPlan",
+				reason: "embedded message failed validation",
+				cause:  err,
+			}
+		}
+	}
+
+	return nil
+}
+
+// CreateTriggerRequestValidationError is the validation error returned by
+// CreateTriggerRequest.Validate if the designated constraints aren't met.
+type CreateTriggerRequestValidationError struct {
+	field  string
+	reason string
+	cause  error
+	key    bool
+}
+
+// Field function returns field value.
+func (e CreateTriggerRequestValidationError) Field() string { return e.field }
+
+// Reason function returns reason value.
+func (e CreateTriggerRequestValidationError) Reason() string { return e.reason }
+
+// Cause function returns cause value.
+func (e CreateTriggerRequestValidationError) Cause() error { return e.cause }
+
+// Key function returns key value.
+func (e CreateTriggerRequestValidationError) Key() bool { return e.key }
+
+// ErrorName returns error name.
+func (e CreateTriggerRequestValidationError) ErrorName() string {
+	return "CreateTriggerRequestValidationError"
+}
+
+// Error satisfies the builtin error interface
+func (e CreateTriggerRequestValidationError) Error() string {
+	cause := ""
+	if e.cause != nil {
+		cause = fmt.Sprintf(" | caused by: %v", e.cause)
+	}
+
+	key := ""
+	if e.key {
+		key = "key for "
+	}
+
+	return fmt.Sprintf(
+		"invalid %sCreateTriggerRequest.%s: %s%s",
+		key,
+		e.field,
+		e.reason,
+		cause)
+}
+
+var _ error = CreateTriggerRequestValidationError{}
+
+var _ interface {
+	Field() string
+	Reason() string
+	Key() bool
+	Cause() error
+	ErrorName() string
+} = CreateTriggerRequestValidationError{}
+
+// Validate checks the field values on CreateTriggerResponse with the rules
+// defined in the proto definition for this message. If any rules are
+// violated, an error is returned.
+func (m *CreateTriggerResponse) Validate() error {
+	if m == nil {
+		return nil
+	}
+
+	return nil
+}
+
+// CreateTriggerResponseValidationError is the validation error returned by
+// CreateTriggerResponse.Validate if the designated constraints aren't met.
+type CreateTriggerResponseValidationError struct {
+	field  string
+	reason string
+	cause  error
+	key    bool
+}
+
+// Field function returns field value.
+func (e CreateTriggerResponseValidationError) Field() string { return e.field }
+
+// Reason function returns reason value.
+func (e CreateTriggerResponseValidationError) Reason() string { return e.reason }
+
+// Cause function returns cause value.
+func (e CreateTriggerResponseValidationError) Cause() error { return e.cause }
+
+// Key function returns key value.
+func (e CreateTriggerResponseValidationError) Key() bool { return e.key }
+
+// ErrorName returns error name.
+func (e CreateTriggerResponseValidationError) ErrorName() string {
+	return "CreateTriggerResponseValidationError"
+}
+
+// Error satisfies the builtin error interface
+func (e CreateTriggerResponseValidationError) Error() string {
+	cause := ""
+	if e.cause != nil {
+		cause = fmt.Sprintf(" | caused by: %v", e.cause)
+	}
+
+	key := ""
+	if e.key {
+		key = "key for "
+	}
+
+	return fmt.Sprintf(
+		"invalid %sCreateTriggerResponse.%s: %s%s",
+		key,
+		e.field,
+		e.reason,
+		cause)
+}
+
+var _ error = CreateTriggerResponseValidationError{}
+
+var _ interface {
+	Field() string
+	Reason() string
+	Key() bool
+	Cause() error
+	ErrorName() string
+} = CreateTriggerResponseValidationError{}
+
+// Validate checks the field values on DeleteTriggerRequest with the rules
+// defined in the proto definition for this message. If any rules are
+// violated, an error is returned.
+func (m *DeleteTriggerRequest) Validate() error {
+	if m == nil {
+		return nil
+	}
+
+	if v, ok := interface{}(m.GetTriggerId()).(interface{ Validate() error }); ok {
+		if err := v.Validate(); err != nil {
+			return DeleteTriggerRequestValidationError{
+				field:  "TriggerId",
+				reason: "embedded message failed validation",
+				cause:  err,
+			}
+		}
+	}
+
+	return nil
+}
+
+// DeleteTriggerRequestValidationError is the validation error returned by
+// DeleteTriggerRequest.Validate if the designated constraints aren't met.
+type DeleteTriggerRequestValidationError struct {
+	field  string
+	reason string
+	cause  error
+	key    bool
+}
+
+// Field function returns field value.
+func (e DeleteTriggerRequestValidationError) Field() string { return e.field }
+
+// Reason function returns reason value.
+func (e DeleteTriggerRequestValidationError) Reason() string { return e.reason }
+
+// Cause function returns cause value.
+func (e DeleteTriggerRequestValidationError) Cause() error { return e.cause }
+
+// Key function returns key value.
+func (e DeleteTriggerRequestValidationError) Key() bool { return e.key }
+
+// ErrorName returns error name.
+func (e DeleteTriggerRequestValidationError) ErrorName() string {
+	return "DeleteTriggerRequestValidationError"
+}
+
+// Error satisfies the builtin error interface
+func (e DeleteTriggerRequestValidationError) Error() string {
+	cause := ""
+	if e.cause != nil {
+		cause = fmt.Sprintf(" | caused by: %v", e.cause)
+	}
+
+	key := ""
+	if e.key {
+		key = "key for "
+	}
+
+	return fmt.Sprintf(
+		"invalid %sDeleteTriggerRequest.%s: %s%s",
+		key,
+		e.field,
+		e.reason,
+		cause)
+}
+
+var _ error = DeleteTriggerRequestValidationError{}
+
+var _ interface {
+	Field() string
+	Reason() string
+	Key() bool
+	Cause() error
+	ErrorName() string
+} = DeleteTriggerRequestValidationError{}
+
+// Validate checks the field values on DeleteTriggerResponse with the rules
+// defined in the proto definition for this message. If any rules are
+// violated, an error is returned.
+func (m *DeleteTriggerResponse) Validate() error {
+	if m == nil {
+		return nil
+	}
+
+	return nil
+}
+
+// DeleteTriggerResponseValidationError is the validation error returned by
+// DeleteTriggerResponse.Validate if the designated constraints aren't met.
+type DeleteTriggerResponseValidationError struct {
+	field  string
+	reason string
+	cause  error
+	key    bool
+}
+
+// Field function returns field value.
+func (e DeleteTriggerResponseValidationError) Field() string { return e.field }
+
+// Reason function returns reason value.
+func (e DeleteTriggerResponseValidationError) Reason() string { return e.reason }
+
+// Cause function returns cause value.
+func (e DeleteTriggerResponseValidationError) Cause() error { return e.cause }
+
+// Key function returns key value.
+func (e DeleteTriggerResponseValidationError) Key() bool { return e.key }
+
+// ErrorName returns error name.
+func (e DeleteTriggerResponseValidationError) ErrorName() string {
+	return "DeleteTriggerResponseValidationError"
+}
+
+// Error satisfies the builtin error interface
+func (e DeleteTriggerResponseValidationError) Error() string {
+	cause := ""
+	if e.cause != nil {
+		cause = fmt.Sprintf(" | caused by: %v", e.cause)
+	}
+
+	key := ""
+	if e.key {
+		key = "key for "
+	}
+
+	return fmt.Sprintf(
+		"invalid %sDeleteTriggerResponse.%s: %s%s",
+		key,
+		e.field,
+		e.reason,
+		cause)
+}
+
+var _ error = DeleteTriggerResponseValidationError{}
+
+var _ interface {
+	Field() string
+	Reason() string
+	Key() bool
+	Cause() error
+	ErrorName() string
+} = DeleteTriggerResponseValidationError{}
+
 // Validate checks the field values on ArtifactProducer with the rules defined
 // in the proto definition for this message. If any rules are violated, an
 // error is returned.

@@ -35,6 +35,7 @@
 #include <google/protobuf/map_field_inl.h>
 #include <google/protobuf/unknown_field_set.h>
 #include <google/protobuf/any.pb.h>
+#include "flyteidl/admin/launch_plan.pb.h"
 #include "flyteidl/core/literals.pb.h"
 #include "flyteidl/core/types.pb.h"
 #include "flyteidl/core/identifier.pb.h"
@@ -49,7 +50,7 @@ struct TableStruct_flyteidl_2fartifact_2fartifacts_2eproto {
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
   static const ::google::protobuf::internal::AuxillaryParseTableField aux[]
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
-  static const ::google::protobuf::internal::ParseTable schema[18]
+  static const ::google::protobuf::internal::ParseTable schema[22]
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
   static const ::google::protobuf::internal::FieldMetadata field_metadata[];
   static const ::google::protobuf::internal::SerializationTable serialization_table[];
@@ -85,6 +86,18 @@ extern CreateArtifactRequest_PartitionsEntry_DoNotUseDefaultTypeInternal _Create
 class CreateArtifactResponse;
 class CreateArtifactResponseDefaultTypeInternal;
 extern CreateArtifactResponseDefaultTypeInternal _CreateArtifactResponse_default_instance_;
+class CreateTriggerRequest;
+class CreateTriggerRequestDefaultTypeInternal;
+extern CreateTriggerRequestDefaultTypeInternal _CreateTriggerRequest_default_instance_;
+class CreateTriggerResponse;
+class CreateTriggerResponseDefaultTypeInternal;
+extern CreateTriggerResponseDefaultTypeInternal _CreateTriggerResponse_default_instance_;
+class DeleteTriggerRequest;
+class DeleteTriggerRequestDefaultTypeInternal;
+extern DeleteTriggerRequestDefaultTypeInternal _DeleteTriggerRequest_default_instance_;
+class DeleteTriggerResponse;
+class DeleteTriggerResponseDefaultTypeInternal;
+extern DeleteTriggerResponseDefaultTypeInternal _DeleteTriggerResponse_default_instance_;
 class GetArtifactRequest;
 class GetArtifactRequestDefaultTypeInternal;
 extern GetArtifactRequestDefaultTypeInternal _GetArtifactRequest_default_instance_;
@@ -125,6 +138,10 @@ template<> ::flyteidl::artifact::ArtifactSpec* Arena::CreateMaybeMessage<::flyte
 template<> ::flyteidl::artifact::CreateArtifactRequest* Arena::CreateMaybeMessage<::flyteidl::artifact::CreateArtifactRequest>(Arena*);
 template<> ::flyteidl::artifact::CreateArtifactRequest_PartitionsEntry_DoNotUse* Arena::CreateMaybeMessage<::flyteidl::artifact::CreateArtifactRequest_PartitionsEntry_DoNotUse>(Arena*);
 template<> ::flyteidl::artifact::CreateArtifactResponse* Arena::CreateMaybeMessage<::flyteidl::artifact::CreateArtifactResponse>(Arena*);
+template<> ::flyteidl::artifact::CreateTriggerRequest* Arena::CreateMaybeMessage<::flyteidl::artifact::CreateTriggerRequest>(Arena*);
+template<> ::flyteidl::artifact::CreateTriggerResponse* Arena::CreateMaybeMessage<::flyteidl::artifact::CreateTriggerResponse>(Arena*);
+template<> ::flyteidl::artifact::DeleteTriggerRequest* Arena::CreateMaybeMessage<::flyteidl::artifact::DeleteTriggerRequest>(Arena*);
+template<> ::flyteidl::artifact::DeleteTriggerResponse* Arena::CreateMaybeMessage<::flyteidl::artifact::DeleteTriggerResponse>(Arena*);
 template<> ::flyteidl::artifact::GetArtifactRequest* Arena::CreateMaybeMessage<::flyteidl::artifact::GetArtifactRequest>(Arena*);
 template<> ::flyteidl::artifact::GetArtifactResponse* Arena::CreateMaybeMessage<::flyteidl::artifact::GetArtifactResponse>(Arena*);
 template<> ::flyteidl::artifact::ListArtifactNamesRequest* Arena::CreateMaybeMessage<::flyteidl::artifact::ListArtifactNamesRequest>(Arena*);
@@ -1787,6 +1804,446 @@ class AddTagResponse final :
 };
 // -------------------------------------------------------------------
 
+class CreateTriggerRequest final :
+    public ::google::protobuf::Message /* @@protoc_insertion_point(class_definition:flyteidl.artifact.CreateTriggerRequest) */ {
+ public:
+  CreateTriggerRequest();
+  virtual ~CreateTriggerRequest();
+
+  CreateTriggerRequest(const CreateTriggerRequest& from);
+
+  inline CreateTriggerRequest& operator=(const CreateTriggerRequest& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  #if LANG_CXX11
+  CreateTriggerRequest(CreateTriggerRequest&& from) noexcept
+    : CreateTriggerRequest() {
+    *this = ::std::move(from);
+  }
+
+  inline CreateTriggerRequest& operator=(CreateTriggerRequest&& from) noexcept {
+    if (GetArenaNoVirtual() == from.GetArenaNoVirtual()) {
+      if (this != &from) InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+  #endif
+  static const ::google::protobuf::Descriptor* descriptor() {
+    return default_instance().GetDescriptor();
+  }
+  static const CreateTriggerRequest& default_instance();
+
+  static void InitAsDefaultInstance();  // FOR INTERNAL USE ONLY
+  static inline const CreateTriggerRequest* internal_default_instance() {
+    return reinterpret_cast<const CreateTriggerRequest*>(
+               &_CreateTriggerRequest_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    13;
+
+  void Swap(CreateTriggerRequest* other);
+  friend void swap(CreateTriggerRequest& a, CreateTriggerRequest& b) {
+    a.Swap(&b);
+  }
+
+  // implements Message ----------------------------------------------
+
+  inline CreateTriggerRequest* New() const final {
+    return CreateMaybeMessage<CreateTriggerRequest>(nullptr);
+  }
+
+  CreateTriggerRequest* New(::google::protobuf::Arena* arena) const final {
+    return CreateMaybeMessage<CreateTriggerRequest>(arena);
+  }
+  void CopyFrom(const ::google::protobuf::Message& from) final;
+  void MergeFrom(const ::google::protobuf::Message& from) final;
+  void CopyFrom(const CreateTriggerRequest& from);
+  void MergeFrom(const CreateTriggerRequest& from);
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  #if GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
+  static const char* _InternalParse(const char* begin, const char* end, void* object, ::google::protobuf::internal::ParseContext* ctx);
+  ::google::protobuf::internal::ParseFunc _ParseFunc() const final { return _InternalParse; }
+  #else
+  bool MergePartialFromCodedStream(
+      ::google::protobuf::io::CodedInputStream* input) final;
+  #endif  // GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
+  void SerializeWithCachedSizes(
+      ::google::protobuf::io::CodedOutputStream* output) const final;
+  ::google::protobuf::uint8* InternalSerializeWithCachedSizesToArray(
+      ::google::protobuf::uint8* target) const final;
+  int GetCachedSize() const final { return _cached_size_.Get(); }
+
+  private:
+  void SharedCtor();
+  void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(CreateTriggerRequest* other);
+  private:
+  inline ::google::protobuf::Arena* GetArenaNoVirtual() const {
+    return nullptr;
+  }
+  inline void* MaybeArenaPtr() const {
+    return nullptr;
+  }
+  public:
+
+  ::google::protobuf::Metadata GetMetadata() const final;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  // .flyteidl.admin.LaunchPlan trigger_launch_plan = 1;
+  bool has_trigger_launch_plan() const;
+  void clear_trigger_launch_plan();
+  static const int kTriggerLaunchPlanFieldNumber = 1;
+  const ::flyteidl::admin::LaunchPlan& trigger_launch_plan() const;
+  ::flyteidl::admin::LaunchPlan* release_trigger_launch_plan();
+  ::flyteidl::admin::LaunchPlan* mutable_trigger_launch_plan();
+  void set_allocated_trigger_launch_plan(::flyteidl::admin::LaunchPlan* trigger_launch_plan);
+
+  // @@protoc_insertion_point(class_scope:flyteidl.artifact.CreateTriggerRequest)
+ private:
+  class HasBitSetters;
+
+  ::google::protobuf::internal::InternalMetadataWithArena _internal_metadata_;
+  ::flyteidl::admin::LaunchPlan* trigger_launch_plan_;
+  mutable ::google::protobuf::internal::CachedSize _cached_size_;
+  friend struct ::TableStruct_flyteidl_2fartifact_2fartifacts_2eproto;
+};
+// -------------------------------------------------------------------
+
+class CreateTriggerResponse final :
+    public ::google::protobuf::Message /* @@protoc_insertion_point(class_definition:flyteidl.artifact.CreateTriggerResponse) */ {
+ public:
+  CreateTriggerResponse();
+  virtual ~CreateTriggerResponse();
+
+  CreateTriggerResponse(const CreateTriggerResponse& from);
+
+  inline CreateTriggerResponse& operator=(const CreateTriggerResponse& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  #if LANG_CXX11
+  CreateTriggerResponse(CreateTriggerResponse&& from) noexcept
+    : CreateTriggerResponse() {
+    *this = ::std::move(from);
+  }
+
+  inline CreateTriggerResponse& operator=(CreateTriggerResponse&& from) noexcept {
+    if (GetArenaNoVirtual() == from.GetArenaNoVirtual()) {
+      if (this != &from) InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+  #endif
+  static const ::google::protobuf::Descriptor* descriptor() {
+    return default_instance().GetDescriptor();
+  }
+  static const CreateTriggerResponse& default_instance();
+
+  static void InitAsDefaultInstance();  // FOR INTERNAL USE ONLY
+  static inline const CreateTriggerResponse* internal_default_instance() {
+    return reinterpret_cast<const CreateTriggerResponse*>(
+               &_CreateTriggerResponse_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    14;
+
+  void Swap(CreateTriggerResponse* other);
+  friend void swap(CreateTriggerResponse& a, CreateTriggerResponse& b) {
+    a.Swap(&b);
+  }
+
+  // implements Message ----------------------------------------------
+
+  inline CreateTriggerResponse* New() const final {
+    return CreateMaybeMessage<CreateTriggerResponse>(nullptr);
+  }
+
+  CreateTriggerResponse* New(::google::protobuf::Arena* arena) const final {
+    return CreateMaybeMessage<CreateTriggerResponse>(arena);
+  }
+  void CopyFrom(const ::google::protobuf::Message& from) final;
+  void MergeFrom(const ::google::protobuf::Message& from) final;
+  void CopyFrom(const CreateTriggerResponse& from);
+  void MergeFrom(const CreateTriggerResponse& from);
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  #if GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
+  static const char* _InternalParse(const char* begin, const char* end, void* object, ::google::protobuf::internal::ParseContext* ctx);
+  ::google::protobuf::internal::ParseFunc _ParseFunc() const final { return _InternalParse; }
+  #else
+  bool MergePartialFromCodedStream(
+      ::google::protobuf::io::CodedInputStream* input) final;
+  #endif  // GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
+  void SerializeWithCachedSizes(
+      ::google::protobuf::io::CodedOutputStream* output) const final;
+  ::google::protobuf::uint8* InternalSerializeWithCachedSizesToArray(
+      ::google::protobuf::uint8* target) const final;
+  int GetCachedSize() const final { return _cached_size_.Get(); }
+
+  private:
+  void SharedCtor();
+  void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(CreateTriggerResponse* other);
+  private:
+  inline ::google::protobuf::Arena* GetArenaNoVirtual() const {
+    return nullptr;
+  }
+  inline void* MaybeArenaPtr() const {
+    return nullptr;
+  }
+  public:
+
+  ::google::protobuf::Metadata GetMetadata() const final;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  // @@protoc_insertion_point(class_scope:flyteidl.artifact.CreateTriggerResponse)
+ private:
+  class HasBitSetters;
+
+  ::google::protobuf::internal::InternalMetadataWithArena _internal_metadata_;
+  mutable ::google::protobuf::internal::CachedSize _cached_size_;
+  friend struct ::TableStruct_flyteidl_2fartifact_2fartifacts_2eproto;
+};
+// -------------------------------------------------------------------
+
+class DeleteTriggerRequest final :
+    public ::google::protobuf::Message /* @@protoc_insertion_point(class_definition:flyteidl.artifact.DeleteTriggerRequest) */ {
+ public:
+  DeleteTriggerRequest();
+  virtual ~DeleteTriggerRequest();
+
+  DeleteTriggerRequest(const DeleteTriggerRequest& from);
+
+  inline DeleteTriggerRequest& operator=(const DeleteTriggerRequest& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  #if LANG_CXX11
+  DeleteTriggerRequest(DeleteTriggerRequest&& from) noexcept
+    : DeleteTriggerRequest() {
+    *this = ::std::move(from);
+  }
+
+  inline DeleteTriggerRequest& operator=(DeleteTriggerRequest&& from) noexcept {
+    if (GetArenaNoVirtual() == from.GetArenaNoVirtual()) {
+      if (this != &from) InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+  #endif
+  static const ::google::protobuf::Descriptor* descriptor() {
+    return default_instance().GetDescriptor();
+  }
+  static const DeleteTriggerRequest& default_instance();
+
+  static void InitAsDefaultInstance();  // FOR INTERNAL USE ONLY
+  static inline const DeleteTriggerRequest* internal_default_instance() {
+    return reinterpret_cast<const DeleteTriggerRequest*>(
+               &_DeleteTriggerRequest_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    15;
+
+  void Swap(DeleteTriggerRequest* other);
+  friend void swap(DeleteTriggerRequest& a, DeleteTriggerRequest& b) {
+    a.Swap(&b);
+  }
+
+  // implements Message ----------------------------------------------
+
+  inline DeleteTriggerRequest* New() const final {
+    return CreateMaybeMessage<DeleteTriggerRequest>(nullptr);
+  }
+
+  DeleteTriggerRequest* New(::google::protobuf::Arena* arena) const final {
+    return CreateMaybeMessage<DeleteTriggerRequest>(arena);
+  }
+  void CopyFrom(const ::google::protobuf::Message& from) final;
+  void MergeFrom(const ::google::protobuf::Message& from) final;
+  void CopyFrom(const DeleteTriggerRequest& from);
+  void MergeFrom(const DeleteTriggerRequest& from);
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  #if GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
+  static const char* _InternalParse(const char* begin, const char* end, void* object, ::google::protobuf::internal::ParseContext* ctx);
+  ::google::protobuf::internal::ParseFunc _ParseFunc() const final { return _InternalParse; }
+  #else
+  bool MergePartialFromCodedStream(
+      ::google::protobuf::io::CodedInputStream* input) final;
+  #endif  // GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
+  void SerializeWithCachedSizes(
+      ::google::protobuf::io::CodedOutputStream* output) const final;
+  ::google::protobuf::uint8* InternalSerializeWithCachedSizesToArray(
+      ::google::protobuf::uint8* target) const final;
+  int GetCachedSize() const final { return _cached_size_.Get(); }
+
+  private:
+  void SharedCtor();
+  void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(DeleteTriggerRequest* other);
+  private:
+  inline ::google::protobuf::Arena* GetArenaNoVirtual() const {
+    return nullptr;
+  }
+  inline void* MaybeArenaPtr() const {
+    return nullptr;
+  }
+  public:
+
+  ::google::protobuf::Metadata GetMetadata() const final;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  // .flyteidl.core.Identifier trigger_id = 1;
+  bool has_trigger_id() const;
+  void clear_trigger_id();
+  static const int kTriggerIdFieldNumber = 1;
+  const ::flyteidl::core::Identifier& trigger_id() const;
+  ::flyteidl::core::Identifier* release_trigger_id();
+  ::flyteidl::core::Identifier* mutable_trigger_id();
+  void set_allocated_trigger_id(::flyteidl::core::Identifier* trigger_id);
+
+  // @@protoc_insertion_point(class_scope:flyteidl.artifact.DeleteTriggerRequest)
+ private:
+  class HasBitSetters;
+
+  ::google::protobuf::internal::InternalMetadataWithArena _internal_metadata_;
+  ::flyteidl::core::Identifier* trigger_id_;
+  mutable ::google::protobuf::internal::CachedSize _cached_size_;
+  friend struct ::TableStruct_flyteidl_2fartifact_2fartifacts_2eproto;
+};
+// -------------------------------------------------------------------
+
+class DeleteTriggerResponse final :
+    public ::google::protobuf::Message /* @@protoc_insertion_point(class_definition:flyteidl.artifact.DeleteTriggerResponse) */ {
+ public:
+  DeleteTriggerResponse();
+  virtual ~DeleteTriggerResponse();
+
+  DeleteTriggerResponse(const DeleteTriggerResponse& from);
+
+  inline DeleteTriggerResponse& operator=(const DeleteTriggerResponse& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  #if LANG_CXX11
+  DeleteTriggerResponse(DeleteTriggerResponse&& from) noexcept
+    : DeleteTriggerResponse() {
+    *this = ::std::move(from);
+  }
+
+  inline DeleteTriggerResponse& operator=(DeleteTriggerResponse&& from) noexcept {
+    if (GetArenaNoVirtual() == from.GetArenaNoVirtual()) {
+      if (this != &from) InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+  #endif
+  static const ::google::protobuf::Descriptor* descriptor() {
+    return default_instance().GetDescriptor();
+  }
+  static const DeleteTriggerResponse& default_instance();
+
+  static void InitAsDefaultInstance();  // FOR INTERNAL USE ONLY
+  static inline const DeleteTriggerResponse* internal_default_instance() {
+    return reinterpret_cast<const DeleteTriggerResponse*>(
+               &_DeleteTriggerResponse_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    16;
+
+  void Swap(DeleteTriggerResponse* other);
+  friend void swap(DeleteTriggerResponse& a, DeleteTriggerResponse& b) {
+    a.Swap(&b);
+  }
+
+  // implements Message ----------------------------------------------
+
+  inline DeleteTriggerResponse* New() const final {
+    return CreateMaybeMessage<DeleteTriggerResponse>(nullptr);
+  }
+
+  DeleteTriggerResponse* New(::google::protobuf::Arena* arena) const final {
+    return CreateMaybeMessage<DeleteTriggerResponse>(arena);
+  }
+  void CopyFrom(const ::google::protobuf::Message& from) final;
+  void MergeFrom(const ::google::protobuf::Message& from) final;
+  void CopyFrom(const DeleteTriggerResponse& from);
+  void MergeFrom(const DeleteTriggerResponse& from);
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  #if GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
+  static const char* _InternalParse(const char* begin, const char* end, void* object, ::google::protobuf::internal::ParseContext* ctx);
+  ::google::protobuf::internal::ParseFunc _ParseFunc() const final { return _InternalParse; }
+  #else
+  bool MergePartialFromCodedStream(
+      ::google::protobuf::io::CodedInputStream* input) final;
+  #endif  // GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
+  void SerializeWithCachedSizes(
+      ::google::protobuf::io::CodedOutputStream* output) const final;
+  ::google::protobuf::uint8* InternalSerializeWithCachedSizesToArray(
+      ::google::protobuf::uint8* target) const final;
+  int GetCachedSize() const final { return _cached_size_.Get(); }
+
+  private:
+  void SharedCtor();
+  void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(DeleteTriggerResponse* other);
+  private:
+  inline ::google::protobuf::Arena* GetArenaNoVirtual() const {
+    return nullptr;
+  }
+  inline void* MaybeArenaPtr() const {
+    return nullptr;
+  }
+  public:
+
+  ::google::protobuf::Metadata GetMetadata() const final;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  // @@protoc_insertion_point(class_scope:flyteidl.artifact.DeleteTriggerResponse)
+ private:
+  class HasBitSetters;
+
+  ::google::protobuf::internal::InternalMetadataWithArena _internal_metadata_;
+  mutable ::google::protobuf::internal::CachedSize _cached_size_;
+  friend struct ::TableStruct_flyteidl_2fartifact_2fartifacts_2eproto;
+};
+// -------------------------------------------------------------------
+
 class ArtifactProducer final :
     public ::google::protobuf::Message /* @@protoc_insertion_point(class_definition:flyteidl.artifact.ArtifactProducer) */ {
  public:
@@ -1825,7 +2282,7 @@ class ArtifactProducer final :
                &_ArtifactProducer_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    13;
+    17;
 
   void Swap(ArtifactProducer* other);
   friend void swap(ArtifactProducer& a, ArtifactProducer& b) {
@@ -1950,7 +2407,7 @@ class RegisterProducerRequest final :
                &_RegisterProducerRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    14;
+    18;
 
   void Swap(RegisterProducerRequest* other);
   friend void swap(RegisterProducerRequest& a, RegisterProducerRequest& b) {
@@ -2068,7 +2525,7 @@ class ArtifactConsumer final :
                &_ArtifactConsumer_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    15;
+    19;
 
   void Swap(ArtifactConsumer* other);
   friend void swap(ArtifactConsumer& a, ArtifactConsumer& b) {
@@ -2193,7 +2650,7 @@ class RegisterConsumerRequest final :
                &_RegisterConsumerRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    16;
+    20;
 
   void Swap(RegisterConsumerRequest* other);
   friend void swap(RegisterConsumerRequest& a, RegisterConsumerRequest& b) {
@@ -2311,7 +2768,7 @@ class RegisterResponse final :
                &_RegisterResponse_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    17;
+    21;
 
   void Swap(RegisterResponse* other);
   friend void swap(RegisterResponse& a, RegisterResponse& b) {
@@ -3713,6 +4170,112 @@ inline void AddTagRequest::set_overwrite(bool value) {
 
 // -------------------------------------------------------------------
 
+// CreateTriggerRequest
+
+// .flyteidl.admin.LaunchPlan trigger_launch_plan = 1;
+inline bool CreateTriggerRequest::has_trigger_launch_plan() const {
+  return this != internal_default_instance() && trigger_launch_plan_ != nullptr;
+}
+inline const ::flyteidl::admin::LaunchPlan& CreateTriggerRequest::trigger_launch_plan() const {
+  const ::flyteidl::admin::LaunchPlan* p = trigger_launch_plan_;
+  // @@protoc_insertion_point(field_get:flyteidl.artifact.CreateTriggerRequest.trigger_launch_plan)
+  return p != nullptr ? *p : *reinterpret_cast<const ::flyteidl::admin::LaunchPlan*>(
+      &::flyteidl::admin::_LaunchPlan_default_instance_);
+}
+inline ::flyteidl::admin::LaunchPlan* CreateTriggerRequest::release_trigger_launch_plan() {
+  // @@protoc_insertion_point(field_release:flyteidl.artifact.CreateTriggerRequest.trigger_launch_plan)
+  
+  ::flyteidl::admin::LaunchPlan* temp = trigger_launch_plan_;
+  trigger_launch_plan_ = nullptr;
+  return temp;
+}
+inline ::flyteidl::admin::LaunchPlan* CreateTriggerRequest::mutable_trigger_launch_plan() {
+  
+  if (trigger_launch_plan_ == nullptr) {
+    auto* p = CreateMaybeMessage<::flyteidl::admin::LaunchPlan>(GetArenaNoVirtual());
+    trigger_launch_plan_ = p;
+  }
+  // @@protoc_insertion_point(field_mutable:flyteidl.artifact.CreateTriggerRequest.trigger_launch_plan)
+  return trigger_launch_plan_;
+}
+inline void CreateTriggerRequest::set_allocated_trigger_launch_plan(::flyteidl::admin::LaunchPlan* trigger_launch_plan) {
+  ::google::protobuf::Arena* message_arena = GetArenaNoVirtual();
+  if (message_arena == nullptr) {
+    delete reinterpret_cast< ::google::protobuf::MessageLite*>(trigger_launch_plan_);
+  }
+  if (trigger_launch_plan) {
+    ::google::protobuf::Arena* submessage_arena = nullptr;
+    if (message_arena != submessage_arena) {
+      trigger_launch_plan = ::google::protobuf::internal::GetOwnedMessage(
+          message_arena, trigger_launch_plan, submessage_arena);
+    }
+    
+  } else {
+    
+  }
+  trigger_launch_plan_ = trigger_launch_plan;
+  // @@protoc_insertion_point(field_set_allocated:flyteidl.artifact.CreateTriggerRequest.trigger_launch_plan)
+}
+
+// -------------------------------------------------------------------
+
+// CreateTriggerResponse
+
+// -------------------------------------------------------------------
+
+// DeleteTriggerRequest
+
+// .flyteidl.core.Identifier trigger_id = 1;
+inline bool DeleteTriggerRequest::has_trigger_id() const {
+  return this != internal_default_instance() && trigger_id_ != nullptr;
+}
+inline const ::flyteidl::core::Identifier& DeleteTriggerRequest::trigger_id() const {
+  const ::flyteidl::core::Identifier* p = trigger_id_;
+  // @@protoc_insertion_point(field_get:flyteidl.artifact.DeleteTriggerRequest.trigger_id)
+  return p != nullptr ? *p : *reinterpret_cast<const ::flyteidl::core::Identifier*>(
+      &::flyteidl::core::_Identifier_default_instance_);
+}
+inline ::flyteidl::core::Identifier* DeleteTriggerRequest::release_trigger_id() {
+  // @@protoc_insertion_point(field_release:flyteidl.artifact.DeleteTriggerRequest.trigger_id)
+  
+  ::flyteidl::core::Identifier* temp = trigger_id_;
+  trigger_id_ = nullptr;
+  return temp;
+}
+inline ::flyteidl::core::Identifier* DeleteTriggerRequest::mutable_trigger_id() {
+  
+  if (trigger_id_ == nullptr) {
+    auto* p = CreateMaybeMessage<::flyteidl::core::Identifier>(GetArenaNoVirtual());
+    trigger_id_ = p;
+  }
+  // @@protoc_insertion_point(field_mutable:flyteidl.artifact.DeleteTriggerRequest.trigger_id)
+  return trigger_id_;
+}
+inline void DeleteTriggerRequest::set_allocated_trigger_id(::flyteidl::core::Identifier* trigger_id) {
+  ::google::protobuf::Arena* message_arena = GetArenaNoVirtual();
+  if (message_arena == nullptr) {
+    delete reinterpret_cast< ::google::protobuf::MessageLite*>(trigger_id_);
+  }
+  if (trigger_id) {
+    ::google::protobuf::Arena* submessage_arena = nullptr;
+    if (message_arena != submessage_arena) {
+      trigger_id = ::google::protobuf::internal::GetOwnedMessage(
+          message_arena, trigger_id, submessage_arena);
+    }
+    
+  } else {
+    
+  }
+  trigger_id_ = trigger_id;
+  // @@protoc_insertion_point(field_set_allocated:flyteidl.artifact.DeleteTriggerRequest.trigger_id)
+}
+
+// -------------------------------------------------------------------
+
+// DeleteTriggerResponse
+
+// -------------------------------------------------------------------
+
 // ArtifactProducer
 
 // .flyteidl.core.Identifier entity_id = 1;
@@ -3974,6 +4537,14 @@ RegisterConsumerRequest::consumers() const {
 #ifdef __GNUC__
   #pragma GCC diagnostic pop
 #endif  // __GNUC__
+// -------------------------------------------------------------------
+
+// -------------------------------------------------------------------
+
+// -------------------------------------------------------------------
+
+// -------------------------------------------------------------------
+
 // -------------------------------------------------------------------
 
 // -------------------------------------------------------------------

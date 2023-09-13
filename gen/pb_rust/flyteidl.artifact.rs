@@ -128,6 +128,26 @@ pub struct AddTagResponse {
 }
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(Clone, PartialEq, ::prost::Message)]
+pub struct CreateTriggerRequest {
+    #[prost(message, optional, tag="1")]
+    pub trigger_launch_plan: ::core::option::Option<super::admin::LaunchPlan>,
+}
+#[allow(clippy::derive_partial_eq_without_eq)]
+#[derive(Clone, PartialEq, ::prost::Message)]
+pub struct CreateTriggerResponse {
+}
+#[allow(clippy::derive_partial_eq_without_eq)]
+#[derive(Clone, PartialEq, ::prost::Message)]
+pub struct DeleteTriggerRequest {
+    #[prost(message, optional, tag="1")]
+    pub trigger_id: ::core::option::Option<super::core::Identifier>,
+}
+#[allow(clippy::derive_partial_eq_without_eq)]
+#[derive(Clone, PartialEq, ::prost::Message)]
+pub struct DeleteTriggerResponse {
+}
+#[allow(clippy::derive_partial_eq_without_eq)]
+#[derive(Clone, PartialEq, ::prost::Message)]
 pub struct ArtifactProducer {
     /// These can be tasks, and workflows. Keeping track of the launch plans that a given workflow has is purely in
     /// Admin's domain.
