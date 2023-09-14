@@ -73,7 +73,7 @@ message Resource {
   // Structured dataset pointing to the query result table.
   // +optional
   core.LiteralMap outputs = 2;
-  // The message of the execution
+  // A descriptive message for the current state. e.g. waiting for cluster.
   string message = 3;
 }
 
