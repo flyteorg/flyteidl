@@ -78,6 +78,9 @@ pub struct Resource {
     /// +optional
     #[prost(message, optional, tag="2")]
     pub outputs: ::core::option::Option<super::core::LiteralMap>,
+    /// The message of the execution
+    #[prost(string, tag="3")]
+    pub message: ::prost::alloc::string::String,
 }
 /// A message used to delete a task.
 #[allow(clippy::derive_partial_eq_without_eq)]

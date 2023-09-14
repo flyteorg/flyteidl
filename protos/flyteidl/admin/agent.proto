@@ -73,6 +73,8 @@ message Resource {
   // Structured dataset pointing to the query result table.
   // +optional
   core.LiteralMap outputs = 2;
+  // The message of the execution
+  string message = 3;
 }
 
 // A message used to delete a task.
