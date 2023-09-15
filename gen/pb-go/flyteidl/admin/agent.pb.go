@@ -350,7 +350,7 @@ type Resource struct {
 	// Structured dataset pointing to the query result table.
 	// +optional
 	Outputs *core.LiteralMap `protobuf:"bytes,2,opt,name=outputs,proto3" json:"outputs,omitempty"`
-	// The message of the execution
+	// A descriptive message for the current state. e.g. waiting for cluster.
 	Message              string   `protobuf:"bytes,3,opt,name=message,proto3" json:"message,omitempty"`
 	XXX_NoUnkeyedLiteral struct{} `json:"-"`
 	XXX_unrecognized     []byte   `json:"-"`

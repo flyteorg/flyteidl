@@ -78,7 +78,7 @@ pub struct Resource {
     /// +optional
     #[prost(message, optional, tag="2")]
     pub outputs: ::core::option::Option<super::core::LiteralMap>,
-    /// The message of the execution
+    /// A descriptive message for the current state. e.g. waiting for cluster.
     #[prost(string, tag="3")]
     pub message: ::prost::alloc::string::String,
 }

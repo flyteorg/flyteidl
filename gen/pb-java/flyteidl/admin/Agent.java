@@ -5463,7 +5463,7 @@ public final class Agent {
 
     /**
      * <pre>
-     * The message of the execution
+     * A descriptive message for the current state. e.g. waiting for cluster.
      * </pre>
      *
      * <code>string message = 3;</code>
@@ -5471,7 +5471,7 @@ public final class Agent {
     java.lang.String getMessage();
     /**
      * <pre>
-     * The message of the execution
+     * A descriptive message for the current state. e.g. waiting for cluster.
      * </pre>
      *
      * <code>string message = 3;</code>
@@ -5645,7 +5645,7 @@ public final class Agent {
     private volatile java.lang.Object message_;
     /**
      * <pre>
-     * The message of the execution
+     * A descriptive message for the current state. e.g. waiting for cluster.
      * </pre>
      *
      * <code>string message = 3;</code>
@@ -5664,7 +5664,7 @@ public final class Agent {
     }
     /**
      * <pre>
-     * The message of the execution
+     * A descriptive message for the current state. e.g. waiting for cluster.
      * </pre>
      *
      * <code>string message = 3;</code>
@@ -6270,7 +6270,7 @@ public final class Agent {
       private java.lang.Object message_ = "";
       /**
        * <pre>
-       * The message of the execution
+       * A descriptive message for the current state. e.g. waiting for cluster.
        * </pre>
        *
        * <code>string message = 3;</code>
@@ -6289,7 +6289,7 @@ public final class Agent {
       }
       /**
        * <pre>
-       * The message of the execution
+       * A descriptive message for the current state. e.g. waiting for cluster.
        * </pre>
        *
        * <code>string message = 3;</code>
@@ -6309,7 +6309,7 @@ public final class Agent {
       }
       /**
        * <pre>
-       * The message of the execution
+       * A descriptive message for the current state. e.g. waiting for cluster.
        * </pre>
        *
        * <code>string message = 3;</code>
@@ -6326,7 +6326,7 @@ public final class Agent {
       }
       /**
        * <pre>
-       * The message of the execution
+       * A descriptive message for the current state. e.g. waiting for cluster.
        * </pre>
        *
        * <code>string message = 3;</code>
@@ -6339,7 +6339,7 @@ public final class Agent {
       }
       /**
        * <pre>
-       * The message of the execution
+       * A descriptive message for the current state. e.g. waiting for cluster.
        * </pre>
        *
        * <code>string message = 3;</code>

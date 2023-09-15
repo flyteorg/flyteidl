@@ -200,7 +200,7 @@
         },
         "message": {
           "type": "string",
-          "title": "The message of the execution"
+          "description": "A descriptive message for the current state. e.g. waiting for cluster."
         }
       }
     },
