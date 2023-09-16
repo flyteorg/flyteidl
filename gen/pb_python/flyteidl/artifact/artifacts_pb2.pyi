@@ -1,4 +1,5 @@
 from google.protobuf import any_pb2 as _any_pb2
+from flyteidl.admin import launch_plan_pb2 as _launch_plan_pb2
 from flyteidl.core import literals_pb2 as _literals_pb2
 from flyteidl.core import types_pb2 as _types_pb2
 from flyteidl.core import identifier_pb2 as _identifier_pb2
@@ -118,6 +119,26 @@ class AddTagRequest(_message.Message):
     def __init__(self, artifact_id: _Optional[_Union[_identifier_pb2.ArtifactID, _Mapping]] = ..., value: _Optional[str] = ..., overwrite: bool = ...) -> None: ...
 
 class AddTagResponse(_message.Message):
+    __slots__ = []
+    def __init__(self) -> None: ...
+
+class CreateTriggerRequest(_message.Message):
+    __slots__ = ["trigger_launch_plan"]
+    TRIGGER_LAUNCH_PLAN_FIELD_NUMBER: _ClassVar[int]
+    trigger_launch_plan: _launch_plan_pb2.LaunchPlan
+    def __init__(self, trigger_launch_plan: _Optional[_Union[_launch_plan_pb2.LaunchPlan, _Mapping]] = ...) -> None: ...
+
+class CreateTriggerResponse(_message.Message):
+    __slots__ = []
+    def __init__(self) -> None: ...
+
+class DeleteTriggerRequest(_message.Message):
+    __slots__ = ["trigger_id"]
+    TRIGGER_ID_FIELD_NUMBER: _ClassVar[int]
+    trigger_id: _identifier_pb2.Identifier
+    def __init__(self, trigger_id: _Optional[_Union[_identifier_pb2.Identifier, _Mapping]] = ...) -> None: ...
+
+class DeleteTriggerResponse(_message.Message):
     __slots__ = []
     def __init__(self) -> None: ...
 

@@ -148,6 +148,7 @@ from flyteadmin.models.container_architecture import ContainerArchitecture
 from flyteadmin.models.core_alias import CoreAlias
 from flyteadmin.models.core_approve_condition import CoreApproveCondition
 from flyteadmin.models.core_array_node import CoreArrayNode
+from flyteadmin.models.core_artifact_binding_data import CoreArtifactBindingData
 from flyteadmin.models.core_artifact_id import CoreArtifactID
 from flyteadmin.models.core_artifact_key import CoreArtifactKey
 from flyteadmin.models.core_artifact_query import CoreArtifactQuery
@@ -201,6 +202,7 @@ from flyteadmin.models.core_operand import CoreOperand
 from flyteadmin.models.core_output_reference import CoreOutputReference
 from flyteadmin.models.core_parameter import CoreParameter
 from flyteadmin.models.core_parameter_map import CoreParameterMap
+from flyteadmin.models.core_partition_value import CorePartitionValue
 from flyteadmin.models.core_partitions import CorePartitions
 from flyteadmin.models.core_primitive import CorePrimitive
 from flyteadmin.models.core_quality_of_service import CoreQualityOfService
@@ -269,6 +271,7 @@ from flyteadmin.models.io_strategy_download_mode import IOStrategyDownloadMode
 from flyteadmin.models.io_strategy_upload_mode import IOStrategyUploadMode
 from flyteadmin.models.plugin_override_missing_plugin_behavior import PluginOverrideMissingPluginBehavior
 from flyteadmin.models.project_project_state import ProjectProjectState
+from flyteadmin.models.protobuf_any import ProtobufAny
 from flyteadmin.models.protobuf_list_value import ProtobufListValue
 from flyteadmin.models.protobuf_null_value import ProtobufNullValue
 from flyteadmin.models.protobuf_struct import ProtobufStruct

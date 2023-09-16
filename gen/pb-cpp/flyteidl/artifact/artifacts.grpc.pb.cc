@@ -22,6 +22,8 @@ namespace artifact {
 static const char* ArtifactRegistry_method_names[] = {
   "/flyteidl.artifact.ArtifactRegistry/CreateArtifact",
   "/flyteidl.artifact.ArtifactRegistry/GetArtifact",
+  "/flyteidl.artifact.ArtifactRegistry/CreateTrigger",
+  "/flyteidl.artifact.ArtifactRegistry/DeleteTrigger",
   "/flyteidl.artifact.ArtifactRegistry/AddTag",
   "/flyteidl.artifact.ArtifactRegistry/RegisterProducer",
   "/flyteidl.artifact.ArtifactRegistry/RegisterConsumer",
@@ -36,9 +38,11 @@ std::unique_ptr< ArtifactRegistry::Stub> ArtifactRegistry::NewStub(const std::sh
 ArtifactRegistry::Stub::Stub(const std::shared_ptr< ::grpc::ChannelInterface>& channel)
   : channel_(channel), rpcmethod_CreateArtifact_(ArtifactRegistry_method_names[0], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
   , rpcmethod_GetArtifact_(ArtifactRegistry_method_names[1], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
-  , rpcmethod_AddTag_(ArtifactRegistry_method_names[2], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
-  , rpcmethod_RegisterProducer_(ArtifactRegistry_method_names[3], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
-  , rpcmethod_RegisterConsumer_(ArtifactRegistry_method_names[4], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_CreateTrigger_(ArtifactRegistry_method_names[2], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_DeleteTrigger_(ArtifactRegistry_method_names[3], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_AddTag_(ArtifactRegistry_method_names[4], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_RegisterProducer_(ArtifactRegistry_method_names[5], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_RegisterConsumer_(ArtifactRegistry_method_names[6], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
   {}
 
 ::grpc::Status ArtifactRegistry::Stub::CreateArtifact(::grpc::ClientContext* context, const ::flyteidl::artifact::CreateArtifactRequest& request, ::flyteidl::artifact::CreateArtifactResponse* response) {
@@ -95,6 +99,62 @@ void ArtifactRegistry::Stub::experimental_async::GetArtifact(::grpc::ClientConte
 
 ::grpc::ClientAsyncResponseReader< ::flyteidl::artifact::GetArtifactResponse>* ArtifactRegistry::Stub::PrepareAsyncGetArtifactRaw(::grpc::ClientContext* context, const ::flyteidl::artifact::GetArtifactRequest& request, ::grpc::CompletionQueue* cq) {
   return ::grpc::internal::ClientAsyncResponseReaderFactory< ::flyteidl::artifact::GetArtifactResponse>::Create(channel_.get(), cq, rpcmethod_GetArtifact_, context, request, false);
+}
+
+::grpc::Status ArtifactRegistry::Stub::CreateTrigger(::grpc::ClientContext* context, const ::flyteidl::artifact::CreateTriggerRequest& request, ::flyteidl::artifact::CreateTriggerResponse* response) {
+  return ::grpc::internal::BlockingUnaryCall(channel_.get(), rpcmethod_CreateTrigger_, context, request, response);
+}
+
+void ArtifactRegistry::Stub::experimental_async::CreateTrigger(::grpc::ClientContext* context, const ::flyteidl::artifact::CreateTriggerRequest* request, ::flyteidl::artifact::CreateTriggerResponse* response, std::function<void(::grpc::Status)> f) {
+  ::grpc::internal::CallbackUnaryCall(stub_->channel_.get(), stub_->rpcmethod_CreateTrigger_, context, request, response, std::move(f));
+}
+
+void ArtifactRegistry::Stub::experimental_async::CreateTrigger(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::flyteidl::artifact::CreateTriggerResponse* response, std::function<void(::grpc::Status)> f) {
+  ::grpc::internal::CallbackUnaryCall(stub_->channel_.get(), stub_->rpcmethod_CreateTrigger_, context, request, response, std::move(f));
+}
+
+void ArtifactRegistry::Stub::experimental_async::CreateTrigger(::grpc::ClientContext* context, const ::flyteidl::artifact::CreateTriggerRequest* request, ::flyteidl::artifact::CreateTriggerResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
+  ::grpc::internal::ClientCallbackUnaryFactory::Create(stub_->channel_.get(), stub_->rpcmethod_CreateTrigger_, context, request, response, reactor);
+}
+
+void ArtifactRegistry::Stub::experimental_async::CreateTrigger(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::flyteidl::artifact::CreateTriggerResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
+  ::grpc::internal::ClientCallbackUnaryFactory::Create(stub_->channel_.get(), stub_->rpcmethod_CreateTrigger_, context, request, response, reactor);
+}
+
+::grpc::ClientAsyncResponseReader< ::flyteidl::artifact::CreateTriggerResponse>* ArtifactRegistry::Stub::AsyncCreateTriggerRaw(::grpc::ClientContext* context, const ::flyteidl::artifact::CreateTriggerRequest& request, ::grpc::CompletionQueue* cq) {
+  return ::grpc::internal::ClientAsyncResponseReaderFactory< ::flyteidl::artifact::CreateTriggerResponse>::Create(channel_.get(), cq, rpcmethod_CreateTrigger_, context, request, true);
+}
+
+::grpc::ClientAsyncResponseReader< ::flyteidl::artifact::CreateTriggerResponse>* ArtifactRegistry::Stub::PrepareAsyncCreateTriggerRaw(::grpc::ClientContext* context, const ::flyteidl::artifact::CreateTriggerRequest& request, ::grpc::CompletionQueue* cq) {
+  return ::grpc::internal::ClientAsyncResponseReaderFactory< ::flyteidl::artifact::CreateTriggerResponse>::Create(channel_.get(), cq, rpcmethod_CreateTrigger_, context, request, false);
+}
+
+::grpc::Status ArtifactRegistry::Stub::DeleteTrigger(::grpc::ClientContext* context, const ::flyteidl::artifact::DeleteTriggerRequest& request, ::flyteidl::artifact::DeleteTriggerResponse* response) {
+  return ::grpc::internal::BlockingUnaryCall(channel_.get(), rpcmethod_DeleteTrigger_, context, request, response);
+}
+
+void ArtifactRegistry::Stub::experimental_async::DeleteTrigger(::grpc::ClientContext* context, const ::flyteidl::artifact::DeleteTriggerRequest* request, ::flyteidl::artifact::DeleteTriggerResponse* response, std::function<void(::grpc::Status)> f) {
+  ::grpc::internal::CallbackUnaryCall(stub_->channel_.get(), stub_->rpcmethod_DeleteTrigger_, context, request, response, std::move(f));
+}
+
+void ArtifactRegistry::Stub::experimental_async::DeleteTrigger(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::flyteidl::artifact::DeleteTriggerResponse* response, std::function<void(::grpc::Status)> f) {
+  ::grpc::internal::CallbackUnaryCall(stub_->channel_.get(), stub_->rpcmethod_DeleteTrigger_, context, request, response, std::move(f));
+}
+
+void ArtifactRegistry::Stub::experimental_async::DeleteTrigger(::grpc::ClientContext* context, const ::flyteidl::artifact::DeleteTriggerRequest* request, ::flyteidl::artifact::DeleteTriggerResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
+  ::grpc::internal::ClientCallbackUnaryFactory::Create(stub_->channel_.get(), stub_->rpcmethod_DeleteTrigger_, context, request, response, reactor);
+}
+
+void ArtifactRegistry::Stub::experimental_async::DeleteTrigger(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::flyteidl::artifact::DeleteTriggerResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
+  ::grpc::internal::ClientCallbackUnaryFactory::Create(stub_->channel_.get(), stub_->rpcmethod_DeleteTrigger_, context, request, response, reactor);
+}
+
+::grpc::ClientAsyncResponseReader< ::flyteidl::artifact::DeleteTriggerResponse>* ArtifactRegistry::Stub::AsyncDeleteTriggerRaw(::grpc::ClientContext* context, const ::flyteidl::artifact::DeleteTriggerRequest& request, ::grpc::CompletionQueue* cq) {
+  return ::grpc::internal::ClientAsyncResponseReaderFactory< ::flyteidl::artifact::DeleteTriggerResponse>::Create(channel_.get(), cq, rpcmethod_DeleteTrigger_, context, request, true);
+}
+
+::grpc::ClientAsyncResponseReader< ::flyteidl::artifact::DeleteTriggerResponse>* ArtifactRegistry::Stub::PrepareAsyncDeleteTriggerRaw(::grpc::ClientContext* context, const ::flyteidl::artifact::DeleteTriggerRequest& request, ::grpc::CompletionQueue* cq) {
+  return ::grpc::internal::ClientAsyncResponseReaderFactory< ::flyteidl::artifact::DeleteTriggerResponse>::Create(channel_.get(), cq, rpcmethod_DeleteTrigger_, context, request, false);
 }
 
 ::grpc::Status ArtifactRegistry::Stub::AddTag(::grpc::ClientContext* context, const ::flyteidl::artifact::AddTagRequest& request, ::flyteidl::artifact::AddTagResponse* response) {
@@ -195,15 +255,25 @@ ArtifactRegistry::Service::Service() {
   AddMethod(new ::grpc::internal::RpcServiceMethod(
       ArtifactRegistry_method_names[2],
       ::grpc::internal::RpcMethod::NORMAL_RPC,
+      new ::grpc::internal::RpcMethodHandler< ArtifactRegistry::Service, ::flyteidl::artifact::CreateTriggerRequest, ::flyteidl::artifact::CreateTriggerResponse>(
+          std::mem_fn(&ArtifactRegistry::Service::CreateTrigger), this)));
+  AddMethod(new ::grpc::internal::RpcServiceMethod(
+      ArtifactRegistry_method_names[3],
+      ::grpc::internal::RpcMethod::NORMAL_RPC,
+      new ::grpc::internal::RpcMethodHandler< ArtifactRegistry::Service, ::flyteidl::artifact::DeleteTriggerRequest, ::flyteidl::artifact::DeleteTriggerResponse>(
+          std::mem_fn(&ArtifactRegistry::Service::DeleteTrigger), this)));
+  AddMethod(new ::grpc::internal::RpcServiceMethod(
+      ArtifactRegistry_method_names[4],
+      ::grpc::internal::RpcMethod::NORMAL_RPC,
       new ::grpc::internal::RpcMethodHandler< ArtifactRegistry::Service, ::flyteidl::artifact::AddTagRequest, ::flyteidl::artifact::AddTagResponse>(
           std::mem_fn(&ArtifactRegistry::Service::AddTag), this)));
   AddMethod(new ::grpc::internal::RpcServiceMethod(
-      ArtifactRegistry_method_names[3],
+      ArtifactRegistry_method_names[5],
       ::grpc::internal::RpcMethod::NORMAL_RPC,
       new ::grpc::internal::RpcMethodHandler< ArtifactRegistry::Service, ::flyteidl::artifact::RegisterProducerRequest, ::flyteidl::artifact::RegisterResponse>(
           std::mem_fn(&ArtifactRegistry::Service::RegisterProducer), this)));
   AddMethod(new ::grpc::internal::RpcServiceMethod(
-      ArtifactRegistry_method_names[4],
+      ArtifactRegistry_method_names[6],
       ::grpc::internal::RpcMethod::NORMAL_RPC,
       new ::grpc::internal::RpcMethodHandler< ArtifactRegistry::Service, ::flyteidl::artifact::RegisterConsumerRequest, ::flyteidl::artifact::RegisterResponse>(
           std::mem_fn(&ArtifactRegistry::Service::RegisterConsumer), this)));
@@ -220,6 +290,20 @@ ArtifactRegistry::Service::~Service() {
 }
 
 ::grpc::Status ArtifactRegistry::Service::GetArtifact(::grpc::ServerContext* context, const ::flyteidl::artifact::GetArtifactRequest* request, ::flyteidl::artifact::GetArtifactResponse* response) {
+  (void) context;
+  (void) request;
+  (void) response;
+  return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+}
+
+::grpc::Status ArtifactRegistry::Service::CreateTrigger(::grpc::ServerContext* context, const ::flyteidl::artifact::CreateTriggerRequest* request, ::flyteidl::artifact::CreateTriggerResponse* response) {
+  (void) context;
+  (void) request;
+  (void) response;
+  return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+}
+
+::grpc::Status ArtifactRegistry::Service::DeleteTrigger(::grpc::ServerContext* context, const ::flyteidl::artifact::DeleteTriggerRequest* request, ::flyteidl::artifact::DeleteTriggerResponse* response) {
   (void) context;
   (void) request;
   (void) response;

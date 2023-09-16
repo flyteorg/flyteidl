@@ -9,6 +9,8 @@
 
 package flyteadmin
 
-type CorePartitions struct {
-	Value map[string]CorePartitionValue `json:"value,omitempty"`
+type CoreArtifactBindingData struct {
+	Index int64 `json:"index,omitempty"`
+	PartitionKey string `json:"partition_key,omitempty"`
+	Transform string `json:"transform,omitempty"`
 }

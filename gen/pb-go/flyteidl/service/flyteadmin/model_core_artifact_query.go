@@ -13,4 +13,5 @@ type CoreArtifactQuery struct {
 	ArtifactId *CoreArtifactId `json:"artifact_id,omitempty"`
 	ArtifactTag *CoreArtifactTag `json:"artifact_tag,omitempty"`
 	Uri string `json:"uri,omitempty"`
+	Binding *CoreArtifactBindingData `json:"binding,omitempty"`
 }

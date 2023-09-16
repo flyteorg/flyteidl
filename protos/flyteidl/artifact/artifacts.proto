@@ -5,10 +5,12 @@ option go_package = "github.com/flyteorg/flyteidl/gen/pb-go/flyteidl/artifact";
 
 import "google/protobuf/any.proto";
 
+import "flyteidl/admin/launch_plan.proto";
 import "flyteidl/core/literals.proto";
 import "flyteidl/core/types.proto";
 import "flyteidl/core/identifier.proto";
 import "flyteidl/core/interface.proto";
+
 
 message Artifact {
   core.ArtifactID artifact_id = 1;
@@ -105,6 +107,18 @@ message AddTagRequest {
 
 message AddTagResponse {}
 
+message CreateTriggerRequest {
+  admin.LaunchPlan trigger_launch_plan = 1;
+}
+
+message CreateTriggerResponse {}
+
+message DeleteTriggerRequest {
+  core.Identifier trigger_id = 1;
+}
+
+message DeleteTriggerResponse {}
+
 message ArtifactProducer {
   // These can be tasks, and workflows. Keeping track of the launch plans that a given workflow has is purely in
   // Admin's domain.
@@ -138,6 +152,10 @@ service ArtifactRegistry {
 //  rpc ListArtifactNames (ListArtifactNamesRequest) returns (ListArtifactNamesResponse) {}
 //
 //  rpc ListArtifacts (ListArtifactsRequest) returns (ListArtifactsResponse) {}
+
+  rpc CreateTrigger (CreateTriggerRequest) returns (CreateTriggerResponse) {}
+
+  rpc DeleteTrigger (DeleteTriggerRequest) returns (DeleteTriggerResponse) {}
 
   rpc AddTag(AddTagRequest) returns (AddTagResponse) {}
 

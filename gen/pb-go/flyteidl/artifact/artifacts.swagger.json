@@ -24,6 +24,25 @@
       ],
       "default": "SINGLE"
     },
+    "OAuth2TokenRequestType": {
+      "type": "string",
+      "enum": [
+        "CLIENT_CREDENTIALS"
+      ],
+      "default": "CLIENT_CREDENTIALS",
+      "description": "Type of the token requested.\n\n - CLIENT_CREDENTIALS: CLIENT_CREDENTIALS indicates a 2-legged OAuth token requested using client credentials."
+    },
+    "QualityOfServiceTier": {
+      "type": "string",
+      "enum": [
+        "UNDEFINED",
+        "HIGH",
+        "MEDIUM",
+        "LOW"
+      ],
+      "default": "UNDEFINED",
+      "description": " - UNDEFINED: Default: no quality of service specified."
+    },
     "SchemaColumnSchemaColumnType": {
       "type": "string",
       "enum": [
@@ -49,6 +68,16 @@
         }
       }
     },
+    "SecretMountType": {
+      "type": "string",
+      "enum": [
+        "ANY",
+        "ENV_VAR",
+        "FILE"
+      ],
+      "default": "ANY",
+      "description": " - ANY: Default case, indicates the client can tolerate either mounting options.\n - ENV_VAR: ENV_VAR indicates the secret needs to be mounted as an environment variable.\n - FILE: FILE indicates the secret needs to be mounted as a file."
+    },
     "StructuredDatasetTypeDatasetColumn": {
       "type": "object",
       "properties": {
@@ -61,6 +90,349 @@
           "description": "The column type."
         }
       }
+    },
+    "adminAnnotations": {
+      "type": "object",
+      "properties": {
+        "values": {
+          "type": "object",
+          "additionalProperties": {
+            "type": "string"
+          },
+          "description": "Map of custom annotations to be applied to the execution resource."
+        }
+      },
+      "description": "Annotation values to be applied to an execution resource.\nIn the future a mode (e.g. OVERRIDE, APPEND, etc) can be defined\nto specify how to merge annotations defined at registration and execution time."
+    },
+    "adminAuth": {
+      "type": "object",
+      "properties": {
+        "assumable_iam_role": {
+          "type": "string",
+          "description": "Defines an optional iam role which will be used for tasks run in executions created with this launch plan."
+        },
+        "kubernetes_service_account": {
+          "type": "string",
+          "description": "Defines an optional kubernetes service account which will be used for tasks run in executions created with this launch plan."
+        }
+      },
+      "description": "Defines permissions associated with executions created by this launch plan spec.\nUse either of these roles when they have permissions required by your workflow execution.\nDeprecated."
+    },
+    "adminAuthRole": {
+      "type": "object",
+      "properties": {
+        "assumable_iam_role": {
+          "type": "string",
+          "description": "Defines an optional iam role which will be used for tasks run in executions created with this launch plan."
+        },
+        "kubernetes_service_account": {
+          "type": "string",
+          "description": "Defines an optional kubernetes service account which will be used for tasks run in executions created with this launch plan."
+        }
+      },
+      "description": "Defines permissions associated with executions created by this launch plan spec.\nUse either of these roles when they have permissions required by your workflow execution.\nDeprecated."
+    },
+    "adminCronSchedule": {
+      "type": "object",
+      "properties": {
+        "schedule": {
+          "type": "string",
+          "title": "Standard/default cron implementation as described by https://en.wikipedia.org/wiki/Cron#CRON_expression;\nAlso supports nonstandard predefined scheduling definitions\nas described by https://docs.aws.amazon.com/AmazonCloudWatch/latest/events/ScheduledEvents.html#CronExpressions\nexcept @reboot"
+        },
+        "offset": {
+          "type": "string",
+          "title": "ISO 8601 duration as described by https://en.wikipedia.org/wiki/ISO_8601#Durations"
+        }
+      },
+      "description": "Options for schedules to run according to a cron expression."
+    },
+    "adminEmailNotification": {
+      "type": "object",
+      "properties": {
+        "recipients_email": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "title": "The list of email addresses recipients for this notification.\n+required"
+        }
+      },
+      "description": "Defines an email notification specification."
+    },
+    "adminEnvs": {
+      "type": "object",
+      "properties": {
+        "values": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/coreKeyValuePair"
+          },
+          "description": "Map of custom environment variables to be applied to the execution resource."
+        }
+      },
+      "description": "Environment variable values to be applied to an execution resource.\nIn the future a mode (e.g. OVERRIDE, APPEND, etc) can be defined\nto specify how to merge environment variables defined at registration and execution time."
+    },
+    "adminFixedRate": {
+      "type": "object",
+      "properties": {
+        "value": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "unit": {
+          "$ref": "#/definitions/adminFixedRateUnit"
+        }
+      },
+      "description": "Option for schedules run at a certain frequency e.g. every 2 minutes."
+    },
+    "adminFixedRateUnit": {
+      "type": "string",
+      "enum": [
+        "MINUTE",
+        "HOUR",
+        "DAY"
+      ],
+      "default": "MINUTE",
+      "description": "Represents a frequency at which to run a schedule."
+    },
+    "adminLabels": {
+      "type": "object",
+      "properties": {
+        "values": {
+          "type": "object",
+          "additionalProperties": {
+            "type": "string"
+          },
+          "description": "Map of custom labels to be applied to the execution resource."
+        }
+      },
+      "description": "Label values to be applied to an execution resource.\nIn the future a mode (e.g. OVERRIDE, APPEND, etc) can be defined\nto specify how to merge labels defined at registration and execution time."
+    },
+    "adminLaunchPlan": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "$ref": "#/definitions/coreIdentifier",
+          "description": "Uniquely identifies a launch plan entity."
+        },
+        "spec": {
+          "$ref": "#/definitions/adminLaunchPlanSpec",
+          "description": "User-provided launch plan details, including reference workflow, inputs and other metadata."
+        },
+        "closure": {
+          "$ref": "#/definitions/adminLaunchPlanClosure",
+          "description": "Values computed by the flyte platform after launch plan registration."
+        }
+      },
+      "description": "A LaunchPlan provides the capability to templatize workflow executions.\nLaunch plans simplify associating one or more schedules, inputs and notifications with your workflows.\nLaunch plans can be shared and used to trigger executions with predefined inputs even when a workflow\ndefinition doesn't necessarily have a default value for said input."
+    },
+    "adminLaunchPlanClosure": {
+      "type": "object",
+      "properties": {
+        "state": {
+          "$ref": "#/definitions/adminLaunchPlanState",
+          "description": "Indicate the Launch plan state."
+        },
+        "expected_inputs": {
+          "$ref": "#/definitions/coreParameterMap",
+          "title": "Indicates the set of inputs expected when creating an execution with the Launch plan"
+        },
+        "expected_outputs": {
+          "$ref": "#/definitions/coreVariableMap",
+          "title": "Indicates the set of outputs expected to be produced by creating an execution with the Launch plan"
+        },
+        "created_at": {
+          "type": "string",
+          "format": "date-time",
+          "description": "Time at which the launch plan was created."
+        },
+        "updated_at": {
+          "type": "string",
+          "format": "date-time",
+          "description": "Time at which the launch plan was last updated."
+        }
+      },
+      "description": "Values computed by the flyte platform after launch plan registration.\nThese include expected_inputs required to be present in a CreateExecutionRequest\nto launch the reference workflow as well timestamp values associated with the launch plan."
+    },
+    "adminLaunchPlanMetadata": {
+      "type": "object",
+      "properties": {
+        "schedule": {
+          "$ref": "#/definitions/adminSchedule",
+          "title": "Schedule to execute the Launch Plan"
+        },
+        "notifications": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/adminNotification"
+          },
+          "title": "List of notifications based on Execution status transitions"
+        },
+        "launch_conditions": {
+          "$ref": "#/definitions/protobufAny",
+          "title": "Additional metadata for how to launch the launch plan"
+        }
+      },
+      "description": "Additional launch plan attributes included in the LaunchPlanSpec not strictly required to launch\nthe reference workflow."
+    },
+    "adminLaunchPlanSpec": {
+      "type": "object",
+      "properties": {
+        "workflow_id": {
+          "$ref": "#/definitions/coreIdentifier",
+          "title": "Reference to the Workflow template that the launch plan references"
+        },
+        "entity_metadata": {
+          "$ref": "#/definitions/adminLaunchPlanMetadata",
+          "title": "Metadata for the Launch Plan"
+        },
+        "default_inputs": {
+          "$ref": "#/definitions/coreParameterMap",
+          "description": "Input values to be passed for the execution.\nThese can be overriden when an execution is created with this launch plan."
+        },
+        "fixed_inputs": {
+          "$ref": "#/definitions/coreLiteralMap",
+          "description": "Fixed, non-overridable inputs for the Launch Plan.\nThese can not be overriden when an execution is created with this launch plan."
+        },
+        "role": {
+          "type": "string",
+          "title": "String to indicate the role to use to execute the workflow underneath"
+        },
+        "labels": {
+          "$ref": "#/definitions/adminLabels",
+          "description": "Custom labels to be applied to the execution resource."
+        },
+        "annotations": {
+          "$ref": "#/definitions/adminAnnotations",
+          "description": "Custom annotations to be applied to the execution resource."
+        },
+        "auth": {
+          "$ref": "#/definitions/adminAuth",
+          "description": "Indicates the permission associated with workflow executions triggered with this launch plan."
+        },
+        "auth_role": {
+          "$ref": "#/definitions/adminAuthRole"
+        },
+        "security_context": {
+          "$ref": "#/definitions/coreSecurityContext",
+          "title": "Indicates security context for permissions triggered with this launch plan"
+        },
+        "quality_of_service": {
+          "$ref": "#/definitions/coreQualityOfService",
+          "description": "Indicates the runtime priority of the execution."
+        },
+        "raw_output_data_config": {
+          "$ref": "#/definitions/adminRawOutputDataConfig",
+          "description": "Encapsulates user settings pertaining to offloaded data (i.e. Blobs, Schema, query data, etc.)."
+        },
+        "max_parallelism": {
+          "type": "integer",
+          "format": "int32",
+          "description": "Controls the maximum number of tasknodes that can be run in parallel for the entire workflow.\nThis is useful to achieve fairness. Note: MapTasks are regarded as one unit,\nand parallelism/concurrency of MapTasks is independent from this."
+        },
+        "interruptible": {
+          "type": "boolean",
+          "format": "boolean",
+          "description": "Allows for the interruptible flag of a workflow to be overwritten for a single execution.\nOmitting this field uses the workflow's value as a default.\nAs we need to distinguish between the field not being provided and its default value false, we have to use a wrapper\naround the bool field."
+        },
+        "overwrite_cache": {
+          "type": "boolean",
+          "format": "boolean",
+          "description": "Allows for all cached values of a workflow and its tasks to be overwritten for a single execution.\nIf enabled, all calculations are performed even if cached results would be available, overwriting the stored\ndata once execution finishes successfully."
+        },
+        "envs": {
+          "$ref": "#/definitions/adminEnvs",
+          "description": "Environment variables to be set for the execution."
+        }
+      },
+      "description": "User-provided launch plan definition and configuration values."
+    },
+    "adminLaunchPlanState": {
+      "type": "string",
+      "enum": [
+        "INACTIVE",
+        "ACTIVE"
+      ],
+      "default": "INACTIVE",
+      "description": "By default any launch plan regardless of state can be used to launch a workflow execution.\nHowever, at most one version of a launch plan\n(e.g. a NamedEntityIdentifier set of shared project, domain and name values) can be\nactive at a time in regards to *schedules*. That is, at most one schedule in a NamedEntityIdentifier\ngroup will be observed and trigger executions at a defined cadence."
+    },
+    "adminNotification": {
+      "type": "object",
+      "properties": {
+        "phases": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/coreWorkflowExecutionPhase"
+          },
+          "title": "A list of phases to which users can associate the notifications to.\n+required"
+        },
+        "email": {
+          "$ref": "#/definitions/adminEmailNotification"
+        },
+        "pager_duty": {
+          "$ref": "#/definitions/adminPagerDutyNotification"
+        },
+        "slack": {
+          "$ref": "#/definitions/adminSlackNotification"
+        }
+      },
+      "description": "Represents a structure for notifications based on execution status.\nThe notification content is configured within flyte admin but can be templatized.\nFuture iterations could expose configuring notifications with custom content."
+    },
+    "adminPagerDutyNotification": {
+      "type": "object",
+      "properties": {
+        "recipients_email": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "title": "Currently, PagerDuty notifications leverage email to trigger a notification.\n+required"
+        }
+      },
+      "description": "Defines a pager duty notification specification."
+    },
+    "adminRawOutputDataConfig": {
+      "type": "object",
+      "properties": {
+        "output_location_prefix": {
+          "type": "string",
+          "title": "Prefix for where offloaded data from user workflows will be written\ne.g. s3://bucket/key or s3://bucket/"
+        }
+      },
+      "description": "Encapsulates user settings pertaining to offloaded data (i.e. Blobs, Schema, query data, etc.).\nSee https://github.com/flyteorg/flyte/issues/211 for more background information."
+    },
+    "adminSchedule": {
+      "type": "object",
+      "properties": {
+        "cron_expression": {
+          "type": "string",
+          "title": "Uses AWS syntax: Minutes Hours Day-of-month Month Day-of-week Year\ne.g. for a schedule that runs every 15 minutes: 0/15 * * * ? *"
+        },
+        "rate": {
+          "$ref": "#/definitions/adminFixedRate"
+        },
+        "cron_schedule": {
+          "$ref": "#/definitions/adminCronSchedule"
+        },
+        "kickoff_time_input_arg": {
+          "type": "string",
+          "description": "Name of the input variable that the kickoff time will be supplied to when the workflow is kicked off."
+        }
+      },
+      "description": "Defines complete set of information required to trigger an execution on a schedule."
+    },
+    "adminSlackNotification": {
+      "type": "object",
+      "properties": {
+        "recipients_email": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "title": "Currently, Slack notifications leverage email to trigger a notification.\n+required"
+        }
+      },
+      "description": "Defines a slack notification specification."
     },
     "artifactAddTagResponse": {
       "type": "object"
@@ -149,6 +521,12 @@
         }
       }
     },
+    "artifactCreateTriggerResponse": {
+      "type": "object"
+    },
+    "artifactDeleteTriggerResponse": {
+      "type": "object"
+    },
     "artifactGetArtifactResponse": {
       "type": "object",
       "properties": {
@@ -159,6 +537,23 @@
     },
     "artifactRegisterResponse": {
       "type": "object"
+    },
+    "coreArtifactBindingData": {
+      "type": "object",
+      "properties": {
+        "index": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "partition_key": {
+          "type": "string",
+          "title": "These two fields are only relevant in the partition value case"
+        },
+        "transform": {
+          "type": "string"
+        }
+      },
+      "title": "Only valid for triggers"
     },
     "coreArtifactID": {
       "type": "object",
@@ -200,6 +595,9 @@
         },
         "uri": {
           "type": "string"
+        },
+        "binding": {
+          "$ref": "#/definitions/coreArtifactBindingData"
         }
       },
       "title": "Uniqueness constraints for Artifacts\n - project, domain, name, version, partitions\nOption 2 (tags are standalone, point to an individual artifact id):\n - project, domain, name, alias (points to one partition if partitioned)\n - project, domain, name, partition key, partition value"
@@ -313,6 +711,42 @@
         }
       },
       "description": "Encapsulation of fields that uniquely identifies a Flyte resource."
+    },
+    "coreIdentity": {
+      "type": "object",
+      "properties": {
+        "iam_role": {
+          "type": "string",
+          "description": "iam_role references the fully qualified name of Identity \u0026 Access Management role to impersonate."
+        },
+        "k8s_service_account": {
+          "type": "string",
+          "description": "k8s_service_account references a kubernetes service account to impersonate."
+        },
+        "oauth2_client": {
+          "$ref": "#/definitions/coreOAuth2Client",
+          "description": "oauth2_client references an oauth2 client. Backend plugins can use this information to impersonate the client when\nmaking external calls."
+        },
+        "execution_identity": {
+          "type": "string",
+          "title": "execution_identity references the subject who makes the execution"
+        }
+      },
+      "description": "Identity encapsulates the various security identities a task can run as. It's up to the underlying plugin to pick the\nright identity for the execution environment."
+    },
+    "coreKeyValuePair": {
+      "type": "object",
+      "properties": {
+        "key": {
+          "type": "string",
+          "description": "required."
+        },
+        "value": {
+          "type": "string",
+          "description": "+optional."
+        }
+      },
+      "description": "A generic key value pair."
     },
     "coreLiteral": {
       "type": "object",
@@ -429,6 +863,46 @@
       },
       "description": "Encapsulation of fields that identify a Flyte node execution entity."
     },
+    "coreOAuth2Client": {
+      "type": "object",
+      "properties": {
+        "client_id": {
+          "type": "string",
+          "title": "client_id is the public id for the client to use. The system will not perform any pre-auth validation that the\nsecret requested matches the client_id indicated here.\n+required"
+        },
+        "client_secret": {
+          "$ref": "#/definitions/coreSecret",
+          "title": "client_secret is a reference to the secret used to authenticate the OAuth2 client.\n+required"
+        }
+      },
+      "description": "OAuth2Client encapsulates OAuth2 Client Credentials to be used when making calls on behalf of that task."
+    },
+    "coreOAuth2TokenRequest": {
+      "type": "object",
+      "properties": {
+        "name": {
+          "type": "string",
+          "title": "name indicates a unique id for the token request within this task token requests. It'll be used as a suffix for\nenvironment variables and as a filename for mounting tokens as files.\n+required"
+        },
+        "type": {
+          "$ref": "#/definitions/OAuth2TokenRequestType",
+          "title": "type indicates the type of the request to make. Defaults to CLIENT_CREDENTIALS.\n+required"
+        },
+        "client": {
+          "$ref": "#/definitions/coreOAuth2Client",
+          "title": "client references the client_id/secret to use to request the OAuth2 token.\n+required"
+        },
+        "idp_discovery_endpoint": {
+          "type": "string",
+          "title": "idp_discovery_endpoint references the discovery endpoint used to retrieve token endpoint and other related\ninformation.\n+optional"
+        },
+        "token_endpoint": {
+          "type": "string",
+          "title": "token_endpoint references the token issuance endpoint. If idp_discovery_endpoint is not provided, this parameter is\nmandatory.\n+optional"
+        }
+      },
+      "description": "OAuth2TokenRequest encapsulates information needed to request an OAuth2 token.\nFLYTE_TOKENS_ENV_PREFIX will be passed to indicate the prefix of the environment variables that will be present if\ntokens are passed through environment variables.\nFLYTE_TOKENS_PATH_PREFIX will be passed to indicate the prefix of the path where secrets will be mounted if tokens\nare passed through file mounts."
+    },
     "coreParameter": {
       "type": "object",
       "properties": {
@@ -468,13 +942,24 @@
       },
       "description": "A map of Parameters."
     },
+    "corePartitionValue": {
+      "type": "object",
+      "properties": {
+        "static_value": {
+          "type": "string"
+        },
+        "binding": {
+          "$ref": "#/definitions/coreArtifactBindingData"
+        }
+      }
+    },
     "corePartitions": {
       "type": "object",
       "properties": {
         "value": {
           "type": "object",
           "additionalProperties": {
-            "type": "string"
+            "$ref": "#/definitions/corePartitionValue"
           }
         }
       }
@@ -506,6 +991,28 @@
         }
       },
       "title": "Primitive Types"
+    },
+    "coreQualityOfService": {
+      "type": "object",
+      "properties": {
+        "tier": {
+          "$ref": "#/definitions/QualityOfServiceTier"
+        },
+        "spec": {
+          "$ref": "#/definitions/coreQualityOfServiceSpec"
+        }
+      },
+      "description": "Indicates the priority of an execution."
+    },
+    "coreQualityOfServiceSpec": {
+      "type": "object",
+      "properties": {
+        "queueing_budget": {
+          "type": "string",
+          "description": "Indicates how much queueing delay an execution can tolerate."
+        }
+      },
+      "description": "Represents customized execution run-time attributes."
     },
     "coreResourceType": {
       "type": "string",
@@ -575,6 +1082,52 @@
         }
       },
       "description": "Defines schema columns and types to strongly type-validate schemas interoperability."
+    },
+    "coreSecret": {
+      "type": "object",
+      "properties": {
+        "group": {
+          "type": "string",
+          "title": "The name of the secret group where to find the key referenced below. For K8s secrets, this should be the name of\nthe v1/secret object. For Confidant, this should be the Credential name. For Vault, this should be the secret name.\nFor AWS Secret Manager, this should be the name of the secret.\n+required"
+        },
+        "group_version": {
+          "type": "string",
+          "title": "The group version to fetch. This is not supported in all secret management systems. It'll be ignored for the ones\nthat do not support it.\n+optional"
+        },
+        "key": {
+          "type": "string",
+          "title": "The name of the secret to mount. This has to match an existing secret in the system. It's up to the implementation\nof the secret management system to require case sensitivity. For K8s secrets, Confidant and Vault, this should\nmatch one of the keys inside the secret. For AWS Secret Manager, it's ignored.\n+optional"
+        },
+        "mount_requirement": {
+          "$ref": "#/definitions/SecretMountType",
+          "title": "mount_requirement is optional. Indicates where the secret has to be mounted. If provided, the execution will fail\nif the underlying key management system cannot satisfy that requirement. If not provided, the default location\nwill depend on the key management system.\n+optional"
+        }
+      },
+      "description": "Secret encapsulates information about the secret a task needs to proceed. An environment variable\nFLYTE_SECRETS_ENV_PREFIX will be passed to indicate the prefix of the environment variables that will be present if\nsecrets are passed through environment variables.\nFLYTE_SECRETS_DEFAULT_DIR will be passed to indicate the prefix of the path where secrets will be mounted if secrets\nare passed through file mounts."
+    },
+    "coreSecurityContext": {
+      "type": "object",
+      "properties": {
+        "run_as": {
+          "$ref": "#/definitions/coreIdentity",
+          "description": "run_as encapsulates the identity a pod should run as. If the task fills in multiple fields here, it'll be up to the\nbackend plugin to choose the appropriate identity for the execution engine the task will run on."
+        },
+        "secrets": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/coreSecret"
+          },
+          "description": "secrets indicate the list of secrets the task needs in order to proceed. Secrets will be mounted/passed to the\npod as it starts. If the plugin responsible for kicking of the task will not run it on a flyte cluster (e.g. AWS\nBatch), it's the responsibility of the plugin to fetch the secret (which means propeller identity will need access\nto the secret) and to pass it to the remote execution engine."
+        },
+        "tokens": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/coreOAuth2TokenRequest"
+          },
+          "description": "tokens indicate the list of token requests the task needs in order to proceed. Tokens will be mounted/passed to the\npod as it starts. If the plugin responsible for kicking of the task will not run it on a flyte cluster (e.g. AWS\nBatch), it's the responsibility of the plugin to fetch the secret (which means propeller identity will need access\nto the secret) and to pass it to the remote execution engine."
+        }
+      },
+      "description": "SecurityContext holds security attributes that apply to tasks."
     },
     "coreSimpleType": {
       "type": "string",
@@ -755,6 +1308,22 @@
         }
       },
       "title": "Encapsulation of fields that uniquely identifies a Flyte workflow execution"
+    },
+    "coreWorkflowExecutionPhase": {
+      "type": "string",
+      "enum": [
+        "UNDEFINED",
+        "QUEUED",
+        "RUNNING",
+        "SUCCEEDING",
+        "SUCCEEDED",
+        "FAILING",
+        "FAILED",
+        "ABORTED",
+        "TIMED_OUT",
+        "ABORTING"
+      ],
+      "default": "UNDEFINED"
     },
     "protobufAny": {
       "type": "object",
