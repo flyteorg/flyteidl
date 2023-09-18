@@ -67,9 +67,9 @@ extern LiteralTypeDefaultTypeInternal _LiteralType_default_instance_;
 class OutputReference;
 class OutputReferenceDefaultTypeInternal;
 extern OutputReferenceDefaultTypeInternal _OutputReference_default_instance_;
-class PromiseAtrribute;
-class PromiseAtrributeDefaultTypeInternal;
-extern PromiseAtrributeDefaultTypeInternal _PromiseAtrribute_default_instance_;
+class PromiseAttribute;
+class PromiseAttributeDefaultTypeInternal;
+extern PromiseAttributeDefaultTypeInternal _PromiseAttribute_default_instance_;
 class SchemaType;
 class SchemaTypeDefaultTypeInternal;
 extern SchemaTypeDefaultTypeInternal _SchemaType_default_instance_;
@@ -100,7 +100,7 @@ template<> ::flyteidl::core::EnumType* Arena::CreateMaybeMessage<::flyteidl::cor
 template<> ::flyteidl::core::Error* Arena::CreateMaybeMessage<::flyteidl::core::Error>(Arena*);
 template<> ::flyteidl::core::LiteralType* Arena::CreateMaybeMessage<::flyteidl::core::LiteralType>(Arena*);
 template<> ::flyteidl::core::OutputReference* Arena::CreateMaybeMessage<::flyteidl::core::OutputReference>(Arena*);
-template<> ::flyteidl::core::PromiseAtrribute* Arena::CreateMaybeMessage<::flyteidl::core::PromiseAtrribute>(Arena*);
+template<> ::flyteidl::core::PromiseAttribute* Arena::CreateMaybeMessage<::flyteidl::core::PromiseAttribute>(Arena*);
 template<> ::flyteidl::core::SchemaType* Arena::CreateMaybeMessage<::flyteidl::core::SchemaType>(Arena*);
 template<> ::flyteidl::core::SchemaType_SchemaColumn* Arena::CreateMaybeMessage<::flyteidl::core::SchemaType_SchemaColumn>(Arena*);
 template<> ::flyteidl::core::StructuredDatasetType* Arena::CreateMaybeMessage<::flyteidl::core::StructuredDatasetType>(Arena*);
@@ -1740,16 +1740,16 @@ class OutputReference final :
 
   // accessors -------------------------------------------------------
 
-  // repeated .flyteidl.core.PromiseAtrribute attr_path = 3;
+  // repeated .flyteidl.core.PromiseAttribute attr_path = 3;
   int attr_path_size() const;
   void clear_attr_path();
   static const int kAttrPathFieldNumber = 3;
-  ::flyteidl::core::PromiseAtrribute* mutable_attr_path(int index);
-  ::google::protobuf::RepeatedPtrField< ::flyteidl::core::PromiseAtrribute >*
+  ::flyteidl::core::PromiseAttribute* mutable_attr_path(int index);
+  ::google::protobuf::RepeatedPtrField< ::flyteidl::core::PromiseAttribute >*
       mutable_attr_path();
-  const ::flyteidl::core::PromiseAtrribute& attr_path(int index) const;
-  ::flyteidl::core::PromiseAtrribute* add_attr_path();
-  const ::google::protobuf::RepeatedPtrField< ::flyteidl::core::PromiseAtrribute >&
+  const ::flyteidl::core::PromiseAttribute& attr_path(int index) const;
+  ::flyteidl::core::PromiseAttribute* add_attr_path();
+  const ::google::protobuf::RepeatedPtrField< ::flyteidl::core::PromiseAttribute >&
       attr_path() const;
 
   // string node_id = 1;
@@ -1785,7 +1785,7 @@ class OutputReference final :
   class HasBitSetters;
 
   ::google::protobuf::internal::InternalMetadataWithArena _internal_metadata_;
-  ::google::protobuf::RepeatedPtrField< ::flyteidl::core::PromiseAtrribute > attr_path_;
+  ::google::protobuf::RepeatedPtrField< ::flyteidl::core::PromiseAttribute > attr_path_;
   ::google::protobuf::internal::ArenaStringPtr node_id_;
   ::google::protobuf::internal::ArenaStringPtr var_;
   mutable ::google::protobuf::internal::CachedSize _cached_size_;
@@ -1793,25 +1793,25 @@ class OutputReference final :
 };
 // -------------------------------------------------------------------
 
-class PromiseAtrribute final :
-    public ::google::protobuf::Message /* @@protoc_insertion_point(class_definition:flyteidl.core.PromiseAtrribute) */ {
+class PromiseAttribute final :
+    public ::google::protobuf::Message /* @@protoc_insertion_point(class_definition:flyteidl.core.PromiseAttribute) */ {
  public:
-  PromiseAtrribute();
-  virtual ~PromiseAtrribute();
+  PromiseAttribute();
+  virtual ~PromiseAttribute();
 
-  PromiseAtrribute(const PromiseAtrribute& from);
+  PromiseAttribute(const PromiseAttribute& from);
 
-  inline PromiseAtrribute& operator=(const PromiseAtrribute& from) {
+  inline PromiseAttribute& operator=(const PromiseAttribute& from) {
     CopyFrom(from);
     return *this;
   }
   #if LANG_CXX11
-  PromiseAtrribute(PromiseAtrribute&& from) noexcept
-    : PromiseAtrribute() {
+  PromiseAttribute(PromiseAttribute&& from) noexcept
+    : PromiseAttribute() {
     *this = ::std::move(from);
   }
 
-  inline PromiseAtrribute& operator=(PromiseAtrribute&& from) noexcept {
+  inline PromiseAttribute& operator=(PromiseAttribute&& from) noexcept {
     if (GetArenaNoVirtual() == from.GetArenaNoVirtual()) {
       if (this != &from) InternalSwap(&from);
     } else {
@@ -1823,7 +1823,7 @@ class PromiseAtrribute final :
   static const ::google::protobuf::Descriptor* descriptor() {
     return default_instance().GetDescriptor();
   }
-  static const PromiseAtrribute& default_instance();
+  static const PromiseAttribute& default_instance();
 
   enum ValueCase {
     kStringValue = 1,
@@ -1832,31 +1832,31 @@ class PromiseAtrribute final :
   };
 
   static void InitAsDefaultInstance();  // FOR INTERNAL USE ONLY
-  static inline const PromiseAtrribute* internal_default_instance() {
-    return reinterpret_cast<const PromiseAtrribute*>(
-               &_PromiseAtrribute_default_instance_);
+  static inline const PromiseAttribute* internal_default_instance() {
+    return reinterpret_cast<const PromiseAttribute*>(
+               &_PromiseAttribute_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
     11;
 
-  void Swap(PromiseAtrribute* other);
-  friend void swap(PromiseAtrribute& a, PromiseAtrribute& b) {
+  void Swap(PromiseAttribute* other);
+  friend void swap(PromiseAttribute& a, PromiseAttribute& b) {
     a.Swap(&b);
   }
 
   // implements Message ----------------------------------------------
 
-  inline PromiseAtrribute* New() const final {
-    return CreateMaybeMessage<PromiseAtrribute>(nullptr);
+  inline PromiseAttribute* New() const final {
+    return CreateMaybeMessage<PromiseAttribute>(nullptr);
   }
 
-  PromiseAtrribute* New(::google::protobuf::Arena* arena) const final {
-    return CreateMaybeMessage<PromiseAtrribute>(arena);
+  PromiseAttribute* New(::google::protobuf::Arena* arena) const final {
+    return CreateMaybeMessage<PromiseAttribute>(arena);
   }
   void CopyFrom(const ::google::protobuf::Message& from) final;
   void MergeFrom(const ::google::protobuf::Message& from) final;
-  void CopyFrom(const PromiseAtrribute& from);
-  void MergeFrom(const PromiseAtrribute& from);
+  void CopyFrom(const PromiseAttribute& from);
+  void MergeFrom(const PromiseAttribute& from);
   PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
   bool IsInitialized() const final;
 
@@ -1878,7 +1878,7 @@ class PromiseAtrribute final :
   void SharedCtor();
   void SharedDtor();
   void SetCachedSize(int size) const final;
-  void InternalSwap(PromiseAtrribute* other);
+  void InternalSwap(PromiseAttribute* other);
   private:
   inline ::google::protobuf::Arena* GetArenaNoVirtual() const {
     return nullptr;
@@ -1922,7 +1922,7 @@ class PromiseAtrribute final :
 
   void clear_value();
   ValueCase value_case() const;
-  // @@protoc_insertion_point(class_scope:flyteidl.core.PromiseAtrribute)
+  // @@protoc_insertion_point(class_scope:flyteidl.core.PromiseAttribute)
  private:
   class HasBitSetters;
   void set_has_string_value();
@@ -3362,31 +3362,31 @@ inline void OutputReference::set_allocated_var(::std::string* var) {
   // @@protoc_insertion_point(field_set_allocated:flyteidl.core.OutputReference.var)
 }
 
-// repeated .flyteidl.core.PromiseAtrribute attr_path = 3;
+// repeated .flyteidl.core.PromiseAttribute attr_path = 3;
 inline int OutputReference::attr_path_size() const {
   return attr_path_.size();
 }
 inline void OutputReference::clear_attr_path() {
   attr_path_.Clear();
 }
-inline ::flyteidl::core::PromiseAtrribute* OutputReference::mutable_attr_path(int index) {
+inline ::flyteidl::core::PromiseAttribute* OutputReference::mutable_attr_path(int index) {
   // @@protoc_insertion_point(field_mutable:flyteidl.core.OutputReference.attr_path)
   return attr_path_.Mutable(index);
 }
-inline ::google::protobuf::RepeatedPtrField< ::flyteidl::core::PromiseAtrribute >*
+inline ::google::protobuf::RepeatedPtrField< ::flyteidl::core::PromiseAttribute >*
 OutputReference::mutable_attr_path() {
   // @@protoc_insertion_point(field_mutable_list:flyteidl.core.OutputReference.attr_path)
   return &attr_path_;
 }
-inline const ::flyteidl::core::PromiseAtrribute& OutputReference::attr_path(int index) const {
+inline const ::flyteidl::core::PromiseAttribute& OutputReference::attr_path(int index) const {
   // @@protoc_insertion_point(field_get:flyteidl.core.OutputReference.attr_path)
   return attr_path_.Get(index);
 }
-inline ::flyteidl::core::PromiseAtrribute* OutputReference::add_attr_path() {
+inline ::flyteidl::core::PromiseAttribute* OutputReference::add_attr_path() {
   // @@protoc_insertion_point(field_add:flyteidl.core.OutputReference.attr_path)
   return attr_path_.Add();
 }
-inline const ::google::protobuf::RepeatedPtrField< ::flyteidl::core::PromiseAtrribute >&
+inline const ::google::protobuf::RepeatedPtrField< ::flyteidl::core::PromiseAttribute >&
 OutputReference::attr_path() const {
   // @@protoc_insertion_point(field_list:flyteidl.core.OutputReference.attr_path)
   return attr_path_;
@@ -3394,51 +3394,51 @@ OutputReference::attr_path() const {
 
 // -------------------------------------------------------------------
 
-// PromiseAtrribute
+// PromiseAttribute
 
 // string string_value = 1;
-inline bool PromiseAtrribute::has_string_value() const {
+inline bool PromiseAttribute::has_string_value() const {
   return value_case() == kStringValue;
 }
-inline void PromiseAtrribute::set_has_string_value() {
+inline void PromiseAttribute::set_has_string_value() {
   _oneof_case_[0] = kStringValue;
 }
-inline void PromiseAtrribute::clear_string_value() {
+inline void PromiseAttribute::clear_string_value() {
   if (has_string_value()) {
     value_.string_value_.DestroyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
     clear_has_value();
   }
 }
-inline const ::std::string& PromiseAtrribute::string_value() const {
-  // @@protoc_insertion_point(field_get:flyteidl.core.PromiseAtrribute.string_value)
+inline const ::std::string& PromiseAttribute::string_value() const {
+  // @@protoc_insertion_point(field_get:flyteidl.core.PromiseAttribute.string_value)
   if (has_string_value()) {
     return value_.string_value_.GetNoArena();
   }
   return *&::google::protobuf::internal::GetEmptyStringAlreadyInited();
 }
-inline void PromiseAtrribute::set_string_value(const ::std::string& value) {
-  // @@protoc_insertion_point(field_set:flyteidl.core.PromiseAtrribute.string_value)
+inline void PromiseAttribute::set_string_value(const ::std::string& value) {
+  // @@protoc_insertion_point(field_set:flyteidl.core.PromiseAttribute.string_value)
   if (!has_string_value()) {
     clear_value();
     set_has_string_value();
     value_.string_value_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
   }
   value_.string_value_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
-  // @@protoc_insertion_point(field_set:flyteidl.core.PromiseAtrribute.string_value)
+  // @@protoc_insertion_point(field_set:flyteidl.core.PromiseAttribute.string_value)
 }
 #if LANG_CXX11
-inline void PromiseAtrribute::set_string_value(::std::string&& value) {
-  // @@protoc_insertion_point(field_set:flyteidl.core.PromiseAtrribute.string_value)
+inline void PromiseAttribute::set_string_value(::std::string&& value) {
+  // @@protoc_insertion_point(field_set:flyteidl.core.PromiseAttribute.string_value)
   if (!has_string_value()) {
     clear_value();
     set_has_string_value();
     value_.string_value_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
   }
   value_.string_value_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::move(value));
-  // @@protoc_insertion_point(field_set_rvalue:flyteidl.core.PromiseAtrribute.string_value)
+  // @@protoc_insertion_point(field_set_rvalue:flyteidl.core.PromiseAttribute.string_value)
 }
 #endif
-inline void PromiseAtrribute::set_string_value(const char* value) {
+inline void PromiseAttribute::set_string_value(const char* value) {
   GOOGLE_DCHECK(value != nullptr);
   if (!has_string_value()) {
     clear_value();
@@ -3447,9 +3447,9 @@ inline void PromiseAtrribute::set_string_value(const char* value) {
   }
   value_.string_value_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
       ::std::string(value));
-  // @@protoc_insertion_point(field_set_char:flyteidl.core.PromiseAtrribute.string_value)
+  // @@protoc_insertion_point(field_set_char:flyteidl.core.PromiseAttribute.string_value)
 }
-inline void PromiseAtrribute::set_string_value(const char* value, size_t size) {
+inline void PromiseAttribute::set_string_value(const char* value, size_t size) {
   if (!has_string_value()) {
     clear_value();
     set_has_string_value();
@@ -3457,19 +3457,19 @@ inline void PromiseAtrribute::set_string_value(const char* value, size_t size) {
   }
   value_.string_value_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(
       reinterpret_cast<const char*>(value), size));
-  // @@protoc_insertion_point(field_set_pointer:flyteidl.core.PromiseAtrribute.string_value)
+  // @@protoc_insertion_point(field_set_pointer:flyteidl.core.PromiseAttribute.string_value)
 }
-inline ::std::string* PromiseAtrribute::mutable_string_value() {
+inline ::std::string* PromiseAttribute::mutable_string_value() {
   if (!has_string_value()) {
     clear_value();
     set_has_string_value();
     value_.string_value_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
   }
-  // @@protoc_insertion_point(field_mutable:flyteidl.core.PromiseAtrribute.string_value)
+  // @@protoc_insertion_point(field_mutable:flyteidl.core.PromiseAttribute.string_value)
   return value_.string_value_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
 }
-inline ::std::string* PromiseAtrribute::release_string_value() {
-  // @@protoc_insertion_point(field_release:flyteidl.core.PromiseAtrribute.string_value)
+inline ::std::string* PromiseAttribute::release_string_value() {
+  // @@protoc_insertion_point(field_release:flyteidl.core.PromiseAttribute.string_value)
   if (has_string_value()) {
     clear_has_value();
     return value_.string_value_.ReleaseNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
@@ -3477,7 +3477,7 @@ inline ::std::string* PromiseAtrribute::release_string_value() {
     return nullptr;
   }
 }
-inline void PromiseAtrribute::set_allocated_string_value(::std::string* string_value) {
+inline void PromiseAttribute::set_allocated_string_value(::std::string* string_value) {
   if (has_value()) {
     clear_value();
   }
@@ -3485,46 +3485,46 @@ inline void PromiseAtrribute::set_allocated_string_value(::std::string* string_v
     set_has_string_value();
     value_.string_value_.UnsafeSetDefault(string_value);
   }
-  // @@protoc_insertion_point(field_set_allocated:flyteidl.core.PromiseAtrribute.string_value)
+  // @@protoc_insertion_point(field_set_allocated:flyteidl.core.PromiseAttribute.string_value)
 }
 
 // int32 int_value = 2;
-inline bool PromiseAtrribute::has_int_value() const {
+inline bool PromiseAttribute::has_int_value() const {
   return value_case() == kIntValue;
 }
-inline void PromiseAtrribute::set_has_int_value() {
+inline void PromiseAttribute::set_has_int_value() {
   _oneof_case_[0] = kIntValue;
 }
-inline void PromiseAtrribute::clear_int_value() {
+inline void PromiseAttribute::clear_int_value() {
   if (has_int_value()) {
     value_.int_value_ = 0;
     clear_has_value();
   }
 }
-inline ::google::protobuf::int32 PromiseAtrribute::int_value() const {
-  // @@protoc_insertion_point(field_get:flyteidl.core.PromiseAtrribute.int_value)
+inline ::google::protobuf::int32 PromiseAttribute::int_value() const {
+  // @@protoc_insertion_point(field_get:flyteidl.core.PromiseAttribute.int_value)
   if (has_int_value()) {
     return value_.int_value_;
   }
   return 0;
 }
-inline void PromiseAtrribute::set_int_value(::google::protobuf::int32 value) {
+inline void PromiseAttribute::set_int_value(::google::protobuf::int32 value) {
   if (!has_int_value()) {
     clear_value();
     set_has_int_value();
   }
   value_.int_value_ = value;
-  // @@protoc_insertion_point(field_set:flyteidl.core.PromiseAtrribute.int_value)
+  // @@protoc_insertion_point(field_set:flyteidl.core.PromiseAttribute.int_value)
 }
 
-inline bool PromiseAtrribute::has_value() const {
+inline bool PromiseAttribute::has_value() const {
   return value_case() != VALUE_NOT_SET;
 }
-inline void PromiseAtrribute::clear_has_value() {
+inline void PromiseAttribute::clear_has_value() {
   _oneof_case_[0] = VALUE_NOT_SET;
 }
-inline PromiseAtrribute::ValueCase PromiseAtrribute::value_case() const {
-  return PromiseAtrribute::ValueCase(_oneof_case_[0]);
+inline PromiseAttribute::ValueCase PromiseAttribute::value_case() const {
+  return PromiseAttribute::ValueCase(_oneof_case_[0]);
 }
 // -------------------------------------------------------------------
 

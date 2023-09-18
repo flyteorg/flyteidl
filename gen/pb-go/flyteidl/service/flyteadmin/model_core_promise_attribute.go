@@ -9,7 +9,7 @@
 
 package flyteadmin
 
-type CorePromiseAtrribute struct {
+type CorePromiseAttribute struct {
 	StringValue string `json:"string_value,omitempty"`
 	IntValue int32 `json:"int_value,omitempty"`
 }

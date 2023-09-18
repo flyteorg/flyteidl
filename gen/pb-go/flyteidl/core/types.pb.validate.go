@@ -826,20 +826,20 @@ var _ interface {
 	ErrorName() string
 } = OutputReferenceValidationError{}
 
-// Validate checks the field values on PromiseAtrribute with the rules defined
+// Validate checks the field values on PromiseAttribute with the rules defined
 // in the proto definition for this message. If any rules are violated, an
 // error is returned.
-func (m *PromiseAtrribute) Validate() error {
+func (m *PromiseAttribute) Validate() error {
 	if m == nil {
 		return nil
 	}
 
 	switch m.Value.(type) {
 
-	case *PromiseAtrribute_StringValue:
+	case *PromiseAttribute_StringValue:
 		// no validation rules for StringValue
 
-	case *PromiseAtrribute_IntValue:
+	case *PromiseAttribute_IntValue:
 		// no validation rules for IntValue
 
 	}
@@ -847,9 +847,9 @@ func (m *PromiseAtrribute) Validate() error {
 	return nil
 }
 
-// PromiseAtrributeValidationError is the validation error returned by
-// PromiseAtrribute.Validate if the designated constraints aren't met.
-type PromiseAtrributeValidationError struct {
+// PromiseAttributeValidationError is the validation error returned by
+// PromiseAttribute.Validate if the designated constraints aren't met.
+type PromiseAttributeValidationError struct {
 	field  string
 	reason string
 	cause  error
@@ -857,22 +857,22 @@ type PromiseAtrributeValidationError struct {
 }
 
 // Field function returns field value.
-func (e PromiseAtrributeValidationError) Field() string { return e.field }
+func (e PromiseAttributeValidationError) Field() string { return e.field }
 
 // Reason function returns reason value.
-func (e PromiseAtrributeValidationError) Reason() string { return e.reason }
+func (e PromiseAttributeValidationError) Reason() string { return e.reason }
 
 // Cause function returns cause value.
-func (e PromiseAtrributeValidationError) Cause() error { return e.cause }
+func (e PromiseAttributeValidationError) Cause() error { return e.cause }
 
 // Key function returns key value.
-func (e PromiseAtrributeValidationError) Key() bool { return e.key }
+func (e PromiseAttributeValidationError) Key() bool { return e.key }
 
 // ErrorName returns error name.
-func (e PromiseAtrributeValidationError) ErrorName() string { return "PromiseAtrributeValidationError" }
+func (e PromiseAttributeValidationError) ErrorName() string { return "PromiseAttributeValidationError" }
 
 // Error satisfies the builtin error interface
-func (e PromiseAtrributeValidationError) Error() string {
+func (e PromiseAttributeValidationError) Error() string {
 	cause := ""
 	if e.cause != nil {
 		cause = fmt.Sprintf(" | caused by: %v", e.cause)
@@ -884,14 +884,14 @@ func (e PromiseAtrributeValidationError) Error() string {
 	}
 
 	return fmt.Sprintf(
-		"invalid %sPromiseAtrribute.%s: %s%s",
+		"invalid %sPromiseAttribute.%s: %s%s",
 		key,
 		e.field,
 		e.reason,
 		cause)
 }
 
-var _ error = PromiseAtrributeValidationError{}
+var _ error = PromiseAttributeValidationError{}
 
 var _ interface {
 	Field() string
@@ -899,7 +899,7 @@ var _ interface {
 	Key() bool
 	Cause() error
 	ErrorName() string
-} = PromiseAtrributeValidationError{}
+} = PromiseAttributeValidationError{}
 
 // Validate checks the field values on Error with the rules defined in the
 // proto definition for this message. If any rules are violated, an error is returned.

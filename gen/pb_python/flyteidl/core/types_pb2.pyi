@@ -147,10 +147,10 @@ class OutputReference(_message.Message):
     ATTR_PATH_FIELD_NUMBER: _ClassVar[int]
     node_id: str
     var: str
-    attr_path: _containers.RepeatedCompositeFieldContainer[PromiseAtrribute]
-    def __init__(self, node_id: _Optional[str] = ..., var: _Optional[str] = ..., attr_path: _Optional[_Iterable[_Union[PromiseAtrribute, _Mapping]]] = ...) -> None: ...
+    attr_path: _containers.RepeatedCompositeFieldContainer[PromiseAttribute]
+    def __init__(self, node_id: _Optional[str] = ..., var: _Optional[str] = ..., attr_path: _Optional[_Iterable[_Union[PromiseAttribute, _Mapping]]] = ...) -> None: ...
 
-class PromiseAtrribute(_message.Message):
+class PromiseAttribute(_message.Message):
     __slots__ = ["string_value", "int_value"]
     STRING_VALUE_FIELD_NUMBER: _ClassVar[int]
     INT_VALUE_FIELD_NUMBER: _ClassVar[int]

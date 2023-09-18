@@ -243,7 +243,7 @@ pub struct OutputReference {
     #[prost(string, tag="2")]
     pub var: ::prost::alloc::string::String,
     #[prost(message, repeated, tag="3")]
-    pub attr_path: ::prost::alloc::vec::Vec<PromiseAtrribute>,
+    pub attr_path: ::prost::alloc::vec::Vec<PromiseAttribute>,
 }
 // PromiseAttribute stores the attribute path of a promise, which will be resolved at runtime.
 // The attribute path is a list of strings and integers.
@@ -258,12 +258,12 @@ pub struct OutputReference {
 
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(Clone, PartialEq, ::prost::Message)]
-pub struct PromiseAtrribute {
-    #[prost(oneof="promise_atrribute::Value", tags="1, 2")]
-    pub value: ::core::option::Option<promise_atrribute::Value>,
+pub struct PromiseAttribute {
+    #[prost(oneof="promise_attribute::Value", tags="1, 2")]
+    pub value: ::core::option::Option<promise_attribute::Value>,
 }
-/// Nested message and enum types in `PromiseAtrribute`.
-pub mod promise_atrribute {
+/// Nested message and enum types in `PromiseAttribute`.
+pub mod promise_attribute {
     #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(Clone, PartialEq, ::prost::Oneof)]
     pub enum Value {

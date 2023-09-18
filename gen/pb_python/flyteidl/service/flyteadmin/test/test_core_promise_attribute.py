@@ -16,12 +16,12 @@ from __future__ import absolute_import
 import unittest
 
 import flyteadmin
-from flyteadmin.models.core_promise_atrribute import CorePromiseAtrribute  # noqa: E501
+from flyteadmin.models.core_promise_attribute import CorePromiseAttribute  # noqa: E501
 from flyteadmin.rest import ApiException
 
 
-class TestCorePromiseAtrribute(unittest.TestCase):
-    """CorePromiseAtrribute unit test stubs"""
+class TestCorePromiseAttribute(unittest.TestCase):
+    """CorePromiseAttribute unit test stubs"""
 
     def setUp(self):
         pass
@@ -29,10 +29,10 @@ class TestCorePromiseAtrribute(unittest.TestCase):
     def tearDown(self):
         pass
 
-    def testCorePromiseAtrribute(self):
-        """Test CorePromiseAtrribute"""
+    def testCorePromiseAttribute(self):
+        """Test CorePromiseAttribute"""
         # FIXME: construct object with mandatory attributes with example values
-        # model = flyteadmin.models.core_promise_atrribute.CorePromiseAtrribute()  # noqa: E501
+        # model = flyteadmin.models.core_promise_attribute.CorePromiseAttribute()  # noqa: E501
         pass
 
 

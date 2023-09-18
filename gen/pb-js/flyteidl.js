@@ -9864,7 +9864,7 @@
                  * @interface IOutputReference
                  * @property {string|null} [nodeId] OutputReference nodeId
                  * @property {string|null} ["var"] OutputReference var
-                 * @property {Array.<flyteidl.core.IPromiseAtrribute>|null} [attrPath] OutputReference attrPath
+                 * @property {Array.<flyteidl.core.IPromiseAttribute>|null} [attrPath] OutputReference attrPath
                  */
     
                 /**
@@ -9901,7 +9901,7 @@
     
                 /**
                  * OutputReference attrPath.
-                 * @member {Array.<flyteidl.core.IPromiseAtrribute>} attrPath
+                 * @member {Array.<flyteidl.core.IPromiseAttribute>} attrPath
                  * @memberof flyteidl.core.OutputReference
                  * @instance
                  */
@@ -9937,7 +9937,7 @@
                         writer.uint32(/* id 2, wireType 2 =*/18).string(message["var"]);
                     if (message.attrPath != null && message.attrPath.length)
                         for (var i = 0; i < message.attrPath.length; ++i)
-                            $root.flyteidl.core.PromiseAtrribute.encode(message.attrPath[i], writer.uint32(/* id 3, wireType 2 =*/26).fork()).ldelim();
+                            $root.flyteidl.core.PromiseAttribute.encode(message.attrPath[i], writer.uint32(/* id 3, wireType 2 =*/26).fork()).ldelim();
                     return writer;
                 };
     
@@ -9968,7 +9968,7 @@
                         case 3:
                             if (!(message.attrPath && message.attrPath.length))
                                 message.attrPath = [];
-                            message.attrPath.push($root.flyteidl.core.PromiseAtrribute.decode(reader, reader.uint32()));
+                            message.attrPath.push($root.flyteidl.core.PromiseAttribute.decode(reader, reader.uint32()));
                             break;
                         default:
                             reader.skipType(tag & 7);
@@ -9999,7 +9999,7 @@
                         if (!Array.isArray(message.attrPath))
                             return "attrPath: array expected";
                         for (var i = 0; i < message.attrPath.length; ++i) {
-                            var error = $root.flyteidl.core.PromiseAtrribute.verify(message.attrPath[i]);
+                            var error = $root.flyteidl.core.PromiseAttribute.verify(message.attrPath[i]);
                             if (error)
                                 return "attrPath." + error;
                         }
@@ -10010,25 +10010,25 @@
                 return OutputReference;
             })();
     
-            core.PromiseAtrribute = (function() {
+            core.PromiseAttribute = (function() {
     
                 /**
-                 * Properties of a PromiseAtrribute.
+                 * Properties of a PromiseAttribute.
                  * @memberof flyteidl.core
-                 * @interface IPromiseAtrribute
-                 * @property {string|null} [stringValue] PromiseAtrribute stringValue
-                 * @property {number|null} [intValue] PromiseAtrribute intValue
+                 * @interface IPromiseAttribute
+                 * @property {string|null} [stringValue] PromiseAttribute stringValue
+                 * @property {number|null} [intValue] PromiseAttribute intValue
                  */
     
                 /**
-                 * Constructs a new PromiseAtrribute.
+                 * Constructs a new PromiseAttribute.
                  * @memberof flyteidl.core
-                 * @classdesc Represents a PromiseAtrribute.
-                 * @implements IPromiseAtrribute
+                 * @classdesc Represents a PromiseAttribute.
+                 * @implements IPromiseAttribute
                  * @constructor
-                 * @param {flyteidl.core.IPromiseAtrribute=} [properties] Properties to set
+                 * @param {flyteidl.core.IPromiseAttribute=} [properties] Properties to set
                  */
-                function PromiseAtrribute(properties) {
+                function PromiseAttribute(properties) {
                     if (properties)
                         for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
                             if (properties[keys[i]] != null)
@@ -10036,57 +10036,57 @@
                 }
     
                 /**
-                 * PromiseAtrribute stringValue.
+                 * PromiseAttribute stringValue.
                  * @member {string} stringValue
-                 * @memberof flyteidl.core.PromiseAtrribute
+                 * @memberof flyteidl.core.PromiseAttribute
                  * @instance
                  */
-                PromiseAtrribute.prototype.stringValue = "";
+                PromiseAttribute.prototype.stringValue = "";
     
                 /**
-                 * PromiseAtrribute intValue.
+                 * PromiseAttribute intValue.
                  * @member {number} intValue
-                 * @memberof flyteidl.core.PromiseAtrribute
+                 * @memberof flyteidl.core.PromiseAttribute
                  * @instance
                  */
-                PromiseAtrribute.prototype.intValue = 0;
+                PromiseAttribute.prototype.intValue = 0;
     
                 // OneOf field names bound to virtual getters and setters
                 var $oneOfFields;
     
                 /**
-                 * PromiseAtrribute value.
+                 * PromiseAttribute value.
                  * @member {"stringValue"|"intValue"|undefined} value
-                 * @memberof flyteidl.core.PromiseAtrribute
+                 * @memberof flyteidl.core.PromiseAttribute
                  * @instance
                  */
-                Object.defineProperty(PromiseAtrribute.prototype, "value", {
+                Object.defineProperty(PromiseAttribute.prototype, "value", {
                     get: $util.oneOfGetter($oneOfFields = ["stringValue", "intValue"]),
                     set: $util.oneOfSetter($oneOfFields)
                 });
     
                 /**
-                 * Creates a new PromiseAtrribute instance using the specified properties.
+                 * Creates a new PromiseAttribute instance using the specified properties.
                  * @function create
-                 * @memberof flyteidl.core.PromiseAtrribute
+                 * @memberof flyteidl.core.PromiseAttribute
                  * @static
-                 * @param {flyteidl.core.IPromiseAtrribute=} [properties] Properties to set
-                 * @returns {flyteidl.core.PromiseAtrribute} PromiseAtrribute instance
+                 * @param {flyteidl.core.IPromiseAttribute=} [properties] Properties to set
+                 * @returns {flyteidl.core.PromiseAttribute} PromiseAttribute instance
                  */
-                PromiseAtrribute.create = function create(properties) {
-                    return new PromiseAtrribute(properties);
+                PromiseAttribute.create = function create(properties) {
+                    return new PromiseAttribute(properties);
                 };
     
                 /**
-                 * Encodes the specified PromiseAtrribute message. Does not implicitly {@link flyteidl.core.PromiseAtrribute.verify|verify} messages.
+                 * Encodes the specified PromiseAttribute message. Does not implicitly {@link flyteidl.core.PromiseAttribute.verify|verify} messages.
                  * @function encode
-                 * @memberof flyteidl.core.PromiseAtrribute
+                 * @memberof flyteidl.core.PromiseAttribute
                  * @static
-                 * @param {flyteidl.core.IPromiseAtrribute} message PromiseAtrribute message or plain object to encode
+                 * @param {flyteidl.core.IPromiseAttribute} message PromiseAttribute message or plain object to encode
                  * @param {$protobuf.Writer} [writer] Writer to encode to
                  * @returns {$protobuf.Writer} Writer
                  */
-                PromiseAtrribute.encode = function encode(message, writer) {
+                PromiseAttribute.encode = function encode(message, writer) {
                     if (!writer)
                         writer = $Writer.create();
                     if (message.stringValue != null && message.hasOwnProperty("stringValue"))
@@ -10097,20 +10097,20 @@
                 };
     
                 /**
-                 * Decodes a PromiseAtrribute message from the specified reader or buffer.
+                 * Decodes a PromiseAttribute message from the specified reader or buffer.
                  * @function decode
-                 * @memberof flyteidl.core.PromiseAtrribute
+                 * @memberof flyteidl.core.PromiseAttribute
                  * @static
                  * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
                  * @param {number} [length] Message length if known beforehand
-                 * @returns {flyteidl.core.PromiseAtrribute} PromiseAtrribute
+                 * @returns {flyteidl.core.PromiseAttribute} PromiseAttribute
                  * @throws {Error} If the payload is not a reader or valid buffer
                  * @throws {$protobuf.util.ProtocolError} If required fields are missing
                  */
-                PromiseAtrribute.decode = function decode(reader, length) {
+                PromiseAttribute.decode = function decode(reader, length) {
                     if (!(reader instanceof $Reader))
                         reader = $Reader.create(reader);
-                    var end = length === undefined ? reader.len : reader.pos + length, message = new $root.flyteidl.core.PromiseAtrribute();
+                    var end = length === undefined ? reader.len : reader.pos + length, message = new $root.flyteidl.core.PromiseAttribute();
                     while (reader.pos < end) {
                         var tag = reader.uint32();
                         switch (tag >>> 3) {
@@ -10129,14 +10129,14 @@
                 };
     
                 /**
-                 * Verifies a PromiseAtrribute message.
+                 * Verifies a PromiseAttribute message.
                  * @function verify
-                 * @memberof flyteidl.core.PromiseAtrribute
+                 * @memberof flyteidl.core.PromiseAttribute
                  * @static
                  * @param {Object.<string,*>} message Plain object to verify
                  * @returns {string|null} `null` if valid, otherwise the reason why it is not
                  */
-                PromiseAtrribute.verify = function verify(message) {
+                PromiseAttribute.verify = function verify(message) {
                     if (typeof message !== "object" || message === null)
                         return "object expected";
                     var properties = {};
@@ -10155,7 +10155,7 @@
                     return null;
                 };
     
-                return PromiseAtrribute;
+                return PromiseAttribute;
             })();
     
             core.Error = (function() {

@@ -6493,7 +6493,7 @@
         "attr_path": {
           "type": "array",
           "items": {
-            "$ref": "#/definitions/corePromiseAtrribute"
+            "$ref": "#/definitions/corePromiseAttribute"
           }
         }
       },
@@ -6559,7 +6559,7 @@
       },
       "title": "Primitive Types"
     },
-    "corePromiseAtrribute": {
+    "corePromiseAttribute": {
       "type": "object",
       "properties": {
         "string_value": {

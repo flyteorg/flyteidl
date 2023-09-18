@@ -18,7 +18,7 @@
 
 extern PROTOBUF_INTERNAL_EXPORT_flyteidl_2fcore_2ftypes_2eproto ::google::protobuf::internal::SCCInfo<0> scc_info_BlobType_flyteidl_2fcore_2ftypes_2eproto;
 extern PROTOBUF_INTERNAL_EXPORT_flyteidl_2fcore_2ftypes_2eproto ::google::protobuf::internal::SCCInfo<0> scc_info_EnumType_flyteidl_2fcore_2ftypes_2eproto;
-extern PROTOBUF_INTERNAL_EXPORT_flyteidl_2fcore_2ftypes_2eproto ::google::protobuf::internal::SCCInfo<0> scc_info_PromiseAtrribute_flyteidl_2fcore_2ftypes_2eproto;
+extern PROTOBUF_INTERNAL_EXPORT_flyteidl_2fcore_2ftypes_2eproto ::google::protobuf::internal::SCCInfo<0> scc_info_PromiseAttribute_flyteidl_2fcore_2ftypes_2eproto;
 extern PROTOBUF_INTERNAL_EXPORT_flyteidl_2fcore_2ftypes_2eproto ::google::protobuf::internal::SCCInfo<0> scc_info_SchemaType_SchemaColumn_flyteidl_2fcore_2ftypes_2eproto;
 extern PROTOBUF_INTERNAL_EXPORT_flyteidl_2fcore_2ftypes_2eproto ::google::protobuf::internal::SCCInfo<0> scc_info_TypeStructure_flyteidl_2fcore_2ftypes_2eproto;
 extern PROTOBUF_INTERNAL_EXPORT_flyteidl_2fcore_2ftypes_2eproto ::google::protobuf::internal::SCCInfo<1> scc_info_SchemaType_flyteidl_2fcore_2ftypes_2eproto;
@@ -79,12 +79,12 @@ class OutputReferenceDefaultTypeInternal {
  public:
   ::google::protobuf::internal::ExplicitlyConstructed<OutputReference> _instance;
 } _OutputReference_default_instance_;
-class PromiseAtrributeDefaultTypeInternal {
+class PromiseAttributeDefaultTypeInternal {
  public:
-  ::google::protobuf::internal::ExplicitlyConstructed<PromiseAtrribute> _instance;
+  ::google::protobuf::internal::ExplicitlyConstructed<PromiseAttribute> _instance;
   ::google::protobuf::internal::ArenaStringPtr string_value_;
   ::google::protobuf::int32 int_value_;
-} _PromiseAtrribute_default_instance_;
+} _PromiseAttribute_default_instance_;
 class ErrorDefaultTypeInternal {
  public:
   ::google::protobuf::internal::ExplicitlyConstructed<Error> _instance;
@@ -228,21 +228,21 @@ static void InitDefaultsOutputReference_flyteidl_2fcore_2ftypes_2eproto() {
 
 ::google::protobuf::internal::SCCInfo<1> scc_info_OutputReference_flyteidl_2fcore_2ftypes_2eproto =
     {{ATOMIC_VAR_INIT(::google::protobuf::internal::SCCInfoBase::kUninitialized), 1, InitDefaultsOutputReference_flyteidl_2fcore_2ftypes_2eproto}, {
-      &scc_info_PromiseAtrribute_flyteidl_2fcore_2ftypes_2eproto.base,}};
+      &scc_info_PromiseAttribute_flyteidl_2fcore_2ftypes_2eproto.base,}};
 
-static void InitDefaultsPromiseAtrribute_flyteidl_2fcore_2ftypes_2eproto() {
+static void InitDefaultsPromiseAttribute_flyteidl_2fcore_2ftypes_2eproto() {
   GOOGLE_PROTOBUF_VERIFY_VERSION;
 
   {
-    void* ptr = &::flyteidl::core::_PromiseAtrribute_default_instance_;
-    new (ptr) ::flyteidl::core::PromiseAtrribute();
+    void* ptr = &::flyteidl::core::_PromiseAttribute_default_instance_;
+    new (ptr) ::flyteidl::core::PromiseAttribute();
     ::google::protobuf::internal::OnShutdownDestroyMessage(ptr);
   }
-  ::flyteidl::core::PromiseAtrribute::InitAsDefaultInstance();
+  ::flyteidl::core::PromiseAttribute::InitAsDefaultInstance();
 }
 
-::google::protobuf::internal::SCCInfo<0> scc_info_PromiseAtrribute_flyteidl_2fcore_2ftypes_2eproto =
-    {{ATOMIC_VAR_INIT(::google::protobuf::internal::SCCInfoBase::kUninitialized), 0, InitDefaultsPromiseAtrribute_flyteidl_2fcore_2ftypes_2eproto}, {}};
+::google::protobuf::internal::SCCInfo<0> scc_info_PromiseAttribute_flyteidl_2fcore_2ftypes_2eproto =
+    {{ATOMIC_VAR_INIT(::google::protobuf::internal::SCCInfoBase::kUninitialized), 0, InitDefaultsPromiseAttribute_flyteidl_2fcore_2ftypes_2eproto}, {}};
 
 static void InitDefaultsError_flyteidl_2fcore_2ftypes_2eproto() {
   GOOGLE_PROTOBUF_VERIFY_VERSION;
@@ -267,7 +267,7 @@ void InitDefaults_flyteidl_2fcore_2ftypes_2eproto() {
   ::google::protobuf::internal::InitSCC(&scc_info_TypeAnnotation_flyteidl_2fcore_2ftypes_2eproto.base);
   ::google::protobuf::internal::InitSCC(&scc_info_LiteralType_flyteidl_2fcore_2ftypes_2eproto.base);
   ::google::protobuf::internal::InitSCC(&scc_info_OutputReference_flyteidl_2fcore_2ftypes_2eproto.base);
-  ::google::protobuf::internal::InitSCC(&scc_info_PromiseAtrribute_flyteidl_2fcore_2ftypes_2eproto.base);
+  ::google::protobuf::internal::InitSCC(&scc_info_PromiseAttribute_flyteidl_2fcore_2ftypes_2eproto.base);
   ::google::protobuf::internal::InitSCC(&scc_info_Error_flyteidl_2fcore_2ftypes_2eproto.base);
 }
 
@@ -362,13 +362,13 @@ const ::google::protobuf::uint32 TableStruct_flyteidl_2fcore_2ftypes_2eproto::of
   PROTOBUF_FIELD_OFFSET(::flyteidl::core::OutputReference, var_),
   PROTOBUF_FIELD_OFFSET(::flyteidl::core::OutputReference, attr_path_),
   ~0u,  // no _has_bits_
-  PROTOBUF_FIELD_OFFSET(::flyteidl::core::PromiseAtrribute, _internal_metadata_),
+  PROTOBUF_FIELD_OFFSET(::flyteidl::core::PromiseAttribute, _internal_metadata_),
   ~0u,  // no _extensions_
-  PROTOBUF_FIELD_OFFSET(::flyteidl::core::PromiseAtrribute, _oneof_case_[0]),
+  PROTOBUF_FIELD_OFFSET(::flyteidl::core::PromiseAttribute, _oneof_case_[0]),
   ~0u,  // no _weak_field_map_
-  offsetof(::flyteidl::core::PromiseAtrributeDefaultTypeInternal, string_value_),
-  offsetof(::flyteidl::core::PromiseAtrributeDefaultTypeInternal, int_value_),
-  PROTOBUF_FIELD_OFFSET(::flyteidl::core::PromiseAtrribute, value_),
+  offsetof(::flyteidl::core::PromiseAttributeDefaultTypeInternal, string_value_),
+  offsetof(::flyteidl::core::PromiseAttributeDefaultTypeInternal, int_value_),
+  PROTOBUF_FIELD_OFFSET(::flyteidl::core::PromiseAttribute, value_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::flyteidl::core::Error, _internal_metadata_),
   ~0u,  // no _extensions_
@@ -389,7 +389,7 @@ static const ::google::protobuf::internal::MigrationSchema schemas[] PROTOBUF_SE
   { 54, -1, sizeof(::flyteidl::core::TypeAnnotation)},
   { 60, -1, sizeof(::flyteidl::core::LiteralType)},
   { 77, -1, sizeof(::flyteidl::core::OutputReference)},
-  { 85, -1, sizeof(::flyteidl::core::PromiseAtrribute)},
+  { 85, -1, sizeof(::flyteidl::core::PromiseAttribute)},
   { 93, -1, sizeof(::flyteidl::core::Error)},
 };
 
@@ -405,7 +405,7 @@ static ::google::protobuf::Message const * const file_default_instances[] = {
   reinterpret_cast<const ::google::protobuf::Message*>(&::flyteidl::core::_TypeAnnotation_default_instance_),
   reinterpret_cast<const ::google::protobuf::Message*>(&::flyteidl::core::_LiteralType_default_instance_),
   reinterpret_cast<const ::google::protobuf::Message*>(&::flyteidl::core::_OutputReference_default_instance_),
-  reinterpret_cast<const ::google::protobuf::Message*>(&::flyteidl::core::_PromiseAtrribute_default_instance_),
+  reinterpret_cast<const ::google::protobuf::Message*>(&::flyteidl::core::_PromiseAttribute_default_instance_),
   reinterpret_cast<const ::google::protobuf::Message*>(&::flyteidl::core::_Error_default_instance_),
 };
 
@@ -455,8 +455,8 @@ const char descriptor_table_protodef_flyteidl_2fcore_2ftypes_2eproto[] =
   "\022/\n\tstructure\030\013 \001(\0132\034.flyteidl.core.Type"
   "StructureB\006\n\004type\"c\n\017OutputReference\022\017\n\007"
   "node_id\030\001 \001(\t\022\013\n\003var\030\002 \001(\t\0222\n\tattr_path\030"
-  "\003 \003(\0132\037.flyteidl.core.PromiseAtrribute\"H"
-  "\n\020PromiseAtrribute\022\026\n\014string_value\030\001 \001(\t"
+  "\003 \003(\0132\037.flyteidl.core.PromiseAttribute\"H"
+  "\n\020PromiseAttribute\022\026\n\014string_value\030\001 \001(\t"
   "H\000\022\023\n\tint_value\030\002 \001(\005H\000B\007\n\005value\"0\n\005Erro"
   "r\022\026\n\016failed_node_id\030\001 \001(\t\022\017\n\007message\030\002 \001"
   "(\t*\206\001\n\nSimpleType\022\010\n\004NONE\020\000\022\013\n\007INTEGER\020\001"
@@ -4722,13 +4722,13 @@ const char* OutputReference::_InternalParse(const char* begin, const char* end, 
         ptr += size;
         break;
       }
-      // repeated .flyteidl.core.PromiseAtrribute attr_path = 3;
+      // repeated .flyteidl.core.PromiseAttribute attr_path = 3;
       case 3: {
         if (static_cast<::google::protobuf::uint8>(tag) != 26) goto handle_unusual;
         do {
           ptr = ::google::protobuf::io::ReadSize(ptr, &size);
           GOOGLE_PROTOBUF_PARSER_ASSERT(ptr);
-          parser_till_end = ::flyteidl::core::PromiseAtrribute::_InternalParse;
+          parser_till_end = ::flyteidl::core::PromiseAttribute::_InternalParse;
           object = msg->add_attr_path();
           if (size > end - ptr) goto len_delim_till_end;
           ptr += size;
@@ -4802,7 +4802,7 @@ bool OutputReference::MergePartialFromCodedStream(
         break;
       }
 
-      // repeated .flyteidl.core.PromiseAtrribute attr_path = 3;
+      // repeated .flyteidl.core.PromiseAttribute attr_path = 3;
       case 3: {
         if (static_cast< ::google::protobuf::uint8>(tag) == (26 & 0xFF)) {
           DO_(::google::protobuf::internal::WireFormatLite::ReadMessage(
@@ -4860,7 +4860,7 @@ void OutputReference::SerializeWithCachedSizes(
       2, this->var(), output);
   }
 
-  // repeated .flyteidl.core.PromiseAtrribute attr_path = 3;
+  // repeated .flyteidl.core.PromiseAttribute attr_path = 3;
   for (unsigned int i = 0,
       n = static_cast<unsigned int>(this->attr_path_size()); i < n; i++) {
     ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
@@ -4904,7 +4904,7 @@ void OutputReference::SerializeWithCachedSizes(
         2, this->var(), target);
   }
 
-  // repeated .flyteidl.core.PromiseAtrribute attr_path = 3;
+  // repeated .flyteidl.core.PromiseAttribute attr_path = 3;
   for (unsigned int i = 0,
       n = static_cast<unsigned int>(this->attr_path_size()); i < n; i++) {
     target = ::google::protobuf::internal::WireFormatLite::
@@ -4933,7 +4933,7 @@ size_t OutputReference::ByteSizeLong() const {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  // repeated .flyteidl.core.PromiseAtrribute attr_path = 3;
+  // repeated .flyteidl.core.PromiseAttribute attr_path = 3;
   {
     unsigned int count = static_cast<unsigned int>(this->attr_path_size());
     total_size += 1UL * count;
@@ -5036,26 +5036,26 @@ void OutputReference::InternalSwap(OutputReference* other) {
 
 // ===================================================================
 
-void PromiseAtrribute::InitAsDefaultInstance() {
-  ::flyteidl::core::_PromiseAtrribute_default_instance_.string_value_.UnsafeSetDefault(
+void PromiseAttribute::InitAsDefaultInstance() {
+  ::flyteidl::core::_PromiseAttribute_default_instance_.string_value_.UnsafeSetDefault(
       &::google::protobuf::internal::GetEmptyStringAlreadyInited());
-  ::flyteidl::core::_PromiseAtrribute_default_instance_.int_value_ = 0;
+  ::flyteidl::core::_PromiseAttribute_default_instance_.int_value_ = 0;
 }
-class PromiseAtrribute::HasBitSetters {
+class PromiseAttribute::HasBitSetters {
  public:
 };
 
 #if !defined(_MSC_VER) || _MSC_VER >= 1900
-const int PromiseAtrribute::kStringValueFieldNumber;
-const int PromiseAtrribute::kIntValueFieldNumber;
+const int PromiseAttribute::kStringValueFieldNumber;
+const int PromiseAttribute::kIntValueFieldNumber;
 #endif  // !defined(_MSC_VER) || _MSC_VER >= 1900
 
-PromiseAtrribute::PromiseAtrribute()
+PromiseAttribute::PromiseAttribute()
   : ::google::protobuf::Message(), _internal_metadata_(nullptr) {
   SharedCtor();
-  // @@protoc_insertion_point(constructor:flyteidl.core.PromiseAtrribute)
+  // @@protoc_insertion_point(constructor:flyteidl.core.PromiseAttribute)
 }
-PromiseAtrribute::PromiseAtrribute(const PromiseAtrribute& from)
+PromiseAttribute::PromiseAttribute(const PromiseAttribute& from)
   : ::google::protobuf::Message(),
       _internal_metadata_(nullptr) {
   _internal_metadata_.MergeFrom(from._internal_metadata_);
@@ -5073,37 +5073,37 @@ PromiseAtrribute::PromiseAtrribute(const PromiseAtrribute& from)
       break;
     }
   }
-  // @@protoc_insertion_point(copy_constructor:flyteidl.core.PromiseAtrribute)
+  // @@protoc_insertion_point(copy_constructor:flyteidl.core.PromiseAttribute)
 }
 
-void PromiseAtrribute::SharedCtor() {
+void PromiseAttribute::SharedCtor() {
   ::google::protobuf::internal::InitSCC(
-      &scc_info_PromiseAtrribute_flyteidl_2fcore_2ftypes_2eproto.base);
+      &scc_info_PromiseAttribute_flyteidl_2fcore_2ftypes_2eproto.base);
   clear_has_value();
 }
 
-PromiseAtrribute::~PromiseAtrribute() {
-  // @@protoc_insertion_point(destructor:flyteidl.core.PromiseAtrribute)
+PromiseAttribute::~PromiseAttribute() {
+  // @@protoc_insertion_point(destructor:flyteidl.core.PromiseAttribute)
   SharedDtor();
 }
 
-void PromiseAtrribute::SharedDtor() {
+void PromiseAttribute::SharedDtor() {
   if (has_value()) {
     clear_value();
   }
 }
 
-void PromiseAtrribute::SetCachedSize(int size) const {
+void PromiseAttribute::SetCachedSize(int size) const {
   _cached_size_.Set(size);
 }
-const PromiseAtrribute& PromiseAtrribute::default_instance() {
-  ::google::protobuf::internal::InitSCC(&::scc_info_PromiseAtrribute_flyteidl_2fcore_2ftypes_2eproto.base);
+const PromiseAttribute& PromiseAttribute::default_instance() {
+  ::google::protobuf::internal::InitSCC(&::scc_info_PromiseAttribute_flyteidl_2fcore_2ftypes_2eproto.base);
   return *internal_default_instance();
 }
 
 
-void PromiseAtrribute::clear_value() {
-// @@protoc_insertion_point(one_of_clear_start:flyteidl.core.PromiseAtrribute)
+void PromiseAttribute::clear_value() {
+// @@protoc_insertion_point(one_of_clear_start:flyteidl.core.PromiseAttribute)
   switch (value_case()) {
     case kStringValue: {
       value_.string_value_.DestroyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
@@ -5121,8 +5121,8 @@ void PromiseAtrribute::clear_value() {
 }
 
 
-void PromiseAtrribute::Clear() {
-// @@protoc_insertion_point(message_clear_start:flyteidl.core.PromiseAtrribute)
+void PromiseAttribute::Clear() {
+// @@protoc_insertion_point(message_clear_start:flyteidl.core.PromiseAttribute)
   ::google::protobuf::uint32 cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
@@ -5132,9 +5132,9 @@ void PromiseAtrribute::Clear() {
 }
 
 #if GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
-const char* PromiseAtrribute::_InternalParse(const char* begin, const char* end, void* object,
+const char* PromiseAttribute::_InternalParse(const char* begin, const char* end, void* object,
                   ::google::protobuf::internal::ParseContext* ctx) {
-  auto msg = static_cast<PromiseAtrribute*>(object);
+  auto msg = static_cast<PromiseAttribute*>(object);
   ::google::protobuf::int32 size; (void)size;
   int depth; (void)depth;
   ::google::protobuf::uint32 tag;
@@ -5149,7 +5149,7 @@ const char* PromiseAtrribute::_InternalParse(const char* begin, const char* end,
         if (static_cast<::google::protobuf::uint8>(tag) != 10) goto handle_unusual;
         ptr = ::google::protobuf::io::ReadSize(ptr, &size);
         GOOGLE_PROTOBUF_PARSER_ASSERT(ptr);
-        ctx->extra_parse_data().SetFieldName("flyteidl.core.PromiseAtrribute.string_value");
+        ctx->extra_parse_data().SetFieldName("flyteidl.core.PromiseAttribute.string_value");
         object = msg->mutable_string_value();
         if (size > end - ptr + ::google::protobuf::internal::ParseContext::kSlopBytes) {
           parser_till_end = ::google::protobuf::internal::GreedyStringParserUTF8;
@@ -5191,11 +5191,11 @@ len_delim_till_end:
                                {parser_till_end, object}, size);
 }
 #else  // GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
-bool PromiseAtrribute::MergePartialFromCodedStream(
+bool PromiseAttribute::MergePartialFromCodedStream(
     ::google::protobuf::io::CodedInputStream* input) {
 #define DO_(EXPRESSION) if (!PROTOBUF_PREDICT_TRUE(EXPRESSION)) goto failure
   ::google::protobuf::uint32 tag;
-  // @@protoc_insertion_point(parse_start:flyteidl.core.PromiseAtrribute)
+  // @@protoc_insertion_point(parse_start:flyteidl.core.PromiseAttribute)
   for (;;) {
     ::std::pair<::google::protobuf::uint32, bool> p = input->ReadTagWithCutoffNoLastTag(127u);
     tag = p.first;
@@ -5209,7 +5209,7 @@ bool PromiseAtrribute::MergePartialFromCodedStream(
           DO_(::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
             this->string_value().data(), static_cast<int>(this->string_value().length()),
             ::google::protobuf::internal::WireFormatLite::PARSE,
-            "flyteidl.core.PromiseAtrribute.string_value"));
+            "flyteidl.core.PromiseAttribute.string_value"));
         } else {
           goto handle_unusual;
         }
@@ -5242,18 +5242,18 @@ bool PromiseAtrribute::MergePartialFromCodedStream(
     }
   }
 success:
-  // @@protoc_insertion_point(parse_success:flyteidl.core.PromiseAtrribute)
+  // @@protoc_insertion_point(parse_success:flyteidl.core.PromiseAttribute)
   return true;
 failure:
-  // @@protoc_insertion_point(parse_failure:flyteidl.core.PromiseAtrribute)
+  // @@protoc_insertion_point(parse_failure:flyteidl.core.PromiseAttribute)
   return false;
 #undef DO_
 }
 #endif  // GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
 
-void PromiseAtrribute::SerializeWithCachedSizes(
+void PromiseAttribute::SerializeWithCachedSizes(
     ::google::protobuf::io::CodedOutputStream* output) const {
-  // @@protoc_insertion_point(serialize_start:flyteidl.core.PromiseAtrribute)
+  // @@protoc_insertion_point(serialize_start:flyteidl.core.PromiseAttribute)
   ::google::protobuf::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
@@ -5262,7 +5262,7 @@ void PromiseAtrribute::SerializeWithCachedSizes(
     ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
       this->string_value().data(), static_cast<int>(this->string_value().length()),
       ::google::protobuf::internal::WireFormatLite::SERIALIZE,
-      "flyteidl.core.PromiseAtrribute.string_value");
+      "flyteidl.core.PromiseAttribute.string_value");
     ::google::protobuf::internal::WireFormatLite::WriteStringMaybeAliased(
       1, this->string_value(), output);
   }
@@ -5276,12 +5276,12 @@ void PromiseAtrribute::SerializeWithCachedSizes(
     ::google::protobuf::internal::WireFormat::SerializeUnknownFields(
         _internal_metadata_.unknown_fields(), output);
   }
-  // @@protoc_insertion_point(serialize_end:flyteidl.core.PromiseAtrribute)
+  // @@protoc_insertion_point(serialize_end:flyteidl.core.PromiseAttribute)
 }
 
-::google::protobuf::uint8* PromiseAtrribute::InternalSerializeWithCachedSizesToArray(
+::google::protobuf::uint8* PromiseAttribute::InternalSerializeWithCachedSizesToArray(
     ::google::protobuf::uint8* target) const {
-  // @@protoc_insertion_point(serialize_to_array_start:flyteidl.core.PromiseAtrribute)
+  // @@protoc_insertion_point(serialize_to_array_start:flyteidl.core.PromiseAttribute)
   ::google::protobuf::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
@@ -5290,7 +5290,7 @@ void PromiseAtrribute::SerializeWithCachedSizes(
     ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
       this->string_value().data(), static_cast<int>(this->string_value().length()),
       ::google::protobuf::internal::WireFormatLite::SERIALIZE,
-      "flyteidl.core.PromiseAtrribute.string_value");
+      "flyteidl.core.PromiseAttribute.string_value");
     target =
       ::google::protobuf::internal::WireFormatLite::WriteStringToArray(
         1, this->string_value(), target);
@@ -5305,12 +5305,12 @@ void PromiseAtrribute::SerializeWithCachedSizes(
     target = ::google::protobuf::internal::WireFormat::SerializeUnknownFieldsToArray(
         _internal_metadata_.unknown_fields(), target);
   }
-  // @@protoc_insertion_point(serialize_to_array_end:flyteidl.core.PromiseAtrribute)
+  // @@protoc_insertion_point(serialize_to_array_end:flyteidl.core.PromiseAttribute)
   return target;
 }
 
-size_t PromiseAtrribute::ByteSizeLong() const {
-// @@protoc_insertion_point(message_byte_size_start:flyteidl.core.PromiseAtrribute)
+size_t PromiseAttribute::ByteSizeLong() const {
+// @@protoc_insertion_point(message_byte_size_start:flyteidl.core.PromiseAttribute)
   size_t total_size = 0;
 
   if (_internal_metadata_.have_unknown_fields()) {
@@ -5346,23 +5346,23 @@ size_t PromiseAtrribute::ByteSizeLong() const {
   return total_size;
 }
 
-void PromiseAtrribute::MergeFrom(const ::google::protobuf::Message& from) {
-// @@protoc_insertion_point(generalized_merge_from_start:flyteidl.core.PromiseAtrribute)
+void PromiseAttribute::MergeFrom(const ::google::protobuf::Message& from) {
+// @@protoc_insertion_point(generalized_merge_from_start:flyteidl.core.PromiseAttribute)
   GOOGLE_DCHECK_NE(&from, this);
-  const PromiseAtrribute* source =
-      ::google::protobuf::DynamicCastToGenerated<PromiseAtrribute>(
+  const PromiseAttribute* source =
+      ::google::protobuf::DynamicCastToGenerated<PromiseAttribute>(
           &from);
   if (source == nullptr) {
-  // @@protoc_insertion_point(generalized_merge_from_cast_fail:flyteidl.core.PromiseAtrribute)
+  // @@protoc_insertion_point(generalized_merge_from_cast_fail:flyteidl.core.PromiseAttribute)
     ::google::protobuf::internal::ReflectionOps::Merge(from, this);
   } else {
-  // @@protoc_insertion_point(generalized_merge_from_cast_success:flyteidl.core.PromiseAtrribute)
+  // @@protoc_insertion_point(generalized_merge_from_cast_success:flyteidl.core.PromiseAttribute)
     MergeFrom(*source);
   }
 }
 
-void PromiseAtrribute::MergeFrom(const PromiseAtrribute& from) {
-// @@protoc_insertion_point(class_specific_merge_from_start:flyteidl.core.PromiseAtrribute)
+void PromiseAttribute::MergeFrom(const PromiseAttribute& from) {
+// @@protoc_insertion_point(class_specific_merge_from_start:flyteidl.core.PromiseAttribute)
   GOOGLE_DCHECK_NE(&from, this);
   _internal_metadata_.MergeFrom(from._internal_metadata_);
   ::google::protobuf::uint32 cached_has_bits = 0;
@@ -5383,36 +5383,36 @@ void PromiseAtrribute::MergeFrom(const PromiseAtrribute& from) {
   }
 }
 
-void PromiseAtrribute::CopyFrom(const ::google::protobuf::Message& from) {
-// @@protoc_insertion_point(generalized_copy_from_start:flyteidl.core.PromiseAtrribute)
+void PromiseAttribute::CopyFrom(const ::google::protobuf::Message& from) {
+// @@protoc_insertion_point(generalized_copy_from_start:flyteidl.core.PromiseAttribute)
   if (&from == this) return;
   Clear();
   MergeFrom(from);
 }
 
-void PromiseAtrribute::CopyFrom(const PromiseAtrribute& from) {
-// @@protoc_insertion_point(class_specific_copy_from_start:flyteidl.core.PromiseAtrribute)
+void PromiseAttribute::CopyFrom(const PromiseAttribute& from) {
+// @@protoc_insertion_point(class_specific_copy_from_start:flyteidl.core.PromiseAttribute)
   if (&from == this) return;
   Clear();
   MergeFrom(from);
 }
 
-bool PromiseAtrribute::IsInitialized() const {
+bool PromiseAttribute::IsInitialized() const {
   return true;
 }
 
-void PromiseAtrribute::Swap(PromiseAtrribute* other) {
+void PromiseAttribute::Swap(PromiseAttribute* other) {
   if (other == this) return;
   InternalSwap(other);
 }
-void PromiseAtrribute::InternalSwap(PromiseAtrribute* other) {
+void PromiseAttribute::InternalSwap(PromiseAttribute* other) {
   using std::swap;
   _internal_metadata_.Swap(&other->_internal_metadata_);
   swap(value_, other->value_);
   swap(_oneof_case_[0], other->_oneof_case_[0]);
 }
 
-::google::protobuf::Metadata PromiseAtrribute::GetMetadata() const {
+::google::protobuf::Metadata PromiseAttribute::GetMetadata() const {
   ::google::protobuf::internal::AssignDescriptors(&::assign_descriptors_table_flyteidl_2fcore_2ftypes_2eproto);
   return ::file_level_metadata_flyteidl_2fcore_2ftypes_2eproto[kIndexInFileMessages];
 }
@@ -5826,8 +5826,8 @@ template<> PROTOBUF_NOINLINE ::flyteidl::core::LiteralType* Arena::CreateMaybeMe
 template<> PROTOBUF_NOINLINE ::flyteidl::core::OutputReference* Arena::CreateMaybeMessage< ::flyteidl::core::OutputReference >(Arena* arena) {
   return Arena::CreateInternal< ::flyteidl::core::OutputReference >(arena);
 }
-template<> PROTOBUF_NOINLINE ::flyteidl::core::PromiseAtrribute* Arena::CreateMaybeMessage< ::flyteidl::core::PromiseAtrribute >(Arena* arena) {
-  return Arena::CreateInternal< ::flyteidl::core::PromiseAtrribute >(arena);
+template<> PROTOBUF_NOINLINE ::flyteidl::core::PromiseAttribute* Arena::CreateMaybeMessage< ::flyteidl::core::PromiseAttribute >(Arena* arena) {
+  return Arena::CreateInternal< ::flyteidl::core::PromiseAttribute >(arena);
 }
 template<> PROTOBUF_NOINLINE ::flyteidl::core::Error* Arena::CreateMaybeMessage< ::flyteidl::core::Error >(Arena* arena) {
   return Arena::CreateInternal< ::flyteidl::core::Error >(arena);

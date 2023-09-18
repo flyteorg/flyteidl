@@ -16,7 +16,7 @@ import re  # noqa: F401
 
 import six
 
-from flyteadmin.models.core_promise_atrribute import CorePromiseAtrribute  # noqa: F401,E501
+from flyteadmin.models.core_promise_attribute import CorePromiseAttribute  # noqa: F401,E501
 
 
 class CoreOutputReference(object):
@@ -35,7 +35,7 @@ class CoreOutputReference(object):
     swagger_types = {
         'node_id': 'str',
         'var': 'str',
-        'attr_path': 'list[CorePromiseAtrribute]'
+        'attr_path': 'list[CorePromiseAttribute]'
     }
 
     attribute_map = {
@@ -111,7 +111,7 @@ class CoreOutputReference(object):
 
 
         :return: The attr_path of this CoreOutputReference.  # noqa: E501
-        :rtype: list[CorePromiseAtrribute]
+        :rtype: list[CorePromiseAttribute]
         """
         return self._attr_path
 
@@ -121,7 +121,7 @@ class CoreOutputReference(object):
 
 
         :param attr_path: The attr_path of this CoreOutputReference.  # noqa: E501
-        :type: list[CorePromiseAtrribute]
+        :type: list[CorePromiseAttribute]
         """
 
         self._attr_path = attr_path

@@ -11214,27 +11214,27 @@ public final class Types {
         getVarBytes();
 
     /**
-     * <code>repeated .flyteidl.core.PromiseAtrribute attr_path = 3;</code>
+     * <code>repeated .flyteidl.core.PromiseAttribute attr_path = 3;</code>
      */
-    java.util.List<flyteidl.core.Types.PromiseAtrribute> 
+    java.util.List<flyteidl.core.Types.PromiseAttribute> 
         getAttrPathList();
     /**
-     * <code>repeated .flyteidl.core.PromiseAtrribute attr_path = 3;</code>
+     * <code>repeated .flyteidl.core.PromiseAttribute attr_path = 3;</code>
      */
-    flyteidl.core.Types.PromiseAtrribute getAttrPath(int index);
+    flyteidl.core.Types.PromiseAttribute getAttrPath(int index);
     /**
-     * <code>repeated .flyteidl.core.PromiseAtrribute attr_path = 3;</code>
+     * <code>repeated .flyteidl.core.PromiseAttribute attr_path = 3;</code>
      */
     int getAttrPathCount();
     /**
-     * <code>repeated .flyteidl.core.PromiseAtrribute attr_path = 3;</code>
+     * <code>repeated .flyteidl.core.PromiseAttribute attr_path = 3;</code>
      */
-    java.util.List<? extends flyteidl.core.Types.PromiseAtrributeOrBuilder> 
+    java.util.List<? extends flyteidl.core.Types.PromiseAttributeOrBuilder> 
         getAttrPathOrBuilderList();
     /**
-     * <code>repeated .flyteidl.core.PromiseAtrribute attr_path = 3;</code>
+     * <code>repeated .flyteidl.core.PromiseAttribute attr_path = 3;</code>
      */
-    flyteidl.core.Types.PromiseAtrributeOrBuilder getAttrPathOrBuilder(
+    flyteidl.core.Types.PromiseAttributeOrBuilder getAttrPathOrBuilder(
         int index);
   }
   /**
@@ -11298,11 +11298,11 @@ public final class Types {
             }
             case 26: {
               if (!((mutable_bitField0_ & 0x00000004) != 0)) {
-                attrPath_ = new java.util.ArrayList<flyteidl.core.Types.PromiseAtrribute>();
+                attrPath_ = new java.util.ArrayList<flyteidl.core.Types.PromiseAttribute>();
                 mutable_bitField0_ |= 0x00000004;
               }
               attrPath_.add(
-                  input.readMessage(flyteidl.core.Types.PromiseAtrribute.parser(), extensionRegistry));
+                  input.readMessage(flyteidl.core.Types.PromiseAttribute.parser(), extensionRegistry));
               break;
             }
             default: {
@@ -11426,36 +11426,36 @@ public final class Types {
     }
 
     public static final int ATTR_PATH_FIELD_NUMBER = 3;
-    private java.util.List<flyteidl.core.Types.PromiseAtrribute> attrPath_;
+    private java.util.List<flyteidl.core.Types.PromiseAttribute> attrPath_;
     /**
-     * <code>repeated .flyteidl.core.PromiseAtrribute attr_path = 3;</code>
+     * <code>repeated .flyteidl.core.PromiseAttribute attr_path = 3;</code>
      */
-    public java.util.List<flyteidl.core.Types.PromiseAtrribute> getAttrPathList() {
+    public java.util.List<flyteidl.core.Types.PromiseAttribute> getAttrPathList() {
       return attrPath_;
     }
     /**
-     * <code>repeated .flyteidl.core.PromiseAtrribute attr_path = 3;</code>
+     * <code>repeated .flyteidl.core.PromiseAttribute attr_path = 3;</code>
      */
-    public java.util.List<? extends flyteidl.core.Types.PromiseAtrributeOrBuilder> 
+    public java.util.List<? extends flyteidl.core.Types.PromiseAttributeOrBuilder> 
         getAttrPathOrBuilderList() {
       return attrPath_;
     }
     /**
-     * <code>repeated .flyteidl.core.PromiseAtrribute attr_path = 3;</code>
+     * <code>repeated .flyteidl.core.PromiseAttribute attr_path = 3;</code>
      */
     public int getAttrPathCount() {
       return attrPath_.size();
     }
     /**
-     * <code>repeated .flyteidl.core.PromiseAtrribute attr_path = 3;</code>
+     * <code>repeated .flyteidl.core.PromiseAttribute attr_path = 3;</code>
      */
-    public flyteidl.core.Types.PromiseAtrribute getAttrPath(int index) {
+    public flyteidl.core.Types.PromiseAttribute getAttrPath(int index) {
       return attrPath_.get(index);
     }
     /**
-     * <code>repeated .flyteidl.core.PromiseAtrribute attr_path = 3;</code>
+     * <code>repeated .flyteidl.core.PromiseAttribute attr_path = 3;</code>
      */
-    public flyteidl.core.Types.PromiseAtrributeOrBuilder getAttrPathOrBuilder(
+    public flyteidl.core.Types.PromiseAttributeOrBuilder getAttrPathOrBuilder(
         int index) {
       return attrPath_.get(index);
     }
@@ -12021,22 +12021,22 @@ public final class Types {
         return this;
       }
 
-      private java.util.List<flyteidl.core.Types.PromiseAtrribute> attrPath_ =
+      private java.util.List<flyteidl.core.Types.PromiseAttribute> attrPath_ =
         java.util.Collections.emptyList();
       private void ensureAttrPathIsMutable() {
         if (!((bitField0_ & 0x00000004) != 0)) {
-          attrPath_ = new java.util.ArrayList<flyteidl.core.Types.PromiseAtrribute>(attrPath_);
+          attrPath_ = new java.util.ArrayList<flyteidl.core.Types.PromiseAttribute>(attrPath_);
           bitField0_ |= 0x00000004;
          }
       }
 
       private com.google.protobuf.RepeatedFieldBuilderV3<
-          flyteidl.core.Types.PromiseAtrribute, flyteidl.core.Types.PromiseAtrribute.Builder, flyteidl.core.Types.PromiseAtrributeOrBuilder> attrPathBuilder_;
+          flyteidl.core.Types.PromiseAttribute, flyteidl.core.Types.PromiseAttribute.Builder, flyteidl.core.Types.PromiseAttributeOrBuilder> attrPathBuilder_;
 
       /**
-       * <code>repeated .flyteidl.core.PromiseAtrribute attr_path = 3;</code>
+       * <code>repeated .flyteidl.core.PromiseAttribute attr_path = 3;</code>
        */
-      public java.util.List<flyteidl.core.Types.PromiseAtrribute> getAttrPathList() {
+      public java.util.List<flyteidl.core.Types.PromiseAttribute> getAttrPathList() {
         if (attrPathBuilder_ == null) {
           return java.util.Collections.unmodifiableList(attrPath_);
         } else {
@@ -12044,7 +12044,7 @@ public final class Types {
         }
       }
       /**
-       * <code>repeated .flyteidl.core.PromiseAtrribute attr_path = 3;</code>
+       * <code>repeated .flyteidl.core.PromiseAttribute attr_path = 3;</code>
        */
       public int getAttrPathCount() {
         if (attrPathBuilder_ == null) {
@@ -12054,9 +12054,9 @@ public final class Types {
         }
       }
       /**
-       * <code>repeated .flyteidl.core.PromiseAtrribute attr_path = 3;</code>
+       * <code>repeated .flyteidl.core.PromiseAttribute attr_path = 3;</code>
        */
-      public flyteidl.core.Types.PromiseAtrribute getAttrPath(int index) {
+      public flyteidl.core.Types.PromiseAttribute getAttrPath(int index) {
         if (attrPathBuilder_ == null) {
           return attrPath_.get(index);
         } else {
@@ -12064,10 +12064,10 @@ public final class Types {
         }
       }
       /**
-       * <code>repeated .flyteidl.core.PromiseAtrribute attr_path = 3;</code>
+       * <code>repeated .flyteidl.core.PromiseAttribute attr_path = 3;</code>
        */
       public Builder setAttrPath(
-          int index, flyteidl.core.Types.PromiseAtrribute value) {
+          int index, flyteidl.core.Types.PromiseAttribute value) {
         if (attrPathBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
@@ -12081,10 +12081,10 @@ public final class Types {
         return this;
       }
       /**
-       * <code>repeated .flyteidl.core.PromiseAtrribute attr_path = 3;</code>
+       * <code>repeated .flyteidl.core.PromiseAttribute attr_path = 3;</code>
        */
       public Builder setAttrPath(
-          int index, flyteidl.core.Types.PromiseAtrribute.Builder builderForValue) {
+          int index, flyteidl.core.Types.PromiseAttribute.Builder builderForValue) {
         if (attrPathBuilder_ == null) {
           ensureAttrPathIsMutable();
           attrPath_.set(index, builderForValue.build());
@@ -12095,9 +12095,9 @@ public final class Types {
         return this;
       }
       /**
-       * <code>repeated .flyteidl.core.PromiseAtrribute attr_path = 3;</code>
+       * <code>repeated .flyteidl.core.PromiseAttribute attr_path = 3;</code>
        */
-      public Builder addAttrPath(flyteidl.core.Types.PromiseAtrribute value) {
+      public Builder addAttrPath(flyteidl.core.Types.PromiseAttribute value) {
         if (attrPathBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
@@ -12111,10 +12111,10 @@ public final class Types {
         return this;
       }
       /**
-       * <code>repeated .flyteidl.core.PromiseAtrribute attr_path = 3;</code>
+       * <code>repeated .flyteidl.core.PromiseAttribute attr_path = 3;</code>
        */
       public Builder addAttrPath(
-          int index, flyteidl.core.Types.PromiseAtrribute value) {
+          int index, flyteidl.core.Types.PromiseAttribute value) {
         if (attrPathBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
@@ -12128,10 +12128,10 @@ public final class Types {
         return this;
       }
       /**
-       * <code>repeated .flyteidl.core.PromiseAtrribute attr_path = 3;</code>
+       * <code>repeated .flyteidl.core.PromiseAttribute attr_path = 3;</code>
        */
       public Builder addAttrPath(
-          flyteidl.core.Types.PromiseAtrribute.Builder builderForValue) {
+          flyteidl.core.Types.PromiseAttribute.Builder builderForValue) {
         if (attrPathBuilder_ == null) {
           ensureAttrPathIsMutable();
           attrPath_.add(builderForValue.build());
@@ -12142,10 +12142,10 @@ public final class Types {
         return this;
       }
       /**
-       * <code>repeated .flyteidl.core.PromiseAtrribute attr_path = 3;</code>
+       * <code>repeated .flyteidl.core.PromiseAttribute attr_path = 3;</code>
        */
       public Builder addAttrPath(
-          int index, flyteidl.core.Types.PromiseAtrribute.Builder builderForValue) {
+          int index, flyteidl.core.Types.PromiseAttribute.Builder builderForValue) {
         if (attrPathBuilder_ == null) {
           ensureAttrPathIsMutable();
           attrPath_.add(index, builderForValue.build());
@@ -12156,10 +12156,10 @@ public final class Types {
         return this;
       }
       /**
-       * <code>repeated .flyteidl.core.PromiseAtrribute attr_path = 3;</code>
+       * <code>repeated .flyteidl.core.PromiseAttribute attr_path = 3;</code>
        */
       public Builder addAllAttrPath(
-          java.lang.Iterable<? extends flyteidl.core.Types.PromiseAtrribute> values) {
+          java.lang.Iterable<? extends flyteidl.core.Types.PromiseAttribute> values) {
         if (attrPathBuilder_ == null) {
           ensureAttrPathIsMutable();
           com.google.protobuf.AbstractMessageLite.Builder.addAll(
@@ -12171,7 +12171,7 @@ public final class Types {
         return this;
       }
       /**
-       * <code>repeated .flyteidl.core.PromiseAtrribute attr_path = 3;</code>
+       * <code>repeated .flyteidl.core.PromiseAttribute attr_path = 3;</code>
        */
       public Builder clearAttrPath() {
         if (attrPathBuilder_ == null) {
@@ -12184,7 +12184,7 @@ public final class Types {
         return this;
       }
       /**
-       * <code>repeated .flyteidl.core.PromiseAtrribute attr_path = 3;</code>
+       * <code>repeated .flyteidl.core.PromiseAttribute attr_path = 3;</code>
        */
       public Builder removeAttrPath(int index) {
         if (attrPathBuilder_ == null) {
@@ -12197,16 +12197,16 @@ public final class Types {
         return this;
       }
       /**
-       * <code>repeated .flyteidl.core.PromiseAtrribute attr_path = 3;</code>
+       * <code>repeated .flyteidl.core.PromiseAttribute attr_path = 3;</code>
        */
-      public flyteidl.core.Types.PromiseAtrribute.Builder getAttrPathBuilder(
+      public flyteidl.core.Types.PromiseAttribute.Builder getAttrPathBuilder(
           int index) {
         return getAttrPathFieldBuilder().getBuilder(index);
       }
       /**
-       * <code>repeated .flyteidl.core.PromiseAtrribute attr_path = 3;</code>
+       * <code>repeated .flyteidl.core.PromiseAttribute attr_path = 3;</code>
        */
-      public flyteidl.core.Types.PromiseAtrributeOrBuilder getAttrPathOrBuilder(
+      public flyteidl.core.Types.PromiseAttributeOrBuilder getAttrPathOrBuilder(
           int index) {
         if (attrPathBuilder_ == null) {
           return attrPath_.get(index);  } else {
@@ -12214,9 +12214,9 @@ public final class Types {
         }
       }
       /**
-       * <code>repeated .flyteidl.core.PromiseAtrribute attr_path = 3;</code>
+       * <code>repeated .flyteidl.core.PromiseAttribute attr_path = 3;</code>
        */
-      public java.util.List<? extends flyteidl.core.Types.PromiseAtrributeOrBuilder> 
+      public java.util.List<? extends flyteidl.core.Types.PromiseAttributeOrBuilder> 
            getAttrPathOrBuilderList() {
         if (attrPathBuilder_ != null) {
           return attrPathBuilder_.getMessageOrBuilderList();
@@ -12225,33 +12225,33 @@ public final class Types {
         }
       }
       /**
-       * <code>repeated .flyteidl.core.PromiseAtrribute attr_path = 3;</code>
+       * <code>repeated .flyteidl.core.PromiseAttribute attr_path = 3;</code>
        */
-      public flyteidl.core.Types.PromiseAtrribute.Builder addAttrPathBuilder() {
+      public flyteidl.core.Types.PromiseAttribute.Builder addAttrPathBuilder() {
         return getAttrPathFieldBuilder().addBuilder(
-            flyteidl.core.Types.PromiseAtrribute.getDefaultInstance());
+            flyteidl.core.Types.PromiseAttribute.getDefaultInstance());
       }
       /**
-       * <code>repeated .flyteidl.core.PromiseAtrribute attr_path = 3;</code>
+       * <code>repeated .flyteidl.core.PromiseAttribute attr_path = 3;</code>
        */
-      public flyteidl.core.Types.PromiseAtrribute.Builder addAttrPathBuilder(
+      public flyteidl.core.Types.PromiseAttribute.Builder addAttrPathBuilder(
           int index) {
         return getAttrPathFieldBuilder().addBuilder(
-            index, flyteidl.core.Types.PromiseAtrribute.getDefaultInstance());
+            index, flyteidl.core.Types.PromiseAttribute.getDefaultInstance());
       }
       /**
-       * <code>repeated .flyteidl.core.PromiseAtrribute attr_path = 3;</code>
+       * <code>repeated .flyteidl.core.PromiseAttribute attr_path = 3;</code>
        */
-      public java.util.List<flyteidl.core.Types.PromiseAtrribute.Builder> 
+      public java.util.List<flyteidl.core.Types.PromiseAttribute.Builder> 
            getAttrPathBuilderList() {
         return getAttrPathFieldBuilder().getBuilderList();
       }
       private com.google.protobuf.RepeatedFieldBuilderV3<
-          flyteidl.core.Types.PromiseAtrribute, flyteidl.core.Types.PromiseAtrribute.Builder, flyteidl.core.Types.PromiseAtrributeOrBuilder> 
+          flyteidl.core.Types.PromiseAttribute, flyteidl.core.Types.PromiseAttribute.Builder, flyteidl.core.Types.PromiseAttributeOrBuilder> 
           getAttrPathFieldBuilder() {
         if (attrPathBuilder_ == null) {
           attrPathBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
-              flyteidl.core.Types.PromiseAtrribute, flyteidl.core.Types.PromiseAtrribute.Builder, flyteidl.core.Types.PromiseAtrributeOrBuilder>(
+              flyteidl.core.Types.PromiseAttribute, flyteidl.core.Types.PromiseAttribute.Builder, flyteidl.core.Types.PromiseAttributeOrBuilder>(
                   attrPath_,
                   ((bitField0_ & 0x00000004) != 0),
                   getParentForChildren(),
@@ -12313,8 +12313,8 @@ public final class Types {
 
   }
 
-  public interface PromiseAtrributeOrBuilder extends
-      // @@protoc_insertion_point(interface_extends:flyteidl.core.PromiseAtrribute)
+  public interface PromiseAttributeOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:flyteidl.core.PromiseAttribute)
       com.google.protobuf.MessageOrBuilder {
 
     /**
@@ -12332,21 +12332,21 @@ public final class Types {
      */
     int getIntValue();
 
-    public flyteidl.core.Types.PromiseAtrribute.ValueCase getValueCase();
+    public flyteidl.core.Types.PromiseAttribute.ValueCase getValueCase();
   }
   /**
-   * Protobuf type {@code flyteidl.core.PromiseAtrribute}
+   * Protobuf type {@code flyteidl.core.PromiseAttribute}
    */
-  public  static final class PromiseAtrribute extends
+  public  static final class PromiseAttribute extends
       com.google.protobuf.GeneratedMessageV3 implements
-      // @@protoc_insertion_point(message_implements:flyteidl.core.PromiseAtrribute)
-      PromiseAtrributeOrBuilder {
+      // @@protoc_insertion_point(message_implements:flyteidl.core.PromiseAttribute)
+      PromiseAttributeOrBuilder {
   private static final long serialVersionUID = 0L;
-    // Use PromiseAtrribute.newBuilder() to construct.
-    private PromiseAtrribute(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+    // Use PromiseAttribute.newBuilder() to construct.
+    private PromiseAttribute(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
     }
-    private PromiseAtrribute() {
+    private PromiseAttribute() {
     }
 
     @java.lang.Override
@@ -12354,7 +12354,7 @@ public final class Types {
     getUnknownFields() {
       return this.unknownFields;
     }
-    private PromiseAtrribute(
+    private PromiseAttribute(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
@@ -12405,15 +12405,15 @@ public final class Types {
     }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return flyteidl.core.Types.internal_static_flyteidl_core_PromiseAtrribute_descriptor;
+      return flyteidl.core.Types.internal_static_flyteidl_core_PromiseAttribute_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return flyteidl.core.Types.internal_static_flyteidl_core_PromiseAtrribute_fieldAccessorTable
+      return flyteidl.core.Types.internal_static_flyteidl_core_PromiseAttribute_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              flyteidl.core.Types.PromiseAtrribute.class, flyteidl.core.Types.PromiseAtrribute.Builder.class);
+              flyteidl.core.Types.PromiseAttribute.class, flyteidl.core.Types.PromiseAttribute.Builder.class);
     }
 
     private int valueCase_ = 0;
@@ -12556,10 +12556,10 @@ public final class Types {
       if (obj == this) {
        return true;
       }
-      if (!(obj instanceof flyteidl.core.Types.PromiseAtrribute)) {
+      if (!(obj instanceof flyteidl.core.Types.PromiseAttribute)) {
         return super.equals(obj);
       }
-      flyteidl.core.Types.PromiseAtrribute other = (flyteidl.core.Types.PromiseAtrribute) obj;
+      flyteidl.core.Types.PromiseAttribute other = (flyteidl.core.Types.PromiseAttribute) obj;
 
       if (!getValueCase().equals(other.getValueCase())) return false;
       switch (valueCase_) {
@@ -12602,69 +12602,69 @@ public final class Types {
       return hash;
     }
 
-    public static flyteidl.core.Types.PromiseAtrribute parseFrom(
+    public static flyteidl.core.Types.PromiseAttribute parseFrom(
         java.nio.ByteBuffer data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static flyteidl.core.Types.PromiseAtrribute parseFrom(
+    public static flyteidl.core.Types.PromiseAttribute parseFrom(
         java.nio.ByteBuffer data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static flyteidl.core.Types.PromiseAtrribute parseFrom(
+    public static flyteidl.core.Types.PromiseAttribute parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static flyteidl.core.Types.PromiseAtrribute parseFrom(
+    public static flyteidl.core.Types.PromiseAttribute parseFrom(
         com.google.protobuf.ByteString data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static flyteidl.core.Types.PromiseAtrribute parseFrom(byte[] data)
+    public static flyteidl.core.Types.PromiseAttribute parseFrom(byte[] data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static flyteidl.core.Types.PromiseAtrribute parseFrom(
+    public static flyteidl.core.Types.PromiseAttribute parseFrom(
         byte[] data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static flyteidl.core.Types.PromiseAtrribute parseFrom(java.io.InputStream input)
+    public static flyteidl.core.Types.PromiseAttribute parseFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
-    public static flyteidl.core.Types.PromiseAtrribute parseFrom(
+    public static flyteidl.core.Types.PromiseAttribute parseFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
-    public static flyteidl.core.Types.PromiseAtrribute parseDelimitedFrom(java.io.InputStream input)
+    public static flyteidl.core.Types.PromiseAttribute parseDelimitedFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input);
     }
-    public static flyteidl.core.Types.PromiseAtrribute parseDelimitedFrom(
+    public static flyteidl.core.Types.PromiseAttribute parseDelimitedFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
     }
-    public static flyteidl.core.Types.PromiseAtrribute parseFrom(
+    public static flyteidl.core.Types.PromiseAttribute parseFrom(
         com.google.protobuf.CodedInputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
-    public static flyteidl.core.Types.PromiseAtrribute parseFrom(
+    public static flyteidl.core.Types.PromiseAttribute parseFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
@@ -12677,7 +12677,7 @@ public final class Types {
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
     }
-    public static Builder newBuilder(flyteidl.core.Types.PromiseAtrribute prototype) {
+    public static Builder newBuilder(flyteidl.core.Types.PromiseAttribute prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
     @java.lang.Override
@@ -12693,26 +12693,26 @@ public final class Types {
       return builder;
     }
     /**
-     * Protobuf type {@code flyteidl.core.PromiseAtrribute}
+     * Protobuf type {@code flyteidl.core.PromiseAttribute}
      */
     public static final class Builder extends
         com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-        // @@protoc_insertion_point(builder_implements:flyteidl.core.PromiseAtrribute)
-        flyteidl.core.Types.PromiseAtrributeOrBuilder {
+        // @@protoc_insertion_point(builder_implements:flyteidl.core.PromiseAttribute)
+        flyteidl.core.Types.PromiseAttributeOrBuilder {
       public static final com.google.protobuf.Descriptors.Descriptor
           getDescriptor() {
-        return flyteidl.core.Types.internal_static_flyteidl_core_PromiseAtrribute_descriptor;
+        return flyteidl.core.Types.internal_static_flyteidl_core_PromiseAttribute_descriptor;
       }
 
       @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
-        return flyteidl.core.Types.internal_static_flyteidl_core_PromiseAtrribute_fieldAccessorTable
+        return flyteidl.core.Types.internal_static_flyteidl_core_PromiseAttribute_fieldAccessorTable
             .ensureFieldAccessorsInitialized(
-                flyteidl.core.Types.PromiseAtrribute.class, flyteidl.core.Types.PromiseAtrribute.Builder.class);
+                flyteidl.core.Types.PromiseAttribute.class, flyteidl.core.Types.PromiseAttribute.Builder.class);
       }
 
-      // Construct using flyteidl.core.Types.PromiseAtrribute.newBuilder()
+      // Construct using flyteidl.core.Types.PromiseAttribute.newBuilder()
       private Builder() {
         maybeForceBuilderInitialization();
       }
@@ -12738,17 +12738,17 @@ public final class Types {
       @java.lang.Override
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
-        return flyteidl.core.Types.internal_static_flyteidl_core_PromiseAtrribute_descriptor;
+        return flyteidl.core.Types.internal_static_flyteidl_core_PromiseAttribute_descriptor;
       }
 
       @java.lang.Override
-      public flyteidl.core.Types.PromiseAtrribute getDefaultInstanceForType() {
-        return flyteidl.core.Types.PromiseAtrribute.getDefaultInstance();
+      public flyteidl.core.Types.PromiseAttribute getDefaultInstanceForType() {
+        return flyteidl.core.Types.PromiseAttribute.getDefaultInstance();
       }
 
       @java.lang.Override
-      public flyteidl.core.Types.PromiseAtrribute build() {
-        flyteidl.core.Types.PromiseAtrribute result = buildPartial();
+      public flyteidl.core.Types.PromiseAttribute build() {
+        flyteidl.core.Types.PromiseAttribute result = buildPartial();
         if (!result.isInitialized()) {
           throw newUninitializedMessageException(result);
         }
@@ -12756,8 +12756,8 @@ public final class Types {
       }
 
       @java.lang.Override
-      public flyteidl.core.Types.PromiseAtrribute buildPartial() {
-        flyteidl.core.Types.PromiseAtrribute result = new flyteidl.core.Types.PromiseAtrribute(this);
+      public flyteidl.core.Types.PromiseAttribute buildPartial() {
+        flyteidl.core.Types.PromiseAttribute result = new flyteidl.core.Types.PromiseAttribute(this);
         if (valueCase_ == 1) {
           result.value_ = value_;
         }
@@ -12803,16 +12803,16 @@ public final class Types {
       }
       @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof flyteidl.core.Types.PromiseAtrribute) {
-          return mergeFrom((flyteidl.core.Types.PromiseAtrribute)other);
+        if (other instanceof flyteidl.core.Types.PromiseAttribute) {
+          return mergeFrom((flyteidl.core.Types.PromiseAttribute)other);
         } else {
           super.mergeFrom(other);
           return this;
         }
       }
 
-      public Builder mergeFrom(flyteidl.core.Types.PromiseAtrribute other) {
-        if (other == flyteidl.core.Types.PromiseAtrribute.getDefaultInstance()) return this;
+      public Builder mergeFrom(flyteidl.core.Types.PromiseAttribute other) {
+        if (other == flyteidl.core.Types.PromiseAttribute.getDefaultInstance()) return this;
         switch (other.getValueCase()) {
           case STRING_VALUE: {
             valueCase_ = 1;
@@ -12843,11 +12843,11 @@ public final class Types {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        flyteidl.core.Types.PromiseAtrribute parsedMessage = null;
+        flyteidl.core.Types.PromiseAttribute parsedMessage = null;
         try {
           parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (flyteidl.core.Types.PromiseAtrribute) e.getUnfinishedMessage();
+          parsedMessage = (flyteidl.core.Types.PromiseAttribute) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
           if (parsedMessage != null) {
@@ -12994,41 +12994,41 @@ public final class Types {
       }
 
 
-      // @@protoc_insertion_point(builder_scope:flyteidl.core.PromiseAtrribute)
+      // @@protoc_insertion_point(builder_scope:flyteidl.core.PromiseAttribute)
     }
 
-    // @@protoc_insertion_point(class_scope:flyteidl.core.PromiseAtrribute)
-    private static final flyteidl.core.Types.PromiseAtrribute DEFAULT_INSTANCE;
+    // @@protoc_insertion_point(class_scope:flyteidl.core.PromiseAttribute)
+    private static final flyteidl.core.Types.PromiseAttribute DEFAULT_INSTANCE;
     static {
-      DEFAULT_INSTANCE = new flyteidl.core.Types.PromiseAtrribute();
+      DEFAULT_INSTANCE = new flyteidl.core.Types.PromiseAttribute();
     }
 
-    public static flyteidl.core.Types.PromiseAtrribute getDefaultInstance() {
+    public static flyteidl.core.Types.PromiseAttribute getDefaultInstance() {
       return DEFAULT_INSTANCE;
     }
 
-    private static final com.google.protobuf.Parser<PromiseAtrribute>
-        PARSER = new com.google.protobuf.AbstractParser<PromiseAtrribute>() {
+    private static final com.google.protobuf.Parser<PromiseAttribute>
+        PARSER = new com.google.protobuf.AbstractParser<PromiseAttribute>() {
       @java.lang.Override
-      public PromiseAtrribute parsePartialFrom(
+      public PromiseAttribute parsePartialFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new PromiseAtrribute(input, extensionRegistry);
+        return new PromiseAttribute(input, extensionRegistry);
       }
     };
 
-    public static com.google.protobuf.Parser<PromiseAtrribute> parser() {
+    public static com.google.protobuf.Parser<PromiseAttribute> parser() {
       return PARSER;
     }
 
     @java.lang.Override
-    public com.google.protobuf.Parser<PromiseAtrribute> getParserForType() {
+    public com.google.protobuf.Parser<PromiseAttribute> getParserForType() {
       return PARSER;
     }
 
     @java.lang.Override
-    public flyteidl.core.Types.PromiseAtrribute getDefaultInstanceForType() {
+    public flyteidl.core.Types.PromiseAttribute getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
 
@@ -13856,10 +13856,10 @@ public final class Types {
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_flyteidl_core_OutputReference_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_flyteidl_core_PromiseAtrribute_descriptor;
+    internal_static_flyteidl_core_PromiseAttribute_descriptor;
   private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_flyteidl_core_PromiseAtrribute_fieldAccessorTable;
+      internal_static_flyteidl_core_PromiseAttribute_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_flyteidl_core_Error_descriptor;
   private static final 
@@ -13913,8 +13913,8 @@ public final class Types {
       "\022/\n\tstructure\030\013 \001(\0132\034.flyteidl.core.Type" +
       "StructureB\006\n\004type\"c\n\017OutputReference\022\017\n\007" +
       "node_id\030\001 \001(\t\022\013\n\003var\030\002 \001(\t\0222\n\tattr_path\030" +
-      "\003 \003(\0132\037.flyteidl.core.PromiseAtrribute\"H" +
-      "\n\020PromiseAtrribute\022\026\n\014string_value\030\001 \001(\t" +
+      "\003 \003(\0132\037.flyteidl.core.PromiseAttribute\"H" +
+      "\n\020PromiseAttribute\022\026\n\014string_value\030\001 \001(\t" +
       "H\000\022\023\n\tint_value\030\002 \001(\005H\000B\007\n\005value\"0\n\005Erro" +
       "r\022\026\n\016failed_node_id\030\001 \001(\t\022\017\n\007message\030\002 \001" +
       "(\t*\206\001\n\nSimpleType\022\010\n\004NONE\020\000\022\013\n\007INTEGER\020\001" +
@@ -14003,11 +14003,11 @@ public final class Types {
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_flyteidl_core_OutputReference_descriptor,
         new java.lang.String[] { "NodeId", "Var", "AttrPath", });
-    internal_static_flyteidl_core_PromiseAtrribute_descriptor =
+    internal_static_flyteidl_core_PromiseAttribute_descriptor =
       getDescriptor().getMessageTypes().get(9);
-    internal_static_flyteidl_core_PromiseAtrribute_fieldAccessorTable = new
+    internal_static_flyteidl_core_PromiseAttribute_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_flyteidl_core_PromiseAtrribute_descriptor,
+        internal_static_flyteidl_core_PromiseAttribute_descriptor,
         new java.lang.String[] { "StringValue", "IntValue", "Value", });
     internal_static_flyteidl_core_Error_descriptor =
       getDescriptor().getMessageTypes().get(10);

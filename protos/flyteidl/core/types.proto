@@ -171,7 +171,7 @@ message OutputReference {
     // Variable name must refer to an output variable for the node.
     string var = 2;
 
-    repeated PromiseAtrribute attr_path = 3;
+    repeated PromiseAttribute attr_path = 3;
 }  
 
 // PromiseAttribute stores the attribute path of a promise, which will be resolved at runtime.
@@ -185,7 +185,7 @@ message OutputReference {
 // ```
 // the output reference t2 binds to has a list of PromiseAttribute ["a", "b", 0]
 
-message PromiseAtrribute {
+message PromiseAttribute {
     oneof value {
         string string_value = 1;
         int32 int_value = 2;
