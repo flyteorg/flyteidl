@@ -7321,6 +7321,64 @@ export namespace flyteidl {
             public static verify(message: { [k: string]: any }): (string|null);
         }
 
+        /** Properties of a BatchedReason. */
+        interface IBatchedReason {
+
+            /** BatchedReason reason */
+            reason?: (string|null);
+
+            /** BatchedReason occurredAt */
+            occurredAt?: (google.protobuf.ITimestamp|null);
+        }
+
+        /** Represents a BatchedReason. */
+        class BatchedReason implements IBatchedReason {
+
+            /**
+             * Constructs a new BatchedReason.
+             * @param [properties] Properties to set
+             */
+            constructor(properties?: flyteidl.event.IBatchedReason);
+
+            /** BatchedReason reason. */
+            public reason: string;
+
+            /** BatchedReason occurredAt. */
+            public occurredAt?: (google.protobuf.ITimestamp|null);
+
+            /**
+             * Creates a new BatchedReason instance using the specified properties.
+             * @param [properties] Properties to set
+             * @returns BatchedReason instance
+             */
+            public static create(properties?: flyteidl.event.IBatchedReason): flyteidl.event.BatchedReason;
+
+            /**
+             * Encodes the specified BatchedReason message. Does not implicitly {@link flyteidl.event.BatchedReason.verify|verify} messages.
+             * @param message BatchedReason message or plain object to encode
+             * @param [writer] Writer to encode to
+             * @returns Writer
+             */
+            public static encode(message: flyteidl.event.IBatchedReason, writer?: $protobuf.Writer): $protobuf.Writer;
+
+            /**
+             * Decodes a BatchedReason message from the specified reader or buffer.
+             * @param reader Reader or buffer to decode from
+             * @param [length] Message length if known beforehand
+             * @returns BatchedReason
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): flyteidl.event.BatchedReason;
+
+            /**
+             * Verifies a BatchedReason message.
+             * @param message Plain object to verify
+             * @returns `null` if valid, otherwise the reason why it is not
+             */
+            public static verify(message: { [k: string]: any }): (string|null);
+        }
+
         /** Properties of a TaskExecutionEvent. */
         interface ITaskExecutionEvent {
 
@@ -7368,6 +7426,9 @@ export namespace flyteidl {
 
             /** TaskExecutionEvent reason */
             reason?: (string|null);
+
+            /** TaskExecutionEvent reasons */
+            reasons?: (flyteidl.event.IBatchedReason[]|null);
 
             /** TaskExecutionEvent taskType */
             taskType?: (string|null);
@@ -7435,6 +7496,9 @@ export namespace flyteidl {
 
             /** TaskExecutionEvent reason. */
             public reason: string;
+
+            /** TaskExecutionEvent reasons. */
+            public reasons: flyteidl.event.IBatchedReason[];
 
             /** TaskExecutionEvent taskType. */
             public taskType: string;

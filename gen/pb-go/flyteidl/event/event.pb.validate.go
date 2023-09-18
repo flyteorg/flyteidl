@@ -793,6 +793,83 @@ var _ interface {
 	ErrorName() string
 } = ParentNodeExecutionMetadataValidationError{}
 
+// Validate checks the field values on BatchedReason with the rules defined in
+// the proto definition for this message. If any rules are violated, an error
+// is returned.
+func (m *BatchedReason) Validate() error {
+	if m == nil {
+		return nil
+	}
+
+	// no validation rules for Reason
+
+	if v, ok := interface{}(m.GetOccurredAt()).(interface{ Validate() error }); ok {
+		if err := v.Validate(); err != nil {
+			return BatchedReasonValidationError{
+				field:  "OccurredAt",
+				reason: "embedded message failed validation",
+				cause:  err,
+			}
+		}
+	}
+
+	return nil
+}
+
+// BatchedReasonValidationError is the validation error returned by
+// BatchedReason.Validate if the designated constraints aren't met.
+type BatchedReasonValidationError struct {
+	field  string
+	reason string
+	cause  error
+	key    bool
+}
+
+// Field function returns field value.
+func (e BatchedReasonValidationError) Field() string { return e.field }
+
+// Reason function returns reason value.
+func (e BatchedReasonValidationError) Reason() string { return e.reason }
+
+// Cause function returns cause value.
+func (e BatchedReasonValidationError) Cause() error { return e.cause }
+
+// Key function returns key value.
+func (e BatchedReasonValidationError) Key() bool { return e.key }
+
+// ErrorName returns error name.
+func (e BatchedReasonValidationError) ErrorName() string { return "BatchedReasonValidationError" }
+
+// Error satisfies the builtin error interface
+func (e BatchedReasonValidationError) Error() string {
+	cause := ""
+	if e.cause != nil {
+		cause = fmt.Sprintf(" | caused by: %v", e.cause)
+	}
+
+	key := ""
+	if e.key {
+		key = "key for "
+	}
+
+	return fmt.Sprintf(
+		"invalid %sBatchedReason.%s: %s%s",
+		key,
+		e.field,
+		e.reason,
+		cause)
+}
+
+var _ error = BatchedReasonValidationError{}
+
+var _ interface {
+	Field() string
+	Reason() string
+	Key() bool
+	Cause() error
+	ErrorName() string
+} = BatchedReasonValidationError{}
+
 // Validate checks the field values on TaskExecutionEvent with the rules
 // defined in the proto definition for this message. If any rules are
 // violated, an error is returned.
@@ -865,6 +942,21 @@ func (m *TaskExecutionEvent) Validate() error {
 	// no validation rules for PhaseVersion
 
 	// no validation rules for Reason
+
+	for idx, item := range m.GetReasons() {
+		_, _ = idx, item
+
+		if v, ok := interface{}(item).(interface{ Validate() error }); ok {
+			if err := v.Validate(); err != nil {
+				return TaskExecutionEventValidationError{
+					field:  fmt.Sprintf("Reasons[%v]", idx),
+					reason: "embedded message failed validation",
+					cause:  err,
+				}
+			}
+		}
+
+	}
 
 	// no validation rules for TaskType
 

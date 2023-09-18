@@ -358,6 +358,7 @@ Class | Method | HTTP request | Description
  - [CoreWorkflowNode](docs/CoreWorkflowNode.md)
  - [CoreWorkflowTemplate](docs/CoreWorkflowTemplate.md)
  - [DataLoadingConfigLiteralMapFormat](docs/DataLoadingConfigLiteralMapFormat.md)
+ - [EventBatchedReason](docs/EventBatchedReason.md)
  - [EventExternalResourceInfo](docs/EventExternalResourceInfo.md)
  - [EventNodeExecutionEvent](docs/EventNodeExecutionEvent.md)
  - [EventParentNodeExecutionMetadata](docs/EventParentNodeExecutionMetadata.md)
