@@ -5249,9 +5249,6 @@ export namespace flyteidl {
             /** ResourceMetadata gpuAccelerator. */
             public gpuAccelerator?: (flyteidl.core.IGPUAccelerator|null);
 
-            /** ResourceMetadata acceleratorValue. */
-            public acceleratorValue?: "gpuAccelerator";
-
             /**
              * Creates a new ResourceMetadata instance using the specified properties.
              * @param [properties] Properties to set

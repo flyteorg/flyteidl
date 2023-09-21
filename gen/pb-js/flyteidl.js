@@ -12480,20 +12480,6 @@
                  */
                 ResourceMetadata.prototype.gpuAccelerator = null;
     
-                // OneOf field names bound to virtual getters and setters
-                var $oneOfFields;
-    
-                /**
-                 * ResourceMetadata acceleratorValue.
-                 * @member {"gpuAccelerator"|undefined} acceleratorValue
-                 * @memberof flyteidl.core.ResourceMetadata
-                 * @instance
-                 */
-                Object.defineProperty(ResourceMetadata.prototype, "acceleratorValue", {
-                    get: $util.oneOfGetter($oneOfFields = ["gpuAccelerator"]),
-                    set: $util.oneOfSetter($oneOfFields)
-                });
-    
                 /**
                  * Creates a new ResourceMetadata instance using the specified properties.
                  * @function create
@@ -12563,14 +12549,10 @@
                 ResourceMetadata.verify = function verify(message) {
                     if (typeof message !== "object" || message === null)
                         return "object expected";
-                    var properties = {};
                     if (message.gpuAccelerator != null && message.hasOwnProperty("gpuAccelerator")) {
-                        properties.acceleratorValue = 1;
-                        {
-                            var error = $root.flyteidl.core.GPUAccelerator.verify(message.gpuAccelerator);
-                            if (error)
-                                return "gpuAccelerator." + error;
-                        }
+                        var error = $root.flyteidl.core.GPUAccelerator.verify(message.gpuAccelerator);
+                        if (error)
+                            return "gpuAccelerator." + error;
                     }
                     return null;
                 };

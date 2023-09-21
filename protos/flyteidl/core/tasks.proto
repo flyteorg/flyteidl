@@ -72,9 +72,7 @@ message GPUAccelerator {
 
 // Additional metadata associated with resources to allocate to a task
 message ResourceMetadata {
-    oneof accelerator_value {
-        GPUAccelerator gpu_accelerator = 1;
-    }
+    GPUAccelerator gpu_accelerator = 1;
 }
 
 // Task Metadata

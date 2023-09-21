@@ -962,11 +962,6 @@ class ResourceMetadata final :
   }
   static const ResourceMetadata& default_instance();
 
-  enum AcceleratorValueCase {
-    kGpuAccelerator = 1,
-    ACCELERATOR_VALUE_NOT_SET = 0,
-  };
-
   static void InitAsDefaultInstance();  // FOR INTERNAL USE ONLY
   static inline const ResourceMetadata* internal_default_instance() {
     return reinterpret_cast<const ResourceMetadata*>(
@@ -1039,24 +1034,13 @@ class ResourceMetadata final :
   ::flyteidl::core::GPUAccelerator* mutable_gpu_accelerator();
   void set_allocated_gpu_accelerator(::flyteidl::core::GPUAccelerator* gpu_accelerator);
 
-  void clear_accelerator_value();
-  AcceleratorValueCase accelerator_value_case() const;
   // @@protoc_insertion_point(class_scope:flyteidl.core.ResourceMetadata)
  private:
   class HasBitSetters;
-  void set_has_gpu_accelerator();
-
-  inline bool has_accelerator_value() const;
-  inline void clear_has_accelerator_value();
 
   ::google::protobuf::internal::InternalMetadataWithArena _internal_metadata_;
-  union AcceleratorValueUnion {
-    AcceleratorValueUnion() {}
-    ::flyteidl::core::GPUAccelerator* gpu_accelerator_;
-  } accelerator_value_;
+  ::flyteidl::core::GPUAccelerator* gpu_accelerator_;
   mutable ::google::protobuf::internal::CachedSize _cached_size_;
-  ::google::protobuf::uint32 _oneof_case_[1];
-
   friend struct ::TableStruct_flyteidl_2fcore_2ftasks_2eproto;
 };
 // -------------------------------------------------------------------
@@ -3276,54 +3260,55 @@ inline GPUAccelerator::PartitionSizeValueCase GPUAccelerator::partition_size_val
 
 // .flyteidl.core.GPUAccelerator gpu_accelerator = 1;
 inline bool ResourceMetadata::has_gpu_accelerator() const {
-  return accelerator_value_case() == kGpuAccelerator;
-}
-inline void ResourceMetadata::set_has_gpu_accelerator() {
-  _oneof_case_[0] = kGpuAccelerator;
+  return this != internal_default_instance() && gpu_accelerator_ != nullptr;
 }
 inline void ResourceMetadata::clear_gpu_accelerator() {
-  if (has_gpu_accelerator()) {
-    delete accelerator_value_.gpu_accelerator_;
-    clear_has_accelerator_value();
+  if (GetArenaNoVirtual() == nullptr && gpu_accelerator_ != nullptr) {
+    delete gpu_accelerator_;
   }
+  gpu_accelerator_ = nullptr;
+}
+inline const ::flyteidl::core::GPUAccelerator& ResourceMetadata::gpu_accelerator() const {
+  const ::flyteidl::core::GPUAccelerator* p = gpu_accelerator_;
+  // @@protoc_insertion_point(field_get:flyteidl.core.ResourceMetadata.gpu_accelerator)
+  return p != nullptr ? *p : *reinterpret_cast<const ::flyteidl::core::GPUAccelerator*>(
+      &::flyteidl::core::_GPUAccelerator_default_instance_);
 }
 inline ::flyteidl::core::GPUAccelerator* ResourceMetadata::release_gpu_accelerator() {
   // @@protoc_insertion_point(field_release:flyteidl.core.ResourceMetadata.gpu_accelerator)
-  if (has_gpu_accelerator()) {
-    clear_has_accelerator_value();
-      ::flyteidl::core::GPUAccelerator* temp = accelerator_value_.gpu_accelerator_;
-    accelerator_value_.gpu_accelerator_ = nullptr;
-    return temp;
-  } else {
-    return nullptr;
-  }
-}
-inline const ::flyteidl::core::GPUAccelerator& ResourceMetadata::gpu_accelerator() const {
-  // @@protoc_insertion_point(field_get:flyteidl.core.ResourceMetadata.gpu_accelerator)
-  return has_gpu_accelerator()
-      ? *accelerator_value_.gpu_accelerator_
-      : *reinterpret_cast< ::flyteidl::core::GPUAccelerator*>(&::flyteidl::core::_GPUAccelerator_default_instance_);
+  
+  ::flyteidl::core::GPUAccelerator* temp = gpu_accelerator_;
+  gpu_accelerator_ = nullptr;
+  return temp;
 }
 inline ::flyteidl::core::GPUAccelerator* ResourceMetadata::mutable_gpu_accelerator() {
-  if (!has_gpu_accelerator()) {
-    clear_accelerator_value();
-    set_has_gpu_accelerator();
-    accelerator_value_.gpu_accelerator_ = CreateMaybeMessage< ::flyteidl::core::GPUAccelerator >(
-        GetArenaNoVirtual());
+  
+  if (gpu_accelerator_ == nullptr) {
+    auto* p = CreateMaybeMessage<::flyteidl::core::GPUAccelerator>(GetArenaNoVirtual());
+    gpu_accelerator_ = p;
   }
   // @@protoc_insertion_point(field_mutable:flyteidl.core.ResourceMetadata.gpu_accelerator)
-  return accelerator_value_.gpu_accelerator_;
+  return gpu_accelerator_;
+}
+inline void ResourceMetadata::set_allocated_gpu_accelerator(::flyteidl::core::GPUAccelerator* gpu_accelerator) {
+  ::google::protobuf::Arena* message_arena = GetArenaNoVirtual();
+  if (message_arena == nullptr) {
+    delete gpu_accelerator_;
+  }
+  if (gpu_accelerator) {
+    ::google::protobuf::Arena* submessage_arena = nullptr;
+    if (message_arena != submessage_arena) {
+      gpu_accelerator = ::google::protobuf::internal::GetOwnedMessage(
+          message_arena, gpu_accelerator, submessage_arena);
+    }
+    
+  } else {
+    
+  }
+  gpu_accelerator_ = gpu_accelerator;
+  // @@protoc_insertion_point(field_set_allocated:flyteidl.core.ResourceMetadata.gpu_accelerator)
 }
 
-inline bool ResourceMetadata::has_accelerator_value() const {
-  return accelerator_value_case() != ACCELERATOR_VALUE_NOT_SET;
-}
-inline void ResourceMetadata::clear_has_accelerator_value() {
-  _oneof_case_[0] = ACCELERATOR_VALUE_NOT_SET;
-}
-inline ResourceMetadata::AcceleratorValueCase ResourceMetadata::accelerator_value_case() const {
-  return ResourceMetadata::AcceleratorValueCase(_oneof_case_[0]);
-}
 // -------------------------------------------------------------------
 
 // -------------------------------------------------------------------

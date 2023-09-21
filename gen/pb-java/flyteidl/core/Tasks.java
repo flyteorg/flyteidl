@@ -4188,8 +4188,6 @@ public final class Tasks {
      * <code>.flyteidl.core.GPUAccelerator gpu_accelerator = 1;</code>
      */
     flyteidl.core.Tasks.GPUAcceleratorOrBuilder getGpuAcceleratorOrBuilder();
-
-    public flyteidl.core.Tasks.ResourceMetadata.AcceleratorValueCase getAcceleratorValueCase();
   }
   /**
    * <pre>
@@ -4236,16 +4234,15 @@ public final class Tasks {
               break;
             case 10: {
               flyteidl.core.Tasks.GPUAccelerator.Builder subBuilder = null;
-              if (acceleratorValueCase_ == 1) {
-                subBuilder = ((flyteidl.core.Tasks.GPUAccelerator) acceleratorValue_).toBuilder();
+              if (gpuAccelerator_ != null) {
+                subBuilder = gpuAccelerator_.toBuilder();
               }
-              acceleratorValue_ =
-                  input.readMessage(flyteidl.core.Tasks.GPUAccelerator.parser(), extensionRegistry);
+              gpuAccelerator_ = input.readMessage(flyteidl.core.Tasks.GPUAccelerator.parser(), extensionRegistry);
               if (subBuilder != null) {
-                subBuilder.mergeFrom((flyteidl.core.Tasks.GPUAccelerator) acceleratorValue_);
-                acceleratorValue_ = subBuilder.buildPartial();
+                subBuilder.mergeFrom(gpuAccelerator_);
+                gpuAccelerator_ = subBuilder.buildPartial();
               }
-              acceleratorValueCase_ = 1;
+
               break;
             }
             default: {
@@ -4280,66 +4277,25 @@ public final class Tasks {
               flyteidl.core.Tasks.ResourceMetadata.class, flyteidl.core.Tasks.ResourceMetadata.Builder.class);
     }
 
-    private int acceleratorValueCase_ = 0;
-    private java.lang.Object acceleratorValue_;
-    public enum AcceleratorValueCase
-        implements com.google.protobuf.Internal.EnumLite {
-      GPU_ACCELERATOR(1),
-      ACCELERATORVALUE_NOT_SET(0);
-      private final int value;
-      private AcceleratorValueCase(int value) {
-        this.value = value;
-      }
-      /**
-       * @deprecated Use {@link #forNumber(int)} instead.
-       */
-      @java.lang.Deprecated
-      public static AcceleratorValueCase valueOf(int value) {
-        return forNumber(value);
-      }
-
-      public static AcceleratorValueCase forNumber(int value) {
-        switch (value) {
-          case 1: return GPU_ACCELERATOR;
-          case 0: return ACCELERATORVALUE_NOT_SET;
-          default: return null;
-        }
-      }
-      public int getNumber() {
-        return this.value;
-      }
-    };
-
-    public AcceleratorValueCase
-    getAcceleratorValueCase() {
-      return AcceleratorValueCase.forNumber(
-          acceleratorValueCase_);
-    }
-
     public static final int GPU_ACCELERATOR_FIELD_NUMBER = 1;
+    private flyteidl.core.Tasks.GPUAccelerator gpuAccelerator_;
     /**
      * <code>.flyteidl.core.GPUAccelerator gpu_accelerator = 1;</code>
      */
     public boolean hasGpuAccelerator() {
-      return acceleratorValueCase_ == 1;
+      return gpuAccelerator_ != null;
     }
     /**
      * <code>.flyteidl.core.GPUAccelerator gpu_accelerator = 1;</code>
      */
     public flyteidl.core.Tasks.GPUAccelerator getGpuAccelerator() {
-      if (acceleratorValueCase_ == 1) {
-         return (flyteidl.core.Tasks.GPUAccelerator) acceleratorValue_;
-      }
-      return flyteidl.core.Tasks.GPUAccelerator.getDefaultInstance();
+      return gpuAccelerator_ == null ? flyteidl.core.Tasks.GPUAccelerator.getDefaultInstance() : gpuAccelerator_;
     }
     /**
      * <code>.flyteidl.core.GPUAccelerator gpu_accelerator = 1;</code>
      */
     public flyteidl.core.Tasks.GPUAcceleratorOrBuilder getGpuAcceleratorOrBuilder() {
-      if (acceleratorValueCase_ == 1) {
-         return (flyteidl.core.Tasks.GPUAccelerator) acceleratorValue_;
-      }
-      return flyteidl.core.Tasks.GPUAccelerator.getDefaultInstance();
+      return getGpuAccelerator();
     }
 
     private byte memoizedIsInitialized = -1;
@@ -4356,8 +4312,8 @@ public final class Tasks {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (acceleratorValueCase_ == 1) {
-        output.writeMessage(1, (flyteidl.core.Tasks.GPUAccelerator) acceleratorValue_);
+      if (gpuAccelerator_ != null) {
+        output.writeMessage(1, getGpuAccelerator());
       }
       unknownFields.writeTo(output);
     }
@@ -4368,9 +4324,9 @@ public final class Tasks {
       if (size != -1) return size;
 
       size = 0;
-      if (acceleratorValueCase_ == 1) {
+      if (gpuAccelerator_ != null) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(1, (flyteidl.core.Tasks.GPUAccelerator) acceleratorValue_);
+          .computeMessageSize(1, getGpuAccelerator());
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -4387,14 +4343,10 @@ public final class Tasks {
       }
       flyteidl.core.Tasks.ResourceMetadata other = (flyteidl.core.Tasks.ResourceMetadata) obj;
 
-      if (!getAcceleratorValueCase().equals(other.getAcceleratorValueCase())) return false;
-      switch (acceleratorValueCase_) {
-        case 1:
-          if (!getGpuAccelerator()
-              .equals(other.getGpuAccelerator())) return false;
-          break;
-        case 0:
-        default:
+      if (hasGpuAccelerator() != other.hasGpuAccelerator()) return false;
+      if (hasGpuAccelerator()) {
+        if (!getGpuAccelerator()
+            .equals(other.getGpuAccelerator())) return false;
       }
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
@@ -4407,13 +4359,9 @@ public final class Tasks {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
-      switch (acceleratorValueCase_) {
-        case 1:
-          hash = (37 * hash) + GPU_ACCELERATOR_FIELD_NUMBER;
-          hash = (53 * hash) + getGpuAccelerator().hashCode();
-          break;
-        case 0:
-        default:
+      if (hasGpuAccelerator()) {
+        hash = (37 * hash) + GPU_ACCELERATOR_FIELD_NUMBER;
+        hash = (53 * hash) + getGpuAccelerator().hashCode();
       }
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
@@ -4552,8 +4500,12 @@ public final class Tasks {
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        acceleratorValueCase_ = 0;
-        acceleratorValue_ = null;
+        if (gpuAcceleratorBuilder_ == null) {
+          gpuAccelerator_ = null;
+        } else {
+          gpuAccelerator_ = null;
+          gpuAcceleratorBuilder_ = null;
+        }
         return this;
       }
 
@@ -4580,14 +4532,11 @@ public final class Tasks {
       @java.lang.Override
       public flyteidl.core.Tasks.ResourceMetadata buildPartial() {
         flyteidl.core.Tasks.ResourceMetadata result = new flyteidl.core.Tasks.ResourceMetadata(this);
-        if (acceleratorValueCase_ == 1) {
-          if (gpuAcceleratorBuilder_ == null) {
-            result.acceleratorValue_ = acceleratorValue_;
-          } else {
-            result.acceleratorValue_ = gpuAcceleratorBuilder_.build();
-          }
+        if (gpuAcceleratorBuilder_ == null) {
+          result.gpuAccelerator_ = gpuAccelerator_;
+        } else {
+          result.gpuAccelerator_ = gpuAcceleratorBuilder_.build();
         }
-        result.acceleratorValueCase_ = acceleratorValueCase_;
         onBuilt();
         return result;
       }
@@ -4636,14 +4585,8 @@ public final class Tasks {
 
       public Builder mergeFrom(flyteidl.core.Tasks.ResourceMetadata other) {
         if (other == flyteidl.core.Tasks.ResourceMetadata.getDefaultInstance()) return this;
-        switch (other.getAcceleratorValueCase()) {
-          case GPU_ACCELERATOR: {
-            mergeGpuAccelerator(other.getGpuAccelerator());
-            break;
-          }
-          case ACCELERATORVALUE_NOT_SET: {
-            break;
-          }
+        if (other.hasGpuAccelerator()) {
+          mergeGpuAccelerator(other.getGpuAccelerator());
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -4673,44 +4616,24 @@ public final class Tasks {
         }
         return this;
       }
-      private int acceleratorValueCase_ = 0;
-      private java.lang.Object acceleratorValue_;
-      public AcceleratorValueCase
-          getAcceleratorValueCase() {
-        return AcceleratorValueCase.forNumber(
-            acceleratorValueCase_);
-      }
 
-      public Builder clearAcceleratorValue() {
-        acceleratorValueCase_ = 0;
-        acceleratorValue_ = null;
-        onChanged();
-        return this;
-      }
-
-
+      private flyteidl.core.Tasks.GPUAccelerator gpuAccelerator_;
       private com.google.protobuf.SingleFieldBuilderV3<
           flyteidl.core.Tasks.GPUAccelerator, flyteidl.core.Tasks.GPUAccelerator.Builder, flyteidl.core.Tasks.GPUAcceleratorOrBuilder> gpuAcceleratorBuilder_;
       /**
        * <code>.flyteidl.core.GPUAccelerator gpu_accelerator = 1;</code>
        */
       public boolean hasGpuAccelerator() {
-        return acceleratorValueCase_ == 1;
+        return gpuAcceleratorBuilder_ != null || gpuAccelerator_ != null;
       }
       /**
        * <code>.flyteidl.core.GPUAccelerator gpu_accelerator = 1;</code>
        */
       public flyteidl.core.Tasks.GPUAccelerator getGpuAccelerator() {
         if (gpuAcceleratorBuilder_ == null) {
-          if (acceleratorValueCase_ == 1) {
-            return (flyteidl.core.Tasks.GPUAccelerator) acceleratorValue_;
-          }
-          return flyteidl.core.Tasks.GPUAccelerator.getDefaultInstance();
+          return gpuAccelerator_ == null ? flyteidl.core.Tasks.GPUAccelerator.getDefaultInstance() : gpuAccelerator_;
         } else {
-          if (acceleratorValueCase_ == 1) {
-            return gpuAcceleratorBuilder_.getMessage();
-          }
-          return flyteidl.core.Tasks.GPUAccelerator.getDefaultInstance();
+          return gpuAcceleratorBuilder_.getMessage();
         }
       }
       /**
@@ -4721,12 +4644,12 @@ public final class Tasks {
           if (value == null) {
             throw new NullPointerException();
           }
-          acceleratorValue_ = value;
+          gpuAccelerator_ = value;
           onChanged();
         } else {
           gpuAcceleratorBuilder_.setMessage(value);
         }
-        acceleratorValueCase_ = 1;
+
         return this;
       }
       /**
@@ -4735,12 +4658,12 @@ public final class Tasks {
       public Builder setGpuAccelerator(
           flyteidl.core.Tasks.GPUAccelerator.Builder builderForValue) {
         if (gpuAcceleratorBuilder_ == null) {
-          acceleratorValue_ = builderForValue.build();
+          gpuAccelerator_ = builderForValue.build();
           onChanged();
         } else {
           gpuAcceleratorBuilder_.setMessage(builderForValue.build());
         }
-        acceleratorValueCase_ = 1;
+
         return this;
       }
       /**
@@ -4748,21 +4671,17 @@ public final class Tasks {
        */
       public Builder mergeGpuAccelerator(flyteidl.core.Tasks.GPUAccelerator value) {
         if (gpuAcceleratorBuilder_ == null) {
-          if (acceleratorValueCase_ == 1 &&
-              acceleratorValue_ != flyteidl.core.Tasks.GPUAccelerator.getDefaultInstance()) {
-            acceleratorValue_ = flyteidl.core.Tasks.GPUAccelerator.newBuilder((flyteidl.core.Tasks.GPUAccelerator) acceleratorValue_)
-                .mergeFrom(value).buildPartial();
+          if (gpuAccelerator_ != null) {
+            gpuAccelerator_ =
+              flyteidl.core.Tasks.GPUAccelerator.newBuilder(gpuAccelerator_).mergeFrom(value).buildPartial();
           } else {
-            acceleratorValue_ = value;
+            gpuAccelerator_ = value;
           }
           onChanged();
         } else {
-          if (acceleratorValueCase_ == 1) {
-            gpuAcceleratorBuilder_.mergeFrom(value);
-          }
-          gpuAcceleratorBuilder_.setMessage(value);
+          gpuAcceleratorBuilder_.mergeFrom(value);
         }
-        acceleratorValueCase_ = 1;
+
         return this;
       }
       /**
@@ -4770,37 +4689,32 @@ public final class Tasks {
        */
       public Builder clearGpuAccelerator() {
         if (gpuAcceleratorBuilder_ == null) {
-          if (acceleratorValueCase_ == 1) {
-            acceleratorValueCase_ = 0;
-            acceleratorValue_ = null;
-            onChanged();
-          }
+          gpuAccelerator_ = null;
+          onChanged();
         } else {
-          if (acceleratorValueCase_ == 1) {
-            acceleratorValueCase_ = 0;
-            acceleratorValue_ = null;
-          }
-          gpuAcceleratorBuilder_.clear();
+          gpuAccelerator_ = null;
+          gpuAcceleratorBuilder_ = null;
         }
+
         return this;
       }
       /**
        * <code>.flyteidl.core.GPUAccelerator gpu_accelerator = 1;</code>
        */
       public flyteidl.core.Tasks.GPUAccelerator.Builder getGpuAcceleratorBuilder() {
+        
+        onChanged();
         return getGpuAcceleratorFieldBuilder().getBuilder();
       }
       /**
        * <code>.flyteidl.core.GPUAccelerator gpu_accelerator = 1;</code>
        */
       public flyteidl.core.Tasks.GPUAcceleratorOrBuilder getGpuAcceleratorOrBuilder() {
-        if ((acceleratorValueCase_ == 1) && (gpuAcceleratorBuilder_ != null)) {
+        if (gpuAcceleratorBuilder_ != null) {
           return gpuAcceleratorBuilder_.getMessageOrBuilder();
         } else {
-          if (acceleratorValueCase_ == 1) {
-            return (flyteidl.core.Tasks.GPUAccelerator) acceleratorValue_;
-          }
-          return flyteidl.core.Tasks.GPUAccelerator.getDefaultInstance();
+          return gpuAccelerator_ == null ?
+              flyteidl.core.Tasks.GPUAccelerator.getDefaultInstance() : gpuAccelerator_;
         }
       }
       /**
@@ -4810,18 +4724,13 @@ public final class Tasks {
           flyteidl.core.Tasks.GPUAccelerator, flyteidl.core.Tasks.GPUAccelerator.Builder, flyteidl.core.Tasks.GPUAcceleratorOrBuilder> 
           getGpuAcceleratorFieldBuilder() {
         if (gpuAcceleratorBuilder_ == null) {
-          if (!(acceleratorValueCase_ == 1)) {
-            acceleratorValue_ = flyteidl.core.Tasks.GPUAccelerator.getDefaultInstance();
-          }
           gpuAcceleratorBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
               flyteidl.core.Tasks.GPUAccelerator, flyteidl.core.Tasks.GPUAccelerator.Builder, flyteidl.core.Tasks.GPUAcceleratorOrBuilder>(
-                  (flyteidl.core.Tasks.GPUAccelerator) acceleratorValue_,
+                  getGpuAccelerator(),
                   getParentForChildren(),
                   isClean());
-          acceleratorValue_ = null;
+          gpuAccelerator_ = null;
         }
-        acceleratorValueCase_ = 1;
-        onChanged();;
         return gpuAcceleratorBuilder_;
       }
       @java.lang.Override
@@ -20524,77 +20433,76 @@ public final class Tasks {
       "\030\003 \001(\t\"\'\n\013RuntimeType\022\t\n\005OTHER\020\000\022\r\n\tFLYT" +
       "E_SDK\020\001\"k\n\016GPUAccelerator\022\016\n\006device\030\001 \001(" +
       "\t\022\027\n\runpartitioned\030\002 \001(\010H\000\022\030\n\016partition_" +
-      "size\030\003 \001(\tH\000B\026\n\024partition_size_value\"a\n\020" +
-      "ResourceMetadata\0228\n\017gpu_accelerator\030\001 \001(" +
-      "\0132\035.flyteidl.core.GPUAcceleratorH\000B\023\n\021ac" +
-      "celerator_value\"\212\004\n\014TaskMetadata\022\024\n\014disc" +
-      "overable\030\001 \001(\010\022/\n\007runtime\030\002 \001(\0132\036.flytei" +
-      "dl.core.RuntimeMetadata\022*\n\007timeout\030\004 \001(\013" +
-      "2\031.google.protobuf.Duration\022-\n\007retries\030\005" +
-      " \001(\0132\034.flyteidl.core.RetryStrategy\022\031\n\021di" +
-      "scovery_version\030\006 \001(\t\022 \n\030deprecated_erro" +
-      "r_message\030\007 \001(\t\022\027\n\rinterruptible\030\010 \001(\010H\000" +
-      "\022\032\n\022cache_serializable\030\t \001(\010\022\026\n\016generate" +
-      "s_deck\030\n \001(\010\0223\n\004tags\030\013 \003(\0132%.flyteidl.co" +
-      "re.TaskMetadata.TagsEntry\022\031\n\021pod_templat" +
-      "e_name\030\014 \001(\t\022:\n\021resource_metadata\030\r \001(\0132" +
-      "\037.flyteidl.core.ResourceMetadata\032+\n\tTags" +
-      "Entry\022\013\n\003key\030\001 \001(\t\022\r\n\005value\030\002 \001(\t:\0028\001B\025\n" +
-      "\023interruptible_value\"\220\004\n\014TaskTemplate\022%\n" +
-      "\002id\030\001 \001(\0132\031.flyteidl.core.Identifier\022\014\n\004" +
-      "type\030\002 \001(\t\022-\n\010metadata\030\003 \001(\0132\033.flyteidl." +
-      "core.TaskMetadata\0220\n\tinterface\030\004 \001(\0132\035.f" +
-      "lyteidl.core.TypedInterface\022\'\n\006custom\030\005 " +
-      "\001(\0132\027.google.protobuf.Struct\022-\n\tcontaine" +
-      "r\030\006 \001(\0132\030.flyteidl.core.ContainerH\000\022(\n\007k" +
-      "8s_pod\030\021 \001(\0132\025.flyteidl.core.K8sPodH\000\022!\n" +
-      "\003sql\030\022 \001(\0132\022.flyteidl.core.SqlH\000\022\031\n\021task" +
-      "_type_version\030\007 \001(\005\0228\n\020security_context\030" +
-      "\010 \001(\0132\036.flyteidl.core.SecurityContext\0227\n" +
-      "\006config\030\020 \003(\0132\'.flyteidl.core.TaskTempla" +
-      "te.ConfigEntry\032-\n\013ConfigEntry\022\013\n\003key\030\001 \001" +
-      "(\t\022\r\n\005value\030\002 \001(\t:\0028\001B\010\n\006target\"\'\n\rConta" +
-      "inerPort\022\026\n\016container_port\030\001 \001(\r\"\255\003\n\tCon" +
-      "tainer\022\r\n\005image\030\001 \001(\t\022\017\n\007command\030\002 \003(\t\022\014" +
-      "\n\004args\030\003 \003(\t\022+\n\tresources\030\004 \001(\0132\030.flytei" +
-      "dl.core.Resources\022(\n\003env\030\005 \003(\0132\033.flyteid" +
-      "l.core.KeyValuePair\022/\n\006config\030\006 \003(\0132\033.fl" +
-      "yteidl.core.KeyValuePairB\002\030\001\022+\n\005ports\030\007 " +
-      "\003(\0132\034.flyteidl.core.ContainerPort\0225\n\013dat" +
-      "a_config\030\t \001(\0132 .flyteidl.core.DataLoadi" +
-      "ngConfig\022;\n\014architecture\030\n \001(\0162%.flyteid" +
-      "l.core.Container.Architecture\"I\n\014Archite" +
-      "cture\022\013\n\007UNKNOWN\020\000\022\t\n\005AMD64\020\001\022\t\n\005ARM64\020\002" +
-      "\022\n\n\006ARM_V6\020\003\022\n\n\006ARM_V7\020\004\"\233\002\n\nIOStrategy\022" +
-      "=\n\rdownload_mode\030\001 \001(\0162&.flyteidl.core.I" +
-      "OStrategy.DownloadMode\0229\n\013upload_mode\030\002 " +
-      "\001(\0162$.flyteidl.core.IOStrategy.UploadMod" +
-      "e\"L\n\014DownloadMode\022\022\n\016DOWNLOAD_EAGER\020\000\022\023\n" +
-      "\017DOWNLOAD_STREAM\020\001\022\023\n\017DO_NOT_DOWNLOAD\020\002\"" +
-      "E\n\nUploadMode\022\022\n\016UPLOAD_ON_EXIT\020\000\022\020\n\014UPL" +
-      "OAD_EAGER\020\001\022\021\n\rDO_NOT_UPLOAD\020\002\"\363\001\n\021DataL" +
-      "oadingConfig\022\017\n\007enabled\030\001 \001(\010\022\022\n\ninput_p" +
-      "ath\030\002 \001(\t\022\023\n\013output_path\030\003 \001(\t\022A\n\006format" +
-      "\030\004 \001(\01621.flyteidl.core.DataLoadingConfig" +
-      ".LiteralMapFormat\022.\n\013io_strategy\030\005 \001(\0132\031" +
-      ".flyteidl.core.IOStrategy\"1\n\020LiteralMapF" +
-      "ormat\022\010\n\004JSON\020\000\022\010\n\004YAML\020\001\022\t\n\005PROTO\020\002\"\236\001\n" +
-      "\006K8sPod\0222\n\010metadata\030\001 \001(\0132 .flyteidl.cor" +
-      "e.K8sObjectMetadata\022)\n\010pod_spec\030\002 \001(\0132\027." +
-      "google.protobuf.Struct\0225\n\013data_config\030\003 " +
-      "\001(\0132 .flyteidl.core.DataLoadingConfig\"\374\001" +
-      "\n\021K8sObjectMetadata\022<\n\006labels\030\001 \003(\0132,.fl" +
-      "yteidl.core.K8sObjectMetadata.LabelsEntr" +
-      "y\022F\n\013annotations\030\002 \003(\01321.flyteidl.core.K" +
-      "8sObjectMetadata.AnnotationsEntry\032-\n\013Lab" +
-      "elsEntry\022\013\n\003key\030\001 \001(\t\022\r\n\005value\030\002 \001(\t:\0028\001" +
-      "\0322\n\020AnnotationsEntry\022\013\n\003key\030\001 \001(\t\022\r\n\005val" +
-      "ue\030\002 \001(\t:\0028\001\"~\n\003Sql\022\021\n\tstatement\030\001 \001(\t\022+" +
-      "\n\007dialect\030\002 \001(\0162\032.flyteidl.core.Sql.Dial" +
-      "ect\"7\n\007Dialect\022\r\n\tUNDEFINED\020\000\022\010\n\004ANSI\020\001\022" +
-      "\010\n\004HIVE\020\002\022\t\n\005OTHER\020\003B6Z4github.com/flyte" +
-      "org/flyteidl/gen/pb-go/flyteidl/coreb\006pr" +
-      "oto3"
+      "size\030\003 \001(\tH\000B\026\n\024partition_size_value\"J\n\020" +
+      "ResourceMetadata\0226\n\017gpu_accelerator\030\001 \001(" +
+      "\0132\035.flyteidl.core.GPUAccelerator\"\212\004\n\014Tas" +
+      "kMetadata\022\024\n\014discoverable\030\001 \001(\010\022/\n\007runti" +
+      "me\030\002 \001(\0132\036.flyteidl.core.RuntimeMetadata" +
+      "\022*\n\007timeout\030\004 \001(\0132\031.google.protobuf.Dura" +
+      "tion\022-\n\007retries\030\005 \001(\0132\034.flyteidl.core.Re" +
+      "tryStrategy\022\031\n\021discovery_version\030\006 \001(\t\022 " +
+      "\n\030deprecated_error_message\030\007 \001(\t\022\027\n\rinte" +
+      "rruptible\030\010 \001(\010H\000\022\032\n\022cache_serializable\030" +
+      "\t \001(\010\022\026\n\016generates_deck\030\n \001(\010\0223\n\004tags\030\013 " +
+      "\003(\0132%.flyteidl.core.TaskMetadata.TagsEnt" +
+      "ry\022\031\n\021pod_template_name\030\014 \001(\t\022:\n\021resourc" +
+      "e_metadata\030\r \001(\0132\037.flyteidl.core.Resourc" +
+      "eMetadata\032+\n\tTagsEntry\022\013\n\003key\030\001 \001(\t\022\r\n\005v" +
+      "alue\030\002 \001(\t:\0028\001B\025\n\023interruptible_value\"\220\004" +
+      "\n\014TaskTemplate\022%\n\002id\030\001 \001(\0132\031.flyteidl.co" +
+      "re.Identifier\022\014\n\004type\030\002 \001(\t\022-\n\010metadata\030" +
+      "\003 \001(\0132\033.flyteidl.core.TaskMetadata\0220\n\tin" +
+      "terface\030\004 \001(\0132\035.flyteidl.core.TypedInter" +
+      "face\022\'\n\006custom\030\005 \001(\0132\027.google.protobuf.S" +
+      "truct\022-\n\tcontainer\030\006 \001(\0132\030.flyteidl.core" +
+      ".ContainerH\000\022(\n\007k8s_pod\030\021 \001(\0132\025.flyteidl" +
+      ".core.K8sPodH\000\022!\n\003sql\030\022 \001(\0132\022.flyteidl.c" +
+      "ore.SqlH\000\022\031\n\021task_type_version\030\007 \001(\005\0228\n\020" +
+      "security_context\030\010 \001(\0132\036.flyteidl.core.S" +
+      "ecurityContext\0227\n\006config\030\020 \003(\0132\'.flyteid" +
+      "l.core.TaskTemplate.ConfigEntry\032-\n\013Confi" +
+      "gEntry\022\013\n\003key\030\001 \001(\t\022\r\n\005value\030\002 \001(\t:\0028\001B\010" +
+      "\n\006target\"\'\n\rContainerPort\022\026\n\016container_p" +
+      "ort\030\001 \001(\r\"\255\003\n\tContainer\022\r\n\005image\030\001 \001(\t\022\017" +
+      "\n\007command\030\002 \003(\t\022\014\n\004args\030\003 \003(\t\022+\n\tresourc" +
+      "es\030\004 \001(\0132\030.flyteidl.core.Resources\022(\n\003en" +
+      "v\030\005 \003(\0132\033.flyteidl.core.KeyValuePair\022/\n\006" +
+      "config\030\006 \003(\0132\033.flyteidl.core.KeyValuePai" +
+      "rB\002\030\001\022+\n\005ports\030\007 \003(\0132\034.flyteidl.core.Con" +
+      "tainerPort\0225\n\013data_config\030\t \001(\0132 .flytei" +
+      "dl.core.DataLoadingConfig\022;\n\014architectur" +
+      "e\030\n \001(\0162%.flyteidl.core.Container.Archit" +
+      "ecture\"I\n\014Architecture\022\013\n\007UNKNOWN\020\000\022\t\n\005A" +
+      "MD64\020\001\022\t\n\005ARM64\020\002\022\n\n\006ARM_V6\020\003\022\n\n\006ARM_V7\020" +
+      "\004\"\233\002\n\nIOStrategy\022=\n\rdownload_mode\030\001 \001(\0162" +
+      "&.flyteidl.core.IOStrategy.DownloadMode\022" +
+      "9\n\013upload_mode\030\002 \001(\0162$.flyteidl.core.IOS" +
+      "trategy.UploadMode\"L\n\014DownloadMode\022\022\n\016DO" +
+      "WNLOAD_EAGER\020\000\022\023\n\017DOWNLOAD_STREAM\020\001\022\023\n\017D" +
+      "O_NOT_DOWNLOAD\020\002\"E\n\nUploadMode\022\022\n\016UPLOAD" +
+      "_ON_EXIT\020\000\022\020\n\014UPLOAD_EAGER\020\001\022\021\n\rDO_NOT_U" +
+      "PLOAD\020\002\"\363\001\n\021DataLoadingConfig\022\017\n\007enabled" +
+      "\030\001 \001(\010\022\022\n\ninput_path\030\002 \001(\t\022\023\n\013output_pat" +
+      "h\030\003 \001(\t\022A\n\006format\030\004 \001(\01621.flyteidl.core." +
+      "DataLoadingConfig.LiteralMapFormat\022.\n\013io" +
+      "_strategy\030\005 \001(\0132\031.flyteidl.core.IOStrate" +
+      "gy\"1\n\020LiteralMapFormat\022\010\n\004JSON\020\000\022\010\n\004YAML" +
+      "\020\001\022\t\n\005PROTO\020\002\"\236\001\n\006K8sPod\0222\n\010metadata\030\001 \001" +
+      "(\0132 .flyteidl.core.K8sObjectMetadata\022)\n\010" +
+      "pod_spec\030\002 \001(\0132\027.google.protobuf.Struct\022" +
+      "5\n\013data_config\030\003 \001(\0132 .flyteidl.core.Dat" +
+      "aLoadingConfig\"\374\001\n\021K8sObjectMetadata\022<\n\006" +
+      "labels\030\001 \003(\0132,.flyteidl.core.K8sObjectMe" +
+      "tadata.LabelsEntry\022F\n\013annotations\030\002 \003(\0132" +
+      "1.flyteidl.core.K8sObjectMetadata.Annota" +
+      "tionsEntry\032-\n\013LabelsEntry\022\013\n\003key\030\001 \001(\t\022\r" +
+      "\n\005value\030\002 \001(\t:\0028\001\0322\n\020AnnotationsEntry\022\013\n" +
+      "\003key\030\001 \001(\t\022\r\n\005value\030\002 \001(\t:\0028\001\"~\n\003Sql\022\021\n\t" +
+      "statement\030\001 \001(\t\022+\n\007dialect\030\002 \001(\0162\032.flyte" +
+      "idl.core.Sql.Dialect\"7\n\007Dialect\022\r\n\tUNDEF" +
+      "INED\020\000\022\010\n\004ANSI\020\001\022\010\n\004HIVE\020\002\022\t\n\005OTHER\020\003B6Z" +
+      "4github.com/flyteorg/flyteidl/gen/pb-go/" +
+      "flyteidl/coreb\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
@@ -20643,7 +20551,7 @@ public final class Tasks {
     internal_static_flyteidl_core_ResourceMetadata_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_flyteidl_core_ResourceMetadata_descriptor,
-        new java.lang.String[] { "GpuAccelerator", "AcceleratorValue", });
+        new java.lang.String[] { "GpuAccelerator", });
     internal_static_flyteidl_core_TaskMetadata_descriptor =
       getDescriptor().getMessageTypes().get(4);
     internal_static_flyteidl_core_TaskMetadata_fieldAccessorTable = new

@@ -1046,17 +1046,8 @@ pub mod gpu_accelerator {
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(Clone, PartialEq, ::prost::Message)]
 pub struct ResourceMetadata {
-    #[prost(oneof="resource_metadata::AcceleratorValue", tags="1")]
-    pub accelerator_value: ::core::option::Option<resource_metadata::AcceleratorValue>,
-}
-/// Nested message and enum types in `ResourceMetadata`.
-pub mod resource_metadata {
-    #[allow(clippy::derive_partial_eq_without_eq)]
-#[derive(Clone, PartialEq, ::prost::Oneof)]
-    pub enum AcceleratorValue {
-        #[prost(message, tag="1")]
-        GpuAccelerator(super::GpuAccelerator),
-    }
+    #[prost(message, optional, tag="1")]
+    pub gpu_accelerator: ::core::option::Option<GpuAccelerator>,
 }
 /// Task Metadata
 #[allow(clippy::derive_partial_eq_without_eq)]

@@ -286,20 +286,14 @@ func (m *ResourceMetadata) Validate() error {
 		return nil
 	}
 
-	switch m.AcceleratorValue.(type) {
-
-	case *ResourceMetadata_GpuAccelerator:
-
-		if v, ok := interface{}(m.GetGpuAccelerator()).(interface{ Validate() error }); ok {
-			if err := v.Validate(); err != nil {
-				return ResourceMetadataValidationError{
-					field:  "GpuAccelerator",
-					reason: "embedded message failed validation",
-					cause:  err,
-				}
+	if v, ok := interface{}(m.GetGpuAccelerator()).(interface{ Validate() error }); ok {
+		if err := v.Validate(); err != nil {
+			return ResourceMetadataValidationError{
+				field:  "GpuAccelerator",
+				reason: "embedded message failed validation",
+				cause:  err,
 			}
 		}
-
 	}
 
 	return nil
