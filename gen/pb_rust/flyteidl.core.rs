@@ -1046,6 +1046,12 @@ pub mod gpu_accelerator {
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(Clone, PartialEq, ::prost::Message)]
 pub struct ResourceMetadata {
+    /// Selection of GPU accelerators currently involves using node selectors and/or
+    /// tolerations to schedule a given workload on the right node group. Given that
+    /// these are attributes of the pod, and not directly associated with the primary
+    /// container's resource specification (the `nvidia.com/gpu` resource name is used
+    /// across accelerators), we pass this request through as resource metadata
+    /// instead.
     #[prost(message, optional, tag="1")]
     pub gpu_accelerator: ::core::option::Option<GpuAccelerator>,
 }

@@ -53,6 +53,7 @@ class CoreResourceMetadata(object):
     def gpu_accelerator(self):
         """Gets the gpu_accelerator of this CoreResourceMetadata.  # noqa: E501
 
+        Selection of GPU accelerators currently involves using node selectors and/or tolerations to schedule a given workload on the right node group. Given that these are attributes of the pod, and not directly associated with the primary container's resource specification (the `nvidia.com/gpu` resource name is used across accelerators), we pass this request through as resource metadata instead.  # noqa: E501
 
         :return: The gpu_accelerator of this CoreResourceMetadata.  # noqa: E501
         :rtype: CoreGPUAccelerator
@@ -63,6 +64,7 @@ class CoreResourceMetadata(object):
     def gpu_accelerator(self, gpu_accelerator):
         """Sets the gpu_accelerator of this CoreResourceMetadata.
 
+        Selection of GPU accelerators currently involves using node selectors and/or tolerations to schedule a given workload on the right node group. Given that these are attributes of the pod, and not directly associated with the primary container's resource specification (the `nvidia.com/gpu` resource name is used across accelerators), we pass this request through as resource metadata instead.  # noqa: E501
 
         :param gpu_accelerator: The gpu_accelerator of this CoreResourceMetadata.  # noqa: E501
         :type: CoreGPUAccelerator

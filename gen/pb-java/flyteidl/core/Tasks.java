@@ -4177,14 +4177,41 @@ public final class Tasks {
       com.google.protobuf.MessageOrBuilder {
 
     /**
+     * <pre>
+     * Selection of GPU accelerators currently involves using node selectors and/or
+     * tolerations to schedule a given workload on the right node group. Given that
+     * these are attributes of the pod, and not directly associated with the primary
+     * container's resource specification (the `nvidia.com/gpu` resource name is used
+     * across accelerators), we pass this request through as resource metadata
+     * instead.
+     * </pre>
+     *
      * <code>.flyteidl.core.GPUAccelerator gpu_accelerator = 1;</code>
      */
     boolean hasGpuAccelerator();
     /**
+     * <pre>
+     * Selection of GPU accelerators currently involves using node selectors and/or
+     * tolerations to schedule a given workload on the right node group. Given that
+     * these are attributes of the pod, and not directly associated with the primary
+     * container's resource specification (the `nvidia.com/gpu` resource name is used
+     * across accelerators), we pass this request through as resource metadata
+     * instead.
+     * </pre>
+     *
      * <code>.flyteidl.core.GPUAccelerator gpu_accelerator = 1;</code>
      */
     flyteidl.core.Tasks.GPUAccelerator getGpuAccelerator();
     /**
+     * <pre>
+     * Selection of GPU accelerators currently involves using node selectors and/or
+     * tolerations to schedule a given workload on the right node group. Given that
+     * these are attributes of the pod, and not directly associated with the primary
+     * container's resource specification (the `nvidia.com/gpu` resource name is used
+     * across accelerators), we pass this request through as resource metadata
+     * instead.
+     * </pre>
+     *
      * <code>.flyteidl.core.GPUAccelerator gpu_accelerator = 1;</code>
      */
     flyteidl.core.Tasks.GPUAcceleratorOrBuilder getGpuAcceleratorOrBuilder();
@@ -4280,18 +4307,45 @@ public final class Tasks {
     public static final int GPU_ACCELERATOR_FIELD_NUMBER = 1;
     private flyteidl.core.Tasks.GPUAccelerator gpuAccelerator_;
     /**
+     * <pre>
+     * Selection of GPU accelerators currently involves using node selectors and/or
+     * tolerations to schedule a given workload on the right node group. Given that
+     * these are attributes of the pod, and not directly associated with the primary
+     * container's resource specification (the `nvidia.com/gpu` resource name is used
+     * across accelerators), we pass this request through as resource metadata
+     * instead.
+     * </pre>
+     *
      * <code>.flyteidl.core.GPUAccelerator gpu_accelerator = 1;</code>
      */
     public boolean hasGpuAccelerator() {
       return gpuAccelerator_ != null;
     }
     /**
+     * <pre>
+     * Selection of GPU accelerators currently involves using node selectors and/or
+     * tolerations to schedule a given workload on the right node group. Given that
+     * these are attributes of the pod, and not directly associated with the primary
+     * container's resource specification (the `nvidia.com/gpu` resource name is used
+     * across accelerators), we pass this request through as resource metadata
+     * instead.
+     * </pre>
+     *
      * <code>.flyteidl.core.GPUAccelerator gpu_accelerator = 1;</code>
      */
     public flyteidl.core.Tasks.GPUAccelerator getGpuAccelerator() {
       return gpuAccelerator_ == null ? flyteidl.core.Tasks.GPUAccelerator.getDefaultInstance() : gpuAccelerator_;
     }
     /**
+     * <pre>
+     * Selection of GPU accelerators currently involves using node selectors and/or
+     * tolerations to schedule a given workload on the right node group. Given that
+     * these are attributes of the pod, and not directly associated with the primary
+     * container's resource specification (the `nvidia.com/gpu` resource name is used
+     * across accelerators), we pass this request through as resource metadata
+     * instead.
+     * </pre>
+     *
      * <code>.flyteidl.core.GPUAccelerator gpu_accelerator = 1;</code>
      */
     public flyteidl.core.Tasks.GPUAcceleratorOrBuilder getGpuAcceleratorOrBuilder() {
@@ -4621,12 +4675,30 @@ public final class Tasks {
       private com.google.protobuf.SingleFieldBuilderV3<
           flyteidl.core.Tasks.GPUAccelerator, flyteidl.core.Tasks.GPUAccelerator.Builder, flyteidl.core.Tasks.GPUAcceleratorOrBuilder> gpuAcceleratorBuilder_;
       /**
+       * <pre>
+       * Selection of GPU accelerators currently involves using node selectors and/or
+       * tolerations to schedule a given workload on the right node group. Given that
+       * these are attributes of the pod, and not directly associated with the primary
+       * container's resource specification (the `nvidia.com/gpu` resource name is used
+       * across accelerators), we pass this request through as resource metadata
+       * instead.
+       * </pre>
+       *
        * <code>.flyteidl.core.GPUAccelerator gpu_accelerator = 1;</code>
        */
       public boolean hasGpuAccelerator() {
         return gpuAcceleratorBuilder_ != null || gpuAccelerator_ != null;
       }
       /**
+       * <pre>
+       * Selection of GPU accelerators currently involves using node selectors and/or
+       * tolerations to schedule a given workload on the right node group. Given that
+       * these are attributes of the pod, and not directly associated with the primary
+       * container's resource specification (the `nvidia.com/gpu` resource name is used
+       * across accelerators), we pass this request through as resource metadata
+       * instead.
+       * </pre>
+       *
        * <code>.flyteidl.core.GPUAccelerator gpu_accelerator = 1;</code>
        */
       public flyteidl.core.Tasks.GPUAccelerator getGpuAccelerator() {
@@ -4637,6 +4709,15 @@ public final class Tasks {
         }
       }
       /**
+       * <pre>
+       * Selection of GPU accelerators currently involves using node selectors and/or
+       * tolerations to schedule a given workload on the right node group. Given that
+       * these are attributes of the pod, and not directly associated with the primary
+       * container's resource specification (the `nvidia.com/gpu` resource name is used
+       * across accelerators), we pass this request through as resource metadata
+       * instead.
+       * </pre>
+       *
        * <code>.flyteidl.core.GPUAccelerator gpu_accelerator = 1;</code>
        */
       public Builder setGpuAccelerator(flyteidl.core.Tasks.GPUAccelerator value) {
@@ -4653,6 +4734,15 @@ public final class Tasks {
         return this;
       }
       /**
+       * <pre>
+       * Selection of GPU accelerators currently involves using node selectors and/or
+       * tolerations to schedule a given workload on the right node group. Given that
+       * these are attributes of the pod, and not directly associated with the primary
+       * container's resource specification (the `nvidia.com/gpu` resource name is used
+       * across accelerators), we pass this request through as resource metadata
+       * instead.
+       * </pre>
+       *
        * <code>.flyteidl.core.GPUAccelerator gpu_accelerator = 1;</code>
        */
       public Builder setGpuAccelerator(
@@ -4667,6 +4757,15 @@ public final class Tasks {
         return this;
       }
       /**
+       * <pre>
+       * Selection of GPU accelerators currently involves using node selectors and/or
+       * tolerations to schedule a given workload on the right node group. Given that
+       * these are attributes of the pod, and not directly associated with the primary
+       * container's resource specification (the `nvidia.com/gpu` resource name is used
+       * across accelerators), we pass this request through as resource metadata
+       * instead.
+       * </pre>
+       *
        * <code>.flyteidl.core.GPUAccelerator gpu_accelerator = 1;</code>
        */
       public Builder mergeGpuAccelerator(flyteidl.core.Tasks.GPUAccelerator value) {
@@ -4685,6 +4784,15 @@ public final class Tasks {
         return this;
       }
       /**
+       * <pre>
+       * Selection of GPU accelerators currently involves using node selectors and/or
+       * tolerations to schedule a given workload on the right node group. Given that
+       * these are attributes of the pod, and not directly associated with the primary
+       * container's resource specification (the `nvidia.com/gpu` resource name is used
+       * across accelerators), we pass this request through as resource metadata
+       * instead.
+       * </pre>
+       *
        * <code>.flyteidl.core.GPUAccelerator gpu_accelerator = 1;</code>
        */
       public Builder clearGpuAccelerator() {
@@ -4699,6 +4807,15 @@ public final class Tasks {
         return this;
       }
       /**
+       * <pre>
+       * Selection of GPU accelerators currently involves using node selectors and/or
+       * tolerations to schedule a given workload on the right node group. Given that
+       * these are attributes of the pod, and not directly associated with the primary
+       * container's resource specification (the `nvidia.com/gpu` resource name is used
+       * across accelerators), we pass this request through as resource metadata
+       * instead.
+       * </pre>
+       *
        * <code>.flyteidl.core.GPUAccelerator gpu_accelerator = 1;</code>
        */
       public flyteidl.core.Tasks.GPUAccelerator.Builder getGpuAcceleratorBuilder() {
@@ -4707,6 +4824,15 @@ public final class Tasks {
         return getGpuAcceleratorFieldBuilder().getBuilder();
       }
       /**
+       * <pre>
+       * Selection of GPU accelerators currently involves using node selectors and/or
+       * tolerations to schedule a given workload on the right node group. Given that
+       * these are attributes of the pod, and not directly associated with the primary
+       * container's resource specification (the `nvidia.com/gpu` resource name is used
+       * across accelerators), we pass this request through as resource metadata
+       * instead.
+       * </pre>
+       *
        * <code>.flyteidl.core.GPUAccelerator gpu_accelerator = 1;</code>
        */
       public flyteidl.core.Tasks.GPUAcceleratorOrBuilder getGpuAcceleratorOrBuilder() {
@@ -4718,6 +4844,15 @@ public final class Tasks {
         }
       }
       /**
+       * <pre>
+       * Selection of GPU accelerators currently involves using node selectors and/or
+       * tolerations to schedule a given workload on the right node group. Given that
+       * these are attributes of the pod, and not directly associated with the primary
+       * container's resource specification (the `nvidia.com/gpu` resource name is used
+       * across accelerators), we pass this request through as resource metadata
+       * instead.
+       * </pre>
+       *
        * <code>.flyteidl.core.GPUAccelerator gpu_accelerator = 1;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<

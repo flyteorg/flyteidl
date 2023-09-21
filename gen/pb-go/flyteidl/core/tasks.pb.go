@@ -507,6 +507,12 @@ func (*GPUAccelerator) XXX_OneofWrappers() []interface{} {
 
 // Additional metadata associated with resources to allocate to a task
 type ResourceMetadata struct {
+	// Selection of GPU accelerators currently involves using node selectors and/or
+	// tolerations to schedule a given workload on the right node group. Given that
+	// these are attributes of the pod, and not directly associated with the primary
+	// container's resource specification (the `nvidia.com/gpu` resource name is used
+	// across accelerators), we pass this request through as resource metadata
+	// instead.
 	GpuAccelerator       *GPUAccelerator `protobuf:"bytes,1,opt,name=gpu_accelerator,json=gpuAccelerator,proto3" json:"gpu_accelerator,omitempty"`
 	XXX_NoUnkeyedLiteral struct{}        `json:"-"`
 	XXX_unrecognized     []byte          `json:"-"`

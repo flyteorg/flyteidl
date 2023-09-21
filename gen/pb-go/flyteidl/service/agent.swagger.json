@@ -683,7 +683,8 @@
       "type": "object",
       "properties": {
         "gpu_accelerator": {
-          "$ref": "#/definitions/coreGPUAccelerator"
+          "$ref": "#/definitions/coreGPUAccelerator",
+          "description": "Selection of GPU accelerators currently involves using node selectors and/or\ntolerations to schedule a given workload on the right node group. Given that\nthese are attributes of the pod, and not directly associated with the primary\ncontainer's resource specification (the `nvidia.com/gpu` resource name is used\nacross accelerators), we pass this request through as resource metadata\ninstead."
         }
       },
       "title": "Additional metadata associated with resources to allocate to a task"
