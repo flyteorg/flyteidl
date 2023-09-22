@@ -12,8 +12,18 @@ from typing import ClassVar as _ClassVar, Iterable as _Iterable, Mapping as _Map
 
 DESCRIPTOR: _descriptor.FileDescriptor
 
+class GPUAccelerator(_message.Message):
+    __slots__ = ["device", "unpartitioned", "partition_size"]
+    DEVICE_FIELD_NUMBER: _ClassVar[int]
+    UNPARTITIONED_FIELD_NUMBER: _ClassVar[int]
+    PARTITION_SIZE_FIELD_NUMBER: _ClassVar[int]
+    device: str
+    unpartitioned: bool
+    partition_size: str
+    def __init__(self, device: _Optional[str] = ..., unpartitioned: bool = ..., partition_size: _Optional[str] = ...) -> None: ...
+
 class Resources(_message.Message):
-    __slots__ = ["requests", "limits"]
+    __slots__ = ["requests", "limits", "gpu_accelerator"]
     class ResourceName(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
         __slots__ = []
         UNKNOWN: _ClassVar[Resources.ResourceName]
@@ -37,9 +47,11 @@ class Resources(_message.Message):
         def __init__(self, name: _Optional[_Union[Resources.ResourceName, str]] = ..., value: _Optional[str] = ...) -> None: ...
     REQUESTS_FIELD_NUMBER: _ClassVar[int]
     LIMITS_FIELD_NUMBER: _ClassVar[int]
+    GPU_ACCELERATOR_FIELD_NUMBER: _ClassVar[int]
     requests: _containers.RepeatedCompositeFieldContainer[Resources.ResourceEntry]
     limits: _containers.RepeatedCompositeFieldContainer[Resources.ResourceEntry]
-    def __init__(self, requests: _Optional[_Iterable[_Union[Resources.ResourceEntry, _Mapping]]] = ..., limits: _Optional[_Iterable[_Union[Resources.ResourceEntry, _Mapping]]] = ...) -> None: ...
+    gpu_accelerator: GPUAccelerator
+    def __init__(self, requests: _Optional[_Iterable[_Union[Resources.ResourceEntry, _Mapping]]] = ..., limits: _Optional[_Iterable[_Union[Resources.ResourceEntry, _Mapping]]] = ..., gpu_accelerator: _Optional[_Union[GPUAccelerator, _Mapping]] = ...) -> None: ...
 
 class RuntimeMetadata(_message.Message):
     __slots__ = ["type", "version", "flavor"]

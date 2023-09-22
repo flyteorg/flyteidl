@@ -241,6 +241,7 @@ Class | Method | HTTP request | Description
  - [CoreError](docs/CoreError.md)
  - [CoreExecutionError](docs/CoreExecutionError.md)
  - [CoreGateNode](docs/CoreGateNode.md)
+ - [CoreGpuAccelerator](docs/CoreGpuAccelerator.md)
  - [CoreIdentifier](docs/CoreIdentifier.md)
  - [CoreIdentity](docs/CoreIdentity.md)
  - [CoreIfBlock](docs/CoreIfBlock.md)

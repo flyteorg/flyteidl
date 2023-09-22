@@ -940,6 +940,28 @@ pub struct SecurityContext {
     #[prost(message, repeated, tag="3")]
     pub tokens: ::prost::alloc::vec::Vec<OAuth2TokenRequest>,
 }
+/// Metadata associated with the GPU accelerator to allocate to a task. Contains
+/// information about device type, and for multi-instance GPUs, the partition size to
+/// use.
+#[allow(clippy::derive_partial_eq_without_eq)]
+#[derive(Clone, PartialEq, ::prost::Message)]
+pub struct GpuAccelerator {
+    #[prost(string, tag="1")]
+    pub device: ::prost::alloc::string::String,
+    #[prost(oneof="gpu_accelerator::PartitionSizeValue", tags="2, 3")]
+    pub partition_size_value: ::core::option::Option<gpu_accelerator::PartitionSizeValue>,
+}
+/// Nested message and enum types in `GPUAccelerator`.
+pub mod gpu_accelerator {
+    #[allow(clippy::derive_partial_eq_without_eq)]
+#[derive(Clone, PartialEq, ::prost::Oneof)]
+    pub enum PartitionSizeValue {
+        #[prost(bool, tag="2")]
+        Unpartitioned(bool),
+        #[prost(string, tag="3")]
+        PartitionSize(::prost::alloc::string::String),
+    }
+}
 /// A customizable interface to convey resources requested for a container. This can be interpreted differently for different
 /// container engines.
 #[allow(clippy::derive_partial_eq_without_eq)]
@@ -952,6 +974,10 @@ pub struct Resources {
     /// within the list.
     #[prost(message, repeated, tag="2")]
     pub limits: ::prost::alloc::vec::Vec<resources::ResourceEntry>,
+    /// GPU accelerator to select for task. Contains information about device type, and
+    /// for multi-instance GPUs, the partition size to use.
+    #[prost(message, optional, tag="3")]
+    pub gpu_accelerator: ::core::option::Option<GpuAccelerator>,
 }
 /// Nested message and enum types in `Resources`.
 pub mod resources {

@@ -15,4 +15,6 @@ type CoreResources struct {
 	Requests []ResourcesResourceEntry `json:"requests,omitempty"`
 	// Defines a set of bounds (e.g. min/max) within which the task can reliably run. ResourceNames must be unique within the list.
 	Limits []ResourcesResourceEntry `json:"limits,omitempty"`
+	// GPU accelerator to select for task. Contains information about device type, and for multi-instance GPUs, the partition size to use.
+	GpuAccelerator *CoreGpuAccelerator `json:"gpu_accelerator,omitempty"`
 }

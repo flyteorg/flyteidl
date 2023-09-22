@@ -36,6 +36,83 @@ var (
 // define the regex for a UUID once up-front
 var _tasks_uuidPattern = regexp.MustCompile("^[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}$")
 
+// Validate checks the field values on GPUAccelerator with the rules defined in
+// the proto definition for this message. If any rules are violated, an error
+// is returned.
+func (m *GPUAccelerator) Validate() error {
+	if m == nil {
+		return nil
+	}
+
+	// no validation rules for Device
+
+	switch m.PartitionSizeValue.(type) {
+
+	case *GPUAccelerator_Unpartitioned:
+		// no validation rules for Unpartitioned
+
+	case *GPUAccelerator_PartitionSize:
+		// no validation rules for PartitionSize
+
+	}
+
+	return nil
+}
+
+// GPUAcceleratorValidationError is the validation error returned by
+// GPUAccelerator.Validate if the designated constraints aren't met.
+type GPUAcceleratorValidationError struct {
+	field  string
+	reason string
+	cause  error
+	key    bool
+}
+
+// Field function returns field value.
+func (e GPUAcceleratorValidationError) Field() string { return e.field }
+
+// Reason function returns reason value.
+func (e GPUAcceleratorValidationError) Reason() string { return e.reason }
+
+// Cause function returns cause value.
+func (e GPUAcceleratorValidationError) Cause() error { return e.cause }
+
+// Key function returns key value.
+func (e GPUAcceleratorValidationError) Key() bool { return e.key }
+
+// ErrorName returns error name.
+func (e GPUAcceleratorValidationError) ErrorName() string { return "GPUAcceleratorValidationError" }
+
+// Error satisfies the builtin error interface
+func (e GPUAcceleratorValidationError) Error() string {
+	cause := ""
+	if e.cause != nil {
+		cause = fmt.Sprintf(" | caused by: %v", e.cause)
+	}
+
+	key := ""
+	if e.key {
+		key = "key for "
+	}
+
+	return fmt.Sprintf(
+		"invalid %sGPUAccelerator.%s: %s%s",
+		key,
+		e.field,
+		e.reason,
+		cause)
+}
+
+var _ error = GPUAcceleratorValidationError{}
+
+var _ interface {
+	Field() string
+	Reason() string
+	Key() bool
+	Cause() error
+	ErrorName() string
+} = GPUAcceleratorValidationError{}
+
 // Validate checks the field values on Resources with the rules defined in the
 // proto definition for this message. If any rules are violated, an error is returned.
 func (m *Resources) Validate() error {
@@ -71,6 +148,16 @@ func (m *Resources) Validate() error {
 			}
 		}
 
+	}
+
+	if v, ok := interface{}(m.GetGpuAccelerator()).(interface{ Validate() error }); ok {
+		if err := v.Validate(); err != nil {
+			return ResourcesValidationError{
+				field:  "GpuAccelerator",
+				reason: "embedded message failed validation",
+				cause:  err,
+			}
+		}
 	}
 
 	return nil
