@@ -6026,6 +6026,22 @@
       },
       "description": "Represents the error message from the execution."
     },
+    "coreGPUAccelerator": {
+      "type": "object",
+      "properties": {
+        "device": {
+          "type": "string"
+        },
+        "unpartitioned": {
+          "type": "boolean",
+          "format": "boolean"
+        },
+        "partition_size": {
+          "type": "string"
+        }
+      },
+      "description": "Metadata associated with the GPU accelerator to allocate to a task. Contains\ninformation about device type, and for multi-instance GPUs, the partition size to\nuse."
+    },
     "coreGateNode": {
       "type": "object",
       "properties": {
@@ -6605,6 +6621,10 @@
             "$ref": "#/definitions/ResourcesResourceEntry"
           },
           "description": "Defines a set of bounds (e.g. min/max) within which the task can reliably run. ResourceNames must be unique\nwithin the list."
+        },
+        "gpu_accelerator": {
+          "$ref": "#/definitions/coreGPUAccelerator",
+          "description": "GPU accelerator to select for task. Contains information about device type, and\nfor multi-instance GPUs, the partition size to use."
         }
       },
       "description": "A customizable interface to convey resources requested for a container. This can be interpreted differently for different\ncontainer engines."

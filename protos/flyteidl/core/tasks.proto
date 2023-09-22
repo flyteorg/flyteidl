@@ -11,6 +11,17 @@ package flyteidl.core;
 
 option go_package = "github.com/flyteorg/flyteidl/gen/pb-go/flyteidl/core";
 
+// Metadata associated with the GPU accelerator to allocate to a task. Contains
+// information about device type, and for multi-instance GPUs, the partition size to
+// use.
+message GPUAccelerator {
+    string device = 1;
+    oneof partition_size_value {
+        bool unpartitioned = 2;
+        string partition_size = 3;
+    }
+}
+
 // A customizable interface to convey resources requested for a container. This can be interpreted differently for different
 // container engines.
 message Resources {
@@ -41,6 +52,10 @@ message Resources {
     // Defines a set of bounds (e.g. min/max) within which the task can reliably run. ResourceNames must be unique
     // within the list.
     repeated ResourceEntry limits = 2;
+
+    // GPU accelerator to select for task. Contains information about device type, and
+    // for multi-instance GPUs, the partition size to use.
+    GPUAccelerator gpu_accelerator = 3;
 }
 
 // Runtime information. This is loosely defined to allow for extensibility.

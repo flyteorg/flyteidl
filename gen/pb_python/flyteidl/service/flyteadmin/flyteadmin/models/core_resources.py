@@ -16,6 +16,7 @@ import re  # noqa: F401
 
 import six
 
+from flyteadmin.models.core_gpu_accelerator import CoreGPUAccelerator  # noqa: F401,E501
 from flyteadmin.models.resources_resource_entry import ResourcesResourceEntry  # noqa: F401,E501
 
 
@@ -34,25 +35,30 @@ class CoreResources(object):
     """
     swagger_types = {
         'requests': 'list[ResourcesResourceEntry]',
-        'limits': 'list[ResourcesResourceEntry]'
+        'limits': 'list[ResourcesResourceEntry]',
+        'gpu_accelerator': 'CoreGPUAccelerator'
     }
 
     attribute_map = {
         'requests': 'requests',
-        'limits': 'limits'
+        'limits': 'limits',
+        'gpu_accelerator': 'gpu_accelerator'
     }
 
-    def __init__(self, requests=None, limits=None):  # noqa: E501
+    def __init__(self, requests=None, limits=None, gpu_accelerator=None):  # noqa: E501
         """CoreResources - a model defined in Swagger"""  # noqa: E501
 
         self._requests = None
         self._limits = None
+        self._gpu_accelerator = None
         self.discriminator = None
 
         if requests is not None:
             self.requests = requests
         if limits is not None:
             self.limits = limits
+        if gpu_accelerator is not None:
+            self.gpu_accelerator = gpu_accelerator
 
     @property
     def requests(self):
@@ -99,6 +105,29 @@ class CoreResources(object):
         """
 
         self._limits = limits
+
+    @property
+    def gpu_accelerator(self):
+        """Gets the gpu_accelerator of this CoreResources.  # noqa: E501
+
+        GPU accelerator to select for task. Contains information about device type, and for multi-instance GPUs, the partition size to use.  # noqa: E501
+
+        :return: The gpu_accelerator of this CoreResources.  # noqa: E501
+        :rtype: CoreGPUAccelerator
+        """
+        return self._gpu_accelerator
+
+    @gpu_accelerator.setter
+    def gpu_accelerator(self, gpu_accelerator):
+        """Sets the gpu_accelerator of this CoreResources.
+
+        GPU accelerator to select for task. Contains information about device type, and for multi-instance GPUs, the partition size to use.  # noqa: E501
+
+        :param gpu_accelerator: The gpu_accelerator of this CoreResources.  # noqa: E501
+        :type: CoreGPUAccelerator
+        """
+
+        self._gpu_accelerator = gpu_accelerator
 
     def to_dict(self):
         """Returns the model properties as a dict"""
