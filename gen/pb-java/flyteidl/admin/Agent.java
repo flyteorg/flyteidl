@@ -7392,24 +7392,6 @@ public final class Agent {
      * <code>.flyteidl.core.TaskTemplate template = 2;</code>
      */
     flyteidl.core.Tasks.TaskTemplateOrBuilder getTemplateOrBuilder();
-
-    /**
-     * <pre>
-     * Prefix for where task output data will be written. (e.g. s3://my-bucket/randomstring)
-     * </pre>
-     *
-     * <code>string output_prefix = 3;</code>
-     */
-    java.lang.String getOutputPrefix();
-    /**
-     * <pre>
-     * Prefix for where task output data will be written. (e.g. s3://my-bucket/randomstring)
-     * </pre>
-     *
-     * <code>string output_prefix = 3;</code>
-     */
-    com.google.protobuf.ByteString
-        getOutputPrefixBytes();
   }
   /**
    * <pre>
@@ -7428,7 +7410,6 @@ public final class Agent {
       super(builder);
     }
     private DoTaskRequest() {
-      outputPrefix_ = "";
     }
 
     @java.lang.Override
@@ -7479,12 +7460,6 @@ public final class Agent {
                 template_ = subBuilder.buildPartial();
               }
 
-              break;
-            }
-            case 26: {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              outputPrefix_ = s;
               break;
             }
             default: {
@@ -7591,48 +7566,6 @@ public final class Agent {
       return getTemplate();
     }
 
-    public static final int OUTPUT_PREFIX_FIELD_NUMBER = 3;
-    private volatile java.lang.Object outputPrefix_;
-    /**
-     * <pre>
-     * Prefix for where task output data will be written. (e.g. s3://my-bucket/randomstring)
-     * </pre>
-     *
-     * <code>string output_prefix = 3;</code>
-     */
-    public java.lang.String getOutputPrefix() {
-      java.lang.Object ref = outputPrefix_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
-      } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        outputPrefix_ = s;
-        return s;
-      }
-    }
-    /**
-     * <pre>
-     * Prefix for where task output data will be written. (e.g. s3://my-bucket/randomstring)
-     * </pre>
-     *
-     * <code>string output_prefix = 3;</code>
-     */
-    public com.google.protobuf.ByteString
-        getOutputPrefixBytes() {
-      java.lang.Object ref = outputPrefix_;
-      if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        outputPrefix_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-
     private byte memoizedIsInitialized = -1;
     @java.lang.Override
     public final boolean isInitialized() {
@@ -7653,9 +7586,6 @@ public final class Agent {
       if (template_ != null) {
         output.writeMessage(2, getTemplate());
       }
-      if (!getOutputPrefixBytes().isEmpty()) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 3, outputPrefix_);
-      }
       unknownFields.writeTo(output);
     }
 
@@ -7672,9 +7602,6 @@ public final class Agent {
       if (template_ != null) {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(2, getTemplate());
-      }
-      if (!getOutputPrefixBytes().isEmpty()) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, outputPrefix_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -7701,8 +7628,6 @@ public final class Agent {
         if (!getTemplate()
             .equals(other.getTemplate())) return false;
       }
-      if (!getOutputPrefix()
-          .equals(other.getOutputPrefix())) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -7722,8 +7647,6 @@ public final class Agent {
         hash = (37 * hash) + TEMPLATE_FIELD_NUMBER;
         hash = (53 * hash) + getTemplate().hashCode();
       }
-      hash = (37 * hash) + OUTPUT_PREFIX_FIELD_NUMBER;
-      hash = (53 * hash) + getOutputPrefix().hashCode();
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -7873,8 +7796,6 @@ public final class Agent {
           template_ = null;
           templateBuilder_ = null;
         }
-        outputPrefix_ = "";
-
         return this;
       }
 
@@ -7911,7 +7832,6 @@ public final class Agent {
         } else {
           result.template_ = templateBuilder_.build();
         }
-        result.outputPrefix_ = outputPrefix_;
         onBuilt();
         return result;
       }
@@ -7965,10 +7885,6 @@ public final class Agent {
         }
         if (other.hasTemplate()) {
           mergeTemplate(other.getTemplate());
-        }
-        if (!other.getOutputPrefix().isEmpty()) {
-          outputPrefix_ = other.outputPrefix_;
-          onChanged();
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -8321,95 +8237,6 @@ public final class Agent {
           template_ = null;
         }
         return templateBuilder_;
-      }
-
-      private java.lang.Object outputPrefix_ = "";
-      /**
-       * <pre>
-       * Prefix for where task output data will be written. (e.g. s3://my-bucket/randomstring)
-       * </pre>
-       *
-       * <code>string output_prefix = 3;</code>
-       */
-      public java.lang.String getOutputPrefix() {
-        java.lang.Object ref = outputPrefix_;
-        if (!(ref instanceof java.lang.String)) {
-          com.google.protobuf.ByteString bs =
-              (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
-          outputPrefix_ = s;
-          return s;
-        } else {
-          return (java.lang.String) ref;
-        }
-      }
-      /**
-       * <pre>
-       * Prefix for where task output data will be written. (e.g. s3://my-bucket/randomstring)
-       * </pre>
-       *
-       * <code>string output_prefix = 3;</code>
-       */
-      public com.google.protobuf.ByteString
-          getOutputPrefixBytes() {
-        java.lang.Object ref = outputPrefix_;
-        if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
-          outputPrefix_ = b;
-          return b;
-        } else {
-          return (com.google.protobuf.ByteString) ref;
-        }
-      }
-      /**
-       * <pre>
-       * Prefix for where task output data will be written. (e.g. s3://my-bucket/randomstring)
-       * </pre>
-       *
-       * <code>string output_prefix = 3;</code>
-       */
-      public Builder setOutputPrefix(
-          java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  
-        outputPrefix_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <pre>
-       * Prefix for where task output data will be written. (e.g. s3://my-bucket/randomstring)
-       * </pre>
-       *
-       * <code>string output_prefix = 3;</code>
-       */
-      public Builder clearOutputPrefix() {
-        
-        outputPrefix_ = getDefaultInstance().getOutputPrefix();
-        onChanged();
-        return this;
-      }
-      /**
-       * <pre>
-       * Prefix for where task output data will be written. (e.g. s3://my-bucket/randomstring)
-       * </pre>
-       *
-       * <code>string output_prefix = 3;</code>
-       */
-      public Builder setOutputPrefixBytes(
-          com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-        
-        outputPrefix_ = value;
-        onChanged();
-        return this;
       }
       @java.lang.Override
       public final Builder setUnknownFields(
@@ -9175,16 +9002,15 @@ public final class Agent {
       "dmin.State\022*\n\007outputs\030\002 \001(\0132\031.flyteidl.c" +
       "ore.LiteralMap\"=\n\021DeleteTaskRequest\022\021\n\tt" +
       "ask_type\030\001 \001(\t\022\025\n\rresource_meta\030\002 \001(\014\"\024\n" +
-      "\022DeleteTaskResponse\"\200\001\n\rDoTaskRequest\022)\n" +
-      "\006inputs\030\001 \001(\0132\031.flyteidl.core.LiteralMap" +
-      "\022-\n\010template\030\002 \001(\0132\033.flyteidl.core.TaskT" +
-      "emplate\022\025\n\routput_prefix\030\003 \001(\t\"<\n\016DoTask" +
-      "Response\022*\n\010resource\030\001 \001(\0132\030.flyteidl.ad" +
-      "min.Resource*^\n\005State\022\025\n\021RETRYABLE_FAILU" +
-      "RE\020\000\022\025\n\021PERMANENT_FAILURE\020\001\022\013\n\007PENDING\020\002" +
-      "\022\013\n\007RUNNING\020\003\022\r\n\tSUCCEEDED\020\004B7Z5github.c" +
-      "om/flyteorg/flyteidl/gen/pb-go/flyteidl/" +
-      "adminb\006proto3"
+      "\022DeleteTaskResponse\"i\n\rDoTaskRequest\022)\n\006" +
+      "inputs\030\001 \001(\0132\031.flyteidl.core.LiteralMap\022" +
+      "-\n\010template\030\002 \001(\0132\033.flyteidl.core.TaskTe" +
+      "mplate\"<\n\016DoTaskResponse\022*\n\010resource\030\001 \001" +
+      "(\0132\030.flyteidl.admin.Resource*^\n\005State\022\025\n" +
+      "\021RETRYABLE_FAILURE\020\000\022\025\n\021PERMANENT_FAILUR" +
+      "E\020\001\022\013\n\007PENDING\020\002\022\013\n\007RUNNING\020\003\022\r\n\tSUCCEED" +
+      "ED\020\004B7Z5github.com/flyteorg/flyteidl/gen" +
+      "/pb-go/flyteidl/adminb\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
@@ -9273,7 +9099,7 @@ public final class Agent {
     internal_static_flyteidl_admin_DoTaskRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_flyteidl_admin_DoTaskRequest_descriptor,
-        new java.lang.String[] { "Inputs", "Template", "OutputPrefix", });
+        new java.lang.String[] { "Inputs", "Template", });
     internal_static_flyteidl_admin_DoTaskResponse_descriptor =
       getDescriptor().getMessageTypes().get(9);
     internal_static_flyteidl_admin_DoTaskResponse_fieldAccessorTable = new

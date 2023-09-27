@@ -8075,9 +8075,6 @@ export namespace flyteidl {
 
             /** DoTaskRequest template */
             template?: (flyteidl.core.ITaskTemplate|null);
-
-            /** DoTaskRequest outputPrefix */
-            outputPrefix?: (string|null);
         }
 
         /** Represents a DoTaskRequest. */
@@ -8094,9 +8091,6 @@ export namespace flyteidl {
 
             /** DoTaskRequest template. */
             public template?: (flyteidl.core.ITaskTemplate|null);
-
-            /** DoTaskRequest outputPrefix. */
-            public outputPrefix: string;
 
             /**
              * Creates a new DoTaskRequest instance using the specified properties.

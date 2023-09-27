@@ -677,8 +677,6 @@ func (m *DoTaskRequest) Validate() error {
 		}
 	}
 
-	// no validation rules for OutputPrefix
-
 	return nil
 }
 

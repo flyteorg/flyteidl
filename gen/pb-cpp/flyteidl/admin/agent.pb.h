@@ -1385,20 +1385,6 @@ class DoTaskRequest final :
 
   // accessors -------------------------------------------------------
 
-  // string output_prefix = 3;
-  void clear_output_prefix();
-  static const int kOutputPrefixFieldNumber = 3;
-  const ::std::string& output_prefix() const;
-  void set_output_prefix(const ::std::string& value);
-  #if LANG_CXX11
-  void set_output_prefix(::std::string&& value);
-  #endif
-  void set_output_prefix(const char* value);
-  void set_output_prefix(const char* value, size_t size);
-  ::std::string* mutable_output_prefix();
-  ::std::string* release_output_prefix();
-  void set_allocated_output_prefix(::std::string* output_prefix);
-
   // .flyteidl.core.LiteralMap inputs = 1;
   bool has_inputs() const;
   void clear_inputs();
@@ -1422,7 +1408,6 @@ class DoTaskRequest final :
   class HasBitSetters;
 
   ::google::protobuf::internal::InternalMetadataWithArena _internal_metadata_;
-  ::google::protobuf::internal::ArenaStringPtr output_prefix_;
   ::flyteidl::core::LiteralMap* inputs_;
   ::flyteidl::core::TaskTemplate* template__;
   mutable ::google::protobuf::internal::CachedSize _cached_size_;
@@ -2454,59 +2439,6 @@ inline void DoTaskRequest::set_allocated_template_(::flyteidl::core::TaskTemplat
   }
   template__ = template_;
   // @@protoc_insertion_point(field_set_allocated:flyteidl.admin.DoTaskRequest.template)
-}
-
-// string output_prefix = 3;
-inline void DoTaskRequest::clear_output_prefix() {
-  output_prefix_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-}
-inline const ::std::string& DoTaskRequest::output_prefix() const {
-  // @@protoc_insertion_point(field_get:flyteidl.admin.DoTaskRequest.output_prefix)
-  return output_prefix_.GetNoArena();
-}
-inline void DoTaskRequest::set_output_prefix(const ::std::string& value) {
-  
-  output_prefix_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
-  // @@protoc_insertion_point(field_set:flyteidl.admin.DoTaskRequest.output_prefix)
-}
-#if LANG_CXX11
-inline void DoTaskRequest::set_output_prefix(::std::string&& value) {
-  
-  output_prefix_.SetNoArena(
-    &::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::move(value));
-  // @@protoc_insertion_point(field_set_rvalue:flyteidl.admin.DoTaskRequest.output_prefix)
-}
-#endif
-inline void DoTaskRequest::set_output_prefix(const char* value) {
-  GOOGLE_DCHECK(value != nullptr);
-  
-  output_prefix_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
-  // @@protoc_insertion_point(field_set_char:flyteidl.admin.DoTaskRequest.output_prefix)
-}
-inline void DoTaskRequest::set_output_prefix(const char* value, size_t size) {
-  
-  output_prefix_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
-      ::std::string(reinterpret_cast<const char*>(value), size));
-  // @@protoc_insertion_point(field_set_pointer:flyteidl.admin.DoTaskRequest.output_prefix)
-}
-inline ::std::string* DoTaskRequest::mutable_output_prefix() {
-  
-  // @@protoc_insertion_point(field_mutable:flyteidl.admin.DoTaskRequest.output_prefix)
-  return output_prefix_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-}
-inline ::std::string* DoTaskRequest::release_output_prefix() {
-  // @@protoc_insertion_point(field_release:flyteidl.admin.DoTaskRequest.output_prefix)
-  
-  return output_prefix_.ReleaseNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-}
-inline void DoTaskRequest::set_allocated_output_prefix(::std::string* output_prefix) {
-  if (output_prefix != nullptr) {
-    
-  } else {
-    
-  }
-  output_prefix_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), output_prefix);
-  // @@protoc_insertion_point(field_set_allocated:flyteidl.admin.DoTaskRequest.output_prefix)
 }
 
 // -------------------------------------------------------------------

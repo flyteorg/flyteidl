@@ -107,9 +107,6 @@ pub struct DoTaskRequest {
     /// Template of the task that encapsulates all the metadata of the task.
     #[prost(message, optional, tag="2")]
     pub template: ::core::option::Option<super::core::TaskTemplate>,
-    /// Prefix for where task output data will be written. (e.g. s3://my-bucket/randomstring)
-    #[prost(string, tag="3")]
-    pub output_prefix: ::prost::alloc::string::String,
 }
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(Clone, PartialEq, ::prost::Message)]

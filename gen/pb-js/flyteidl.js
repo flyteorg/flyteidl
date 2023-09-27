@@ -19649,7 +19649,6 @@
                  * @interface IDoTaskRequest
                  * @property {flyteidl.core.ILiteralMap|null} [inputs] DoTaskRequest inputs
                  * @property {flyteidl.core.ITaskTemplate|null} [template] DoTaskRequest template
-                 * @property {string|null} [outputPrefix] DoTaskRequest outputPrefix
                  */
     
                 /**
@@ -19684,14 +19683,6 @@
                 DoTaskRequest.prototype.template = null;
     
                 /**
-                 * DoTaskRequest outputPrefix.
-                 * @member {string} outputPrefix
-                 * @memberof flyteidl.admin.DoTaskRequest
-                 * @instance
-                 */
-                DoTaskRequest.prototype.outputPrefix = "";
-    
-                /**
                  * Creates a new DoTaskRequest instance using the specified properties.
                  * @function create
                  * @memberof flyteidl.admin.DoTaskRequest
@@ -19719,8 +19710,6 @@
                         $root.flyteidl.core.LiteralMap.encode(message.inputs, writer.uint32(/* id 1, wireType 2 =*/10).fork()).ldelim();
                     if (message.template != null && message.hasOwnProperty("template"))
                         $root.flyteidl.core.TaskTemplate.encode(message.template, writer.uint32(/* id 2, wireType 2 =*/18).fork()).ldelim();
-                    if (message.outputPrefix != null && message.hasOwnProperty("outputPrefix"))
-                        writer.uint32(/* id 3, wireType 2 =*/26).string(message.outputPrefix);
                     return writer;
                 };
     
@@ -19747,9 +19736,6 @@
                             break;
                         case 2:
                             message.template = $root.flyteidl.core.TaskTemplate.decode(reader, reader.uint32());
-                            break;
-                        case 3:
-                            message.outputPrefix = reader.string();
                             break;
                         default:
                             reader.skipType(tag & 7);
@@ -19780,9 +19766,6 @@
                         if (error)
                             return "template." + error;
                     }
-                    if (message.outputPrefix != null && message.hasOwnProperty("outputPrefix"))
-                        if (!$util.isString(message.outputPrefix))
-                            return "outputPrefix: string expected";
                     return null;
                 };
     
