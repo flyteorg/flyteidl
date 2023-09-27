@@ -793,9 +793,10 @@ var _ interface {
 	ErrorName() string
 } = ParentNodeExecutionMetadataValidationError{}
 
-// Validate checks the field values on Reason with the rules defined in the
-// proto definition for this message. If any rules are violated, an error is returned.
-func (m *Reason) Validate() error {
+// Validate checks the field values on EventReason with the rules defined in
+// the proto definition for this message. If any rules are violated, an error
+// is returned.
+func (m *EventReason) Validate() error {
 	if m == nil {
 		return nil
 	}
@@ -804,7 +805,7 @@ func (m *Reason) Validate() error {
 
 	if v, ok := interface{}(m.GetOccurredAt()).(interface{ Validate() error }); ok {
 		if err := v.Validate(); err != nil {
-			return ReasonValidationError{
+			return EventReasonValidationError{
 				field:  "OccurredAt",
 				reason: "embedded message failed validation",
 				cause:  err,
@@ -815,9 +816,9 @@ func (m *Reason) Validate() error {
 	return nil
 }
 
-// ReasonValidationError is the validation error returned by Reason.Validate if
-// the designated constraints aren't met.
-type ReasonValidationError struct {
+// EventReasonValidationError is the validation error returned by
+// EventReason.Validate if the designated constraints aren't met.
+type EventReasonValidationError struct {
 	field  string
 	reason string
 	cause  error
@@ -825,22 +826,22 @@ type ReasonValidationError struct {
 }
 
 // Field function returns field value.
-func (e ReasonValidationError) Field() string { return e.field }
+func (e EventReasonValidationError) Field() string { return e.field }
 
 // Reason function returns reason value.
-func (e ReasonValidationError) Reason() string { return e.reason }
+func (e EventReasonValidationError) Reason() string { return e.reason }
 
 // Cause function returns cause value.
-func (e ReasonValidationError) Cause() error { return e.cause }
+func (e EventReasonValidationError) Cause() error { return e.cause }
 
 // Key function returns key value.
-func (e ReasonValidationError) Key() bool { return e.key }
+func (e EventReasonValidationError) Key() bool { return e.key }
 
 // ErrorName returns error name.
-func (e ReasonValidationError) ErrorName() string { return "ReasonValidationError" }
+func (e EventReasonValidationError) ErrorName() string { return "EventReasonValidationError" }
 
 // Error satisfies the builtin error interface
-func (e ReasonValidationError) Error() string {
+func (e EventReasonValidationError) Error() string {
 	cause := ""
 	if e.cause != nil {
 		cause = fmt.Sprintf(" | caused by: %v", e.cause)
@@ -852,14 +853,14 @@ func (e ReasonValidationError) Error() string {
 	}
 
 	return fmt.Sprintf(
-		"invalid %sReason.%s: %s%s",
+		"invalid %sEventReason.%s: %s%s",
 		key,
 		e.field,
 		e.reason,
 		cause)
 }
 
-var _ error = ReasonValidationError{}
+var _ error = EventReasonValidationError{}
 
 var _ interface {
 	Field() string
@@ -867,7 +868,7 @@ var _ interface {
 	Key() bool
 	Cause() error
 	ErrorName() string
-} = ReasonValidationError{}
+} = EventReasonValidationError{}
 
 // Validate checks the field values on TaskExecutionEvent with the rules
 // defined in the proto definition for this message. If any rules are

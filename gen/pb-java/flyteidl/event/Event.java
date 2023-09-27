@@ -11113,8 +11113,8 @@ public final class Event {
 
   }
 
-  public interface ReasonOrBuilder extends
-      // @@protoc_insertion_point(interface_extends:flyteidl.event.Reason)
+  public interface EventReasonOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:flyteidl.event.EventReason)
       com.google.protobuf.MessageOrBuilder {
 
     /**
@@ -11161,18 +11161,18 @@ public final class Event {
     com.google.protobuf.TimestampOrBuilder getOccurredAtOrBuilder();
   }
   /**
-   * Protobuf type {@code flyteidl.event.Reason}
+   * Protobuf type {@code flyteidl.event.EventReason}
    */
-  public  static final class Reason extends
+  public  static final class EventReason extends
       com.google.protobuf.GeneratedMessageV3 implements
-      // @@protoc_insertion_point(message_implements:flyteidl.event.Reason)
-      ReasonOrBuilder {
+      // @@protoc_insertion_point(message_implements:flyteidl.event.EventReason)
+      EventReasonOrBuilder {
   private static final long serialVersionUID = 0L;
-    // Use Reason.newBuilder() to construct.
-    private Reason(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+    // Use EventReason.newBuilder() to construct.
+    private EventReason(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
     }
-    private Reason() {
+    private EventReason() {
       reason_ = "";
     }
 
@@ -11181,7 +11181,7 @@ public final class Event {
     getUnknownFields() {
       return this.unknownFields;
     }
-    private Reason(
+    private EventReason(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
@@ -11240,15 +11240,15 @@ public final class Event {
     }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return flyteidl.event.Event.internal_static_flyteidl_event_Reason_descriptor;
+      return flyteidl.event.Event.internal_static_flyteidl_event_EventReason_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return flyteidl.event.Event.internal_static_flyteidl_event_Reason_fieldAccessorTable
+      return flyteidl.event.Event.internal_static_flyteidl_event_EventReason_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              flyteidl.event.Event.Reason.class, flyteidl.event.Event.Reason.Builder.class);
+              flyteidl.event.Event.EventReason.class, flyteidl.event.Event.EventReason.Builder.class);
     }
 
     public static final int REASON_FIELD_NUMBER = 1;
@@ -11372,10 +11372,10 @@ public final class Event {
       if (obj == this) {
        return true;
       }
-      if (!(obj instanceof flyteidl.event.Event.Reason)) {
+      if (!(obj instanceof flyteidl.event.Event.EventReason)) {
         return super.equals(obj);
       }
-      flyteidl.event.Event.Reason other = (flyteidl.event.Event.Reason) obj;
+      flyteidl.event.Event.EventReason other = (flyteidl.event.Event.EventReason) obj;
 
       if (!getReason()
           .equals(other.getReason())) return false;
@@ -11406,69 +11406,69 @@ public final class Event {
       return hash;
     }
 
-    public static flyteidl.event.Event.Reason parseFrom(
+    public static flyteidl.event.Event.EventReason parseFrom(
         java.nio.ByteBuffer data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static flyteidl.event.Event.Reason parseFrom(
+    public static flyteidl.event.Event.EventReason parseFrom(
         java.nio.ByteBuffer data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static flyteidl.event.Event.Reason parseFrom(
+    public static flyteidl.event.Event.EventReason parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static flyteidl.event.Event.Reason parseFrom(
+    public static flyteidl.event.Event.EventReason parseFrom(
         com.google.protobuf.ByteString data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static flyteidl.event.Event.Reason parseFrom(byte[] data)
+    public static flyteidl.event.Event.EventReason parseFrom(byte[] data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static flyteidl.event.Event.Reason parseFrom(
+    public static flyteidl.event.Event.EventReason parseFrom(
         byte[] data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static flyteidl.event.Event.Reason parseFrom(java.io.InputStream input)
+    public static flyteidl.event.Event.EventReason parseFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
-    public static flyteidl.event.Event.Reason parseFrom(
+    public static flyteidl.event.Event.EventReason parseFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
-    public static flyteidl.event.Event.Reason parseDelimitedFrom(java.io.InputStream input)
+    public static flyteidl.event.Event.EventReason parseDelimitedFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input);
     }
-    public static flyteidl.event.Event.Reason parseDelimitedFrom(
+    public static flyteidl.event.Event.EventReason parseDelimitedFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
     }
-    public static flyteidl.event.Event.Reason parseFrom(
+    public static flyteidl.event.Event.EventReason parseFrom(
         com.google.protobuf.CodedInputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
-    public static flyteidl.event.Event.Reason parseFrom(
+    public static flyteidl.event.Event.EventReason parseFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
@@ -11481,7 +11481,7 @@ public final class Event {
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
     }
-    public static Builder newBuilder(flyteidl.event.Event.Reason prototype) {
+    public static Builder newBuilder(flyteidl.event.Event.EventReason prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
     @java.lang.Override
@@ -11497,26 +11497,26 @@ public final class Event {
       return builder;
     }
     /**
-     * Protobuf type {@code flyteidl.event.Reason}
+     * Protobuf type {@code flyteidl.event.EventReason}
      */
     public static final class Builder extends
         com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-        // @@protoc_insertion_point(builder_implements:flyteidl.event.Reason)
-        flyteidl.event.Event.ReasonOrBuilder {
+        // @@protoc_insertion_point(builder_implements:flyteidl.event.EventReason)
+        flyteidl.event.Event.EventReasonOrBuilder {
       public static final com.google.protobuf.Descriptors.Descriptor
           getDescriptor() {
-        return flyteidl.event.Event.internal_static_flyteidl_event_Reason_descriptor;
+        return flyteidl.event.Event.internal_static_flyteidl_event_EventReason_descriptor;
       }
 
       @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
-        return flyteidl.event.Event.internal_static_flyteidl_event_Reason_fieldAccessorTable
+        return flyteidl.event.Event.internal_static_flyteidl_event_EventReason_fieldAccessorTable
             .ensureFieldAccessorsInitialized(
-                flyteidl.event.Event.Reason.class, flyteidl.event.Event.Reason.Builder.class);
+                flyteidl.event.Event.EventReason.class, flyteidl.event.Event.EventReason.Builder.class);
       }
 
-      // Construct using flyteidl.event.Event.Reason.newBuilder()
+      // Construct using flyteidl.event.Event.EventReason.newBuilder()
       private Builder() {
         maybeForceBuilderInitialization();
       }
@@ -11548,17 +11548,17 @@ public final class Event {
       @java.lang.Override
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
-        return flyteidl.event.Event.internal_static_flyteidl_event_Reason_descriptor;
+        return flyteidl.event.Event.internal_static_flyteidl_event_EventReason_descriptor;
       }
 
       @java.lang.Override
-      public flyteidl.event.Event.Reason getDefaultInstanceForType() {
-        return flyteidl.event.Event.Reason.getDefaultInstance();
+      public flyteidl.event.Event.EventReason getDefaultInstanceForType() {
+        return flyteidl.event.Event.EventReason.getDefaultInstance();
       }
 
       @java.lang.Override
-      public flyteidl.event.Event.Reason build() {
-        flyteidl.event.Event.Reason result = buildPartial();
+      public flyteidl.event.Event.EventReason build() {
+        flyteidl.event.Event.EventReason result = buildPartial();
         if (!result.isInitialized()) {
           throw newUninitializedMessageException(result);
         }
@@ -11566,8 +11566,8 @@ public final class Event {
       }
 
       @java.lang.Override
-      public flyteidl.event.Event.Reason buildPartial() {
-        flyteidl.event.Event.Reason result = new flyteidl.event.Event.Reason(this);
+      public flyteidl.event.Event.EventReason buildPartial() {
+        flyteidl.event.Event.EventReason result = new flyteidl.event.Event.EventReason(this);
         result.reason_ = reason_;
         if (occurredAtBuilder_ == null) {
           result.occurredAt_ = occurredAt_;
@@ -11612,16 +11612,16 @@ public final class Event {
       }
       @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof flyteidl.event.Event.Reason) {
-          return mergeFrom((flyteidl.event.Event.Reason)other);
+        if (other instanceof flyteidl.event.Event.EventReason) {
+          return mergeFrom((flyteidl.event.Event.EventReason)other);
         } else {
           super.mergeFrom(other);
           return this;
         }
       }
 
-      public Builder mergeFrom(flyteidl.event.Event.Reason other) {
-        if (other == flyteidl.event.Event.Reason.getDefaultInstance()) return this;
+      public Builder mergeFrom(flyteidl.event.Event.EventReason other) {
+        if (other == flyteidl.event.Event.EventReason.getDefaultInstance()) return this;
         if (!other.getReason().isEmpty()) {
           reason_ = other.reason_;
           onChanged();
@@ -11644,11 +11644,11 @@ public final class Event {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        flyteidl.event.Event.Reason parsedMessage = null;
+        flyteidl.event.Event.EventReason parsedMessage = null;
         try {
           parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (flyteidl.event.Event.Reason) e.getUnfinishedMessage();
+          parsedMessage = (flyteidl.event.Event.EventReason) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
           if (parsedMessage != null) {
@@ -11912,41 +11912,41 @@ public final class Event {
       }
 
 
-      // @@protoc_insertion_point(builder_scope:flyteidl.event.Reason)
+      // @@protoc_insertion_point(builder_scope:flyteidl.event.EventReason)
     }
 
-    // @@protoc_insertion_point(class_scope:flyteidl.event.Reason)
-    private static final flyteidl.event.Event.Reason DEFAULT_INSTANCE;
+    // @@protoc_insertion_point(class_scope:flyteidl.event.EventReason)
+    private static final flyteidl.event.Event.EventReason DEFAULT_INSTANCE;
     static {
-      DEFAULT_INSTANCE = new flyteidl.event.Event.Reason();
+      DEFAULT_INSTANCE = new flyteidl.event.Event.EventReason();
     }
 
-    public static flyteidl.event.Event.Reason getDefaultInstance() {
+    public static flyteidl.event.Event.EventReason getDefaultInstance() {
       return DEFAULT_INSTANCE;
     }
 
-    private static final com.google.protobuf.Parser<Reason>
-        PARSER = new com.google.protobuf.AbstractParser<Reason>() {
+    private static final com.google.protobuf.Parser<EventReason>
+        PARSER = new com.google.protobuf.AbstractParser<EventReason>() {
       @java.lang.Override
-      public Reason parsePartialFrom(
+      public EventReason parsePartialFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new Reason(input, extensionRegistry);
+        return new EventReason(input, extensionRegistry);
       }
     };
 
-    public static com.google.protobuf.Parser<Reason> parser() {
+    public static com.google.protobuf.Parser<EventReason> parser() {
       return PARSER;
     }
 
     @java.lang.Override
-    public com.google.protobuf.Parser<Reason> getParserForType() {
+    public com.google.protobuf.Parser<EventReason> getParserForType() {
       return PARSER;
     }
 
     @java.lang.Override
-    public flyteidl.event.Event.Reason getDefaultInstanceForType() {
+    public flyteidl.event.Event.EventReason getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
 
@@ -12304,24 +12304,24 @@ public final class Event {
      * An optional list of explanations for the phase transition.
      * </pre>
      *
-     * <code>repeated .flyteidl.event.Reason reasons = 21;</code>
+     * <code>repeated .flyteidl.event.EventReason reasons = 21;</code>
      */
-    java.util.List<flyteidl.event.Event.Reason> 
+    java.util.List<flyteidl.event.Event.EventReason> 
         getReasonsList();
     /**
      * <pre>
      * An optional list of explanations for the phase transition.
      * </pre>
      *
-     * <code>repeated .flyteidl.event.Reason reasons = 21;</code>
+     * <code>repeated .flyteidl.event.EventReason reasons = 21;</code>
      */
-    flyteidl.event.Event.Reason getReasons(int index);
+    flyteidl.event.Event.EventReason getReasons(int index);
     /**
      * <pre>
      * An optional list of explanations for the phase transition.
      * </pre>
      *
-     * <code>repeated .flyteidl.event.Reason reasons = 21;</code>
+     * <code>repeated .flyteidl.event.EventReason reasons = 21;</code>
      */
     int getReasonsCount();
     /**
@@ -12329,18 +12329,18 @@ public final class Event {
      * An optional list of explanations for the phase transition.
      * </pre>
      *
-     * <code>repeated .flyteidl.event.Reason reasons = 21;</code>
+     * <code>repeated .flyteidl.event.EventReason reasons = 21;</code>
      */
-    java.util.List<? extends flyteidl.event.Event.ReasonOrBuilder> 
+    java.util.List<? extends flyteidl.event.Event.EventReasonOrBuilder> 
         getReasonsOrBuilderList();
     /**
      * <pre>
      * An optional list of explanations for the phase transition.
      * </pre>
      *
-     * <code>repeated .flyteidl.event.Reason reasons = 21;</code>
+     * <code>repeated .flyteidl.event.EventReason reasons = 21;</code>
      */
-    flyteidl.event.Event.ReasonOrBuilder getReasonsOrBuilder(
+    flyteidl.event.Event.EventReasonOrBuilder getReasonsOrBuilder(
         int index);
 
     /**
@@ -12671,11 +12671,11 @@ public final class Event {
             }
             case 170: {
               if (!((mutable_bitField0_ & 0x00008000) != 0)) {
-                reasons_ = new java.util.ArrayList<flyteidl.event.Event.Reason>();
+                reasons_ = new java.util.ArrayList<flyteidl.event.Event.EventReason>();
                 mutable_bitField0_ |= 0x00008000;
               }
               reasons_.add(
-                  input.readMessage(flyteidl.event.Event.Reason.parser(), extensionRegistry));
+                  input.readMessage(flyteidl.event.Event.EventReason.parser(), extensionRegistry));
               break;
             }
             default: {
@@ -13351,15 +13351,15 @@ public final class Event {
     }
 
     public static final int REASONS_FIELD_NUMBER = 21;
-    private java.util.List<flyteidl.event.Event.Reason> reasons_;
+    private java.util.List<flyteidl.event.Event.EventReason> reasons_;
     /**
      * <pre>
      * An optional list of explanations for the phase transition.
      * </pre>
      *
-     * <code>repeated .flyteidl.event.Reason reasons = 21;</code>
+     * <code>repeated .flyteidl.event.EventReason reasons = 21;</code>
      */
-    public java.util.List<flyteidl.event.Event.Reason> getReasonsList() {
+    public java.util.List<flyteidl.event.Event.EventReason> getReasonsList() {
       return reasons_;
     }
     /**
@@ -13367,9 +13367,9 @@ public final class Event {
      * An optional list of explanations for the phase transition.
      * </pre>
      *
-     * <code>repeated .flyteidl.event.Reason reasons = 21;</code>
+     * <code>repeated .flyteidl.event.EventReason reasons = 21;</code>
      */
-    public java.util.List<? extends flyteidl.event.Event.ReasonOrBuilder> 
+    public java.util.List<? extends flyteidl.event.Event.EventReasonOrBuilder> 
         getReasonsOrBuilderList() {
       return reasons_;
     }
@@ -13378,7 +13378,7 @@ public final class Event {
      * An optional list of explanations for the phase transition.
      * </pre>
      *
-     * <code>repeated .flyteidl.event.Reason reasons = 21;</code>
+     * <code>repeated .flyteidl.event.EventReason reasons = 21;</code>
      */
     public int getReasonsCount() {
       return reasons_.size();
@@ -13388,9 +13388,9 @@ public final class Event {
      * An optional list of explanations for the phase transition.
      * </pre>
      *
-     * <code>repeated .flyteidl.event.Reason reasons = 21;</code>
+     * <code>repeated .flyteidl.event.EventReason reasons = 21;</code>
      */
-    public flyteidl.event.Event.Reason getReasons(int index) {
+    public flyteidl.event.Event.EventReason getReasons(int index) {
       return reasons_.get(index);
     }
     /**
@@ -13398,9 +13398,9 @@ public final class Event {
      * An optional list of explanations for the phase transition.
      * </pre>
      *
-     * <code>repeated .flyteidl.event.Reason reasons = 21;</code>
+     * <code>repeated .flyteidl.event.EventReason reasons = 21;</code>
      */
-    public flyteidl.event.Event.ReasonOrBuilder getReasonsOrBuilder(
+    public flyteidl.event.Event.EventReasonOrBuilder getReasonsOrBuilder(
         int index) {
       return reasons_.get(index);
     }
@@ -16438,26 +16438,26 @@ public final class Event {
         return this;
       }
 
-      private java.util.List<flyteidl.event.Event.Reason> reasons_ =
+      private java.util.List<flyteidl.event.Event.EventReason> reasons_ =
         java.util.Collections.emptyList();
       private void ensureReasonsIsMutable() {
         if (!((bitField0_ & 0x00008000) != 0)) {
-          reasons_ = new java.util.ArrayList<flyteidl.event.Event.Reason>(reasons_);
+          reasons_ = new java.util.ArrayList<flyteidl.event.Event.EventReason>(reasons_);
           bitField0_ |= 0x00008000;
          }
       }
 
       private com.google.protobuf.RepeatedFieldBuilderV3<
-          flyteidl.event.Event.Reason, flyteidl.event.Event.Reason.Builder, flyteidl.event.Event.ReasonOrBuilder> reasonsBuilder_;
+          flyteidl.event.Event.EventReason, flyteidl.event.Event.EventReason.Builder, flyteidl.event.Event.EventReasonOrBuilder> reasonsBuilder_;
 
       /**
        * <pre>
        * An optional list of explanations for the phase transition.
        * </pre>
        *
-       * <code>repeated .flyteidl.event.Reason reasons = 21;</code>
+       * <code>repeated .flyteidl.event.EventReason reasons = 21;</code>
        */
-      public java.util.List<flyteidl.event.Event.Reason> getReasonsList() {
+      public java.util.List<flyteidl.event.Event.EventReason> getReasonsList() {
         if (reasonsBuilder_ == null) {
           return java.util.Collections.unmodifiableList(reasons_);
         } else {
@@ -16469,7 +16469,7 @@ public final class Event {
        * An optional list of explanations for the phase transition.
        * </pre>
        *
-       * <code>repeated .flyteidl.event.Reason reasons = 21;</code>
+       * <code>repeated .flyteidl.event.EventReason reasons = 21;</code>
        */
       public int getReasonsCount() {
         if (reasonsBuilder_ == null) {
@@ -16483,9 +16483,9 @@ public final class Event {
        * An optional list of explanations for the phase transition.
        * </pre>
        *
-       * <code>repeated .flyteidl.event.Reason reasons = 21;</code>
+       * <code>repeated .flyteidl.event.EventReason reasons = 21;</code>
        */
-      public flyteidl.event.Event.Reason getReasons(int index) {
+      public flyteidl.event.Event.EventReason getReasons(int index) {
         if (reasonsBuilder_ == null) {
           return reasons_.get(index);
         } else {
@@ -16497,10 +16497,10 @@ public final class Event {
        * An optional list of explanations for the phase transition.
        * </pre>
        *
-       * <code>repeated .flyteidl.event.Reason reasons = 21;</code>
+       * <code>repeated .flyteidl.event.EventReason reasons = 21;</code>
        */
       public Builder setReasons(
-          int index, flyteidl.event.Event.Reason value) {
+          int index, flyteidl.event.Event.EventReason value) {
         if (reasonsBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
@@ -16518,10 +16518,10 @@ public final class Event {
        * An optional list of explanations for the phase transition.
        * </pre>
        *
-       * <code>repeated .flyteidl.event.Reason reasons = 21;</code>
+       * <code>repeated .flyteidl.event.EventReason reasons = 21;</code>
        */
       public Builder setReasons(
-          int index, flyteidl.event.Event.Reason.Builder builderForValue) {
+          int index, flyteidl.event.Event.EventReason.Builder builderForValue) {
         if (reasonsBuilder_ == null) {
           ensureReasonsIsMutable();
           reasons_.set(index, builderForValue.build());
@@ -16536,9 +16536,9 @@ public final class Event {
        * An optional list of explanations for the phase transition.
        * </pre>
        *
-       * <code>repeated .flyteidl.event.Reason reasons = 21;</code>
+       * <code>repeated .flyteidl.event.EventReason reasons = 21;</code>
        */
-      public Builder addReasons(flyteidl.event.Event.Reason value) {
+      public Builder addReasons(flyteidl.event.Event.EventReason value) {
         if (reasonsBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
@@ -16556,10 +16556,10 @@ public final class Event {
        * An optional list of explanations for the phase transition.
        * </pre>
        *
-       * <code>repeated .flyteidl.event.Reason reasons = 21;</code>
+       * <code>repeated .flyteidl.event.EventReason reasons = 21;</code>
        */
       public Builder addReasons(
-          int index, flyteidl.event.Event.Reason value) {
+          int index, flyteidl.event.Event.EventReason value) {
         if (reasonsBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
@@ -16577,10 +16577,10 @@ public final class Event {
        * An optional list of explanations for the phase transition.
        * </pre>
        *
-       * <code>repeated .flyteidl.event.Reason reasons = 21;</code>
+       * <code>repeated .flyteidl.event.EventReason reasons = 21;</code>
        */
       public Builder addReasons(
-          flyteidl.event.Event.Reason.Builder builderForValue) {
+          flyteidl.event.Event.EventReason.Builder builderForValue) {
         if (reasonsBuilder_ == null) {
           ensureReasonsIsMutable();
           reasons_.add(builderForValue.build());
@@ -16595,10 +16595,10 @@ public final class Event {
        * An optional list of explanations for the phase transition.
        * </pre>
        *
-       * <code>repeated .flyteidl.event.Reason reasons = 21;</code>
+       * <code>repeated .flyteidl.event.EventReason reasons = 21;</code>
        */
       public Builder addReasons(
-          int index, flyteidl.event.Event.Reason.Builder builderForValue) {
+          int index, flyteidl.event.Event.EventReason.Builder builderForValue) {
         if (reasonsBuilder_ == null) {
           ensureReasonsIsMutable();
           reasons_.add(index, builderForValue.build());
@@ -16613,10 +16613,10 @@ public final class Event {
        * An optional list of explanations for the phase transition.
        * </pre>
        *
-       * <code>repeated .flyteidl.event.Reason reasons = 21;</code>
+       * <code>repeated .flyteidl.event.EventReason reasons = 21;</code>
        */
       public Builder addAllReasons(
-          java.lang.Iterable<? extends flyteidl.event.Event.Reason> values) {
+          java.lang.Iterable<? extends flyteidl.event.Event.EventReason> values) {
         if (reasonsBuilder_ == null) {
           ensureReasonsIsMutable();
           com.google.protobuf.AbstractMessageLite.Builder.addAll(
@@ -16632,7 +16632,7 @@ public final class Event {
        * An optional list of explanations for the phase transition.
        * </pre>
        *
-       * <code>repeated .flyteidl.event.Reason reasons = 21;</code>
+       * <code>repeated .flyteidl.event.EventReason reasons = 21;</code>
        */
       public Builder clearReasons() {
         if (reasonsBuilder_ == null) {
@@ -16649,7 +16649,7 @@ public final class Event {
        * An optional list of explanations for the phase transition.
        * </pre>
        *
-       * <code>repeated .flyteidl.event.Reason reasons = 21;</code>
+       * <code>repeated .flyteidl.event.EventReason reasons = 21;</code>
        */
       public Builder removeReasons(int index) {
         if (reasonsBuilder_ == null) {
@@ -16666,9 +16666,9 @@ public final class Event {
        * An optional list of explanations for the phase transition.
        * </pre>
        *
-       * <code>repeated .flyteidl.event.Reason reasons = 21;</code>
+       * <code>repeated .flyteidl.event.EventReason reasons = 21;</code>
        */
-      public flyteidl.event.Event.Reason.Builder getReasonsBuilder(
+      public flyteidl.event.Event.EventReason.Builder getReasonsBuilder(
           int index) {
         return getReasonsFieldBuilder().getBuilder(index);
       }
@@ -16677,9 +16677,9 @@ public final class Event {
        * An optional list of explanations for the phase transition.
        * </pre>
        *
-       * <code>repeated .flyteidl.event.Reason reasons = 21;</code>
+       * <code>repeated .flyteidl.event.EventReason reasons = 21;</code>
        */
-      public flyteidl.event.Event.ReasonOrBuilder getReasonsOrBuilder(
+      public flyteidl.event.Event.EventReasonOrBuilder getReasonsOrBuilder(
           int index) {
         if (reasonsBuilder_ == null) {
           return reasons_.get(index);  } else {
@@ -16691,9 +16691,9 @@ public final class Event {
        * An optional list of explanations for the phase transition.
        * </pre>
        *
-       * <code>repeated .flyteidl.event.Reason reasons = 21;</code>
+       * <code>repeated .flyteidl.event.EventReason reasons = 21;</code>
        */
-      public java.util.List<? extends flyteidl.event.Event.ReasonOrBuilder> 
+      public java.util.List<? extends flyteidl.event.Event.EventReasonOrBuilder> 
            getReasonsOrBuilderList() {
         if (reasonsBuilder_ != null) {
           return reasonsBuilder_.getMessageOrBuilderList();
@@ -16706,41 +16706,41 @@ public final class Event {
        * An optional list of explanations for the phase transition.
        * </pre>
        *
-       * <code>repeated .flyteidl.event.Reason reasons = 21;</code>
+       * <code>repeated .flyteidl.event.EventReason reasons = 21;</code>
        */
-      public flyteidl.event.Event.Reason.Builder addReasonsBuilder() {
+      public flyteidl.event.Event.EventReason.Builder addReasonsBuilder() {
         return getReasonsFieldBuilder().addBuilder(
-            flyteidl.event.Event.Reason.getDefaultInstance());
+            flyteidl.event.Event.EventReason.getDefaultInstance());
       }
       /**
        * <pre>
        * An optional list of explanations for the phase transition.
        * </pre>
        *
-       * <code>repeated .flyteidl.event.Reason reasons = 21;</code>
+       * <code>repeated .flyteidl.event.EventReason reasons = 21;</code>
        */
-      public flyteidl.event.Event.Reason.Builder addReasonsBuilder(
+      public flyteidl.event.Event.EventReason.Builder addReasonsBuilder(
           int index) {
         return getReasonsFieldBuilder().addBuilder(
-            index, flyteidl.event.Event.Reason.getDefaultInstance());
+            index, flyteidl.event.Event.EventReason.getDefaultInstance());
       }
       /**
        * <pre>
        * An optional list of explanations for the phase transition.
        * </pre>
        *
-       * <code>repeated .flyteidl.event.Reason reasons = 21;</code>
+       * <code>repeated .flyteidl.event.EventReason reasons = 21;</code>
        */
-      public java.util.List<flyteidl.event.Event.Reason.Builder> 
+      public java.util.List<flyteidl.event.Event.EventReason.Builder> 
            getReasonsBuilderList() {
         return getReasonsFieldBuilder().getBuilderList();
       }
       private com.google.protobuf.RepeatedFieldBuilderV3<
-          flyteidl.event.Event.Reason, flyteidl.event.Event.Reason.Builder, flyteidl.event.Event.ReasonOrBuilder> 
+          flyteidl.event.Event.EventReason, flyteidl.event.Event.EventReason.Builder, flyteidl.event.Event.EventReasonOrBuilder> 
           getReasonsFieldBuilder() {
         if (reasonsBuilder_ == null) {
           reasonsBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
-              flyteidl.event.Event.Reason, flyteidl.event.Event.Reason.Builder, flyteidl.event.Event.ReasonOrBuilder>(
+              flyteidl.event.Event.EventReason, flyteidl.event.Event.EventReason.Builder, flyteidl.event.Event.EventReasonOrBuilder>(
                   reasons_,
                   ((bitField0_ & 0x00008000) != 0),
                   getParentForChildren(),
@@ -21571,10 +21571,10 @@ public final class Event {
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_flyteidl_event_ParentNodeExecutionMetadata_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_flyteidl_event_Reason_descriptor;
+    internal_static_flyteidl_event_EventReason_descriptor;
   private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_flyteidl_event_Reason_fieldAccessorTable;
+      internal_static_flyteidl_event_EventReason_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_flyteidl_event_TaskExecutionEvent_descriptor;
   private static final 
@@ -21659,47 +21659,47 @@ public final class Event {
       "(\t\"Q\n\033ParentTaskExecutionMetadata\0222\n\002id\030" +
       "\001 \001(\0132&.flyteidl.core.TaskExecutionIdent" +
       "ifier\".\n\033ParentNodeExecutionMetadata\022\017\n\007" +
-      "node_id\030\001 \001(\t\"I\n\006Reason\022\016\n\006reason\030\001 \001(\t\022" +
-      "/\n\013occurred_at\030\002 \001(\0132\032.google.protobuf.T" +
-      "imestamp\"\264\006\n\022TaskExecutionEvent\022*\n\007task_" +
-      "id\030\001 \001(\0132\031.flyteidl.core.Identifier\022H\n\030p" +
-      "arent_node_execution_id\030\002 \001(\0132&.flyteidl" +
-      ".core.NodeExecutionIdentifier\022\025\n\rretry_a" +
-      "ttempt\030\003 \001(\r\0221\n\005phase\030\004 \001(\0162\".flyteidl.c" +
-      "ore.TaskExecution.Phase\022\023\n\013producer_id\030\005" +
-      " \001(\t\022$\n\004logs\030\006 \003(\0132\026.flyteidl.core.TaskL" +
-      "og\022/\n\013occurred_at\030\007 \001(\0132\032.google.protobu" +
-      "f.Timestamp\022\023\n\tinput_uri\030\010 \001(\tH\000\022/\n\ninpu" +
-      "t_data\030\023 \001(\0132\031.flyteidl.core.LiteralMapH" +
-      "\000\022\024\n\noutput_uri\030\t \001(\tH\001\022.\n\005error\030\n \001(\0132\035" +
-      ".flyteidl.core.ExecutionErrorH\001\0220\n\013outpu" +
-      "t_data\030\021 \001(\0132\031.flyteidl.core.LiteralMapH" +
-      "\001\022,\n\013custom_info\030\013 \001(\0132\027.google.protobuf" +
-      ".Struct\022\025\n\rphase_version\030\014 \001(\r\022\022\n\006reason" +
-      "\030\r \001(\tB\002\030\001\022\'\n\007reasons\030\025 \003(\0132\026.flyteidl.e" +
-      "vent.Reason\022\021\n\ttask_type\030\016 \001(\t\0227\n\010metada" +
-      "ta\030\020 \001(\0132%.flyteidl.event.TaskExecutionM" +
-      "etadata\022\025\n\revent_version\030\022 \001(\005\022/\n\013report" +
-      "ed_at\030\024 \001(\0132\032.google.protobuf.TimestampB" +
-      "\r\n\013input_valueB\017\n\routput_result\"\343\001\n\024Exte" +
-      "rnalResourceInfo\022\023\n\013external_id\030\001 \001(\t\022\r\n" +
-      "\005index\030\002 \001(\r\022\025\n\rretry_attempt\030\003 \001(\r\0221\n\005p" +
-      "hase\030\004 \001(\0162\".flyteidl.core.TaskExecution" +
-      ".Phase\0227\n\014cache_status\030\005 \001(\0162!.flyteidl." +
-      "core.CatalogCacheStatus\022$\n\004logs\030\006 \003(\0132\026." +
-      "flyteidl.core.TaskLog\"?\n\020ResourcePoolInf" +
-      "o\022\030\n\020allocation_token\030\001 \001(\t\022\021\n\tnamespace" +
-      "\030\002 \001(\t\"\310\002\n\025TaskExecutionMetadata\022\026\n\016gene" +
-      "rated_name\030\001 \001(\t\022@\n\022external_resources\030\002" +
-      " \003(\0132$.flyteidl.event.ExternalResourceIn" +
-      "fo\022<\n\022resource_pool_info\030\003 \003(\0132 .flyteid" +
-      "l.event.ResourcePoolInfo\022\031\n\021plugin_ident" +
-      "ifier\030\004 \001(\t\022K\n\016instance_class\030\020 \001(\01623.fl" +
-      "yteidl.event.TaskExecutionMetadata.Insta" +
-      "nceClass\"/\n\rInstanceClass\022\013\n\007DEFAULT\020\000\022\021" +
-      "\n\rINTERRUPTIBLE\020\001B7Z5github.com/flyteorg" +
-      "/flyteidl/gen/pb-go/flyteidl/eventb\006prot" +
-      "o3"
+      "node_id\030\001 \001(\t\"N\n\013EventReason\022\016\n\006reason\030\001" +
+      " \001(\t\022/\n\013occurred_at\030\002 \001(\0132\032.google.proto" +
+      "buf.Timestamp\"\271\006\n\022TaskExecutionEvent\022*\n\007" +
+      "task_id\030\001 \001(\0132\031.flyteidl.core.Identifier" +
+      "\022H\n\030parent_node_execution_id\030\002 \001(\0132&.fly" +
+      "teidl.core.NodeExecutionIdentifier\022\025\n\rre" +
+      "try_attempt\030\003 \001(\r\0221\n\005phase\030\004 \001(\0162\".flyte" +
+      "idl.core.TaskExecution.Phase\022\023\n\013producer" +
+      "_id\030\005 \001(\t\022$\n\004logs\030\006 \003(\0132\026.flyteidl.core." +
+      "TaskLog\022/\n\013occurred_at\030\007 \001(\0132\032.google.pr" +
+      "otobuf.Timestamp\022\023\n\tinput_uri\030\010 \001(\tH\000\022/\n" +
+      "\ninput_data\030\023 \001(\0132\031.flyteidl.core.Litera" +
+      "lMapH\000\022\024\n\noutput_uri\030\t \001(\tH\001\022.\n\005error\030\n " +
+      "\001(\0132\035.flyteidl.core.ExecutionErrorH\001\0220\n\013" +
+      "output_data\030\021 \001(\0132\031.flyteidl.core.Litera" +
+      "lMapH\001\022,\n\013custom_info\030\013 \001(\0132\027.google.pro" +
+      "tobuf.Struct\022\025\n\rphase_version\030\014 \001(\r\022\022\n\006r" +
+      "eason\030\r \001(\tB\002\030\001\022,\n\007reasons\030\025 \003(\0132\033.flyte" +
+      "idl.event.EventReason\022\021\n\ttask_type\030\016 \001(\t" +
+      "\0227\n\010metadata\030\020 \001(\0132%.flyteidl.event.Task" +
+      "ExecutionMetadata\022\025\n\revent_version\030\022 \001(\005" +
+      "\022/\n\013reported_at\030\024 \001(\0132\032.google.protobuf." +
+      "TimestampB\r\n\013input_valueB\017\n\routput_resul" +
+      "t\"\343\001\n\024ExternalResourceInfo\022\023\n\013external_i" +
+      "d\030\001 \001(\t\022\r\n\005index\030\002 \001(\r\022\025\n\rretry_attempt\030" +
+      "\003 \001(\r\0221\n\005phase\030\004 \001(\0162\".flyteidl.core.Tas" +
+      "kExecution.Phase\0227\n\014cache_status\030\005 \001(\0162!" +
+      ".flyteidl.core.CatalogCacheStatus\022$\n\004log" +
+      "s\030\006 \003(\0132\026.flyteidl.core.TaskLog\"?\n\020Resou" +
+      "rcePoolInfo\022\030\n\020allocation_token\030\001 \001(\t\022\021\n" +
+      "\tnamespace\030\002 \001(\t\"\310\002\n\025TaskExecutionMetada" +
+      "ta\022\026\n\016generated_name\030\001 \001(\t\022@\n\022external_r" +
+      "esources\030\002 \003(\0132$.flyteidl.event.External" +
+      "ResourceInfo\022<\n\022resource_pool_info\030\003 \003(\013" +
+      "2 .flyteidl.event.ResourcePoolInfo\022\031\n\021pl" +
+      "ugin_identifier\030\004 \001(\t\022K\n\016instance_class\030" +
+      "\020 \001(\01623.flyteidl.event.TaskExecutionMeta" +
+      "data.InstanceClass\"/\n\rInstanceClass\022\013\n\007D" +
+      "EFAULT\020\000\022\021\n\rINTERRUPTIBLE\020\001B7Z5github.co" +
+      "m/flyteorg/flyteidl/gen/pb-go/flyteidl/e" +
+      "ventb\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
@@ -21762,11 +21762,11 @@ public final class Event {
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_flyteidl_event_ParentNodeExecutionMetadata_descriptor,
         new java.lang.String[] { "NodeId", });
-    internal_static_flyteidl_event_Reason_descriptor =
+    internal_static_flyteidl_event_EventReason_descriptor =
       getDescriptor().getMessageTypes().get(7);
-    internal_static_flyteidl_event_Reason_fieldAccessorTable = new
+    internal_static_flyteidl_event_EventReason_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_flyteidl_event_Reason_descriptor,
+        internal_static_flyteidl_event_EventReason_descriptor,
         new java.lang.String[] { "Reason", "OccurredAt", });
     internal_static_flyteidl_event_TaskExecutionEvent_descriptor =
       getDescriptor().getMessageTypes().get(8);

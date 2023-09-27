@@ -7254,58 +7254,58 @@ export namespace flyteidl {
             public static verify(message: { [k: string]: any }): (string|null);
         }
 
-        /** Properties of a Reason. */
-        interface IReason {
+        /** Properties of an EventReason. */
+        interface IEventReason {
 
-            /** Reason reason */
+            /** EventReason reason */
             reason?: (string|null);
 
-            /** Reason occurredAt */
+            /** EventReason occurredAt */
             occurredAt?: (google.protobuf.ITimestamp|null);
         }
 
-        /** Represents a Reason. */
-        class Reason implements IReason {
+        /** Represents an EventReason. */
+        class EventReason implements IEventReason {
 
             /**
-             * Constructs a new Reason.
+             * Constructs a new EventReason.
              * @param [properties] Properties to set
              */
-            constructor(properties?: flyteidl.event.IReason);
+            constructor(properties?: flyteidl.event.IEventReason);
 
-            /** Reason reason. */
+            /** EventReason reason. */
             public reason: string;
 
-            /** Reason occurredAt. */
+            /** EventReason occurredAt. */
             public occurredAt?: (google.protobuf.ITimestamp|null);
 
             /**
-             * Creates a new Reason instance using the specified properties.
+             * Creates a new EventReason instance using the specified properties.
              * @param [properties] Properties to set
-             * @returns Reason instance
+             * @returns EventReason instance
              */
-            public static create(properties?: flyteidl.event.IReason): flyteidl.event.Reason;
+            public static create(properties?: flyteidl.event.IEventReason): flyteidl.event.EventReason;
 
             /**
-             * Encodes the specified Reason message. Does not implicitly {@link flyteidl.event.Reason.verify|verify} messages.
-             * @param message Reason message or plain object to encode
+             * Encodes the specified EventReason message. Does not implicitly {@link flyteidl.event.EventReason.verify|verify} messages.
+             * @param message EventReason message or plain object to encode
              * @param [writer] Writer to encode to
              * @returns Writer
              */
-            public static encode(message: flyteidl.event.IReason, writer?: $protobuf.Writer): $protobuf.Writer;
+            public static encode(message: flyteidl.event.IEventReason, writer?: $protobuf.Writer): $protobuf.Writer;
 
             /**
-             * Decodes a Reason message from the specified reader or buffer.
+             * Decodes an EventReason message from the specified reader or buffer.
              * @param reader Reader or buffer to decode from
              * @param [length] Message length if known beforehand
-             * @returns Reason
+             * @returns EventReason
              * @throws {Error} If the payload is not a reader or valid buffer
              * @throws {$protobuf.util.ProtocolError} If required fields are missing
              */
-            public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): flyteidl.event.Reason;
+            public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): flyteidl.event.EventReason;
 
             /**
-             * Verifies a Reason message.
+             * Verifies an EventReason message.
              * @param message Plain object to verify
              * @returns `null` if valid, otherwise the reason why it is not
              */
@@ -7361,7 +7361,7 @@ export namespace flyteidl {
             reason?: (string|null);
 
             /** TaskExecutionEvent reasons */
-            reasons?: (flyteidl.event.IReason[]|null);
+            reasons?: (flyteidl.event.IEventReason[]|null);
 
             /** TaskExecutionEvent taskType */
             taskType?: (string|null);
@@ -7431,7 +7431,7 @@ export namespace flyteidl {
             public reason: string;
 
             /** TaskExecutionEvent reasons. */
-            public reasons: flyteidl.event.IReason[];
+            public reasons: flyteidl.event.IEventReason[];
 
             /** TaskExecutionEvent taskType. */
             public taskType: string;

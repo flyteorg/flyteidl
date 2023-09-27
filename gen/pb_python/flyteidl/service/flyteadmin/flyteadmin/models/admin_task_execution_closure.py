@@ -16,11 +16,11 @@ import re  # noqa: F401
 
 import six
 
+from flyteadmin.models.admin_reason import AdminReason  # noqa: F401,E501
 from flyteadmin.models.core_execution_error import CoreExecutionError  # noqa: F401,E501
 from flyteadmin.models.core_literal_map import CoreLiteralMap  # noqa: F401,E501
 from flyteadmin.models.core_task_execution_phase import CoreTaskExecutionPhase  # noqa: F401,E501
 from flyteadmin.models.core_task_log import CoreTaskLog  # noqa: F401,E501
-from flyteadmin.models.flyteidladmin_reason import FlyteidladminReason  # noqa: F401,E501
 from flyteadmin.models.flyteidlevent_task_execution_metadata import FlyteidleventTaskExecutionMetadata  # noqa: F401,E501
 from flyteadmin.models.protobuf_struct import ProtobufStruct  # noqa: F401,E501
 
@@ -53,7 +53,7 @@ class AdminTaskExecutionClosure(object):
         'task_type': 'str',
         'metadata': 'FlyteidleventTaskExecutionMetadata',
         'event_version': 'int',
-        'reasons': 'list[FlyteidladminReason]'
+        'reasons': 'list[AdminReason]'
     }
 
     attribute_map = {
@@ -454,7 +454,7 @@ class AdminTaskExecutionClosure(object):
         A time-series of the phase transition or update explanations. This, when compared to storing a singular reason as previously done, is much more valuable in visualizing and understanding historical evaluations.  # noqa: E501
 
         :return: The reasons of this AdminTaskExecutionClosure.  # noqa: E501
-        :rtype: list[FlyteidladminReason]
+        :rtype: list[AdminReason]
         """
         return self._reasons
 
@@ -465,7 +465,7 @@ class AdminTaskExecutionClosure(object):
         A time-series of the phase transition or update explanations. This, when compared to storing a singular reason as previously done, is much more valuable in visualizing and understanding historical evaluations.  # noqa: E501
 
         :param reasons: The reasons of this AdminTaskExecutionClosure.  # noqa: E501
-        :type: list[FlyteidladminReason]
+        :type: list[AdminReason]
         """
 
         self._reasons = reasons

@@ -40,7 +40,7 @@ type EventTaskExecutionEvent struct {
 	// An optional explanation for the phase transition. Deprecated: Use reasons instead.
 	Reason string `json:"reason,omitempty"`
 	// An optional list of explanations for the phase transition.
-	Reasons []FlyteidleventReason `json:"reasons,omitempty"`
+	Reasons []EventEventReason `json:"reasons,omitempty"`
 	// A predefined yet extensible Task type identifier. If the task definition is already registered in flyte admin this type will be identical, but not all task executions necessarily use pre-registered definitions and this type is useful to render the task in the UI, filter task executions, etc.
 	TaskType string `json:"task_type,omitempty"`
 	// Metadata around how a task was executed.

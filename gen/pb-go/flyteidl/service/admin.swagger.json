@@ -4965,6 +4965,21 @@
       },
       "description": "Encapsulates user settings pertaining to offloaded data (i.e. Blobs, Schema, query data, etc.).\nSee https://github.com/flyteorg/flyte/issues/211 for more background information."
     },
+    "adminReason": {
+      "type": "object",
+      "properties": {
+        "occurred_at": {
+          "type": "string",
+          "format": "date-time",
+          "description": "occurred_at is the timestamp indicating the instant that this reason happened."
+        },
+        "message": {
+          "type": "string",
+          "description": "message is the explanation for the most recent phase transition or status update."
+        }
+      },
+      "description": "Reason is a single message annotated with a timestamp to indicate the instant the reason occurred."
+    },
     "adminSchedule": {
       "type": "object",
       "properties": {
@@ -5137,7 +5152,7 @@
         "reasons": {
           "type": "array",
           "items": {
-            "$ref": "#/definitions/flyteidladminReason"
+            "$ref": "#/definitions/adminReason"
           },
           "description": "A time-series of the phase transition or update explanations. This, when compared to storing a singular reason\nas previously done, is much more valuable in visualizing and understanding historical evaluations."
         }
@@ -7265,6 +7280,20 @@
       },
       "description": "Flyte Workflow Structure that encapsulates task, branch and subworkflow nodes to form a statically analyzable,\ndirected acyclic graph."
     },
+    "eventEventReason": {
+      "type": "object",
+      "properties": {
+        "reason": {
+          "type": "string",
+          "title": "An explanation for this event"
+        },
+        "occurred_at": {
+          "type": "string",
+          "format": "date-time",
+          "title": "The time this reason occurred"
+        }
+      }
+    },
     "eventExternalResourceInfo": {
       "type": "object",
       "properties": {
@@ -7492,7 +7521,7 @@
         "reasons": {
           "type": "array",
           "items": {
-            "$ref": "#/definitions/flyteidleventReason"
+            "$ref": "#/definitions/eventEventReason"
           },
           "description": "An optional list of explanations for the phase transition."
         },
@@ -7590,21 +7619,6 @@
       },
       "description": "Encapsulates all details for a single node execution entity.\nA node represents a component in the overall workflow graph. A node launch a task, multiple tasks, an entire nested\nsub-workflow, or even a separate child-workflow execution.\nThe same task can be called repeatedly in a single workflow but each node is unique."
     },
-    "flyteidladminReason": {
-      "type": "object",
-      "properties": {
-        "occurred_at": {
-          "type": "string",
-          "format": "date-time",
-          "description": "occurred_at is the timestamp indicating the instant that this reason happened."
-        },
-        "message": {
-          "type": "string",
-          "description": "message is the explanation for the most recent phase transition or status update."
-        }
-      },
-      "description": "Reason is a single message annotated with a timestamp to indicate the instant the reason occurred."
-    },
     "flyteidladminTaskCreateRequest": {
       "type": "object",
       "properties": {
@@ -7691,20 +7705,6 @@
         }
       },
       "description": "For dynamic workflow nodes we send information about the dynamic workflow definition that gets generated."
-    },
-    "flyteidleventReason": {
-      "type": "object",
-      "properties": {
-        "reason": {
-          "type": "string",
-          "title": "An explanation for this event"
-        },
-        "occurred_at": {
-          "type": "string",
-          "format": "date-time",
-          "title": "The time this reason occurred"
-        }
-      }
     },
     "flyteidleventTaskExecutionMetadata": {
       "type": "object",

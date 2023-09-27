@@ -14,7 +14,7 @@ import (
 )
 
 // Reason is a single message annotated with a timestamp to indicate the instant the reason occurred.
-type FlyteidladminReason struct {
+type AdminReason struct {
 	// occurred_at is the timestamp indicating the instant that this reason happened.
 	OccurredAt time.Time `json:"occurred_at,omitempty"`
 	// message is the explanation for the most recent phase transition or status update.

@@ -17608,25 +17608,25 @@
                 return ParentNodeExecutionMetadata;
             })();
     
-            event.Reason = (function() {
+            event.EventReason = (function() {
     
                 /**
-                 * Properties of a Reason.
+                 * Properties of an EventReason.
                  * @memberof flyteidl.event
-                 * @interface IReason
-                 * @property {string|null} [reason] Reason reason
-                 * @property {google.protobuf.ITimestamp|null} [occurredAt] Reason occurredAt
+                 * @interface IEventReason
+                 * @property {string|null} [reason] EventReason reason
+                 * @property {google.protobuf.ITimestamp|null} [occurredAt] EventReason occurredAt
                  */
     
                 /**
-                 * Constructs a new Reason.
+                 * Constructs a new EventReason.
                  * @memberof flyteidl.event
-                 * @classdesc Represents a Reason.
-                 * @implements IReason
+                 * @classdesc Represents an EventReason.
+                 * @implements IEventReason
                  * @constructor
-                 * @param {flyteidl.event.IReason=} [properties] Properties to set
+                 * @param {flyteidl.event.IEventReason=} [properties] Properties to set
                  */
-                function Reason(properties) {
+                function EventReason(properties) {
                     if (properties)
                         for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
                             if (properties[keys[i]] != null)
@@ -17634,43 +17634,43 @@
                 }
     
                 /**
-                 * Reason reason.
+                 * EventReason reason.
                  * @member {string} reason
-                 * @memberof flyteidl.event.Reason
+                 * @memberof flyteidl.event.EventReason
                  * @instance
                  */
-                Reason.prototype.reason = "";
+                EventReason.prototype.reason = "";
     
                 /**
-                 * Reason occurredAt.
+                 * EventReason occurredAt.
                  * @member {google.protobuf.ITimestamp|null|undefined} occurredAt
-                 * @memberof flyteidl.event.Reason
+                 * @memberof flyteidl.event.EventReason
                  * @instance
                  */
-                Reason.prototype.occurredAt = null;
+                EventReason.prototype.occurredAt = null;
     
                 /**
-                 * Creates a new Reason instance using the specified properties.
+                 * Creates a new EventReason instance using the specified properties.
                  * @function create
-                 * @memberof flyteidl.event.Reason
+                 * @memberof flyteidl.event.EventReason
                  * @static
-                 * @param {flyteidl.event.IReason=} [properties] Properties to set
-                 * @returns {flyteidl.event.Reason} Reason instance
+                 * @param {flyteidl.event.IEventReason=} [properties] Properties to set
+                 * @returns {flyteidl.event.EventReason} EventReason instance
                  */
-                Reason.create = function create(properties) {
-                    return new Reason(properties);
+                EventReason.create = function create(properties) {
+                    return new EventReason(properties);
                 };
     
                 /**
-                 * Encodes the specified Reason message. Does not implicitly {@link flyteidl.event.Reason.verify|verify} messages.
+                 * Encodes the specified EventReason message. Does not implicitly {@link flyteidl.event.EventReason.verify|verify} messages.
                  * @function encode
-                 * @memberof flyteidl.event.Reason
+                 * @memberof flyteidl.event.EventReason
                  * @static
-                 * @param {flyteidl.event.IReason} message Reason message or plain object to encode
+                 * @param {flyteidl.event.IEventReason} message EventReason message or plain object to encode
                  * @param {$protobuf.Writer} [writer] Writer to encode to
                  * @returns {$protobuf.Writer} Writer
                  */
-                Reason.encode = function encode(message, writer) {
+                EventReason.encode = function encode(message, writer) {
                     if (!writer)
                         writer = $Writer.create();
                     if (message.reason != null && message.hasOwnProperty("reason"))
@@ -17681,20 +17681,20 @@
                 };
     
                 /**
-                 * Decodes a Reason message from the specified reader or buffer.
+                 * Decodes an EventReason message from the specified reader or buffer.
                  * @function decode
-                 * @memberof flyteidl.event.Reason
+                 * @memberof flyteidl.event.EventReason
                  * @static
                  * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
                  * @param {number} [length] Message length if known beforehand
-                 * @returns {flyteidl.event.Reason} Reason
+                 * @returns {flyteidl.event.EventReason} EventReason
                  * @throws {Error} If the payload is not a reader or valid buffer
                  * @throws {$protobuf.util.ProtocolError} If required fields are missing
                  */
-                Reason.decode = function decode(reader, length) {
+                EventReason.decode = function decode(reader, length) {
                     if (!(reader instanceof $Reader))
                         reader = $Reader.create(reader);
-                    var end = length === undefined ? reader.len : reader.pos + length, message = new $root.flyteidl.event.Reason();
+                    var end = length === undefined ? reader.len : reader.pos + length, message = new $root.flyteidl.event.EventReason();
                     while (reader.pos < end) {
                         var tag = reader.uint32();
                         switch (tag >>> 3) {
@@ -17713,14 +17713,14 @@
                 };
     
                 /**
-                 * Verifies a Reason message.
+                 * Verifies an EventReason message.
                  * @function verify
-                 * @memberof flyteidl.event.Reason
+                 * @memberof flyteidl.event.EventReason
                  * @static
                  * @param {Object.<string,*>} message Plain object to verify
                  * @returns {string|null} `null` if valid, otherwise the reason why it is not
                  */
-                Reason.verify = function verify(message) {
+                EventReason.verify = function verify(message) {
                     if (typeof message !== "object" || message === null)
                         return "object expected";
                     if (message.reason != null && message.hasOwnProperty("reason"))
@@ -17734,7 +17734,7 @@
                     return null;
                 };
     
-                return Reason;
+                return EventReason;
             })();
     
             event.TaskExecutionEvent = (function() {
@@ -17758,7 +17758,7 @@
                  * @property {google.protobuf.IStruct|null} [customInfo] TaskExecutionEvent customInfo
                  * @property {number|null} [phaseVersion] TaskExecutionEvent phaseVersion
                  * @property {string|null} [reason] TaskExecutionEvent reason
-                 * @property {Array.<flyteidl.event.IReason>|null} [reasons] TaskExecutionEvent reasons
+                 * @property {Array.<flyteidl.event.IEventReason>|null} [reasons] TaskExecutionEvent reasons
                  * @property {string|null} [taskType] TaskExecutionEvent taskType
                  * @property {flyteidl.event.ITaskExecutionMetadata|null} [metadata] TaskExecutionEvent metadata
                  * @property {number|null} [eventVersion] TaskExecutionEvent eventVersion
@@ -17904,7 +17904,7 @@
     
                 /**
                  * TaskExecutionEvent reasons.
-                 * @member {Array.<flyteidl.event.IReason>} reasons
+                 * @member {Array.<flyteidl.event.IEventReason>} reasons
                  * @memberof flyteidl.event.TaskExecutionEvent
                  * @instance
                  */
@@ -18032,7 +18032,7 @@
                         $root.google.protobuf.Timestamp.encode(message.reportedAt, writer.uint32(/* id 20, wireType 2 =*/162).fork()).ldelim();
                     if (message.reasons != null && message.reasons.length)
                         for (var i = 0; i < message.reasons.length; ++i)
-                            $root.flyteidl.event.Reason.encode(message.reasons[i], writer.uint32(/* id 21, wireType 2 =*/170).fork()).ldelim();
+                            $root.flyteidl.event.EventReason.encode(message.reasons[i], writer.uint32(/* id 21, wireType 2 =*/170).fork()).ldelim();
                     return writer;
                 };
     
@@ -18104,7 +18104,7 @@
                         case 21:
                             if (!(message.reasons && message.reasons.length))
                                 message.reasons = [];
-                            message.reasons.push($root.flyteidl.event.Reason.decode(reader, reader.uint32()));
+                            message.reasons.push($root.flyteidl.event.EventReason.decode(reader, reader.uint32()));
                             break;
                         case 14:
                             message.taskType = reader.string();
@@ -18237,7 +18237,7 @@
                         if (!Array.isArray(message.reasons))
                             return "reasons: array expected";
                         for (var i = 0; i < message.reasons.length; ++i) {
-                            var error = $root.flyteidl.event.Reason.verify(message.reasons[i]);
+                            var error = $root.flyteidl.event.EventReason.verify(message.reasons[i]);
                             if (error)
                                 return "reasons." + error;
                         }
