@@ -6011,22 +6011,6 @@
       },
       "description": "Represents the error message from the execution."
     },
-    "coreGPUAccelerator": {
-      "type": "object",
-      "properties": {
-        "device": {
-          "type": "string"
-        },
-        "unpartitioned": {
-          "type": "boolean",
-          "format": "boolean"
-        },
-        "partition_size": {
-          "type": "string"
-        }
-      },
-      "title": "Metadata associated with the GPU accelerator to allocate to a task"
-    },
     "coreGateNode": {
       "type": "object",
       "properties": {
@@ -6474,6 +6458,12 @@
         "var": {
           "type": "string",
           "description": "Variable name must refer to an output variable for the node."
+        },
+        "attr_path": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/corePromiseAttribute"
+          }
         }
       },
       "description": "A reference to an output produced by a node. The type can be retrieved -and validated- from\nthe underlying interface of the node."
@@ -6538,6 +6528,18 @@
       },
       "title": "Primitive Types"
     },
+    "corePromiseAttribute": {
+      "type": "object",
+      "properties": {
+        "string_value": {
+          "type": "string"
+        },
+        "int_value": {
+          "type": "integer",
+          "format": "int32"
+        }
+      }
+    },
     "coreQualityOfService": {
       "type": "object",
       "properties": {
@@ -6559,15 +6561,6 @@
         }
       },
       "description": "Represents customized execution run-time attributes."
-    },
-    "coreResourceMetadata": {
-      "type": "object",
-      "properties": {
-        "gpu_accelerator": {
-          "$ref": "#/definitions/coreGPUAccelerator"
-        }
-      },
-      "title": "Additional metadata associated with resources to allocate to a task"
     },
     "coreResourceType": {
       "type": "string",
@@ -6977,10 +6970,6 @@
         "pod_template_name": {
           "type": "string",
           "description": "pod_template_name is the unique name of a PodTemplate k8s resource to be used as the base configuration if this\ntask creates a k8s Pod. If this value is set, the specified PodTemplate will be used instead of, but applied\nidentically as, the default PodTemplate configured in FlytePropeller."
-        },
-        "resource_metadata": {
-          "$ref": "#/definitions/coreResourceMetadata",
-          "title": "Additional metadata associated with resources to allocate to this task"
         }
       },
       "title": "Task Metadata"
@@ -7005,10 +6994,6 @@
         "resources": {
           "$ref": "#/definitions/coreResources",
           "description": "A customizable interface to convey resources requested for a task container."
-        },
-        "resource_metadata": {
-          "$ref": "#/definitions/coreResourceMetadata",
-          "title": "Additional metadata associated with resources to allocate to this task"
         }
       },
       "description": "Optional task node overrides that will be applied at task execution time."

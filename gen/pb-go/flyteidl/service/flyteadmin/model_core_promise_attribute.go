@@ -9,8 +9,7 @@
 
 package flyteadmin
 
-type CoreGpuAccelerator struct {
-	Device string `json:"device,omitempty"`
-	Unpartitioned bool `json:"unpartitioned,omitempty"`
-	PartitionSize string `json:"partition_size,omitempty"`
+type CorePromiseAttribute struct {
+	StringValue string `json:"string_value,omitempty"`
+	IntValue int32 `json:"int_value,omitempty"`
 }

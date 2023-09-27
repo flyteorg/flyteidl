@@ -16,12 +16,12 @@ from __future__ import absolute_import
 import unittest
 
 import flyteadmin
-from flyteadmin.models.core_gpu_accelerator import CoreGPUAccelerator  # noqa: E501
+from flyteadmin.models.core_promise_attribute import CorePromiseAttribute  # noqa: E501
 from flyteadmin.rest import ApiException
 
 
-class TestCoreGPUAccelerator(unittest.TestCase):
-    """CoreGPUAccelerator unit test stubs"""
+class TestCorePromiseAttribute(unittest.TestCase):
+    """CorePromiseAttribute unit test stubs"""
 
     def setUp(self):
         pass
@@ -29,10 +29,10 @@ class TestCoreGPUAccelerator(unittest.TestCase):
     def tearDown(self):
         pass
 
-    def testCoreGPUAccelerator(self):
-        """Test CoreGPUAccelerator"""
+    def testCorePromiseAttribute(self):
+        """Test CorePromiseAttribute"""
         # FIXME: construct object with mandatory attributes with example values
-        # model = flyteadmin.models.core_gpu_accelerator.CoreGPUAccelerator()  # noqa: E501
+        # model = flyteadmin.models.core_promise_attribute.CorePromiseAttribute()  # noqa: E501
         pass
 
 

@@ -242,6 +242,36 @@ pub struct OutputReference {
     /// Variable name must refer to an output variable for the node.
     #[prost(string, tag="2")]
     pub var: ::prost::alloc::string::String,
+    #[prost(message, repeated, tag="3")]
+    pub attr_path: ::prost::alloc::vec::Vec<PromiseAttribute>,
+}
+// PromiseAttribute stores the attribute path of a promise, which will be resolved at runtime.
+// The attribute path is a list of strings and integers.
+// In the following example,
+// ```
+// @workflow
+// def wf():
+//      o = t1()
+//      t2(o.a\["b"][0\])
+// ```
+// the output reference t2 binds to has a list of PromiseAttribute ["a", "b", 0]
+
+#[allow(clippy::derive_partial_eq_without_eq)]
+#[derive(Clone, PartialEq, ::prost::Message)]
+pub struct PromiseAttribute {
+    #[prost(oneof="promise_attribute::Value", tags="1, 2")]
+    pub value: ::core::option::Option<promise_attribute::Value>,
+}
+/// Nested message and enum types in `PromiseAttribute`.
+pub mod promise_attribute {
+    #[allow(clippy::derive_partial_eq_without_eq)]
+#[derive(Clone, PartialEq, ::prost::Oneof)]
+    pub enum Value {
+        #[prost(string, tag="1")]
+        StringValue(::prost::alloc::string::String),
+        #[prost(int32, tag="2")]
+        IntValue(i32),
+    }
 }
 /// Represents an error thrown from a node.
 #[allow(clippy::derive_partial_eq_without_eq)]
@@ -1022,42 +1052,6 @@ pub mod runtime_metadata {
         }
     }
 }
-/// Metadata associated with the GPU accelerator to allocate to a task
-#[allow(clippy::derive_partial_eq_without_eq)]
-#[derive(Clone, PartialEq, ::prost::Message)]
-pub struct GpuAccelerator {
-    #[prost(string, tag="1")]
-    pub device: ::prost::alloc::string::String,
-    #[prost(oneof="gpu_accelerator::PartitionSizeValue", tags="2, 3")]
-    pub partition_size_value: ::core::option::Option<gpu_accelerator::PartitionSizeValue>,
-}
-/// Nested message and enum types in `GPUAccelerator`.
-pub mod gpu_accelerator {
-    #[allow(clippy::derive_partial_eq_without_eq)]
-#[derive(Clone, PartialEq, ::prost::Oneof)]
-    pub enum PartitionSizeValue {
-        #[prost(bool, tag="2")]
-        Unpartitioned(bool),
-        #[prost(string, tag="3")]
-        PartitionSize(::prost::alloc::string::String),
-    }
-}
-/// Additional metadata associated with resources to allocate to a task
-#[allow(clippy::derive_partial_eq_without_eq)]
-#[derive(Clone, PartialEq, ::prost::Message)]
-pub struct ResourceMetadata {
-    #[prost(oneof="resource_metadata::AcceleratorValue", tags="1")]
-    pub accelerator_value: ::core::option::Option<resource_metadata::AcceleratorValue>,
-}
-/// Nested message and enum types in `ResourceMetadata`.
-pub mod resource_metadata {
-    #[allow(clippy::derive_partial_eq_without_eq)]
-#[derive(Clone, PartialEq, ::prost::Oneof)]
-    pub enum AcceleratorValue {
-        #[prost(message, tag="1")]
-        GpuAccelerator(super::GpuAccelerator),
-    }
-}
 /// Task Metadata
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(Clone, PartialEq, ::prost::Message)]
@@ -1095,9 +1089,6 @@ pub struct TaskMetadata {
     /// identically as, the default PodTemplate configured in FlytePropeller.
     #[prost(string, tag="12")]
     pub pod_template_name: ::prost::alloc::string::String,
-    /// Additional metadata associated with resources to allocate to this task
-    #[prost(message, optional, tag="13")]
-    pub resource_metadata: ::core::option::Option<ResourceMetadata>,
     // For interruptible we will populate it at the node level but require it be part of TaskMetadata
     // for a user to set the value.
     // We are using oneof instead of bool because otherwise we would be unable to distinguish between value being
@@ -2354,9 +2345,6 @@ pub struct TaskNodeOverrides {
     /// A customizable interface to convey resources requested for a task container. 
     #[prost(message, optional, tag="1")]
     pub resources: ::core::option::Option<Resources>,
-    /// Additional metadata associated with resources to allocate to this task
-    #[prost(message, optional, tag="2")]
-    pub resource_metadata: ::core::option::Option<ResourceMetadata>,
 }
 /// Adjacency list for the workflow. This is created as part of the compilation process. Every process after the compilation
 /// step uses this created ConnectionSet
