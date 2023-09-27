@@ -58,9 +58,6 @@ struct TableStruct_flyteidl_2fevent_2fevent_2eproto {
 void AddDescriptors_flyteidl_2fevent_2fevent_2eproto();
 namespace flyteidl {
 namespace event {
-class BatchedReason;
-class BatchedReasonDefaultTypeInternal;
-extern BatchedReasonDefaultTypeInternal _BatchedReason_default_instance_;
 class DynamicWorkflowNodeMetadata;
 class DynamicWorkflowNodeMetadataDefaultTypeInternal;
 extern DynamicWorkflowNodeMetadataDefaultTypeInternal _DynamicWorkflowNodeMetadata_default_instance_;
@@ -76,6 +73,9 @@ extern ParentNodeExecutionMetadataDefaultTypeInternal _ParentNodeExecutionMetada
 class ParentTaskExecutionMetadata;
 class ParentTaskExecutionMetadataDefaultTypeInternal;
 extern ParentTaskExecutionMetadataDefaultTypeInternal _ParentTaskExecutionMetadata_default_instance_;
+class Reason;
+class ReasonDefaultTypeInternal;
+extern ReasonDefaultTypeInternal _Reason_default_instance_;
 class ResourcePoolInfo;
 class ResourcePoolInfoDefaultTypeInternal;
 extern ResourcePoolInfoDefaultTypeInternal _ResourcePoolInfo_default_instance_;
@@ -98,12 +98,12 @@ extern WorkflowNodeMetadataDefaultTypeInternal _WorkflowNodeMetadata_default_ins
 }  // namespace flyteidl
 namespace google {
 namespace protobuf {
-template<> ::flyteidl::event::BatchedReason* Arena::CreateMaybeMessage<::flyteidl::event::BatchedReason>(Arena*);
 template<> ::flyteidl::event::DynamicWorkflowNodeMetadata* Arena::CreateMaybeMessage<::flyteidl::event::DynamicWorkflowNodeMetadata>(Arena*);
 template<> ::flyteidl::event::ExternalResourceInfo* Arena::CreateMaybeMessage<::flyteidl::event::ExternalResourceInfo>(Arena*);
 template<> ::flyteidl::event::NodeExecutionEvent* Arena::CreateMaybeMessage<::flyteidl::event::NodeExecutionEvent>(Arena*);
 template<> ::flyteidl::event::ParentNodeExecutionMetadata* Arena::CreateMaybeMessage<::flyteidl::event::ParentNodeExecutionMetadata>(Arena*);
 template<> ::flyteidl::event::ParentTaskExecutionMetadata* Arena::CreateMaybeMessage<::flyteidl::event::ParentTaskExecutionMetadata>(Arena*);
+template<> ::flyteidl::event::Reason* Arena::CreateMaybeMessage<::flyteidl::event::Reason>(Arena*);
 template<> ::flyteidl::event::ResourcePoolInfo* Arena::CreateMaybeMessage<::flyteidl::event::ResourcePoolInfo>(Arena*);
 template<> ::flyteidl::event::TaskExecutionEvent* Arena::CreateMaybeMessage<::flyteidl::event::TaskExecutionEvent>(Arena*);
 template<> ::flyteidl::event::TaskExecutionMetadata* Arena::CreateMaybeMessage<::flyteidl::event::TaskExecutionMetadata>(Arena*);
@@ -1383,25 +1383,25 @@ class ParentNodeExecutionMetadata final :
 };
 // -------------------------------------------------------------------
 
-class BatchedReason final :
-    public ::google::protobuf::Message /* @@protoc_insertion_point(class_definition:flyteidl.event.BatchedReason) */ {
+class Reason final :
+    public ::google::protobuf::Message /* @@protoc_insertion_point(class_definition:flyteidl.event.Reason) */ {
  public:
-  BatchedReason();
-  virtual ~BatchedReason();
+  Reason();
+  virtual ~Reason();
 
-  BatchedReason(const BatchedReason& from);
+  Reason(const Reason& from);
 
-  inline BatchedReason& operator=(const BatchedReason& from) {
+  inline Reason& operator=(const Reason& from) {
     CopyFrom(from);
     return *this;
   }
   #if LANG_CXX11
-  BatchedReason(BatchedReason&& from) noexcept
-    : BatchedReason() {
+  Reason(Reason&& from) noexcept
+    : Reason() {
     *this = ::std::move(from);
   }
 
-  inline BatchedReason& operator=(BatchedReason&& from) noexcept {
+  inline Reason& operator=(Reason&& from) noexcept {
     if (GetArenaNoVirtual() == from.GetArenaNoVirtual()) {
       if (this != &from) InternalSwap(&from);
     } else {
@@ -1413,34 +1413,34 @@ class BatchedReason final :
   static const ::google::protobuf::Descriptor* descriptor() {
     return default_instance().GetDescriptor();
   }
-  static const BatchedReason& default_instance();
+  static const Reason& default_instance();
 
   static void InitAsDefaultInstance();  // FOR INTERNAL USE ONLY
-  static inline const BatchedReason* internal_default_instance() {
-    return reinterpret_cast<const BatchedReason*>(
-               &_BatchedReason_default_instance_);
+  static inline const Reason* internal_default_instance() {
+    return reinterpret_cast<const Reason*>(
+               &_Reason_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
     7;
 
-  void Swap(BatchedReason* other);
-  friend void swap(BatchedReason& a, BatchedReason& b) {
+  void Swap(Reason* other);
+  friend void swap(Reason& a, Reason& b) {
     a.Swap(&b);
   }
 
   // implements Message ----------------------------------------------
 
-  inline BatchedReason* New() const final {
-    return CreateMaybeMessage<BatchedReason>(nullptr);
+  inline Reason* New() const final {
+    return CreateMaybeMessage<Reason>(nullptr);
   }
 
-  BatchedReason* New(::google::protobuf::Arena* arena) const final {
-    return CreateMaybeMessage<BatchedReason>(arena);
+  Reason* New(::google::protobuf::Arena* arena) const final {
+    return CreateMaybeMessage<Reason>(arena);
   }
   void CopyFrom(const ::google::protobuf::Message& from) final;
   void MergeFrom(const ::google::protobuf::Message& from) final;
-  void CopyFrom(const BatchedReason& from);
-  void MergeFrom(const BatchedReason& from);
+  void CopyFrom(const Reason& from);
+  void MergeFrom(const Reason& from);
   PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
   bool IsInitialized() const final;
 
@@ -1462,7 +1462,7 @@ class BatchedReason final :
   void SharedCtor();
   void SharedDtor();
   void SetCachedSize(int size) const final;
-  void InternalSwap(BatchedReason* other);
+  void InternalSwap(Reason* other);
   private:
   inline ::google::protobuf::Arena* GetArenaNoVirtual() const {
     return nullptr;
@@ -1501,7 +1501,7 @@ class BatchedReason final :
   ::google::protobuf::Timestamp* mutable_occurred_at();
   void set_allocated_occurred_at(::google::protobuf::Timestamp* occurred_at);
 
-  // @@protoc_insertion_point(class_scope:flyteidl.event.BatchedReason)
+  // @@protoc_insertion_point(class_scope:flyteidl.event.Reason)
  private:
   class HasBitSetters;
 
@@ -1633,16 +1633,16 @@ class TaskExecutionEvent final :
   const ::google::protobuf::RepeatedPtrField< ::flyteidl::core::TaskLog >&
       logs() const;
 
-  // repeated .flyteidl.event.BatchedReason reasons = 21;
+  // repeated .flyteidl.event.Reason reasons = 21;
   int reasons_size() const;
   void clear_reasons();
   static const int kReasonsFieldNumber = 21;
-  ::flyteidl::event::BatchedReason* mutable_reasons(int index);
-  ::google::protobuf::RepeatedPtrField< ::flyteidl::event::BatchedReason >*
+  ::flyteidl::event::Reason* mutable_reasons(int index);
+  ::google::protobuf::RepeatedPtrField< ::flyteidl::event::Reason >*
       mutable_reasons();
-  const ::flyteidl::event::BatchedReason& reasons(int index) const;
-  ::flyteidl::event::BatchedReason* add_reasons();
-  const ::google::protobuf::RepeatedPtrField< ::flyteidl::event::BatchedReason >&
+  const ::flyteidl::event::Reason& reasons(int index) const;
+  ::flyteidl::event::Reason* add_reasons();
+  const ::google::protobuf::RepeatedPtrField< ::flyteidl::event::Reason >&
       reasons() const;
 
   // string producer_id = 5;
@@ -1847,7 +1847,7 @@ class TaskExecutionEvent final :
 
   ::google::protobuf::internal::InternalMetadataWithArena _internal_metadata_;
   ::google::protobuf::RepeatedPtrField< ::flyteidl::core::TaskLog > logs_;
-  ::google::protobuf::RepeatedPtrField< ::flyteidl::event::BatchedReason > reasons_;
+  ::google::protobuf::RepeatedPtrField< ::flyteidl::event::Reason > reasons_;
   ::google::protobuf::internal::ArenaStringPtr producer_id_;
   ::google::protobuf::internal::ArenaStringPtr reason_;
   ::google::protobuf::internal::ArenaStringPtr task_type_;
@@ -4154,88 +4154,88 @@ inline void ParentNodeExecutionMetadata::set_allocated_node_id(::std::string* no
 
 // -------------------------------------------------------------------
 
-// BatchedReason
+// Reason
 
 // string reason = 1;
-inline void BatchedReason::clear_reason() {
+inline void Reason::clear_reason() {
   reason_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
 }
-inline const ::std::string& BatchedReason::reason() const {
-  // @@protoc_insertion_point(field_get:flyteidl.event.BatchedReason.reason)
+inline const ::std::string& Reason::reason() const {
+  // @@protoc_insertion_point(field_get:flyteidl.event.Reason.reason)
   return reason_.GetNoArena();
 }
-inline void BatchedReason::set_reason(const ::std::string& value) {
+inline void Reason::set_reason(const ::std::string& value) {
   
   reason_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
-  // @@protoc_insertion_point(field_set:flyteidl.event.BatchedReason.reason)
+  // @@protoc_insertion_point(field_set:flyteidl.event.Reason.reason)
 }
 #if LANG_CXX11
-inline void BatchedReason::set_reason(::std::string&& value) {
+inline void Reason::set_reason(::std::string&& value) {
   
   reason_.SetNoArena(
     &::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::move(value));
-  // @@protoc_insertion_point(field_set_rvalue:flyteidl.event.BatchedReason.reason)
+  // @@protoc_insertion_point(field_set_rvalue:flyteidl.event.Reason.reason)
 }
 #endif
-inline void BatchedReason::set_reason(const char* value) {
+inline void Reason::set_reason(const char* value) {
   GOOGLE_DCHECK(value != nullptr);
   
   reason_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
-  // @@protoc_insertion_point(field_set_char:flyteidl.event.BatchedReason.reason)
+  // @@protoc_insertion_point(field_set_char:flyteidl.event.Reason.reason)
 }
-inline void BatchedReason::set_reason(const char* value, size_t size) {
+inline void Reason::set_reason(const char* value, size_t size) {
   
   reason_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
       ::std::string(reinterpret_cast<const char*>(value), size));
-  // @@protoc_insertion_point(field_set_pointer:flyteidl.event.BatchedReason.reason)
+  // @@protoc_insertion_point(field_set_pointer:flyteidl.event.Reason.reason)
 }
-inline ::std::string* BatchedReason::mutable_reason() {
+inline ::std::string* Reason::mutable_reason() {
   
-  // @@protoc_insertion_point(field_mutable:flyteidl.event.BatchedReason.reason)
+  // @@protoc_insertion_point(field_mutable:flyteidl.event.Reason.reason)
   return reason_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
 }
-inline ::std::string* BatchedReason::release_reason() {
-  // @@protoc_insertion_point(field_release:flyteidl.event.BatchedReason.reason)
+inline ::std::string* Reason::release_reason() {
+  // @@protoc_insertion_point(field_release:flyteidl.event.Reason.reason)
   
   return reason_.ReleaseNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
 }
-inline void BatchedReason::set_allocated_reason(::std::string* reason) {
+inline void Reason::set_allocated_reason(::std::string* reason) {
   if (reason != nullptr) {
     
   } else {
     
   }
   reason_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), reason);
-  // @@protoc_insertion_point(field_set_allocated:flyteidl.event.BatchedReason.reason)
+  // @@protoc_insertion_point(field_set_allocated:flyteidl.event.Reason.reason)
 }
 
 // .google.protobuf.Timestamp occurred_at = 2;
-inline bool BatchedReason::has_occurred_at() const {
+inline bool Reason::has_occurred_at() const {
   return this != internal_default_instance() && occurred_at_ != nullptr;
 }
-inline const ::google::protobuf::Timestamp& BatchedReason::occurred_at() const {
+inline const ::google::protobuf::Timestamp& Reason::occurred_at() const {
   const ::google::protobuf::Timestamp* p = occurred_at_;
-  // @@protoc_insertion_point(field_get:flyteidl.event.BatchedReason.occurred_at)
+  // @@protoc_insertion_point(field_get:flyteidl.event.Reason.occurred_at)
   return p != nullptr ? *p : *reinterpret_cast<const ::google::protobuf::Timestamp*>(
       &::google::protobuf::_Timestamp_default_instance_);
 }
-inline ::google::protobuf::Timestamp* BatchedReason::release_occurred_at() {
-  // @@protoc_insertion_point(field_release:flyteidl.event.BatchedReason.occurred_at)
+inline ::google::protobuf::Timestamp* Reason::release_occurred_at() {
+  // @@protoc_insertion_point(field_release:flyteidl.event.Reason.occurred_at)
   
   ::google::protobuf::Timestamp* temp = occurred_at_;
   occurred_at_ = nullptr;
   return temp;
 }
-inline ::google::protobuf::Timestamp* BatchedReason::mutable_occurred_at() {
+inline ::google::protobuf::Timestamp* Reason::mutable_occurred_at() {
   
   if (occurred_at_ == nullptr) {
     auto* p = CreateMaybeMessage<::google::protobuf::Timestamp>(GetArenaNoVirtual());
     occurred_at_ = p;
   }
-  // @@protoc_insertion_point(field_mutable:flyteidl.event.BatchedReason.occurred_at)
+  // @@protoc_insertion_point(field_mutable:flyteidl.event.Reason.occurred_at)
   return occurred_at_;
 }
-inline void BatchedReason::set_allocated_occurred_at(::google::protobuf::Timestamp* occurred_at) {
+inline void Reason::set_allocated_occurred_at(::google::protobuf::Timestamp* occurred_at) {
   ::google::protobuf::Arena* message_arena = GetArenaNoVirtual();
   if (message_arena == nullptr) {
     delete reinterpret_cast< ::google::protobuf::MessageLite*>(occurred_at_);
@@ -4252,7 +4252,7 @@ inline void BatchedReason::set_allocated_occurred_at(::google::protobuf::Timesta
     
   }
   occurred_at_ = occurred_at;
-  // @@protoc_insertion_point(field_set_allocated:flyteidl.event.BatchedReason.occurred_at)
+  // @@protoc_insertion_point(field_set_allocated:flyteidl.event.Reason.occurred_at)
 }
 
 // -------------------------------------------------------------------
@@ -4905,31 +4905,31 @@ inline void TaskExecutionEvent::set_allocated_reason(::std::string* reason) {
   // @@protoc_insertion_point(field_set_allocated:flyteidl.event.TaskExecutionEvent.reason)
 }
 
-// repeated .flyteidl.event.BatchedReason reasons = 21;
+// repeated .flyteidl.event.Reason reasons = 21;
 inline int TaskExecutionEvent::reasons_size() const {
   return reasons_.size();
 }
 inline void TaskExecutionEvent::clear_reasons() {
   reasons_.Clear();
 }
-inline ::flyteidl::event::BatchedReason* TaskExecutionEvent::mutable_reasons(int index) {
+inline ::flyteidl::event::Reason* TaskExecutionEvent::mutable_reasons(int index) {
   // @@protoc_insertion_point(field_mutable:flyteidl.event.TaskExecutionEvent.reasons)
   return reasons_.Mutable(index);
 }
-inline ::google::protobuf::RepeatedPtrField< ::flyteidl::event::BatchedReason >*
+inline ::google::protobuf::RepeatedPtrField< ::flyteidl::event::Reason >*
 TaskExecutionEvent::mutable_reasons() {
   // @@protoc_insertion_point(field_mutable_list:flyteidl.event.TaskExecutionEvent.reasons)
   return &reasons_;
 }
-inline const ::flyteidl::event::BatchedReason& TaskExecutionEvent::reasons(int index) const {
+inline const ::flyteidl::event::Reason& TaskExecutionEvent::reasons(int index) const {
   // @@protoc_insertion_point(field_get:flyteidl.event.TaskExecutionEvent.reasons)
   return reasons_.Get(index);
 }
-inline ::flyteidl::event::BatchedReason* TaskExecutionEvent::add_reasons() {
+inline ::flyteidl::event::Reason* TaskExecutionEvent::add_reasons() {
   // @@protoc_insertion_point(field_add:flyteidl.event.TaskExecutionEvent.reasons)
   return reasons_.Add();
 }
-inline const ::google::protobuf::RepeatedPtrField< ::flyteidl::event::BatchedReason >&
+inline const ::google::protobuf::RepeatedPtrField< ::flyteidl::event::Reason >&
 TaskExecutionEvent::reasons() const {
   // @@protoc_insertion_point(field_list:flyteidl.event.TaskExecutionEvent.reasons)
   return reasons_;

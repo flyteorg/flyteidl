@@ -185,11 +185,11 @@ pub struct ParentNodeExecutionMetadata {
 }
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(Clone, PartialEq, ::prost::Message)]
-pub struct BatchedReason {
-    /// An explanation for this batched event
+pub struct Reason {
+    /// An explanation for this event
     #[prost(string, tag="1")]
     pub reason: ::prost::alloc::string::String,
-    /// The time this batched event occurred
+    /// The time this reason occurred
     #[prost(message, optional, tag="2")]
     pub occurred_at: ::core::option::Option<::prost_types::Timestamp>,
 }
@@ -236,7 +236,7 @@ pub struct TaskExecutionEvent {
     pub reason: ::prost::alloc::string::String,
     /// An optional list of explanations for the phase transition.
     #[prost(message, repeated, tag="21")]
-    pub reasons: ::prost::alloc::vec::Vec<BatchedReason>,
+    pub reasons: ::prost::alloc::vec::Vec<Reason>,
     /// A predefined yet extensible Task type identifier. If the task definition is already registered in flyte admin
     /// this type will be identical, but not all task executions necessarily use pre-registered definitions and this
     /// type is useful to render the task in the UI, filter task executions, etc.

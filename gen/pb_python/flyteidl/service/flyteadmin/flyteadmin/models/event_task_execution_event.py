@@ -22,7 +22,7 @@ from flyteadmin.models.core_literal_map import CoreLiteralMap  # noqa: F401,E501
 from flyteadmin.models.core_node_execution_identifier import CoreNodeExecutionIdentifier  # noqa: F401,E501
 from flyteadmin.models.core_task_execution_phase import CoreTaskExecutionPhase  # noqa: F401,E501
 from flyteadmin.models.core_task_log import CoreTaskLog  # noqa: F401,E501
-from flyteadmin.models.event_batched_reason import EventBatchedReason  # noqa: F401,E501
+from flyteadmin.models.flyteidlevent_reason import FlyteidleventReason  # noqa: F401,E501
 from flyteadmin.models.flyteidlevent_task_execution_metadata import FlyteidleventTaskExecutionMetadata  # noqa: F401,E501
 from flyteadmin.models.protobuf_struct import ProtobufStruct  # noqa: F401,E501
 
@@ -56,7 +56,7 @@ class EventTaskExecutionEvent(object):
         'custom_info': 'ProtobufStruct',
         'phase_version': 'int',
         'reason': 'str',
-        'reasons': 'list[EventBatchedReason]',
+        'reasons': 'list[FlyteidleventReason]',
         'task_type': 'str',
         'metadata': 'FlyteidleventTaskExecutionMetadata',
         'event_version': 'int',
@@ -492,7 +492,7 @@ class EventTaskExecutionEvent(object):
         An optional list of explanations for the phase transition.  # noqa: E501
 
         :return: The reasons of this EventTaskExecutionEvent.  # noqa: E501
-        :rtype: list[EventBatchedReason]
+        :rtype: list[FlyteidleventReason]
         """
         return self._reasons
 
@@ -503,7 +503,7 @@ class EventTaskExecutionEvent(object):
         An optional list of explanations for the phase transition.  # noqa: E501
 
         :param reasons: The reasons of this EventTaskExecutionEvent.  # noqa: E501
-        :type: list[EventBatchedReason]
+        :type: list[FlyteidleventReason]
         """
 
         self._reasons = reasons

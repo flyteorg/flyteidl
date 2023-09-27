@@ -17766,25 +17766,25 @@
                 return ParentNodeExecutionMetadata;
             })();
     
-            event.BatchedReason = (function() {
+            event.Reason = (function() {
     
                 /**
-                 * Properties of a BatchedReason.
+                 * Properties of a Reason.
                  * @memberof flyteidl.event
-                 * @interface IBatchedReason
-                 * @property {string|null} [reason] BatchedReason reason
-                 * @property {google.protobuf.ITimestamp|null} [occurredAt] BatchedReason occurredAt
+                 * @interface IReason
+                 * @property {string|null} [reason] Reason reason
+                 * @property {google.protobuf.ITimestamp|null} [occurredAt] Reason occurredAt
                  */
     
                 /**
-                 * Constructs a new BatchedReason.
+                 * Constructs a new Reason.
                  * @memberof flyteidl.event
-                 * @classdesc Represents a BatchedReason.
-                 * @implements IBatchedReason
+                 * @classdesc Represents a Reason.
+                 * @implements IReason
                  * @constructor
-                 * @param {flyteidl.event.IBatchedReason=} [properties] Properties to set
+                 * @param {flyteidl.event.IReason=} [properties] Properties to set
                  */
-                function BatchedReason(properties) {
+                function Reason(properties) {
                     if (properties)
                         for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
                             if (properties[keys[i]] != null)
@@ -17792,43 +17792,43 @@
                 }
     
                 /**
-                 * BatchedReason reason.
+                 * Reason reason.
                  * @member {string} reason
-                 * @memberof flyteidl.event.BatchedReason
+                 * @memberof flyteidl.event.Reason
                  * @instance
                  */
-                BatchedReason.prototype.reason = "";
+                Reason.prototype.reason = "";
     
                 /**
-                 * BatchedReason occurredAt.
+                 * Reason occurredAt.
                  * @member {google.protobuf.ITimestamp|null|undefined} occurredAt
-                 * @memberof flyteidl.event.BatchedReason
+                 * @memberof flyteidl.event.Reason
                  * @instance
                  */
-                BatchedReason.prototype.occurredAt = null;
+                Reason.prototype.occurredAt = null;
     
                 /**
-                 * Creates a new BatchedReason instance using the specified properties.
+                 * Creates a new Reason instance using the specified properties.
                  * @function create
-                 * @memberof flyteidl.event.BatchedReason
+                 * @memberof flyteidl.event.Reason
                  * @static
-                 * @param {flyteidl.event.IBatchedReason=} [properties] Properties to set
-                 * @returns {flyteidl.event.BatchedReason} BatchedReason instance
+                 * @param {flyteidl.event.IReason=} [properties] Properties to set
+                 * @returns {flyteidl.event.Reason} Reason instance
                  */
-                BatchedReason.create = function create(properties) {
-                    return new BatchedReason(properties);
+                Reason.create = function create(properties) {
+                    return new Reason(properties);
                 };
     
                 /**
-                 * Encodes the specified BatchedReason message. Does not implicitly {@link flyteidl.event.BatchedReason.verify|verify} messages.
+                 * Encodes the specified Reason message. Does not implicitly {@link flyteidl.event.Reason.verify|verify} messages.
                  * @function encode
-                 * @memberof flyteidl.event.BatchedReason
+                 * @memberof flyteidl.event.Reason
                  * @static
-                 * @param {flyteidl.event.IBatchedReason} message BatchedReason message or plain object to encode
+                 * @param {flyteidl.event.IReason} message Reason message or plain object to encode
                  * @param {$protobuf.Writer} [writer] Writer to encode to
                  * @returns {$protobuf.Writer} Writer
                  */
-                BatchedReason.encode = function encode(message, writer) {
+                Reason.encode = function encode(message, writer) {
                     if (!writer)
                         writer = $Writer.create();
                     if (message.reason != null && message.hasOwnProperty("reason"))
@@ -17839,20 +17839,20 @@
                 };
     
                 /**
-                 * Decodes a BatchedReason message from the specified reader or buffer.
+                 * Decodes a Reason message from the specified reader or buffer.
                  * @function decode
-                 * @memberof flyteidl.event.BatchedReason
+                 * @memberof flyteidl.event.Reason
                  * @static
                  * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
                  * @param {number} [length] Message length if known beforehand
-                 * @returns {flyteidl.event.BatchedReason} BatchedReason
+                 * @returns {flyteidl.event.Reason} Reason
                  * @throws {Error} If the payload is not a reader or valid buffer
                  * @throws {$protobuf.util.ProtocolError} If required fields are missing
                  */
-                BatchedReason.decode = function decode(reader, length) {
+                Reason.decode = function decode(reader, length) {
                     if (!(reader instanceof $Reader))
                         reader = $Reader.create(reader);
-                    var end = length === undefined ? reader.len : reader.pos + length, message = new $root.flyteidl.event.BatchedReason();
+                    var end = length === undefined ? reader.len : reader.pos + length, message = new $root.flyteidl.event.Reason();
                     while (reader.pos < end) {
                         var tag = reader.uint32();
                         switch (tag >>> 3) {
@@ -17871,14 +17871,14 @@
                 };
     
                 /**
-                 * Verifies a BatchedReason message.
+                 * Verifies a Reason message.
                  * @function verify
-                 * @memberof flyteidl.event.BatchedReason
+                 * @memberof flyteidl.event.Reason
                  * @static
                  * @param {Object.<string,*>} message Plain object to verify
                  * @returns {string|null} `null` if valid, otherwise the reason why it is not
                  */
-                BatchedReason.verify = function verify(message) {
+                Reason.verify = function verify(message) {
                     if (typeof message !== "object" || message === null)
                         return "object expected";
                     if (message.reason != null && message.hasOwnProperty("reason"))
@@ -17892,7 +17892,7 @@
                     return null;
                 };
     
-                return BatchedReason;
+                return Reason;
             })();
     
             event.TaskExecutionEvent = (function() {
@@ -17916,7 +17916,7 @@
                  * @property {google.protobuf.IStruct|null} [customInfo] TaskExecutionEvent customInfo
                  * @property {number|null} [phaseVersion] TaskExecutionEvent phaseVersion
                  * @property {string|null} [reason] TaskExecutionEvent reason
-                 * @property {Array.<flyteidl.event.IBatchedReason>|null} [reasons] TaskExecutionEvent reasons
+                 * @property {Array.<flyteidl.event.IReason>|null} [reasons] TaskExecutionEvent reasons
                  * @property {string|null} [taskType] TaskExecutionEvent taskType
                  * @property {flyteidl.event.ITaskExecutionMetadata|null} [metadata] TaskExecutionEvent metadata
                  * @property {number|null} [eventVersion] TaskExecutionEvent eventVersion
@@ -18062,7 +18062,7 @@
     
                 /**
                  * TaskExecutionEvent reasons.
-                 * @member {Array.<flyteidl.event.IBatchedReason>} reasons
+                 * @member {Array.<flyteidl.event.IReason>} reasons
                  * @memberof flyteidl.event.TaskExecutionEvent
                  * @instance
                  */
@@ -18190,7 +18190,7 @@
                         $root.google.protobuf.Timestamp.encode(message.reportedAt, writer.uint32(/* id 20, wireType 2 =*/162).fork()).ldelim();
                     if (message.reasons != null && message.reasons.length)
                         for (var i = 0; i < message.reasons.length; ++i)
-                            $root.flyteidl.event.BatchedReason.encode(message.reasons[i], writer.uint32(/* id 21, wireType 2 =*/170).fork()).ldelim();
+                            $root.flyteidl.event.Reason.encode(message.reasons[i], writer.uint32(/* id 21, wireType 2 =*/170).fork()).ldelim();
                     return writer;
                 };
     
@@ -18262,7 +18262,7 @@
                         case 21:
                             if (!(message.reasons && message.reasons.length))
                                 message.reasons = [];
-                            message.reasons.push($root.flyteidl.event.BatchedReason.decode(reader, reader.uint32()));
+                            message.reasons.push($root.flyteidl.event.Reason.decode(reader, reader.uint32()));
                             break;
                         case 14:
                             message.taskType = reader.string();
@@ -18395,7 +18395,7 @@
                         if (!Array.isArray(message.reasons))
                             return "reasons: array expected";
                         for (var i = 0; i < message.reasons.length; ++i) {
-                            var error = $root.flyteidl.event.BatchedReason.verify(message.reasons[i]);
+                            var error = $root.flyteidl.event.Reason.verify(message.reasons[i]);
                             if (error)
                                 return "reasons." + error;
                         }

@@ -16,12 +16,12 @@ from __future__ import absolute_import
 import unittest
 
 import flyteadmin
-from flyteadmin.models.event_batched_reason import EventBatchedReason  # noqa: E501
+from flyteadmin.models.flyteidlevent_reason import FlyteidleventReason  # noqa: E501
 from flyteadmin.rest import ApiException
 
 
-class TestEventBatchedReason(unittest.TestCase):
-    """EventBatchedReason unit test stubs"""
+class TestFlyteidleventReason(unittest.TestCase):
+    """FlyteidleventReason unit test stubs"""
 
     def setUp(self):
         pass
@@ -29,10 +29,10 @@ class TestEventBatchedReason(unittest.TestCase):
     def tearDown(self):
         pass
 
-    def testEventBatchedReason(self):
-        """Test EventBatchedReason"""
+    def testFlyteidleventReason(self):
+        """Test FlyteidleventReason"""
         # FIXME: construct object with mandatory attributes with example values
-        # model = flyteadmin.models.event_batched_reason.EventBatchedReason()  # noqa: E501
+        # model = flyteadmin.models.flyteidlevent_reason.FlyteidleventReason()  # noqa: E501
         pass
 
 

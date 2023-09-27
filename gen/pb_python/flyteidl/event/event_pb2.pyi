@@ -119,7 +119,7 @@ class ParentNodeExecutionMetadata(_message.Message):
     node_id: str
     def __init__(self, node_id: _Optional[str] = ...) -> None: ...
 
-class BatchedReason(_message.Message):
+class Reason(_message.Message):
     __slots__ = ["reason", "occurred_at"]
     REASON_FIELD_NUMBER: _ClassVar[int]
     OCCURRED_AT_FIELD_NUMBER: _ClassVar[int]
@@ -164,12 +164,12 @@ class TaskExecutionEvent(_message.Message):
     custom_info: _struct_pb2.Struct
     phase_version: int
     reason: str
-    reasons: _containers.RepeatedCompositeFieldContainer[BatchedReason]
+    reasons: _containers.RepeatedCompositeFieldContainer[Reason]
     task_type: str
     metadata: TaskExecutionMetadata
     event_version: int
     reported_at: _timestamp_pb2.Timestamp
-    def __init__(self, task_id: _Optional[_Union[_identifier_pb2.Identifier, _Mapping]] = ..., parent_node_execution_id: _Optional[_Union[_identifier_pb2.NodeExecutionIdentifier, _Mapping]] = ..., retry_attempt: _Optional[int] = ..., phase: _Optional[_Union[_execution_pb2.TaskExecution.Phase, str]] = ..., producer_id: _Optional[str] = ..., logs: _Optional[_Iterable[_Union[_execution_pb2.TaskLog, _Mapping]]] = ..., occurred_at: _Optional[_Union[_timestamp_pb2.Timestamp, _Mapping]] = ..., input_uri: _Optional[str] = ..., input_data: _Optional[_Union[_literals_pb2.LiteralMap, _Mapping]] = ..., output_uri: _Optional[str] = ..., error: _Optional[_Union[_execution_pb2.ExecutionError, _Mapping]] = ..., output_data: _Optional[_Union[_literals_pb2.LiteralMap, _Mapping]] = ..., custom_info: _Optional[_Union[_struct_pb2.Struct, _Mapping]] = ..., phase_version: _Optional[int] = ..., reason: _Optional[str] = ..., reasons: _Optional[_Iterable[_Union[BatchedReason, _Mapping]]] = ..., task_type: _Optional[str] = ..., metadata: _Optional[_Union[TaskExecutionMetadata, _Mapping]] = ..., event_version: _Optional[int] = ..., reported_at: _Optional[_Union[_timestamp_pb2.Timestamp, _Mapping]] = ...) -> None: ...
+    def __init__(self, task_id: _Optional[_Union[_identifier_pb2.Identifier, _Mapping]] = ..., parent_node_execution_id: _Optional[_Union[_identifier_pb2.NodeExecutionIdentifier, _Mapping]] = ..., retry_attempt: _Optional[int] = ..., phase: _Optional[_Union[_execution_pb2.TaskExecution.Phase, str]] = ..., producer_id: _Optional[str] = ..., logs: _Optional[_Iterable[_Union[_execution_pb2.TaskLog, _Mapping]]] = ..., occurred_at: _Optional[_Union[_timestamp_pb2.Timestamp, _Mapping]] = ..., input_uri: _Optional[str] = ..., input_data: _Optional[_Union[_literals_pb2.LiteralMap, _Mapping]] = ..., output_uri: _Optional[str] = ..., error: _Optional[_Union[_execution_pb2.ExecutionError, _Mapping]] = ..., output_data: _Optional[_Union[_literals_pb2.LiteralMap, _Mapping]] = ..., custom_info: _Optional[_Union[_struct_pb2.Struct, _Mapping]] = ..., phase_version: _Optional[int] = ..., reason: _Optional[str] = ..., reasons: _Optional[_Iterable[_Union[Reason, _Mapping]]] = ..., task_type: _Optional[str] = ..., metadata: _Optional[_Union[TaskExecutionMetadata, _Mapping]] = ..., event_version: _Optional[int] = ..., reported_at: _Optional[_Union[_timestamp_pb2.Timestamp, _Mapping]] = ...) -> None: ...
 
 class ExternalResourceInfo(_message.Message):
     __slots__ = ["external_id", "index", "retry_attempt", "phase", "cache_status", "logs"]

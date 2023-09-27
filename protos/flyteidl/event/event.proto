@@ -154,11 +154,11 @@ message ParentNodeExecutionMetadata {
     string node_id = 1;
 }
 
-message BatchedReason {
-    // An explanation for this batched event
+message Reason {
+    // An explanation for this event
     string reason = 1;
 
-    // The time this batched event occurred
+    // The time this reason occurred
     google.protobuf.Timestamp occurred_at = 2;
 }
 
@@ -222,7 +222,7 @@ message TaskExecutionEvent {
     string reason = 13 [deprecated = true];
 
     // An optional list of explanations for the phase transition.
-    repeated BatchedReason reasons = 21;
+    repeated Reason reasons = 21;
 
     // A predefined yet extensible Task type identifier. If the task definition is already registered in flyte admin
     // this type will be identical, but not all task executions necessarily use pre-registered definitions and this

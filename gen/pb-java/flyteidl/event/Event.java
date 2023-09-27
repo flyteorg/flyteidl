@@ -11113,13 +11113,13 @@ public final class Event {
 
   }
 
-  public interface BatchedReasonOrBuilder extends
-      // @@protoc_insertion_point(interface_extends:flyteidl.event.BatchedReason)
+  public interface ReasonOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:flyteidl.event.Reason)
       com.google.protobuf.MessageOrBuilder {
 
     /**
      * <pre>
-     * An explanation for this batched event
+     * An explanation for this event
      * </pre>
      *
      * <code>string reason = 1;</code>
@@ -11127,7 +11127,7 @@ public final class Event {
     java.lang.String getReason();
     /**
      * <pre>
-     * An explanation for this batched event
+     * An explanation for this event
      * </pre>
      *
      * <code>string reason = 1;</code>
@@ -11137,7 +11137,7 @@ public final class Event {
 
     /**
      * <pre>
-     * The time this batched event occurred
+     * The time this reason occurred
      * </pre>
      *
      * <code>.google.protobuf.Timestamp occurred_at = 2;</code>
@@ -11145,7 +11145,7 @@ public final class Event {
     boolean hasOccurredAt();
     /**
      * <pre>
-     * The time this batched event occurred
+     * The time this reason occurred
      * </pre>
      *
      * <code>.google.protobuf.Timestamp occurred_at = 2;</code>
@@ -11153,7 +11153,7 @@ public final class Event {
     com.google.protobuf.Timestamp getOccurredAt();
     /**
      * <pre>
-     * The time this batched event occurred
+     * The time this reason occurred
      * </pre>
      *
      * <code>.google.protobuf.Timestamp occurred_at = 2;</code>
@@ -11161,18 +11161,18 @@ public final class Event {
     com.google.protobuf.TimestampOrBuilder getOccurredAtOrBuilder();
   }
   /**
-   * Protobuf type {@code flyteidl.event.BatchedReason}
+   * Protobuf type {@code flyteidl.event.Reason}
    */
-  public  static final class BatchedReason extends
+  public  static final class Reason extends
       com.google.protobuf.GeneratedMessageV3 implements
-      // @@protoc_insertion_point(message_implements:flyteidl.event.BatchedReason)
-      BatchedReasonOrBuilder {
+      // @@protoc_insertion_point(message_implements:flyteidl.event.Reason)
+      ReasonOrBuilder {
   private static final long serialVersionUID = 0L;
-    // Use BatchedReason.newBuilder() to construct.
-    private BatchedReason(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+    // Use Reason.newBuilder() to construct.
+    private Reason(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
     }
-    private BatchedReason() {
+    private Reason() {
       reason_ = "";
     }
 
@@ -11181,7 +11181,7 @@ public final class Event {
     getUnknownFields() {
       return this.unknownFields;
     }
-    private BatchedReason(
+    private Reason(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
@@ -11240,22 +11240,22 @@ public final class Event {
     }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return flyteidl.event.Event.internal_static_flyteidl_event_BatchedReason_descriptor;
+      return flyteidl.event.Event.internal_static_flyteidl_event_Reason_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return flyteidl.event.Event.internal_static_flyteidl_event_BatchedReason_fieldAccessorTable
+      return flyteidl.event.Event.internal_static_flyteidl_event_Reason_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              flyteidl.event.Event.BatchedReason.class, flyteidl.event.Event.BatchedReason.Builder.class);
+              flyteidl.event.Event.Reason.class, flyteidl.event.Event.Reason.Builder.class);
     }
 
     public static final int REASON_FIELD_NUMBER = 1;
     private volatile java.lang.Object reason_;
     /**
      * <pre>
-     * An explanation for this batched event
+     * An explanation for this event
      * </pre>
      *
      * <code>string reason = 1;</code>
@@ -11274,7 +11274,7 @@ public final class Event {
     }
     /**
      * <pre>
-     * An explanation for this batched event
+     * An explanation for this event
      * </pre>
      *
      * <code>string reason = 1;</code>
@@ -11297,7 +11297,7 @@ public final class Event {
     private com.google.protobuf.Timestamp occurredAt_;
     /**
      * <pre>
-     * The time this batched event occurred
+     * The time this reason occurred
      * </pre>
      *
      * <code>.google.protobuf.Timestamp occurred_at = 2;</code>
@@ -11307,7 +11307,7 @@ public final class Event {
     }
     /**
      * <pre>
-     * The time this batched event occurred
+     * The time this reason occurred
      * </pre>
      *
      * <code>.google.protobuf.Timestamp occurred_at = 2;</code>
@@ -11317,7 +11317,7 @@ public final class Event {
     }
     /**
      * <pre>
-     * The time this batched event occurred
+     * The time this reason occurred
      * </pre>
      *
      * <code>.google.protobuf.Timestamp occurred_at = 2;</code>
@@ -11372,10 +11372,10 @@ public final class Event {
       if (obj == this) {
        return true;
       }
-      if (!(obj instanceof flyteidl.event.Event.BatchedReason)) {
+      if (!(obj instanceof flyteidl.event.Event.Reason)) {
         return super.equals(obj);
       }
-      flyteidl.event.Event.BatchedReason other = (flyteidl.event.Event.BatchedReason) obj;
+      flyteidl.event.Event.Reason other = (flyteidl.event.Event.Reason) obj;
 
       if (!getReason()
           .equals(other.getReason())) return false;
@@ -11406,69 +11406,69 @@ public final class Event {
       return hash;
     }
 
-    public static flyteidl.event.Event.BatchedReason parseFrom(
+    public static flyteidl.event.Event.Reason parseFrom(
         java.nio.ByteBuffer data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static flyteidl.event.Event.BatchedReason parseFrom(
+    public static flyteidl.event.Event.Reason parseFrom(
         java.nio.ByteBuffer data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static flyteidl.event.Event.BatchedReason parseFrom(
+    public static flyteidl.event.Event.Reason parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static flyteidl.event.Event.BatchedReason parseFrom(
+    public static flyteidl.event.Event.Reason parseFrom(
         com.google.protobuf.ByteString data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static flyteidl.event.Event.BatchedReason parseFrom(byte[] data)
+    public static flyteidl.event.Event.Reason parseFrom(byte[] data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static flyteidl.event.Event.BatchedReason parseFrom(
+    public static flyteidl.event.Event.Reason parseFrom(
         byte[] data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static flyteidl.event.Event.BatchedReason parseFrom(java.io.InputStream input)
+    public static flyteidl.event.Event.Reason parseFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
-    public static flyteidl.event.Event.BatchedReason parseFrom(
+    public static flyteidl.event.Event.Reason parseFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
-    public static flyteidl.event.Event.BatchedReason parseDelimitedFrom(java.io.InputStream input)
+    public static flyteidl.event.Event.Reason parseDelimitedFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input);
     }
-    public static flyteidl.event.Event.BatchedReason parseDelimitedFrom(
+    public static flyteidl.event.Event.Reason parseDelimitedFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
     }
-    public static flyteidl.event.Event.BatchedReason parseFrom(
+    public static flyteidl.event.Event.Reason parseFrom(
         com.google.protobuf.CodedInputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
-    public static flyteidl.event.Event.BatchedReason parseFrom(
+    public static flyteidl.event.Event.Reason parseFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
@@ -11481,7 +11481,7 @@ public final class Event {
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
     }
-    public static Builder newBuilder(flyteidl.event.Event.BatchedReason prototype) {
+    public static Builder newBuilder(flyteidl.event.Event.Reason prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
     @java.lang.Override
@@ -11497,26 +11497,26 @@ public final class Event {
       return builder;
     }
     /**
-     * Protobuf type {@code flyteidl.event.BatchedReason}
+     * Protobuf type {@code flyteidl.event.Reason}
      */
     public static final class Builder extends
         com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-        // @@protoc_insertion_point(builder_implements:flyteidl.event.BatchedReason)
-        flyteidl.event.Event.BatchedReasonOrBuilder {
+        // @@protoc_insertion_point(builder_implements:flyteidl.event.Reason)
+        flyteidl.event.Event.ReasonOrBuilder {
       public static final com.google.protobuf.Descriptors.Descriptor
           getDescriptor() {
-        return flyteidl.event.Event.internal_static_flyteidl_event_BatchedReason_descriptor;
+        return flyteidl.event.Event.internal_static_flyteidl_event_Reason_descriptor;
       }
 
       @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
-        return flyteidl.event.Event.internal_static_flyteidl_event_BatchedReason_fieldAccessorTable
+        return flyteidl.event.Event.internal_static_flyteidl_event_Reason_fieldAccessorTable
             .ensureFieldAccessorsInitialized(
-                flyteidl.event.Event.BatchedReason.class, flyteidl.event.Event.BatchedReason.Builder.class);
+                flyteidl.event.Event.Reason.class, flyteidl.event.Event.Reason.Builder.class);
       }
 
-      // Construct using flyteidl.event.Event.BatchedReason.newBuilder()
+      // Construct using flyteidl.event.Event.Reason.newBuilder()
       private Builder() {
         maybeForceBuilderInitialization();
       }
@@ -11548,17 +11548,17 @@ public final class Event {
       @java.lang.Override
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
-        return flyteidl.event.Event.internal_static_flyteidl_event_BatchedReason_descriptor;
+        return flyteidl.event.Event.internal_static_flyteidl_event_Reason_descriptor;
       }
 
       @java.lang.Override
-      public flyteidl.event.Event.BatchedReason getDefaultInstanceForType() {
-        return flyteidl.event.Event.BatchedReason.getDefaultInstance();
+      public flyteidl.event.Event.Reason getDefaultInstanceForType() {
+        return flyteidl.event.Event.Reason.getDefaultInstance();
       }
 
       @java.lang.Override
-      public flyteidl.event.Event.BatchedReason build() {
-        flyteidl.event.Event.BatchedReason result = buildPartial();
+      public flyteidl.event.Event.Reason build() {
+        flyteidl.event.Event.Reason result = buildPartial();
         if (!result.isInitialized()) {
           throw newUninitializedMessageException(result);
         }
@@ -11566,8 +11566,8 @@ public final class Event {
       }
 
       @java.lang.Override
-      public flyteidl.event.Event.BatchedReason buildPartial() {
-        flyteidl.event.Event.BatchedReason result = new flyteidl.event.Event.BatchedReason(this);
+      public flyteidl.event.Event.Reason buildPartial() {
+        flyteidl.event.Event.Reason result = new flyteidl.event.Event.Reason(this);
         result.reason_ = reason_;
         if (occurredAtBuilder_ == null) {
           result.occurredAt_ = occurredAt_;
@@ -11612,16 +11612,16 @@ public final class Event {
       }
       @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof flyteidl.event.Event.BatchedReason) {
-          return mergeFrom((flyteidl.event.Event.BatchedReason)other);
+        if (other instanceof flyteidl.event.Event.Reason) {
+          return mergeFrom((flyteidl.event.Event.Reason)other);
         } else {
           super.mergeFrom(other);
           return this;
         }
       }
 
-      public Builder mergeFrom(flyteidl.event.Event.BatchedReason other) {
-        if (other == flyteidl.event.Event.BatchedReason.getDefaultInstance()) return this;
+      public Builder mergeFrom(flyteidl.event.Event.Reason other) {
+        if (other == flyteidl.event.Event.Reason.getDefaultInstance()) return this;
         if (!other.getReason().isEmpty()) {
           reason_ = other.reason_;
           onChanged();
@@ -11644,11 +11644,11 @@ public final class Event {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        flyteidl.event.Event.BatchedReason parsedMessage = null;
+        flyteidl.event.Event.Reason parsedMessage = null;
         try {
           parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (flyteidl.event.Event.BatchedReason) e.getUnfinishedMessage();
+          parsedMessage = (flyteidl.event.Event.Reason) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
           if (parsedMessage != null) {
@@ -11661,7 +11661,7 @@ public final class Event {
       private java.lang.Object reason_ = "";
       /**
        * <pre>
-       * An explanation for this batched event
+       * An explanation for this event
        * </pre>
        *
        * <code>string reason = 1;</code>
@@ -11680,7 +11680,7 @@ public final class Event {
       }
       /**
        * <pre>
-       * An explanation for this batched event
+       * An explanation for this event
        * </pre>
        *
        * <code>string reason = 1;</code>
@@ -11700,7 +11700,7 @@ public final class Event {
       }
       /**
        * <pre>
-       * An explanation for this batched event
+       * An explanation for this event
        * </pre>
        *
        * <code>string reason = 1;</code>
@@ -11717,7 +11717,7 @@ public final class Event {
       }
       /**
        * <pre>
-       * An explanation for this batched event
+       * An explanation for this event
        * </pre>
        *
        * <code>string reason = 1;</code>
@@ -11730,7 +11730,7 @@ public final class Event {
       }
       /**
        * <pre>
-       * An explanation for this batched event
+       * An explanation for this event
        * </pre>
        *
        * <code>string reason = 1;</code>
@@ -11752,7 +11752,7 @@ public final class Event {
           com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder> occurredAtBuilder_;
       /**
        * <pre>
-       * The time this batched event occurred
+       * The time this reason occurred
        * </pre>
        *
        * <code>.google.protobuf.Timestamp occurred_at = 2;</code>
@@ -11762,7 +11762,7 @@ public final class Event {
       }
       /**
        * <pre>
-       * The time this batched event occurred
+       * The time this reason occurred
        * </pre>
        *
        * <code>.google.protobuf.Timestamp occurred_at = 2;</code>
@@ -11776,7 +11776,7 @@ public final class Event {
       }
       /**
        * <pre>
-       * The time this batched event occurred
+       * The time this reason occurred
        * </pre>
        *
        * <code>.google.protobuf.Timestamp occurred_at = 2;</code>
@@ -11796,7 +11796,7 @@ public final class Event {
       }
       /**
        * <pre>
-       * The time this batched event occurred
+       * The time this reason occurred
        * </pre>
        *
        * <code>.google.protobuf.Timestamp occurred_at = 2;</code>
@@ -11814,7 +11814,7 @@ public final class Event {
       }
       /**
        * <pre>
-       * The time this batched event occurred
+       * The time this reason occurred
        * </pre>
        *
        * <code>.google.protobuf.Timestamp occurred_at = 2;</code>
@@ -11836,7 +11836,7 @@ public final class Event {
       }
       /**
        * <pre>
-       * The time this batched event occurred
+       * The time this reason occurred
        * </pre>
        *
        * <code>.google.protobuf.Timestamp occurred_at = 2;</code>
@@ -11854,7 +11854,7 @@ public final class Event {
       }
       /**
        * <pre>
-       * The time this batched event occurred
+       * The time this reason occurred
        * </pre>
        *
        * <code>.google.protobuf.Timestamp occurred_at = 2;</code>
@@ -11866,7 +11866,7 @@ public final class Event {
       }
       /**
        * <pre>
-       * The time this batched event occurred
+       * The time this reason occurred
        * </pre>
        *
        * <code>.google.protobuf.Timestamp occurred_at = 2;</code>
@@ -11881,7 +11881,7 @@ public final class Event {
       }
       /**
        * <pre>
-       * The time this batched event occurred
+       * The time this reason occurred
        * </pre>
        *
        * <code>.google.protobuf.Timestamp occurred_at = 2;</code>
@@ -11912,41 +11912,41 @@ public final class Event {
       }
 
 
-      // @@protoc_insertion_point(builder_scope:flyteidl.event.BatchedReason)
+      // @@protoc_insertion_point(builder_scope:flyteidl.event.Reason)
     }
 
-    // @@protoc_insertion_point(class_scope:flyteidl.event.BatchedReason)
-    private static final flyteidl.event.Event.BatchedReason DEFAULT_INSTANCE;
+    // @@protoc_insertion_point(class_scope:flyteidl.event.Reason)
+    private static final flyteidl.event.Event.Reason DEFAULT_INSTANCE;
     static {
-      DEFAULT_INSTANCE = new flyteidl.event.Event.BatchedReason();
+      DEFAULT_INSTANCE = new flyteidl.event.Event.Reason();
     }
 
-    public static flyteidl.event.Event.BatchedReason getDefaultInstance() {
+    public static flyteidl.event.Event.Reason getDefaultInstance() {
       return DEFAULT_INSTANCE;
     }
 
-    private static final com.google.protobuf.Parser<BatchedReason>
-        PARSER = new com.google.protobuf.AbstractParser<BatchedReason>() {
+    private static final com.google.protobuf.Parser<Reason>
+        PARSER = new com.google.protobuf.AbstractParser<Reason>() {
       @java.lang.Override
-      public BatchedReason parsePartialFrom(
+      public Reason parsePartialFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new BatchedReason(input, extensionRegistry);
+        return new Reason(input, extensionRegistry);
       }
     };
 
-    public static com.google.protobuf.Parser<BatchedReason> parser() {
+    public static com.google.protobuf.Parser<Reason> parser() {
       return PARSER;
     }
 
     @java.lang.Override
-    public com.google.protobuf.Parser<BatchedReason> getParserForType() {
+    public com.google.protobuf.Parser<Reason> getParserForType() {
       return PARSER;
     }
 
     @java.lang.Override
-    public flyteidl.event.Event.BatchedReason getDefaultInstanceForType() {
+    public flyteidl.event.Event.Reason getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
 
@@ -12304,24 +12304,24 @@ public final class Event {
      * An optional list of explanations for the phase transition.
      * </pre>
      *
-     * <code>repeated .flyteidl.event.BatchedReason reasons = 21;</code>
+     * <code>repeated .flyteidl.event.Reason reasons = 21;</code>
      */
-    java.util.List<flyteidl.event.Event.BatchedReason> 
+    java.util.List<flyteidl.event.Event.Reason> 
         getReasonsList();
     /**
      * <pre>
      * An optional list of explanations for the phase transition.
      * </pre>
      *
-     * <code>repeated .flyteidl.event.BatchedReason reasons = 21;</code>
+     * <code>repeated .flyteidl.event.Reason reasons = 21;</code>
      */
-    flyteidl.event.Event.BatchedReason getReasons(int index);
+    flyteidl.event.Event.Reason getReasons(int index);
     /**
      * <pre>
      * An optional list of explanations for the phase transition.
      * </pre>
      *
-     * <code>repeated .flyteidl.event.BatchedReason reasons = 21;</code>
+     * <code>repeated .flyteidl.event.Reason reasons = 21;</code>
      */
     int getReasonsCount();
     /**
@@ -12329,18 +12329,18 @@ public final class Event {
      * An optional list of explanations for the phase transition.
      * </pre>
      *
-     * <code>repeated .flyteidl.event.BatchedReason reasons = 21;</code>
+     * <code>repeated .flyteidl.event.Reason reasons = 21;</code>
      */
-    java.util.List<? extends flyteidl.event.Event.BatchedReasonOrBuilder> 
+    java.util.List<? extends flyteidl.event.Event.ReasonOrBuilder> 
         getReasonsOrBuilderList();
     /**
      * <pre>
      * An optional list of explanations for the phase transition.
      * </pre>
      *
-     * <code>repeated .flyteidl.event.BatchedReason reasons = 21;</code>
+     * <code>repeated .flyteidl.event.Reason reasons = 21;</code>
      */
-    flyteidl.event.Event.BatchedReasonOrBuilder getReasonsOrBuilder(
+    flyteidl.event.Event.ReasonOrBuilder getReasonsOrBuilder(
         int index);
 
     /**
@@ -12671,11 +12671,11 @@ public final class Event {
             }
             case 170: {
               if (!((mutable_bitField0_ & 0x00008000) != 0)) {
-                reasons_ = new java.util.ArrayList<flyteidl.event.Event.BatchedReason>();
+                reasons_ = new java.util.ArrayList<flyteidl.event.Event.Reason>();
                 mutable_bitField0_ |= 0x00008000;
               }
               reasons_.add(
-                  input.readMessage(flyteidl.event.Event.BatchedReason.parser(), extensionRegistry));
+                  input.readMessage(flyteidl.event.Event.Reason.parser(), extensionRegistry));
               break;
             }
             default: {
@@ -13351,15 +13351,15 @@ public final class Event {
     }
 
     public static final int REASONS_FIELD_NUMBER = 21;
-    private java.util.List<flyteidl.event.Event.BatchedReason> reasons_;
+    private java.util.List<flyteidl.event.Event.Reason> reasons_;
     /**
      * <pre>
      * An optional list of explanations for the phase transition.
      * </pre>
      *
-     * <code>repeated .flyteidl.event.BatchedReason reasons = 21;</code>
+     * <code>repeated .flyteidl.event.Reason reasons = 21;</code>
      */
-    public java.util.List<flyteidl.event.Event.BatchedReason> getReasonsList() {
+    public java.util.List<flyteidl.event.Event.Reason> getReasonsList() {
       return reasons_;
     }
     /**
@@ -13367,9 +13367,9 @@ public final class Event {
      * An optional list of explanations for the phase transition.
      * </pre>
      *
-     * <code>repeated .flyteidl.event.BatchedReason reasons = 21;</code>
+     * <code>repeated .flyteidl.event.Reason reasons = 21;</code>
      */
-    public java.util.List<? extends flyteidl.event.Event.BatchedReasonOrBuilder> 
+    public java.util.List<? extends flyteidl.event.Event.ReasonOrBuilder> 
         getReasonsOrBuilderList() {
       return reasons_;
     }
@@ -13378,7 +13378,7 @@ public final class Event {
      * An optional list of explanations for the phase transition.
      * </pre>
      *
-     * <code>repeated .flyteidl.event.BatchedReason reasons = 21;</code>
+     * <code>repeated .flyteidl.event.Reason reasons = 21;</code>
      */
     public int getReasonsCount() {
       return reasons_.size();
@@ -13388,9 +13388,9 @@ public final class Event {
      * An optional list of explanations for the phase transition.
      * </pre>
      *
-     * <code>repeated .flyteidl.event.BatchedReason reasons = 21;</code>
+     * <code>repeated .flyteidl.event.Reason reasons = 21;</code>
      */
-    public flyteidl.event.Event.BatchedReason getReasons(int index) {
+    public flyteidl.event.Event.Reason getReasons(int index) {
       return reasons_.get(index);
     }
     /**
@@ -13398,9 +13398,9 @@ public final class Event {
      * An optional list of explanations for the phase transition.
      * </pre>
      *
-     * <code>repeated .flyteidl.event.BatchedReason reasons = 21;</code>
+     * <code>repeated .flyteidl.event.Reason reasons = 21;</code>
      */
-    public flyteidl.event.Event.BatchedReasonOrBuilder getReasonsOrBuilder(
+    public flyteidl.event.Event.ReasonOrBuilder getReasonsOrBuilder(
         int index) {
       return reasons_.get(index);
     }
@@ -16438,26 +16438,26 @@ public final class Event {
         return this;
       }
 
-      private java.util.List<flyteidl.event.Event.BatchedReason> reasons_ =
+      private java.util.List<flyteidl.event.Event.Reason> reasons_ =
         java.util.Collections.emptyList();
       private void ensureReasonsIsMutable() {
         if (!((bitField0_ & 0x00008000) != 0)) {
-          reasons_ = new java.util.ArrayList<flyteidl.event.Event.BatchedReason>(reasons_);
+          reasons_ = new java.util.ArrayList<flyteidl.event.Event.Reason>(reasons_);
           bitField0_ |= 0x00008000;
          }
       }
 
       private com.google.protobuf.RepeatedFieldBuilderV3<
-          flyteidl.event.Event.BatchedReason, flyteidl.event.Event.BatchedReason.Builder, flyteidl.event.Event.BatchedReasonOrBuilder> reasonsBuilder_;
+          flyteidl.event.Event.Reason, flyteidl.event.Event.Reason.Builder, flyteidl.event.Event.ReasonOrBuilder> reasonsBuilder_;
 
       /**
        * <pre>
        * An optional list of explanations for the phase transition.
        * </pre>
        *
-       * <code>repeated .flyteidl.event.BatchedReason reasons = 21;</code>
+       * <code>repeated .flyteidl.event.Reason reasons = 21;</code>
        */
-      public java.util.List<flyteidl.event.Event.BatchedReason> getReasonsList() {
+      public java.util.List<flyteidl.event.Event.Reason> getReasonsList() {
         if (reasonsBuilder_ == null) {
           return java.util.Collections.unmodifiableList(reasons_);
         } else {
@@ -16469,7 +16469,7 @@ public final class Event {
        * An optional list of explanations for the phase transition.
        * </pre>
        *
-       * <code>repeated .flyteidl.event.BatchedReason reasons = 21;</code>
+       * <code>repeated .flyteidl.event.Reason reasons = 21;</code>
        */
       public int getReasonsCount() {
         if (reasonsBuilder_ == null) {
@@ -16483,9 +16483,9 @@ public final class Event {
        * An optional list of explanations for the phase transition.
        * </pre>
        *
-       * <code>repeated .flyteidl.event.BatchedReason reasons = 21;</code>
+       * <code>repeated .flyteidl.event.Reason reasons = 21;</code>
        */
-      public flyteidl.event.Event.BatchedReason getReasons(int index) {
+      public flyteidl.event.Event.Reason getReasons(int index) {
         if (reasonsBuilder_ == null) {
           return reasons_.get(index);
         } else {
@@ -16497,10 +16497,10 @@ public final class Event {
        * An optional list of explanations for the phase transition.
        * </pre>
        *
-       * <code>repeated .flyteidl.event.BatchedReason reasons = 21;</code>
+       * <code>repeated .flyteidl.event.Reason reasons = 21;</code>
        */
       public Builder setReasons(
-          int index, flyteidl.event.Event.BatchedReason value) {
+          int index, flyteidl.event.Event.Reason value) {
         if (reasonsBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
@@ -16518,10 +16518,10 @@ public final class Event {
        * An optional list of explanations for the phase transition.
        * </pre>
        *
-       * <code>repeated .flyteidl.event.BatchedReason reasons = 21;</code>
+       * <code>repeated .flyteidl.event.Reason reasons = 21;</code>
        */
       public Builder setReasons(
-          int index, flyteidl.event.Event.BatchedReason.Builder builderForValue) {
+          int index, flyteidl.event.Event.Reason.Builder builderForValue) {
         if (reasonsBuilder_ == null) {
           ensureReasonsIsMutable();
           reasons_.set(index, builderForValue.build());
@@ -16536,9 +16536,9 @@ public final class Event {
        * An optional list of explanations for the phase transition.
        * </pre>
        *
-       * <code>repeated .flyteidl.event.BatchedReason reasons = 21;</code>
+       * <code>repeated .flyteidl.event.Reason reasons = 21;</code>
        */
-      public Builder addReasons(flyteidl.event.Event.BatchedReason value) {
+      public Builder addReasons(flyteidl.event.Event.Reason value) {
         if (reasonsBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
@@ -16556,10 +16556,10 @@ public final class Event {
        * An optional list of explanations for the phase transition.
        * </pre>
        *
-       * <code>repeated .flyteidl.event.BatchedReason reasons = 21;</code>
+       * <code>repeated .flyteidl.event.Reason reasons = 21;</code>
        */
       public Builder addReasons(
-          int index, flyteidl.event.Event.BatchedReason value) {
+          int index, flyteidl.event.Event.Reason value) {
         if (reasonsBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
@@ -16577,10 +16577,10 @@ public final class Event {
        * An optional list of explanations for the phase transition.
        * </pre>
        *
-       * <code>repeated .flyteidl.event.BatchedReason reasons = 21;</code>
+       * <code>repeated .flyteidl.event.Reason reasons = 21;</code>
        */
       public Builder addReasons(
-          flyteidl.event.Event.BatchedReason.Builder builderForValue) {
+          flyteidl.event.Event.Reason.Builder builderForValue) {
         if (reasonsBuilder_ == null) {
           ensureReasonsIsMutable();
           reasons_.add(builderForValue.build());
@@ -16595,10 +16595,10 @@ public final class Event {
        * An optional list of explanations for the phase transition.
        * </pre>
        *
-       * <code>repeated .flyteidl.event.BatchedReason reasons = 21;</code>
+       * <code>repeated .flyteidl.event.Reason reasons = 21;</code>
        */
       public Builder addReasons(
-          int index, flyteidl.event.Event.BatchedReason.Builder builderForValue) {
+          int index, flyteidl.event.Event.Reason.Builder builderForValue) {
         if (reasonsBuilder_ == null) {
           ensureReasonsIsMutable();
           reasons_.add(index, builderForValue.build());
@@ -16613,10 +16613,10 @@ public final class Event {
        * An optional list of explanations for the phase transition.
        * </pre>
        *
-       * <code>repeated .flyteidl.event.BatchedReason reasons = 21;</code>
+       * <code>repeated .flyteidl.event.Reason reasons = 21;</code>
        */
       public Builder addAllReasons(
-          java.lang.Iterable<? extends flyteidl.event.Event.BatchedReason> values) {
+          java.lang.Iterable<? extends flyteidl.event.Event.Reason> values) {
         if (reasonsBuilder_ == null) {
           ensureReasonsIsMutable();
           com.google.protobuf.AbstractMessageLite.Builder.addAll(
@@ -16632,7 +16632,7 @@ public final class Event {
        * An optional list of explanations for the phase transition.
        * </pre>
        *
-       * <code>repeated .flyteidl.event.BatchedReason reasons = 21;</code>
+       * <code>repeated .flyteidl.event.Reason reasons = 21;</code>
        */
       public Builder clearReasons() {
         if (reasonsBuilder_ == null) {
@@ -16649,7 +16649,7 @@ public final class Event {
        * An optional list of explanations for the phase transition.
        * </pre>
        *
-       * <code>repeated .flyteidl.event.BatchedReason reasons = 21;</code>
+       * <code>repeated .flyteidl.event.Reason reasons = 21;</code>
        */
       public Builder removeReasons(int index) {
         if (reasonsBuilder_ == null) {
@@ -16666,9 +16666,9 @@ public final class Event {
        * An optional list of explanations for the phase transition.
        * </pre>
        *
-       * <code>repeated .flyteidl.event.BatchedReason reasons = 21;</code>
+       * <code>repeated .flyteidl.event.Reason reasons = 21;</code>
        */
-      public flyteidl.event.Event.BatchedReason.Builder getReasonsBuilder(
+      public flyteidl.event.Event.Reason.Builder getReasonsBuilder(
           int index) {
         return getReasonsFieldBuilder().getBuilder(index);
       }
@@ -16677,9 +16677,9 @@ public final class Event {
        * An optional list of explanations for the phase transition.
        * </pre>
        *
-       * <code>repeated .flyteidl.event.BatchedReason reasons = 21;</code>
+       * <code>repeated .flyteidl.event.Reason reasons = 21;</code>
        */
-      public flyteidl.event.Event.BatchedReasonOrBuilder getReasonsOrBuilder(
+      public flyteidl.event.Event.ReasonOrBuilder getReasonsOrBuilder(
           int index) {
         if (reasonsBuilder_ == null) {
           return reasons_.get(index);  } else {
@@ -16691,9 +16691,9 @@ public final class Event {
        * An optional list of explanations for the phase transition.
        * </pre>
        *
-       * <code>repeated .flyteidl.event.BatchedReason reasons = 21;</code>
+       * <code>repeated .flyteidl.event.Reason reasons = 21;</code>
        */
-      public java.util.List<? extends flyteidl.event.Event.BatchedReasonOrBuilder> 
+      public java.util.List<? extends flyteidl.event.Event.ReasonOrBuilder> 
            getReasonsOrBuilderList() {
         if (reasonsBuilder_ != null) {
           return reasonsBuilder_.getMessageOrBuilderList();
@@ -16706,41 +16706,41 @@ public final class Event {
        * An optional list of explanations for the phase transition.
        * </pre>
        *
-       * <code>repeated .flyteidl.event.BatchedReason reasons = 21;</code>
+       * <code>repeated .flyteidl.event.Reason reasons = 21;</code>
        */
-      public flyteidl.event.Event.BatchedReason.Builder addReasonsBuilder() {
+      public flyteidl.event.Event.Reason.Builder addReasonsBuilder() {
         return getReasonsFieldBuilder().addBuilder(
-            flyteidl.event.Event.BatchedReason.getDefaultInstance());
+            flyteidl.event.Event.Reason.getDefaultInstance());
       }
       /**
        * <pre>
        * An optional list of explanations for the phase transition.
        * </pre>
        *
-       * <code>repeated .flyteidl.event.BatchedReason reasons = 21;</code>
+       * <code>repeated .flyteidl.event.Reason reasons = 21;</code>
        */
-      public flyteidl.event.Event.BatchedReason.Builder addReasonsBuilder(
+      public flyteidl.event.Event.Reason.Builder addReasonsBuilder(
           int index) {
         return getReasonsFieldBuilder().addBuilder(
-            index, flyteidl.event.Event.BatchedReason.getDefaultInstance());
+            index, flyteidl.event.Event.Reason.getDefaultInstance());
       }
       /**
        * <pre>
        * An optional list of explanations for the phase transition.
        * </pre>
        *
-       * <code>repeated .flyteidl.event.BatchedReason reasons = 21;</code>
+       * <code>repeated .flyteidl.event.Reason reasons = 21;</code>
        */
-      public java.util.List<flyteidl.event.Event.BatchedReason.Builder> 
+      public java.util.List<flyteidl.event.Event.Reason.Builder> 
            getReasonsBuilderList() {
         return getReasonsFieldBuilder().getBuilderList();
       }
       private com.google.protobuf.RepeatedFieldBuilderV3<
-          flyteidl.event.Event.BatchedReason, flyteidl.event.Event.BatchedReason.Builder, flyteidl.event.Event.BatchedReasonOrBuilder> 
+          flyteidl.event.Event.Reason, flyteidl.event.Event.Reason.Builder, flyteidl.event.Event.ReasonOrBuilder> 
           getReasonsFieldBuilder() {
         if (reasonsBuilder_ == null) {
           reasonsBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
-              flyteidl.event.Event.BatchedReason, flyteidl.event.Event.BatchedReason.Builder, flyteidl.event.Event.BatchedReasonOrBuilder>(
+              flyteidl.event.Event.Reason, flyteidl.event.Event.Reason.Builder, flyteidl.event.Event.ReasonOrBuilder>(
                   reasons_,
                   ((bitField0_ & 0x00008000) != 0),
                   getParentForChildren(),
@@ -21571,10 +21571,10 @@ public final class Event {
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_flyteidl_event_ParentNodeExecutionMetadata_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_flyteidl_event_BatchedReason_descriptor;
+    internal_static_flyteidl_event_Reason_descriptor;
   private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_flyteidl_event_BatchedReason_fieldAccessorTable;
+      internal_static_flyteidl_event_Reason_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_flyteidl_event_TaskExecutionEvent_descriptor;
   private static final 
@@ -21659,47 +21659,47 @@ public final class Event {
       "(\t\"Q\n\033ParentTaskExecutionMetadata\0222\n\002id\030" +
       "\001 \001(\0132&.flyteidl.core.TaskExecutionIdent" +
       "ifier\".\n\033ParentNodeExecutionMetadata\022\017\n\007" +
-      "node_id\030\001 \001(\t\"P\n\rBatchedReason\022\016\n\006reason" +
-      "\030\001 \001(\t\022/\n\013occurred_at\030\002 \001(\0132\032.google.pro" +
-      "tobuf.Timestamp\"\273\006\n\022TaskExecutionEvent\022*" +
-      "\n\007task_id\030\001 \001(\0132\031.flyteidl.core.Identifi" +
-      "er\022H\n\030parent_node_execution_id\030\002 \001(\0132&.f" +
-      "lyteidl.core.NodeExecutionIdentifier\022\025\n\r" +
-      "retry_attempt\030\003 \001(\r\0221\n\005phase\030\004 \001(\0162\".fly" +
-      "teidl.core.TaskExecution.Phase\022\023\n\013produc" +
-      "er_id\030\005 \001(\t\022$\n\004logs\030\006 \003(\0132\026.flyteidl.cor" +
-      "e.TaskLog\022/\n\013occurred_at\030\007 \001(\0132\032.google." +
-      "protobuf.Timestamp\022\023\n\tinput_uri\030\010 \001(\tH\000\022" +
-      "/\n\ninput_data\030\023 \001(\0132\031.flyteidl.core.Lite" +
-      "ralMapH\000\022\024\n\noutput_uri\030\t \001(\tH\001\022.\n\005error\030" +
-      "\n \001(\0132\035.flyteidl.core.ExecutionErrorH\001\0220" +
-      "\n\013output_data\030\021 \001(\0132\031.flyteidl.core.Lite" +
-      "ralMapH\001\022,\n\013custom_info\030\013 \001(\0132\027.google.p" +
-      "rotobuf.Struct\022\025\n\rphase_version\030\014 \001(\r\022\022\n" +
-      "\006reason\030\r \001(\tB\002\030\001\022.\n\007reasons\030\025 \003(\0132\035.fly" +
-      "teidl.event.BatchedReason\022\021\n\ttask_type\030\016" +
-      " \001(\t\0227\n\010metadata\030\020 \001(\0132%.flyteidl.event." +
-      "TaskExecutionMetadata\022\025\n\revent_version\030\022" +
-      " \001(\005\022/\n\013reported_at\030\024 \001(\0132\032.google.proto" +
-      "buf.TimestampB\r\n\013input_valueB\017\n\routput_r" +
-      "esult\"\343\001\n\024ExternalResourceInfo\022\023\n\013extern" +
-      "al_id\030\001 \001(\t\022\r\n\005index\030\002 \001(\r\022\025\n\rretry_atte" +
-      "mpt\030\003 \001(\r\0221\n\005phase\030\004 \001(\0162\".flyteidl.core" +
-      ".TaskExecution.Phase\0227\n\014cache_status\030\005 \001" +
-      "(\0162!.flyteidl.core.CatalogCacheStatus\022$\n" +
-      "\004logs\030\006 \003(\0132\026.flyteidl.core.TaskLog\"?\n\020R" +
-      "esourcePoolInfo\022\030\n\020allocation_token\030\001 \001(" +
-      "\t\022\021\n\tnamespace\030\002 \001(\t\"\310\002\n\025TaskExecutionMe" +
-      "tadata\022\026\n\016generated_name\030\001 \001(\t\022@\n\022extern" +
-      "al_resources\030\002 \003(\0132$.flyteidl.event.Exte" +
-      "rnalResourceInfo\022<\n\022resource_pool_info\030\003" +
-      " \003(\0132 .flyteidl.event.ResourcePoolInfo\022\031" +
-      "\n\021plugin_identifier\030\004 \001(\t\022K\n\016instance_cl" +
-      "ass\030\020 \001(\01623.flyteidl.event.TaskExecution" +
-      "Metadata.InstanceClass\"/\n\rInstanceClass\022" +
-      "\013\n\007DEFAULT\020\000\022\021\n\rINTERRUPTIBLE\020\001B7Z5githu" +
-      "b.com/flyteorg/flyteidl/gen/pb-go/flytei" +
-      "dl/eventb\006proto3"
+      "node_id\030\001 \001(\t\"I\n\006Reason\022\016\n\006reason\030\001 \001(\t\022" +
+      "/\n\013occurred_at\030\002 \001(\0132\032.google.protobuf.T" +
+      "imestamp\"\264\006\n\022TaskExecutionEvent\022*\n\007task_" +
+      "id\030\001 \001(\0132\031.flyteidl.core.Identifier\022H\n\030p" +
+      "arent_node_execution_id\030\002 \001(\0132&.flyteidl" +
+      ".core.NodeExecutionIdentifier\022\025\n\rretry_a" +
+      "ttempt\030\003 \001(\r\0221\n\005phase\030\004 \001(\0162\".flyteidl.c" +
+      "ore.TaskExecution.Phase\022\023\n\013producer_id\030\005" +
+      " \001(\t\022$\n\004logs\030\006 \003(\0132\026.flyteidl.core.TaskL" +
+      "og\022/\n\013occurred_at\030\007 \001(\0132\032.google.protobu" +
+      "f.Timestamp\022\023\n\tinput_uri\030\010 \001(\tH\000\022/\n\ninpu" +
+      "t_data\030\023 \001(\0132\031.flyteidl.core.LiteralMapH" +
+      "\000\022\024\n\noutput_uri\030\t \001(\tH\001\022.\n\005error\030\n \001(\0132\035" +
+      ".flyteidl.core.ExecutionErrorH\001\0220\n\013outpu" +
+      "t_data\030\021 \001(\0132\031.flyteidl.core.LiteralMapH" +
+      "\001\022,\n\013custom_info\030\013 \001(\0132\027.google.protobuf" +
+      ".Struct\022\025\n\rphase_version\030\014 \001(\r\022\022\n\006reason" +
+      "\030\r \001(\tB\002\030\001\022\'\n\007reasons\030\025 \003(\0132\026.flyteidl.e" +
+      "vent.Reason\022\021\n\ttask_type\030\016 \001(\t\0227\n\010metada" +
+      "ta\030\020 \001(\0132%.flyteidl.event.TaskExecutionM" +
+      "etadata\022\025\n\revent_version\030\022 \001(\005\022/\n\013report" +
+      "ed_at\030\024 \001(\0132\032.google.protobuf.TimestampB" +
+      "\r\n\013input_valueB\017\n\routput_result\"\343\001\n\024Exte" +
+      "rnalResourceInfo\022\023\n\013external_id\030\001 \001(\t\022\r\n" +
+      "\005index\030\002 \001(\r\022\025\n\rretry_attempt\030\003 \001(\r\0221\n\005p" +
+      "hase\030\004 \001(\0162\".flyteidl.core.TaskExecution" +
+      ".Phase\0227\n\014cache_status\030\005 \001(\0162!.flyteidl." +
+      "core.CatalogCacheStatus\022$\n\004logs\030\006 \003(\0132\026." +
+      "flyteidl.core.TaskLog\"?\n\020ResourcePoolInf" +
+      "o\022\030\n\020allocation_token\030\001 \001(\t\022\021\n\tnamespace" +
+      "\030\002 \001(\t\"\310\002\n\025TaskExecutionMetadata\022\026\n\016gene" +
+      "rated_name\030\001 \001(\t\022@\n\022external_resources\030\002" +
+      " \003(\0132$.flyteidl.event.ExternalResourceIn" +
+      "fo\022<\n\022resource_pool_info\030\003 \003(\0132 .flyteid" +
+      "l.event.ResourcePoolInfo\022\031\n\021plugin_ident" +
+      "ifier\030\004 \001(\t\022K\n\016instance_class\030\020 \001(\01623.fl" +
+      "yteidl.event.TaskExecutionMetadata.Insta" +
+      "nceClass\"/\n\rInstanceClass\022\013\n\007DEFAULT\020\000\022\021" +
+      "\n\rINTERRUPTIBLE\020\001B7Z5github.com/flyteorg" +
+      "/flyteidl/gen/pb-go/flyteidl/eventb\006prot" +
+      "o3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
@@ -21762,11 +21762,11 @@ public final class Event {
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_flyteidl_event_ParentNodeExecutionMetadata_descriptor,
         new java.lang.String[] { "NodeId", });
-    internal_static_flyteidl_event_BatchedReason_descriptor =
+    internal_static_flyteidl_event_Reason_descriptor =
       getDescriptor().getMessageTypes().get(7);
-    internal_static_flyteidl_event_BatchedReason_fieldAccessorTable = new
+    internal_static_flyteidl_event_Reason_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_flyteidl_event_BatchedReason_descriptor,
+        internal_static_flyteidl_event_Reason_descriptor,
         new java.lang.String[] { "Reason", "OccurredAt", });
     internal_static_flyteidl_event_TaskExecutionEvent_descriptor =
       getDescriptor().getMessageTypes().get(8);
