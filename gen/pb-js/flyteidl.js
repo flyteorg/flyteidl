@@ -28532,6 +28532,7 @@
                  * @interface IExecutionUpdateRequest
                  * @property {flyteidl.core.IWorkflowExecutionIdentifier|null} [id] ExecutionUpdateRequest id
                  * @property {flyteidl.admin.ExecutionState|null} [state] ExecutionUpdateRequest state
+                 * @property {Array.<string>|null} [tags] ExecutionUpdateRequest tags
                  */
     
                 /**
@@ -28543,6 +28544,7 @@
                  * @param {flyteidl.admin.IExecutionUpdateRequest=} [properties] Properties to set
                  */
                 function ExecutionUpdateRequest(properties) {
+                    this.tags = [];
                     if (properties)
                         for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
                             if (properties[keys[i]] != null)
@@ -28564,6 +28566,14 @@
                  * @instance
                  */
                 ExecutionUpdateRequest.prototype.state = 0;
+    
+                /**
+                 * ExecutionUpdateRequest tags.
+                 * @member {Array.<string>} tags
+                 * @memberof flyteidl.admin.ExecutionUpdateRequest
+                 * @instance
+                 */
+                ExecutionUpdateRequest.prototype.tags = $util.emptyArray;
     
                 /**
                  * Creates a new ExecutionUpdateRequest instance using the specified properties.
@@ -28593,6 +28603,9 @@
                         $root.flyteidl.core.WorkflowExecutionIdentifier.encode(message.id, writer.uint32(/* id 1, wireType 2 =*/10).fork()).ldelim();
                     if (message.state != null && message.hasOwnProperty("state"))
                         writer.uint32(/* id 2, wireType 0 =*/16).int32(message.state);
+                    if (message.tags != null && message.tags.length)
+                        for (var i = 0; i < message.tags.length; ++i)
+                            writer.uint32(/* id 3, wireType 2 =*/26).string(message.tags[i]);
                     return writer;
                 };
     
@@ -28619,6 +28632,11 @@
                             break;
                         case 2:
                             message.state = reader.int32();
+                            break;
+                        case 3:
+                            if (!(message.tags && message.tags.length))
+                                message.tags = [];
+                            message.tags.push(reader.string());
                             break;
                         default:
                             reader.skipType(tag & 7);
@@ -28652,6 +28670,13 @@
                         case 1:
                             break;
                         }
+                    if (message.tags != null && message.hasOwnProperty("tags")) {
+                        if (!Array.isArray(message.tags))
+                            return "tags: array expected";
+                        for (var i = 0; i < message.tags.length; ++i)
+                            if (!$util.isString(message.tags[i]))
+                                return "tags: string[] expected";
+                    }
                     return null;
                 };
     

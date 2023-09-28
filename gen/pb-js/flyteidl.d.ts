@@ -11819,6 +11819,9 @@ export namespace flyteidl {
 
             /** ExecutionUpdateRequest state */
             state?: (flyteidl.admin.ExecutionState|null);
+
+            /** ExecutionUpdateRequest tags */
+            tags?: (string[]|null);
         }
 
         /** Represents an ExecutionUpdateRequest. */
@@ -11835,6 +11838,9 @@ export namespace flyteidl {
 
             /** ExecutionUpdateRequest state. */
             public state: flyteidl.admin.ExecutionState;
+
+            /** ExecutionUpdateRequest tags. */
+            public tags: string[];
 
             /**
              * Creates a new ExecutionUpdateRequest instance using the specified properties.
