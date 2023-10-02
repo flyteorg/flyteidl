@@ -51,7 +51,7 @@ struct TableStruct_flyteidl_2fcore_2ftasks_2eproto {
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
   static const ::google::protobuf::internal::AuxillaryParseTableField aux[]
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
-  static const ::google::protobuf::internal::ParseTable schema[17]
+  static const ::google::protobuf::internal::ParseTable schema[18]
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
   static const ::google::protobuf::internal::FieldMetadata field_metadata[];
   static const ::google::protobuf::internal::SerializationTable serialization_table[];
@@ -87,6 +87,9 @@ extern K8sObjectMetadata_LabelsEntry_DoNotUseDefaultTypeInternal _K8sObjectMetad
 class K8sPod;
 class K8sPodDefaultTypeInternal;
 extern K8sPodDefaultTypeInternal _K8sPod_default_instance_;
+class ResourceExtensions;
+class ResourceExtensionsDefaultTypeInternal;
+extern ResourceExtensionsDefaultTypeInternal _ResourceExtensions_default_instance_;
 class Resources;
 class ResourcesDefaultTypeInternal;
 extern ResourcesDefaultTypeInternal _Resources_default_instance_;
@@ -124,6 +127,7 @@ template<> ::flyteidl::core::K8sObjectMetadata* Arena::CreateMaybeMessage<::flyt
 template<> ::flyteidl::core::K8sObjectMetadata_AnnotationsEntry_DoNotUse* Arena::CreateMaybeMessage<::flyteidl::core::K8sObjectMetadata_AnnotationsEntry_DoNotUse>(Arena*);
 template<> ::flyteidl::core::K8sObjectMetadata_LabelsEntry_DoNotUse* Arena::CreateMaybeMessage<::flyteidl::core::K8sObjectMetadata_LabelsEntry_DoNotUse>(Arena*);
 template<> ::flyteidl::core::K8sPod* Arena::CreateMaybeMessage<::flyteidl::core::K8sPod>(Arena*);
+template<> ::flyteidl::core::ResourceExtensions* Arena::CreateMaybeMessage<::flyteidl::core::ResourceExtensions>(Arena*);
 template<> ::flyteidl::core::Resources* Arena::CreateMaybeMessage<::flyteidl::core::Resources>(Arena*);
 template<> ::flyteidl::core::Resources_ResourceEntry* Arena::CreateMaybeMessage<::flyteidl::core::Resources_ResourceEntry>(Arena*);
 template<> ::flyteidl::core::RuntimeMetadata* Arena::CreateMaybeMessage<::flyteidl::core::RuntimeMetadata>(Arena*);
@@ -464,6 +468,121 @@ class GPUAccelerator final :
 };
 // -------------------------------------------------------------------
 
+class ResourceExtensions final :
+    public ::google::protobuf::Message /* @@protoc_insertion_point(class_definition:flyteidl.core.ResourceExtensions) */ {
+ public:
+  ResourceExtensions();
+  virtual ~ResourceExtensions();
+
+  ResourceExtensions(const ResourceExtensions& from);
+
+  inline ResourceExtensions& operator=(const ResourceExtensions& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  #if LANG_CXX11
+  ResourceExtensions(ResourceExtensions&& from) noexcept
+    : ResourceExtensions() {
+    *this = ::std::move(from);
+  }
+
+  inline ResourceExtensions& operator=(ResourceExtensions&& from) noexcept {
+    if (GetArenaNoVirtual() == from.GetArenaNoVirtual()) {
+      if (this != &from) InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+  #endif
+  static const ::google::protobuf::Descriptor* descriptor() {
+    return default_instance().GetDescriptor();
+  }
+  static const ResourceExtensions& default_instance();
+
+  static void InitAsDefaultInstance();  // FOR INTERNAL USE ONLY
+  static inline const ResourceExtensions* internal_default_instance() {
+    return reinterpret_cast<const ResourceExtensions*>(
+               &_ResourceExtensions_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    1;
+
+  void Swap(ResourceExtensions* other);
+  friend void swap(ResourceExtensions& a, ResourceExtensions& b) {
+    a.Swap(&b);
+  }
+
+  // implements Message ----------------------------------------------
+
+  inline ResourceExtensions* New() const final {
+    return CreateMaybeMessage<ResourceExtensions>(nullptr);
+  }
+
+  ResourceExtensions* New(::google::protobuf::Arena* arena) const final {
+    return CreateMaybeMessage<ResourceExtensions>(arena);
+  }
+  void CopyFrom(const ::google::protobuf::Message& from) final;
+  void MergeFrom(const ::google::protobuf::Message& from) final;
+  void CopyFrom(const ResourceExtensions& from);
+  void MergeFrom(const ResourceExtensions& from);
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  #if GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
+  static const char* _InternalParse(const char* begin, const char* end, void* object, ::google::protobuf::internal::ParseContext* ctx);
+  ::google::protobuf::internal::ParseFunc _ParseFunc() const final { return _InternalParse; }
+  #else
+  bool MergePartialFromCodedStream(
+      ::google::protobuf::io::CodedInputStream* input) final;
+  #endif  // GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
+  void SerializeWithCachedSizes(
+      ::google::protobuf::io::CodedOutputStream* output) const final;
+  ::google::protobuf::uint8* InternalSerializeWithCachedSizesToArray(
+      ::google::protobuf::uint8* target) const final;
+  int GetCachedSize() const final { return _cached_size_.Get(); }
+
+  private:
+  void SharedCtor();
+  void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(ResourceExtensions* other);
+  private:
+  inline ::google::protobuf::Arena* GetArenaNoVirtual() const {
+    return nullptr;
+  }
+  inline void* MaybeArenaPtr() const {
+    return nullptr;
+  }
+  public:
+
+  ::google::protobuf::Metadata GetMetadata() const final;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  // .flyteidl.core.GPUAccelerator gpu_accelerator = 3;
+  bool has_gpu_accelerator() const;
+  void clear_gpu_accelerator();
+  static const int kGpuAcceleratorFieldNumber = 3;
+  const ::flyteidl::core::GPUAccelerator& gpu_accelerator() const;
+  ::flyteidl::core::GPUAccelerator* release_gpu_accelerator();
+  ::flyteidl::core::GPUAccelerator* mutable_gpu_accelerator();
+  void set_allocated_gpu_accelerator(::flyteidl::core::GPUAccelerator* gpu_accelerator);
+
+  // @@protoc_insertion_point(class_scope:flyteidl.core.ResourceExtensions)
+ private:
+  class HasBitSetters;
+
+  ::google::protobuf::internal::InternalMetadataWithArena _internal_metadata_;
+  ::flyteidl::core::GPUAccelerator* gpu_accelerator_;
+  mutable ::google::protobuf::internal::CachedSize _cached_size_;
+  friend struct ::TableStruct_flyteidl_2fcore_2ftasks_2eproto;
+};
+// -------------------------------------------------------------------
+
 class Resources_ResourceEntry final :
     public ::google::protobuf::Message /* @@protoc_insertion_point(class_definition:flyteidl.core.Resources.ResourceEntry) */ {
  public:
@@ -502,7 +621,7 @@ class Resources_ResourceEntry final :
                &_Resources_ResourceEntry_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    1;
+    2;
 
   void Swap(Resources_ResourceEntry* other);
   friend void swap(Resources_ResourceEntry& a, Resources_ResourceEntry& b) {
@@ -629,7 +748,7 @@ class Resources final :
                &_Resources_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    2;
+    3;
 
   void Swap(Resources* other);
   friend void swap(Resources& a, Resources& b) {
@@ -746,14 +865,14 @@ class Resources final :
   const ::google::protobuf::RepeatedPtrField< ::flyteidl::core::Resources_ResourceEntry >&
       limits() const;
 
-  // .flyteidl.core.GPUAccelerator gpu_accelerator = 3;
-  bool has_gpu_accelerator() const;
-  void clear_gpu_accelerator();
-  static const int kGpuAcceleratorFieldNumber = 3;
-  const ::flyteidl::core::GPUAccelerator& gpu_accelerator() const;
-  ::flyteidl::core::GPUAccelerator* release_gpu_accelerator();
-  ::flyteidl::core::GPUAccelerator* mutable_gpu_accelerator();
-  void set_allocated_gpu_accelerator(::flyteidl::core::GPUAccelerator* gpu_accelerator);
+  // .flyteidl.core.ResourceExtensions extensions = 3;
+  bool has_extensions() const;
+  void clear_extensions();
+  static const int kExtensionsFieldNumber = 3;
+  const ::flyteidl::core::ResourceExtensions& extensions() const;
+  ::flyteidl::core::ResourceExtensions* release_extensions();
+  ::flyteidl::core::ResourceExtensions* mutable_extensions();
+  void set_allocated_extensions(::flyteidl::core::ResourceExtensions* extensions);
 
   // @@protoc_insertion_point(class_scope:flyteidl.core.Resources)
  private:
@@ -762,7 +881,7 @@ class Resources final :
   ::google::protobuf::internal::InternalMetadataWithArena _internal_metadata_;
   ::google::protobuf::RepeatedPtrField< ::flyteidl::core::Resources_ResourceEntry > requests_;
   ::google::protobuf::RepeatedPtrField< ::flyteidl::core::Resources_ResourceEntry > limits_;
-  ::flyteidl::core::GPUAccelerator* gpu_accelerator_;
+  ::flyteidl::core::ResourceExtensions* extensions_;
   mutable ::google::protobuf::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_flyteidl_2fcore_2ftasks_2eproto;
 };
@@ -806,7 +925,7 @@ class RuntimeMetadata final :
                &_RuntimeMetadata_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    3;
+    4;
 
   void Swap(RuntimeMetadata* other);
   friend void swap(RuntimeMetadata& a, RuntimeMetadata& b) {
@@ -1003,7 +1122,7 @@ class TaskMetadata final :
                &_TaskMetadata_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    5;
+    6;
 
   void Swap(TaskMetadata* other);
   friend void swap(TaskMetadata& a, TaskMetadata& b) {
@@ -1272,7 +1391,7 @@ class TaskTemplate final :
                &_TaskTemplate_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    7;
+    8;
 
   void Swap(TaskTemplate* other);
   friend void swap(TaskTemplate& a, TaskTemplate& b) {
@@ -1508,7 +1627,7 @@ class ContainerPort final :
                &_ContainerPort_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    8;
+    9;
 
   void Swap(ContainerPort* other);
   friend void swap(ContainerPort& a, ContainerPort& b) {
@@ -1620,7 +1739,7 @@ class Container final :
                &_Container_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    9;
+    10;
 
   void Swap(Container* other);
   friend void swap(Container& a, Container& b) {
@@ -1884,7 +2003,7 @@ class IOStrategy final :
                &_IOStrategy_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    10;
+    11;
 
   void Swap(IOStrategy* other);
   friend void swap(IOStrategy& a, IOStrategy& b) {
@@ -2059,7 +2178,7 @@ class DataLoadingConfig final :
                &_DataLoadingConfig_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    11;
+    12;
 
   void Swap(DataLoadingConfig* other);
   friend void swap(DataLoadingConfig& a, DataLoadingConfig& b) {
@@ -2246,7 +2365,7 @@ class K8sPod final :
                &_K8sPod_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    12;
+    13;
 
   void Swap(K8sPod* other);
   friend void swap(K8sPod& a, K8sPod& b) {
@@ -2429,7 +2548,7 @@ class K8sObjectMetadata final :
                &_K8sObjectMetadata_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    15;
+    16;
 
   void Swap(K8sObjectMetadata* other);
   friend void swap(K8sObjectMetadata& a, K8sObjectMetadata& b) {
@@ -2565,7 +2684,7 @@ class Sql final :
                &_Sql_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    16;
+    17;
 
   void Swap(Sql* other);
   friend void swap(Sql& a, Sql& b) {
@@ -2878,6 +2997,61 @@ inline GPUAccelerator::PartitionSizeValueCase GPUAccelerator::partition_size_val
 }
 // -------------------------------------------------------------------
 
+// ResourceExtensions
+
+// .flyteidl.core.GPUAccelerator gpu_accelerator = 3;
+inline bool ResourceExtensions::has_gpu_accelerator() const {
+  return this != internal_default_instance() && gpu_accelerator_ != nullptr;
+}
+inline void ResourceExtensions::clear_gpu_accelerator() {
+  if (GetArenaNoVirtual() == nullptr && gpu_accelerator_ != nullptr) {
+    delete gpu_accelerator_;
+  }
+  gpu_accelerator_ = nullptr;
+}
+inline const ::flyteidl::core::GPUAccelerator& ResourceExtensions::gpu_accelerator() const {
+  const ::flyteidl::core::GPUAccelerator* p = gpu_accelerator_;
+  // @@protoc_insertion_point(field_get:flyteidl.core.ResourceExtensions.gpu_accelerator)
+  return p != nullptr ? *p : *reinterpret_cast<const ::flyteidl::core::GPUAccelerator*>(
+      &::flyteidl::core::_GPUAccelerator_default_instance_);
+}
+inline ::flyteidl::core::GPUAccelerator* ResourceExtensions::release_gpu_accelerator() {
+  // @@protoc_insertion_point(field_release:flyteidl.core.ResourceExtensions.gpu_accelerator)
+  
+  ::flyteidl::core::GPUAccelerator* temp = gpu_accelerator_;
+  gpu_accelerator_ = nullptr;
+  return temp;
+}
+inline ::flyteidl::core::GPUAccelerator* ResourceExtensions::mutable_gpu_accelerator() {
+  
+  if (gpu_accelerator_ == nullptr) {
+    auto* p = CreateMaybeMessage<::flyteidl::core::GPUAccelerator>(GetArenaNoVirtual());
+    gpu_accelerator_ = p;
+  }
+  // @@protoc_insertion_point(field_mutable:flyteidl.core.ResourceExtensions.gpu_accelerator)
+  return gpu_accelerator_;
+}
+inline void ResourceExtensions::set_allocated_gpu_accelerator(::flyteidl::core::GPUAccelerator* gpu_accelerator) {
+  ::google::protobuf::Arena* message_arena = GetArenaNoVirtual();
+  if (message_arena == nullptr) {
+    delete gpu_accelerator_;
+  }
+  if (gpu_accelerator) {
+    ::google::protobuf::Arena* submessage_arena = nullptr;
+    if (message_arena != submessage_arena) {
+      gpu_accelerator = ::google::protobuf::internal::GetOwnedMessage(
+          message_arena, gpu_accelerator, submessage_arena);
+    }
+    
+  } else {
+    
+  }
+  gpu_accelerator_ = gpu_accelerator;
+  // @@protoc_insertion_point(field_set_allocated:flyteidl.core.ResourceExtensions.gpu_accelerator)
+}
+
+// -------------------------------------------------------------------
+
 // Resources_ResourceEntry
 
 // .flyteidl.core.Resources.ResourceName name = 1;
@@ -3011,55 +3185,55 @@ Resources::limits() const {
   return limits_;
 }
 
-// .flyteidl.core.GPUAccelerator gpu_accelerator = 3;
-inline bool Resources::has_gpu_accelerator() const {
-  return this != internal_default_instance() && gpu_accelerator_ != nullptr;
+// .flyteidl.core.ResourceExtensions extensions = 3;
+inline bool Resources::has_extensions() const {
+  return this != internal_default_instance() && extensions_ != nullptr;
 }
-inline void Resources::clear_gpu_accelerator() {
-  if (GetArenaNoVirtual() == nullptr && gpu_accelerator_ != nullptr) {
-    delete gpu_accelerator_;
+inline void Resources::clear_extensions() {
+  if (GetArenaNoVirtual() == nullptr && extensions_ != nullptr) {
+    delete extensions_;
   }
-  gpu_accelerator_ = nullptr;
+  extensions_ = nullptr;
 }
-inline const ::flyteidl::core::GPUAccelerator& Resources::gpu_accelerator() const {
-  const ::flyteidl::core::GPUAccelerator* p = gpu_accelerator_;
-  // @@protoc_insertion_point(field_get:flyteidl.core.Resources.gpu_accelerator)
-  return p != nullptr ? *p : *reinterpret_cast<const ::flyteidl::core::GPUAccelerator*>(
-      &::flyteidl::core::_GPUAccelerator_default_instance_);
+inline const ::flyteidl::core::ResourceExtensions& Resources::extensions() const {
+  const ::flyteidl::core::ResourceExtensions* p = extensions_;
+  // @@protoc_insertion_point(field_get:flyteidl.core.Resources.extensions)
+  return p != nullptr ? *p : *reinterpret_cast<const ::flyteidl::core::ResourceExtensions*>(
+      &::flyteidl::core::_ResourceExtensions_default_instance_);
 }
-inline ::flyteidl::core::GPUAccelerator* Resources::release_gpu_accelerator() {
-  // @@protoc_insertion_point(field_release:flyteidl.core.Resources.gpu_accelerator)
+inline ::flyteidl::core::ResourceExtensions* Resources::release_extensions() {
+  // @@protoc_insertion_point(field_release:flyteidl.core.Resources.extensions)
   
-  ::flyteidl::core::GPUAccelerator* temp = gpu_accelerator_;
-  gpu_accelerator_ = nullptr;
+  ::flyteidl::core::ResourceExtensions* temp = extensions_;
+  extensions_ = nullptr;
   return temp;
 }
-inline ::flyteidl::core::GPUAccelerator* Resources::mutable_gpu_accelerator() {
+inline ::flyteidl::core::ResourceExtensions* Resources::mutable_extensions() {
   
-  if (gpu_accelerator_ == nullptr) {
-    auto* p = CreateMaybeMessage<::flyteidl::core::GPUAccelerator>(GetArenaNoVirtual());
-    gpu_accelerator_ = p;
+  if (extensions_ == nullptr) {
+    auto* p = CreateMaybeMessage<::flyteidl::core::ResourceExtensions>(GetArenaNoVirtual());
+    extensions_ = p;
   }
-  // @@protoc_insertion_point(field_mutable:flyteidl.core.Resources.gpu_accelerator)
-  return gpu_accelerator_;
+  // @@protoc_insertion_point(field_mutable:flyteidl.core.Resources.extensions)
+  return extensions_;
 }
-inline void Resources::set_allocated_gpu_accelerator(::flyteidl::core::GPUAccelerator* gpu_accelerator) {
+inline void Resources::set_allocated_extensions(::flyteidl::core::ResourceExtensions* extensions) {
   ::google::protobuf::Arena* message_arena = GetArenaNoVirtual();
   if (message_arena == nullptr) {
-    delete gpu_accelerator_;
+    delete extensions_;
   }
-  if (gpu_accelerator) {
+  if (extensions) {
     ::google::protobuf::Arena* submessage_arena = nullptr;
     if (message_arena != submessage_arena) {
-      gpu_accelerator = ::google::protobuf::internal::GetOwnedMessage(
-          message_arena, gpu_accelerator, submessage_arena);
+      extensions = ::google::protobuf::internal::GetOwnedMessage(
+          message_arena, extensions, submessage_arena);
     }
     
   } else {
     
   }
-  gpu_accelerator_ = gpu_accelerator;
-  // @@protoc_insertion_point(field_set_allocated:flyteidl.core.Resources.gpu_accelerator)
+  extensions_ = extensions;
+  // @@protoc_insertion_point(field_set_allocated:flyteidl.core.Resources.extensions)
 }
 
 // -------------------------------------------------------------------
@@ -4950,6 +5124,8 @@ inline void Sql::set_dialect(::flyteidl::core::Sql_Dialect value) {
 #ifdef __GNUC__
   #pragma GCC diagnostic pop
 #endif  // __GNUC__
+// -------------------------------------------------------------------
+
 // -------------------------------------------------------------------
 
 // -------------------------------------------------------------------

@@ -22,6 +22,14 @@ message GPUAccelerator {
     }
 }
 
+// Encapsulates all non-standard resources, not captured by v1.ResourceRequirements, to
+// allocate to a task.
+message ResourceExtensions {
+    // GPU accelerator to select for task. Contains information about device type, and
+    // for multi-instance GPUs, the partition size to use.
+    GPUAccelerator gpu_accelerator = 3;
+}
+
 // A customizable interface to convey resources requested for a container. This can be interpreted differently for different
 // container engines.
 message Resources {
@@ -53,9 +61,9 @@ message Resources {
     // within the list.
     repeated ResourceEntry limits = 2;
 
-    // GPU accelerator to select for task. Contains information about device type, and
-    // for multi-instance GPUs, the partition size to use.
-    GPUAccelerator gpu_accelerator = 3;
+    // Encapsulates all non-standard resources, not captured by
+    // v1.ResourceRequirements, to allocate to a task.
+    ResourceExtensions extensions = 3;
 }
 
 // Runtime information. This is loosely defined to allow for extensibility.

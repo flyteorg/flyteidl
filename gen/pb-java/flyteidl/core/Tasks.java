@@ -885,6 +885,697 @@ public final class Tasks {
 
   }
 
+  public interface ResourceExtensionsOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:flyteidl.core.ResourceExtensions)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <pre>
+     * GPU accelerator to select for task. Contains information about device type, and
+     * for multi-instance GPUs, the partition size to use.
+     * </pre>
+     *
+     * <code>.flyteidl.core.GPUAccelerator gpu_accelerator = 3;</code>
+     */
+    boolean hasGpuAccelerator();
+    /**
+     * <pre>
+     * GPU accelerator to select for task. Contains information about device type, and
+     * for multi-instance GPUs, the partition size to use.
+     * </pre>
+     *
+     * <code>.flyteidl.core.GPUAccelerator gpu_accelerator = 3;</code>
+     */
+    flyteidl.core.Tasks.GPUAccelerator getGpuAccelerator();
+    /**
+     * <pre>
+     * GPU accelerator to select for task. Contains information about device type, and
+     * for multi-instance GPUs, the partition size to use.
+     * </pre>
+     *
+     * <code>.flyteidl.core.GPUAccelerator gpu_accelerator = 3;</code>
+     */
+    flyteidl.core.Tasks.GPUAcceleratorOrBuilder getGpuAcceleratorOrBuilder();
+  }
+  /**
+   * <pre>
+   * Encapsulates all non-standard resources, not captured by v1.ResourceRequirements, to
+   * allocate to a task.
+   * </pre>
+   *
+   * Protobuf type {@code flyteidl.core.ResourceExtensions}
+   */
+  public  static final class ResourceExtensions extends
+      com.google.protobuf.GeneratedMessageV3 implements
+      // @@protoc_insertion_point(message_implements:flyteidl.core.ResourceExtensions)
+      ResourceExtensionsOrBuilder {
+  private static final long serialVersionUID = 0L;
+    // Use ResourceExtensions.newBuilder() to construct.
+    private ResourceExtensions(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+    private ResourceExtensions() {
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+      return this.unknownFields;
+    }
+    private ResourceExtensions(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 26: {
+              flyteidl.core.Tasks.GPUAccelerator.Builder subBuilder = null;
+              if (gpuAccelerator_ != null) {
+                subBuilder = gpuAccelerator_.toBuilder();
+              }
+              gpuAccelerator_ = input.readMessage(flyteidl.core.Tasks.GPUAccelerator.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(gpuAccelerator_);
+                gpuAccelerator_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return flyteidl.core.Tasks.internal_static_flyteidl_core_ResourceExtensions_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return flyteidl.core.Tasks.internal_static_flyteidl_core_ResourceExtensions_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              flyteidl.core.Tasks.ResourceExtensions.class, flyteidl.core.Tasks.ResourceExtensions.Builder.class);
+    }
+
+    public static final int GPU_ACCELERATOR_FIELD_NUMBER = 3;
+    private flyteidl.core.Tasks.GPUAccelerator gpuAccelerator_;
+    /**
+     * <pre>
+     * GPU accelerator to select for task. Contains information about device type, and
+     * for multi-instance GPUs, the partition size to use.
+     * </pre>
+     *
+     * <code>.flyteidl.core.GPUAccelerator gpu_accelerator = 3;</code>
+     */
+    public boolean hasGpuAccelerator() {
+      return gpuAccelerator_ != null;
+    }
+    /**
+     * <pre>
+     * GPU accelerator to select for task. Contains information about device type, and
+     * for multi-instance GPUs, the partition size to use.
+     * </pre>
+     *
+     * <code>.flyteidl.core.GPUAccelerator gpu_accelerator = 3;</code>
+     */
+    public flyteidl.core.Tasks.GPUAccelerator getGpuAccelerator() {
+      return gpuAccelerator_ == null ? flyteidl.core.Tasks.GPUAccelerator.getDefaultInstance() : gpuAccelerator_;
+    }
+    /**
+     * <pre>
+     * GPU accelerator to select for task. Contains information about device type, and
+     * for multi-instance GPUs, the partition size to use.
+     * </pre>
+     *
+     * <code>.flyteidl.core.GPUAccelerator gpu_accelerator = 3;</code>
+     */
+    public flyteidl.core.Tasks.GPUAcceleratorOrBuilder getGpuAcceleratorOrBuilder() {
+      return getGpuAccelerator();
+    }
+
+    private byte memoizedIsInitialized = -1;
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      if (gpuAccelerator_ != null) {
+        output.writeMessage(3, getGpuAccelerator());
+      }
+      unknownFields.writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (gpuAccelerator_ != null) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(3, getGpuAccelerator());
+      }
+      size += unknownFields.getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof flyteidl.core.Tasks.ResourceExtensions)) {
+        return super.equals(obj);
+      }
+      flyteidl.core.Tasks.ResourceExtensions other = (flyteidl.core.Tasks.ResourceExtensions) obj;
+
+      if (hasGpuAccelerator() != other.hasGpuAccelerator()) return false;
+      if (hasGpuAccelerator()) {
+        if (!getGpuAccelerator()
+            .equals(other.getGpuAccelerator())) return false;
+      }
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      if (hasGpuAccelerator()) {
+        hash = (37 * hash) + GPU_ACCELERATOR_FIELD_NUMBER;
+        hash = (53 * hash) + getGpuAccelerator().hashCode();
+      }
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static flyteidl.core.Tasks.ResourceExtensions parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static flyteidl.core.Tasks.ResourceExtensions parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static flyteidl.core.Tasks.ResourceExtensions parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static flyteidl.core.Tasks.ResourceExtensions parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static flyteidl.core.Tasks.ResourceExtensions parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static flyteidl.core.Tasks.ResourceExtensions parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static flyteidl.core.Tasks.ResourceExtensions parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static flyteidl.core.Tasks.ResourceExtensions parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static flyteidl.core.Tasks.ResourceExtensions parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+    public static flyteidl.core.Tasks.ResourceExtensions parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static flyteidl.core.Tasks.ResourceExtensions parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static flyteidl.core.Tasks.ResourceExtensions parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(flyteidl.core.Tasks.ResourceExtensions prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * <pre>
+     * Encapsulates all non-standard resources, not captured by v1.ResourceRequirements, to
+     * allocate to a task.
+     * </pre>
+     *
+     * Protobuf type {@code flyteidl.core.ResourceExtensions}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:flyteidl.core.ResourceExtensions)
+        flyteidl.core.Tasks.ResourceExtensionsOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return flyteidl.core.Tasks.internal_static_flyteidl_core_ResourceExtensions_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return flyteidl.core.Tasks.internal_static_flyteidl_core_ResourceExtensions_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                flyteidl.core.Tasks.ResourceExtensions.class, flyteidl.core.Tasks.ResourceExtensions.Builder.class);
+      }
+
+      // Construct using flyteidl.core.Tasks.ResourceExtensions.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
+      }
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        if (gpuAcceleratorBuilder_ == null) {
+          gpuAccelerator_ = null;
+        } else {
+          gpuAccelerator_ = null;
+          gpuAcceleratorBuilder_ = null;
+        }
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return flyteidl.core.Tasks.internal_static_flyteidl_core_ResourceExtensions_descriptor;
+      }
+
+      @java.lang.Override
+      public flyteidl.core.Tasks.ResourceExtensions getDefaultInstanceForType() {
+        return flyteidl.core.Tasks.ResourceExtensions.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public flyteidl.core.Tasks.ResourceExtensions build() {
+        flyteidl.core.Tasks.ResourceExtensions result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public flyteidl.core.Tasks.ResourceExtensions buildPartial() {
+        flyteidl.core.Tasks.ResourceExtensions result = new flyteidl.core.Tasks.ResourceExtensions(this);
+        if (gpuAcceleratorBuilder_ == null) {
+          result.gpuAccelerator_ = gpuAccelerator_;
+        } else {
+          result.gpuAccelerator_ = gpuAcceleratorBuilder_.build();
+        }
+        onBuilt();
+        return result;
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.setField(field, value);
+      }
+      @java.lang.Override
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+      @java.lang.Override
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof flyteidl.core.Tasks.ResourceExtensions) {
+          return mergeFrom((flyteidl.core.Tasks.ResourceExtensions)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(flyteidl.core.Tasks.ResourceExtensions other) {
+        if (other == flyteidl.core.Tasks.ResourceExtensions.getDefaultInstance()) return this;
+        if (other.hasGpuAccelerator()) {
+          mergeGpuAccelerator(other.getGpuAccelerator());
+        }
+        this.mergeUnknownFields(other.unknownFields);
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        flyteidl.core.Tasks.ResourceExtensions parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (flyteidl.core.Tasks.ResourceExtensions) e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+
+      private flyteidl.core.Tasks.GPUAccelerator gpuAccelerator_;
+      private com.google.protobuf.SingleFieldBuilderV3<
+          flyteidl.core.Tasks.GPUAccelerator, flyteidl.core.Tasks.GPUAccelerator.Builder, flyteidl.core.Tasks.GPUAcceleratorOrBuilder> gpuAcceleratorBuilder_;
+      /**
+       * <pre>
+       * GPU accelerator to select for task. Contains information about device type, and
+       * for multi-instance GPUs, the partition size to use.
+       * </pre>
+       *
+       * <code>.flyteidl.core.GPUAccelerator gpu_accelerator = 3;</code>
+       */
+      public boolean hasGpuAccelerator() {
+        return gpuAcceleratorBuilder_ != null || gpuAccelerator_ != null;
+      }
+      /**
+       * <pre>
+       * GPU accelerator to select for task. Contains information about device type, and
+       * for multi-instance GPUs, the partition size to use.
+       * </pre>
+       *
+       * <code>.flyteidl.core.GPUAccelerator gpu_accelerator = 3;</code>
+       */
+      public flyteidl.core.Tasks.GPUAccelerator getGpuAccelerator() {
+        if (gpuAcceleratorBuilder_ == null) {
+          return gpuAccelerator_ == null ? flyteidl.core.Tasks.GPUAccelerator.getDefaultInstance() : gpuAccelerator_;
+        } else {
+          return gpuAcceleratorBuilder_.getMessage();
+        }
+      }
+      /**
+       * <pre>
+       * GPU accelerator to select for task. Contains information about device type, and
+       * for multi-instance GPUs, the partition size to use.
+       * </pre>
+       *
+       * <code>.flyteidl.core.GPUAccelerator gpu_accelerator = 3;</code>
+       */
+      public Builder setGpuAccelerator(flyteidl.core.Tasks.GPUAccelerator value) {
+        if (gpuAcceleratorBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          gpuAccelerator_ = value;
+          onChanged();
+        } else {
+          gpuAcceleratorBuilder_.setMessage(value);
+        }
+
+        return this;
+      }
+      /**
+       * <pre>
+       * GPU accelerator to select for task. Contains information about device type, and
+       * for multi-instance GPUs, the partition size to use.
+       * </pre>
+       *
+       * <code>.flyteidl.core.GPUAccelerator gpu_accelerator = 3;</code>
+       */
+      public Builder setGpuAccelerator(
+          flyteidl.core.Tasks.GPUAccelerator.Builder builderForValue) {
+        if (gpuAcceleratorBuilder_ == null) {
+          gpuAccelerator_ = builderForValue.build();
+          onChanged();
+        } else {
+          gpuAcceleratorBuilder_.setMessage(builderForValue.build());
+        }
+
+        return this;
+      }
+      /**
+       * <pre>
+       * GPU accelerator to select for task. Contains information about device type, and
+       * for multi-instance GPUs, the partition size to use.
+       * </pre>
+       *
+       * <code>.flyteidl.core.GPUAccelerator gpu_accelerator = 3;</code>
+       */
+      public Builder mergeGpuAccelerator(flyteidl.core.Tasks.GPUAccelerator value) {
+        if (gpuAcceleratorBuilder_ == null) {
+          if (gpuAccelerator_ != null) {
+            gpuAccelerator_ =
+              flyteidl.core.Tasks.GPUAccelerator.newBuilder(gpuAccelerator_).mergeFrom(value).buildPartial();
+          } else {
+            gpuAccelerator_ = value;
+          }
+          onChanged();
+        } else {
+          gpuAcceleratorBuilder_.mergeFrom(value);
+        }
+
+        return this;
+      }
+      /**
+       * <pre>
+       * GPU accelerator to select for task. Contains information about device type, and
+       * for multi-instance GPUs, the partition size to use.
+       * </pre>
+       *
+       * <code>.flyteidl.core.GPUAccelerator gpu_accelerator = 3;</code>
+       */
+      public Builder clearGpuAccelerator() {
+        if (gpuAcceleratorBuilder_ == null) {
+          gpuAccelerator_ = null;
+          onChanged();
+        } else {
+          gpuAccelerator_ = null;
+          gpuAcceleratorBuilder_ = null;
+        }
+
+        return this;
+      }
+      /**
+       * <pre>
+       * GPU accelerator to select for task. Contains information about device type, and
+       * for multi-instance GPUs, the partition size to use.
+       * </pre>
+       *
+       * <code>.flyteidl.core.GPUAccelerator gpu_accelerator = 3;</code>
+       */
+      public flyteidl.core.Tasks.GPUAccelerator.Builder getGpuAcceleratorBuilder() {
+        
+        onChanged();
+        return getGpuAcceleratorFieldBuilder().getBuilder();
+      }
+      /**
+       * <pre>
+       * GPU accelerator to select for task. Contains information about device type, and
+       * for multi-instance GPUs, the partition size to use.
+       * </pre>
+       *
+       * <code>.flyteidl.core.GPUAccelerator gpu_accelerator = 3;</code>
+       */
+      public flyteidl.core.Tasks.GPUAcceleratorOrBuilder getGpuAcceleratorOrBuilder() {
+        if (gpuAcceleratorBuilder_ != null) {
+          return gpuAcceleratorBuilder_.getMessageOrBuilder();
+        } else {
+          return gpuAccelerator_ == null ?
+              flyteidl.core.Tasks.GPUAccelerator.getDefaultInstance() : gpuAccelerator_;
+        }
+      }
+      /**
+       * <pre>
+       * GPU accelerator to select for task. Contains information about device type, and
+       * for multi-instance GPUs, the partition size to use.
+       * </pre>
+       *
+       * <code>.flyteidl.core.GPUAccelerator gpu_accelerator = 3;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+          flyteidl.core.Tasks.GPUAccelerator, flyteidl.core.Tasks.GPUAccelerator.Builder, flyteidl.core.Tasks.GPUAcceleratorOrBuilder> 
+          getGpuAcceleratorFieldBuilder() {
+        if (gpuAcceleratorBuilder_ == null) {
+          gpuAcceleratorBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              flyteidl.core.Tasks.GPUAccelerator, flyteidl.core.Tasks.GPUAccelerator.Builder, flyteidl.core.Tasks.GPUAcceleratorOrBuilder>(
+                  getGpuAccelerator(),
+                  getParentForChildren(),
+                  isClean());
+          gpuAccelerator_ = null;
+        }
+        return gpuAcceleratorBuilder_;
+      }
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+
+      // @@protoc_insertion_point(builder_scope:flyteidl.core.ResourceExtensions)
+    }
+
+    // @@protoc_insertion_point(class_scope:flyteidl.core.ResourceExtensions)
+    private static final flyteidl.core.Tasks.ResourceExtensions DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new flyteidl.core.Tasks.ResourceExtensions();
+    }
+
+    public static flyteidl.core.Tasks.ResourceExtensions getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<ResourceExtensions>
+        PARSER = new com.google.protobuf.AbstractParser<ResourceExtensions>() {
+      @java.lang.Override
+      public ResourceExtensions parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new ResourceExtensions(input, extensionRegistry);
+      }
+    };
+
+    public static com.google.protobuf.Parser<ResourceExtensions> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<ResourceExtensions> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public flyteidl.core.Tasks.ResourceExtensions getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
   public interface ResourcesOrBuilder extends
       // @@protoc_insertion_point(interface_extends:flyteidl.core.Resources)
       com.google.protobuf.MessageOrBuilder {
@@ -984,31 +1675,31 @@ public final class Tasks {
 
     /**
      * <pre>
-     * GPU accelerator to select for task. Contains information about device type, and
-     * for multi-instance GPUs, the partition size to use.
+     * Encapsulates all non-standard resources, not captured by
+     * v1.ResourceRequirements, to allocate to a task.
      * </pre>
      *
-     * <code>.flyteidl.core.GPUAccelerator gpu_accelerator = 3;</code>
+     * <code>.flyteidl.core.ResourceExtensions extensions = 3;</code>
      */
-    boolean hasGpuAccelerator();
+    boolean hasExtensions();
     /**
      * <pre>
-     * GPU accelerator to select for task. Contains information about device type, and
-     * for multi-instance GPUs, the partition size to use.
+     * Encapsulates all non-standard resources, not captured by
+     * v1.ResourceRequirements, to allocate to a task.
      * </pre>
      *
-     * <code>.flyteidl.core.GPUAccelerator gpu_accelerator = 3;</code>
+     * <code>.flyteidl.core.ResourceExtensions extensions = 3;</code>
      */
-    flyteidl.core.Tasks.GPUAccelerator getGpuAccelerator();
+    flyteidl.core.Tasks.ResourceExtensions getExtensions();
     /**
      * <pre>
-     * GPU accelerator to select for task. Contains information about device type, and
-     * for multi-instance GPUs, the partition size to use.
+     * Encapsulates all non-standard resources, not captured by
+     * v1.ResourceRequirements, to allocate to a task.
      * </pre>
      *
-     * <code>.flyteidl.core.GPUAccelerator gpu_accelerator = 3;</code>
+     * <code>.flyteidl.core.ResourceExtensions extensions = 3;</code>
      */
-    flyteidl.core.Tasks.GPUAcceleratorOrBuilder getGpuAcceleratorOrBuilder();
+    flyteidl.core.Tasks.ResourceExtensionsOrBuilder getExtensionsOrBuilder();
   }
   /**
    * <pre>
@@ -1075,14 +1766,14 @@ public final class Tasks {
               break;
             }
             case 26: {
-              flyteidl.core.Tasks.GPUAccelerator.Builder subBuilder = null;
-              if (gpuAccelerator_ != null) {
-                subBuilder = gpuAccelerator_.toBuilder();
+              flyteidl.core.Tasks.ResourceExtensions.Builder subBuilder = null;
+              if (extensions_ != null) {
+                subBuilder = extensions_.toBuilder();
               }
-              gpuAccelerator_ = input.readMessage(flyteidl.core.Tasks.GPUAccelerator.parser(), extensionRegistry);
+              extensions_ = input.readMessage(flyteidl.core.Tasks.ResourceExtensions.parser(), extensionRegistry);
               if (subBuilder != null) {
-                subBuilder.mergeFrom(gpuAccelerator_);
-                gpuAccelerator_ = subBuilder.buildPartial();
+                subBuilder.mergeFrom(extensions_);
+                extensions_ = subBuilder.buildPartial();
               }
 
               break;
@@ -2119,40 +2810,40 @@ public final class Tasks {
       return limits_.get(index);
     }
 
-    public static final int GPU_ACCELERATOR_FIELD_NUMBER = 3;
-    private flyteidl.core.Tasks.GPUAccelerator gpuAccelerator_;
+    public static final int EXTENSIONS_FIELD_NUMBER = 3;
+    private flyteidl.core.Tasks.ResourceExtensions extensions_;
     /**
      * <pre>
-     * GPU accelerator to select for task. Contains information about device type, and
-     * for multi-instance GPUs, the partition size to use.
+     * Encapsulates all non-standard resources, not captured by
+     * v1.ResourceRequirements, to allocate to a task.
      * </pre>
      *
-     * <code>.flyteidl.core.GPUAccelerator gpu_accelerator = 3;</code>
+     * <code>.flyteidl.core.ResourceExtensions extensions = 3;</code>
      */
-    public boolean hasGpuAccelerator() {
-      return gpuAccelerator_ != null;
+    public boolean hasExtensions() {
+      return extensions_ != null;
     }
     /**
      * <pre>
-     * GPU accelerator to select for task. Contains information about device type, and
-     * for multi-instance GPUs, the partition size to use.
+     * Encapsulates all non-standard resources, not captured by
+     * v1.ResourceRequirements, to allocate to a task.
      * </pre>
      *
-     * <code>.flyteidl.core.GPUAccelerator gpu_accelerator = 3;</code>
+     * <code>.flyteidl.core.ResourceExtensions extensions = 3;</code>
      */
-    public flyteidl.core.Tasks.GPUAccelerator getGpuAccelerator() {
-      return gpuAccelerator_ == null ? flyteidl.core.Tasks.GPUAccelerator.getDefaultInstance() : gpuAccelerator_;
+    public flyteidl.core.Tasks.ResourceExtensions getExtensions() {
+      return extensions_ == null ? flyteidl.core.Tasks.ResourceExtensions.getDefaultInstance() : extensions_;
     }
     /**
      * <pre>
-     * GPU accelerator to select for task. Contains information about device type, and
-     * for multi-instance GPUs, the partition size to use.
+     * Encapsulates all non-standard resources, not captured by
+     * v1.ResourceRequirements, to allocate to a task.
      * </pre>
      *
-     * <code>.flyteidl.core.GPUAccelerator gpu_accelerator = 3;</code>
+     * <code>.flyteidl.core.ResourceExtensions extensions = 3;</code>
      */
-    public flyteidl.core.Tasks.GPUAcceleratorOrBuilder getGpuAcceleratorOrBuilder() {
-      return getGpuAccelerator();
+    public flyteidl.core.Tasks.ResourceExtensionsOrBuilder getExtensionsOrBuilder() {
+      return getExtensions();
     }
 
     private byte memoizedIsInitialized = -1;
@@ -2175,8 +2866,8 @@ public final class Tasks {
       for (int i = 0; i < limits_.size(); i++) {
         output.writeMessage(2, limits_.get(i));
       }
-      if (gpuAccelerator_ != null) {
-        output.writeMessage(3, getGpuAccelerator());
+      if (extensions_ != null) {
+        output.writeMessage(3, getExtensions());
       }
       unknownFields.writeTo(output);
     }
@@ -2195,9 +2886,9 @@ public final class Tasks {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(2, limits_.get(i));
       }
-      if (gpuAccelerator_ != null) {
+      if (extensions_ != null) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(3, getGpuAccelerator());
+          .computeMessageSize(3, getExtensions());
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -2218,10 +2909,10 @@ public final class Tasks {
           .equals(other.getRequestsList())) return false;
       if (!getLimitsList()
           .equals(other.getLimitsList())) return false;
-      if (hasGpuAccelerator() != other.hasGpuAccelerator()) return false;
-      if (hasGpuAccelerator()) {
-        if (!getGpuAccelerator()
-            .equals(other.getGpuAccelerator())) return false;
+      if (hasExtensions() != other.hasExtensions()) return false;
+      if (hasExtensions()) {
+        if (!getExtensions()
+            .equals(other.getExtensions())) return false;
       }
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
@@ -2242,9 +2933,9 @@ public final class Tasks {
         hash = (37 * hash) + LIMITS_FIELD_NUMBER;
         hash = (53 * hash) + getLimitsList().hashCode();
       }
-      if (hasGpuAccelerator()) {
-        hash = (37 * hash) + GPU_ACCELERATOR_FIELD_NUMBER;
-        hash = (53 * hash) + getGpuAccelerator().hashCode();
+      if (hasExtensions()) {
+        hash = (37 * hash) + EXTENSIONS_FIELD_NUMBER;
+        hash = (53 * hash) + getExtensions().hashCode();
       }
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
@@ -2398,11 +3089,11 @@ public final class Tasks {
         } else {
           limitsBuilder_.clear();
         }
-        if (gpuAcceleratorBuilder_ == null) {
-          gpuAccelerator_ = null;
+        if (extensionsBuilder_ == null) {
+          extensions_ = null;
         } else {
-          gpuAccelerator_ = null;
-          gpuAcceleratorBuilder_ = null;
+          extensions_ = null;
+          extensionsBuilder_ = null;
         }
         return this;
       }
@@ -2450,10 +3141,10 @@ public final class Tasks {
         } else {
           result.limits_ = limitsBuilder_.build();
         }
-        if (gpuAcceleratorBuilder_ == null) {
-          result.gpuAccelerator_ = gpuAccelerator_;
+        if (extensionsBuilder_ == null) {
+          result.extensions_ = extensions_;
         } else {
-          result.gpuAccelerator_ = gpuAcceleratorBuilder_.build();
+          result.extensions_ = extensionsBuilder_.build();
         }
         result.bitField0_ = to_bitField0_;
         onBuilt();
@@ -2556,8 +3247,8 @@ public final class Tasks {
             }
           }
         }
-        if (other.hasGpuAccelerator()) {
-          mergeGpuAccelerator(other.getGpuAccelerator());
+        if (other.hasExtensions()) {
+          mergeExtensions(other.getExtensions());
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -3231,166 +3922,166 @@ public final class Tasks {
         return limitsBuilder_;
       }
 
-      private flyteidl.core.Tasks.GPUAccelerator gpuAccelerator_;
+      private flyteidl.core.Tasks.ResourceExtensions extensions_;
       private com.google.protobuf.SingleFieldBuilderV3<
-          flyteidl.core.Tasks.GPUAccelerator, flyteidl.core.Tasks.GPUAccelerator.Builder, flyteidl.core.Tasks.GPUAcceleratorOrBuilder> gpuAcceleratorBuilder_;
+          flyteidl.core.Tasks.ResourceExtensions, flyteidl.core.Tasks.ResourceExtensions.Builder, flyteidl.core.Tasks.ResourceExtensionsOrBuilder> extensionsBuilder_;
       /**
        * <pre>
-       * GPU accelerator to select for task. Contains information about device type, and
-       * for multi-instance GPUs, the partition size to use.
+       * Encapsulates all non-standard resources, not captured by
+       * v1.ResourceRequirements, to allocate to a task.
        * </pre>
        *
-       * <code>.flyteidl.core.GPUAccelerator gpu_accelerator = 3;</code>
+       * <code>.flyteidl.core.ResourceExtensions extensions = 3;</code>
        */
-      public boolean hasGpuAccelerator() {
-        return gpuAcceleratorBuilder_ != null || gpuAccelerator_ != null;
+      public boolean hasExtensions() {
+        return extensionsBuilder_ != null || extensions_ != null;
       }
       /**
        * <pre>
-       * GPU accelerator to select for task. Contains information about device type, and
-       * for multi-instance GPUs, the partition size to use.
+       * Encapsulates all non-standard resources, not captured by
+       * v1.ResourceRequirements, to allocate to a task.
        * </pre>
        *
-       * <code>.flyteidl.core.GPUAccelerator gpu_accelerator = 3;</code>
+       * <code>.flyteidl.core.ResourceExtensions extensions = 3;</code>
        */
-      public flyteidl.core.Tasks.GPUAccelerator getGpuAccelerator() {
-        if (gpuAcceleratorBuilder_ == null) {
-          return gpuAccelerator_ == null ? flyteidl.core.Tasks.GPUAccelerator.getDefaultInstance() : gpuAccelerator_;
+      public flyteidl.core.Tasks.ResourceExtensions getExtensions() {
+        if (extensionsBuilder_ == null) {
+          return extensions_ == null ? flyteidl.core.Tasks.ResourceExtensions.getDefaultInstance() : extensions_;
         } else {
-          return gpuAcceleratorBuilder_.getMessage();
+          return extensionsBuilder_.getMessage();
         }
       }
       /**
        * <pre>
-       * GPU accelerator to select for task. Contains information about device type, and
-       * for multi-instance GPUs, the partition size to use.
+       * Encapsulates all non-standard resources, not captured by
+       * v1.ResourceRequirements, to allocate to a task.
        * </pre>
        *
-       * <code>.flyteidl.core.GPUAccelerator gpu_accelerator = 3;</code>
+       * <code>.flyteidl.core.ResourceExtensions extensions = 3;</code>
        */
-      public Builder setGpuAccelerator(flyteidl.core.Tasks.GPUAccelerator value) {
-        if (gpuAcceleratorBuilder_ == null) {
+      public Builder setExtensions(flyteidl.core.Tasks.ResourceExtensions value) {
+        if (extensionsBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
           }
-          gpuAccelerator_ = value;
+          extensions_ = value;
           onChanged();
         } else {
-          gpuAcceleratorBuilder_.setMessage(value);
+          extensionsBuilder_.setMessage(value);
         }
 
         return this;
       }
       /**
        * <pre>
-       * GPU accelerator to select for task. Contains information about device type, and
-       * for multi-instance GPUs, the partition size to use.
+       * Encapsulates all non-standard resources, not captured by
+       * v1.ResourceRequirements, to allocate to a task.
        * </pre>
        *
-       * <code>.flyteidl.core.GPUAccelerator gpu_accelerator = 3;</code>
+       * <code>.flyteidl.core.ResourceExtensions extensions = 3;</code>
        */
-      public Builder setGpuAccelerator(
-          flyteidl.core.Tasks.GPUAccelerator.Builder builderForValue) {
-        if (gpuAcceleratorBuilder_ == null) {
-          gpuAccelerator_ = builderForValue.build();
+      public Builder setExtensions(
+          flyteidl.core.Tasks.ResourceExtensions.Builder builderForValue) {
+        if (extensionsBuilder_ == null) {
+          extensions_ = builderForValue.build();
           onChanged();
         } else {
-          gpuAcceleratorBuilder_.setMessage(builderForValue.build());
+          extensionsBuilder_.setMessage(builderForValue.build());
         }
 
         return this;
       }
       /**
        * <pre>
-       * GPU accelerator to select for task. Contains information about device type, and
-       * for multi-instance GPUs, the partition size to use.
+       * Encapsulates all non-standard resources, not captured by
+       * v1.ResourceRequirements, to allocate to a task.
        * </pre>
        *
-       * <code>.flyteidl.core.GPUAccelerator gpu_accelerator = 3;</code>
+       * <code>.flyteidl.core.ResourceExtensions extensions = 3;</code>
        */
-      public Builder mergeGpuAccelerator(flyteidl.core.Tasks.GPUAccelerator value) {
-        if (gpuAcceleratorBuilder_ == null) {
-          if (gpuAccelerator_ != null) {
-            gpuAccelerator_ =
-              flyteidl.core.Tasks.GPUAccelerator.newBuilder(gpuAccelerator_).mergeFrom(value).buildPartial();
+      public Builder mergeExtensions(flyteidl.core.Tasks.ResourceExtensions value) {
+        if (extensionsBuilder_ == null) {
+          if (extensions_ != null) {
+            extensions_ =
+              flyteidl.core.Tasks.ResourceExtensions.newBuilder(extensions_).mergeFrom(value).buildPartial();
           } else {
-            gpuAccelerator_ = value;
+            extensions_ = value;
           }
           onChanged();
         } else {
-          gpuAcceleratorBuilder_.mergeFrom(value);
+          extensionsBuilder_.mergeFrom(value);
         }
 
         return this;
       }
       /**
        * <pre>
-       * GPU accelerator to select for task. Contains information about device type, and
-       * for multi-instance GPUs, the partition size to use.
+       * Encapsulates all non-standard resources, not captured by
+       * v1.ResourceRequirements, to allocate to a task.
        * </pre>
        *
-       * <code>.flyteidl.core.GPUAccelerator gpu_accelerator = 3;</code>
+       * <code>.flyteidl.core.ResourceExtensions extensions = 3;</code>
        */
-      public Builder clearGpuAccelerator() {
-        if (gpuAcceleratorBuilder_ == null) {
-          gpuAccelerator_ = null;
+      public Builder clearExtensions() {
+        if (extensionsBuilder_ == null) {
+          extensions_ = null;
           onChanged();
         } else {
-          gpuAccelerator_ = null;
-          gpuAcceleratorBuilder_ = null;
+          extensions_ = null;
+          extensionsBuilder_ = null;
         }
 
         return this;
       }
       /**
        * <pre>
-       * GPU accelerator to select for task. Contains information about device type, and
-       * for multi-instance GPUs, the partition size to use.
+       * Encapsulates all non-standard resources, not captured by
+       * v1.ResourceRequirements, to allocate to a task.
        * </pre>
        *
-       * <code>.flyteidl.core.GPUAccelerator gpu_accelerator = 3;</code>
+       * <code>.flyteidl.core.ResourceExtensions extensions = 3;</code>
        */
-      public flyteidl.core.Tasks.GPUAccelerator.Builder getGpuAcceleratorBuilder() {
+      public flyteidl.core.Tasks.ResourceExtensions.Builder getExtensionsBuilder() {
         
         onChanged();
-        return getGpuAcceleratorFieldBuilder().getBuilder();
+        return getExtensionsFieldBuilder().getBuilder();
       }
       /**
        * <pre>
-       * GPU accelerator to select for task. Contains information about device type, and
-       * for multi-instance GPUs, the partition size to use.
+       * Encapsulates all non-standard resources, not captured by
+       * v1.ResourceRequirements, to allocate to a task.
        * </pre>
        *
-       * <code>.flyteidl.core.GPUAccelerator gpu_accelerator = 3;</code>
+       * <code>.flyteidl.core.ResourceExtensions extensions = 3;</code>
        */
-      public flyteidl.core.Tasks.GPUAcceleratorOrBuilder getGpuAcceleratorOrBuilder() {
-        if (gpuAcceleratorBuilder_ != null) {
-          return gpuAcceleratorBuilder_.getMessageOrBuilder();
+      public flyteidl.core.Tasks.ResourceExtensionsOrBuilder getExtensionsOrBuilder() {
+        if (extensionsBuilder_ != null) {
+          return extensionsBuilder_.getMessageOrBuilder();
         } else {
-          return gpuAccelerator_ == null ?
-              flyteidl.core.Tasks.GPUAccelerator.getDefaultInstance() : gpuAccelerator_;
+          return extensions_ == null ?
+              flyteidl.core.Tasks.ResourceExtensions.getDefaultInstance() : extensions_;
         }
       }
       /**
        * <pre>
-       * GPU accelerator to select for task. Contains information about device type, and
-       * for multi-instance GPUs, the partition size to use.
+       * Encapsulates all non-standard resources, not captured by
+       * v1.ResourceRequirements, to allocate to a task.
        * </pre>
        *
-       * <code>.flyteidl.core.GPUAccelerator gpu_accelerator = 3;</code>
+       * <code>.flyteidl.core.ResourceExtensions extensions = 3;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
-          flyteidl.core.Tasks.GPUAccelerator, flyteidl.core.Tasks.GPUAccelerator.Builder, flyteidl.core.Tasks.GPUAcceleratorOrBuilder> 
-          getGpuAcceleratorFieldBuilder() {
-        if (gpuAcceleratorBuilder_ == null) {
-          gpuAcceleratorBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-              flyteidl.core.Tasks.GPUAccelerator, flyteidl.core.Tasks.GPUAccelerator.Builder, flyteidl.core.Tasks.GPUAcceleratorOrBuilder>(
-                  getGpuAccelerator(),
+          flyteidl.core.Tasks.ResourceExtensions, flyteidl.core.Tasks.ResourceExtensions.Builder, flyteidl.core.Tasks.ResourceExtensionsOrBuilder> 
+          getExtensionsFieldBuilder() {
+        if (extensionsBuilder_ == null) {
+          extensionsBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              flyteidl.core.Tasks.ResourceExtensions, flyteidl.core.Tasks.ResourceExtensions.Builder, flyteidl.core.Tasks.ResourceExtensionsOrBuilder>(
+                  getExtensions(),
                   getParentForChildren(),
                   isClean());
-          gpuAccelerator_ = null;
+          extensions_ = null;
         }
-        return gpuAcceleratorBuilder_;
+        return extensionsBuilder_;
       }
       @java.lang.Override
       public final Builder setUnknownFields(
@@ -19729,6 +20420,11 @@ public final class Tasks {
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_flyteidl_core_GPUAccelerator_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_flyteidl_core_ResourceExtensions_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_flyteidl_core_ResourceExtensions_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_flyteidl_core_Resources_descriptor;
   private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
@@ -19825,85 +20521,87 @@ public final class Tasks {
       "oogle/protobuf/struct.proto\"k\n\016GPUAccele" +
       "rator\022\016\n\006device\030\001 \001(\t\022\027\n\runpartitioned\030\002" +
       " \001(\010H\000\022\030\n\016partition_size\030\003 \001(\tH\000B\026\n\024part" +
-      "ition_size_value\"\351\002\n\tResources\0228\n\010reques" +
-      "ts\030\001 \003(\0132&.flyteidl.core.Resources.Resou" +
-      "rceEntry\0226\n\006limits\030\002 \003(\0132&.flyteidl.core" +
-      ".Resources.ResourceEntry\0226\n\017gpu_accelera" +
-      "tor\030\003 \001(\0132\035.flyteidl.core.GPUAccelerator" +
-      "\032S\n\rResourceEntry\0223\n\004name\030\001 \001(\0162%.flytei" +
-      "dl.core.Resources.ResourceName\022\r\n\005value\030" +
-      "\002 \001(\t\"]\n\014ResourceName\022\013\n\007UNKNOWN\020\000\022\007\n\003CP" +
-      "U\020\001\022\007\n\003GPU\020\002\022\n\n\006MEMORY\020\003\022\013\n\007STORAGE\020\004\022\025\n" +
-      "\021EPHEMERAL_STORAGE\020\005\"\225\001\n\017RuntimeMetadata" +
-      "\0228\n\004type\030\001 \001(\0162*.flyteidl.core.RuntimeMe" +
-      "tadata.RuntimeType\022\017\n\007version\030\002 \001(\t\022\016\n\006f" +
-      "lavor\030\003 \001(\t\"\'\n\013RuntimeType\022\t\n\005OTHER\020\000\022\r\n" +
-      "\tFLYTE_SDK\020\001\"\316\003\n\014TaskMetadata\022\024\n\014discove" +
-      "rable\030\001 \001(\010\022/\n\007runtime\030\002 \001(\0132\036.flyteidl." +
-      "core.RuntimeMetadata\022*\n\007timeout\030\004 \001(\0132\031." +
-      "google.protobuf.Duration\022-\n\007retries\030\005 \001(" +
-      "\0132\034.flyteidl.core.RetryStrategy\022\031\n\021disco" +
-      "very_version\030\006 \001(\t\022 \n\030deprecated_error_m" +
-      "essage\030\007 \001(\t\022\027\n\rinterruptible\030\010 \001(\010H\000\022\032\n" +
-      "\022cache_serializable\030\t \001(\010\022\026\n\016generates_d" +
-      "eck\030\n \001(\010\0223\n\004tags\030\013 \003(\0132%.flyteidl.core." +
-      "TaskMetadata.TagsEntry\022\031\n\021pod_template_n" +
-      "ame\030\014 \001(\t\032+\n\tTagsEntry\022\013\n\003key\030\001 \001(\t\022\r\n\005v" +
-      "alue\030\002 \001(\t:\0028\001B\025\n\023interruptible_value\"\220\004" +
-      "\n\014TaskTemplate\022%\n\002id\030\001 \001(\0132\031.flyteidl.co" +
-      "re.Identifier\022\014\n\004type\030\002 \001(\t\022-\n\010metadata\030" +
-      "\003 \001(\0132\033.flyteidl.core.TaskMetadata\0220\n\tin" +
-      "terface\030\004 \001(\0132\035.flyteidl.core.TypedInter" +
-      "face\022\'\n\006custom\030\005 \001(\0132\027.google.protobuf.S" +
-      "truct\022-\n\tcontainer\030\006 \001(\0132\030.flyteidl.core" +
-      ".ContainerH\000\022(\n\007k8s_pod\030\021 \001(\0132\025.flyteidl" +
-      ".core.K8sPodH\000\022!\n\003sql\030\022 \001(\0132\022.flyteidl.c" +
-      "ore.SqlH\000\022\031\n\021task_type_version\030\007 \001(\005\0228\n\020" +
-      "security_context\030\010 \001(\0132\036.flyteidl.core.S" +
-      "ecurityContext\0227\n\006config\030\020 \003(\0132\'.flyteid" +
-      "l.core.TaskTemplate.ConfigEntry\032-\n\013Confi" +
-      "gEntry\022\013\n\003key\030\001 \001(\t\022\r\n\005value\030\002 \001(\t:\0028\001B\010" +
-      "\n\006target\"\'\n\rContainerPort\022\026\n\016container_p" +
-      "ort\030\001 \001(\r\"\255\003\n\tContainer\022\r\n\005image\030\001 \001(\t\022\017" +
-      "\n\007command\030\002 \003(\t\022\014\n\004args\030\003 \003(\t\022+\n\tresourc" +
-      "es\030\004 \001(\0132\030.flyteidl.core.Resources\022(\n\003en" +
-      "v\030\005 \003(\0132\033.flyteidl.core.KeyValuePair\022/\n\006" +
-      "config\030\006 \003(\0132\033.flyteidl.core.KeyValuePai" +
-      "rB\002\030\001\022+\n\005ports\030\007 \003(\0132\034.flyteidl.core.Con" +
-      "tainerPort\0225\n\013data_config\030\t \001(\0132 .flytei" +
-      "dl.core.DataLoadingConfig\022;\n\014architectur" +
-      "e\030\n \001(\0162%.flyteidl.core.Container.Archit" +
-      "ecture\"I\n\014Architecture\022\013\n\007UNKNOWN\020\000\022\t\n\005A" +
-      "MD64\020\001\022\t\n\005ARM64\020\002\022\n\n\006ARM_V6\020\003\022\n\n\006ARM_V7\020" +
-      "\004\"\233\002\n\nIOStrategy\022=\n\rdownload_mode\030\001 \001(\0162" +
-      "&.flyteidl.core.IOStrategy.DownloadMode\022" +
-      "9\n\013upload_mode\030\002 \001(\0162$.flyteidl.core.IOS" +
-      "trategy.UploadMode\"L\n\014DownloadMode\022\022\n\016DO" +
-      "WNLOAD_EAGER\020\000\022\023\n\017DOWNLOAD_STREAM\020\001\022\023\n\017D" +
-      "O_NOT_DOWNLOAD\020\002\"E\n\nUploadMode\022\022\n\016UPLOAD" +
-      "_ON_EXIT\020\000\022\020\n\014UPLOAD_EAGER\020\001\022\021\n\rDO_NOT_U" +
-      "PLOAD\020\002\"\363\001\n\021DataLoadingConfig\022\017\n\007enabled" +
-      "\030\001 \001(\010\022\022\n\ninput_path\030\002 \001(\t\022\023\n\013output_pat" +
-      "h\030\003 \001(\t\022A\n\006format\030\004 \001(\01621.flyteidl.core." +
-      "DataLoadingConfig.LiteralMapFormat\022.\n\013io" +
-      "_strategy\030\005 \001(\0132\031.flyteidl.core.IOStrate" +
-      "gy\"1\n\020LiteralMapFormat\022\010\n\004JSON\020\000\022\010\n\004YAML" +
-      "\020\001\022\t\n\005PROTO\020\002\"\236\001\n\006K8sPod\0222\n\010metadata\030\001 \001" +
-      "(\0132 .flyteidl.core.K8sObjectMetadata\022)\n\010" +
-      "pod_spec\030\002 \001(\0132\027.google.protobuf.Struct\022" +
-      "5\n\013data_config\030\003 \001(\0132 .flyteidl.core.Dat" +
-      "aLoadingConfig\"\374\001\n\021K8sObjectMetadata\022<\n\006" +
-      "labels\030\001 \003(\0132,.flyteidl.core.K8sObjectMe" +
-      "tadata.LabelsEntry\022F\n\013annotations\030\002 \003(\0132" +
-      "1.flyteidl.core.K8sObjectMetadata.Annota" +
-      "tionsEntry\032-\n\013LabelsEntry\022\013\n\003key\030\001 \001(\t\022\r" +
-      "\n\005value\030\002 \001(\t:\0028\001\0322\n\020AnnotationsEntry\022\013\n" +
-      "\003key\030\001 \001(\t\022\r\n\005value\030\002 \001(\t:\0028\001\"~\n\003Sql\022\021\n\t" +
-      "statement\030\001 \001(\t\022+\n\007dialect\030\002 \001(\0162\032.flyte" +
-      "idl.core.Sql.Dialect\"7\n\007Dialect\022\r\n\tUNDEF" +
-      "INED\020\000\022\010\n\004ANSI\020\001\022\010\n\004HIVE\020\002\022\t\n\005OTHER\020\003B6Z" +
-      "4github.com/flyteorg/flyteidl/gen/pb-go/" +
-      "flyteidl/coreb\006proto3"
+      "ition_size_value\"L\n\022ResourceExtensions\0226" +
+      "\n\017gpu_accelerator\030\003 \001(\0132\035.flyteidl.core." +
+      "GPUAccelerator\"\350\002\n\tResources\0228\n\010requests" +
+      "\030\001 \003(\0132&.flyteidl.core.Resources.Resourc" +
+      "eEntry\0226\n\006limits\030\002 \003(\0132&.flyteidl.core.R" +
+      "esources.ResourceEntry\0225\n\nextensions\030\003 \001" +
+      "(\0132!.flyteidl.core.ResourceExtensions\032S\n" +
+      "\rResourceEntry\0223\n\004name\030\001 \001(\0162%.flyteidl." +
+      "core.Resources.ResourceName\022\r\n\005value\030\002 \001" +
+      "(\t\"]\n\014ResourceName\022\013\n\007UNKNOWN\020\000\022\007\n\003CPU\020\001" +
+      "\022\007\n\003GPU\020\002\022\n\n\006MEMORY\020\003\022\013\n\007STORAGE\020\004\022\025\n\021EP" +
+      "HEMERAL_STORAGE\020\005\"\225\001\n\017RuntimeMetadata\0228\n" +
+      "\004type\030\001 \001(\0162*.flyteidl.core.RuntimeMetad" +
+      "ata.RuntimeType\022\017\n\007version\030\002 \001(\t\022\016\n\006flav" +
+      "or\030\003 \001(\t\"\'\n\013RuntimeType\022\t\n\005OTHER\020\000\022\r\n\tFL" +
+      "YTE_SDK\020\001\"\316\003\n\014TaskMetadata\022\024\n\014discoverab" +
+      "le\030\001 \001(\010\022/\n\007runtime\030\002 \001(\0132\036.flyteidl.cor" +
+      "e.RuntimeMetadata\022*\n\007timeout\030\004 \001(\0132\031.goo" +
+      "gle.protobuf.Duration\022-\n\007retries\030\005 \001(\0132\034" +
+      ".flyteidl.core.RetryStrategy\022\031\n\021discover" +
+      "y_version\030\006 \001(\t\022 \n\030deprecated_error_mess" +
+      "age\030\007 \001(\t\022\027\n\rinterruptible\030\010 \001(\010H\000\022\032\n\022ca" +
+      "che_serializable\030\t \001(\010\022\026\n\016generates_deck" +
+      "\030\n \001(\010\0223\n\004tags\030\013 \003(\0132%.flyteidl.core.Tas" +
+      "kMetadata.TagsEntry\022\031\n\021pod_template_name" +
+      "\030\014 \001(\t\032+\n\tTagsEntry\022\013\n\003key\030\001 \001(\t\022\r\n\005valu" +
+      "e\030\002 \001(\t:\0028\001B\025\n\023interruptible_value\"\220\004\n\014T" +
+      "askTemplate\022%\n\002id\030\001 \001(\0132\031.flyteidl.core." +
+      "Identifier\022\014\n\004type\030\002 \001(\t\022-\n\010metadata\030\003 \001" +
+      "(\0132\033.flyteidl.core.TaskMetadata\0220\n\tinter" +
+      "face\030\004 \001(\0132\035.flyteidl.core.TypedInterfac" +
+      "e\022\'\n\006custom\030\005 \001(\0132\027.google.protobuf.Stru" +
+      "ct\022-\n\tcontainer\030\006 \001(\0132\030.flyteidl.core.Co" +
+      "ntainerH\000\022(\n\007k8s_pod\030\021 \001(\0132\025.flyteidl.co" +
+      "re.K8sPodH\000\022!\n\003sql\030\022 \001(\0132\022.flyteidl.core" +
+      ".SqlH\000\022\031\n\021task_type_version\030\007 \001(\005\0228\n\020sec" +
+      "urity_context\030\010 \001(\0132\036.flyteidl.core.Secu" +
+      "rityContext\0227\n\006config\030\020 \003(\0132\'.flyteidl.c" +
+      "ore.TaskTemplate.ConfigEntry\032-\n\013ConfigEn" +
+      "try\022\013\n\003key\030\001 \001(\t\022\r\n\005value\030\002 \001(\t:\0028\001B\010\n\006t" +
+      "arget\"\'\n\rContainerPort\022\026\n\016container_port" +
+      "\030\001 \001(\r\"\255\003\n\tContainer\022\r\n\005image\030\001 \001(\t\022\017\n\007c" +
+      "ommand\030\002 \003(\t\022\014\n\004args\030\003 \003(\t\022+\n\tresources\030" +
+      "\004 \001(\0132\030.flyteidl.core.Resources\022(\n\003env\030\005" +
+      " \003(\0132\033.flyteidl.core.KeyValuePair\022/\n\006con" +
+      "fig\030\006 \003(\0132\033.flyteidl.core.KeyValuePairB\002" +
+      "\030\001\022+\n\005ports\030\007 \003(\0132\034.flyteidl.core.Contai" +
+      "nerPort\0225\n\013data_config\030\t \001(\0132 .flyteidl." +
+      "core.DataLoadingConfig\022;\n\014architecture\030\n" +
+      " \001(\0162%.flyteidl.core.Container.Architect" +
+      "ure\"I\n\014Architecture\022\013\n\007UNKNOWN\020\000\022\t\n\005AMD6" +
+      "4\020\001\022\t\n\005ARM64\020\002\022\n\n\006ARM_V6\020\003\022\n\n\006ARM_V7\020\004\"\233" +
+      "\002\n\nIOStrategy\022=\n\rdownload_mode\030\001 \001(\0162&.f" +
+      "lyteidl.core.IOStrategy.DownloadMode\0229\n\013" +
+      "upload_mode\030\002 \001(\0162$.flyteidl.core.IOStra" +
+      "tegy.UploadMode\"L\n\014DownloadMode\022\022\n\016DOWNL" +
+      "OAD_EAGER\020\000\022\023\n\017DOWNLOAD_STREAM\020\001\022\023\n\017DO_N" +
+      "OT_DOWNLOAD\020\002\"E\n\nUploadMode\022\022\n\016UPLOAD_ON" +
+      "_EXIT\020\000\022\020\n\014UPLOAD_EAGER\020\001\022\021\n\rDO_NOT_UPLO" +
+      "AD\020\002\"\363\001\n\021DataLoadingConfig\022\017\n\007enabled\030\001 " +
+      "\001(\010\022\022\n\ninput_path\030\002 \001(\t\022\023\n\013output_path\030\003" +
+      " \001(\t\022A\n\006format\030\004 \001(\01621.flyteidl.core.Dat" +
+      "aLoadingConfig.LiteralMapFormat\022.\n\013io_st" +
+      "rategy\030\005 \001(\0132\031.flyteidl.core.IOStrategy\"" +
+      "1\n\020LiteralMapFormat\022\010\n\004JSON\020\000\022\010\n\004YAML\020\001\022" +
+      "\t\n\005PROTO\020\002\"\236\001\n\006K8sPod\0222\n\010metadata\030\001 \001(\0132" +
+      " .flyteidl.core.K8sObjectMetadata\022)\n\010pod" +
+      "_spec\030\002 \001(\0132\027.google.protobuf.Struct\0225\n\013" +
+      "data_config\030\003 \001(\0132 .flyteidl.core.DataLo" +
+      "adingConfig\"\374\001\n\021K8sObjectMetadata\022<\n\006lab" +
+      "els\030\001 \003(\0132,.flyteidl.core.K8sObjectMetad" +
+      "ata.LabelsEntry\022F\n\013annotations\030\002 \003(\01321.f" +
+      "lyteidl.core.K8sObjectMetadata.Annotatio" +
+      "nsEntry\032-\n\013LabelsEntry\022\013\n\003key\030\001 \001(\t\022\r\n\005v" +
+      "alue\030\002 \001(\t:\0028\001\0322\n\020AnnotationsEntry\022\013\n\003ke" +
+      "y\030\001 \001(\t\022\r\n\005value\030\002 \001(\t:\0028\001\"~\n\003Sql\022\021\n\tsta" +
+      "tement\030\001 \001(\t\022+\n\007dialect\030\002 \001(\0162\032.flyteidl" +
+      ".core.Sql.Dialect\"7\n\007Dialect\022\r\n\tUNDEFINE" +
+      "D\020\000\022\010\n\004ANSI\020\001\022\010\n\004HIVE\020\002\022\t\n\005OTHER\020\003B6Z4gi" +
+      "thub.com/flyteorg/flyteidl/gen/pb-go/fly" +
+      "teidl/coreb\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
@@ -19929,12 +20627,18 @@ public final class Tasks {
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_flyteidl_core_GPUAccelerator_descriptor,
         new java.lang.String[] { "Device", "Unpartitioned", "PartitionSize", "PartitionSizeValue", });
-    internal_static_flyteidl_core_Resources_descriptor =
+    internal_static_flyteidl_core_ResourceExtensions_descriptor =
       getDescriptor().getMessageTypes().get(1);
+    internal_static_flyteidl_core_ResourceExtensions_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_flyteidl_core_ResourceExtensions_descriptor,
+        new java.lang.String[] { "GpuAccelerator", });
+    internal_static_flyteidl_core_Resources_descriptor =
+      getDescriptor().getMessageTypes().get(2);
     internal_static_flyteidl_core_Resources_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_flyteidl_core_Resources_descriptor,
-        new java.lang.String[] { "Requests", "Limits", "GpuAccelerator", });
+        new java.lang.String[] { "Requests", "Limits", "Extensions", });
     internal_static_flyteidl_core_Resources_ResourceEntry_descriptor =
       internal_static_flyteidl_core_Resources_descriptor.getNestedTypes().get(0);
     internal_static_flyteidl_core_Resources_ResourceEntry_fieldAccessorTable = new
@@ -19942,13 +20646,13 @@ public final class Tasks {
         internal_static_flyteidl_core_Resources_ResourceEntry_descriptor,
         new java.lang.String[] { "Name", "Value", });
     internal_static_flyteidl_core_RuntimeMetadata_descriptor =
-      getDescriptor().getMessageTypes().get(2);
+      getDescriptor().getMessageTypes().get(3);
     internal_static_flyteidl_core_RuntimeMetadata_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_flyteidl_core_RuntimeMetadata_descriptor,
         new java.lang.String[] { "Type", "Version", "Flavor", });
     internal_static_flyteidl_core_TaskMetadata_descriptor =
-      getDescriptor().getMessageTypes().get(3);
+      getDescriptor().getMessageTypes().get(4);
     internal_static_flyteidl_core_TaskMetadata_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_flyteidl_core_TaskMetadata_descriptor,
@@ -19960,7 +20664,7 @@ public final class Tasks {
         internal_static_flyteidl_core_TaskMetadata_TagsEntry_descriptor,
         new java.lang.String[] { "Key", "Value", });
     internal_static_flyteidl_core_TaskTemplate_descriptor =
-      getDescriptor().getMessageTypes().get(4);
+      getDescriptor().getMessageTypes().get(5);
     internal_static_flyteidl_core_TaskTemplate_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_flyteidl_core_TaskTemplate_descriptor,
@@ -19972,37 +20676,37 @@ public final class Tasks {
         internal_static_flyteidl_core_TaskTemplate_ConfigEntry_descriptor,
         new java.lang.String[] { "Key", "Value", });
     internal_static_flyteidl_core_ContainerPort_descriptor =
-      getDescriptor().getMessageTypes().get(5);
+      getDescriptor().getMessageTypes().get(6);
     internal_static_flyteidl_core_ContainerPort_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_flyteidl_core_ContainerPort_descriptor,
         new java.lang.String[] { "ContainerPort", });
     internal_static_flyteidl_core_Container_descriptor =
-      getDescriptor().getMessageTypes().get(6);
+      getDescriptor().getMessageTypes().get(7);
     internal_static_flyteidl_core_Container_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_flyteidl_core_Container_descriptor,
         new java.lang.String[] { "Image", "Command", "Args", "Resources", "Env", "Config", "Ports", "DataConfig", "Architecture", });
     internal_static_flyteidl_core_IOStrategy_descriptor =
-      getDescriptor().getMessageTypes().get(7);
+      getDescriptor().getMessageTypes().get(8);
     internal_static_flyteidl_core_IOStrategy_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_flyteidl_core_IOStrategy_descriptor,
         new java.lang.String[] { "DownloadMode", "UploadMode", });
     internal_static_flyteidl_core_DataLoadingConfig_descriptor =
-      getDescriptor().getMessageTypes().get(8);
+      getDescriptor().getMessageTypes().get(9);
     internal_static_flyteidl_core_DataLoadingConfig_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_flyteidl_core_DataLoadingConfig_descriptor,
         new java.lang.String[] { "Enabled", "InputPath", "OutputPath", "Format", "IoStrategy", });
     internal_static_flyteidl_core_K8sPod_descriptor =
-      getDescriptor().getMessageTypes().get(9);
+      getDescriptor().getMessageTypes().get(10);
     internal_static_flyteidl_core_K8sPod_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_flyteidl_core_K8sPod_descriptor,
         new java.lang.String[] { "Metadata", "PodSpec", "DataConfig", });
     internal_static_flyteidl_core_K8sObjectMetadata_descriptor =
-      getDescriptor().getMessageTypes().get(10);
+      getDescriptor().getMessageTypes().get(11);
     internal_static_flyteidl_core_K8sObjectMetadata_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_flyteidl_core_K8sObjectMetadata_descriptor,
@@ -20020,7 +20724,7 @@ public final class Tasks {
         internal_static_flyteidl_core_K8sObjectMetadata_AnnotationsEntry_descriptor,
         new java.lang.String[] { "Key", "Value", });
     internal_static_flyteidl_core_Sql_descriptor =
-      getDescriptor().getMessageTypes().get(11);
+      getDescriptor().getMessageTypes().get(12);
     internal_static_flyteidl_core_Sql_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_flyteidl_core_Sql_descriptor,

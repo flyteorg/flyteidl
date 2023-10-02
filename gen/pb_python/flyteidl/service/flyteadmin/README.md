@@ -318,6 +318,7 @@ Class | Method | HTTP request | Description
  - [CorePromiseAttribute](docs/CorePromiseAttribute.md)
  - [CoreQualityOfService](docs/CoreQualityOfService.md)
  - [CoreQualityOfServiceSpec](docs/CoreQualityOfServiceSpec.md)
+ - [CoreResourceExtensions](docs/CoreResourceExtensions.md)
  - [CoreResourceType](docs/CoreResourceType.md)
  - [CoreResources](docs/CoreResources.md)
  - [CoreRetryStrategy](docs/CoreRetryStrategy.md)

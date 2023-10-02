@@ -12136,6 +12136,118 @@
                 return GPUAccelerator;
             })();
     
+            core.ResourceExtensions = (function() {
+    
+                /**
+                 * Properties of a ResourceExtensions.
+                 * @memberof flyteidl.core
+                 * @interface IResourceExtensions
+                 * @property {flyteidl.core.IGPUAccelerator|null} [gpuAccelerator] ResourceExtensions gpuAccelerator
+                 */
+    
+                /**
+                 * Constructs a new ResourceExtensions.
+                 * @memberof flyteidl.core
+                 * @classdesc Represents a ResourceExtensions.
+                 * @implements IResourceExtensions
+                 * @constructor
+                 * @param {flyteidl.core.IResourceExtensions=} [properties] Properties to set
+                 */
+                function ResourceExtensions(properties) {
+                    if (properties)
+                        for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                            if (properties[keys[i]] != null)
+                                this[keys[i]] = properties[keys[i]];
+                }
+    
+                /**
+                 * ResourceExtensions gpuAccelerator.
+                 * @member {flyteidl.core.IGPUAccelerator|null|undefined} gpuAccelerator
+                 * @memberof flyteidl.core.ResourceExtensions
+                 * @instance
+                 */
+                ResourceExtensions.prototype.gpuAccelerator = null;
+    
+                /**
+                 * Creates a new ResourceExtensions instance using the specified properties.
+                 * @function create
+                 * @memberof flyteidl.core.ResourceExtensions
+                 * @static
+                 * @param {flyteidl.core.IResourceExtensions=} [properties] Properties to set
+                 * @returns {flyteidl.core.ResourceExtensions} ResourceExtensions instance
+                 */
+                ResourceExtensions.create = function create(properties) {
+                    return new ResourceExtensions(properties);
+                };
+    
+                /**
+                 * Encodes the specified ResourceExtensions message. Does not implicitly {@link flyteidl.core.ResourceExtensions.verify|verify} messages.
+                 * @function encode
+                 * @memberof flyteidl.core.ResourceExtensions
+                 * @static
+                 * @param {flyteidl.core.IResourceExtensions} message ResourceExtensions message or plain object to encode
+                 * @param {$protobuf.Writer} [writer] Writer to encode to
+                 * @returns {$protobuf.Writer} Writer
+                 */
+                ResourceExtensions.encode = function encode(message, writer) {
+                    if (!writer)
+                        writer = $Writer.create();
+                    if (message.gpuAccelerator != null && message.hasOwnProperty("gpuAccelerator"))
+                        $root.flyteidl.core.GPUAccelerator.encode(message.gpuAccelerator, writer.uint32(/* id 3, wireType 2 =*/26).fork()).ldelim();
+                    return writer;
+                };
+    
+                /**
+                 * Decodes a ResourceExtensions message from the specified reader or buffer.
+                 * @function decode
+                 * @memberof flyteidl.core.ResourceExtensions
+                 * @static
+                 * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+                 * @param {number} [length] Message length if known beforehand
+                 * @returns {flyteidl.core.ResourceExtensions} ResourceExtensions
+                 * @throws {Error} If the payload is not a reader or valid buffer
+                 * @throws {$protobuf.util.ProtocolError} If required fields are missing
+                 */
+                ResourceExtensions.decode = function decode(reader, length) {
+                    if (!(reader instanceof $Reader))
+                        reader = $Reader.create(reader);
+                    var end = length === undefined ? reader.len : reader.pos + length, message = new $root.flyteidl.core.ResourceExtensions();
+                    while (reader.pos < end) {
+                        var tag = reader.uint32();
+                        switch (tag >>> 3) {
+                        case 3:
+                            message.gpuAccelerator = $root.flyteidl.core.GPUAccelerator.decode(reader, reader.uint32());
+                            break;
+                        default:
+                            reader.skipType(tag & 7);
+                            break;
+                        }
+                    }
+                    return message;
+                };
+    
+                /**
+                 * Verifies a ResourceExtensions message.
+                 * @function verify
+                 * @memberof flyteidl.core.ResourceExtensions
+                 * @static
+                 * @param {Object.<string,*>} message Plain object to verify
+                 * @returns {string|null} `null` if valid, otherwise the reason why it is not
+                 */
+                ResourceExtensions.verify = function verify(message) {
+                    if (typeof message !== "object" || message === null)
+                        return "object expected";
+                    if (message.gpuAccelerator != null && message.hasOwnProperty("gpuAccelerator")) {
+                        var error = $root.flyteidl.core.GPUAccelerator.verify(message.gpuAccelerator);
+                        if (error)
+                            return "gpuAccelerator." + error;
+                    }
+                    return null;
+                };
+    
+                return ResourceExtensions;
+            })();
+    
             core.Resources = (function() {
     
                 /**
@@ -12144,7 +12256,7 @@
                  * @interface IResources
                  * @property {Array.<flyteidl.core.Resources.IResourceEntry>|null} [requests] Resources requests
                  * @property {Array.<flyteidl.core.Resources.IResourceEntry>|null} [limits] Resources limits
-                 * @property {flyteidl.core.IGPUAccelerator|null} [gpuAccelerator] Resources gpuAccelerator
+                 * @property {flyteidl.core.IResourceExtensions|null} [extensions] Resources extensions
                  */
     
                 /**
@@ -12181,12 +12293,12 @@
                 Resources.prototype.limits = $util.emptyArray;
     
                 /**
-                 * Resources gpuAccelerator.
-                 * @member {flyteidl.core.IGPUAccelerator|null|undefined} gpuAccelerator
+                 * Resources extensions.
+                 * @member {flyteidl.core.IResourceExtensions|null|undefined} extensions
                  * @memberof flyteidl.core.Resources
                  * @instance
                  */
-                Resources.prototype.gpuAccelerator = null;
+                Resources.prototype.extensions = null;
     
                 /**
                  * Creates a new Resources instance using the specified properties.
@@ -12218,8 +12330,8 @@
                     if (message.limits != null && message.limits.length)
                         for (var i = 0; i < message.limits.length; ++i)
                             $root.flyteidl.core.Resources.ResourceEntry.encode(message.limits[i], writer.uint32(/* id 2, wireType 2 =*/18).fork()).ldelim();
-                    if (message.gpuAccelerator != null && message.hasOwnProperty("gpuAccelerator"))
-                        $root.flyteidl.core.GPUAccelerator.encode(message.gpuAccelerator, writer.uint32(/* id 3, wireType 2 =*/26).fork()).ldelim();
+                    if (message.extensions != null && message.hasOwnProperty("extensions"))
+                        $root.flyteidl.core.ResourceExtensions.encode(message.extensions, writer.uint32(/* id 3, wireType 2 =*/26).fork()).ldelim();
                     return writer;
                 };
     
@@ -12252,7 +12364,7 @@
                             message.limits.push($root.flyteidl.core.Resources.ResourceEntry.decode(reader, reader.uint32()));
                             break;
                         case 3:
-                            message.gpuAccelerator = $root.flyteidl.core.GPUAccelerator.decode(reader, reader.uint32());
+                            message.extensions = $root.flyteidl.core.ResourceExtensions.decode(reader, reader.uint32());
                             break;
                         default:
                             reader.skipType(tag & 7);
@@ -12291,10 +12403,10 @@
                                 return "limits." + error;
                         }
                     }
-                    if (message.gpuAccelerator != null && message.hasOwnProperty("gpuAccelerator")) {
-                        var error = $root.flyteidl.core.GPUAccelerator.verify(message.gpuAccelerator);
+                    if (message.extensions != null && message.hasOwnProperty("extensions")) {
+                        var error = $root.flyteidl.core.ResourceExtensions.verify(message.extensions);
                         if (error)
-                            return "gpuAccelerator." + error;
+                            return "extensions." + error;
                     }
                     return null;
                 };

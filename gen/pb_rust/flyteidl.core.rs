@@ -962,6 +962,16 @@ pub mod gpu_accelerator {
         PartitionSize(::prost::alloc::string::String),
     }
 }
+/// Encapsulates all non-standard resources, not captured by v1.ResourceRequirements, to
+/// allocate to a task.
+#[allow(clippy::derive_partial_eq_without_eq)]
+#[derive(Clone, PartialEq, ::prost::Message)]
+pub struct ResourceExtensions {
+    /// GPU accelerator to select for task. Contains information about device type, and
+    /// for multi-instance GPUs, the partition size to use.
+    #[prost(message, optional, tag="3")]
+    pub gpu_accelerator: ::core::option::Option<GpuAccelerator>,
+}
 /// A customizable interface to convey resources requested for a container. This can be interpreted differently for different
 /// container engines.
 #[allow(clippy::derive_partial_eq_without_eq)]
@@ -974,10 +984,10 @@ pub struct Resources {
     /// within the list.
     #[prost(message, repeated, tag="2")]
     pub limits: ::prost::alloc::vec::Vec<resources::ResourceEntry>,
-    /// GPU accelerator to select for task. Contains information about device type, and
-    /// for multi-instance GPUs, the partition size to use.
+    /// Encapsulates all non-standard resources, not captured by
+    /// v1.ResourceRequirements, to allocate to a task.
     #[prost(message, optional, tag="3")]
-    pub gpu_accelerator: ::core::option::Option<GpuAccelerator>,
+    pub extensions: ::core::option::Option<ResourceExtensions>,
 }
 /// Nested message and enum types in `Resources`.
 pub mod resources {
