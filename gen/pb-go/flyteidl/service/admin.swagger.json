@@ -6026,6 +6026,16 @@
       },
       "description": "Represents the error message from the execution."
     },
+    "coreExtendedResources": {
+      "type": "object",
+      "properties": {
+        "gpu_accelerator": {
+          "$ref": "#/definitions/coreGPUAccelerator",
+          "description": "GPU accelerator to select for task. Contains information about device type, and\nfor multi-instance GPUs, the partition size to use."
+        }
+      },
+      "description": "Encapsulates all non-standard resources, not captured by v1.ResourceRequirements, to\nallocate to a task."
+    },
     "coreGPUAccelerator": {
       "type": "object",
       "properties": {
@@ -6593,16 +6603,6 @@
       },
       "description": "Represents customized execution run-time attributes."
     },
-    "coreResourceExtensions": {
-      "type": "object",
-      "properties": {
-        "gpu_accelerator": {
-          "$ref": "#/definitions/coreGPUAccelerator",
-          "description": "GPU accelerator to select for task. Contains information about device type, and\nfor multi-instance GPUs, the partition size to use."
-        }
-      },
-      "description": "Encapsulates all non-standard resources, not captured by v1.ResourceRequirements, to\nallocate to a task."
-    },
     "coreResourceType": {
       "type": "string",
       "enum": [
@@ -6631,10 +6631,6 @@
             "$ref": "#/definitions/ResourcesResourceEntry"
           },
           "description": "Defines a set of bounds (e.g. min/max) within which the task can reliably run. ResourceNames must be unique\nwithin the list."
-        },
-        "extensions": {
-          "$ref": "#/definitions/coreResourceExtensions",
-          "description": "Encapsulates all non-standard resources, not captured by\nv1.ResourceRequirements, to allocate to a task."
         }
       },
       "description": "A customizable interface to convey resources requested for a container. This can be interpreted differently for different\ncontainer engines."
@@ -7039,6 +7035,10 @@
         "resources": {
           "$ref": "#/definitions/coreResources",
           "description": "A customizable interface to convey resources requested for a task container."
+        },
+        "extended_resources": {
+          "$ref": "#/definitions/coreExtendedResources",
+          "description": "Overrides for all non-standard resources, not captured by\nv1.ResourceRequirements, to allocate to a task."
         }
       },
       "description": "Optional task node overrides that will be applied at task execution time."
@@ -7083,6 +7083,10 @@
         "security_context": {
           "$ref": "#/definitions/coreSecurityContext",
           "description": "security_context encapsulates security attributes requested to run this task."
+        },
+        "extended_resources": {
+          "$ref": "#/definitions/coreExtendedResources",
+          "description": "Encapsulates all non-standard resources, not captured by\nv1.ResourceRequirements, to allocate to a task."
         },
         "config": {
           "type": "object",

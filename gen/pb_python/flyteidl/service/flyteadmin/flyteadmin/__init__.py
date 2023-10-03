@@ -180,6 +180,7 @@ from flyteadmin.models.core_data_loading_config import CoreDataLoadingConfig
 from flyteadmin.models.core_enum_type import CoreEnumType
 from flyteadmin.models.core_error import CoreError
 from flyteadmin.models.core_execution_error import CoreExecutionError
+from flyteadmin.models.core_extended_resources import CoreExtendedResources
 from flyteadmin.models.core_gpu_accelerator import CoreGPUAccelerator
 from flyteadmin.models.core_gate_node import CoreGateNode
 from flyteadmin.models.core_io_strategy import CoreIOStrategy
@@ -209,7 +210,6 @@ from flyteadmin.models.core_primitive import CorePrimitive
 from flyteadmin.models.core_promise_attribute import CorePromiseAttribute
 from flyteadmin.models.core_quality_of_service import CoreQualityOfService
 from flyteadmin.models.core_quality_of_service_spec import CoreQualityOfServiceSpec
-from flyteadmin.models.core_resource_extensions import CoreResourceExtensions
 from flyteadmin.models.core_resource_type import CoreResourceType
 from flyteadmin.models.core_resources import CoreResources
 from flyteadmin.models.core_retry_strategy import CoreRetryStrategy

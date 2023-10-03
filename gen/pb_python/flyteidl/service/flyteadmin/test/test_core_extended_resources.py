@@ -16,12 +16,12 @@ from __future__ import absolute_import
 import unittest
 
 import flyteadmin
-from flyteadmin.models.core_resource_extensions import CoreResourceExtensions  # noqa: E501
+from flyteadmin.models.core_extended_resources import CoreExtendedResources  # noqa: E501
 from flyteadmin.rest import ApiException
 
 
-class TestCoreResourceExtensions(unittest.TestCase):
-    """CoreResourceExtensions unit test stubs"""
+class TestCoreExtendedResources(unittest.TestCase):
+    """CoreExtendedResources unit test stubs"""
 
     def setUp(self):
         pass
@@ -29,10 +29,10 @@ class TestCoreResourceExtensions(unittest.TestCase):
     def tearDown(self):
         pass
 
-    def testCoreResourceExtensions(self):
-        """Test CoreResourceExtensions"""
+    def testCoreExtendedResources(self):
+        """Test CoreExtendedResources"""
         # FIXME: construct object with mandatory attributes with example values
-        # model = flyteadmin.models.core_resource_extensions.CoreResourceExtensions()  # noqa: E501
+        # model = flyteadmin.models.core_extended_resources.CoreExtendedResources()  # noqa: E501
         pass
 
 

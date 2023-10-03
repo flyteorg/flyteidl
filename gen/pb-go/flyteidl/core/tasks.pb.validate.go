@@ -36,6 +36,100 @@ var (
 // define the regex for a UUID once up-front
 var _tasks_uuidPattern = regexp.MustCompile("^[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}$")
 
+// Validate checks the field values on Resources with the rules defined in the
+// proto definition for this message. If any rules are violated, an error is returned.
+func (m *Resources) Validate() error {
+	if m == nil {
+		return nil
+	}
+
+	for idx, item := range m.GetRequests() {
+		_, _ = idx, item
+
+		if v, ok := interface{}(item).(interface{ Validate() error }); ok {
+			if err := v.Validate(); err != nil {
+				return ResourcesValidationError{
+					field:  fmt.Sprintf("Requests[%v]", idx),
+					reason: "embedded message failed validation",
+					cause:  err,
+				}
+			}
+		}
+
+	}
+
+	for idx, item := range m.GetLimits() {
+		_, _ = idx, item
+
+		if v, ok := interface{}(item).(interface{ Validate() error }); ok {
+			if err := v.Validate(); err != nil {
+				return ResourcesValidationError{
+					field:  fmt.Sprintf("Limits[%v]", idx),
+					reason: "embedded message failed validation",
+					cause:  err,
+				}
+			}
+		}
+
+	}
+
+	return nil
+}
+
+// ResourcesValidationError is the validation error returned by
+// Resources.Validate if the designated constraints aren't met.
+type ResourcesValidationError struct {
+	field  string
+	reason string
+	cause  error
+	key    bool
+}
+
+// Field function returns field value.
+func (e ResourcesValidationError) Field() string { return e.field }
+
+// Reason function returns reason value.
+func (e ResourcesValidationError) Reason() string { return e.reason }
+
+// Cause function returns cause value.
+func (e ResourcesValidationError) Cause() error { return e.cause }
+
+// Key function returns key value.
+func (e ResourcesValidationError) Key() bool { return e.key }
+
+// ErrorName returns error name.
+func (e ResourcesValidationError) ErrorName() string { return "ResourcesValidationError" }
+
+// Error satisfies the builtin error interface
+func (e ResourcesValidationError) Error() string {
+	cause := ""
+	if e.cause != nil {
+		cause = fmt.Sprintf(" | caused by: %v", e.cause)
+	}
+
+	key := ""
+	if e.key {
+		key = "key for "
+	}
+
+	return fmt.Sprintf(
+		"invalid %sResources.%s: %s%s",
+		key,
+		e.field,
+		e.reason,
+		cause)
+}
+
+var _ error = ResourcesValidationError{}
+
+var _ interface {
+	Field() string
+	Reason() string
+	Key() bool
+	Cause() error
+	ErrorName() string
+} = ResourcesValidationError{}
+
 // Validate checks the field values on GPUAccelerator with the rules defined in
 // the proto definition for this message. If any rules are violated, an error
 // is returned.
@@ -113,17 +207,17 @@ var _ interface {
 	ErrorName() string
 } = GPUAcceleratorValidationError{}
 
-// Validate checks the field values on ResourceExtensions with the rules
-// defined in the proto definition for this message. If any rules are
-// violated, an error is returned.
-func (m *ResourceExtensions) Validate() error {
+// Validate checks the field values on ExtendedResources with the rules defined
+// in the proto definition for this message. If any rules are violated, an
+// error is returned.
+func (m *ExtendedResources) Validate() error {
 	if m == nil {
 		return nil
 	}
 
 	if v, ok := interface{}(m.GetGpuAccelerator()).(interface{ Validate() error }); ok {
 		if err := v.Validate(); err != nil {
-			return ResourceExtensionsValidationError{
+			return ExtendedResourcesValidationError{
 				field:  "GpuAccelerator",
 				reason: "embedded message failed validation",
 				cause:  err,
@@ -134,9 +228,9 @@ func (m *ResourceExtensions) Validate() error {
 	return nil
 }
 
-// ResourceExtensionsValidationError is the validation error returned by
-// ResourceExtensions.Validate if the designated constraints aren't met.
-type ResourceExtensionsValidationError struct {
+// ExtendedResourcesValidationError is the validation error returned by
+// ExtendedResources.Validate if the designated constraints aren't met.
+type ExtendedResourcesValidationError struct {
 	field  string
 	reason string
 	cause  error
@@ -144,24 +238,24 @@ type ResourceExtensionsValidationError struct {
 }
 
 // Field function returns field value.
-func (e ResourceExtensionsValidationError) Field() string { return e.field }
+func (e ExtendedResourcesValidationError) Field() string { return e.field }
 
 // Reason function returns reason value.
-func (e ResourceExtensionsValidationError) Reason() string { return e.reason }
+func (e ExtendedResourcesValidationError) Reason() string { return e.reason }
 
 // Cause function returns cause value.
-func (e ResourceExtensionsValidationError) Cause() error { return e.cause }
+func (e ExtendedResourcesValidationError) Cause() error { return e.cause }
 
 // Key function returns key value.
-func (e ResourceExtensionsValidationError) Key() bool { return e.key }
+func (e ExtendedResourcesValidationError) Key() bool { return e.key }
 
 // ErrorName returns error name.
-func (e ResourceExtensionsValidationError) ErrorName() string {
-	return "ResourceExtensionsValidationError"
+func (e ExtendedResourcesValidationError) ErrorName() string {
+	return "ExtendedResourcesValidationError"
 }
 
 // Error satisfies the builtin error interface
-func (e ResourceExtensionsValidationError) Error() string {
+func (e ExtendedResourcesValidationError) Error() string {
 	cause := ""
 	if e.cause != nil {
 		cause = fmt.Sprintf(" | caused by: %v", e.cause)
@@ -173,14 +267,14 @@ func (e ResourceExtensionsValidationError) Error() string {
 	}
 
 	return fmt.Sprintf(
-		"invalid %sResourceExtensions.%s: %s%s",
+		"invalid %sExtendedResources.%s: %s%s",
 		key,
 		e.field,
 		e.reason,
 		cause)
 }
 
-var _ error = ResourceExtensionsValidationError{}
+var _ error = ExtendedResourcesValidationError{}
 
 var _ interface {
 	Field() string
@@ -188,111 +282,7 @@ var _ interface {
 	Key() bool
 	Cause() error
 	ErrorName() string
-} = ResourceExtensionsValidationError{}
-
-// Validate checks the field values on Resources with the rules defined in the
-// proto definition for this message. If any rules are violated, an error is returned.
-func (m *Resources) Validate() error {
-	if m == nil {
-		return nil
-	}
-
-	for idx, item := range m.GetRequests() {
-		_, _ = idx, item
-
-		if v, ok := interface{}(item).(interface{ Validate() error }); ok {
-			if err := v.Validate(); err != nil {
-				return ResourcesValidationError{
-					field:  fmt.Sprintf("Requests[%v]", idx),
-					reason: "embedded message failed validation",
-					cause:  err,
-				}
-			}
-		}
-
-	}
-
-	for idx, item := range m.GetLimits() {
-		_, _ = idx, item
-
-		if v, ok := interface{}(item).(interface{ Validate() error }); ok {
-			if err := v.Validate(); err != nil {
-				return ResourcesValidationError{
-					field:  fmt.Sprintf("Limits[%v]", idx),
-					reason: "embedded message failed validation",
-					cause:  err,
-				}
-			}
-		}
-
-	}
-
-	if v, ok := interface{}(m.GetExtensions()).(interface{ Validate() error }); ok {
-		if err := v.Validate(); err != nil {
-			return ResourcesValidationError{
-				field:  "Extensions",
-				reason: "embedded message failed validation",
-				cause:  err,
-			}
-		}
-	}
-
-	return nil
-}
-
-// ResourcesValidationError is the validation error returned by
-// Resources.Validate if the designated constraints aren't met.
-type ResourcesValidationError struct {
-	field  string
-	reason string
-	cause  error
-	key    bool
-}
-
-// Field function returns field value.
-func (e ResourcesValidationError) Field() string { return e.field }
-
-// Reason function returns reason value.
-func (e ResourcesValidationError) Reason() string { return e.reason }
-
-// Cause function returns cause value.
-func (e ResourcesValidationError) Cause() error { return e.cause }
-
-// Key function returns key value.
-func (e ResourcesValidationError) Key() bool { return e.key }
-
-// ErrorName returns error name.
-func (e ResourcesValidationError) ErrorName() string { return "ResourcesValidationError" }
-
-// Error satisfies the builtin error interface
-func (e ResourcesValidationError) Error() string {
-	cause := ""
-	if e.cause != nil {
-		cause = fmt.Sprintf(" | caused by: %v", e.cause)
-	}
-
-	key := ""
-	if e.key {
-		key = "key for "
-	}
-
-	return fmt.Sprintf(
-		"invalid %sResources.%s: %s%s",
-		key,
-		e.field,
-		e.reason,
-		cause)
-}
-
-var _ error = ResourcesValidationError{}
-
-var _ interface {
-	Field() string
-	Reason() string
-	Key() bool
-	Cause() error
-	ErrorName() string
-} = ResourcesValidationError{}
+} = ExtendedResourcesValidationError{}
 
 // Validate checks the field values on RuntimeMetadata with the rules defined
 // in the proto definition for this message. If any rules are violated, an
@@ -537,6 +527,16 @@ func (m *TaskTemplate) Validate() error {
 		if err := v.Validate(); err != nil {
 			return TaskTemplateValidationError{
 				field:  "SecurityContext",
+				reason: "embedded message failed validation",
+				cause:  err,
+			}
+		}
+	}
+
+	if v, ok := interface{}(m.GetExtendedResources()).(interface{ Validate() error }); ok {
+		if err := v.Validate(); err != nil {
+			return TaskTemplateValidationError{
+				field:  "ExtendedResources",
 				reason: "embedded message failed validation",
 				cause:  err,
 			}

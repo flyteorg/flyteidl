@@ -16,7 +16,6 @@ import re  # noqa: F401
 
 import six
 
-from flyteadmin.models.core_resource_extensions import CoreResourceExtensions  # noqa: F401,E501
 from flyteadmin.models.resources_resource_entry import ResourcesResourceEntry  # noqa: F401,E501
 
 
@@ -35,30 +34,25 @@ class CoreResources(object):
     """
     swagger_types = {
         'requests': 'list[ResourcesResourceEntry]',
-        'limits': 'list[ResourcesResourceEntry]',
-        'extensions': 'CoreResourceExtensions'
+        'limits': 'list[ResourcesResourceEntry]'
     }
 
     attribute_map = {
         'requests': 'requests',
-        'limits': 'limits',
-        'extensions': 'extensions'
+        'limits': 'limits'
     }
 
-    def __init__(self, requests=None, limits=None, extensions=None):  # noqa: E501
+    def __init__(self, requests=None, limits=None):  # noqa: E501
         """CoreResources - a model defined in Swagger"""  # noqa: E501
 
         self._requests = None
         self._limits = None
-        self._extensions = None
         self.discriminator = None
 
         if requests is not None:
             self.requests = requests
         if limits is not None:
             self.limits = limits
-        if extensions is not None:
-            self.extensions = extensions
 
     @property
     def requests(self):
@@ -105,29 +99,6 @@ class CoreResources(object):
         """
 
         self._limits = limits
-
-    @property
-    def extensions(self):
-        """Gets the extensions of this CoreResources.  # noqa: E501
-
-        Encapsulates all non-standard resources, not captured by v1.ResourceRequirements, to allocate to a task.  # noqa: E501
-
-        :return: The extensions of this CoreResources.  # noqa: E501
-        :rtype: CoreResourceExtensions
-        """
-        return self._extensions
-
-    @extensions.setter
-    def extensions(self, extensions):
-        """Sets the extensions of this CoreResources.
-
-        Encapsulates all non-standard resources, not captured by v1.ResourceRequirements, to allocate to a task.  # noqa: E501
-
-        :param extensions: The extensions of this CoreResources.  # noqa: E501
-        :type: CoreResourceExtensions
-        """
-
-        self._extensions = extensions
 
     def to_dict(self):
         """Returns the model properties as a dict"""

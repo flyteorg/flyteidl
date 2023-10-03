@@ -10,7 +10,7 @@
 package flyteadmin
 
 // Encapsulates all non-standard resources, not captured by v1.ResourceRequirements, to allocate to a task.
-type CoreResourceExtensions struct {
+type CoreExtendedResources struct {
 	// GPU accelerator to select for task. Contains information about device type, and for multi-instance GPUs, the partition size to use.
 	GpuAccelerator *CoreGpuAccelerator `json:"gpu_accelerator,omitempty"`
 }

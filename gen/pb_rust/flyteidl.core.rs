@@ -940,38 +940,6 @@ pub struct SecurityContext {
     #[prost(message, repeated, tag="3")]
     pub tokens: ::prost::alloc::vec::Vec<OAuth2TokenRequest>,
 }
-/// Metadata associated with the GPU accelerator to allocate to a task. Contains
-/// information about device type, and for multi-instance GPUs, the partition size to
-/// use.
-#[allow(clippy::derive_partial_eq_without_eq)]
-#[derive(Clone, PartialEq, ::prost::Message)]
-pub struct GpuAccelerator {
-    #[prost(string, tag="1")]
-    pub device: ::prost::alloc::string::String,
-    #[prost(oneof="gpu_accelerator::PartitionSizeValue", tags="2, 3")]
-    pub partition_size_value: ::core::option::Option<gpu_accelerator::PartitionSizeValue>,
-}
-/// Nested message and enum types in `GPUAccelerator`.
-pub mod gpu_accelerator {
-    #[allow(clippy::derive_partial_eq_without_eq)]
-#[derive(Clone, PartialEq, ::prost::Oneof)]
-    pub enum PartitionSizeValue {
-        #[prost(bool, tag="2")]
-        Unpartitioned(bool),
-        #[prost(string, tag="3")]
-        PartitionSize(::prost::alloc::string::String),
-    }
-}
-/// Encapsulates all non-standard resources, not captured by v1.ResourceRequirements, to
-/// allocate to a task.
-#[allow(clippy::derive_partial_eq_without_eq)]
-#[derive(Clone, PartialEq, ::prost::Message)]
-pub struct ResourceExtensions {
-    /// GPU accelerator to select for task. Contains information about device type, and
-    /// for multi-instance GPUs, the partition size to use.
-    #[prost(message, optional, tag="3")]
-    pub gpu_accelerator: ::core::option::Option<GpuAccelerator>,
-}
 /// A customizable interface to convey resources requested for a container. This can be interpreted differently for different
 /// container engines.
 #[allow(clippy::derive_partial_eq_without_eq)]
@@ -984,10 +952,6 @@ pub struct Resources {
     /// within the list.
     #[prost(message, repeated, tag="2")]
     pub limits: ::prost::alloc::vec::Vec<resources::ResourceEntry>,
-    /// Encapsulates all non-standard resources, not captured by
-    /// v1.ResourceRequirements, to allocate to a task.
-    #[prost(message, optional, tag="3")]
-    pub extensions: ::core::option::Option<ResourceExtensions>,
 }
 /// Nested message and enum types in `Resources`.
 pub mod resources {
@@ -1043,6 +1007,38 @@ pub mod resources {
             }
         }
     }
+}
+/// Metadata associated with the GPU accelerator to allocate to a task. Contains
+/// information about device type, and for multi-instance GPUs, the partition size to
+/// use.
+#[allow(clippy::derive_partial_eq_without_eq)]
+#[derive(Clone, PartialEq, ::prost::Message)]
+pub struct GpuAccelerator {
+    #[prost(string, tag="1")]
+    pub device: ::prost::alloc::string::String,
+    #[prost(oneof="gpu_accelerator::PartitionSizeValue", tags="2, 3")]
+    pub partition_size_value: ::core::option::Option<gpu_accelerator::PartitionSizeValue>,
+}
+/// Nested message and enum types in `GPUAccelerator`.
+pub mod gpu_accelerator {
+    #[allow(clippy::derive_partial_eq_without_eq)]
+#[derive(Clone, PartialEq, ::prost::Oneof)]
+    pub enum PartitionSizeValue {
+        #[prost(bool, tag="2")]
+        Unpartitioned(bool),
+        #[prost(string, tag="3")]
+        PartitionSize(::prost::alloc::string::String),
+    }
+}
+/// Encapsulates all non-standard resources, not captured by v1.ResourceRequirements, to
+/// allocate to a task.
+#[allow(clippy::derive_partial_eq_without_eq)]
+#[derive(Clone, PartialEq, ::prost::Message)]
+pub struct ExtendedResources {
+    /// GPU accelerator to select for task. Contains information about device type, and
+    /// for multi-instance GPUs, the partition size to use.
+    #[prost(message, optional, tag="3")]
+    pub gpu_accelerator: ::core::option::Option<GpuAccelerator>,
 }
 /// Runtime information. This is loosely defined to allow for extensibility.
 #[allow(clippy::derive_partial_eq_without_eq)]
@@ -1180,6 +1176,10 @@ pub struct TaskTemplate {
     /// security_context encapsulates security attributes requested to run this task.
     #[prost(message, optional, tag="8")]
     pub security_context: ::core::option::Option<SecurityContext>,
+    /// Encapsulates all non-standard resources, not captured by
+    /// v1.ResourceRequirements, to allocate to a task.
+    #[prost(message, optional, tag="9")]
+    pub extended_resources: ::core::option::Option<ExtendedResources>,
     /// Metadata about the custom defined for this task. This is extensible to allow various plugins in the system
     /// to use as required.
     /// reserve the field numbers 1 through 15 for very frequently occurring message elements
@@ -2381,6 +2381,10 @@ pub struct TaskNodeOverrides {
     /// A customizable interface to convey resources requested for a task container. 
     #[prost(message, optional, tag="1")]
     pub resources: ::core::option::Option<Resources>,
+    /// Overrides for all non-standard resources, not captured by
+    /// v1.ResourceRequirements, to allocate to a task.
+    #[prost(message, optional, tag="2")]
+    pub extended_resources: ::core::option::Option<ExtendedResources>,
 }
 /// Adjacency list for the workflow. This is created as part of the compilation process. Every process after the compilation
 /// step uses this created ConnectionSet

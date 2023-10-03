@@ -4570,6 +4570,7 @@
                  * @memberof flyteidl.core
                  * @interface ITaskNodeOverrides
                  * @property {flyteidl.core.IResources|null} [resources] TaskNodeOverrides resources
+                 * @property {flyteidl.core.IExtendedResources|null} [extendedResources] TaskNodeOverrides extendedResources
                  */
     
                 /**
@@ -4594,6 +4595,14 @@
                  * @instance
                  */
                 TaskNodeOverrides.prototype.resources = null;
+    
+                /**
+                 * TaskNodeOverrides extendedResources.
+                 * @member {flyteidl.core.IExtendedResources|null|undefined} extendedResources
+                 * @memberof flyteidl.core.TaskNodeOverrides
+                 * @instance
+                 */
+                TaskNodeOverrides.prototype.extendedResources = null;
     
                 /**
                  * Creates a new TaskNodeOverrides instance using the specified properties.
@@ -4621,6 +4630,8 @@
                         writer = $Writer.create();
                     if (message.resources != null && message.hasOwnProperty("resources"))
                         $root.flyteidl.core.Resources.encode(message.resources, writer.uint32(/* id 1, wireType 2 =*/10).fork()).ldelim();
+                    if (message.extendedResources != null && message.hasOwnProperty("extendedResources"))
+                        $root.flyteidl.core.ExtendedResources.encode(message.extendedResources, writer.uint32(/* id 2, wireType 2 =*/18).fork()).ldelim();
                     return writer;
                 };
     
@@ -4645,6 +4656,9 @@
                         case 1:
                             message.resources = $root.flyteidl.core.Resources.decode(reader, reader.uint32());
                             break;
+                        case 2:
+                            message.extendedResources = $root.flyteidl.core.ExtendedResources.decode(reader, reader.uint32());
+                            break;
                         default:
                             reader.skipType(tag & 7);
                             break;
@@ -4668,6 +4682,11 @@
                         var error = $root.flyteidl.core.Resources.verify(message.resources);
                         if (error)
                             return "resources." + error;
+                    }
+                    if (message.extendedResources != null && message.hasOwnProperty("extendedResources")) {
+                        var error = $root.flyteidl.core.ExtendedResources.verify(message.extendedResources);
+                        if (error)
+                            return "extendedResources." + error;
                     }
                     return null;
                 };
@@ -11971,6 +11990,311 @@
                 return ParameterMap;
             })();
     
+            core.Resources = (function() {
+    
+                /**
+                 * Properties of a Resources.
+                 * @memberof flyteidl.core
+                 * @interface IResources
+                 * @property {Array.<flyteidl.core.Resources.IResourceEntry>|null} [requests] Resources requests
+                 * @property {Array.<flyteidl.core.Resources.IResourceEntry>|null} [limits] Resources limits
+                 */
+    
+                /**
+                 * Constructs a new Resources.
+                 * @memberof flyteidl.core
+                 * @classdesc Represents a Resources.
+                 * @implements IResources
+                 * @constructor
+                 * @param {flyteidl.core.IResources=} [properties] Properties to set
+                 */
+                function Resources(properties) {
+                    this.requests = [];
+                    this.limits = [];
+                    if (properties)
+                        for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                            if (properties[keys[i]] != null)
+                                this[keys[i]] = properties[keys[i]];
+                }
+    
+                /**
+                 * Resources requests.
+                 * @member {Array.<flyteidl.core.Resources.IResourceEntry>} requests
+                 * @memberof flyteidl.core.Resources
+                 * @instance
+                 */
+                Resources.prototype.requests = $util.emptyArray;
+    
+                /**
+                 * Resources limits.
+                 * @member {Array.<flyteidl.core.Resources.IResourceEntry>} limits
+                 * @memberof flyteidl.core.Resources
+                 * @instance
+                 */
+                Resources.prototype.limits = $util.emptyArray;
+    
+                /**
+                 * Creates a new Resources instance using the specified properties.
+                 * @function create
+                 * @memberof flyteidl.core.Resources
+                 * @static
+                 * @param {flyteidl.core.IResources=} [properties] Properties to set
+                 * @returns {flyteidl.core.Resources} Resources instance
+                 */
+                Resources.create = function create(properties) {
+                    return new Resources(properties);
+                };
+    
+                /**
+                 * Encodes the specified Resources message. Does not implicitly {@link flyteidl.core.Resources.verify|verify} messages.
+                 * @function encode
+                 * @memberof flyteidl.core.Resources
+                 * @static
+                 * @param {flyteidl.core.IResources} message Resources message or plain object to encode
+                 * @param {$protobuf.Writer} [writer] Writer to encode to
+                 * @returns {$protobuf.Writer} Writer
+                 */
+                Resources.encode = function encode(message, writer) {
+                    if (!writer)
+                        writer = $Writer.create();
+                    if (message.requests != null && message.requests.length)
+                        for (var i = 0; i < message.requests.length; ++i)
+                            $root.flyteidl.core.Resources.ResourceEntry.encode(message.requests[i], writer.uint32(/* id 1, wireType 2 =*/10).fork()).ldelim();
+                    if (message.limits != null && message.limits.length)
+                        for (var i = 0; i < message.limits.length; ++i)
+                            $root.flyteidl.core.Resources.ResourceEntry.encode(message.limits[i], writer.uint32(/* id 2, wireType 2 =*/18).fork()).ldelim();
+                    return writer;
+                };
+    
+                /**
+                 * Decodes a Resources message from the specified reader or buffer.
+                 * @function decode
+                 * @memberof flyteidl.core.Resources
+                 * @static
+                 * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+                 * @param {number} [length] Message length if known beforehand
+                 * @returns {flyteidl.core.Resources} Resources
+                 * @throws {Error} If the payload is not a reader or valid buffer
+                 * @throws {$protobuf.util.ProtocolError} If required fields are missing
+                 */
+                Resources.decode = function decode(reader, length) {
+                    if (!(reader instanceof $Reader))
+                        reader = $Reader.create(reader);
+                    var end = length === undefined ? reader.len : reader.pos + length, message = new $root.flyteidl.core.Resources();
+                    while (reader.pos < end) {
+                        var tag = reader.uint32();
+                        switch (tag >>> 3) {
+                        case 1:
+                            if (!(message.requests && message.requests.length))
+                                message.requests = [];
+                            message.requests.push($root.flyteidl.core.Resources.ResourceEntry.decode(reader, reader.uint32()));
+                            break;
+                        case 2:
+                            if (!(message.limits && message.limits.length))
+                                message.limits = [];
+                            message.limits.push($root.flyteidl.core.Resources.ResourceEntry.decode(reader, reader.uint32()));
+                            break;
+                        default:
+                            reader.skipType(tag & 7);
+                            break;
+                        }
+                    }
+                    return message;
+                };
+    
+                /**
+                 * Verifies a Resources message.
+                 * @function verify
+                 * @memberof flyteidl.core.Resources
+                 * @static
+                 * @param {Object.<string,*>} message Plain object to verify
+                 * @returns {string|null} `null` if valid, otherwise the reason why it is not
+                 */
+                Resources.verify = function verify(message) {
+                    if (typeof message !== "object" || message === null)
+                        return "object expected";
+                    if (message.requests != null && message.hasOwnProperty("requests")) {
+                        if (!Array.isArray(message.requests))
+                            return "requests: array expected";
+                        for (var i = 0; i < message.requests.length; ++i) {
+                            var error = $root.flyteidl.core.Resources.ResourceEntry.verify(message.requests[i]);
+                            if (error)
+                                return "requests." + error;
+                        }
+                    }
+                    if (message.limits != null && message.hasOwnProperty("limits")) {
+                        if (!Array.isArray(message.limits))
+                            return "limits: array expected";
+                        for (var i = 0; i < message.limits.length; ++i) {
+                            var error = $root.flyteidl.core.Resources.ResourceEntry.verify(message.limits[i]);
+                            if (error)
+                                return "limits." + error;
+                        }
+                    }
+                    return null;
+                };
+    
+                /**
+                 * ResourceName enum.
+                 * @name flyteidl.core.Resources.ResourceName
+                 * @enum {string}
+                 * @property {number} UNKNOWN=0 UNKNOWN value
+                 * @property {number} CPU=1 CPU value
+                 * @property {number} GPU=2 GPU value
+                 * @property {number} MEMORY=3 MEMORY value
+                 * @property {number} STORAGE=4 STORAGE value
+                 * @property {number} EPHEMERAL_STORAGE=5 EPHEMERAL_STORAGE value
+                 */
+                Resources.ResourceName = (function() {
+                    var valuesById = {}, values = Object.create(valuesById);
+                    values[valuesById[0] = "UNKNOWN"] = 0;
+                    values[valuesById[1] = "CPU"] = 1;
+                    values[valuesById[2] = "GPU"] = 2;
+                    values[valuesById[3] = "MEMORY"] = 3;
+                    values[valuesById[4] = "STORAGE"] = 4;
+                    values[valuesById[5] = "EPHEMERAL_STORAGE"] = 5;
+                    return values;
+                })();
+    
+                Resources.ResourceEntry = (function() {
+    
+                    /**
+                     * Properties of a ResourceEntry.
+                     * @memberof flyteidl.core.Resources
+                     * @interface IResourceEntry
+                     * @property {flyteidl.core.Resources.ResourceName|null} [name] ResourceEntry name
+                     * @property {string|null} [value] ResourceEntry value
+                     */
+    
+                    /**
+                     * Constructs a new ResourceEntry.
+                     * @memberof flyteidl.core.Resources
+                     * @classdesc Represents a ResourceEntry.
+                     * @implements IResourceEntry
+                     * @constructor
+                     * @param {flyteidl.core.Resources.IResourceEntry=} [properties] Properties to set
+                     */
+                    function ResourceEntry(properties) {
+                        if (properties)
+                            for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                                if (properties[keys[i]] != null)
+                                    this[keys[i]] = properties[keys[i]];
+                    }
+    
+                    /**
+                     * ResourceEntry name.
+                     * @member {flyteidl.core.Resources.ResourceName} name
+                     * @memberof flyteidl.core.Resources.ResourceEntry
+                     * @instance
+                     */
+                    ResourceEntry.prototype.name = 0;
+    
+                    /**
+                     * ResourceEntry value.
+                     * @member {string} value
+                     * @memberof flyteidl.core.Resources.ResourceEntry
+                     * @instance
+                     */
+                    ResourceEntry.prototype.value = "";
+    
+                    /**
+                     * Creates a new ResourceEntry instance using the specified properties.
+                     * @function create
+                     * @memberof flyteidl.core.Resources.ResourceEntry
+                     * @static
+                     * @param {flyteidl.core.Resources.IResourceEntry=} [properties] Properties to set
+                     * @returns {flyteidl.core.Resources.ResourceEntry} ResourceEntry instance
+                     */
+                    ResourceEntry.create = function create(properties) {
+                        return new ResourceEntry(properties);
+                    };
+    
+                    /**
+                     * Encodes the specified ResourceEntry message. Does not implicitly {@link flyteidl.core.Resources.ResourceEntry.verify|verify} messages.
+                     * @function encode
+                     * @memberof flyteidl.core.Resources.ResourceEntry
+                     * @static
+                     * @param {flyteidl.core.Resources.IResourceEntry} message ResourceEntry message or plain object to encode
+                     * @param {$protobuf.Writer} [writer] Writer to encode to
+                     * @returns {$protobuf.Writer} Writer
+                     */
+                    ResourceEntry.encode = function encode(message, writer) {
+                        if (!writer)
+                            writer = $Writer.create();
+                        if (message.name != null && message.hasOwnProperty("name"))
+                            writer.uint32(/* id 1, wireType 0 =*/8).int32(message.name);
+                        if (message.value != null && message.hasOwnProperty("value"))
+                            writer.uint32(/* id 2, wireType 2 =*/18).string(message.value);
+                        return writer;
+                    };
+    
+                    /**
+                     * Decodes a ResourceEntry message from the specified reader or buffer.
+                     * @function decode
+                     * @memberof flyteidl.core.Resources.ResourceEntry
+                     * @static
+                     * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+                     * @param {number} [length] Message length if known beforehand
+                     * @returns {flyteidl.core.Resources.ResourceEntry} ResourceEntry
+                     * @throws {Error} If the payload is not a reader or valid buffer
+                     * @throws {$protobuf.util.ProtocolError} If required fields are missing
+                     */
+                    ResourceEntry.decode = function decode(reader, length) {
+                        if (!(reader instanceof $Reader))
+                            reader = $Reader.create(reader);
+                        var end = length === undefined ? reader.len : reader.pos + length, message = new $root.flyteidl.core.Resources.ResourceEntry();
+                        while (reader.pos < end) {
+                            var tag = reader.uint32();
+                            switch (tag >>> 3) {
+                            case 1:
+                                message.name = reader.int32();
+                                break;
+                            case 2:
+                                message.value = reader.string();
+                                break;
+                            default:
+                                reader.skipType(tag & 7);
+                                break;
+                            }
+                        }
+                        return message;
+                    };
+    
+                    /**
+                     * Verifies a ResourceEntry message.
+                     * @function verify
+                     * @memberof flyteidl.core.Resources.ResourceEntry
+                     * @static
+                     * @param {Object.<string,*>} message Plain object to verify
+                     * @returns {string|null} `null` if valid, otherwise the reason why it is not
+                     */
+                    ResourceEntry.verify = function verify(message) {
+                        if (typeof message !== "object" || message === null)
+                            return "object expected";
+                        if (message.name != null && message.hasOwnProperty("name"))
+                            switch (message.name) {
+                            default:
+                                return "name: enum value expected";
+                            case 0:
+                            case 1:
+                            case 2:
+                            case 3:
+                            case 4:
+                            case 5:
+                                break;
+                            }
+                        if (message.value != null && message.hasOwnProperty("value"))
+                            if (!$util.isString(message.value))
+                                return "value: string expected";
+                        return null;
+                    };
+    
+                    return ResourceEntry;
+                })();
+    
+                return Resources;
+            })();
+    
             core.GPUAccelerator = (function() {
     
                 /**
@@ -12136,24 +12460,24 @@
                 return GPUAccelerator;
             })();
     
-            core.ResourceExtensions = (function() {
+            core.ExtendedResources = (function() {
     
                 /**
-                 * Properties of a ResourceExtensions.
+                 * Properties of an ExtendedResources.
                  * @memberof flyteidl.core
-                 * @interface IResourceExtensions
-                 * @property {flyteidl.core.IGPUAccelerator|null} [gpuAccelerator] ResourceExtensions gpuAccelerator
+                 * @interface IExtendedResources
+                 * @property {flyteidl.core.IGPUAccelerator|null} [gpuAccelerator] ExtendedResources gpuAccelerator
                  */
     
                 /**
-                 * Constructs a new ResourceExtensions.
+                 * Constructs a new ExtendedResources.
                  * @memberof flyteidl.core
-                 * @classdesc Represents a ResourceExtensions.
-                 * @implements IResourceExtensions
+                 * @classdesc Represents an ExtendedResources.
+                 * @implements IExtendedResources
                  * @constructor
-                 * @param {flyteidl.core.IResourceExtensions=} [properties] Properties to set
+                 * @param {flyteidl.core.IExtendedResources=} [properties] Properties to set
                  */
-                function ResourceExtensions(properties) {
+                function ExtendedResources(properties) {
                     if (properties)
                         for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
                             if (properties[keys[i]] != null)
@@ -12161,35 +12485,35 @@
                 }
     
                 /**
-                 * ResourceExtensions gpuAccelerator.
+                 * ExtendedResources gpuAccelerator.
                  * @member {flyteidl.core.IGPUAccelerator|null|undefined} gpuAccelerator
-                 * @memberof flyteidl.core.ResourceExtensions
+                 * @memberof flyteidl.core.ExtendedResources
                  * @instance
                  */
-                ResourceExtensions.prototype.gpuAccelerator = null;
+                ExtendedResources.prototype.gpuAccelerator = null;
     
                 /**
-                 * Creates a new ResourceExtensions instance using the specified properties.
+                 * Creates a new ExtendedResources instance using the specified properties.
                  * @function create
-                 * @memberof flyteidl.core.ResourceExtensions
+                 * @memberof flyteidl.core.ExtendedResources
                  * @static
-                 * @param {flyteidl.core.IResourceExtensions=} [properties] Properties to set
-                 * @returns {flyteidl.core.ResourceExtensions} ResourceExtensions instance
+                 * @param {flyteidl.core.IExtendedResources=} [properties] Properties to set
+                 * @returns {flyteidl.core.ExtendedResources} ExtendedResources instance
                  */
-                ResourceExtensions.create = function create(properties) {
-                    return new ResourceExtensions(properties);
+                ExtendedResources.create = function create(properties) {
+                    return new ExtendedResources(properties);
                 };
     
                 /**
-                 * Encodes the specified ResourceExtensions message. Does not implicitly {@link flyteidl.core.ResourceExtensions.verify|verify} messages.
+                 * Encodes the specified ExtendedResources message. Does not implicitly {@link flyteidl.core.ExtendedResources.verify|verify} messages.
                  * @function encode
-                 * @memberof flyteidl.core.ResourceExtensions
+                 * @memberof flyteidl.core.ExtendedResources
                  * @static
-                 * @param {flyteidl.core.IResourceExtensions} message ResourceExtensions message or plain object to encode
+                 * @param {flyteidl.core.IExtendedResources} message ExtendedResources message or plain object to encode
                  * @param {$protobuf.Writer} [writer] Writer to encode to
                  * @returns {$protobuf.Writer} Writer
                  */
-                ResourceExtensions.encode = function encode(message, writer) {
+                ExtendedResources.encode = function encode(message, writer) {
                     if (!writer)
                         writer = $Writer.create();
                     if (message.gpuAccelerator != null && message.hasOwnProperty("gpuAccelerator"))
@@ -12198,20 +12522,20 @@
                 };
     
                 /**
-                 * Decodes a ResourceExtensions message from the specified reader or buffer.
+                 * Decodes an ExtendedResources message from the specified reader or buffer.
                  * @function decode
-                 * @memberof flyteidl.core.ResourceExtensions
+                 * @memberof flyteidl.core.ExtendedResources
                  * @static
                  * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
                  * @param {number} [length] Message length if known beforehand
-                 * @returns {flyteidl.core.ResourceExtensions} ResourceExtensions
+                 * @returns {flyteidl.core.ExtendedResources} ExtendedResources
                  * @throws {Error} If the payload is not a reader or valid buffer
                  * @throws {$protobuf.util.ProtocolError} If required fields are missing
                  */
-                ResourceExtensions.decode = function decode(reader, length) {
+                ExtendedResources.decode = function decode(reader, length) {
                     if (!(reader instanceof $Reader))
                         reader = $Reader.create(reader);
-                    var end = length === undefined ? reader.len : reader.pos + length, message = new $root.flyteidl.core.ResourceExtensions();
+                    var end = length === undefined ? reader.len : reader.pos + length, message = new $root.flyteidl.core.ExtendedResources();
                     while (reader.pos < end) {
                         var tag = reader.uint32();
                         switch (tag >>> 3) {
@@ -12227,14 +12551,14 @@
                 };
     
                 /**
-                 * Verifies a ResourceExtensions message.
+                 * Verifies an ExtendedResources message.
                  * @function verify
-                 * @memberof flyteidl.core.ResourceExtensions
+                 * @memberof flyteidl.core.ExtendedResources
                  * @static
                  * @param {Object.<string,*>} message Plain object to verify
                  * @returns {string|null} `null` if valid, otherwise the reason why it is not
                  */
-                ResourceExtensions.verify = function verify(message) {
+                ExtendedResources.verify = function verify(message) {
                     if (typeof message !== "object" || message === null)
                         return "object expected";
                     if (message.gpuAccelerator != null && message.hasOwnProperty("gpuAccelerator")) {
@@ -12245,331 +12569,7 @@
                     return null;
                 };
     
-                return ResourceExtensions;
-            })();
-    
-            core.Resources = (function() {
-    
-                /**
-                 * Properties of a Resources.
-                 * @memberof flyteidl.core
-                 * @interface IResources
-                 * @property {Array.<flyteidl.core.Resources.IResourceEntry>|null} [requests] Resources requests
-                 * @property {Array.<flyteidl.core.Resources.IResourceEntry>|null} [limits] Resources limits
-                 * @property {flyteidl.core.IResourceExtensions|null} [extensions] Resources extensions
-                 */
-    
-                /**
-                 * Constructs a new Resources.
-                 * @memberof flyteidl.core
-                 * @classdesc Represents a Resources.
-                 * @implements IResources
-                 * @constructor
-                 * @param {flyteidl.core.IResources=} [properties] Properties to set
-                 */
-                function Resources(properties) {
-                    this.requests = [];
-                    this.limits = [];
-                    if (properties)
-                        for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
-                            if (properties[keys[i]] != null)
-                                this[keys[i]] = properties[keys[i]];
-                }
-    
-                /**
-                 * Resources requests.
-                 * @member {Array.<flyteidl.core.Resources.IResourceEntry>} requests
-                 * @memberof flyteidl.core.Resources
-                 * @instance
-                 */
-                Resources.prototype.requests = $util.emptyArray;
-    
-                /**
-                 * Resources limits.
-                 * @member {Array.<flyteidl.core.Resources.IResourceEntry>} limits
-                 * @memberof flyteidl.core.Resources
-                 * @instance
-                 */
-                Resources.prototype.limits = $util.emptyArray;
-    
-                /**
-                 * Resources extensions.
-                 * @member {flyteidl.core.IResourceExtensions|null|undefined} extensions
-                 * @memberof flyteidl.core.Resources
-                 * @instance
-                 */
-                Resources.prototype.extensions = null;
-    
-                /**
-                 * Creates a new Resources instance using the specified properties.
-                 * @function create
-                 * @memberof flyteidl.core.Resources
-                 * @static
-                 * @param {flyteidl.core.IResources=} [properties] Properties to set
-                 * @returns {flyteidl.core.Resources} Resources instance
-                 */
-                Resources.create = function create(properties) {
-                    return new Resources(properties);
-                };
-    
-                /**
-                 * Encodes the specified Resources message. Does not implicitly {@link flyteidl.core.Resources.verify|verify} messages.
-                 * @function encode
-                 * @memberof flyteidl.core.Resources
-                 * @static
-                 * @param {flyteidl.core.IResources} message Resources message or plain object to encode
-                 * @param {$protobuf.Writer} [writer] Writer to encode to
-                 * @returns {$protobuf.Writer} Writer
-                 */
-                Resources.encode = function encode(message, writer) {
-                    if (!writer)
-                        writer = $Writer.create();
-                    if (message.requests != null && message.requests.length)
-                        for (var i = 0; i < message.requests.length; ++i)
-                            $root.flyteidl.core.Resources.ResourceEntry.encode(message.requests[i], writer.uint32(/* id 1, wireType 2 =*/10).fork()).ldelim();
-                    if (message.limits != null && message.limits.length)
-                        for (var i = 0; i < message.limits.length; ++i)
-                            $root.flyteidl.core.Resources.ResourceEntry.encode(message.limits[i], writer.uint32(/* id 2, wireType 2 =*/18).fork()).ldelim();
-                    if (message.extensions != null && message.hasOwnProperty("extensions"))
-                        $root.flyteidl.core.ResourceExtensions.encode(message.extensions, writer.uint32(/* id 3, wireType 2 =*/26).fork()).ldelim();
-                    return writer;
-                };
-    
-                /**
-                 * Decodes a Resources message from the specified reader or buffer.
-                 * @function decode
-                 * @memberof flyteidl.core.Resources
-                 * @static
-                 * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
-                 * @param {number} [length] Message length if known beforehand
-                 * @returns {flyteidl.core.Resources} Resources
-                 * @throws {Error} If the payload is not a reader or valid buffer
-                 * @throws {$protobuf.util.ProtocolError} If required fields are missing
-                 */
-                Resources.decode = function decode(reader, length) {
-                    if (!(reader instanceof $Reader))
-                        reader = $Reader.create(reader);
-                    var end = length === undefined ? reader.len : reader.pos + length, message = new $root.flyteidl.core.Resources();
-                    while (reader.pos < end) {
-                        var tag = reader.uint32();
-                        switch (tag >>> 3) {
-                        case 1:
-                            if (!(message.requests && message.requests.length))
-                                message.requests = [];
-                            message.requests.push($root.flyteidl.core.Resources.ResourceEntry.decode(reader, reader.uint32()));
-                            break;
-                        case 2:
-                            if (!(message.limits && message.limits.length))
-                                message.limits = [];
-                            message.limits.push($root.flyteidl.core.Resources.ResourceEntry.decode(reader, reader.uint32()));
-                            break;
-                        case 3:
-                            message.extensions = $root.flyteidl.core.ResourceExtensions.decode(reader, reader.uint32());
-                            break;
-                        default:
-                            reader.skipType(tag & 7);
-                            break;
-                        }
-                    }
-                    return message;
-                };
-    
-                /**
-                 * Verifies a Resources message.
-                 * @function verify
-                 * @memberof flyteidl.core.Resources
-                 * @static
-                 * @param {Object.<string,*>} message Plain object to verify
-                 * @returns {string|null} `null` if valid, otherwise the reason why it is not
-                 */
-                Resources.verify = function verify(message) {
-                    if (typeof message !== "object" || message === null)
-                        return "object expected";
-                    if (message.requests != null && message.hasOwnProperty("requests")) {
-                        if (!Array.isArray(message.requests))
-                            return "requests: array expected";
-                        for (var i = 0; i < message.requests.length; ++i) {
-                            var error = $root.flyteidl.core.Resources.ResourceEntry.verify(message.requests[i]);
-                            if (error)
-                                return "requests." + error;
-                        }
-                    }
-                    if (message.limits != null && message.hasOwnProperty("limits")) {
-                        if (!Array.isArray(message.limits))
-                            return "limits: array expected";
-                        for (var i = 0; i < message.limits.length; ++i) {
-                            var error = $root.flyteidl.core.Resources.ResourceEntry.verify(message.limits[i]);
-                            if (error)
-                                return "limits." + error;
-                        }
-                    }
-                    if (message.extensions != null && message.hasOwnProperty("extensions")) {
-                        var error = $root.flyteidl.core.ResourceExtensions.verify(message.extensions);
-                        if (error)
-                            return "extensions." + error;
-                    }
-                    return null;
-                };
-    
-                /**
-                 * ResourceName enum.
-                 * @name flyteidl.core.Resources.ResourceName
-                 * @enum {string}
-                 * @property {number} UNKNOWN=0 UNKNOWN value
-                 * @property {number} CPU=1 CPU value
-                 * @property {number} GPU=2 GPU value
-                 * @property {number} MEMORY=3 MEMORY value
-                 * @property {number} STORAGE=4 STORAGE value
-                 * @property {number} EPHEMERAL_STORAGE=5 EPHEMERAL_STORAGE value
-                 */
-                Resources.ResourceName = (function() {
-                    var valuesById = {}, values = Object.create(valuesById);
-                    values[valuesById[0] = "UNKNOWN"] = 0;
-                    values[valuesById[1] = "CPU"] = 1;
-                    values[valuesById[2] = "GPU"] = 2;
-                    values[valuesById[3] = "MEMORY"] = 3;
-                    values[valuesById[4] = "STORAGE"] = 4;
-                    values[valuesById[5] = "EPHEMERAL_STORAGE"] = 5;
-                    return values;
-                })();
-    
-                Resources.ResourceEntry = (function() {
-    
-                    /**
-                     * Properties of a ResourceEntry.
-                     * @memberof flyteidl.core.Resources
-                     * @interface IResourceEntry
-                     * @property {flyteidl.core.Resources.ResourceName|null} [name] ResourceEntry name
-                     * @property {string|null} [value] ResourceEntry value
-                     */
-    
-                    /**
-                     * Constructs a new ResourceEntry.
-                     * @memberof flyteidl.core.Resources
-                     * @classdesc Represents a ResourceEntry.
-                     * @implements IResourceEntry
-                     * @constructor
-                     * @param {flyteidl.core.Resources.IResourceEntry=} [properties] Properties to set
-                     */
-                    function ResourceEntry(properties) {
-                        if (properties)
-                            for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
-                                if (properties[keys[i]] != null)
-                                    this[keys[i]] = properties[keys[i]];
-                    }
-    
-                    /**
-                     * ResourceEntry name.
-                     * @member {flyteidl.core.Resources.ResourceName} name
-                     * @memberof flyteidl.core.Resources.ResourceEntry
-                     * @instance
-                     */
-                    ResourceEntry.prototype.name = 0;
-    
-                    /**
-                     * ResourceEntry value.
-                     * @member {string} value
-                     * @memberof flyteidl.core.Resources.ResourceEntry
-                     * @instance
-                     */
-                    ResourceEntry.prototype.value = "";
-    
-                    /**
-                     * Creates a new ResourceEntry instance using the specified properties.
-                     * @function create
-                     * @memberof flyteidl.core.Resources.ResourceEntry
-                     * @static
-                     * @param {flyteidl.core.Resources.IResourceEntry=} [properties] Properties to set
-                     * @returns {flyteidl.core.Resources.ResourceEntry} ResourceEntry instance
-                     */
-                    ResourceEntry.create = function create(properties) {
-                        return new ResourceEntry(properties);
-                    };
-    
-                    /**
-                     * Encodes the specified ResourceEntry message. Does not implicitly {@link flyteidl.core.Resources.ResourceEntry.verify|verify} messages.
-                     * @function encode
-                     * @memberof flyteidl.core.Resources.ResourceEntry
-                     * @static
-                     * @param {flyteidl.core.Resources.IResourceEntry} message ResourceEntry message or plain object to encode
-                     * @param {$protobuf.Writer} [writer] Writer to encode to
-                     * @returns {$protobuf.Writer} Writer
-                     */
-                    ResourceEntry.encode = function encode(message, writer) {
-                        if (!writer)
-                            writer = $Writer.create();
-                        if (message.name != null && message.hasOwnProperty("name"))
-                            writer.uint32(/* id 1, wireType 0 =*/8).int32(message.name);
-                        if (message.value != null && message.hasOwnProperty("value"))
-                            writer.uint32(/* id 2, wireType 2 =*/18).string(message.value);
-                        return writer;
-                    };
-    
-                    /**
-                     * Decodes a ResourceEntry message from the specified reader or buffer.
-                     * @function decode
-                     * @memberof flyteidl.core.Resources.ResourceEntry
-                     * @static
-                     * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
-                     * @param {number} [length] Message length if known beforehand
-                     * @returns {flyteidl.core.Resources.ResourceEntry} ResourceEntry
-                     * @throws {Error} If the payload is not a reader or valid buffer
-                     * @throws {$protobuf.util.ProtocolError} If required fields are missing
-                     */
-                    ResourceEntry.decode = function decode(reader, length) {
-                        if (!(reader instanceof $Reader))
-                            reader = $Reader.create(reader);
-                        var end = length === undefined ? reader.len : reader.pos + length, message = new $root.flyteidl.core.Resources.ResourceEntry();
-                        while (reader.pos < end) {
-                            var tag = reader.uint32();
-                            switch (tag >>> 3) {
-                            case 1:
-                                message.name = reader.int32();
-                                break;
-                            case 2:
-                                message.value = reader.string();
-                                break;
-                            default:
-                                reader.skipType(tag & 7);
-                                break;
-                            }
-                        }
-                        return message;
-                    };
-    
-                    /**
-                     * Verifies a ResourceEntry message.
-                     * @function verify
-                     * @memberof flyteidl.core.Resources.ResourceEntry
-                     * @static
-                     * @param {Object.<string,*>} message Plain object to verify
-                     * @returns {string|null} `null` if valid, otherwise the reason why it is not
-                     */
-                    ResourceEntry.verify = function verify(message) {
-                        if (typeof message !== "object" || message === null)
-                            return "object expected";
-                        if (message.name != null && message.hasOwnProperty("name"))
-                            switch (message.name) {
-                            default:
-                                return "name: enum value expected";
-                            case 0:
-                            case 1:
-                            case 2:
-                            case 3:
-                            case 4:
-                            case 5:
-                                break;
-                            }
-                        if (message.value != null && message.hasOwnProperty("value"))
-                            if (!$util.isString(message.value))
-                                return "value: string expected";
-                        return null;
-                    };
-    
-                    return ResourceEntry;
-                })();
-    
-                return Resources;
+                return ExtendedResources;
             })();
     
             core.RuntimeMetadata = (function() {
@@ -13066,6 +13066,7 @@
                  * @property {flyteidl.core.ISql|null} [sql] TaskTemplate sql
                  * @property {number|null} [taskTypeVersion] TaskTemplate taskTypeVersion
                  * @property {flyteidl.core.ISecurityContext|null} [securityContext] TaskTemplate securityContext
+                 * @property {flyteidl.core.IExtendedResources|null} [extendedResources] TaskTemplate extendedResources
                  * @property {Object.<string,string>|null} [config] TaskTemplate config
                  */
     
@@ -13166,6 +13167,14 @@
                 TaskTemplate.prototype.securityContext = null;
     
                 /**
+                 * TaskTemplate extendedResources.
+                 * @member {flyteidl.core.IExtendedResources|null|undefined} extendedResources
+                 * @memberof flyteidl.core.TaskTemplate
+                 * @instance
+                 */
+                TaskTemplate.prototype.extendedResources = null;
+    
+                /**
                  * TaskTemplate config.
                  * @member {Object.<string,string>} config
                  * @memberof flyteidl.core.TaskTemplate
@@ -13227,6 +13236,8 @@
                         writer.uint32(/* id 7, wireType 0 =*/56).int32(message.taskTypeVersion);
                     if (message.securityContext != null && message.hasOwnProperty("securityContext"))
                         $root.flyteidl.core.SecurityContext.encode(message.securityContext, writer.uint32(/* id 8, wireType 2 =*/66).fork()).ldelim();
+                    if (message.extendedResources != null && message.hasOwnProperty("extendedResources"))
+                        $root.flyteidl.core.ExtendedResources.encode(message.extendedResources, writer.uint32(/* id 9, wireType 2 =*/74).fork()).ldelim();
                     if (message.config != null && message.hasOwnProperty("config"))
                         for (var keys = Object.keys(message.config), i = 0; i < keys.length; ++i)
                             writer.uint32(/* id 16, wireType 2 =*/130).fork().uint32(/* id 1, wireType 2 =*/10).string(keys[i]).uint32(/* id 2, wireType 2 =*/18).string(message.config[keys[i]]).ldelim();
@@ -13284,6 +13295,9 @@
                             break;
                         case 8:
                             message.securityContext = $root.flyteidl.core.SecurityContext.decode(reader, reader.uint32());
+                            break;
+                        case 9:
+                            message.extendedResources = $root.flyteidl.core.ExtendedResources.decode(reader, reader.uint32());
                             break;
                         case 16:
                             reader.skip().pos++;
@@ -13371,6 +13385,11 @@
                         var error = $root.flyteidl.core.SecurityContext.verify(message.securityContext);
                         if (error)
                             return "securityContext." + error;
+                    }
+                    if (message.extendedResources != null && message.hasOwnProperty("extendedResources")) {
+                        var error = $root.flyteidl.core.ExtendedResources.verify(message.extendedResources);
+                        if (error)
+                            return "extendedResources." + error;
                     }
                     if (message.config != null && message.hasOwnProperty("config")) {
                         if (!$util.isObject(message.config))
