@@ -101,12 +101,12 @@ public final class Cloudevents {
     /**
      * <code>repeated .flyteidl.core.ArtifactID artifact_ids = 6;</code>
      */
-    java.util.List<flyteidl.core.IdentifierOuterClass.ArtifactID> 
+    java.util.List<flyteidl.core.ArtifactId.ArtifactID> 
         getArtifactIdsList();
     /**
      * <code>repeated .flyteidl.core.ArtifactID artifact_ids = 6;</code>
      */
-    flyteidl.core.IdentifierOuterClass.ArtifactID getArtifactIds(int index);
+    flyteidl.core.ArtifactId.ArtifactID getArtifactIds(int index);
     /**
      * <code>repeated .flyteidl.core.ArtifactID artifact_ids = 6;</code>
      */
@@ -114,12 +114,12 @@ public final class Cloudevents {
     /**
      * <code>repeated .flyteidl.core.ArtifactID artifact_ids = 6;</code>
      */
-    java.util.List<? extends flyteidl.core.IdentifierOuterClass.ArtifactIDOrBuilder> 
+    java.util.List<? extends flyteidl.core.ArtifactId.ArtifactIDOrBuilder> 
         getArtifactIdsOrBuilderList();
     /**
      * <code>repeated .flyteidl.core.ArtifactID artifact_ids = 6;</code>
      */
-    flyteidl.core.IdentifierOuterClass.ArtifactIDOrBuilder getArtifactIdsOrBuilder(
+    flyteidl.core.ArtifactId.ArtifactIDOrBuilder getArtifactIdsOrBuilder(
         int index);
 
     /**
@@ -260,11 +260,11 @@ public final class Cloudevents {
             }
             case 50: {
               if (!((mutable_bitField0_ & 0x00000020) != 0)) {
-                artifactIds_ = new java.util.ArrayList<flyteidl.core.IdentifierOuterClass.ArtifactID>();
+                artifactIds_ = new java.util.ArrayList<flyteidl.core.ArtifactId.ArtifactID>();
                 mutable_bitField0_ |= 0x00000020;
               }
               artifactIds_.add(
-                  input.readMessage(flyteidl.core.IdentifierOuterClass.ArtifactID.parser(), extensionRegistry));
+                  input.readMessage(flyteidl.core.ArtifactId.ArtifactID.parser(), extensionRegistry));
               break;
             }
             case 58: {
@@ -450,17 +450,17 @@ public final class Cloudevents {
     }
 
     public static final int ARTIFACT_IDS_FIELD_NUMBER = 6;
-    private java.util.List<flyteidl.core.IdentifierOuterClass.ArtifactID> artifactIds_;
+    private java.util.List<flyteidl.core.ArtifactId.ArtifactID> artifactIds_;
     /**
      * <code>repeated .flyteidl.core.ArtifactID artifact_ids = 6;</code>
      */
-    public java.util.List<flyteidl.core.IdentifierOuterClass.ArtifactID> getArtifactIdsList() {
+    public java.util.List<flyteidl.core.ArtifactId.ArtifactID> getArtifactIdsList() {
       return artifactIds_;
     }
     /**
      * <code>repeated .flyteidl.core.ArtifactID artifact_ids = 6;</code>
      */
-    public java.util.List<? extends flyteidl.core.IdentifierOuterClass.ArtifactIDOrBuilder> 
+    public java.util.List<? extends flyteidl.core.ArtifactId.ArtifactIDOrBuilder> 
         getArtifactIdsOrBuilderList() {
       return artifactIds_;
     }
@@ -473,13 +473,13 @@ public final class Cloudevents {
     /**
      * <code>repeated .flyteidl.core.ArtifactID artifact_ids = 6;</code>
      */
-    public flyteidl.core.IdentifierOuterClass.ArtifactID getArtifactIds(int index) {
+    public flyteidl.core.ArtifactId.ArtifactID getArtifactIds(int index) {
       return artifactIds_.get(index);
     }
     /**
      * <code>repeated .flyteidl.core.ArtifactID artifact_ids = 6;</code>
      */
-    public flyteidl.core.IdentifierOuterClass.ArtifactIDOrBuilder getArtifactIdsOrBuilder(
+    public flyteidl.core.ArtifactId.ArtifactIDOrBuilder getArtifactIdsOrBuilder(
         int index) {
       return artifactIds_.get(index);
     }
@@ -1715,22 +1715,22 @@ public final class Cloudevents {
         return scheduledAtBuilder_;
       }
 
-      private java.util.List<flyteidl.core.IdentifierOuterClass.ArtifactID> artifactIds_ =
+      private java.util.List<flyteidl.core.ArtifactId.ArtifactID> artifactIds_ =
         java.util.Collections.emptyList();
       private void ensureArtifactIdsIsMutable() {
         if (!((bitField0_ & 0x00000020) != 0)) {
-          artifactIds_ = new java.util.ArrayList<flyteidl.core.IdentifierOuterClass.ArtifactID>(artifactIds_);
+          artifactIds_ = new java.util.ArrayList<flyteidl.core.ArtifactId.ArtifactID>(artifactIds_);
           bitField0_ |= 0x00000020;
          }
       }
 
       private com.google.protobuf.RepeatedFieldBuilderV3<
-          flyteidl.core.IdentifierOuterClass.ArtifactID, flyteidl.core.IdentifierOuterClass.ArtifactID.Builder, flyteidl.core.IdentifierOuterClass.ArtifactIDOrBuilder> artifactIdsBuilder_;
+          flyteidl.core.ArtifactId.ArtifactID, flyteidl.core.ArtifactId.ArtifactID.Builder, flyteidl.core.ArtifactId.ArtifactIDOrBuilder> artifactIdsBuilder_;
 
       /**
        * <code>repeated .flyteidl.core.ArtifactID artifact_ids = 6;</code>
        */
-      public java.util.List<flyteidl.core.IdentifierOuterClass.ArtifactID> getArtifactIdsList() {
+      public java.util.List<flyteidl.core.ArtifactId.ArtifactID> getArtifactIdsList() {
         if (artifactIdsBuilder_ == null) {
           return java.util.Collections.unmodifiableList(artifactIds_);
         } else {
@@ -1750,7 +1750,7 @@ public final class Cloudevents {
       /**
        * <code>repeated .flyteidl.core.ArtifactID artifact_ids = 6;</code>
        */
-      public flyteidl.core.IdentifierOuterClass.ArtifactID getArtifactIds(int index) {
+      public flyteidl.core.ArtifactId.ArtifactID getArtifactIds(int index) {
         if (artifactIdsBuilder_ == null) {
           return artifactIds_.get(index);
         } else {
@@ -1761,7 +1761,7 @@ public final class Cloudevents {
        * <code>repeated .flyteidl.core.ArtifactID artifact_ids = 6;</code>
        */
       public Builder setArtifactIds(
-          int index, flyteidl.core.IdentifierOuterClass.ArtifactID value) {
+          int index, flyteidl.core.ArtifactId.ArtifactID value) {
         if (artifactIdsBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
@@ -1778,7 +1778,7 @@ public final class Cloudevents {
        * <code>repeated .flyteidl.core.ArtifactID artifact_ids = 6;</code>
        */
       public Builder setArtifactIds(
-          int index, flyteidl.core.IdentifierOuterClass.ArtifactID.Builder builderForValue) {
+          int index, flyteidl.core.ArtifactId.ArtifactID.Builder builderForValue) {
         if (artifactIdsBuilder_ == null) {
           ensureArtifactIdsIsMutable();
           artifactIds_.set(index, builderForValue.build());
@@ -1791,7 +1791,7 @@ public final class Cloudevents {
       /**
        * <code>repeated .flyteidl.core.ArtifactID artifact_ids = 6;</code>
        */
-      public Builder addArtifactIds(flyteidl.core.IdentifierOuterClass.ArtifactID value) {
+      public Builder addArtifactIds(flyteidl.core.ArtifactId.ArtifactID value) {
         if (artifactIdsBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
@@ -1808,7 +1808,7 @@ public final class Cloudevents {
        * <code>repeated .flyteidl.core.ArtifactID artifact_ids = 6;</code>
        */
       public Builder addArtifactIds(
-          int index, flyteidl.core.IdentifierOuterClass.ArtifactID value) {
+          int index, flyteidl.core.ArtifactId.ArtifactID value) {
         if (artifactIdsBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
@@ -1825,7 +1825,7 @@ public final class Cloudevents {
        * <code>repeated .flyteidl.core.ArtifactID artifact_ids = 6;</code>
        */
       public Builder addArtifactIds(
-          flyteidl.core.IdentifierOuterClass.ArtifactID.Builder builderForValue) {
+          flyteidl.core.ArtifactId.ArtifactID.Builder builderForValue) {
         if (artifactIdsBuilder_ == null) {
           ensureArtifactIdsIsMutable();
           artifactIds_.add(builderForValue.build());
@@ -1839,7 +1839,7 @@ public final class Cloudevents {
        * <code>repeated .flyteidl.core.ArtifactID artifact_ids = 6;</code>
        */
       public Builder addArtifactIds(
-          int index, flyteidl.core.IdentifierOuterClass.ArtifactID.Builder builderForValue) {
+          int index, flyteidl.core.ArtifactId.ArtifactID.Builder builderForValue) {
         if (artifactIdsBuilder_ == null) {
           ensureArtifactIdsIsMutable();
           artifactIds_.add(index, builderForValue.build());
@@ -1853,7 +1853,7 @@ public final class Cloudevents {
        * <code>repeated .flyteidl.core.ArtifactID artifact_ids = 6;</code>
        */
       public Builder addAllArtifactIds(
-          java.lang.Iterable<? extends flyteidl.core.IdentifierOuterClass.ArtifactID> values) {
+          java.lang.Iterable<? extends flyteidl.core.ArtifactId.ArtifactID> values) {
         if (artifactIdsBuilder_ == null) {
           ensureArtifactIdsIsMutable();
           com.google.protobuf.AbstractMessageLite.Builder.addAll(
@@ -1893,14 +1893,14 @@ public final class Cloudevents {
       /**
        * <code>repeated .flyteidl.core.ArtifactID artifact_ids = 6;</code>
        */
-      public flyteidl.core.IdentifierOuterClass.ArtifactID.Builder getArtifactIdsBuilder(
+      public flyteidl.core.ArtifactId.ArtifactID.Builder getArtifactIdsBuilder(
           int index) {
         return getArtifactIdsFieldBuilder().getBuilder(index);
       }
       /**
        * <code>repeated .flyteidl.core.ArtifactID artifact_ids = 6;</code>
        */
-      public flyteidl.core.IdentifierOuterClass.ArtifactIDOrBuilder getArtifactIdsOrBuilder(
+      public flyteidl.core.ArtifactId.ArtifactIDOrBuilder getArtifactIdsOrBuilder(
           int index) {
         if (artifactIdsBuilder_ == null) {
           return artifactIds_.get(index);  } else {
@@ -1910,7 +1910,7 @@ public final class Cloudevents {
       /**
        * <code>repeated .flyteidl.core.ArtifactID artifact_ids = 6;</code>
        */
-      public java.util.List<? extends flyteidl.core.IdentifierOuterClass.ArtifactIDOrBuilder> 
+      public java.util.List<? extends flyteidl.core.ArtifactId.ArtifactIDOrBuilder> 
            getArtifactIdsOrBuilderList() {
         if (artifactIdsBuilder_ != null) {
           return artifactIdsBuilder_.getMessageOrBuilderList();
@@ -1921,31 +1921,31 @@ public final class Cloudevents {
       /**
        * <code>repeated .flyteidl.core.ArtifactID artifact_ids = 6;</code>
        */
-      public flyteidl.core.IdentifierOuterClass.ArtifactID.Builder addArtifactIdsBuilder() {
+      public flyteidl.core.ArtifactId.ArtifactID.Builder addArtifactIdsBuilder() {
         return getArtifactIdsFieldBuilder().addBuilder(
-            flyteidl.core.IdentifierOuterClass.ArtifactID.getDefaultInstance());
+            flyteidl.core.ArtifactId.ArtifactID.getDefaultInstance());
       }
       /**
        * <code>repeated .flyteidl.core.ArtifactID artifact_ids = 6;</code>
        */
-      public flyteidl.core.IdentifierOuterClass.ArtifactID.Builder addArtifactIdsBuilder(
+      public flyteidl.core.ArtifactId.ArtifactID.Builder addArtifactIdsBuilder(
           int index) {
         return getArtifactIdsFieldBuilder().addBuilder(
-            index, flyteidl.core.IdentifierOuterClass.ArtifactID.getDefaultInstance());
+            index, flyteidl.core.ArtifactId.ArtifactID.getDefaultInstance());
       }
       /**
        * <code>repeated .flyteidl.core.ArtifactID artifact_ids = 6;</code>
        */
-      public java.util.List<flyteidl.core.IdentifierOuterClass.ArtifactID.Builder> 
+      public java.util.List<flyteidl.core.ArtifactId.ArtifactID.Builder> 
            getArtifactIdsBuilderList() {
         return getArtifactIdsFieldBuilder().getBuilderList();
       }
       private com.google.protobuf.RepeatedFieldBuilderV3<
-          flyteidl.core.IdentifierOuterClass.ArtifactID, flyteidl.core.IdentifierOuterClass.ArtifactID.Builder, flyteidl.core.IdentifierOuterClass.ArtifactIDOrBuilder> 
+          flyteidl.core.ArtifactId.ArtifactID, flyteidl.core.ArtifactId.ArtifactID.Builder, flyteidl.core.ArtifactId.ArtifactIDOrBuilder> 
           getArtifactIdsFieldBuilder() {
         if (artifactIdsBuilder_ == null) {
           artifactIdsBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
-              flyteidl.core.IdentifierOuterClass.ArtifactID, flyteidl.core.IdentifierOuterClass.ArtifactID.Builder, flyteidl.core.IdentifierOuterClass.ArtifactIDOrBuilder>(
+              flyteidl.core.ArtifactId.ArtifactID, flyteidl.core.ArtifactId.ArtifactID.Builder, flyteidl.core.ArtifactId.ArtifactIDOrBuilder>(
                   artifactIds_,
                   ((bitField0_ & 0x00000020) != 0),
                   getParentForChildren(),
@@ -2958,12 +2958,12 @@ public final class Cloudevents {
     /**
      * <code>repeated .flyteidl.core.ArtifactID artifact_ids = 6;</code>
      */
-    java.util.List<flyteidl.core.IdentifierOuterClass.ArtifactID> 
+    java.util.List<flyteidl.core.ArtifactId.ArtifactID> 
         getArtifactIdsList();
     /**
      * <code>repeated .flyteidl.core.ArtifactID artifact_ids = 6;</code>
      */
-    flyteidl.core.IdentifierOuterClass.ArtifactID getArtifactIds(int index);
+    flyteidl.core.ArtifactId.ArtifactID getArtifactIds(int index);
     /**
      * <code>repeated .flyteidl.core.ArtifactID artifact_ids = 6;</code>
      */
@@ -2971,12 +2971,12 @@ public final class Cloudevents {
     /**
      * <code>repeated .flyteidl.core.ArtifactID artifact_ids = 6;</code>
      */
-    java.util.List<? extends flyteidl.core.IdentifierOuterClass.ArtifactIDOrBuilder> 
+    java.util.List<? extends flyteidl.core.ArtifactId.ArtifactIDOrBuilder> 
         getArtifactIdsOrBuilderList();
     /**
      * <code>repeated .flyteidl.core.ArtifactID artifact_ids = 6;</code>
      */
-    flyteidl.core.IdentifierOuterClass.ArtifactIDOrBuilder getArtifactIdsOrBuilder(
+    flyteidl.core.ArtifactId.ArtifactIDOrBuilder getArtifactIdsOrBuilder(
         int index);
 
     /**
@@ -3112,11 +3112,11 @@ public final class Cloudevents {
             }
             case 50: {
               if (!((mutable_bitField0_ & 0x00000020) != 0)) {
-                artifactIds_ = new java.util.ArrayList<flyteidl.core.IdentifierOuterClass.ArtifactID>();
+                artifactIds_ = new java.util.ArrayList<flyteidl.core.ArtifactId.ArtifactID>();
                 mutable_bitField0_ |= 0x00000020;
               }
               artifactIds_.add(
-                  input.readMessage(flyteidl.core.IdentifierOuterClass.ArtifactID.parser(), extensionRegistry));
+                  input.readMessage(flyteidl.core.ArtifactId.ArtifactID.parser(), extensionRegistry));
               break;
             }
             case 58: {
@@ -3326,17 +3326,17 @@ public final class Cloudevents {
     }
 
     public static final int ARTIFACT_IDS_FIELD_NUMBER = 6;
-    private java.util.List<flyteidl.core.IdentifierOuterClass.ArtifactID> artifactIds_;
+    private java.util.List<flyteidl.core.ArtifactId.ArtifactID> artifactIds_;
     /**
      * <code>repeated .flyteidl.core.ArtifactID artifact_ids = 6;</code>
      */
-    public java.util.List<flyteidl.core.IdentifierOuterClass.ArtifactID> getArtifactIdsList() {
+    public java.util.List<flyteidl.core.ArtifactId.ArtifactID> getArtifactIdsList() {
       return artifactIds_;
     }
     /**
      * <code>repeated .flyteidl.core.ArtifactID artifact_ids = 6;</code>
      */
-    public java.util.List<? extends flyteidl.core.IdentifierOuterClass.ArtifactIDOrBuilder> 
+    public java.util.List<? extends flyteidl.core.ArtifactId.ArtifactIDOrBuilder> 
         getArtifactIdsOrBuilderList() {
       return artifactIds_;
     }
@@ -3349,13 +3349,13 @@ public final class Cloudevents {
     /**
      * <code>repeated .flyteidl.core.ArtifactID artifact_ids = 6;</code>
      */
-    public flyteidl.core.IdentifierOuterClass.ArtifactID getArtifactIds(int index) {
+    public flyteidl.core.ArtifactId.ArtifactID getArtifactIds(int index) {
       return artifactIds_.get(index);
     }
     /**
      * <code>repeated .flyteidl.core.ArtifactID artifact_ids = 6;</code>
      */
-    public flyteidl.core.IdentifierOuterClass.ArtifactIDOrBuilder getArtifactIdsOrBuilder(
+    public flyteidl.core.ArtifactId.ArtifactIDOrBuilder getArtifactIdsOrBuilder(
         int index) {
       return artifactIds_.get(index);
     }
@@ -4658,22 +4658,22 @@ public final class Cloudevents {
         return scheduledAtBuilder_;
       }
 
-      private java.util.List<flyteidl.core.IdentifierOuterClass.ArtifactID> artifactIds_ =
+      private java.util.List<flyteidl.core.ArtifactId.ArtifactID> artifactIds_ =
         java.util.Collections.emptyList();
       private void ensureArtifactIdsIsMutable() {
         if (!((bitField0_ & 0x00000020) != 0)) {
-          artifactIds_ = new java.util.ArrayList<flyteidl.core.IdentifierOuterClass.ArtifactID>(artifactIds_);
+          artifactIds_ = new java.util.ArrayList<flyteidl.core.ArtifactId.ArtifactID>(artifactIds_);
           bitField0_ |= 0x00000020;
          }
       }
 
       private com.google.protobuf.RepeatedFieldBuilderV3<
-          flyteidl.core.IdentifierOuterClass.ArtifactID, flyteidl.core.IdentifierOuterClass.ArtifactID.Builder, flyteidl.core.IdentifierOuterClass.ArtifactIDOrBuilder> artifactIdsBuilder_;
+          flyteidl.core.ArtifactId.ArtifactID, flyteidl.core.ArtifactId.ArtifactID.Builder, flyteidl.core.ArtifactId.ArtifactIDOrBuilder> artifactIdsBuilder_;
 
       /**
        * <code>repeated .flyteidl.core.ArtifactID artifact_ids = 6;</code>
        */
-      public java.util.List<flyteidl.core.IdentifierOuterClass.ArtifactID> getArtifactIdsList() {
+      public java.util.List<flyteidl.core.ArtifactId.ArtifactID> getArtifactIdsList() {
         if (artifactIdsBuilder_ == null) {
           return java.util.Collections.unmodifiableList(artifactIds_);
         } else {
@@ -4693,7 +4693,7 @@ public final class Cloudevents {
       /**
        * <code>repeated .flyteidl.core.ArtifactID artifact_ids = 6;</code>
        */
-      public flyteidl.core.IdentifierOuterClass.ArtifactID getArtifactIds(int index) {
+      public flyteidl.core.ArtifactId.ArtifactID getArtifactIds(int index) {
         if (artifactIdsBuilder_ == null) {
           return artifactIds_.get(index);
         } else {
@@ -4704,7 +4704,7 @@ public final class Cloudevents {
        * <code>repeated .flyteidl.core.ArtifactID artifact_ids = 6;</code>
        */
       public Builder setArtifactIds(
-          int index, flyteidl.core.IdentifierOuterClass.ArtifactID value) {
+          int index, flyteidl.core.ArtifactId.ArtifactID value) {
         if (artifactIdsBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
@@ -4721,7 +4721,7 @@ public final class Cloudevents {
        * <code>repeated .flyteidl.core.ArtifactID artifact_ids = 6;</code>
        */
       public Builder setArtifactIds(
-          int index, flyteidl.core.IdentifierOuterClass.ArtifactID.Builder builderForValue) {
+          int index, flyteidl.core.ArtifactId.ArtifactID.Builder builderForValue) {
         if (artifactIdsBuilder_ == null) {
           ensureArtifactIdsIsMutable();
           artifactIds_.set(index, builderForValue.build());
@@ -4734,7 +4734,7 @@ public final class Cloudevents {
       /**
        * <code>repeated .flyteidl.core.ArtifactID artifact_ids = 6;</code>
        */
-      public Builder addArtifactIds(flyteidl.core.IdentifierOuterClass.ArtifactID value) {
+      public Builder addArtifactIds(flyteidl.core.ArtifactId.ArtifactID value) {
         if (artifactIdsBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
@@ -4751,7 +4751,7 @@ public final class Cloudevents {
        * <code>repeated .flyteidl.core.ArtifactID artifact_ids = 6;</code>
        */
       public Builder addArtifactIds(
-          int index, flyteidl.core.IdentifierOuterClass.ArtifactID value) {
+          int index, flyteidl.core.ArtifactId.ArtifactID value) {
         if (artifactIdsBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
@@ -4768,7 +4768,7 @@ public final class Cloudevents {
        * <code>repeated .flyteidl.core.ArtifactID artifact_ids = 6;</code>
        */
       public Builder addArtifactIds(
-          flyteidl.core.IdentifierOuterClass.ArtifactID.Builder builderForValue) {
+          flyteidl.core.ArtifactId.ArtifactID.Builder builderForValue) {
         if (artifactIdsBuilder_ == null) {
           ensureArtifactIdsIsMutable();
           artifactIds_.add(builderForValue.build());
@@ -4782,7 +4782,7 @@ public final class Cloudevents {
        * <code>repeated .flyteidl.core.ArtifactID artifact_ids = 6;</code>
        */
       public Builder addArtifactIds(
-          int index, flyteidl.core.IdentifierOuterClass.ArtifactID.Builder builderForValue) {
+          int index, flyteidl.core.ArtifactId.ArtifactID.Builder builderForValue) {
         if (artifactIdsBuilder_ == null) {
           ensureArtifactIdsIsMutable();
           artifactIds_.add(index, builderForValue.build());
@@ -4796,7 +4796,7 @@ public final class Cloudevents {
        * <code>repeated .flyteidl.core.ArtifactID artifact_ids = 6;</code>
        */
       public Builder addAllArtifactIds(
-          java.lang.Iterable<? extends flyteidl.core.IdentifierOuterClass.ArtifactID> values) {
+          java.lang.Iterable<? extends flyteidl.core.ArtifactId.ArtifactID> values) {
         if (artifactIdsBuilder_ == null) {
           ensureArtifactIdsIsMutable();
           com.google.protobuf.AbstractMessageLite.Builder.addAll(
@@ -4836,14 +4836,14 @@ public final class Cloudevents {
       /**
        * <code>repeated .flyteidl.core.ArtifactID artifact_ids = 6;</code>
        */
-      public flyteidl.core.IdentifierOuterClass.ArtifactID.Builder getArtifactIdsBuilder(
+      public flyteidl.core.ArtifactId.ArtifactID.Builder getArtifactIdsBuilder(
           int index) {
         return getArtifactIdsFieldBuilder().getBuilder(index);
       }
       /**
        * <code>repeated .flyteidl.core.ArtifactID artifact_ids = 6;</code>
        */
-      public flyteidl.core.IdentifierOuterClass.ArtifactIDOrBuilder getArtifactIdsOrBuilder(
+      public flyteidl.core.ArtifactId.ArtifactIDOrBuilder getArtifactIdsOrBuilder(
           int index) {
         if (artifactIdsBuilder_ == null) {
           return artifactIds_.get(index);  } else {
@@ -4853,7 +4853,7 @@ public final class Cloudevents {
       /**
        * <code>repeated .flyteidl.core.ArtifactID artifact_ids = 6;</code>
        */
-      public java.util.List<? extends flyteidl.core.IdentifierOuterClass.ArtifactIDOrBuilder> 
+      public java.util.List<? extends flyteidl.core.ArtifactId.ArtifactIDOrBuilder> 
            getArtifactIdsOrBuilderList() {
         if (artifactIdsBuilder_ != null) {
           return artifactIdsBuilder_.getMessageOrBuilderList();
@@ -4864,31 +4864,31 @@ public final class Cloudevents {
       /**
        * <code>repeated .flyteidl.core.ArtifactID artifact_ids = 6;</code>
        */
-      public flyteidl.core.IdentifierOuterClass.ArtifactID.Builder addArtifactIdsBuilder() {
+      public flyteidl.core.ArtifactId.ArtifactID.Builder addArtifactIdsBuilder() {
         return getArtifactIdsFieldBuilder().addBuilder(
-            flyteidl.core.IdentifierOuterClass.ArtifactID.getDefaultInstance());
+            flyteidl.core.ArtifactId.ArtifactID.getDefaultInstance());
       }
       /**
        * <code>repeated .flyteidl.core.ArtifactID artifact_ids = 6;</code>
        */
-      public flyteidl.core.IdentifierOuterClass.ArtifactID.Builder addArtifactIdsBuilder(
+      public flyteidl.core.ArtifactId.ArtifactID.Builder addArtifactIdsBuilder(
           int index) {
         return getArtifactIdsFieldBuilder().addBuilder(
-            index, flyteidl.core.IdentifierOuterClass.ArtifactID.getDefaultInstance());
+            index, flyteidl.core.ArtifactId.ArtifactID.getDefaultInstance());
       }
       /**
        * <code>repeated .flyteidl.core.ArtifactID artifact_ids = 6;</code>
        */
-      public java.util.List<flyteidl.core.IdentifierOuterClass.ArtifactID.Builder> 
+      public java.util.List<flyteidl.core.ArtifactId.ArtifactID.Builder> 
            getArtifactIdsBuilderList() {
         return getArtifactIdsFieldBuilder().getBuilderList();
       }
       private com.google.protobuf.RepeatedFieldBuilderV3<
-          flyteidl.core.IdentifierOuterClass.ArtifactID, flyteidl.core.IdentifierOuterClass.ArtifactID.Builder, flyteidl.core.IdentifierOuterClass.ArtifactIDOrBuilder> 
+          flyteidl.core.ArtifactId.ArtifactID, flyteidl.core.ArtifactId.ArtifactID.Builder, flyteidl.core.ArtifactId.ArtifactIDOrBuilder> 
           getArtifactIdsFieldBuilder() {
         if (artifactIdsBuilder_ == null) {
           artifactIdsBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
-              flyteidl.core.IdentifierOuterClass.ArtifactID, flyteidl.core.IdentifierOuterClass.ArtifactID.Builder, flyteidl.core.IdentifierOuterClass.ArtifactIDOrBuilder>(
+              flyteidl.core.ArtifactId.ArtifactID, flyteidl.core.ArtifactId.ArtifactID.Builder, flyteidl.core.ArtifactId.ArtifactIDOrBuilder>(
                   artifactIds_,
                   ((bitField0_ & 0x00000020) != 0),
                   getParentForChildren(),
@@ -5258,7 +5258,7 @@ public final class Cloudevents {
      *
      * <code>repeated .flyteidl.core.ArtifactID artifact_ids = 4;</code>
      */
-    java.util.List<flyteidl.core.IdentifierOuterClass.ArtifactID> 
+    java.util.List<flyteidl.core.ArtifactId.ArtifactID> 
         getArtifactIdsList();
     /**
      * <pre>
@@ -5267,7 +5267,7 @@ public final class Cloudevents {
      *
      * <code>repeated .flyteidl.core.ArtifactID artifact_ids = 4;</code>
      */
-    flyteidl.core.IdentifierOuterClass.ArtifactID getArtifactIds(int index);
+    flyteidl.core.ArtifactId.ArtifactID getArtifactIds(int index);
     /**
      * <pre>
      * Artifact IDs found
@@ -5283,7 +5283,7 @@ public final class Cloudevents {
      *
      * <code>repeated .flyteidl.core.ArtifactID artifact_ids = 4;</code>
      */
-    java.util.List<? extends flyteidl.core.IdentifierOuterClass.ArtifactIDOrBuilder> 
+    java.util.List<? extends flyteidl.core.ArtifactId.ArtifactIDOrBuilder> 
         getArtifactIdsOrBuilderList();
     /**
      * <pre>
@@ -5292,7 +5292,7 @@ public final class Cloudevents {
      *
      * <code>repeated .flyteidl.core.ArtifactID artifact_ids = 4;</code>
      */
-    flyteidl.core.IdentifierOuterClass.ArtifactIDOrBuilder getArtifactIdsOrBuilder(
+    flyteidl.core.ArtifactId.ArtifactIDOrBuilder getArtifactIdsOrBuilder(
         int index);
 
     /**
@@ -5416,11 +5416,11 @@ public final class Cloudevents {
             }
             case 34: {
               if (!((mutable_bitField0_ & 0x00000008) != 0)) {
-                artifactIds_ = new java.util.ArrayList<flyteidl.core.IdentifierOuterClass.ArtifactID>();
+                artifactIds_ = new java.util.ArrayList<flyteidl.core.ArtifactId.ArtifactID>();
                 mutable_bitField0_ |= 0x00000008;
               }
               artifactIds_.add(
-                  input.readMessage(flyteidl.core.IdentifierOuterClass.ArtifactID.parser(), extensionRegistry));
+                  input.readMessage(flyteidl.core.ArtifactId.ArtifactID.parser(), extensionRegistry));
               break;
             }
             case 42: {
@@ -5559,7 +5559,7 @@ public final class Cloudevents {
     }
 
     public static final int ARTIFACT_IDS_FIELD_NUMBER = 4;
-    private java.util.List<flyteidl.core.IdentifierOuterClass.ArtifactID> artifactIds_;
+    private java.util.List<flyteidl.core.ArtifactId.ArtifactID> artifactIds_;
     /**
      * <pre>
      * Artifact IDs found
@@ -5567,7 +5567,7 @@ public final class Cloudevents {
      *
      * <code>repeated .flyteidl.core.ArtifactID artifact_ids = 4;</code>
      */
-    public java.util.List<flyteidl.core.IdentifierOuterClass.ArtifactID> getArtifactIdsList() {
+    public java.util.List<flyteidl.core.ArtifactId.ArtifactID> getArtifactIdsList() {
       return artifactIds_;
     }
     /**
@@ -5577,7 +5577,7 @@ public final class Cloudevents {
      *
      * <code>repeated .flyteidl.core.ArtifactID artifact_ids = 4;</code>
      */
-    public java.util.List<? extends flyteidl.core.IdentifierOuterClass.ArtifactIDOrBuilder> 
+    public java.util.List<? extends flyteidl.core.ArtifactId.ArtifactIDOrBuilder> 
         getArtifactIdsOrBuilderList() {
       return artifactIds_;
     }
@@ -5598,7 +5598,7 @@ public final class Cloudevents {
      *
      * <code>repeated .flyteidl.core.ArtifactID artifact_ids = 4;</code>
      */
-    public flyteidl.core.IdentifierOuterClass.ArtifactID getArtifactIds(int index) {
+    public flyteidl.core.ArtifactId.ArtifactID getArtifactIds(int index) {
       return artifactIds_.get(index);
     }
     /**
@@ -5608,7 +5608,7 @@ public final class Cloudevents {
      *
      * <code>repeated .flyteidl.core.ArtifactID artifact_ids = 4;</code>
      */
-    public flyteidl.core.IdentifierOuterClass.ArtifactIDOrBuilder getArtifactIdsOrBuilder(
+    public flyteidl.core.ArtifactId.ArtifactIDOrBuilder getArtifactIdsOrBuilder(
         int index) {
       return artifactIds_.get(index);
     }
@@ -6553,17 +6553,17 @@ public final class Cloudevents {
         return workflowIdBuilder_;
       }
 
-      private java.util.List<flyteidl.core.IdentifierOuterClass.ArtifactID> artifactIds_ =
+      private java.util.List<flyteidl.core.ArtifactId.ArtifactID> artifactIds_ =
         java.util.Collections.emptyList();
       private void ensureArtifactIdsIsMutable() {
         if (!((bitField0_ & 0x00000008) != 0)) {
-          artifactIds_ = new java.util.ArrayList<flyteidl.core.IdentifierOuterClass.ArtifactID>(artifactIds_);
+          artifactIds_ = new java.util.ArrayList<flyteidl.core.ArtifactId.ArtifactID>(artifactIds_);
           bitField0_ |= 0x00000008;
          }
       }
 
       private com.google.protobuf.RepeatedFieldBuilderV3<
-          flyteidl.core.IdentifierOuterClass.ArtifactID, flyteidl.core.IdentifierOuterClass.ArtifactID.Builder, flyteidl.core.IdentifierOuterClass.ArtifactIDOrBuilder> artifactIdsBuilder_;
+          flyteidl.core.ArtifactId.ArtifactID, flyteidl.core.ArtifactId.ArtifactID.Builder, flyteidl.core.ArtifactId.ArtifactIDOrBuilder> artifactIdsBuilder_;
 
       /**
        * <pre>
@@ -6572,7 +6572,7 @@ public final class Cloudevents {
        *
        * <code>repeated .flyteidl.core.ArtifactID artifact_ids = 4;</code>
        */
-      public java.util.List<flyteidl.core.IdentifierOuterClass.ArtifactID> getArtifactIdsList() {
+      public java.util.List<flyteidl.core.ArtifactId.ArtifactID> getArtifactIdsList() {
         if (artifactIdsBuilder_ == null) {
           return java.util.Collections.unmodifiableList(artifactIds_);
         } else {
@@ -6600,7 +6600,7 @@ public final class Cloudevents {
        *
        * <code>repeated .flyteidl.core.ArtifactID artifact_ids = 4;</code>
        */
-      public flyteidl.core.IdentifierOuterClass.ArtifactID getArtifactIds(int index) {
+      public flyteidl.core.ArtifactId.ArtifactID getArtifactIds(int index) {
         if (artifactIdsBuilder_ == null) {
           return artifactIds_.get(index);
         } else {
@@ -6615,7 +6615,7 @@ public final class Cloudevents {
        * <code>repeated .flyteidl.core.ArtifactID artifact_ids = 4;</code>
        */
       public Builder setArtifactIds(
-          int index, flyteidl.core.IdentifierOuterClass.ArtifactID value) {
+          int index, flyteidl.core.ArtifactId.ArtifactID value) {
         if (artifactIdsBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
@@ -6636,7 +6636,7 @@ public final class Cloudevents {
        * <code>repeated .flyteidl.core.ArtifactID artifact_ids = 4;</code>
        */
       public Builder setArtifactIds(
-          int index, flyteidl.core.IdentifierOuterClass.ArtifactID.Builder builderForValue) {
+          int index, flyteidl.core.ArtifactId.ArtifactID.Builder builderForValue) {
         if (artifactIdsBuilder_ == null) {
           ensureArtifactIdsIsMutable();
           artifactIds_.set(index, builderForValue.build());
@@ -6653,7 +6653,7 @@ public final class Cloudevents {
        *
        * <code>repeated .flyteidl.core.ArtifactID artifact_ids = 4;</code>
        */
-      public Builder addArtifactIds(flyteidl.core.IdentifierOuterClass.ArtifactID value) {
+      public Builder addArtifactIds(flyteidl.core.ArtifactId.ArtifactID value) {
         if (artifactIdsBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
@@ -6674,7 +6674,7 @@ public final class Cloudevents {
        * <code>repeated .flyteidl.core.ArtifactID artifact_ids = 4;</code>
        */
       public Builder addArtifactIds(
-          int index, flyteidl.core.IdentifierOuterClass.ArtifactID value) {
+          int index, flyteidl.core.ArtifactId.ArtifactID value) {
         if (artifactIdsBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
@@ -6695,7 +6695,7 @@ public final class Cloudevents {
        * <code>repeated .flyteidl.core.ArtifactID artifact_ids = 4;</code>
        */
       public Builder addArtifactIds(
-          flyteidl.core.IdentifierOuterClass.ArtifactID.Builder builderForValue) {
+          flyteidl.core.ArtifactId.ArtifactID.Builder builderForValue) {
         if (artifactIdsBuilder_ == null) {
           ensureArtifactIdsIsMutable();
           artifactIds_.add(builderForValue.build());
@@ -6713,7 +6713,7 @@ public final class Cloudevents {
        * <code>repeated .flyteidl.core.ArtifactID artifact_ids = 4;</code>
        */
       public Builder addArtifactIds(
-          int index, flyteidl.core.IdentifierOuterClass.ArtifactID.Builder builderForValue) {
+          int index, flyteidl.core.ArtifactId.ArtifactID.Builder builderForValue) {
         if (artifactIdsBuilder_ == null) {
           ensureArtifactIdsIsMutable();
           artifactIds_.add(index, builderForValue.build());
@@ -6731,7 +6731,7 @@ public final class Cloudevents {
        * <code>repeated .flyteidl.core.ArtifactID artifact_ids = 4;</code>
        */
       public Builder addAllArtifactIds(
-          java.lang.Iterable<? extends flyteidl.core.IdentifierOuterClass.ArtifactID> values) {
+          java.lang.Iterable<? extends flyteidl.core.ArtifactId.ArtifactID> values) {
         if (artifactIdsBuilder_ == null) {
           ensureArtifactIdsIsMutable();
           com.google.protobuf.AbstractMessageLite.Builder.addAll(
@@ -6783,7 +6783,7 @@ public final class Cloudevents {
        *
        * <code>repeated .flyteidl.core.ArtifactID artifact_ids = 4;</code>
        */
-      public flyteidl.core.IdentifierOuterClass.ArtifactID.Builder getArtifactIdsBuilder(
+      public flyteidl.core.ArtifactId.ArtifactID.Builder getArtifactIdsBuilder(
           int index) {
         return getArtifactIdsFieldBuilder().getBuilder(index);
       }
@@ -6794,7 +6794,7 @@ public final class Cloudevents {
        *
        * <code>repeated .flyteidl.core.ArtifactID artifact_ids = 4;</code>
        */
-      public flyteidl.core.IdentifierOuterClass.ArtifactIDOrBuilder getArtifactIdsOrBuilder(
+      public flyteidl.core.ArtifactId.ArtifactIDOrBuilder getArtifactIdsOrBuilder(
           int index) {
         if (artifactIdsBuilder_ == null) {
           return artifactIds_.get(index);  } else {
@@ -6808,7 +6808,7 @@ public final class Cloudevents {
        *
        * <code>repeated .flyteidl.core.ArtifactID artifact_ids = 4;</code>
        */
-      public java.util.List<? extends flyteidl.core.IdentifierOuterClass.ArtifactIDOrBuilder> 
+      public java.util.List<? extends flyteidl.core.ArtifactId.ArtifactIDOrBuilder> 
            getArtifactIdsOrBuilderList() {
         if (artifactIdsBuilder_ != null) {
           return artifactIdsBuilder_.getMessageOrBuilderList();
@@ -6823,9 +6823,9 @@ public final class Cloudevents {
        *
        * <code>repeated .flyteidl.core.ArtifactID artifact_ids = 4;</code>
        */
-      public flyteidl.core.IdentifierOuterClass.ArtifactID.Builder addArtifactIdsBuilder() {
+      public flyteidl.core.ArtifactId.ArtifactID.Builder addArtifactIdsBuilder() {
         return getArtifactIdsFieldBuilder().addBuilder(
-            flyteidl.core.IdentifierOuterClass.ArtifactID.getDefaultInstance());
+            flyteidl.core.ArtifactId.ArtifactID.getDefaultInstance());
       }
       /**
        * <pre>
@@ -6834,10 +6834,10 @@ public final class Cloudevents {
        *
        * <code>repeated .flyteidl.core.ArtifactID artifact_ids = 4;</code>
        */
-      public flyteidl.core.IdentifierOuterClass.ArtifactID.Builder addArtifactIdsBuilder(
+      public flyteidl.core.ArtifactId.ArtifactID.Builder addArtifactIdsBuilder(
           int index) {
         return getArtifactIdsFieldBuilder().addBuilder(
-            index, flyteidl.core.IdentifierOuterClass.ArtifactID.getDefaultInstance());
+            index, flyteidl.core.ArtifactId.ArtifactID.getDefaultInstance());
       }
       /**
        * <pre>
@@ -6846,16 +6846,16 @@ public final class Cloudevents {
        *
        * <code>repeated .flyteidl.core.ArtifactID artifact_ids = 4;</code>
        */
-      public java.util.List<flyteidl.core.IdentifierOuterClass.ArtifactID.Builder> 
+      public java.util.List<flyteidl.core.ArtifactId.ArtifactID.Builder> 
            getArtifactIdsBuilderList() {
         return getArtifactIdsFieldBuilder().getBuilderList();
       }
       private com.google.protobuf.RepeatedFieldBuilderV3<
-          flyteidl.core.IdentifierOuterClass.ArtifactID, flyteidl.core.IdentifierOuterClass.ArtifactID.Builder, flyteidl.core.IdentifierOuterClass.ArtifactIDOrBuilder> 
+          flyteidl.core.ArtifactId.ArtifactID, flyteidl.core.ArtifactId.ArtifactID.Builder, flyteidl.core.ArtifactId.ArtifactIDOrBuilder> 
           getArtifactIdsFieldBuilder() {
         if (artifactIdsBuilder_ == null) {
           artifactIdsBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
-              flyteidl.core.IdentifierOuterClass.ArtifactID, flyteidl.core.IdentifierOuterClass.ArtifactID.Builder, flyteidl.core.IdentifierOuterClass.ArtifactIDOrBuilder>(
+              flyteidl.core.ArtifactId.ArtifactID, flyteidl.core.ArtifactId.ArtifactID.Builder, flyteidl.core.ArtifactId.ArtifactIDOrBuilder>(
                   artifactIds_,
                   ((bitField0_ & 0x00000008) != 0),
                   getParentForChildren(),
@@ -7079,43 +7079,44 @@ public final class Cloudevents {
       "\n flyteidl/event/cloudevents.proto\022\016flyt" +
       "eidl.event\032\032flyteidl/event/event.proto\032\034" +
       "flyteidl/core/literals.proto\032\035flyteidl/c" +
-      "ore/interface.proto\032\036flyteidl/core/ident" +
-      "ifier.proto\032\037google/protobuf/timestamp.p" +
-      "roto\"\343\003\n\033CloudEventWorkflowExecution\0229\n\t" +
-      "raw_event\030\001 \001(\0132&.flyteidl.event.Workflo" +
-      "wExecutionEvent\022.\n\013output_data\030\002 \001(\0132\031.f" +
-      "lyteidl.core.LiteralMap\0227\n\020output_interf" +
-      "ace\030\003 \001(\0132\035.flyteidl.core.TypedInterface" +
-      "\022-\n\ninput_data\030\004 \001(\0132\031.flyteidl.core.Lit" +
-      "eralMap\0220\n\014scheduled_at\030\005 \001(\0132\032.google.p" +
-      "rotobuf.Timestamp\022/\n\014artifact_ids\030\006 \003(\0132" +
-      "\031.flyteidl.core.ArtifactID\022E\n\025parent_nod" +
-      "e_execution\030\007 \001(\0132&.flyteidl.core.NodeEx" +
-      "ecutionIdentifier\022G\n\023reference_execution" +
-      "\030\010 \001(\0132*.flyteidl.core.WorkflowExecution" +
-      "Identifier\"P\n\027CloudEventNodeExecution\0225\n" +
-      "\traw_event\030\001 \001(\0132\".flyteidl.event.NodeEx" +
-      "ecutionEvent\"\333\003\n\027CloudEventTaskExecution" +
-      "\0225\n\traw_event\030\001 \001(\0132\".flyteidl.event.Tas" +
-      "kExecutionEvent\022.\n\013output_data\030\002 \001(\0132\031.f" +
-      "lyteidl.core.LiteralMap\0227\n\020output_interf" +
-      "ace\030\003 \001(\0132\035.flyteidl.core.TypedInterface" +
-      "\022-\n\ninput_data\030\004 \001(\0132\031.flyteidl.core.Lit" +
-      "eralMap\0220\n\014scheduled_at\030\005 \001(\0132\032.google.p" +
-      "rotobuf.Timestamp\022/\n\014artifact_ids\030\006 \003(\0132" +
-      "\031.flyteidl.core.ArtifactID\022E\n\025parent_nod" +
-      "e_execution\030\007 \001(\0132&.flyteidl.core.NodeEx" +
-      "ecutionIdentifier\022G\n\023reference_execution" +
-      "\030\010 \001(\0132*.flyteidl.core.WorkflowExecution" +
-      "Identifier\"\207\002\n\030CloudEventExecutionStart\022" +
-      "@\n\014execution_id\030\001 \001(\0132*.flyteidl.core.Wo" +
-      "rkflowExecutionIdentifier\0221\n\016launch_plan" +
-      "_id\030\002 \001(\0132\031.flyteidl.core.Identifier\022.\n\013" +
-      "workflow_id\030\003 \001(\0132\031.flyteidl.core.Identi" +
-      "fier\022/\n\014artifact_ids\030\004 \003(\0132\031.flyteidl.co" +
-      "re.ArtifactID\022\025\n\rartifact_keys\030\005 \003(\tB7Z5" +
-      "github.com/flyteorg/flyteidl/gen/pb-go/f" +
-      "lyteidl/eventb\006proto3"
+      "ore/interface.proto\032\037flyteidl/core/artif" +
+      "act_id.proto\032\036flyteidl/core/identifier.p" +
+      "roto\032\037google/protobuf/timestamp.proto\"\343\003" +
+      "\n\033CloudEventWorkflowExecution\0229\n\traw_eve" +
+      "nt\030\001 \001(\0132&.flyteidl.event.WorkflowExecut" +
+      "ionEvent\022.\n\013output_data\030\002 \001(\0132\031.flyteidl" +
+      ".core.LiteralMap\0227\n\020output_interface\030\003 \001" +
+      "(\0132\035.flyteidl.core.TypedInterface\022-\n\ninp" +
+      "ut_data\030\004 \001(\0132\031.flyteidl.core.LiteralMap" +
+      "\0220\n\014scheduled_at\030\005 \001(\0132\032.google.protobuf" +
+      ".Timestamp\022/\n\014artifact_ids\030\006 \003(\0132\031.flyte" +
+      "idl.core.ArtifactID\022E\n\025parent_node_execu" +
+      "tion\030\007 \001(\0132&.flyteidl.core.NodeExecution" +
+      "Identifier\022G\n\023reference_execution\030\010 \001(\0132" +
+      "*.flyteidl.core.WorkflowExecutionIdentif" +
+      "ier\"P\n\027CloudEventNodeExecution\0225\n\traw_ev" +
+      "ent\030\001 \001(\0132\".flyteidl.event.NodeExecution" +
+      "Event\"\333\003\n\027CloudEventTaskExecution\0225\n\traw" +
+      "_event\030\001 \001(\0132\".flyteidl.event.TaskExecut" +
+      "ionEvent\022.\n\013output_data\030\002 \001(\0132\031.flyteidl" +
+      ".core.LiteralMap\0227\n\020output_interface\030\003 \001" +
+      "(\0132\035.flyteidl.core.TypedInterface\022-\n\ninp" +
+      "ut_data\030\004 \001(\0132\031.flyteidl.core.LiteralMap" +
+      "\0220\n\014scheduled_at\030\005 \001(\0132\032.google.protobuf" +
+      ".Timestamp\022/\n\014artifact_ids\030\006 \003(\0132\031.flyte" +
+      "idl.core.ArtifactID\022E\n\025parent_node_execu" +
+      "tion\030\007 \001(\0132&.flyteidl.core.NodeExecution" +
+      "Identifier\022G\n\023reference_execution\030\010 \001(\0132" +
+      "*.flyteidl.core.WorkflowExecutionIdentif" +
+      "ier\"\207\002\n\030CloudEventExecutionStart\022@\n\014exec" +
+      "ution_id\030\001 \001(\0132*.flyteidl.core.WorkflowE" +
+      "xecutionIdentifier\0221\n\016launch_plan_id\030\002 \001" +
+      "(\0132\031.flyteidl.core.Identifier\022.\n\013workflo" +
+      "w_id\030\003 \001(\0132\031.flyteidl.core.Identifier\022/\n" +
+      "\014artifact_ids\030\004 \003(\0132\031.flyteidl.core.Arti" +
+      "factID\022\025\n\rartifact_keys\030\005 \003(\tB7Z5github." +
+      "com/flyteorg/flyteidl/gen/pb-go/flyteidl" +
+      "/eventb\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
@@ -7131,6 +7132,7 @@ public final class Cloudevents {
           flyteidl.event.Event.getDescriptor(),
           flyteidl.core.Literals.getDescriptor(),
           flyteidl.core.Interface.getDescriptor(),
+          flyteidl.core.ArtifactId.getDescriptor(),
           flyteidl.core.IdentifierOuterClass.getDescriptor(),
           com.google.protobuf.TimestampProto.getDescriptor(),
         }, assigner);
@@ -7161,6 +7163,7 @@ public final class Cloudevents {
     flyteidl.event.Event.getDescriptor();
     flyteidl.core.Literals.getDescriptor();
     flyteidl.core.Interface.getDescriptor();
+    flyteidl.core.ArtifactId.getDescriptor();
     flyteidl.core.IdentifierOuterClass.getDescriptor();
     com.google.protobuf.TimestampProto.getDescriptor();
   }

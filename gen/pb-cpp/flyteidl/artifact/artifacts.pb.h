@@ -39,6 +39,7 @@
 #include "flyteidl/core/literals.pb.h"
 #include "flyteidl/core/types.pb.h"
 #include "flyteidl/core/identifier.pb.h"
+#include "flyteidl/core/artifact_id.pb.h"
 #include "flyteidl/core/interface.pb.h"
 // @@protoc_insertion_point(includes)
 #include <google/protobuf/port_def.inc>

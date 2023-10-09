@@ -8205,11 +8205,11 @@ public final class Dataproxy {
     /**
      * <code>.flyteidl.core.ArtifactID artifact_id = 2;</code>
      */
-    flyteidl.core.IdentifierOuterClass.ArtifactID getArtifactId();
+    flyteidl.core.ArtifactId.ArtifactID getArtifactId();
     /**
      * <code>.flyteidl.core.ArtifactID artifact_id = 2;</code>
      */
-    flyteidl.core.IdentifierOuterClass.ArtifactIDOrBuilder getArtifactIdOrBuilder();
+    flyteidl.core.ArtifactId.ArtifactIDOrBuilder getArtifactIdOrBuilder();
 
     public flyteidl.service.Dataproxy.GetDataRequest.QueryCase getQueryCase();
   }
@@ -8263,14 +8263,14 @@ public final class Dataproxy {
               break;
             }
             case 18: {
-              flyteidl.core.IdentifierOuterClass.ArtifactID.Builder subBuilder = null;
+              flyteidl.core.ArtifactId.ArtifactID.Builder subBuilder = null;
               if (queryCase_ == 2) {
-                subBuilder = ((flyteidl.core.IdentifierOuterClass.ArtifactID) query_).toBuilder();
+                subBuilder = ((flyteidl.core.ArtifactId.ArtifactID) query_).toBuilder();
               }
               query_ =
-                  input.readMessage(flyteidl.core.IdentifierOuterClass.ArtifactID.parser(), extensionRegistry);
+                  input.readMessage(flyteidl.core.ArtifactId.ArtifactID.parser(), extensionRegistry);
               if (subBuilder != null) {
-                subBuilder.mergeFrom((flyteidl.core.IdentifierOuterClass.ArtifactID) query_);
+                subBuilder.mergeFrom((flyteidl.core.ArtifactId.ArtifactID) query_);
                 query_ = subBuilder.buildPartial();
               }
               queryCase_ = 2;
@@ -8399,20 +8399,20 @@ public final class Dataproxy {
     /**
      * <code>.flyteidl.core.ArtifactID artifact_id = 2;</code>
      */
-    public flyteidl.core.IdentifierOuterClass.ArtifactID getArtifactId() {
+    public flyteidl.core.ArtifactId.ArtifactID getArtifactId() {
       if (queryCase_ == 2) {
-         return (flyteidl.core.IdentifierOuterClass.ArtifactID) query_;
+         return (flyteidl.core.ArtifactId.ArtifactID) query_;
       }
-      return flyteidl.core.IdentifierOuterClass.ArtifactID.getDefaultInstance();
+      return flyteidl.core.ArtifactId.ArtifactID.getDefaultInstance();
     }
     /**
      * <code>.flyteidl.core.ArtifactID artifact_id = 2;</code>
      */
-    public flyteidl.core.IdentifierOuterClass.ArtifactIDOrBuilder getArtifactIdOrBuilder() {
+    public flyteidl.core.ArtifactId.ArtifactIDOrBuilder getArtifactIdOrBuilder() {
       if (queryCase_ == 2) {
-         return (flyteidl.core.IdentifierOuterClass.ArtifactID) query_;
+         return (flyteidl.core.ArtifactId.ArtifactID) query_;
       }
-      return flyteidl.core.IdentifierOuterClass.ArtifactID.getDefaultInstance();
+      return flyteidl.core.ArtifactId.ArtifactID.getDefaultInstance();
     }
 
     private byte memoizedIsInitialized = -1;
@@ -8433,7 +8433,7 @@ public final class Dataproxy {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 1, query_);
       }
       if (queryCase_ == 2) {
-        output.writeMessage(2, (flyteidl.core.IdentifierOuterClass.ArtifactID) query_);
+        output.writeMessage(2, (flyteidl.core.ArtifactId.ArtifactID) query_);
       }
       unknownFields.writeTo(output);
     }
@@ -8449,7 +8449,7 @@ public final class Dataproxy {
       }
       if (queryCase_ == 2) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(2, (flyteidl.core.IdentifierOuterClass.ArtifactID) query_);
+          .computeMessageSize(2, (flyteidl.core.ArtifactId.ArtifactID) query_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -8866,7 +8866,7 @@ public final class Dataproxy {
       }
 
       private com.google.protobuf.SingleFieldBuilderV3<
-          flyteidl.core.IdentifierOuterClass.ArtifactID, flyteidl.core.IdentifierOuterClass.ArtifactID.Builder, flyteidl.core.IdentifierOuterClass.ArtifactIDOrBuilder> artifactIdBuilder_;
+          flyteidl.core.ArtifactId.ArtifactID, flyteidl.core.ArtifactId.ArtifactID.Builder, flyteidl.core.ArtifactId.ArtifactIDOrBuilder> artifactIdBuilder_;
       /**
        * <code>.flyteidl.core.ArtifactID artifact_id = 2;</code>
        */
@@ -8876,23 +8876,23 @@ public final class Dataproxy {
       /**
        * <code>.flyteidl.core.ArtifactID artifact_id = 2;</code>
        */
-      public flyteidl.core.IdentifierOuterClass.ArtifactID getArtifactId() {
+      public flyteidl.core.ArtifactId.ArtifactID getArtifactId() {
         if (artifactIdBuilder_ == null) {
           if (queryCase_ == 2) {
-            return (flyteidl.core.IdentifierOuterClass.ArtifactID) query_;
+            return (flyteidl.core.ArtifactId.ArtifactID) query_;
           }
-          return flyteidl.core.IdentifierOuterClass.ArtifactID.getDefaultInstance();
+          return flyteidl.core.ArtifactId.ArtifactID.getDefaultInstance();
         } else {
           if (queryCase_ == 2) {
             return artifactIdBuilder_.getMessage();
           }
-          return flyteidl.core.IdentifierOuterClass.ArtifactID.getDefaultInstance();
+          return flyteidl.core.ArtifactId.ArtifactID.getDefaultInstance();
         }
       }
       /**
        * <code>.flyteidl.core.ArtifactID artifact_id = 2;</code>
        */
-      public Builder setArtifactId(flyteidl.core.IdentifierOuterClass.ArtifactID value) {
+      public Builder setArtifactId(flyteidl.core.ArtifactId.ArtifactID value) {
         if (artifactIdBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
@@ -8909,7 +8909,7 @@ public final class Dataproxy {
        * <code>.flyteidl.core.ArtifactID artifact_id = 2;</code>
        */
       public Builder setArtifactId(
-          flyteidl.core.IdentifierOuterClass.ArtifactID.Builder builderForValue) {
+          flyteidl.core.ArtifactId.ArtifactID.Builder builderForValue) {
         if (artifactIdBuilder_ == null) {
           query_ = builderForValue.build();
           onChanged();
@@ -8922,11 +8922,11 @@ public final class Dataproxy {
       /**
        * <code>.flyteidl.core.ArtifactID artifact_id = 2;</code>
        */
-      public Builder mergeArtifactId(flyteidl.core.IdentifierOuterClass.ArtifactID value) {
+      public Builder mergeArtifactId(flyteidl.core.ArtifactId.ArtifactID value) {
         if (artifactIdBuilder_ == null) {
           if (queryCase_ == 2 &&
-              query_ != flyteidl.core.IdentifierOuterClass.ArtifactID.getDefaultInstance()) {
-            query_ = flyteidl.core.IdentifierOuterClass.ArtifactID.newBuilder((flyteidl.core.IdentifierOuterClass.ArtifactID) query_)
+              query_ != flyteidl.core.ArtifactId.ArtifactID.getDefaultInstance()) {
+            query_ = flyteidl.core.ArtifactId.ArtifactID.newBuilder((flyteidl.core.ArtifactId.ArtifactID) query_)
                 .mergeFrom(value).buildPartial();
           } else {
             query_ = value;
@@ -8963,35 +8963,35 @@ public final class Dataproxy {
       /**
        * <code>.flyteidl.core.ArtifactID artifact_id = 2;</code>
        */
-      public flyteidl.core.IdentifierOuterClass.ArtifactID.Builder getArtifactIdBuilder() {
+      public flyteidl.core.ArtifactId.ArtifactID.Builder getArtifactIdBuilder() {
         return getArtifactIdFieldBuilder().getBuilder();
       }
       /**
        * <code>.flyteidl.core.ArtifactID artifact_id = 2;</code>
        */
-      public flyteidl.core.IdentifierOuterClass.ArtifactIDOrBuilder getArtifactIdOrBuilder() {
+      public flyteidl.core.ArtifactId.ArtifactIDOrBuilder getArtifactIdOrBuilder() {
         if ((queryCase_ == 2) && (artifactIdBuilder_ != null)) {
           return artifactIdBuilder_.getMessageOrBuilder();
         } else {
           if (queryCase_ == 2) {
-            return (flyteidl.core.IdentifierOuterClass.ArtifactID) query_;
+            return (flyteidl.core.ArtifactId.ArtifactID) query_;
           }
-          return flyteidl.core.IdentifierOuterClass.ArtifactID.getDefaultInstance();
+          return flyteidl.core.ArtifactId.ArtifactID.getDefaultInstance();
         }
       }
       /**
        * <code>.flyteidl.core.ArtifactID artifact_id = 2;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
-          flyteidl.core.IdentifierOuterClass.ArtifactID, flyteidl.core.IdentifierOuterClass.ArtifactID.Builder, flyteidl.core.IdentifierOuterClass.ArtifactIDOrBuilder> 
+          flyteidl.core.ArtifactId.ArtifactID, flyteidl.core.ArtifactId.ArtifactID.Builder, flyteidl.core.ArtifactId.ArtifactIDOrBuilder> 
           getArtifactIdFieldBuilder() {
         if (artifactIdBuilder_ == null) {
           if (!(queryCase_ == 2)) {
-            query_ = flyteidl.core.IdentifierOuterClass.ArtifactID.getDefaultInstance();
+            query_ = flyteidl.core.ArtifactId.ArtifactID.getDefaultInstance();
           }
           artifactIdBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-              flyteidl.core.IdentifierOuterClass.ArtifactID, flyteidl.core.IdentifierOuterClass.ArtifactID.Builder, flyteidl.core.IdentifierOuterClass.ArtifactIDOrBuilder>(
-                  (flyteidl.core.IdentifierOuterClass.ArtifactID) query_,
+              flyteidl.core.ArtifactId.ArtifactID, flyteidl.core.ArtifactId.ArtifactID.Builder, flyteidl.core.ArtifactId.ArtifactIDOrBuilder>(
+                  (flyteidl.core.ArtifactId.ArtifactID) query_,
                   getParentForChildren(),
                   isClean());
           query_ = null;
@@ -10653,63 +10653,64 @@ public final class Dataproxy {
       "\n flyteidl/service/dataproxy.proto\022\020flyt" +
       "eidl.service\032\034google/api/annotations.pro" +
       "to\032\036google/protobuf/duration.proto\032\037goog" +
-      "le/protobuf/timestamp.proto\032\036flyteidl/co" +
-      "re/identifier.proto\032\034flyteidl/core/liter" +
-      "als.proto\032!flyteidl/artifact/artifacts.p" +
-      "roto\"\245\001\n\034CreateUploadLocationResponse\022\022\n" +
-      "\nsigned_url\030\001 \001(\t\022\022\n\nnative_url\030\002 \001(\t\022.\n" +
-      "\nexpires_at\030\003 \001(\0132\032.google.protobuf.Time" +
-      "stamp\022-\n\010artifact\030\004 \001(\0132\033.flyteidl.artif" +
-      "act.Artifact\"\343\001\n\033CreateUploadLocationReq" +
-      "uest\022\017\n\007project\030\001 \001(\t\022\016\n\006domain\030\002 \001(\t\022\020\n" +
-      "\010filename\030\003 \001(\t\022-\n\nexpires_in\030\004 \001(\0132\031.go" +
-      "ogle.protobuf.Duration\022\023\n\013content_md5\030\005 " +
-      "\001(\014\022\025\n\rfilename_root\030\006 \001(\t\0226\n\rartifact_s" +
-      "pec\030\007 \001(\0132\037.flyteidl.artifact.ArtifactSp" +
-      "ec\"f\n\035CreateDownloadLocationRequest\022\022\n\nn" +
-      "ative_url\030\001 \001(\t\022-\n\nexpires_in\030\002 \001(\0132\031.go" +
-      "ogle.protobuf.Duration:\002\030\001\"h\n\036CreateDown" +
-      "loadLocationResponse\022\022\n\nsigned_url\030\001 \001(\t" +
-      "\022.\n\nexpires_at\030\002 \001(\0132\032.google.protobuf.T" +
-      "imestamp:\002\030\001\"\320\001\n\031CreateDownloadLinkReque" +
-      "st\0225\n\rartifact_type\030\001 \001(\0162\036.flyteidl.ser" +
-      "vice.ArtifactType\022-\n\nexpires_in\030\002 \001(\0132\031." +
-      "google.protobuf.Duration\022C\n\021node_executi" +
-      "on_id\030\003 \001(\0132&.flyteidl.core.NodeExecutio" +
-      "nIdentifierH\000B\010\n\006source\"\242\001\n\032CreateDownlo" +
-      "adLinkResponse\022\026\n\nsigned_url\030\001 \003(\tB\002\030\001\0222" +
-      "\n\nexpires_at\030\002 \001(\0132\032.google.protobuf.Tim" +
-      "estampB\002\030\001\0228\n\017pre_signed_urls\030\003 \001(\0132\037.fl" +
-      "yteidl.service.PreSignedURLs\"S\n\rPreSigne" +
-      "dURLs\022\022\n\nsigned_url\030\001 \003(\t\022.\n\nexpires_at\030" +
-      "\002 \001(\0132\032.google.protobuf.Timestamp\"`\n\016Get" +
-      "DataRequest\022\023\n\tflyte_url\030\001 \001(\tH\000\0220\n\013arti" +
-      "fact_id\030\002 \001(\0132\031.flyteidl.core.ArtifactID" +
-      "H\000B\007\n\005query\"\343\001\n\017GetDataResponse\0220\n\013liter" +
-      "al_map\030\001 \001(\0132\031.flyteidl.core.LiteralMapH" +
-      "\000\022:\n\017pre_signed_urls\030\002 \001(\0132\037.flyteidl.se" +
-      "rvice.PreSignedURLsH\000\022)\n\007literal\030\003 \001(\0132\026" +
-      ".flyteidl.core.LiteralH\000\022/\n\010artifact\030\004 \001" +
-      "(\0132\033.flyteidl.artifact.ArtifactH\000B\006\n\004dat" +
-      "a*C\n\014ArtifactType\022\033\n\027ARTIFACT_TYPE_UNDEF" +
-      "INED\020\000\022\026\n\022ARTIFACT_TYPE_DECK\020\0012\342\004\n\020DataP" +
-      "roxyService\022\240\001\n\024CreateUploadLocation\022-.f" +
-      "lyteidl.service.CreateUploadLocationRequ" +
-      "est\032..flyteidl.service.CreateUploadLocat" +
-      "ionResponse\")\202\323\344\223\002#\"\036/api/v1/dataproxy/a" +
-      "rtifact_urn:\001*\022\246\001\n\026CreateDownloadLocatio" +
-      "n\022/.flyteidl.service.CreateDownloadLocat" +
-      "ionRequest\0320.flyteidl.service.CreateDown" +
-      "loadLocationResponse\")\210\002\001\202\323\344\223\002 \022\036/api/v1" +
-      "/dataproxy/artifact_urn\022\233\001\n\022CreateDownlo" +
-      "adLink\022+.flyteidl.service.CreateDownload" +
-      "LinkRequest\032,.flyteidl.service.CreateDow" +
-      "nloadLinkResponse\"*\202\323\344\223\002$\"\037/api/v1/datap" +
-      "roxy/artifact_link:\001*\022d\n\007GetData\022 .flyte" +
-      "idl.service.GetDataRequest\032!.flyteidl.se" +
-      "rvice.GetDataResponse\"\024\202\323\344\223\002\016\022\014/api/v1/d" +
-      "ataB9Z7github.com/flyteorg/flyteidl/gen/" +
-      "pb-go/flyteidl/serviceb\006proto3"
+      "le/protobuf/timestamp.proto\032\037flyteidl/co" +
+      "re/artifact_id.proto\032\036flyteidl/core/iden" +
+      "tifier.proto\032\034flyteidl/core/literals.pro" +
+      "to\032!flyteidl/artifact/artifacts.proto\"\245\001" +
+      "\n\034CreateUploadLocationResponse\022\022\n\nsigned" +
+      "_url\030\001 \001(\t\022\022\n\nnative_url\030\002 \001(\t\022.\n\nexpire" +
+      "s_at\030\003 \001(\0132\032.google.protobuf.Timestamp\022-" +
+      "\n\010artifact\030\004 \001(\0132\033.flyteidl.artifact.Art" +
+      "ifact\"\343\001\n\033CreateUploadLocationRequest\022\017\n" +
+      "\007project\030\001 \001(\t\022\016\n\006domain\030\002 \001(\t\022\020\n\010filena" +
+      "me\030\003 \001(\t\022-\n\nexpires_in\030\004 \001(\0132\031.google.pr" +
+      "otobuf.Duration\022\023\n\013content_md5\030\005 \001(\014\022\025\n\r" +
+      "filename_root\030\006 \001(\t\0226\n\rartifact_spec\030\007 \001" +
+      "(\0132\037.flyteidl.artifact.ArtifactSpec\"f\n\035C" +
+      "reateDownloadLocationRequest\022\022\n\nnative_u" +
+      "rl\030\001 \001(\t\022-\n\nexpires_in\030\002 \001(\0132\031.google.pr" +
+      "otobuf.Duration:\002\030\001\"h\n\036CreateDownloadLoc" +
+      "ationResponse\022\022\n\nsigned_url\030\001 \001(\t\022.\n\nexp" +
+      "ires_at\030\002 \001(\0132\032.google.protobuf.Timestam" +
+      "p:\002\030\001\"\320\001\n\031CreateDownloadLinkRequest\0225\n\ra" +
+      "rtifact_type\030\001 \001(\0162\036.flyteidl.service.Ar" +
+      "tifactType\022-\n\nexpires_in\030\002 \001(\0132\031.google." +
+      "protobuf.Duration\022C\n\021node_execution_id\030\003" +
+      " \001(\0132&.flyteidl.core.NodeExecutionIdenti" +
+      "fierH\000B\010\n\006source\"\242\001\n\032CreateDownloadLinkR" +
+      "esponse\022\026\n\nsigned_url\030\001 \003(\tB\002\030\001\0222\n\nexpir" +
+      "es_at\030\002 \001(\0132\032.google.protobuf.TimestampB" +
+      "\002\030\001\0228\n\017pre_signed_urls\030\003 \001(\0132\037.flyteidl." +
+      "service.PreSignedURLs\"S\n\rPreSignedURLs\022\022" +
+      "\n\nsigned_url\030\001 \003(\t\022.\n\nexpires_at\030\002 \001(\0132\032" +
+      ".google.protobuf.Timestamp\"`\n\016GetDataReq" +
+      "uest\022\023\n\tflyte_url\030\001 \001(\tH\000\0220\n\013artifact_id" +
+      "\030\002 \001(\0132\031.flyteidl.core.ArtifactIDH\000B\007\n\005q" +
+      "uery\"\343\001\n\017GetDataResponse\0220\n\013literal_map\030" +
+      "\001 \001(\0132\031.flyteidl.core.LiteralMapH\000\022:\n\017pr" +
+      "e_signed_urls\030\002 \001(\0132\037.flyteidl.service.P" +
+      "reSignedURLsH\000\022)\n\007literal\030\003 \001(\0132\026.flytei" +
+      "dl.core.LiteralH\000\022/\n\010artifact\030\004 \001(\0132\033.fl" +
+      "yteidl.artifact.ArtifactH\000B\006\n\004data*C\n\014Ar" +
+      "tifactType\022\033\n\027ARTIFACT_TYPE_UNDEFINED\020\000\022" +
+      "\026\n\022ARTIFACT_TYPE_DECK\020\0012\342\004\n\020DataProxySer" +
+      "vice\022\240\001\n\024CreateUploadLocation\022-.flyteidl" +
+      ".service.CreateUploadLocationRequest\032..f" +
+      "lyteidl.service.CreateUploadLocationResp" +
+      "onse\")\202\323\344\223\002#\"\036/api/v1/dataproxy/artifact" +
+      "_urn:\001*\022\246\001\n\026CreateDownloadLocation\022/.fly" +
+      "teidl.service.CreateDownloadLocationRequ" +
+      "est\0320.flyteidl.service.CreateDownloadLoc" +
+      "ationResponse\")\210\002\001\202\323\344\223\002 \022\036/api/v1/datapr" +
+      "oxy/artifact_urn\022\233\001\n\022CreateDownloadLink\022" +
+      "+.flyteidl.service.CreateDownloadLinkReq" +
+      "uest\032,.flyteidl.service.CreateDownloadLi" +
+      "nkResponse\"*\202\323\344\223\002$\"\037/api/v1/dataproxy/ar" +
+      "tifact_link:\001*\022d\n\007GetData\022 .flyteidl.ser" +
+      "vice.GetDataRequest\032!.flyteidl.service.G" +
+      "etDataResponse\"\024\202\323\344\223\002\016\022\014/api/v1/dataB9Z7" +
+      "github.com/flyteorg/flyteidl/gen/pb-go/f" +
+      "lyteidl/serviceb\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
@@ -10725,6 +10726,7 @@ public final class Dataproxy {
           com.google.api.AnnotationsProto.getDescriptor(),
           com.google.protobuf.DurationProto.getDescriptor(),
           com.google.protobuf.TimestampProto.getDescriptor(),
+          flyteidl.core.ArtifactId.getDescriptor(),
           flyteidl.core.IdentifierOuterClass.getDescriptor(),
           flyteidl.core.Literals.getDescriptor(),
           flyteidl.artifact.Artifacts.getDescriptor(),
@@ -10791,6 +10793,7 @@ public final class Dataproxy {
     com.google.api.AnnotationsProto.getDescriptor();
     com.google.protobuf.DurationProto.getDescriptor();
     com.google.protobuf.TimestampProto.getDescriptor();
+    flyteidl.core.ArtifactId.getDescriptor();
     flyteidl.core.IdentifierOuterClass.getDescriptor();
     flyteidl.core.Literals.getDescriptor();
     flyteidl.artifact.Artifacts.getDescriptor();

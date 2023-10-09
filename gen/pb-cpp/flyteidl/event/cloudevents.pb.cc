@@ -16,10 +16,10 @@
 // @@protoc_insertion_point(includes)
 #include <google/protobuf/port_def.inc>
 
+extern PROTOBUF_INTERNAL_EXPORT_flyteidl_2fcore_2fartifact_5fid_2eproto ::google::protobuf::internal::SCCInfo<2> scc_info_ArtifactID_flyteidl_2fcore_2fartifact_5fid_2eproto;
 extern PROTOBUF_INTERNAL_EXPORT_flyteidl_2fcore_2fidentifier_2eproto ::google::protobuf::internal::SCCInfo<0> scc_info_Identifier_flyteidl_2fcore_2fidentifier_2eproto;
 extern PROTOBUF_INTERNAL_EXPORT_flyteidl_2fcore_2fidentifier_2eproto ::google::protobuf::internal::SCCInfo<0> scc_info_WorkflowExecutionIdentifier_flyteidl_2fcore_2fidentifier_2eproto;
 extern PROTOBUF_INTERNAL_EXPORT_flyteidl_2fcore_2fidentifier_2eproto ::google::protobuf::internal::SCCInfo<1> scc_info_NodeExecutionIdentifier_flyteidl_2fcore_2fidentifier_2eproto;
-extern PROTOBUF_INTERNAL_EXPORT_flyteidl_2fcore_2fidentifier_2eproto ::google::protobuf::internal::SCCInfo<2> scc_info_ArtifactID_flyteidl_2fcore_2fidentifier_2eproto;
 extern PROTOBUF_INTERNAL_EXPORT_flyteidl_2fcore_2finterface_2eproto ::google::protobuf::internal::SCCInfo<1> scc_info_TypedInterface_flyteidl_2fcore_2finterface_2eproto;
 extern PROTOBUF_INTERNAL_EXPORT_flyteidl_2fcore_2fliterals_2eproto ::google::protobuf::internal::SCCInfo<10> scc_info_Literal_flyteidl_2fcore_2fliterals_2eproto;
 extern PROTOBUF_INTERNAL_EXPORT_flyteidl_2fevent_2fevent_2eproto ::google::protobuf::internal::SCCInfo<4> scc_info_WorkflowExecutionEvent_flyteidl_2fevent_2fevent_2eproto;
@@ -63,7 +63,7 @@ static void InitDefaultsCloudEventWorkflowExecution_flyteidl_2fevent_2fcloudeven
       &scc_info_Literal_flyteidl_2fcore_2fliterals_2eproto.base,
       &scc_info_TypedInterface_flyteidl_2fcore_2finterface_2eproto.base,
       &scc_info_Timestamp_google_2fprotobuf_2ftimestamp_2eproto.base,
-      &scc_info_ArtifactID_flyteidl_2fcore_2fidentifier_2eproto.base,
+      &scc_info_ArtifactID_flyteidl_2fcore_2fartifact_5fid_2eproto.base,
       &scc_info_NodeExecutionIdentifier_flyteidl_2fcore_2fidentifier_2eproto.base,
       &scc_info_WorkflowExecutionIdentifier_flyteidl_2fcore_2fidentifier_2eproto.base,}};
 
@@ -99,7 +99,7 @@ static void InitDefaultsCloudEventTaskExecution_flyteidl_2fevent_2fcloudevents_2
       &scc_info_Literal_flyteidl_2fcore_2fliterals_2eproto.base,
       &scc_info_TypedInterface_flyteidl_2fcore_2finterface_2eproto.base,
       &scc_info_Timestamp_google_2fprotobuf_2ftimestamp_2eproto.base,
-      &scc_info_ArtifactID_flyteidl_2fcore_2fidentifier_2eproto.base,
+      &scc_info_ArtifactID_flyteidl_2fcore_2fartifact_5fid_2eproto.base,
       &scc_info_NodeExecutionIdentifier_flyteidl_2fcore_2fidentifier_2eproto.base,
       &scc_info_WorkflowExecutionIdentifier_flyteidl_2fcore_2fidentifier_2eproto.base,}};
 
@@ -118,7 +118,7 @@ static void InitDefaultsCloudEventExecutionStart_flyteidl_2fevent_2fcloudevents_
     {{ATOMIC_VAR_INIT(::google::protobuf::internal::SCCInfoBase::kUninitialized), 3, InitDefaultsCloudEventExecutionStart_flyteidl_2fevent_2fcloudevents_2eproto}, {
       &scc_info_WorkflowExecutionIdentifier_flyteidl_2fcore_2fidentifier_2eproto.base,
       &scc_info_Identifier_flyteidl_2fcore_2fidentifier_2eproto.base,
-      &scc_info_ArtifactID_flyteidl_2fcore_2fidentifier_2eproto.base,}};
+      &scc_info_ArtifactID_flyteidl_2fcore_2fartifact_5fid_2eproto.base,}};
 
 void InitDefaults_flyteidl_2fevent_2fcloudevents_2eproto() {
   ::google::protobuf::internal::InitSCC(&scc_info_CloudEventWorkflowExecution_flyteidl_2fevent_2fcloudevents_2eproto.base);
@@ -199,60 +199,62 @@ const char descriptor_table_protodef_flyteidl_2fevent_2fcloudevents_2eproto[] =
   "\n flyteidl/event/cloudevents.proto\022\016flyt"
   "eidl.event\032\032flyteidl/event/event.proto\032\034"
   "flyteidl/core/literals.proto\032\035flyteidl/c"
-  "ore/interface.proto\032\036flyteidl/core/ident"
-  "ifier.proto\032\037google/protobuf/timestamp.p"
-  "roto\"\343\003\n\033CloudEventWorkflowExecution\0229\n\t"
-  "raw_event\030\001 \001(\0132&.flyteidl.event.Workflo"
-  "wExecutionEvent\022.\n\013output_data\030\002 \001(\0132\031.f"
-  "lyteidl.core.LiteralMap\0227\n\020output_interf"
-  "ace\030\003 \001(\0132\035.flyteidl.core.TypedInterface"
-  "\022-\n\ninput_data\030\004 \001(\0132\031.flyteidl.core.Lit"
-  "eralMap\0220\n\014scheduled_at\030\005 \001(\0132\032.google.p"
-  "rotobuf.Timestamp\022/\n\014artifact_ids\030\006 \003(\0132"
-  "\031.flyteidl.core.ArtifactID\022E\n\025parent_nod"
-  "e_execution\030\007 \001(\0132&.flyteidl.core.NodeEx"
-  "ecutionIdentifier\022G\n\023reference_execution"
-  "\030\010 \001(\0132*.flyteidl.core.WorkflowExecution"
-  "Identifier\"P\n\027CloudEventNodeExecution\0225\n"
-  "\traw_event\030\001 \001(\0132\".flyteidl.event.NodeEx"
-  "ecutionEvent\"\333\003\n\027CloudEventTaskExecution"
-  "\0225\n\traw_event\030\001 \001(\0132\".flyteidl.event.Tas"
-  "kExecutionEvent\022.\n\013output_data\030\002 \001(\0132\031.f"
-  "lyteidl.core.LiteralMap\0227\n\020output_interf"
-  "ace\030\003 \001(\0132\035.flyteidl.core.TypedInterface"
-  "\022-\n\ninput_data\030\004 \001(\0132\031.flyteidl.core.Lit"
-  "eralMap\0220\n\014scheduled_at\030\005 \001(\0132\032.google.p"
-  "rotobuf.Timestamp\022/\n\014artifact_ids\030\006 \003(\0132"
-  "\031.flyteidl.core.ArtifactID\022E\n\025parent_nod"
-  "e_execution\030\007 \001(\0132&.flyteidl.core.NodeEx"
-  "ecutionIdentifier\022G\n\023reference_execution"
-  "\030\010 \001(\0132*.flyteidl.core.WorkflowExecution"
-  "Identifier\"\207\002\n\030CloudEventExecutionStart\022"
-  "@\n\014execution_id\030\001 \001(\0132*.flyteidl.core.Wo"
-  "rkflowExecutionIdentifier\0221\n\016launch_plan"
-  "_id\030\002 \001(\0132\031.flyteidl.core.Identifier\022.\n\013"
-  "workflow_id\030\003 \001(\0132\031.flyteidl.core.Identi"
-  "fier\022/\n\014artifact_ids\030\004 \003(\0132\031.flyteidl.co"
-  "re.ArtifactID\022\025\n\rartifact_keys\030\005 \003(\tB7Z5"
-  "github.com/flyteorg/flyteidl/gen/pb-go/f"
-  "lyteidl/eventb\006proto3"
+  "ore/interface.proto\032\037flyteidl/core/artif"
+  "act_id.proto\032\036flyteidl/core/identifier.p"
+  "roto\032\037google/protobuf/timestamp.proto\"\343\003"
+  "\n\033CloudEventWorkflowExecution\0229\n\traw_eve"
+  "nt\030\001 \001(\0132&.flyteidl.event.WorkflowExecut"
+  "ionEvent\022.\n\013output_data\030\002 \001(\0132\031.flyteidl"
+  ".core.LiteralMap\0227\n\020output_interface\030\003 \001"
+  "(\0132\035.flyteidl.core.TypedInterface\022-\n\ninp"
+  "ut_data\030\004 \001(\0132\031.flyteidl.core.LiteralMap"
+  "\0220\n\014scheduled_at\030\005 \001(\0132\032.google.protobuf"
+  ".Timestamp\022/\n\014artifact_ids\030\006 \003(\0132\031.flyte"
+  "idl.core.ArtifactID\022E\n\025parent_node_execu"
+  "tion\030\007 \001(\0132&.flyteidl.core.NodeExecution"
+  "Identifier\022G\n\023reference_execution\030\010 \001(\0132"
+  "*.flyteidl.core.WorkflowExecutionIdentif"
+  "ier\"P\n\027CloudEventNodeExecution\0225\n\traw_ev"
+  "ent\030\001 \001(\0132\".flyteidl.event.NodeExecution"
+  "Event\"\333\003\n\027CloudEventTaskExecution\0225\n\traw"
+  "_event\030\001 \001(\0132\".flyteidl.event.TaskExecut"
+  "ionEvent\022.\n\013output_data\030\002 \001(\0132\031.flyteidl"
+  ".core.LiteralMap\0227\n\020output_interface\030\003 \001"
+  "(\0132\035.flyteidl.core.TypedInterface\022-\n\ninp"
+  "ut_data\030\004 \001(\0132\031.flyteidl.core.LiteralMap"
+  "\0220\n\014scheduled_at\030\005 \001(\0132\032.google.protobuf"
+  ".Timestamp\022/\n\014artifact_ids\030\006 \003(\0132\031.flyte"
+  "idl.core.ArtifactID\022E\n\025parent_node_execu"
+  "tion\030\007 \001(\0132&.flyteidl.core.NodeExecution"
+  "Identifier\022G\n\023reference_execution\030\010 \001(\0132"
+  "*.flyteidl.core.WorkflowExecutionIdentif"
+  "ier\"\207\002\n\030CloudEventExecutionStart\022@\n\014exec"
+  "ution_id\030\001 \001(\0132*.flyteidl.core.WorkflowE"
+  "xecutionIdentifier\0221\n\016launch_plan_id\030\002 \001"
+  "(\0132\031.flyteidl.core.Identifier\022.\n\013workflo"
+  "w_id\030\003 \001(\0132\031.flyteidl.core.Identifier\022/\n"
+  "\014artifact_ids\030\004 \003(\0132\031.flyteidl.core.Arti"
+  "factID\022\025\n\rartifact_keys\030\005 \003(\tB7Z5github."
+  "com/flyteorg/flyteidl/gen/pb-go/flyteidl"
+  "/eventb\006proto3"
   ;
 ::google::protobuf::internal::DescriptorTable descriptor_table_flyteidl_2fevent_2fcloudevents_2eproto = {
   false, InitDefaults_flyteidl_2fevent_2fcloudevents_2eproto, 
   descriptor_table_protodef_flyteidl_2fevent_2fcloudevents_2eproto,
-  "flyteidl/event/cloudevents.proto", &assign_descriptors_table_flyteidl_2fevent_2fcloudevents_2eproto, 1581,
+  "flyteidl/event/cloudevents.proto", &assign_descriptors_table_flyteidl_2fevent_2fcloudevents_2eproto, 1614,
 };
 
 void AddDescriptors_flyteidl_2fevent_2fcloudevents_2eproto() {
-  static constexpr ::google::protobuf::internal::InitFunc deps[5] =
+  static constexpr ::google::protobuf::internal::InitFunc deps[6] =
   {
     ::AddDescriptors_flyteidl_2fevent_2fevent_2eproto,
     ::AddDescriptors_flyteidl_2fcore_2fliterals_2eproto,
     ::AddDescriptors_flyteidl_2fcore_2finterface_2eproto,
+    ::AddDescriptors_flyteidl_2fcore_2fartifact_5fid_2eproto,
     ::AddDescriptors_flyteidl_2fcore_2fidentifier_2eproto,
     ::AddDescriptors_google_2fprotobuf_2ftimestamp_2eproto,
   };
- ::google::protobuf::internal::AddDescriptors(&descriptor_table_flyteidl_2fevent_2fcloudevents_2eproto, deps, 5);
+ ::google::protobuf::internal::AddDescriptors(&descriptor_table_flyteidl_2fevent_2fcloudevents_2eproto, deps, 6);
 }
 
 // Force running AddDescriptors() at dynamic initialization time.

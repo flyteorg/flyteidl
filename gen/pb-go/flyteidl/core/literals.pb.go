@@ -724,8 +724,7 @@ type Literal struct {
 	// This is used for caching purposes. For more details refer to RFC 1893
 	// (https://github.com/flyteorg/flyte/blob/master/rfc/system/1893-caching-of-offloaded-objects.md)
 	Hash string `protobuf:"bytes,4,opt,name=hash,proto3" json:"hash,omitempty"`
-	// Rejected: We were going to add the Artifact (or at least ArtifactID) here as a way to keep track of lineage
-	// But this was deemed too janky.
+	// Additional metadata for literals.
 	Metadata             map[string]string `protobuf:"bytes,5,rep,name=metadata,proto3" json:"metadata,omitempty" protobuf_key:"bytes,1,opt,name=key,proto3" protobuf_val:"bytes,2,opt,name=value,proto3"`
 	XXX_NoUnkeyedLiteral struct{}          `json:"-"`
 	XXX_unrecognized     []byte            `json:"-"`

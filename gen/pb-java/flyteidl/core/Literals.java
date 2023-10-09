@@ -9379,8 +9379,7 @@ public final class Literals {
 
     /**
      * <pre>
-     * Rejected: We were going to add the Artifact (or at least ArtifactID) here as a way to keep track of lineage
-     * But this was deemed too janky.
+     * Additional metadata for literals.
      * </pre>
      *
      * <code>map&lt;string, string&gt; metadata = 5;</code>
@@ -9388,8 +9387,7 @@ public final class Literals {
     int getMetadataCount();
     /**
      * <pre>
-     * Rejected: We were going to add the Artifact (or at least ArtifactID) here as a way to keep track of lineage
-     * But this was deemed too janky.
+     * Additional metadata for literals.
      * </pre>
      *
      * <code>map&lt;string, string&gt; metadata = 5;</code>
@@ -9404,8 +9402,7 @@ public final class Literals {
     getMetadata();
     /**
      * <pre>
-     * Rejected: We were going to add the Artifact (or at least ArtifactID) here as a way to keep track of lineage
-     * But this was deemed too janky.
+     * Additional metadata for literals.
      * </pre>
      *
      * <code>map&lt;string, string&gt; metadata = 5;</code>
@@ -9414,8 +9411,7 @@ public final class Literals {
     getMetadataMap();
     /**
      * <pre>
-     * Rejected: We were going to add the Artifact (or at least ArtifactID) here as a way to keep track of lineage
-     * But this was deemed too janky.
+     * Additional metadata for literals.
      * </pre>
      *
      * <code>map&lt;string, string&gt; metadata = 5;</code>
@@ -9426,8 +9422,7 @@ public final class Literals {
         java.lang.String defaultValue);
     /**
      * <pre>
-     * Rejected: We were going to add the Artifact (or at least ArtifactID) here as a way to keep track of lineage
-     * But this was deemed too janky.
+     * Additional metadata for literals.
      * </pre>
      *
      * <code>map&lt;string, string&gt; metadata = 5;</code>
@@ -9816,8 +9811,7 @@ public final class Literals {
     }
     /**
      * <pre>
-     * Rejected: We were going to add the Artifact (or at least ArtifactID) here as a way to keep track of lineage
-     * But this was deemed too janky.
+     * Additional metadata for literals.
      * </pre>
      *
      * <code>map&lt;string, string&gt; metadata = 5;</code>
@@ -9837,8 +9831,7 @@ public final class Literals {
     }
     /**
      * <pre>
-     * Rejected: We were going to add the Artifact (or at least ArtifactID) here as a way to keep track of lineage
-     * But this was deemed too janky.
+     * Additional metadata for literals.
      * </pre>
      *
      * <code>map&lt;string, string&gt; metadata = 5;</code>
@@ -9849,8 +9842,7 @@ public final class Literals {
     }
     /**
      * <pre>
-     * Rejected: We were going to add the Artifact (or at least ArtifactID) here as a way to keep track of lineage
-     * But this was deemed too janky.
+     * Additional metadata for literals.
      * </pre>
      *
      * <code>map&lt;string, string&gt; metadata = 5;</code>
@@ -9866,8 +9858,7 @@ public final class Literals {
     }
     /**
      * <pre>
-     * Rejected: We were going to add the Artifact (or at least ArtifactID) here as a way to keep track of lineage
-     * But this was deemed too janky.
+     * Additional metadata for literals.
      * </pre>
      *
      * <code>map&lt;string, string&gt; metadata = 5;</code>
@@ -10996,8 +10987,7 @@ public final class Literals {
       }
       /**
        * <pre>
-       * Rejected: We were going to add the Artifact (or at least ArtifactID) here as a way to keep track of lineage
-       * But this was deemed too janky.
+       * Additional metadata for literals.
        * </pre>
        *
        * <code>map&lt;string, string&gt; metadata = 5;</code>
@@ -11017,8 +11007,7 @@ public final class Literals {
       }
       /**
        * <pre>
-       * Rejected: We were going to add the Artifact (or at least ArtifactID) here as a way to keep track of lineage
-       * But this was deemed too janky.
+       * Additional metadata for literals.
        * </pre>
        *
        * <code>map&lt;string, string&gt; metadata = 5;</code>
@@ -11029,8 +11018,7 @@ public final class Literals {
       }
       /**
        * <pre>
-       * Rejected: We were going to add the Artifact (or at least ArtifactID) here as a way to keep track of lineage
-       * But this was deemed too janky.
+       * Additional metadata for literals.
        * </pre>
        *
        * <code>map&lt;string, string&gt; metadata = 5;</code>
@@ -11046,8 +11034,7 @@ public final class Literals {
       }
       /**
        * <pre>
-       * Rejected: We were going to add the Artifact (or at least ArtifactID) here as a way to keep track of lineage
-       * But this was deemed too janky.
+       * Additional metadata for literals.
        * </pre>
        *
        * <code>map&lt;string, string&gt; metadata = 5;</code>
@@ -11071,8 +11058,7 @@ public final class Literals {
       }
       /**
        * <pre>
-       * Rejected: We were going to add the Artifact (or at least ArtifactID) here as a way to keep track of lineage
-       * But this was deemed too janky.
+       * Additional metadata for literals.
        * </pre>
        *
        * <code>map&lt;string, string&gt; metadata = 5;</code>
@@ -11095,8 +11081,7 @@ public final class Literals {
       }
       /**
        * <pre>
-       * Rejected: We were going to add the Artifact (or at least ArtifactID) here as a way to keep track of lineage
-       * But this was deemed too janky.
+       * Additional metadata for literals.
        * </pre>
        *
        * <code>map&lt;string, string&gt; metadata = 5;</code>
@@ -11112,8 +11097,7 @@ public final class Literals {
       }
       /**
        * <pre>
-       * Rejected: We were going to add the Artifact (or at least ArtifactID) here as a way to keep track of lineage
-       * But this was deemed too janky.
+       * Additional metadata for literals.
        * </pre>
        *
        * <code>map&lt;string, string&gt; metadata = 5;</code>

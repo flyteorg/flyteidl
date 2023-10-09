@@ -109,8 +109,7 @@ message Literal {
     // (https://github.com/flyteorg/flyte/blob/master/rfc/system/1893-caching-of-offloaded-objects.md)
     string hash = 4;
 
-    // Rejected: We were going to add the Artifact (or at least ArtifactID) here as a way to keep track of lineage
-    // But this was deemed too janky.
+    // Additional metadata for literals.
     map<string, string> metadata = 5;
 }
 

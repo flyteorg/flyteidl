@@ -18,8 +18,8 @@
 
 extern PROTOBUF_INTERNAL_EXPORT_flyteidl_2fartifact_2fartifacts_2eproto ::google::protobuf::internal::SCCInfo<2> scc_info_Artifact_flyteidl_2fartifact_2fartifacts_2eproto;
 extern PROTOBUF_INTERNAL_EXPORT_flyteidl_2fartifact_2fartifacts_2eproto ::google::protobuf::internal::SCCInfo<5> scc_info_ArtifactSpec_flyteidl_2fartifact_2fartifacts_2eproto;
+extern PROTOBUF_INTERNAL_EXPORT_flyteidl_2fcore_2fartifact_5fid_2eproto ::google::protobuf::internal::SCCInfo<2> scc_info_ArtifactID_flyteidl_2fcore_2fartifact_5fid_2eproto;
 extern PROTOBUF_INTERNAL_EXPORT_flyteidl_2fcore_2fidentifier_2eproto ::google::protobuf::internal::SCCInfo<1> scc_info_NodeExecutionIdentifier_flyteidl_2fcore_2fidentifier_2eproto;
-extern PROTOBUF_INTERNAL_EXPORT_flyteidl_2fcore_2fidentifier_2eproto ::google::protobuf::internal::SCCInfo<2> scc_info_ArtifactID_flyteidl_2fcore_2fidentifier_2eproto;
 extern PROTOBUF_INTERNAL_EXPORT_flyteidl_2fcore_2fliterals_2eproto ::google::protobuf::internal::SCCInfo<10> scc_info_Literal_flyteidl_2fcore_2fliterals_2eproto;
 extern PROTOBUF_INTERNAL_EXPORT_flyteidl_2fservice_2fdataproxy_2eproto ::google::protobuf::internal::SCCInfo<1> scc_info_PreSignedURLs_flyteidl_2fservice_2fdataproxy_2eproto;
 extern PROTOBUF_INTERNAL_EXPORT_google_2fprotobuf_2fduration_2eproto ::google::protobuf::internal::SCCInfo<0> scc_info_Duration_google_2fprotobuf_2fduration_2eproto;
@@ -193,7 +193,7 @@ static void InitDefaultsGetDataRequest_flyteidl_2fservice_2fdataproxy_2eproto() 
 
 ::google::protobuf::internal::SCCInfo<1> scc_info_GetDataRequest_flyteidl_2fservice_2fdataproxy_2eproto =
     {{ATOMIC_VAR_INIT(::google::protobuf::internal::SCCInfoBase::kUninitialized), 1, InitDefaultsGetDataRequest_flyteidl_2fservice_2fdataproxy_2eproto}, {
-      &scc_info_ArtifactID_flyteidl_2fcore_2fidentifier_2eproto.base,}};
+      &scc_info_ArtifactID_flyteidl_2fcore_2fartifact_5fid_2eproto.base,}};
 
 static void InitDefaultsGetDataResponse_flyteidl_2fservice_2fdataproxy_2eproto() {
   GOOGLE_PROTOBUF_VERIFY_VERSION;
@@ -341,81 +341,83 @@ const char descriptor_table_protodef_flyteidl_2fservice_2fdataproxy_2eproto[] =
   "\n flyteidl/service/dataproxy.proto\022\020flyt"
   "eidl.service\032\034google/api/annotations.pro"
   "to\032\036google/protobuf/duration.proto\032\037goog"
-  "le/protobuf/timestamp.proto\032\036flyteidl/co"
-  "re/identifier.proto\032\034flyteidl/core/liter"
-  "als.proto\032!flyteidl/artifact/artifacts.p"
-  "roto\"\245\001\n\034CreateUploadLocationResponse\022\022\n"
-  "\nsigned_url\030\001 \001(\t\022\022\n\nnative_url\030\002 \001(\t\022.\n"
-  "\nexpires_at\030\003 \001(\0132\032.google.protobuf.Time"
-  "stamp\022-\n\010artifact\030\004 \001(\0132\033.flyteidl.artif"
-  "act.Artifact\"\343\001\n\033CreateUploadLocationReq"
-  "uest\022\017\n\007project\030\001 \001(\t\022\016\n\006domain\030\002 \001(\t\022\020\n"
-  "\010filename\030\003 \001(\t\022-\n\nexpires_in\030\004 \001(\0132\031.go"
-  "ogle.protobuf.Duration\022\023\n\013content_md5\030\005 "
-  "\001(\014\022\025\n\rfilename_root\030\006 \001(\t\0226\n\rartifact_s"
-  "pec\030\007 \001(\0132\037.flyteidl.artifact.ArtifactSp"
-  "ec\"f\n\035CreateDownloadLocationRequest\022\022\n\nn"
-  "ative_url\030\001 \001(\t\022-\n\nexpires_in\030\002 \001(\0132\031.go"
-  "ogle.protobuf.Duration:\002\030\001\"h\n\036CreateDown"
-  "loadLocationResponse\022\022\n\nsigned_url\030\001 \001(\t"
-  "\022.\n\nexpires_at\030\002 \001(\0132\032.google.protobuf.T"
-  "imestamp:\002\030\001\"\320\001\n\031CreateDownloadLinkReque"
-  "st\0225\n\rartifact_type\030\001 \001(\0162\036.flyteidl.ser"
-  "vice.ArtifactType\022-\n\nexpires_in\030\002 \001(\0132\031."
-  "google.protobuf.Duration\022C\n\021node_executi"
-  "on_id\030\003 \001(\0132&.flyteidl.core.NodeExecutio"
-  "nIdentifierH\000B\010\n\006source\"\242\001\n\032CreateDownlo"
-  "adLinkResponse\022\026\n\nsigned_url\030\001 \003(\tB\002\030\001\0222"
-  "\n\nexpires_at\030\002 \001(\0132\032.google.protobuf.Tim"
-  "estampB\002\030\001\0228\n\017pre_signed_urls\030\003 \001(\0132\037.fl"
-  "yteidl.service.PreSignedURLs\"S\n\rPreSigne"
-  "dURLs\022\022\n\nsigned_url\030\001 \003(\t\022.\n\nexpires_at\030"
-  "\002 \001(\0132\032.google.protobuf.Timestamp\"`\n\016Get"
-  "DataRequest\022\023\n\tflyte_url\030\001 \001(\tH\000\0220\n\013arti"
-  "fact_id\030\002 \001(\0132\031.flyteidl.core.ArtifactID"
-  "H\000B\007\n\005query\"\343\001\n\017GetDataResponse\0220\n\013liter"
-  "al_map\030\001 \001(\0132\031.flyteidl.core.LiteralMapH"
-  "\000\022:\n\017pre_signed_urls\030\002 \001(\0132\037.flyteidl.se"
-  "rvice.PreSignedURLsH\000\022)\n\007literal\030\003 \001(\0132\026"
-  ".flyteidl.core.LiteralH\000\022/\n\010artifact\030\004 \001"
-  "(\0132\033.flyteidl.artifact.ArtifactH\000B\006\n\004dat"
-  "a*C\n\014ArtifactType\022\033\n\027ARTIFACT_TYPE_UNDEF"
-  "INED\020\000\022\026\n\022ARTIFACT_TYPE_DECK\020\0012\342\004\n\020DataP"
-  "roxyService\022\240\001\n\024CreateUploadLocation\022-.f"
-  "lyteidl.service.CreateUploadLocationRequ"
-  "est\032..flyteidl.service.CreateUploadLocat"
-  "ionResponse\")\202\323\344\223\002#\"\036/api/v1/dataproxy/a"
-  "rtifact_urn:\001*\022\246\001\n\026CreateDownloadLocatio"
-  "n\022/.flyteidl.service.CreateDownloadLocat"
-  "ionRequest\0320.flyteidl.service.CreateDown"
-  "loadLocationResponse\")\210\002\001\202\323\344\223\002 \022\036/api/v1"
-  "/dataproxy/artifact_urn\022\233\001\n\022CreateDownlo"
-  "adLink\022+.flyteidl.service.CreateDownload"
-  "LinkRequest\032,.flyteidl.service.CreateDow"
-  "nloadLinkResponse\"*\202\323\344\223\002$\"\037/api/v1/datap"
-  "roxy/artifact_link:\001*\022d\n\007GetData\022 .flyte"
-  "idl.service.GetDataRequest\032!.flyteidl.se"
-  "rvice.GetDataResponse\"\024\202\323\344\223\002\016\022\014/api/v1/d"
-  "ataB9Z7github.com/flyteorg/flyteidl/gen/"
-  "pb-go/flyteidl/serviceb\006proto3"
+  "le/protobuf/timestamp.proto\032\037flyteidl/co"
+  "re/artifact_id.proto\032\036flyteidl/core/iden"
+  "tifier.proto\032\034flyteidl/core/literals.pro"
+  "to\032!flyteidl/artifact/artifacts.proto\"\245\001"
+  "\n\034CreateUploadLocationResponse\022\022\n\nsigned"
+  "_url\030\001 \001(\t\022\022\n\nnative_url\030\002 \001(\t\022.\n\nexpire"
+  "s_at\030\003 \001(\0132\032.google.protobuf.Timestamp\022-"
+  "\n\010artifact\030\004 \001(\0132\033.flyteidl.artifact.Art"
+  "ifact\"\343\001\n\033CreateUploadLocationRequest\022\017\n"
+  "\007project\030\001 \001(\t\022\016\n\006domain\030\002 \001(\t\022\020\n\010filena"
+  "me\030\003 \001(\t\022-\n\nexpires_in\030\004 \001(\0132\031.google.pr"
+  "otobuf.Duration\022\023\n\013content_md5\030\005 \001(\014\022\025\n\r"
+  "filename_root\030\006 \001(\t\0226\n\rartifact_spec\030\007 \001"
+  "(\0132\037.flyteidl.artifact.ArtifactSpec\"f\n\035C"
+  "reateDownloadLocationRequest\022\022\n\nnative_u"
+  "rl\030\001 \001(\t\022-\n\nexpires_in\030\002 \001(\0132\031.google.pr"
+  "otobuf.Duration:\002\030\001\"h\n\036CreateDownloadLoc"
+  "ationResponse\022\022\n\nsigned_url\030\001 \001(\t\022.\n\nexp"
+  "ires_at\030\002 \001(\0132\032.google.protobuf.Timestam"
+  "p:\002\030\001\"\320\001\n\031CreateDownloadLinkRequest\0225\n\ra"
+  "rtifact_type\030\001 \001(\0162\036.flyteidl.service.Ar"
+  "tifactType\022-\n\nexpires_in\030\002 \001(\0132\031.google."
+  "protobuf.Duration\022C\n\021node_execution_id\030\003"
+  " \001(\0132&.flyteidl.core.NodeExecutionIdenti"
+  "fierH\000B\010\n\006source\"\242\001\n\032CreateDownloadLinkR"
+  "esponse\022\026\n\nsigned_url\030\001 \003(\tB\002\030\001\0222\n\nexpir"
+  "es_at\030\002 \001(\0132\032.google.protobuf.TimestampB"
+  "\002\030\001\0228\n\017pre_signed_urls\030\003 \001(\0132\037.flyteidl."
+  "service.PreSignedURLs\"S\n\rPreSignedURLs\022\022"
+  "\n\nsigned_url\030\001 \003(\t\022.\n\nexpires_at\030\002 \001(\0132\032"
+  ".google.protobuf.Timestamp\"`\n\016GetDataReq"
+  "uest\022\023\n\tflyte_url\030\001 \001(\tH\000\0220\n\013artifact_id"
+  "\030\002 \001(\0132\031.flyteidl.core.ArtifactIDH\000B\007\n\005q"
+  "uery\"\343\001\n\017GetDataResponse\0220\n\013literal_map\030"
+  "\001 \001(\0132\031.flyteidl.core.LiteralMapH\000\022:\n\017pr"
+  "e_signed_urls\030\002 \001(\0132\037.flyteidl.service.P"
+  "reSignedURLsH\000\022)\n\007literal\030\003 \001(\0132\026.flytei"
+  "dl.core.LiteralH\000\022/\n\010artifact\030\004 \001(\0132\033.fl"
+  "yteidl.artifact.ArtifactH\000B\006\n\004data*C\n\014Ar"
+  "tifactType\022\033\n\027ARTIFACT_TYPE_UNDEFINED\020\000\022"
+  "\026\n\022ARTIFACT_TYPE_DECK\020\0012\342\004\n\020DataProxySer"
+  "vice\022\240\001\n\024CreateUploadLocation\022-.flyteidl"
+  ".service.CreateUploadLocationRequest\032..f"
+  "lyteidl.service.CreateUploadLocationResp"
+  "onse\")\202\323\344\223\002#\"\036/api/v1/dataproxy/artifact"
+  "_urn:\001*\022\246\001\n\026CreateDownloadLocation\022/.fly"
+  "teidl.service.CreateDownloadLocationRequ"
+  "est\0320.flyteidl.service.CreateDownloadLoc"
+  "ationResponse\")\210\002\001\202\323\344\223\002 \022\036/api/v1/datapr"
+  "oxy/artifact_urn\022\233\001\n\022CreateDownloadLink\022"
+  "+.flyteidl.service.CreateDownloadLinkReq"
+  "uest\032,.flyteidl.service.CreateDownloadLi"
+  "nkResponse\"*\202\323\344\223\002$\"\037/api/v1/dataproxy/ar"
+  "tifact_link:\001*\022d\n\007GetData\022 .flyteidl.ser"
+  "vice.GetDataRequest\032!.flyteidl.service.G"
+  "etDataResponse\"\024\202\323\344\223\002\016\022\014/api/v1/dataB9Z7"
+  "github.com/flyteorg/flyteidl/gen/pb-go/f"
+  "lyteidl/serviceb\006proto3"
   ;
 ::google::protobuf::internal::DescriptorTable descriptor_table_flyteidl_2fservice_2fdataproxy_2eproto = {
   false, InitDefaults_flyteidl_2fservice_2fdataproxy_2eproto, 
   descriptor_table_protodef_flyteidl_2fservice_2fdataproxy_2eproto,
-  "flyteidl/service/dataproxy.proto", &assign_descriptors_table_flyteidl_2fservice_2fdataproxy_2eproto, 2390,
+  "flyteidl/service/dataproxy.proto", &assign_descriptors_table_flyteidl_2fservice_2fdataproxy_2eproto, 2423,
 };
 
 void AddDescriptors_flyteidl_2fservice_2fdataproxy_2eproto() {
-  static constexpr ::google::protobuf::internal::InitFunc deps[6] =
+  static constexpr ::google::protobuf::internal::InitFunc deps[7] =
   {
     ::AddDescriptors_google_2fapi_2fannotations_2eproto,
     ::AddDescriptors_google_2fprotobuf_2fduration_2eproto,
     ::AddDescriptors_google_2fprotobuf_2ftimestamp_2eproto,
+    ::AddDescriptors_flyteidl_2fcore_2fartifact_5fid_2eproto,
     ::AddDescriptors_flyteidl_2fcore_2fidentifier_2eproto,
     ::AddDescriptors_flyteidl_2fcore_2fliterals_2eproto,
     ::AddDescriptors_flyteidl_2fartifact_2fartifacts_2eproto,
   };
- ::google::protobuf::internal::AddDescriptors(&descriptor_table_flyteidl_2fservice_2fdataproxy_2eproto, deps, 6);
+ ::google::protobuf::internal::AddDescriptors(&descriptor_table_flyteidl_2fservice_2fdataproxy_2eproto, deps, 7);
 }
 
 // Force running AddDescriptors() at dynamic initialization time.

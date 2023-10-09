@@ -478,8 +478,7 @@ pub struct Literal {
     /// (<https://github.com/flyteorg/flyte/blob/master/rfc/system/1893-caching-of-offloaded-objects.md>)
     #[prost(string, tag="4")]
     pub hash: ::prost::alloc::string::String,
-    /// Rejected: We were going to add the Artifact (or at least ArtifactID) here as a way to keep track of lineage
-    /// But this was deemed too janky.
+    /// Additional metadata for literals.
     #[prost(map="string, string", tag="5")]
     pub metadata: ::std::collections::HashMap<::prost::alloc::string::String, ::prost::alloc::string::String>,
     #[prost(oneof="literal::Value", tags="1, 2, 3")]
@@ -662,6 +661,45 @@ pub struct SignalIdentifier {
     #[prost(message, optional, tag="2")]
     pub execution_id: ::core::option::Option<WorkflowExecutionIdentifier>,
 }
+/// Indicates a resource type within Flyte.
+#[derive(Clone, Copy, Debug, PartialEq, Eq, Hash, PartialOrd, Ord, ::prost::Enumeration)]
+#[repr(i32)]
+pub enum ResourceType {
+    Unspecified = 0,
+    Task = 1,
+    Workflow = 2,
+    LaunchPlan = 3,
+    /// A dataset represents an entity modeled in Flyte DataCatalog. A Dataset is also a versioned entity and can be a compilation of multiple individual objects.
+    /// Eventually all Catalog objects should be modeled similar to Flyte Objects. The Dataset entities makes it possible for the UI  and CLI to act on the objects 
+    /// in a similar manner to other Flyte objects
+    Dataset = 4,
+}
+impl ResourceType {
+    /// String value of the enum field names used in the ProtoBuf definition.
+    ///
+    /// The values are not transformed in any way and thus are considered stable
+    /// (if the ProtoBuf definition does not change) and safe for programmatic use.
+    pub fn as_str_name(&self) -> &'static str {
+        match self {
+            ResourceType::Unspecified => "UNSPECIFIED",
+            ResourceType::Task => "TASK",
+            ResourceType::Workflow => "WORKFLOW",
+            ResourceType::LaunchPlan => "LAUNCH_PLAN",
+            ResourceType::Dataset => "DATASET",
+        }
+    }
+    /// Creates an enum from field names used in the ProtoBuf definition.
+    pub fn from_str_name(value: &str) -> ::core::option::Option<Self> {
+        match value {
+            "UNSPECIFIED" => Some(Self::Unspecified),
+            "TASK" => Some(Self::Task),
+            "WORKFLOW" => Some(Self::Workflow),
+            "LAUNCH_PLAN" => Some(Self::LaunchPlan),
+            "DATASET" => Some(Self::Dataset),
+            _ => None,
+        }
+    }
+}
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(Clone, PartialEq, ::prost::Message)]
 pub struct ArtifactKey {
@@ -774,45 +812,6 @@ pub struct Trigger {
     /// Consider making these ArtifactQuery instead.
     #[prost(message, repeated, tag="2")]
     pub triggers: ::prost::alloc::vec::Vec<ArtifactId>,
-}
-/// Indicates a resource type within Flyte.
-#[derive(Clone, Copy, Debug, PartialEq, Eq, Hash, PartialOrd, Ord, ::prost::Enumeration)]
-#[repr(i32)]
-pub enum ResourceType {
-    Unspecified = 0,
-    Task = 1,
-    Workflow = 2,
-    LaunchPlan = 3,
-    /// A dataset represents an entity modeled in Flyte DataCatalog. A Dataset is also a versioned entity and can be a compilation of multiple individual objects.
-    /// Eventually all Catalog objects should be modeled similar to Flyte Objects. The Dataset entities makes it possible for the UI  and CLI to act on the objects 
-    /// in a similar manner to other Flyte objects
-    Dataset = 4,
-}
-impl ResourceType {
-    /// String value of the enum field names used in the ProtoBuf definition.
-    ///
-    /// The values are not transformed in any way and thus are considered stable
-    /// (if the ProtoBuf definition does not change) and safe for programmatic use.
-    pub fn as_str_name(&self) -> &'static str {
-        match self {
-            ResourceType::Unspecified => "UNSPECIFIED",
-            ResourceType::Task => "TASK",
-            ResourceType::Workflow => "WORKFLOW",
-            ResourceType::LaunchPlan => "LAUNCH_PLAN",
-            ResourceType::Dataset => "DATASET",
-        }
-    }
-    /// Creates an enum from field names used in the ProtoBuf definition.
-    pub fn from_str_name(value: &str) -> ::core::option::Option<Self> {
-        match value {
-            "UNSPECIFIED" => Some(Self::Unspecified),
-            "TASK" => Some(Self::Task),
-            "WORKFLOW" => Some(Self::Workflow),
-            "LAUNCH_PLAN" => Some(Self::LaunchPlan),
-            "DATASET" => Some(Self::Dataset),
-            _ => None,
-        }
-    }
 }
 /// Defines a strongly typed variable.
 #[allow(clippy::derive_partial_eq_without_eq)]

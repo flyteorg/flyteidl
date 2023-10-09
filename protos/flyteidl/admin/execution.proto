@@ -7,6 +7,7 @@ import "flyteidl/admin/cluster_assignment.proto";
 import "flyteidl/admin/common.proto";
 import "flyteidl/core/literals.proto";
 import "flyteidl/core/execution.proto";
+import "flyteidl/core/artifact_id.proto";
 import "flyteidl/core/identifier.proto";
 import "flyteidl/core/metrics.proto";
 import "flyteidl/core/security.proto";

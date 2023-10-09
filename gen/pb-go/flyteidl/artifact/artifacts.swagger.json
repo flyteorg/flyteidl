@@ -772,7 +772,7 @@
           "additionalProperties": {
             "type": "string"
           },
-          "description": "Rejected: We were going to add the Artifact (or at least ArtifactID) here as a way to keep track of lineage\nBut this was deemed too janky."
+          "description": "Additional metadata for literals."
         }
       },
       "description": "A simple value. This supports any level of nesting (e.g. array of array of array of Blobs) as well as simple primitives."

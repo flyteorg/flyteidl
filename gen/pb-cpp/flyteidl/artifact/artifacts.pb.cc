@@ -22,12 +22,12 @@ extern PROTOBUF_INTERNAL_EXPORT_flyteidl_2fartifact_2fartifacts_2eproto ::google
 extern PROTOBUF_INTERNAL_EXPORT_flyteidl_2fartifact_2fartifacts_2eproto ::google::protobuf::internal::SCCInfo<2> scc_info_ArtifactProducer_flyteidl_2fartifact_2fartifacts_2eproto;
 extern PROTOBUF_INTERNAL_EXPORT_flyteidl_2fartifact_2fartifacts_2eproto ::google::protobuf::internal::SCCInfo<2> scc_info_Artifact_flyteidl_2fartifact_2fartifacts_2eproto;
 extern PROTOBUF_INTERNAL_EXPORT_flyteidl_2fartifact_2fartifacts_2eproto ::google::protobuf::internal::SCCInfo<5> scc_info_ArtifactSpec_flyteidl_2fartifact_2fartifacts_2eproto;
-extern PROTOBUF_INTERNAL_EXPORT_flyteidl_2fcore_2fidentifier_2eproto ::google::protobuf::internal::SCCInfo<0> scc_info_ArtifactKey_flyteidl_2fcore_2fidentifier_2eproto;
+extern PROTOBUF_INTERNAL_EXPORT_flyteidl_2fcore_2fartifact_5fid_2eproto ::google::protobuf::internal::SCCInfo<0> scc_info_ArtifactKey_flyteidl_2fcore_2fartifact_5fid_2eproto;
+extern PROTOBUF_INTERNAL_EXPORT_flyteidl_2fcore_2fartifact_5fid_2eproto ::google::protobuf::internal::SCCInfo<2> scc_info_ArtifactID_flyteidl_2fcore_2fartifact_5fid_2eproto;
+extern PROTOBUF_INTERNAL_EXPORT_flyteidl_2fcore_2fartifact_5fid_2eproto ::google::protobuf::internal::SCCInfo<3> scc_info_ArtifactQuery_flyteidl_2fcore_2fartifact_5fid_2eproto;
 extern PROTOBUF_INTERNAL_EXPORT_flyteidl_2fcore_2fidentifier_2eproto ::google::protobuf::internal::SCCInfo<0> scc_info_Identifier_flyteidl_2fcore_2fidentifier_2eproto;
 extern PROTOBUF_INTERNAL_EXPORT_flyteidl_2fcore_2fidentifier_2eproto ::google::protobuf::internal::SCCInfo<0> scc_info_WorkflowExecutionIdentifier_flyteidl_2fcore_2fidentifier_2eproto;
-extern PROTOBUF_INTERNAL_EXPORT_flyteidl_2fcore_2fidentifier_2eproto ::google::protobuf::internal::SCCInfo<2> scc_info_ArtifactID_flyteidl_2fcore_2fidentifier_2eproto;
 extern PROTOBUF_INTERNAL_EXPORT_flyteidl_2fcore_2fidentifier_2eproto ::google::protobuf::internal::SCCInfo<2> scc_info_TaskExecutionIdentifier_flyteidl_2fcore_2fidentifier_2eproto;
-extern PROTOBUF_INTERNAL_EXPORT_flyteidl_2fcore_2fidentifier_2eproto ::google::protobuf::internal::SCCInfo<3> scc_info_ArtifactQuery_flyteidl_2fcore_2fidentifier_2eproto;
 extern PROTOBUF_INTERNAL_EXPORT_flyteidl_2fcore_2finterface_2eproto ::google::protobuf::internal::SCCInfo<1> scc_info_ParameterMap_flyteidl_2fcore_2finterface_2eproto;
 extern PROTOBUF_INTERNAL_EXPORT_flyteidl_2fcore_2finterface_2eproto ::google::protobuf::internal::SCCInfo<1> scc_info_VariableMap_flyteidl_2fcore_2finterface_2eproto;
 extern PROTOBUF_INTERNAL_EXPORT_flyteidl_2fcore_2fliterals_2eproto ::google::protobuf::internal::SCCInfo<10> scc_info_Literal_flyteidl_2fcore_2fliterals_2eproto;
@@ -141,7 +141,7 @@ static void InitDefaultsArtifact_flyteidl_2fartifact_2fartifacts_2eproto() {
 
 ::google::protobuf::internal::SCCInfo<2> scc_info_Artifact_flyteidl_2fartifact_2fartifacts_2eproto =
     {{ATOMIC_VAR_INIT(::google::protobuf::internal::SCCInfoBase::kUninitialized), 2, InitDefaultsArtifact_flyteidl_2fartifact_2fartifacts_2eproto}, {
-      &scc_info_ArtifactID_flyteidl_2fcore_2fidentifier_2eproto.base,
+      &scc_info_ArtifactID_flyteidl_2fcore_2fartifact_5fid_2eproto.base,
       &scc_info_ArtifactSpec_flyteidl_2fartifact_2fartifacts_2eproto.base,}};
 
 static void InitDefaultsCreateArtifactRequest_PartitionsEntry_DoNotUse_flyteidl_2fartifact_2fartifacts_2eproto() {
@@ -170,7 +170,7 @@ static void InitDefaultsCreateArtifactRequest_flyteidl_2fartifact_2fartifacts_2e
 
 ::google::protobuf::internal::SCCInfo<3> scc_info_CreateArtifactRequest_flyteidl_2fartifact_2fartifacts_2eproto =
     {{ATOMIC_VAR_INIT(::google::protobuf::internal::SCCInfoBase::kUninitialized), 3, InitDefaultsCreateArtifactRequest_flyteidl_2fartifact_2fartifacts_2eproto}, {
-      &scc_info_ArtifactKey_flyteidl_2fcore_2fidentifier_2eproto.base,
+      &scc_info_ArtifactKey_flyteidl_2fcore_2fartifact_5fid_2eproto.base,
       &scc_info_ArtifactSpec_flyteidl_2fartifact_2fartifacts_2eproto.base,
       &scc_info_CreateArtifactRequest_PartitionsEntry_DoNotUse_flyteidl_2fartifact_2fartifacts_2eproto.base,}};
 
@@ -221,7 +221,7 @@ static void InitDefaultsGetArtifactRequest_flyteidl_2fartifact_2fartifacts_2epro
 
 ::google::protobuf::internal::SCCInfo<1> scc_info_GetArtifactRequest_flyteidl_2fartifact_2fartifacts_2eproto =
     {{ATOMIC_VAR_INIT(::google::protobuf::internal::SCCInfoBase::kUninitialized), 1, InitDefaultsGetArtifactRequest_flyteidl_2fartifact_2fartifacts_2eproto}, {
-      &scc_info_ArtifactQuery_flyteidl_2fcore_2fidentifier_2eproto.base,}};
+      &scc_info_ArtifactQuery_flyteidl_2fcore_2fartifact_5fid_2eproto.base,}};
 
 static void InitDefaultsGetArtifactResponse_flyteidl_2fartifact_2fartifacts_2eproto() {
   GOOGLE_PROTOBUF_VERIFY_VERSION;
@@ -265,7 +265,7 @@ static void InitDefaultsListArtifactNamesResponse_flyteidl_2fartifact_2fartifact
 
 ::google::protobuf::internal::SCCInfo<1> scc_info_ListArtifactNamesResponse_flyteidl_2fartifact_2fartifacts_2eproto =
     {{ATOMIC_VAR_INIT(::google::protobuf::internal::SCCInfoBase::kUninitialized), 1, InitDefaultsListArtifactNamesResponse_flyteidl_2fartifact_2fartifacts_2eproto}, {
-      &scc_info_ArtifactKey_flyteidl_2fcore_2fidentifier_2eproto.base,}};
+      &scc_info_ArtifactKey_flyteidl_2fcore_2fartifact_5fid_2eproto.base,}};
 
 static void InitDefaultsListArtifactsRequest_flyteidl_2fartifact_2fartifacts_2eproto() {
   GOOGLE_PROTOBUF_VERIFY_VERSION;
@@ -280,7 +280,7 @@ static void InitDefaultsListArtifactsRequest_flyteidl_2fartifact_2fartifacts_2ep
 
 ::google::protobuf::internal::SCCInfo<1> scc_info_ListArtifactsRequest_flyteidl_2fartifact_2fartifacts_2eproto =
     {{ATOMIC_VAR_INIT(::google::protobuf::internal::SCCInfoBase::kUninitialized), 1, InitDefaultsListArtifactsRequest_flyteidl_2fartifact_2fartifacts_2eproto}, {
-      &scc_info_ArtifactKey_flyteidl_2fcore_2fidentifier_2eproto.base,}};
+      &scc_info_ArtifactKey_flyteidl_2fcore_2fartifact_5fid_2eproto.base,}};
 
 static void InitDefaultsListArtifactsResponse_flyteidl_2fartifact_2fartifacts_2eproto() {
   GOOGLE_PROTOBUF_VERIFY_VERSION;
@@ -310,7 +310,7 @@ static void InitDefaultsAddTagRequest_flyteidl_2fartifact_2fartifacts_2eproto() 
 
 ::google::protobuf::internal::SCCInfo<1> scc_info_AddTagRequest_flyteidl_2fartifact_2fartifacts_2eproto =
     {{ATOMIC_VAR_INIT(::google::protobuf::internal::SCCInfoBase::kUninitialized), 1, InitDefaultsAddTagRequest_flyteidl_2fartifact_2fartifacts_2eproto}, {
-      &scc_info_ArtifactID_flyteidl_2fcore_2fidentifier_2eproto.base,}};
+      &scc_info_ArtifactID_flyteidl_2fcore_2fartifact_5fid_2eproto.base,}};
 
 static void InitDefaultsAddTagResponse_flyteidl_2fartifact_2fartifacts_2eproto() {
   GOOGLE_PROTOBUF_VERIFY_VERSION;
@@ -704,95 +704,97 @@ const char descriptor_table_protodef_flyteidl_2fartifact_2fartifacts_2eproto[] =
   "o\032 flyteidl/admin/launch_plan.proto\032\034fly"
   "teidl/core/literals.proto\032\031flyteidl/core"
   "/types.proto\032\036flyteidl/core/identifier.p"
-  "roto\032\035flyteidl/core/interface.proto\"w\n\010A"
-  "rtifact\022.\n\013artifact_id\030\001 \001(\0132\031.flyteidl."
-  "core.ArtifactID\022-\n\004spec\030\002 \001(\0132\037.flyteidl"
-  ".artifact.ArtifactSpec\022\014\n\004tags\030\003 \003(\t\"\227\002\n"
-  "\025CreateArtifactRequest\0220\n\014artifact_key\030\001"
-  " \001(\0132\032.flyteidl.core.ArtifactKey\022\017\n\007vers"
-  "ion\030\003 \001(\t\022-\n\004spec\030\002 \001(\0132\037.flyteidl.artif"
-  "act.ArtifactSpec\022L\n\npartitions\030\004 \003(\01328.f"
-  "lyteidl.artifact.CreateArtifactRequest.P"
-  "artitionsEntry\022\013\n\003tag\030\005 \001(\t\0321\n\017Partition"
-  "sEntry\022\013\n\003key\030\001 \001(\t\022\r\n\005value\030\002 \001(\t:\0028\001\"\343"
-  "\002\n\014ArtifactSpec\022%\n\005value\030\001 \001(\0132\026.flyteid"
-  "l.core.Literal\022(\n\004type\030\002 \001(\0132\032.flyteidl."
-  "core.LiteralType\022@\n\016task_execution\030\005 \001(\013"
-  "2&.flyteidl.core.TaskExecutionIdentifier"
-  "H\000\022\?\n\texecution\030\006 \001(\0132*.flyteidl.core.Wo"
-  "rkflowExecutionIdentifierH\000\022\023\n\tprincipal"
-  "\030\007 \001(\tH\000\022\031\n\021short_description\030\010 \001(\t\022\030\n\020l"
-  "ong_description\030\t \001(\t\022+\n\ruser_metadata\030\n"
-  " \001(\0132\024.google.protobuf.AnyB\010\n\006source\"G\n\026"
-  "CreateArtifactResponse\022-\n\010artifact\030\001 \001(\013"
-  "2\033.flyteidl.artifact.Artifact\"R\n\022GetArti"
-  "factRequest\022+\n\005query\030\001 \001(\0132\034.flyteidl.co"
-  "re.ArtifactQuery\022\017\n\007details\030\002 \001(\010\"D\n\023Get"
-  "ArtifactResponse\022-\n\010artifact\030\001 \001(\0132\033.fly"
-  "teidl.artifact.Artifact\";\n\030ListArtifactN"
-  "amesRequest\022\017\n\007project\030\001 \001(\t\022\016\n\006domain\030\002"
-  " \001(\t\"N\n\031ListArtifactNamesResponse\0221\n\rart"
-  "ifact_keys\030\001 \003(\0132\032.flyteidl.core.Artifac"
-  "tKey\"H\n\024ListArtifactsRequest\0220\n\014artifact"
-  "_key\030\001 \001(\0132\032.flyteidl.core.ArtifactKey\"G"
-  "\n\025ListArtifactsResponse\022.\n\tartifacts\030\001 \003"
-  "(\0132\033.flyteidl.artifact.Artifact\"a\n\rAddTa"
-  "gRequest\022.\n\013artifact_id\030\001 \001(\0132\031.flyteidl"
-  ".core.ArtifactID\022\r\n\005value\030\002 \001(\t\022\021\n\toverw"
-  "rite\030\003 \001(\010\"\020\n\016AddTagResponse\"O\n\024CreateTr"
-  "iggerRequest\0227\n\023trigger_launch_plan\030\001 \001("
-  "\0132\032.flyteidl.admin.LaunchPlan\"\027\n\025CreateT"
-  "riggerResponse\"E\n\024DeleteTriggerRequest\022-"
-  "\n\ntrigger_id\030\001 \001(\0132\031.flyteidl.core.Ident"
-  "ifier\"\027\n\025DeleteTriggerResponse\"m\n\020Artifa"
-  "ctProducer\022,\n\tentity_id\030\001 \001(\0132\031.flyteidl"
-  ".core.Identifier\022+\n\007outputs\030\002 \001(\0132\032.flyt"
-  "eidl.core.VariableMap\"Q\n\027RegisterProduce"
-  "rRequest\0226\n\tproducers\030\001 \003(\0132#.flyteidl.a"
-  "rtifact.ArtifactProducer\"m\n\020ArtifactCons"
-  "umer\022,\n\tentity_id\030\001 \001(\0132\031.flyteidl.core."
-  "Identifier\022+\n\006inputs\030\002 \001(\0132\033.flyteidl.co"
-  "re.ParameterMap\"Q\n\027RegisterConsumerReque"
-  "st\0226\n\tconsumers\030\001 \003(\0132#.flyteidl.artifac"
-  "t.ArtifactConsumer\"\022\n\020RegisterResponse2\306"
-  "\005\n\020ArtifactRegistry\022g\n\016CreateArtifact\022(."
-  "flyteidl.artifact.CreateArtifactRequest\032"
-  ").flyteidl.artifact.CreateArtifactRespon"
-  "se\"\000\022^\n\013GetArtifact\022%.flyteidl.artifact."
-  "GetArtifactRequest\032&.flyteidl.artifact.G"
-  "etArtifactResponse\"\000\022d\n\rCreateTrigger\022\'."
-  "flyteidl.artifact.CreateTriggerRequest\032("
-  ".flyteidl.artifact.CreateTriggerResponse"
-  "\"\000\022d\n\rDeleteTrigger\022\'.flyteidl.artifact."
-  "DeleteTriggerRequest\032(.flyteidl.artifact"
-  ".DeleteTriggerResponse\"\000\022O\n\006AddTag\022 .fly"
-  "teidl.artifact.AddTagRequest\032!.flyteidl."
-  "artifact.AddTagResponse\"\000\022e\n\020RegisterPro"
-  "ducer\022*.flyteidl.artifact.RegisterProduc"
-  "erRequest\032#.flyteidl.artifact.RegisterRe"
-  "sponse\"\000\022e\n\020RegisterConsumer\022*.flyteidl."
-  "artifact.RegisterConsumerRequest\032#.flyte"
-  "idl.artifact.RegisterResponse\"\000B:Z8githu"
-  "b.com/flyteorg/flyteidl/gen/pb-go/flytei"
-  "dl/artifactb\006proto3"
+  "roto\032\037flyteidl/core/artifact_id.proto\032\035f"
+  "lyteidl/core/interface.proto\"w\n\010Artifact"
+  "\022.\n\013artifact_id\030\001 \001(\0132\031.flyteidl.core.Ar"
+  "tifactID\022-\n\004spec\030\002 \001(\0132\037.flyteidl.artifa"
+  "ct.ArtifactSpec\022\014\n\004tags\030\003 \003(\t\"\227\002\n\025Create"
+  "ArtifactRequest\0220\n\014artifact_key\030\001 \001(\0132\032."
+  "flyteidl.core.ArtifactKey\022\017\n\007version\030\003 \001"
+  "(\t\022-\n\004spec\030\002 \001(\0132\037.flyteidl.artifact.Art"
+  "ifactSpec\022L\n\npartitions\030\004 \003(\01328.flyteidl"
+  ".artifact.CreateArtifactRequest.Partitio"
+  "nsEntry\022\013\n\003tag\030\005 \001(\t\0321\n\017PartitionsEntry\022"
+  "\013\n\003key\030\001 \001(\t\022\r\n\005value\030\002 \001(\t:\0028\001\"\343\002\n\014Arti"
+  "factSpec\022%\n\005value\030\001 \001(\0132\026.flyteidl.core."
+  "Literal\022(\n\004type\030\002 \001(\0132\032.flyteidl.core.Li"
+  "teralType\022@\n\016task_execution\030\005 \001(\0132&.flyt"
+  "eidl.core.TaskExecutionIdentifierH\000\022\?\n\te"
+  "xecution\030\006 \001(\0132*.flyteidl.core.WorkflowE"
+  "xecutionIdentifierH\000\022\023\n\tprincipal\030\007 \001(\tH"
+  "\000\022\031\n\021short_description\030\010 \001(\t\022\030\n\020long_des"
+  "cription\030\t \001(\t\022+\n\ruser_metadata\030\n \001(\0132\024."
+  "google.protobuf.AnyB\010\n\006source\"G\n\026CreateA"
+  "rtifactResponse\022-\n\010artifact\030\001 \001(\0132\033.flyt"
+  "eidl.artifact.Artifact\"R\n\022GetArtifactReq"
+  "uest\022+\n\005query\030\001 \001(\0132\034.flyteidl.core.Arti"
+  "factQuery\022\017\n\007details\030\002 \001(\010\"D\n\023GetArtifac"
+  "tResponse\022-\n\010artifact\030\001 \001(\0132\033.flyteidl.a"
+  "rtifact.Artifact\";\n\030ListArtifactNamesReq"
+  "uest\022\017\n\007project\030\001 \001(\t\022\016\n\006domain\030\002 \001(\t\"N\n"
+  "\031ListArtifactNamesResponse\0221\n\rartifact_k"
+  "eys\030\001 \003(\0132\032.flyteidl.core.ArtifactKey\"H\n"
+  "\024ListArtifactsRequest\0220\n\014artifact_key\030\001 "
+  "\001(\0132\032.flyteidl.core.ArtifactKey\"G\n\025ListA"
+  "rtifactsResponse\022.\n\tartifacts\030\001 \003(\0132\033.fl"
+  "yteidl.artifact.Artifact\"a\n\rAddTagReques"
+  "t\022.\n\013artifact_id\030\001 \001(\0132\031.flyteidl.core.A"
+  "rtifactID\022\r\n\005value\030\002 \001(\t\022\021\n\toverwrite\030\003 "
+  "\001(\010\"\020\n\016AddTagResponse\"O\n\024CreateTriggerRe"
+  "quest\0227\n\023trigger_launch_plan\030\001 \001(\0132\032.fly"
+  "teidl.admin.LaunchPlan\"\027\n\025CreateTriggerR"
+  "esponse\"E\n\024DeleteTriggerRequest\022-\n\ntrigg"
+  "er_id\030\001 \001(\0132\031.flyteidl.core.Identifier\"\027"
+  "\n\025DeleteTriggerResponse\"m\n\020ArtifactProdu"
+  "cer\022,\n\tentity_id\030\001 \001(\0132\031.flyteidl.core.I"
+  "dentifier\022+\n\007outputs\030\002 \001(\0132\032.flyteidl.co"
+  "re.VariableMap\"Q\n\027RegisterProducerReques"
+  "t\0226\n\tproducers\030\001 \003(\0132#.flyteidl.artifact"
+  ".ArtifactProducer\"m\n\020ArtifactConsumer\022,\n"
+  "\tentity_id\030\001 \001(\0132\031.flyteidl.core.Identif"
+  "ier\022+\n\006inputs\030\002 \001(\0132\033.flyteidl.core.Para"
+  "meterMap\"Q\n\027RegisterConsumerRequest\0226\n\tc"
+  "onsumers\030\001 \003(\0132#.flyteidl.artifact.Artif"
+  "actConsumer\"\022\n\020RegisterResponse2\306\005\n\020Arti"
+  "factRegistry\022g\n\016CreateArtifact\022(.flyteid"
+  "l.artifact.CreateArtifactRequest\032).flyte"
+  "idl.artifact.CreateArtifactResponse\"\000\022^\n"
+  "\013GetArtifact\022%.flyteidl.artifact.GetArti"
+  "factRequest\032&.flyteidl.artifact.GetArtif"
+  "actResponse\"\000\022d\n\rCreateTrigger\022\'.flyteid"
+  "l.artifact.CreateTriggerRequest\032(.flytei"
+  "dl.artifact.CreateTriggerResponse\"\000\022d\n\rD"
+  "eleteTrigger\022\'.flyteidl.artifact.DeleteT"
+  "riggerRequest\032(.flyteidl.artifact.Delete"
+  "TriggerResponse\"\000\022O\n\006AddTag\022 .flyteidl.a"
+  "rtifact.AddTagRequest\032!.flyteidl.artifac"
+  "t.AddTagResponse\"\000\022e\n\020RegisterProducer\022*"
+  ".flyteidl.artifact.RegisterProducerReque"
+  "st\032#.flyteidl.artifact.RegisterResponse\""
+  "\000\022e\n\020RegisterConsumer\022*.flyteidl.artifac"
+  "t.RegisterConsumerRequest\032#.flyteidl.art"
+  "ifact.RegisterResponse\"\000B:Z8github.com/f"
+  "lyteorg/flyteidl/gen/pb-go/flyteidl/arti"
+  "factb\006proto3"
   ;
 ::google::protobuf::internal::DescriptorTable descriptor_table_flyteidl_2fartifact_2fartifacts_2eproto = {
   false, InitDefaults_flyteidl_2fartifact_2fartifacts_2eproto, 
   descriptor_table_protodef_flyteidl_2fartifact_2fartifacts_2eproto,
-  "flyteidl/artifact/artifacts.proto", &assign_descriptors_table_flyteidl_2fartifact_2fartifacts_2eproto, 3019,
+  "flyteidl/artifact/artifacts.proto", &assign_descriptors_table_flyteidl_2fartifact_2fartifacts_2eproto, 3052,
 };
 
 void AddDescriptors_flyteidl_2fartifact_2fartifacts_2eproto() {
-  static constexpr ::google::protobuf::internal::InitFunc deps[6] =
+  static constexpr ::google::protobuf::internal::InitFunc deps[7] =
   {
     ::AddDescriptors_google_2fprotobuf_2fany_2eproto,
     ::AddDescriptors_flyteidl_2fadmin_2flaunch_5fplan_2eproto,
     ::AddDescriptors_flyteidl_2fcore_2fliterals_2eproto,
     ::AddDescriptors_flyteidl_2fcore_2ftypes_2eproto,
     ::AddDescriptors_flyteidl_2fcore_2fidentifier_2eproto,
+    ::AddDescriptors_flyteidl_2fcore_2fartifact_5fid_2eproto,
     ::AddDescriptors_flyteidl_2fcore_2finterface_2eproto,
   };
- ::google::protobuf::internal::AddDescriptors(&descriptor_table_flyteidl_2fartifact_2fartifacts_2eproto, deps, 6);
+ ::google::protobuf::internal::AddDescriptors(&descriptor_table_flyteidl_2fartifact_2fartifacts_2eproto, deps, 7);
 }
 
 // Force running AddDescriptors() at dynamic initialization time.

@@ -25,11 +25,11 @@ public final class Artifacts {
     /**
      * <code>.flyteidl.core.ArtifactID artifact_id = 1;</code>
      */
-    flyteidl.core.IdentifierOuterClass.ArtifactID getArtifactId();
+    flyteidl.core.ArtifactId.ArtifactID getArtifactId();
     /**
      * <code>.flyteidl.core.ArtifactID artifact_id = 1;</code>
      */
-    flyteidl.core.IdentifierOuterClass.ArtifactIDOrBuilder getArtifactIdOrBuilder();
+    flyteidl.core.ArtifactId.ArtifactIDOrBuilder getArtifactIdOrBuilder();
 
     /**
      * <code>.flyteidl.artifact.ArtifactSpec spec = 2;</code>
@@ -120,11 +120,11 @@ public final class Artifacts {
               done = true;
               break;
             case 10: {
-              flyteidl.core.IdentifierOuterClass.ArtifactID.Builder subBuilder = null;
+              flyteidl.core.ArtifactId.ArtifactID.Builder subBuilder = null;
               if (artifactId_ != null) {
                 subBuilder = artifactId_.toBuilder();
               }
-              artifactId_ = input.readMessage(flyteidl.core.IdentifierOuterClass.ArtifactID.parser(), extensionRegistry);
+              artifactId_ = input.readMessage(flyteidl.core.ArtifactId.ArtifactID.parser(), extensionRegistry);
               if (subBuilder != null) {
                 subBuilder.mergeFrom(artifactId_);
                 artifactId_ = subBuilder.buildPartial();
@@ -191,7 +191,7 @@ public final class Artifacts {
 
     private int bitField0_;
     public static final int ARTIFACT_ID_FIELD_NUMBER = 1;
-    private flyteidl.core.IdentifierOuterClass.ArtifactID artifactId_;
+    private flyteidl.core.ArtifactId.ArtifactID artifactId_;
     /**
      * <code>.flyteidl.core.ArtifactID artifact_id = 1;</code>
      */
@@ -201,13 +201,13 @@ public final class Artifacts {
     /**
      * <code>.flyteidl.core.ArtifactID artifact_id = 1;</code>
      */
-    public flyteidl.core.IdentifierOuterClass.ArtifactID getArtifactId() {
-      return artifactId_ == null ? flyteidl.core.IdentifierOuterClass.ArtifactID.getDefaultInstance() : artifactId_;
+    public flyteidl.core.ArtifactId.ArtifactID getArtifactId() {
+      return artifactId_ == null ? flyteidl.core.ArtifactId.ArtifactID.getDefaultInstance() : artifactId_;
     }
     /**
      * <code>.flyteidl.core.ArtifactID artifact_id = 1;</code>
      */
-    public flyteidl.core.IdentifierOuterClass.ArtifactIDOrBuilder getArtifactIdOrBuilder() {
+    public flyteidl.core.ArtifactId.ArtifactIDOrBuilder getArtifactIdOrBuilder() {
       return getArtifactId();
     }
 
@@ -660,9 +660,9 @@ public final class Artifacts {
       }
       private int bitField0_;
 
-      private flyteidl.core.IdentifierOuterClass.ArtifactID artifactId_;
+      private flyteidl.core.ArtifactId.ArtifactID artifactId_;
       private com.google.protobuf.SingleFieldBuilderV3<
-          flyteidl.core.IdentifierOuterClass.ArtifactID, flyteidl.core.IdentifierOuterClass.ArtifactID.Builder, flyteidl.core.IdentifierOuterClass.ArtifactIDOrBuilder> artifactIdBuilder_;
+          flyteidl.core.ArtifactId.ArtifactID, flyteidl.core.ArtifactId.ArtifactID.Builder, flyteidl.core.ArtifactId.ArtifactIDOrBuilder> artifactIdBuilder_;
       /**
        * <code>.flyteidl.core.ArtifactID artifact_id = 1;</code>
        */
@@ -672,9 +672,9 @@ public final class Artifacts {
       /**
        * <code>.flyteidl.core.ArtifactID artifact_id = 1;</code>
        */
-      public flyteidl.core.IdentifierOuterClass.ArtifactID getArtifactId() {
+      public flyteidl.core.ArtifactId.ArtifactID getArtifactId() {
         if (artifactIdBuilder_ == null) {
-          return artifactId_ == null ? flyteidl.core.IdentifierOuterClass.ArtifactID.getDefaultInstance() : artifactId_;
+          return artifactId_ == null ? flyteidl.core.ArtifactId.ArtifactID.getDefaultInstance() : artifactId_;
         } else {
           return artifactIdBuilder_.getMessage();
         }
@@ -682,7 +682,7 @@ public final class Artifacts {
       /**
        * <code>.flyteidl.core.ArtifactID artifact_id = 1;</code>
        */
-      public Builder setArtifactId(flyteidl.core.IdentifierOuterClass.ArtifactID value) {
+      public Builder setArtifactId(flyteidl.core.ArtifactId.ArtifactID value) {
         if (artifactIdBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
@@ -699,7 +699,7 @@ public final class Artifacts {
        * <code>.flyteidl.core.ArtifactID artifact_id = 1;</code>
        */
       public Builder setArtifactId(
-          flyteidl.core.IdentifierOuterClass.ArtifactID.Builder builderForValue) {
+          flyteidl.core.ArtifactId.ArtifactID.Builder builderForValue) {
         if (artifactIdBuilder_ == null) {
           artifactId_ = builderForValue.build();
           onChanged();
@@ -712,11 +712,11 @@ public final class Artifacts {
       /**
        * <code>.flyteidl.core.ArtifactID artifact_id = 1;</code>
        */
-      public Builder mergeArtifactId(flyteidl.core.IdentifierOuterClass.ArtifactID value) {
+      public Builder mergeArtifactId(flyteidl.core.ArtifactId.ArtifactID value) {
         if (artifactIdBuilder_ == null) {
           if (artifactId_ != null) {
             artifactId_ =
-              flyteidl.core.IdentifierOuterClass.ArtifactID.newBuilder(artifactId_).mergeFrom(value).buildPartial();
+              flyteidl.core.ArtifactId.ArtifactID.newBuilder(artifactId_).mergeFrom(value).buildPartial();
           } else {
             artifactId_ = value;
           }
@@ -744,7 +744,7 @@ public final class Artifacts {
       /**
        * <code>.flyteidl.core.ArtifactID artifact_id = 1;</code>
        */
-      public flyteidl.core.IdentifierOuterClass.ArtifactID.Builder getArtifactIdBuilder() {
+      public flyteidl.core.ArtifactId.ArtifactID.Builder getArtifactIdBuilder() {
         
         onChanged();
         return getArtifactIdFieldBuilder().getBuilder();
@@ -752,23 +752,23 @@ public final class Artifacts {
       /**
        * <code>.flyteidl.core.ArtifactID artifact_id = 1;</code>
        */
-      public flyteidl.core.IdentifierOuterClass.ArtifactIDOrBuilder getArtifactIdOrBuilder() {
+      public flyteidl.core.ArtifactId.ArtifactIDOrBuilder getArtifactIdOrBuilder() {
         if (artifactIdBuilder_ != null) {
           return artifactIdBuilder_.getMessageOrBuilder();
         } else {
           return artifactId_ == null ?
-              flyteidl.core.IdentifierOuterClass.ArtifactID.getDefaultInstance() : artifactId_;
+              flyteidl.core.ArtifactId.ArtifactID.getDefaultInstance() : artifactId_;
         }
       }
       /**
        * <code>.flyteidl.core.ArtifactID artifact_id = 1;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
-          flyteidl.core.IdentifierOuterClass.ArtifactID, flyteidl.core.IdentifierOuterClass.ArtifactID.Builder, flyteidl.core.IdentifierOuterClass.ArtifactIDOrBuilder> 
+          flyteidl.core.ArtifactId.ArtifactID, flyteidl.core.ArtifactId.ArtifactID.Builder, flyteidl.core.ArtifactId.ArtifactIDOrBuilder> 
           getArtifactIdFieldBuilder() {
         if (artifactIdBuilder_ == null) {
           artifactIdBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-              flyteidl.core.IdentifierOuterClass.ArtifactID, flyteidl.core.IdentifierOuterClass.ArtifactID.Builder, flyteidl.core.IdentifierOuterClass.ArtifactIDOrBuilder>(
+              flyteidl.core.ArtifactId.ArtifactID, flyteidl.core.ArtifactId.ArtifactID.Builder, flyteidl.core.ArtifactId.ArtifactIDOrBuilder>(
                   getArtifactId(),
                   getParentForChildren(),
                   isClean());
@@ -1095,7 +1095,7 @@ public final class Artifacts {
      *
      * <code>.flyteidl.core.ArtifactKey artifact_key = 1;</code>
      */
-    flyteidl.core.IdentifierOuterClass.ArtifactKey getArtifactKey();
+    flyteidl.core.ArtifactId.ArtifactKey getArtifactKey();
     /**
      * <pre>
      * Specify just project/domain on creation
@@ -1103,7 +1103,7 @@ public final class Artifacts {
      *
      * <code>.flyteidl.core.ArtifactKey artifact_key = 1;</code>
      */
-    flyteidl.core.IdentifierOuterClass.ArtifactKeyOrBuilder getArtifactKeyOrBuilder();
+    flyteidl.core.ArtifactId.ArtifactKeyOrBuilder getArtifactKeyOrBuilder();
 
     /**
      * <code>string version = 3;</code>
@@ -1214,11 +1214,11 @@ public final class Artifacts {
               done = true;
               break;
             case 10: {
-              flyteidl.core.IdentifierOuterClass.ArtifactKey.Builder subBuilder = null;
+              flyteidl.core.ArtifactId.ArtifactKey.Builder subBuilder = null;
               if (artifactKey_ != null) {
                 subBuilder = artifactKey_.toBuilder();
               }
-              artifactKey_ = input.readMessage(flyteidl.core.IdentifierOuterClass.ArtifactKey.parser(), extensionRegistry);
+              artifactKey_ = input.readMessage(flyteidl.core.ArtifactId.ArtifactKey.parser(), extensionRegistry);
               if (subBuilder != null) {
                 subBuilder.mergeFrom(artifactKey_);
                 artifactKey_ = subBuilder.buildPartial();
@@ -1310,7 +1310,7 @@ public final class Artifacts {
 
     private int bitField0_;
     public static final int ARTIFACT_KEY_FIELD_NUMBER = 1;
-    private flyteidl.core.IdentifierOuterClass.ArtifactKey artifactKey_;
+    private flyteidl.core.ArtifactId.ArtifactKey artifactKey_;
     /**
      * <pre>
      * Specify just project/domain on creation
@@ -1328,8 +1328,8 @@ public final class Artifacts {
      *
      * <code>.flyteidl.core.ArtifactKey artifact_key = 1;</code>
      */
-    public flyteidl.core.IdentifierOuterClass.ArtifactKey getArtifactKey() {
-      return artifactKey_ == null ? flyteidl.core.IdentifierOuterClass.ArtifactKey.getDefaultInstance() : artifactKey_;
+    public flyteidl.core.ArtifactId.ArtifactKey getArtifactKey() {
+      return artifactKey_ == null ? flyteidl.core.ArtifactId.ArtifactKey.getDefaultInstance() : artifactKey_;
     }
     /**
      * <pre>
@@ -1338,7 +1338,7 @@ public final class Artifacts {
      *
      * <code>.flyteidl.core.ArtifactKey artifact_key = 1;</code>
      */
-    public flyteidl.core.IdentifierOuterClass.ArtifactKeyOrBuilder getArtifactKeyOrBuilder() {
+    public flyteidl.core.ArtifactId.ArtifactKeyOrBuilder getArtifactKeyOrBuilder() {
       return getArtifactKey();
     }
 
@@ -1939,9 +1939,9 @@ public final class Artifacts {
       }
       private int bitField0_;
 
-      private flyteidl.core.IdentifierOuterClass.ArtifactKey artifactKey_;
+      private flyteidl.core.ArtifactId.ArtifactKey artifactKey_;
       private com.google.protobuf.SingleFieldBuilderV3<
-          flyteidl.core.IdentifierOuterClass.ArtifactKey, flyteidl.core.IdentifierOuterClass.ArtifactKey.Builder, flyteidl.core.IdentifierOuterClass.ArtifactKeyOrBuilder> artifactKeyBuilder_;
+          flyteidl.core.ArtifactId.ArtifactKey, flyteidl.core.ArtifactId.ArtifactKey.Builder, flyteidl.core.ArtifactId.ArtifactKeyOrBuilder> artifactKeyBuilder_;
       /**
        * <pre>
        * Specify just project/domain on creation
@@ -1959,9 +1959,9 @@ public final class Artifacts {
        *
        * <code>.flyteidl.core.ArtifactKey artifact_key = 1;</code>
        */
-      public flyteidl.core.IdentifierOuterClass.ArtifactKey getArtifactKey() {
+      public flyteidl.core.ArtifactId.ArtifactKey getArtifactKey() {
         if (artifactKeyBuilder_ == null) {
-          return artifactKey_ == null ? flyteidl.core.IdentifierOuterClass.ArtifactKey.getDefaultInstance() : artifactKey_;
+          return artifactKey_ == null ? flyteidl.core.ArtifactId.ArtifactKey.getDefaultInstance() : artifactKey_;
         } else {
           return artifactKeyBuilder_.getMessage();
         }
@@ -1973,7 +1973,7 @@ public final class Artifacts {
        *
        * <code>.flyteidl.core.ArtifactKey artifact_key = 1;</code>
        */
-      public Builder setArtifactKey(flyteidl.core.IdentifierOuterClass.ArtifactKey value) {
+      public Builder setArtifactKey(flyteidl.core.ArtifactId.ArtifactKey value) {
         if (artifactKeyBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
@@ -1994,7 +1994,7 @@ public final class Artifacts {
        * <code>.flyteidl.core.ArtifactKey artifact_key = 1;</code>
        */
       public Builder setArtifactKey(
-          flyteidl.core.IdentifierOuterClass.ArtifactKey.Builder builderForValue) {
+          flyteidl.core.ArtifactId.ArtifactKey.Builder builderForValue) {
         if (artifactKeyBuilder_ == null) {
           artifactKey_ = builderForValue.build();
           onChanged();
@@ -2011,11 +2011,11 @@ public final class Artifacts {
        *
        * <code>.flyteidl.core.ArtifactKey artifact_key = 1;</code>
        */
-      public Builder mergeArtifactKey(flyteidl.core.IdentifierOuterClass.ArtifactKey value) {
+      public Builder mergeArtifactKey(flyteidl.core.ArtifactId.ArtifactKey value) {
         if (artifactKeyBuilder_ == null) {
           if (artifactKey_ != null) {
             artifactKey_ =
-              flyteidl.core.IdentifierOuterClass.ArtifactKey.newBuilder(artifactKey_).mergeFrom(value).buildPartial();
+              flyteidl.core.ArtifactId.ArtifactKey.newBuilder(artifactKey_).mergeFrom(value).buildPartial();
           } else {
             artifactKey_ = value;
           }
@@ -2051,7 +2051,7 @@ public final class Artifacts {
        *
        * <code>.flyteidl.core.ArtifactKey artifact_key = 1;</code>
        */
-      public flyteidl.core.IdentifierOuterClass.ArtifactKey.Builder getArtifactKeyBuilder() {
+      public flyteidl.core.ArtifactId.ArtifactKey.Builder getArtifactKeyBuilder() {
         
         onChanged();
         return getArtifactKeyFieldBuilder().getBuilder();
@@ -2063,12 +2063,12 @@ public final class Artifacts {
        *
        * <code>.flyteidl.core.ArtifactKey artifact_key = 1;</code>
        */
-      public flyteidl.core.IdentifierOuterClass.ArtifactKeyOrBuilder getArtifactKeyOrBuilder() {
+      public flyteidl.core.ArtifactId.ArtifactKeyOrBuilder getArtifactKeyOrBuilder() {
         if (artifactKeyBuilder_ != null) {
           return artifactKeyBuilder_.getMessageOrBuilder();
         } else {
           return artifactKey_ == null ?
-              flyteidl.core.IdentifierOuterClass.ArtifactKey.getDefaultInstance() : artifactKey_;
+              flyteidl.core.ArtifactId.ArtifactKey.getDefaultInstance() : artifactKey_;
         }
       }
       /**
@@ -2079,11 +2079,11 @@ public final class Artifacts {
        * <code>.flyteidl.core.ArtifactKey artifact_key = 1;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
-          flyteidl.core.IdentifierOuterClass.ArtifactKey, flyteidl.core.IdentifierOuterClass.ArtifactKey.Builder, flyteidl.core.IdentifierOuterClass.ArtifactKeyOrBuilder> 
+          flyteidl.core.ArtifactId.ArtifactKey, flyteidl.core.ArtifactId.ArtifactKey.Builder, flyteidl.core.ArtifactId.ArtifactKeyOrBuilder> 
           getArtifactKeyFieldBuilder() {
         if (artifactKeyBuilder_ == null) {
           artifactKeyBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-              flyteidl.core.IdentifierOuterClass.ArtifactKey, flyteidl.core.IdentifierOuterClass.ArtifactKey.Builder, flyteidl.core.IdentifierOuterClass.ArtifactKeyOrBuilder>(
+              flyteidl.core.ArtifactId.ArtifactKey, flyteidl.core.ArtifactId.ArtifactKey.Builder, flyteidl.core.ArtifactId.ArtifactKeyOrBuilder>(
                   getArtifactKey(),
                   getParentForChildren(),
                   isClean());
@@ -5379,11 +5379,11 @@ public final class Artifacts {
     /**
      * <code>.flyteidl.core.ArtifactQuery query = 1;</code>
      */
-    flyteidl.core.IdentifierOuterClass.ArtifactQuery getQuery();
+    flyteidl.core.ArtifactId.ArtifactQuery getQuery();
     /**
      * <code>.flyteidl.core.ArtifactQuery query = 1;</code>
      */
-    flyteidl.core.IdentifierOuterClass.ArtifactQueryOrBuilder getQueryOrBuilder();
+    flyteidl.core.ArtifactId.ArtifactQueryOrBuilder getQueryOrBuilder();
 
     /**
      * <pre>
@@ -5434,11 +5434,11 @@ public final class Artifacts {
               done = true;
               break;
             case 10: {
-              flyteidl.core.IdentifierOuterClass.ArtifactQuery.Builder subBuilder = null;
+              flyteidl.core.ArtifactId.ArtifactQuery.Builder subBuilder = null;
               if (query_ != null) {
                 subBuilder = query_.toBuilder();
               }
-              query_ = input.readMessage(flyteidl.core.IdentifierOuterClass.ArtifactQuery.parser(), extensionRegistry);
+              query_ = input.readMessage(flyteidl.core.ArtifactId.ArtifactQuery.parser(), extensionRegistry);
               if (subBuilder != null) {
                 subBuilder.mergeFrom(query_);
                 query_ = subBuilder.buildPartial();
@@ -5484,7 +5484,7 @@ public final class Artifacts {
     }
 
     public static final int QUERY_FIELD_NUMBER = 1;
-    private flyteidl.core.IdentifierOuterClass.ArtifactQuery query_;
+    private flyteidl.core.ArtifactId.ArtifactQuery query_;
     /**
      * <code>.flyteidl.core.ArtifactQuery query = 1;</code>
      */
@@ -5494,13 +5494,13 @@ public final class Artifacts {
     /**
      * <code>.flyteidl.core.ArtifactQuery query = 1;</code>
      */
-    public flyteidl.core.IdentifierOuterClass.ArtifactQuery getQuery() {
-      return query_ == null ? flyteidl.core.IdentifierOuterClass.ArtifactQuery.getDefaultInstance() : query_;
+    public flyteidl.core.ArtifactId.ArtifactQuery getQuery() {
+      return query_ == null ? flyteidl.core.ArtifactId.ArtifactQuery.getDefaultInstance() : query_;
     }
     /**
      * <code>.flyteidl.core.ArtifactQuery query = 1;</code>
      */
-    public flyteidl.core.IdentifierOuterClass.ArtifactQueryOrBuilder getQueryOrBuilder() {
+    public flyteidl.core.ArtifactId.ArtifactQueryOrBuilder getQueryOrBuilder() {
       return getQuery();
     }
 
@@ -5850,9 +5850,9 @@ public final class Artifacts {
         return this;
       }
 
-      private flyteidl.core.IdentifierOuterClass.ArtifactQuery query_;
+      private flyteidl.core.ArtifactId.ArtifactQuery query_;
       private com.google.protobuf.SingleFieldBuilderV3<
-          flyteidl.core.IdentifierOuterClass.ArtifactQuery, flyteidl.core.IdentifierOuterClass.ArtifactQuery.Builder, flyteidl.core.IdentifierOuterClass.ArtifactQueryOrBuilder> queryBuilder_;
+          flyteidl.core.ArtifactId.ArtifactQuery, flyteidl.core.ArtifactId.ArtifactQuery.Builder, flyteidl.core.ArtifactId.ArtifactQueryOrBuilder> queryBuilder_;
       /**
        * <code>.flyteidl.core.ArtifactQuery query = 1;</code>
        */
@@ -5862,9 +5862,9 @@ public final class Artifacts {
       /**
        * <code>.flyteidl.core.ArtifactQuery query = 1;</code>
        */
-      public flyteidl.core.IdentifierOuterClass.ArtifactQuery getQuery() {
+      public flyteidl.core.ArtifactId.ArtifactQuery getQuery() {
         if (queryBuilder_ == null) {
-          return query_ == null ? flyteidl.core.IdentifierOuterClass.ArtifactQuery.getDefaultInstance() : query_;
+          return query_ == null ? flyteidl.core.ArtifactId.ArtifactQuery.getDefaultInstance() : query_;
         } else {
           return queryBuilder_.getMessage();
         }
@@ -5872,7 +5872,7 @@ public final class Artifacts {
       /**
        * <code>.flyteidl.core.ArtifactQuery query = 1;</code>
        */
-      public Builder setQuery(flyteidl.core.IdentifierOuterClass.ArtifactQuery value) {
+      public Builder setQuery(flyteidl.core.ArtifactId.ArtifactQuery value) {
         if (queryBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
@@ -5889,7 +5889,7 @@ public final class Artifacts {
        * <code>.flyteidl.core.ArtifactQuery query = 1;</code>
        */
       public Builder setQuery(
-          flyteidl.core.IdentifierOuterClass.ArtifactQuery.Builder builderForValue) {
+          flyteidl.core.ArtifactId.ArtifactQuery.Builder builderForValue) {
         if (queryBuilder_ == null) {
           query_ = builderForValue.build();
           onChanged();
@@ -5902,11 +5902,11 @@ public final class Artifacts {
       /**
        * <code>.flyteidl.core.ArtifactQuery query = 1;</code>
        */
-      public Builder mergeQuery(flyteidl.core.IdentifierOuterClass.ArtifactQuery value) {
+      public Builder mergeQuery(flyteidl.core.ArtifactId.ArtifactQuery value) {
         if (queryBuilder_ == null) {
           if (query_ != null) {
             query_ =
-              flyteidl.core.IdentifierOuterClass.ArtifactQuery.newBuilder(query_).mergeFrom(value).buildPartial();
+              flyteidl.core.ArtifactId.ArtifactQuery.newBuilder(query_).mergeFrom(value).buildPartial();
           } else {
             query_ = value;
           }
@@ -5934,7 +5934,7 @@ public final class Artifacts {
       /**
        * <code>.flyteidl.core.ArtifactQuery query = 1;</code>
        */
-      public flyteidl.core.IdentifierOuterClass.ArtifactQuery.Builder getQueryBuilder() {
+      public flyteidl.core.ArtifactId.ArtifactQuery.Builder getQueryBuilder() {
         
         onChanged();
         return getQueryFieldBuilder().getBuilder();
@@ -5942,23 +5942,23 @@ public final class Artifacts {
       /**
        * <code>.flyteidl.core.ArtifactQuery query = 1;</code>
        */
-      public flyteidl.core.IdentifierOuterClass.ArtifactQueryOrBuilder getQueryOrBuilder() {
+      public flyteidl.core.ArtifactId.ArtifactQueryOrBuilder getQueryOrBuilder() {
         if (queryBuilder_ != null) {
           return queryBuilder_.getMessageOrBuilder();
         } else {
           return query_ == null ?
-              flyteidl.core.IdentifierOuterClass.ArtifactQuery.getDefaultInstance() : query_;
+              flyteidl.core.ArtifactId.ArtifactQuery.getDefaultInstance() : query_;
         }
       }
       /**
        * <code>.flyteidl.core.ArtifactQuery query = 1;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
-          flyteidl.core.IdentifierOuterClass.ArtifactQuery, flyteidl.core.IdentifierOuterClass.ArtifactQuery.Builder, flyteidl.core.IdentifierOuterClass.ArtifactQueryOrBuilder> 
+          flyteidl.core.ArtifactId.ArtifactQuery, flyteidl.core.ArtifactId.ArtifactQuery.Builder, flyteidl.core.ArtifactId.ArtifactQueryOrBuilder> 
           getQueryFieldBuilder() {
         if (queryBuilder_ == null) {
           queryBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-              flyteidl.core.IdentifierOuterClass.ArtifactQuery, flyteidl.core.IdentifierOuterClass.ArtifactQuery.Builder, flyteidl.core.IdentifierOuterClass.ArtifactQueryOrBuilder>(
+              flyteidl.core.ArtifactId.ArtifactQuery, flyteidl.core.ArtifactId.ArtifactQuery.Builder, flyteidl.core.ArtifactId.ArtifactQueryOrBuilder>(
                   getQuery(),
                   getParentForChildren(),
                   isClean());
@@ -7356,12 +7356,12 @@ public final class Artifacts {
     /**
      * <code>repeated .flyteidl.core.ArtifactKey artifact_keys = 1;</code>
      */
-    java.util.List<flyteidl.core.IdentifierOuterClass.ArtifactKey> 
+    java.util.List<flyteidl.core.ArtifactId.ArtifactKey> 
         getArtifactKeysList();
     /**
      * <code>repeated .flyteidl.core.ArtifactKey artifact_keys = 1;</code>
      */
-    flyteidl.core.IdentifierOuterClass.ArtifactKey getArtifactKeys(int index);
+    flyteidl.core.ArtifactId.ArtifactKey getArtifactKeys(int index);
     /**
      * <code>repeated .flyteidl.core.ArtifactKey artifact_keys = 1;</code>
      */
@@ -7369,12 +7369,12 @@ public final class Artifacts {
     /**
      * <code>repeated .flyteidl.core.ArtifactKey artifact_keys = 1;</code>
      */
-    java.util.List<? extends flyteidl.core.IdentifierOuterClass.ArtifactKeyOrBuilder> 
+    java.util.List<? extends flyteidl.core.ArtifactId.ArtifactKeyOrBuilder> 
         getArtifactKeysOrBuilderList();
     /**
      * <code>repeated .flyteidl.core.ArtifactKey artifact_keys = 1;</code>
      */
-    flyteidl.core.IdentifierOuterClass.ArtifactKeyOrBuilder getArtifactKeysOrBuilder(
+    flyteidl.core.ArtifactId.ArtifactKeyOrBuilder getArtifactKeysOrBuilder(
         int index);
   }
   /**
@@ -7419,11 +7419,11 @@ public final class Artifacts {
               break;
             case 10: {
               if (!((mutable_bitField0_ & 0x00000001) != 0)) {
-                artifactKeys_ = new java.util.ArrayList<flyteidl.core.IdentifierOuterClass.ArtifactKey>();
+                artifactKeys_ = new java.util.ArrayList<flyteidl.core.ArtifactId.ArtifactKey>();
                 mutable_bitField0_ |= 0x00000001;
               }
               artifactKeys_.add(
-                  input.readMessage(flyteidl.core.IdentifierOuterClass.ArtifactKey.parser(), extensionRegistry));
+                  input.readMessage(flyteidl.core.ArtifactId.ArtifactKey.parser(), extensionRegistry));
               break;
             }
             default: {
@@ -7462,17 +7462,17 @@ public final class Artifacts {
     }
 
     public static final int ARTIFACT_KEYS_FIELD_NUMBER = 1;
-    private java.util.List<flyteidl.core.IdentifierOuterClass.ArtifactKey> artifactKeys_;
+    private java.util.List<flyteidl.core.ArtifactId.ArtifactKey> artifactKeys_;
     /**
      * <code>repeated .flyteidl.core.ArtifactKey artifact_keys = 1;</code>
      */
-    public java.util.List<flyteidl.core.IdentifierOuterClass.ArtifactKey> getArtifactKeysList() {
+    public java.util.List<flyteidl.core.ArtifactId.ArtifactKey> getArtifactKeysList() {
       return artifactKeys_;
     }
     /**
      * <code>repeated .flyteidl.core.ArtifactKey artifact_keys = 1;</code>
      */
-    public java.util.List<? extends flyteidl.core.IdentifierOuterClass.ArtifactKeyOrBuilder> 
+    public java.util.List<? extends flyteidl.core.ArtifactId.ArtifactKeyOrBuilder> 
         getArtifactKeysOrBuilderList() {
       return artifactKeys_;
     }
@@ -7485,13 +7485,13 @@ public final class Artifacts {
     /**
      * <code>repeated .flyteidl.core.ArtifactKey artifact_keys = 1;</code>
      */
-    public flyteidl.core.IdentifierOuterClass.ArtifactKey getArtifactKeys(int index) {
+    public flyteidl.core.ArtifactId.ArtifactKey getArtifactKeys(int index) {
       return artifactKeys_.get(index);
     }
     /**
      * <code>repeated .flyteidl.core.ArtifactKey artifact_keys = 1;</code>
      */
-    public flyteidl.core.IdentifierOuterClass.ArtifactKeyOrBuilder getArtifactKeysOrBuilder(
+    public flyteidl.core.ArtifactId.ArtifactKeyOrBuilder getArtifactKeysOrBuilder(
         int index) {
       return artifactKeys_.get(index);
     }
@@ -7838,22 +7838,22 @@ public final class Artifacts {
       }
       private int bitField0_;
 
-      private java.util.List<flyteidl.core.IdentifierOuterClass.ArtifactKey> artifactKeys_ =
+      private java.util.List<flyteidl.core.ArtifactId.ArtifactKey> artifactKeys_ =
         java.util.Collections.emptyList();
       private void ensureArtifactKeysIsMutable() {
         if (!((bitField0_ & 0x00000001) != 0)) {
-          artifactKeys_ = new java.util.ArrayList<flyteidl.core.IdentifierOuterClass.ArtifactKey>(artifactKeys_);
+          artifactKeys_ = new java.util.ArrayList<flyteidl.core.ArtifactId.ArtifactKey>(artifactKeys_);
           bitField0_ |= 0x00000001;
          }
       }
 
       private com.google.protobuf.RepeatedFieldBuilderV3<
-          flyteidl.core.IdentifierOuterClass.ArtifactKey, flyteidl.core.IdentifierOuterClass.ArtifactKey.Builder, flyteidl.core.IdentifierOuterClass.ArtifactKeyOrBuilder> artifactKeysBuilder_;
+          flyteidl.core.ArtifactId.ArtifactKey, flyteidl.core.ArtifactId.ArtifactKey.Builder, flyteidl.core.ArtifactId.ArtifactKeyOrBuilder> artifactKeysBuilder_;
 
       /**
        * <code>repeated .flyteidl.core.ArtifactKey artifact_keys = 1;</code>
        */
-      public java.util.List<flyteidl.core.IdentifierOuterClass.ArtifactKey> getArtifactKeysList() {
+      public java.util.List<flyteidl.core.ArtifactId.ArtifactKey> getArtifactKeysList() {
         if (artifactKeysBuilder_ == null) {
           return java.util.Collections.unmodifiableList(artifactKeys_);
         } else {
@@ -7873,7 +7873,7 @@ public final class Artifacts {
       /**
        * <code>repeated .flyteidl.core.ArtifactKey artifact_keys = 1;</code>
        */
-      public flyteidl.core.IdentifierOuterClass.ArtifactKey getArtifactKeys(int index) {
+      public flyteidl.core.ArtifactId.ArtifactKey getArtifactKeys(int index) {
         if (artifactKeysBuilder_ == null) {
           return artifactKeys_.get(index);
         } else {
@@ -7884,7 +7884,7 @@ public final class Artifacts {
        * <code>repeated .flyteidl.core.ArtifactKey artifact_keys = 1;</code>
        */
       public Builder setArtifactKeys(
-          int index, flyteidl.core.IdentifierOuterClass.ArtifactKey value) {
+          int index, flyteidl.core.ArtifactId.ArtifactKey value) {
         if (artifactKeysBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
@@ -7901,7 +7901,7 @@ public final class Artifacts {
        * <code>repeated .flyteidl.core.ArtifactKey artifact_keys = 1;</code>
        */
       public Builder setArtifactKeys(
-          int index, flyteidl.core.IdentifierOuterClass.ArtifactKey.Builder builderForValue) {
+          int index, flyteidl.core.ArtifactId.ArtifactKey.Builder builderForValue) {
         if (artifactKeysBuilder_ == null) {
           ensureArtifactKeysIsMutable();
           artifactKeys_.set(index, builderForValue.build());
@@ -7914,7 +7914,7 @@ public final class Artifacts {
       /**
        * <code>repeated .flyteidl.core.ArtifactKey artifact_keys = 1;</code>
        */
-      public Builder addArtifactKeys(flyteidl.core.IdentifierOuterClass.ArtifactKey value) {
+      public Builder addArtifactKeys(flyteidl.core.ArtifactId.ArtifactKey value) {
         if (artifactKeysBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
@@ -7931,7 +7931,7 @@ public final class Artifacts {
        * <code>repeated .flyteidl.core.ArtifactKey artifact_keys = 1;</code>
        */
       public Builder addArtifactKeys(
-          int index, flyteidl.core.IdentifierOuterClass.ArtifactKey value) {
+          int index, flyteidl.core.ArtifactId.ArtifactKey value) {
         if (artifactKeysBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
@@ -7948,7 +7948,7 @@ public final class Artifacts {
        * <code>repeated .flyteidl.core.ArtifactKey artifact_keys = 1;</code>
        */
       public Builder addArtifactKeys(
-          flyteidl.core.IdentifierOuterClass.ArtifactKey.Builder builderForValue) {
+          flyteidl.core.ArtifactId.ArtifactKey.Builder builderForValue) {
         if (artifactKeysBuilder_ == null) {
           ensureArtifactKeysIsMutable();
           artifactKeys_.add(builderForValue.build());
@@ -7962,7 +7962,7 @@ public final class Artifacts {
        * <code>repeated .flyteidl.core.ArtifactKey artifact_keys = 1;</code>
        */
       public Builder addArtifactKeys(
-          int index, flyteidl.core.IdentifierOuterClass.ArtifactKey.Builder builderForValue) {
+          int index, flyteidl.core.ArtifactId.ArtifactKey.Builder builderForValue) {
         if (artifactKeysBuilder_ == null) {
           ensureArtifactKeysIsMutable();
           artifactKeys_.add(index, builderForValue.build());
@@ -7976,7 +7976,7 @@ public final class Artifacts {
        * <code>repeated .flyteidl.core.ArtifactKey artifact_keys = 1;</code>
        */
       public Builder addAllArtifactKeys(
-          java.lang.Iterable<? extends flyteidl.core.IdentifierOuterClass.ArtifactKey> values) {
+          java.lang.Iterable<? extends flyteidl.core.ArtifactId.ArtifactKey> values) {
         if (artifactKeysBuilder_ == null) {
           ensureArtifactKeysIsMutable();
           com.google.protobuf.AbstractMessageLite.Builder.addAll(
@@ -8016,14 +8016,14 @@ public final class Artifacts {
       /**
        * <code>repeated .flyteidl.core.ArtifactKey artifact_keys = 1;</code>
        */
-      public flyteidl.core.IdentifierOuterClass.ArtifactKey.Builder getArtifactKeysBuilder(
+      public flyteidl.core.ArtifactId.ArtifactKey.Builder getArtifactKeysBuilder(
           int index) {
         return getArtifactKeysFieldBuilder().getBuilder(index);
       }
       /**
        * <code>repeated .flyteidl.core.ArtifactKey artifact_keys = 1;</code>
        */
-      public flyteidl.core.IdentifierOuterClass.ArtifactKeyOrBuilder getArtifactKeysOrBuilder(
+      public flyteidl.core.ArtifactId.ArtifactKeyOrBuilder getArtifactKeysOrBuilder(
           int index) {
         if (artifactKeysBuilder_ == null) {
           return artifactKeys_.get(index);  } else {
@@ -8033,7 +8033,7 @@ public final class Artifacts {
       /**
        * <code>repeated .flyteidl.core.ArtifactKey artifact_keys = 1;</code>
        */
-      public java.util.List<? extends flyteidl.core.IdentifierOuterClass.ArtifactKeyOrBuilder> 
+      public java.util.List<? extends flyteidl.core.ArtifactId.ArtifactKeyOrBuilder> 
            getArtifactKeysOrBuilderList() {
         if (artifactKeysBuilder_ != null) {
           return artifactKeysBuilder_.getMessageOrBuilderList();
@@ -8044,31 +8044,31 @@ public final class Artifacts {
       /**
        * <code>repeated .flyteidl.core.ArtifactKey artifact_keys = 1;</code>
        */
-      public flyteidl.core.IdentifierOuterClass.ArtifactKey.Builder addArtifactKeysBuilder() {
+      public flyteidl.core.ArtifactId.ArtifactKey.Builder addArtifactKeysBuilder() {
         return getArtifactKeysFieldBuilder().addBuilder(
-            flyteidl.core.IdentifierOuterClass.ArtifactKey.getDefaultInstance());
+            flyteidl.core.ArtifactId.ArtifactKey.getDefaultInstance());
       }
       /**
        * <code>repeated .flyteidl.core.ArtifactKey artifact_keys = 1;</code>
        */
-      public flyteidl.core.IdentifierOuterClass.ArtifactKey.Builder addArtifactKeysBuilder(
+      public flyteidl.core.ArtifactId.ArtifactKey.Builder addArtifactKeysBuilder(
           int index) {
         return getArtifactKeysFieldBuilder().addBuilder(
-            index, flyteidl.core.IdentifierOuterClass.ArtifactKey.getDefaultInstance());
+            index, flyteidl.core.ArtifactId.ArtifactKey.getDefaultInstance());
       }
       /**
        * <code>repeated .flyteidl.core.ArtifactKey artifact_keys = 1;</code>
        */
-      public java.util.List<flyteidl.core.IdentifierOuterClass.ArtifactKey.Builder> 
+      public java.util.List<flyteidl.core.ArtifactId.ArtifactKey.Builder> 
            getArtifactKeysBuilderList() {
         return getArtifactKeysFieldBuilder().getBuilderList();
       }
       private com.google.protobuf.RepeatedFieldBuilderV3<
-          flyteidl.core.IdentifierOuterClass.ArtifactKey, flyteidl.core.IdentifierOuterClass.ArtifactKey.Builder, flyteidl.core.IdentifierOuterClass.ArtifactKeyOrBuilder> 
+          flyteidl.core.ArtifactId.ArtifactKey, flyteidl.core.ArtifactId.ArtifactKey.Builder, flyteidl.core.ArtifactId.ArtifactKeyOrBuilder> 
           getArtifactKeysFieldBuilder() {
         if (artifactKeysBuilder_ == null) {
           artifactKeysBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
-              flyteidl.core.IdentifierOuterClass.ArtifactKey, flyteidl.core.IdentifierOuterClass.ArtifactKey.Builder, flyteidl.core.IdentifierOuterClass.ArtifactKeyOrBuilder>(
+              flyteidl.core.ArtifactId.ArtifactKey, flyteidl.core.ArtifactId.ArtifactKey.Builder, flyteidl.core.ArtifactId.ArtifactKeyOrBuilder>(
                   artifactKeys_,
                   ((bitField0_ & 0x00000001) != 0),
                   getParentForChildren(),
@@ -8141,11 +8141,11 @@ public final class Artifacts {
     /**
      * <code>.flyteidl.core.ArtifactKey artifact_key = 1;</code>
      */
-    flyteidl.core.IdentifierOuterClass.ArtifactKey getArtifactKey();
+    flyteidl.core.ArtifactId.ArtifactKey getArtifactKey();
     /**
      * <code>.flyteidl.core.ArtifactKey artifact_key = 1;</code>
      */
-    flyteidl.core.IdentifierOuterClass.ArtifactKeyOrBuilder getArtifactKeyOrBuilder();
+    flyteidl.core.ArtifactId.ArtifactKeyOrBuilder getArtifactKeyOrBuilder();
   }
   /**
    * Protobuf type {@code flyteidl.artifact.ListArtifactsRequest}
@@ -8187,11 +8187,11 @@ public final class Artifacts {
               done = true;
               break;
             case 10: {
-              flyteidl.core.IdentifierOuterClass.ArtifactKey.Builder subBuilder = null;
+              flyteidl.core.ArtifactId.ArtifactKey.Builder subBuilder = null;
               if (artifactKey_ != null) {
                 subBuilder = artifactKey_.toBuilder();
               }
-              artifactKey_ = input.readMessage(flyteidl.core.IdentifierOuterClass.ArtifactKey.parser(), extensionRegistry);
+              artifactKey_ = input.readMessage(flyteidl.core.ArtifactId.ArtifactKey.parser(), extensionRegistry);
               if (subBuilder != null) {
                 subBuilder.mergeFrom(artifactKey_);
                 artifactKey_ = subBuilder.buildPartial();
@@ -8232,7 +8232,7 @@ public final class Artifacts {
     }
 
     public static final int ARTIFACT_KEY_FIELD_NUMBER = 1;
-    private flyteidl.core.IdentifierOuterClass.ArtifactKey artifactKey_;
+    private flyteidl.core.ArtifactId.ArtifactKey artifactKey_;
     /**
      * <code>.flyteidl.core.ArtifactKey artifact_key = 1;</code>
      */
@@ -8242,13 +8242,13 @@ public final class Artifacts {
     /**
      * <code>.flyteidl.core.ArtifactKey artifact_key = 1;</code>
      */
-    public flyteidl.core.IdentifierOuterClass.ArtifactKey getArtifactKey() {
-      return artifactKey_ == null ? flyteidl.core.IdentifierOuterClass.ArtifactKey.getDefaultInstance() : artifactKey_;
+    public flyteidl.core.ArtifactId.ArtifactKey getArtifactKey() {
+      return artifactKey_ == null ? flyteidl.core.ArtifactId.ArtifactKey.getDefaultInstance() : artifactKey_;
     }
     /**
      * <code>.flyteidl.core.ArtifactKey artifact_key = 1;</code>
      */
-    public flyteidl.core.IdentifierOuterClass.ArtifactKeyOrBuilder getArtifactKeyOrBuilder() {
+    public flyteidl.core.ArtifactId.ArtifactKeyOrBuilder getArtifactKeyOrBuilder() {
       return getArtifactKey();
     }
 
@@ -8567,9 +8567,9 @@ public final class Artifacts {
         return this;
       }
 
-      private flyteidl.core.IdentifierOuterClass.ArtifactKey artifactKey_;
+      private flyteidl.core.ArtifactId.ArtifactKey artifactKey_;
       private com.google.protobuf.SingleFieldBuilderV3<
-          flyteidl.core.IdentifierOuterClass.ArtifactKey, flyteidl.core.IdentifierOuterClass.ArtifactKey.Builder, flyteidl.core.IdentifierOuterClass.ArtifactKeyOrBuilder> artifactKeyBuilder_;
+          flyteidl.core.ArtifactId.ArtifactKey, flyteidl.core.ArtifactId.ArtifactKey.Builder, flyteidl.core.ArtifactId.ArtifactKeyOrBuilder> artifactKeyBuilder_;
       /**
        * <code>.flyteidl.core.ArtifactKey artifact_key = 1;</code>
        */
@@ -8579,9 +8579,9 @@ public final class Artifacts {
       /**
        * <code>.flyteidl.core.ArtifactKey artifact_key = 1;</code>
        */
-      public flyteidl.core.IdentifierOuterClass.ArtifactKey getArtifactKey() {
+      public flyteidl.core.ArtifactId.ArtifactKey getArtifactKey() {
         if (artifactKeyBuilder_ == null) {
-          return artifactKey_ == null ? flyteidl.core.IdentifierOuterClass.ArtifactKey.getDefaultInstance() : artifactKey_;
+          return artifactKey_ == null ? flyteidl.core.ArtifactId.ArtifactKey.getDefaultInstance() : artifactKey_;
         } else {
           return artifactKeyBuilder_.getMessage();
         }
@@ -8589,7 +8589,7 @@ public final class Artifacts {
       /**
        * <code>.flyteidl.core.ArtifactKey artifact_key = 1;</code>
        */
-      public Builder setArtifactKey(flyteidl.core.IdentifierOuterClass.ArtifactKey value) {
+      public Builder setArtifactKey(flyteidl.core.ArtifactId.ArtifactKey value) {
         if (artifactKeyBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
@@ -8606,7 +8606,7 @@ public final class Artifacts {
        * <code>.flyteidl.core.ArtifactKey artifact_key = 1;</code>
        */
       public Builder setArtifactKey(
-          flyteidl.core.IdentifierOuterClass.ArtifactKey.Builder builderForValue) {
+          flyteidl.core.ArtifactId.ArtifactKey.Builder builderForValue) {
         if (artifactKeyBuilder_ == null) {
           artifactKey_ = builderForValue.build();
           onChanged();
@@ -8619,11 +8619,11 @@ public final class Artifacts {
       /**
        * <code>.flyteidl.core.ArtifactKey artifact_key = 1;</code>
        */
-      public Builder mergeArtifactKey(flyteidl.core.IdentifierOuterClass.ArtifactKey value) {
+      public Builder mergeArtifactKey(flyteidl.core.ArtifactId.ArtifactKey value) {
         if (artifactKeyBuilder_ == null) {
           if (artifactKey_ != null) {
             artifactKey_ =
-              flyteidl.core.IdentifierOuterClass.ArtifactKey.newBuilder(artifactKey_).mergeFrom(value).buildPartial();
+              flyteidl.core.ArtifactId.ArtifactKey.newBuilder(artifactKey_).mergeFrom(value).buildPartial();
           } else {
             artifactKey_ = value;
           }
@@ -8651,7 +8651,7 @@ public final class Artifacts {
       /**
        * <code>.flyteidl.core.ArtifactKey artifact_key = 1;</code>
        */
-      public flyteidl.core.IdentifierOuterClass.ArtifactKey.Builder getArtifactKeyBuilder() {
+      public flyteidl.core.ArtifactId.ArtifactKey.Builder getArtifactKeyBuilder() {
         
         onChanged();
         return getArtifactKeyFieldBuilder().getBuilder();
@@ -8659,23 +8659,23 @@ public final class Artifacts {
       /**
        * <code>.flyteidl.core.ArtifactKey artifact_key = 1;</code>
        */
-      public flyteidl.core.IdentifierOuterClass.ArtifactKeyOrBuilder getArtifactKeyOrBuilder() {
+      public flyteidl.core.ArtifactId.ArtifactKeyOrBuilder getArtifactKeyOrBuilder() {
         if (artifactKeyBuilder_ != null) {
           return artifactKeyBuilder_.getMessageOrBuilder();
         } else {
           return artifactKey_ == null ?
-              flyteidl.core.IdentifierOuterClass.ArtifactKey.getDefaultInstance() : artifactKey_;
+              flyteidl.core.ArtifactId.ArtifactKey.getDefaultInstance() : artifactKey_;
         }
       }
       /**
        * <code>.flyteidl.core.ArtifactKey artifact_key = 1;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
-          flyteidl.core.IdentifierOuterClass.ArtifactKey, flyteidl.core.IdentifierOuterClass.ArtifactKey.Builder, flyteidl.core.IdentifierOuterClass.ArtifactKeyOrBuilder> 
+          flyteidl.core.ArtifactId.ArtifactKey, flyteidl.core.ArtifactId.ArtifactKey.Builder, flyteidl.core.ArtifactId.ArtifactKeyOrBuilder> 
           getArtifactKeyFieldBuilder() {
         if (artifactKeyBuilder_ == null) {
           artifactKeyBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-              flyteidl.core.IdentifierOuterClass.ArtifactKey, flyteidl.core.IdentifierOuterClass.ArtifactKey.Builder, flyteidl.core.IdentifierOuterClass.ArtifactKeyOrBuilder>(
+              flyteidl.core.ArtifactId.ArtifactKey, flyteidl.core.ArtifactId.ArtifactKey.Builder, flyteidl.core.ArtifactId.ArtifactKeyOrBuilder>(
                   getArtifactKey(),
                   getParentForChildren(),
                   isClean());
@@ -9528,11 +9528,11 @@ public final class Artifacts {
     /**
      * <code>.flyteidl.core.ArtifactID artifact_id = 1;</code>
      */
-    flyteidl.core.IdentifierOuterClass.ArtifactID getArtifactId();
+    flyteidl.core.ArtifactId.ArtifactID getArtifactId();
     /**
      * <code>.flyteidl.core.ArtifactID artifact_id = 1;</code>
      */
-    flyteidl.core.IdentifierOuterClass.ArtifactIDOrBuilder getArtifactIdOrBuilder();
+    flyteidl.core.ArtifactId.ArtifactIDOrBuilder getArtifactIdOrBuilder();
 
     /**
      * <code>string value = 2;</code>
@@ -9600,11 +9600,11 @@ public final class Artifacts {
               done = true;
               break;
             case 10: {
-              flyteidl.core.IdentifierOuterClass.ArtifactID.Builder subBuilder = null;
+              flyteidl.core.ArtifactId.ArtifactID.Builder subBuilder = null;
               if (artifactId_ != null) {
                 subBuilder = artifactId_.toBuilder();
               }
-              artifactId_ = input.readMessage(flyteidl.core.IdentifierOuterClass.ArtifactID.parser(), extensionRegistry);
+              artifactId_ = input.readMessage(flyteidl.core.ArtifactId.ArtifactID.parser(), extensionRegistry);
               if (subBuilder != null) {
                 subBuilder.mergeFrom(artifactId_);
                 artifactId_ = subBuilder.buildPartial();
@@ -9656,7 +9656,7 @@ public final class Artifacts {
     }
 
     public static final int ARTIFACT_ID_FIELD_NUMBER = 1;
-    private flyteidl.core.IdentifierOuterClass.ArtifactID artifactId_;
+    private flyteidl.core.ArtifactId.ArtifactID artifactId_;
     /**
      * <code>.flyteidl.core.ArtifactID artifact_id = 1;</code>
      */
@@ -9666,13 +9666,13 @@ public final class Artifacts {
     /**
      * <code>.flyteidl.core.ArtifactID artifact_id = 1;</code>
      */
-    public flyteidl.core.IdentifierOuterClass.ArtifactID getArtifactId() {
-      return artifactId_ == null ? flyteidl.core.IdentifierOuterClass.ArtifactID.getDefaultInstance() : artifactId_;
+    public flyteidl.core.ArtifactId.ArtifactID getArtifactId() {
+      return artifactId_ == null ? flyteidl.core.ArtifactId.ArtifactID.getDefaultInstance() : artifactId_;
     }
     /**
      * <code>.flyteidl.core.ArtifactID artifact_id = 1;</code>
      */
-    public flyteidl.core.IdentifierOuterClass.ArtifactIDOrBuilder getArtifactIdOrBuilder() {
+    public flyteidl.core.ArtifactId.ArtifactIDOrBuilder getArtifactIdOrBuilder() {
       return getArtifactId();
     }
 
@@ -10079,9 +10079,9 @@ public final class Artifacts {
         return this;
       }
 
-      private flyteidl.core.IdentifierOuterClass.ArtifactID artifactId_;
+      private flyteidl.core.ArtifactId.ArtifactID artifactId_;
       private com.google.protobuf.SingleFieldBuilderV3<
-          flyteidl.core.IdentifierOuterClass.ArtifactID, flyteidl.core.IdentifierOuterClass.ArtifactID.Builder, flyteidl.core.IdentifierOuterClass.ArtifactIDOrBuilder> artifactIdBuilder_;
+          flyteidl.core.ArtifactId.ArtifactID, flyteidl.core.ArtifactId.ArtifactID.Builder, flyteidl.core.ArtifactId.ArtifactIDOrBuilder> artifactIdBuilder_;
       /**
        * <code>.flyteidl.core.ArtifactID artifact_id = 1;</code>
        */
@@ -10091,9 +10091,9 @@ public final class Artifacts {
       /**
        * <code>.flyteidl.core.ArtifactID artifact_id = 1;</code>
        */
-      public flyteidl.core.IdentifierOuterClass.ArtifactID getArtifactId() {
+      public flyteidl.core.ArtifactId.ArtifactID getArtifactId() {
         if (artifactIdBuilder_ == null) {
-          return artifactId_ == null ? flyteidl.core.IdentifierOuterClass.ArtifactID.getDefaultInstance() : artifactId_;
+          return artifactId_ == null ? flyteidl.core.ArtifactId.ArtifactID.getDefaultInstance() : artifactId_;
         } else {
           return artifactIdBuilder_.getMessage();
         }
@@ -10101,7 +10101,7 @@ public final class Artifacts {
       /**
        * <code>.flyteidl.core.ArtifactID artifact_id = 1;</code>
        */
-      public Builder setArtifactId(flyteidl.core.IdentifierOuterClass.ArtifactID value) {
+      public Builder setArtifactId(flyteidl.core.ArtifactId.ArtifactID value) {
         if (artifactIdBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
@@ -10118,7 +10118,7 @@ public final class Artifacts {
        * <code>.flyteidl.core.ArtifactID artifact_id = 1;</code>
        */
       public Builder setArtifactId(
-          flyteidl.core.IdentifierOuterClass.ArtifactID.Builder builderForValue) {
+          flyteidl.core.ArtifactId.ArtifactID.Builder builderForValue) {
         if (artifactIdBuilder_ == null) {
           artifactId_ = builderForValue.build();
           onChanged();
@@ -10131,11 +10131,11 @@ public final class Artifacts {
       /**
        * <code>.flyteidl.core.ArtifactID artifact_id = 1;</code>
        */
-      public Builder mergeArtifactId(flyteidl.core.IdentifierOuterClass.ArtifactID value) {
+      public Builder mergeArtifactId(flyteidl.core.ArtifactId.ArtifactID value) {
         if (artifactIdBuilder_ == null) {
           if (artifactId_ != null) {
             artifactId_ =
-              flyteidl.core.IdentifierOuterClass.ArtifactID.newBuilder(artifactId_).mergeFrom(value).buildPartial();
+              flyteidl.core.ArtifactId.ArtifactID.newBuilder(artifactId_).mergeFrom(value).buildPartial();
           } else {
             artifactId_ = value;
           }
@@ -10163,7 +10163,7 @@ public final class Artifacts {
       /**
        * <code>.flyteidl.core.ArtifactID artifact_id = 1;</code>
        */
-      public flyteidl.core.IdentifierOuterClass.ArtifactID.Builder getArtifactIdBuilder() {
+      public flyteidl.core.ArtifactId.ArtifactID.Builder getArtifactIdBuilder() {
         
         onChanged();
         return getArtifactIdFieldBuilder().getBuilder();
@@ -10171,23 +10171,23 @@ public final class Artifacts {
       /**
        * <code>.flyteidl.core.ArtifactID artifact_id = 1;</code>
        */
-      public flyteidl.core.IdentifierOuterClass.ArtifactIDOrBuilder getArtifactIdOrBuilder() {
+      public flyteidl.core.ArtifactId.ArtifactIDOrBuilder getArtifactIdOrBuilder() {
         if (artifactIdBuilder_ != null) {
           return artifactIdBuilder_.getMessageOrBuilder();
         } else {
           return artifactId_ == null ?
-              flyteidl.core.IdentifierOuterClass.ArtifactID.getDefaultInstance() : artifactId_;
+              flyteidl.core.ArtifactId.ArtifactID.getDefaultInstance() : artifactId_;
         }
       }
       /**
        * <code>.flyteidl.core.ArtifactID artifact_id = 1;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
-          flyteidl.core.IdentifierOuterClass.ArtifactID, flyteidl.core.IdentifierOuterClass.ArtifactID.Builder, flyteidl.core.IdentifierOuterClass.ArtifactIDOrBuilder> 
+          flyteidl.core.ArtifactId.ArtifactID, flyteidl.core.ArtifactId.ArtifactID.Builder, flyteidl.core.ArtifactId.ArtifactIDOrBuilder> 
           getArtifactIdFieldBuilder() {
         if (artifactIdBuilder_ == null) {
           artifactIdBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-              flyteidl.core.IdentifierOuterClass.ArtifactID, flyteidl.core.IdentifierOuterClass.ArtifactID.Builder, flyteidl.core.IdentifierOuterClass.ArtifactIDOrBuilder>(
+              flyteidl.core.ArtifactId.ArtifactID, flyteidl.core.ArtifactId.ArtifactID.Builder, flyteidl.core.ArtifactId.ArtifactIDOrBuilder>(
                   getArtifactId(),
                   getParentForChildren(),
                   isClean());
@@ -16632,77 +16632,78 @@ public final class Artifacts {
       "o\032 flyteidl/admin/launch_plan.proto\032\034fly" +
       "teidl/core/literals.proto\032\031flyteidl/core" +
       "/types.proto\032\036flyteidl/core/identifier.p" +
-      "roto\032\035flyteidl/core/interface.proto\"w\n\010A" +
-      "rtifact\022.\n\013artifact_id\030\001 \001(\0132\031.flyteidl." +
-      "core.ArtifactID\022-\n\004spec\030\002 \001(\0132\037.flyteidl" +
-      ".artifact.ArtifactSpec\022\014\n\004tags\030\003 \003(\t\"\227\002\n" +
-      "\025CreateArtifactRequest\0220\n\014artifact_key\030\001" +
-      " \001(\0132\032.flyteidl.core.ArtifactKey\022\017\n\007vers" +
-      "ion\030\003 \001(\t\022-\n\004spec\030\002 \001(\0132\037.flyteidl.artif" +
-      "act.ArtifactSpec\022L\n\npartitions\030\004 \003(\01328.f" +
-      "lyteidl.artifact.CreateArtifactRequest.P" +
-      "artitionsEntry\022\013\n\003tag\030\005 \001(\t\0321\n\017Partition" +
-      "sEntry\022\013\n\003key\030\001 \001(\t\022\r\n\005value\030\002 \001(\t:\0028\001\"\343" +
-      "\002\n\014ArtifactSpec\022%\n\005value\030\001 \001(\0132\026.flyteid" +
-      "l.core.Literal\022(\n\004type\030\002 \001(\0132\032.flyteidl." +
-      "core.LiteralType\022@\n\016task_execution\030\005 \001(\013" +
-      "2&.flyteidl.core.TaskExecutionIdentifier" +
-      "H\000\022?\n\texecution\030\006 \001(\0132*.flyteidl.core.Wo" +
-      "rkflowExecutionIdentifierH\000\022\023\n\tprincipal" +
-      "\030\007 \001(\tH\000\022\031\n\021short_description\030\010 \001(\t\022\030\n\020l" +
-      "ong_description\030\t \001(\t\022+\n\ruser_metadata\030\n" +
-      " \001(\0132\024.google.protobuf.AnyB\010\n\006source\"G\n\026" +
-      "CreateArtifactResponse\022-\n\010artifact\030\001 \001(\013" +
-      "2\033.flyteidl.artifact.Artifact\"R\n\022GetArti" +
-      "factRequest\022+\n\005query\030\001 \001(\0132\034.flyteidl.co" +
-      "re.ArtifactQuery\022\017\n\007details\030\002 \001(\010\"D\n\023Get" +
-      "ArtifactResponse\022-\n\010artifact\030\001 \001(\0132\033.fly" +
-      "teidl.artifact.Artifact\";\n\030ListArtifactN" +
-      "amesRequest\022\017\n\007project\030\001 \001(\t\022\016\n\006domain\030\002" +
-      " \001(\t\"N\n\031ListArtifactNamesResponse\0221\n\rart" +
-      "ifact_keys\030\001 \003(\0132\032.flyteidl.core.Artifac" +
-      "tKey\"H\n\024ListArtifactsRequest\0220\n\014artifact" +
-      "_key\030\001 \001(\0132\032.flyteidl.core.ArtifactKey\"G" +
-      "\n\025ListArtifactsResponse\022.\n\tartifacts\030\001 \003" +
-      "(\0132\033.flyteidl.artifact.Artifact\"a\n\rAddTa" +
-      "gRequest\022.\n\013artifact_id\030\001 \001(\0132\031.flyteidl" +
-      ".core.ArtifactID\022\r\n\005value\030\002 \001(\t\022\021\n\toverw" +
-      "rite\030\003 \001(\010\"\020\n\016AddTagResponse\"O\n\024CreateTr" +
-      "iggerRequest\0227\n\023trigger_launch_plan\030\001 \001(" +
-      "\0132\032.flyteidl.admin.LaunchPlan\"\027\n\025CreateT" +
-      "riggerResponse\"E\n\024DeleteTriggerRequest\022-" +
-      "\n\ntrigger_id\030\001 \001(\0132\031.flyteidl.core.Ident" +
-      "ifier\"\027\n\025DeleteTriggerResponse\"m\n\020Artifa" +
-      "ctProducer\022,\n\tentity_id\030\001 \001(\0132\031.flyteidl" +
-      ".core.Identifier\022+\n\007outputs\030\002 \001(\0132\032.flyt" +
-      "eidl.core.VariableMap\"Q\n\027RegisterProduce" +
-      "rRequest\0226\n\tproducers\030\001 \003(\0132#.flyteidl.a" +
-      "rtifact.ArtifactProducer\"m\n\020ArtifactCons" +
-      "umer\022,\n\tentity_id\030\001 \001(\0132\031.flyteidl.core." +
-      "Identifier\022+\n\006inputs\030\002 \001(\0132\033.flyteidl.co" +
-      "re.ParameterMap\"Q\n\027RegisterConsumerReque" +
-      "st\0226\n\tconsumers\030\001 \003(\0132#.flyteidl.artifac" +
-      "t.ArtifactConsumer\"\022\n\020RegisterResponse2\306" +
-      "\005\n\020ArtifactRegistry\022g\n\016CreateArtifact\022(." +
-      "flyteidl.artifact.CreateArtifactRequest\032" +
-      ").flyteidl.artifact.CreateArtifactRespon" +
-      "se\"\000\022^\n\013GetArtifact\022%.flyteidl.artifact." +
-      "GetArtifactRequest\032&.flyteidl.artifact.G" +
-      "etArtifactResponse\"\000\022d\n\rCreateTrigger\022\'." +
-      "flyteidl.artifact.CreateTriggerRequest\032(" +
-      ".flyteidl.artifact.CreateTriggerResponse" +
-      "\"\000\022d\n\rDeleteTrigger\022\'.flyteidl.artifact." +
-      "DeleteTriggerRequest\032(.flyteidl.artifact" +
-      ".DeleteTriggerResponse\"\000\022O\n\006AddTag\022 .fly" +
-      "teidl.artifact.AddTagRequest\032!.flyteidl." +
-      "artifact.AddTagResponse\"\000\022e\n\020RegisterPro" +
-      "ducer\022*.flyteidl.artifact.RegisterProduc" +
-      "erRequest\032#.flyteidl.artifact.RegisterRe" +
-      "sponse\"\000\022e\n\020RegisterConsumer\022*.flyteidl." +
-      "artifact.RegisterConsumerRequest\032#.flyte" +
-      "idl.artifact.RegisterResponse\"\000B:Z8githu" +
-      "b.com/flyteorg/flyteidl/gen/pb-go/flytei" +
-      "dl/artifactb\006proto3"
+      "roto\032\037flyteidl/core/artifact_id.proto\032\035f" +
+      "lyteidl/core/interface.proto\"w\n\010Artifact" +
+      "\022.\n\013artifact_id\030\001 \001(\0132\031.flyteidl.core.Ar" +
+      "tifactID\022-\n\004spec\030\002 \001(\0132\037.flyteidl.artifa" +
+      "ct.ArtifactSpec\022\014\n\004tags\030\003 \003(\t\"\227\002\n\025Create" +
+      "ArtifactRequest\0220\n\014artifact_key\030\001 \001(\0132\032." +
+      "flyteidl.core.ArtifactKey\022\017\n\007version\030\003 \001" +
+      "(\t\022-\n\004spec\030\002 \001(\0132\037.flyteidl.artifact.Art" +
+      "ifactSpec\022L\n\npartitions\030\004 \003(\01328.flyteidl" +
+      ".artifact.CreateArtifactRequest.Partitio" +
+      "nsEntry\022\013\n\003tag\030\005 \001(\t\0321\n\017PartitionsEntry\022" +
+      "\013\n\003key\030\001 \001(\t\022\r\n\005value\030\002 \001(\t:\0028\001\"\343\002\n\014Arti" +
+      "factSpec\022%\n\005value\030\001 \001(\0132\026.flyteidl.core." +
+      "Literal\022(\n\004type\030\002 \001(\0132\032.flyteidl.core.Li" +
+      "teralType\022@\n\016task_execution\030\005 \001(\0132&.flyt" +
+      "eidl.core.TaskExecutionIdentifierH\000\022?\n\te" +
+      "xecution\030\006 \001(\0132*.flyteidl.core.WorkflowE" +
+      "xecutionIdentifierH\000\022\023\n\tprincipal\030\007 \001(\tH" +
+      "\000\022\031\n\021short_description\030\010 \001(\t\022\030\n\020long_des" +
+      "cription\030\t \001(\t\022+\n\ruser_metadata\030\n \001(\0132\024." +
+      "google.protobuf.AnyB\010\n\006source\"G\n\026CreateA" +
+      "rtifactResponse\022-\n\010artifact\030\001 \001(\0132\033.flyt" +
+      "eidl.artifact.Artifact\"R\n\022GetArtifactReq" +
+      "uest\022+\n\005query\030\001 \001(\0132\034.flyteidl.core.Arti" +
+      "factQuery\022\017\n\007details\030\002 \001(\010\"D\n\023GetArtifac" +
+      "tResponse\022-\n\010artifact\030\001 \001(\0132\033.flyteidl.a" +
+      "rtifact.Artifact\";\n\030ListArtifactNamesReq" +
+      "uest\022\017\n\007project\030\001 \001(\t\022\016\n\006domain\030\002 \001(\t\"N\n" +
+      "\031ListArtifactNamesResponse\0221\n\rartifact_k" +
+      "eys\030\001 \003(\0132\032.flyteidl.core.ArtifactKey\"H\n" +
+      "\024ListArtifactsRequest\0220\n\014artifact_key\030\001 " +
+      "\001(\0132\032.flyteidl.core.ArtifactKey\"G\n\025ListA" +
+      "rtifactsResponse\022.\n\tartifacts\030\001 \003(\0132\033.fl" +
+      "yteidl.artifact.Artifact\"a\n\rAddTagReques" +
+      "t\022.\n\013artifact_id\030\001 \001(\0132\031.flyteidl.core.A" +
+      "rtifactID\022\r\n\005value\030\002 \001(\t\022\021\n\toverwrite\030\003 " +
+      "\001(\010\"\020\n\016AddTagResponse\"O\n\024CreateTriggerRe" +
+      "quest\0227\n\023trigger_launch_plan\030\001 \001(\0132\032.fly" +
+      "teidl.admin.LaunchPlan\"\027\n\025CreateTriggerR" +
+      "esponse\"E\n\024DeleteTriggerRequest\022-\n\ntrigg" +
+      "er_id\030\001 \001(\0132\031.flyteidl.core.Identifier\"\027" +
+      "\n\025DeleteTriggerResponse\"m\n\020ArtifactProdu" +
+      "cer\022,\n\tentity_id\030\001 \001(\0132\031.flyteidl.core.I" +
+      "dentifier\022+\n\007outputs\030\002 \001(\0132\032.flyteidl.co" +
+      "re.VariableMap\"Q\n\027RegisterProducerReques" +
+      "t\0226\n\tproducers\030\001 \003(\0132#.flyteidl.artifact" +
+      ".ArtifactProducer\"m\n\020ArtifactConsumer\022,\n" +
+      "\tentity_id\030\001 \001(\0132\031.flyteidl.core.Identif" +
+      "ier\022+\n\006inputs\030\002 \001(\0132\033.flyteidl.core.Para" +
+      "meterMap\"Q\n\027RegisterConsumerRequest\0226\n\tc" +
+      "onsumers\030\001 \003(\0132#.flyteidl.artifact.Artif" +
+      "actConsumer\"\022\n\020RegisterResponse2\306\005\n\020Arti" +
+      "factRegistry\022g\n\016CreateArtifact\022(.flyteid" +
+      "l.artifact.CreateArtifactRequest\032).flyte" +
+      "idl.artifact.CreateArtifactResponse\"\000\022^\n" +
+      "\013GetArtifact\022%.flyteidl.artifact.GetArti" +
+      "factRequest\032&.flyteidl.artifact.GetArtif" +
+      "actResponse\"\000\022d\n\rCreateTrigger\022\'.flyteid" +
+      "l.artifact.CreateTriggerRequest\032(.flytei" +
+      "dl.artifact.CreateTriggerResponse\"\000\022d\n\rD" +
+      "eleteTrigger\022\'.flyteidl.artifact.DeleteT" +
+      "riggerRequest\032(.flyteidl.artifact.Delete" +
+      "TriggerResponse\"\000\022O\n\006AddTag\022 .flyteidl.a" +
+      "rtifact.AddTagRequest\032!.flyteidl.artifac" +
+      "t.AddTagResponse\"\000\022e\n\020RegisterProducer\022*" +
+      ".flyteidl.artifact.RegisterProducerReque" +
+      "st\032#.flyteidl.artifact.RegisterResponse\"" +
+      "\000\022e\n\020RegisterConsumer\022*.flyteidl.artifac" +
+      "t.RegisterConsumerRequest\032#.flyteidl.art" +
+      "ifact.RegisterResponse\"\000B:Z8github.com/f" +
+      "lyteorg/flyteidl/gen/pb-go/flyteidl/arti" +
+      "factb\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
@@ -16720,6 +16721,7 @@ public final class Artifacts {
           flyteidl.core.Literals.getDescriptor(),
           flyteidl.core.Types.getDescriptor(),
           flyteidl.core.IdentifierOuterClass.getDescriptor(),
+          flyteidl.core.ArtifactId.getDescriptor(),
           flyteidl.core.Interface.getDescriptor(),
         }, assigner);
     internal_static_flyteidl_artifact_Artifact_descriptor =
@@ -16859,6 +16861,7 @@ public final class Artifacts {
     flyteidl.core.Literals.getDescriptor();
     flyteidl.core.Types.getDescriptor();
     flyteidl.core.IdentifierOuterClass.getDescriptor();
+    flyteidl.core.ArtifactId.getDescriptor();
     flyteidl.core.Interface.getDescriptor();
   }
 
