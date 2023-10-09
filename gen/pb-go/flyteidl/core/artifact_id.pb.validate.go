@@ -180,32 +180,22 @@ var _ interface {
 	ErrorName() string
 } = ArtifactBindingDataValidationError{}
 
-// Validate checks the field values on PartitionValue with the rules defined in
-// the proto definition for this message. If any rules are violated, an error
-// is returned.
-func (m *PartitionValue) Validate() error {
+// Validate checks the field values on InputBindingData with the rules defined
+// in the proto definition for this message. If any rules are violated, an
+// error is returned.
+func (m *InputBindingData) Validate() error {
 	if m == nil {
 		return nil
 	}
 
-	// no validation rules for StaticValue
-
-	if v, ok := interface{}(m.GetBinding()).(interface{ Validate() error }); ok {
-		if err := v.Validate(); err != nil {
-			return PartitionValueValidationError{
-				field:  "Binding",
-				reason: "embedded message failed validation",
-				cause:  err,
-			}
-		}
-	}
+	// no validation rules for Var
 
 	return nil
 }
 
-// PartitionValueValidationError is the validation error returned by
-// PartitionValue.Validate if the designated constraints aren't met.
-type PartitionValueValidationError struct {
+// InputBindingDataValidationError is the validation error returned by
+// InputBindingData.Validate if the designated constraints aren't met.
+type InputBindingDataValidationError struct {
 	field  string
 	reason string
 	cause  error
@@ -213,22 +203,22 @@ type PartitionValueValidationError struct {
 }
 
 // Field function returns field value.
-func (e PartitionValueValidationError) Field() string { return e.field }
+func (e InputBindingDataValidationError) Field() string { return e.field }
 
 // Reason function returns reason value.
-func (e PartitionValueValidationError) Reason() string { return e.reason }
+func (e InputBindingDataValidationError) Reason() string { return e.reason }
 
 // Cause function returns cause value.
-func (e PartitionValueValidationError) Cause() error { return e.cause }
+func (e InputBindingDataValidationError) Cause() error { return e.cause }
 
 // Key function returns key value.
-func (e PartitionValueValidationError) Key() bool { return e.key }
+func (e InputBindingDataValidationError) Key() bool { return e.key }
 
 // ErrorName returns error name.
-func (e PartitionValueValidationError) ErrorName() string { return "PartitionValueValidationError" }
+func (e InputBindingDataValidationError) ErrorName() string { return "InputBindingDataValidationError" }
 
 // Error satisfies the builtin error interface
-func (e PartitionValueValidationError) Error() string {
+func (e InputBindingDataValidationError) Error() string {
 	cause := ""
 	if e.cause != nil {
 		cause = fmt.Sprintf(" | caused by: %v", e.cause)
@@ -240,14 +230,14 @@ func (e PartitionValueValidationError) Error() string {
 	}
 
 	return fmt.Sprintf(
-		"invalid %sPartitionValue.%s: %s%s",
+		"invalid %sInputBindingData.%s: %s%s",
 		key,
 		e.field,
 		e.reason,
 		cause)
 }
 
-var _ error = PartitionValueValidationError{}
+var _ error = InputBindingDataValidationError{}
 
 var _ interface {
 	Field() string
@@ -255,7 +245,102 @@ var _ interface {
 	Key() bool
 	Cause() error
 	ErrorName() string
-} = PartitionValueValidationError{}
+} = InputBindingDataValidationError{}
+
+// Validate checks the field values on LabelValue with the rules defined in the
+// proto definition for this message. If any rules are violated, an error is returned.
+func (m *LabelValue) Validate() error {
+	if m == nil {
+		return nil
+	}
+
+	switch m.Value.(type) {
+
+	case *LabelValue_StaticValue:
+		// no validation rules for StaticValue
+
+	case *LabelValue_TriggeredBinding:
+
+		if v, ok := interface{}(m.GetTriggeredBinding()).(interface{ Validate() error }); ok {
+			if err := v.Validate(); err != nil {
+				return LabelValueValidationError{
+					field:  "TriggeredBinding",
+					reason: "embedded message failed validation",
+					cause:  err,
+				}
+			}
+		}
+
+	case *LabelValue_InputBinding:
+
+		if v, ok := interface{}(m.GetInputBinding()).(interface{ Validate() error }); ok {
+			if err := v.Validate(); err != nil {
+				return LabelValueValidationError{
+					field:  "InputBinding",
+					reason: "embedded message failed validation",
+					cause:  err,
+				}
+			}
+		}
+
+	}
+
+	return nil
+}
+
+// LabelValueValidationError is the validation error returned by
+// LabelValue.Validate if the designated constraints aren't met.
+type LabelValueValidationError struct {
+	field  string
+	reason string
+	cause  error
+	key    bool
+}
+
+// Field function returns field value.
+func (e LabelValueValidationError) Field() string { return e.field }
+
+// Reason function returns reason value.
+func (e LabelValueValidationError) Reason() string { return e.reason }
+
+// Cause function returns cause value.
+func (e LabelValueValidationError) Cause() error { return e.cause }
+
+// Key function returns key value.
+func (e LabelValueValidationError) Key() bool { return e.key }
+
+// ErrorName returns error name.
+func (e LabelValueValidationError) ErrorName() string { return "LabelValueValidationError" }
+
+// Error satisfies the builtin error interface
+func (e LabelValueValidationError) Error() string {
+	cause := ""
+	if e.cause != nil {
+		cause = fmt.Sprintf(" | caused by: %v", e.cause)
+	}
+
+	key := ""
+	if e.key {
+		key = "key for "
+	}
+
+	return fmt.Sprintf(
+		"invalid %sLabelValue.%s: %s%s",
+		key,
+		e.field,
+		e.reason,
+		cause)
+}
+
+var _ error = LabelValueValidationError{}
+
+var _ interface {
+	Field() string
+	Reason() string
+	Key() bool
+	Cause() error
+	ErrorName() string
+} = LabelValueValidationError{}
 
 // Validate checks the field values on Partitions with the rules defined in the
 // proto definition for this message. If any rules are violated, an error is returned.
@@ -448,7 +533,15 @@ func (m *ArtifactTag) Validate() error {
 		}
 	}
 
-	// no validation rules for Value
+	if v, ok := interface{}(m.GetValue()).(interface{ Validate() error }); ok {
+		if err := v.Validate(); err != nil {
+			return ArtifactTagValidationError{
+				field:  "Value",
+				reason: "embedded message failed validation",
+				cause:  err,
+			}
+		}
+	}
 
 	return nil
 }

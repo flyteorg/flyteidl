@@ -16,7 +16,7 @@ import re  # noqa: F401
 
 import six
 
-from flyteadmin.models.core_partition_value import CorePartitionValue  # noqa: F401,E501
+from flyteadmin.models.core_label_value import CoreLabelValue  # noqa: F401,E501
 
 
 class CorePartitions(object):
@@ -33,7 +33,7 @@ class CorePartitions(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'value': 'dict(str, CorePartitionValue)'
+        'value': 'dict(str, CoreLabelValue)'
     }
 
     attribute_map = {
@@ -55,7 +55,7 @@ class CorePartitions(object):
 
 
         :return: The value of this CorePartitions.  # noqa: E501
-        :rtype: dict(str, CorePartitionValue)
+        :rtype: dict(str, CoreLabelValue)
         """
         return self._value
 
@@ -65,7 +65,7 @@ class CorePartitions(object):
 
 
         :param value: The value of this CorePartitions.  # noqa: E501
-        :type: dict(str, CorePartitionValue)
+        :type: dict(str, CoreLabelValue)
         """
 
         self._value = value

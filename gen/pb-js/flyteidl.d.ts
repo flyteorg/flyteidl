@@ -133,58 +133,119 @@ export namespace flyteidl {
             public static verify(message: { [k: string]: any }): (string|null);
         }
 
-        /** Properties of a PartitionValue. */
-        interface IPartitionValue {
+        /** Properties of an InputBindingData. */
+        interface IInputBindingData {
 
-            /** PartitionValue staticValue */
-            staticValue?: (string|null);
-
-            /** PartitionValue binding */
-            binding?: (flyteidl.core.IArtifactBindingData|null);
+            /** InputBindingData var */
+            "var"?: (string|null);
         }
 
-        /** Represents a PartitionValue. */
-        class PartitionValue implements IPartitionValue {
+        /** Represents an InputBindingData. */
+        class InputBindingData implements IInputBindingData {
 
             /**
-             * Constructs a new PartitionValue.
+             * Constructs a new InputBindingData.
              * @param [properties] Properties to set
              */
-            constructor(properties?: flyteidl.core.IPartitionValue);
+            constructor(properties?: flyteidl.core.IInputBindingData);
 
-            /** PartitionValue staticValue. */
-            public staticValue: string;
-
-            /** PartitionValue binding. */
-            public binding?: (flyteidl.core.IArtifactBindingData|null);
+            /** InputBindingData var. */
+            public var: string;
 
             /**
-             * Creates a new PartitionValue instance using the specified properties.
+             * Creates a new InputBindingData instance using the specified properties.
              * @param [properties] Properties to set
-             * @returns PartitionValue instance
+             * @returns InputBindingData instance
              */
-            public static create(properties?: flyteidl.core.IPartitionValue): flyteidl.core.PartitionValue;
+            public static create(properties?: flyteidl.core.IInputBindingData): flyteidl.core.InputBindingData;
 
             /**
-             * Encodes the specified PartitionValue message. Does not implicitly {@link flyteidl.core.PartitionValue.verify|verify} messages.
-             * @param message PartitionValue message or plain object to encode
+             * Encodes the specified InputBindingData message. Does not implicitly {@link flyteidl.core.InputBindingData.verify|verify} messages.
+             * @param message InputBindingData message or plain object to encode
              * @param [writer] Writer to encode to
              * @returns Writer
              */
-            public static encode(message: flyteidl.core.IPartitionValue, writer?: $protobuf.Writer): $protobuf.Writer;
+            public static encode(message: flyteidl.core.IInputBindingData, writer?: $protobuf.Writer): $protobuf.Writer;
 
             /**
-             * Decodes a PartitionValue message from the specified reader or buffer.
+             * Decodes an InputBindingData message from the specified reader or buffer.
              * @param reader Reader or buffer to decode from
              * @param [length] Message length if known beforehand
-             * @returns PartitionValue
+             * @returns InputBindingData
              * @throws {Error} If the payload is not a reader or valid buffer
              * @throws {$protobuf.util.ProtocolError} If required fields are missing
              */
-            public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): flyteidl.core.PartitionValue;
+            public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): flyteidl.core.InputBindingData;
 
             /**
-             * Verifies a PartitionValue message.
+             * Verifies an InputBindingData message.
+             * @param message Plain object to verify
+             * @returns `null` if valid, otherwise the reason why it is not
+             */
+            public static verify(message: { [k: string]: any }): (string|null);
+        }
+
+        /** Properties of a LabelValue. */
+        interface ILabelValue {
+
+            /** LabelValue staticValue */
+            staticValue?: (string|null);
+
+            /** LabelValue triggeredBinding */
+            triggeredBinding?: (flyteidl.core.IArtifactBindingData|null);
+
+            /** LabelValue inputBinding */
+            inputBinding?: (flyteidl.core.IInputBindingData|null);
+        }
+
+        /** Represents a LabelValue. */
+        class LabelValue implements ILabelValue {
+
+            /**
+             * Constructs a new LabelValue.
+             * @param [properties] Properties to set
+             */
+            constructor(properties?: flyteidl.core.ILabelValue);
+
+            /** LabelValue staticValue. */
+            public staticValue: string;
+
+            /** LabelValue triggeredBinding. */
+            public triggeredBinding?: (flyteidl.core.IArtifactBindingData|null);
+
+            /** LabelValue inputBinding. */
+            public inputBinding?: (flyteidl.core.IInputBindingData|null);
+
+            /** LabelValue value. */
+            public value?: ("staticValue"|"triggeredBinding"|"inputBinding");
+
+            /**
+             * Creates a new LabelValue instance using the specified properties.
+             * @param [properties] Properties to set
+             * @returns LabelValue instance
+             */
+            public static create(properties?: flyteidl.core.ILabelValue): flyteidl.core.LabelValue;
+
+            /**
+             * Encodes the specified LabelValue message. Does not implicitly {@link flyteidl.core.LabelValue.verify|verify} messages.
+             * @param message LabelValue message or plain object to encode
+             * @param [writer] Writer to encode to
+             * @returns Writer
+             */
+            public static encode(message: flyteidl.core.ILabelValue, writer?: $protobuf.Writer): $protobuf.Writer;
+
+            /**
+             * Decodes a LabelValue message from the specified reader or buffer.
+             * @param reader Reader or buffer to decode from
+             * @param [length] Message length if known beforehand
+             * @returns LabelValue
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): flyteidl.core.LabelValue;
+
+            /**
+             * Verifies a LabelValue message.
              * @param message Plain object to verify
              * @returns `null` if valid, otherwise the reason why it is not
              */
@@ -195,7 +256,7 @@ export namespace flyteidl {
         interface IPartitions {
 
             /** Partitions value */
-            value?: ({ [k: string]: flyteidl.core.IPartitionValue }|null);
+            value?: ({ [k: string]: flyteidl.core.ILabelValue }|null);
         }
 
         /** Represents a Partitions. */
@@ -208,7 +269,7 @@ export namespace flyteidl {
             constructor(properties?: flyteidl.core.IPartitions);
 
             /** Partitions value. */
-            public value: { [k: string]: flyteidl.core.IPartitionValue };
+            public value: { [k: string]: flyteidl.core.ILabelValue };
 
             /**
              * Creates a new Partitions instance using the specified properties.
@@ -317,7 +378,7 @@ export namespace flyteidl {
             artifactKey?: (flyteidl.core.IArtifactKey|null);
 
             /** ArtifactTag value */
-            value?: (string|null);
+            value?: (flyteidl.core.ILabelValue|null);
         }
 
         /** Represents an ArtifactTag. */
@@ -333,7 +394,7 @@ export namespace flyteidl {
             public artifactKey?: (flyteidl.core.IArtifactKey|null);
 
             /** ArtifactTag value. */
-            public value: string;
+            public value?: (flyteidl.core.ILabelValue|null);
 
             /**
              * Creates a new ArtifactTag instance using the specified properties.

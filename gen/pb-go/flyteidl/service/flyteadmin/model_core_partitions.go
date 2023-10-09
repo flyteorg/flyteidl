@@ -10,5 +10,5 @@
 package flyteadmin
 
 type CorePartitions struct {
-	Value map[string]CorePartitionValue `json:"value,omitempty"`
+	Value map[string]CoreLabelValue `json:"value,omitempty"`
 }

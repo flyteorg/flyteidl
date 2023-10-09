@@ -14,8 +14,8 @@ message ArtifactKey {
   string name = 3;
 }
 
+// Only valid for triggers
 message ArtifactBindingData {
-  // Only valid for triggers
   uint32 index = 1;
 
   // These two fields are only relevant in the partition value case
@@ -23,12 +23,19 @@ message ArtifactBindingData {
   string transform = 3;
 }
 
-message PartitionValue {
-  string static_value = 1;
-  ArtifactBindingData binding = 2;
+message InputBindingData {
+  string var = 1;
+}
+
+message LabelValue {
+  oneof value {
+    string static_value = 1;
+    ArtifactBindingData triggered_binding = 2;
+    InputBindingData input_binding = 3;
+  }
 }
 message Partitions {
-  map<string, PartitionValue> value = 1;
+  map<string, LabelValue> value = 1;
 }
 
 message ArtifactID {
@@ -50,7 +57,7 @@ message ArtifactID {
 message ArtifactTag {
   ArtifactKey artifact_key = 1;
 
-  string value = 2;
+  LabelValue value = 2;
 }
 
 // Uniqueness constraints for Artifacts
@@ -63,6 +70,9 @@ message ArtifactQuery {
     ArtifactID artifact_id = 1;
     ArtifactTag artifact_tag = 2;
     string uri = 3;
+
+    // This is used in the trigger case, where a user specifies a value for an input that is one of the triggering
+    // artifacts, or a partition value derived from a triggering artifact.
     ArtifactBindingData binding = 4;
   }
 }

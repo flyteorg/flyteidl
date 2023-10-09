@@ -26,13 +26,21 @@ class ArtifactBindingData(_message.Message):
     transform: str
     def __init__(self, index: _Optional[int] = ..., partition_key: _Optional[str] = ..., transform: _Optional[str] = ...) -> None: ...
 
-class PartitionValue(_message.Message):
-    __slots__ = ["static_value", "binding"]
+class InputBindingData(_message.Message):
+    __slots__ = ["var"]
+    VAR_FIELD_NUMBER: _ClassVar[int]
+    var: str
+    def __init__(self, var: _Optional[str] = ...) -> None: ...
+
+class LabelValue(_message.Message):
+    __slots__ = ["static_value", "triggered_binding", "input_binding"]
     STATIC_VALUE_FIELD_NUMBER: _ClassVar[int]
-    BINDING_FIELD_NUMBER: _ClassVar[int]
+    TRIGGERED_BINDING_FIELD_NUMBER: _ClassVar[int]
+    INPUT_BINDING_FIELD_NUMBER: _ClassVar[int]
     static_value: str
-    binding: ArtifactBindingData
-    def __init__(self, static_value: _Optional[str] = ..., binding: _Optional[_Union[ArtifactBindingData, _Mapping]] = ...) -> None: ...
+    triggered_binding: ArtifactBindingData
+    input_binding: InputBindingData
+    def __init__(self, static_value: _Optional[str] = ..., triggered_binding: _Optional[_Union[ArtifactBindingData, _Mapping]] = ..., input_binding: _Optional[_Union[InputBindingData, _Mapping]] = ...) -> None: ...
 
 class Partitions(_message.Message):
     __slots__ = ["value"]
@@ -41,11 +49,11 @@ class Partitions(_message.Message):
         KEY_FIELD_NUMBER: _ClassVar[int]
         VALUE_FIELD_NUMBER: _ClassVar[int]
         key: str
-        value: PartitionValue
-        def __init__(self, key: _Optional[str] = ..., value: _Optional[_Union[PartitionValue, _Mapping]] = ...) -> None: ...
+        value: LabelValue
+        def __init__(self, key: _Optional[str] = ..., value: _Optional[_Union[LabelValue, _Mapping]] = ...) -> None: ...
     VALUE_FIELD_NUMBER: _ClassVar[int]
-    value: _containers.MessageMap[str, PartitionValue]
-    def __init__(self, value: _Optional[_Mapping[str, PartitionValue]] = ...) -> None: ...
+    value: _containers.MessageMap[str, LabelValue]
+    def __init__(self, value: _Optional[_Mapping[str, LabelValue]] = ...) -> None: ...
 
 class ArtifactID(_message.Message):
     __slots__ = ["artifact_key", "version", "partitions"]
@@ -62,8 +70,8 @@ class ArtifactTag(_message.Message):
     ARTIFACT_KEY_FIELD_NUMBER: _ClassVar[int]
     VALUE_FIELD_NUMBER: _ClassVar[int]
     artifact_key: ArtifactKey
-    value: str
-    def __init__(self, artifact_key: _Optional[_Union[ArtifactKey, _Mapping]] = ..., value: _Optional[str] = ...) -> None: ...
+    value: LabelValue
+    def __init__(self, artifact_key: _Optional[_Union[ArtifactKey, _Mapping]] = ..., value: _Optional[_Union[LabelValue, _Mapping]] = ...) -> None: ...
 
 class ArtifactQuery(_message.Message):
     __slots__ = ["artifact_id", "artifact_tag", "uri", "binding"]

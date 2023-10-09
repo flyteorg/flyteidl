@@ -322,25 +322,24 @@
                 return ArtifactBindingData;
             })();
     
-            core.PartitionValue = (function() {
+            core.InputBindingData = (function() {
     
                 /**
-                 * Properties of a PartitionValue.
+                 * Properties of an InputBindingData.
                  * @memberof flyteidl.core
-                 * @interface IPartitionValue
-                 * @property {string|null} [staticValue] PartitionValue staticValue
-                 * @property {flyteidl.core.IArtifactBindingData|null} [binding] PartitionValue binding
+                 * @interface IInputBindingData
+                 * @property {string|null} ["var"] InputBindingData var
                  */
     
                 /**
-                 * Constructs a new PartitionValue.
+                 * Constructs a new InputBindingData.
                  * @memberof flyteidl.core
-                 * @classdesc Represents a PartitionValue.
-                 * @implements IPartitionValue
+                 * @classdesc Represents an InputBindingData.
+                 * @implements IInputBindingData
                  * @constructor
-                 * @param {flyteidl.core.IPartitionValue=} [properties] Properties to set
+                 * @param {flyteidl.core.IInputBindingData=} [properties] Properties to set
                  */
-                function PartitionValue(properties) {
+                function InputBindingData(properties) {
                     if (properties)
                         for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
                             if (properties[keys[i]] != null)
@@ -348,75 +347,62 @@
                 }
     
                 /**
-                 * PartitionValue staticValue.
-                 * @member {string} staticValue
-                 * @memberof flyteidl.core.PartitionValue
+                 * InputBindingData var.
+                 * @member {string} var
+                 * @memberof flyteidl.core.InputBindingData
                  * @instance
                  */
-                PartitionValue.prototype.staticValue = "";
+                InputBindingData.prototype["var"] = "";
     
                 /**
-                 * PartitionValue binding.
-                 * @member {flyteidl.core.IArtifactBindingData|null|undefined} binding
-                 * @memberof flyteidl.core.PartitionValue
-                 * @instance
-                 */
-                PartitionValue.prototype.binding = null;
-    
-                /**
-                 * Creates a new PartitionValue instance using the specified properties.
+                 * Creates a new InputBindingData instance using the specified properties.
                  * @function create
-                 * @memberof flyteidl.core.PartitionValue
+                 * @memberof flyteidl.core.InputBindingData
                  * @static
-                 * @param {flyteidl.core.IPartitionValue=} [properties] Properties to set
-                 * @returns {flyteidl.core.PartitionValue} PartitionValue instance
+                 * @param {flyteidl.core.IInputBindingData=} [properties] Properties to set
+                 * @returns {flyteidl.core.InputBindingData} InputBindingData instance
                  */
-                PartitionValue.create = function create(properties) {
-                    return new PartitionValue(properties);
+                InputBindingData.create = function create(properties) {
+                    return new InputBindingData(properties);
                 };
     
                 /**
-                 * Encodes the specified PartitionValue message. Does not implicitly {@link flyteidl.core.PartitionValue.verify|verify} messages.
+                 * Encodes the specified InputBindingData message. Does not implicitly {@link flyteidl.core.InputBindingData.verify|verify} messages.
                  * @function encode
-                 * @memberof flyteidl.core.PartitionValue
+                 * @memberof flyteidl.core.InputBindingData
                  * @static
-                 * @param {flyteidl.core.IPartitionValue} message PartitionValue message or plain object to encode
+                 * @param {flyteidl.core.IInputBindingData} message InputBindingData message or plain object to encode
                  * @param {$protobuf.Writer} [writer] Writer to encode to
                  * @returns {$protobuf.Writer} Writer
                  */
-                PartitionValue.encode = function encode(message, writer) {
+                InputBindingData.encode = function encode(message, writer) {
                     if (!writer)
                         writer = $Writer.create();
-                    if (message.staticValue != null && message.hasOwnProperty("staticValue"))
-                        writer.uint32(/* id 1, wireType 2 =*/10).string(message.staticValue);
-                    if (message.binding != null && message.hasOwnProperty("binding"))
-                        $root.flyteidl.core.ArtifactBindingData.encode(message.binding, writer.uint32(/* id 2, wireType 2 =*/18).fork()).ldelim();
+                    if (message["var"] != null && message.hasOwnProperty("var"))
+                        writer.uint32(/* id 1, wireType 2 =*/10).string(message["var"]);
                     return writer;
                 };
     
                 /**
-                 * Decodes a PartitionValue message from the specified reader or buffer.
+                 * Decodes an InputBindingData message from the specified reader or buffer.
                  * @function decode
-                 * @memberof flyteidl.core.PartitionValue
+                 * @memberof flyteidl.core.InputBindingData
                  * @static
                  * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
                  * @param {number} [length] Message length if known beforehand
-                 * @returns {flyteidl.core.PartitionValue} PartitionValue
+                 * @returns {flyteidl.core.InputBindingData} InputBindingData
                  * @throws {Error} If the payload is not a reader or valid buffer
                  * @throws {$protobuf.util.ProtocolError} If required fields are missing
                  */
-                PartitionValue.decode = function decode(reader, length) {
+                InputBindingData.decode = function decode(reader, length) {
                     if (!(reader instanceof $Reader))
                         reader = $Reader.create(reader);
-                    var end = length === undefined ? reader.len : reader.pos + length, message = new $root.flyteidl.core.PartitionValue();
+                    var end = length === undefined ? reader.len : reader.pos + length, message = new $root.flyteidl.core.InputBindingData();
                     while (reader.pos < end) {
                         var tag = reader.uint32();
                         switch (tag >>> 3) {
                         case 1:
-                            message.staticValue = reader.string();
-                            break;
-                        case 2:
-                            message.binding = $root.flyteidl.core.ArtifactBindingData.decode(reader, reader.uint32());
+                            message["var"] = reader.string();
                             break;
                         default:
                             reader.skipType(tag & 7);
@@ -427,28 +413,198 @@
                 };
     
                 /**
-                 * Verifies a PartitionValue message.
+                 * Verifies an InputBindingData message.
                  * @function verify
-                 * @memberof flyteidl.core.PartitionValue
+                 * @memberof flyteidl.core.InputBindingData
                  * @static
                  * @param {Object.<string,*>} message Plain object to verify
                  * @returns {string|null} `null` if valid, otherwise the reason why it is not
                  */
-                PartitionValue.verify = function verify(message) {
+                InputBindingData.verify = function verify(message) {
                     if (typeof message !== "object" || message === null)
                         return "object expected";
+                    if (message["var"] != null && message.hasOwnProperty("var"))
+                        if (!$util.isString(message["var"]))
+                            return "var: string expected";
+                    return null;
+                };
+    
+                return InputBindingData;
+            })();
+    
+            core.LabelValue = (function() {
+    
+                /**
+                 * Properties of a LabelValue.
+                 * @memberof flyteidl.core
+                 * @interface ILabelValue
+                 * @property {string|null} [staticValue] LabelValue staticValue
+                 * @property {flyteidl.core.IArtifactBindingData|null} [triggeredBinding] LabelValue triggeredBinding
+                 * @property {flyteidl.core.IInputBindingData|null} [inputBinding] LabelValue inputBinding
+                 */
+    
+                /**
+                 * Constructs a new LabelValue.
+                 * @memberof flyteidl.core
+                 * @classdesc Represents a LabelValue.
+                 * @implements ILabelValue
+                 * @constructor
+                 * @param {flyteidl.core.ILabelValue=} [properties] Properties to set
+                 */
+                function LabelValue(properties) {
+                    if (properties)
+                        for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                            if (properties[keys[i]] != null)
+                                this[keys[i]] = properties[keys[i]];
+                }
+    
+                /**
+                 * LabelValue staticValue.
+                 * @member {string} staticValue
+                 * @memberof flyteidl.core.LabelValue
+                 * @instance
+                 */
+                LabelValue.prototype.staticValue = "";
+    
+                /**
+                 * LabelValue triggeredBinding.
+                 * @member {flyteidl.core.IArtifactBindingData|null|undefined} triggeredBinding
+                 * @memberof flyteidl.core.LabelValue
+                 * @instance
+                 */
+                LabelValue.prototype.triggeredBinding = null;
+    
+                /**
+                 * LabelValue inputBinding.
+                 * @member {flyteidl.core.IInputBindingData|null|undefined} inputBinding
+                 * @memberof flyteidl.core.LabelValue
+                 * @instance
+                 */
+                LabelValue.prototype.inputBinding = null;
+    
+                // OneOf field names bound to virtual getters and setters
+                var $oneOfFields;
+    
+                /**
+                 * LabelValue value.
+                 * @member {"staticValue"|"triggeredBinding"|"inputBinding"|undefined} value
+                 * @memberof flyteidl.core.LabelValue
+                 * @instance
+                 */
+                Object.defineProperty(LabelValue.prototype, "value", {
+                    get: $util.oneOfGetter($oneOfFields = ["staticValue", "triggeredBinding", "inputBinding"]),
+                    set: $util.oneOfSetter($oneOfFields)
+                });
+    
+                /**
+                 * Creates a new LabelValue instance using the specified properties.
+                 * @function create
+                 * @memberof flyteidl.core.LabelValue
+                 * @static
+                 * @param {flyteidl.core.ILabelValue=} [properties] Properties to set
+                 * @returns {flyteidl.core.LabelValue} LabelValue instance
+                 */
+                LabelValue.create = function create(properties) {
+                    return new LabelValue(properties);
+                };
+    
+                /**
+                 * Encodes the specified LabelValue message. Does not implicitly {@link flyteidl.core.LabelValue.verify|verify} messages.
+                 * @function encode
+                 * @memberof flyteidl.core.LabelValue
+                 * @static
+                 * @param {flyteidl.core.ILabelValue} message LabelValue message or plain object to encode
+                 * @param {$protobuf.Writer} [writer] Writer to encode to
+                 * @returns {$protobuf.Writer} Writer
+                 */
+                LabelValue.encode = function encode(message, writer) {
+                    if (!writer)
+                        writer = $Writer.create();
                     if (message.staticValue != null && message.hasOwnProperty("staticValue"))
+                        writer.uint32(/* id 1, wireType 2 =*/10).string(message.staticValue);
+                    if (message.triggeredBinding != null && message.hasOwnProperty("triggeredBinding"))
+                        $root.flyteidl.core.ArtifactBindingData.encode(message.triggeredBinding, writer.uint32(/* id 2, wireType 2 =*/18).fork()).ldelim();
+                    if (message.inputBinding != null && message.hasOwnProperty("inputBinding"))
+                        $root.flyteidl.core.InputBindingData.encode(message.inputBinding, writer.uint32(/* id 3, wireType 2 =*/26).fork()).ldelim();
+                    return writer;
+                };
+    
+                /**
+                 * Decodes a LabelValue message from the specified reader or buffer.
+                 * @function decode
+                 * @memberof flyteidl.core.LabelValue
+                 * @static
+                 * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+                 * @param {number} [length] Message length if known beforehand
+                 * @returns {flyteidl.core.LabelValue} LabelValue
+                 * @throws {Error} If the payload is not a reader or valid buffer
+                 * @throws {$protobuf.util.ProtocolError} If required fields are missing
+                 */
+                LabelValue.decode = function decode(reader, length) {
+                    if (!(reader instanceof $Reader))
+                        reader = $Reader.create(reader);
+                    var end = length === undefined ? reader.len : reader.pos + length, message = new $root.flyteidl.core.LabelValue();
+                    while (reader.pos < end) {
+                        var tag = reader.uint32();
+                        switch (tag >>> 3) {
+                        case 1:
+                            message.staticValue = reader.string();
+                            break;
+                        case 2:
+                            message.triggeredBinding = $root.flyteidl.core.ArtifactBindingData.decode(reader, reader.uint32());
+                            break;
+                        case 3:
+                            message.inputBinding = $root.flyteidl.core.InputBindingData.decode(reader, reader.uint32());
+                            break;
+                        default:
+                            reader.skipType(tag & 7);
+                            break;
+                        }
+                    }
+                    return message;
+                };
+    
+                /**
+                 * Verifies a LabelValue message.
+                 * @function verify
+                 * @memberof flyteidl.core.LabelValue
+                 * @static
+                 * @param {Object.<string,*>} message Plain object to verify
+                 * @returns {string|null} `null` if valid, otherwise the reason why it is not
+                 */
+                LabelValue.verify = function verify(message) {
+                    if (typeof message !== "object" || message === null)
+                        return "object expected";
+                    var properties = {};
+                    if (message.staticValue != null && message.hasOwnProperty("staticValue")) {
+                        properties.value = 1;
                         if (!$util.isString(message.staticValue))
                             return "staticValue: string expected";
-                    if (message.binding != null && message.hasOwnProperty("binding")) {
-                        var error = $root.flyteidl.core.ArtifactBindingData.verify(message.binding);
-                        if (error)
-                            return "binding." + error;
+                    }
+                    if (message.triggeredBinding != null && message.hasOwnProperty("triggeredBinding")) {
+                        if (properties.value === 1)
+                            return "value: multiple values";
+                        properties.value = 1;
+                        {
+                            var error = $root.flyteidl.core.ArtifactBindingData.verify(message.triggeredBinding);
+                            if (error)
+                                return "triggeredBinding." + error;
+                        }
+                    }
+                    if (message.inputBinding != null && message.hasOwnProperty("inputBinding")) {
+                        if (properties.value === 1)
+                            return "value: multiple values";
+                        properties.value = 1;
+                        {
+                            var error = $root.flyteidl.core.InputBindingData.verify(message.inputBinding);
+                            if (error)
+                                return "inputBinding." + error;
+                        }
                     }
                     return null;
                 };
     
-                return PartitionValue;
+                return LabelValue;
             })();
     
             core.Partitions = (function() {
@@ -457,7 +613,7 @@
                  * Properties of a Partitions.
                  * @memberof flyteidl.core
                  * @interface IPartitions
-                 * @property {Object.<string,flyteidl.core.IPartitionValue>|null} [value] Partitions value
+                 * @property {Object.<string,flyteidl.core.ILabelValue>|null} [value] Partitions value
                  */
     
                 /**
@@ -478,7 +634,7 @@
     
                 /**
                  * Partitions value.
-                 * @member {Object.<string,flyteidl.core.IPartitionValue>} value
+                 * @member {Object.<string,flyteidl.core.ILabelValue>} value
                  * @memberof flyteidl.core.Partitions
                  * @instance
                  */
@@ -511,7 +667,7 @@
                     if (message.value != null && message.hasOwnProperty("value"))
                         for (var keys = Object.keys(message.value), i = 0; i < keys.length; ++i) {
                             writer.uint32(/* id 1, wireType 2 =*/10).fork().uint32(/* id 1, wireType 2 =*/10).string(keys[i]);
-                            $root.flyteidl.core.PartitionValue.encode(message.value[keys[i]], writer.uint32(/* id 2, wireType 2 =*/18).fork()).ldelim().ldelim();
+                            $root.flyteidl.core.LabelValue.encode(message.value[keys[i]], writer.uint32(/* id 2, wireType 2 =*/18).fork()).ldelim().ldelim();
                         }
                     return writer;
                 };
@@ -540,7 +696,7 @@
                                 message.value = {};
                             key = reader.string();
                             reader.pos++;
-                            message.value[key] = $root.flyteidl.core.PartitionValue.decode(reader, reader.uint32());
+                            message.value[key] = $root.flyteidl.core.LabelValue.decode(reader, reader.uint32());
                             break;
                         default:
                             reader.skipType(tag & 7);
@@ -566,7 +722,7 @@
                             return "value: object expected";
                         var key = Object.keys(message.value);
                         for (var i = 0; i < key.length; ++i) {
-                            var error = $root.flyteidl.core.PartitionValue.verify(message.value[key[i]]);
+                            var error = $root.flyteidl.core.LabelValue.verify(message.value[key[i]]);
                             if (error)
                                 return "value." + error;
                         }
@@ -750,7 +906,7 @@
                  * @memberof flyteidl.core
                  * @interface IArtifactTag
                  * @property {flyteidl.core.IArtifactKey|null} [artifactKey] ArtifactTag artifactKey
-                 * @property {string|null} [value] ArtifactTag value
+                 * @property {flyteidl.core.ILabelValue|null} [value] ArtifactTag value
                  */
     
                 /**
@@ -778,11 +934,11 @@
     
                 /**
                  * ArtifactTag value.
-                 * @member {string} value
+                 * @member {flyteidl.core.ILabelValue|null|undefined} value
                  * @memberof flyteidl.core.ArtifactTag
                  * @instance
                  */
-                ArtifactTag.prototype.value = "";
+                ArtifactTag.prototype.value = null;
     
                 /**
                  * Creates a new ArtifactTag instance using the specified properties.
@@ -811,7 +967,7 @@
                     if (message.artifactKey != null && message.hasOwnProperty("artifactKey"))
                         $root.flyteidl.core.ArtifactKey.encode(message.artifactKey, writer.uint32(/* id 1, wireType 2 =*/10).fork()).ldelim();
                     if (message.value != null && message.hasOwnProperty("value"))
-                        writer.uint32(/* id 2, wireType 2 =*/18).string(message.value);
+                        $root.flyteidl.core.LabelValue.encode(message.value, writer.uint32(/* id 2, wireType 2 =*/18).fork()).ldelim();
                     return writer;
                 };
     
@@ -837,7 +993,7 @@
                             message.artifactKey = $root.flyteidl.core.ArtifactKey.decode(reader, reader.uint32());
                             break;
                         case 2:
-                            message.value = reader.string();
+                            message.value = $root.flyteidl.core.LabelValue.decode(reader, reader.uint32());
                             break;
                         default:
                             reader.skipType(tag & 7);
@@ -863,9 +1019,11 @@
                         if (error)
                             return "artifactKey." + error;
                     }
-                    if (message.value != null && message.hasOwnProperty("value"))
-                        if (!$util.isString(message.value))
-                            return "value: string expected";
+                    if (message.value != null && message.hasOwnProperty("value")) {
+                        var error = $root.flyteidl.core.LabelValue.verify(message.value);
+                        if (error)
+                            return "value." + error;
+                    }
                     return null;
                 };
     

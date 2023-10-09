@@ -597,7 +597,8 @@
           "type": "string"
         },
         "binding": {
-          "$ref": "#/definitions/coreArtifactBindingData"
+          "$ref": "#/definitions/coreArtifactBindingData",
+          "description": "This is used in the trigger case, where a user specifies a value for an input that is one of the triggering\nartifacts, or a partition value derived from a triggering artifact."
         }
       },
       "title": "Uniqueness constraints for Artifacts\n - project, domain, name, version, partitions\nOption 2 (tags are standalone, point to an individual artifact id):\n - project, domain, name, alias (points to one partition if partitioned)\n - project, domain, name, partition key, partition value"
@@ -609,7 +610,7 @@
           "$ref": "#/definitions/coreArtifactKey"
         },
         "value": {
-          "type": "string"
+          "$ref": "#/definitions/coreLabelValue"
         }
       }
     },
@@ -734,6 +735,14 @@
       },
       "description": "Identity encapsulates the various security identities a task can run as. It's up to the underlying plugin to pick the\nright identity for the execution environment."
     },
+    "coreInputBindingData": {
+      "type": "object",
+      "properties": {
+        "var": {
+          "type": "string"
+        }
+      }
+    },
     "coreKeyValuePair": {
       "type": "object",
       "properties": {
@@ -747,6 +756,20 @@
         }
       },
       "description": "A generic key value pair."
+    },
+    "coreLabelValue": {
+      "type": "object",
+      "properties": {
+        "static_value": {
+          "type": "string"
+        },
+        "triggered_binding": {
+          "$ref": "#/definitions/coreArtifactBindingData"
+        },
+        "input_binding": {
+          "$ref": "#/definitions/coreInputBindingData"
+        }
+      }
     },
     "coreLiteral": {
       "type": "object",
@@ -942,24 +965,13 @@
       },
       "description": "A map of Parameters."
     },
-    "corePartitionValue": {
-      "type": "object",
-      "properties": {
-        "static_value": {
-          "type": "string"
-        },
-        "binding": {
-          "$ref": "#/definitions/coreArtifactBindingData"
-        }
-      }
-    },
     "corePartitions": {
       "type": "object",
       "properties": {
         "value": {
           "type": "object",
           "additionalProperties": {
-            "$ref": "#/definitions/corePartitionValue"
+            "$ref": "#/definitions/coreLabelValue"
           }
         }
       }

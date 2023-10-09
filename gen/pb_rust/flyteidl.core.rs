@@ -725,17 +725,34 @@ pub struct ArtifactBindingData {
 }
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(Clone, PartialEq, ::prost::Message)]
-pub struct PartitionValue {
+pub struct InputBindingData {
     #[prost(string, tag="1")]
-    pub static_value: ::prost::alloc::string::String,
-    #[prost(message, optional, tag="2")]
-    pub binding: ::core::option::Option<ArtifactBindingData>,
+    pub var: ::prost::alloc::string::String,
+}
+#[allow(clippy::derive_partial_eq_without_eq)]
+#[derive(Clone, PartialEq, ::prost::Message)]
+pub struct LabelValue {
+    #[prost(oneof="label_value::Value", tags="1, 2, 3")]
+    pub value: ::core::option::Option<label_value::Value>,
+}
+/// Nested message and enum types in `LabelValue`.
+pub mod label_value {
+    #[allow(clippy::derive_partial_eq_without_eq)]
+#[derive(Clone, PartialEq, ::prost::Oneof)]
+    pub enum Value {
+        #[prost(string, tag="1")]
+        StaticValue(::prost::alloc::string::String),
+        #[prost(message, tag="2")]
+        TriggeredBinding(super::ArtifactBindingData),
+        #[prost(message, tag="3")]
+        InputBinding(super::InputBindingData),
+    }
 }
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(Clone, PartialEq, ::prost::Message)]
 pub struct Partitions {
     #[prost(map="string, message", tag="1")]
-    pub value: ::std::collections::HashMap<::prost::alloc::string::String, PartitionValue>,
+    pub value: ::std::collections::HashMap<::prost::alloc::string::String, LabelValue>,
 }
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(Clone, PartialEq, ::prost::Message)]
@@ -773,8 +790,8 @@ pub mod artifact_id {
 pub struct ArtifactTag {
     #[prost(message, optional, tag="1")]
     pub artifact_key: ::core::option::Option<ArtifactKey>,
-    #[prost(string, tag="2")]
-    pub value: ::prost::alloc::string::String,
+    #[prost(message, optional, tag="2")]
+    pub value: ::core::option::Option<LabelValue>,
 }
 /// Uniqueness constraints for Artifacts
 ///   - project, domain, name, version, partitions
@@ -798,6 +815,8 @@ pub mod artifact_query {
         ArtifactTag(super::ArtifactTag),
         #[prost(string, tag="3")]
         Uri(::prost::alloc::string::String),
+        /// This is used in the trigger case, where a user specifies a value for an input that is one of the triggering
+        /// artifacts, or a partition value derived from a triggering artifact.
         #[prost(message, tag="4")]
         Binding(super::ArtifactBindingData),
     }
