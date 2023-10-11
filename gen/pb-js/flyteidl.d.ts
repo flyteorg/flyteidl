@@ -22413,6 +22413,9 @@ export namespace flyteidl {
 
             /** ArtifactSpec userMetadata */
             userMetadata?: (google.protobuf.IAny|null);
+
+            /** ArtifactSpec metadataType */
+            metadataType?: (string|null);
         }
 
         /** Represents an ArtifactSpec. */
@@ -22448,8 +22451,8 @@ export namespace flyteidl {
             /** ArtifactSpec userMetadata. */
             public userMetadata?: (google.protobuf.IAny|null);
 
-            /** ArtifactSpec source. */
-            public source?: ("taskExecution"|"execution"|"principal");
+            /** ArtifactSpec metadataType. */
+            public metadataType: string;
 
             /**
              * Creates a new ArtifactSpec instance using the specified properties.

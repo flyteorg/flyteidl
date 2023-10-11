@@ -43,22 +43,22 @@ message ArtifactSpec {
   // type to all Literals is a lot of work.
   core.LiteralType type = 2;
 
-  oneof source {
-    // Outputs of tasks will have this.
-    core.TaskExecutionIdentifier task_execution = 5;
+  // Outputs of tasks will have this.
+  core.TaskExecutionIdentifier task_execution = 5;
 
-    // Workflow outputs will have this.
-    core.WorkflowExecutionIdentifier execution = 6;
+  // Workflow outputs will have this.
+  core.WorkflowExecutionIdentifier execution = 6;
 
-    // Uploads, either from the UI or from the CLI, or FlyteRemote, will have this.
-    string principal = 7;
-  }
+  // Uploads, either from the UI or from the CLI, or FlyteRemote, will have this.
+  string principal = 7;
 
   string short_description = 8;
   string long_description = 9;
 
   // Additional user metadata
   google.protobuf.Any user_metadata = 10;
+
+  string metadata_type = 11;
 }
 
 

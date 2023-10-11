@@ -246,6 +246,9 @@
         "user_metadata": {
           "$ref": "#/definitions/protobufAny",
           "title": "Additional user metadata"
+        },
+        "metadata_type": {
+          "type": "string"
         }
       }
     },

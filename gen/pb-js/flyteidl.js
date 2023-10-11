@@ -52266,6 +52266,7 @@
                  * @property {string|null} [shortDescription] ArtifactSpec shortDescription
                  * @property {string|null} [longDescription] ArtifactSpec longDescription
                  * @property {google.protobuf.IAny|null} [userMetadata] ArtifactSpec userMetadata
+                 * @property {string|null} [metadataType] ArtifactSpec metadataType
                  */
     
                 /**
@@ -52347,19 +52348,13 @@
                  */
                 ArtifactSpec.prototype.userMetadata = null;
     
-                // OneOf field names bound to virtual getters and setters
-                var $oneOfFields;
-    
                 /**
-                 * ArtifactSpec source.
-                 * @member {"taskExecution"|"execution"|"principal"|undefined} source
+                 * ArtifactSpec metadataType.
+                 * @member {string} metadataType
                  * @memberof flyteidl.artifact.ArtifactSpec
                  * @instance
                  */
-                Object.defineProperty(ArtifactSpec.prototype, "source", {
-                    get: $util.oneOfGetter($oneOfFields = ["taskExecution", "execution", "principal"]),
-                    set: $util.oneOfSetter($oneOfFields)
-                });
+                ArtifactSpec.prototype.metadataType = "";
     
                 /**
                  * Creates a new ArtifactSpec instance using the specified properties.
@@ -52401,6 +52396,8 @@
                         writer.uint32(/* id 9, wireType 2 =*/74).string(message.longDescription);
                     if (message.userMetadata != null && message.hasOwnProperty("userMetadata"))
                         $root.google.protobuf.Any.encode(message.userMetadata, writer.uint32(/* id 10, wireType 2 =*/82).fork()).ldelim();
+                    if (message.metadataType != null && message.hasOwnProperty("metadataType"))
+                        writer.uint32(/* id 11, wireType 2 =*/90).string(message.metadataType);
                     return writer;
                 };
     
@@ -52446,6 +52443,9 @@
                         case 10:
                             message.userMetadata = $root.google.protobuf.Any.decode(reader, reader.uint32());
                             break;
+                        case 11:
+                            message.metadataType = reader.string();
+                            break;
                         default:
                             reader.skipType(tag & 7);
                             break;
@@ -52465,7 +52465,6 @@
                 ArtifactSpec.verify = function verify(message) {
                     if (typeof message !== "object" || message === null)
                         return "object expected";
-                    var properties = {};
                     if (message.value != null && message.hasOwnProperty("value")) {
                         var error = $root.flyteidl.core.Literal.verify(message.value);
                         if (error)
@@ -52477,30 +52476,18 @@
                             return "type." + error;
                     }
                     if (message.taskExecution != null && message.hasOwnProperty("taskExecution")) {
-                        properties.source = 1;
-                        {
-                            var error = $root.flyteidl.core.TaskExecutionIdentifier.verify(message.taskExecution);
-                            if (error)
-                                return "taskExecution." + error;
-                        }
+                        var error = $root.flyteidl.core.TaskExecutionIdentifier.verify(message.taskExecution);
+                        if (error)
+                            return "taskExecution." + error;
                     }
                     if (message.execution != null && message.hasOwnProperty("execution")) {
-                        if (properties.source === 1)
-                            return "source: multiple values";
-                        properties.source = 1;
-                        {
-                            var error = $root.flyteidl.core.WorkflowExecutionIdentifier.verify(message.execution);
-                            if (error)
-                                return "execution." + error;
-                        }
+                        var error = $root.flyteidl.core.WorkflowExecutionIdentifier.verify(message.execution);
+                        if (error)
+                            return "execution." + error;
                     }
-                    if (message.principal != null && message.hasOwnProperty("principal")) {
-                        if (properties.source === 1)
-                            return "source: multiple values";
-                        properties.source = 1;
+                    if (message.principal != null && message.hasOwnProperty("principal"))
                         if (!$util.isString(message.principal))
                             return "principal: string expected";
-                    }
                     if (message.shortDescription != null && message.hasOwnProperty("shortDescription"))
                         if (!$util.isString(message.shortDescription))
                             return "shortDescription: string expected";
@@ -52512,6 +52499,9 @@
                         if (error)
                             return "userMetadata." + error;
                     }
+                    if (message.metadataType != null && message.hasOwnProperty("metadataType"))
+                        if (!$util.isString(message.metadataType))
+                            return "metadataType: string expected";
                     return null;
                 };
     
