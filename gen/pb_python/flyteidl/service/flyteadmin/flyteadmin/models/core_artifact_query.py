@@ -133,6 +133,7 @@ class CoreArtifactQuery(object):
     def binding(self):
         """Gets the binding of this CoreArtifactQuery.  # noqa: E501
 
+        This is used in the trigger case, where a user specifies a value for an input that is one of the triggering artifacts, or a partition value derived from a triggering artifact.  # noqa: E501
 
         :return: The binding of this CoreArtifactQuery.  # noqa: E501
         :rtype: CoreArtifactBindingData
@@ -143,6 +144,7 @@ class CoreArtifactQuery(object):
     def binding(self, binding):
         """Sets the binding of this CoreArtifactQuery.
 
+        This is used in the trigger case, where a user specifies a value for an input that is one of the triggering artifacts, or a partition value derived from a triggering artifact.  # noqa: E501
 
         :param binding: The binding of this CoreArtifactQuery.  # noqa: E501
         :type: CoreArtifactBindingData

@@ -5681,7 +5681,8 @@
           "type": "string"
         },
         "binding": {
-          "$ref": "#/definitions/coreArtifactBindingData"
+          "$ref": "#/definitions/coreArtifactBindingData",
+          "description": "This is used in the trigger case, where a user specifies a value for an input that is one of the triggering\nartifacts, or a partition value derived from a triggering artifact."
         }
       },
       "title": "Uniqueness constraints for Artifacts\n - project, domain, name, version, partitions\nOption 2 (tags are standalone, point to an individual artifact id):\n - project, domain, name, alias (points to one partition if partitioned)\n - project, domain, name, partition key, partition value"
@@ -5693,7 +5694,7 @@
           "$ref": "#/definitions/coreArtifactKey"
         },
         "value": {
-          "type": "string"
+          "$ref": "#/definitions/coreLabelValue"
         }
       }
     },
@@ -6229,6 +6230,14 @@
       },
       "description": "Defines a series of if/else blocks. The first branch whose condition evaluates to true is the one to execute.\nIf no conditions were satisfied, the else_node or the error will execute."
     },
+    "coreInputBindingData": {
+      "type": "object",
+      "properties": {
+        "var": {
+          "type": "string"
+        }
+      }
+    },
     "coreK8sObjectMetadata": {
       "type": "object",
       "properties": {
@@ -6281,6 +6290,20 @@
       },
       "description": "A generic key value pair."
     },
+    "coreLabelValue": {
+      "type": "object",
+      "properties": {
+        "static_value": {
+          "type": "string"
+        },
+        "triggered_binding": {
+          "$ref": "#/definitions/coreArtifactBindingData"
+        },
+        "input_binding": {
+          "$ref": "#/definitions/coreInputBindingData"
+        }
+      }
+    },
     "coreLiteral": {
       "type": "object",
       "properties": {
@@ -6305,7 +6328,7 @@
           "additionalProperties": {
             "type": "string"
           },
-          "description": "Rejected: We were going to add the Artifact (or at least ArtifactID) here as a way to keep track of lineage\nBut this was deemed too janky."
+          "description": "Additional metadata for literals."
         }
       },
       "description": "A simple value. This supports any level of nesting (e.g. array of array of array of Blobs) as well as simple primitives."
@@ -6615,24 +6638,13 @@
       },
       "description": "A map of Parameters."
     },
-    "corePartitionValue": {
-      "type": "object",
-      "properties": {
-        "static_value": {
-          "type": "string"
-        },
-        "binding": {
-          "$ref": "#/definitions/coreArtifactBindingData"
-        }
-      }
-    },
     "corePartitions": {
       "type": "object",
       "properties": {
         "value": {
           "type": "object",
           "additionalProperties": {
-            "$ref": "#/definitions/corePartitionValue"
+            "$ref": "#/definitions/coreLabelValue"
           }
         }
       }

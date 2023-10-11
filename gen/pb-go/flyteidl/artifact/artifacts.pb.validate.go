@@ -241,6 +241,28 @@ func (m *ArtifactSpec) Validate() error {
 		}
 	}
 
+	if v, ok := interface{}(m.GetTaskExecution()).(interface{ Validate() error }); ok {
+		if err := v.Validate(); err != nil {
+			return ArtifactSpecValidationError{
+				field:  "TaskExecution",
+				reason: "embedded message failed validation",
+				cause:  err,
+			}
+		}
+	}
+
+	if v, ok := interface{}(m.GetExecution()).(interface{ Validate() error }); ok {
+		if err := v.Validate(); err != nil {
+			return ArtifactSpecValidationError{
+				field:  "Execution",
+				reason: "embedded message failed validation",
+				cause:  err,
+			}
+		}
+	}
+
+	// no validation rules for Principal
+
 	// no validation rules for ShortDescription
 
 	// no validation rules for LongDescription
@@ -255,36 +277,7 @@ func (m *ArtifactSpec) Validate() error {
 		}
 	}
 
-	switch m.Source.(type) {
-
-	case *ArtifactSpec_TaskExecution:
-
-		if v, ok := interface{}(m.GetTaskExecution()).(interface{ Validate() error }); ok {
-			if err := v.Validate(); err != nil {
-				return ArtifactSpecValidationError{
-					field:  "TaskExecution",
-					reason: "embedded message failed validation",
-					cause:  err,
-				}
-			}
-		}
-
-	case *ArtifactSpec_Execution:
-
-		if v, ok := interface{}(m.GetExecution()).(interface{ Validate() error }); ok {
-			if err := v.Validate(); err != nil {
-				return ArtifactSpecValidationError{
-					field:  "Execution",
-					reason: "embedded message failed validation",
-					cause:  err,
-				}
-			}
-		}
-
-	case *ArtifactSpec_Principal:
-		// no validation rules for Principal
-
-	}
+	// no validation rules for MetadataType
 
 	return nil
 }

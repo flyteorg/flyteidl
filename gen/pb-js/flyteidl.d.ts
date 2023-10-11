@@ -5,198 +5,559 @@ export namespace flyteidl {
     /** Namespace core. */
     namespace core {
 
-        /** CatalogCacheStatus enum. */
-        enum CatalogCacheStatus {
-            CACHE_DISABLED = 0,
-            CACHE_MISS = 1,
-            CACHE_HIT = 2,
-            CACHE_POPULATED = 3,
-            CACHE_LOOKUP_FAILURE = 4,
-            CACHE_PUT_FAILURE = 5,
-            CACHE_SKIPPED = 6
-        }
+        /** Properties of an ArtifactKey. */
+        interface IArtifactKey {
 
-        /** Properties of a CatalogArtifactTag. */
-        interface ICatalogArtifactTag {
+            /** ArtifactKey project */
+            project?: (string|null);
 
-            /** CatalogArtifactTag artifactId */
-            artifactId?: (string|null);
+            /** ArtifactKey domain */
+            domain?: (string|null);
 
-            /** CatalogArtifactTag name */
+            /** ArtifactKey name */
             name?: (string|null);
         }
 
-        /** Represents a CatalogArtifactTag. */
-        class CatalogArtifactTag implements ICatalogArtifactTag {
+        /** Represents an ArtifactKey. */
+        class ArtifactKey implements IArtifactKey {
 
             /**
-             * Constructs a new CatalogArtifactTag.
+             * Constructs a new ArtifactKey.
              * @param [properties] Properties to set
              */
-            constructor(properties?: flyteidl.core.ICatalogArtifactTag);
+            constructor(properties?: flyteidl.core.IArtifactKey);
 
-            /** CatalogArtifactTag artifactId. */
-            public artifactId: string;
+            /** ArtifactKey project. */
+            public project: string;
 
-            /** CatalogArtifactTag name. */
+            /** ArtifactKey domain. */
+            public domain: string;
+
+            /** ArtifactKey name. */
             public name: string;
 
             /**
-             * Creates a new CatalogArtifactTag instance using the specified properties.
+             * Creates a new ArtifactKey instance using the specified properties.
              * @param [properties] Properties to set
-             * @returns CatalogArtifactTag instance
+             * @returns ArtifactKey instance
              */
-            public static create(properties?: flyteidl.core.ICatalogArtifactTag): flyteidl.core.CatalogArtifactTag;
+            public static create(properties?: flyteidl.core.IArtifactKey): flyteidl.core.ArtifactKey;
 
             /**
-             * Encodes the specified CatalogArtifactTag message. Does not implicitly {@link flyteidl.core.CatalogArtifactTag.verify|verify} messages.
-             * @param message CatalogArtifactTag message or plain object to encode
+             * Encodes the specified ArtifactKey message. Does not implicitly {@link flyteidl.core.ArtifactKey.verify|verify} messages.
+             * @param message ArtifactKey message or plain object to encode
              * @param [writer] Writer to encode to
              * @returns Writer
              */
-            public static encode(message: flyteidl.core.ICatalogArtifactTag, writer?: $protobuf.Writer): $protobuf.Writer;
+            public static encode(message: flyteidl.core.IArtifactKey, writer?: $protobuf.Writer): $protobuf.Writer;
 
             /**
-             * Decodes a CatalogArtifactTag message from the specified reader or buffer.
+             * Decodes an ArtifactKey message from the specified reader or buffer.
              * @param reader Reader or buffer to decode from
              * @param [length] Message length if known beforehand
-             * @returns CatalogArtifactTag
+             * @returns ArtifactKey
              * @throws {Error} If the payload is not a reader or valid buffer
              * @throws {$protobuf.util.ProtocolError} If required fields are missing
              */
-            public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): flyteidl.core.CatalogArtifactTag;
+            public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): flyteidl.core.ArtifactKey;
 
             /**
-             * Verifies a CatalogArtifactTag message.
+             * Verifies an ArtifactKey message.
              * @param message Plain object to verify
              * @returns `null` if valid, otherwise the reason why it is not
              */
             public static verify(message: { [k: string]: any }): (string|null);
         }
 
-        /** Properties of a CatalogMetadata. */
-        interface ICatalogMetadata {
+        /** Properties of an ArtifactBindingData. */
+        interface IArtifactBindingData {
 
-            /** CatalogMetadata datasetId */
-            datasetId?: (flyteidl.core.IIdentifier|null);
+            /** ArtifactBindingData index */
+            index?: (number|null);
 
-            /** CatalogMetadata artifactTag */
-            artifactTag?: (flyteidl.core.ICatalogArtifactTag|null);
+            /** ArtifactBindingData partitionKey */
+            partitionKey?: (string|null);
 
-            /** CatalogMetadata sourceTaskExecution */
-            sourceTaskExecution?: (flyteidl.core.ITaskExecutionIdentifier|null);
+            /** ArtifactBindingData transform */
+            transform?: (string|null);
         }
 
-        /** Represents a CatalogMetadata. */
-        class CatalogMetadata implements ICatalogMetadata {
+        /** Represents an ArtifactBindingData. */
+        class ArtifactBindingData implements IArtifactBindingData {
 
             /**
-             * Constructs a new CatalogMetadata.
+             * Constructs a new ArtifactBindingData.
              * @param [properties] Properties to set
              */
-            constructor(properties?: flyteidl.core.ICatalogMetadata);
+            constructor(properties?: flyteidl.core.IArtifactBindingData);
 
-            /** CatalogMetadata datasetId. */
-            public datasetId?: (flyteidl.core.IIdentifier|null);
+            /** ArtifactBindingData index. */
+            public index: number;
 
-            /** CatalogMetadata artifactTag. */
-            public artifactTag?: (flyteidl.core.ICatalogArtifactTag|null);
+            /** ArtifactBindingData partitionKey. */
+            public partitionKey: string;
 
-            /** CatalogMetadata sourceTaskExecution. */
-            public sourceTaskExecution?: (flyteidl.core.ITaskExecutionIdentifier|null);
-
-            /** CatalogMetadata sourceExecution. */
-            public sourceExecution?: "sourceTaskExecution";
+            /** ArtifactBindingData transform. */
+            public transform: string;
 
             /**
-             * Creates a new CatalogMetadata instance using the specified properties.
+             * Creates a new ArtifactBindingData instance using the specified properties.
              * @param [properties] Properties to set
-             * @returns CatalogMetadata instance
+             * @returns ArtifactBindingData instance
              */
-            public static create(properties?: flyteidl.core.ICatalogMetadata): flyteidl.core.CatalogMetadata;
+            public static create(properties?: flyteidl.core.IArtifactBindingData): flyteidl.core.ArtifactBindingData;
 
             /**
-             * Encodes the specified CatalogMetadata message. Does not implicitly {@link flyteidl.core.CatalogMetadata.verify|verify} messages.
-             * @param message CatalogMetadata message or plain object to encode
+             * Encodes the specified ArtifactBindingData message. Does not implicitly {@link flyteidl.core.ArtifactBindingData.verify|verify} messages.
+             * @param message ArtifactBindingData message or plain object to encode
              * @param [writer] Writer to encode to
              * @returns Writer
              */
-            public static encode(message: flyteidl.core.ICatalogMetadata, writer?: $protobuf.Writer): $protobuf.Writer;
+            public static encode(message: flyteidl.core.IArtifactBindingData, writer?: $protobuf.Writer): $protobuf.Writer;
 
             /**
-             * Decodes a CatalogMetadata message from the specified reader or buffer.
+             * Decodes an ArtifactBindingData message from the specified reader or buffer.
              * @param reader Reader or buffer to decode from
              * @param [length] Message length if known beforehand
-             * @returns CatalogMetadata
+             * @returns ArtifactBindingData
              * @throws {Error} If the payload is not a reader or valid buffer
              * @throws {$protobuf.util.ProtocolError} If required fields are missing
              */
-            public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): flyteidl.core.CatalogMetadata;
+            public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): flyteidl.core.ArtifactBindingData;
 
             /**
-             * Verifies a CatalogMetadata message.
+             * Verifies an ArtifactBindingData message.
              * @param message Plain object to verify
              * @returns `null` if valid, otherwise the reason why it is not
              */
             public static verify(message: { [k: string]: any }): (string|null);
         }
 
-        /** Properties of a CatalogReservation. */
-        interface ICatalogReservation {
+        /** Properties of an InputBindingData. */
+        interface IInputBindingData {
+
+            /** InputBindingData var */
+            "var"?: (string|null);
         }
 
-        /** Represents a CatalogReservation. */
-        class CatalogReservation implements ICatalogReservation {
+        /** Represents an InputBindingData. */
+        class InputBindingData implements IInputBindingData {
 
             /**
-             * Constructs a new CatalogReservation.
+             * Constructs a new InputBindingData.
              * @param [properties] Properties to set
              */
-            constructor(properties?: flyteidl.core.ICatalogReservation);
+            constructor(properties?: flyteidl.core.IInputBindingData);
+
+            /** InputBindingData var. */
+            public var: string;
 
             /**
-             * Creates a new CatalogReservation instance using the specified properties.
+             * Creates a new InputBindingData instance using the specified properties.
              * @param [properties] Properties to set
-             * @returns CatalogReservation instance
+             * @returns InputBindingData instance
              */
-            public static create(properties?: flyteidl.core.ICatalogReservation): flyteidl.core.CatalogReservation;
+            public static create(properties?: flyteidl.core.IInputBindingData): flyteidl.core.InputBindingData;
 
             /**
-             * Encodes the specified CatalogReservation message. Does not implicitly {@link flyteidl.core.CatalogReservation.verify|verify} messages.
-             * @param message CatalogReservation message or plain object to encode
+             * Encodes the specified InputBindingData message. Does not implicitly {@link flyteidl.core.InputBindingData.verify|verify} messages.
+             * @param message InputBindingData message or plain object to encode
              * @param [writer] Writer to encode to
              * @returns Writer
              */
-            public static encode(message: flyteidl.core.ICatalogReservation, writer?: $protobuf.Writer): $protobuf.Writer;
+            public static encode(message: flyteidl.core.IInputBindingData, writer?: $protobuf.Writer): $protobuf.Writer;
 
             /**
-             * Decodes a CatalogReservation message from the specified reader or buffer.
+             * Decodes an InputBindingData message from the specified reader or buffer.
              * @param reader Reader or buffer to decode from
              * @param [length] Message length if known beforehand
-             * @returns CatalogReservation
+             * @returns InputBindingData
              * @throws {Error} If the payload is not a reader or valid buffer
              * @throws {$protobuf.util.ProtocolError} If required fields are missing
              */
-            public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): flyteidl.core.CatalogReservation;
+            public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): flyteidl.core.InputBindingData;
 
             /**
-             * Verifies a CatalogReservation message.
+             * Verifies an InputBindingData message.
              * @param message Plain object to verify
              * @returns `null` if valid, otherwise the reason why it is not
              */
             public static verify(message: { [k: string]: any }): (string|null);
         }
 
-        namespace CatalogReservation {
+        /** Properties of a LabelValue. */
+        interface ILabelValue {
 
-            /** Status enum. */
-            enum Status {
-                RESERVATION_DISABLED = 0,
-                RESERVATION_ACQUIRED = 1,
-                RESERVATION_EXISTS = 2,
-                RESERVATION_RELEASED = 3,
-                RESERVATION_FAILURE = 4
-            }
+            /** LabelValue staticValue */
+            staticValue?: (string|null);
+
+            /** LabelValue triggeredBinding */
+            triggeredBinding?: (flyteidl.core.IArtifactBindingData|null);
+
+            /** LabelValue inputBinding */
+            inputBinding?: (flyteidl.core.IInputBindingData|null);
+        }
+
+        /** Represents a LabelValue. */
+        class LabelValue implements ILabelValue {
+
+            /**
+             * Constructs a new LabelValue.
+             * @param [properties] Properties to set
+             */
+            constructor(properties?: flyteidl.core.ILabelValue);
+
+            /** LabelValue staticValue. */
+            public staticValue: string;
+
+            /** LabelValue triggeredBinding. */
+            public triggeredBinding?: (flyteidl.core.IArtifactBindingData|null);
+
+            /** LabelValue inputBinding. */
+            public inputBinding?: (flyteidl.core.IInputBindingData|null);
+
+            /** LabelValue value. */
+            public value?: ("staticValue"|"triggeredBinding"|"inputBinding");
+
+            /**
+             * Creates a new LabelValue instance using the specified properties.
+             * @param [properties] Properties to set
+             * @returns LabelValue instance
+             */
+            public static create(properties?: flyteidl.core.ILabelValue): flyteidl.core.LabelValue;
+
+            /**
+             * Encodes the specified LabelValue message. Does not implicitly {@link flyteidl.core.LabelValue.verify|verify} messages.
+             * @param message LabelValue message or plain object to encode
+             * @param [writer] Writer to encode to
+             * @returns Writer
+             */
+            public static encode(message: flyteidl.core.ILabelValue, writer?: $protobuf.Writer): $protobuf.Writer;
+
+            /**
+             * Decodes a LabelValue message from the specified reader or buffer.
+             * @param reader Reader or buffer to decode from
+             * @param [length] Message length if known beforehand
+             * @returns LabelValue
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): flyteidl.core.LabelValue;
+
+            /**
+             * Verifies a LabelValue message.
+             * @param message Plain object to verify
+             * @returns `null` if valid, otherwise the reason why it is not
+             */
+            public static verify(message: { [k: string]: any }): (string|null);
+        }
+
+        /** Properties of a Partitions. */
+        interface IPartitions {
+
+            /** Partitions value */
+            value?: ({ [k: string]: flyteidl.core.ILabelValue }|null);
+        }
+
+        /** Represents a Partitions. */
+        class Partitions implements IPartitions {
+
+            /**
+             * Constructs a new Partitions.
+             * @param [properties] Properties to set
+             */
+            constructor(properties?: flyteidl.core.IPartitions);
+
+            /** Partitions value. */
+            public value: { [k: string]: flyteidl.core.ILabelValue };
+
+            /**
+             * Creates a new Partitions instance using the specified properties.
+             * @param [properties] Properties to set
+             * @returns Partitions instance
+             */
+            public static create(properties?: flyteidl.core.IPartitions): flyteidl.core.Partitions;
+
+            /**
+             * Encodes the specified Partitions message. Does not implicitly {@link flyteidl.core.Partitions.verify|verify} messages.
+             * @param message Partitions message or plain object to encode
+             * @param [writer] Writer to encode to
+             * @returns Writer
+             */
+            public static encode(message: flyteidl.core.IPartitions, writer?: $protobuf.Writer): $protobuf.Writer;
+
+            /**
+             * Decodes a Partitions message from the specified reader or buffer.
+             * @param reader Reader or buffer to decode from
+             * @param [length] Message length if known beforehand
+             * @returns Partitions
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): flyteidl.core.Partitions;
+
+            /**
+             * Verifies a Partitions message.
+             * @param message Plain object to verify
+             * @returns `null` if valid, otherwise the reason why it is not
+             */
+            public static verify(message: { [k: string]: any }): (string|null);
+        }
+
+        /** Properties of an ArtifactID. */
+        interface IArtifactID {
+
+            /** ArtifactID artifactKey */
+            artifactKey?: (flyteidl.core.IArtifactKey|null);
+
+            /** ArtifactID version */
+            version?: (string|null);
+
+            /** ArtifactID partitions */
+            partitions?: (flyteidl.core.IPartitions|null);
+        }
+
+        /** Represents an ArtifactID. */
+        class ArtifactID implements IArtifactID {
+
+            /**
+             * Constructs a new ArtifactID.
+             * @param [properties] Properties to set
+             */
+            constructor(properties?: flyteidl.core.IArtifactID);
+
+            /** ArtifactID artifactKey. */
+            public artifactKey?: (flyteidl.core.IArtifactKey|null);
+
+            /** ArtifactID version. */
+            public version: string;
+
+            /** ArtifactID partitions. */
+            public partitions?: (flyteidl.core.IPartitions|null);
+
+            /** ArtifactID dimensions. */
+            public dimensions?: "partitions";
+
+            /**
+             * Creates a new ArtifactID instance using the specified properties.
+             * @param [properties] Properties to set
+             * @returns ArtifactID instance
+             */
+            public static create(properties?: flyteidl.core.IArtifactID): flyteidl.core.ArtifactID;
+
+            /**
+             * Encodes the specified ArtifactID message. Does not implicitly {@link flyteidl.core.ArtifactID.verify|verify} messages.
+             * @param message ArtifactID message or plain object to encode
+             * @param [writer] Writer to encode to
+             * @returns Writer
+             */
+            public static encode(message: flyteidl.core.IArtifactID, writer?: $protobuf.Writer): $protobuf.Writer;
+
+            /**
+             * Decodes an ArtifactID message from the specified reader or buffer.
+             * @param reader Reader or buffer to decode from
+             * @param [length] Message length if known beforehand
+             * @returns ArtifactID
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): flyteidl.core.ArtifactID;
+
+            /**
+             * Verifies an ArtifactID message.
+             * @param message Plain object to verify
+             * @returns `null` if valid, otherwise the reason why it is not
+             */
+            public static verify(message: { [k: string]: any }): (string|null);
+        }
+
+        /** Properties of an ArtifactTag. */
+        interface IArtifactTag {
+
+            /** ArtifactTag artifactKey */
+            artifactKey?: (flyteidl.core.IArtifactKey|null);
+
+            /** ArtifactTag value */
+            value?: (flyteidl.core.ILabelValue|null);
+        }
+
+        /** Represents an ArtifactTag. */
+        class ArtifactTag implements IArtifactTag {
+
+            /**
+             * Constructs a new ArtifactTag.
+             * @param [properties] Properties to set
+             */
+            constructor(properties?: flyteidl.core.IArtifactTag);
+
+            /** ArtifactTag artifactKey. */
+            public artifactKey?: (flyteidl.core.IArtifactKey|null);
+
+            /** ArtifactTag value. */
+            public value?: (flyteidl.core.ILabelValue|null);
+
+            /**
+             * Creates a new ArtifactTag instance using the specified properties.
+             * @param [properties] Properties to set
+             * @returns ArtifactTag instance
+             */
+            public static create(properties?: flyteidl.core.IArtifactTag): flyteidl.core.ArtifactTag;
+
+            /**
+             * Encodes the specified ArtifactTag message. Does not implicitly {@link flyteidl.core.ArtifactTag.verify|verify} messages.
+             * @param message ArtifactTag message or plain object to encode
+             * @param [writer] Writer to encode to
+             * @returns Writer
+             */
+            public static encode(message: flyteidl.core.IArtifactTag, writer?: $protobuf.Writer): $protobuf.Writer;
+
+            /**
+             * Decodes an ArtifactTag message from the specified reader or buffer.
+             * @param reader Reader or buffer to decode from
+             * @param [length] Message length if known beforehand
+             * @returns ArtifactTag
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): flyteidl.core.ArtifactTag;
+
+            /**
+             * Verifies an ArtifactTag message.
+             * @param message Plain object to verify
+             * @returns `null` if valid, otherwise the reason why it is not
+             */
+            public static verify(message: { [k: string]: any }): (string|null);
+        }
+
+        /** Properties of an ArtifactQuery. */
+        interface IArtifactQuery {
+
+            /** ArtifactQuery artifactId */
+            artifactId?: (flyteidl.core.IArtifactID|null);
+
+            /** ArtifactQuery artifactTag */
+            artifactTag?: (flyteidl.core.IArtifactTag|null);
+
+            /** ArtifactQuery uri */
+            uri?: (string|null);
+
+            /** ArtifactQuery binding */
+            binding?: (flyteidl.core.IArtifactBindingData|null);
+        }
+
+        /** Represents an ArtifactQuery. */
+        class ArtifactQuery implements IArtifactQuery {
+
+            /**
+             * Constructs a new ArtifactQuery.
+             * @param [properties] Properties to set
+             */
+            constructor(properties?: flyteidl.core.IArtifactQuery);
+
+            /** ArtifactQuery artifactId. */
+            public artifactId?: (flyteidl.core.IArtifactID|null);
+
+            /** ArtifactQuery artifactTag. */
+            public artifactTag?: (flyteidl.core.IArtifactTag|null);
+
+            /** ArtifactQuery uri. */
+            public uri: string;
+
+            /** ArtifactQuery binding. */
+            public binding?: (flyteidl.core.IArtifactBindingData|null);
+
+            /** ArtifactQuery identifier. */
+            public identifier?: ("artifactId"|"artifactTag"|"uri"|"binding");
+
+            /**
+             * Creates a new ArtifactQuery instance using the specified properties.
+             * @param [properties] Properties to set
+             * @returns ArtifactQuery instance
+             */
+            public static create(properties?: flyteidl.core.IArtifactQuery): flyteidl.core.ArtifactQuery;
+
+            /**
+             * Encodes the specified ArtifactQuery message. Does not implicitly {@link flyteidl.core.ArtifactQuery.verify|verify} messages.
+             * @param message ArtifactQuery message or plain object to encode
+             * @param [writer] Writer to encode to
+             * @returns Writer
+             */
+            public static encode(message: flyteidl.core.IArtifactQuery, writer?: $protobuf.Writer): $protobuf.Writer;
+
+            /**
+             * Decodes an ArtifactQuery message from the specified reader or buffer.
+             * @param reader Reader or buffer to decode from
+             * @param [length] Message length if known beforehand
+             * @returns ArtifactQuery
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): flyteidl.core.ArtifactQuery;
+
+            /**
+             * Verifies an ArtifactQuery message.
+             * @param message Plain object to verify
+             * @returns `null` if valid, otherwise the reason why it is not
+             */
+            public static verify(message: { [k: string]: any }): (string|null);
+        }
+
+        /** Properties of a Trigger. */
+        interface ITrigger {
+
+            /** Trigger triggerId */
+            triggerId?: (flyteidl.core.IIdentifier|null);
+
+            /** Trigger triggers */
+            triggers?: (flyteidl.core.IArtifactID[]|null);
+        }
+
+        /** Represents a Trigger. */
+        class Trigger implements ITrigger {
+
+            /**
+             * Constructs a new Trigger.
+             * @param [properties] Properties to set
+             */
+            constructor(properties?: flyteidl.core.ITrigger);
+
+            /** Trigger triggerId. */
+            public triggerId?: (flyteidl.core.IIdentifier|null);
+
+            /** Trigger triggers. */
+            public triggers: flyteidl.core.IArtifactID[];
+
+            /**
+             * Creates a new Trigger instance using the specified properties.
+             * @param [properties] Properties to set
+             * @returns Trigger instance
+             */
+            public static create(properties?: flyteidl.core.ITrigger): flyteidl.core.Trigger;
+
+            /**
+             * Encodes the specified Trigger message. Does not implicitly {@link flyteidl.core.Trigger.verify|verify} messages.
+             * @param message Trigger message or plain object to encode
+             * @param [writer] Writer to encode to
+             * @returns Writer
+             */
+            public static encode(message: flyteidl.core.ITrigger, writer?: $protobuf.Writer): $protobuf.Writer;
+
+            /**
+             * Decodes a Trigger message from the specified reader or buffer.
+             * @param reader Reader or buffer to decode from
+             * @param [length] Message length if known beforehand
+             * @returns Trigger
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): flyteidl.core.Trigger;
+
+            /**
+             * Verifies a Trigger message.
+             * @param message Plain object to verify
+             * @returns `null` if valid, otherwise the reason why it is not
+             */
+            public static verify(message: { [k: string]: any }): (string|null);
         }
 
         /** ResourceType enum. */
@@ -528,498 +889,198 @@ export namespace flyteidl {
             public static verify(message: { [k: string]: any }): (string|null);
         }
 
-        /** Properties of an ArtifactKey. */
-        interface IArtifactKey {
+        /** CatalogCacheStatus enum. */
+        enum CatalogCacheStatus {
+            CACHE_DISABLED = 0,
+            CACHE_MISS = 1,
+            CACHE_HIT = 2,
+            CACHE_POPULATED = 3,
+            CACHE_LOOKUP_FAILURE = 4,
+            CACHE_PUT_FAILURE = 5,
+            CACHE_SKIPPED = 6
+        }
 
-            /** ArtifactKey project */
-            project?: (string|null);
+        /** Properties of a CatalogArtifactTag. */
+        interface ICatalogArtifactTag {
 
-            /** ArtifactKey domain */
-            domain?: (string|null);
+            /** CatalogArtifactTag artifactId */
+            artifactId?: (string|null);
 
-            /** ArtifactKey name */
+            /** CatalogArtifactTag name */
             name?: (string|null);
         }
 
-        /** Represents an ArtifactKey. */
-        class ArtifactKey implements IArtifactKey {
+        /** Represents a CatalogArtifactTag. */
+        class CatalogArtifactTag implements ICatalogArtifactTag {
 
             /**
-             * Constructs a new ArtifactKey.
+             * Constructs a new CatalogArtifactTag.
              * @param [properties] Properties to set
              */
-            constructor(properties?: flyteidl.core.IArtifactKey);
+            constructor(properties?: flyteidl.core.ICatalogArtifactTag);
 
-            /** ArtifactKey project. */
-            public project: string;
+            /** CatalogArtifactTag artifactId. */
+            public artifactId: string;
 
-            /** ArtifactKey domain. */
-            public domain: string;
-
-            /** ArtifactKey name. */
+            /** CatalogArtifactTag name. */
             public name: string;
 
             /**
-             * Creates a new ArtifactKey instance using the specified properties.
+             * Creates a new CatalogArtifactTag instance using the specified properties.
              * @param [properties] Properties to set
-             * @returns ArtifactKey instance
+             * @returns CatalogArtifactTag instance
              */
-            public static create(properties?: flyteidl.core.IArtifactKey): flyteidl.core.ArtifactKey;
+            public static create(properties?: flyteidl.core.ICatalogArtifactTag): flyteidl.core.CatalogArtifactTag;
 
             /**
-             * Encodes the specified ArtifactKey message. Does not implicitly {@link flyteidl.core.ArtifactKey.verify|verify} messages.
-             * @param message ArtifactKey message or plain object to encode
+             * Encodes the specified CatalogArtifactTag message. Does not implicitly {@link flyteidl.core.CatalogArtifactTag.verify|verify} messages.
+             * @param message CatalogArtifactTag message or plain object to encode
              * @param [writer] Writer to encode to
              * @returns Writer
              */
-            public static encode(message: flyteidl.core.IArtifactKey, writer?: $protobuf.Writer): $protobuf.Writer;
+            public static encode(message: flyteidl.core.ICatalogArtifactTag, writer?: $protobuf.Writer): $protobuf.Writer;
 
             /**
-             * Decodes an ArtifactKey message from the specified reader or buffer.
+             * Decodes a CatalogArtifactTag message from the specified reader or buffer.
              * @param reader Reader or buffer to decode from
              * @param [length] Message length if known beforehand
-             * @returns ArtifactKey
+             * @returns CatalogArtifactTag
              * @throws {Error} If the payload is not a reader or valid buffer
              * @throws {$protobuf.util.ProtocolError} If required fields are missing
              */
-            public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): flyteidl.core.ArtifactKey;
+            public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): flyteidl.core.CatalogArtifactTag;
 
             /**
-             * Verifies an ArtifactKey message.
+             * Verifies a CatalogArtifactTag message.
              * @param message Plain object to verify
              * @returns `null` if valid, otherwise the reason why it is not
              */
             public static verify(message: { [k: string]: any }): (string|null);
         }
 
-        /** Properties of an ArtifactBindingData. */
-        interface IArtifactBindingData {
+        /** Properties of a CatalogMetadata. */
+        interface ICatalogMetadata {
 
-            /** ArtifactBindingData index */
-            index?: (number|null);
+            /** CatalogMetadata datasetId */
+            datasetId?: (flyteidl.core.IIdentifier|null);
 
-            /** ArtifactBindingData partitionKey */
-            partitionKey?: (string|null);
+            /** CatalogMetadata artifactTag */
+            artifactTag?: (flyteidl.core.ICatalogArtifactTag|null);
 
-            /** ArtifactBindingData transform */
-            transform?: (string|null);
+            /** CatalogMetadata sourceTaskExecution */
+            sourceTaskExecution?: (flyteidl.core.ITaskExecutionIdentifier|null);
         }
 
-        /** Represents an ArtifactBindingData. */
-        class ArtifactBindingData implements IArtifactBindingData {
+        /** Represents a CatalogMetadata. */
+        class CatalogMetadata implements ICatalogMetadata {
 
             /**
-             * Constructs a new ArtifactBindingData.
+             * Constructs a new CatalogMetadata.
              * @param [properties] Properties to set
              */
-            constructor(properties?: flyteidl.core.IArtifactBindingData);
+            constructor(properties?: flyteidl.core.ICatalogMetadata);
 
-            /** ArtifactBindingData index. */
-            public index: number;
+            /** CatalogMetadata datasetId. */
+            public datasetId?: (flyteidl.core.IIdentifier|null);
 
-            /** ArtifactBindingData partitionKey. */
-            public partitionKey: string;
+            /** CatalogMetadata artifactTag. */
+            public artifactTag?: (flyteidl.core.ICatalogArtifactTag|null);
 
-            /** ArtifactBindingData transform. */
-            public transform: string;
+            /** CatalogMetadata sourceTaskExecution. */
+            public sourceTaskExecution?: (flyteidl.core.ITaskExecutionIdentifier|null);
+
+            /** CatalogMetadata sourceExecution. */
+            public sourceExecution?: "sourceTaskExecution";
 
             /**
-             * Creates a new ArtifactBindingData instance using the specified properties.
+             * Creates a new CatalogMetadata instance using the specified properties.
              * @param [properties] Properties to set
-             * @returns ArtifactBindingData instance
+             * @returns CatalogMetadata instance
              */
-            public static create(properties?: flyteidl.core.IArtifactBindingData): flyteidl.core.ArtifactBindingData;
+            public static create(properties?: flyteidl.core.ICatalogMetadata): flyteidl.core.CatalogMetadata;
 
             /**
-             * Encodes the specified ArtifactBindingData message. Does not implicitly {@link flyteidl.core.ArtifactBindingData.verify|verify} messages.
-             * @param message ArtifactBindingData message or plain object to encode
+             * Encodes the specified CatalogMetadata message. Does not implicitly {@link flyteidl.core.CatalogMetadata.verify|verify} messages.
+             * @param message CatalogMetadata message or plain object to encode
              * @param [writer] Writer to encode to
              * @returns Writer
              */
-            public static encode(message: flyteidl.core.IArtifactBindingData, writer?: $protobuf.Writer): $protobuf.Writer;
+            public static encode(message: flyteidl.core.ICatalogMetadata, writer?: $protobuf.Writer): $protobuf.Writer;
 
             /**
-             * Decodes an ArtifactBindingData message from the specified reader or buffer.
+             * Decodes a CatalogMetadata message from the specified reader or buffer.
              * @param reader Reader or buffer to decode from
              * @param [length] Message length if known beforehand
-             * @returns ArtifactBindingData
+             * @returns CatalogMetadata
              * @throws {Error} If the payload is not a reader or valid buffer
              * @throws {$protobuf.util.ProtocolError} If required fields are missing
              */
-            public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): flyteidl.core.ArtifactBindingData;
+            public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): flyteidl.core.CatalogMetadata;
 
             /**
-             * Verifies an ArtifactBindingData message.
+             * Verifies a CatalogMetadata message.
              * @param message Plain object to verify
              * @returns `null` if valid, otherwise the reason why it is not
              */
             public static verify(message: { [k: string]: any }): (string|null);
         }
 
-        /** Properties of a PartitionValue. */
-        interface IPartitionValue {
-
-            /** PartitionValue staticValue */
-            staticValue?: (string|null);
-
-            /** PartitionValue binding */
-            binding?: (flyteidl.core.IArtifactBindingData|null);
+        /** Properties of a CatalogReservation. */
+        interface ICatalogReservation {
         }
 
-        /** Represents a PartitionValue. */
-        class PartitionValue implements IPartitionValue {
+        /** Represents a CatalogReservation. */
+        class CatalogReservation implements ICatalogReservation {
 
             /**
-             * Constructs a new PartitionValue.
+             * Constructs a new CatalogReservation.
              * @param [properties] Properties to set
              */
-            constructor(properties?: flyteidl.core.IPartitionValue);
-
-            /** PartitionValue staticValue. */
-            public staticValue: string;
-
-            /** PartitionValue binding. */
-            public binding?: (flyteidl.core.IArtifactBindingData|null);
+            constructor(properties?: flyteidl.core.ICatalogReservation);
 
             /**
-             * Creates a new PartitionValue instance using the specified properties.
+             * Creates a new CatalogReservation instance using the specified properties.
              * @param [properties] Properties to set
-             * @returns PartitionValue instance
+             * @returns CatalogReservation instance
              */
-            public static create(properties?: flyteidl.core.IPartitionValue): flyteidl.core.PartitionValue;
+            public static create(properties?: flyteidl.core.ICatalogReservation): flyteidl.core.CatalogReservation;
 
             /**
-             * Encodes the specified PartitionValue message. Does not implicitly {@link flyteidl.core.PartitionValue.verify|verify} messages.
-             * @param message PartitionValue message or plain object to encode
+             * Encodes the specified CatalogReservation message. Does not implicitly {@link flyteidl.core.CatalogReservation.verify|verify} messages.
+             * @param message CatalogReservation message or plain object to encode
              * @param [writer] Writer to encode to
              * @returns Writer
              */
-            public static encode(message: flyteidl.core.IPartitionValue, writer?: $protobuf.Writer): $protobuf.Writer;
+            public static encode(message: flyteidl.core.ICatalogReservation, writer?: $protobuf.Writer): $protobuf.Writer;
 
             /**
-             * Decodes a PartitionValue message from the specified reader or buffer.
+             * Decodes a CatalogReservation message from the specified reader or buffer.
              * @param reader Reader or buffer to decode from
              * @param [length] Message length if known beforehand
-             * @returns PartitionValue
+             * @returns CatalogReservation
              * @throws {Error} If the payload is not a reader or valid buffer
              * @throws {$protobuf.util.ProtocolError} If required fields are missing
              */
-            public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): flyteidl.core.PartitionValue;
+            public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): flyteidl.core.CatalogReservation;
 
             /**
-             * Verifies a PartitionValue message.
+             * Verifies a CatalogReservation message.
              * @param message Plain object to verify
              * @returns `null` if valid, otherwise the reason why it is not
              */
             public static verify(message: { [k: string]: any }): (string|null);
         }
 
-        /** Properties of a Partitions. */
-        interface IPartitions {
+        namespace CatalogReservation {
 
-            /** Partitions value */
-            value?: ({ [k: string]: flyteidl.core.IPartitionValue }|null);
-        }
-
-        /** Represents a Partitions. */
-        class Partitions implements IPartitions {
-
-            /**
-             * Constructs a new Partitions.
-             * @param [properties] Properties to set
-             */
-            constructor(properties?: flyteidl.core.IPartitions);
-
-            /** Partitions value. */
-            public value: { [k: string]: flyteidl.core.IPartitionValue };
-
-            /**
-             * Creates a new Partitions instance using the specified properties.
-             * @param [properties] Properties to set
-             * @returns Partitions instance
-             */
-            public static create(properties?: flyteidl.core.IPartitions): flyteidl.core.Partitions;
-
-            /**
-             * Encodes the specified Partitions message. Does not implicitly {@link flyteidl.core.Partitions.verify|verify} messages.
-             * @param message Partitions message or plain object to encode
-             * @param [writer] Writer to encode to
-             * @returns Writer
-             */
-            public static encode(message: flyteidl.core.IPartitions, writer?: $protobuf.Writer): $protobuf.Writer;
-
-            /**
-             * Decodes a Partitions message from the specified reader or buffer.
-             * @param reader Reader or buffer to decode from
-             * @param [length] Message length if known beforehand
-             * @returns Partitions
-             * @throws {Error} If the payload is not a reader or valid buffer
-             * @throws {$protobuf.util.ProtocolError} If required fields are missing
-             */
-            public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): flyteidl.core.Partitions;
-
-            /**
-             * Verifies a Partitions message.
-             * @param message Plain object to verify
-             * @returns `null` if valid, otherwise the reason why it is not
-             */
-            public static verify(message: { [k: string]: any }): (string|null);
-        }
-
-        /** Properties of an ArtifactID. */
-        interface IArtifactID {
-
-            /** ArtifactID artifactKey */
-            artifactKey?: (flyteidl.core.IArtifactKey|null);
-
-            /** ArtifactID version */
-            version?: (string|null);
-
-            /** ArtifactID partitions */
-            partitions?: (flyteidl.core.IPartitions|null);
-        }
-
-        /** Represents an ArtifactID. */
-        class ArtifactID implements IArtifactID {
-
-            /**
-             * Constructs a new ArtifactID.
-             * @param [properties] Properties to set
-             */
-            constructor(properties?: flyteidl.core.IArtifactID);
-
-            /** ArtifactID artifactKey. */
-            public artifactKey?: (flyteidl.core.IArtifactKey|null);
-
-            /** ArtifactID version. */
-            public version: string;
-
-            /** ArtifactID partitions. */
-            public partitions?: (flyteidl.core.IPartitions|null);
-
-            /** ArtifactID dimensions. */
-            public dimensions?: "partitions";
-
-            /**
-             * Creates a new ArtifactID instance using the specified properties.
-             * @param [properties] Properties to set
-             * @returns ArtifactID instance
-             */
-            public static create(properties?: flyteidl.core.IArtifactID): flyteidl.core.ArtifactID;
-
-            /**
-             * Encodes the specified ArtifactID message. Does not implicitly {@link flyteidl.core.ArtifactID.verify|verify} messages.
-             * @param message ArtifactID message or plain object to encode
-             * @param [writer] Writer to encode to
-             * @returns Writer
-             */
-            public static encode(message: flyteidl.core.IArtifactID, writer?: $protobuf.Writer): $protobuf.Writer;
-
-            /**
-             * Decodes an ArtifactID message from the specified reader or buffer.
-             * @param reader Reader or buffer to decode from
-             * @param [length] Message length if known beforehand
-             * @returns ArtifactID
-             * @throws {Error} If the payload is not a reader or valid buffer
-             * @throws {$protobuf.util.ProtocolError} If required fields are missing
-             */
-            public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): flyteidl.core.ArtifactID;
-
-            /**
-             * Verifies an ArtifactID message.
-             * @param message Plain object to verify
-             * @returns `null` if valid, otherwise the reason why it is not
-             */
-            public static verify(message: { [k: string]: any }): (string|null);
-        }
-
-        /** Properties of an ArtifactTag. */
-        interface IArtifactTag {
-
-            /** ArtifactTag artifactKey */
-            artifactKey?: (flyteidl.core.IArtifactKey|null);
-
-            /** ArtifactTag value */
-            value?: (string|null);
-        }
-
-        /** Represents an ArtifactTag. */
-        class ArtifactTag implements IArtifactTag {
-
-            /**
-             * Constructs a new ArtifactTag.
-             * @param [properties] Properties to set
-             */
-            constructor(properties?: flyteidl.core.IArtifactTag);
-
-            /** ArtifactTag artifactKey. */
-            public artifactKey?: (flyteidl.core.IArtifactKey|null);
-
-            /** ArtifactTag value. */
-            public value: string;
-
-            /**
-             * Creates a new ArtifactTag instance using the specified properties.
-             * @param [properties] Properties to set
-             * @returns ArtifactTag instance
-             */
-            public static create(properties?: flyteidl.core.IArtifactTag): flyteidl.core.ArtifactTag;
-
-            /**
-             * Encodes the specified ArtifactTag message. Does not implicitly {@link flyteidl.core.ArtifactTag.verify|verify} messages.
-             * @param message ArtifactTag message or plain object to encode
-             * @param [writer] Writer to encode to
-             * @returns Writer
-             */
-            public static encode(message: flyteidl.core.IArtifactTag, writer?: $protobuf.Writer): $protobuf.Writer;
-
-            /**
-             * Decodes an ArtifactTag message from the specified reader or buffer.
-             * @param reader Reader or buffer to decode from
-             * @param [length] Message length if known beforehand
-             * @returns ArtifactTag
-             * @throws {Error} If the payload is not a reader or valid buffer
-             * @throws {$protobuf.util.ProtocolError} If required fields are missing
-             */
-            public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): flyteidl.core.ArtifactTag;
-
-            /**
-             * Verifies an ArtifactTag message.
-             * @param message Plain object to verify
-             * @returns `null` if valid, otherwise the reason why it is not
-             */
-            public static verify(message: { [k: string]: any }): (string|null);
-        }
-
-        /** Properties of an ArtifactQuery. */
-        interface IArtifactQuery {
-
-            /** ArtifactQuery artifactId */
-            artifactId?: (flyteidl.core.IArtifactID|null);
-
-            /** ArtifactQuery artifactTag */
-            artifactTag?: (flyteidl.core.IArtifactTag|null);
-
-            /** ArtifactQuery uri */
-            uri?: (string|null);
-
-            /** ArtifactQuery binding */
-            binding?: (flyteidl.core.IArtifactBindingData|null);
-        }
-
-        /** Represents an ArtifactQuery. */
-        class ArtifactQuery implements IArtifactQuery {
-
-            /**
-             * Constructs a new ArtifactQuery.
-             * @param [properties] Properties to set
-             */
-            constructor(properties?: flyteidl.core.IArtifactQuery);
-
-            /** ArtifactQuery artifactId. */
-            public artifactId?: (flyteidl.core.IArtifactID|null);
-
-            /** ArtifactQuery artifactTag. */
-            public artifactTag?: (flyteidl.core.IArtifactTag|null);
-
-            /** ArtifactQuery uri. */
-            public uri: string;
-
-            /** ArtifactQuery binding. */
-            public binding?: (flyteidl.core.IArtifactBindingData|null);
-
-            /** ArtifactQuery identifier. */
-            public identifier?: ("artifactId"|"artifactTag"|"uri"|"binding");
-
-            /**
-             * Creates a new ArtifactQuery instance using the specified properties.
-             * @param [properties] Properties to set
-             * @returns ArtifactQuery instance
-             */
-            public static create(properties?: flyteidl.core.IArtifactQuery): flyteidl.core.ArtifactQuery;
-
-            /**
-             * Encodes the specified ArtifactQuery message. Does not implicitly {@link flyteidl.core.ArtifactQuery.verify|verify} messages.
-             * @param message ArtifactQuery message or plain object to encode
-             * @param [writer] Writer to encode to
-             * @returns Writer
-             */
-            public static encode(message: flyteidl.core.IArtifactQuery, writer?: $protobuf.Writer): $protobuf.Writer;
-
-            /**
-             * Decodes an ArtifactQuery message from the specified reader or buffer.
-             * @param reader Reader or buffer to decode from
-             * @param [length] Message length if known beforehand
-             * @returns ArtifactQuery
-             * @throws {Error} If the payload is not a reader or valid buffer
-             * @throws {$protobuf.util.ProtocolError} If required fields are missing
-             */
-            public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): flyteidl.core.ArtifactQuery;
-
-            /**
-             * Verifies an ArtifactQuery message.
-             * @param message Plain object to verify
-             * @returns `null` if valid, otherwise the reason why it is not
-             */
-            public static verify(message: { [k: string]: any }): (string|null);
-        }
-
-        /** Properties of a Trigger. */
-        interface ITrigger {
-
-            /** Trigger triggerId */
-            triggerId?: (flyteidl.core.IIdentifier|null);
-
-            /** Trigger triggers */
-            triggers?: (flyteidl.core.IArtifactID[]|null);
-        }
-
-        /** Represents a Trigger. */
-        class Trigger implements ITrigger {
-
-            /**
-             * Constructs a new Trigger.
-             * @param [properties] Properties to set
-             */
-            constructor(properties?: flyteidl.core.ITrigger);
-
-            /** Trigger triggerId. */
-            public triggerId?: (flyteidl.core.IIdentifier|null);
-
-            /** Trigger triggers. */
-            public triggers: flyteidl.core.IArtifactID[];
-
-            /**
-             * Creates a new Trigger instance using the specified properties.
-             * @param [properties] Properties to set
-             * @returns Trigger instance
-             */
-            public static create(properties?: flyteidl.core.ITrigger): flyteidl.core.Trigger;
-
-            /**
-             * Encodes the specified Trigger message. Does not implicitly {@link flyteidl.core.Trigger.verify|verify} messages.
-             * @param message Trigger message or plain object to encode
-             * @param [writer] Writer to encode to
-             * @returns Writer
-             */
-            public static encode(message: flyteidl.core.ITrigger, writer?: $protobuf.Writer): $protobuf.Writer;
-
-            /**
-             * Decodes a Trigger message from the specified reader or buffer.
-             * @param reader Reader or buffer to decode from
-             * @param [length] Message length if known beforehand
-             * @returns Trigger
-             * @throws {Error} If the payload is not a reader or valid buffer
-             * @throws {$protobuf.util.ProtocolError} If required fields are missing
-             */
-            public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): flyteidl.core.Trigger;
-
-            /**
-             * Verifies a Trigger message.
-             * @param message Plain object to verify
-             * @returns `null` if valid, otherwise the reason why it is not
-             */
-            public static verify(message: { [k: string]: any }): (string|null);
+            /** Status enum. */
+            enum Status {
+                RESERVATION_DISABLED = 0,
+                RESERVATION_ACQUIRED = 1,
+                RESERVATION_EXISTS = 2,
+                RESERVATION_RELEASED = 3,
+                RESERVATION_FAILURE = 4
+            }
         }
 
         /** Properties of a ConnectionSet. */
@@ -22352,6 +22413,9 @@ export namespace flyteidl {
 
             /** ArtifactSpec userMetadata */
             userMetadata?: (google.protobuf.IAny|null);
+
+            /** ArtifactSpec metadataType */
+            metadataType?: (string|null);
         }
 
         /** Represents an ArtifactSpec. */
@@ -22387,8 +22451,8 @@ export namespace flyteidl {
             /** ArtifactSpec userMetadata. */
             public userMetadata?: (google.protobuf.IAny|null);
 
-            /** ArtifactSpec source. */
-            public source?: ("taskExecution"|"execution"|"principal");
+            /** ArtifactSpec metadataType. */
+            public metadataType: string;
 
             /**
              * Creates a new ArtifactSpec instance using the specified properties.

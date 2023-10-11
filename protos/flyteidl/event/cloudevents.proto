@@ -7,6 +7,7 @@ option go_package = "github.com/flyteorg/flyteidl/gen/pb-go/flyteidl/event";
 import "flyteidl/event/event.proto";
 import "flyteidl/core/literals.proto";
 import "flyteidl/core/interface.proto";
+import "flyteidl/core/artifact_id.proto";
 import "flyteidl/core/identifier.proto";
 import "google/protobuf/timestamp.proto";
 

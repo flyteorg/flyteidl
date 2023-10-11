@@ -184,9 +184,11 @@ from flyteadmin.models.core_identifier import CoreIdentifier
 from flyteadmin.models.core_identity import CoreIdentity
 from flyteadmin.models.core_if_block import CoreIfBlock
 from flyteadmin.models.core_if_else_block import CoreIfElseBlock
+from flyteadmin.models.core_input_binding_data import CoreInputBindingData
 from flyteadmin.models.core_k8s_object_metadata import CoreK8sObjectMetadata
 from flyteadmin.models.core_k8s_pod import CoreK8sPod
 from flyteadmin.models.core_key_value_pair import CoreKeyValuePair
+from flyteadmin.models.core_label_value import CoreLabelValue
 from flyteadmin.models.core_literal import CoreLiteral
 from flyteadmin.models.core_literal_collection import CoreLiteralCollection
 from flyteadmin.models.core_literal_map import CoreLiteralMap
@@ -202,7 +204,6 @@ from flyteadmin.models.core_operand import CoreOperand
 from flyteadmin.models.core_output_reference import CoreOutputReference
 from flyteadmin.models.core_parameter import CoreParameter
 from flyteadmin.models.core_parameter_map import CoreParameterMap
-from flyteadmin.models.core_partition_value import CorePartitionValue
 from flyteadmin.models.core_partitions import CorePartitions
 from flyteadmin.models.core_primitive import CorePrimitive
 from flyteadmin.models.core_promise_attribute import CorePromiseAttribute

@@ -34,6 +34,7 @@
 #include "flyteidl/event/event.pb.h"
 #include "flyteidl/core/literals.pb.h"
 #include "flyteidl/core/interface.pb.h"
+#include "flyteidl/core/artifact_id.pb.h"
 #include "flyteidl/core/identifier.pb.h"
 #include <google/protobuf/timestamp.pb.h>
 // @@protoc_insertion_point(includes)

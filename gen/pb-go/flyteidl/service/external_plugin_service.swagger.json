@@ -216,7 +216,7 @@
           "$ref": "#/definitions/coreArtifactKey"
         },
         "value": {
-          "type": "string"
+          "$ref": "#/definitions/coreLabelValue"
         }
       }
     },
@@ -447,6 +447,14 @@
       },
       "description": "Identity encapsulates the various security identities a task can run as. It's up to the underlying plugin to pick the\nright identity for the execution environment."
     },
+    "coreInputBindingData": {
+      "type": "object",
+      "properties": {
+        "var": {
+          "type": "string"
+        }
+      }
+    },
     "coreK8sObjectMetadata": {
       "type": "object",
       "properties": {
@@ -499,6 +507,20 @@
       },
       "description": "A generic key value pair."
     },
+    "coreLabelValue": {
+      "type": "object",
+      "properties": {
+        "static_value": {
+          "type": "string"
+        },
+        "triggered_binding": {
+          "$ref": "#/definitions/coreArtifactBindingData"
+        },
+        "input_binding": {
+          "$ref": "#/definitions/coreInputBindingData"
+        }
+      }
+    },
     "coreLiteral": {
       "type": "object",
       "properties": {
@@ -523,7 +545,7 @@
           "additionalProperties": {
             "type": "string"
           },
-          "description": "Rejected: We were going to add the Artifact (or at least ArtifactID) here as a way to keep track of lineage\nBut this was deemed too janky."
+          "description": "Additional metadata for literals."
         }
       },
       "description": "A simple value. This supports any level of nesting (e.g. array of array of array of Blobs) as well as simple primitives."
@@ -650,24 +672,13 @@
       "default": "CLIENT_CREDENTIALS",
       "description": "Type of the token requested.\n\n - CLIENT_CREDENTIALS: CLIENT_CREDENTIALS indicates a 2-legged OAuth token requested using client credentials."
     },
-    "corePartitionValue": {
-      "type": "object",
-      "properties": {
-        "static_value": {
-          "type": "string"
-        },
-        "binding": {
-          "$ref": "#/definitions/coreArtifactBindingData"
-        }
-      }
-    },
     "corePartitions": {
       "type": "object",
       "properties": {
         "value": {
           "type": "object",
           "additionalProperties": {
-            "$ref": "#/definitions/corePartitionValue"
+            "$ref": "#/definitions/coreLabelValue"
           }
         }
       }

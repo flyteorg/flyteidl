@@ -11,5 +11,5 @@ package flyteadmin
 
 type CoreArtifactTag struct {
 	ArtifactKey *CoreArtifactKey `json:"artifact_key,omitempty"`
-	Value string `json:"value,omitempty"`
+	Value *CoreLabelValue `json:"value,omitempty"`
 }

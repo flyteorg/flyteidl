@@ -165,7 +165,7 @@ class CoreLiteral(object):
     def metadata(self):
         """Gets the metadata of this CoreLiteral.  # noqa: E501
 
-        Rejected: We were going to add the Artifact (or at least ArtifactID) here as a way to keep track of lineage But this was deemed too janky.  # noqa: E501
+        Additional metadata for literals.  # noqa: E501
 
         :return: The metadata of this CoreLiteral.  # noqa: E501
         :rtype: dict(str, str)
@@ -176,7 +176,7 @@ class CoreLiteral(object):
     def metadata(self, metadata):
         """Sets the metadata of this CoreLiteral.
 
-        Rejected: We were going to add the Artifact (or at least ArtifactID) here as a way to keep track of lineage But this was deemed too janky.  # noqa: E501
+        Additional metadata for literals.  # noqa: E501
 
         :param metadata: The metadata of this CoreLiteral.  # noqa: E501
         :type: dict(str, str)

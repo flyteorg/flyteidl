@@ -17,6 +17,7 @@ import re  # noqa: F401
 import six
 
 from flyteadmin.models.core_artifact_key import CoreArtifactKey  # noqa: F401,E501
+from flyteadmin.models.core_label_value import CoreLabelValue  # noqa: F401,E501
 
 
 class CoreArtifactTag(object):
@@ -34,7 +35,7 @@ class CoreArtifactTag(object):
     """
     swagger_types = {
         'artifact_key': 'CoreArtifactKey',
-        'value': 'str'
+        'value': 'CoreLabelValue'
     }
 
     attribute_map = {
@@ -81,7 +82,7 @@ class CoreArtifactTag(object):
 
 
         :return: The value of this CoreArtifactTag.  # noqa: E501
-        :rtype: str
+        :rtype: CoreLabelValue
         """
         return self._value
 
@@ -91,7 +92,7 @@ class CoreArtifactTag(object):
 
 
         :param value: The value of this CoreArtifactTag.  # noqa: E501
-        :type: str
+        :type: CoreLabelValue
         """
 
         self._value = value

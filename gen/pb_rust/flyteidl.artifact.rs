@@ -35,6 +35,15 @@ pub struct ArtifactSpec {
     /// type to all Literals is a lot of work.
     #[prost(message, optional, tag="2")]
     pub r#type: ::core::option::Option<super::core::LiteralType>,
+    /// Outputs of tasks will have this.
+    #[prost(message, optional, tag="5")]
+    pub task_execution: ::core::option::Option<super::core::TaskExecutionIdentifier>,
+    /// Workflow outputs will have this.
+    #[prost(message, optional, tag="6")]
+    pub execution: ::core::option::Option<super::core::WorkflowExecutionIdentifier>,
+    /// Uploads, either from the UI or from the CLI, or FlyteRemote, will have this.
+    #[prost(string, tag="7")]
+    pub principal: ::prost::alloc::string::String,
     #[prost(string, tag="8")]
     pub short_description: ::prost::alloc::string::String,
     #[prost(string, tag="9")]
@@ -42,24 +51,8 @@ pub struct ArtifactSpec {
     /// Additional user metadata
     #[prost(message, optional, tag="10")]
     pub user_metadata: ::core::option::Option<::prost_types::Any>,
-    #[prost(oneof="artifact_spec::Source", tags="5, 6, 7")]
-    pub source: ::core::option::Option<artifact_spec::Source>,
-}
-/// Nested message and enum types in `ArtifactSpec`.
-pub mod artifact_spec {
-    #[allow(clippy::derive_partial_eq_without_eq)]
-#[derive(Clone, PartialEq, ::prost::Oneof)]
-    pub enum Source {
-        /// Outputs of tasks will have this.
-        #[prost(message, tag="5")]
-        TaskExecution(super::super::core::TaskExecutionIdentifier),
-        /// Workflow outputs will have this.
-        #[prost(message, tag="6")]
-        Execution(super::super::core::WorkflowExecutionIdentifier),
-        /// Uploads, either from the UI or from the CLI, or FlyteRemote, will have this.
-        #[prost(string, tag="7")]
-        Principal(::prost::alloc::string::String),
-    }
+    #[prost(string, tag="11")]
+    pub metadata_type: ::prost::alloc::string::String,
 }
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(Clone, PartialEq, ::prost::Message)]

@@ -7,6 +7,7 @@ import "google/api/annotations.proto";
 // import "protoc-gen-swagger/options/annotations.proto";
 import "google/protobuf/duration.proto";
 import "google/protobuf/timestamp.proto";
+import "flyteidl/core/artifact_id.proto";
 import "flyteidl/core/identifier.proto";
 import "flyteidl/core/literals.proto";
 import "flyteidl/artifact/artifacts.proto";
@@ -73,7 +74,6 @@ message CreateDownloadLocationRequest {
   // exceeds the platform allowed max.
   // +optional. The default value comes from a global config.
   google.protobuf.Duration expires_in = 2;
-
 }
 
 message CreateDownloadLocationResponse {

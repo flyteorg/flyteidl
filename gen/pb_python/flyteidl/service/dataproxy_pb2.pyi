@@ -1,6 +1,7 @@
 from google.api import annotations_pb2 as _annotations_pb2
 from google.protobuf import duration_pb2 as _duration_pb2
 from google.protobuf import timestamp_pb2 as _timestamp_pb2
+from flyteidl.core import artifact_id_pb2 as _artifact_id_pb2
 from flyteidl.core import identifier_pb2 as _identifier_pb2
 from flyteidl.core import literals_pb2 as _literals_pb2
 from flyteidl.artifact import artifacts_pb2 as _artifacts_pb2
@@ -98,8 +99,8 @@ class GetDataRequest(_message.Message):
     FLYTE_URL_FIELD_NUMBER: _ClassVar[int]
     ARTIFACT_ID_FIELD_NUMBER: _ClassVar[int]
     flyte_url: str
-    artifact_id: _identifier_pb2.ArtifactID
-    def __init__(self, flyte_url: _Optional[str] = ..., artifact_id: _Optional[_Union[_identifier_pb2.ArtifactID, _Mapping]] = ...) -> None: ...
+    artifact_id: _artifact_id_pb2.ArtifactID
+    def __init__(self, flyte_url: _Optional[str] = ..., artifact_id: _Optional[_Union[_artifact_id_pb2.ArtifactID, _Mapping]] = ...) -> None: ...
 
 class GetDataResponse(_message.Message):
     __slots__ = ["literal_map", "pre_signed_urls", "literal", "artifact"]

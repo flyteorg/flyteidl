@@ -36,6 +36,7 @@
 #include "flyteidl/admin/common.pb.h"
 #include "flyteidl/core/literals.pb.h"
 #include "flyteidl/core/execution.pb.h"
+#include "flyteidl/core/artifact_id.pb.h"
 #include "flyteidl/core/identifier.pb.h"
 #include "flyteidl/core/metrics.pb.h"
 #include "flyteidl/core/security.pb.h"

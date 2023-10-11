@@ -246,6 +246,9 @@
         "user_metadata": {
           "$ref": "#/definitions/protobufAny",
           "title": "Additional user metadata"
+        },
+        "metadata_type": {
+          "type": "string"
         }
       }
     },
@@ -394,6 +397,28 @@
       },
       "description": "Encapsulation of fields that uniquely identifies a Flyte resource."
     },
+    "coreInputBindingData": {
+      "type": "object",
+      "properties": {
+        "var": {
+          "type": "string"
+        }
+      }
+    },
+    "coreLabelValue": {
+      "type": "object",
+      "properties": {
+        "static_value": {
+          "type": "string"
+        },
+        "triggered_binding": {
+          "$ref": "#/definitions/coreArtifactBindingData"
+        },
+        "input_binding": {
+          "$ref": "#/definitions/coreInputBindingData"
+        }
+      }
+    },
     "coreLiteral": {
       "type": "object",
       "properties": {
@@ -418,7 +443,7 @@
           "additionalProperties": {
             "type": "string"
           },
-          "description": "Rejected: We were going to add the Artifact (or at least ArtifactID) here as a way to keep track of lineage\nBut this was deemed too janky."
+          "description": "Additional metadata for literals."
         }
       },
       "description": "A simple value. This supports any level of nesting (e.g. array of array of array of Blobs) as well as simple primitives."
@@ -509,24 +534,13 @@
       },
       "description": "Encapsulation of fields that identify a Flyte node execution entity."
     },
-    "corePartitionValue": {
-      "type": "object",
-      "properties": {
-        "static_value": {
-          "type": "string"
-        },
-        "binding": {
-          "$ref": "#/definitions/coreArtifactBindingData"
-        }
-      }
-    },
     "corePartitions": {
       "type": "object",
       "properties": {
         "value": {
           "type": "object",
           "additionalProperties": {
-            "$ref": "#/definitions/corePartitionValue"
+            "$ref": "#/definitions/coreLabelValue"
           }
         }
       }

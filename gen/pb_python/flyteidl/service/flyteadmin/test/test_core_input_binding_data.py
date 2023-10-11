@@ -16,12 +16,12 @@ from __future__ import absolute_import
 import unittest
 
 import flyteadmin
-from flyteadmin.models.core_partition_value import CorePartitionValue  # noqa: E501
+from flyteadmin.models.core_input_binding_data import CoreInputBindingData  # noqa: E501
 from flyteadmin.rest import ApiException
 
 
-class TestCorePartitionValue(unittest.TestCase):
-    """CorePartitionValue unit test stubs"""
+class TestCoreInputBindingData(unittest.TestCase):
+    """CoreInputBindingData unit test stubs"""
 
     def setUp(self):
         pass
@@ -29,10 +29,10 @@ class TestCorePartitionValue(unittest.TestCase):
     def tearDown(self):
         pass
 
-    def testCorePartitionValue(self):
-        """Test CorePartitionValue"""
+    def testCoreInputBindingData(self):
+        """Test CoreInputBindingData"""
         # FIXME: construct object with mandatory attributes with example values
-        # model = flyteadmin.models.core_partition_value.CorePartitionValue()  # noqa: E501
+        # model = flyteadmin.models.core_input_binding_data.CoreInputBindingData()  # noqa: E501
         pass
 
 

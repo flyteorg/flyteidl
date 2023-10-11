@@ -35,6 +35,7 @@
 #include "google/api/annotations.pb.h"
 #include <google/protobuf/duration.pb.h>
 #include <google/protobuf/timestamp.pb.h>
+#include "flyteidl/core/artifact_id.pb.h"
 #include "flyteidl/core/identifier.pb.h"
 #include "flyteidl/core/literals.pb.h"
 #include "flyteidl/artifact/artifacts.pb.h"
