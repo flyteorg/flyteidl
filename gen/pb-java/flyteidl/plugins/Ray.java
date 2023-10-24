@@ -942,6 +942,42 @@ public final class Ray {
      */
     flyteidl.plugins.Ray.WorkerGroupSpecOrBuilder getWorkerGroupSpecOrBuilder(
         int index);
+
+    /**
+     * <pre>
+     * Namespace used to create the ray cluster
+     * </pre>
+     *
+     * <code>string namespace = 3;</code>
+     */
+    java.lang.String getNamespace();
+    /**
+     * <pre>
+     * Namespace used to create the ray cluster
+     * </pre>
+     *
+     * <code>string namespace = 3;</code>
+     */
+    com.google.protobuf.ByteString
+        getNamespaceBytes();
+
+    /**
+     * <pre>
+     * Kubernetes service account used by the ray cluster
+     * </pre>
+     *
+     * <code>string k8s_service_account = 4;</code>
+     */
+    java.lang.String getK8SServiceAccount();
+    /**
+     * <pre>
+     * Kubernetes service account used by the ray cluster
+     * </pre>
+     *
+     * <code>string k8s_service_account = 4;</code>
+     */
+    com.google.protobuf.ByteString
+        getK8SServiceAccountBytes();
   }
   /**
    * <pre>
@@ -961,6 +997,8 @@ public final class Ray {
     }
     private RayCluster() {
       workerGroupSpec_ = java.util.Collections.emptyList();
+      namespace_ = "";
+      k8SServiceAccount_ = "";
     }
 
     @java.lang.Override
@@ -1007,6 +1045,18 @@ public final class Ray {
               }
               workerGroupSpec_.add(
                   input.readMessage(flyteidl.plugins.Ray.WorkerGroupSpec.parser(), extensionRegistry));
+              break;
+            }
+            case 26: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              namespace_ = s;
+              break;
+            }
+            case 34: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              k8SServiceAccount_ = s;
               break;
             }
             default: {
@@ -1133,6 +1183,90 @@ public final class Ray {
       return workerGroupSpec_.get(index);
     }
 
+    public static final int NAMESPACE_FIELD_NUMBER = 3;
+    private volatile java.lang.Object namespace_;
+    /**
+     * <pre>
+     * Namespace used to create the ray cluster
+     * </pre>
+     *
+     * <code>string namespace = 3;</code>
+     */
+    public java.lang.String getNamespace() {
+      java.lang.Object ref = namespace_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        namespace_ = s;
+        return s;
+      }
+    }
+    /**
+     * <pre>
+     * Namespace used to create the ray cluster
+     * </pre>
+     *
+     * <code>string namespace = 3;</code>
+     */
+    public com.google.protobuf.ByteString
+        getNamespaceBytes() {
+      java.lang.Object ref = namespace_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        namespace_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int K8S_SERVICE_ACCOUNT_FIELD_NUMBER = 4;
+    private volatile java.lang.Object k8SServiceAccount_;
+    /**
+     * <pre>
+     * Kubernetes service account used by the ray cluster
+     * </pre>
+     *
+     * <code>string k8s_service_account = 4;</code>
+     */
+    public java.lang.String getK8SServiceAccount() {
+      java.lang.Object ref = k8SServiceAccount_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        k8SServiceAccount_ = s;
+        return s;
+      }
+    }
+    /**
+     * <pre>
+     * Kubernetes service account used by the ray cluster
+     * </pre>
+     *
+     * <code>string k8s_service_account = 4;</code>
+     */
+    public com.google.protobuf.ByteString
+        getK8SServiceAccountBytes() {
+      java.lang.Object ref = k8SServiceAccount_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        k8SServiceAccount_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
     private byte memoizedIsInitialized = -1;
     @java.lang.Override
     public final boolean isInitialized() {
@@ -1153,6 +1287,12 @@ public final class Ray {
       for (int i = 0; i < workerGroupSpec_.size(); i++) {
         output.writeMessage(2, workerGroupSpec_.get(i));
       }
+      if (!getNamespaceBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 3, namespace_);
+      }
+      if (!getK8SServiceAccountBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 4, k8SServiceAccount_);
+      }
       unknownFields.writeTo(output);
     }
 
@@ -1169,6 +1309,12 @@ public final class Ray {
       for (int i = 0; i < workerGroupSpec_.size(); i++) {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(2, workerGroupSpec_.get(i));
+      }
+      if (!getNamespaceBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, namespace_);
+      }
+      if (!getK8SServiceAccountBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, k8SServiceAccount_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -1192,6 +1338,10 @@ public final class Ray {
       }
       if (!getWorkerGroupSpecList()
           .equals(other.getWorkerGroupSpecList())) return false;
+      if (!getNamespace()
+          .equals(other.getNamespace())) return false;
+      if (!getK8SServiceAccount()
+          .equals(other.getK8SServiceAccount())) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -1211,6 +1361,10 @@ public final class Ray {
         hash = (37 * hash) + WORKER_GROUP_SPEC_FIELD_NUMBER;
         hash = (53 * hash) + getWorkerGroupSpecList().hashCode();
       }
+      hash = (37 * hash) + NAMESPACE_FIELD_NUMBER;
+      hash = (53 * hash) + getNamespace().hashCode();
+      hash = (37 * hash) + K8S_SERVICE_ACCOUNT_FIELD_NUMBER;
+      hash = (53 * hash) + getK8SServiceAccount().hashCode();
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -1361,6 +1515,10 @@ public final class Ray {
         } else {
           workerGroupSpecBuilder_.clear();
         }
+        namespace_ = "";
+
+        k8SServiceAccount_ = "";
+
         return this;
       }
 
@@ -1403,6 +1561,8 @@ public final class Ray {
         } else {
           result.workerGroupSpec_ = workerGroupSpecBuilder_.build();
         }
+        result.namespace_ = namespace_;
+        result.k8SServiceAccount_ = k8SServiceAccount_;
         result.bitField0_ = to_bitField0_;
         onBuilt();
         return result;
@@ -1480,6 +1640,14 @@ public final class Ray {
               workerGroupSpecBuilder_.addAllMessages(other.workerGroupSpec_);
             }
           }
+        }
+        if (!other.getNamespace().isEmpty()) {
+          namespace_ = other.namespace_;
+          onChanged();
+        }
+        if (!other.getK8SServiceAccount().isEmpty()) {
+          k8SServiceAccount_ = other.k8SServiceAccount_;
+          onChanged();
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -1975,6 +2143,184 @@ public final class Ray {
         }
         return workerGroupSpecBuilder_;
       }
+
+      private java.lang.Object namespace_ = "";
+      /**
+       * <pre>
+       * Namespace used to create the ray cluster
+       * </pre>
+       *
+       * <code>string namespace = 3;</code>
+       */
+      public java.lang.String getNamespace() {
+        java.lang.Object ref = namespace_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          namespace_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <pre>
+       * Namespace used to create the ray cluster
+       * </pre>
+       *
+       * <code>string namespace = 3;</code>
+       */
+      public com.google.protobuf.ByteString
+          getNamespaceBytes() {
+        java.lang.Object ref = namespace_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          namespace_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <pre>
+       * Namespace used to create the ray cluster
+       * </pre>
+       *
+       * <code>string namespace = 3;</code>
+       */
+      public Builder setNamespace(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        namespace_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * Namespace used to create the ray cluster
+       * </pre>
+       *
+       * <code>string namespace = 3;</code>
+       */
+      public Builder clearNamespace() {
+        
+        namespace_ = getDefaultInstance().getNamespace();
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * Namespace used to create the ray cluster
+       * </pre>
+       *
+       * <code>string namespace = 3;</code>
+       */
+      public Builder setNamespaceBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        namespace_ = value;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object k8SServiceAccount_ = "";
+      /**
+       * <pre>
+       * Kubernetes service account used by the ray cluster
+       * </pre>
+       *
+       * <code>string k8s_service_account = 4;</code>
+       */
+      public java.lang.String getK8SServiceAccount() {
+        java.lang.Object ref = k8SServiceAccount_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          k8SServiceAccount_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <pre>
+       * Kubernetes service account used by the ray cluster
+       * </pre>
+       *
+       * <code>string k8s_service_account = 4;</code>
+       */
+      public com.google.protobuf.ByteString
+          getK8SServiceAccountBytes() {
+        java.lang.Object ref = k8SServiceAccount_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          k8SServiceAccount_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <pre>
+       * Kubernetes service account used by the ray cluster
+       * </pre>
+       *
+       * <code>string k8s_service_account = 4;</code>
+       */
+      public Builder setK8SServiceAccount(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        k8SServiceAccount_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * Kubernetes service account used by the ray cluster
+       * </pre>
+       *
+       * <code>string k8s_service_account = 4;</code>
+       */
+      public Builder clearK8SServiceAccount() {
+        
+        k8SServiceAccount_ = getDefaultInstance().getK8SServiceAccount();
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * Kubernetes service account used by the ray cluster
+       * </pre>
+       *
+       * <code>string k8s_service_account = 4;</code>
+       */
+      public Builder setK8SServiceAccountBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        k8SServiceAccount_ = value;
+        onChanged();
+        return this;
+      }
       @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
@@ -2090,6 +2436,31 @@ public final class Ray {
 
     java.lang.String getRayStartParamsOrThrow(
         java.lang.String key);
+
+    /**
+     * <pre>
+     * Resource specification for ray head pod
+     * </pre>
+     *
+     * <code>.flyteidl.core.Resources resources = 2;</code>
+     */
+    boolean hasResources();
+    /**
+     * <pre>
+     * Resource specification for ray head pod
+     * </pre>
+     *
+     * <code>.flyteidl.core.Resources resources = 2;</code>
+     */
+    flyteidl.core.Tasks.Resources getResources();
+    /**
+     * <pre>
+     * Resource specification for ray head pod
+     * </pre>
+     *
+     * <code>.flyteidl.core.Resources resources = 2;</code>
+     */
+    flyteidl.core.Tasks.ResourcesOrBuilder getResourcesOrBuilder();
   }
   /**
    * <pre>
@@ -2147,6 +2518,19 @@ public final class Ray {
                   rayStartParams__.getKey(), rayStartParams__.getValue());
               break;
             }
+            case 18: {
+              flyteidl.core.Tasks.Resources.Builder subBuilder = null;
+              if (resources_ != null) {
+                subBuilder = resources_.toBuilder();
+              }
+              resources_ = input.readMessage(flyteidl.core.Tasks.Resources.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(resources_);
+                resources_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
             default: {
               if (!parseUnknownField(
                   input, unknownFields, extensionRegistry, tag)) {
@@ -2191,6 +2575,7 @@ public final class Ray {
               flyteidl.plugins.Ray.HeadGroupSpec.class, flyteidl.plugins.Ray.HeadGroupSpec.Builder.class);
     }
 
+    private int bitField0_;
     public static final int RAY_START_PARAMS_FIELD_NUMBER = 1;
     private static final class RayStartParamsDefaultEntryHolder {
       static final com.google.protobuf.MapEntry<
@@ -2287,6 +2672,39 @@ public final class Ray {
       return map.get(key);
     }
 
+    public static final int RESOURCES_FIELD_NUMBER = 2;
+    private flyteidl.core.Tasks.Resources resources_;
+    /**
+     * <pre>
+     * Resource specification for ray head pod
+     * </pre>
+     *
+     * <code>.flyteidl.core.Resources resources = 2;</code>
+     */
+    public boolean hasResources() {
+      return resources_ != null;
+    }
+    /**
+     * <pre>
+     * Resource specification for ray head pod
+     * </pre>
+     *
+     * <code>.flyteidl.core.Resources resources = 2;</code>
+     */
+    public flyteidl.core.Tasks.Resources getResources() {
+      return resources_ == null ? flyteidl.core.Tasks.Resources.getDefaultInstance() : resources_;
+    }
+    /**
+     * <pre>
+     * Resource specification for ray head pod
+     * </pre>
+     *
+     * <code>.flyteidl.core.Resources resources = 2;</code>
+     */
+    public flyteidl.core.Tasks.ResourcesOrBuilder getResourcesOrBuilder() {
+      return getResources();
+    }
+
     private byte memoizedIsInitialized = -1;
     @java.lang.Override
     public final boolean isInitialized() {
@@ -2307,6 +2725,9 @@ public final class Ray {
           internalGetRayStartParams(),
           RayStartParamsDefaultEntryHolder.defaultEntry,
           1);
+      if (resources_ != null) {
+        output.writeMessage(2, getResources());
+      }
       unknownFields.writeTo(output);
     }
 
@@ -2326,6 +2747,10 @@ public final class Ray {
         size += com.google.protobuf.CodedOutputStream
             .computeMessageSize(1, rayStartParams__);
       }
+      if (resources_ != null) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(2, getResources());
+      }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
@@ -2343,6 +2768,11 @@ public final class Ray {
 
       if (!internalGetRayStartParams().equals(
           other.internalGetRayStartParams())) return false;
+      if (hasResources() != other.hasResources()) return false;
+      if (hasResources()) {
+        if (!getResources()
+            .equals(other.getResources())) return false;
+      }
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -2357,6 +2787,10 @@ public final class Ray {
       if (!internalGetRayStartParams().getMap().isEmpty()) {
         hash = (37 * hash) + RAY_START_PARAMS_FIELD_NUMBER;
         hash = (53 * hash) + internalGetRayStartParams().hashCode();
+      }
+      if (hasResources()) {
+        hash = (37 * hash) + RESOURCES_FIELD_NUMBER;
+        hash = (53 * hash) + getResources().hashCode();
       }
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
@@ -2518,6 +2952,12 @@ public final class Ray {
       public Builder clear() {
         super.clear();
         internalGetMutableRayStartParams().clear();
+        if (resourcesBuilder_ == null) {
+          resources_ = null;
+        } else {
+          resources_ = null;
+          resourcesBuilder_ = null;
+        }
         return this;
       }
 
@@ -2545,8 +2985,15 @@ public final class Ray {
       public flyteidl.plugins.Ray.HeadGroupSpec buildPartial() {
         flyteidl.plugins.Ray.HeadGroupSpec result = new flyteidl.plugins.Ray.HeadGroupSpec(this);
         int from_bitField0_ = bitField0_;
+        int to_bitField0_ = 0;
         result.rayStartParams_ = internalGetRayStartParams();
         result.rayStartParams_.makeImmutable();
+        if (resourcesBuilder_ == null) {
+          result.resources_ = resources_;
+        } else {
+          result.resources_ = resourcesBuilder_.build();
+        }
+        result.bitField0_ = to_bitField0_;
         onBuilt();
         return result;
       }
@@ -2597,6 +3044,9 @@ public final class Ray {
         if (other == flyteidl.plugins.Ray.HeadGroupSpec.getDefaultInstance()) return this;
         internalGetMutableRayStartParams().mergeFrom(
             other.internalGetRayStartParams());
+        if (other.hasResources()) {
+          mergeResources(other.getResources());
+        }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
@@ -2784,6 +3234,159 @@ public final class Ray {
             .putAll(values);
         return this;
       }
+
+      private flyteidl.core.Tasks.Resources resources_;
+      private com.google.protobuf.SingleFieldBuilderV3<
+          flyteidl.core.Tasks.Resources, flyteidl.core.Tasks.Resources.Builder, flyteidl.core.Tasks.ResourcesOrBuilder> resourcesBuilder_;
+      /**
+       * <pre>
+       * Resource specification for ray head pod
+       * </pre>
+       *
+       * <code>.flyteidl.core.Resources resources = 2;</code>
+       */
+      public boolean hasResources() {
+        return resourcesBuilder_ != null || resources_ != null;
+      }
+      /**
+       * <pre>
+       * Resource specification for ray head pod
+       * </pre>
+       *
+       * <code>.flyteidl.core.Resources resources = 2;</code>
+       */
+      public flyteidl.core.Tasks.Resources getResources() {
+        if (resourcesBuilder_ == null) {
+          return resources_ == null ? flyteidl.core.Tasks.Resources.getDefaultInstance() : resources_;
+        } else {
+          return resourcesBuilder_.getMessage();
+        }
+      }
+      /**
+       * <pre>
+       * Resource specification for ray head pod
+       * </pre>
+       *
+       * <code>.flyteidl.core.Resources resources = 2;</code>
+       */
+      public Builder setResources(flyteidl.core.Tasks.Resources value) {
+        if (resourcesBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          resources_ = value;
+          onChanged();
+        } else {
+          resourcesBuilder_.setMessage(value);
+        }
+
+        return this;
+      }
+      /**
+       * <pre>
+       * Resource specification for ray head pod
+       * </pre>
+       *
+       * <code>.flyteidl.core.Resources resources = 2;</code>
+       */
+      public Builder setResources(
+          flyteidl.core.Tasks.Resources.Builder builderForValue) {
+        if (resourcesBuilder_ == null) {
+          resources_ = builderForValue.build();
+          onChanged();
+        } else {
+          resourcesBuilder_.setMessage(builderForValue.build());
+        }
+
+        return this;
+      }
+      /**
+       * <pre>
+       * Resource specification for ray head pod
+       * </pre>
+       *
+       * <code>.flyteidl.core.Resources resources = 2;</code>
+       */
+      public Builder mergeResources(flyteidl.core.Tasks.Resources value) {
+        if (resourcesBuilder_ == null) {
+          if (resources_ != null) {
+            resources_ =
+              flyteidl.core.Tasks.Resources.newBuilder(resources_).mergeFrom(value).buildPartial();
+          } else {
+            resources_ = value;
+          }
+          onChanged();
+        } else {
+          resourcesBuilder_.mergeFrom(value);
+        }
+
+        return this;
+      }
+      /**
+       * <pre>
+       * Resource specification for ray head pod
+       * </pre>
+       *
+       * <code>.flyteidl.core.Resources resources = 2;</code>
+       */
+      public Builder clearResources() {
+        if (resourcesBuilder_ == null) {
+          resources_ = null;
+          onChanged();
+        } else {
+          resources_ = null;
+          resourcesBuilder_ = null;
+        }
+
+        return this;
+      }
+      /**
+       * <pre>
+       * Resource specification for ray head pod
+       * </pre>
+       *
+       * <code>.flyteidl.core.Resources resources = 2;</code>
+       */
+      public flyteidl.core.Tasks.Resources.Builder getResourcesBuilder() {
+        
+        onChanged();
+        return getResourcesFieldBuilder().getBuilder();
+      }
+      /**
+       * <pre>
+       * Resource specification for ray head pod
+       * </pre>
+       *
+       * <code>.flyteidl.core.Resources resources = 2;</code>
+       */
+      public flyteidl.core.Tasks.ResourcesOrBuilder getResourcesOrBuilder() {
+        if (resourcesBuilder_ != null) {
+          return resourcesBuilder_.getMessageOrBuilder();
+        } else {
+          return resources_ == null ?
+              flyteidl.core.Tasks.Resources.getDefaultInstance() : resources_;
+        }
+      }
+      /**
+       * <pre>
+       * Resource specification for ray head pod
+       * </pre>
+       *
+       * <code>.flyteidl.core.Resources resources = 2;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+          flyteidl.core.Tasks.Resources, flyteidl.core.Tasks.Resources.Builder, flyteidl.core.Tasks.ResourcesOrBuilder> 
+          getResourcesFieldBuilder() {
+        if (resourcesBuilder_ == null) {
+          resourcesBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              flyteidl.core.Tasks.Resources, flyteidl.core.Tasks.Resources.Builder, flyteidl.core.Tasks.ResourcesOrBuilder>(
+                  getResources(),
+                  getParentForChildren(),
+                  isClean());
+          resources_ = null;
+        }
+        return resourcesBuilder_;
+      }
       @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
@@ -2944,6 +3547,31 @@ public final class Ray {
 
     java.lang.String getRayStartParamsOrThrow(
         java.lang.String key);
+
+    /**
+     * <pre>
+     * Resource specification for ray worker pods
+     * </pre>
+     *
+     * <code>.flyteidl.core.Resources resources = 6;</code>
+     */
+    boolean hasResources();
+    /**
+     * <pre>
+     * Resource specification for ray worker pods
+     * </pre>
+     *
+     * <code>.flyteidl.core.Resources resources = 6;</code>
+     */
+    flyteidl.core.Tasks.Resources getResources();
+    /**
+     * <pre>
+     * Resource specification for ray worker pods
+     * </pre>
+     *
+     * <code>.flyteidl.core.Resources resources = 6;</code>
+     */
+    flyteidl.core.Tasks.ResourcesOrBuilder getResourcesOrBuilder();
   }
   /**
    * <pre>
@@ -3021,6 +3649,19 @@ public final class Ray {
                   RayStartParamsDefaultEntryHolder.defaultEntry.getParserForType(), extensionRegistry);
               rayStartParams_.getMutableMap().put(
                   rayStartParams__.getKey(), rayStartParams__.getValue());
+              break;
+            }
+            case 50: {
+              flyteidl.core.Tasks.Resources.Builder subBuilder = null;
+              if (resources_ != null) {
+                subBuilder = resources_.toBuilder();
+              }
+              resources_ = input.readMessage(flyteidl.core.Tasks.Resources.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(resources_);
+                resources_ = subBuilder.buildPartial();
+              }
+
               break;
             }
             default: {
@@ -3245,6 +3886,39 @@ public final class Ray {
       return map.get(key);
     }
 
+    public static final int RESOURCES_FIELD_NUMBER = 6;
+    private flyteidl.core.Tasks.Resources resources_;
+    /**
+     * <pre>
+     * Resource specification for ray worker pods
+     * </pre>
+     *
+     * <code>.flyteidl.core.Resources resources = 6;</code>
+     */
+    public boolean hasResources() {
+      return resources_ != null;
+    }
+    /**
+     * <pre>
+     * Resource specification for ray worker pods
+     * </pre>
+     *
+     * <code>.flyteidl.core.Resources resources = 6;</code>
+     */
+    public flyteidl.core.Tasks.Resources getResources() {
+      return resources_ == null ? flyteidl.core.Tasks.Resources.getDefaultInstance() : resources_;
+    }
+    /**
+     * <pre>
+     * Resource specification for ray worker pods
+     * </pre>
+     *
+     * <code>.flyteidl.core.Resources resources = 6;</code>
+     */
+    public flyteidl.core.Tasks.ResourcesOrBuilder getResourcesOrBuilder() {
+      return getResources();
+    }
+
     private byte memoizedIsInitialized = -1;
     @java.lang.Override
     public final boolean isInitialized() {
@@ -3277,6 +3951,9 @@ public final class Ray {
           internalGetRayStartParams(),
           RayStartParamsDefaultEntryHolder.defaultEntry,
           5);
+      if (resources_ != null) {
+        output.writeMessage(6, getResources());
+      }
       unknownFields.writeTo(output);
     }
 
@@ -3311,6 +3988,10 @@ public final class Ray {
         size += com.google.protobuf.CodedOutputStream
             .computeMessageSize(5, rayStartParams__);
       }
+      if (resources_ != null) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(6, getResources());
+      }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
@@ -3336,6 +4017,11 @@ public final class Ray {
           != other.getMaxReplicas()) return false;
       if (!internalGetRayStartParams().equals(
           other.internalGetRayStartParams())) return false;
+      if (hasResources() != other.hasResources()) return false;
+      if (hasResources()) {
+        if (!getResources()
+            .equals(other.getResources())) return false;
+      }
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -3358,6 +4044,10 @@ public final class Ray {
       if (!internalGetRayStartParams().getMap().isEmpty()) {
         hash = (37 * hash) + RAY_START_PARAMS_FIELD_NUMBER;
         hash = (53 * hash) + internalGetRayStartParams().hashCode();
+      }
+      if (hasResources()) {
+        hash = (37 * hash) + RESOURCES_FIELD_NUMBER;
+        hash = (53 * hash) + getResources().hashCode();
       }
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
@@ -3527,6 +4217,12 @@ public final class Ray {
         maxReplicas_ = 0;
 
         internalGetMutableRayStartParams().clear();
+        if (resourcesBuilder_ == null) {
+          resources_ = null;
+        } else {
+          resources_ = null;
+          resourcesBuilder_ = null;
+        }
         return this;
       }
 
@@ -3561,6 +4257,11 @@ public final class Ray {
         result.maxReplicas_ = maxReplicas_;
         result.rayStartParams_ = internalGetRayStartParams();
         result.rayStartParams_.makeImmutable();
+        if (resourcesBuilder_ == null) {
+          result.resources_ = resources_;
+        } else {
+          result.resources_ = resourcesBuilder_.build();
+        }
         result.bitField0_ = to_bitField0_;
         onBuilt();
         return result;
@@ -3625,6 +4326,9 @@ public final class Ray {
         }
         internalGetMutableRayStartParams().mergeFrom(
             other.internalGetRayStartParams());
+        if (other.hasResources()) {
+          mergeResources(other.getResources());
+        }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
@@ -4015,6 +4719,159 @@ public final class Ray {
             .putAll(values);
         return this;
       }
+
+      private flyteidl.core.Tasks.Resources resources_;
+      private com.google.protobuf.SingleFieldBuilderV3<
+          flyteidl.core.Tasks.Resources, flyteidl.core.Tasks.Resources.Builder, flyteidl.core.Tasks.ResourcesOrBuilder> resourcesBuilder_;
+      /**
+       * <pre>
+       * Resource specification for ray worker pods
+       * </pre>
+       *
+       * <code>.flyteidl.core.Resources resources = 6;</code>
+       */
+      public boolean hasResources() {
+        return resourcesBuilder_ != null || resources_ != null;
+      }
+      /**
+       * <pre>
+       * Resource specification for ray worker pods
+       * </pre>
+       *
+       * <code>.flyteidl.core.Resources resources = 6;</code>
+       */
+      public flyteidl.core.Tasks.Resources getResources() {
+        if (resourcesBuilder_ == null) {
+          return resources_ == null ? flyteidl.core.Tasks.Resources.getDefaultInstance() : resources_;
+        } else {
+          return resourcesBuilder_.getMessage();
+        }
+      }
+      /**
+       * <pre>
+       * Resource specification for ray worker pods
+       * </pre>
+       *
+       * <code>.flyteidl.core.Resources resources = 6;</code>
+       */
+      public Builder setResources(flyteidl.core.Tasks.Resources value) {
+        if (resourcesBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          resources_ = value;
+          onChanged();
+        } else {
+          resourcesBuilder_.setMessage(value);
+        }
+
+        return this;
+      }
+      /**
+       * <pre>
+       * Resource specification for ray worker pods
+       * </pre>
+       *
+       * <code>.flyteidl.core.Resources resources = 6;</code>
+       */
+      public Builder setResources(
+          flyteidl.core.Tasks.Resources.Builder builderForValue) {
+        if (resourcesBuilder_ == null) {
+          resources_ = builderForValue.build();
+          onChanged();
+        } else {
+          resourcesBuilder_.setMessage(builderForValue.build());
+        }
+
+        return this;
+      }
+      /**
+       * <pre>
+       * Resource specification for ray worker pods
+       * </pre>
+       *
+       * <code>.flyteidl.core.Resources resources = 6;</code>
+       */
+      public Builder mergeResources(flyteidl.core.Tasks.Resources value) {
+        if (resourcesBuilder_ == null) {
+          if (resources_ != null) {
+            resources_ =
+              flyteidl.core.Tasks.Resources.newBuilder(resources_).mergeFrom(value).buildPartial();
+          } else {
+            resources_ = value;
+          }
+          onChanged();
+        } else {
+          resourcesBuilder_.mergeFrom(value);
+        }
+
+        return this;
+      }
+      /**
+       * <pre>
+       * Resource specification for ray worker pods
+       * </pre>
+       *
+       * <code>.flyteidl.core.Resources resources = 6;</code>
+       */
+      public Builder clearResources() {
+        if (resourcesBuilder_ == null) {
+          resources_ = null;
+          onChanged();
+        } else {
+          resources_ = null;
+          resourcesBuilder_ = null;
+        }
+
+        return this;
+      }
+      /**
+       * <pre>
+       * Resource specification for ray worker pods
+       * </pre>
+       *
+       * <code>.flyteidl.core.Resources resources = 6;</code>
+       */
+      public flyteidl.core.Tasks.Resources.Builder getResourcesBuilder() {
+        
+        onChanged();
+        return getResourcesFieldBuilder().getBuilder();
+      }
+      /**
+       * <pre>
+       * Resource specification for ray worker pods
+       * </pre>
+       *
+       * <code>.flyteidl.core.Resources resources = 6;</code>
+       */
+      public flyteidl.core.Tasks.ResourcesOrBuilder getResourcesOrBuilder() {
+        if (resourcesBuilder_ != null) {
+          return resourcesBuilder_.getMessageOrBuilder();
+        } else {
+          return resources_ == null ?
+              flyteidl.core.Tasks.Resources.getDefaultInstance() : resources_;
+        }
+      }
+      /**
+       * <pre>
+       * Resource specification for ray worker pods
+       * </pre>
+       *
+       * <code>.flyteidl.core.Resources resources = 6;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+          flyteidl.core.Tasks.Resources, flyteidl.core.Tasks.Resources.Builder, flyteidl.core.Tasks.ResourcesOrBuilder> 
+          getResourcesFieldBuilder() {
+        if (resourcesBuilder_ == null) {
+          resourcesBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              flyteidl.core.Tasks.Resources, flyteidl.core.Tasks.Resources.Builder, flyteidl.core.Tasks.ResourcesOrBuilder>(
+                  getResources(),
+                  getParentForChildren(),
+                  isClean());
+          resources_ = null;
+        }
+        return resourcesBuilder_;
+      }
       @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
@@ -4108,23 +4965,28 @@ public final class Ray {
   static {
     java.lang.String[] descriptorData = {
       "\n\032flyteidl/plugins/ray.proto\022\020flyteidl.p" +
-      "lugins\"P\n\006RayJob\0221\n\013ray_cluster\030\001 \001(\0132\034." +
-      "flyteidl.plugins.RayCluster\022\023\n\013runtime_e" +
-      "nv\030\002 \001(\t\"\204\001\n\nRayCluster\0228\n\017head_group_sp" +
-      "ec\030\001 \001(\0132\037.flyteidl.plugins.HeadGroupSpe" +
-      "c\022<\n\021worker_group_spec\030\002 \003(\0132!.flyteidl." +
-      "plugins.WorkerGroupSpec\"\225\001\n\rHeadGroupSpe" +
-      "c\022M\n\020ray_start_params\030\001 \003(\01323.flyteidl.p" +
-      "lugins.HeadGroupSpec.RayStartParamsEntry" +
+      "lugins\032\031flyteidl/core/tasks.proto\"P\n\006Ray" +
+      "Job\0221\n\013ray_cluster\030\001 \001(\0132\034.flyteidl.plug" +
+      "ins.RayCluster\022\023\n\013runtime_env\030\002 \001(\t\"\264\001\n\n" +
+      "RayCluster\0228\n\017head_group_spec\030\001 \001(\0132\037.fl" +
+      "yteidl.plugins.HeadGroupSpec\022<\n\021worker_g" +
+      "roup_spec\030\002 \003(\0132!.flyteidl.plugins.Worke" +
+      "rGroupSpec\022\021\n\tnamespace\030\003 \001(\t\022\033\n\023k8s_ser" +
+      "vice_account\030\004 \001(\t\"\302\001\n\rHeadGroupSpec\022M\n\020" +
+      "ray_start_params\030\001 \003(\01323.flyteidl.plugin" +
+      "s.HeadGroupSpec.RayStartParamsEntry\022+\n\tr" +
+      "esources\030\002 \001(\0132\030.flyteidl.core.Resources" +
       "\0325\n\023RayStartParamsEntry\022\013\n\003key\030\001 \001(\t\022\r\n\005" +
-      "value\030\002 \001(\t:\0028\001\"\353\001\n\017WorkerGroupSpec\022\022\n\ng" +
+      "value\030\002 \001(\t:\0028\001\"\230\002\n\017WorkerGroupSpec\022\022\n\ng" +
       "roup_name\030\001 \001(\t\022\020\n\010replicas\030\002 \001(\005\022\024\n\014min" +
       "_replicas\030\003 \001(\005\022\024\n\014max_replicas\030\004 \001(\005\022O\n" +
       "\020ray_start_params\030\005 \003(\01325.flyteidl.plugi" +
-      "ns.WorkerGroupSpec.RayStartParamsEntry\0325" +
-      "\n\023RayStartParamsEntry\022\013\n\003key\030\001 \001(\t\022\r\n\005va" +
-      "lue\030\002 \001(\t:\0028\001B9Z7github.com/flyteorg/fly" +
-      "teidl/gen/pb-go/flyteidl/pluginsb\006proto3"
+      "ns.WorkerGroupSpec.RayStartParamsEntry\022+" +
+      "\n\tresources\030\006 \001(\0132\030.flyteidl.core.Resour" +
+      "ces\0325\n\023RayStartParamsEntry\022\013\n\003key\030\001 \001(\t\022" +
+      "\r\n\005value\030\002 \001(\t:\0028\001B9Z7github.com/flyteor" +
+      "g/flyteidl/gen/pb-go/flyteidl/pluginsb\006p" +
+      "roto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
@@ -4137,6 +4999,7 @@ public final class Ray {
     com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
         new com.google.protobuf.Descriptors.FileDescriptor[] {
+          flyteidl.core.Tasks.getDescriptor(),
         }, assigner);
     internal_static_flyteidl_plugins_RayJob_descriptor =
       getDescriptor().getMessageTypes().get(0);
@@ -4149,13 +5012,13 @@ public final class Ray {
     internal_static_flyteidl_plugins_RayCluster_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_flyteidl_plugins_RayCluster_descriptor,
-        new java.lang.String[] { "HeadGroupSpec", "WorkerGroupSpec", });
+        new java.lang.String[] { "HeadGroupSpec", "WorkerGroupSpec", "Namespace", "K8SServiceAccount", });
     internal_static_flyteidl_plugins_HeadGroupSpec_descriptor =
       getDescriptor().getMessageTypes().get(2);
     internal_static_flyteidl_plugins_HeadGroupSpec_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_flyteidl_plugins_HeadGroupSpec_descriptor,
-        new java.lang.String[] { "RayStartParams", });
+        new java.lang.String[] { "RayStartParams", "Resources", });
     internal_static_flyteidl_plugins_HeadGroupSpec_RayStartParamsEntry_descriptor =
       internal_static_flyteidl_plugins_HeadGroupSpec_descriptor.getNestedTypes().get(0);
     internal_static_flyteidl_plugins_HeadGroupSpec_RayStartParamsEntry_fieldAccessorTable = new
@@ -4167,13 +5030,14 @@ public final class Ray {
     internal_static_flyteidl_plugins_WorkerGroupSpec_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_flyteidl_plugins_WorkerGroupSpec_descriptor,
-        new java.lang.String[] { "GroupName", "Replicas", "MinReplicas", "MaxReplicas", "RayStartParams", });
+        new java.lang.String[] { "GroupName", "Replicas", "MinReplicas", "MaxReplicas", "RayStartParams", "Resources", });
     internal_static_flyteidl_plugins_WorkerGroupSpec_RayStartParamsEntry_descriptor =
       internal_static_flyteidl_plugins_WorkerGroupSpec_descriptor.getNestedTypes().get(0);
     internal_static_flyteidl_plugins_WorkerGroupSpec_RayStartParamsEntry_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_flyteidl_plugins_WorkerGroupSpec_RayStartParamsEntry_descriptor,
         new java.lang.String[] { "Key", "Value", });
+    flyteidl.core.Tasks.getDescriptor();
   }
 
   // @@protoc_insertion_point(outer_class_scope)

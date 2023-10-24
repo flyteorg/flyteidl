@@ -4,6 +4,8 @@ package flyteidl.plugins;
 
 option go_package = "github.com/flyteorg/flyteidl/gen/pb-go/flyteidl/plugins";
 
+import "flyteidl/core/tasks.proto";
+
 // RayJobSpec defines the desired state of RayJob
 message RayJob {
   // RayClusterSpec is the cluster template to run the job
@@ -19,6 +21,10 @@ message RayCluster {
   HeadGroupSpec head_group_spec = 1;
   // WorkerGroupSpecs are the specs for the worker pods
   repeated WorkerGroupSpec worker_group_spec = 2;
+  // Namespace used to create the ray cluster
+  string namespace = 3;
+  // Kubernetes service account used by the ray cluster
+  string k8s_service_account = 4;
 }
 
 // HeadGroupSpec are the spec for the head pod
@@ -26,6 +32,8 @@ message HeadGroupSpec {
   // Optional. RayStartParams are the params of the start command: address, object-store-memory.
   // Refer to https://docs.ray.io/en/latest/ray-core/package-ref.html#ray-start
   map<string, string> ray_start_params = 1;
+  // Resource specification for ray head pod
+  core.Resources resources = 2;
 }
 
 // WorkerGroupSpec are the specs for the worker pods
@@ -41,4 +49,6 @@ message WorkerGroupSpec {
   // Optional. RayStartParams are the params of the start command: address, object-store-memory.
   // Refer to https://docs.ray.io/en/latest/ray-core/package-ref.html#ray-start
   map<string, string> ray_start_params = 5;
+  // Resource specification for ray worker pods
+  core.Resources resources = 6;
 }

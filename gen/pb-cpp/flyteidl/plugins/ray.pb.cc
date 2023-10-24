@@ -16,11 +16,12 @@
 // @@protoc_insertion_point(includes)
 #include <google/protobuf/port_def.inc>
 
+extern PROTOBUF_INTERNAL_EXPORT_flyteidl_2fcore_2ftasks_2eproto ::google::protobuf::internal::SCCInfo<1> scc_info_Resources_flyteidl_2fcore_2ftasks_2eproto;
 extern PROTOBUF_INTERNAL_EXPORT_flyteidl_2fplugins_2fray_2eproto ::google::protobuf::internal::SCCInfo<0> scc_info_HeadGroupSpec_RayStartParamsEntry_DoNotUse_flyteidl_2fplugins_2fray_2eproto;
 extern PROTOBUF_INTERNAL_EXPORT_flyteidl_2fplugins_2fray_2eproto ::google::protobuf::internal::SCCInfo<0> scc_info_WorkerGroupSpec_RayStartParamsEntry_DoNotUse_flyteidl_2fplugins_2fray_2eproto;
-extern PROTOBUF_INTERNAL_EXPORT_flyteidl_2fplugins_2fray_2eproto ::google::protobuf::internal::SCCInfo<1> scc_info_HeadGroupSpec_flyteidl_2fplugins_2fray_2eproto;
-extern PROTOBUF_INTERNAL_EXPORT_flyteidl_2fplugins_2fray_2eproto ::google::protobuf::internal::SCCInfo<1> scc_info_WorkerGroupSpec_flyteidl_2fplugins_2fray_2eproto;
+extern PROTOBUF_INTERNAL_EXPORT_flyteidl_2fplugins_2fray_2eproto ::google::protobuf::internal::SCCInfo<2> scc_info_HeadGroupSpec_flyteidl_2fplugins_2fray_2eproto;
 extern PROTOBUF_INTERNAL_EXPORT_flyteidl_2fplugins_2fray_2eproto ::google::protobuf::internal::SCCInfo<2> scc_info_RayCluster_flyteidl_2fplugins_2fray_2eproto;
+extern PROTOBUF_INTERNAL_EXPORT_flyteidl_2fplugins_2fray_2eproto ::google::protobuf::internal::SCCInfo<2> scc_info_WorkerGroupSpec_flyteidl_2fplugins_2fray_2eproto;
 namespace flyteidl {
 namespace plugins {
 class RayJobDefaultTypeInternal {
@@ -104,9 +105,10 @@ static void InitDefaultsHeadGroupSpec_flyteidl_2fplugins_2fray_2eproto() {
   ::flyteidl::plugins::HeadGroupSpec::InitAsDefaultInstance();
 }
 
-::google::protobuf::internal::SCCInfo<1> scc_info_HeadGroupSpec_flyteidl_2fplugins_2fray_2eproto =
-    {{ATOMIC_VAR_INIT(::google::protobuf::internal::SCCInfoBase::kUninitialized), 1, InitDefaultsHeadGroupSpec_flyteidl_2fplugins_2fray_2eproto}, {
-      &scc_info_HeadGroupSpec_RayStartParamsEntry_DoNotUse_flyteidl_2fplugins_2fray_2eproto.base,}};
+::google::protobuf::internal::SCCInfo<2> scc_info_HeadGroupSpec_flyteidl_2fplugins_2fray_2eproto =
+    {{ATOMIC_VAR_INIT(::google::protobuf::internal::SCCInfoBase::kUninitialized), 2, InitDefaultsHeadGroupSpec_flyteidl_2fplugins_2fray_2eproto}, {
+      &scc_info_HeadGroupSpec_RayStartParamsEntry_DoNotUse_flyteidl_2fplugins_2fray_2eproto.base,
+      &scc_info_Resources_flyteidl_2fcore_2ftasks_2eproto.base,}};
 
 static void InitDefaultsWorkerGroupSpec_RayStartParamsEntry_DoNotUse_flyteidl_2fplugins_2fray_2eproto() {
   GOOGLE_PROTOBUF_VERIFY_VERSION;
@@ -132,9 +134,10 @@ static void InitDefaultsWorkerGroupSpec_flyteidl_2fplugins_2fray_2eproto() {
   ::flyteidl::plugins::WorkerGroupSpec::InitAsDefaultInstance();
 }
 
-::google::protobuf::internal::SCCInfo<1> scc_info_WorkerGroupSpec_flyteidl_2fplugins_2fray_2eproto =
-    {{ATOMIC_VAR_INIT(::google::protobuf::internal::SCCInfoBase::kUninitialized), 1, InitDefaultsWorkerGroupSpec_flyteidl_2fplugins_2fray_2eproto}, {
-      &scc_info_WorkerGroupSpec_RayStartParamsEntry_DoNotUse_flyteidl_2fplugins_2fray_2eproto.base,}};
+::google::protobuf::internal::SCCInfo<2> scc_info_WorkerGroupSpec_flyteidl_2fplugins_2fray_2eproto =
+    {{ATOMIC_VAR_INIT(::google::protobuf::internal::SCCInfoBase::kUninitialized), 2, InitDefaultsWorkerGroupSpec_flyteidl_2fplugins_2fray_2eproto}, {
+      &scc_info_WorkerGroupSpec_RayStartParamsEntry_DoNotUse_flyteidl_2fplugins_2fray_2eproto.base,
+      &scc_info_Resources_flyteidl_2fcore_2ftasks_2eproto.base,}};
 
 void InitDefaults_flyteidl_2fplugins_2fray_2eproto() {
   ::google::protobuf::internal::InitSCC(&scc_info_RayJob_flyteidl_2fplugins_2fray_2eproto.base);
@@ -164,6 +167,8 @@ const ::google::protobuf::uint32 TableStruct_flyteidl_2fplugins_2fray_2eproto::o
   ~0u,  // no _weak_field_map_
   PROTOBUF_FIELD_OFFSET(::flyteidl::plugins::RayCluster, head_group_spec_),
   PROTOBUF_FIELD_OFFSET(::flyteidl::plugins::RayCluster, worker_group_spec_),
+  PROTOBUF_FIELD_OFFSET(::flyteidl::plugins::RayCluster, namespace__),
+  PROTOBUF_FIELD_OFFSET(::flyteidl::plugins::RayCluster, k8s_service_account_),
   PROTOBUF_FIELD_OFFSET(::flyteidl::plugins::HeadGroupSpec_RayStartParamsEntry_DoNotUse, _has_bits_),
   PROTOBUF_FIELD_OFFSET(::flyteidl::plugins::HeadGroupSpec_RayStartParamsEntry_DoNotUse, _internal_metadata_),
   ~0u,  // no _extensions_
@@ -179,6 +184,7 @@ const ::google::protobuf::uint32 TableStruct_flyteidl_2fplugins_2fray_2eproto::o
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
   PROTOBUF_FIELD_OFFSET(::flyteidl::plugins::HeadGroupSpec, ray_start_params_),
+  PROTOBUF_FIELD_OFFSET(::flyteidl::plugins::HeadGroupSpec, resources_),
   PROTOBUF_FIELD_OFFSET(::flyteidl::plugins::WorkerGroupSpec_RayStartParamsEntry_DoNotUse, _has_bits_),
   PROTOBUF_FIELD_OFFSET(::flyteidl::plugins::WorkerGroupSpec_RayStartParamsEntry_DoNotUse, _internal_metadata_),
   ~0u,  // no _extensions_
@@ -198,14 +204,15 @@ const ::google::protobuf::uint32 TableStruct_flyteidl_2fplugins_2fray_2eproto::o
   PROTOBUF_FIELD_OFFSET(::flyteidl::plugins::WorkerGroupSpec, min_replicas_),
   PROTOBUF_FIELD_OFFSET(::flyteidl::plugins::WorkerGroupSpec, max_replicas_),
   PROTOBUF_FIELD_OFFSET(::flyteidl::plugins::WorkerGroupSpec, ray_start_params_),
+  PROTOBUF_FIELD_OFFSET(::flyteidl::plugins::WorkerGroupSpec, resources_),
 };
 static const ::google::protobuf::internal::MigrationSchema schemas[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
   { 0, -1, sizeof(::flyteidl::plugins::RayJob)},
   { 7, -1, sizeof(::flyteidl::plugins::RayCluster)},
-  { 14, 21, sizeof(::flyteidl::plugins::HeadGroupSpec_RayStartParamsEntry_DoNotUse)},
-  { 23, -1, sizeof(::flyteidl::plugins::HeadGroupSpec)},
-  { 29, 36, sizeof(::flyteidl::plugins::WorkerGroupSpec_RayStartParamsEntry_DoNotUse)},
-  { 38, -1, sizeof(::flyteidl::plugins::WorkerGroupSpec)},
+  { 16, 23, sizeof(::flyteidl::plugins::HeadGroupSpec_RayStartParamsEntry_DoNotUse)},
+  { 25, -1, sizeof(::flyteidl::plugins::HeadGroupSpec)},
+  { 32, 39, sizeof(::flyteidl::plugins::WorkerGroupSpec_RayStartParamsEntry_DoNotUse)},
+  { 41, -1, sizeof(::flyteidl::plugins::WorkerGroupSpec)},
 };
 
 static ::google::protobuf::Message const * const file_default_instances[] = {
@@ -225,35 +232,41 @@ static ::google::protobuf::Message const * const file_default_instances[] = {
 
 const char descriptor_table_protodef_flyteidl_2fplugins_2fray_2eproto[] =
   "\n\032flyteidl/plugins/ray.proto\022\020flyteidl.p"
-  "lugins\"P\n\006RayJob\0221\n\013ray_cluster\030\001 \001(\0132\034."
-  "flyteidl.plugins.RayCluster\022\023\n\013runtime_e"
-  "nv\030\002 \001(\t\"\204\001\n\nRayCluster\0228\n\017head_group_sp"
-  "ec\030\001 \001(\0132\037.flyteidl.plugins.HeadGroupSpe"
-  "c\022<\n\021worker_group_spec\030\002 \003(\0132!.flyteidl."
-  "plugins.WorkerGroupSpec\"\225\001\n\rHeadGroupSpe"
-  "c\022M\n\020ray_start_params\030\001 \003(\01323.flyteidl.p"
-  "lugins.HeadGroupSpec.RayStartParamsEntry"
+  "lugins\032\031flyteidl/core/tasks.proto\"P\n\006Ray"
+  "Job\0221\n\013ray_cluster\030\001 \001(\0132\034.flyteidl.plug"
+  "ins.RayCluster\022\023\n\013runtime_env\030\002 \001(\t\"\264\001\n\n"
+  "RayCluster\0228\n\017head_group_spec\030\001 \001(\0132\037.fl"
+  "yteidl.plugins.HeadGroupSpec\022<\n\021worker_g"
+  "roup_spec\030\002 \003(\0132!.flyteidl.plugins.Worke"
+  "rGroupSpec\022\021\n\tnamespace\030\003 \001(\t\022\033\n\023k8s_ser"
+  "vice_account\030\004 \001(\t\"\302\001\n\rHeadGroupSpec\022M\n\020"
+  "ray_start_params\030\001 \003(\01323.flyteidl.plugin"
+  "s.HeadGroupSpec.RayStartParamsEntry\022+\n\tr"
+  "esources\030\002 \001(\0132\030.flyteidl.core.Resources"
   "\0325\n\023RayStartParamsEntry\022\013\n\003key\030\001 \001(\t\022\r\n\005"
-  "value\030\002 \001(\t:\0028\001\"\353\001\n\017WorkerGroupSpec\022\022\n\ng"
+  "value\030\002 \001(\t:\0028\001\"\230\002\n\017WorkerGroupSpec\022\022\n\ng"
   "roup_name\030\001 \001(\t\022\020\n\010replicas\030\002 \001(\005\022\024\n\014min"
   "_replicas\030\003 \001(\005\022\024\n\014max_replicas\030\004 \001(\005\022O\n"
   "\020ray_start_params\030\005 \003(\01325.flyteidl.plugi"
-  "ns.WorkerGroupSpec.RayStartParamsEntry\0325"
-  "\n\023RayStartParamsEntry\022\013\n\003key\030\001 \001(\t\022\r\n\005va"
-  "lue\030\002 \001(\t:\0028\001B9Z7github.com/flyteorg/fly"
-  "teidl/gen/pb-go/flyteidl/pluginsb\006proto3"
+  "ns.WorkerGroupSpec.RayStartParamsEntry\022+"
+  "\n\tresources\030\006 \001(\0132\030.flyteidl.core.Resour"
+  "ces\0325\n\023RayStartParamsEntry\022\013\n\003key\030\001 \001(\t\022"
+  "\r\n\005value\030\002 \001(\t:\0028\001B9Z7github.com/flyteor"
+  "g/flyteidl/gen/pb-go/flyteidl/pluginsb\006p"
+  "roto3"
   ;
 ::google::protobuf::internal::DescriptorTable descriptor_table_flyteidl_2fplugins_2fray_2eproto = {
   false, InitDefaults_flyteidl_2fplugins_2fray_2eproto, 
   descriptor_table_protodef_flyteidl_2fplugins_2fray_2eproto,
-  "flyteidl/plugins/ray.proto", &assign_descriptors_table_flyteidl_2fplugins_2fray_2eproto, 720,
+  "flyteidl/plugins/ray.proto", &assign_descriptors_table_flyteidl_2fplugins_2fray_2eproto, 885,
 };
 
 void AddDescriptors_flyteidl_2fplugins_2fray_2eproto() {
   static constexpr ::google::protobuf::internal::InitFunc deps[1] =
   {
+    ::AddDescriptors_flyteidl_2fcore_2ftasks_2eproto,
   };
- ::google::protobuf::internal::AddDescriptors(&descriptor_table_flyteidl_2fplugins_2fray_2eproto, deps, 0);
+ ::google::protobuf::internal::AddDescriptors(&descriptor_table_flyteidl_2fplugins_2fray_2eproto, deps, 1);
 }
 
 // Force running AddDescriptors() at dynamic initialization time.
@@ -643,6 +656,8 @@ RayCluster::HasBitSetters::head_group_spec(const RayCluster* msg) {
 #if !defined(_MSC_VER) || _MSC_VER >= 1900
 const int RayCluster::kHeadGroupSpecFieldNumber;
 const int RayCluster::kWorkerGroupSpecFieldNumber;
+const int RayCluster::kNamespaceFieldNumber;
+const int RayCluster::kK8SServiceAccountFieldNumber;
 #endif  // !defined(_MSC_VER) || _MSC_VER >= 1900
 
 RayCluster::RayCluster()
@@ -655,6 +670,14 @@ RayCluster::RayCluster(const RayCluster& from)
       _internal_metadata_(nullptr),
       worker_group_spec_(from.worker_group_spec_) {
   _internal_metadata_.MergeFrom(from._internal_metadata_);
+  namespace__.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  if (from.namespace_().size() > 0) {
+    namespace__.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.namespace__);
+  }
+  k8s_service_account_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  if (from.k8s_service_account().size() > 0) {
+    k8s_service_account_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.k8s_service_account_);
+  }
   if (from.has_head_group_spec()) {
     head_group_spec_ = new ::flyteidl::plugins::HeadGroupSpec(*from.head_group_spec_);
   } else {
@@ -666,6 +689,8 @@ RayCluster::RayCluster(const RayCluster& from)
 void RayCluster::SharedCtor() {
   ::google::protobuf::internal::InitSCC(
       &scc_info_RayCluster_flyteidl_2fplugins_2fray_2eproto.base);
+  namespace__.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  k8s_service_account_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
   head_group_spec_ = nullptr;
 }
 
@@ -675,6 +700,8 @@ RayCluster::~RayCluster() {
 }
 
 void RayCluster::SharedDtor() {
+  namespace__.DestroyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  k8s_service_account_.DestroyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
   if (this != internal_default_instance()) delete head_group_spec_;
 }
 
@@ -694,6 +721,8 @@ void RayCluster::Clear() {
   (void) cached_has_bits;
 
   worker_group_spec_.Clear();
+  namespace__.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  k8s_service_account_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
   if (GetArenaNoVirtual() == nullptr && head_group_spec_ != nullptr) {
     delete head_group_spec_;
   }
@@ -743,6 +772,38 @@ const char* RayCluster::_InternalParse(const char* begin, const char* end, void*
         } while ((::google::protobuf::io::UnalignedLoad<::google::protobuf::uint64>(ptr) & 255) == 18 && (ptr += 1));
         break;
       }
+      // string namespace = 3;
+      case 3: {
+        if (static_cast<::google::protobuf::uint8>(tag) != 26) goto handle_unusual;
+        ptr = ::google::protobuf::io::ReadSize(ptr, &size);
+        GOOGLE_PROTOBUF_PARSER_ASSERT(ptr);
+        ctx->extra_parse_data().SetFieldName("flyteidl.plugins.RayCluster.namespace");
+        object = msg->mutable_namespace_();
+        if (size > end - ptr + ::google::protobuf::internal::ParseContext::kSlopBytes) {
+          parser_till_end = ::google::protobuf::internal::GreedyStringParserUTF8;
+          goto string_till_end;
+        }
+        GOOGLE_PROTOBUF_PARSER_ASSERT(::google::protobuf::internal::StringCheckUTF8(ptr, size, ctx));
+        ::google::protobuf::internal::InlineGreedyStringParser(object, ptr, size, ctx);
+        ptr += size;
+        break;
+      }
+      // string k8s_service_account = 4;
+      case 4: {
+        if (static_cast<::google::protobuf::uint8>(tag) != 34) goto handle_unusual;
+        ptr = ::google::protobuf::io::ReadSize(ptr, &size);
+        GOOGLE_PROTOBUF_PARSER_ASSERT(ptr);
+        ctx->extra_parse_data().SetFieldName("flyteidl.plugins.RayCluster.k8s_service_account");
+        object = msg->mutable_k8s_service_account();
+        if (size > end - ptr + ::google::protobuf::internal::ParseContext::kSlopBytes) {
+          parser_till_end = ::google::protobuf::internal::GreedyStringParserUTF8;
+          goto string_till_end;
+        }
+        GOOGLE_PROTOBUF_PARSER_ASSERT(::google::protobuf::internal::StringCheckUTF8(ptr, size, ctx));
+        ::google::protobuf::internal::InlineGreedyStringParser(object, ptr, size, ctx);
+        ptr += size;
+        break;
+      }
       default: {
       handle_unusual:
         if ((tag & 7) == 4 || tag == 0) {
@@ -758,6 +819,10 @@ const char* RayCluster::_InternalParse(const char* begin, const char* end, void*
     }  // switch
   }  // while
   return ptr;
+string_till_end:
+  static_cast<::std::string*>(object)->clear();
+  static_cast<::std::string*>(object)->reserve(size);
+  goto len_delim_till_end;
 len_delim_till_end:
   return ctx->StoreAndTailCall(ptr, end, {_InternalParse, msg},
                                {parser_till_end, object}, size);
@@ -789,6 +854,36 @@ bool RayCluster::MergePartialFromCodedStream(
         if (static_cast< ::google::protobuf::uint8>(tag) == (18 & 0xFF)) {
           DO_(::google::protobuf::internal::WireFormatLite::ReadMessage(
                 input, add_worker_group_spec()));
+        } else {
+          goto handle_unusual;
+        }
+        break;
+      }
+
+      // string namespace = 3;
+      case 3: {
+        if (static_cast< ::google::protobuf::uint8>(tag) == (26 & 0xFF)) {
+          DO_(::google::protobuf::internal::WireFormatLite::ReadString(
+                input, this->mutable_namespace_()));
+          DO_(::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
+            this->namespace_().data(), static_cast<int>(this->namespace_().length()),
+            ::google::protobuf::internal::WireFormatLite::PARSE,
+            "flyteidl.plugins.RayCluster.namespace"));
+        } else {
+          goto handle_unusual;
+        }
+        break;
+      }
+
+      // string k8s_service_account = 4;
+      case 4: {
+        if (static_cast< ::google::protobuf::uint8>(tag) == (34 & 0xFF)) {
+          DO_(::google::protobuf::internal::WireFormatLite::ReadString(
+                input, this->mutable_k8s_service_account()));
+          DO_(::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
+            this->k8s_service_account().data(), static_cast<int>(this->k8s_service_account().length()),
+            ::google::protobuf::internal::WireFormatLite::PARSE,
+            "flyteidl.plugins.RayCluster.k8s_service_account"));
         } else {
           goto handle_unusual;
         }
@@ -837,6 +932,26 @@ void RayCluster::SerializeWithCachedSizes(
       output);
   }
 
+  // string namespace = 3;
+  if (this->namespace_().size() > 0) {
+    ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
+      this->namespace_().data(), static_cast<int>(this->namespace_().length()),
+      ::google::protobuf::internal::WireFormatLite::SERIALIZE,
+      "flyteidl.plugins.RayCluster.namespace");
+    ::google::protobuf::internal::WireFormatLite::WriteStringMaybeAliased(
+      3, this->namespace_(), output);
+  }
+
+  // string k8s_service_account = 4;
+  if (this->k8s_service_account().size() > 0) {
+    ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
+      this->k8s_service_account().data(), static_cast<int>(this->k8s_service_account().length()),
+      ::google::protobuf::internal::WireFormatLite::SERIALIZE,
+      "flyteidl.plugins.RayCluster.k8s_service_account");
+    ::google::protobuf::internal::WireFormatLite::WriteStringMaybeAliased(
+      4, this->k8s_service_account(), output);
+  }
+
   if (_internal_metadata_.have_unknown_fields()) {
     ::google::protobuf::internal::WireFormat::SerializeUnknownFields(
         _internal_metadata_.unknown_fields(), output);
@@ -863,6 +978,28 @@ void RayCluster::SerializeWithCachedSizes(
     target = ::google::protobuf::internal::WireFormatLite::
       InternalWriteMessageToArray(
         2, this->worker_group_spec(static_cast<int>(i)), target);
+  }
+
+  // string namespace = 3;
+  if (this->namespace_().size() > 0) {
+    ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
+      this->namespace_().data(), static_cast<int>(this->namespace_().length()),
+      ::google::protobuf::internal::WireFormatLite::SERIALIZE,
+      "flyteidl.plugins.RayCluster.namespace");
+    target =
+      ::google::protobuf::internal::WireFormatLite::WriteStringToArray(
+        3, this->namespace_(), target);
+  }
+
+  // string k8s_service_account = 4;
+  if (this->k8s_service_account().size() > 0) {
+    ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
+      this->k8s_service_account().data(), static_cast<int>(this->k8s_service_account().length()),
+      ::google::protobuf::internal::WireFormatLite::SERIALIZE,
+      "flyteidl.plugins.RayCluster.k8s_service_account");
+    target =
+      ::google::protobuf::internal::WireFormatLite::WriteStringToArray(
+        4, this->k8s_service_account(), target);
   }
 
   if (_internal_metadata_.have_unknown_fields()) {
@@ -895,6 +1032,20 @@ size_t RayCluster::ByteSizeLong() const {
         ::google::protobuf::internal::WireFormatLite::MessageSize(
           this->worker_group_spec(static_cast<int>(i)));
     }
+  }
+
+  // string namespace = 3;
+  if (this->namespace_().size() > 0) {
+    total_size += 1 +
+      ::google::protobuf::internal::WireFormatLite::StringSize(
+        this->namespace_());
+  }
+
+  // string k8s_service_account = 4;
+  if (this->k8s_service_account().size() > 0) {
+    total_size += 1 +
+      ::google::protobuf::internal::WireFormatLite::StringSize(
+        this->k8s_service_account());
   }
 
   // .flyteidl.plugins.HeadGroupSpec head_group_spec = 1;
@@ -932,6 +1083,14 @@ void RayCluster::MergeFrom(const RayCluster& from) {
   (void) cached_has_bits;
 
   worker_group_spec_.MergeFrom(from.worker_group_spec_);
+  if (from.namespace_().size() > 0) {
+
+    namespace__.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.namespace__);
+  }
+  if (from.k8s_service_account().size() > 0) {
+
+    k8s_service_account_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.k8s_service_account_);
+  }
   if (from.has_head_group_spec()) {
     mutable_head_group_spec()->::flyteidl::plugins::HeadGroupSpec::MergeFrom(from.head_group_spec());
   }
@@ -963,6 +1122,10 @@ void RayCluster::InternalSwap(RayCluster* other) {
   using std::swap;
   _internal_metadata_.Swap(&other->_internal_metadata_);
   CastToBase(&worker_group_spec_)->InternalSwap(CastToBase(&other->worker_group_spec_));
+  namespace__.Swap(&other->namespace__, &::google::protobuf::internal::GetEmptyStringAlreadyInited(),
+    GetArenaNoVirtual());
+  k8s_service_account_.Swap(&other->k8s_service_account_, &::google::protobuf::internal::GetEmptyStringAlreadyInited(),
+    GetArenaNoVirtual());
   swap(head_group_spec_, other->head_group_spec_);
 }
 
@@ -1016,13 +1179,27 @@ bool HeadGroupSpec_RayStartParamsEntry_DoNotUse::_ParseMap(const char* begin, co
 // ===================================================================
 
 void HeadGroupSpec::InitAsDefaultInstance() {
+  ::flyteidl::plugins::_HeadGroupSpec_default_instance_._instance.get_mutable()->resources_ = const_cast< ::flyteidl::core::Resources*>(
+      ::flyteidl::core::Resources::internal_default_instance());
 }
 class HeadGroupSpec::HasBitSetters {
  public:
+  static const ::flyteidl::core::Resources& resources(const HeadGroupSpec* msg);
 };
 
+const ::flyteidl::core::Resources&
+HeadGroupSpec::HasBitSetters::resources(const HeadGroupSpec* msg) {
+  return *msg->resources_;
+}
+void HeadGroupSpec::clear_resources() {
+  if (GetArenaNoVirtual() == nullptr && resources_ != nullptr) {
+    delete resources_;
+  }
+  resources_ = nullptr;
+}
 #if !defined(_MSC_VER) || _MSC_VER >= 1900
 const int HeadGroupSpec::kRayStartParamsFieldNumber;
+const int HeadGroupSpec::kResourcesFieldNumber;
 #endif  // !defined(_MSC_VER) || _MSC_VER >= 1900
 
 HeadGroupSpec::HeadGroupSpec()
@@ -1035,12 +1212,18 @@ HeadGroupSpec::HeadGroupSpec(const HeadGroupSpec& from)
       _internal_metadata_(nullptr) {
   _internal_metadata_.MergeFrom(from._internal_metadata_);
   ray_start_params_.MergeFrom(from.ray_start_params_);
+  if (from.has_resources()) {
+    resources_ = new ::flyteidl::core::Resources(*from.resources_);
+  } else {
+    resources_ = nullptr;
+  }
   // @@protoc_insertion_point(copy_constructor:flyteidl.plugins.HeadGroupSpec)
 }
 
 void HeadGroupSpec::SharedCtor() {
   ::google::protobuf::internal::InitSCC(
       &scc_info_HeadGroupSpec_flyteidl_2fplugins_2fray_2eproto.base);
+  resources_ = nullptr;
 }
 
 HeadGroupSpec::~HeadGroupSpec() {
@@ -1049,6 +1232,7 @@ HeadGroupSpec::~HeadGroupSpec() {
 }
 
 void HeadGroupSpec::SharedDtor() {
+  if (this != internal_default_instance()) delete resources_;
 }
 
 void HeadGroupSpec::SetCachedSize(int size) const {
@@ -1067,6 +1251,10 @@ void HeadGroupSpec::Clear() {
   (void) cached_has_bits;
 
   ray_start_params_.Clear();
+  if (GetArenaNoVirtual() == nullptr && resources_ != nullptr) {
+    delete resources_;
+  }
+  resources_ = nullptr;
   _internal_metadata_.Clear();
 }
 
@@ -1100,6 +1288,19 @@ const char* HeadGroupSpec::_InternalParse(const char* begin, const char* end, vo
           ptr = newend;
           if (ptr >= end) break;
         } while ((::google::protobuf::io::UnalignedLoad<::google::protobuf::uint64>(ptr) & 255) == 10 && (ptr += 1));
+        break;
+      }
+      // .flyteidl.core.Resources resources = 2;
+      case 2: {
+        if (static_cast<::google::protobuf::uint8>(tag) != 18) goto handle_unusual;
+        ptr = ::google::protobuf::io::ReadSize(ptr, &size);
+        GOOGLE_PROTOBUF_PARSER_ASSERT(ptr);
+        parser_till_end = ::flyteidl::core::Resources::_InternalParse;
+        object = msg->mutable_resources();
+        if (size > end - ptr) goto len_delim_till_end;
+        ptr += size;
+        GOOGLE_PROTOBUF_PARSER_ASSERT(ctx->ParseExactRange(
+            {parser_till_end, object}, ptr - size, ptr));
         break;
       }
       default: {
@@ -1152,6 +1353,17 @@ bool HeadGroupSpec::MergePartialFromCodedStream(
             parser.value().data(), static_cast<int>(parser.value().length()),
             ::google::protobuf::internal::WireFormatLite::PARSE,
             "flyteidl.plugins.HeadGroupSpec.RayStartParamsEntry.value"));
+        } else {
+          goto handle_unusual;
+        }
+        break;
+      }
+
+      // .flyteidl.core.Resources resources = 2;
+      case 2: {
+        if (static_cast< ::google::protobuf::uint8>(tag) == (18 & 0xFF)) {
+          DO_(::google::protobuf::internal::WireFormatLite::ReadMessage(
+               input, mutable_resources()));
         } else {
           goto handle_unusual;
         }
@@ -1234,6 +1446,12 @@ void HeadGroupSpec::SerializeWithCachedSizes(
     }
   }
 
+  // .flyteidl.core.Resources resources = 2;
+  if (this->has_resources()) {
+    ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
+      2, HasBitSetters::resources(this), output);
+  }
+
   if (_internal_metadata_.have_unknown_fields()) {
     ::google::protobuf::internal::WireFormat::SerializeUnknownFields(
         _internal_metadata_.unknown_fields(), output);
@@ -1296,6 +1514,13 @@ void HeadGroupSpec::SerializeWithCachedSizes(
     }
   }
 
+  // .flyteidl.core.Resources resources = 2;
+  if (this->has_resources()) {
+    target = ::google::protobuf::internal::WireFormatLite::
+      InternalWriteMessageToArray(
+        2, HasBitSetters::resources(this), target);
+  }
+
   if (_internal_metadata_.have_unknown_fields()) {
     target = ::google::protobuf::internal::WireFormat::SerializeUnknownFieldsToArray(
         _internal_metadata_.unknown_fields(), target);
@@ -1331,6 +1556,13 @@ size_t HeadGroupSpec::ByteSizeLong() const {
     }
   }
 
+  // .flyteidl.core.Resources resources = 2;
+  if (this->has_resources()) {
+    total_size += 1 +
+      ::google::protobuf::internal::WireFormatLite::MessageSize(
+        *resources_);
+  }
+
   int cached_size = ::google::protobuf::internal::ToCachedSize(total_size);
   SetCachedSize(cached_size);
   return total_size;
@@ -1359,6 +1591,9 @@ void HeadGroupSpec::MergeFrom(const HeadGroupSpec& from) {
   (void) cached_has_bits;
 
   ray_start_params_.MergeFrom(from.ray_start_params_);
+  if (from.has_resources()) {
+    mutable_resources()->::flyteidl::core::Resources::MergeFrom(from.resources());
+  }
 }
 
 void HeadGroupSpec::CopyFrom(const ::google::protobuf::Message& from) {
@@ -1387,6 +1622,7 @@ void HeadGroupSpec::InternalSwap(HeadGroupSpec* other) {
   using std::swap;
   _internal_metadata_.Swap(&other->_internal_metadata_);
   ray_start_params_.Swap(&other->ray_start_params_);
+  swap(resources_, other->resources_);
 }
 
 ::google::protobuf::Metadata HeadGroupSpec::GetMetadata() const {
@@ -1439,17 +1675,31 @@ bool WorkerGroupSpec_RayStartParamsEntry_DoNotUse::_ParseMap(const char* begin, 
 // ===================================================================
 
 void WorkerGroupSpec::InitAsDefaultInstance() {
+  ::flyteidl::plugins::_WorkerGroupSpec_default_instance_._instance.get_mutable()->resources_ = const_cast< ::flyteidl::core::Resources*>(
+      ::flyteidl::core::Resources::internal_default_instance());
 }
 class WorkerGroupSpec::HasBitSetters {
  public:
+  static const ::flyteidl::core::Resources& resources(const WorkerGroupSpec* msg);
 };
 
+const ::flyteidl::core::Resources&
+WorkerGroupSpec::HasBitSetters::resources(const WorkerGroupSpec* msg) {
+  return *msg->resources_;
+}
+void WorkerGroupSpec::clear_resources() {
+  if (GetArenaNoVirtual() == nullptr && resources_ != nullptr) {
+    delete resources_;
+  }
+  resources_ = nullptr;
+}
 #if !defined(_MSC_VER) || _MSC_VER >= 1900
 const int WorkerGroupSpec::kGroupNameFieldNumber;
 const int WorkerGroupSpec::kReplicasFieldNumber;
 const int WorkerGroupSpec::kMinReplicasFieldNumber;
 const int WorkerGroupSpec::kMaxReplicasFieldNumber;
 const int WorkerGroupSpec::kRayStartParamsFieldNumber;
+const int WorkerGroupSpec::kResourcesFieldNumber;
 #endif  // !defined(_MSC_VER) || _MSC_VER >= 1900
 
 WorkerGroupSpec::WorkerGroupSpec()
@@ -1466,6 +1716,11 @@ WorkerGroupSpec::WorkerGroupSpec(const WorkerGroupSpec& from)
   if (from.group_name().size() > 0) {
     group_name_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.group_name_);
   }
+  if (from.has_resources()) {
+    resources_ = new ::flyteidl::core::Resources(*from.resources_);
+  } else {
+    resources_ = nullptr;
+  }
   ::memcpy(&replicas_, &from.replicas_,
     static_cast<size_t>(reinterpret_cast<char*>(&max_replicas_) -
     reinterpret_cast<char*>(&replicas_)) + sizeof(max_replicas_));
@@ -1476,9 +1731,9 @@ void WorkerGroupSpec::SharedCtor() {
   ::google::protobuf::internal::InitSCC(
       &scc_info_WorkerGroupSpec_flyteidl_2fplugins_2fray_2eproto.base);
   group_name_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-  ::memset(&replicas_, 0, static_cast<size_t>(
+  ::memset(&resources_, 0, static_cast<size_t>(
       reinterpret_cast<char*>(&max_replicas_) -
-      reinterpret_cast<char*>(&replicas_)) + sizeof(max_replicas_));
+      reinterpret_cast<char*>(&resources_)) + sizeof(max_replicas_));
 }
 
 WorkerGroupSpec::~WorkerGroupSpec() {
@@ -1488,6 +1743,7 @@ WorkerGroupSpec::~WorkerGroupSpec() {
 
 void WorkerGroupSpec::SharedDtor() {
   group_name_.DestroyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  if (this != internal_default_instance()) delete resources_;
 }
 
 void WorkerGroupSpec::SetCachedSize(int size) const {
@@ -1507,6 +1763,10 @@ void WorkerGroupSpec::Clear() {
 
   ray_start_params_.Clear();
   group_name_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  if (GetArenaNoVirtual() == nullptr && resources_ != nullptr) {
+    delete resources_;
+  }
+  resources_ = nullptr;
   ::memset(&replicas_, 0, static_cast<size_t>(
       reinterpret_cast<char*>(&max_replicas_) -
       reinterpret_cast<char*>(&replicas_)) + sizeof(max_replicas_));
@@ -1580,6 +1840,19 @@ const char* WorkerGroupSpec::_InternalParse(const char* begin, const char* end, 
           ptr = newend;
           if (ptr >= end) break;
         } while ((::google::protobuf::io::UnalignedLoad<::google::protobuf::uint64>(ptr) & 255) == 42 && (ptr += 1));
+        break;
+      }
+      // .flyteidl.core.Resources resources = 6;
+      case 6: {
+        if (static_cast<::google::protobuf::uint8>(tag) != 50) goto handle_unusual;
+        ptr = ::google::protobuf::io::ReadSize(ptr, &size);
+        GOOGLE_PROTOBUF_PARSER_ASSERT(ptr);
+        parser_till_end = ::flyteidl::core::Resources::_InternalParse;
+        object = msg->mutable_resources();
+        if (size > end - ptr) goto len_delim_till_end;
+        ptr += size;
+        GOOGLE_PROTOBUF_PARSER_ASSERT(ctx->ParseExactRange(
+            {parser_till_end, object}, ptr - size, ptr));
         break;
       }
       default: {
@@ -1696,6 +1969,17 @@ bool WorkerGroupSpec::MergePartialFromCodedStream(
         break;
       }
 
+      // .flyteidl.core.Resources resources = 6;
+      case 6: {
+        if (static_cast< ::google::protobuf::uint8>(tag) == (50 & 0xFF)) {
+          DO_(::google::protobuf::internal::WireFormatLite::ReadMessage(
+               input, mutable_resources()));
+        } else {
+          goto handle_unusual;
+        }
+        break;
+      }
+
       default: {
       handle_unusual:
         if (tag == 0) {
@@ -1797,6 +2081,12 @@ void WorkerGroupSpec::SerializeWithCachedSizes(
     }
   }
 
+  // .flyteidl.core.Resources resources = 6;
+  if (this->has_resources()) {
+    ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
+      6, HasBitSetters::resources(this), output);
+  }
+
   if (_internal_metadata_.have_unknown_fields()) {
     ::google::protobuf::internal::WireFormat::SerializeUnknownFields(
         _internal_metadata_.unknown_fields(), output);
@@ -1885,6 +2175,13 @@ void WorkerGroupSpec::SerializeWithCachedSizes(
     }
   }
 
+  // .flyteidl.core.Resources resources = 6;
+  if (this->has_resources()) {
+    target = ::google::protobuf::internal::WireFormatLite::
+      InternalWriteMessageToArray(
+        6, HasBitSetters::resources(this), target);
+  }
+
   if (_internal_metadata_.have_unknown_fields()) {
     target = ::google::protobuf::internal::WireFormat::SerializeUnknownFieldsToArray(
         _internal_metadata_.unknown_fields(), target);
@@ -1925,6 +2222,13 @@ size_t WorkerGroupSpec::ByteSizeLong() const {
     total_size += 1 +
       ::google::protobuf::internal::WireFormatLite::StringSize(
         this->group_name());
+  }
+
+  // .flyteidl.core.Resources resources = 6;
+  if (this->has_resources()) {
+    total_size += 1 +
+      ::google::protobuf::internal::WireFormatLite::MessageSize(
+        *resources_);
   }
 
   // int32 replicas = 2;
@@ -1980,6 +2284,9 @@ void WorkerGroupSpec::MergeFrom(const WorkerGroupSpec& from) {
 
     group_name_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.group_name_);
   }
+  if (from.has_resources()) {
+    mutable_resources()->::flyteidl::core::Resources::MergeFrom(from.resources());
+  }
   if (from.replicas() != 0) {
     set_replicas(from.replicas());
   }
@@ -2019,6 +2326,7 @@ void WorkerGroupSpec::InternalSwap(WorkerGroupSpec* other) {
   ray_start_params_.Swap(&other->ray_start_params_);
   group_name_.Swap(&other->group_name_, &::google::protobuf::internal::GetEmptyStringAlreadyInited(),
     GetArenaNoVirtual());
+  swap(resources_, other->resources_);
   swap(replicas_, other->replicas_);
   swap(min_replicas_, other->min_replicas_);
   swap(max_replicas_, other->max_replicas_);

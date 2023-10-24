@@ -186,6 +186,12 @@ pub struct RayCluster {
     /// WorkerGroupSpecs are the specs for the worker pods
     #[prost(message, repeated, tag="2")]
     pub worker_group_spec: ::prost::alloc::vec::Vec<WorkerGroupSpec>,
+    /// Namespace used to create the ray cluster
+    #[prost(string, tag="3")]
+    pub namespace: ::prost::alloc::string::String,
+    /// Kubernetes service account used by the ray cluster
+    #[prost(string, tag="4")]
+    pub k8s_service_account: ::prost::alloc::string::String,
 }
 /// HeadGroupSpec are the spec for the head pod
 #[allow(clippy::derive_partial_eq_without_eq)]
@@ -195,6 +201,9 @@ pub struct HeadGroupSpec {
     /// Refer to <https://docs.ray.io/en/latest/ray-core/package-ref.html#ray-start>
     #[prost(map="string, string", tag="1")]
     pub ray_start_params: ::std::collections::HashMap<::prost::alloc::string::String, ::prost::alloc::string::String>,
+    /// Resource specification for ray head pod
+    #[prost(message, optional, tag="2")]
+    pub resources: ::core::option::Option<super::core::Resources>,
 }
 /// WorkerGroupSpec are the specs for the worker pods
 #[allow(clippy::derive_partial_eq_without_eq)]
@@ -216,6 +225,9 @@ pub struct WorkerGroupSpec {
     /// Refer to <https://docs.ray.io/en/latest/ray-core/package-ref.html#ray-start>
     #[prost(map="string, string", tag="5")]
     pub ray_start_params: ::std::collections::HashMap<::prost::alloc::string::String, ::prost::alloc::string::String>,
+    /// Resource specification for ray worker pods
+    #[prost(message, optional, tag="6")]
+    pub resources: ::core::option::Option<super::core::Resources>,
 }
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(Clone, PartialEq, ::prost::Message)]
