@@ -1,0 +1,79 @@
+syntax = "proto3";
+
+package flyteidl.external;
+
+option go_package = "github.com/lyft/flyteidl/gen/pb-go/flyteidl/external";
+
+import "flyteidl/core/execution.proto";
+import "flyteidl/core/identifier.proto";
+import "flyteidl/core/catalog.proto";
+import "flyteidl/core/workflow_closure.proto";
+import "flyteidl/core/compiler.proto";
+import "flyteidl/admin/event.proto";
+import "flyteidl/admin/common.proto";
+import "flyteidl/admin/execution.proto";
+import "flyteidl/admin/node_execution.proto";
+import "flyteidl/admin/task_execution.proto";
+import "google/protobuf/timestamp.proto";
+import "google/protobuf/struct.proto";
+
+// Contains the information about the workflow execution such as inputs,
+// annotations, labels. It also includes the workflow graph.
+message ExecutionEventClosure {
+    flyteidl.core.ConnectionSet connections = 1;
+
+    flyteidl.core.LiteralMap computed_input = 2;
+
+    core.Identifier launch_plan = 3;
+
+    flyteidl.admin.Annotations annotations = 4;
+
+    flyteidl.admin.Labels labels = 5;
+
+    flyteidl.admin.ExecutionMetadata metadata = 6;
+}
+
+// An event for workflow execution
+message WorkflowEvent {
+   flyteidl.admin.Execution execution = 1;
+
+   ExecutionEventClosure workflow_event_closure = 2;
+}
+
+// Contains the node spec and workflow event closure. If the node is a task node,
+// it will also include the task execution.
+message NodeEventClosure {
+    flyteidl.core.Node node = 1;
+    // Only available when the node is a task node and node is finished
+    oneof target {
+        flyteidl.admin.TaskExecution task_execution = 2;
+    }
+
+    ExecutionEventClosure workflow_event_closure = 3;
+}
+
+// Event for Node Execution
+message NodeEvent {
+    flyteidl.admin.NodeExecution node_execution = 1;
+
+    NodeEventClosure node_event_closure = 2;
+}
+
+// Event for Task Execution
+message TaskEvent {
+    flyteidl.admin.TaskExecution task_execution = 1;
+}
+
+// Instead of creating a new envelope, we can also use the cloudEvent as the envelope
+message Event {
+    string id = 1;
+    string producer_id = 2;
+    google.protobuf.Timestamp occurred_at = 3;
+    oneof event {
+        WorkflowEvent workflow_event = 4;
+        NodeEvent node_event = 5;
+        TaskEvent task_event = 6;
+    }
+}
+
+
