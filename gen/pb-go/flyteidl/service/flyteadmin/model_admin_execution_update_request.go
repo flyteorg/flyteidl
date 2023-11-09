@@ -12,4 +12,5 @@ package flyteadmin
 type AdminExecutionUpdateRequest struct {
 	Id *CoreWorkflowExecutionIdentifier `json:"id,omitempty"`
 	State *AdminExecutionState `json:"state,omitempty"`
+	Tags []string `json:"tags,omitempty"`
 }

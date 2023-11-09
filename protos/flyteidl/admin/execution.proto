@@ -376,6 +376,9 @@ message ExecutionUpdateRequest {
 
     // State to set as the new value active/archive
     ExecutionState state = 2;
+
+    // Tag of the execution to update
+    repeated string tags = 3;
 }
 
 message ExecutionStateChangeDetails {
